@@ -1,0 +1,75 @@
+entries:
+- title: Data Library
+  product: Data Library<br/>
+  version: 1.0.0-beta.1
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web
+    folderitems:
+    - title: FHIR&reg; Delta
+      url: /datalibrary.html
+      output: web, pdf
+      type: homepage
+
+  - title: Foundations
+    output: web
+    folderitems:
+      - title: Patient
+        url: /datalibrary_delta_patient_resource.html
+        output: web, pdf
+      - title: Practitioner
+        url: /datalibrary_delta_practitioner_resource.html
+        output: web, pdf
+      - title: Organization
+        url: /datalibrary_delta_organization_resource.html
+        output: web, pdf
+      - title: Location
+        url: /datalibrary_delta_location_resource.html
+        output: web, pdf
+
+  - title: Access Record
+    output: web
+    folderitems:
+    - title: Bundle (Searchset)
+      url: /datalibrary_delta_bundle_searchset_resource.html
+      output: web, pdf
+    - title: Composition
+      url: /datalibrary_delta_composition_resource.html
+      output: web, pdf
+    - title: Device
+      url: /datalibrary_delta_device_resource.html
+      output: web, pdf
+
+  - title: Appointment Management
+    output: web
+    folderitems:
+    - title: Appointment
+      url: /datalibrary_delta_appointment_resource.html
+      output: web, pdf
+    - title: Schedule
+      url: /datalibrary_delta_schedule_resource.html
+      output: web, pdf
+    - title: Slot
+      url: /datalibrary_delta_slot_resource.html
+      output: web, pdf
+
+  - title: Task Management
+    output: web
+    folderitems:
+    - title: Order
+      url: /datalibrary_delta_order_resource.html
+      output: web, pdf

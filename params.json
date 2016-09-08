@@ -1,6 +1,0 @@
-{
-  "name": "GP Connect Technical Guidance",
-  "tagline": "Supporting the Design, Build and Test of Open APIs using the HL7 FHIR standard.",
-  "body": "### Welcome to the GP Connect Technical Guidance GitHub Pages.\r\n\r\n[GP Connect](http://systems.hscic.gov.uk/gpsoc/interface/gpconnect) aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model.\r\n\r\n### Priority Capabilities\r\n\r\nGP Connect is initially focusing on three main interoperability capabilities which the Digital Interoperability Platform will provide:\r\n\r\n- Access a patient's care record for the purpose of direct care.\r\n- Manage appointments in order to co-ordinate access to care.\r\n- Manage tasks in order to work effectively across care settings.\r\n\r\n### Authors and Contributors\r\n- Michael Measures (@michaelmeasures) at GitHub.\r\n\r\n### Contact\r\nHaving trouble with the GP Connect Pages? [Contact Michael](mailto://michael.measures@hscic.gov.uk) and I’ll try and help you sort it out.\r\n",
-  "note": "Don't delete this file! It's used internally to help with page regeneration."
-}
