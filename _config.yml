@@ -11,7 +11,7 @@ site_title: GP Connect
 company_name: NHS Digital
 # this appears in the footer
 
-github_editme_path:
+github_editme_path: /edit/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 #disqus: true
@@ -28,6 +28,7 @@ port: 4005
 exclude:
   - .idea/
   - .gitignore
+  - pages/development/development_github_repositories.md
 # these are the files and directories that jekyll will exclude from the build
 
 feedback_email: michael.measures@nhs.net
@@ -100,8 +101,10 @@ sidebars:
 description: "GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model."
 # the description is used in the feed.xml file
 
+sitemap: true
+
 # needed for sitemap.xml file only
-url:
+url: https://nhsconnect.github.io/gpconnect
 
 repository: nhsconnect/gpconnect
 
@@ -109,6 +112,7 @@ gist:
   noscript: false
 
 gems:
+   - jekyll-github-metadata
    - jekyll-mentions
    - jemoji
    - jekyll-redirect-from
