@@ -42,3 +42,8 @@ Provider systems must also demonstrate standards compliance as part of the NHS D
 ## Clinical Terminology ##
 
 Provider systems must output assured SNOMED CT mappings according to coded data specifications.  Where assured mappings do not exist, then the native Read or CTV3 code and corresponding native text must be provided.
+
+## Demographic Cross Checking ##
+
+Consumer systems must compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
+If differences exist then the consumer system must show an alert/warning and provide details of which fields/values are different between the two systems.

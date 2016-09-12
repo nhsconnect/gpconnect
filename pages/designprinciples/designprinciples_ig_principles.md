@@ -35,3 +35,6 @@ clinical activity concerned with the prevention, diagnosis or treatment of illne
 - Exclusion sets such as SCR and others for specific conditions e.g. sexual health, HIV etc. are not expected to be applied by the principal systems for FoT; to mitigate this, organisations involved in sharing must have established the relevant controls such as data sharing agreements & fair use notices explicitly covering this;  work is ongoing to obtain more detailed understanding of currently defined exclusion sets and how these are applied within SCR and other systems to determine the agreed model for GP Connect.
 
 - Audit requirements as defined in existing contractual frameworks as well as the NHS Digital Assurance Target Operating Model must be met by Provider and Consumer systems.
+
+- Demographic Cross Checking: Consumer systems must compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
+If differences exist then the consumer system must show an alert/warning and provide details of which fields/values are different between the two systems.
