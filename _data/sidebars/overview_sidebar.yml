@@ -1,0 +1,248 @@
+entries:
+- title: GP Connect
+  product: GP Connect<br/>
+  version: 1.0.0-alpha.1
+  levels: one
+  folders:
+
+  - title: Overview
+    output: web
+    folderitems:
+    - title: Introduction
+      url: /index.html
+      output: web, pdf
+      type: homepage
+    - title: Getting Started
+      url: /overview_engage.html
+      output: web
+    - title: News
+      url: /news.html
+      output: web
+    - title: Capabilities
+      url: /overview_priority_capabilities.html
+      output: web
+    - title: Workshops and Timeline
+      url: /overview_workshops.html
+      output: web
+    - title: First of Type
+      url: /overview_first_of_type.html
+      output: web
+    - title: Glossary
+      url: /overview_glossary.html
+      output: web
+
+  - title: Design Approach
+    output: web
+    folderitems:
+    - title: Design Principles
+      url: /designprinciples_maturity_model.html
+      output: web
+    - title: Clinical Terminologies
+      url: /design_clinical_terminologies.html
+      output: web
+    - title: Product Versioning
+      url: /design_product_versioning.html
+      output: web
+
+  - title: Explore
+    output: web
+    folderitems:
+    - title: Consumer Demonstrator
+      url: /system_demonstrator.html
+      output: web
+    - title: Reference Implementation
+      url: /system_reference.html
+      output: web
+    - title: Swagger API Documentation
+      url: /system_reference_swagger.html
+      output: web
+
+  - title: Development Guidance
+    output: web
+    folderitems:
+    - title: Development Assets
+      url: /development_deliverables.html
+      output: web
+
+      subfolders:
+      - title: FHIR&reg; API Guidance
+        output: web
+        subfolderitems:
+
+        - title: Open Source
+          url: /development_fhir_open_source_guidance.html
+          output: web
+        - title: Server Guidance
+          url: /development_fhir_server_guidance.html
+          output: web
+        - title: Common API Guidance
+          url: /development_fhir_api_guidance.html
+          output: web
+        - title: Operation Guidance
+          url: /development_fhir_operation_guidance.html
+          output: web
+        - title: Resource Guidance
+          url: /development_fhir_resource_guidance.html
+          output: web
+        - title: Error Handling
+          url: /development_fhir_error_handling_guidance.html
+          output: web
+
+    - title: FHIR&reg; Data Models
+      url: /datalibrary.html
+      output: web
+
+#    - title: Dev Environments
+#      url: /development_environments.html
+#      output: web
+
+  - title: Implement A Capability
+    output: web
+    folderitems:
+    - title: API Foundations
+      url: /foundations.html
+      output: web
+    - title: Access Record
+      url: /accessrecord.html
+      output: web
+    - title: Task Management
+      url: /tasks.html
+      output: web
+    - title: Appointment Management
+      url: /appointments.html
+      output: web
+
+  - title: Integrate With Spine
+    output: web
+    folderitems:
+    - title: Cross Org Audit & Provenance
+      url: /integration_cross_organisation_audit_and_provenance.html
+      output: web
+    - title: Personal Demographic Service
+      url: /integration_personal_demographic_service.html
+      output: web	
+    - title: Spine Directory Services
+      url: /integration_spine_directory_service.html
+      output: web
+    - title: Spine Security Proxy Introduction
+      url: /integration_spine_security_proxy.html
+      output: web
+    - title: Spine Security Proxy Implementation Guide
+      url: /integration_spine_security_proxy_implementation_guide.html
+      output: web
+
+  - title: Test & Assure
+    output: web
+    folderitems:
+    - title: Testing Assets
+      url: /testing_deliverables.html
+      output: web
+    - title: Testing Data
+      url: /testing_data.html
+      output: web
+    - title: Accreditation
+      url: /testing_accreditation.html
+      output: web
+    - title: Assurance
+      url: /testing_assurance.html
+      subfolders:
+      - title: System Test
+        output: web
+        subfolderitems:
+
+        - title: Stage 1. Test Window
+          url: /development_stage_one_test_window.html
+          output: web
+        - title: Stage 2. Test Window
+          url: /development_stage_two_test_window.html
+          output: web
+        - title: Stage 3. Test Window
+          url: /development_stage_three_test_window.html
+          output: web      
+      output: web
+    - title: Path to Live
+      url: /testing_environments.html
+      output: web
+
+  - title: Help & Support
+    output: web
+    folderitems:
+    - title: Frequently Asked Questions (FAQ)
+      url: /support_faq.html
+      output: web
+    - title: Communications
+      url: /support_communications.html
+      output: web
+
+  - title: Tags
+    output: web
+    folderitems:
+    - title: News
+      url: /tag_news.html
+      output: web
+    - title: Getting Started
+      url: /tag_getting_started.html
+      output: web
+    - title: First of Type
+      url: /tag_first_of_type.html
+      output: web
+    - title: FHIR&reg;
+      url: /tag_fhir.html
+      output: web
+    - title: Structured
+      url: /tag_structured.html
+      output: web
+    - title: Use Case
+      url: /tag_use_case.html
+      output: web
+    - title: Foundations
+      url: /tag_foundations.html
+      output: web
+    - title: HTML Get Care Record
+      url: /tag_htmlgetcarerecord.html
+      output: web
+    - title: Get Care Record
+      url: /tag_getcarerecord.html
+      output: web
+    - title: Appointments
+      url: /tag_appointments.html
+      output: web
+    - title: Tasks
+      url: /tag_tasks.html
+      output: web
+    - title: Engagement
+      url: /tag_engagement.html
+      output: web
+    - title: Design
+      url: /tag_design.html
+      output: web	  
+    - title: Development
+      url: /tag_development.html
+      output: web
+    - title: Integration
+      url: /tag_integration.html
+      output: web
+    - title: Testing
+      url: /tag_testing.html
+      output: web
+    - title: Assurance
+      url: /tag_assurance.html
+      output: web
+    - title: Deployment
+      url: /tag_deployment.html
+      output: web
+    - title: Support
+      url: /tag_support.html
+      output: web	  
+    - title: Clinical Safety
+      url: /tag_clinical_safety.html
+      output: web
+    - title: Information Governance
+      url: /tag_information_governance.html
+      output: web
+    - title: Commissioning
+      url: /tag_commissioning.html
+      output: web
+    - title: Code Snippet
+      url: /tag_code_snippet.html
+      output: web

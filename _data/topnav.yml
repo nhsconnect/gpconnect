@@ -1,0 +1,31 @@
+topnav:
+- title: Topnav
+  items:
+    - title: News
+      url: news.html
+
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+    - title: GP External Links
+      folderitems:        
+        - title: GPC NHS Digital
+          external_url: http://systems.digital.nhs.uk/gpsoc/interface/gpconnect/
+        - title: GPC Developer Network
+          external_url: http://developer.nhs.uk/library/interoperability/gp-connect/
+        - title: GPC Code4Health
+          external_url: http://interoperability.code4health.org/projects/gp-connect-2/
+        - title: GPC Github API
+          external_url: https://github.com/nhsconnect/gpconnect-api/
+        - title: GPC Github Data Library
+          external_url: https://github.com/nhsconnect/gpconnect-fhir/
+    - title: Capability Packs
+      folderitems:
+        - title: Foundations
+          url: foundations.html
+        - title: Access Record
+          url: accessrecord.html
+        - title: Appointment Management
+          url: appointments.html
+        - title: Task Management
+          url: tasks.html

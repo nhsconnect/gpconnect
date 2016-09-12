@@ -1,0 +1,2 @@
+consumer: "a system which consumes data from the GP Connect FHIR APIs"
+provider: "a system which provides data from GP Connect FHIR APIs"
