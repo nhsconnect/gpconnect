@@ -18,6 +18,9 @@ GP Connect aims to support better clinical care by opening up information and da
 
 Find out more on the [NHS Digital GP Connect homepage](http://systems.digital.nhs.uk/gpsoc/interface/gpconnect).
 
+Follow us on Twitter for all the latest news and announcements:
+
+{% include twitterfollow.html %}
 
 # The GP Connect Developer Ecosystem #
 
