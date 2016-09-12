@@ -20,6 +20,7 @@ A two-way channel to allow the Supplier Community to engage with each other and 
 
 ## Mailing List
 
+{% include tinyletter.html %}
 ## Twitter
 
 ## Issue Tracking
