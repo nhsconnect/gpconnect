@@ -116,6 +116,7 @@ gems:
    - jekyll-mentions
    - jemoji
    - jekyll-redirect-from
+   - jekyll-seo-tag
    - jekyll-sitemap
    - jekyll-feed
    - jekyll-gist
