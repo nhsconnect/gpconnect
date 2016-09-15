@@ -19,6 +19,9 @@ github_editme_path: /edit/gh-pages/
 disqus_shortname: nhsconnect
 # if you're using disqus for comments, add the shortname here. if not, leave this value blank.
 
+gitter: true
+gitter_room: gpconnect/Lobby
+
 host: 127.0.0.1
 # the preview server used. Leave as is.
 
