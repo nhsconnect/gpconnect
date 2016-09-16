@@ -12,6 +12,8 @@ summary: A brief introduction to getting started with the GP Connect FHIR&reg; A
 
 {% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities, other parties are advised not to develop against these specifications until a formal announcement has been made." %}
 
+[![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} [![Join the chat at https://gitter.im/gpconnect/Lobby](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg)](https://gitter.im/gpconnect/Lobby){:target="_blank" class="no_icon"}
+
 # The GP Connect Vision #
 
 GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model.
