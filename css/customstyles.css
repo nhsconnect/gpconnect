@@ -1,7 +1,6 @@
 body {
     font-size:15px;
 }
-
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
@@ -934,6 +933,7 @@ a[href^="http://"]:after, a[href^="https://"]:after {
 }
 
 /* Strip the outbound icon when this class is present */
+.gitter-open-chat-button:after,
 a[href].noCrossRef::after,
 a.no_icon:after
  {
