@@ -1,7 +1,7 @@
 ---
 title: Introduction to GP Connect
 keywords: homepage
-tags: [introduction]
+tags: [getting_started]
 sidebar: home_sidebar
 permalink: index.html
 toc: false
@@ -12,7 +12,9 @@ summary: A brief introduction to getting started with the GP Connect FHIR&reg; A
 
 {% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities, other parties are advised not to develop against these specifications until a formal announcement has been made." %}
 
-[![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} [![Join the chat at https://gitter.im/gpconnect/Lobby](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg)](https://gitter.im/gpconnect/Lobby){:target="_blank" class="no_icon"}
+{% comment %}
+[![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
+{% endcomment %}
 
 # The GP Connect Vision #
 
@@ -23,6 +25,10 @@ Find out more on the [NHS Digital GP Connect homepage](http://systems.digital.nh
 Follow us on Twitter for all the latest news and announcements:
 
 {% include twitterfollow.html %}
+
+Or join the developer chat on Gitter:
+
+[![Join the chat at https://gitter.im/gpconnect/Lobby](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg)](https://gitter.im/gpconnect/Lobby){:target="_blank" class="no_icon"}
 
 # The GP Connect Developer Ecosystem #
 
