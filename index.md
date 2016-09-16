@@ -28,7 +28,7 @@ Follow us on Twitter for all the latest news and announcements:
 
 This site is broadly structured around a typical API Developer's Journey:
 
-![NHS API Development Journey](images/development/NHS_API_Development_Journey-1024x835.jpg)
+{% include developer_journey.html %}
 
 To begin head to the [Getting Started](overview_engage.html) page.
 
