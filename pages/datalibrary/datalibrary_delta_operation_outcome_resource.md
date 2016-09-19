@@ -36,4 +36,3 @@ GP Connect APIs.
 </table>
 
 
-{% include links.html %}

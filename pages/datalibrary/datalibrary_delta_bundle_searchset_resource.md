@@ -46,4 +46,3 @@ Overview of changes made to the standard FHIR&reg; DSTU2 [Bundle](https://www.hl
 	</tbody>
 </table>
 
-{% include links.html %}

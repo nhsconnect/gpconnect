@@ -38,4 +38,3 @@ summary: "Schedule resource delta between GP Connect and the base FHIR resource.
 
 </table>
 
-{% include links.html %}

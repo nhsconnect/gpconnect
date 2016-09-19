@@ -41,4 +41,3 @@ Provider systems SHALL returning one of the following `OperationOutcome` error c
 | `422`     | INVALID_PARAMETER | Submitted parameter is not valid. |
 | `422`     | REFERENCE_NOT_FOUND | Referenced resource not found. |
 
-{% include links.html %}

@@ -64,4 +64,3 @@ Overview of changes made to the standard FHIR&reg; DSTU2 [Composition](https://w
 	</tbody>
 </table>
 
-{% include links.html %}

@@ -30,4 +30,3 @@ GP Connect systems are expected to handle coded data as follows:
 
 {% include important.html content="Updated assured mappings are released every 6 months; suppliers are expected to update their systems in-line with the timescales currently required under the GPSoC framework." %}
 
-{% include links.html %}

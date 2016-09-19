@@ -68,4 +68,3 @@ summary: An overview of the workshops being held to support the design and devel
 | 24th March 2016      | Leeds | Access Record HTML (1)                                                |
  
 
-{% include links.html %}

@@ -24,4 +24,3 @@ The following open source FHIR server libraries are available on GitHub:
 - Java [HAPI FHIR](https://github.com/jamesagnew/hapi-fhir){:target="_blank"}
 
 
-{% include links.html %}

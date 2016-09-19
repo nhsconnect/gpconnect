@@ -111,4 +111,3 @@ Consumer system SHALL generate a new JWT for each API request.
 
 {% gist michaelmeasures/d6a75e52acdbee93c4c30d23e639fb1a %}
 
-{% include links.html %}

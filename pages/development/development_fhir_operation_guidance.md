@@ -103,4 +103,3 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | Get Patient Referrals | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Referral.read` | `GET`  | `[base]/Referral?patient=[id]` |
 | Get Patient Appointments | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Appointment.read` | `GET`  | `[base]/Appointment?patient=[id]` |
 
-{% include links.html %}

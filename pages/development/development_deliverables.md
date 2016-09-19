@@ -21,4 +21,3 @@ summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of GP Con
 | | | |
 
 
-{% include links.html %}

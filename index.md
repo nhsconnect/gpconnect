@@ -34,4 +34,3 @@ This site is broadly structured around a typical API Developer's Journey:
 
 To begin head to the [Getting Started](overview_engage.html) page.
 
-{% include links.html %}

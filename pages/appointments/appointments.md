@@ -34,4 +34,3 @@ Demonstrates the ability to provide service users (and patients) with the abilit
 
 {% include tip.html content="Creation of `Schedule` and `Slot` resources is out of scope for the GP Connect FoT as these resources are expected to be managed from within an organisation's principal IT system." %}
 
-{% include links.html %}

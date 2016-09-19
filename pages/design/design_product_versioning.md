@@ -52,4 +52,3 @@ Taking a similar approach to the [FHIR Maturity Model](http://wiki.hl7.org/index
 | 4 | `X.Y.Z-rc.n` | Release Candidate; slower iterations, community engaged, scope fixed, detailed approach fixed, no new features, bug fixes and amendments for clinical safety & IG only. | Draft implemented in at least two commercial systems. |
 | 5 | `X.Y.Z` | Stable; release version. | Draft implemented in at least three commercial systems with full accreditation and assurance mechanisms in place. |
 
-{% include links.html %}

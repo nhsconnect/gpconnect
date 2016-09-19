@@ -31,4 +31,3 @@ Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinica
 - [Receive a task](tasks_receive_a_task.html)
 {% endcomment %}
 
-{% include links.html %}

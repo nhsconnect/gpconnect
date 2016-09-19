@@ -35,4 +35,3 @@ Overview of changes made to the standard FHIR&reg; DSTU2 [Organization](https://
 </table>			
 
 
-{% include links.html %}

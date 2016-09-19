@@ -278,4 +278,3 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 		- Used when the client has closed the request before the server could send a response.
 			- To be logged by the proxy as it can’t be sent to client/consumer.
 
-{% include links.html %}

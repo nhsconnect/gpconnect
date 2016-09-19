@@ -33,4 +33,3 @@ GP Connect systems are expected to undertake the following technical accreditati
 {% include todo.html content="Information about the Technical Accreditation process will be added here." %}
 
 
-{% include links.html %}
