@@ -9,7 +9,8 @@ layout: default
             {% assign projectTags = site.data.tags.allowed-tags %}
             {% for tag in page.tags %}
             {% if projectTags contains tag %}
-            <a href="{{ "tag_" | append: {{tag}}.html">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
+            {% assign tag_href = "tag_" | append: tag | append: ".html" %}
+            <a href="{{ tag_href }}">{{tag}}</a>{% unless forloop.last %}, {% endunless%}
             {% endif %}
             {% endfor %}
             {% endif %}
