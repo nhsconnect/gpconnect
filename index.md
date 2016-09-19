@@ -24,9 +24,7 @@ Find out more on the [NHS Digital GP Connect homepage](http://systems.digital.nh
 
 {% include twitterfollow.html %}
 
-Or join the developer chat on Gitter:
-
-[![Join the chat at https://gitter.im/gpconnect/Lobby](https://img.shields.io/badge/gitter-join%20chat-brightgreen.svg)](https://gitter.im/gpconnect/Lobby){:target="_blank" class="no_icon"}
+{% include gitterbadge.html %}
 
 # The GP Connect Developer Ecosystem #
 
