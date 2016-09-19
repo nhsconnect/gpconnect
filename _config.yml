@@ -22,6 +22,9 @@ disqus_shortname: nhsconnect
 gitter: true
 gitter_room: gpconnect/Lobby
 
+tiny_letter: true
+tiny_letter_username: nhsconnectapi
+
 host: 127.0.0.1
 # the preview server used. Leave as is.
 
