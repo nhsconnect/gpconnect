@@ -1,1 +1,3 @@
-<a class="twitter-timeline" data-height="600" href="https://twitter.com/nhsconnectapi">Tweets by @nhsconnectapi</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% if site.twitter %}
+<a class="twitter-timeline" data-height="600" href="https://twitter.com/{{site.twitter_username}}">Tweets by @{{site.twitter_username}}</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+{% endif %}

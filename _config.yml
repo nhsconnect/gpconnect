@@ -15,15 +15,17 @@ github_editme_path: /edit/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 #disqus: true
-
 disqus_shortname: nhsconnect
-# if you're using disqus for comments, add the shortname here. if not, leave this value blank.
 
 gitter: true
 gitter_room: gpconnect/Lobby
 
 tiny_letter: true
 tiny_letter_username: nhsconnectapi
+
+twitter: true
+twitter_username: nhsconnectapi
+twitter_site_hashtags: GPConnect
 
 host: 127.0.0.1
 # the preview server used. Leave as is.
