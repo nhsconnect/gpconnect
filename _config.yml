@@ -17,7 +17,7 @@ github_editme_path: /edit/gh-pages/
 #disqus: true
 disqus_shortname: nhsconnect
 
-gitter: true
+gitter: false
 gitter_room: gpconnect/Lobby
 
 tiny_letter: true
