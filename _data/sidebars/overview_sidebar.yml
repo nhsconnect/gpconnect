@@ -115,6 +115,9 @@ entries:
   - title: Integrate With Spine
     output: web
     folderitems:
+    - title: System Topologies
+      url: /integration_system_topologies.html
+      output: web     
     - title: Cross Org Audit & Provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
@@ -129,7 +132,7 @@ entries:
       output: web
     - title: Spine Security Proxy Implementation Guide
       url: /integration_spine_security_proxy_implementation_guide.html
-      output: web
+      output: web 
 
   - title: Test & Assure
     output: web
