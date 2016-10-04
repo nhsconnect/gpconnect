@@ -13,7 +13,7 @@ Download the [Swagger API Documentation](downloads/swagger/swagger.json){:target
 
 ## Swagger UI Examples Using Postman ##
 
-Download the [Postman](https://www.getpostman.com/){:target="_blank"} Chrome App and import our Swagger defintions to get going fast.
+Download the [Postman](https://www.getpostman.com/){:target="_blank" class="no_icon"} Chrome App and import our Swagger defintions to get going fast.
 
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://app.getpostman.com/run-collection/4d8bd021b5e85bdf2acd)
 

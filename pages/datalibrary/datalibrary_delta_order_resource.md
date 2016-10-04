@@ -88,4 +88,3 @@ Overview of changes made to the standard FHIR&reg; DSTU2 Basic resource for use 
 	</tbody>
 </table>
 
-{% include links.html %}

@@ -60,4 +60,3 @@ ldapsearch -h ldap.spine.nhs.uk -b "ou=services, o=nhs"
 
 The FHIR endpoint URL of the message handling system can then be extracted from the `nhsMhsEndPoint` field of the MHS record.
 
-{% include links.html %}

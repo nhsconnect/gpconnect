@@ -40,4 +40,3 @@ Overview of changes made to the standard FHIR&reg; DSTU2 [Practitioner](https://
 	</tbody>
 </table>
 
-{% include links.html %}

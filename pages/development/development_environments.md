@@ -17,4 +17,3 @@ GP Connect has developed two implementations of the GP Connect FHIR APIs:
 	- Provider APIs
 
 
-{% include links.html %}

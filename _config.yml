@@ -15,9 +15,17 @@ github_editme_path: /edit/gh-pages/
 # if you're using Github, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 
 #disqus: true
-
 disqus_shortname: nhsconnect
-# if you're using disqus for comments, add the shortname here. if not, leave this value blank.
+
+gitter: false
+gitter_room: gpconnect/Lobby
+
+tiny_letter: true
+tiny_letter_username: nhsconnectapi
+
+twitter: true
+twitter_username: nhsconnectapi
+twitter_site_hashtags: GPConnect
 
 host: 127.0.0.1
 # the preview server used. Leave as is.
@@ -55,9 +63,8 @@ kramdown:
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 
 collections:
-  tooltips:
+  developer-journey:
     output: false
-# collections are declared here. this renders the content in _tooltips and processes it, but doesn't output it as actual files in the output unless you change output to true
 
 defaults:
   -
@@ -69,15 +76,6 @@ defaults:
       comments: true
       search: true
       sidebar: overview_sidebar
-  -
-    scope:
-      path: ""
-      type: "tooltips"
-    values:
-      layout: "page"
-      comments: true
-      search: true
-      tooltip: true
 
   -
     scope:
@@ -116,6 +114,7 @@ gems:
    - jekyll-mentions
    - jemoji
    - jekyll-redirect-from
+   - jekyll-seo-tag
    - jekyll-sitemap
    - jekyll-feed
    - jekyll-gist

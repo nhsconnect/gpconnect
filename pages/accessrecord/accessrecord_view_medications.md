@@ -29,7 +29,14 @@ A list of all current acute and repeat medications issued to a patient ordered b
 
 ### Structured Data ###
 
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
+| Logical Item | FHIR Mapping | Narrative Item |
+|---------------|------------|----------------|
+| Medication Material |	MedicationOrder.medication.code | M |
+| Medication Start and End Time	| MedicationOrder.dosageInstruction.schedule[x] | - |
+| Medication Dosage units |	MedicationOrder.dosageInstruction.dose[x] | M |
+| Medication Schedule(when/how often) | MedicationOrder.dosageInstruction.schedule[x] | M |
+| Medication Dosage Rate | MedicationOrder.dosageInstruction.rate | M |
+| Max Medication Dosage quantity | MedicationOrder.dosageInstruction.maxDosePerPeriod | M |
 
 ### Date Horizon ###
 
@@ -52,6 +59,8 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 5. Days Duration
 6. Details<sup>1</sup>
 	- longer human readable free-text details for the medication item.
+
+Provider systems SHALL include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative SHALL include the items marked as mandatory in `Narrative Item` column of the `Structured Data` table.
 
 ### HTML View ###
 

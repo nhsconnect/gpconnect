@@ -56,4 +56,3 @@ Refer to [Capability Pack - Appointment Management](appointments.html) for furth
 
 Refer to [Capability Pack - Task Management](tasks.html) for further details.
 
-{% include links.html %}

@@ -125,3 +125,7 @@ Bundle bundle = client.search().forResource(Patient.class)
 .encodedXml()
 .execute();
 ```
+
+### cURL ###
+
+{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'SSP-From: 0001' -H 'SSP-To: 0002' -H 'SSP-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'SSP-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.fhir.nhs.net/fhir/Patient?identifier=http://fhir.nhs.net/Id/nhs-number%7CP002'" %}

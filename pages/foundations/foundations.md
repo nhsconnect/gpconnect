@@ -49,4 +49,3 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
 - [Find a location](foundations_use_case_find_a_location.html)
 
-{% include links.html %}

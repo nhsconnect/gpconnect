@@ -29,4 +29,3 @@ GP Connect is initially focussing on delivering FoT deployments into the followi
 
 {% include todo.html content="Once confirmed, the list of FoT sites, software and capabilities will be detailed above. " %}
 
-{% include links.html %}

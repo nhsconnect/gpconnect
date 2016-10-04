@@ -92,4 +92,3 @@ GP Connect is working closely with a number of interoperability communities:
 
 The content here is designed for a technical audience (i.e. developers, architects and data scientists) for other details (i.e. the vision, timescales, business benefits and case studies) then please see the [NHS Digital GP Connect Homepage](http://systems.digital.nhs.uk/gpsoc/interface/gpconnect){:target="_blank"}.
 
-{% include links.html %}

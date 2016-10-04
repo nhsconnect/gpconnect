@@ -38,4 +38,3 @@ A numder of Spine specific HTTP headers also need to be populated with the inten
 
 Please refer to the [Spine Security Proxy Implementation Guide](integration_spine_security_proxy_implementation_guide.html) for full technical details.
 
-{% include links.html %}

@@ -46,4 +46,3 @@ summary: "Appointment resource delta between GP Connect and the base FHIR resour
 
 </table>
 
-{% include links.html %}

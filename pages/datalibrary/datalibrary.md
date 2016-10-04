@@ -39,4 +39,3 @@ Please refer to the [Appointment Management FHIR API IG / DMS Bundle](http://dat
 
 Please refer to the [Task Management FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-tasks/index.html) for full details of the profiled FHIR resources and worked examples.
 
-{% include links.html %}

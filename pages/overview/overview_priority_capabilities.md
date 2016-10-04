@@ -28,4 +28,3 @@ GP Connect is initially focussing on delivering three main interoperability capa
 
 [Task Management Capability](tasks.html)
 
-{% include links.html %}

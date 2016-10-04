@@ -24,6 +24,9 @@ entries:
     - title: Workshops and Timeline
       url: /overview_workshops.html
       output: web
+    - title: Work in Progress
+      url: /overview_work_in_progress.html
+      output: web      
     - title: First of Type
       url: /overview_first_of_type.html
       output: web
@@ -115,6 +118,9 @@ entries:
   - title: Integrate With Spine
     output: web
     folderitems:
+    - title: System Topologies
+      url: /integration_system_topologies.html
+      output: web     
     - title: Cross Org Audit & Provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
@@ -129,7 +135,7 @@ entries:
       output: web
     - title: Spine Security Proxy Implementation Guide
       url: /integration_spine_security_proxy_implementation_guide.html
-      output: web
+      output: web 
 
   - title: Test & Assure
     output: web

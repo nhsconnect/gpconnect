@@ -59,4 +59,3 @@ Overview of changes made to the standard FHIR&reg; DSTU2 [Patient](https://www.h
 </table>
 
 
-{% include links.html %}

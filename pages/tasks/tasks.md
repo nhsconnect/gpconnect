@@ -31,4 +31,8 @@ Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinica
 - [Receive a task](tasks_receive_a_task.html)
 {% endcomment %}
 
-{% include links.html %}
+### Domain Message Specification ###
+
+Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles utilised:
+
+{% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-170816-tasks/" content="Task Management." %}

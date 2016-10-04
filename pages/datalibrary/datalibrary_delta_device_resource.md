@@ -88,4 +88,3 @@ Overview of changes made to the standard FHIR&reg; DSTU2 [Device](https://www.hl
 	</tbody>
 </table>
 
-{% include links.html %}
