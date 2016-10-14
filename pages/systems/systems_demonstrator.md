@@ -32,7 +32,7 @@ We now have a functioning user interface that can drive interactions with the FH
 - Appointment Management for a patient across practice diaries.
 - Task Management for a patient across organisational boundaries.
 
-## Live System ##
+## Online System ##
 
 View the latest build of the [GP Connect Demonstrator](http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/){:target="_blank"} online now!
 
