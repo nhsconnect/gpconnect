@@ -1,0 +1,17 @@
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+                    <img class="pull-left" src="{{ "images/explanatoryline.png" }}" alt="NHS Digital Explanatory Line"/>
+                    <br/>
+                    &copy;{{ site.time | date: "%Y"  }} {{site.company_name}}<br />
+                    {% if page.last_updated %}<span>Page last updated:</span> {{page.last_updated}}<br/>{% endif %} Site last generated: {{ site.time | date: "%b %-d, %Y"  }} <br />
+                    {{site.github.build_revision}}<br/>
+                    <br/>
+                    <!-- OGL Licence -->
+                    <div class="open-government-licence">
+                        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon"><img src="{{ "images/licence/ogl-symbol-41px-retina-black.png" }}"></img></a>
+                        <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon">Open Government Licence v3.0</a>, except where otherwise stated</p>
+                    </div>
+                </div>
+            </div>
+</footer>
