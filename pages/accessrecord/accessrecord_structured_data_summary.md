@@ -11,7 +11,7 @@ summary: "Summary Structured Data."
 
 Structured and coded FHIR Resources are a priority for the GP Connect programme. We've been working hard to agree the content of HTML views so that we can progress to the resource modelling phase knowing that the data we want to structure is definitely available.
 
-Workshops to model the FHIR resources for `Allergies`, `Medications`, `Problems` and `Immunisations` are the current priority with on going discussions about which use cases will be supported by the structured resources.
+Work to model the FHIR resources for `Allergies`, `Medications`, `Problems / Conditions`, `Immunisations`, `Procedures`, `Encounter`, `Observations` and `Vital Signs` are the current priority with on going discussions about which use cases will be supported by the structured resources.
 
 If you'd like to get involved or want to know more there are three options:
 
