@@ -24,6 +24,9 @@ entries:
     - title: Workshops and Timeline
       url: /overview_workshops.html
       output: web
+    - title: Webinars
+      url: /overview_webinars.html
+      output: web
     - title: Work in Progress
       url: /overview_work_in_progress.html
       output: web      
