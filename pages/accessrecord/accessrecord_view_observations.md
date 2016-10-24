@@ -40,7 +40,7 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 	- the date of observation.
 2. Entry
 	- a short human readable free-text title for the observation.
-3. Value
+3. Value (and Range where available)
 4. Details
 	- longer human readable free-text details for the observation.
 
