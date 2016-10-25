@@ -37,9 +37,9 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `SSP-From`           | Consumer's ASID |
-| `SSP-To`             | Provider's ASID |
-| `SSP-InteractionID`  | `TODO`|
+| `Ssp-From`           | Consumer's ASID |
+| `Ssp-To`             | Provider's ASID |
+| `Ssp-InteractionID`  | `TODO`|
 
 Example HTTP request headers:
 

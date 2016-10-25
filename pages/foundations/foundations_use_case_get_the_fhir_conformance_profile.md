@@ -29,10 +29,10 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `SSP-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `SSP-From`           | Consumer's ASID |
-| `SSP-To`             | Provider's ASID |
-| `SSP-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata`|
+| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
+| `Ssp-From`           | Consumer's ASID |
+| `Ssp-To`             | Provider's ASID |
+| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata`|
 
 #### Payload Request Body ####
 

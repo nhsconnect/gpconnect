@@ -31,10 +31,10 @@ A numder of Spine specific HTTP headers also need to be populated with the inten
 
 | Header               | Value |
 |----------------------|-------|
-| `SSP-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `SSP-From`           | Consumer's ASID |
-| `SSP-To`             | Provider's ASID |
-| `SSP-InteractionID`  | Spine's InteractionID |
+| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
+| `Ssp-From`           | Consumer's ASID |
+| `Ssp-To`             | Provider's ASID |
+| `Ssp-InteractionID`  | Spine's InteractionID |
 
 Please refer to the [Spine Security Proxy Implementation Guide](integration_spine_security_proxy_implementation_guide.html) for full technical details.
 
