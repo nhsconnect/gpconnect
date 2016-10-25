@@ -77,10 +77,6 @@ Provider systems:
 
 - SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
-For example the:
-
-- submitted `start` and `end` date range is for a time period greater than two weeks in duration.
-
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
 ### Request Response ###
