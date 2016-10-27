@@ -90,6 +90,9 @@ entries:
         - title: Resource Guidance
           url: /development_fhir_resource_guidance.html
           output: web
+        - title: Security Guidance
+          url: /development_api_security_guidance.html
+          output: web
         - title: Error Handling
           url: /development_fhir_error_handling_guidance.html
           output: web
