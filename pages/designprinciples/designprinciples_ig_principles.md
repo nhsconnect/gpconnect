@@ -16,8 +16,7 @@ Review and agreement as to the IG model for additional and beyond FoT clinical s
  
 - Provider systems must be compliant with NHS Codes of Practice and Legal Obligations, and their existing NHS contractual IG requirements;  eg the foundational requirements for the GP Principal System  are covered by the GPSoC IG v 4 schedule as well as the other Common Authority  Requirements; requirements additional to these will be documented and  included in GP Connect Development, Assurance and Deployment  activities and documentation  
 
-- The GP Connect APIs are for use in Direct Care settings only, where Direct Care is defined as 
-clinical activity concerned with the prevention, diagnosis or treatment of illness; data must not be used for any other purposes or uses;  see example use cases and user stories on the GP Connect portals.
+- The GP Connect APIs are for use in Direct Patient Care settings only.
 
 - Responsibility to ensure that Consuming organisation use of the GP Connect APIs is compliant with NHS Codes of Practice & Legal Obligations in their use of healthcare records and information, resides with the Commissioning Organisation (not NHS Digital).
 

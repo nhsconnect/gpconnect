@@ -11,7 +11,7 @@ summary: An overview of the FoT roadmap.
 
 The First of Type will be limited to a select set of sites and suppliers who will demonstrate the broadest range of usage. This will provide the widest information and lessons to incorporate into general release following on from First of Type. 
 
-We hope to find FoT sites from general practice, extended access (GP Federations), 111, Out of hours services,  secondary care and other direct care settings which would benefit from the prioritised capabilities.
+We hope to find FoT sites from general practice, extended access (GP Federations), 111, Out of hours services, secondary care and other direct patient care settings which would benefit from the prioritised capabilities.
 
 Suppliers who represent all applications types such as EPRs, middleware, and regional care record portals will be ideal as it will be necessary to understand how third party accreditation and assurance processes will work across all supported system types. 
 
