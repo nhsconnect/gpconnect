@@ -96,6 +96,9 @@ entries:
         - title: Error Handling
           url: /development_fhir_error_handling_guidance.html
           output: web
+        - title: V&P Guidance
+          url: /development_api_volume_and_performance.html
+          output: web          
 
     - title: FHIR&reg; Data Models
       url: /datalibrary.html
