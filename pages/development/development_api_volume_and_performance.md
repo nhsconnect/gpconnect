@@ -27,7 +27,7 @@ A query API is any API which performs a user initiated retrival of data without 
 
 Provider systems SHOULD process query API calls in &lt;1000ms, as this is the limit beyond which a user feels their workflow has been interrupted.
 
-Provider systems SHALL process query API calls in &lt3000ms.
+Provider systems SHALL process query API calls in &lt;3000ms.
 
 ## External Documents / Policy Documents ##
 
