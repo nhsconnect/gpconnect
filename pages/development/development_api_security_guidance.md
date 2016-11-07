@@ -25,8 +25,8 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 
 {% include important.html content="The list of supported ciphers is ordered in order of preference (i.e. the first item being the most preferred)." %}
 
-- `AESGCM-EECDH`
-- `AESGCM-EDH`
+- `AESGCM+EECDH`
+- `AESGCM+EDH`
 - `AES256+EECDH`
 - `AES256+EDH`
 
@@ -38,7 +38,7 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 
 ## Tomcat OpenSSL Support Using The APR/Native Provider ##
 
-- SSLCipherSuite = `AESGCM-EECDH,AESGCM-EDH,AES256+EECDH,AES256+EDH`
+- SSLCipherSuite = `AESGCM+EECDH,AESGCM+EDH,AES256+EECDH,AES256+EDH`
 - SSLHonorCipherOrder = `true`
 - SSLProtocol = `TLSv1+TLSv1.1+TLSv1.2`
 - SSLVerifyClient = `require`
