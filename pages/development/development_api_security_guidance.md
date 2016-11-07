@@ -1,5 +1,5 @@
 ---
-title: API Security Guidance
+title: Security Guidance
 keywords: development
 tags: [development]
 sidebar: overview_sidebar
