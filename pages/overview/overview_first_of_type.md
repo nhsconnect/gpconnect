@@ -1,7 +1,7 @@
 ---
 title: First of Type
-keywords: first_of_type
-tags: [first_of_type] [Tranche 1] [Tranche 2] [Tranche 3]
+keywords: fot, first_of_type
+tags: [first_of_type]
 sidebar: overview_sidebar
 permalink: overview_first_of_type.html
 summary: Information regarding First of Type.
@@ -45,7 +45,7 @@ Those applicants that are not successful will be contacted as soon as possible f
 The following candidates have been selected for Tranche 1
 
 |Commissioning Authority|Care Setting|Geographical Location|
-|-|-|-|
+|-----------------------|------------|---------------------|
 |NHS Kernow CCG| General Practice - Federated Working| North & South Kerrier|
 |Leeds Teaching Hospital NHS Trust| Cross Care Setting Shared Record (Leeds Care Record)|Leeds|
 
