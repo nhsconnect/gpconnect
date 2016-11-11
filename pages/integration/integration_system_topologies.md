@@ -33,7 +33,7 @@ Note the ASID for each system which consumes data from the GP record.  Also plea
 
 ## Regional Shared Care Record ##
 
-![Acute with Portal](images/integration/topology4-hostedRegionalCareRecord.png)
+![Regional Care Record](images/integration/topology4-hostedregionalcarerecord.png)
 
 A regional shared care initiative hosted by one of the participating organisations might have a topology similar to this.  Note the ASID for each organisation/system.
 
