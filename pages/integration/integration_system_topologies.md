@@ -33,11 +33,9 @@ Note the ASID for each system which consumes data from the GP record.  Also plea
 
 ## Regional Shared Care Record ##
 
-![Acute with Portal](images/integration/topology4-hostedRegionalCareRecord.png)
+![Shared Care Record](images/integration/topology4-hostedRegionalCareRecord.png)
 
-A regional shared care initiative hosted by one of the participating organisations might have a topology similar to this.  Note the ASID for each organisation/system.
-
-NOTE: Unless otherwise indicated, the same topology may be employed in a Consumer or Provider role.
+A regional shared care initiative hosted by one of the participating organisations might have a topology similar to this.  This  illustrates a consuming portal deployment. The hosting organisation holds the ASID for the consumer application and (subject to the usual governance controls) the data can be shared via the portal to other organisations.
 
 ## Spine Endpoint Terms ##
 
@@ -45,6 +43,8 @@ NOTE: Unless otherwise indicated, the same topology may be employed in a Consume
 | CMA Endpoint | Combined MHS and Accredited System Endpoint. An endpoint registered with Spine for a single system. |
 | ASID | Accredited System Identifer. A unique number allocated to a system on accreditation for connection to Spine. |
 | MHS | Message Handling Server.  A middleware that handles messaging to/from Spine. |
+
+
 
 
 {% include links.html %}
