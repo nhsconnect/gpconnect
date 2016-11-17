@@ -127,6 +127,17 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 	<p>'[section]' data is not supported by this system.</p>
 </div>
 ```
+### Section Banner ###
+
+#### Applied Date Ranges ####
+
+Provider Systems SHALL return the date range applied to a section's data where applicable, in the format dd-mmm-yyyy, following the Section Heading
+
+#### Section Content Message ####
+
+Following the Section Header & Date Range Applied, Provider Systems SHALL return a message describing the contents of the section where there is a variance from the specification - eg where Historical Allergies are included in the Current Allergies sub-section, or where a particular column is not provided
+
+{% include todo.html content="Specific Provider variances to be documented here." %}
 
 ### Per Section Default Time Frames ###
 
