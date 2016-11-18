@@ -131,7 +131,13 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Applied Date Ranges ####
 
-Provider Systems SHALL return the date range applied to a section's data where applicable, in the format dd-mmm-yyyy, following the Section Heading
+Provider Systems SHALL return the date range applied to a section's data where applicable
+
+```html
+<div>
+	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  or 'All Data Items'
+</div>
+```
 
 #### Section Content Message ####
 
@@ -141,24 +147,25 @@ Following the Section Header & Date Range Applied, Provider Systems SHALL return
 
 ### Per Section Default Time Frames ###
 
-{% include todo.html content="Section time frames to be confirmed through clinical engagement." %}
+{% include todo.html content="Section default time frames to be reviewed following FoT feedback." %}
 
 | Section Code   | Time Frame | FHIR Resource(s) |
 |----------------|------------|------------------|
-| ADM  | X years | - |                
+| ADM  | All |- |                
 | ALL  | All Relevant | AllergyIntolerance<sup>1</sup> |
-| CLI  | X years | Condition, Procedure |
-| ENC  | X years | Encounter |
+| CLI  | All | Condition, Procedure |
+| ENC  | All | Encounter |
 | IMM  | All Relevant | Immunization<sup>1</sup> |
-| INV  | X years | DiagnosticOrder |
-| MED  | X years | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
-| OBS  | X years | Observation |
+| INV  | All | DiagnosticOrder<sup>2</sup> |
+| MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
+| OBS  | All Relevant | Observation |
 | PAT  | - | Patient |
 | PRB  | All Relevant | Problem<sup>1</sup> |
-| REF  | X years | Referral |
+| REF  | X years | Referral<sup>2</sup> |
 | SUM  | - | Summary |
 
 <sup>1</sup> An explicit time frame is not allowed to be specified as the system SHALL return 'All Relevant' resources.
+<sup>2</sup> Section to be considered as part of Stage 2.
 
 Provider systems SHALL return a HTTP *Bad Request* `400` error response if a date range is specified for a section that is defined as returning 'All Relevant' resources.
 
