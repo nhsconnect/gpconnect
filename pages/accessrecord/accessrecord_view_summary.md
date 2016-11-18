@@ -33,9 +33,9 @@ Please see HTML guidance in the [Active Problems and Issues](accessrecord_view_p
 
 Please see HTML guidance in the [Current Medication Issues](accessrecord_view_medications.html#current-medication-issues) section.
 
-### Current Repeat Medication ###
+### Current Repeat Medications ###
 
-Please see HTML guidance in the [Current Repeat Medication](accessrecord_view_medications.html#current-repeat-medication) section.
+Please see HTML guidance in the [Current Repeat Medications](accessrecord_view_medications.html#current-repeat-medications) section.
 
 ### Current Allergies and Adverse Reactions ###
 
