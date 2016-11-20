@@ -90,7 +90,6 @@ Provider systems SHALL returning one of the following `OperationOutcome` error c
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
 | `403` | NO_PATIENT_CONSENT | No Patient Consent To Share |
-| `403` | NO_ORGANISATIONAL_CONSENT | No Organisational Consent To Share |
 | `403` | NON_AUTHORITATIVE | Non Authoritative |
 
 #### Example 3. No Patient Consent To Share #####
