@@ -194,6 +194,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 ### In Scope for FoT ###
 
 - Authentication of consumer/provider systems.
+- Authorisation of consumer requests against a Data Sharing Repository.
 - End-to-End encryption of all traffic between systems.
 - Transparent retrieval of HTTPS resources from provider systems.
 - Performant retrieval of HTTPS resources.
@@ -202,7 +203,6 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 ### Out of Scope for FoT ###
 
-- Authorisation of consumer requests against a Data Sharing Repository.
 - Distributed Denial of Service (DDoS) protection / throttling to protect provider systems from being swamped (either intentionally or unintentionally) by consumer systems.
 - Patient Index search/trace functionality.
 	- Consumer systems are expected to be integrated with the existing PDS (or equivalent) system.
