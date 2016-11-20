@@ -76,7 +76,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 
 <span class="label label-info">DECISION</span> Consumer SHALL cross-check with demographics returned from the Provider system.
 
-### View Retrieval ###
+### View Non-Retrieval ###
 
 Potential grounds for not returning a HTML view:
 
@@ -96,14 +96,14 @@ Patient consent preferences:
 - <span class="label label-success">SELECTED</span> Patient consent enforced by the Provider system and cannot be overridden.
 - Patient consent enforced by the Provider BUT can be overridden by Consumer.
 
-### Sensitive Data Exclusions ###
+### Patient Data Exclusions ###
 
-<span class="label label-info">DECISION</span> Provider system SHALL enforce exclusion rules.
+<span class="label label-info">DECISION</span> Provider system SHALL enforce exclusion rules, either for the complete patient record, or sections/data-items.
 
-Two potential mechanisms for how sensitive data can be excluded:
+These can be determined by two potential sets of exclusion settings:
 
 - Manual exclusion (based on explicit patient preference).
-	- <span class="label label-success">SELECTED</span> Principle patient preferences.
+	- <span class="label label-success">SELECTED</span> Provider system-based patient preferences.
 	- SCR standard patient preferences (in addition).<sup>1</sup>
 - Automatic exclusion (based on implied patient preference).<sup>2</sup>
 
@@ -111,13 +111,14 @@ Two potential mechanisms for how sensitive data can be excluded:
 
 <sup>2</sup> Automatic or inferred exclusions are not supported as this would be technically impractical (i.e. it's not possible to filter out all free-text and other fields which could potentially contain data which should ideally be excluded).
 
+### Legal Exclusion Sets ###
+
+<span class="label label-info">DECISION</span> Legal Exclusion Sets will not be applied, either for the complete patient record, or sections/data-items given that the current set is out of date, not universally applied and currently under review at the national level.
+
+
 ### Data Sharing Agreements ###
 
-- Closed group (organisation level data sharing agreement required).
-- Closed group with patient override (i.e. patient can restrict).
-	- <span class="label label-success">SELECTED</span> Full GP care record blocked.
-	- Selected parts of the GP record blocked.
-- Closed (no data sharing between organisations).
+- Data-Sharing Agreement must be in place between the consuming organisation and the providing organisation
 
 #### Exclusion Warnings ####
 
