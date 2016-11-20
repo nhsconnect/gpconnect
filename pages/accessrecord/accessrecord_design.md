@@ -78,14 +78,15 @@ Although a traced national identifier is initially mandated for use with the GP 
 
 ### View Non-Retrieval ###
 
-Potential grounds for not returning a HTML view:
+Potential grounds for not returning an HTML view:
 
 - Technical constraints
 	- Generation from structured FHIR&reg; resources
 	- Can't safely retrieve from GP system
 - Information Governance
-	- SCR Exclusions
-	- Data Sharing Agreements
+	- Data Sharing Agreement not in place
+	- Patient Dissent to record sharing
+	
 - PDS Status
 	- Corrupt Record etc.
 
