@@ -85,7 +85,7 @@ For example a valid NHS Number value is supplied to the `$gpc.getcarerecord` Ope
 
 ### Security Validation Errors ###
 
-Provider systems SHALL returning one of the following `OperationOutcome` error codes in the case of enforcing their local patient consent/data sharing rules when responding to consumer API requests.
+Provider systems SHALL returning one of the following `OperationOutcome` error codes in the case of enforcing their local patient consent rules when responding to consumer API requests.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
