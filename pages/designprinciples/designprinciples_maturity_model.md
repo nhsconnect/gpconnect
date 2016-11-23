@@ -15,14 +15,14 @@ The maturity roadmap of a compliant Principal GP system is expected to follow th
 
 ## Stage 1. Q3 2016 ##
 - HTML Get Care Record, Appointment and Task capabilities.
- - Patient Summary, Encounters, Clinical Items, Problems, Allergies & Sensitivities, <br/>Medications, Referrals, Observations, Investigations, Immunisations & Administrative Items.
+ - HTML Patient Summary, Encounters, Clinical Items, Problems and Issues, Allergies and Adverse Reactions, <br/>Medications, Referrals, Observations, Immunisations & Administrative Items.
 - Spine Security Proxy (SSP) integration.
 - RBAC Auditing of local user roles in the JWT.
  
 ## Stage 2. Q4 2016 ##
 - Get Care Record with bundled structured resources.
-- HTML Warnings, Key Indicators, Current Recalls, Patient Details.
-- HTML View Clinical Safety & Cross-Vendor Consistency Changes.
+- HTML Warnings, Key Indicators, Current Recalls, Patient Details, Investigations.
+- HTML View Clinical Safety, Cross-Vendor Consistency Changes, Medications Sections Review, Date-Range Review.
 - CORS Support in the SSP.
 - Data Sharing Agreement checking in the SSP.
 - RBAC Auditing of Spine Smartcard user roles in the JWT.
