@@ -39,9 +39,6 @@ Commissioning clinical safety approval of the consumer system forms part of the 
 
 Provider systems must also demonstrate standards compliance as part of the NHS Digital assurance processes. 
 
-## Clinical Terminology ##
-
-Provider systems must output assured SNOMED CT mappings according to coded data specifications.  Where assured mappings do not exist, then the native Read or CTV3 code and corresponding native text must be provided.
 
 ## Demographic Cross Checking ##
 

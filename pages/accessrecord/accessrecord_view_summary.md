@@ -25,21 +25,21 @@ summary: "Summary HTML View."
 - Chronic Conditions (top 5% of patients)
 - Diabetes etc.
 
-### Active Problems and Summary Items ###
+### Active Problems and Issues ###
 
-Please see HTML guidance in the [Active Problems and Summary Items](accessrecord_view_problems.html#active-problems-and-summary-items) section.
+Please see HTML guidance in the [Active Problems and Issues](accessrecord_view_problems.html#active-problems-and-issues) section.
 
 ### Current Medication Issues ###
 
 Please see HTML guidance in the [Current Medication Issues](accessrecord_view_medications.html#current-medication-issues) section.
 
-### Current Medication Repeats ###
+### Current Repeat Medications ###
 
-Please see HTML guidance in the [Current Medication Repeats](accessrecord_view_medications.html#current-medication-repeats) section.
+Please see HTML guidance in the [Current Repeat Medications](accessrecord_view_medications.html#current-repeat-medications) section.
 
-### Current Allergies and Sensitivities ###
+### Current Allergies and Adverse Reactions ###
 
-Please see HTML guidance in the [Current Allergies and Sensitivities](accessrecord_view_allergies.html#current-allergies-and-sensitivities) section.
+Please see HTML guidance in the [Current Allergies and Adverse Reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions) section.
 
 ### Current Recalls ###
 
