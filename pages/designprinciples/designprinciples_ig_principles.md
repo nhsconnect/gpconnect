@@ -10,7 +10,7 @@ summary: "High-level principles related to information governance (IG) of data w
 ## First of Type (FoT) Principles ##
 
 {% include important.html content="The principles below have been discussed in workshops with the GP Principal Providers, and with their underpinning detailed requirements, are currently undergoing review to obtain the  necessary stakeholder agreement.<br/><br/>
-The detailed requirements supporting these will be available as part of the Provider, Consumer Development and Assurance documentation to be published during August/September 2016.<br/><br/>
+The detailed requirements supporting these will be available as part of the Provider, Consumer Development and Assurance documentation to be published during November/December 2016.<br/><br/>
 Review and agreement as to the IG model for additional and beyond FoT clinical settings is underway and taking into account other strategic projects and work in this arena.  Changes may arise to these principles and detailed supporting requirements as a result." %}
 
  
