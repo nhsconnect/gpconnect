@@ -16,7 +16,7 @@ summary: "Medications HTML View."
 Contains three sections:
 
  - [Current Medication Issues](accessrecord_view_medications.html#current-medication-issues)
- - [Current Medication Repeats](accessrecord_view_medications.html#current-medication-repeats)
+ - [Current Repeat Medications](accessrecord_view_medications.html#current-repeat-medications)
  - [Past Medications](accessrecord_view_medications.html#past-medications)
 
 ## Current Medication Issues ##
@@ -51,11 +51,12 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### Table Columns ###
 
-1. Start Date
-2. Drug
+1. Date Description - to contain meaningful date description according to Medication 'Type', aligning with SCR
+2. Date
+2. Medication Item
 3. Type
  - i.e. Repeat or Acute
-4. Scheduled End
+4. Scheduled End Date
 5. Days Duration
 6. Details<sup>1</sup>
 	- longer human readable free-text details for the medication item.
@@ -71,8 +72,9 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 	<table>
 		<thead>
 			<tr>
-				<th>Start Date</th>
-				<th>Drug</th>
+				<th>Date Desc.</th>
+				<th>Date</th>
+				<th>Medication Item</th>
 				<th>Type</th>
 				<th>Scheduled End</th>
 				<th>Days Duration</th>
@@ -81,7 +83,8 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 		</thead>
 		<tbody>
 			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
+				<td>{{item.dateDescription}}</td>
+				<td>{{item.date}}</td>
 				<td>{{item.drug}}</td>
 				<td>{{item.type}}</td>
 				<td>{{item.scheduledEnd}}</td>
@@ -94,11 +97,11 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 ```
 {% endraw %}
 
-## Current Medication Repeats ##
+## Current Repeat Medications##
 
 ### Purpose ###
 
-A list of all current repeat medications issued to a patient ordered by date descending (i.e. most recent date/time first).
+A list of all current repeat medications issued to a patient ordered by date descending (i.e. most recent Last Issued date/time first).
 
 ### Structured Data ###
 
@@ -110,16 +113,16 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### Table Construction ###
 
-- Table header SHALL be "Current Medication Repeats".
+- Table header SHALL be "Current Repeat Medications".
 - Table columns SHALL be ordered left-to-right (1..N).
 - Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by date descending (i.e. most recent date/time first).
+- Table rows SHALL be ordered by Last Issued date descending (i.e. most recent date/time first).
 
 ### Table Columns ###
 
-1. Start Date
+1. Last Issued
 2. Drug
-3. Last Issued
+3. Start
 4. Review Date
 5. Number Issued
 6. Max Issues
@@ -131,22 +134,22 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 {% raw %}
 ```html
 <div>
-	<h2>Current Medication Repeats</h2>
+	<h2>Current Repeat Medications</h2>
 	<table>
 		<tbody>
 			<tr>
-				<th>Start Date</th>
-				<th>Drug</th>
 				<th>Last Issued</th>
+				<th>Medication Item</th>
+				<th>Start Date</th>
 				<th>Review Date</th>
 				<th>Number Issued</th>
 				<th>Max Issues</th>
 				<th>Details</th>
 			</tr>
 			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.drug}}</td>
 				<td>{{item.lastIssued}}</td>
+				<td>{{item.drug}}</td>
+				<td>{{item.start}}</td>
 				<td>{{item.review}}</td>
 				<td>{{item.numberIssued}}</td>
 				<td>{{item.maxIssues}}</td>
@@ -162,7 +165,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### Purpose ###
 
-A list of all past medications issued to a patient ordered by date descending (i.e. most recent date/time first).
+A list of all past medications, issued to a patient ordered by date descending (i.e. most recent date/time first). The type will include Acute, or Repeat.  Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
 
 ### Structured Data ###
 
@@ -182,9 +185,9 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 ### Table Columns ###
 
 1. Start Date
-2. Drug
+2. Medication Item
 3. Type
-	- i.e. Repeat or Acute
+	- i.e. Repeat, Acute
 4. Last Issued
 5. Review Date
 6. Number Issued
@@ -201,7 +204,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 		<tbody>
 			<tr>
 				<th>Start Date</th>
-				<th>Drug</th>
+				<th>Medication Item</th>
 				<th>Type</th>
 				<th>Last Issued</th>
 				<th>Review Date</th>
