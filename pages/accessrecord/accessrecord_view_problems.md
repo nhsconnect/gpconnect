@@ -1,5 +1,5 @@
 ---
-title: Problems
+title: Problems and Issues
 keywords: getcarerecord, view, section, problems
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
@@ -7,22 +7,34 @@ permalink: accessrecord_view_problems.html
 summary: "Problems HTML View."
 ---
 
-## Problems ##
+## Problems and Issues ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
-| PRB | Problems | Yes | Yes | Yes | Yes |
+| PRB | Problems and Issues | Yes | Yes | Yes | Yes |
 
 Contains two sections:
 
- - [Active Problems and Summary Items](accessrecord_view_problems.html#active-problems-and-summary-items)
- - [Inactive Problems and Summary Items](accessrecord_view_problems.html#inactive-problems-and-summary-items)
+ - [Active Problems and Issues](accessrecord_view_problems.html#active-problems-and-issues)
+ - [Inactive Problems and Issues](accessrecord_view_problems.html#inactive-problems-and-issues)
 
-## Active Problems and Summary Items ##
+
+###Section Banner Content Variance Message###
+
+| Provider | Message |
+| ------------ | ------------ |-
+| EMIS|  |
+| TPP| Indicate section includes Summary Items  |
+| INPS|  |
+|Microtest| Indicate Significance represents Priority of High, Medium, Low  |
+
+
+
+## Active Problems and Issues ##
 
 ### Purpose ###
 
-A list of active problems and summary items related to a patient ordered by date descending (i.e. most recent date/time first).
+A list of active problems and issues related to a patient ordered by date descending (i.e. most recent date/time first).
 
 ### Structured Data ###
 
@@ -34,7 +46,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### Table Construction ###
 
-- Table header SHALL be "Active Problems and Summary Items".
+- Table header SHALL be "Active Problems and Issues".
 - Table columns SHALL be ordered left-to-right (1..N).
 - Table content SHALL NOT be truncated.
 - Table rows SHALL be ordered by start date descending (i.e. most recent date/time first).
@@ -54,7 +66,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 {% raw %}
 ```html
 <div>
-	<h2>Active Problems and Summary Items</h2>
+	<h2>Active Problems and Issues</h2>
 	<table>
 		<tbody>
 			<tr>
@@ -75,11 +87,11 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 ```
 {% endraw %}
 
-## Inactive Problems and Summary Items ##
+## Inactive Problems and Issues ##
 
 ### Purpose ###
 
-A list of inactive (i.e. end dated) problems and summary items related to a patient ordered by date descending (i.e. most recent end? date/time first).
+A list of inactive (i.e. end dated) problems and issues related to a patient ordered by date descending (i.e. most recent end? date/time first).
 
 ### Structured Data ###
 
@@ -91,7 +103,7 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### Table Construction ###
 
-- Table header SHALL be "Inactive Problems and Summary Items".
+- Table header SHALL be "Inactive Problems and Issues".
 - Table columns SHALL be ordered left-to-right (1..N).
 - Table content SHALL NOT be truncated.
 - Table rows SHALL be ordered by start date descending (i.e. most recent date/time first).
@@ -116,7 +128,7 @@ If no end dated records exist then the following
 {% raw %}
 ```html
 <div>
-	<h2>Inactive Problems and Summary Items</h2>
+	<h2>Inactive Problems and Issues</h2>
 	<table>
 		<thead>
 			<tr>
