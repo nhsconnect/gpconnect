@@ -127,6 +127,7 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 	<p>'[section]' data is not supported by this system.</p>
 </div>
 ```
+
 ### Section Banner ###
 
 #### Applied Date Ranges ####
@@ -145,7 +146,24 @@ Following the Section Header & Date Range Applied, Provider Systems SHALL return
 
 {% include todo.html content="Specific Provider variances to be documented here." %}
 
+| Section Code   | EMIS | TPP|INPS|Microtest|
+|----------------|------|------|------------------|
+| ADM  | All |- |                
+| ALL  | All Relevant | AllergyIntolerance<sup>1</sup> |
+| CLI  | All | Condition, Procedure |
+| ENC  | All | Encounter |
+| IMM  | All Relevant | Immunization<sup>1</sup> |
+| INV  | All | DiagnosticOrder<sup>2</sup> |
+| MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
+| OBS  | All Relevant | Observation |
+| PAT  | - | Patient |
+| PRB  | All Relevant | Problem<sup>1</sup> |
+| REF  | X years | Referral<sup>2</sup> |
+| SUM  | - | Summary |
+
 ### Per Section Default Time Frames ###
+
+Section Default Time Frames SHALL be configurable, to be easily amendable if required in response to FoT feedback 
 
 {% include todo.html content="Section default time frames to be reviewed following FoT feedback." %}
 
