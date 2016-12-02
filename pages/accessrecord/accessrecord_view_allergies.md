@@ -1,5 +1,5 @@
 ---
-title: Allergies
+title: Allergies and Adverse Reactions
 keywords: getcarerecord, view, section, allergies
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
@@ -11,20 +11,31 @@ summary: "Allergies HTML View."
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
-| ALL | Allergies and Sensitivities | Yes | Yes | Yes<sup>1</sup> | Yes |
+| ALL | Allergies and Adverse Reactions| Yes | Yes | Yes<sup>1</sup> | Yes |
 
 <sup>1</sup> INPS have indicated they don't record end dates for allergies & sensitivities. Hence, no History view is possible.
 
 Contains two sections:
 
- - [Current Allergies and Sensitivities](accessrecord_view_allergies.html#current-allergies-and-sensitivities)
- - [Historical Allergies and Sensitivities](accessrecord_view_allergies.html#historical-allergies-and-sensitivities)
+ - [Current Allergies and Adverse Reactions](accessrecord_view_allergies.html#current-allergies-and-sensitivities)
+ - [Historical Allergies and Adverse Reactions](accessrecord_view_allergies.html#historical-allergies-and-sensitivities)
 
-## Current Allergies and Sensitivities ##
+
+###Section Banner Content Variance Message###
+
+| Provider | Message |
+| ------------ | ------------ |-
+| EMIS|  |
+| TPP|  |
+| INPS| Display "All Allergies listed in Current section" |
+|Microtest|  |
+
+
+## Current Allergies and Adverse Reactions ##
 
 ### Purpose ###
 
-A list of current allergies and sensitivities related to a patient ordered by date descending (i.e. most recent date/time first).
+A list of current allergies and adverse reactions related to a patient ordered by date descending (i.e. most recent date/time first).
 
 ### Structured Data ###
 
@@ -36,7 +47,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### Table Construction ###
 
-- Table header SHALL be "Current Allergies and Sensitivities".
+- Table header SHALL be "Current Allergies and Adverse Reactions".
 - Table columns SHALL be ordered left-to-right (1..N).
 - Table content SHALL NOT be truncated.
 - Table rows SHALL be ordered by start date descending (i.e. most recent date/time first).
@@ -53,7 +64,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 {% raw %}
 ```html
 <div>
-	<h2>Current Allergies and Sensitivities</h2>
+	<h2>Current Allergies and Adverse Reactions</h2>
 	<table>
 		<thead>
 			<tr>
@@ -72,11 +83,11 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 ```
 {% endraw %}
 
-## Historical Allergies and Sensitivities ##
+## Historical Allergies and Adverse Reactions ##
 
 ### Purpose ###
 
-A list of historical allergies and sensitivities related to a patient ordered by date descending (i.e. most recent date/time first).
+A list of historical allergies and adverse reactions related to a patient ordered by date descending (i.e. most recent date/time first).
 
 ### Structured Data ###
 
@@ -88,7 +99,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### Table Construction ###
 
-- Table header SHALL be "Historical Allergies and Sensitivities".
+- Table header SHALL be "Historical Allergies and Adverse Reactions".
 - Table columns SHALL be ordered left-to-right (1..N).
 - Table content SHALL NOT be truncated.
 - Table rows SHALL be ordered by start date descending (i.e. most recent date/time first).
@@ -96,18 +107,18 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 ### Table Columns ###
 
 1. Start Date
-	- the start date of the allergy or sensitivity.
+	- the start date of the allergy or adverse reaction.
 2. End Date
-	- the end date of the allergy or sensitivity. 
+	- the end date of the allergy or adverse reaction. 
 3. Details
-	- longer human readable free-text details for the allergy or sensitivity.
+	- longer human readable free-text details for the allergy or adverse reaction.
 
 ### HTML View ###
 
 {% raw %}
 ```html
 <div>
-	<h2>Historical Allergies and Sensitivities</h2>
+	<h2>Historical Allergies and Adverse Reactions</h2>
 	<table>
 		<thead>
 			<tr>
