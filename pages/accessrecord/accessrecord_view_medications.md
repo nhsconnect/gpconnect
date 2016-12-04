@@ -51,7 +51,7 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### Table Columns ###
 
-1. Date
+1. Start Date
 2. Medication Item
 3. Type
  - i.e. Repeat or Acute
@@ -119,7 +119,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 1. Last Issued
 2. Medication Item
-3. Start
+3. Start Date
 4. Review Date
 5. Number Issued
 6. Max Issues
