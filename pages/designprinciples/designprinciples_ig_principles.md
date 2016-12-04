@@ -35,7 +35,7 @@ Review and agreement as to the IG model for additional and beyond FoT clinical s
 
 - Any data marked as private/sealed/locked within the GP Patient record must not be shared outside the practice;   override/break seal capabilities will not be developed within the APIs for FoT
 
-- the HTML view will provide appropriate indication of withheld data 
+- The HTML view will provide appropriate indication of withheld data 
 
 - Audit requirements as defined in existing contractual frameworks as well as the NHS Digital Assurance Target Operating Model must be met by Provider and Consumer systems.
 
