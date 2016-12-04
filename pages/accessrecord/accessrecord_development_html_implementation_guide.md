@@ -132,7 +132,7 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Applied Date Ranges ####
 
-Provider Systems SHALL return the date range applied to a section's data where applicable
+Consumer Systems SHALL display the date range applied to a section's data, as supplied by the Provider where applicable, beneath the Section Header
 
 ```html
 <div>
@@ -142,24 +142,8 @@ Provider Systems SHALL return the date range applied to a section's data where a
 
 #### Section Content Message ####
 
-Following the Section Header & Date Range Applied, Provider Systems SHALL return a message describing the contents of the section where there is a variance from the specification - eg where Historical Allergies are included in the Current Allergies sub-section, or where a particular column is not provided
+Following the Section Header & Date Range Applied, Consumer Systems SHALL display the Provider-returned message describing the contents of the section and indicating where contents may vary - eg where Historical Allergies are included in the Current Allergies sub-section, or where a particular column is not provided
 
-{% include todo.html content="Specific Provider variances to be documented here." %}
-
-| Section Code   | EMIS | TPP|INPS|Microtest|
-|----------------|------|------|------------------|
-| ADM  | All |- |                
-| ALL  | All Relevant | AllergyIntolerance<sup>1</sup> |
-| CLI  | All | Condition, Procedure |
-| ENC  | All | Encounter |
-| IMM  | All Relevant | Immunization<sup>1</sup> |
-| INV  | All | DiagnosticOrder<sup>2</sup> |
-| MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
-| OBS  | All Relevant | Observation |
-| PAT  | - | Patient |
-| PRB  | All Relevant | Problem<sup>1</sup> |
-| REF  | X years | Referral<sup>2</sup> |
-| SUM  | - | Summary |
 
 ### Per Section Default Time Frames ###
 
