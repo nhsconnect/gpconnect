@@ -19,7 +19,7 @@ Contains two sections:
  - [Inactive Problems and Issues](accessrecord_view_problems.html#inactive-problems-and-issues)
 
 
-###Section Banner Content Variance Message###
+###Section Banner Content Message###
 
 Providers message describing at a summary level how they have populated this section, to include the following:
 
