@@ -51,8 +51,7 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### Table Columns ###
 
-1. Date Description - to contain meaningful date description according to Medication 'Type', aligning with SCR
-2. Date
+1. Date
 2. Medication Item
 3. Type
  - i.e. Repeat or Acute
@@ -72,8 +71,7 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 	<table>
 		<thead>
 			<tr>
-				<th>Date Desc.</th>
-				<th>Date</th>
+				<th>StartDate</th>
 				<th>Medication Item</th>
 				<th>Type</th>
 				<th>Scheduled End</th>
@@ -83,7 +81,6 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 		</thead>
 		<tbody>
 			<tr ng-repeat="item in items">
-				<td>{{item.dateDescription}}</td>
 				<td>{{item.date}}</td>
 				<td>{{item.drug}}</td>
 				<td>{{item.type}}</td>
@@ -121,7 +118,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 ### Table Columns ###
 
 1. Last Issued
-2. Drug
+2. Medication Item
 3. Start
 4. Review Date
 5. Number Issued
