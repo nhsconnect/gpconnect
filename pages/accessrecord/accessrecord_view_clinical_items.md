@@ -25,6 +25,20 @@ A list of clinical items related to a patient ordered by date descending (i.e. m
 
 All relevant records SHALL be returned with-in Consumer supplied date range.
 
+###Clinical Items Section Banner Content Message###
+
+Providers to provide message describing at a summary level how they have populated this section, including reference to items identified as Diagnoses, Procedures, Symptoms
+ 
+ 
+ | Provider | Message |
+ | -------- | ------- |
+ | EMIS |    |
+ | TPP |  Message to indicate inclusion of Practice-specific codes |
+ | INPS| Message to include Read Chapter 1 with Chapters A - Z |
+ |Microtest| Message to include Items excluding Read Code Chapter 2 and Codes starting 9 and 0 |
+
+
+
 ### Table Construction ###
 
 - Table header SHALL be "Clinical Items".
