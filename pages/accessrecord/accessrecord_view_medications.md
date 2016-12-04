@@ -19,6 +19,19 @@ Contains three sections:
  - [Current Repeat Medications](accessrecord_view_medications.html#current-repeat-medications)
  - [Past Medications](accessrecord_view_medications.html#past-medications)
 
+
+###Section Banner Content Message###
+
+Providers message describing at a summary level how they have populated this section, to include the following:
+
+| Provider | Message |
+| ------------ | ------------ |-
+| EMIS|  |
+| TPP|  |
+| INPS|  |
+|Microtest|  |
+
+
 ## Current Medication Issues ##
 
 ### Purpose ###
