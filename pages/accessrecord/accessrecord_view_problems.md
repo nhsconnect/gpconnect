@@ -21,13 +21,14 @@ Contains two sections:
 
 ###Section Banner Content Variance Message###
 
+Providers message describing at a summary level how they have populated this section, to include the following:
+
 | Provider | Message |
 | ------------ | ------------ |-
 | EMIS|  |
-| TPP| Indicate section includes Summary Items  |
-| INPS|  |
-|Microtest| Indicate Significance represents Priority of High, Medium, Low  |
-
+| TPP| Section includes Summary Items  |
+| INPS| All problems included in Active Section |
+|Microtest|  Significance represents Priority of High, Medium, Low  |
 
 
 ## Active Problems and Issues ##
