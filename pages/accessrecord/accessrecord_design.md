@@ -115,6 +115,7 @@ These can be determined by two potential sets of exclusion settings:
 ### Legal Exclusion Sets ###
 
 <span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Legal Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
+https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/9/subpack/97/releases;jsessionid=AB048FD7361740B3D3EB628337C188D5
 
 
 ### Data Sharing Agreements ###
