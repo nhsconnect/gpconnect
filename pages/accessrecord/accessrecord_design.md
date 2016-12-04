@@ -92,7 +92,7 @@ Potential grounds for not returning an HTML view:
 
 ### Patient Consent ###
 
-Patient consent preferences:
+Patient Consent Preferences:
 
 - <span class="label label-success">SELECTED</span> Patient consent enforced by the Provider system and cannot be overridden.
 - Patient consent enforced by the Provider BUT can be overridden by Consumer.
@@ -114,21 +114,22 @@ These can be determined by two potential sets of exclusion settings:
 
 ### Legal Exclusion Sets ###
 
-<span class="label label-info">DECISION</span> Legal Exclusion Sets will not be applied, either for the complete patient record, or sections/data-items given that the current set is out of date, not universally applied and currently under review at the national level.
+<span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Legal Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
 
 
 ### Data Sharing Agreements ###
 
 - Data-Sharing Agreement must be in place between the consuming organisation and the providing organisation
+- The Spine Security Proxy validates this requirement, therefore Provider Systems SHALL NOT apply or change locally-configured Data-Sharing validation
 
 #### Exclusion Warnings ####
 
 - No indication that data has been excluded.
 - <span class="label label-success">SELECTED</span> Warning indication per section that data has been excluded (within the time frame).
-- In line with some information related to the data item.
+- <span class="label label-success">SELECTED</span> In line with some information related to the data item.
 	- i.e. encounter date/time but not the place or encounter details.
 
-<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/locked.
+<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld either due to patient preferences or as a result of the application of the Legal Exclusion set - to be displayed both within the Section Banner as well as at line item level.
 
 #### SCR Consent Model ####
 
@@ -167,7 +168,7 @@ Date range handling in the HTML view per section:
 
 #### HTML Section Ordering ####
 
-<span class="label label-info">DECISION</span> Consumer systems SHALL provided access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML Composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
+<span class="label label-info">DECISION</span> Consumer systems SHALL provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML Composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
 
 ### Per Section Minimum Free Text For Display ###
 
