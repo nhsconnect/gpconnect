@@ -138,6 +138,8 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 6. Max Issues
 7. Details
 	- longer human readable free-text details for the medication item.
+	
+{% include todo.html content="Number Issued, & Max Issues to be reviewed given Provider variances "%}
 
 ### HTML View ###
 
@@ -185,6 +187,20 @@ A list of all past medications, issued to a patient ordered by date descending (
 
 All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
 
+###Section Banner Content Message###
+
+Providers message describing at a summary level how they have populated this section
+
+| Provider | Message |
+| ------------ | ------------ |-
+| EMIS| |
+| TPP|  |
+| INPS| |
+|Microtest|  |
+
+
+
+
 ### Table Construction ###
 
 - Table header SHALL be "Past Medications".
@@ -203,6 +219,9 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 6. Number Issued
 7. Max Issued
 8. Details
+
+{% include todo.html content="Number Issued, & Max Issues to be reviewed given Provider variances "%}
+
 
 ### HTML View ###
 
