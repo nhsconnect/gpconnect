@@ -76,34 +76,35 @@ Although a traced national identifier is initially mandated for use with the GP 
 
 <span class="label label-info">DECISION</span> Consumer SHALL cross-check with demographics returned from the Provider system.
 
-### View Retrieval ###
+### View Non-Retrieval ###
 
-Potential grounds for not returning a HTML view:
+Potential grounds for not returning an HTML view:
 
 - Technical constraints
 	- Generation from structured FHIR&reg; resources
 	- Can't safely retrieve from GP system
 - Information Governance
-	- SCR Exclusions
-	- Data Sharing Agreements
+	- Data Sharing Agreement not in place
+	- Patient Dissent to record sharing
+	
 - PDS Status
 	- Corrupt Record etc.
 
 ### Patient Consent ###
 
-Patient consent preferences:
+Patient Consent Preferences:
 
 - <span class="label label-success">SELECTED</span> Patient consent enforced by the Provider system and cannot be overridden.
 - Patient consent enforced by the Provider BUT can be overridden by Consumer.
 
-### Sensitive Data Exclusions ###
+### Patient Data Exclusions ###
 
-<span class="label label-info">DECISION</span> Provider system SHALL enforce exclusion rules.
+<span class="label label-info">DECISION</span> Provider system SHALL enforce exclusion rules, either for the complete patient record, or sections/data-items.
 
-Two potential mechanisms for how sensitive data can be excluded:
+These can be determined by two potential sets of exclusion settings:
 
 - Manual exclusion (based on explicit patient preference).
-	- <span class="label label-success">SELECTED</span> Principle patient preferences.
+	- <span class="label label-success">SELECTED</span> Provider system-based patient preferences.
 	- SCR standard patient preferences (in addition).<sup>1</sup>
 - Automatic exclusion (based on implied patient preference).<sup>2</sup>
 
@@ -111,22 +112,25 @@ Two potential mechanisms for how sensitive data can be excluded:
 
 <sup>2</sup> Automatic or inferred exclusions are not supported as this would be technically impractical (i.e. it's not possible to filter out all free-text and other fields which could potentially contain data which should ideally be excluded).
 
+### Legal Exclusion Sets ###
+
+<span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Legal Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
+https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/9/subpack/97/releases;jsessionid=AB048FD7361740B3D3EB628337C188D5
+
+
 ### Data Sharing Agreements ###
 
-- Closed group (organisation level data sharing agreement required).
-- Closed group with patient override (i.e. patient can restrict).
-	- <span class="label label-success">SELECTED</span> Full GP care record blocked.
-	- Selected parts of the GP record blocked.
-- Closed (no data sharing between organisations).
+- Data-Sharing Agreement must be in place between the consuming organisation and the providing organisation
+- The Spine Security Proxy validates this requirement, therefore Provider Systems SHALL NOT apply or change locally-configured Data-Sharing validation
 
 #### Exclusion Warnings ####
 
 - No indication that data has been excluded.
 - <span class="label label-success">SELECTED</span> Warning indication per section that data has been excluded (within the time frame).
-- In line with some information related to the data item.
+- <span class="label label-success">SELECTED</span> In line with some information related to the data item.
 	- i.e. encounter date/time but not the place or encounter details.
 
-<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/locked.
+<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld either due to patient preferences or as a result of the application of the Legal Exclusion set - to be displayed both within the Section Banner as well as at line item level.
 
 #### SCR Consent Model ####
 
@@ -165,7 +169,7 @@ Date range handling in the HTML view per section:
 
 #### HTML Section Ordering ####
 
-<span class="label label-info">DECISION</span> Consumer systems SHALL provided access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML Composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
+<span class="label label-info">DECISION</span> Consumer systems SHALL provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML Composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
 
 ### Per Section Minimum Free Text For Display ###
 

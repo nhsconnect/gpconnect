@@ -31,6 +31,19 @@ All relevant<sup>^</sup> records SHALL be returned with-in Consumer supplied dat
 
 <sup>^</sup> For GP Connect FoT relevant records are all coded items held in the GP CIS system under the READ code hierarchy for administrative content.
 
+
+###Section Banner Content Message###
+
+Providers message describing at a summary level how they have populated this section, to include the following:
+
+| Provider | Message |
+| ------------ | ------------ |-
+| EMIS|  |
+| TPP|   |
+| INPS|  |
+|Microtest| Chapter Heading - Read 2 to distinguish the administrative codes (those starting '9' (Administration) and '0' (Occupation)   |
+
+
 ### Table Construction ###
 
 - Table header SHALL be "Administrative Items".
