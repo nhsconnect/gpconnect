@@ -1,0 +1,3257 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: GPConnect
+host: ec2-54-194-109-184.eu-west-1.compute.amazonaws.com
+basePath: /
+schemes:
+  - http
+paths:
+  /fhir/Appointment:
+    post:
+      tags:
+        - Appointment
+      summary: '*Create a new Appointment.'
+      operationId: Appointment_Create
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: resource
+          in: body
+          description: The details of the Appointment.
+          required: true
+          schema:
+            $ref: '#/definitions/Hl7.Fhir.Model.Appointment'
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '422':
+          description: Unprocessable Entity
+      deprecated: false
+  '/fhir/Appointment/{id}':
+    get:
+      tags:
+        - Appointment
+      summary: '*Read a Appointment by ResourceId.'
+      operationId: Appointment_Read
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: id
+          in: path
+          description: The ResourceId of the Appointment.
+          required: true
+          type: integer
+          format: int32
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '410':
+          description: Gone
+      deprecated: false
+    put:
+      tags:
+        - Appointment
+      summary: '*Update an existing Appointment by ResourceId.'
+      operationId: Appointment_Update
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: resource
+          in: body
+          description: The updated details of the Appointment.
+          required: true
+          schema:
+            $ref: '#/definitions/Hl7.Fhir.Model.Appointment'
+        - name: id
+          in: path
+          description: The ResourceId of the Appointment.
+          required: true
+          type: integer
+          format: int32
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '410':
+          description: Gone
+        '422':
+          description: Unprocessable Entity
+      deprecated: false
+  '/fhir/Location/{id}':
+    get:
+      tags:
+        - Location
+      summary: '*Read a Location by ResourceId.'
+      operationId: Location_Read
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: id
+          in: path
+          description: The ResourceId of the Location.
+          required: true
+          type: integer
+          format: int32
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '410':
+          description: Gone
+      deprecated: false
+  /fhir/metadata:
+    get:
+      tags:
+        - Metadata
+      summary: '*Get the Conformance details for the server.'
+      operationId: Metadata_Metadata
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+      deprecated: false
+  /fhir/Order:
+    post:
+      tags:
+        - Order
+      summary: '*Create a new Order.'
+      operationId: Order_Create
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: resource
+          in: body
+          description: The details of the Order.
+          required: true
+          schema:
+            $ref: '#/definitions/Hl7.Fhir.Model.Order'
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '422':
+          description: Unprocessable Entity
+      deprecated: false
+  /fhir/Organization:
+    get:
+      tags:
+        - OrganizationIdentifier
+      summary: '*Search for Organization(s) by an Identifier Token.'
+      operationId: OrganizationIdentifier_SearchByIdentifier
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: identifier
+          in: query
+          required: true
+          type: string
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+      deprecated: false
+  '/fhir/Organization/{id}':
+    get:
+      tags:
+        - Organization
+      summary: '*Read a Organization by ResourceId.'
+      operationId: Organization_Read
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: id
+          in: path
+          description: The ResourceId of the Organization.
+          required: true
+          type: integer
+          format: int32
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '410':
+          description: Gone
+      deprecated: false
+  /fhir/Organization/$gpc.getschedule:
+    post:
+      tags:
+        - OrganizationOperation
+      summary: '*Retrieve the Free/Busy Schedule Bundle for the Organization.'
+      operationId: OrganizationOperation_GetSchedule
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: parameters
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Hl7.Fhir.Model.Parameters'
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Hl7.Fhir.Model.Bundle'
+        '403':
+          description: Forbidden
+      deprecated: false
+  /fhir/Patient:
+    get:
+      tags:
+        - PatientIdentifier
+      summary: '*Search for Patient(s) by an Identifier Token.'
+      operationId: PatientIdentifier_SearchByIdentifier
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: identifier
+          in: query
+          description: Patient Identifier as a token.
+          required: true
+          type: string
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+      deprecated: false
+  '/fhir/Patient/{id}':
+    get:
+      tags:
+        - Patient
+      summary: '*Read a Patient by ResourceId.'
+      operationId: Patient_Read
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: id
+          in: path
+          description: The ResourceId of the Patient.
+          required: true
+          type: integer
+          format: int32
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '410':
+          description: Gone
+      deprecated: false
+  '/fhir/Patient/{id}/Appointment':
+    get:
+      tags:
+        - PatientCompartment
+      summary: '*Find all Appointments for a given Patient.'
+      operationId: PatientCompartment_Appointment
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: id
+          in: path
+          description: ResourceId for the Patient.
+          required: true
+          type: integer
+          format: int32
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+      deprecated: false
+  /fhir/Patient/$gpc.getcarerecord:
+    post:
+      tags:
+        - PatientOperation
+      summary: '*Retrieve the Care Record Bundle for the Patient.'
+      operationId: PatientOperation_GetCareRecord
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: parameters
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/Hl7.Fhir.Model.Parameters'
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Hl7.Fhir.Model.Bundle'
+        '403':
+          description: Forbidden
+      deprecated: false
+  /fhir/Practitioner:
+    get:
+      tags:
+        - PractitionerIdentifier
+      summary: '*Search for Practitioner(s) by an Identifier Token.'
+      operationId: PractitionerIdentifier_SearchByIdentifier
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: identifier
+          in: query
+          required: true
+          type: string
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+      deprecated: false
+  '/fhir/Practitioner/{id}':
+    get:
+      tags:
+        - Practitioner
+      summary: '*Read a Practitioner by ResourceId.'
+      operationId: Practitioner_Read
+      consumes:
+        - application/json+fhir
+        - application/xml+fhir
+      produces:
+        - application/json+fhir
+        - application/xml+fhir
+      parameters:
+        - name: id
+          in: path
+          description: The ResourceId of the Practitioner.
+          required: true
+          type: integer
+          format: int32
+        - name: Ssp-From
+          in: header
+          required: true
+          type: string
+        - name: Ssp-To
+          in: header
+          required: true
+          type: string
+        - name: Ssp-InteractionID
+          in: header
+          required: true
+          type: string
+      responses:
+        '200':
+          description: OK
+        '403':
+          description: Forbidden
+        '404':
+          description: NotFound
+        '410':
+          description: Gone
+      deprecated: false
+definitions:
+  Hl7.Fhir.Model.Bundle:
+    type: object
+    properties:
+      TypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Bundle.BundleType]'
+      TotalElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.UnsignedInt'
+      Link:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Bundle.LinkComponent'
+      Entry:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Bundle.EntryComponent'
+      Signature:
+        $ref: '#/definitions/Hl7.Fhir.Model.Signature'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Bundle.BundleType]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.UnsignedInt:
+    type: object
+    properties:
+      Value:
+        format: int32
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Bundle.LinkComponent:
+    type: object
+    properties:
+      RelationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      UrlElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Bundle.EntryComponent:
+    type: object
+    properties:
+      Link:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Bundle.LinkComponent'
+      FullUrlElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      Resource:
+        $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Search:
+        $ref: '#/definitions/Hl7.Fhir.Model.Bundle.SearchComponent'
+      Request:
+        $ref: '#/definitions/Hl7.Fhir.Model.Bundle.RequestComponent'
+      Response:
+        $ref: '#/definitions/Hl7.Fhir.Model.Bundle.ResponseComponent'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Signature:
+    type: object
+    properties:
+      Type:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Coding'
+      WhenElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Instant'
+      Who:
+        $ref: '#/definitions/Hl7.Fhir.Model.Element'
+      ContentTypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+      BlobElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Base64Binary'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Id:
+    type: object
+    properties:
+      Value:
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Meta:
+    type: object
+    properties:
+      VersionIdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      LastUpdatedElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Instant'
+      ProfileElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      Security:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Coding'
+      Tag:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Coding'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.FhirUri:
+    type: object
+    properties:
+      Value:
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Code:
+    type: object
+    properties:
+      Value:
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Extension:
+    type: object
+    properties:
+      Url:
+        type: string
+      Value:
+        $ref: '#/definitions/Hl7.Fhir.Model.Element'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.FhirString:
+    type: object
+    properties:
+      Value:
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Resource:
+    type: object
+    properties:
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+  Hl7.Fhir.Model.Bundle.SearchComponent:
+    type: object
+    properties:
+      ModeElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Bundle.SearchEntryMode]
+      ScoreElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Bundle.RequestComponent:
+    type: object
+    properties:
+      MethodElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Bundle.HTTPVerb]'
+      UrlElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      IfNoneMatchElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      IfModifiedSinceElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Instant'
+      IfMatchElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      IfNoneExistElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Bundle.ResponseComponent:
+    type: object
+    properties:
+      StatusElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      LocationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      EtagElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      LastModifiedElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Instant'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Coding:
+    type: object
+    properties:
+      SystemElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      VersionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      CodeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+      DisplayElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      UserSelectedElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Instant:
+    type: object
+    properties:
+      Value:
+        format: date-time
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Element:
+    type: object
+    properties:
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Base64Binary:
+    type: object
+    properties:
+      Value:
+        format: byte
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Bundle.SearchEntryMode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.FhirDecimal:
+    type: object
+    properties:
+      Value:
+        format: double
+        type: number
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Bundle.HTTPVerb]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.FhirBoolean:
+    type: object
+    properties:
+      Value:
+        type: boolean
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Appointment:
+    type: object
+    properties:
+      Identifier:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Identifier'
+      StatusElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Appointment.AppointmentStatus]
+      Type:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Reason:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      PriorityElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.UnsignedInt'
+      DescriptionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      StartElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Instant'
+      EndElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Instant'
+      MinutesDurationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.PositiveInt'
+      Slot:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      CommentElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Participant:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Appointment.ParticipantComponent'
+      Text:
+        $ref: '#/definitions/Hl7.Fhir.Model.Narrative'
+      Contained:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+    example:
+      Identifier: []
+      StatusElement:
+        Value: 2
+        Extension: []
+      Reason:
+        Coding: []
+        TextElement:
+          Value: Feeling Sick
+          Extension: []
+        Extension: []
+      PriorityElement:
+        Value: 1
+        Extension: []
+      DescriptionElement:
+        Value: Appointment Description
+        Extension: []
+      StartElement:
+        Value: '2016-05-30T10:00:00+09:30'
+        Extension: []
+      EndElement:
+        Value: '2016-05-30T10:25:00+09:30'
+        Extension: []
+      Slot:
+        - ReferenceElement:
+            Value: Slot/1
+            Extension: []
+          DisplayElement:
+            Value: Slot 1
+            Extension: []
+          Extension: []
+      Participant:
+        - Type: []
+          Actor:
+            ReferenceElement:
+              Value: Patient/1
+              Extension: []
+            DisplayElement:
+              Value: Mrs. Jane Cunningham (Female)
+              Extension: []
+            Extension: []
+          RequiredElement:
+            Value: 0
+            Extension: []
+          StatusElement:
+            Value: 0
+            Extension: []
+          ModifierExtension: []
+          Extension: []
+        - Type: []
+          Actor:
+            ReferenceElement:
+              Value: Practitioner/1
+              Extension: []
+            DisplayElement:
+              Value: Dr. Mike Smith (Male)
+              Extension: []
+            Extension: []
+          RequiredElement:
+            Value: 0
+            Extension: []
+          StatusElement:
+            Value: 0
+            Extension: []
+          ModifierExtension: []
+          Extension: []
+      Contained: []
+      Extension: []
+      ModifierExtension: []
+      Meta:
+        ProfileElement:
+          - Value: 'http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1-0'
+            Extension: []
+        Security: []
+        Tag: []
+        Extension: []
+  Hl7.Fhir.Model.Identifier:
+    type: object
+    properties:
+      UseElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Identifier.IdentifierUse]
+      Type:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      SystemElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      ValueElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Period:
+        $ref: '#/definitions/Hl7.Fhir.Model.Period'
+      Assigner:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Appointment.AppointmentStatus]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.CodeableConcept:
+    type: object
+    properties:
+      Coding:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Coding'
+      TextElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.PositiveInt:
+    type: object
+    properties:
+      Value:
+        format: int32
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.ResourceReference:
+    type: object
+    properties:
+      ReferenceElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      DisplayElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Appointment.ParticipantComponent:
+    type: object
+    properties:
+      Type:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Actor:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      RequiredElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Appointment.ParticipantRequired]
+      StatusElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Appointment.ParticipationStatus]
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Narrative:
+    type: object
+    properties:
+      StatusElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Narrative.NarrativeStatus]
+      Div:
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Identifier.IdentifierUse]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Period:
+    type: object
+    properties:
+      StartElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDateTime'
+      EndElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDateTime'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Appointment.ParticipantRequired]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Appointment.ParticipationStatus]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Narrative.NarrativeStatus]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.FhirDateTime:
+    type: object
+    properties:
+      Value:
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Spark.Engine.Core.FhirResponse:
+    type: object
+    properties:
+      StatusCode:
+        format: int32
+        enum:
+          - 100
+          - 101
+          - 200
+          - 201
+          - 202
+          - 203
+          - 204
+          - 205
+          - 206
+          - 300
+          - 301
+          - 301
+          - 302
+          - 302
+          - 303
+          - 303
+          - 304
+          - 305
+          - 306
+          - 307
+          - 307
+          - 400
+          - 401
+          - 402
+          - 403
+          - 404
+          - 405
+          - 406
+          - 407
+          - 408
+          - 409
+          - 410
+          - 411
+          - 412
+          - 413
+          - 414
+          - 415
+          - 416
+          - 417
+          - 426
+          - 500
+          - 501
+          - 502
+          - 503
+          - 504
+          - 505
+        type: integer
+      Key:
+        $ref: '#/definitions/Spark.Engine.Core.IKey'
+      Resource:
+        $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      IsValid:
+        type: boolean
+        readOnly: true
+      HasBody:
+        type: boolean
+        readOnly: true
+  Spark.Engine.Core.IKey:
+    type: object
+    properties:
+      Base:
+        type: string
+      TypeName:
+        type: string
+      ResourceId:
+        type: string
+      VersionId:
+        type: string
+  Hl7.Fhir.Model.Location:
+    type: object
+    properties:
+      Identifier:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Identifier'
+      StatusElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Location.LocationStatus]
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      DescriptionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ModeElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Location.LocationMode]
+      Type:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Telecom:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ContactPoint'
+      Address:
+        $ref: '#/definitions/Hl7.Fhir.Model.Address'
+      PhysicalType:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Position:
+        $ref: '#/definitions/Hl7.Fhir.Model.Location.PositionComponent'
+      ManagingOrganization:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      PartOf:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Text:
+        $ref: '#/definitions/Hl7.Fhir.Model.Narrative'
+      Contained:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Location.LocationStatus]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Location.LocationMode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.ContactPoint:
+    type: object
+    properties:
+      SystemElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ContactPoint.ContactPointSystem]
+      ValueElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      UseElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ContactPoint.ContactPointUse]
+      RankElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.PositiveInt'
+      Period:
+        $ref: '#/definitions/Hl7.Fhir.Model.Period'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Address:
+    type: object
+    properties:
+      UseElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Address.AddressUse]'
+      TypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Address.AddressType]'
+      TextElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      LineElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      CityElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      DistrictElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      StateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      PostalCodeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      CountryElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Period:
+        $ref: '#/definitions/Hl7.Fhir.Model.Period'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Location.PositionComponent:
+    type: object
+    properties:
+      LongitudeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      LatitudeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      AltitudeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ContactPoint.ContactPointSystem]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ContactPoint.ContactPointUse]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Address.AddressUse]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Address.AddressType]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance:
+    type: object
+    properties:
+      UrlElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      VersionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      StatusElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ConformanceResourceStatus]
+      ExperimentalElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      PublisherElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Contact:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.ContactComponent'
+      DateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDateTime'
+      DescriptionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      RequirementsElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      CopyrightElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      KindElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ConformanceStatementKind]
+      Software:
+        $ref: '#/definitions/Hl7.Fhir.Model.Conformance.SoftwareComponent'
+      Implementation:
+        $ref: '#/definitions/Hl7.Fhir.Model.Conformance.ImplementationComponent'
+      FhirVersionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      AcceptUnknownElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.UnknownContentCode]
+      FormatElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Code'
+      Profile:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Rest:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.RestComponent'
+      Messaging:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.MessagingComponent'
+      Document:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.DocumentComponent'
+      Text:
+        $ref: '#/definitions/Hl7.Fhir.Model.Narrative'
+      Contained:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ConformanceResourceStatus]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.ContactComponent:
+    type: object
+    properties:
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Telecom:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ContactPoint'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ConformanceStatementKind]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.SoftwareComponent:
+    type: object
+    properties:
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      VersionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ReleaseDateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDateTime'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.ImplementationComponent:
+    type: object
+    properties:
+      DescriptionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      UrlElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.UnknownContentCode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.RestComponent:
+    type: object
+    properties:
+      ModeElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.RestfulConformanceMode]
+      DocumentationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Security:
+        $ref: '#/definitions/Hl7.Fhir.Model.Conformance.SecurityComponent'
+      Resource:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.ResourceComponent'
+      Interaction:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.SystemInteractionComponent'
+      TransactionMode_Element:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.TransactionMode]
+      SearchParam:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.SearchParamComponent'
+      Operation:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.OperationComponent'
+      CompartmentElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.MessagingComponent:
+    type: object
+    properties:
+      Endpoint:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.EndpointComponent'
+      ReliableCacheElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.UnsignedInt'
+      DocumentationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Event:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.EventComponent'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.DocumentComponent:
+    type: object
+    properties:
+      ModeElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.DocumentMode]
+      DocumentationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Profile:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.RestfulConformanceMode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.SecurityComponent:
+    type: object
+    properties:
+      CorsElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      Service:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      DescriptionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Certificate:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.CertificateComponent'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.ResourceComponent:
+    type: object
+    properties:
+      TypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ResourceType]'
+      Profile:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Interaction:
+        type: array
+        items:
+          $ref: >-
+            #/definitions/Hl7.Fhir.Model.Conformance.ResourceInteractionComponent
+      VersioningElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ResourceVersionPolicy]
+      ReadHistoryElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      UpdateCreateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      ConditionalCreateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      ConditionalUpdateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      ConditionalDeleteElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ConditionalDeleteStatus]
+      SearchIncludeElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      SearchRevIncludeElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      SearchParam:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Conformance.SearchParamComponent'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.SystemInteractionComponent:
+    type: object
+    properties:
+      CodeElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.SystemRestfulInteraction]
+      DocumentationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.TransactionMode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.SearchParamComponent:
+    type: object
+    properties:
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      DefinitionElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      TypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.SearchParamType]'
+      DocumentationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      TargetElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ResourceType]'
+      ModifierElement:
+        type: array
+        items:
+          $ref: >-
+            #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.SearchModifierCode]
+      ChainElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.OperationComponent:
+    type: object
+    properties:
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Definition:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.EndpointComponent:
+    type: object
+    properties:
+      Protocol:
+        $ref: '#/definitions/Hl7.Fhir.Model.Coding'
+      AddressElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.EventComponent:
+    type: object
+    properties:
+      Code:
+        $ref: '#/definitions/Hl7.Fhir.Model.Coding'
+      CategoryElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.MessageSignificanceCategory]
+      ModeElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ConformanceEventMode]
+      FocusElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ResourceType]'
+      Request:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Response:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      DocumentationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.DocumentMode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.CertificateComponent:
+    type: object
+    properties:
+      TypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+      BlobElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Base64Binary'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.ResourceType]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+          - 13
+          - 14
+          - 15
+          - 16
+          - 17
+          - 18
+          - 19
+          - 20
+          - 21
+          - 22
+          - 23
+          - 24
+          - 25
+          - 26
+          - 27
+          - 28
+          - 29
+          - 30
+          - 31
+          - 32
+          - 33
+          - 34
+          - 35
+          - 36
+          - 37
+          - 38
+          - 39
+          - 40
+          - 41
+          - 42
+          - 43
+          - 44
+          - 45
+          - 46
+          - 47
+          - 48
+          - 49
+          - 50
+          - 51
+          - 52
+          - 53
+          - 54
+          - 55
+          - 56
+          - 57
+          - 58
+          - 59
+          - 60
+          - 61
+          - 62
+          - 63
+          - 64
+          - 65
+          - 66
+          - 67
+          - 68
+          - 69
+          - 70
+          - 71
+          - 72
+          - 73
+          - 74
+          - 75
+          - 76
+          - 77
+          - 78
+          - 79
+          - 80
+          - 81
+          - 82
+          - 83
+          - 84
+          - 85
+          - 86
+          - 87
+          - 88
+          - 89
+          - 90
+          - 91
+          - 92
+          - 93
+          - 94
+          - 95
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Conformance.ResourceInteractionComponent:
+    type: object
+    properties:
+      CodeElement:
+        $ref: >-
+          #/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.TypeRestfulInteraction]
+      DocumentationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ResourceVersionPolicy]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ConditionalDeleteStatus]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.SystemRestfulInteraction]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.SearchParamType]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.SearchModifierCode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.MessageSignificanceCategory]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.ConformanceEventMode]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Conformance.TypeRestfulInteraction]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Order:
+    type: object
+    properties:
+      Identifier:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Identifier'
+      DateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDateTime'
+      Subject:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Source:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Target:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Reason:
+        $ref: '#/definitions/Hl7.Fhir.Model.Element'
+      When:
+        $ref: '#/definitions/Hl7.Fhir.Model.Order.WhenComponent'
+      Detail:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Text:
+        $ref: '#/definitions/Hl7.Fhir.Model.Narrative'
+      Contained:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+    example:
+      Identifier: []
+      DateElement:
+        Value: 10/08/2016
+        Extension: []
+      Subject:
+        ReferenceElement:
+          Value: Patient/1
+          Extension: []
+        DisplayElement:
+          Value: Mrs. Jane Cunningham
+          Extension: []
+        Extension: []
+      Source:
+        ReferenceElement:
+          Value: Organization/1
+          Extension: []
+        DisplayElement:
+          Value: GP Super Clinic
+          Extension: []
+        Extension: []
+      Target:
+        ReferenceElement:
+          Value: Organization/2
+          Extension: []
+        DisplayElement:
+          Value: GP Clinic Down The Road
+          Extension: []
+        Extension: []
+      Detail: []
+      Contained: []
+      Extension: []
+      ModifierExtension: []
+      Meta:
+        ProfileElement:
+          - Value: 'http://fhir.nhs.net/StructureDefinition/gpconnect-order-1-0'
+            Extension: []
+        Security: []
+        Tag: []
+        Extension: []
+  Hl7.Fhir.Model.Order.WhenComponent:
+    type: object
+    properties:
+      Code:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Schedule:
+        $ref: '#/definitions/Hl7.Fhir.Model.Timing'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Timing:
+    type: object
+    properties:
+      EventElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirDateTime'
+      Repeat:
+        $ref: '#/definitions/Hl7.Fhir.Model.Timing.RepeatComponent'
+      Code:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Timing.RepeatComponent:
+    type: object
+    properties:
+      Bounds:
+        $ref: '#/definitions/Hl7.Fhir.Model.Element'
+      CountElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Integer'
+      DurationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      DurationMaxElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      DurationUnitsElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Timing.UnitsOfTime]'
+      FrequencyElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Integer'
+      FrequencyMaxElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Integer'
+      PeriodElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      PeriodMaxElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDecimal'
+      PeriodUnitsElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Timing.UnitsOfTime]'
+      WhenElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Timing.EventTiming]'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Integer:
+    type: object
+    properties:
+      Value:
+        format: int32
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Timing.UnitsOfTime]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Timing.EventTiming]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+          - 7
+          - 8
+          - 9
+          - 10
+          - 11
+          - 12
+          - 13
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Organization:
+    type: object
+    properties:
+      Identifier:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Identifier'
+      ActiveElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      Type:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Telecom:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ContactPoint'
+      Address:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Address'
+      PartOf:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Contact:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Organization.ContactComponent'
+      Text:
+        $ref: '#/definitions/Hl7.Fhir.Model.Narrative'
+      Contained:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+    example:
+      Identifier:
+        - SystemElement:
+            Value: 'http://fhir.nhs.net/Id/ods-organization-code'
+            Extension: []
+          ValueElement:
+            Value: O001
+            Extension: []
+          Extension: []
+      ActiveElement:
+        Value: true
+        Extension: []
+      NameElement:
+        Value: GP Super Clinic
+        Extension: []
+      Telecom: []
+      Address: []
+      Contact: []
+      Contained: []
+      Extension: []
+      ModifierExtension: []
+      Meta:
+        ProfileElement:
+          - Value: 'http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1-0'
+            Extension: []
+        Security: []
+        Tag: []
+        Extension: []
+  Hl7.Fhir.Model.Organization.ContactComponent:
+    type: object
+    properties:
+      Purpose:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Name:
+        $ref: '#/definitions/Hl7.Fhir.Model.HumanName'
+      Telecom:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ContactPoint'
+      Address:
+        $ref: '#/definitions/Hl7.Fhir.Model.Address'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.HumanName:
+    type: object
+    properties:
+      UseElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.HumanName.NameUse]'
+      TextElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      FamilyElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      GivenElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      PrefixElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      SuffixElement:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Period:
+        $ref: '#/definitions/Hl7.Fhir.Model.Period'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.HumanName.NameUse]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+          - 4
+          - 5
+          - 6
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Parameters:
+    type: object
+    properties:
+      Parameter:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Parameters.ParameterComponent'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+  Hl7.Fhir.Model.Parameters.ParameterComponent:
+    type: object
+    properties:
+      NameElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      Value:
+        $ref: '#/definitions/Hl7.Fhir.Model.Element'
+      Resource:
+        $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Part:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Parameters.ParameterComponent'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Patient:
+    type: object
+    properties:
+      Identifier:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Identifier'
+      ActiveElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      Name:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.HumanName'
+      Telecom:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ContactPoint'
+      GenderElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.AdministrativeGender]'
+      BirthDateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Date'
+      Deceased:
+        $ref: '#/definitions/Hl7.Fhir.Model.Element'
+      Address:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Address'
+      MaritalStatus:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      MultipleBirth:
+        $ref: '#/definitions/Hl7.Fhir.Model.Element'
+      Photo:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Attachment'
+      Contact:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Patient.ContactComponent'
+      Animal:
+        $ref: '#/definitions/Hl7.Fhir.Model.Patient.AnimalComponent'
+      Communication:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Patient.CommunicationComponent'
+      CareProvider:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      ManagingOrganization:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Link:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Patient.LinkComponent'
+      Text:
+        $ref: '#/definitions/Hl7.Fhir.Model.Narrative'
+      Contained:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+    example:
+      Identifier:
+        - SystemElement:
+            Value: 'http://fhir.nhs.net/Id/nhs-number'
+            Extension: []
+          ValueElement:
+            Value: '1234567890'
+            Extension: []
+          Extension: []
+      ActiveElement:
+        Value: true
+        Extension: []
+      Name:
+        - FamilyElement:
+            - Value: Cunningham
+              Extension: []
+          GivenElement:
+            - Value: Jane
+              Extension: []
+          PrefixElement: []
+          SuffixElement:
+            - Value: Mrs.
+              Extension: []
+          Extension: []
+      Telecom: []
+      GenderElement:
+        Value: 1
+        Extension: []
+      BirthDateElement:
+        Value: '1976-01-10'
+        Extension: []
+      Address: []
+      Photo: []
+      Contact: []
+      Communication: []
+      CareProvider: []
+      Link: []
+      Contained: []
+      Extension: []
+      ModifierExtension: []
+      Meta:
+        ProfileElement:
+          - Value: 'http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1-0'
+            Extension: []
+        Security: []
+        Tag: []
+        Extension: []
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.AdministrativeGender]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+          - 3
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Date:
+    type: object
+    properties:
+      Value:
+        type: string
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Attachment:
+    type: object
+    properties:
+      ContentTypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+      DataElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Base64Binary'
+      UrlElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      SizeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.UnsignedInt'
+      HashElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Base64Binary'
+      TitleElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirString'
+      CreationElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirDateTime'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Patient.ContactComponent:
+    type: object
+    properties:
+      Relationship:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Name:
+        $ref: '#/definitions/Hl7.Fhir.Model.HumanName'
+      Telecom:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ContactPoint'
+      Address:
+        $ref: '#/definitions/Hl7.Fhir.Model.Address'
+      GenderElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.AdministrativeGender]'
+      Organization:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Period:
+        $ref: '#/definitions/Hl7.Fhir.Model.Period'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Patient.AnimalComponent:
+    type: object
+    properties:
+      Species:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Breed:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      GenderStatus:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Patient.CommunicationComponent:
+    type: object
+    properties:
+      Language:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      PreferredElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Patient.LinkComponent:
+    type: object
+    properties:
+      Other:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      TypeElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Patient.LinkType]'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  'Hl7.Fhir.Model.Code[Hl7.Fhir.Model.Patient.LinkType]':
+    type: object
+    properties:
+      Value:
+        format: int32
+        enum:
+          - 0
+          - 1
+          - 2
+        type: integer
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Practitioner:
+    type: object
+    properties:
+      Identifier:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Identifier'
+      ActiveElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirBoolean'
+      Name:
+        $ref: '#/definitions/Hl7.Fhir.Model.HumanName'
+      Telecom:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ContactPoint'
+      Address:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Address'
+      GenderElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code[Hl7.Fhir.Model.AdministrativeGender]'
+      BirthDateElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Date'
+      Photo:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Attachment'
+      PractitionerRole:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Practitioner.PractitionerRoleComponent'
+      Qualification:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Practitioner.QualificationComponent'
+      Communication:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Text:
+        $ref: '#/definitions/Hl7.Fhir.Model.Narrative'
+      Contained:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Resource'
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      IdElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Id'
+      Meta:
+        $ref: '#/definitions/Hl7.Fhir.Model.Meta'
+      ImplicitRulesElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.FhirUri'
+      LanguageElement:
+        $ref: '#/definitions/Hl7.Fhir.Model.Code'
+    example:
+      Identifier:
+        - SystemElement:
+            Value: 'http://fhir.nhs.net/sds-user-id'
+            Extension: []
+          ValueElement:
+            Value: S001
+            Extension: []
+          Extension: []
+      ActiveElement:
+        Value: true
+        Extension: []
+      Name:
+        FamilyElement:
+          - Value: Smith
+            Extension: []
+        GivenElement:
+          - Value: Mike
+            Extension: []
+        PrefixElement:
+          - Value: Dr.
+            Extension: []
+        SuffixElement: []
+        Extension: []
+      Telecom: []
+      Address: []
+      GenderElement:
+        Value: 0
+        Extension: []
+      Photo: []
+      PractitionerRole: []
+      Qualification: []
+      Communication: []
+      Contained: []
+      Extension: []
+      ModifierExtension: []
+      Meta:
+        ProfileElement:
+          - Value: 'http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1-0'
+            Extension: []
+        Security: []
+        Tag: []
+        Extension: []
+  Hl7.Fhir.Model.Practitioner.PractitionerRoleComponent:
+    type: object
+    properties:
+      ManagingOrganization:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      Role:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Specialty:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Period:
+        $ref: '#/definitions/Hl7.Fhir.Model.Period'
+      Location:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      HealthcareService:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+  Hl7.Fhir.Model.Practitioner.QualificationComponent:
+    type: object
+    properties:
+      Identifier:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Identifier'
+      Code:
+        $ref: '#/definitions/Hl7.Fhir.Model.CodeableConcept'
+      Period:
+        $ref: '#/definitions/Hl7.Fhir.Model.Period'
+      Issuer:
+        $ref: '#/definitions/Hl7.Fhir.Model.ResourceReference'
+      ModifierExtension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
+      ElementId:
+        type: string
+      Extension:
+        type: array
+        items:
+          $ref: '#/definitions/Hl7.Fhir.Model.Extension'
