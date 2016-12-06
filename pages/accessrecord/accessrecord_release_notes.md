@@ -17,7 +17,8 @@ summary: "Release notes for the various versions of the Access Record capability
   - The application of a Legal Exclusion set - currently the RGCP set on TRUD, which is being reviewed with amendments/changes expected Feb 2017
   - The indication of withheld information, either arising from Patient preferences, or the application of the exclusion set to be at line item level as well as in Section Banner , as this provides more valuable information as to when and volume of exclusions
   - The elaboration of the Data-Sharing paragraph to reflect the validation of data-sharing agreements by the Spine Security Proxy, and the requirement that Provider Data-Sharing configuration should not be applied or changed for GP Connect interactions
-
+- 1.0.0-rc.1
+  - Beta version promoted to release candidate
 - 1.0.0-beta.1
   - Initial release of the Access Record capability pack on GitHub in early August 2016.
 - 1.0.0-alpha.1
