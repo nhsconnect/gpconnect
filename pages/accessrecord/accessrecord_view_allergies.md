@@ -7,7 +7,7 @@ permalink: accessrecord_view_allergies.html
 summary: "Allergies HTML View."
 ---
 
-## Allergies and Sensitivities ##
+## Allergies and Adverse Reactions ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
