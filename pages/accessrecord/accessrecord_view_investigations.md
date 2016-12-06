@@ -15,6 +15,8 @@ summary: "Investigations HTML View."
 
 <sup>1</sup> The Investigations section can currently only be provided by a single GP principal system supplier (i.e. TPP).
 
+{% include todo.html content="The Investigations section to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
+
 ### Purpose ###
 
 A list of all investigations related to a patient ordered by date descending (i.e. most recent date/time first).
