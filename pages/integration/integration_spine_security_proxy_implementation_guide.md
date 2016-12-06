@@ -266,6 +266,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `504` Gateway Timeout
 - If the following specific error conditions occur then the proxy SHALL return the corresponding HTTP status codes to the consumer system.
 	- `403`	Forbidden
+		- Used to indicate that no data sharing agreement exists between the requesting (consuming) and providing organisation.
 	- `444`	No Response
 		- Used to indicate that the server has returned no information to the client and closed the connection.
 	- `495`	SSL Certificate Error
