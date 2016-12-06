@@ -22,7 +22,7 @@ A list of all immunisations related to a patient ordered by date descending (i.e
 {% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 
-###Section Banner Content Message###
+### Section Banner Content Message ###
 
 Providers message describing at a summary level how they have populated this section, to include the following:
 

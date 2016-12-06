@@ -20,7 +20,7 @@ Contains three sections:
  - [Past Medications](accessrecord_view_medications.html#past-medications)
 
 
-###Section Banner Content Message###
+### Section Banner Content Message ###
 
 Providers message describing at a summary level how they have populated this section, to include the following:
 
@@ -187,7 +187,7 @@ A list of all past medications, issued to a patient ordered by date descending (
 
 All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
 
-###Section Banner Content Message###
+### Section Banner Content Message ###
 
 Providers message describing at a summary level how they have populated this section
 

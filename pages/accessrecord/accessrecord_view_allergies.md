@@ -21,7 +21,7 @@ Contains two sections:
  - [Historical Allergies and Adverse Reactions](accessrecord_view_allergies.html#historical-allergies-and-sensitivities)
 
 
-###Section Banner Content Message###
+### Section Banner Content Message ###
 
 | Provider | Message |
 | ------------ | ------------ |-

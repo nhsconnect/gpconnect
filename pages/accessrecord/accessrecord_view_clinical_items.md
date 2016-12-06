@@ -25,7 +25,7 @@ A list of clinical items related to a patient ordered by date descending (i.e. m
 
 All relevant records SHALL be returned with-in Consumer supplied date range.
 
-###Section Banner Content Message###
+### Section Banner Content Message ###
 
 Providers to provide message describing at a summary level how they have populated this section, including reference to items identified as Diagnoses, Procedures, Symptoms
  
