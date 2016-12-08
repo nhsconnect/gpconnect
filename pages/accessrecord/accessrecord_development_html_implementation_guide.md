@@ -19,6 +19,8 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 ## Common User Interface Guidance ##
 
+{% include todo.html content="Dec 2016:  The following links need to be reinstated following updates to the NHS Digital Extranet.  Please access the guidance [here](http://webarchive.nationalarchives.gov.uk/+/http://www.isb.nhs.uk/use/baselines/cui) as a temporary measure  ." %}
+
 Where appropriate the following [Common User Interface (CUI)](http://systems.digital.nhs.uk/data/cui/) guidance documents should be followed when generating the GP Connect HTML Views.
 
 ### NHS Number Format ###
