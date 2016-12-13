@@ -188,6 +188,9 @@ entries:
     - title: Communication Channels
       url: /support_communications.html
       output: web
+    - title: Run Website Locally
+      url: /support_run_website_locally.html
+      output: web
 
   - title: Tags
     output: web

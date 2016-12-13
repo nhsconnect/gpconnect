@@ -1,10 +1,16 @@
-# GP Connect Pages Website #
-
-## How to run the website locally? ##
+---
+title: Run Website Locally
+keywords: support, website, jekyll
+tags: [support]
+toc: false
+sidebar: overview_sidebar
+permalink: support_run_website_locally.html
+summary: "How to run the website locally on your own PC."
+---
 
 Please follow the following instructions to setting up GitHub Pages to run locally:
 
-[setting-up-your-github-pages-site-locally-with-jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/ )
+[setting-up-your-github-pages-site-locally-with-jekyll](https://help.github.com/articles/setting-up-your-github-pages-site-locally-with-jekyll/)
 
 In short...
 
