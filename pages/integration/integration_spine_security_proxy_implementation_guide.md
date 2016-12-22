@@ -147,6 +147,8 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 <sup>3</sup> an example of a valid JSON Web Token (JWT) for the purposes of GP Connect can be found in the [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) guidance.
 
+{% include important.html content="Note that according to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2]) all HTTP header fields names are case insensitive and should be handled as such." %}
+
 ### Proxy ###
 
 - Provides PKI client and server credentials to allow verification of proxy system (by both consumer and provider systems).
