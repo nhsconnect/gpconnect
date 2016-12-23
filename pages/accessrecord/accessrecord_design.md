@@ -26,9 +26,9 @@ What is the scope of what views we're aiming to deliver?
 
 ### Record In Transit ###
 
-Their is a risk around their being an incomplete GP record if the patient's record is undergoing a transfer.
+There is a risk that the GP record may be incomplete if the patient's record is undergoing a transfer.
 
-- <span class="label label-success">SELECTED</span> Provider some warning that the record could be incomplete.
+- <span class="label label-success">SELECTED</span> Provider to supply a warning that the record could be incomplete.
 - Other.
 
 ## HTML Sections ##
