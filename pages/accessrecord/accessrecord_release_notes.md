@@ -6,7 +6,7 @@ sidebar: accessrecord_sidebar
 permalink: accessrecord_release_notes.html
 summary: "Release notes for the various versions of the Access Record capability."
 ---
-- 1.0.0-rc.2
+- 1.0.0-rc.2 (Released: 6th December) 
 
    - The elaboration of page(s) content to reflect the validation of data-sharing agreements by the Spine Security Proxy only, and the requirement that Provider Data-Sharing configuration should not be applied or changed for GP Connect interactions 
   - The application of a configurable Legal Exclusion set - currently the RGCP set on TRUD -  which is being reviewed with amendments/changes expected Feb 2017
@@ -25,9 +25,9 @@ summary: "Release notes for the various versions of the Access Record capability
   - Medications Sections to be reviewed as part of Stage 2
   - GP Name in Patient Banner (Details) to be the 'Usual' GP
   
-- 1.0.0-rc.1
+- 1.0.0-rc.1 (Released: September 2016)
   - Beta version promoted to release candidate
-- 1.0.0-beta.1
+- 1.0.0-beta.1 (Release: August 2016)
   - Initial release of the Access Record capability pack on GitHub in early August 2016.
-- 1.0.0-alpha.1
+- 1.0.0-alpha.1 (Released: May 2016)
   - Initial release for feedback/comments as part of the late May 2016 release. 
