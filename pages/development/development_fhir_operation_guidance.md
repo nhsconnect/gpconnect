@@ -22,7 +22,7 @@ summary: "Details of which operations a FHIR server should expose to be a fully 
 
 All `InteractionIDs` are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`.
 
-- Program = `gpconnet`
+- Program = `gpconnect`
 - Standard = `fhir`
 - Mechanism = [ `rest`, `operation` ]
 	- `rest` for RESTful API Interactions.
