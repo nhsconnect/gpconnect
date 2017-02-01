@@ -18,11 +18,11 @@ Information is provided below to clarity how this endpoint lookup functions.
 
 1. Consuming system lookup
 
-From the perspective of a consuming system, an overview of the endpoint lookup process is given followedby a worked end-to-end example of a GPConnect request to retrieve the HTML View of a patient record.
+	From the perspective of a consuming system, an overview of the endpoint lookup process is given followedby a worked end-to-end 		example of a GPConnect request to retrieve the HTML View of a patient record.
 
 2. Provider system endpoint setup
 
-Guidance on how a provider system should set up endpoints in Spine Directory Services.
+	Guidance on how a provider system should set up endpoints in Spine Directory Services.
 
 
 ### Consumer System Endpoint Lookup ###
@@ -94,20 +94,24 @@ The client certificate and encrypted private key should be defined in the .ldapr
 TLS_CERT C:\mydir\cert.pem
 TLS_KEY C:\mydir\key.pem
 `
+
 The location of the .ldaprc file can be defined using the LDAPRC environment variable.
 
 Please contact [Assurance Support service desk (sa.servicedesk@nhs.net)] for certificates and details of the ldap server for your environment.
 
 ### Worked example of the endpoint lookup process ###
 
-**Given** 
+*Given* 
 A consuming system which needs to get the HTML View of a patient record at the patient's registered practice. The consuming system has the following information about the patient:
 - NHS Number
 - A set of demographic details about the patient
 
-**When** the consuming system interfacts with GP Connect
+*When* 
+The consuming system interfacts with GP Connect
 
-**Then** the following steps MUST be followed:
+*Then* 
+The following steps MUST be followed:
+
 
 #### Step 0. PDS Trace (pre-requisite step)
 
@@ -184,5 +188,68 @@ POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/1
 
 The provider system is responsible for populating SDS with the necessary information to enable reliable endpoint lookup by consuming system.
 
-In order to ensure that endpoint lookup is reliable, the following design guidelines must be followed for First of Type implementations:
+In order to ensure that endpoint lookup is reliable, the following guidelines must be followed for First of Type implementations:
 
+1. Format of FHIR base URL
+
+	The FHIR base URL for a given ASID MUST be defined in the nhsMhsEndPoint attribute of the MHS record (i.e. the ldap object of 		type nhsMhs). This URL MUST be in the following format:
+
+	```bash
+	http://FQDN of endpoint/[ODS Code/routing identifer]/[FHIR version]/
+	```
+
+	The ordering of these three elements MUST be maintained for all instances. Note that following the FQDN of the endpoint, a 		routing identifier must be present to ensure that the FHIR request can be routed to the relevant practice data store.
+
+
+2. CMA type endpoints only will be used
+
+	A CMA type endpoint refers to an endpoint which is a combined MHS sytem and Accredited System endpoint. There will be a 1-1 		mapping between an Accredited System (uniquely identified by an ASID) and a Message Handling System (MSH). I.e. the MHS record 		found in SDS will refer to an endpoint which handles requests for a single acredited system.
+
+3. nhsMhsEndPoint contains base URL
+
+	The nhsMHsEndPoint attribute will contain the *base URL*. It is the responsibility of the consuming system to construct the FHIR operation or RESTful resource request which will be postfixed to this base URL.
+
+	I.e. an example of a FHIR base URL for a GetCareRecord interaction would be
+
+	```bash
+	https://pcs.thirdparty.nhs.uk/T99999/1.0.2/
+	```
+
+	Note that the "Patient/$gpc.getcarerecord" is not added.
+
+	In line with this, provider systems are responsible for performing checks that the FHIR request received is a reasonable means to  request the resource in view given the specificed interaction. 
+
+
+4. The FHIR base URL should contain the FHIR version 
+
+	It is the responsibility to ensure that the FHIR base URL defined in the nhsMhsEndPoint attribute contains the FHIR STU version num,ber portion of a base URL. This will enable versioning of provider API by FHIR version. 
+
+	In line with this, provider systems MUST NOT version through the use of HTTP header elements.
+
+
+5. Product sets to be used where FHIR version changes
+
+	Where a provider moves in future to later version of FHIR, it will be necessary to define a new product set to accomodate the set of interactions provided by this. Base URLs defined for a specific product set MUST all reference the same FHIR version. FHIR resources references returned in FHIR resposes MUST be locally resolvable.
+
+
+6. FHIR version in conformance statement
+
+	The FHIR version as returned in a conformance statement from the FHIR server assoicated with a FHIR request must match the FHIR version given in the FHIR base URL.
+
+
+7. Practice routing identifier to be placed in base URL
+
+	As described above, a routing identifier MUST be placed in the FHIR base URL. This routing identifier may be the ODS code of the practice, or another logical identifier which acheives reliable routing of the request to the patient's registered practice data store. It is expected that the FHIR server business logic will extract the routing identifier.
+
+
+8. Practice specific ODS codes to be used
+
+	ODS codes which refer to Principle Clinical Systems as a single entity MUST NOT be used to provide routing. Practice specific ODS codes will be used for routing purposes in the FHIR base URL found in the NhsMhsEndPoint attribute of the MHS record.
+
+
+9. Acceptable use of ASID information in HTTP Headers
+
+	Source and destination ASID information is passed to the Principle Clinical System from the Spine Security Proxy. This information is to be used for audit and debugging purposes only, and will not be used by to perform routing or lookups. It is the responsibility of the SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice specific ODS codes present in the FHIR base URL. 
+
+
+### Worked example of Provider System Endpoint Lookup 
