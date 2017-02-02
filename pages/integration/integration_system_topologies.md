@@ -33,7 +33,7 @@ Note the ASID for each system which consumes data from the GP record.  Also plea
 
 ## Regional Shared Care Record ##
 
-![Shared Care Record](images/integration/topology4-hostedRegionalCareRecord.png)
+![Shared Care Record](images/integration/topology4-hostedregionalcarerecord.png)
 
 A regional shared care initiative hosted by one of the participating organisations might have a topology similar to this.  This  illustrates a consuming portal deployment. The hosting organisation holds the ASID for the consumer application and (subject to the usual governance controls) the data can be shared via the portal to other organisations.
 
