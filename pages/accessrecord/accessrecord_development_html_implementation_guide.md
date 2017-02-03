@@ -176,7 +176,7 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | OBS  | All Relevant | Observation |
 | PAT  | - | Patient |
 | PRB  | All Relevant | Problem<sup>1</sup> |
-| REF  | X years | Referral<sup>2</sup> |
+| REF  | All Relevant | Referral |
 | SUM  | - | Summary |
 
 <sup>1</sup> An explicit time frame is not allowed to be specified as the system SHALL return 'All Relevant' resources.
