@@ -138,9 +138,20 @@ Consumer Systems SHALL display the date range applied to a section's data, as su
 
 ```html
 <div>
-	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  or 'All Data Items'
+	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  
+
 </div>
 ```
+
+#### Default Date Ranges ####
+
+Where the Consumer System has not supplied a date-range, then where applicable and while the default is for ALL items to be provided, the following message SHALL be supplied by the Provider and displayed by the Consumer System beneath the Section Header
+
+```html
+<div>
+	<p>All relevant items subject to Patient preferences and/or legal exclusions</p>
+</div>
+``` 
 
 #### Section Content Message ####
 
