@@ -22,7 +22,7 @@ Contains three sections:
 
 ### Section Banner Content Message ###
 
-Providers message describing at a summary level how they have populated this section, to include the following:
+Providers message describing at a summary level how they have populated this section, and also the warning message where medications prescribed elsewhere have been excluded:  "Medications prescribed elsewhere have been excluded"
 
 | Provider | Message |
 | ------------ | ------------ |-
