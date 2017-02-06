@@ -129,6 +129,16 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 	<p>'[section]' data is not supported by this system.</p>
 </div>
 ```
+### Consumer-Supplied Date Ranges ###
+
+For these, the Provider SHALL supply all matching dates/times, eg the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
+
+
+### Record In Transit ###
+
+In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record SHALL be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, SHALL be provided and displayed.
+
+
 
 ### Section Banner ###
 
@@ -138,9 +148,20 @@ Consumer Systems SHALL display the date range applied to a section's data, as su
 
 ```html
 <div>
-	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  or 'All Data Items'
+	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  
+
 </div>
 ```
+
+#### Default Date Ranges ####
+
+Where the Consumer System has not supplied a date-range, then where applicable and while the default is for ALL items to be provided, the following message SHALL be supplied by the Provider and displayed by the Consumer System beneath the Section Header
+
+```html
+<div>
+	<p>All relevant items subject to Patient preferences and/or legal exclusions</p>
+</div>
+``` 
 
 #### Section Content Message ####
 
@@ -164,8 +185,8 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
 | OBS  | All Relevant | Observation |
 | PAT  | - | Patient |
-| PRB  | All Relevant | Problem<sup>1</sup> |
-| REF  | X years | Referral<sup>2</sup> |
+| PRB  | All Relevant | Problem|
+| REF  | All Relevant | Referral |
 | SUM  | - | Summary |
 
 <sup>1</sup> An explicit time frame is not allowed to be specified as the system SHALL return 'All Relevant' resources.

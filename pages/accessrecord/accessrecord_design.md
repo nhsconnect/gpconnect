@@ -24,13 +24,6 @@ What is the scope of what views we're aiming to deliver?
 
 <span class="label label-info">DECISION</span> Remove the structured clinical data from the bundle until [Stage 2.](designprinciples_maturity_model.html) engagement.
 
-### Record In Transit ###
-
-There is a risk that the GP record may be incomplete if the patient's record is undergoing a transfer.
-
-- <span class="label label-success">SELECTED</span> Provider to supply a warning that the record could be incomplete.
-- Other.
-
 ## HTML Sections ##
 
 ### Delivery Mechanism ###
@@ -134,6 +127,13 @@ These can be determined by two potential sets of exclusion settings:
 
 <span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld either due to patient preferences or as a result of the application of the Legal Exclusion set - to be displayed both within the Section Banner as well as at line item level.
 
+### Record 'In-transit' As A Result of GP Transfer ###
+
+If the patient's record is indicated in the Provider system as not fully-integrated following a GP to GP transfer, then only data which has been entered to the current GP record should be returned, and NOT the contents of the previous GP record.  Where data is excluded according to this, a warning should be included in the Section Banner indicating that some data has been excluded as a result of the transfer.    
+
+- <span class="label label-success">SELECTED</span> Provider to supply a warning that the record could be incomplete.
+- Other.
+
 #### SCR Consent Model ####
 
 {% include roadmap.html content="Could potentially be brought into scope for Stage 2 or 3." %}
@@ -167,7 +167,7 @@ Date range handling in the HTML view per section:
 
 - No date range, return all data always for all sections.
 - Fixed date ranges for sections.
-- <span class="label label-success">SELECTED</span> Default date ranges to match SCR time-frames per section (e.g. always return all allergies) with clinical sign off.
+- <span class="label label-success">SELECTED</span> Date Ranges to be applied as indicated in the relevant Section implementation guidance (e.g. always return all allergies) with clinical sign off.
 
 #### HTML Section Ordering ####
 

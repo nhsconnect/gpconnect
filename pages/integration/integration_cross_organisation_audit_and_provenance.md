@@ -33,7 +33,7 @@ Consumer system SHALL generate a new JWT for each API request.
 
 <sup>2</sup> Patient scope for patient centric APIs (i.e. Get Care Record and Patient's Appointments, Patient Task) or scope for organisation centric APIs (i.e. Get Organization Schedule)
 
-<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username).
+<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided
 
 Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
 
@@ -128,6 +128,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 
 {% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't commit to using the SMART on FHIR specification." %}
 
+Where the Practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied
 {% include todo.html content="Spine RBAC role support to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 ### Example Code ###

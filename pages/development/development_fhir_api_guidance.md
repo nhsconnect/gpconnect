@@ -55,7 +55,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 2. [Domain Resource](https://www.hl7.org/fhir/DSTU2/domainresource.html)
 	1. Common API
 		1. [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) profiled as gpconnect-patient-1.
-		2. [Patient](https://www.hl7.org/fhir/DSTU2/practitioner.html) profiled as gpconnect-practitioner-1.
+		2. [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) profiled as gpconnect-practitioner-1.
 		3. [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) profiled as gpconnect-organization-1.
 		4. [Location](https://www.hl7.org/fhir/DSTU2/location.html) profiled as gpconnect-location-1
 	2. Care Record API
