@@ -134,6 +134,12 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 For these, the Provider SHALL supply all matching dates/times, eg the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
 
 
+### Record In Transit ###
+
+In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record SHALL be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, SHALL be provided and displayed.
+
+
+
 ### Section Banner ###
 
 #### Applied Date Ranges ####
