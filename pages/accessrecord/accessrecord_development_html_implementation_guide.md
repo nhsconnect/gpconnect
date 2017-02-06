@@ -175,7 +175,7 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
 | OBS  | All Relevant | Observation |
 | PAT  | - | Patient |
-| PRB  | All Relevant | Problem<sup>1</sup> |
+| PRB  | All Relevant | Problem|
 | REF  | All Relevant | Referral |
 | SUM  | - | Summary |
 
