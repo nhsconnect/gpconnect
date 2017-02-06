@@ -22,7 +22,7 @@ Contains three sections:
 
 ### Section Banner Content Message ###
 
-Providers message describing at a summary level how they have populated this section, to include the following:
+Providers message describing at a summary level how they have populated this section, and also the warning message where medications prescribed elsewhere have been excluded:  "Medications prescribed elsewhere have been excluded"
 
 | Provider | Message |
 | ------------ | ------------ |-
@@ -53,7 +53,7 @@ A list of all current acute and repeat medications issued to a patient ordered b
 
 ### Date Horizon ###
 
-All relevant records SHALL be returned with-in Consumer supplied date range.
+All relevant records SHALL be returned.
 
 ### Table Construction ###
 
@@ -177,7 +177,9 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### Purpose ###
 
-A list of all past medications, issued to a patient ordered by date descending (i.e. most recent date/time first). The type will include Acute, or Repeat.  Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
+A list of all past medications, issued to a patient ordered by date descending (i.e. most recent date/time first). The type will include Acute, or Repeat. 
+
+Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
 
 ### Structured Data ###
 
