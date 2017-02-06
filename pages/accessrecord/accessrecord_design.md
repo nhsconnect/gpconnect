@@ -26,9 +26,9 @@ What is the scope of what views we're aiming to deliver?
 
 ### Record In Transit ###
 
-There is a risk that the GP record may be incomplete if the patient's record is undergoing a transfer.
+In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record SHALL be provided.  A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer.
 
-- <span class="label label-success">SELECTED</span> Provider to supply a warning that the record could be incomplete.
+- <span class="label label-success">SELECTED</span> Provider to supply appropriate warning message as to no data or incomplete data due to transfer
 - Other.
 
 ## HTML Sections ##
