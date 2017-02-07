@@ -129,6 +129,7 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 	<p>'[section]' data is not supported by this system.</p>
 </div>
 ```
+
 ### Consumer-Supplied Date Ranges ###
 
 For these, the Provider SHALL supply all matching dates/times, eg the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
