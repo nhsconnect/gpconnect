@@ -187,7 +187,7 @@ Where the medication was cancelled (Acute) or Discontinued (Repeat), this should
 
 ### Date Horizon ###
 
-All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
+All relevant records SHALL be returned according to consumer-supplied date range.
 
 ### Section Banner Content Message ###
 

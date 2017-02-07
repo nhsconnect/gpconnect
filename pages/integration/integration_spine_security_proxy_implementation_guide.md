@@ -76,7 +76,7 @@ Servicing a consumer system’s request for a FHIR endpoint located on a provide
 | 3.   | Lookup what capabilities exist at that organisation to support access to the record. | | SDS or FHIR ELS | 3a) The consumer system SHALL resolve the endpoint of the provider system using an organisational identifier (i.e. ODS code) against SDS. <br/><br/>OR (when available^) 3b) The proxy system SHALL resolve the endpoint of the provider system using a consumer system supplied identifier (i.e. patient NHS number). <br/><br/>OR (when available^) The consumer system SHALL resolve the endpoint of the provider system using a FHIR ELS RESTful query. |
 | 4.   | Consumer requests the record. | SSP | The consumer system SHALL build a request URL using the proxy endpoint and either the endpoint of the provider <br/><br/>OR (when available^) the NHS number of the patient<sup>2</sup>. <br/><br/>The consumer system SHALL issue the request to the proxy system over a secure channel. |
 | 5.   | Lookup the patient’s sharing preferences. | PPR | Out of scope for GP Connect FoT. |
-| 6.   | Lookup organisational data sharing. | DSAR |  |
+| 6.   | Lookup organisational data sharing. | DSAR | Interim solution as part of SSP.  Strategic solution out of scope for GP Connect FoT. |
 | 7.   | Proxy retrieves the record (throttling as required^) and returns to the consumer system. | SSP | The proxy system SHALL forward on the consumer systems request and return the provider systems response over a secure channel. |
 
 <sup>^</sup> will be made available after the initial GP Connect FoT go-live.
