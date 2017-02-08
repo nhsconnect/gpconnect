@@ -24,6 +24,14 @@ Take the [Ripple](http://rippleosi.org/){:target="_blank"} open source record vi
 
 ![API Consumer talking to API Provider via the Spine Security Proxy](images/systems/API Consumer talking to API Provider via the Spine Security Proxy.png)
 
+## Source Code ##
+The GP Connect Consumer Demonstrator is a free open source software (FOSS) project.  
+
+- Download the source code from the
+[Demonstrator GitHub project repo](https://github.com/nhs-digital/gpconnect){:target="_blank"}
+
+- The project contains step by step instructions to set up a working instance on your own machine.
+
 ## Current Status ##
 
 We now have a functioning user interface that can drive interactions with the FHIR-based APIs to:
