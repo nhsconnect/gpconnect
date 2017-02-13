@@ -108,7 +108,7 @@ These can be determined by two potential sets of exclusion settings:
 ### Sensitive Data Exclusion Set ###
 
 <span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Sensitive Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
-<br>[Legally Restricted Patient Data](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/9/subpack/97/releases;jsessionid=AB048FD7361740B3D3EB628337C188D5)
+<br>[GP Summary Exclusion Code Lists](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/1/subpack/141/releases)
 
 {% include note.html content="You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link" %}
 
