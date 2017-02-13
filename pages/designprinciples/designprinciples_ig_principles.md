@@ -22,7 +22,7 @@ Review and agreement as to the IG model for additional and beyond FoT clinical s
 
 - FoT Early Adopter deployments will represent organisation groupings where the necessary data sharing agreements between data controllers, augmented by Data Controller-Data Processor contracts, IG process and policy and fair usage notifications are already in place eg existing federation or shared record groups
 
-- Data-sharing validation will be implemented by the Spine Security Proxy (SSP);  local data-sharing configuration will not be applied and must not be changed to enable GP Connect interactions
+- Organisational Data-sharing validation will be implemented by the Spine Security Proxy (SSP);  local data-sharing configuration will not be applied and must not be changed to enable GP Connect interactions
  
 - FoT Early Adopter Consuming Organisations are  N3, IGSoC and IG Toolkit compliant, and meet national requirements for:
   - Technical (Endpoint) Security
