@@ -31,7 +31,7 @@ Review and agreement as to the IG model for additional and beyond FoT clinical s
 
 - Consuming Organisations must deploy Permission to View processes based on the Summary Care Record (SCR) guidelines and these must be implemented and audited by the consuming system as per the detailed GP Connect Consumer IG requirements; in scenarios where the patient is not present, for example a referral to an outpatient clinic where it would be reasonable to review the GP record prior to the appoint, access to the record can be made based on a Legitimate Relationship with the patient, subject to Data-Sharing agreement and Provider System Patient Consent.
 
-- Functionality to support the application of an exclusion set must be provided;  the current RCGP Legal Exclusion set for specific conditions e.g. sexual health, HIV etc. will be applied for FoT, with expected changes arising from the current national review and expected in February 2017 to be reflected 
+- Functionality to support the application of an exclusion set must be provided;  the current RCGP Sensitive Dataset for specific conditions e.g. sexual health, HIV etc. will be applied (ie excluded) for FoT, with expected changes arising from the current national review and expected in February 2017 to be reflected 
 
 - Any data marked as private/sealed/locked within the GP Patient record must not be shared outside the practice;   override/break seal capabilities will not be developed within the APIs for FoT
 
