@@ -105,9 +105,9 @@ These can be determined by two potential sets of exclusion settings:
 
 <sup>2</sup> Automatic or inferred exclusions are not supported as this would be technically impractical (i.e. it's not possible to filter out all free-text and other fields which could potentially contain data which should ideally be excluded).
 
-### Legal Exclusion Sets ###
+### Sensitive Data Exclusion Set ###
 
-<span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Legal Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
+<span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Sensitive Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
 <br>[Legally Restricted Patient Data](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/9/subpack/97/releases;jsessionid=AB048FD7361740B3D3EB628337C188D5)
 
 {% include note.html content="You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link" %}
