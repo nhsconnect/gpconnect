@@ -118,14 +118,14 @@ These can be determined by two potential sets of exclusion settings:
 - Data-Sharing Agreement must be in place between the consuming organisation and the providing organisation
 - The Spine Security Proxy validates this requirement, therefore Provider Systems SHALL NOT apply or change locally-configured Data-Sharing validation
 
-#### Exclusion Warnings ####
+### Exclusion Warnings ###
 
 - No indication that data has been excluded.
 - <span class="label label-success">SELECTED</span> Warning indication per section that data has been excluded (within the time frame).
 - <span class="label label-success">SELECTED</span> In line with some information related to the data item.
 	- i.e. encounter date/time but not the place or encounter details.
 
-<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld either due to patient preferences or as a result of the application of the Legal Exclusion set - to be displayed both within the Section Banner as well as at line item level.
+<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld either due to patient preferences or as a result of the application of the Sensitive Exclusion set - to be displayed both within the Section Banner as well as at line item level.
 
 ### Record 'In-transit' As A Result of GP Transfer ###
 
