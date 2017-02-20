@@ -11,9 +11,11 @@ summary: "Allergies HTML View."
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
-| ALL | Allergies and Adverse Reactions| Yes | Yes | Yes<sup>1</sup> | Yes |
+| ALL | Allergies and Adverse Reactions| Yes | Yes<sup>1</sup> | Yes<sup>2</sup> | Yes |
 
-<sup>1</sup> INPS have indicated they don't record end dates for allergies & sensitivities. Hence, no History view is possible.
+<sup>1</sup> EMIS have indicated that they are including all allergies & sensitivities in the 'Current Allergies .....' section.
+
+<sup>2</sup> INPS have indicated they don't record end dates for allergies & sensitivities. Hence, no History view is possible.
 
 Contains two sections:
 
@@ -25,7 +27,7 @@ Contains two sections:
 
 | Provider | Message |
 | ------------ | ------------ |-
-| EMIS|  |
+| EMIS|  Display "All Allergies listed in Current section"  |
 | TPP|  |
 | INPS| Display "All Allergies listed in Current section" |
 |Microtest|  |
