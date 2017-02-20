@@ -33,7 +33,7 @@ Review and agreement as to the IG model for additional and beyond FoT clinical s
 
 - Functionality to support the application of an exclusion set must be provided;  the current RCGP Sensitive Dataset for specific conditions e.g. sexual health, HIV etc. will be applied (ie excluded) for FoT, with expected changes arising from the current national review and expected in February 2017 to be reflected 
 
-- Any data marked as private/sealed/locked within the GP Patient record must not be shared outside the practice;   override/break seal capabilities will not be developed within the APIs for FoT
+- Any data marked as private/sealed/locked/practice-designated confidential within the GP Patient record must not be shared outside the practice;   override/break seal capabilities will not be developed within the APIs for FoT
 
 - The HTML view will provide appropriate indication of withheld data 
 
