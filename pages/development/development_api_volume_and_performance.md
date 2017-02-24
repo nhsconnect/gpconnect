@@ -9,7 +9,13 @@ summary: "Details of the API volume and performance characteristics."
 
 ## Volumetrics ##
 
-{% include todo.html content="Coming Soon..." %}
+{% include important.html content="The fundamental principle of the approach is to flex the parameters and model as we develop, deploy and understand how the NHS are using the service, therefore learnings from the First of Type and Fast Followers are key. We have based usage on population covered by each deployment and some real-world figures around percentage of population in contact with the NHS on a daily basis and then some parameters around how many record reads per encounter. This is all parameter driven so we can adjust the model as we deploy and start to gather actual usage information." %}
+
+{% include download.html content="Draft GP Connect API [Volumetric Model](downloads/testing/HSCIC.GPSOC.GPCONNECT.API.CallUsageModelTotals.xlsx) sent to principle suppliers on the 2nd September 2016." %}
+
+Provider systems SHALL NOT use this volumetric model as a 'gold standard' but MAY use it as the basis of developing their own volumetric models.
+
+Provider systems SHALL through V&P profiling and solution assurance activities demonstrate how the system can scale as demand increases.
 
 ## Performance ##
 
@@ -48,8 +54,8 @@ Suppliers of provider solutions are expected to scale their infrastructure solut
 
 A plan outlining the points at which infrastructure will be scaled up should be provided after V&P testing is performed.
 
- 
 ### V&P Test Environment ###
+
 Test environments SHALL simulate consumer applications making API calls against simulated test data (patient records, diaries, tasks etc) 
  
 Test data SHALL be populated with realistic complexity, depth and volume, i.e. in the case of patients the data should be representative of clinical records of a mix of healthy patients and patients with multiple long term conditions.  
@@ -57,7 +63,8 @@ Test data SHALL be populated with realistic complexity, depth and volume, i.e. i
 If a small set of test data is repeatedly used as part of the V&P tests then test setup SHOULD seek to minimise the effects of caching e.g. within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).  
  
 ### Volumetric Model ###
-Suppliers SHOULD test API call volumes against the provided Volumetric Model (linked spreadsheet).  For phases after the initial tranche(s) of First of Type deployments, it is anticipated that a standard GP Connect automated test harness will be made available to test the provider APIs according to the volumetric model*.
+
+Suppliers SHOULD test API call volumes against a refined Volumetric Model<sup>1</sup>.
  
 During the LOAD test, the timings for end to end API calls SHALL NOT exceed the maximum stated (250ms for command APIs, 3000ms for query APIs) and SHOULD NOT exceed the lower limits (100ms and 1000ms respectively).
  
@@ -65,8 +72,7 @@ Results for the RAMP test SHALL include the tps and message size profile at the 
  
 If a SOAK test is performed, results SHALL be provided.  
  
-*note the test profile differs according to the supplier, based on the proportion of patient population whose GP records are held with that supplier.  It would not be fair to test a large supplier's system against a usage profile based on the population of a small supplier.
-
+<sup>1</sup>Note, V&P test profiles will differ according to the supplier based on the proportion of patient population whose GP records are held with that supplier.
 
 ## External Documents / Policy Documents ##
 
