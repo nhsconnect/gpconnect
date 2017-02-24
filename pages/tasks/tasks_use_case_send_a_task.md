@@ -155,7 +155,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful receipt and storage of a new task (i.e. Order).
+- SHALL return a `201` **Created** HTTP status code on successful receipt and storage of a new task (i.e. Order).
 - SHALL return as the response payload body in-line with the guidance provider in the [Development - FHIR API Guidance - Common API Guidance - Create Resource](development_fhir_api_guidance.html) section.
 - SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
 - SHALL include the `versionId` of the current version of each `Order` resource.
