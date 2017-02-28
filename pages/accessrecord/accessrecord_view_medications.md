@@ -148,7 +148,7 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 <div>
 	<h2>Current Repeat Medications</h2>
 	<table>
-		<tbody>
+		<thead>
 			<tr>
 				<th>Last Issued</th>
 				<th>Medication Item</th>
@@ -158,6 +158,8 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 				<th>Max Issues</th>
 				<th>Details</th>
 			</tr>
+		</thead>
+		<tbody>
 			<tr ng-repeat="item in items">
 				<td>{{item.lastIssued}}</td>
 				<td>{{item.drug}}</td>
@@ -232,7 +234,7 @@ Providers message describing at a summary level how they have populated this sec
 <div>
 	<h2>Past Medications</h2>
 	<table>
-		<tbody>
+		<thead>
 			<tr>
 				<th>Start Date</th>
 				<th>Medication Item</th>
@@ -243,6 +245,8 @@ Providers message describing at a summary level how they have populated this sec
 				<th>Max Issues</th>
 				<th>Details</th>
 			</tr>
+		</thead>
+		<tbody>
 			<tr ng-repeat="item in items">
 				<td>{{item.start}}</td>
 				<td>{{item.drug}}</td>

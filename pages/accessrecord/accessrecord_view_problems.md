@@ -69,13 +69,15 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 <div>
 	<h2>Active Problems and Issues</h2>
 	<table>
-		<tbody>
+		<thead>
 			<tr>
 				<th>Start Date</th>
 				<th>Entry</th>
 				<th>Significance</th>
 				<th>Details</th>
 			</tr>
+		</thead>
+		<tbody>
 			<tr ng-repeat="item in items">
 				<td>{{item.start}}</td>
 				<td>{{item.entry}}</td>
