@@ -7,7 +7,7 @@ permalink: accessrecord_release_notes.html
 summary: "Release notes for the various versions of the Access Record capability."
 ---
 
-#### 1.0.0-rc.3 (Released: 20th February)
+#### 1.0.0-rc.4 (Released: 20th February)
 
 - Updated [Access Record Design Decisions](accessrecord_design.html)
   - Wording uplifted to include GP-Practice designated Confidential Items 
