@@ -105,6 +105,13 @@ These can be determined by two potential sets of exclusion settings:
 
 <sup>2</sup> Automatic or inferred exclusions are not supported as this would be technically impractical (i.e. it's not possible to filter out all free-text and other fields which could potentially contain data which should ideally be excluded).
 
+### 'Confidential' (GP Practice-designated) Data Exclusions ###
+
+<span class="label label-info">DECISION</span> Provider system SHALL enforce exclusion rules, either for the complete patient record, or sections/data-items.
+
+Items designated by the Practice as confidential SHALL not be provided, and processed in the same way as Patient Data Exclusions.
+
+
 ### Sensitive Data Exclusion Set ###
 
 <span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Sensitive Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
@@ -125,7 +132,7 @@ These can be determined by two potential sets of exclusion settings:
 - <span class="label label-success">SELECTED</span> In line with some information related to the data item.
 	- i.e. encounter date/time but not the place or encounter details.
 
-<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld either due to patient preferences or as a result of the application of the Sensitive Exclusion set - to be displayed both within the Section Banner as well as at line item level.
+<span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld due to patient preferences, gp-practice designation of 'Confidential' or as a result of the application of the Sensitive Exclusion set - to be displayed both within the Section Banner as well as at line item level.
 
 ### Record 'In-transit' As A Result of GP Transfer ###
 
