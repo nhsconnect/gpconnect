@@ -26,15 +26,20 @@ Consumer system SHALL generate a new JWT for each API request.
 | requested_record | R | The FHIR patient resource being requested (i.e. NHS Number identifier details) | No | FHIR Patient<sup>1</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
 | requested_scope | R | Data being requested<sup>2</sup> | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
 | requesting_device | R | FHIR device resource making the request | No | FHIR Device<sup>1</sup> |
-| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1</sup> | 
+| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
 | requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>1+3</sup> |
 
 <sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s).
 
 <sup>2</sup> Patient scope for patient centric APIs (i.e. Get Care Record and Patient's Appointments, Patient Task) or scope for organisation centric APIs (i.e. Get Organization Schedule)
 
-<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided
+<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field.
 
+<sup>4</sup> The requesting organisation resource SHALL refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
+
+{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
+
+#### JWT Generation ####
 Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
 
 - Header
