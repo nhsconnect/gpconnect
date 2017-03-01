@@ -7,6 +7,17 @@ permalink: accessrecord_release_notes.html
 summary: "Release notes for the various versions of the Access Record capability."
 ---
 
+#### 1.0.0-rc.4 (Released: 20th February)
+
+- Updated [Access Record Design Decisions](accessrecord_design.html)
+  - Wording uplifted to include GP-Practice designated Confidential Items 
+  
+-  Updated [Design_Principles](designprinciples_ig_principles.html)
+-Wording uplifted to include Confidential Items Exclusion
+    
+- Updated [Allergies](accessrecord_view_allergies.html)
+-Wording uplifted to reflect EMIS not providing Historical Allergies
+
 #### 1.0.0-rc.3 (Released: 6th February)
 
 - Updated [Access Record HTML Implementation Guide](accessrecord_development_html_implementation_guide.html)  
