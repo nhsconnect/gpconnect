@@ -185,13 +185,14 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | INV  | All | DiagnosticOrder<sup>2</sup> |
 | MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
 | OBS  | All Relevant | Observation |
-| PAT  | - | Patient |
+| PAT  | - | Patient<sup>3</sup> |
 | PRB  | All Relevant | Problem|
 | REF  | All Relevant | Referral |
-| SUM  | - | Summary |
+| SUM  | - | Summary<sup>3</sup> |
 
 <sup>1</sup> An explicit time frame is not allowed to be specified as the system SHALL return 'All Relevant' resources.
 <sup>2</sup> Section to be considered as part of Stage 2.
+<sup>3</sup> An explicit time frame is not allowed as these are set piece views, the system SHALL return 'All Relevant' resources.
 
 Provider systems SHALL return a HTTP *Bad Request* `400` error response if a date range is specified for a section that is defined as returning 'All Relevant' resources.
 
