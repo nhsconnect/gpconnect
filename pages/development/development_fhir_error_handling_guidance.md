@@ -150,7 +150,7 @@ For example sending/creating a new Task using the RESTful API fails as an invali
 
 ### Unexpected Internal Server Errors ###
 
-{% include tip.html content="When the error is unexpected and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details." %}
+When the error is unexpected and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
@@ -158,7 +158,7 @@ For example sending/creating a new Task using the RESTful API fails as an invali
 
 #### Example 5. Unexpected Exception #####
 
-For example an unexpected internal exception is thrown by either an Operation or RESTful API, then the following details would be returned:
+For example an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
 
 ```json
  {
@@ -173,6 +173,38 @@ For example an unexpected internal exception is thrown by either an Operation or
 			"coding": [{
 				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
 				"code": "INTERNAL_SERVER_ERROR"
+			}]
+		},
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+### Malformed Request ###
+
+When the server cannot or will not process a request due to an apparent client error (e.g., malformed request syntax, too large size etc.) then the following `BAD_REQUEST` error SHALL be used to return debug details.
+
+| HTTP Code | Error Code | Description |
+| --------- | ---------- | ----------- |
+| `400`     | BAD_REQUEST | Submitted request is malformed / invalid. |
+
+#### Example 6. Malformed Request Syntax #####
+
+For example if the request could not be understood by the server due to malformed syntax, then the following error details would be returned:
+
+```json
+ {
+	"resourceType": "OperationOutcome",
+	"meta": {
+		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"]
+	},
+	"issue": [{
+		"severity": "error",
+		"code": "invalid",
+		"details": {
+			"coding": [{
+				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"code": "BAD_REQUEST"
 			}]
 		},
 		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
