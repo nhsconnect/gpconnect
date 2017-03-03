@@ -158,10 +158,10 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `403` Forbidden
 - Rejection of consumer requests that trigger throttling limits put in place to protect downstream provider systems from DoS attacks.^
 - Validation of additional HTTP headers for the purposes of security/auditing and debugging/profiling.
-	- `Ssp-TraceID`: `GUID/UUID` which identifies the sender's message/interaction (to be generated per request).
-	- `Ssp-From`: Sender of the message/request as an `ASID`.
-	- `Ssp-To`: Recipient of the message/request as an `ASID`.
-	- `Ssp-InteractionID`: The message type or `interactionID` of the message.
+	- `SSP-TraceID`: `GUID/UUID` which identifies the sender's message/interaction (to be generated per request).
+	- `SSP-From`: Sender of the message/request as an `ASID`.
+	- `SSP-To`: Recipient of the message/request as an `ASID`.
+	- `SSP-InteractionID`: The message type or `interactionID` of the message.
 - Decoration of additional HTTP headers into the response for notifying consumer systems of throttling limits in-line with industry best practise.^
 	- `X-Rate-Limit-Limit`:  The number of allowed requests in the current period.
 	- `X-Rate-Limit-Remaining`: The number of remaining requests in the current period.
