@@ -313,9 +313,30 @@ Servers SHALL support both formal MIME-types for FHIR resources:
 
 Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
+Servers SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client application.
+
+### [Wire Format Representations](https://www.hl7.org/fhir/DSTU2/formats.html#wire) ###
+
+Servers SHALL support two wire formats as ways to represent resources when they are exchanged:
+
+- [XML](https://www.hl7.org/fhir/DSTU2/xml.html)
+- [JSON](https://www.hl7.org/fhir/DSTU2/json.html)
+
+{% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
+
+Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html#1.10.3) and declare this by setting [Conformance.acceptUnknown](https://www.hl7.org/fhir/DSTU2/conformance-definitions.html#Conformance.acceptUnknown) to 'both' in their conformance profile.
+
+Systems SHALL declare which format(s) they support in their Conformance Statement. If a server receives a request for a format that it does not support it SHALL return a http status code of `415` indicating an `Unsupported Media Type`.
+
 ### [Transfer Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
 Clients and servers SHALL support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
+
+### [Character Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
+
+Clients and servers SHALL support the `UTF-8` character encoding as outlined in the FHIR standard.
+
+> FHIR uses `UTF-8` for all request and response bodies. Since the HTTP specification (section 3.7.1) defines a default character encoding of `ISO-8859-1`, requests and responses SHALL explicitly set the character encoding to `UTF-8` using the `charset` parameter of the MIME-type in the `Content-Type` header. Requests MAY also specify this charset parameter in the `Accept` header and/or use the `Accept-Charset` header.
 
 ### Content Compression ###
 
@@ -324,6 +345,10 @@ To improve system performances clients/servers SHALL support GZIP compression.
 Compression is requested by setting the `Accept-Encoding` header to `gzip`.
 
 {% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %} 
+
+### [Inter-version Compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html) ###
+
+Unrecognized search criteria SHALL always be ignored. As search criteria supported in a query are echoed back as part of the search response there is no risk in ignoring unexpected search criteria.
 
 ### HTTP Headers ###
 
@@ -498,6 +523,7 @@ Servers SHALL produce the following main [HTTP Status Codes](http://www.iana.org
 | `409` | Conflict |
 | `410` | Gone |
 | `412` | Precondition Failed |
+| `415` | Unsupported Media Type |
 | `422` | Unprocessable Entity |
 | `500` | Internal Server Error |
 
