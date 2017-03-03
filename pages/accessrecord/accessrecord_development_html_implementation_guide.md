@@ -79,6 +79,27 @@ Consumer systems SHALL compare the returned structured patient demographic data 
 
 If differences exist then the consumer system SHALL show an alert/warning and provide details of which fields/values are different between the two systems.
 
+The following data SHALL be cross checked between consumer and returned provider data.  Any differences between these fields SHALL be brought to the attention of the user.   
+
+| Item | Resource Field |
+| ---- | -------------- | 
+| Family Name | patient.name.family |
+| Given Name | patient.name.given |
+| Gender | patient.gender |
+| Birth Date | patient.birthDate |
+| GP Practice Code | patient.managingOrganization | 
+
+<sup>1</sup>May be redacted if patient is flagged on Spine as Sensitive demographics.
+
+Additionally the following data MAY be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
+
+* Address and Postcode
+* Contact (telephone, mobile, email)
+* Responsible GP Code and Name
+* GP Practice Name and Address
+
+All above may be redacted if patient is flagged on Spine as Sensitive demographics.
+
 ## Section Retrieval ##
 
 ### Error Handling ###
