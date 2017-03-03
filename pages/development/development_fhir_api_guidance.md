@@ -422,6 +422,26 @@ FHIR defines an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) re
 
 ## FHIR Resources ##
 
+### [Resource Data Types](https://www.hl7.org/fhir/DSTU2/datatypes.html) ###
+
+The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/DSTU2/datatypes.html) that are used for the resource elements.
+
+The user locale (i.e. user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems SHALL NOT effect the FHIR on the wire representation of any data types (especially date-time and number formats).
+
+Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) respresentation warrant further consideration and SHALL be taken into consideration when designing and constructing FHIR resources.
+
+For example:
+
+- Leading 0 digits are not allowed.
+- Strings SHALL NOT exceed 1MB in size.
+- URIs are case sensitive.
+- UUID values (urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7) use all lowercase.
+- Dates have no time zone.
+- Dates can be partial dates (e.g. just year or year + month).
+- Precision of the decimal value has signficance.
+- Primitive types other than string SHALL NOT have leading or trailing whitespace.
+- [Use of null](https://www.hl7.org/fhir/DSTU2/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/DSTU2/datatypes.html#1.19.0.1.1)
+
 ### [Resource Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) ###
 
 The FHIR resource narrative is not currently expected to be populated. 
