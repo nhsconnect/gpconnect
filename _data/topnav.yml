@@ -23,8 +23,10 @@ topnav_dropdowns:
       folderitems:
         - title: Foundations
           url: foundations.html
-        - title: Access Record
+        - title: Access Record HTML
           url: accessrecord.html
+        - title: Access Record REST
+          url: accessrecord_rest.html
         - title: Appointment Management
           url: appointments.html
         - title: Task Management
