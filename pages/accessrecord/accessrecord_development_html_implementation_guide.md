@@ -17,6 +17,12 @@ This document is intended for use by software developers looking to build a conf
 
 The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
+## Real Time View ##
+{% include important.html content="The record returned from the Provider system is near real time." %}
+
+* Local pending changes (i.e. within a consultation that is actively ongoing) may not be available.
+* The record is machine generated and therefore is not owned or attested by any single clinician.
+
 ## Common User Interface Guidance ##
 
 {% include todo.html content="Dec 2016:  The following links need to be reinstated following updates to the NHS Digital Extranet.  Please access the guidance [here](http://webarchive.nationalarchives.gov.uk/+/http://www.isb.nhs.uk/use/baselines/cui) as a temporary measure  ." %}
