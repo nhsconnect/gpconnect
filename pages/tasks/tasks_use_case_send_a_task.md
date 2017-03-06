@@ -73,6 +73,7 @@ The following data-elements are mandatory (i.e data MUST be present).
 - the `target` organisation of the recipient.
 - the free-text `detail`<sup>1</sup> of what action is being ordered.
 - the `taskType` identifying if this task requires a follow-up action.
+- the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the submitted resources.
 
 <sup>1</sup> The free-text detail of what is being ordered will be encoded as a FHIR [Basic](https://www.hl7.org/fhir/DSTU2/basic.html) resource using a [Contained Reference](https://www.hl7.org/fhir/DSTU2/references.html#contained). Hence, the `detail` [Reference](https://www.hl7.org/fhir/DSTU2/references.html) is expected to be a pointer to the contained resource.
 
@@ -85,20 +86,26 @@ For example, on the wire serialised as JSON this looks like the following:
 ```json
 {
 	"resourceType": "Order",
+	"meta":{
+		"profile":["http://fhir.nhs.net/StructureDefinition/gpconnect-task-order-1"]
+	},
 	"contained": [{
 		"resourceType": "Basic",
 		"id": "ad6a2e86-37a8-43c9-b0ae-f2adcff4de3a",
+		"meta":{
+			"profile":["http://fhir.nhs.net/StructureDefinition/gpconnect-task-description-basic-1"]
+		},
 		"text": {
 			"div": "<div>Please review the patient's medications at the next available opportunity.</div>"
 		},
 		"code": {
 			"coding": [{
-				"system": "http://hl7.org/fhir/basic-resource-type",
-				"code": "OrderDetails"
+				"system": "http://fhir.nhs.net/ValueSet/gpconnect-task-narrative-1",
+				"code": "Task Narrative"
 			}]
 		}
 	}],
-	"date": "23/07/2016",
+	"date": "2014-12-11",
 	"subject": {
 		"reference": "Patient/1",
 		"display": "Mrs Jane Johnson"
@@ -113,7 +120,7 @@ For example, on the wire serialised as JSON this looks like the following:
 	},
 	"reasonCodeableConcept": {
 		"coding": [{
-			"system": "http://fhir.nhs.net/ValueSet/gpconnect-reason-type-1",
+			"system": "http://fhir.nhs.net/ValueSet/gpconnect-task-type-1",
 			"code": "1"
 		}],
 		"text": "For your information"
@@ -138,6 +145,7 @@ The Provider system SHALL return an error if:
 - the `date` is not today's date (i.e. is in the past).
 - the `target` GP organisation has no existing direct care relationship with the patient.
 - the `record` is invalild (i.e. isn't from the correct value set).
+- the relevant GP Connect `StructureDefinition` profile details are not included in the `meta` fields of the submitted resources.
 
 Servers are permitted to reject creating a task (i.e. `Order`) because of integrity concerns or other business rules, and return HTTP status codes accordingly (usually a `422` **Unprocessable Entity**).
 
@@ -167,22 +175,26 @@ Provider systems:
 	"id": "2",
 	"meta": {
 		"versionId": "636062814622034751",
-		"lastUpdated": "2016-07-08T20:31:02.625+01:00"
+		"lastUpdated": "2016-07-08T20:31:02.625+01:00",
+		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-task-order-1"]
 	},
 	"contained": [{
 		"resourceType": "Basic",
 		"id": "fa5db35a-af22-4d7c-aa59-74bc696d38e8",
+		"meta":{
+			"profile":["http://fhir.nhs.net/StructureDefinition/gpconnect-task-description-basic-1"]
+		},
 		"text": {
 			"div": "<div>Please review the patient's medications at the next available opportunity.</div>"
 		},
 		"code": {
 			"coding": [{
-				"system": "http://hl7.org/fhir/basic-resource-type",
-				"code": "OrderDetails"
+				"system": "http://fhir.nhs.net/ValueSet/gpconnect-task-narrative-1",
+				"code": "Task Narrative"
 			}]
 		}
 	}],
-	"date": "8/08/2016",
+	"date": "2014-12-11",
 	"subject": {
 		"reference": "http://gpconnect.fhir.nhs.net/fhir/Patient/1"
 	},
@@ -194,7 +206,7 @@ Provider systems:
 	},
 	"reasonCodeableConcept": {
 		"coding": [{
-			"system": "http://fhir.nhs.net/ValueSet/gpconnect-reason-type-1",
+			"system": "http://fhir.nhs.net/ValueSet/gpconnect-task-type-1",
 			"code": "1"
 		}],
 		"text": "For your information"
@@ -217,14 +229,20 @@ client.PreferredFormat = ResourceFormat.Json;
 var orderDetails = new Basic
 {
 	Id = Guid.NewGuid().ToString(),
+	Meta = new Meta {
+		Profile = new []{"http://fhir.nhs.net/StructureDefinition/gpconnect-task-description-basic-1"}
+	},
 	Text = new Narrative {
 		Div = "<div>Please review the patient's medications at the next available opportunity.</div>"
 	},
-	Code = new CodeableConcept("http://hl7.org/fhir/basic-resource-type","OrderDetails")
+	Code = new CodeableConcept("http://fhir.nhs.net/ValueSet/gpconnect-task-narrative-1","Task Narrative")
 };
 var order = new Order
 {
-	Date = DateTime.Now.Date.ToShortDateString(),
+	Meta = new Meta {
+		Profile = new []{"http://fhir.nhs.net/StructureDefinition/gpconnect-task-order-1"}
+	},
+	Date = DateTime.Now.Date.ToString("yyyy-MM-dd"),
 	Subject = new ResourceReference {
 		Display = "Mrs Jane Johnson",
 		Reference = ResourceType.Patient + "/1"
@@ -240,7 +258,7 @@ var order = new Order
 	Contained = new List<Resource>() {
 		orderDetails,
 	},
-	Reason = new CodeableConcept(null,null,"Reason for the appointment."),
+	Reason = new CodeableConcept("http://fhir.nhs.net/ValueSet/gpconnect-task-type-1","1","Information Only"),
 	Detail = new List<ResourceReference> {
 		new ResourceReference {
 		 Reference = "#" + orderDetails.Id,
