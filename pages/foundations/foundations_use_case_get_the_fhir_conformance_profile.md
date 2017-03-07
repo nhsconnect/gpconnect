@@ -53,6 +53,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrival of the conformance profile.
+- SHALL ensure that the FHIR version number returned by the FHIR server endpoint conformance statement matches the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
 
 An example GP Connect Conformance profile of type `Kind` is shown below ready for customisation and embedding into GP Connect assured provider systems.
 
