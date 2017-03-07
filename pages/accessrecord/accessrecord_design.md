@@ -83,6 +83,14 @@ Potential grounds for not returning an HTML view:
 - PDS Status
 	- Corrupt Record etc.
 
+### Record Locking ###
+
+Behaviour when Access Record query/request received while patient record being updated in provider system:
+
+- <span class="label label-success">SELECTED</span> Return the requested record section, only including data that has been successfully committed to the database and is available to all users.  [As agreed in workshops]
+- Return error message in lieu of record section. 
+- Return snapshot of record as-is at the time of request including any non-committed changes.
+
 ### Patient Consent ###
 
 Patient Consent Preferences:

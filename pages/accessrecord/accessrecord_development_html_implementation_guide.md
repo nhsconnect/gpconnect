@@ -23,6 +23,16 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 * Local pending changes (i.e. within a consultation that is actively ongoing) may not be available.
 * The record is machine generated and therefore is not owned or attested by any single clinician.
 
+## Record Locking ##
+
+GP Connect queries/requests may be received while the patient's record is being updated.
+
+Record locking inside a provider system SHALL NOT impact the ability of the system to fulfil read/query requests of the patient's record.
+
+However, it is understood that there are differing approaches to record locking within the GP principal systems which affect when any local/pending changes are actually committed back to the patient's record.
+
+When a consumer system accesses a patient's record, the provider systems SHALL only return data that has been successfully committed back to the patient's record and thus has become available to all users (including users of the provider APIs).
+
 ## Common User Interface Guidance ##
 
 {% include todo.html content="Dec 2016:  The following links need to be reinstated following updates to the NHS Digital Extranet.  Please access the guidance [here](http://webarchive.nationalarchives.gov.uk/+/http://www.isb.nhs.uk/use/baselines/cui) as a temporary measure  ." %}
