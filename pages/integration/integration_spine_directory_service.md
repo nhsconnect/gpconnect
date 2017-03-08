@@ -14,18 +14,20 @@ GP Connect Consumer systems are expected to resolve the FHIR endpoint for a give
 
 {% include roadmap.html content="NHS Digital is considering the delivery of a simplified FHIR façade over the Spine Directory Service (SDS) to allow FHIR endpoint resolution to be achieved in a more streamlined (and FHIR compatible) way." %}
 
-Information is provided below to clarity how this endpoint lookup functions.
+Information is provided below to clarify how this endpoint lookup functions
 
-1. Consuming system lookup
+1. Consuming system viewpoint
 
-	From the perspective of a consuming system, an overview of the endpoint lookup process is given followedby a worked end-to-end 		example of a GPConnect request to retrieve the HTML View of a patient record.
+	From the perspective of a consuming system, an overview of the endpoint lookup process is given followed by a worked end-to-end example of a GPConnect request to retrieve the HTML View of a patient record.
 
-2. Provider system endpoint setup
+2. Provider system viewpoint
 
 	Guidance on how a provider system should set up endpoints in Spine Directory Services.
 
 
-### Consumer System Endpoint Lookup ###
+### Consuming System Viewpoint ###
+
+The consuming system will interact with SDS in order to resolve the FHIR Endpoint Base URL to be used when constructing the request to be made to the Spine Security Proxy. 
 
 This is a two step process, as follows:
 
@@ -41,7 +43,7 @@ Consuming systems SHALL NOT cache and re-use consuming system, endpoint informat
 
 #### Step 1: Accredited System ID (ASID) Lookup ####
 
-Using an organisation ODS code clients SHALL lookup the Accredited System ID (ASID) as follows:
+Using an organisation ODS code, clients SHALL lookup the Accredited System ID (ASID) as follows:
 
 - Accredited System type
 	- objectClass = `nhsAs`
@@ -60,7 +62,8 @@ The ASID will be returned in the uniqueIdentifier attribute which is returned fr
 
 Note that ldaps is used to establish a TLS session rather than the StartTLS option. Also note that once the TLS session is established, SASL authentication is not used by SDS and is therefore disabled through the -x option.
 
-Please refer to https://nhsconnect.github.io/gpconnect/development_fhir_operation_guidance.html for details of the GPConnect interactionId appropriate for your use case.
+Please refer to [FHIR operation guidance](development_fhir_operation_guidance.html) for details of the GPConnect interactionId appropriate for your use case.
+
 
 #### Step 2: Message Handling System (MHS) Lookup ####
 
@@ -84,7 +87,7 @@ The FHIR endpoint URL of the message handling system can then be extracted from 
 
 #### ldapsearch configuration ####
 
-SDS requires TLS Mutual Authentication. It is therefore necessary to configure ldapsearch with the certificates necessary to verify the authenticity of the SDS LDAP server, and also to enable SDS to verify the spine endpoint making the LDAP request:
+SDS requires TLS Mutual Authentication. It is therefore necessary to configure ldapsearch in the examples above with the certificates necessary to verify the authenticity of the SDS LDAP server, and also to enable SDS to verify the spine endpoint making the LDAP request:
 
 1. Root and SubCA spine development certificates available from Assurance Support
 2. Obtain a client certificate by submitting a certificate signing request for your development endpoint to Assurance Support
@@ -102,25 +105,25 @@ TLS_KEY C:\mydir\key.pem
 
 The location of the .ldaprc file can be defined using the LDAPRC environment variable.
 
-Please contact [Assurance Support service desk (sa.servicedesk@nhs.net)] for certificates and details of the ldap server for your environment.
+Please contact [Assurance Support service desk](mailto:sa.servicedesk@nhs.net) for certificates and details of the ldap server for your environment.
 
 ### Worked example of the endpoint lookup process ###
 
-*Given* 
+**Given**
 A consuming system which needs to get the HTML View of a patient record at the patient's registered practice. The consuming system has the following information about the patient:
 - NHS Number
 - A set of demographic details about the patient
 
-*When* 
-The consuming system interfacts with GP Connect
+**When**
+The consuming system interacts with GP Connect
 
-*Then* 
+**Then** 
 The following steps MUST be followed:
 
 
 #### Step 0. PDS Trace (pre-requisite step)
 
-The Consuming system is responsible for performing a PDS Trace to both verify the identity of the patient and retrieve the ODS code of the patient's registered primary care practice. See https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html
+The Consuming system is responsible for [performing a PDS Trace](integration_personal_demographic_service.html) to both verify the identity of the patient and retrieve the ODS code of the patient's registered primary care practice. 
 
 For this example, NHS Number 9000000084 with demographic details Mr Anthony Tester, 19 Ficticious Avenue, Testtown returns the ODS code T99999
 
@@ -129,132 +132,135 @@ For this example, NHS Number 9000000084 with demographic details Mr Anthony Test
 
 The ASID and Party Key is now looked up on SDS. The example below uses ldapsearch:
 
-```bash
-ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs" 
+	
+	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs" 
 	"(&(nhsIDCode=T99999) (objectClass=nhsAS)(nhsAsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord))" 
 	uniqueIdentifier nhsMhsPartyKey
-```
+	
 This query should return a single matching accredited system object from SDS, the ASID being found in the uniqueIdentifier attribute. In the case, ldapsearch returns the following results:
 
-```bash
-# 999999999999, Services, nhs
-dn: uniqueIdentifier=9999999999,ou=Services,o=nhs
-uniqueIdentifier: 999999999999
-nhsMhsPartyKey: T99999-9999999
 
-# search result
-search: 1
-result: 0 Success
-```
+	999999999999, Services, nhs
+	dn: uniqueIdentifier=9999999999,ou=Services,o=nhs
+	uniqueIdentifier: 999999999999
+	nhsMhsPartyKey: T99999-9999999
 
+	# search result
+	search: 1
+	result: 0 Success
 
+	
 #### Step 2: MHS lookup on SDS to determine FHIR base endpoint URL
 
 Using the Party Key retrieved from Step 1, and the same interaction ID, the following ldapsearch query is executed:
 
-```bash
-ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
+	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
 	"(&(nhsMhsPartyKey=T99999-9999999) (objectClass=nhsMhs) (nhsMhsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord))" 
 	nhsMhsEndPoint nhsMHSFQDN
-```
+	
 
 This query should again return a single endpoint. In this case, the ldapquery returns the following results:
 
-```bash
-# 472b35d4641b76454b13, Services, nhs
-dn: uniqueIdentifier=472b35d4641b76454b13,ou=Services,o=nhs
-nhsMhsEndPoint: https://pcs.thirdparty.nhs.uk/T99999/1.0.2/
-nhsMHSFQDN: Test14-A20076.EMIS.thirdparty.nhs.uk
+	# 472b35d4641b76454b13, Services, nhs
+	dn: uniqueIdentifier=472b35d4641b76454b13,ou=Services,o=nhs
+	nhsMhsEndPoint: https://pcs.thirdparty.nhs.uk/T99999/1.0.2/
+	nhsMHSFQDN: pcs.thirdparty.nhs.uk
 
-# search result
-search: 2
-result: 0 Success
-```
+	# search result
+	search: 2
+	result: 0 Success
+	
 
 
 #### Step 3: Consumer constructs full GP Connect request URL to be sent to the Spine Security Proxy
 
 The format of the full URL which the consuming sytem is responsible for constructing is as follows:
 
-`
-https://[URL of Spine Security Proxy]/[PCS FHIR Base URL]/[FHIR request]
-`
+`https://[URL of Spine Security Proxy]/[PCS FHIR Base URL]/[FHIR request]`
 
-The value returned in the nhsMhsEndPoint attribute in Step 2 should be treated as the FHIR base URL at the Principle Clinical System.
+The value returned in the nhsMhsEndPoint attribute in Step 2 should be treated as the FHIR Base URL at the Principle Clinical System.
 
 In this example, to issue a GetCareRecord request, the following request would be made:
 
-```bash
-POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/1.0.2/Patient/$gpc.getcarerecord
-```
+`POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/1.0.2/Patient/$gpc.getcarerecord`
 
 
-### Provider System Endpoint Setup ###
 
-The provider system is responsible for populating SDS with the necessary information to enable reliable endpoint lookup by consuming system.
+### Provider System Viewpoint ###
+
+The provider system is responsible for populating SDS with the necessary information to enable reliable endpoint lookup by consuming systems.
 
 In order to ensure that endpoint lookup is reliable, the following guidelines must be followed for First of Type implementations:
 
-1. Format of FHIR base URL
+**1. Format of FHIR Base URL**
 
-	The FHIR base URL for a given ASID MUST be defined in the nhsMhsEndPoint attribute of the MHS record (i.e. the ldap object of 		type nhsMhs). This URL MUST be in the following format:
+The *FHIR base URL* for a given ASID SHALL be defined in the nhsMhsEndPoint attribute of the MHS record (i.e. the ldap object of type nhsMhs). This URL SHALL be in the following format:
 
-	```bash
-	http://FQDN of endpoint/[ODS Code/routing identifer]/[FHIR version]/
-	```
+`http://FQDN of endpoint/[ODS Code/routing identifer]/[FHIR version]/`
 
-	The ordering of these three elements MUST be maintained for all instances. Note that following the FQDN of the endpoint, a 		routing identifier must be present to ensure that the FHIR request can be routed to the relevant practice data store.
+The ordering of these three elements is not prescriptive, except that the FHIR Version SHALL be given at the end of the URL in all instances. The ODS code/routing identifier could be specified as a sub-domain in the FQDN of the endpoint, or immediately after this.
 
+Examples of acceptable FHIR base URLs are given below:
 
-2. CMA type endpoints only will be used
+`https://pcs.thirdparty.nhs.uk/T99999/1.0.2/`
 
-	A CMA type endpoint refers to an endpoint which is a combined MHS sytem and Accredited System endpoint. There will be a 1-1 		mapping between an Accredited System (uniquely identified by an ASID) and a Message Handling System (MSH). I.e. the MHS record 		found in SDS will refer to an endpoint which handles requests for a single acredited system.
-
-3. nhsMhsEndPoint contains base URL
-
-	The nhsMHsEndPoint attribute will contain the *base URL*. It is the responsibility of the consuming system to construct the FHIR operation or RESTful resource request which will be postfixed to this base URL.
-
-	I.e. an example of a FHIR base URL for a GetCareRecord interaction would be
-
-	```bash
-	https://pcs.thirdparty.nhs.uk/T99999/1.0.2/
-	```
-
-	Note that the "Patient/$gpc.getcarerecord" is not added.
-
-	In line with this, provider systems are responsible for performing checks that the FHIR request received is a reasonable means to  request the resource in view given the specificed interaction. 
+`https://T99999.pcs.thirdparty.nhs.uk/1.0.2/`
 
 
-4. The FHIR base URL should contain the FHIR version 
+**2. For First of Type interactions, CMA type endpoints only will be used**
 
-	It is the responsibility to ensure that the FHIR base URL defined in the nhsMhsEndPoint attribute contains the FHIR STU version num,ber portion of a base URL. This will enable versioning of provider API by FHIR version. 
+A CMA type endpoint refers to an endpoint which is a combined MHS sytem and Accredited System endpoint. There will be a 1-1 mapping between an Accredited System (uniquely identified by an ASID) and a Message Handling System (MSH). A single MHS record SHALL be associated with a given ASID and interaction ID.
 
-	In line with this, provider systems MUST NOT version through the use of HTTP header elements.
+**3. nhsMhsEndPoint attribute SHALL contain the FHIR Base URL only**
 
+The nhsMHsEndPoint attribute SHALL contain the *FHIR Base URL*. It is the responsibility of the consuming system to construct the FHIR operation or RESTful resource request which will be postfixed to this base URL.
 
-5. Product sets to be used where FHIR version changes
+I.e. an example of a FHIR base URL for a GetCareRecord interaction would be
 
-	Where a provider moves in future to later version of FHIR, it will be necessary to define a new product set to accomodate the set of interactions provided by this. Base URLs defined for a specific product set MUST all reference the same FHIR version. FHIR resources references returned in FHIR resposes MUST be locally resolvable.
+`https://pcs.thirdparty.nhs.uk/T99999/1.0.2/`
 
+Note that the "Patient/$gpc.getcarerecord" is not added.
 
-6. FHIR version in conformance statement
-
-	The FHIR version as returned in a conformance statement from the FHIR server assoicated with a FHIR request must match the FHIR version given in the FHIR base URL.
-
-
-7. Practice routing identifier to be placed in base URL
-
-	As described above, a routing identifier MUST be placed in the FHIR base URL. This routing identifier may be the ODS code of the practice, or another logical identifier which acheives reliable routing of the request to the patient's registered practice data store. It is expected that the FHIR server business logic will extract the routing identifier.
+In line with this, provider systems SHOULD perform checks that the FHIR request received is a reasonable means to request the resource in view given the specificed interaction. 
 
 
-8. Practice specific ODS codes to be used
+**4. Practice routing identifier to be included in FHIR Base URL**
 
-	ODS codes which refer to Principle Clinical Systems as a single entity MUST NOT be used to provide routing. Practice specific ODS codes will be used for routing purposes in the FHIR base URL found in the NhsMhsEndPoint attribute of the MHS record.
+As described above, a routing identifier SHALL be placed in the FHIR base URL. This routing identifier may be the ODS code of the practice, or another logical identifier which acheives reliable routing of the request to the patient's registered practice data store. It is expected that the FHIR server business logic will extract the routing identifier.
+
+In line with this, HTTP headers SHALL NOT be used to provide this organisation routing.
+
+**5. Practice specific ODS codes to be used**
+
+ODS codes which refer to Principle Clinical Systems as a single entity SHALL NOT be used to provide routing. Practice specific ODS codes SHALL be used for routing purposes in the FHIR base URL found in the NhsMhsEndPoint attribute of the MHS record.
 
 
-9. Acceptable use of ASID information in HTTP Headers
+**6. The FHIR Base URL SHALL contain the FHIR version number**
 
-	Source and destination ASID information is passed to the Principle Clinical System from the Spine Security Proxy. This information is to be used for audit and debugging purposes only, and will not be used by to perform routing or lookups. It is the responsibility of the SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice specific ODS codes present in the FHIR base URL. 
+The FHIR Base URL defined in the nhsMhsEndPoint attribute SHALL contain the FHIR version number. This will enable versioning of provider API by FHIR version. 
+
+In line with this, provider systems SHALL NOT version through the use of HTTP headers.
+
+For example, where the FHIR server is running FHIR DSTU2, the FHIR base URL for the GP practice with an ODS code of T99999 would be in the following format:
+
+`https://pcs.thirdparty.nhs.uk/T99999/1.0.2/`
+
+**7. FHIR version SHALL match version found in FHIR conformance statement**
+
+The FHIR version as returned in a [conformance statement](foundations_use_case_get_the_fhir_conformance_profile.html) from the FHIR server service a FHIR request SHALL match the FHIR version given in the FHIR Base URL.
+
+**8. FHIR Base URLs associated with a given product set SHALL use same FHIR Version**
+
+Where a provider moves in future to later version of FHIR, it will be necessary to define a new product set to accommodate the set of interactions provided by this. Base URLs defined for a specific product set SHALL all reference the same FHIR version. This ensures that FHIR resources references returned in FHIR responses are locally resolvable. 
+
+For example, all interactions associated with the Appointment Management capability in a given product set must refer to the same FHIR server, so that the resource references for "Read Appointment" and "Amend" appointment would be locally resolvable to the same resource on the same FHIR Server. 
 
 
-### Worked example of Provider System Endpoint Lookup 
+**9. Acceptable use of ASID information in HTTP Headers**
+
+Source and destination ASID information is passed to the Principle Clinical System from the Spine Security Proxy. Providers SHALL use this information for audit and debugging purposes only, and SHALL NOT use these headers to perform routing or lookups. 
+
+It is the responsibility of the Spine Security Proxy SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice specific ODS codes present in the FHIR base URL. 
+
+
+
