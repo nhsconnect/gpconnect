@@ -96,9 +96,9 @@ It is expected that for phase 1 delivery a number of supporting systems won’t 
 As such it is planned that the following mitigations will be implemented as part of phase 1:
 
 - Retrieving patient demographics and NHS number (step 1) will have been performed by the consumer system using a PDS or SMSP trace.
-- The Record Location (step 2) and Endpoint Location (step 3a) will be performed internally by the consumer system using the patient’s GP organisational identifier as returned from a PDS lookup with the endpoint look-up being performed via a direct LDAP query to the Spine Director Service (SDS).
+- The Record Location (step 2) and Endpoint Location (step 3a) will be performed internally by the consumer system using the patient’s GP organisational identifier as returned from a PDS lookup with the endpoint look-up being performed via a direct LDAP query to the [Spine Directory Service (SDS)](integration_spine_directory_service.html).
 - The Patient Preferences Repository (step 5) will not be checked.
-- The Data Sharing Agreement Repository (Step 6) will not be checked.
+- An interim Data Sharing Agreement Repository (Step 6), implemented by the SSP,  will be checked.
 
 <sup>^</sup> will be made available after the initial GP Connect FoT go-live.
 
@@ -187,7 +187,8 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- Exposed patient records are expected to contain only curated NHS numbers.
 - Provides PKI server credentials to allow verification of provider system.
 - Validation of PKI credentials to allow verification of proxy system.
-- Processing of FHIR conformant API requests and generation of FHIR conformant responses.
+- Processing of FHIR conformant API requests and generation of FHIR conformant responses. T
+- Publish endpoints to SDS/Endpoint Locator which include the FHIR Version number. The FHIR version number returned by the FHIR server endpoint conformance statement SHALL match the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
 - Error response generation in line with FHIR and HTTP conventions including the return of transient HTTP error codes when appropriate (i.e. due to the provider being down or busy).
 	- `503` Service Unavailable
 
