@@ -61,7 +61,13 @@ An example GP Connect Conformance profile of type `Kind` is shown below ready fo
 
 {% gist michaelmeasures/486aa287a7ea5911fa9de6c55b0d46bb %}
 
-### C# ###
+Consumer Systems:
+
+- SHOULD, during development, request the conformance profile from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
+- MAY, at run-time, request the conformance profile from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
+- MAY cache conformance profiles information retrieved from an endpoint at run-time on a per-session basis. 
+
+### C# client request to get the conformance profile ###
 
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
