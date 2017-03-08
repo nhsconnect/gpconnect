@@ -381,6 +381,11 @@ The Spine Security Proxy (SSP) SHALL perform the following checks to authenticat
 - Check that the client/sending endpoint has been registered (and accredited) to initiate the given interaction.
 - Check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction.   
 
+#### Caching Headers ####
+
+Providers SHALL use the following HTTP Header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
+
+
 ### [Managing Return Content](https://www.hl7.org/fhir/DSTU2/http.html#return) ###
 
 Severs SHALL default to the `return=representation` behaviour (i.e. returning the entire resource) for interactions that create or update resources.
