@@ -50,8 +50,7 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 - Grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language.
 - Familiarise yourself with our GP Connect [FHIR API Guidance](development_fhir_api_guidance.html) common to all APIs.
 - Have a look at our [FHIR Data Library](datalibrary.html) which explains the changes (or profiles) we've created as GP Connect versions of the international [DSTU2 FHIR](https://www.hl7.org/fhir/DSTU2/){:target="_blank"} Resources. 
-- Download or clone the GP Connect API definitions & data library:
-	- [GP Connect API Defintions](https://github.com/nhsconnect/gpconnect-api){:target="_blank"}
+- Download or clone the GP Connect machine readable FHIR definitions:
 	- [GP Connect Data Library](https://github.com/nhsconnect/gpconnect-fhir){:target="_blank"}
 - Dig in deep and explore one or more of the GP Connect Capability Packs and start building new or hitting existing APIs.
   - [Foundations Capability Pack](foundations.html) (e.g. resolve a patient to their logical identifier for further API calls).
