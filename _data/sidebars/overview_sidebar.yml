@@ -56,9 +56,6 @@ entries:
     - title: Consumer Demonstrator
       url: /system_demonstrator.html
       output: web
-    - title: Reference Implementation
-      url: /system_reference.html
-      output: web
     - title: Swagger API Documentation
       url: /system_reference_swagger.html
       output: web
