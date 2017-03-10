@@ -1,10 +1,10 @@
 ---
-title: Access Record
+title: Access Record HTML
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord.html
-summary: "Introduction to the GP Connect Access Record capability."
+summary: "Introduction to the GP Connect Access Record HTML capability."
 ---
 
 [<i class="fa fa-arrow-left" aria-hidden="true"/> Back to GP Connect - Getting Started.](index.html)
