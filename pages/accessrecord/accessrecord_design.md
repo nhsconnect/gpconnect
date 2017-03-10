@@ -59,7 +59,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 - Provider system to cross-check. 
 - Spine Security Proxy (SSP) to cross-check.
 
-<span class="label label-info">DECISION</span> As per GP SoC requirements make minimal registration details mandatory (i.e. First Name, Surname, Gender, DOB) in the FHIR profile.
+<span class="label label-info">DECISION</span> As per GPSoC requirements make minimal registration details mandatory (i.e. First Name, Surname, Gender, DOB) in the FHIR profile.
 
 #### Minimum Patient Demographics  ####
 
