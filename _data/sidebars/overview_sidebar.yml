@@ -53,7 +53,7 @@ entries:
   - title: Explore
     output: web
     folderitems:
-    - title: Consumer Demonstrator
+    - title: System Demonstrator
       url: /system_demonstrator.html
       output: web
     - title: Swagger API Documentation
@@ -108,7 +108,7 @@ entries:
   - title: Implement A Capability
     output: web
     folderitems:
-    - title: API Foundations
+    - title: Foundations
       url: /foundations.html
       output: web
     - title: Access Record HTML
