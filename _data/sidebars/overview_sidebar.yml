@@ -53,11 +53,8 @@ entries:
   - title: Explore
     output: web
     folderitems:
-    - title: Consumer Demonstrator
+    - title: System Demonstrator
       url: /system_demonstrator.html
-      output: web
-    - title: Reference Implementation
-      url: /system_reference.html
       output: web
     - title: Swagger API Documentation
       url: /system_reference_swagger.html
@@ -111,11 +108,14 @@ entries:
   - title: Implement A Capability
     output: web
     folderitems:
-    - title: API Foundations
+    - title: Foundations
       url: /foundations.html
       output: web
-    - title: Access Record
+    - title: Access Record HTML
       url: /accessrecord.html
+      output: web
+    - title: Access Record REST
+      url: /accessrecord_rest.html
       output: web
     - title: Task Management
       url: /tasks.html
