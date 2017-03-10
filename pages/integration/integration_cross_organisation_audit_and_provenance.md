@@ -9,6 +9,59 @@ summary: "Overview of how audit and provenance data is expected to be transporte
 
 ## Cross Organisation Audit & Provenance ##
 
+### Governance ###
+
+Provider systems SHALL ensure that access to confidential data, including patient or clinical data, through the API must meet, as a minimum, the same requirements for information governance, authentication and authorisation, and auditing as that of the host system the API exposes.
+
+### Audit Trail ###
+
+{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC Framework Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' requirements." %}
+
+For implementers that don't have access to the GP SoC Framework / 'IG Requirements for GP Systems V4' requirements then the following extract of requirements covers the main audit trail requirements:
+
+Provider systems SHALL record in an audit trail all access and data changes within the system as a result of API activity in the same way that internal access and changes are required to be recorded.
+
+Provider systems SHALL ensure that all API transactions are recorded in an audit trail, and that audit trails must be subject to the standard IG audit requirements as defined in “IG Requirements for GP Systems V4” or as subsequently amended.
+
+Provider systems SHALL ensure failed or rejected API transactions are recorded with the same detail as for successful API requests, with error codes as per the [error handling guidance](development_fhir_error_handling_guidance.html).
+
+Audit Trail records shall include the following minimum information:
+
+- a record of the user identity. This is the User ID, Name, Role profile (including Role and Organisation, URP id when Smartcard authenticated) attribute values, obtained from the user’s Session structure;
+- a record of the identify of the authority – the person authorising the entry of, or access to data (if different from the user);
+- the date and time on which the event occurred;
+- details of the nature of the audited event and the identity of the associated data (e.g. patient ID, message ID) of the audited event;
+- a sequence number to protect against malicious attempts to subvert the audit trail by, for example, altering the system date.
+- Audit trail records should include details of the end-user device (or system) involved in the recorded activity.
+
+Audit Trails shall be enabled at all times and there shall be no means for users, or any other individuals, to disable any Audit Trail.
+
+{% include note.html content="Whilst some details (such as name, role) associated with individual users are likely to change over time, the display of user information must reflect the state of such information as it was at the time of the associated event (such as data entry)." %}
+
+### Provenance ###
+
+Provider systems SHALL ensure that all additions, amendments or logical deletions to administrative and clinical data made via an API is clearly identified with information regarding the provenance of the data (e.g. timestamp, details of Consumer system, details of user (including role), so it is clear which information has been generated through an API rather than through the Provider system itself.
+
+Provider systems SHALL record the following provenance details of all API personal and sensitive personal data recorded within the system:
+
+- Author details (identified through unique ID), including name and role
+- Data entered by (if different from author)
+- Date & time (to the second) entered
+- Originating organisation
+- API interaction
+
+### Legal Processing ###
+
+Provider systems SHALL ensure that data provided to Consumer systems only include data for which the GP practice acts as Data Controller.
+
+### Patient Dissent ###
+
+Provider systems SHALL ensure that Patient Consent is respected (i.e. where express dissent is recorded then data is not shared).
+
+## Cross Organisation Audit & Provenance Transport ##
+
+### Bearer Token ###
+
 Consumer systems SHALL provided audit and provenance details in the HTTP authorization header as an oAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
 
 Provider systems SHALL respond to oAuth Bearer Token errors inline with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
