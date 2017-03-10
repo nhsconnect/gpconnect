@@ -101,52 +101,6 @@ entries:
       url: /accessrecord_view_patient_details.html
       output: web, pdf
 
-  - title: Structured Data
-    output: web, pdf
-    folderitems:
-   
-    - title: Coming Soon
-      url: /accessrecord_structured_data_summary.html
-      output: web, pdf
-
-    
-#    - title: Summary
-#      url: /accessrecord_structured_data_summary.html
- #     output: web, pdf
- #   - title: Encounters
- #     url: /accessrecord_structured_data_encounters.html
- #     output: web, pdf
- #   - title: Clinical Items
- #     url: /accessrecord_structured_data_clinical_items.html
- #     output: web, pdf
-#    - title: Problems
-#      url: /accessrecord_structured_data_problems.html
-  #    output: web, pdf
-#    - title: Allergies
-  #    url: /accessrecord_structured_data_allergies.html
-  #    output: web, pdf
-   # - title: Medications
-    #  url: /accessrecord_structured_data_medications.html
-     # output: web, pdf
-  #  - title: Referrals
-   #   url: /accessrecord_structured_data_referrals.html
-   #   output: web, pdf
-   # - title: Observations
- #     url: /accessrecord_structured_data_observations.html
-   #   output: web, pdf
-   # - title: Investigations
-   #   url: /accessrecord_structured_data_investigations.html
-   #   output: web, pdf
-   # - title: Immunisations
-    #  url: /accessrecord_structured_data_immunisations.html
-   #   output: web, pdf
-  #  - title: Administrative Items
-   #   url: /accessrecord_structured_data_administrative_items.html
-    #  output: web, pdf
-   # - title: Patient Details
-   #   url: /accessrecord_structured_data_patient_details.html
-   #   output: web, pdf
-
 #  - title: Safety and Governance
 #    output: web, pdf
 #
