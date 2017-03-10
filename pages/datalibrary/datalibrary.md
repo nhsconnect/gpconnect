@@ -11,31 +11,31 @@ summary: "All about the changes (i.e. the delta) we've made to the standard FHIR
 
 ## Foundation ##
 
-- [Patient Resource Delta](datalibrary_delta_patient_resource.html)
-- [Practitioner Resource Delta](datalibrary_delta_practitioner_resource.html)
-- [Organization Resource Delta](datalibrary_delta_organization_resource.html)
-- [Location Resource Delta](datalibrary_delta_location_resource.html)
-- [Operation Outcome Resource Delta](datalibrary_delta_operation_outcome_resource.html)
+- [Patient Resource](https://www.simplifier.net/GPConnect/gpconnect-patient-1)
+- [Practitioner Resource](https://www.simplifier.net/GPConnect/gpconnect-practitioner-1)
+- [Organization Resource](https://www.simplifier.net/GPConnect/gpconnect-organization-1)
+- [Location Resource](https://www.simplifier.net/GPConnect/gpconnect-location-1)
+- [Operation Outcome Resource](https://www.simplifier.net/GPConnect/gpconnect-operationoutcome-1)
 
 ## Access Record ##
 
-- [Bundle Resource Delta](datalibrary_delta_bundle_searchset_resource.html)
-- [Composition Resource Delta](datalibrary_delta_composition_resource.html)
-- [Device Resource Delta](datalibrary_delta_device_resource.html)
+- [Bundle Resource](https://www.simplifier.net/GPConnect/gpconnect-searchset-bundle-1)
+- [Composition Resource](https://www.simplifier.net/GPConnect/gpconnect-carerecord-composition-1)
+- [Device Resource](https://www.simplifier.net/GPConnect/gpconnect-device-1)
 
 Please refer to the [Access Record FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/index.html) for full details of the profiled FHIR resources and worked examples.
 
 ## Appointment Management ##
 
-- [Appointment Resource Delta](datalibrary_delta_appointment_resource.html)
-- [Schedule Resource Delta](datalibrary_delta_schedule_resource.html)
-- [Slot Resource Delta](datalibrary_delta_slot_resource.html)
+- [Appointment Resource](https://www.simplifier.net/GPConnect/gpconnect-appointment-1)
+- [Schedule Resource](https://www.simplifier.net/GPConnect/gpconnect-schedule-1)
+- [Slot Resource](https://www.simplifier.net/GPConnect/gpconnect-slot-1)
 
 Please refer to the [Appointment Management FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-250816-appts/index.html) for full details of the profiled FHIR resources and worked examples.
 
 ## Task Management ##
 
-- [Order Resource Delta](datalibrary_delta_order_resource.html)
+- [Order Resource](https://www.simplifier.net/GPConnect/gpconnect-task-order-1)
 
 Please refer to the [Task Management FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-tasks/index.html) for full details of the profiled FHIR resources and worked examples.
 
