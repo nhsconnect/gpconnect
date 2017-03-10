@@ -96,6 +96,9 @@ entries:
         - title: V&P Guidance
           url: /development_api_volume_and_performance.html
           output: web          
+        - title: NFR Guidance
+          url: /development_api_non_functional_requirements.html
+          output: web
 
     - title: FHIR&reg; Data Models
       url: /datalibrary.html
