@@ -56,7 +56,10 @@ entries:
     - title: HTML Implementation Guide
       url: /accessrecord_development_html_implementation_guide.html
       output: web, pdf
-
+    - title: Example Conformance Profile
+      url: /accessrecord_development_conformance_profile.html
+      output: web, pdf
+      
   - title: HTML Views
     output: web, pdf
     folderitems:
