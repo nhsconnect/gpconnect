@@ -27,9 +27,9 @@ entries:
     - title: Webinars
       url: /overview_webinars.html
       output: web
-    - title: Work in Progress
-      url: /overview_work_in_progress.html
-      output: web      
+#    - title: Work in Progress
+#      url: /overview_work_in_progress.html
+#      output: web
     - title: First of Type
       url: /overview_first_of_type.html
       output: web
@@ -100,10 +100,6 @@ entries:
     - title: FHIR&reg; Data Models
       url: /datalibrary.html
       output: web
-
-#    - title: Dev Environments
-#      url: /development_environments.html
-#      output: web
 
   - title: Implement A Capability
     output: web
