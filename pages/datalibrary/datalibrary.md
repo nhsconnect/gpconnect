@@ -17,13 +17,13 @@ summary: "All about the changes (i.e. the delta) we've made to the standard FHIR
 - [Location Resource](https://www.simplifier.net/GPConnect/gpconnect-location-1)
 - [Operation Outcome Resource](https://www.simplifier.net/GPConnect/gpconnect-operationoutcome-1)
 
-## Access Record ##
+## Access Record HTML ##
 
 - [Bundle Resource](https://www.simplifier.net/GPConnect/gpconnect-searchset-bundle-1)
 - [Composition Resource](https://www.simplifier.net/GPConnect/gpconnect-carerecord-composition-1)
 - [Device Resource](https://www.simplifier.net/GPConnect/gpconnect-device-1)
 
-Please refer to the [Access Record FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/index.html) for full details of the profiled FHIR resources and worked examples.
+Please refer to the [Access Record HTML DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/index.html) for full details of the profiled FHIR resources and worked examples.
 
 ## Appointment Management ##
 
@@ -31,11 +31,11 @@ Please refer to the [Access Record FHIR API IG / DMS Bundle](http://data.develop
 - [Schedule Resource](https://www.simplifier.net/GPConnect/gpconnect-schedule-1)
 - [Slot Resource](https://www.simplifier.net/GPConnect/gpconnect-slot-1)
 
-Please refer to the [Appointment Management FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-250816-appts/index.html) for full details of the profiled FHIR resources and worked examples.
+Please refer to the [Appointment Management DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-250816-appts/index.html) for full details of the profiled FHIR resources and worked examples.
 
 ## Task Management ##
 
 - [Order Resource](https://www.simplifier.net/GPConnect/gpconnect-task-order-1)
 
-Please refer to the [Task Management FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-tasks/index.html) for full details of the profiled FHIR resources and worked examples.
+Please refer to the [Task Management DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-tasks/index.html) for full details of the profiled FHIR resources and worked examples.
 
