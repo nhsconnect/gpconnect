@@ -65,7 +65,7 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 
 ## 4. Assure ##
 
-- Read about the [Accreditation](testing_accreditation.html) and [Assurance](testing_assurance.html) process.
+- Read about the [Provider Testing](testing_api_provider_testing.html) and [Consumer Testing](testing_api_consumer_testing.html) process.
 
 ## 5. Deploy ##
 

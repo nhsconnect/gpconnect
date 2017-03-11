@@ -155,31 +155,17 @@ entries:
     - title: Testing Assets
       url: /testing_deliverables.html
       output: web
-    - title: Testing Data
-      url: /testing_data.html
-      output: web
-    - title: Accreditation
-      url: /testing_accreditation.html
-      output: web
-    - title: Assurance
-      url: /testing_assurance.html
-      subfolders:
-      - title: System Test
-        output: web
-        subfolderitems:
-
-        - title: Stage 1. Test Window
-          url: /development_stage_one_test_window.html
-          output: web
-        - title: Stage 2. Test Window
-          url: /development_stage_two_test_window.html
-          output: web
-        - title: Stage 3. Test Window
-          url: /development_stage_three_test_window.html
-          output: web      
-      output: web
-    - title: Path to Live
+    - title: Test Environments
       url: /testing_environments.html
+      output: web
+#    - title: Testing Data
+#      url: /testing_data.html
+#      output: web
+    - title: Provider Testing
+      url: /testing_api_provider_testing.html
+      output: web
+    - title: Consumer Testing
+      url: /testing_api_consumer_testing.html
       output: web
 
   - title: Help & Support
