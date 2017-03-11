@@ -36,11 +36,13 @@ FHIR resources in scope for RESTful care record access ([Maturity Model Stage 3.
 
 ### Purpose ###
 
-In a fine-grained structured format, this capability will provide health professionals with access to a patient's primary care record by requesting FHIR resources.
+This capability delivers the ability to access structured primary care record data for a given patient in order to provide new interoperability opportunities between primary care and other sectors. Access to the structured and coded record will allow much tighter interoperability than the basic HTML Views described above.
 
 ### Use Cases ###
 
-- TODO
+- A health professional is able to view and import allergies into their local patient record system.
+- Information is rendered natively in a system rather than embedded in a HTML view to provide a more seamless experience, e.g. mobile device.
+- Information offered in a structured and coded form by the API for the purposes of reconciling medications, problems and allergies e.g. as part of an inpatient spell.
 
 ### Domain Message Specification ###
 
