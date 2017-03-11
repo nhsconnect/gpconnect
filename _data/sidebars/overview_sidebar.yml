@@ -75,9 +75,6 @@ entries:
         - title: Open Source
           url: /development_fhir_open_source_guidance.html
           output: web
-        - title: Server Guidance
-          url: /development_fhir_server_guidance.html
-          output: web
         - title: Common API Guidance
           url: /development_fhir_api_guidance.html
           output: web
