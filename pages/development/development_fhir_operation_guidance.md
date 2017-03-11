@@ -87,14 +87,15 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 
 | Operation                       | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------------|---------------------------| ----------|---------------------|
-| Get Patient Allergy Intolerances | `urn:nhs:names:services:gpconnect:fhir:claim:patient/AllergyIntolerance.read` | `GET`  | `[base]/AllergyIntolerance?patient=[id]` |
-| Get Patient Conditions | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Condition.read` | `GET`  | `[base]/Condition?patient=[id]` |
+| [Get Patient Allergy Intolerances](accessrecord_rest_structured_data_allergyintolerance.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/AllergyIntolerance.read` | `GET`  | `[base]/AllergyIntolerance?patient=[id]` |
+| [Get Patient Conditions](accessrecord_rest_structured_data_condition.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Condition.read` | `GET`  | `[base]/Condition?patient=[id]` |
 | Get Patient Diagnostic Orders | `urn:nhs:names:services:gpconnect:fhir:claim:patient/DiagnosticOrder.read` | `GET`  | `[base]/DiagnosticOrder?patient=[id]` |
 | Get Patient Diagnostic Reports | `urn:nhs:names:services:gpconnect:fhir:claim:patient/DiagnosticReport.read` | `GET`  | `[base]/DiagnosticReport?patient=[id]` |
 | Get Patient Encounters | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Encounter.read` | `GET`  | `[base]/Encounter?patient=[id]` |
 | Get Patient Flags | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Flag.read` | `GET`  | `[base]/Flag?patient=[id]` |
-| Get Patient Immunizations | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Immunization.read` | `GET`  | `[base]/Immunization?patient=[id]` |
-| Get Patient Medication Orders | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationOrder.read` | `GET`  | `[base]/MedicationOrder?patient=[id]` |
+| [Get Patient Immunizations](accessrecord_rest_structured_data_immunization.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Immunization.read` | `GET`  | `[base]/Immunization?patient=[id]` |
+| [Get Patient Medication Orders](accessrecord_rest_structured_data_medicationorder.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationOrder.read` | `GET`  | `[base]/MedicationOrder?patient=[id]` |
+| [Get Patient Medication Statements](accessrecord_rest_structured_data_medicationstatement.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationStatement.read` | `GET`  | `[base]/MedicationStatement?patient=[id]` |
 | Get Patient Medication Dispenses | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationDispense.read` | `GET`  | `[base]/MedicationDispense?patient=[id]` |
 | Get Patient Medication Administrations | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationAdministration.read` | `GET`  | `[base]/MedicationAdministration?patient=[id]` |
 | Get Patient Observations | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Observation.read` | `GET`  | `[base]/Observation?patient=[id]` |
