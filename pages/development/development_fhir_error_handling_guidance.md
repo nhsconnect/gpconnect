@@ -182,7 +182,7 @@ For example an unexpected internal exception is thrown by either an Operation or
 }
 ```
 
-### Malformed Request ###
+### Malformed Request Errors ###
 
 When the server cannot or will not process a request due to an apparent client error (e.g., malformed request syntax, too large size etc.) then the following `BAD_REQUEST` error SHALL be used to return debug details.
 
@@ -209,6 +209,129 @@ For example if the request could not be understood by the server due to malforme
 				"code": "BAD_REQUEST"
 			}]
 		},
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+### Spine Security Proxy Errors ###
+
+When the spine security proxy cannot or will not process a request then the follwoing errors SHALL be used to return debug details.
+
+#### Example 7. Bad Request #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `400`     | Bad Request | i.e. content of the request is invalid against the specification. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "invalid",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 8. Forbidden #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `403`     | Forbidden | i.e. ASID/InteractionID check has failed. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "forbidden",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 9. Method Not Allowed #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `405`     | Method Not Allowed | i.e. asked for an unsupported HTTP verb such as PATCH. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "not-supported",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 10. Unsupported Media Type #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `415`     | Unsupported Media Type | i.e. a consumer application asked for an unsupported media type. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "not-supported",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 11. Internal Server Error #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `500`     | Internal Server Error | i.e. an unexpected error / exception has occured. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "exception",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 12. Bad Gateway #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `502`     | Bad Gateway | i.e. downstream server is offline. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "transient",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 13. Gateway Timeout #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `504`     | Gateway Timeout | i.e. downstream server timed out. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "transient",
 		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
 	}]
 }
