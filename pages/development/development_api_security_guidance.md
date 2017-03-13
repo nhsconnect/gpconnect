@@ -45,8 +45,12 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 - `AESGCM+EDH`
 - `AES256+EECDH`
 - `AES256+EDH`
+- `AES256+SHA` (temporary support for limited roll-out/FoT only)
+- `AES128+SHA` (temporary support for limited roll-out/FoT only)
 
 {% include note.html content="GCM (Galois Counter Mode) suites are prefered as these are resistant to timing attacks<sup>1</sup>." %}
+
+{% include warning.html content="Support for AES265-SHA and AES128-SHA ciphers is temporary in nature and will withdrawn." %}
 
 {% include important.html content="A Java 8 (or above) Runtime Environment and/or an upto date version of OpenSSL is required to support the GCM cipher suites." %}
 
