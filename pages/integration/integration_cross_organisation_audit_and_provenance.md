@@ -9,7 +9,62 @@ summary: "Overview of how audit and provenance data is expected to be transporte
 
 ## Cross Organisation Audit & Provenance ##
 
-Consumer systems SHALL provided audit and provenance details in the HTTP authorization header as an oAuth bearer token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+### Governance ###
+
+Provider systems SHALL ensure that access to confidential data, including patient or clinical data, through the API must meet, as a minimum, the same requirements for information governance, authentication and authorisation, and auditing as that of the host system the API exposes.
+
+### Audit Trail ###
+
+{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' requirements." %}
+
+For implementers that don't have access to the GP SoC Framework / 'IG Requirements for GP Systems V4' requirements then the following extract of requirements covers the main audit trail requirements:
+
+Provider systems SHALL record in an audit trail all access and data changes within the system as a result of API activity in the same way that internal access and changes are required to be recorded.
+
+Provider systems SHALL ensure that all API transactions are recorded in an audit trail, and that audit trails must be subject to the standard IG audit requirements as defined in “IG Requirements for GP Systems V4” or as subsequently amended.
+
+Provider systems SHALL ensure failed or rejected API transactions are recorded with the same detail as for successful API requests, with error codes as per the [error handling guidance](development_fhir_error_handling_guidance.html).
+
+Audit Trail records shall include the following minimum information:
+
+- a record of the user identity. This is the User ID, Name, Role profile (including Role and Organisation, URP id when Smartcard authenticated) attribute values, obtained from the user’s Session structure;
+- a record of the identify of the authority – the person authorising the entry of, or access to data (if different from the user);
+- the date and time on which the event occurred;
+- details of the nature of the audited event and the identity of the associated data (e.g. patient ID, message ID) of the audited event;
+- a sequence number to protect against malicious attempts to subvert the audit trail by, for example, altering the system date.
+- Audit trail records should include details of the end-user device (or system) involved in the recorded activity.
+
+Audit Trails shall be enabled at all times and there shall be no means for users, or any other individuals, to disable any Audit Trail.
+
+{% include note.html content="Whilst some details (such as name, role) associated with individual users are likely to change over time, the display of user information must reflect the state of such information as it was at the time of the associated event (such as data entry)." %}
+
+### Provenance ###
+
+Provider systems SHALL ensure that all additions, amendments or logical deletions to administrative and clinical data made via an API is clearly identified with information regarding the provenance of the data (e.g. timestamp, details of Consumer system, details of user (including role), so it is clear which information has been generated through an API rather than through the Provider system itself.
+
+Provider systems SHALL record the following provenance details of all API personal and sensitive personal data recorded within the system:
+
+- Author details (identified through unique ID), including name and role
+- Data entered by (if different from author)
+- Date & time (to the second) entered
+- Originating organisation
+- API interaction
+
+### Legal Processing ###
+
+Provider systems SHALL ensure that data provided to Consumer systems only include data for which the GP practice acts as Data Controller.
+
+### Patient Dissent ###
+
+Provider systems SHALL ensure that Patient Consent is respected (i.e. where express dissent is recorded then data is not shared).
+
+## Cross Organisation Audit & Provenance Transport ##
+
+### Bearer Token ###
+
+Consumer systems SHALL provided audit and provenance details in the HTTP authorization header as an oAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+
+Provider systems SHALL respond to oAuth Bearer Token errors inline with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
 
 ### JSON Web Tokens (JWT) ###
 
@@ -26,15 +81,20 @@ Consumer system SHALL generate a new JWT for each API request.
 | requested_record | R | The FHIR patient resource being requested (i.e. NHS Number identifier details) | No | FHIR Patient<sup>1</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
 | requested_scope | R | Data being requested<sup>2</sup> | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
 | requesting_device | R | FHIR device resource making the request | No | FHIR Device<sup>1</sup> |
-| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1</sup> | 
+| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
 | requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>1+3</sup> |
 
 <sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s).
 
 <sup>2</sup> Patient scope for patient centric APIs (i.e. Get Care Record and Patient's Appointments, Patient Task) or scope for organisation centric APIs (i.e. Get Organization Schedule)
 
-<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided
+<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field.
 
+<sup>4</sup> The requesting organisation resource SHALL refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
+
+{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
+
+#### JWT Generation ####
 Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
 
 - Header
@@ -139,3 +199,7 @@ Where the Practitioner has both a local system role as well as a Spine RBAC role
 
 {% gist michaelmeasures/d6a75e52acdbee93c4c30d23e639fb1a %}
 
+## External Documents / Policy Documents ##
+
+| Name | Author | Version | Updated |
+| GPSoC IG Requirements for GP Systems | NHS Digital | v4.0 | ??/??/???? |

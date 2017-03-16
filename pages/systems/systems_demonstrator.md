@@ -1,10 +1,10 @@
 ---
-title: Consumer Demonstrator
+title: System Demonstrator
 keywords: system, demonstrator
 tags: [system,demonstrator]
 sidebar: overview_sidebar
 permalink: system_demonstrator.html
-summary: "Consumer demonstrator implementation of the GP Connect FHIR APIs."
+summary: "Demonstrator implementation of the GP Connect FHIR APIs."
 ---
 
 ## Objective ##
@@ -25,7 +25,7 @@ Take the [Ripple](http://rippleosi.org/){:target="_blank"} open source record vi
 ![API Consumer talking to API Provider via the Spine Security Proxy](images/systems/API Consumer talking to API Provider via the Spine Security Proxy.png)
 
 ## Source Code ##
-The GP Connect Consumer Demonstrator is a free open source software (FOSS) project.  
+The GP Connect Demonstrator is a free open source software (FOSS) project.
 
 - Download the source code from the
 [Demonstrator GitHub project repo](https://github.com/nhs-digital/gpconnect){:target="_blank"}

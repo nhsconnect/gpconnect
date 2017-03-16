@@ -1,5 +1,5 @@
 ---
-title: Access Record Design Decisions
+title: Access Record HTML Design Decisions
 keywords: getcarerecord design
 tags: [design,getcarerecord]
 sidebar: accessrecord_sidebar
@@ -59,7 +59,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 - Provider system to cross-check. 
 - Spine Security Proxy (SSP) to cross-check.
 
-<span class="label label-info">DECISION</span> As per GP SoC requirements make minimal registration details mandatory (i.e. First Name, Surname, Gender, DOB) in the FHIR profile.
+<span class="label label-info">DECISION</span> As per GPSoC requirements make minimal registration details mandatory (i.e. First Name, Surname, Gender, DOB) in the FHIR profile.
 
 #### Minimum Patient Demographics  ####
 
@@ -82,6 +82,14 @@ Potential grounds for not returning an HTML view:
 	
 - PDS Status
 	- Corrupt Record etc.
+
+### Record Locking ###
+
+Behaviour when Access Record query/request received while patient record being updated in provider system:
+
+- <span class="label label-success">SELECTED</span> Return the requested record section, only including data that has been successfully committed to the database and is available to all users.  [As agreed in workshops]
+- Return error message in lieu of record section. 
+- Return snapshot of record as-is at the time of request including any non-committed changes.
 
 ### Patient Consent ###
 

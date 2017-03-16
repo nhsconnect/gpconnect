@@ -24,13 +24,13 @@ Refer to [Capability Pack - Foundations](foundations.html) for further details.
 
 ## Access Care Record Resources ##
 
-{% include important.html content="NHS Digital facilitated workshops will be being run throughout August and September to finalise the GP Connect FHIR profiles. [Structured Data](accessrecord_structured_data_summary.html) access remains a high priority for the GP Connect programme however we have temporarily removed the majority of the structured resources from the [Access Record FHIR API IG / DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/index.html) to enable development to commence on the [Access Record HTML Views](accessrecord_view_summary.html)." %}
+{% include important.html content="NHS Digital facilitated workshops will be being run throughout August and September to finalise the GP Connect FHIR profiles. Structured Data access remains a high priority for the GP Connect programme however we have temporarily removed the majority of the structured resources from the [Access Record DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/index.html) to enable development to commence on the [Access Record HTML Views](accessrecord_view_summary.html)." %}
 
 0 of the following 13 resources are expected to have their own API endpoints for GP Connect FoT ([Stage 1. Maturity Model](designprinciples_maturity_model.html)).
 
 | Resource | Create | Read | Update | Delete | History<br/>Read | Search | Identifier<br/>Search | Bundle<br/>Read | Compartment<br/>Read |  
 |----------|--------|------|--------|--------|------------------|--------|-----------------------|-----------------|----------------------|
-|Coming soon. <br> Please refer to [DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/index.html) | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | `$gpc.getcarerecord` | &nbsp; |
+| TBC | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | &nbsp; | `$gpc.getcarerecord` | &nbsp; |
 
 Refer to [Capability Pack - Access Record](accessrecord.html) for further details.
 

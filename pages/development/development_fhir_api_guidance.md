@@ -102,6 +102,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 		5. ne (not equal to)
 	3.  Parameters for all resources
 		1.  [_query](https://www.hl7.org/fhir/DSTU2/search.html#query)
+		2.  [_list](https://www.hl7.org/fhir/DSTU2/search.html#list)
 	4.  Search result parameters
 		1.  [_include](https://www.hl7.org/fhir/DSTU2/search.html#include) can be used internally inside a named `_query` operation.
 		2.  [_sort](https://www.hl7.org/fhir/DSTU2/search.html#sort) can be used internally inside a named `_query` operation.
@@ -154,8 +155,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 		5. _security
 		6. _text
 		7. _content
-		8. _list
-		9. _filter
+		8. _filter
 	3. Search result parameters
 		1. _revinclude
 		2. _count		
@@ -313,9 +313,30 @@ Servers SHALL support both formal MIME-types for FHIR resources:
 
 Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
+Servers SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client application.
+
+### [Wire Format Representations](https://www.hl7.org/fhir/DSTU2/formats.html#wire) ###
+
+Servers SHALL support two wire formats as ways to represent resources when they are exchanged:
+
+- [XML](https://www.hl7.org/fhir/DSTU2/xml.html)
+- [JSON](https://www.hl7.org/fhir/DSTU2/json.html)
+
+{% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
+
+Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html#1.10.3) and declare this by setting [Conformance.acceptUnknown](https://www.hl7.org/fhir/DSTU2/conformance-definitions.html#Conformance.acceptUnknown) to 'both' in their conformance profile.
+
+Systems SHALL declare which format(s) they support in their Conformance Statement. If a server receives a request for a format that it does not support it SHALL return a http status code of `415` indicating an `Unsupported Media Type`.
+
 ### [Transfer Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
 Clients and servers SHALL support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
+
+### [Character Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
+
+Clients and servers SHALL support the `UTF-8` character encoding as outlined in the FHIR standard.
+
+> FHIR uses `UTF-8` for all request and response bodies. Since the HTTP specification (section 3.7.1) defines a default character encoding of `ISO-8859-1`, requests and responses SHALL explicitly set the character encoding to `UTF-8` using the `charset` parameter of the MIME-type in the `Content-Type` header. Requests MAY also specify this charset parameter in the `Accept` header and/or use the `Accept-Charset` header.
 
 ### Content Compression ###
 
@@ -324,6 +345,10 @@ To improve system performances clients/servers SHALL support GZIP compression.
 Compression is requested by setting the `Accept-Encoding` header to `gzip`.
 
 {% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %} 
+
+### [Inter-version Compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html) ###
+
+Unrecognized search criteria SHALL always be ignored. As search criteria supported in a query are echoed back as part of the search response there is no risk in ignoring unexpected search criteria.
 
 ### HTTP Headers ###
 
@@ -355,6 +380,11 @@ The Spine Security Proxy (SSP) SHALL perform the following checks to authenticat
 - Get the CN from the TLS session and compare the host name to the declared endpoint.
 - Check that the client/sending endpoint has been registered (and accredited) to initiate the given interaction.
 - Check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction.   
+
+#### Caching Headers ####
+
+Providers SHALL use the following HTTP Header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
+
 
 ### [Managing Return Content](https://www.hl7.org/fhir/DSTU2/http.html#return) ###
 
@@ -397,6 +427,26 @@ FHIR defines an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) re
 
 ## FHIR Resources ##
 
+### [Resource Data Types](https://www.hl7.org/fhir/DSTU2/datatypes.html) ###
+
+The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/DSTU2/datatypes.html) that are used for the resource elements.
+
+The user locale (i.e. user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems SHALL NOT effect the FHIR on the wire representation of any data types (especially date-time and number formats).
+
+Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) respresentation warrant further consideration and SHALL be taken into consideration when designing and constructing FHIR resources.
+
+For example:
+
+- Leading 0 digits are not allowed.
+- Strings SHALL NOT exceed 1MB in size.
+- URIs are case sensitive.
+- UUID values (urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7) use all lowercase.
+- Dates have no time zone.
+- Dates can be partial dates (e.g. just year or year + month).
+- Precision of the decimal value has signficance.
+- Primitive types other than string SHALL NOT have leading or trailing whitespace.
+- [Use of null](https://www.hl7.org/fhir/DSTU2/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/DSTU2/datatypes.html#1.19.0.1.1)
+
 ### [Resource Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) ###
 
 The FHIR resource narrative is not currently expected to be populated. 
@@ -414,13 +464,13 @@ A provider’s ability to process a request relating to a resource may depend on
 
 {% include important.html content="GP Connect clients and servers SHALL utilise local relative references only and as such the resources will be expected to reside on the same server." %}
 
-Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource.
+Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field SHALL be formatted inline with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
 
 | Resource | Display Format |
 | -------- | -------------- |
-| `Patient` | patient.name (patient.identifier) |
-| `Practitioner` | practitioner.name (practitioner.identifier) |
-| `Organization` | organization.name (organisation.identifier) |
+| `Patient` | patient.name |
+| `Practitioner` | practitioner.name |
+| `Organization` | organization.name |
 
 {% include todo.html content="Further display field guidance to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
@@ -498,6 +548,7 @@ Servers SHALL produce the following main [HTTP Status Codes](http://www.iana.org
 | `409` | Conflict |
 | `410` | Gone |
 | `412` | Precondition Failed |
+| `415` | Unsupported Media Type |
 | `422` | Unprocessable Entity |
 | `500` | Internal Server Error |
 

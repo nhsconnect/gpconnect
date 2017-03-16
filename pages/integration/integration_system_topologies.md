@@ -35,7 +35,7 @@ Note the ASID for each system which consumes data from the GP record.  Also plea
 
 ![Shared Care Record](images/integration/topology4-hostedregionalcarerecord.png)
 
-A regional shared care initiative hosted by one of the participating organisations might have a topology similar to this.  This  illustrates a consuming portal deployment. The hosting organisation holds the ASID for the consumer application and (subject to the usual governance controls) the data can be shared via the portal to other organisations.
+A regional shared care initiative hosted by one of the participating organisations might have a topology similar to this.  This  illustrates a consuming portal deployment. The hosting organisation holds the ASID for the consumer application and (subject to the usual governance controls) the data can be shared via the portal to other organisations.  However in such scenarios it is important that the originating clinician and organisation details are provided in the request so that consumer and provider audit requirements can be met. See [Cross Organisation Audit and Provenance](integration_cross_organisation_audit_and_provenance.html) 
 
 ## Spine Endpoint Terms ##
 

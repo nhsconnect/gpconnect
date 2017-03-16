@@ -1,5 +1,5 @@
 ---
-title: Access Record Known Issues
+title: Access Record HTML Known Issues
 keywords: htmlgetcarerecord, getcarerecord, design, known issues, bugs
 tags: [htmlgetcarerecord,design]
 sidebar: accessrecord_sidebar

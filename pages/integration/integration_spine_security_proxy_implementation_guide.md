@@ -96,9 +96,9 @@ It is expected that for phase 1 delivery a number of supporting systems won’t 
 As such it is planned that the following mitigations will be implemented as part of phase 1:
 
 - Retrieving patient demographics and NHS number (step 1) will have been performed by the consumer system using a PDS or SMSP trace.
-- The Record Location (step 2) and Endpoint Location (step 3a) will be performed internally by the consumer system using the patient’s GP organisational identifier as returned from a PDS lookup with the endpoint look-up being performed via a direct LDAP query to the Spine Director Service (SDS).
+- The Record Location (step 2) and Endpoint Location (step 3a) will be performed internally by the consumer system using the patient’s GP organisational identifier as returned from a PDS lookup with the endpoint look-up being performed via a direct LDAP query to the [Spine Directory Service (SDS)](integration_spine_directory_service.html).
 - The Patient Preferences Repository (step 5) will not be checked.
-- The Data Sharing Agreement Repository (Step 6) will not be checked.
+- An interim Data Sharing Agreement Repository (Step 6), implemented by the SSP,  will be checked.
 
 <sup>^</sup> will be made available after the initial GP Connect FoT go-live.
 
@@ -109,7 +109,7 @@ As such it is planned that the following mitigations will be implemented as part
 - PDS trace/validation of NHS number.<sup>1</sup>
 - Provides PKI client credentials to allow verification of consumer system.
 - Validation of PKI server credentials to allow verification of proxy system.
-- Addition of Spine HTTP headers to allow secure routing & system-level auditing.
+- Addition of Spine HTTP headers to allow secure routing & system-level auditing.<sup>2</sup>
 	- `Ssp-TraceID`
 		- `GUID/UUID` which identifies the sender's message/interaction (to be generated per request).
 	- `Ssp-From`
@@ -117,7 +117,7 @@ As such it is planned that the following mitigations will be implemented as part
 	- `Ssp-To`
 		- `ASID` which identifies the recipient's FHIR endpoint.
 	- `Ssp-InteractionID`
-		- `InteractionID` of the operation being performed.<sup>2</sup>
+		- `InteractionID` of the operation being performed.<sup>3</sup>
 - Construction of URL formatted for valid consumption by the proxy system.
 	- `https://[proxy_server]/https://[provider_server]/[fhir_base]/[fhir_request]`
 		- Fully qualified domain name of the proxy system.
@@ -127,7 +127,7 @@ As such it is planned that the following mitigations will be implemented as part
 			- To include major API version details.
 			- FHIR URL request.
 				- `[type]/[id] {?_format=[mime-type]}`
-- Construction of a valid JSON Web Token (JWT) to include the consumer’s client and user claims in line with the audit trail record requirements.<sup>3</sup>
+- Construction of a valid JSON Web Token (JWT) to include the consumer’s client and user claims in line with the audit trail record requirements.<sup>4</sup>
 	- UserID, Name, Role and Organisation
 	- Identity of authority (the person authorising the entry of, or access to data).
 	- The date and time on which the event occurred.
@@ -143,9 +143,11 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 <sup>1</sup> this look-up is to ensure the NHS Number is of good quality in the consumer system and is not required prior to each API operation.
 
-<sup>2</sup> a table of `InteractionIDs` for each RESTful API can be found in the [Development - FHIR API Guidance - Operation Guidance](development_fhir_operation_guidance.html) page.
+<sup>2</sup> The content of the HTTP headers is not to be used for internal processing message routing within provider systems. 
+  
+<sup>3</sup> a table of `InteractionIDs` for each RESTful API can be found in the [Development - FHIR API Guidance - Operation Guidance](development_fhir_operation_guidance.html) page.
 
-<sup>3</sup> an example of a valid JSON Web Token (JWT) for the purposes of GP Connect can be found in the [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) guidance.
+<sup>4</sup> an example of a valid JSON Web Token (JWT) for the purposes of GP Connect can be found in the [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) guidance.
 
 {% include important.html content="Note that according to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2]) all HTTP header fields names are case insensitive and should be handled as such." %}
 
@@ -185,11 +187,14 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- Exposed patient records are expected to contain only curated NHS numbers.
 - Provides PKI server credentials to allow verification of provider system.
 - Validation of PKI credentials to allow verification of proxy system.
-- Processing of FHIR conformant API requests and generation of FHIR conformant responses.
+- Processing of FHIR conformant API requests and generation of FHIR conformant responses.<sup>2</sup>
+- Publish endpoints to SDS/Endpoint Locator which include the FHIR Version number. The FHIR version number returned by the FHIR server endpoint conformance statement SHALL match the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
 - Error response generation in line with FHIR and HTTP conventions including the return of transient HTTP error codes when appropriate (i.e. due to the provider being down or busy).
 	- `503` Service Unavailable
 
 <sup>1</sup> this look-up is to ensure the NHS Number is of good quality in the provider system and is not required prior to each API operation.
+
+<sup>2</sup> The content of the HTTP headers must not be used for internal business logic or message routing within provider systems other than the stated requirement for auditing.  For example: routing all GP Connect requests from a provider supplier's N3 facing gateway to a specific practice endpoint within the supplier's estate, based solely on the header information, would not be acceptable.  The URL is the only approved mechanism for request routing.
 
 ## Proxy Requirements ##
 
