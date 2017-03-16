@@ -17,6 +17,8 @@ Provider systems SHALL only permit approved [supported ciphers](development_api_
 
 Provider systems SHALL only accept encrypted connections and drop connection attempts presented over insecure protocols.
 
+Provider systems SHALL only accept request for it's allocated ASID on it's matching endpoint URL.
+
 ## Security Testing ##
 
 Provider systems SHALL as a minimum be tested against the [OWASP top 10 web application vulnerabilities](https://www.owasp.org/index.php/Top_10_2013-Top_10).
