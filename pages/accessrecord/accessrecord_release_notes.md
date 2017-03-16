@@ -1,22 +1,35 @@
 ---
-title: Access Record Release Notes
+title: Access Record HTML Release Notes
 keywords: getcarerecord, release notes
 tags: []
 sidebar: accessrecord_sidebar
 permalink: accessrecord_release_notes.html
-summary: "Release notes for the various versions of the Access Record capability."
+summary: "Release notes for the various versions of the Access Record HTML capability."
 ---
+
+#### 1.0.0-rc.5 (Released: 16th March)
+
+- Updated [Access Record Landing Page](accessrecord.html)
+  - Removed details of structured record access as that's now covered in a seperate pack.
+- Updated [Access Record Design Decisions](accessrecord_design.html)
+  - Added some design guidance on how record locking impacts servicing queries/requests.
+- Updated [Access Record Known Issues](accessrecord_known_issues.html)
+  - Removed historical known issues which have now been addressed.
+- Updated [Access Record View Medications](accessrecord_view_medications.html)
+  - Minor fix to HTML template to bring thead/tbody tag usage inline with the other templates.
+  - Minor wording tweak "Max Issued" to "Max Issues" for consistency.
+  - Minor wording tweak "Scheduled End Date" to "Scheduled End" for consistency.
+- Updated [Access Record View Problems](accessrecord_view_problems.html)
+  - Minor fix to HTML template to bring thead/tbody tag usage inline with the other templates.
 
 #### 1.0.0-rc.4 (Released: 20th February)
 
 - Updated [Access Record Design Decisions](accessrecord_design.html)
-  - Wording uplifted to include GP-Practice designated Confidential Items 
-  
--  Updated [Design_Principles](designprinciples_ig_principles.html)
--Wording uplifted to include Confidential Items Exclusion
-    
+  - Wording uplifted to include GP Practice designated Confidential Items.
+- Updated [Design_Principles](designprinciples_ig_principles.html)
+  - Wording uplifted to include Confidential Items Exclusion.
 - Updated [Allergies](accessrecord_view_allergies.html)
--Wording uplifted to reflect EMIS not providing Historical Allergies
+  - Wording uplifted to reflect EMIS is not providing Historical Allergies.
 
 #### 1.0.0-rc.3 (Released: 6th February)
 
@@ -59,7 +72,7 @@ summary: "Release notes for the various versions of the Access Record capability
 #### 1.0.0-rc.1 (Released: September 2016)
 - Beta version promoted to release candidate
 
-#### 1.0.0-beta.1 (Release: August 2016)
+#### 1.0.0-beta.1 (Released: August 2016)
 - Initial release of the Access Record capability pack on GitHub in early August 2016.
 
 #### 1.0.0-alpha.1 (Released: May 2016)

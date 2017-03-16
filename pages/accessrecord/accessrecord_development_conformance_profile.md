@@ -1,10 +1,10 @@
 ---
-title: Example Conformance Profile
+title: Access Record HTML Conformance Profile
 keywords: getcarerecord, development, conformance, metadata
 tags: [development,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_conformance_profile.html
-summary: "Example of a conformance profile for the Access Record capability."
+summary: "Example of a conformance profile for the Access Record HTML capability."
 ---
 
 ## Conformance Statement ##
