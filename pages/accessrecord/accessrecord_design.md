@@ -1,5 +1,5 @@
 ---
-title: Access Record Design Decisions
+title: Access Record HTML Design Decisions
 keywords: getcarerecord design
 tags: [design,getcarerecord]
 sidebar: accessrecord_sidebar
