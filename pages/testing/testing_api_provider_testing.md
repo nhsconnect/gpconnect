@@ -35,6 +35,8 @@ Provider systems SHALL be tested for conformance to one or more of the following
  - [Appointment Management](appointments.html)
  - [Task Management](tasks.html)
 
+{% include download.html content="Download the [GP Connect Provider Test Suite](https://github.com/nhsconnect/gpconnect-provider-testing) to help validate the technical conformance of your provider API implementation." %}
+
 ## Solution Assurance ##
 
 Solution assurance ensures that the correct level of safety, governance, and security has been accepted, understood and signed off by the organisation providing the APIs.
