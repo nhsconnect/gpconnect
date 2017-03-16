@@ -464,13 +464,13 @@ A provider’s ability to process a request relating to a resource may depend on
 
 {% include important.html content="GP Connect clients and servers SHALL utilise local relative references only and as such the resources will be expected to reside on the same server." %}
 
-Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource.
+Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field SHALL be formatted inline with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
 
 | Resource | Display Format |
 | -------- | -------------- |
-| `Patient` | patient.name (patient.identifier) |
-| `Practitioner` | practitioner.name (practitioner.identifier) |
-| `Organization` | organization.name (organisation.identifier) |
+| `Patient` | patient.name |
+| `Practitioner` | practitioner.name |
+| `Organization` | organization.name |
 
 {% include todo.html content="Further display field guidance to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
