@@ -198,7 +198,7 @@ Where the Consumer System has not supplied a date-range, then where applicable a
 
 ```html
 <div>
-	<p>All relevant items subject to Patient preferences and/or legal exclusions</p>
+	<p>All relevant items subject to patient preferences and/or RCGP exclusions</p>
 </div>
 ``` 
 
