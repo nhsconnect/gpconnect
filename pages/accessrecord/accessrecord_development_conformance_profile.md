@@ -34,6 +34,16 @@ This is an example conformance statement for a GP Connect FHIR server which prov
 	<acceptUnknown value="both" />
 	<format value="application/xml+fhir" />
 	<format value="application/json+fhir" />
+ 	<profile>
+ 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-device-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"/>
+	</profile>
 	<rest>
 		<mode value="server" />
 		<security>
