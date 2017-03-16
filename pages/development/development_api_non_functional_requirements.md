@@ -51,6 +51,8 @@ Provider systems SHALL audit all API access and actions.
 
 Please refer to the [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) page for technical details.
 
+Provider systems SHALL record audit & provenance data inline with existing GPSoC framework agreements, including relevant IM1 requirements for interfacing mechanisms.
+
 ### Maintainability ###
 
 Provider systesms SHALL be designed to optimise the ability of maintenance personnel to revise or enhance it.
@@ -74,6 +76,14 @@ Please refer to the 'GPSoC Technical Standards' for details.
 Provider and Consumer systems MUST maintain a compliance of minimum Double “A” of the WCAG 1.0 (or equivalent in WCAG 2.0), or as stipulated by UK Government Guidelines, for all user interfaces. Please see the [Web Accessibility Initiative](https://www.w3.org/WAI/) for more details.
 
 Please refer to the 'GPSoC Technical Standards' for details.
+
+### Deployment ###
+
+Provider systems SHALL be deployed with the provider APIs enabled by default.
+
+Provider systems MAY provide a mechanism for a data controller at an organisation to choose to globally disable/enable the provider APIs (i.e. turn on/off the overall GP Connect technical capability).
+
+Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (i.e. Access Record HTML vs. Appointments vs. Tasks).
 
 ## External Documents / Policy Documents ##
 
