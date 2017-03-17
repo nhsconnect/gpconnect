@@ -41,7 +41,7 @@ Provider systems SHALL be tested for conformance to one or more of the following
 
 Solution assurance ensures that the correct level of safety, governance, and security has been accepted, understood and signed off by the organisation providing the APIs.
 
-{% include important.html content="Suppliers are responsible for there own testing and the clinical safety of the delivered system. Supplier authored tests must be traceable back to the published specification. NHS Digital's automated test suite is non-exhaustive and does not cover all test cases/scenarios required to pass solution assurance. NHS Digital expects to see evidence of more supplier authored tests in addition to the NHS Digital authored tests." %}
+{% include important.html content="Suppliers are responsible for their own testing and the clinical safety of the delivered system. Supplier authored tests must be traceable back to the published specification. NHS Digital's automated test suite is non-exhaustive and does not cover all test cases/scenarios required to pass solution assurance. NHS Digital expects to see evidence of more supplier authored tests in addition to the NHS Digital authored tests." %}
 
 ### Witness Testing ###
 
