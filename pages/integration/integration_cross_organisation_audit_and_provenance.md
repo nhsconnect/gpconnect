@@ -15,7 +15,7 @@ Provider systems SHALL ensure that access to confidential data, including patien
 
 ### Audit Trail ###
 
-{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' requirements." %}
+{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' and 'GP Systems Interface Mechanism' requirements." %}
 
 For implementers that don't have access to the GP SoC Framework / 'IG Requirements for GP Systems V4' requirements then the following extract of requirements covers the main audit trail requirements:
 
@@ -202,4 +202,5 @@ Where the Practitioner has both a local system role as well as a Spine RBAC role
 ## External Documents / Policy Documents ##
 
 | Name | Author | Version | Updated |
-| GPSoC IG Requirements for GP Systems | NHS Digital | v4.0 | ??/??/???? |
+| GPSoC IG Requirements for GP Systems | NHS Digital | v4.0 | 19/09/2014 |
+| GP Systems Interface Mechanism Requirements V 1| NHS Digital | v0.10|
