@@ -13,6 +13,8 @@ GP Connect systems SHALL be capable of performing [Personal Demographic Service]
 
 GP Connect systems SHALL follow the guiding principles of [how systems should integrate with PDS](http://webarchive.nationalarchives.gov.uk/20160921135209/http://systems.digital.nhs.uk/demographics/spineconnect). This describes in particular the principles governing how systems should synchronise with PDS as the master repository of demographics data to ensure local system data does not become stale.
 
+There is a very limited risk that the consumer-traced NHS number pre-dates a patient record status change to sensitive Flag (S-Flag) immediately prior to use.
+
 ## Spine Mini Service PDS (SMSP) ##
 
 GP Connect systems MAY utilise the [Spine Mini Service PDS](http://systems.digital.nhs.uk/ddc/spine-mini-service){:target="_blank"} (SMSP) as a lighter weight alternative to integrating with the full Spine Personal Demographic Service (PDS).
