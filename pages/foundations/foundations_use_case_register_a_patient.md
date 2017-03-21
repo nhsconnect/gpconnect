@@ -23,7 +23,7 @@ This specification describes a single use cases. For complete details and backgr
 The Consumer system:
 
 - SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
-- SHALL have previously assertained that the patient isn't already registered at the provider organisation.
+- SHALL have previously ascertained that the patient isn't already registered at the provider organisation.
 
 ## API Usage ##
 
