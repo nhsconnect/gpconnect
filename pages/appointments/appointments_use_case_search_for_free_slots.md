@@ -9,7 +9,7 @@ summary: "Use case for searching for free slots within a date range at an organi
 
 ## Use Case ##
 
-This specification describes a single use cases. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
 
 ## Security ##
 
@@ -22,10 +22,10 @@ This specification describes a single use cases. For complete details and backgr
 
 The Consumer system:
 
-- SHALL have previously resolved the organisation's FHIR instance using an ODS Code, ODS Site Code or other organisational business identifier.
+- SHALL have previously [resolved the organisation's FHIR Base URL](integration_spine_directory_services.html) using an ODS Code, ODS Site Code or other organisational business identifier.
 - SHALL request a maximum date range covering a two week period.
 
-{% include tip.html content="Multiple seperate API calls can be made if a larger date range is required however consideration should be given to the load this placed on the Provider system." %}
+{% include tip.html content="Multiple separate API calls can be made if a larger date range is required however consideration should be given to the load this placed on the Provider system." %}
 
 ## API Usage ##
 

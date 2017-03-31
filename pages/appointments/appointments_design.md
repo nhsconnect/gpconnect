@@ -9,7 +9,7 @@ summary: "Overview of the design decisions made in relation to the Appointment M
 
 ## Appointment API Scope ##
 
-The scope of appointment management is to:
+The scope of appointment management is to deliver:
 
 - <span class="label label-success">SELECTED</span> Functionality required to manage appointments in the context of a patient.
 - Functionality to view or manage an entire diary/appointment book.
