@@ -1,7 +1,7 @@
 entries:
 - title: GP Connect
   product: GP Connect<br/>
-  version: 1.0.0-alpha.3
+  version: 1.0.0-alpha.4
   levels: one
   folders:
 
@@ -27,9 +27,9 @@ entries:
     - title: Webinars
       url: /overview_webinars.html
       output: web
-    - title: Work in Progress
-      url: /overview_work_in_progress.html
-      output: web      
+#    - title: Work in Progress
+#      url: /overview_work_in_progress.html
+#      output: web
     - title: First of Type
       url: /overview_first_of_type.html
       output: web
@@ -53,11 +53,8 @@ entries:
   - title: Explore
     output: web
     folderitems:
-    - title: Consumer Demonstrator
+    - title: System Demonstrator
       url: /system_demonstrator.html
-      output: web
-    - title: Reference Implementation
-      url: /system_reference.html
       output: web
     - title: Swagger API Documentation
       url: /system_reference_swagger.html
@@ -78,9 +75,6 @@ entries:
         - title: Open Source
           url: /development_fhir_open_source_guidance.html
           output: web
-        - title: Server Guidance
-          url: /development_fhir_server_guidance.html
-          output: web
         - title: Common API Guidance
           url: /development_fhir_api_guidance.html
           output: web
@@ -99,23 +93,25 @@ entries:
         - title: V&P Guidance
           url: /development_api_volume_and_performance.html
           output: web          
+        - title: NFR Guidance
+          url: /development_api_non_functional_requirements.html
+          output: web
 
     - title: FHIR&reg; Data Models
       url: /datalibrary.html
       output: web
 
-#    - title: Dev Environments
-#      url: /development_environments.html
-#      output: web
-
   - title: Implement A Capability
     output: web
     folderitems:
-    - title: API Foundations
+    - title: Foundations
       url: /foundations.html
       output: web
-    - title: Access Record
+    - title: Access Record HTML
       url: /accessrecord.html
+      output: web
+    - title: Access Record REST
+      url: /accessrecord_rest.html
       output: web
     - title: Task Management
       url: /tasks.html
@@ -152,31 +148,17 @@ entries:
     - title: Testing Assets
       url: /testing_deliverables.html
       output: web
-    - title: Testing Data
-      url: /testing_data.html
-      output: web
-    - title: Accreditation
-      url: /testing_accreditation.html
-      output: web
-    - title: Assurance
-      url: /testing_assurance.html
-      subfolders:
-      - title: System Test
-        output: web
-        subfolderitems:
-
-        - title: Stage 1. Test Window
-          url: /development_stage_one_test_window.html
-          output: web
-        - title: Stage 2. Test Window
-          url: /development_stage_two_test_window.html
-          output: web
-        - title: Stage 3. Test Window
-          url: /development_stage_three_test_window.html
-          output: web      
-      output: web
-    - title: Path to Live
+    - title: Test Environments
       url: /testing_environments.html
+      output: web
+#    - title: Testing Data
+#      url: /testing_data.html
+#      output: web
+    - title: Provider Testing
+      url: /testing_api_provider_testing.html
+      output: web
+    - title: Consumer Testing
+      url: /testing_api_consumer_testing.html
       output: web
 
   - title: Help & Support

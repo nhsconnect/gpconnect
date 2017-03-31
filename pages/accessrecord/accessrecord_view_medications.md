@@ -68,7 +68,7 @@ All relevant records SHALL be returned.
 2. Medication Item
 3. Type
  - i.e. Repeat or Acute
-4. Scheduled End Date
+4. Scheduled End
 5. Days Duration
 6. Details<sup>1</sup>
 	- longer human readable free-text details for the medication item.
@@ -84,7 +84,7 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 	<table>
 		<thead>
 			<tr>
-				<th>StartDate</th>
+				<th>Start Date</th>
 				<th>Medication Item</th>
 				<th>Type</th>
 				<th>Scheduled End</th>
@@ -221,7 +221,7 @@ Providers message describing at a summary level how they have populated this sec
 4. Last Issued
 5. Review Date
 6. Number Issued
-7. Max Issued
+7. Max Issues
 8. Details
 
 {% include todo.html content="Number Issued, & Max Issues to be reviewed given Provider variances "%}

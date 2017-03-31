@@ -50,23 +50,23 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 - Grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language.
 - Familiarise yourself with our GP Connect [FHIR API Guidance](development_fhir_api_guidance.html) common to all APIs.
 - Have a look at our [FHIR Data Library](datalibrary.html) which explains the changes (or profiles) we've created as GP Connect versions of the international [DSTU2 FHIR](https://www.hl7.org/fhir/DSTU2/){:target="_blank"} Resources. 
-- Download or clone the GP Connect API definitions & data library:
-	- [GP Connect API Defintions](https://github.com/nhsconnect/gpconnect-api){:target="_blank"}
+- Download or clone the GP Connect machine readable FHIR definitions:
 	- [GP Connect Data Library](https://github.com/nhsconnect/gpconnect-fhir){:target="_blank"}
 - Dig in deep and explore one or more of the GP Connect Capability Packs and start building new or hitting existing APIs.
   - [Foundations Capability Pack](foundations.html) (e.g. resolve a patient to their logical identifier for further API calls).
   	- Note the foundation per-requisites are mandatory and may restrict your ability to utilise the GP Connect APIs.
-  - [Access Record Capability Pack](accessrecord.html) (e.g. Access headings from the primary care record).
+  - [Access Record HTML Capability Pack](accessrecord.html) (e.g. Access html views from the primary care record).
+  - [Access Record REST Capability Pack](accessrecord_rest.html) (e.g. Access structured data from the primary care record).
   - [Appointment Management Capability Pack](appointments.html) (e.g. Book an appointment for a patient).
   - [Task Management Capability Pack](tasks.html) (e.g. Send a notification task to a general practice organisation).
 - Finally take a look at cross-cutting areas:
   - JSON Web Token - Provides [Cross Organisation Audit and Provenance](integration_cross_organisation_audit_and_provenance.html) details.
   - Additional HTTP headers and Proxy URL - This gives you access to the [Spine Security Proxy](integration_spine_security_proxy.html), the secure 'front door' of GP Connect APIs.
-  - Configure HTTPS and TLS MA - This allows you to mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time). 
+  - Configure HTTPS and TLS MA - [Security Guidance](development_api_security_guidance.html) allows you to secure and mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time). 
 
 ## 4. Assure ##
 
-- Read about the [Accreditation](testing_accreditation.html) and [Assurance](testing_assurance.html) process.
+- Read about the [Provider Testing](testing_api_provider_testing.html) and [Consumer Testing](testing_api_consumer_testing.html) process.
 
 ## 5. Deploy ##
 

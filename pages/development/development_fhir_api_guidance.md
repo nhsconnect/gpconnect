@@ -102,6 +102,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 		5. ne (not equal to)
 	3.  Parameters for all resources
 		1.  [_query](https://www.hl7.org/fhir/DSTU2/search.html#query)
+		2.  [_list](https://www.hl7.org/fhir/DSTU2/search.html#list)
 	4.  Search result parameters
 		1.  [_include](https://www.hl7.org/fhir/DSTU2/search.html#include) can be used internally inside a named `_query` operation.
 		2.  [_sort](https://www.hl7.org/fhir/DSTU2/search.html#sort) can be used internally inside a named `_query` operation.
@@ -154,8 +155,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 		5. _security
 		6. _text
 		7. _content
-		8. _list
-		9. _filter
+		8. _filter
 	3. Search result parameters
 		1. _revinclude
 		2. _count		
@@ -464,13 +464,13 @@ A provider’s ability to process a request relating to a resource may depend on
 
 {% include important.html content="GP Connect clients and servers SHALL utilise local relative references only and as such the resources will be expected to reside on the same server." %}
 
-Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource.
+Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field SHALL be formatted inline with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
 
 | Resource | Display Format |
 | -------- | -------------- |
-| `Patient` | patient.name (patient.identifier) |
-| `Practitioner` | practitioner.name (practitioner.identifier) |
-| `Organization` | organization.name (organisation.identifier) |
+| `Patient` | patient.name |
+| `Practitioner` | practitioner.name |
+| `Organization` | organization.name |
 
 {% include todo.html content="Further display field guidance to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 

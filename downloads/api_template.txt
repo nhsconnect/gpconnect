@@ -37,6 +37,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
+| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `TODO`|
@@ -107,5 +108,5 @@ TODO
 ) library." %}
 
 ```java
-Hello World
+TODO
 ```

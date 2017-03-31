@@ -15,6 +15,8 @@ summary: "Details of the API volume and performance characteristics."
 
 Provider systems SHALL NOT use this volumetric model as a 'gold standard' but MAY use it as the basis of developing their own volumetric models.
 
+### Scalability ###
+
 Provider systems SHALL through V&P profiling and solution assurance activities demonstrate how the system can scale as demand increases.
 
 ## Performance ##
