@@ -20,23 +20,25 @@ summary: An overview of the workshops being held to support the design and devel
 
 ### April 2017 ###
 
+Some highlights between August and April:
+
+- RC.5 spec pack of Access Record HTML capability published.
+- Automated test suite completed and made available publically for Access Record HTML.
+- Conditional DevMAC awarded to first supplier for Access Record HTML (Stage 1), proceeding to FoT.
+
 | Date                 | Location       | Description |
 |----------------------|----------------|-------------|
-| 11th April 2017     | WebEx | Access Record Stage 2 & 3; use cases, FHIR profiles and API overview. |
+| 11th April 2017      | WebEx | Structured Access Record (Stages 2 & 3); use cases, FHIR profiles and API overview. |
 
-Agenda (link coming soon)<br>
--	Outline our use case development approach and Meds use case
--	Provide an overview of information models and FHIR Profiles
--	Walk through API specifications / capability pack
--	Discuss an overarching timeline and approach for delivery
+Agenda<br>
+
+-	Outline our use case development approach and Meds use case.
+-	Provide an overview of information models and FHIR Profiles.
+-	Walk through API specifications / capability pack.
+-	Discuss an overarching timeline and approach for delivery.
 
 [Workshop slides](downloads/workshops/20170411/GP_Connect_Structured_Access_Record_WebEx_Workshop_11042017.pptx)<br>
-Workshop notes (link coming soon)
 
-Some highlights between August and April:
-- RC.5 spec pack of Access Record capability published
-- Automated test suite completed and made available publically for Access Record RC.5
-- Conditional DevMAC awarded to first supplier for Access Record Stage 1, proceeding to FoT
 
 ### August 2016 ###
 
