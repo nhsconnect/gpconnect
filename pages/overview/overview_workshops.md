@@ -30,7 +30,7 @@ Agenda (link coming soon)<br>
 -	Walk through API specifications / capability pack
 -	Discuss an overarching timeline and approach for delivery
 
-Workshop slides (link coming soon)<br>
+[Workshop slides](downloads/workshops/20170411/GP_Connect_Structured_Access_Record_WebEx_Workshop_11042017.pptx)<br>
 Workshop notes (link coming soon)
 
 Some highlights between August and April:
