@@ -46,6 +46,12 @@ View the latest build of the [GP Connect Demonstrator](http://ec2-54-194-109-184
 
 {% include tip.html content="All data held in the GP Connect Demonstrator is a cleared down and reseeded each night to allow for easier testing. <br/>Please refer to the Demonstrator's in-built help for further details." %}
 
+## Community Projects ##
+
+Dave Bould has developed a Vagrant config file for building a complete GP Connect Demonstrator environment with only a few commands.
+
+[GP Connect Vagrant](https://github.com/dbould/gpconnect-vagrant)
+
 ## Example Screens ##
 
 ![GP Connect Demonstrator Patient Summary](images/systems/GP Connect Demonstrator Patient Summary.png)
