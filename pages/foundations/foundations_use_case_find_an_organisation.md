@@ -9,7 +9,7 @@ summary: "Use case for finding an organisation resource by business identity."
 
 ## API Usage ##
 
-Resolve (zero or more) `Organization` resources using a business identifier (i.e. SDS User Id).
+Resolve (zero or more) `Organization` resources using a business identifier (i.e. ODS organization code or ODS site code).
 
 ### Request Operation ###
 
