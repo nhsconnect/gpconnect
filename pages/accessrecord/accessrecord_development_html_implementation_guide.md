@@ -198,7 +198,7 @@ Where the Consumer System has not supplied a date-range, then where applicable a
 
 ```html
 <div>
-	<p>All relevant items subject to patient preferences and/or RCGP exclusions</p>
+	<p>All relevant items</p>
 </div>
 ``` 
 
@@ -223,7 +223,7 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | INV  | All | DiagnosticOrder<sup>2</sup> |
 | MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
 | OBS  | All Relevant | Observation |
-| PAT  | - | Patient<sup>3</sup> |
+| PAT  | - | Patient<sup>2,3</sup> |
 | PRB  | All Relevant | Problem|
 | REF  | All Relevant | Referral |
 | SUM  | - | Summary<sup>3</sup> |
