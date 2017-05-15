@@ -43,8 +43,3 @@ A regional shared care initiative hosted by one of the participating organisatio
 | CMA Endpoint | Combined MHS and Accredited System Endpoint. An endpoint registered with Spine for a single system. |
 | ASID | Accredited System Identifer. A unique number allocated to a system on accreditation for connection to Spine. |
 | MHS | Message Handling Server.  A middleware that handles messaging to/from Spine. |
-
-
-
-
-{% include links.html %}
