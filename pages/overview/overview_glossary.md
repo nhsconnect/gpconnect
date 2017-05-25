@@ -51,3 +51,7 @@ SDS
 
 ODS
 : {{site.data.glossary.ods}}
+
+Federation
+: {{site.data.glossary.federation}}
+
