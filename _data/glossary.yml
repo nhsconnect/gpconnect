@@ -12,3 +12,4 @@ spine: "Is a collection of national applications, services and directories which
 pds: "Personal Demographic Service"
 sds: "Spine Directory Service"
 ods: "Organisational Data Service"
+federation: "For the purposes of federation of appointment bookings through the Appointments API, the “federation” is simply considered to the list of the organisations which are members of the federation, for example as a list of ODS codes"
