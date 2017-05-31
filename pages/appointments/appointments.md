@@ -11,7 +11,7 @@ summary: "All about the appointment management capability."
 
 {% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
 
-## Purpose - Change ##
+## Purpose ##
 
 Demonstrates the ability to provide service users (and patients) with the ability to book and manage appointments in a timely fashion and to provide better, quicker access to primary care.
 
