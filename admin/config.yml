@@ -2,6 +2,7 @@ backend:
   name: github
   repo: nhsconnect/gpconnect
   branch: develop
+  site_domain: gpconnect.netlify.com
 
 media_folder: "images/uploads"
 
