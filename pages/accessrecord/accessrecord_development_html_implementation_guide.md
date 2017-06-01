@@ -1,10 +1,14 @@
 ---
 title: HTML Implementation Guide
-keywords: getcarerecord, development, html, rendering
-tags: [development,getcarerecord]
+keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_implementation_guide.html
-summary: "Overview of the common HTML view rendering guidance in relation to the Access Record capability."
+summary: >-
+  Overview of the common HTML view rendering guidance in relation to the Access
+  Record capability.
+tags:
+  - development
+  - getcarerecord
 ---
 
 ## HTML Implementation Guide ##
@@ -187,8 +191,7 @@ Consumer Systems SHALL display the date range applied to a section's data, as su
 
 ```html
 <div>
-	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  
-
+	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>
 </div>
 ```
 
@@ -258,5 +261,6 @@ As outlined in the 'Styling the XHTML' section of the FHIR&reg; standard.
 > In order to minimise manageability and security issues, authoring systems cannot specify the CSS stylesheet to use directly. Instead, the application that displays the resource provides the stylesheets. This means that the rendering system chooses what styles can be used, but the authoring system must use them in advance. Authoring systems can use these classes, which SHALL be supported by all rendering systems.
 > 
 > Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/DSTU2/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/DSTU2/narrative.html#css) on the FHIR website for full details.
+
 
 
