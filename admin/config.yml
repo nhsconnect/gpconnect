@@ -14,6 +14,16 @@ collections:
     folder: "pages/accessrecord"
     create: false
     slug: "accessrecord_{{slug}}"
+    files:
+    - name: "accessrecord_clinical_scenarios"
+      label: "Clinical Scenarios"
+      file: "accessrecord_clinical_scenarios.md"
+    - name: "accessrecord_design"
+      label: "Design"
+      file: "accessrecord_design.md"
+    - name: "accessrecord_release_notes"
+      label: "Release Notes"
+      file: "accessrecord_release_notes.md"
     fields:
       - {label: "Title", name: "title", widget: "string", default: "Page Title For Browser"}
       - {label: "Key Words", name: "keywords", widget: "hidden", default: "getcarerecord"}
