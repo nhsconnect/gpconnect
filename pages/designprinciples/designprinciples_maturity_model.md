@@ -15,7 +15,7 @@ The maturity roadmap of a compliant Principal GP system is expected to follow th
 
 ## Stage 1 - Current ##
 - Access Record (v1.0), Appointment (v1.0) and Task (v1.0) capabilities.
- - Access Record includes: HTML Patient Summary, Encounters, Clinical Items, Problems and Issues, Allergies and Adverse Reactions, <br/>Medications, Referrals, Observations, Immunisations & Administrative Items.
+ - Access Record includes: HTML Patient Summary, Encounters, Clinical Items, Problems and Issues, Allergies and Adverse Reactions, Medications, Referrals, Observations, Immunisations & Administrative Items.
 - Spine Security Proxy (SSP) integration.
 - Organisational Data Sharing Agreement checking in the SSP.
 - RBAC Auditing of local user roles in the JWT.
@@ -37,8 +37,8 @@ This is the working list of structured resources required for Access Record v2.0
 
 ## Priority confirmed ##
 
-1a. MedicationOrder
-1b. MedicationStatement
+1. a) MedicationOrder
+1. b) MedicationStatement
 2. AllergyIntolerance
 3. Immunization
 4. Condition
