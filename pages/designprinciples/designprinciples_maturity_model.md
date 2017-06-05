@@ -37,8 +37,8 @@ This is the working list of structured resources required for Access Record v2.0
 
 ## Priority confirmed ##
 
-1. a) MedicationOrder
-1. b) MedicationStatement
+1. a) MedicationOrder 
+<br/> b) MedicationStatement
 2. AllergyIntolerance
 3. Immunization
 4. Condition
