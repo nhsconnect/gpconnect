@@ -25,7 +25,7 @@ If you're planning on consuming data using GP Connect APIs then you're a Consume
 
 ### Become an API Provider
 
-If you are planning on providing data using GP Connect APIs then you're a Provider system. 
+If you're planning on providing data using GP Connect APIs then you're a Provider system. 
 
 
 
