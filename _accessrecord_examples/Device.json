@@ -1,0 +1,39 @@
+{
+    "resourceType": "Device",
+    "id": "c4c8d038-913a-490c-9682-47047f4155fb",
+    "meta": {
+        "profile": [
+            "http://fhir.nhs.net/StructureDefinition/gpconnect-device-1"
+        ]
+    },
+    "identifier": [
+        {
+            "id": "8cecc0f1-ded1-4956-9504-cf02cc6395e3"
+        }
+    ],
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "462240000",
+                "display": "Patient health record information system (physical object)"
+            }
+        ]
+    },
+    "note": [
+        {
+            "text": "System generated EHR (Details)"
+        }
+    ],
+    "manufacturer": "EMIS",
+    "model": "AA 1001-C",
+    "version": "8.15-04",
+    "owner": {
+        "reference": "Organization/79600119-ebaf-4362-bb89-d473a33b1675",
+        "display": "Wood Town GP Practice"
+    },
+    "location": {
+        "reference": "Location/ad13fdcb-b69c-4ec7-a027-b220898db38f",
+        "display": "Wood Town GP Practice"
+    }
+}

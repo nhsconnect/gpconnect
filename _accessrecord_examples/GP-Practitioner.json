@@ -1,0 +1,66 @@
+{
+    "resourceType": "Practitioner",
+    "id": "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
+    "meta": {
+        "profile": [
+            "http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"
+        ]
+    },
+    "identifier": [
+        {
+            "system": "http://fhir.nhs.net/Id/sds-user-id",
+            "value": "1234567"
+        },
+        {
+            "system": "http://fhir.nhs.net/Id/sds-role-profile-id",
+            "value": "PT1234"
+        }
+    ],
+    "name": {
+        "family": [
+            "Wood"
+        ],
+        "given": [
+            "Tom"
+        ],
+        "prefix": [
+            "Dr."
+        ]
+    },
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "0113-333-1231",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "use": "work",
+            "line": [
+                "13, Amber Street"
+            ],
+            "city": "Leeds",
+            "postalCode": "LS20 1TV",
+            "country": "GBR"
+        }
+    ],
+    "gender": "male",
+    "practitionerRole": [
+        {
+            "managingOrganization": {
+                "reference": "Organization/79600119-ebaf-4362-bb89-d473a33b1675",
+                "display": "Wood Town GP Practice"
+            },
+            "role": {
+                "coding": [
+                    {
+                        "system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
+                        "code": "R8000",
+                        "display": "General Medical Practitioner"
+                    }
+                ]
+            }
+        }
+    ]
+}

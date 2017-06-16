@@ -1,0 +1,24 @@
+{
+    "resourceType": "OperationOutcome",
+    "id": "b91578cd-8d04-4664-bf53-ecd20bd923a4",
+    "meta": {
+        "profile": [
+            "http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"
+        ]
+    },
+    "issue": [
+        {
+            "severity": "information",
+            "code": "not-found",
+            "details": {
+                "coding": [
+                    {
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+                        "code": "GPC-001"
+                    }
+                ]
+            },
+            "diagnostics": "Not found"
+        }
+    ]
+}

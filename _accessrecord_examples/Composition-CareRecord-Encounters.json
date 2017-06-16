@@ -1,0 +1,70 @@
+{
+    "resourceType": "Composition",
+    "id": "0256d888-5aea-11e6-8b77-86f30ca893d3",
+    "meta": {
+        "profile": [
+            "http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"
+        ]
+    },
+    "text": {
+        "status": "generated",
+        "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p style=\"font-size:20px\"><b>Patient Care Record - Mrs Sally Taylor</b></p><p style=\"font-size:16px\"><b>Record Id:</b> 31686b67-9f20-4644-9a54-193d2f91de57 <b>NHS Number:</b> 9900002831 <b>Date of Birth:</b> 1947-06-09 <b>Address:</b> 42 Grove Street, Overtown, West Yorkshire, LS21 1PF <b>Home Telephone:</b> 0113-245-1919 \r\n\t\t\t</p><table width=\"100%\" border=\"1\"><thead><tr><td colspan=\"5\"><b>Meta</b></td></tr></thead><tbody align=\"left\"><tr style=\"bold\"><td style=\"width:20%\"><b>Id</b></td><td style=\"width:20%\"><b>Date</b></td><td style=\"width:20%\"><b>Type</b></td><td style=\"width:20%\"><b>Status</b></td><td style=\"width:20%\"><b>Confidentiality</b></td></tr><tr><td style=\"width:20%\">767cec9e-8355-417f-8c8c-ba6dbffe195e</td><td style=\"width:20%\">11 July 2015 10:11:15 AM</td><td style=\"width:20%\">Care Record</td><td style=\"width:20%\">Final</td><td style=\"width:20%\">Very Restricted</td></tr></tbody></table><br /><table width=\"100%\" border=\"1\"><thead><tr><td colspan=\"2\"><b>Author/Custodian</b></td></tr></thead><tbody align=\"left\"><tr><td style=\"width:50%\"><b>Author</b></td><td style=\"width:50%\"><b>Custodian</b></td></tr><tr><td style=\"width:50%\">EMIS AA 1001-C 8.15-04</td><td style=\"width:50%\">Wood Town GP Practice</td></tr></tbody></table><br /></div>"
+    },
+    "date": "2015-07-11T10:11:15+00:00",
+    "type": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "425173008",
+                "display": "record extract"
+            }
+        ],
+        "text": "record extract"
+    },
+    "class": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "700232004",
+                "display": "general medical service"
+            }
+        ],
+        "text": "general medical service"
+    },
+    "title": "Patient Record",
+    "status": "final",
+    "confidentiality": "V",
+    "subject": {
+        "reference": "Patient/31686b67-9f20-4644-9a54-193d2f91de57",
+        "display": "Sally Taylor"
+    },
+    "author": [
+        {
+            "reference": "Device/c4c8d038-913a-490c-9682-47047f4155fb",
+            "display": "EMIS AA 1001-C 8.15-04"
+        }
+    ],
+    "custodian": {
+        "reference": "Organization/79600119-ebaf-4362-bb89-d473a33b1675",
+        "display": "Wood Town GP practice"
+    },
+    "section": [
+        {
+            "title": "Encounters",
+            "code": {
+                "coding": [
+                    {
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
+                        "code": "ENC",
+                        "display": "Encounters"
+                    }
+                ],
+                "text": "Encounters"
+            },
+            "text": {
+                "status": "generated",
+                "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><table width=\"100%\" border=\"1\"><thead><tr><td style=\"width:50%\" colspan=\"4\"><p><b>Encounters</b>: </p></td></tr></thead><tbody align=\"left\"><tr><td style=\"width:20%\"><b>12 Feb 2015 - 19 Feb 2015</b></td><td style=\"width:80%\"><b>Admission - Leeds General Infirmary - Dr Matt Smith</b></td></tr><tr><td style=\"width:20%\"></td><td style=\"width:25%\">Medical consultation on hospital inpatient<br />\r\n\t\t\t\t\t\t\tPatients swallowing considered unsafe and on the advice of SALT team non oral feeding initiated.<br />\r\n\t\t\t\t\t\t\tDiagnosis: Cerebrovascular accident<br />  \r\n\t\t\t\t\t\t\tInvestigation/s: Computed tomography scan - whole body. Electrocardiographic monitoring <br /> \r\n\t\t\t\t\t\t\tObservation/s: Blood pressure - Systolic blood pressure 107mmHg Diastolic blood pressure 60mmHg<br />\r\n\t\t\t\t\t\t\tPrescription/s: Aspirin 75mg e/c tablet<br />\r\n\t\t\t\t\t\t\tProcedure/s: Percutaneous Endoscopic Gastrostomy (PEG) inserted.<br /></td></tr><tr><td style=\"width:20%\"><b>01 Jan 2015</b></td><td style=\"width:80%\"><b>GP Clinic - Wood Town GP Practice - Dr Tom Wood</b></td></tr><tr><td style=\"width:20%\"></td><td style=\"width:25%\">Consultation<br />\r\n\t\t\t\t\t\t\tProcedure/s: Nail bed procedure performed<br /></td></tr><tr><td style=\"width:20%\"><b>11 Dec 2014</b></td><td style=\"width:80%\"><b>Out of Hours GP Clinic - Bridge Street Medical Practice - Dr Bob Jones</b></td></tr><tr><td style=\"width:20%\"></td><td style=\"width:25%\">\r\n\t\t\t\t\t\t\tConsultation<br /></td></tr><tr><td style=\"width:20%\"><b>01 Sep 2014 - 02 Sep 2014</b></td><td style=\"width:80%\"><b>Admission - Leeds General Infirmary - Consultant - Dr Matt Smith</b></td></tr><tr><td style=\"width:20%\"></td><td style=\"width:25%\">Medical consultation on hospital inpatient<br />\r\n\t\t\t\t\t\t\tPatient admitted following fall at home.<br />\r\n\t\t\t\t\t\t\tDiagnosis: Dislocation of toe joint <br />   \r\n\t\t\t\t\t\t\tInvestigation/s: X-ray of foot <br />  \r\n\t\t\t\t\t\t\tObservation/s: Blood pressure - Systolic blood pressure 165mmHg Diastolic blood pressure 70mmHg<br />\r\n\t\t\t\t\t\t\tPrescription/s: Naproxen 250mg tablet<br />\r\n\t\t\t\t\t\t\tProcedure/s: Reduction of dislocation of joint of toe<br /></td></tr></tbody></table><br /></div>"
+            }
+        }
+    ]
+}

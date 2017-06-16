@@ -53,13 +53,28 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: HTML Implementation Guide
-      url: /accessrecord_development_html_implementation_guide.html
-      output: web, pdf
-    - title: Example Conformance Profile
-      url: /accessrecord_development_conformance_profile.html
-      output: web, pdf
-      
+      - title: HTML Implementation Guide
+        url: /accessrecord_development_html_implementation_guide.html
+        output: web, pdf
+      - title: Example Conformance Profile
+        url: /accessrecord_development_conformance_profile.html
+        output: web, pdf
+
+        subfolders:
+        - title: Example Profile Data
+          output: web
+          subfolderitems:
+
+          - title: Example Index
+            url: /accessrecord_examples.html
+            output: web, pdf
+          - title: Request Data
+            url: /accessrecord_examples_getrecordqueryrequest.html
+            output: web
+          - title: Response Data
+            url: /accessrecord_examples_getrecordqueryresponse.html
+            output: web      
+
   - title: HTML Views
     output: web, pdf
     folderitems:

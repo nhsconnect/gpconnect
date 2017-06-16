@@ -1,0 +1,43 @@
+{
+    "resourceType": "Organization",
+    "id": "79600119-ebaf-4362-bb89-d473a33b1675",
+    "meta": {
+        "profile": [
+            "http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"
+        ]
+    },
+    "identifier": [
+        {
+            "system": "http://fhir.nhs.net/Id/ods-organization-code",
+            "value": "B86022"
+        }
+    ],
+    "type": {
+        "coding": [
+            {
+                "system": "http://fhir.nhs.net/ValueSet/organisation-type-1",
+                "code": "prov",
+                "display": "Healthcare Provider"
+            }
+        ]
+    },
+    "name": "Wood Town GP practice",
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "0113-333-3579",
+            "use": "work"
+        }
+    ],
+    "address": [
+        {
+            "use": "work",
+            "line": [
+                "13, Amber Street"
+            ],
+            "city": "Leeds",
+            "postalCode": "LS20 1TV",
+            "country": "GBR"
+        }
+    ]
+}

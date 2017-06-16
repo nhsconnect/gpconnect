@@ -1,0 +1,36 @@
+{
+    "resourceType": "Parameters",
+    "id": "eaadddaf-0239-476e-b23e-195d14dae608",
+    "meta": {
+        "profile": [
+            "http://fhir.nhs.net/OperationDefinition/gpconnect-carerecord-operation-1"
+        ]
+    },
+    "parameter": [
+        {
+            "name": "patientNHSNumber",
+            "valueIdentifier": {
+                "id": "9900002831"
+            }
+        },
+        {
+            "name": "recordSection",
+            "valueCodeableConcept": {
+                "coding": [
+                    {
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
+                        "code": "SUM",
+                        "display": "Summary"
+                    }
+                ]
+            }
+        },
+        {
+            "name": "timePeriod",
+            "valuePeriod": {
+                "start": "2015-10-02",
+                "end": "2016-02-01"
+            }
+        }
+    ]
+}

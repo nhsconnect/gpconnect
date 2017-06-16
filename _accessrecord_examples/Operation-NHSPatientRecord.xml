@@ -1,0 +1,28 @@
+<Parameters 
+    xmlns="http://hl7.org/fhir">
+    <id value="eaadddaf-0239-476e-b23e-195d14dae608" />
+    <meta>
+        <profile value="http://fhir.nhs.net/OperationDefinition/gpconnect-carerecord-operation-1" />
+    </meta>
+    <parameter>
+        <name value="patientNHSNumber" />
+        <valueIdentifier id="9900002831" />
+    </parameter>
+    <parameter>
+        <name value="recordSection" />
+        <valueCodeableConcept>
+            <coding>
+                <system value="http://fhir.nhs.net/ValueSet/gpconnect-record-section-1" />
+                <code value="SUM" />
+                <display value="Summary" />
+            </coding>
+        </valueCodeableConcept>
+    </parameter>
+    <parameter>
+        <name value="timePeriod" />
+        <valuePeriod>
+            <start value="2015-10-02" />
+            <end value="2016-02-01" />
+        </valuePeriod>
+    </parameter>
+</Parameters>

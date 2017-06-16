@@ -1,0 +1,68 @@
+<Patient 
+    xmlns="http://hl7.org/fhir">
+    <id value="31686b67-9f20-4644-9a54-193d2f91de57" />
+    <meta>
+        <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1" />
+    </meta>
+    <identifier>
+        <system value="http://fhir.nhs.net/Id/nhs-number" />
+        <value value="9900002831" />
+    </identifier>
+    <name>
+        <use value="usual" />
+        <family value="Taylor" />
+        <given value="Sally" />
+        <prefix value="Mrs" />
+    </name>
+    <telecom>
+        <system value="phone" />
+        <value value="0113-245-1919" />
+        <use value="home" />
+    </telecom>
+    <gender value="female" />
+    <birthDate value="1947-06-09" />
+    <address>
+        <use value="home" />
+        <type value="both" />
+        <line value="42, Grove Street" />
+        <city value="Overtown" />
+        <district value="West Yorkshire" />
+        <postalCode value="LS21 1PF" />
+    </address>
+    <maritalStatus>
+        <coding>
+            <system value="http://hl7.org/fhir/ValueSet/marital-status" />
+            <code value="M" />
+            <display value="Married" />
+        </coding>
+    </maritalStatus>
+    <contact>
+        <relationship>
+            <coding>
+                <system value="http://fhir.nhs.net/ValueSet/cda-person-relationship-type-1" />
+                <code value="43" />
+                <display value="Daughter" />
+            </coding>
+        </relationship>
+        <name>
+            <use value="usual" />
+            <family value="Taylor" />
+            <given value="Ann" />
+            <prefix value="Miss" />
+        </name>
+        <telecom>
+            <system value="phone" />
+            <value value="0113-245-0909" />
+            <use value="home" />
+        </telecom>
+        <address>
+            <use value="home" />
+            <type value="both" />
+            <line value="120, Grove Street" />
+            <city value="Overtown" />
+            <district value="West Yorkshire" />
+            <postalCode value="LS21 1PT" />
+        </address>
+        <gender value="female" />
+    </contact>
+</Patient>

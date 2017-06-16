@@ -1,0 +1,65 @@
+{
+    "resourceType": "Location",
+    "id": "5f469508-03b3-4c32-919c-caf177221081",
+    "meta": {
+        "profile": [
+            "http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"
+        ]
+    },
+    "identifier": [
+        {
+            "use": "official",
+            "system": "http://fhir.nhs.net/Id/ods-site-code",
+            "value": "RJZ46"
+        }
+    ],
+    "name": "Haemotology Clinics",
+    "description": "Haematology Clinics of Kings College Hospital",
+    "type": {
+        "coding": [
+            {
+                "system": "http://hl7.org/fhir/ValueSet/v3-ServiceDeliveryLocationRoleType",
+                "code": "HEM",
+                "display": "Hematology clinic"
+            }
+        ]
+    },
+    "telecom": [
+        {
+            "system": "phone",
+            "value": "02032999009",
+            "use": "work"
+        },
+        {
+            "system": "fax",
+            "value": "02032993445",
+            "use": "work"
+        },
+        {
+            "system": "email",
+            "value": "kch-tr.OutpatientAppointments@nhs.net"
+        }
+    ],
+    "address": {
+        "use": "work",
+        "line": [
+            "Denmark Hill"
+        ],
+        "city": "London",
+        "postalCode": "SE59RS",
+        "country": "GBR"
+    },
+    "physicalType": {
+        "coding": [
+            {
+                "system": "http://snomed.info/sct",
+                "code": "310390009",
+                "display": "Hospital clinic"
+            }
+        ]
+    },
+    "managingOrganization": {
+        "reference": "Organization/1474506e-609d-412e-952b-4bc74d769038",
+        "display": "King's College Hospital"
+    }
+}

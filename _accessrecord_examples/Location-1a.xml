@@ -1,0 +1,53 @@
+<Location 
+    xmlns="http://hl7.org/fhir">
+    <id value="5f469508-03b3-4c32-919c-caf177221081" />
+    <meta>
+        <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-location-1" />
+    </meta>
+    <identifier>
+        <use value="official" />
+        <system value="http://fhir.nhs.net/Id/ods-site-code" />
+        <value value="RJZ46" />
+    </identifier>
+    <name value="Haemotology Clinics" />
+    <description value="Haematology Clinics of Kings College Hospital" />
+    <type>
+        <coding>
+            <system value="http://hl7.org/fhir/ValueSet/v3-ServiceDeliveryLocationRoleType" />
+            <code value="HEM" />
+            <display value="Hematology clinic" />
+        </coding>
+    </type>
+    <telecom>
+        <system value="phone" />
+        <value value="02032999009" />
+        <use value="work" />
+    </telecom>
+    <telecom>
+        <system value="fax" />
+        <value value="02032993445" />
+        <use value="work" />
+    </telecom>
+    <telecom>
+        <system value="email" />
+        <value value="kch-tr.OutpatientAppointments@nhs.net" />
+    </telecom>
+    <address>
+        <use value="work" />
+        <line value="Denmark Hill" />
+        <city value="London" />
+        <postalCode value="SE59RS" />
+        <country value="GBR" />
+    </address>
+    <physicalType>
+        <coding>
+            <system value="http://snomed.info/sct" />
+            <code value="310390009" />
+            <display value="Hospital clinic" />
+        </coding>
+    </physicalType>
+    <managingOrganization>
+        <reference value="Organization/1474506e-609d-412e-952b-4bc74d769038" />
+        <display value="King's College Hospital" />
+    </managingOrganization>
+</Location>

@@ -1,0 +1,18 @@
+<OperationOutcome 
+    xmlns="http://hl7.org/fhir">
+    <id value="b91578cd-8d04-4664-bf53-ecd20bd923a4" />
+    <meta>
+        <profile value="http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1" />
+    </meta>
+    <issue>
+        <severity value="information" />
+        <code value="not-found" />
+        <details>
+            <coding>
+                <system value="http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1" />
+                <code value="GPC-001" />
+            </coding>
+        </details>
+        <diagnostics value="Not found" />
+    </issue>
+</OperationOutcome>
