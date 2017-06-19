@@ -7,6 +7,14 @@ permalink: foundations_use_case_get_the_fhir_conformance_profile.html
 summary: "Use case for getting the GP Connect FHIR server's conformance statement."
 ---
 
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+
 ## API Usage ##
 
 ### Request Operation ###

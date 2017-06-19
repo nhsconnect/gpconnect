@@ -7,6 +7,15 @@ permalink: foundations_use_case_find_a_patient.html
 summary: "Use case for finding a patient resource by business identity."
 ---
 
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+
 ## API Usage ##
 
 Resolve (zero or more) `Patient` resources using a business identifier (i.e. NHS Number).

@@ -6,6 +6,14 @@ sidebar: foundations_sidebar
 permalink: foundations_use_case_read_an_organisation.html
 summary: "Use case for reading an organisation resource."
 ---
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- MAY have previously [resolved the logical ID of the organisation](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_an_organisation.html) from the ODS Organisation Code or ODS Site Code.
 
 ## API Use Case ##
 

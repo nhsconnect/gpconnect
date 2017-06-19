@@ -7,6 +7,16 @@ permalink: foundations_use_case_read_a_patient.html
 summary: "Use case for reading a patient resource."
 ---
 
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS Number
+
 ## API Use Case ##
 
 This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).

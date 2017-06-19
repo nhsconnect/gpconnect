@@ -7,6 +7,14 @@ permalink: foundations_use_case_find_a_location.html
 summary: "Use case for finding a location resource by business identity."
 ---
 
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+
 ## API Usage ##
 
 Resolve (zero or more) `Location` resources using a business identifier (i.e. ODS Site Code).

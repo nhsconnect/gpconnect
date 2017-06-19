@@ -26,7 +26,8 @@ For further details and clinical background please see [Task Management - Clinic
 
 The Consumer system:
 
-- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
 - SHALL hold an up to date<sup>1</sup> record of GP Practice ODS Codes<sup>2</sup>.
 - SHALL hold an up to date<sup>1</sup> record of GP Practitioner Organisation Codes<sup>2</sup>.
 

@@ -22,7 +22,8 @@ This specification describes a single use case. For complete details and backgro
 
 The Consumer system:
 
-- SHALL have previously [resolved the organisation's FHIR Base URL](integration_spine_directory_services.html) using an ODS Code, ODS Site Code or other organisational business identifier.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously [resolved the logical ID of the organisation or site](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_an_organisation.html) on the server from the ODS Organisation Code or ODS Site Code.
 - SHALL request a maximum date range covering a two week period.
 
 {% include tip.html content="Multiple separate API calls can be made if a larger date range is required however consideration should be given to the load this placed on the Provider system." %}
