@@ -182,7 +182,7 @@ Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
 
-- Transport level integration SHALL be via HTTP as defined in [RFC 2616](https://tools.ietf.org/html/rfc2616).
+- Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
 - Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).
 - HTTP Strict Transport Security (HSTS) as defined in [RFC 6797](https://tools.ietf.org/html/rfc6797) SHALL be employed to protect against protocol downgrade attacks and cookie hijacking.
 

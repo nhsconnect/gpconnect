@@ -149,7 +149,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 <sup>4</sup> an example of a valid JSON Web Token (JWT) for the purposes of GP Connect can be found in the [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) guidance.
 
-{% include important.html content="Note that according to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2]) all HTTP header fields names are case insensitive and should be handled as such." %}
+{% include important.html content="Note that according to [RFC 7230, section 3.2](https://tools.ietf.org/html/rfc7230) all HTTP header fields names are case insensitive and should be handled as such." %}
 
 ### Proxy ###
 
@@ -230,7 +230,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 ### Functional Requirements ###
 
-- Transport level integration SHALL be via HTTP as defined in [RFC 2616](https://tools.ietf.org/html/rfc2616).
+- Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
 - Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).
 - HTTP Strict Transport Security (HSTS) as defined in [RFC 6797](https://tools.ietf.org/html/rfc6797) SHALL be employed to protect against protocol downgrade attacks and cookie hijacking.
 - Authentication of systems connecting to the proxy SHALL be via PKI certificates with TLS Mutual Authentication (MA) providing two-way authentication.
