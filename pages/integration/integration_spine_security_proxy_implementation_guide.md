@@ -269,8 +269,9 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `429`	Too Many Requests
 - If a downstream provider system is unreachable or fails to fulfil a valid request with a valid response then a gateway error SHALL be returned to the consumer system.
 	- `502` Bad Gateway
-- If a downstream provider system fails to fulfil a request within a configured timeout period then the connection should be closed and a HTTP timeout response SHALL be returned to the consumer system.
+- If a downstream provider system fails to fulfil a request within a configured timeout period then the connection should be closed and a HTTP timeout response SHALL be returned to the consumer system. Two HTTP status codes are given below, as implementations vary across technology stacks.
 	- `504` Gateway Timeout
+	- `599` Network Connect Timeout
 - If the following specific error conditions occur then the proxy SHALL return the corresponding HTTP status codes to the consumer system.
 	- `403`	Forbidden
 		- Used to indicate that no data sharing agreement exists between the requesting (consuming) and providing organisation.
