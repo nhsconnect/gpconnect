@@ -58,3 +58,11 @@ The content displayed in the HTML views has then been used as a common base line
 Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles utilised:
 
 {% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/" content="Get Care Record." %}
+
+### SPINE Interactions ###
+
+The Access Record HTML capability message set includes the following set of spine interactions:
+
+| Operation                 | InteractionID             | 
+|---------------------------|---------------------------| 
+| [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` |

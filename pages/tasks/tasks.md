@@ -36,3 +36,11 @@ Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinica
 Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles utilised:
 
 {% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-170816-tasks/" content="Task Management." %}
+
+## SPINE Interactions
+
+The Tasks capability message set includes the following set of spine interactions:
+
+| Operation                 | InteractionID             | 
+|---------------------------|---------------------------| 
+|  [Create Task](tasks_use_case_send_a_task.html)               | `urn:nhs:names:services:gpconnect:fhir:rest:create:order` |
