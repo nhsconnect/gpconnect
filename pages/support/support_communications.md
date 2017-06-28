@@ -22,6 +22,8 @@ For all the latest news/announcements please subscribe to our [News](news.html) 
 
 > A two-way channel to allow the Supplier Community to engage with each other and NHS Digital to seek suport related to product development.
 
+- [GP Connect Forum](https://interopen.ryver.com/index.html#forums/1108379)
+
 {% include gitterbadge.html %}
 
 ## Issues
