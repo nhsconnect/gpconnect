@@ -118,7 +118,7 @@ As such it is planned that the following mitigations will be implemented as part
 		- `ASID` which identifies the recipient's FHIR endpoint.
 	- `Ssp-InteractionID`
 		- `InteractionID` of the operation being performed.<sup>3</sup>
-- Construction of URL formatted for valid consumption by the proxy system.
+- Construction of URL formatted for valid consumption by the proxy system, applying percent encoding as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1)
 	- `https://[proxy_server]/https://[provider_server]/[fhir_base]/[fhir_request]`
 		- Fully qualified domain name of the proxy system.
 		- Fully qualified domain name of the provider system.

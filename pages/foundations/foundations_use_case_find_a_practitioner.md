@@ -15,6 +15,8 @@ Resolve (zero or more) `Practitioner` resources using a business identifier (i.e
 
 The `[system]` field SHALL be populated with a valid practitioner identifier system URL (i.e. `http://fhir.nhs.net/Id/sds-user-id`).
 
+The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+
 #### FHIR Relative Request ####
 
 ```http
