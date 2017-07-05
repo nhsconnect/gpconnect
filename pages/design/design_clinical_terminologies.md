@@ -30,3 +30,8 @@ GP Connect systems are expected to handle coded data as follows:
 
 {% include important.html content="Updated assured mappings are released every 6 months; suppliers are expected to update their systems in-line with the timescales currently required under the GPSoC framework." %}
 
+
+### Case Sensitivity of Terminologies ###
+[FHIR Terminologies](https://www.hl7.org/fhir/terminologies.html#required){:target="_blank"}
+
+Throughout this specification, coded values are always treated as a pair composed of "system" and "code", where the system is a URL that identifies the code system that defines the codes. Note, that system values are always case sensitive. Different code systems make their own rules as to whether the codes they define are case sensitive or not. Note that all the codes defined by FHIR itself are case sensitive and SHALL be used in the provided case (usually, but not always, lowercase).
