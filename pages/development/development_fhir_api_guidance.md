@@ -553,6 +553,7 @@ Servers SHALL produce the following main [HTTP Status Codes](http://www.iana.org
 | `415` | Unsupported Media Type |
 | `422` | Unprocessable Entity |
 | `500` | Internal Server Error |
+| `501` | Not Implemented |
 
 #### [Rejecting Updates](https://www.hl7.org/fhir/DSTU2/http.html#2.1.0.10.1) ####
 
