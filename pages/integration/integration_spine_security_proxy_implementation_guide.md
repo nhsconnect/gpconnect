@@ -188,6 +188,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - Provides PKI server credentials to allow verification of provider system.
 - Validation of PKI credentials to allow verification of proxy system.
 - Processing of FHIR conformant API requests and generation of FHIR conformant responses.<sup>2</sup>
+- Where a requested FHIR Operation or Resource has not been implemented, the provider SHOULD return a [501 HTTP Status code](development_fhir_error_handling_guidance.html#internal-server-errors)
 - Publish endpoints to SDS/Endpoint Locator which include the FHIR Version number. The FHIR version number returned by the FHIR server endpoint conformance statement SHALL match the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
 - Error response generation in line with FHIR and HTTP conventions including the return of transient HTTP error codes when appropriate (i.e. due to the provider being down or busy).
 	- `503` Service Unavailable
