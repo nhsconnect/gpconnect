@@ -19,6 +19,8 @@ Provider systems SHALL only accept encrypted connections and drop connection att
 
 Provider systems SHALL only accept request for it's allocated ASID on it's matching endpoint URL.
 
+Provider systems MAY authorise access to API endpoints through examining acceptable values in the JWT requested_scope claim
+
 ## Security Testing ##
 
 Provider systems SHALL as a minimum be tested against the [OWASP top 10 web application vulnerabilities](https://www.owasp.org/index.php/Top_10_2013-Top_10).
@@ -86,6 +88,27 @@ Cache-Control: no-cache, no-store
 Expires: 0
 Pragma: no-cache
 ```
+
+
+## Authorisation of access to endpoints ##
+
+The primary purpose of the JWT claims is to [enable cross organisation provenance](integration_cross_organisation_audit_and_provenance.html#cross-organisation-audit--provenance-transport) information to be transmitted for auditing purposes.
+
+Provider systems MAY choose to use the value of the requested_scope claim to authorise access to APIs. In this case, provider systems SHALL apply authorisation logic to endpoints as follows:
+
+| Endpoint | Acceptable values of requested_scope JWT claim |
+|-------- | -----------------------------------|
+| /Patient | patient/*.[read/write] |
+| /Organization <br/> including /Organisation/[id]/$gpc.getschedule | organization/*.[read/write] |
+|/Appointment |patient/*.[read/write] |
+| /Task | organization/*.[read/write] |
+| /Practitioner | organization/*.[read/write] |
+| /Location | organization/*.[read/write] |
+
+
+
+
+
 
 ## External Documents / Policy Documents ##
 
