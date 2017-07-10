@@ -9,17 +9,25 @@ summary: "Details of the API security model and supported protocols."
 
 ## Secure Connection Negotiation ##
 
-Provider systems SHALL only accept connections from the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP).
+Provider Systems:
 
-Provider systems SHALL authenticate the SSP prior to responding to any requests using it's [client certificate](development_api_security_guidance.html#client-certificates-tlsma).
+- SHALL only accept connections from the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP).
 
-Provider systems SHALL only permit approved [supported ciphers](development_api_security_guidance.html#supported-ciphers) to be utilised.
+- SHALL authenticate the SSP prior to responding to any requests using it's [client certificate](development_api_security_guidance.html#client-certificates-tlsma).
 
-Provider systems SHALL only accept encrypted connections and drop connection attempts presented over insecure protocols.
+- SHALL only permit approved [supported ciphers](development_api_security_guidance.html#supported-ciphers) to be utilised.
 
-Provider systems SHALL only accept request for it's allocated ASID on it's matching endpoint URL.
+- SHALL only accept encrypted connections and drop connection attempts presented over insecure protocols.
 
-Provider systems MAY authorise access to API endpoints through examining acceptable values in the JWT requested_scope claim
+- SHALL only accept requests for it's allocated ASID, as specified by the `Ssp-To` header,  on it's matching endpoint URL.
+
+- SHALL check that the `Ssp-InteractionID` value is consistent with the endpoint being requested.
+
+- SHALL check for the presence of all [SSP headers](integration_spine_security_proxy_implementation_guide.html#consumer)
+
+- SHALL check that an [authorization bearer token](integration_cross_organisation_audit_and_provenance.html#json-web-tokens-jwt) in present and correctly formed.
+
+- MAY authorise access to API endpoints through examining acceptable values in the JWT requested_scope claim
 
 ## Security Testing ##
 
