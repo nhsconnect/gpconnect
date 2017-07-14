@@ -21,9 +21,9 @@ entries:
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-#    - title: Workshops and Timeline
-#      url: /overview_workshops.html
-#      output: web
+    - title: Workshops and Timeline
+      url: /overview_workshops.html
+      output: web
 #    - title: Webinars
 #      url: /overview_webinars.html
 #      output: web
@@ -36,6 +36,9 @@ entries:
     - title: Glossary
       url: /overview_glossary.html
       output: web
+    - title: Release Notes
+      url: /overview_release_notes.html
+      output: web      
 
   - title: Design Approach
     output: web
