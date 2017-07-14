@@ -251,21 +251,46 @@ The FHIR RESTful API Style Guide defines the following URL conventions which are
 
 ### [Service Root URL](https://www.hl7.org/fhir/DSTU2/http.html#general) ###
 
-The Service Root URL is the address where all of the resources defined by this interface are found. The Service Root URL takes the form of:
-
-```
-https://server{/path}
-```
+The Service Root URL is the address where all of the resources defined by this interface are found. 
 
 The Service Root URL is the `[base]` portion of all FHIR APIs.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
-<p/>
 
-Discussions are ongoing around the use of [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
 
-Whilst consumer systems are required to construct a Service Root URL that is suitable for interacting with the SSP service, API provider systems will be unaware of any additional URL prefix as this will be removed prior to calling the final API endpoint.
+### FHIR API Versioning ###
+FHIR APIs SHALL be versioned according to  [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
+
+Provider systems are required to publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
+
+{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS Code]/[FHIR_VERSION_NAME]/{PROVIDER_MAJOR_VERSION}`" %}
+
+
+- `[FQDN of FHIR Server]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
+
+- `[ODS Code]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
+
+- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version number, examples being `DSTU2` and `STU3`
+
+- `{PROVIDER_VERSION}` identifies the major version number of the provider API. Where the provider version number is omitted, the major version SHALL be assumed to be 1.
+  
+- The FHIR Base URL SHALL NOT contain a trailing `/`
+
+
+
+#### Example Server Root URL
+
+For example, a provider has developed a new version of their FHIR API for practice GP0001 which is running FHIR STU3. The provider will publish the server root URL to Spine Directory Services as follows:
+
+`https://provider.nhs.uk/GP0001/STU3/2`
+
+Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+
+The consumer system would therefore issue a request to the new version of the provider FHIR API  to the following URL:
+
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/2`
+
 
 ### [Resource URL](http://www.hl7.org/implement/standards/fhir/http.html#2.1.0) ###
 
