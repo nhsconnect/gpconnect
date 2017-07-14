@@ -271,7 +271,7 @@ Provider systems are required to publish Service Root URLs for major versions of
 
 - `[ODS Code]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
 
-- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version number, examples being `DSTU2` and `STU3`
+- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
 
 - `{PROVIDER_VERSION}` identifies the major version number of the provider API. Where the provider version number is omitted, the major version SHALL be assumed to be 1.
   
