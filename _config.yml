@@ -39,7 +39,7 @@ exclude:
   - pages/development/development_github_repositories.md
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_email: michael.measures@nhs.net
+feedback_email: brian.diggle@nhs.net
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true

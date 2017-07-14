@@ -15,18 +15,18 @@ entries:
     - title: Getting Started
       url: /overview_engage.html
       output: web
-    - title: News
-      url: /news.html
-      output: web
+#    - title: News
+#      url: /news.html
+#      output: web
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-    - title: Workshops and Timeline
-      url: /overview_workshops.html
-      output: web
-    - title: Webinars
-      url: /overview_webinars.html
-      output: web
+#    - title: Workshops and Timeline
+#      url: /overview_workshops.html
+#      output: web
+#    - title: Webinars
+#      url: /overview_webinars.html
+#      output: web
 #    - title: Work in Progress
 #      url: /overview_work_in_progress.html
 #      output: web
