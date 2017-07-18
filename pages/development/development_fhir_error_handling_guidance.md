@@ -1,5 +1,5 @@
 ---
-title: Error Handling
+title: Error Handling Guidance
 keywords: fhir, development, operation outcome, error
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -18,6 +18,8 @@ The FHIR standard allows for an `OperationOutcome` to be returned for any/all er
 - Operation APIs SHALL return an `OperationOutcome` in the event of an error.
 - RESTful APIs SHALL return an `OperationOutcome` when a specific error code has for a certain situation (i.e. no patient consent to share).
 - RESTful APIs SHALL return an `OperationOutcome` when any other unexpected error occurs containing debug details in the `Diagnostics` field.
+
+{% include download.html content="A spreadsheet of [Expected Error Codes](downloads/development/expected_error_codes.xlsx) is available which covers the most common error scenarios." %}
 
 ### Identity Validation Errors ####
 
@@ -148,17 +150,25 @@ For example sending/creating a new Task using the RESTful API fails as an invali
 }
 ```
 
-### Unexpected Internal Server Errors ###
+### Internal Server Errors ###
 
-{% include tip.html content="When the error is unexpected and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details." %}
+When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
 | `500`     | INTERNAL_SERVER_ERROR | Unexpected internal server error. |
 
+When the FHIR server has received an request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED SHOULD be used.
+
+| HTTP Code | Error Code | Description |
+| --------- | ---------- | ----------- |
+| `501`     | NOT_IMPLEMENTED | FHIR resource or operation not implemented at server |
+
+
+
 #### Example 5. Unexpected Exception #####
 
-For example an unexpected internal exception is thrown by either an Operation or RESTful API, then the following details would be returned:
+For example an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
 
 ```json
  {
@@ -175,6 +185,163 @@ For example an unexpected internal exception is thrown by either an Operation or
 				"code": "INTERNAL_SERVER_ERROR"
 			}]
 		},
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+
+
+### Malformed Request Errors ###
+
+When the server cannot or will not process a request due to an apparent client error (e.g., malformed request syntax, too large size etc.) then the following `BAD_REQUEST` error SHALL be used to return debug details.
+
+| HTTP Code | Error Code | Description |
+| --------- | ---------- | ----------- |
+| `400`     | BAD_REQUEST | Submitted request is malformed / invalid. |
+
+#### Example 6. Malformed Request Syntax #####
+
+For example if the request could not be understood by the server due to malformed syntax, then the following error details would be returned:
+
+```json
+ {
+	"resourceType": "OperationOutcome",
+	"meta": {
+		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"]
+	},
+	"issue": [{
+		"severity": "error",
+		"code": "invalid",
+		"details": {
+			"coding": [{
+				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"code": "BAD_REQUEST"
+			}]
+		},
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+### Spine Security Proxy Errors ###
+
+When the spine security proxy cannot or will not process a request then the follwoing errors SHALL be used to return debug details.
+
+#### Example 7. Bad Request #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `400`     | Bad Request | i.e. content of the request is invalid against the specification. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "invalid",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 8. Forbidden #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `403`     | Forbidden | i.e. ASID/InteractionID check has failed. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "forbidden",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 9. Method Not Allowed #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `405`     | Method Not Allowed | i.e. asked for an unsupported HTTP verb such as PATCH. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "not-supported",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 10. Unsupported Media Type #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `415`     | Unsupported Media Type | i.e. a consumer application asked for an unsupported media type. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "not-supported",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 11. Internal Server Error #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `500`     | Internal Server Error | i.e. an unexpected error / exception has occured. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "exception",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 12. Bad Gateway #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `502`     | Bad Gateway | i.e. downstream server is offline. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "transient",
+		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
+	}]
+}
+```
+
+#### Example 13. Gateway Timeout #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `504`     | Gateway Timeout | i.e. downstream server timed out. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "transient",
 		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
 	}]
 }

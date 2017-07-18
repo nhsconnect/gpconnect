@@ -27,15 +27,15 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### Section Banner Content Message ###
 
-Providers to provide message describing at a summary level how they have populated this section, including reference to items identified as Diagnoses, Procedures, Symptoms
+Providers to provide meaningful message describing at a summary level how they have populated this section, including reference to items identified as Diagnoses, Procedures, Symptoms
  
  
  | Provider | Message |
  | -------- | ------- |
  | EMIS |    |
- | TPP |  Message to indicate inclusion of Practice-specific codes |
- | INPS| Message to include Read Chapter 1 with Chapters A - Z |
- |Microtest| Message to include Items excluding Read Code Chapter 2 and Codes starting 9 and 0 |
+ | TPP |  Message to include indication of inclusion of Practice-specific codes |
+ | INPS| Message to include meaningful interpretation of Read Chapter 1 with Chapters A - Z |
+ |Microtest| Message to include meaningful interpretation of items excluding Read Code Chapter 2 and Codes starting 9 and 0 |
 
 
 

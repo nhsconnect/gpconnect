@@ -102,6 +102,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 		5. ne (not equal to)
 	3.  Parameters for all resources
 		1.  [_query](https://www.hl7.org/fhir/DSTU2/search.html#query)
+		2.  [_list](https://www.hl7.org/fhir/DSTU2/search.html#list)
 	4.  Search result parameters
 		1.  [_include](https://www.hl7.org/fhir/DSTU2/search.html#include) can be used internally inside a named `_query` operation.
 		2.  [_sort](https://www.hl7.org/fhir/DSTU2/search.html#sort) can be used internally inside a named `_query` operation.
@@ -154,8 +155,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 		5. _security
 		6. _text
 		7. _content
-		8. _list
-		9. _filter
+		8. _filter
 	3. Search result parameters
 		1. _revinclude
 		2. _count		
@@ -182,7 +182,7 @@ Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
 
-- Transport level integration SHALL be via HTTP as defined in [RFC 2616](https://tools.ietf.org/html/rfc2616).
+- Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
 - Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).
 - HTTP Strict Transport Security (HSTS) as defined in [RFC 6797](https://tools.ietf.org/html/rfc6797) SHALL be employed to protect against protocol downgrade attacks and cookie hijacking.
 
@@ -251,21 +251,46 @@ The FHIR RESTful API Style Guide defines the following URL conventions which are
 
 ### [Service Root URL](https://www.hl7.org/fhir/DSTU2/http.html#general) ###
 
-The Service Root URL is the address where all of the resources defined by this interface are found. The Service Root URL takes the form of:
-
-```
-https://server{/path}
-```
+The Service Root URL is the address where all of the resources defined by this interface are found. 
 
 The Service Root URL is the `[base]` portion of all FHIR APIs.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
-<p/>
 
-Discussions are ongoing around the use of [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
 
-Whilst consumer systems are required to construct a Service Root URL that is suitable for interacting with the SSP service, API provider systems will be unaware of any additional URL prefix as this will be removed prior to calling the final API endpoint.
+### FHIR API Versioning ###
+FHIR APIs SHALL be versioned according to  [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
+
+Provider systems are required to publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
+
+{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS Code]/[FHIR_VERSION_NAME]/{PROVIDER_MAJOR_VERSION}`" %}
+
+
+- `[FQDN of FHIR Server]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
+
+- `[ODS Code]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
+
+- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
+
+- `{PROVIDER_VERSION}` identifies the major version number of the provider API. Where the provider version number is omitted, the major version SHALL be assumed to be 1.
+  
+- The FHIR Base URL SHALL NOT contain a trailing `/`
+
+
+
+#### Example Server Root URL
+
+For example, a provider has developed a new version of their FHIR API for practice GP0001 which is running FHIR STU3. The provider will publish the server root URL to Spine Directory Services as follows:
+
+`https://provider.nhs.uk/GP0001/STU3/2`
+
+Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+
+The consumer system would therefore issue a request to the new version of the provider FHIR API  to the following URL:
+
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/2`
+
 
 ### [Resource URL](http://www.hl7.org/implement/standards/fhir/http.html#2.1.0) ###
 
@@ -298,7 +323,9 @@ This is the `logical Id` of the resource which is assigned by the server respons
 
 Once assigned, the identity SHALL never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %}   
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %} 
+
+For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/dstu2/resource.html#id)  
 
 #### External Resource Resolution ####
 
@@ -313,9 +340,30 @@ Servers SHALL support both formal MIME-types for FHIR resources:
 
 Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
+Servers SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client application.
+
+### [Wire Format Representations](https://www.hl7.org/fhir/DSTU2/formats.html#wire) ###
+
+Servers SHALL support two wire formats as ways to represent resources when they are exchanged:
+
+- [XML](https://www.hl7.org/fhir/DSTU2/xml.html)
+- [JSON](https://www.hl7.org/fhir/DSTU2/json.html)
+
+{% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
+
+Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html#1.10.3) and declare this by setting [Conformance.acceptUnknown](https://www.hl7.org/fhir/DSTU2/conformance-definitions.html#Conformance.acceptUnknown) to 'both' in their conformance profile.
+
+Systems SHALL declare which format(s) they support in their Conformance Statement. If a server receives a request for a format that it does not support it SHALL return a http status code of `415` indicating an `Unsupported Media Type`.
+
 ### [Transfer Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
 Clients and servers SHALL support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
+
+### [Character Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
+
+Clients and servers SHALL support the `UTF-8` character encoding as outlined in the FHIR standard.
+
+> FHIR uses `UTF-8` for all request and response bodies. Since the HTTP specification (section 3.7.1) defines a default character encoding of `ISO-8859-1`, requests and responses SHALL explicitly set the character encoding to `UTF-8` using the `charset` parameter of the MIME-type in the `Content-Type` header. Requests MAY also specify this charset parameter in the `Accept` header and/or use the `Accept-Charset` header.
 
 ### Content Compression ###
 
@@ -325,6 +373,10 @@ Compression is requested by setting the `Accept-Encoding` header to `gzip`.
 
 {% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %} 
 
+### [Inter-version Compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html) ###
+
+Unrecognized search criteria SHALL always be ignored. As search criteria supported in a query are echoed back as part of the search response there is no risk in ignoring unexpected search criteria.
+
 ### HTTP Headers ###
 
 #### Proxying Headers ####
@@ -333,9 +385,9 @@ Additional HTTP headers SHALL be added into the HTTP request/response for the pu
 
 #### Cross Organisation Provenance & Audit Headers ####
 
-In order to meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients SHALL provide an oAuth 2.0 Bearer token in the HTTP Authentication header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
+In order to meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients SHALL provide an oAuth 2.0 Bearer token in the HTTP Authorization header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
 
-{% include tip.html content="We are using an open standard (i.e. JWT) to bundling together the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will not be centrally issued and are not signed or encrypted (i.e. are constructed of plain-text). Furthermore, there are JWT libraries available for most programming languages and they are simple to use." %}
+{% include tip.html content="We are using an open standard (i.e. JWT) to provide a container for the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will **not** be centrally issued and are not signed or encrypted (i.e. are constructed of plain-text). There are JWT libraries available for most programming languages simplify generation of this data in JWT format." %}
 
 Refer to [Integration - Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance) for full details of the JWT claims that SHALL be used for passing audit and provenance details between systems.
 
@@ -355,6 +407,11 @@ The Spine Security Proxy (SSP) SHALL perform the following checks to authenticat
 - Get the CN from the TLS session and compare the host name to the declared endpoint.
 - Check that the client/sending endpoint has been registered (and accredited) to initiate the given interaction.
 - Check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction.   
+
+#### Caching Headers ####
+
+Providers SHALL use the following HTTP Header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
+
 
 ### [Managing Return Content](https://www.hl7.org/fhir/DSTU2/http.html#return) ###
 
@@ -397,6 +454,26 @@ FHIR defines an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) re
 
 ## FHIR Resources ##
 
+### [Resource Data Types](https://www.hl7.org/fhir/DSTU2/datatypes.html) ###
+
+The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/DSTU2/datatypes.html) that are used for the resource elements.
+
+The user locale (i.e. user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems SHALL NOT effect the FHIR on the wire representation of any data types (especially date-time and number formats).
+
+Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) respresentation warrant further consideration and SHALL be taken into consideration when designing and constructing FHIR resources.
+
+For example:
+
+- Leading 0 digits are not allowed.
+- Strings SHALL NOT exceed 1MB in size.
+- URIs are case sensitive.
+- UUID values (urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7) use all lowercase.
+- Dates have no time zone.
+- Dates can be partial dates (e.g. just year or year + month).
+- Precision of the decimal value has signficance.
+- Primitive types other than string SHALL NOT have leading or trailing whitespace.
+- [Use of null](https://www.hl7.org/fhir/DSTU2/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/DSTU2/datatypes.html#1.19.0.1.1)
+
 ### [Resource Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) ###
 
 The FHIR resource narrative is not currently expected to be populated. 
@@ -414,13 +491,13 @@ A provider’s ability to process a request relating to a resource may depend on
 
 {% include important.html content="GP Connect clients and servers SHALL utilise local relative references only and as such the resources will be expected to reside on the same server." %}
 
-Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource.
+Resource references SHALL include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field SHALL be formatted inline with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
 
 | Resource | Display Format |
 | -------- | -------------- |
-| `Patient` | patient.name (patient.identifier) |
-| `Practitioner` | practitioner.name (practitioner.identifier) |
-| `Organization` | organization.name (organisation.identifier) |
+| `Patient` | patient.name |
+| `Practitioner` | practitioner.name |
+| `Organization` | organization.name |
 
 {% include todo.html content="Further display field guidance to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
@@ -498,8 +575,10 @@ Servers SHALL produce the following main [HTTP Status Codes](http://www.iana.org
 | `409` | Conflict |
 | `410` | Gone |
 | `412` | Precondition Failed |
+| `415` | Unsupported Media Type |
 | `422` | Unprocessable Entity |
 | `500` | Internal Server Error |
+| `501` | Not Implemented |
 
 #### [Rejecting Updates](https://www.hl7.org/fhir/DSTU2/http.html#2.1.0.10.1) ####
 

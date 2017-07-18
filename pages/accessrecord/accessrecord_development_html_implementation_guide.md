@@ -1,10 +1,14 @@
 ---
 title: HTML Implementation Guide
-keywords: getcarerecord, development, html, rendering
-tags: [development,getcarerecord]
+keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_implementation_guide.html
-summary: "Overview of the common HTML view rendering guidance in relation to the Access Record capability."
+summary: >-
+  Overview of the common HTML view rendering guidance in relation to the Access
+  Record capability.
+tags:
+  - development
+  - getcarerecord
 ---
 
 ## HTML Implementation Guide ##
@@ -16,6 +20,23 @@ This document is intended for use by software developers looking to build a conf
 ### Notational Conventions ###
 
 The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+
+## Near Real Time View ##
+
+{% include important.html content="The record returned from the Provider system is near real time." %}
+
+- Local pending changes (i.e. within a consultation that is actively ongoing) may not be available.
+- The record is machine generated and therefore is not owned or attested by any single clinician.
+
+## Record Locking ##
+
+GP Connect queries/requests may be received while the patient's record is being updated.
+
+Record locking inside a provider system SHALL NOT impact the ability of the system to fulfil read/query requests of the patient's record.
+
+However, it is understood that there are differing approaches to record locking within the GP principal systems which affect when any local/pending changes are actually committed back to the patient's record.
+
+When a consumer system accesses a patient's record, the provider systems SHALL only return data that has been successfully committed back to the patient's record and thus has become available to all users (including users of the provider APIs).
 
 ## Common User Interface Guidance ##
 
@@ -78,6 +99,27 @@ Provider systems SHALL return a minimal set of structured data along with the HT
 Consumer systems SHALL compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
 
 If differences exist then the consumer system SHALL show an alert/warning and provide details of which fields/values are different between the two systems.
+
+The following data SHALL be cross checked between consumer and returned provider data.  Any differences between these fields SHALL be brought to the attention of the user.   
+
+| Item | Resource Field |
+| ---- | -------------- | 
+| Family Name | patient.name.family |
+| Given Name | patient.name.given |
+| Gender | patient.gender |
+| Birth Date | patient.birthDate |
+| GP Practice Code | patient.managingOrganization | 
+
+<sup>1</sup>May be redacted if patient is flagged on Spine as Sensitive demographics.
+
+Additionally the following data MAY be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
+
+* Address and Postcode
+* Contact (telephone, mobile, email)
+* Responsible GP Code and Name
+* GP Practice Name and Address
+
+All above may be redacted if patient is flagged on Spine as Sensitive demographics.
 
 ## Section Retrieval ##
 
@@ -149,8 +191,7 @@ Consumer Systems SHALL display the date range applied to a section's data, as su
 
 ```html
 <div>
-	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  
-
+	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>
 </div>
 ```
 
@@ -160,7 +201,7 @@ Where the Consumer System has not supplied a date-range, then where applicable a
 
 ```html
 <div>
-	<p>All relevant items subject to Patient preferences and/or legal exclusions</p>
+	<p>All relevant items</p>
 </div>
 ``` 
 
@@ -185,7 +226,7 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | INV  | All | DiagnosticOrder<sup>2</sup> |
 | MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
 | OBS  | All Relevant | Observation |
-| PAT  | - | Patient<sup>3</sup> |
+| PAT  | - | Patient<sup>2,3</sup> |
 | PRB  | All Relevant | Problem|
 | REF  | All Relevant | Referral |
 | SUM  | - | Summary<sup>3</sup> |
@@ -194,7 +235,7 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 <sup>2</sup> Section to be considered as part of Stage 2.
 <sup>3</sup> An explicit time frame is not allowed as these are set piece views, the system SHALL return 'All Relevant' resources.
 
-Provider systems SHALL return a HTTP *Bad Request* `400` error response if a date range is specified for a section that is defined as returning 'All Relevant' resources.
+Provider systems SHALL return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
 
 # HTML Section Views #
 
@@ -207,10 +248,11 @@ Provider systems SHALL use XHTML constructs as defined in the [FHIR Narrative](h
 As outlined in the Narrative section of the FHIR&reg; standard.
 
 > The XHTML content SHALL NOT contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.
-
-<p/>
-
+> 
+<p />
 > Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;``` etc. Unicode characters SHALL be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```.
+
+{%include important.html content="The content SHALL NOT contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." %}
 
 ### [Styling the XHTML](https://www.hl7.org/fhir/DSTU2/narrative.html#css) ###
 
@@ -219,5 +261,6 @@ As outlined in the 'Styling the XHTML' section of the FHIR&reg; standard.
 > In order to minimise manageability and security issues, authoring systems cannot specify the CSS stylesheet to use directly. Instead, the application that displays the resource provides the stylesheets. This means that the rendering system chooses what styles can be used, but the authoring system must use them in advance. Authoring systems can use these classes, which SHALL be supported by all rendering systems.
 > 
 > Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/DSTU2/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/DSTU2/narrative.html#css) on the FHIR website for full details.
+
 
 

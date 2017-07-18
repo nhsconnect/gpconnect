@@ -12,19 +12,21 @@ GP Connect is initially focussing on delivering three main interoperability capa
 
 ![GP Connect Priority Capabilities](images/overview/priority_capabilities.png)
 
-## Access Record
+## Access Record ##
 
-[Access Record HTML Views](accessrecord_view_summary.html)
+### HTML ###
 
-*Coming Soon...*
+[Access Record HTML](accessrecord.html)
 
-[Access Record Structured Data](accessrecord_structured_data_summary.html) 
+### Structured ###
 
-## Appointment Management
+[Access Record REST](accessrecord_rest.html)
+
+## Appointments ##
 
 [Appointment Management Capability](appointments.html)
 
-## Task Management
+## Tasks ##
 
 [Task Management Capability](tasks.html)
 

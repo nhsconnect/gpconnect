@@ -1,10 +1,10 @@
 ---
-title: Access Record
+title: Access Record HTML
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord.html
-summary: "Introduction to the GP Connect Access Record capability."
+summary: "Introduction to the GP Connect Access Record HTML capability."
 ---
 
 [<i class="fa fa-arrow-left" aria-hidden="true"/> Back to GP Connect - Getting Started.](index.html)
@@ -59,14 +59,10 @@ Please refer to the Domain Message Specification (DMS) bundle for details of the
 
 {% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/" content="Get Care Record." %}
 
-## Structured & Coded Data ##
+### SPINE Interactions ###
 
-### Purpose ###
+The Access Record HTML capability message set includes the following set of spine interactions:
 
-This capability delivers the ability to access structured primary care record data for a given patient in order to provide new interoperability opportunities between primary care and other sectors. Access to the structured and coded record will allow much tighter interoperability than the basic HTML Views described above.
-
-### Use Cases ###
-
-- A health professional is able to view and import allergies into their local patient record system.
-- Information is rendered natively in a system rather than embedded in a HTML view to provide a more seamless experience, e.g. mobile device.
-- Information offered in a structured and coded form by the API for the purposes of reconciling medications, problems and allergies e.g. as part of an inpatient spell.
+| Operation                 | InteractionID             | 
+|---------------------------|---------------------------| 
+| [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` |

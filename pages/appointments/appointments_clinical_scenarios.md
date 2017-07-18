@@ -7,6 +7,12 @@ permalink: appointments_clinical_scenarios.html
 summary: "Potential clinical scenarios for the Appointments capability."
 ---
 
+Key:
+
+<i class='fa fa-check'/> In scope for FoT.
+
+<i class='fa fa-road'/> Out of scope for FoT.
+
 ## Search for free slots ##
 
 <i class='fa fa-check'/> As a Healthcare Professional at a HealthCare Organisation I would like to be able to access all available appointments at an organisation so that a Patient can be directed to appropriate care
@@ -38,7 +44,7 @@ summary: "Potential clinical scenarios for the Appointments capability."
 
 > 2. As a GP I want to make an appointment for my patient with one of my local practices which provides a coil fitting clinic. 
 > 3. A&E triage nurses booking appointments for patients directly into GP systems - diverting patients to the most suitable contact type for their condition, and reducing the cost of inappropriate A&E attendances Service to be available 24/7 so may be an electronic on-line booking service.
-> 5. As a healthcare professional in the Admin Hub of our Federation, I want to book at appointment for a patient to have a home visit by our Admissions Prevention team.
+> 5. As a healthcare professional in the Admin Hub of our Federation, I want to book an appointment for a patient to have a home visit by our Admissions Prevention team.
 > 6. As a Practice Nurse, I want to make an appointment for my patient to have bloods taken at the local phlebotomy service. 
 > 7. As a member of the Discharge Support team in the hospital, I want to book an appointment for my patient with the District Nurse for the removal of sutures the week after discharge.
 
@@ -85,7 +91,5 @@ summary: "Potential clinical scenarios for the Appointments capability."
 > 1. A Carer who is acting on behalf of a Patient decides that they would like to cancel a Patients appointment as they are no longer able to attend; the carer is able to access Patient Facing Services online on behalf of the appointment, view the Patients’ booked appointments and then cancel the relevant appointment thus freeing it for someone else to book.
 
 
-<i class='fa fa-check'/> In scope for FoT.
 
-<i class='fa fa-road'/> Out of scope for FoT.
 

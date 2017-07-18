@@ -1,10 +1,10 @@
 ---
-title: Consumer Demonstrator
+title: System Demonstrator
 keywords: system, demonstrator
 tags: [system,demonstrator]
 sidebar: overview_sidebar
 permalink: system_demonstrator.html
-summary: "Consumer demonstrator implementation of the GP Connect FHIR APIs."
+summary: "Demonstrator implementation of the GP Connect FHIR APIs."
 ---
 
 ## Objective ##
@@ -25,7 +25,7 @@ Take the [Ripple](http://rippleosi.org/){:target="_blank"} open source record vi
 ![API Consumer talking to API Provider via the Spine Security Proxy](images/systems/API Consumer talking to API Provider via the Spine Security Proxy.png)
 
 ## Source Code ##
-The GP Connect Consumer Demonstrator is a free open source software (FOSS) project.  
+The GP Connect Demonstrator is a free open source software (FOSS) project.
 
 - Download the source code from the
 [Demonstrator GitHub project repo](https://github.com/nhs-digital/gpconnect){:target="_blank"}
@@ -45,6 +45,12 @@ We now have a functioning user interface that can drive interactions with the FH
 View the latest build of the [GP Connect Demonstrator](http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/){:target="_blank"} online now!
 
 {% include tip.html content="All data held in the GP Connect Demonstrator is a cleared down and reseeded each night to allow for easier testing. <br/>Please refer to the Demonstrator's in-built help for further details." %}
+
+## Community Projects ##
+
+Dave Bould has developed a Vagrant config file for building a complete GP Connect Demonstrator environment with only a few commands.
+
+[GP Connect Vagrant](https://github.com/dbould/gpconnect-vagrant)
 
 ## Example Screens ##
 
