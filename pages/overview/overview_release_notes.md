@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: "Release notes for the various versions of the GP Connect overview."
 ---
 
-#### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)
+#### GP Connect 1.0.0-alpha.5 (Released: 20 July 2017)
 
 - Updated [Common API Guidance](development_fhir_api_guidance.html)
 	- Clarification on API Versioning and FHIR Server Root URL formats.
