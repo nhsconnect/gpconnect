@@ -39,7 +39,7 @@ exclude:
   - pages/development/development_github_repositories.md
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_email: michael.measures@nhs.net
+feedback_email: brian.diggle@nhs.net
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true
@@ -62,9 +62,13 @@ kramdown:
  syntax_highlighter: rouge
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
 
+excerpt_separator: ""
+
 collections:
   developer-journey:
     output: false
+  accessrecord_examples:
+    output: true
 
 defaults:
   -
@@ -86,6 +90,13 @@ defaults:
       comments: true
       search: true
       sidebar: overview_sidebar
+
+  -
+    scope:
+      path: ""
+      type: "accessrecord_examples"
+    values:
+      layout: "page"
 
 # these are defaults used for the frontmatter for these file types
 

@@ -118,7 +118,7 @@ As such it is planned that the following mitigations will be implemented as part
 		- `ASID` which identifies the recipient's FHIR endpoint.
 	- `Ssp-InteractionID`
 		- `InteractionID` of the operation being performed.<sup>3</sup>
-- Construction of URL formatted for valid consumption by the proxy system.
+- Construction of URL formatted for valid consumption by the proxy system, applying percent encoding as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1)
 	- `https://[proxy_server]/https://[provider_server]/[fhir_base]/[fhir_request]`
 		- Fully qualified domain name of the proxy system.
 		- Fully qualified domain name of the provider system.
@@ -149,7 +149,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 <sup>4</sup> an example of a valid JSON Web Token (JWT) for the purposes of GP Connect can be found in the [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) guidance.
 
-{% include important.html content="Note that according to [RFC 2616](https://www.w3.org/Protocols/rfc2616/rfc2616-sec4.html#sec4.2]) all HTTP header fields names are case insensitive and should be handled as such." %}
+{% include important.html content="Note that according to [RFC 7230, section 3.2](https://tools.ietf.org/html/rfc7230) all HTTP header fields names are case insensitive and should be handled as such." %}
 
 ### Proxy ###
 
@@ -188,7 +188,9 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - Provides PKI server credentials to allow verification of provider system.
 - Validation of PKI credentials to allow verification of proxy system.
 - Processing of FHIR conformant API requests and generation of FHIR conformant responses.<sup>2</sup>
-- Publish endpoints to SDS/Endpoint Locator which include the FHIR Version number. The FHIR version number returned by the FHIR server endpoint conformance statement SHALL match the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
+- Where a requested FHIR Operation or Resource has not been implemented, the provider SHOULD return a [501 HTTP Status code](development_fhir_error_handling_guidance.html#internal-server-errors)
+- Publish endpoints to SDS (or future endpoint lookup service). The published endpoint shall be the FHIR Base URL. The FHIR base URL SHALL contain an identifier which uniquely identifies a GP practice at the level of its ODS code.
+- Published endpoints SHALL include the FHIR Version number. The FHIR version number returned by the FHIR server endpoint conformance statement SHALL match the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
 - Error response generation in line with FHIR and HTTP conventions including the return of transient HTTP error codes when appropriate (i.e. due to the provider being down or busy).
 	- `503` Service Unavailable
 
@@ -230,7 +232,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 ### Functional Requirements ###
 
-- Transport level integration SHALL be via HTTP as defined in [RFC 2616](https://tools.ietf.org/html/rfc2616).
+- Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
 - Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).
 - HTTP Strict Transport Security (HSTS) as defined in [RFC 6797](https://tools.ietf.org/html/rfc6797) SHALL be employed to protect against protocol downgrade attacks and cookie hijacking.
 - Authentication of systems connecting to the proxy SHALL be via PKI certificates with TLS Mutual Authentication (MA) providing two-way authentication.
@@ -269,8 +271,9 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `429`	Too Many Requests
 - If a downstream provider system is unreachable or fails to fulfil a valid request with a valid response then a gateway error SHALL be returned to the consumer system.
 	- `502` Bad Gateway
-- If a downstream provider system fails to fulfil a request within a configured timeout period then the connection should be closed and a HTTP timeout response SHALL be returned to the consumer system.
+- If a downstream provider system fails to fulfil a request within a configured timeout period then the connection should be closed and a HTTP timeout response SHALL be returned to the consumer system. Two HTTP status codes are given below, as implementations vary across technology stacks.
 	- `504` Gateway Timeout
+	- `599` Network Connect Timeout
 - If the following specific error conditions occur then the proxy SHALL return the corresponding HTTP status codes to the consumer system.
 	- `403`	Forbidden
 		- Used to indicate that no data sharing agreement exists between the requesting (consuming) and providing organisation.

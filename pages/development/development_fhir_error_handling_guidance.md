@@ -1,5 +1,5 @@
 ---
-title: Error Handling
+title: Error Handling Guidance
 keywords: fhir, development, operation outcome, error
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -150,13 +150,21 @@ For example sending/creating a new Task using the RESTful API fails as an invali
 }
 ```
 
-### Unexpected Internal Server Errors ###
+### Internal Server Errors ###
 
-When the error is unexpected and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details.
+When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
 | `500`     | INTERNAL_SERVER_ERROR | Unexpected internal server error. |
+
+When the FHIR server has received an request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED SHOULD be used.
+
+| HTTP Code | Error Code | Description |
+| --------- | ---------- | ----------- |
+| `501`     | NOT_IMPLEMENTED | FHIR resource or operation not implemented at server |
+
+
 
 #### Example 5. Unexpected Exception #####
 
@@ -181,6 +189,8 @@ For example an unexpected internal exception is thrown by either an Operation or
 	}]
 }
 ```
+
+
 
 ### Malformed Request Errors ###
 

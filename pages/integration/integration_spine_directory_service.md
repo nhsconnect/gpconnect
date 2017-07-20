@@ -27,7 +27,7 @@ Information is provided below to clarify how this endpoint lookup functions
 
 ### Consuming System Viewpoint ###
 
-The consuming system will interact with SDS in order to resolve the FHIR Endpoint Base URL to be used when constructing the request to be made to the Spine Security Proxy. 
+The consuming system will interact with SDS in order to resolve the FHIR Endpoint Server Root URL to be used when constructing the request to be made to the Spine Security Proxy. 
 
 This is a two step process, as follows:
 
@@ -150,7 +150,7 @@ This query should return a single matching accredited system object from SDS, th
 	result: 0 Success
 
 	
-#### Step 2: MHS lookup on SDS to determine FHIR base endpoint URL
+#### Step 2: MHS lookup on SDS to determine FHIR endpoint Server Root URL
 
 Using the Party Key retrieved from Step 1, and the same interaction ID, the following ldapsearch query is executed:
 
@@ -163,7 +163,7 @@ This query should again return a single endpoint. In this case, the ldapquery re
 
 	# 472b35d4641b76454b13, Services, nhs
 	dn: uniqueIdentifier=472b35d4641b76454b13,ou=Services,o=nhs
-	nhsMhsEndPoint: https://pcs.thirdparty.nhs.uk/T99999/1.0.2/
+	nhsMhsEndPoint: https://pcs.thirdparty.nhs.uk/T99999/DSTU2/1
 	nhsMHSFQDN: pcs.thirdparty.nhs.uk
 
 	# search result
@@ -176,13 +176,13 @@ This query should again return a single endpoint. In this case, the ldapquery re
 
 The format of the full URL which the consuming sytem is responsible for constructing is as follows:
 
-`https://[URL of Spine Security Proxy]/[PCS FHIR Base URL]/[FHIR request]`
+`https://[URL of Spine Security Proxy]/[Provider Server Root URL]/[FHIR request]`
 
-The value returned in the nhsMhsEndPoint attribute in Step 2 should be treated as the FHIR Base URL at the Principle Clinical System.
+The value returned in the nhsMhsEndPoint attribute in Step 2 should be treated as the FHIR Server Root URL at the provider system.
 
 In this example, to issue a GetCareRecord request, the following request would be made:
 
-`POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/1.0.2/Patient/$gpc.getcarerecord`
+`POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/DSTU2/1/Patient/$gpc.getcarerecord`
 
 
 
@@ -192,75 +192,64 @@ The provider system is responsible for populating SDS with the necessary informa
 
 In order to ensure that endpoint lookup is reliable, the following guidelines must be followed for First of Type implementations:
 
-**1. Format of FHIR Base URL**
+**1. Format of Server Root URL**
 
-The *FHIR base URL* for a given ASID SHALL be defined in the nhsMhsEndPoint attribute of the MHS record (i.e. the ldap object of type nhsMhs). This URL SHALL be in the following format:
+The *Server Root URL* for a given ASID SHALL be defined in the nhsMhsEndPoint attribute of the MHS record (i.e. the ldap object of type nhsMhs). This URL SHALL be in the format described in the [API Versioning](development_fhir_api_guidance.html#fhir-api-versioning) guidance.
 
-`http://FQDN of endpoint/[ODS Code/routing identifer]/[FHIR version]/`
 
-The ordering of these three elements is not prescriptive, except that the FHIR Version SHALL be given at the end of the URL in all instances. The ODS code/routing identifier could be specified as a sub-domain in the FQDN of the endpoint, or immediately after this.
-
-Examples of acceptable FHIR base URLs are given below:
-
-`https://pcs.thirdparty.nhs.uk/T99999/1.0.2/`
-
-`https://T99999.pcs.thirdparty.nhs.uk/1.0.2/`
 
 
 **2. For First of Type interactions, CMA type endpoints only will be used**
 
 A CMA type endpoint refers to an endpoint which is a combined MHS sytem and Accredited System endpoint. There will be a 1-1 mapping between an Accredited System (uniquely identified by an ASID) and a Message Handling System (MSH). A single MHS record SHALL be associated with a given ASID and interaction ID.
 
-**3. nhsMhsEndPoint attribute SHALL contain the FHIR Base URL only**
+**3. nhsMhsEndPoint attribute SHALL contain the FHIR Server Root URL only**
 
-The nhsMHsEndPoint attribute SHALL contain the *FHIR Base URL*. It is the responsibility of the consuming system to construct the FHIR operation or RESTful resource request which will be postfixed to this base URL.
+The nhsMHsEndPoint attribute SHALL contain the *FHIR Server Root URL*. It is the responsibility of the consuming system to construct the FHIR operation or RESTful resource request which will be postfixed to this base URL.
 
-I.e. an example of a FHIR base URL for a GetCareRecord interaction would be
+I.e. an example of a FHIR server root URL for a GetCareRecord interaction at practice GP0001 would be
 
-`https://pcs.thirdparty.nhs.uk/T99999/1.0.2/`
+`https://provider.thirdparty.nhs.uk/GP0001/DSTU2/1`
 
 Note that the "Patient/$gpc.getcarerecord" is not added.
 
 In line with this, provider systems SHOULD perform checks that the FHIR request received is a reasonable means to request the resource in view given the specificed interaction. 
 
 
-**4. Practice routing identifier to be included in FHIR Base URL**
+**4. Practice routing identifier to be included in FHIR Server Root URL**
 
-As described above, a routing identifier SHALL be placed in the FHIR base URL. This routing identifier may be the ODS code of the practice, or another logical identifier which acheives reliable routing of the request to the patient's registered practice data store. It is expected that the FHIR server business logic will extract the routing identifier.
+As described in the [API Versioning](development_fhir_api_guidance.html#fhir-api-versioning) guidance, a routing identifier SHALL be placed in the FHIR Servder Root URL. This routing identifier may be the ODS code of the practice, or another logical identifier which acheives reliable routing of the request to the patient's registered practice data store. It is expected that the FHIR server business logic will extract the routing identifier.
 
 In line with this, HTTP headers SHALL NOT be used to provide this organisation routing.
 
 **5. Practice specific ODS codes to be used**
 
-ODS codes which refer to Principle Clinical Systems as a single entity SHALL NOT be used to provide routing. Practice specific ODS codes SHALL be used for routing purposes in the FHIR base URL found in the NhsMhsEndPoint attribute of the MHS record.
+ODS codes which refer to Principle Clinical Systems as a single entity SHALL NOT be used to provide routing. Practice specific ODS codes SHALL be used for routing purposes in the FHIR Server Root URL found in the NhsMhsEndPoint attribute of the MHS record.
 
 
-**6. The FHIR Base URL SHALL contain the FHIR version number**
+**6. The FHIR Server Root URL SHALL contain the FHIR version name**
 
-The FHIR Base URL defined in the nhsMhsEndPoint attribute SHALL contain the FHIR version number. This will enable versioning of provider API by FHIR version. 
+The FHIR Server Root URL defined in the nhsMhsEndPoint attribute SHALL contain the FHIR version name as described in the [API Versioning](development_fhir_api_guidance.html#fhir-api-versioning) guidance. This will enable versioning of provider API by FHIR version. 
 
 In line with this, provider systems SHALL NOT version through the use of HTTP headers.
 
-For example, where the FHIR server is running FHIR DSTU2, the FHIR base URL for the GP practice with an ODS code of T99999 would be in the following format:
-
-`https://pcs.thirdparty.nhs.uk/T99999/1.0.2/`
 
 **7. FHIR version SHALL match version found in FHIR conformance statement**
 
-The FHIR version as returned in a [conformance statement](foundations_use_case_get_the_fhir_conformance_profile.html) from the FHIR server service a FHIR request SHALL match the FHIR version given in the FHIR Base URL.
+The FHIR version as returned in a [conformance statement](foundations_use_case_get_the_fhir_conformance_profile.html) from the FHIR server which services the FHIR request SHALL match the FHIR version given in the FHIR Server Root URL.
 
-**8. FHIR Base URLs associated with a given product set SHALL use same FHIR Version**
+**8. FHIR Server Root URLs associated with a given product set SHALL use same FHIR Version**
 
-Where a provider moves in future to later version of FHIR, it will be necessary to define a new product set to accommodate the set of interactions provided by this. Base URLs defined for a specific product set SHALL all reference the same FHIR version. This ensures that FHIR resources references returned in FHIR responses are locally resolvable. 
+Where a provider moves in future to later version of FHIR, it will be necessary to define a new product set to accommodate the set of interactions provided by this. FHIR Server Root URLs defined for a specific product set SHALL all reference the same FHIR version. This ensures that FHIR resources references returned in FHIR responses are locally resolvable. 
 
 For example, all interactions associated with the Appointment Management capability in a given product set must refer to the same FHIR server, so that the resource references for "Read Appointment" and "Amend" appointment would be locally resolvable to the same resource on the same FHIR Server. 
 
 
 **9. Acceptable use of ASID information in HTTP Headers**
 
-Source and destination ASID information is passed to the Principle Clinical System from the Spine Security Proxy. Providers SHALL use this information for audit and debugging purposes only, and SHALL NOT use these headers to perform routing or lookups. 
+Source and destination ASID information is passed to the provider system from the Spine Security Proxy. Providers SHALL use this information for audit and debugging purposes only, and SHALL NOT use these headers to perform routing or lookups. 
 
-It is the responsibility of the Spine Security Proxy SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice specific ODS codes present in the FHIR base URL. 
+It is the responsibility of the Spine Security Proxy SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice specific ODS codes present in the FHIR Server Root URL. 
 
 
 

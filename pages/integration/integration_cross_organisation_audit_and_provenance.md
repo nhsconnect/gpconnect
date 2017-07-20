@@ -15,7 +15,7 @@ Provider systems SHALL ensure that access to confidential data, including patien
 
 ### Audit Trail ###
 
-{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' and 'GP Systems Interface Mechanism' requirements." %}
+{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework, Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' and 'GP Systems Interface Mechanism' requirements." %}
 
 For implementers that don't have access to the GP SoC Framework / 'IG Requirements for GP Systems V4' requirements then the following extract of requirements covers the main audit trail requirements:
 
@@ -62,7 +62,13 @@ Provider systems SHALL ensure that Patient Consent is respected (i.e. where expr
 
 ### Bearer Token ###
 
-Consumer systems SHALL provided audit and provenance details in the HTTP authorization header as an oAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+Consumer systems SHALL provide audit and provenance details in the HTTP authorization header as an oAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+
+An example such an HTTP header is given below:
+
+```
+     Authorization: Bearer jwt_token_string
+```
 
 Provider systems SHALL respond to oAuth Bearer Token errors inline with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
 

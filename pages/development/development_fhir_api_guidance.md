@@ -182,7 +182,7 @@ Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
 
-- Transport level integration SHALL be via HTTP as defined in [RFC 2616](https://tools.ietf.org/html/rfc2616).
+- Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
 - Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).
 - HTTP Strict Transport Security (HSTS) as defined in [RFC 6797](https://tools.ietf.org/html/rfc6797) SHALL be employed to protect against protocol downgrade attacks and cookie hijacking.
 
@@ -251,21 +251,46 @@ The FHIR RESTful API Style Guide defines the following URL conventions which are
 
 ### [Service Root URL](https://www.hl7.org/fhir/DSTU2/http.html#general) ###
 
-The Service Root URL is the address where all of the resources defined by this interface are found. The Service Root URL takes the form of:
-
-```
-https://server{/path}
-```
+The Service Root URL is the address where all of the resources defined by this interface are found. 
 
 The Service Root URL is the `[base]` portion of all FHIR APIs.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
-<p/>
 
-Discussions are ongoing around the use of [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
 
-Whilst consumer systems are required to construct a Service Root URL that is suitable for interacting with the SSP service, API provider systems will be unaware of any additional URL prefix as this will be removed prior to calling the final API endpoint.
+### FHIR API Versioning ###
+FHIR APIs SHALL be versioned according to  [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
+
+Provider systems are required to publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
+
+{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS Code]/[FHIR_VERSION_NAME]/{PROVIDER_MAJOR_VERSION}`" %}
+
+
+- `[FQDN of FHIR Server]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
+
+- `[ODS Code]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
+
+- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
+
+- `{PROVIDER_VERSION}` identifies the major version number of the provider API. Where the provider version number is omitted, the major version SHALL be assumed to be 1.
+  
+- The FHIR Base URL SHALL NOT contain a trailing `/`
+
+
+
+#### Example Server Root URL
+
+For example, a provider has developed a new version of their FHIR API for practice GP0001 which is running FHIR STU3. The provider will publish the server root URL to Spine Directory Services as follows:
+
+`https://provider.nhs.uk/GP0001/STU3/2`
+
+Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+
+The consumer system would therefore issue a request to the new version of the provider FHIR API  to the following URL:
+
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/2`
+
 
 ### [Resource URL](http://www.hl7.org/implement/standards/fhir/http.html#2.1.0) ###
 
@@ -298,7 +323,9 @@ This is the `logical Id` of the resource which is assigned by the server respons
 
 Once assigned, the identity SHALL never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %}   
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %} 
+
+For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/dstu2/resource.html#id)  
 
 #### External Resource Resolution ####
 
@@ -358,9 +385,9 @@ Additional HTTP headers SHALL be added into the HTTP request/response for the pu
 
 #### Cross Organisation Provenance & Audit Headers ####
 
-In order to meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients SHALL provide an oAuth 2.0 Bearer token in the HTTP Authentication header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
+In order to meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients SHALL provide an oAuth 2.0 Bearer token in the HTTP Authorization header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
 
-{% include tip.html content="We are using an open standard (i.e. JWT) to bundling together the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will not be centrally issued and are not signed or encrypted (i.e. are constructed of plain-text). Furthermore, there are JWT libraries available for most programming languages and they are simple to use." %}
+{% include tip.html content="We are using an open standard (i.e. JWT) to provide a container for the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will **not** be centrally issued and are not signed or encrypted (i.e. are constructed of plain-text). There are JWT libraries available for most programming languages simplify generation of this data in JWT format." %}
 
 Refer to [Integration - Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance) for full details of the JWT claims that SHALL be used for passing audit and provenance details between systems.
 
@@ -551,6 +578,7 @@ Servers SHALL produce the following main [HTTP Status Codes](http://www.iana.org
 | `415` | Unsupported Media Type |
 | `422` | Unprocessable Entity |
 | `500` | Internal Server Error |
+| `501` | Not Implemented |
 
 #### [Rejecting Updates](https://www.hl7.org/fhir/DSTU2/http.html#2.1.0.10.1) ####
 

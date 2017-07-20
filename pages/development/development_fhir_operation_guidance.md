@@ -34,6 +34,8 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 	- Resource Type is the name of a FHIR resource (i.e. `Patient`, `Appointment`, `Organization` etc).
 	- Operation Name is the name of a custom FHIR operation (i.e. `gpc.getcarerecord`)
 
+### Foundations Capability Interactions ###
+
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
 | [Read Metadata](foundations_use_case_get_the_fhir_conformance_profile.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata` | `GET`  | `[base]/metadata` |
@@ -45,15 +47,34 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization` | `GET`  | <code>[base]/Organization?identifier=[odsCode]&#124;http://fhir.nhs.net/Id/ods-organization-code</code> |
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location` | `GET`  | `[base]/Location/[id]` |
 | [Location Search](foundations_use_case_find_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:location` | `GET`  | <code>[base]/Location?identifier=[odsSiteCode]&#124;http://fhir.nhs.net/Id/ods-site-code</code> <br/>&nbsp;<br/> <code>[base]/Location?identifier=[odsCode]&#124;http://fhir.nhs.net/Id/ods-organization-code</code> |
+| [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient` | `POST`  | `[base]/Patient/$gpc.registerpatient` |
+
+
+### Access Record HTML Capability Interactions ###
+
+| Operation                 | InteractionID             | Http Verb | Example URL Pattern |
+|---------------------------|---------------------------| ----------|---------------------|
 | [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` | `POST` | `[base]/Patient/$gpc.getcarerecord` |
+
+
+### Appointments Capability Interactions ###
+
+| Operation                 | InteractionID             | Http Verb | Example URL Pattern |
+|---------------------------|---------------------------| ----------|---------------------|
 | [Get Organisation Schedule](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getschedule` | `POST` | `[base]/Organization/$gpc.getschedule` |
 | [Read Appointment](appointments_use_case_read_an_appointment.html)          | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment` | `GET`  | `[base]/Appointment/[id]` |
 | [Create Appointment](appointments_use_case_book_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment` | `POST` | `[base]/Appointment` |
 | [Amend Appointment](appointments_use_case_amend_an_appointment.html)         | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment` | `PUT`  | `[base]/Appointment/[id]` |
 | [Cancel Appointment](appointments_use_case_cancel_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment` | `PUT`  | `[base]/Appointment/[id]` |
-| [Create Task](tasks_use_case_send_a_task.html)               | `urn:nhs:names:services:gpconnect:fhir:rest:create:order` | `POST` | `[base]/Order` |
 | [Get Patient Appointments](appointments_use_case_retrieve_a_patients_appointments.html)  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments` | `GET`  | `[base]/Patient/[id]/Appointment` |
-| [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient` | `POST`  | `[base]/Patient/$gpc.registerpatient` |
+
+
+### Task Capability Interactions ###
+
+| Operation                 | InteractionID             | Http Verb | Example URL Pattern |
+|---------------------------|---------------------------| ----------|---------------------|
+| [Create Task](tasks_use_case_send_a_task.html) | `urn:nhs:names:services:gpconnect:fhir:rest:create:order` | `POST` | `[base]/Order/` |
+
 
 ## Stage 3. FHIR Operations ##
 

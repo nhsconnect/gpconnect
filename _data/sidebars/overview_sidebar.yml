@@ -1,7 +1,7 @@
 entries:
 - title: GP Connect
   product: GP Connect<br/>
-  version: 1.0.0-alpha.4
+  version: 1.0.0-alpha.5
   levels: one
   folders:
 
@@ -15,18 +15,18 @@ entries:
     - title: Getting Started
       url: /overview_engage.html
       output: web
-    - title: News
-      url: /news.html
-      output: web
+#    - title: News
+#      url: /news.html
+#      output: web
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
     - title: Workshops and Timeline
       url: /overview_workshops.html
       output: web
-    - title: Webinars
-      url: /overview_webinars.html
-      output: web
+#    - title: Webinars
+#      url: /overview_webinars.html
+#      output: web
 #    - title: Work in Progress
 #      url: /overview_work_in_progress.html
 #      output: web
@@ -36,6 +36,9 @@ entries:
     - title: Glossary
       url: /overview_glossary.html
       output: web
+    - title: Release Notes
+      url: /overview_release_notes.html
+      output: web      
 
   - title: Design Approach
     output: web

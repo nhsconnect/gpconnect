@@ -90,5 +90,5 @@ GP Connect is working closely with a number of interoperability communities:
 
 ## Timescales, benefits and more
 
-The content here is designed for a technical audience (i.e. developers, architects and data scientists) for other details (i.e. the vision, timescales, business benefits and case studies) then please see the [NHS Digital GP Connect Homepage](http://systems.digital.nhs.uk/gpsoc/interface/gpconnect){:target="_blank"}.
+The content here is designed for a technical audience (i.e. developers, architects and data scientists) for other details (i.e. the vision, timescales, business benefits and case studies) then please see the [NHS Digital GP Connect Homepage](https://digital.nhs.uk/article/1275/GP-Connect){:target="_blank"}.
 

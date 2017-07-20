@@ -1,8 +1,8 @@
 topnav:
 - title: Topnav
-  items:
-    - title: News
-      url: news.html
+#  items:
+ #   - title: News
+  #    url: news.html
 
 topnav_dropdowns:
 - title: Topnav dropdowns

@@ -22,6 +22,8 @@ GP Connect systems MAY utilise the [Spine Mini Service PDS](http://systems.digit
 
 {% include important.html content="As the SMSP service does not return multiple possible matches for the patient it is typically only suitable to be used where there is enough information to achieve a single matched trace." %}
 
+{% include note.html content="SMSP responses do not include trace sequence number information. The presence of a trace sequence number in a consumer request to GPConnect could enable providers to programmatically determine the need to perform a PDS trace themselves, for example if their local patient record's trace was not current." %}
+
 
 ## Demographics Batch Service (DBS) ##
 
