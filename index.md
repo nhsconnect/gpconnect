@@ -8,7 +8,7 @@ toc: false
 summary: A brief introduction to getting started with the GP Connect FHIR&reg; APIs.
 ---
 
-{% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect Provider APIs or Consuming Applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. Please see our github [releases page](https://github.com/nhsconnect/gpconnect/releases){:target="_blank"} for more info." %}
+{% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect Provider APIs or Consuming Applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. Please see our github [releases page](https://github.com/nhsconnect/gpconnect/releases) for more info." %}
 
 {% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities, other parties are advised not to develop against these specifications until a formal announcement has been made." %}
 
