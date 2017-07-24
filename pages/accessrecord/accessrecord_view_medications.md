@@ -195,6 +195,9 @@ All relevant records SHALL be returned according to consumer-supplied date range
 
 Providers message describing at a summary level how they have populated this section
 
+For Providers not able to differentiate between prescriptions ended 'normally', and those discontinued/cancelled before the original prescribed end date, this can be mitigated by Banner description: <br>
+"Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date"
+
 | Provider | Message |
 | ------------ | ------------ |-
 | EMIS| |
