@@ -49,4 +49,5 @@ Please see HTML guidance in the [Current Allergies and Adverse Reactions](access
 
 ### Last 3 Encounters ###
 
+{% include important.html content="the Section title for Encounters on the Summary View should explicitly state 'Last 3 Encounters'.  The columns and content should be as per the HTML guidance for Encounters with the exception of only 3 rows in the table." %}  
 Please see HTML guidance in the [Encounters](accessrecord_view_encounters.html) section.
