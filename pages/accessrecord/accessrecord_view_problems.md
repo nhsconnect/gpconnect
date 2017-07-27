@@ -28,7 +28,7 @@ Providers message describing at a summary level how they have populated this sec
 | EMIS|  |
 | TPP| Section includes Summary Items  |
 | INPS| All problems included in Active Section |
-|Microtest|  Significance represents Priority of High, Medium, Low  |
+|Microtest|  Significance represents Priority of High, Medium, Low <br> (maps to Major, Routine and Minor respectively) |
 
 
 ## Active Problems and Issues ##

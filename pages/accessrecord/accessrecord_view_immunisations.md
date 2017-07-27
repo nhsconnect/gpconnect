@@ -31,7 +31,7 @@ Providers message describing at a summary level how they have populated this sec
 | EMIS| Part and Content not supported |
 | TPP|  |
 | INPS|  Part = Stage, Contents = Type of Immunisation  |
-|Microtest|   |
+|Microtest| Part and Content not supported |
 
 
 ### Date Horizon ###
