@@ -59,7 +59,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource comforming to [gpconnect-appointment-1](https://www.simplifier.net/GPConnect/gpconnect-appointment-1)
 
 The following data-elements are mandatory (i.e data MUST be present).
 

@@ -175,7 +175,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- SHALL include the `Patient`, `Practitioner` and `Organization` details for the nwely registered patient record in a searchset `Bundle`.
+- SHALL include the `Patient`, `Practitioner` and `Organization` details for the newly registered patient record in a searchset `Bundle`.
 
 ```json
 {
