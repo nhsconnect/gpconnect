@@ -176,18 +176,61 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 For these, the Provider SHALL supply all matching dates/times, eg the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
 
+If no end date is supplied, the Provider SHALL supply all data from start date onwards (including future where applicable). 
+
+If no start date is supplied, the Provider SHALL supply all data until the end date. 
 
 ### Record In Transit ###
 
 In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record SHALL be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, SHALL be provided and displayed.
 
+## Section Layout ##
+
+There are two styles of HTML View: pages where multiple tables are provided in the same HTML View page and those where a single table is returned.  Sections with multiple tables are subdivided into *Sub-sections*.
+
+### HTML Views with a Single Table ###
+HTML Views with a single table and hence a single Section are:  
+
+**Encounters**, **Clinical Items**, **Administrative Items**, **Observations**, **Referrals**, **Immunisations**.
+
+These Views SHALL have the following structure:
+
+- Section Title
+- Content Banner (where applicable)
+- Date Banner (where applicable: section date range applied)
+- Exclusion Banner (where applicable: to indicate excluded items)
+- Table
+
+### HTML Views with Multiple Tables ###
+HTML Views with multiple tables and hence multiple Sections are:
+ 
+**Problems**, **Allergies**, **Medications**.
+
+These Views SHALL have the following structure:
+
+- Section Title
+- Content Banner (where applicable)
+- Sub-section 
+	- Sub-section Title (*e.g. Current Medications*)
+	- Date Banner (*where applicable: section date range applied*)
+	- Exclusion Banner (*where applicable, to indicate excluded items*)
+	- Table
+- Sub-section 
+	- Sub-section Title (*e.g. Past Medications*)
+	- Date Banner (*where applicable: section date range applied*)
+	- Exclusion Banner (*where applicable: to indicate excluded items*)
+	- Table
+
+...etc
+
+{% include note.html content="Note this layout does not apply to the Summary HTML View.  See [Summary HTML View](accessrecord_view_summary.html)" %} 
 
 
 ### Section Banner ###
 
 #### Applied Date Ranges ####
 
-Consumer Systems SHALL display the date range applied to a section's data, as supplied by the Provider where applicable, beneath the Section Header
+Consumer Systems SHALL display the date range applied to a section's data, as supplied by the Provider where applicable, beneath the Section Header.
 
 ```html
 <div>
@@ -195,9 +238,25 @@ Consumer Systems SHALL display the date range applied to a section's data, as su
 </div>
 ```
 
+If no Consumer End date: 
+
+```html
+<div>
+    <p>All Data Items from [Start Date]</p>
+</div>
+``` 
+
+If no Consumer Start date:
+
+```html
+<div>
+	<p>All Data Items until [End Date]</p> 
+</div>
+``` 
+
 #### Default Date Ranges ####
 
-Where the Consumer System has not supplied a date-range, then where applicable and while the default is for ALL items to be provided, the following message SHALL be supplied by the Provider and displayed by the Consumer System beneath the Section Header
+Where the Consumer System has not supplied a date-range, then where applicable and while the default is for ALL items to be provided, the following message SHALL be supplied by the Provider and displayed by the Consumer System beneath the Section Header.
 
 ```html
 <div>
@@ -209,6 +268,15 @@ Where the Consumer System has not supplied a date-range, then where applicable a
 
 Following the Section Header & Date Range Applied, Consumer Systems SHALL display the Provider-returned message describing the contents of the section and indicating where contents may vary - eg where Historical Allergies are included in the Current Allergies sub-section, or where a particular column is not provided
 
+#### Section Exclusion Banner ####
+
+Where any exclusions have been applied to the data in the section, the following message SHALL be supplied by the Provider and displayed by the Consumer, if any items were excluded for these reasons.
+
+```html
+<div>
+	<p>Items excluded due to confidentiality, patient preferences and/or RCGP sensitive dataset exclusions</p>
+</div>
+```
 
 ### Per Section Default Time Frames ###
 
