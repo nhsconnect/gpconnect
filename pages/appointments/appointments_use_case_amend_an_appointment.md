@@ -154,7 +154,7 @@ Provider systems:
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
-- SHALL have updated the appointment `reason` inline with the details supplied in the request.
+- SHALL have updated the appointment `reason` according to the details supplied in the request.
 
 ```json
 {

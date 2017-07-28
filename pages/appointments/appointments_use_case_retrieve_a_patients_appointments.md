@@ -55,7 +55,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Ap
 Providers SHALL support searching within this compartment by `start` date/time, for example:
 
 ```http
-GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{start_prefix}end_date]}
+GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{search_prefix}end_date]}
 ```
 
 #### Request Headers ####
@@ -80,6 +80,11 @@ Provider systems:
 - SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+For example:
+
+- Where the use of the `start` search paramter does not define a valid date range, HTTP Status code 422 with error code 'INVALID_PARAMETER'
+
 
 ### Request Response ###
 
