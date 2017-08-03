@@ -63,8 +63,8 @@ The request payload is a profiled version of the standard FHIR [Appointment](htt
 
 The following data-elements are mandatory (i.e data MUST be present).
 
-- the patient `participant` of the appointment.
-- the primary practitioner `participant` of the appointment.
+- a patient `participant` of the appointment.
+- a location `participant` of the appointment.
 - the `start` and `end` of the appointment.
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
@@ -111,18 +111,10 @@ On the wire a JSON serialised request would look something like the following:
 		"status": "accepted"
 	},
 	{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "PPRF"
-			}],
-			"text": "Primary Performer"
-		}],
 		"actor": {
-			"reference": "Practitioner/100",
-			"display": "Dr. Bob Smith"
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
 		},
-		"required": "required",
 		"status": "accepted"
 	}]
 }
@@ -216,6 +208,13 @@ Provider systems:
 			"display": "Dr. Bob Smith"
 		},
 		"required": "required",
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
 		"status": "accepted"
 	}]
 }

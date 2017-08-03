@@ -126,6 +126,13 @@ On the wire a JSON serialised request would look something like the following:
 		},
 		"required": "required",
 		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
+		"status": "accepted"
 	}]
 }
 ```
@@ -212,6 +219,13 @@ Provider systems:
 			"display": "Dr. Bob Smith"
 		},
 		"required": "required",
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
 		"status": "accepted"
 	}]
 }

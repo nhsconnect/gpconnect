@@ -137,6 +137,13 @@ Provider systems:
 		},
 		"required": "required",
 		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
+		"status": "accepted"
 	}]
 }
 ```
