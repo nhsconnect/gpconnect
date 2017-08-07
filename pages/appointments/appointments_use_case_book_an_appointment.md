@@ -69,6 +69,11 @@ The following data-elements are mandatory (i.e data MUST be present).
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
 
+The following data-elements SHOULD be included when available.
+
+- a practitioner `participant` of the appointment.
+
+
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation)." %}
 
 On the wire a JSON serialised request would look something like the following:
