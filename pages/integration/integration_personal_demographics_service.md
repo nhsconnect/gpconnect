@@ -22,7 +22,7 @@ There is a very limited risk that the consumer-traced NHS number pre-dates a pat
 
 ### 2. Spine Mini Service PDS (SMSP) ###
 
-GP Connect systems MAY utilise the [Spine Mini Service PDS](http://systems.digital.nhs.uk/ddc/spine-mini-service){:target="_blank"} (SMSP) as a lighter weight alternative to integrating with the full Spine Personal Demographic Service (PDS).
+GP Connect systems MAY utilise the [Spine Mini Service Provider for PDS](https://developer.nhs.uk/library/systems/nhs-digital-smsp-pds/){:target="_blank"} (SMSP) as a lighter weight alternative to integrating with the full Spine Personal Demographic Service (PDS).
 
 
 {% include important.html content="As the SMSP service does not return multiple possible matches for the patient it is typically only suitable to be used where there is enough information to achieve a single matched trace." %}
