@@ -76,29 +76,32 @@ Provider systems SHALL respond to oAuth Bearer Token errors inline with [RFC 675
 
 Consumer system SHALL generate a new JWT for each API request.
 
-| Claim | Priority | Description | Fixed Value | Dynamic Value |
+| Claim | Optionality | Description | Fixed Value | Dynamic Value |
 |-------|----------|-------------|-------------|------------------|
 | iss | R | Requesting systems issuer URI | No | Yes |
 | sub | R | ID for the user on whose behalf this request is being made. Matches `requesting_practitioner.id` | No | Yes |
-| aud | R | Authorization server's `token_URL` | `https://authorize.fhir.nhs.net/token` | No |
+| aud | R | Requested resource URI<sup>6</sup> | No | Yes |
 | exp | R | Expiration time integer after which this authorization MUST be considered invalid. | `exp` | (now + 5 minutes) UTC time in seconds |
 | iat | R | The UTC time the JWT was created by the requesting system | `iat` | now UTC time in seconds |
-| reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
-| requested_record | R | The FHIR patient resource being requested (i.e. NHS Number identifier details) | No | FHIR Patient<sup>1</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
-| requested_scope | R | Data being requested<sup>2</sup> | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
+| reason_for_request | R | Purpose for which access is being requested | No | `directcare`<br/>OR <br/>`patientfacing` |
+| requested_scope | R | Data being requested | No | `patient/*.[read/write]` <br/>OR <br/>`organization/*.[read/write]`<sup>2</sup> |
 | requesting_device | R | FHIR device resource making the request | No | FHIR Device<sup>1</sup> |
-| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
-| requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>1+3</sup> |
+| requesting_organization | O | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
+| requesting_identity | R | FHIR practitioner or citizen resource making the request | No | FHIR Practitioner<sup>1+3</sup><br/>OR <br/>FHIR Citizen<sup>1+5</sup> |
 
 <sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s).
 
-<sup>2</sup> Patient scope for patient centric APIs (i.e. Get Care Record and Patient's Appointments, Patient Task) or scope for organisation centric APIs (i.e. Get Organization Schedule)
+<sup>2</sup> A list of one or more strings delimited by white space, in the format “patient/[ResourceType].[RightsType]” or “organization/[ResourceType].[RightsType]”. For “patient”, [ResourceType] (e.g. Condition, Appointment, Observation) may be any named Resource in the [HL7 FHIR STU3 Compartment Patient set](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html){:target="_blank"} or "`*`". For "organization", [ResourceType] may be any of “practitioner”, “organization”, “location” or "`*`". [RightsType] may only be “read”, “write” or "`*`".
 
-<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field.
+<sup>3</sup> To contain the practitioner's ID and local system identifier(s) (i.e. login details / username) when `reason_for_request` = `"directcare"`. `identity_role` shall contain a job role identifier in a “role” resource. Where the practitioner has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field. 
 
-<sup>4</sup> The requesting organisation resource SHALL refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
+<sup>4</sup> The `requesting_organization` claim is Optional **ONLY** when `reason_for_request` = "patientfacing", in which case it should be omitted. When `reason_for_request` = "directcare", it **SHALL** refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
 
-{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
+<sup>5</sup>To contain a citizen's Citizen ID and local system identifier(s) (i.e. login details / username) when `reason_for_request` = `"patientfacing"`. `identity_role` shall contain a relationship role name in a “relationship” resource.
+
+<sup>6</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the Consumer by the [SDS endpoint lookup service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process){:target="_blank"} as the value of `nhsMhsEndPoint`.
+
+{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the `requested_identity` and `requested_organization` populated in the JWT reflect the originating organisation rather than the hosting organization." %}
 
 #### JWT Generation ####
 Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
@@ -128,24 +131,20 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 
 {% include tip.html content="The [JWT.io](https://jwt.io/) website includes a number of rich resources to aid in developing JWT enabled applications." %}
 
-## JWT Payload Example ##
+## JWT Payload Examples ##
+
+### `reason_for_request` = "directcare" <br/> `requesting_identity`:`resourceType` = "Practitioner" ###
 
 ```json
 {
 	"iss": "https://[ConsumerSystemURL]",
-	"sub": "[PractitionerID]",
-	"aud": "https://authorize.fhir.nhs.net/token",
-	"exp": 1469436987,
-	"iat": 1469436687,
-	"reason_for_request": "directcare",
-	"requested_record": {
-		"resourceType": "Patient",
-		"identifier": [{
-			"system": "http://fhir.nhs.net/Id/nhs-number",
-			"value": "[NHSNumber]"
-		}]
-	},
-	"requesting_device": {
+        "sub": "[PractitionerID]",
+        "aud": "[RequestedResourceURI]",
+        "exp": 1469436987,
+        "iat": 1469436687,
+        "reason_for_request": "directcare",
+        "requested_scope": "patient/*.read",
+        "requesting_device": {
 		"resourceType": "Device",
 		"id": "[DeviceID]",
 		"identifier": [{
@@ -164,7 +163,8 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 		}],
 		"name": "Requesting Organisation Name"
 	},
-	"requesting_practitioner": {
+ 
+	"requesting_identity": {
 		"resourceType": "Practitioner",
 		"id": "[PractitionerID]",
 		"identifier": [{
@@ -180,7 +180,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 			"given": ["[Given]"],
 			"prefix": ["[Prefix]"]
 		},
-		"practitionerRole": [{
+		"identity_role": [{
 			"role": {
 				"coding": [{
 					"system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
@@ -190,6 +190,58 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 		}]
 	}
 }
+
+```
+
+### `reason_for_request` = "patientfacing" <br/> `requesting_identity`:`resourceType` = "Citizen" ###
+
+```json
+{
+	"iss": "https://[AuthenticationSystemURL]",
+	"sub": "[CitizenID]",
+	"aud": "[RequestedResourceURI]",
+	"exp": 1469436987,
+	"iat": 1469436687,
+	"reason_for_request": "patientfacing",
+	"requested_scope": "patient/medication.read patient/appointment.write",
+	"requesting_device": {
+		"resourceType": "Device",
+		"id": "[DeviceID]",
+		"identifier": [{
+			"system": "[DeviceSystem]",
+			"value": "[DeviceID]"
+		}],
+		"model": "[SoftwareName]",
+		"version": "[SoftwareVersion]"
+	},
+	"requesting_identity": {
+		"resourceType": "Citizen",
+		"id": "[CitizenID]",
+		"identifier": [{
+			"system": "http://fhir.nhs.net/citizen-user-id",
+			"value": "[CitizenUserID]"
+		},
+		{
+			"system": "[UserSystem]",
+			"value": "[UserID]"
+		}],
+		"name": {
+			"family": ["[Family]"],
+			"given": ["[Given]"],
+			"prefix": ["[Prefix]"]
+		},
+		"identity_role": [{
+			"relationship": {
+				"coding": [{
+					"system": "http://fhir.nhs.net/ValueSet/citizen-relationship-name-1",
+					"code": "[CitizenRelationshipRoleName]"
+				}]
+			}
+		}]
+	}
+ 
+}
+ 
 ```
 
 {% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't commit to using the SMART on FHIR specification." %}
