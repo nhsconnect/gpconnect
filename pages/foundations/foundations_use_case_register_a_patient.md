@@ -9,7 +9,9 @@ summary: "Use case for registering a patient with an organization."
 
 ## API Use Case ##
 
-This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+This specification describes a single use case. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+
+{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It is not a full patient registration endpoint, and does not change a patients' registered practice information as held on Personal Demographics Service (PDS)" %}
 
 ## Security ##
 
@@ -197,7 +199,10 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- SHALL include the `Patient`, `Practitioner` and `Organization` details for the newly registered patient record in a searchset `Bundle`.
+- SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
+	- `Patient` profiled to `gpconnect-patient-1` containing details of the newly registered patient. This will include details sourced from PDS.
+	- `Practitioner` profiled to `gpconnect-practitioner-1`
+	- `Organization` profiled to `gpconnect-organization-1`
 
 ```json
 {

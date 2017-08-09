@@ -23,7 +23,7 @@ The ability to create appointments for Patients not known to the GP practice/dia
 - <span class="label label-success">SELECTED</span> If a patient is not known to the local system the appointment booking will be rejected by booking system. It will be possible to register the patient via a separate patient registration end point.
 - If a patient is not known to the local system the appointment booking will be accepted and a patient record will be created with basic details about the patient (identifier).
 
-{% include todo.html content="Details of how to Register a Patient will be provided in the Foundations capability pack in a future release. " %}
+{% include note.html content="Details of how to [Register a Patient](foundations_use_case_register_a_patient.html) can be found in the Foundations capability pack. " %}
 
 ## Content of diaries ##
 
@@ -53,7 +53,7 @@ When searching for diaries, the results will be:
 
 ## Do we need to use the 'AppointmentResponse' resource? ##
 
-As per the suggested FHIR workflow in [5.27.1.1](https://www.hl7.org/fhir/appointment.html) Should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource, or are HTTP response codes sufficient for GP Connect use cases?
+As per the suggested FHIR workflow in the [FHIR DSTU2 Appointment](https://www.hl7.org/fhir/DSTU/appointment.html) Should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource, or are HTTP response codes sufficient for GP Connect use cases?
 
 - AppointmentResponse resource will be provided in response to a booking request.
 - <span class="label label-success">SELECTED</span> HTTP codes will be used to convey success/failure of a booking request.
