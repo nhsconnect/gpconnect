@@ -11,7 +11,7 @@ summary: "Overview of how audit and provenance data is expected to be transporte
 
 ### Governance ###
 
-Provider systems SHALL ensure that access to confidential data, including patient or clinical data, through the API must meet, as a minimum, the same requirements for information governance, authentication and authorisation, and auditing as that of the host system the API exposes.
+Provider systems SHALL ensure that access to confidential data, including patient or clinical data, through the API must meet, as a minimum, the same requirements for information governance, authentication, authorisation, and auditing as that of the host system the API exposes.
 
 ### Audit Trail ###
 

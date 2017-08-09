@@ -25,6 +25,8 @@ The `[system]` field SHALL be populated with a valid location identifier system 
 
 The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'http://fhir.nhs.net/Id/ods-site-code', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+
 #### FHIR Relative Request ####
 
 ```http
