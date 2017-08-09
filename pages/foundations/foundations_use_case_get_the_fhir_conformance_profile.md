@@ -65,9 +65,181 @@ Provider systems:
 
 An example GP Connect Conformance Statement of type `Instance` is shown below ready for customisation and embedding into GP Connect assured provider systems.
 
-{% include important.html content="The following draft conformance statement does not contain details for resource profiles that are to be accessed though the searchset bundles." %}
-
-{% gist michaelmeasures/486aa287a7ea5911fa9de6c55b0d46bb %}
+```xml
+<Conformance xmlns="http://hl7.org/fhir">
+	<version value="1.0.0-rc.1" />
+	<name value="GP Connect" />
+	<status value="draft" />
+	<experimental value="true" />
+	<publisher value="NHS Digital" />
+	<contact>
+		<name value="Software Vendor Contact Name" />
+	</contact>
+	<date value="2016-08-08" />
+	<description value="This server is a reference implementation of the GP Connect FHIR APIs" />
+	<copyright value="Copyright NHS Digital 2016" />
+	<software>
+		<name value="Software Name" />
+		<version value="Software Verson" />
+		<releaseDate value="Software Release Date" />
+	</software>
+	<fhirVersion value="1.0.2" />
+	<acceptUnknown value="both" />
+	<format value="application/xml+fhir" />
+	<format value="application/json+fhir" />
+	<profile>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-device-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"/>
+ 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Appointment-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Schedule-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Slot-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Schedule-Operation-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-GetSchedule-Bundle-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Register-Patient-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-RegisterPatient-Bundle-1"/>
+	</profile>
+	<rest>
+		<mode value="server" />
+		<security>
+			<cors value="true" />
+			<certificate>
+				<blob />
+			</certificate>
+		</security>
+		<resource>
+			<type value="Patient" />
+			<interaction>
+				<code value="read" />
+			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<versioning value="versioned" />
+			<readHistory value="false" />
+			<updateCreate value="false" />
+			<searchParam>
+				<name value="identifier" />
+				<type value="token" />
+				<documentation value="NHS Number (i.e. http://fhir.nhs.net/Id/nhs-number|123456789)" />
+			</searchParam>
+		</resource>
+		<resource>
+			<type value="Organization" />
+			<interaction>
+				<code value="read" />
+			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<versioning value="versioned" />
+			<readHistory value="false" />
+			<updateCreate value="false" />
+			<searchParam>
+				<name value="identifier" />
+				<type value="token" />
+				<documentation value="ODS Code (i.e. http://fhir.nhs.net/Id/ods-organization-code|Y12345) OR ODS Site Code (i.e. http://fhir.nhs.net/Id/ods-site-code|Y12345678)" />
+			</searchParam>
+		</resource>
+		<resource>
+			<type value="Practitioner" />
+			<interaction>
+				<code value="read" />
+			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<versioning value="versioned" />
+			<readHistory value="false" />
+			<updateCreate value="false" />
+			<searchParam>
+				<name value="identifier" />
+				<type value="token" />
+				<documentation value="SDS User Id (i.e. http://fhir.nhs.net/sds-user-id|999999)" />
+			</searchParam>
+		</resource>
+		<resource>
+			<type value="Appointment" />
+			<interaction>
+				<code value="read" />
+			</interaction>
+			<interaction>
+				<code value="create" />
+			</interaction>
+			<interaction>
+				<code value="vread" />
+			</interaction>
+			<interaction>
+				<code value="update" />
+			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<versioning value="versioned" />
+			<readHistory value="false" />
+			<updateCreate value="false" />
+			<searchParam>
+				<name value="identifier" />
+				<type value="token" />
+				<documentation value="NHS Number (i.e. http://fhir.nhs.net/Id/nhs-number|123456789)" />
+			</searchParam>
+		</resource>
+		<resource>
+			<type value="Location" />
+			<interaction>
+				<code value="read" />
+			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<versioning value="versioned" />
+			<readHistory value="false" />
+			<updateCreate value="false" />
+			<searchParam>
+				<name value="identifier" />
+				<type value="token" />
+				<documentation value="ODS Code (i.e. http://fhir.nhs.net/Id/ods-organization-code|Y12345) OR ODS Site Code (i.e. http://fhir.nhs.net/Id/ods-site-code|Y12345678)" />
+			</searchParam>
+		</resource>
+		<resource>
+			<type value="Order" />
+			<interaction>
+				<code value="create" />
+			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<versioning value="versioned" />
+			<readHistory value="false" />
+			<updateCreate value="false" />
+		</resource>
+		<operation>
+			<name value="gpc.getcarerecord" />
+			<definition>
+				<reference value="OperationDefinition/gpc.getcarerecord" />
+			</definition>
+		</operation>
+		<operation>
+			<name value="gpc.getschedule" />
+			<definition>
+				<reference value="OperationDefinition/gpc.getschedule" />
+			</definition>
+		</operation>
+		<operation>
+			<name value="gpc.registerpatient" />
+			<definition>
+				<reference value="OperationDefinition/gpc.registerpatient" />
+			</definition>
+		</operation>
+	</rest>
+	<rest>
+		<mode value="server" />
+	</rest>
+</Conformance>
+```
 
 {% include tip.html content="Please see capability packs for examples of conformance statements specific to those capabilities" %}
 - [Access Record Conformance Statement](accessrecord_development_conformance_profile.html)
