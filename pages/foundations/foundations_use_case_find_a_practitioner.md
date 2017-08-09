@@ -79,7 +79,7 @@ Provider systems:
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.fhir.nhs.net/fhir/fhir/Practitioner/1/_history/636064088099800115",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Practitioner/1/_history/636064088099800115",
 		"resource": {
 			"resourceType": "Practitioner",
 			"id": "1",
@@ -108,7 +108,7 @@ Provider systems:
 ### C# ###
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var query = new string[] { "identifier=http://fhir.nhs.net/Id/sds-user-id|S001" };
 var bundle = client.Search("Practitioner", query);
@@ -119,7 +119,7 @@ FhirSerializer.SerializeResourceToJson(bundle).Dump();
 
 ```java
 FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.fhir.nhs.net/fhir/");
+IGenericClient client = ctx.newRestfulGenericClient("gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Practitioner.class)
 .where(new TokenClientParam("identifier").exactly().systemAndCode("http://fhir.nhs.net/Id/sds-user-id", "S001"))
 .encodedJson()

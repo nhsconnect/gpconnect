@@ -87,7 +87,7 @@ Provider systems:
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.fhir.nhs.net/fhir/Location/1/_history/636064088100870233",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Location/1/_history/636064088100870233",
 		"resource": {
             "resourceType": "Location",
             "id": "1",
@@ -111,7 +111,7 @@ Provider systems:
 ### C# ###
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var query = new string[] { "identifier=http://fhir.nhs.net/Id/ods-site-code|L001" };
 var bundle = client.Search("Location", query);
@@ -122,7 +122,7 @@ FhirSerializer.SerializeResourceToXml(bundle).Dump();
 
 ```java
 FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.fhir.nhs.net/fhir/");
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Location.class)
 .where(new TokenClientParam("identifier").exactly().systemAndCode("http://fhir.nhs.net/Id/ods-site-code", "L001"))
 .encodedXml()

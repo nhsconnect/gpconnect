@@ -58,7 +58,7 @@ Consumers SHALL include the following additional HTTP request headers:
 Example HTTP request headers:
 
 ```http
-POST http://gpconnect.fhir.nhs.net/fhir/Patient/$gpc.registerpatient HTTP/1.1
+POST http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/$gpc.registerpatient HTTP/1.1
 User-Agent: .NET FhirClient for FHIR 1.2.0
 Accept: application/json+fhir;charset=utf-8
 Prefer: return=representation
@@ -75,9 +75,11 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 #### Payload Request Body ####
 
-The following data-elements are mandatory (i.e. data MUST be present):
+The following data-elements are mandatory (i.e. data SHALL be present):
 
-- the `registerPatient` is the patient who you want to be registered.
+- A `registerPatient` patient resource profiled to `gpconnect-register-patient-1`. This is the patient who you want to be registered. Within this resource: 
+	-  The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
+	- Where the gender and name are available these SHALL be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
 
@@ -243,7 +245,7 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var parameters = new Parameters();
 parameters.Add("registerPatient", new Patient
@@ -276,7 +278,7 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 
 ```java
 FhirContext ctx = FhirContext.forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.fhir.nhs.net/fhir/");
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.registerInterceptor(new LoggingInterceptor(true));
 
 Patient patient = new Patient();
