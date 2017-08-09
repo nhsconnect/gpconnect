@@ -87,17 +87,17 @@ Consumer system SHALL generate a new JWT for each API request.
 | requested_scope | R | Data being requested | No | `patient/*.[read/write]` <br/>OR <br/>`organization/*.[read/write]`<sup>2</sup> |
 | requesting_device | R | FHIR device resource making the request | No | FHIR Device<sup>1</sup> |
 | requesting_organization | O | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
-| requesting_identity | R | FHIR practitioner or citizen resource making the request | No | FHIR Practitioner<sup>1+3</sup><br/>OR <br/>FHIR Citizen<sup>1+5</sup> |
+| requesting_identity | R | FHIR practitioner or person resource making the request | No | FHIR Practitioner<sup>1+3</sup><br/>OR <br/>FHIR Person<sup>1+5</sup> |
 
 <sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s).
 
 <sup>2</sup> A list of one or more strings delimited by white space, in the format “patient/[ResourceType].[RightsType]” or “organization/[ResourceType].[RightsType]”. For “patient”, [ResourceType] (e.g. Condition, Appointment, Observation) may be any named Resource in the [HL7 FHIR STU3 Compartment Patient set](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html){:target="_blank"} or "`*`". For "organization", [ResourceType] may be any of “practitioner”, “organization”, “location” or "`*`". [RightsType] may only be “read”, “write” or "`*`".
 
-<sup>3</sup> To contain the practitioner's ID and local system identifier(s) (i.e. login details / username) when `reason_for_request` = `"directcare"`. `identity_role` shall contain a job role identifier in a “role” resource. Where the practitioner has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field. 
+<sup>3</sup> To contain the practitioner's ID and local system identifier(s) (i.e. login details / username) when `reason_for_request` = `"directcare"`. `practitionerRole` shall contain a job role identifier in a “role” resource. Where the practitioner has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field. 
 
 <sup>4</sup> The `requesting_organization` claim is Optional **ONLY** when `reason_for_request` = "patientfacing", in which case it should be omitted. When `reason_for_request` = "directcare", it **SHALL** refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
 
-<sup>5</sup>To contain a citizen's Citizen ID and local system identifier(s) (i.e. login details / username) when `reason_for_request` = `"patientfacing"`. `identity_role` shall contain a relationship role name in a “relationship” resource.
+<sup>5</sup>An HL7 FHIR DSTU2 Person resource, used to contain Citizen ID and local system identifier(s) (i.e. login details / username) for a person other than a practitioner requesting access to a GP Connect capability when `reason_for_request` = `"patientfacing"`.
 
 <sup>6</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the Consumer by the [SDS endpoint lookup service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process){:target="_blank"} as the value of `nhsMhsEndPoint`.
 
@@ -143,7 +143,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
         "exp": 1469436987,
         "iat": 1469436687,
         "reason_for_request": "directcare",
-        "requested_scope": "patient/*.read",
+        "requested_scope": "patient/*.read organization/organization.*",
         "requesting_device": {
 		"resourceType": "Device",
 		"id": "[DeviceID]",
@@ -180,7 +180,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 			"given": ["[Given]"],
 			"prefix": ["[Prefix]"]
 		},
-		"identity_role": [{
+		"practitionerRole": [{
 			"role": {
 				"coding": [{
 					"system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
@@ -215,7 +215,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 		"version": "[SoftwareVersion]"
 	},
 	"requesting_identity": {
-		"resourceType": "Citizen",
+		"resourceType": "Person",
 		"id": "[CitizenID]",
 		"identifier": [{
 			"system": "http://fhir.nhs.net/citizen-user-id",
@@ -229,15 +229,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 			"family": ["[Family]"],
 			"given": ["[Given]"],
 			"prefix": ["[Prefix]"]
-		},
-		"identity_role": [{
-			"relationship": {
-				"coding": [{
-					"system": "http://fhir.nhs.net/ValueSet/citizen-relationship-name-1",
-					"code": "[CitizenRelationshipRoleName]"
-				}]
-			}
-		}]
+		}
 	}
  
 }
@@ -255,7 +247,82 @@ Where the Practitioner has both a local system role as well as a Spine RBAC role
 
 {% include tip.html content="The following code snippet utilise the [Microsoft Identity Model JWT Token Nuget Package](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt/) for creating, serializing and validating JWT tokens." %}
 
-{% gist michaelmeasures/d6a75e52acdbee93c4c30d23e639fb1a %}
+```C#
+var requesting_device = new Device {
+	Id = "[DeviceID]",
+	Model = "[SoftwareName]",
+	Version = "[SoftwareVersion]",
+	Identifier =
+	{
+		new Identifier("[DeviceSystem]", "[DeviceID]")
+	}
+};
+
+var requesting_organization = new Organization {
+	Id = "[OrganizationID]",
+	Name = "Requesting Organisation Name",
+	Identifier =
+	{
+		new Identifier("http://fhir.nhs.net/Id/ods-organization-code", "[ODSCode]")
+	}
+};
+
+var requesting_identity = new Practitioner {
+	resourceType = "Practitioner",
+	Id = "[PractitionerID]",
+	PractitionerRole =
+	{
+		new role()
+		{
+			new coding("http://fhir.nhs.net/ValueSet/sds-job-role-name-1", "[SDSJobRoleName]")
+		}
+	},
+	Name = new HumanName()
+	{
+			Prefix = new[] {"[Prefix]"},
+			Given = new[] {"[Given]"},
+			Family = new[] {"[Family]"}
+	},
+	Identifier =
+	{
+		new Identifier("http://fhir.nhs.net/sds-user-id", "[SDSUserID]"),
+		new Identifier("[UserSystem]", "[UserID]")
+	}
+};
+
+var subject_patient = new Patient {
+	Identifier =
+	{
+		new Identifier("http://fhir.nhs.net/Id/nhs-number","[NHSNumber]")
+	}
+};
+
+var audit_event_id = "[AuditEventID]";
+var requesting_system_url = "https://[ConsumerSystemURL]";
+var requesting_system_token_url = "https://authorize.fhir.nhs.net/token";
+var now = DateTime.UtcNow;
+var expires = now.AddMinutes(5);
+
+var claims = new List<System.Security.Claims.Claim>
+{
+    new System.Security.Claims.Claim("iss", requesting_system_url, ClaimValueTypes.String),
+    new System.Security.Claims.Claim("sub", requesting_practitioner.Id, ClaimValueTypes.String),
+    new System.Security.Claims.Claim("aud", requesting_system_token_url, ClaimValueTypes.String),
+    new System.Security.Claims.Claim("exp", EpochTime.GetIntDate(expires).ToString(), ClaimValueTypes.Integer64),
+    new System.Security.Claims.Claim("iat", EpochTime.GetIntDate(now).ToString(), ClaimValueTypes.Integer64),
+    new System.Security.Claims.Claim("reason_for_request", "directcare", ClaimValueTypes.String),
+    new System.Security.Claims.Claim("requested_record", FhirSerializer.SerializeToJson(subject_patient), JsonClaimValueTypes.Json),
+    new System.Security.Claims.Claim("requesting_device", FhirSerializer.SerializeToJson(requesting_device), JsonClaimValueTypes.Json),
+    new System.Security.Claims.Claim("requesting_organization", FhirSerializer.SerializeToJson(requesting_organization), JsonClaimValueTypes.Json),
+    new System.Security.Claims.Claim("requesting_identity", FhirSerializer.SerializeToJson(requesting_identity), JsonClaimValueTypes.Json)
+};
+
+// Serialize To Json
+JwtPayload payload = new JwtPayload(claims);
+var jsonPayload = payload.SerializeToJson();
+jsonPayload.Dump();
+
+```
 
 ## External Documents / Policy Documents ##
 
