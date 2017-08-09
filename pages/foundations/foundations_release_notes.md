@@ -11,6 +11,7 @@ summary: "Release notes for the various versions of the Foundations capability."
   - Updated example conformance profile to include GP Connect profile information (Page - [Get the FHIR Conformance Statement](foundations_use_case_get_the_fhir_conformance_profile.html)).
   - Clarified use of [Register a patient](foundations_use_case_register_a_patient.html) API is only to support local-only temporary patient registrations to support federated appointment booking
   - Added additional clarification around use of identifiers for all foundation search capabilities (Pages - Find a practitioner, Find a patient, Find an organisation, Find a location).
+  - Clarity on mandatory data items for [Register a patient](foundations_use_case_register_a_patient.html) API
 
 - 1.0.0-beta.1
   - Initial release of the Foundations capability pack on GitHub in early August 2016.
