@@ -7,13 +7,25 @@ permalink: foundations_use_case_find_an_organisation.html
 summary: "Use case for finding an organisation resource by business identity."
 ---
 
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+
 ## API Usage ##
 
-Resolve (zero or more) `Organization` resources using a business identifier (i.e. SDS User Id).
+Resolve (zero or more) `Organization` resources using a business identifier (i.e. ODS organization code or ODS site code).
 
 ### Request Operation ###
 
 The `[system]` field SHALL be populated with a valid organization identifier system URL (i.e. `http://fhir.nhs.net/Id/ods-organization-code` or `http://fhir.nhs.net/Id/ods-site-code`).
+
+The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier types 'http://fhir.nhs.net/Id/ods-organization-code' and 'http://fhir.nhs.net/Id/ods-site-code', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR Relative Request ####
 
@@ -77,7 +89,7 @@ Provider systems:
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.fhir.nhs.net/fhir/Organization/1/_history/636064088098730113",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Organization/1/_history/636064088098730113",
 		"resource": {
 			"resourceType": "Organization",
 			"id": "1",
@@ -101,7 +113,7 @@ Provider systems:
 ### C# ###
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var query = new string[] { "identifier=http://fhir.nhs.net/Id/ods-organization-code|O001" };
 var bundle = client.Search("Organization", query);
@@ -112,7 +124,7 @@ FhirSerializer.SerializeResourceToJson(bundle).Dump();
 
 ```java
 FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.fhir.nhs.net/fhir/");
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Organization.class)
 .where(new TokenClientParam("identifier").exactly().systemAndCode("http://fhir.nhs.net/Id/ods-organization-code", "O001"))
 .encodedJson()

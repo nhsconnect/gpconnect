@@ -9,7 +9,9 @@ summary: "Use case for registering a patient with an organization."
 
 ## API Use Case ##
 
-This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+This specification describes a single use case. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+
+{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It is not a full patient registration endpoint, and does not change a patients' registered practice information as held on Personal Demographics Service (PDS)" %}
 
 ## Security ##
 
@@ -55,7 +57,7 @@ Consumers SHALL include the following additional HTTP request headers:
 Example HTTP request headers:
 
 ```http
-POST http://gpconnect.fhir.nhs.net/fhir/Patient/$gpc.registerpatient HTTP/1.1
+POST http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/$gpc.registerpatient HTTP/1.1
 User-Agent: .NET FhirClient for FHIR 1.2.0
 Accept: application/json+fhir;charset=utf-8
 Prefer: return=representation
@@ -72,46 +74,70 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 #### Payload Request Body ####
 
-The following data-elements are mandatory (i.e. data MUST be present):
+The following data-elements are mandatory (i.e. data SHALL be present):
 
-- the `registerPatient` is the patient who you want to be registered.
+- A `registerPatient` patient resource profiled to `gpconnect-register-patient-1`. This is the patient who you want to be registered. Within this resource: 
+	-  The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
+	- Where the gender and name are available these SHALL be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
 
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
 
 ```xml
-<OperationDefinition xmlns="http://hl7.org/fhir">
-	<id value="registerpatient" />
-	<version value="1.0.0-beta.1" />
-	<name value="Register A Patient" />
-	<status value="draft" />
-	<kind value="operation" />
-	<experimental value="true" />
-	<publisher value="NHS Digital" />
-	<date value="2016-08-01" />
-	<description value="Register A Patient For The Given Organization." />
-	<idempotent value="false" />
-	<code value="gpc.registerpatient" />
-	<system value="false" />
-	<type value="Patient" />
-	<instance value="false" />
-	<parameter>
-		<name value="registerPatient" />
-		<use value="in" />
-		<min value="1" />
-		<max value="1" />
-		<documentation value="Patient demographic and NHS number information captured in the patient resource to register the patient." />
-		<type value="Patient" />
-	</parameter>
-	<parameter>
-		<name value="response" />
-		<use value="out" />
-		<min value="1" />
-		<max value="1" />
-		<documentation value="The searchset bundle resource that has been returned in response to the given input parameters." />
-		<type value="Bundle" />
-	</parameter>
+<OperationDefinition>
+    <id value="0857bd2a-9c1f-4e2a-ac48-f6a81f88ab01" />
+    <meta>
+        <versionId value="1" />
+        <lastUpdated value="2016-11-07T12:21:35.991+00:00" />
+        <tag>
+            <system value="urn:hscic:examples" />
+            <code value="Operation-Register-Patient" />
+            <display value="Register Patient Operation" />
+        </tag>
+    </meta>
+    <url value="http://fhir.nhs.net/OperationDefinition/gpconnect-registerpatient-operation-1" />
+    <version value="0.0.1" />
+    <name value="GPConnect-RegisterPatient-Operation-1" />
+    <status value="active" />
+    <kind value="operation" />
+    <publisher value="NHS Digital" />
+    <contact>
+        <name value="Interoperability Team" />
+        <telecom>
+            <system value="email" />
+            <value value="interoperabilityteam@nhs.net" />
+            <use value="work" />
+        </telecom>
+    </contact>
+    <date value="2016-08-03T00:00:00+01:00" />
+    <description value="Request to register a patient at a healthcare organisation" />
+    <code value="gpc.registerpatient" />
+    <system value="false" />
+    <type value="Patient" />
+    <instance value="false" />
+    <parameter>
+        <name value="registerPatient" />
+        <use value="in" />
+        <min value="1" />
+        <max value="1" />
+        <documentation value="Patient demographic information captured in the patient resource to register the patient." />
+        <type value="Patient" />
+        <profile>
+            <reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-register-patient-1" />
+        </profile>
+    </parameter>
+    <parameter>
+        <name value="response" />
+        <use value="out" />
+        <min value="1" />
+        <max value="1" />
+        <documentation value="The searchset bundle resource that has been returned in response to the given input parameters" />
+        <type value="Bundle" />
+        <profile>
+            <reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-registerpatient-bundle-1" />
+        </profile>
+    </parameter>
 </OperationDefinition>
 ```
 
@@ -174,7 +200,10 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- SHALL include the `Patient`, `Practitioner` and `Organization` details for the nwely registered patient record in a searchset `Bundle`.
+- SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
+	- `Patient` profiled to `gpconnect-patient-1` containing details of the newly registered patient. This will include details sourced from PDS.
+	- `Practitioner` profiled to `gpconnect-practitioner-1`
+	- `Organization` profiled to `gpconnect-organization-1`
 
 ```json
 {
@@ -190,7 +219,7 @@ Provider systems:
 			"meta": {
 				"versionId": "636180880331209494",
 				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"]
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-register-patient-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/nhs-number",
@@ -215,7 +244,7 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var parameters = new Parameters();
 parameters.Add("registerPatient", new Patient
@@ -248,7 +277,7 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 
 ```java
 FhirContext ctx = FhirContext.forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.fhir.nhs.net/fhir/");
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.registerInterceptor(new LoggingInterceptor(true));
 
 Patient patient = new Patient();
