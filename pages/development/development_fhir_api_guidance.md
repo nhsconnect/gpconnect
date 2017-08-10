@@ -85,7 +85,6 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 		1.  [READ](https://www.hl7.org/fhir/DSTU2/http.html#read)
 		2.  [UPDATE](https://www.hl7.org/fhir/DSTU2/http.html#update)
 		3.  [DELETE](https://www.hl7.org/fhir/DSTU2/http.html#delete)
-		4.  [VREAD](https://www.hl7.org/fhir/DSTU2/http.html#vread)
 	2.  Type Level
 		1.  [CREATE](https://www.hl7.org/fhir/DSTU2/http.html#create)
 		2.  [SEARCH](https://www.hl7.org/fhir/DSTU2/http.html#search)
@@ -130,6 +129,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 2. Interactions
 	1. Instance
 		1. HISTORY
+		2. [VREAD](https://www.hl7.org/fhir/DSTU2/http.html#vread)
 	2. Type Level
 		1. HISTORY
 	3. Whole System

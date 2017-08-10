@@ -170,9 +170,6 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 				<code value="create" />
 			</interaction>
 			<interaction>
-				<code value="vread" />
-			</interaction>
-			<interaction>
 				<code value="update" />
 			</interaction>
 			<interaction>
