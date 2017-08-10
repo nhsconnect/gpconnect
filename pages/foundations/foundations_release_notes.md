@@ -13,6 +13,7 @@ summary: "Release notes for the various versions of the Foundations capability."
   - Added additional clarification around use of identifiers for all foundation search capabilities (Pages - Find a practitioner, Find a patient, Find an organisation, Find a location).
   - Clarity on mandatory data items for [Register a patient](foundations_use_case_register_a_patient.html) API
   - Moved VRead to out of scope (Pages - Get the FHIR Conformance Statement, Common API Guidance)
+  - Added java example code to specification for Read capabilities (Pages - Read a practitioner, Read a patient, Read an organisation, Read a location).
 
 - 1.0.0-beta.1
   - Initial release of the Foundations capability pack on GitHub in early August 2016.

@@ -117,5 +117,7 @@ FhirSerializer.SerializeResourceToXml(resource).Dump();
 ) library." %}
 
 ```java
-Hello World
+FhirContext ctx = new FhirContext().forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+Organization organization = client.read().resource(Organization.class).withId("2").execute();
 ```
