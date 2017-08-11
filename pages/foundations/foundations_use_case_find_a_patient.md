@@ -7,6 +7,15 @@ permalink: foundations_use_case_find_a_patient.html
 summary: "Use case for finding a patient resource by business identity."
 ---
 
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+
 ## API Usage ##
 
 Resolve (zero or more) `Patient` resources using a business identifier (i.e. NHS Number).
@@ -14,6 +23,10 @@ Resolve (zero or more) `Patient` resources using a business identifier (i.e. NHS
 ### Request Operation ###
 
 The `[system]` field SHALL be populated with a valid patient identifier system URL (i.e. `http://fhir.nhs.net/Id/nhs-number`).
+
+The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'http://fhir.nhs.net/Id/nhs-number', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR Relative Request ####
 
@@ -77,7 +90,7 @@ Provider systems:
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.fhir.nhs.net/fhir/Patient/2/_history/636064088097580046",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/2/_history/636064088097580046",
 		"resource": {
 			"resourceType": "Patient",
 			"id": "2",
@@ -108,7 +121,7 @@ Provider systems:
 ### C# ###
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var query = new string[] { "identifier=http://fhir.nhs.net/Id/nhs-number|P002" };
 var bundle = client.Search("Patient", query);
@@ -119,7 +132,7 @@ FhirSerializer.SerializeResourceToXml(bundle).Dump();
 
 ```java
 FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.fhir.nhs.net/fhir/");
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Patient.class)
 .where(new TokenClientParam("identifier").exactly().systemAndCode("http://fhir.nhs.net/Id/nhs-number", "P002"))
 .encodedXml()
@@ -128,4 +141,4 @@ Bundle bundle = client.search().forResource(Patient.class)
 
 ### cURL ###
 
-{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.fhir.nhs.net/fhir/Patient?identifier=http://fhir.nhs.net/Id/nhs-number%7CP002'" %}
+{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient?identifier=http://fhir.nhs.net/Id/nhs-number%7CP002'" %}
