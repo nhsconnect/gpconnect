@@ -302,7 +302,7 @@ var requesting_system_url = "https://[ConsumerSystemURL]";
 var requesting_system_token_url = "https://authorize.fhir.nhs.net/token";
 
 // --this example getting local patient ID 1 at gp practice GP001
-var target_request_url = "https://http://gpconnect.aprovider.nhs.net/GP0001/DSTU2/1/Patient/1
+var target_request_url = "https://http://gpconnect.aprovider.nhs.net/GP0001/DSTU2/1/Patient/1";
 var now = DateTime.UtcNow;
 var expires = now.AddMinutes(5);
 
