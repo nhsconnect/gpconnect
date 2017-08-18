@@ -7,6 +7,11 @@ permalink: accessrecord_release_notes.html
 summary: "Release notes for the various versions of the Access Record HTML capability."
 ---
 
+#### 1.0.0-rc.6
+
+- Updated datalibrary to be capability specific, moving it to reside under the "Development" menu within the capability. This is to allow the Profiled FHIR Resources to be referenced per capability and updated independantly.
+
+
 #### 1.0.0-rc.5 (Released: 16th March)
 
 - Updated [Access Record Landing Page](accessrecord.html)
