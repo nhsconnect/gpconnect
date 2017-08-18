@@ -175,7 +175,7 @@ Provider systems:
 		"text": "GP"
 	},
 	"reason": {
-		"text": "Rash"
+		"text": "Free text reason."
 	},
 	"description": "Free text description.",
 	"start": "2016-05-30T10:00:00+01:00",
