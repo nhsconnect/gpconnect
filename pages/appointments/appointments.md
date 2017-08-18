@@ -34,11 +34,10 @@ Demonstrates the ability to provide service users (and patients) with the abilit
 
 {% include tip.html content="Creation of `Schedule` and `Slot` resources is out of scope for the GP Connect FoT as these resources are expected to be managed from within an organisation's principal IT system." %}
 
-### Domain Message Specification ###
 
-Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles utilised:
+## Profiled Fhir Resources ##
 
-{% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-250816-appts/" content="Appointment Management." %}
+Please refer to the [Appointment Management FHIR Resources](datalibraryappointment.html) page for details of the FHIR profiles utilised for the Appointment Management capability.
 
 ## SPINE Interactions ##
 
