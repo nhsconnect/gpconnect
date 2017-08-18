@@ -57,9 +57,10 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment` |
 
+
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see "FHIR Resources" in the menu on the left.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
 
 The following data-elements are mandatory (i.e data MUST be present).
 
@@ -73,8 +74,18 @@ The following data-elements SHOULD be included when available.
 
 - a practitioner `participant` of the appointment.
 
-
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation)." %}
+
+
+The following guidance around Appointment Resource element should be followed when populating any of the listed fields:
+
+| Resource Element        | Guidance |
+| ---                     | --- |
+| Appointment.***comment***     | This field should be used for "Patient specific notes" and any additional comments relating to the appointment. |
+| Appointment.***description*** | This field should be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
+
+
+#### Example Request Body ####
 
 On the wire a JSON serialised request would look something like the following:
 
