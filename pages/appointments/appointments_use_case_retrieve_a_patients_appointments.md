@@ -44,7 +44,7 @@ GET /Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{search_
 
 The Provider systems:
 
-- SHALL support the following search prefixes (lt,le,gt,ge,ne) as outlined in the [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html) section.  
+- SHALL support the following search prefixes (eq,gt,lt,ge,le) as outlined in the [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html#search-resources) section.  
 
 #### FHIR Absolute Request ####
 
