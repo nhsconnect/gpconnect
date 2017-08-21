@@ -158,7 +158,8 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/ods-organization-code",
@@ -178,7 +179,8 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"]
 			},
 			"identifier": [{
 				"system": "Z33435",
@@ -194,7 +196,8 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-schedule-1"]
 			},
 			"modifierExtension": [{
 				"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-practitioner-1",
@@ -231,7 +234,8 @@ Provider systems:
 			"id": "2",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/sds-user-id",
@@ -276,7 +280,8 @@ Provider systems:
 			"id": "1584",
 			"meta": {
 				"versionId": "1471219260000",
-				"lastUpdated": "2016-08-15T01:01:00.000+01:00"
+				"lastUpdated": "2016-08-15T01:01:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-slot-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/gpconnect-schedule-identifier",

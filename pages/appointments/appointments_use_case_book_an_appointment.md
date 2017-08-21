@@ -92,6 +92,9 @@ On the wire a JSON serialised request would look something like the following:
 ```json
 {
 	"resourceType": "Appointment",
+	"meta": {
+		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+	},
 	"status": "booked",
 	"type": {
 		"coding": [{
