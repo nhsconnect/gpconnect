@@ -17,17 +17,17 @@ The following profiled FHIR resources are used in the current version of the Fou
 ---
 ## Find a practitioner / Read a practitioner ##
 ### Response ###
-* [gpconnect-practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
+* [CareConnect-GPC-Practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
   
 ---
 ## Find an organisation / Read an organisation ##
 ### Response ###
-* [gpconnect-organization-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
+* [CareConnect-GPC-Organization-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
   
 ---
 ## Find a location / Read a location ##
 ### Response ###
-* [gpconnect-location-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-location-1) (based on [FHIR Location](https://www.hl7.org/fhir/DSTU2/location.html))
+* [CareConnect-GPC-Location-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1) (based on [FHIR Location](https://www.hl7.org/fhir/DSTU2/location.html))
 
 ---
 ## Register a patient ##
@@ -39,8 +39,8 @@ The following profiled FHIR resources are used in the current version of the Fou
 ### Response ###
 * [gpconnect-registerpatient-bundle-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html))
   * [gpconnect-register-patient-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-register-patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
-  * [gpconnect-practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
-  * [gpconnect-organization-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
+  * [CareConnect-GPC-Practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
+  * [CareConnect-GPC-Organization-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
 
 ---
 ## Errors ##

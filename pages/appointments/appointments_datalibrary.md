@@ -18,9 +18,9 @@ The following profiled FHIR resources are used in the current version of the App
 * [gpconnect-getschedule-bundle-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-getschedule-bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html))
   * [gpconnect-slot-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-slot-1) (based on [FHIR Slot](https://www.hl7.org/fhir/DSTU2/slot.html))
   * [gpconnect-schedule-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-schedule-1) (based on [FHIR Schedule](https://www.hl7.org/fhir/DSTU2/schedule.html))
-  * [gpconnect-practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
-  * [gpconnect-organization-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
-  * [gpconnect-location-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-location-1) (based on [FHIR Location](https://www.hl7.org/fhir/DSTU2/location.html))
+  * [CareConnect-GPC-Practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
+  * [CareConnect-GPC-Organization-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
+  * [CareConnect-GPC-Location-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1) (based on [FHIR Location](https://www.hl7.org/fhir/DSTU2/location.html))
 
   
 ---
