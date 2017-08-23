@@ -1,5 +1,5 @@
 ---
-title: Spcification Versioning Guidance
+title: Specification Versioning Guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
