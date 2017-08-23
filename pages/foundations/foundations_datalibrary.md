@@ -17,7 +17,7 @@ The following profiled FHIR resources are used in the current version of the Fou
 N/A - No fhir resource is sent within the request
 
 ### Response ###
-* [gpconnect-patient-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
+* [CareConnect-GPC-Patient-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
 
 ---
 ## ***Find a practitioner / Read a practitioner*** ##
@@ -48,11 +48,11 @@ N/A - No fhir resource is sent within the request
 
 ### Request ###
 * [gpconnect-registerpatient-operation-1](https://fhir-test.nhs.uk/OperationDefinition/gpconnect-registerpatient-operation-1) (based on [FHIR Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html))
-  * [gpconnect-register-patient-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-register-patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
+  * [CareConnect-GPC-Patient-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
 
 ### Response ###
 * [gpconnect-registerpatient-bundle-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html))
-  * [gpconnect-register-patient-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-register-patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
+  * [CareConnect-GPC-Patient-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
   * [CareConnect-GPC-Practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
   * [CareConnect-GPC-Organization-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
 
