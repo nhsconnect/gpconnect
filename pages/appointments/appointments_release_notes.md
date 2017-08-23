@@ -15,6 +15,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Updated search prefixes listed on "Retrieve a patient's appointments" page, within Appointment Management Api Use Case section, to align with common api guidance, removed "ne" search prefix and added the "eq" search prefix. Also updated the link to the Common Api Guidance page to directly link to the search section.
   - Corrected examples on Api Use Cases pages to include Fhir Resource Profile in the returned Fhir resources.
   - Added clarification on the expected response when the "Search for free slots" capability does not return any free slots for the requested time period (Page - appointments_use_case_search_for_free_slots.html)
+  - Updated Api Use Case pages to make clear the expectations around the Fhir Resource Metadata Profile element, along with updates to examples to show new profile definitions.
   
 - 1.0.0-beta.1
   - Initial release of the Appointment Management capability pack on Github in early August 2016.

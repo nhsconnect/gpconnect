@@ -144,7 +144,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" schedule and slot details.
 - SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall within the requested date range.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
 - SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. `Practitioner` is required in the searchset `Bundle` only if available.
  
   The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` Resources related to the returned free `Slot` Resources. If no free slots are returned for the requested time period then no Resources should be returned within the response `Bundle`.
@@ -162,7 +162,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1469444400000",
 				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"]
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Organization-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/ods-organization-code",
@@ -183,7 +183,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1469444400000",
 				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"]
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Location-1"]
 			},
 			"identifier": [{
 				"system": "Z33435",
@@ -238,7 +238,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1469444400000",
 				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"]
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Practitioner-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/sds-user-id",

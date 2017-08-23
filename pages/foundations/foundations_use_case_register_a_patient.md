@@ -77,7 +77,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 The following data-elements are mandatory (i.e. data SHALL be present):
 
-- A `registerPatient` patient resource profiled to `gpconnect-register-patient-1`. This is the patient who you want to be registered. Within this resource: 
+- A `registerPatient` patient resource profiled to `CareConnect-GPC-Patient-1`. This is the patient who you want to be registered. Within this resource: 
 	-  The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
 	- Where the gender and name are available these SHALL be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
 
@@ -125,7 +125,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <documentation value="Patient demographic information captured in the patient resource to register the patient." />
         <type value="Patient" />
         <profile>
-            <reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-register-patient-1" />
+            <reference value="http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Patient-1" />
         </profile>
     </parameter>
     <parameter>
@@ -153,6 +153,9 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 		"name": "registerPatient",
 		"resource": {
 			"resourceType": "Patient",
+			"meta": {
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
+			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/nhs-number",
 				"value": "1234569999"
@@ -200,11 +203,11 @@ Content-Length: 1464
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
 - SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
-	- `Patient` profiled to `gpconnect-patient-1` containing details of the newly registered patient. This will include details sourced from PDS.
-	- `Practitioner` profiled to `gpconnect-practitioner-1`
-	- `Organization` profiled to `gpconnect-organization-1`
+	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered patient. This will include details sourced from PDS.
+	- `Practitioner` profiled to `CareConnect-GPC-Practitioner-1`
+	- `Organization` profiled to `CareConnect-GPC-Organization-1`
 
 ```json
 {
@@ -220,7 +223,7 @@ Provider systems:
 			"meta": {
 				"versionId": "636180880331209494",
 				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-register-patient-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/nhs-number",

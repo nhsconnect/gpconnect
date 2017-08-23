@@ -79,8 +79,8 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Organization` resources in a `Bundle` of `type` searchset.
-- SHALL return `Organization` resources that conform to the `gpconnect-organization-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Organization` resources.
+- SHALL return `Organization` resources that conform to the `CareConnect-GPC-Organization-1` profile.
+- SHALL include the URI of the `CareConnect-GPC-Organization-1` profile StructureDefinition in the `Organization.meta.profile` element of the returned `Organization` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Organization` resource.
 - SHALL include all relevant business `identifier` details (i.e. ODS Code, ODS Site Code etc.) for each `Organization` resource.
 
@@ -96,7 +96,7 @@ Provider systems:
 			"meta": {
 				"versionId": "636064088098730113",
 				"lastUpdated": "2016-08-10T13:52:54.516+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/ods-organization-code",

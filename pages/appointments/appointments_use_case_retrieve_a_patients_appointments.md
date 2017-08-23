@@ -97,7 +97,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 
 ```json
 {

@@ -71,8 +71,8 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Practitioner` resources in a `Bundle` of `type` searchset.
-- SHALL return `Practitioner` resources that conform to the `gpconnect-practitioner-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Practitioner` resources.
+- SHALL return `Practitioner` resources that conform to the `CareConnect-GPC-Practitioner-1` profile.
+- SHALL include the URI of the `CareConnect-GPC-Practitioner-1` profile StructureDefinition in the `Practitioner.meta.profile` element of the returned `Practitioner` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Practitioner` resource.
 - SHALL include all relevant business `identifier` details (i.e. SDS User Id) for each `Practitioner` resource.
 
@@ -88,7 +88,7 @@ Provider systems:
 			"meta": {
 				"versionId": "636064088099800115",
 				"lastUpdated": "2016-08-10T13:47:09.966+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"]
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Practitioner-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/sds-user-id",
