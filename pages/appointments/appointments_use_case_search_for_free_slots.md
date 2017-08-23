@@ -145,7 +145,10 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" schedule and slot details.
 - SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall within the requested date range.
 - SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. Practitioner is required in the searchset `Bundle` only if available.
+- SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. `Practitioner` is required in the searchset `Bundle` only if available.
+ 
+  The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` Resources related to the returned free `Slot` Resources. If no free slots are returned for the requested time period then no Resources should be returned within the response `Bundle`.
+
 
 ```json
 {
