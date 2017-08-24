@@ -7,11 +7,11 @@ permalink: development_fhir_versioning_specification_guidance.html
 summary: "Details of the common versioning for the GP Connect specification."
 ---
 
-The GP Connect specification is broken up into the following sections allowing for seperate releases of the different capability areas. This allows development and uplift of spcification to be done incrementally meaning that a provider and consumer will not have to update all their implemented capabilities each time a change is made. The section and version for the page being viewed within the specification is shown above the navigation menu on the left of the page, just below the NHSDigital logo.
+The GP Connect specification is broken up into the following sections allowing for seperate releases of the different capability areas. This allows development and uplift of the specification to be done incrementally meaning that a provider and consumer will not have to update all their implemented capabilities each time a change is made. The section and version for the page being viewed within the specification is shown above the navigation menu on the left of the page, just below the NHS Digital logo.
 
-The following sections are the current individually versioned areas of the specification, which hold their own version and can be released as seperate releases:
+The following sections are the current individually versioned areas of the specification, which hold their own version and can pubished as seperate releases:
 
-| Specification Section | What is included in the specificaiton section |
+| Specification Section | What is included in the specification section |
 | --- | --- |
 | [GP Connect](/index.html) | This section of the specification is targeted at the cross cutting requirements and guidance common to all capabilities. |
 | [Design Principles](/designprinciples_maturity_model.html) | This section of the specification relates to the over arching principles used by the GP Connect project when creating and implemneting any aspect of the GP Connect specification and project. |
