@@ -7,31 +7,31 @@ permalink: development_fhir_versioning_specification_guidance.html
 summary: "Details of the common versioning for the GP Connect specification."
 ---
 
-The GP Connect specification is broken up into the following sections allowing for seperate releases of the different capability areas. This allows development and uplift of the specification to be done incrementally meaning that a provider and consumer will not have to update all their implemented capabilities each time a change is made. The section and version for the page being viewed within the specification is shown above the navigation menu on the left of the page, just below the NHS Digital logo.
+The GP Connect specification is broken up into the following sections allowing for separate releases of the different capability areas. This allows development and uplift of the specification to be done incrementally meaning that a provider and consumer will not have to update all their implemented capabilities each time a change is made. The section and version for the page being viewed within the specification are shown above the navigation menu on the left of the page, just below the NHS Digital logo.
 
-The following sections are the current individually versioned areas of the specification, which hold their own version and can pubished as seperate releases:
+The following sections are the current individually versioned areas of the specification, which hold their own version and can published as separate releases:
 
 | Specification Section | What is included in the specification section |
 | --- | --- |
 | [GP Connect](/index.html) | This section of the specification is targeted at the cross cutting requirements and guidance common to all capabilities. |
-| [Design Principles](/designprinciples_maturity_model.html) | This section of the specification relates to the over arching principles used by the GP Connect project when creating and implemneting any aspect of the GP Connect specification and project. |
+| [Design Principles](/designprinciples_maturity_model.html) | This section of the specification relates to the overarching principles used by the GP Connect project when creating and implementing any aspect of the GP Connect specification and project. |
 | [Access Record HTML](/accessrecord.html) | This section contains requirements and details for development specific to the Access Record HTML capability. |
 | [Access Record REST](/accessrecord_rest.html) |This section contains the requirements and details relating to the Access Record REST capability for access to structured data. |
-| [Appointment Management](/appointments.html) | The Appointment Managament section of the specification relatese to the requirements and implementation details specifically relating to the Appointment Management capabilities. |
-| [Foundations](/foundations.html) | This section of the specificaion relates to the requirements and details required for implementing the Foundation capabilities. |
-| [Task Management](/tasks.html) | This section of the specification realtes to the requirements and details needed to impelement the Task Management capability. |
+| [Appointment Management](/appointments.html) | This section of the specification relates to the requirements and implementation details specifically relating to the Appointment Management capabilities. |
+| [Foundations](/foundations.html) | This section of the specification relates to the requirements and details required for implementing the Foundation capabilities. |
+| [Task Management](/tasks.html) | This section of the specification relates to the requirements and details needed to implement the Task Management capability. |
 
 ### Versioning Style ###
 
 Each of the sections above will be versioned using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}, using the format "***MAJOR.MINOR.PATCH***".
 
-The seperate components of the version will be updated as per below for each update of the specification:
+The separate components of the version will be updated as per below for each update of the specification:
 
 - MAJOR version when you make incompatible API changes.
 - MINOR version when you add functionality in a backwards-compatible manner.
 - PATCH version when you make backwards-compatible bug fixes.
 
-In addition a pre-release version MAY be denoted by appending a hyphen (refer to [Semantic Versioning - Item 9](http://semver.org/#spec-item-9){:target="_blank"}) along with a pre release label for the type of release.
+In addition a pre-release version MAY be denoted by appending a hyphen (refer to [Semantic Versioning - Item 9](http://semver.org/#spec-item-9){:target="_blank"}) along with a pre-release label for the type of release.
 
 ### Pre-release Labels ###
 
@@ -53,7 +53,7 @@ Taking a similar approach to the [FHIR Maturity Model](http://wiki.hl7.org/index
 
 | Level | Version | Description | 
 |-------|---------|-------------| 
-| 1 | `X.Y.Z-alpha.n` | Alpha; rapid interations, fail fast, exploration, proof of concepts, approach flexible. | Draft may not have been implemented at all but has been published. |
+| 1 | `X.Y.Z-alpha.n` | Alpha; rapid interactions, fail fast, exploration, proof of concepts, approach flexible. | Draft may not have been implemented at all but has been published. |
 | 2 | `X.Y.Z-beta.n` | Early Beta; rapid iterations, community engaged, scope flexible, high-level approach agreed in principle. | Draft partially implemented in one or more prototype systems. |
 | 3 | `X.Y.Z-beta.n` | Late Beta; slower iterations, community engaged, scope largely agreed, high-level approach fixed. | Draft partially implemented two or more commercial systems. |
 | 4 | `X.Y.Z-rc.n` | Release Candidate; slower iterations, community engaged, scope fixed, detailed approach fixed, no new features, bug fixes and amendments for clinical safety & IG only. | Draft implemented in at least two commercial systems. |
