@@ -17,6 +17,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Added clarification on the expected response when the "Search for free slots" capability does not return any free slots for the requested time period (Page - appointments_use_case_search_for_free_slots.html)
   - Updated Api Use Case pages to make clear the expectations around the Fhir Resource Metadata Profile element, along with updates to examples to show new profile definitions.
   - Added clarification around GP Connect "Fhir Resource Profile" and "Metadata Profile" requirements on the request/consumer side of the "Book Appointment", "Amend Appointment" and "Cancel appointment" capabilities. (Pages - appointments_use_case_amend_an_appointment.html, appointments_use_case_cancel_an_appointment.html, appointments_use_case_book_an_appointment.html)
+  - Added clarification on the expected response content for the "Retrieve Patient Appointments" capability (Page - appointments_use_case_retrieve_a_patients_appointments.html).
   
 - 1.0.0-beta.1
   - Initial release of the Appointment Management capability pack on Github in early August 2016.
