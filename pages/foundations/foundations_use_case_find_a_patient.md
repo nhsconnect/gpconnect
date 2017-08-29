@@ -80,6 +80,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
+- SHALL only return `Patient` resources for `Active` patients ([Definition of a GP Connect Active Patient](/overview_glossary.html#active-patient)).
 - SHALL return `Patient` resources that conform to the `CareConnect-GPC-Patient-1` profile.
 - SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
