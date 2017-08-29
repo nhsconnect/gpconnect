@@ -9,6 +9,8 @@ summary: "Use case for registering a patient with an organization."
 
 ## API Use Case ##
 
+The "Register a patient" capability should either create a new temporary patient registration or re-activate an existing "Inactive" patient registration as a temporary patient registration within the GP Practice system ([Definition of a GP Connect Active Patient](/overview_glossary.html#active-patient)).
+
 This specification describes a single use case. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
 
 {% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It is not a full patient registration endpoint, and does not change a patients' registered practice information as held on Personal Demographics Service (PDS)" %}
@@ -205,7 +207,7 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
 - SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
-	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered patient. This will include details sourced from PDS.
+	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
 	- `Practitioner` profiled to `CareConnect-GPC-Practitioner-1`
 	- `Organization` profiled to `CareConnect-GPC-Organization-1`
 
