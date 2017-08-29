@@ -62,6 +62,10 @@ Consumers SHALL include the following additional HTTP request headers:
 
 The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
 
+Consumer systems:
+- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
+
 The following data-elements are mandatory (i.e data MUST be present).
 
 - a patient `participant` of the appointment.

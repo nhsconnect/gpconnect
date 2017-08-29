@@ -59,10 +59,13 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+
+Consumer systems:
+- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
 Only the following data-elements can be modified when performing an appointment amendment.
-
 - the appointment `reason` MUST be updated to include any updated appointment reason details.
 
 {% include important.html content="If any content other than the appointment reason is updated the server SHALL reject the amendment and return an error." %}
