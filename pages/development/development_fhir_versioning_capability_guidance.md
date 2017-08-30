@@ -7,9 +7,11 @@ permalink: development_fhir_versioning_capability_guidance.html
 summary: "Details of the common versioning requirements for GP Connect FHIR APIs."
 ---
 
-### Capability / Interaction Versioning ###
+### Capability Pack / Interaction Versioning ###
 
-For each capability (e.g. "Find a patient", "Search for free slots", etc) there is an InteractionID associated with that capability. The InteractionID for each capability is specified within the relevant Capability Packs, for example the "Find a patient" interaction is listed in the [Spine Interactions for the Foundations Capability Pack](foundations.html#spine-interactions).
+For each of the five capability packs (`Foundations`, `Access Record HTML`, `Access Record REST`, `Appointment Management`, `Task Management`) there are a number of `API Use Cases` which make up the capability pack, for example "Find a patient" and "Read an organization" are two of the API Use Cases within the Foundation capability pack.
+
+Each API Use Case has an associated InteractionID. The InteractionID for each API Use Case is specified within the relevant Capability Packs, for example the "Find a patient" interaction is listed in the [Spine Interactions for the Foundations Capability Pack](foundations.html#spine-interactions).
 
 InteractionsIDs in early versions of the specification did not contain a version number, but going forward a major version number will now be added. A new version of the interaction will be issued when there is a breaking change made within the interaction, for example if a Profiled FHIR resources used as part of the interaction is changed but is not backwardly compatible with the previous versions of the profiled FHIR resources, this would result in a new major version of the interaction.
 
@@ -21,12 +23,12 @@ Example of InteractionID versioning:
 | urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2 | A Profiled FHIR Resource breaking change from "GPConnect-Patient-1" FHIR resource to "CareConnect-GPC-Patient-1" FHIR Resource, released in Access Record HTML 1.0.0-rc.6. |
 | urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-3 | This will be the next InteractionID which will be used for the next breaking change to the Access Record HTML capability. |
 
-Providers will register a new endpoint within the SDS for new interactions, therefore when "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2" is developed by the provider there would be two endpoints registered on the SDS, one for the old "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord" Access Record interaction and one for the new "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2" interaction. Details relating to the specifics of provider endpoints and provider endpoint versioning is specified on the [Provider API Versioning Guidance](/development_fhir_versioning_provider_guidance.html) page.
+Providers will register a new endpoint within the SDS for new versions of the capability packs, therefore when "urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2" is developed for "Access Record HTML 1.0.0-rc.6" there would be two endpoints registered on the SDS, one for the old "Access Record HTML 1.0.0-rc.5" capability pack and one for the new "Access Record HTML 1.0.0-rc-5" capability pack. Details relating to the specifics of provider endpoints and provider endpoint versioning is specified on the [Provider API Versioning Guidance](/development_fhir_versioning_provider_guidance.html) page.
 
 
 #### Provider Supported Versions ####
 
-Providers are expected to maintain both the current and previous version of each capability, ie. "n" and "n-1", to maintain interoperability between systems as each of the providers and all of the consumers uplift to the latest version of the capability.
+Providers are expected to maintain both the current and previous version of each capability pack, ie. "n" and "n-1", to maintain interoperability between systems as each of the providers and all of the consumers uplift to the latest version of the capability.
 
 
 ### FHIR Resource Versioning ###

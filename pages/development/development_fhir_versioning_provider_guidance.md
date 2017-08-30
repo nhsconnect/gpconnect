@@ -27,10 +27,10 @@ Provider systems are required to publish Service Root URLs for major versions of
 
 For example if a provider implements the "Access Record HTML 1.0.0-rc.5" and then implements "Access Record HTML 1.0.0-rc.6" which includes a breaking change and uplift of the InteractionID with a new major version, as specified in the [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html) page, the provider would create a new endpoint for the new version of the capability.
 
-| Provider Registered endpoint | InteractionID Endpoint is registered against in SDS |
+| Provider Registered endpoint | InteractionID Endpoint is registered against in SDS | Capability Version |
 | --- | --- |
-| https://provider.nhs.uk/GP0001/DSTU2/1 | urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord |
-| https://provider.nhs.uk/GP0001/DSTU2/2 | urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2 |
+| https://provider.nhs.uk/GP0001/DSTU2/1 | urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord | Access Record HTML 1.0.0-rc.5 |
+| https://provider.nhs.uk/GP0001/DSTU2/2 | urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2 | Access Record HTML 1.0.0-rc.6 |
 
 
 If a provider has developed a new version of their FHIR API for practice GP0001 which is running FHIR STU3. The provider would publish the server root URL to Spine Directory Services as follows:
