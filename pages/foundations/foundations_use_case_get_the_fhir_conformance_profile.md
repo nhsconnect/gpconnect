@@ -149,9 +149,17 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			<interaction>
 				<code value="read" />
 			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
 			<versioning value="versioned" />
 			<readHistory value="false" />
 			<updateCreate value="false" />
+			<searchParam>
+				<name value="identifier" />
+				<type value="token" />
+				<documentation value="SDS User Id (i.e. http://fhir.nhs.net/sds-user-id|999999)" />
+			</searchParam>
 		</resource>
 		<resource>
 			<type value="Appointment" />
