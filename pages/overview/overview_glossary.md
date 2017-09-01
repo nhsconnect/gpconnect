@@ -57,11 +57,11 @@ Glossary of common terms and abbreviations used though-out the GP Connect docume
 
 #### Active Patient ####
 
-An "Active" patient as defined by GP Connect is any patient on a providers system that has not left or been deducted on the GP Practice patient admin system. The concept of "Active" is related to the ***status*** of a patient registration rather than to the ***type*** of registration.
+An `Active` patient as defined by GP Connect is any patient on a providers system that has `Not Left` and is `Not Deceased`.
 
-A providers system may have a number of different statuses which would be considered "Active" for each registration type. Below is a basic example of a possible GP Practice representation of patient registration type and registration status, to help explain the concept of "Active" patient within GP Connect.
+The concept of "Active" is related to the patients registration ***status*** rather than to the patients registration ***type***. A providers system may have a number of different statuses which should be considered "Active", many of those statuses may apply to a number of different registration type. Below is a basic example of a possible GP Practice representation of patient registration type and registration status, to help explain the concept of "Active" patient within GP Connect.
 
-| Status | GP Connect Considered Active |
+| Patient Registration Status | GP Connect Considered Active |
 | --- | --- |
 | Pending registration | <span style="color:green">Yes</span> |
 | Fully registered | <span style="color:green">Yes</span> |
@@ -69,7 +69,7 @@ A providers system may have a number of different statuses which would be consid
 | Deceased | <span style="color:red">No</span> |
 | Left/Deducted | <span style="color:red">No</span> |
 
-| Patient Type | Associated Status |
+| Patient Registration Type | Associated Registration Status |
 | --- | --- |
 | Regular / GMS | "Pending registration", "Fully registered", "Pending deduction",<br/> "Deceased", "Left/Deducted" |
 | Temporary - Long Stay | "Fully registered", "Deceased", "Left/Deducted" |
