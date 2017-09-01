@@ -80,8 +80,9 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-- SHALL return `Patient` resources that conform to the `gpconnect-patient-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Patient` resources.
+- SHALL only return `Patient` resources for `Active` patients ([Definition of a GP Connect Active Patient](/overview_glossary.html#active-patient)).
+- SHALL return `Patient` resources that conform to the `CareConnect-GPC-Patient-1` profile.
+- SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
 - SHALL include all relevant business `identifier` details (i.e. NHS Number) for each `Patient` resource.
 
@@ -90,14 +91,14 @@ Provider systems:
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/2/_history/636064088097580046",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/2",
 		"resource": {
 			"resourceType": "Patient",
 			"id": "2",
 			"meta": {
 				"versionId": "636064088097580046",
 				"lastUpdated": "2016-08-10T16:52:39.716+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/nhs-number",

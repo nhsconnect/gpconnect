@@ -41,13 +41,22 @@ entries:
       url: /tasks_known_issues.html
       output: web, pdf
 
-  - title: API Use Cases
+  - title: Development
     output: web, pdf
     folderitems:
-
-    - title: Send a task
-      url: /tasks_use_case_send_a_task.html
+    - title: FHIR Resources
+      url: /datalibrarytasks.html
       output: web, pdf
+      
+      subfolders:
+      - title: API Use Cases
+        output: web, pdf
+        subfolderitems:
+
+        - title: Send a task
+          url: /tasks_use_case_send_a_task.html
+          output: web, pdf
+
 #    - title: Receive a task
 #      url: /tasks_use_case_receive_a_task.html
 #      output: web, pdf

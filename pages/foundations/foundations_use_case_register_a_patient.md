@@ -9,6 +9,8 @@ summary: "Use case for registering a patient with an organization."
 
 ## API Use Case ##
 
+The "Register a patient" capability should either create a new temporary patient registration or re-activate an existing "Inactive" patient registration, as a temporary patient registration within the GP Practice system ([Definition of a GP Connect Active Patient](/overview_glossary.html#active-patient)).
+
 This specification describes a single use case. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
 
 {% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It is not a full patient registration endpoint, and does not change a patients' registered practice information as held on Personal Demographics Service (PDS)" %}
@@ -76,10 +78,11 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 The following data-elements are mandatory (i.e. data SHALL be present):
 
-- A `registerPatient` patient resource profiled to `gpconnect-register-patient-1`. This is the patient who you want to be registered. Within this resource: 
-	-  The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
+- A `registerPatient` patient resource profiled to `CareConnect-GPC-Patient-1`. This is the patient who you want to be registered. Within this resource: 
+	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
 	- Where the gender and name are available these SHALL be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
-
+    - The consumer SHALL NOT populate the "registrationDetails" extension within the patient resource.
+	
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
 
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
@@ -124,7 +127,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <documentation value="Patient demographic information captured in the patient resource to register the patient." />
         <type value="Patient" />
         <profile>
-            <reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-register-patient-1" />
+            <reference value="http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Patient-1" />
         </profile>
     </parameter>
     <parameter>
@@ -152,6 +155,9 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 		"name": "registerPatient",
 		"resource": {
 			"resourceType": "Patient",
+			"meta": {
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
+			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/nhs-number",
 				"value": "1234569999"
@@ -199,11 +205,12 @@ Content-Length: 1464
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
 - SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
-	- `Patient` profiled to `gpconnect-patient-1` containing details of the newly registered patient. This will include details sourced from PDS.
-	- `Practitioner` profiled to `gpconnect-practitioner-1`
-	- `Organization` profiled to `gpconnect-organization-1`
+	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
+- SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
+  - The "registrationStatus" should be populated with the status `Active`
+  - The "registrationType" should be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type should be use and more detail around the specific type of registration can be added using the "text" element of the CodeableConcept.
 
 ```json
 {
@@ -219,7 +226,7 @@ Provider systems:
 			"meta": {
 				"versionId": "636180880331209494",
 				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-register-patient-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/nhs-number",

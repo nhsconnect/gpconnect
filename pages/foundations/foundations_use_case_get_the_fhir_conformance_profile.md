@@ -133,7 +133,7 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			<searchParam>
 				<name value="identifier" />
 				<type value="token" />
-				<documentation value="ODS Code (i.e. http://fhir.nhs.net/Id/ods-organization-code|Y12345) OR ODS Site Code (i.e. http://fhir.nhs.net/Id/ods-site-code|Y12345678)" />
+				<documentation value="ODS Code (i.e. http://fhir.nhs.net/Id/ods-organization-code|Y12345)" />
 			</searchParam>
 		</resource>
 		<resource>
@@ -190,7 +190,7 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			<searchParam>
 				<name value="identifier" />
 				<type value="token" />
-				<documentation value="ODS Code (i.e. http://fhir.nhs.net/Id/ods-organization-code|Y12345) OR ODS Site Code (i.e. http://fhir.nhs.net/Id/ods-site-code|Y12345678)" />
+				<documentation value="ODS Code (i.e. ODS Site Code (i.e. http://fhir.nhs.net/Id/ods-site-code|Y12345678)" />
 			</searchParam>
 		</resource>
 		<resource>
