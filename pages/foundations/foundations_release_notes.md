@@ -13,6 +13,7 @@ summary: "Release notes for the various versions of the Foundations capability."
   - Added information around what GP Connect considers as an Active Patient and use of Active Patient within the "Find a patient" capability (Page - foundations_use_case_find_a_patient.html, overview_glossary.html).
   - Added additional information for "Register Patient" capability around re-activating inactive patients instead of registering new patient each time. (Page - foundations_use_case_register_a_patient.html)
   - Removed the Practitioner and Organization as mandatory resources within the response bundle for the "Register Patient" interaction (Page - foundations_use_case_register_a_patient.html)
+  - Added clarification around the use of the "registrationDetails" extension for the "Register patient" interaction (Page - foundations_use_case_register_a_patient.html)
 
 - 1.0.0-beta.2
   - Updated example conformance profile to include GP Connect profile information (Page - [Get the FHIR Conformance Statement](https://nhsconnect.github.io/gpconnect/foundations_use_case_get_the_fhir_conformance_profile.html)).
