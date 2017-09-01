@@ -53,8 +53,6 @@ N/A - No fhir resource is sent within the request
 ### Response ###
 * [gpconnect-registerpatient-bundle-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html))
   * [CareConnect-GPC-Patient-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
-  * [CareConnect-GPC-Practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
-  * [CareConnect-GPC-Organization-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
 
 ---
 ## ***Errors*** ##
