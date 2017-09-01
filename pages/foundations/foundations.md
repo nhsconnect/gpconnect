@@ -45,7 +45,6 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 
 - [Get the FHIR conformance profile](foundations_use_case_get_the_fhir_conformance_profile.html)
 - [Find a patient](foundations_use_case_find_a_patient.html)
-- [Find a practitioner](foundations_use_case_find_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
 - [Find a location](foundations_use_case_find_a_location.html)
 
@@ -59,7 +58,6 @@ The Foundation capability message set includes the following set of spine intera
 | [Read Patient](foundations_use_case_read_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient` |
 | [Patient Search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient` |
 | [Read Practitioner](foundations_use_case_read_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner` |
-| [Practitioner Search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner` |
 | [Read Organization](foundations_use_case_read_an_organization.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization` |
 | [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization` |
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location` | 

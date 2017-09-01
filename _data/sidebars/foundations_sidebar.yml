@@ -57,9 +57,6 @@ entries:
         - title: Read a patient
           url: /foundations_use_case_read_a_patient.html
           output: web, pdf
-        - title: Find a practitioner
-          url: /foundations_use_case_find_a_practitioner.html
-          output: web, pdf
         - title: Read a practitioner
           url: /foundations_use_case_read_a_practitioner.html
           output: web, pdf

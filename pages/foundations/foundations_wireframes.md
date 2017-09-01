@@ -9,8 +9,6 @@ summary: "Wireframe mock-ups of what GP Connect Foundations might look like when
 
 ## Find a patient ##
 
-## Find a practitioner ##
-
 ## Find an organisation ##
 
 ## Find a location ##

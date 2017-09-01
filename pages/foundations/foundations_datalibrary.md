@@ -4,7 +4,7 @@ keywords: development
 sidebar: foundations_sidebar
 toc: false
 permalink: datalibraryfoundation.html
-summary: "The fhir prifles and interactions required for the Foundation capability"
+summary: "The fhir profiles and interactions required for the Foundation capability"
 ---
 
 The following profiled FHIR resources are used in the current version of the Foundation capabilities, see "API Use Cases" in the menu on the left. Full details of profiled FHIR resources and worked examples are available on the [FHIR Reference Server](https://fhir-test.nhs.uk/).
@@ -20,7 +20,7 @@ N/A - No fhir resource is sent within the request
 * [CareConnect-GPC-Patient-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
 
 ---
-## ***Find a practitioner / Read a practitioner*** ##
+## ***Read a practitioner*** ##
 ### Request ###
 N/A - No fhir resource is sent within the request
 
