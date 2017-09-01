@@ -53,11 +53,9 @@ The content displayed in the HTML views has then been used as a common base line
 - Extended access GP practices can view all of the patients primary care views even when the record is held on a different GP system.
 - Other care settings (e.g. 111, Physio, Community, Emergency, Acute/Secondary, Social) can view the patients GP record (those held by the patients recorded GP practice) to better inform care decisions they may be making for a patient.
 
-### Domain Message Specification ###
+### Profiled Fhir Resources ###
 
-Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles utilised:
-
-{% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/" content="Get Care Record." %}
+Please refer to the [AccessRecord HTML FHIR Resources](datalibraryaccessRecord.html) page for details of the FHIR profiles utilised for the Access Record HTML operation.
 
 ### SPINE Interactions ###
 

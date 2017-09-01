@@ -34,8 +34,20 @@ Demonstrates the ability to provide service users (and patients) with the abilit
 
 {% include tip.html content="Creation of `Schedule` and `Slot` resources is out of scope for the GP Connect FoT as these resources are expected to be managed from within an organisation's principal IT system." %}
 
-### Domain Message Specification ###
 
-Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles utilised:
+## Profiled Fhir Resources ##
 
-{% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-250816-appts/" content="Appointment Management." %}
+Please refer to the [Appointment Management FHIR Resources](datalibraryappointment.html) page for details of the FHIR profiles utilised for the Appointment Management capability.
+
+## SPINE Interactions ##
+
+The Appointment Management capability message set includes the following set of spine interactions:
+
+| Operation                 | InteractionID             | 
+|---------------------------|---------------------------| 
+| [Get Organisation Schedule](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getschedule` |
+| [Read Appointment](appointments_use_case_read_an_appointment.html)          | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment` |
+| [Create Appointment](appointments_use_case_book_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment` |
+| [Amend Appointment](appointments_use_case_amend_an_appointment.html)         | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment` |
+| [Cancel Appointment](appointments_use_case_cancel_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment` |
+| [Get Patient Appointments](appointments_use_case_retrieve_a_patients_appointments.html)  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments` |

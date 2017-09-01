@@ -49,9 +49,7 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 - Familiarise yourself with HL7&reg; FHIR&reg; (Fast Health Interoperability Resources) ([developer intro](http://www.hl7.org/implement/standards/fhir/overview-dev.html){:target="_blank"}, [exec summary](http://www.hl7.org/implement/standards/fhir/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/overview-clinical.html){:target="_blank"}).
 - Grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language.
 - Familiarise yourself with our GP Connect [FHIR API Guidance](development_fhir_api_guidance.html) common to all APIs.
-- Have a look at our [FHIR Data Library](datalibrary.html) which explains the changes (or profiles) we've created as GP Connect versions of the international [DSTU2 FHIR](https://www.hl7.org/fhir/DSTU2/){:target="_blank"} Resources. 
-- Download or clone the GP Connect machine readable FHIR definitions:
-	- [GP Connect Data Library](https://github.com/nhsconnect/gpconnect-fhir){:target="_blank"}
+- Explore the GP Connect Profiled Fhir Resources, a variation of the international [Fhir Resources](https://www.hl7.org/fhir/DSTU2/){:target="_blank"}, for [Foundations](datalibraryfoundation.html), [AccessRecord HTML](datalibraryaccessRecord.html) and [Appointment Management](datalibraryappointment.html).
 - Dig in deep and explore one or more of the GP Connect Capability Packs and start building new or hitting existing APIs.
   - [Foundations Capability Pack](foundations.html) (e.g. resolve a patient to their logical identifier for further API calls).
   	- Note the foundation per-requisites are mandatory and may restrict your ability to utilise the GP Connect APIs.

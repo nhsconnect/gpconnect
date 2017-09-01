@@ -17,15 +17,15 @@ The Consumer system:
 
 ## API Usage ##
 
-Resolve (zero or more) `Organization` resources using a business identifier (i.e. ODS organization code or ODS site code).
+Resolve (zero or more) `Organization` resources using a business identifier (i.e. ODS organization code).
 
 ### Request Operation ###
 
-The `[system]` field SHALL be populated with a valid organization identifier system URL (i.e. `http://fhir.nhs.net/Id/ods-organization-code` or `http://fhir.nhs.net/Id/ods-site-code`).
+The `[system]` field SHALL be populated with a valid organization identifier system URL (i.e. `http://fhir.nhs.net/Id/ods-organization-code`).
 
 The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier types 'http://fhir.nhs.net/Id/ods-organization-code' and 'http://fhir.nhs.net/Id/ods-site-code', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'http://fhir.nhs.net/Id/ods-organization-code', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR Relative Request ####
 
@@ -79,24 +79,24 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Organization` resources in a `Bundle` of `type` searchset.
-- SHALL return `Organization` resources that conform to the `gpconnect-organization-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Organization` resources.
+- SHALL return `Organization` resources that conform to the `CareConnect-GPC-Organization-1` profile.
+- SHALL include the URI of the `CareConnect-GPC-Organization-1` profile StructureDefinition in the `Organization.meta.profile` element of the returned `Organization` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Organization` resource.
-- SHALL include all relevant business `identifier` details (i.e. ODS Code, ODS Site Code etc.) for each `Organization` resource.
+- SHALL include all relevant business `identifier` details (i.e. ODS Code) for each `Organization` resource.
 
 ```json
 {
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Organization/1/_history/636064088098730113",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Organization/1",
 		"resource": {
 			"resourceType": "Organization",
 			"id": "1",
 			"meta": {
 				"versionId": "636064088098730113",
 				"lastUpdated": "2016-08-10T13:52:54.516+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/ods-organization-code",
