@@ -208,8 +208,6 @@ Provider systems:
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
 - SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
 	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
-	- `Practitioner` profiled to `CareConnect-GPC-Practitioner-1`
-	- `Organization` profiled to `CareConnect-GPC-Organization-1`
 
 ```json
 {
