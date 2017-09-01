@@ -167,10 +167,6 @@ Provider systems:
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/ods-organization-code",
 				"value": "R1A15"
-			},
-			{
-				"system": "http://fhir.nhs.net/Id/ods-site-code",
-				"value": "Z33435"
 			}],
 			"name": "The Hepworth Surgery"
 		}
