@@ -37,11 +37,15 @@ Provider systems SHOULD be tested for vulnerability to Denial of Service (DoS) a
 
 ## Secure Socket Layer (SSL), and Transport Layer Security (TLS) Protocols ##
 
-After consultation with the Infrastructure Security, Operational Security and Spine DDC teams the following SSL protocol guidance have been agreed:
+After consultation with the Infrastructure Security, Operational Security and Spine DDC teams the following SSL protocols SHALL be supported.
 
-- Suppliers SHALL use `TLS1.2` with mutual authentication enabled for all message interactions.
-- At the current time suppliers may use `TLS1.0` or `TLS1.1`, however these protocols will soon become unsupported and suppliers should move to support `TLS1.2` as soon as possible.
-- Suppliers SHALL NOT use `SSLv2` and `SSLv3` as they are deprecated.
+{% include important.html content="The list of supported ciphers is ordered in order of preference (i.e. the first item being the most preferred)." %}
+
+- `TLSv1.2`
+- `TLSv1.1`
+- `TLSv1`
+
+{% include note.html content="SSLv2 and SSLv3 are deprecated and SHALL NOT be used. All consumer and provider systems SHALL be configured to implement TLSv1 and SHOULD be configured to implement TLSv1.1 and above." %}
 
 ## Supported Ciphers ##
 
