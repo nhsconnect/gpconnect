@@ -131,9 +131,9 @@ Provider systems:
 
 - SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
-For example the:
+For example:
 
-- submitted `start` and `end` date range does not match that of the requested `Slot`(s).
+- the submitted `start` and `end` date range does not match that of the requested `Slot`(s).
 - one or more of the requested `Slot` resources does not exist or already has a `status` of busy.
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
