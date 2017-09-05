@@ -77,8 +77,8 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Location` resources that conform to the `gpconnect-location-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Location` resource.
+- SHALL return `Location` resources that conform to the `CareConnect-GPC-Location-1` profile.
+- SHALL include the URI of the `CareConnect-GPC-Location-1` profile StructureDefinition in the `Location.meta.profile` element of the returned `Location` resource.
 - SHALL include the `versionId` of the current version of the `Location` resource.
 - SHALL include all relevant business `identifier` details (i.e. ODS Site Code) for the `Location` resource.
 
@@ -89,7 +89,7 @@ Provider systems:
 	"meta": {
 		"versionId": "636064088100870233",
 		"lastUpdated": "2016-08-10T14:27:49.778+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"]
+		"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Location-1"]
 	},
 	"identifier": [{
 		"system": "http://fhir.nhs.net/Id/ods-site-code",

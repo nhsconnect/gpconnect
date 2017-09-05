@@ -49,9 +49,6 @@ entries:
     - title: Clinical Terminologies
       url: /design_clinical_terminologies.html
       output: web
-    - title: Product Versioning
-      url: /design_product_versioning.html
-      output: web
 
   - title: Explore
     output: web
@@ -99,10 +96,23 @@ entries:
         - title: NFR Guidance
           url: /development_api_non_functional_requirements.html
           output: web
+          
+      - title: Versioning Guidance
+        output: web
+        subfolderitems:
 
-    - title: FHIR&reg; Data Models
-      url: /datalibrary.html
-      output: web
+        - title: Specification
+          url: /development_fhir_versioning_specification_guidance.html
+          output: web
+        - title: Capability & Resources
+          url: /development_fhir_versioning_capability_guidance.html
+          output: web
+        - title: Provider API
+          url: /development_fhir_versioning_provider_guidance.html
+          output: web
+        - title: Consumer Guidance
+          url: /development_fhir_versioning_consumer_guidance.html
+          output: web
 
   - title: Implement A Capability
     output: web

@@ -59,10 +59,13 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+
+Consumer systems:
+- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
 Only the following data-elements can be modified when performing an appointment cancellation.
-
 - the appointment `status` MUST be updated to "cancelled".
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details.
 
@@ -164,7 +167,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
 - SHALL have updated the appointment `status` to cancelled.
 - SHALL have updated the appointment `cancellation-reason` inline with any details supplied in the request.

@@ -144,8 +144,11 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" schedule and slot details.
 - SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall within the requested date range.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. Practitioner is required in the searchset `Bundle` only if available.
+- SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
+- SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. `Practitioner` is required in the searchset `Bundle` only if available.
+ 
+  The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` Resources related to the returned free `Slot` Resources. If no free slots are returned for the requested time period then no Resources should be returned within the response `Bundle`.
+
 
 ```json
 {
@@ -158,15 +161,12 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Organization-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/ods-organization-code",
 				"value": "R1A15"
-			},
-			{
-				"system": "http://fhir.nhs.net/Id/ods-site-code",
-				"value": "Z33435"
 			}],
 			"name": "The Hepworth Surgery"
 		}
@@ -178,7 +178,8 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Location-1"]
 			},
 			"identifier": [{
 				"system": "Z33435",
@@ -194,7 +195,8 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-schedule-1"]
 			},
 			"modifierExtension": [{
 				"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-practitioner-1",
@@ -231,7 +233,8 @@ Provider systems:
 			"id": "2",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Practitioner-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/sds-user-id",
@@ -276,7 +279,8 @@ Provider systems:
 			"id": "1584",
 			"meta": {
 				"versionId": "1471219260000",
-				"lastUpdated": "2016-08-15T01:01:00.000+01:00"
+				"lastUpdated": "2016-08-15T01:01:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-slot-1"]
 			},
 			"identifier": [{
 				"system": "http://fhir.nhs.net/Id/gpconnect-schedule-identifier",

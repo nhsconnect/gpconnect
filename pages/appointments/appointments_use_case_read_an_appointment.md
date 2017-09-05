@@ -77,7 +77,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return `Appointment` resources that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Appointment` resource.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of the `Appointment` resource.
 - SHALL include all relevant business `identifier` details (if any) for the `Appointment` resource.
 

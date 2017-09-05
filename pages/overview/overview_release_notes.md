@@ -7,6 +7,12 @@ permalink: overview_release_notes.html
 summary: "Release notes for the various versions of the GP Connect overview."
 ---
 
+#### GP Connect 1.0.0-beta.1
+
+- Added additional information around versioning (pages - development_fhir_versioning_specification_guidance.html, development_fhir_versioning_capability_guidance.html, development_fhir_versioning_provider_guidance.html, development_fhir_versioning_consumer_guidance.html)
+- Updated Security guidance around the protocols suppliers should implement (Page - development_api_security_guidance.html).
+
+
 #### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)
 
 - Updated [Common API Guidance](development_fhir_api_guidance.html)
@@ -26,9 +32,3 @@ summary: "Release notes for the various versions of the GP Connect overview."
 	- Addition of 501 HTTP Status code to guidance
 - Updated [Clinical Terminologies](design_clinical_terminologies.html)
 	- Clearer statement on case sensitivity of terminologies in FHIR
-
-	
-
-
-
-

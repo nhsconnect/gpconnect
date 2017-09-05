@@ -13,7 +13,7 @@ summary: "Use case for reading an organisation resource."
 The Consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- MAY have previously [resolved the logical ID of the organisation](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_an_organisation.html) from the ODS Organisation Code or ODS Site Code.
+- MAY have previously [resolved the logical ID of the organisation](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_an_organisation.html) from the ODS Organisation Code.
 
 ## API Use Case ##
 
@@ -76,10 +76,10 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Organization` resources that conform to the `gpconnect-organization-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Organization` resource.
+- SHALL return `Organization` resources that conform to the `CareConnect-GPC-Organization-1` profile.
+- SHALL include the URI of the `CareConnect-GPC-Organization-1` profile StructureDefinition in the `Organization.meta.profile` element of the returned `Organization` resource.
 - SHALL include the `versionId` of the current version of the `Organization` resource.
-- SHALL include all relevant business `identifier` details (i.e. ODS Code and/or ODS Site Code) for the `Organization` resource.
+- SHALL include all relevant business `identifier` details (i.e. ODS Code) for the `Organization` resource.
 
 ```json
 {
@@ -88,7 +88,7 @@ Provider systems:
 	"meta": {
 		"versionId": "636064088098730113",
 		"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"]
+		"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Organization-1"]
 	},
 	"identifier": [{
 		"system": "http://fhir.nhs.net/Id/ods-organization-code",

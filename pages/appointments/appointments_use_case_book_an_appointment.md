@@ -57,9 +57,14 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment` |
 
+
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource comforming to [gpconnect-appointment-1](https://www.simplifier.net/GPConnect/gpconnect-appointment-1)
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+
+Consumer systems:
+- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
 The following data-elements are mandatory (i.e data MUST be present).
 
@@ -73,14 +78,27 @@ The following data-elements SHOULD be included when available.
 
 - a practitioner `participant` of the appointment.
 
-
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation)." %}
+
+
+The following guidance around Appointment Resource element should be followed when populating any of the listed fields:
+
+| Resource Element        | Guidance |
+| ---                     | --- |
+| Appointment.***comment***     | This field should be used for "Patient specific notes" and any additional comments relating to the appointment. |
+| Appointment.***description*** | This field should be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
+
+
+#### Example Request Body ####
 
 On the wire a JSON serialised request would look something like the following:
 
 ```json
 {
 	"resourceType": "Appointment",
+	"meta": {
+		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+	},
 	"status": "booked",
 	"type": {
 		"coding": [{
@@ -153,7 +171,7 @@ Provider systems:
 - SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL maintain resource state in accordance with their own internal integrity constraints, including the state of any associated resources, such as `Slots`, `Schedules`, etc.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
 - MAY generate a business identifier to allow an individual appointment (i.e. `Appointment` resource) to be uniquely identifiable.
 
@@ -175,7 +193,7 @@ Provider systems:
 		"text": "GP"
 	},
 	"reason": {
-		"text": "Rash"
+		"text": "Free text reason."
 	},
 	"description": "Free text description.",
 	"start": "2016-05-30T10:00:00+01:00",

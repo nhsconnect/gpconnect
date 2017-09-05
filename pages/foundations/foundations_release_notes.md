@@ -7,6 +7,15 @@ permalink: foundations_release_notes.html
 summary: "Release notes for the various versions of the Foundations capability."
 ---
 
+- 1.0.0-rc.1
+  - Updated datalibrary to be capability specific, moving it to reside under the "Development" menu within the capability. This is to allow the Profiled FHIR Resources to be referenced per capability and updated independantly. For foundations we have updated specification to reference FHIR profiles stored on FHIR reference server rather than those on the old DMS capability pack.
+  - Updated Api Use Case pages to make clear the expectations around the Fhir Resource Metadata Profile element, along with updates to examples to show new profile definitions.
+  - Added information around what GP Connect considers as an Active Patient and use of Active Patient within the "Find a patient" capability (Page - foundations_use_case_find_a_patient.html, overview_glossary.html).
+  - Added additional information for "Register Patient" capability around re-activating inactive patients instead of registering new patient each time. (Page - foundations_use_case_register_a_patient.html)
+  - Removed the Practitioner and Organization as mandatory resources within the response bundle for the "Register Patient" interaction (Page - foundations_use_case_register_a_patient.html)
+  - Added clarification around the use of the "registrationDetails" extension for the "Register patient" interaction (Page - foundations_use_case_register_a_patient.html)
+  - Removed ODS-Site-Code as a search parameter and identifier from the Organization resource for "Find Organization" and "Organization Read"
+
 - 1.0.0-beta.2
   - Updated example conformance profile to include GP Connect profile information (Page - [Get the FHIR Conformance Statement](https://nhsconnect.github.io/gpconnect/foundations_use_case_get_the_fhir_conformance_profile.html)).
   - Clarified use of [Register a patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_register_a_patient.html) API is only to support local-only temporary patient registrations to support federated appointment booking
