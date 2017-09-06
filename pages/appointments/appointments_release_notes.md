@@ -19,6 +19,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Added clarification around GP Connect "FHIR Resource Profile" and "Metadata Profile" requirements on the request/consumer side of the [Book an Appointment](appointments_use_case_book_an_appointment.htm), [Amend  an Appointment](appointments_use_case_amend_an_appointment.html) and [Cancel an appointment](appointments_use_case_cancel_an_appointment.html) API use cases. 
   - Added clarification on the expected response content for the [Retrieve a Patient's Appointments](appointments_use_case_retrieve_a_patients_appointments.html) API use case.
   - Additional detail on error conditions for [Read an appointment](appointments_use_case_read_an_appointment.html)
+  - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html) API use case associated with cancel an appointment interaction
   
 #### 1.0.0-beta.1
   - Initial release of the Appointment Management capability pack on Github in early August 2016.
