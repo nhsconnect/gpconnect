@@ -13,11 +13,11 @@ Resolve (zero or more) `Practitioner` resources using a business identifier (i.e
 
 ### Request Operation ###
 
-The `[system]` field SHALL be populated with a valid practitioner identifier system URL (i.e. `http://fhir.nhs.net/Id/sds-user-id`).
+The `[system]` field SHALL be populated with a valid practitioner identifier system URL (i.e. `https://fhir.nhs.uk/Id/sds-user-id`).
 
 The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'http://fhir.nhs.net/Id/sds-user-id', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/sds-user-id', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR Relative Request ####
 
@@ -91,7 +91,7 @@ Provider systems:
 				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Practitioner-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/sds-user-id",
+				"system": "https://fhir.nhs.uk/Id/sds-user-id",
 				"value": "S001"
 			}],
 			"name": {
@@ -112,7 +112,7 @@ Provider systems:
 ```csharp
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var query = new string[] { "identifier=http://fhir.nhs.net/Id/sds-user-id|S001" };
+var query = new string[] { "identifier=https://fhir.nhs.uk/Id/sds-user-id|S001" };
 var bundle = client.Search("Practitioner", query);
 FhirSerializer.SerializeResourceToJson(bundle).Dump();
 ```
@@ -123,7 +123,7 @@ FhirSerializer.SerializeResourceToJson(bundle).Dump();
 FhirContext ctx = new FhirContext();
 IGenericClient client = ctx.newRestfulGenericClient("gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Practitioner.class)
-.where(new TokenClientParam("identifier").exactly().systemAndCode("http://fhir.nhs.net/Id/sds-user-id", "S001"))
+.where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/sds-user-id", "S001"))
 .encodedJson()
 .execute();
 ```

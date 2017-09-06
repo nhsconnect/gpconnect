@@ -160,7 +160,7 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/nhs-number",
+				"system": "https://fhir.nhs.uk/Id/nhs-number",
 				"value": "1234569999"
 			}],
 			"active": true,
@@ -230,7 +230,7 @@ Provider systems:
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/nhs-number",
+				"system": "https://fhir.nhs.uk/Id/nhs-number",
 				"value": "1234569999"
 			}],
 			"name": [{
@@ -271,7 +271,7 @@ parameters.Add("registerPatient", new Patient
 	},
 	Identifier =
 	{
-		new Identifier("http://fhir.nhs.net/Id/nhs-number","1234569999")
+		new Identifier("https://fhir.nhs.uk/Id/nhs-number","1234569999")
 	}
 });
 var resource = client.TypeOperation("gpc.registerpatient","Patient",parameters);
@@ -290,7 +290,7 @@ client.registerInterceptor(new LoggingInterceptor(true));
 
 Patient patient = new Patient();
 patient.addIdentifier()
-   .setSystem("http://fhir.nhs.net/Id/nhs-number")
+   .setSystem("https://fhir.nhs.uk/Id/nhs-number")
    .setValue("1234569999");
 patient.addName()
    .addFamily("Smith")

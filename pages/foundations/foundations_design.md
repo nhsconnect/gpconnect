@@ -13,10 +13,10 @@ The following business identifier types are to be supported by GP Connect system
 
 | Identifier | Resource | System |
 | ---------- | -------- | ------ |
-| NHS Number | Patient | `http://fhir.nhs.net/Id/nhs-number` |
+| NHS Number | Patient | `https://fhir.nhs.uk/Id/nhs-number` |
 | Local Identifier | Resource | `http://fhir.nhs.net/Id/local-identifier` |
-| ODS Code | Organisation | `http://fhir.nhs.net/Id/ods-organization-code` |
-| ODS Site Code | Location | `http://fhir.nhs.net/Id/ods-site-code` |
-| SDS User ID | Practitioner | `http://fhir.nhs.net/Id/sds-user-id` |
+| ODS Code | Organisation | `https://fhir.nhs.uk/Id/ods-organization-code` |
+| ODS Site Code | Location | `https://fhir.nhs.uk/Id/ods-site-code` |
+| SDS User ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |
 
 {% include important.html content="Support for additional identifier types inline with the existing GPSoC requirements is also under consideration." %}

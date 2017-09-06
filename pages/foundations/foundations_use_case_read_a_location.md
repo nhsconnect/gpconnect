@@ -92,7 +92,7 @@ Provider systems:
 		"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Location-1"]
 	},
 	"identifier": [{
-		"system": "http://fhir.nhs.net/Id/ods-site-code",
+		"system": "https://fhir.nhs.uk/Id/ods-site-code",
 		"value": "L001"
 	}],
 	"name": "Honley Highstreet"
