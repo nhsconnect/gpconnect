@@ -101,6 +101,9 @@ Provider systems:
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period. No additional filtering should be applied by the provider, all appointments including cancelled appointments should be returned as part of the response.
+- Where only start date is specified, provider SHALL return all data items from this date.
+- Where only end date is specified, provider SHALL return all data items until this date.
+- Where no date period is specified in input parameters, provider systems SHOULD return all past, present and future appointments.
 
 ```json
 {
