@@ -165,7 +165,7 @@ Provider systems:
 				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Organization-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/ods-organization-code",
+				"system": "https://fhir.nhs.uk/Id/ods-organization-code",
 				"value": "R1A15"
 			}],
 			"name": "The Hepworth Surgery"
@@ -237,7 +237,7 @@ Provider systems:
 				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Practitioner-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/sds-user-id",
+				"system": "https://fhir.nhs.uk/Id/sds-user-id",
 				"value": "G22345655"
 			},
 			{

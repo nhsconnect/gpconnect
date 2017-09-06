@@ -21,6 +21,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Additional detail on error conditions for [Read an appointment](appointments_use_case_read_an_appointment.html)
   - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html) API use case associated with cancel an appointment interaction
   - [Book an appointment](development_fhir_api_guidance.html#create-resource) emphasised requirement for provider to return Location header describing details of the newly created resource.
+  - Updated identifier system within examples to match identifiers within new fhir profiles (Pages - appointments_use_case_search_for_free_slots.html)
   
 #### 1.0.0-beta.1
   - Initial release of the Appointment Management capability pack on Github in early August 2016.
