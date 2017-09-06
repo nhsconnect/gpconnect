@@ -21,11 +21,11 @@ Resolve (zero or more) `Location` resources using a business identifier (i.e. OD
 
 ### Request Operation ###
 
-The `[system]` field SHALL be populated with a valid location identifier system URL (i.e. `http://fhir.nhs.net/Id/ods-site-code`).
+The `[system]` field SHALL be populated with a valid location identifier system URL (i.e. `https://fhir.nhs.uk/Id/ods-site-code`).
 
 The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'http://fhir.nhs.net/Id/ods-site-code', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/ods-site-code', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR Relative Request ####
 
@@ -99,7 +99,7 @@ Provider systems:
                 "profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1"]
             },
             "identifier": [{
-                "system": "http://fhir.nhs.net/Id/ods-site-code",
+                "system": "https://fhir.nhs.uk/Id/ods-site-code",
                 "value": "L001"
             }],
             "name": "Honley Highstreet"
@@ -115,7 +115,7 @@ Provider systems:
 ```csharp
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var query = new string[] { "identifier=http://fhir.nhs.net/Id/ods-site-code|L001" };
+var query = new string[] { "identifier=https://fhir.nhs.uk/Id/ods-site-code|L001" };
 var bundle = client.Search("Location", query);
 FhirSerializer.SerializeResourceToXml(bundle).Dump();
 ```
@@ -126,7 +126,7 @@ FhirSerializer.SerializeResourceToXml(bundle).Dump();
 FhirContext ctx = new FhirContext();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Location.class)
-.where(new TokenClientParam("identifier").exactly().systemAndCode("http://fhir.nhs.net/Id/ods-site-code", "L001"))
+.where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/ods-site-code", "L001"))
 .encodedXml()
 .execute();
 ```

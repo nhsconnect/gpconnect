@@ -22,11 +22,11 @@ Resolve (zero or more) `Patient` resources using a business identifier (i.e. NHS
 
 ### Request Operation ###
 
-The `[system]` field SHALL be populated with a valid patient identifier system URL (i.e. `http://fhir.nhs.net/Id/nhs-number`).
+The `[system]` field SHALL be populated with a valid patient identifier system URL (i.e. `https://fhir.nhs.uk/Id/nhs-number`).
 
 The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'http://fhir.nhs.net/Id/nhs-number', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/nhs-number', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR Relative Request ####
 
@@ -101,7 +101,7 @@ Provider systems:
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/nhs-number",
+				"system": "https://fhir.nhs.uk/Id/nhs-number",
 				"value": "P002"
 			}],
 			"name": [{
@@ -124,7 +124,7 @@ Provider systems:
 ```csharp
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var query = new string[] { "identifier=http://fhir.nhs.net/Id/nhs-number|P002" };
+var query = new string[] { "identifier=https://fhir.nhs.uk/Id/nhs-number|P002" };
 var bundle = client.Search("Patient", query);
 FhirSerializer.SerializeResourceToXml(bundle).Dump();
 ```
@@ -135,11 +135,11 @@ FhirSerializer.SerializeResourceToXml(bundle).Dump();
 FhirContext ctx = new FhirContext();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Patient.class)
-.where(new TokenClientParam("identifier").exactly().systemAndCode("http://fhir.nhs.net/Id/nhs-number", "P002"))
+.where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/nhs-number", "P002"))
 .encodedXml()
 .execute();
 ```
 
 ### cURL ###
 
-{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient?identifier=http://fhir.nhs.net/Id/nhs-number%7CP002'" %}
+{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7CP002'" %}
