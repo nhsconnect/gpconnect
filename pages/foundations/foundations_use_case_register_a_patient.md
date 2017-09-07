@@ -229,6 +229,33 @@ Provider systems:
 				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
+			"extension": [{
+				"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+				"extension": [{
+					"url": "registrationPeriod",
+					"valuePeriod": {
+						"start": "2017-09-07T14:17:44+01:00"
+					}
+				},
+				{
+					"url": "registrationType",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-RegistrationType-1",
+							"code": "T"
+						}]
+					}
+				},
+				{
+					"url": "registrationStatus",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-RegistrationStatus-1",
+							"code": "A"
+						}]
+					}
+				}]
+			}],
 			"identifier": [{
 				"system": "https://fhir.nhs.uk/Id/nhs-number",
 				"value": "1234569999"
