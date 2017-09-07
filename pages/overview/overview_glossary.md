@@ -66,12 +66,12 @@ The concept of "Active" is related to the patients registration ***status*** rat
 | Pending registration | <span style="color:green">Yes</span> |
 | Fully registered | <span style="color:green">Yes</span> |
 | Pending deduction | <span style="color:green">Yes</span> |
-| Deceased | <span style="color:red">No</span> |
-| Left/Deducted | <span style="color:red">No</span> |
+| Deceased | <span style="color:red">No (Inactive)</span> |
+| Left/Deducted | <span style="color:red">No (Inactive)</span> |
 
 | Patient Registration Type | Associated Registration Status |
 | --- | --- |
-| Regular / GMS | "Pending registration", "Fully registered", "Pending deduction",<br/> "Deceased", "Left/Deducted" |
+| Regular / GMS | "Registration Pending", "Fully registered", "Deduction Pending",<br/> "Deceased", "Left/Deducted" |
 | Temporary - Long Stay | "Fully registered", "Deceased", "Left/Deducted" |
 | Temporary - Short Stay | "Fully registered", "Deceased", "Left/Deducted" |
 | Emergency | "Fully registered", "Deceased", "Left/Deducted" |
