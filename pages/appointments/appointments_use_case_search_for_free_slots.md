@@ -162,7 +162,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1469444400000",
 				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Organization-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
 			},
 			"identifier": [{
 				"system": "https://fhir.nhs.uk/Id/ods-organization-code",
@@ -179,11 +179,11 @@ Provider systems:
 			"meta": {
 				"versionId": "1469444400000",
 				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Location-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1"]
 			},
 			"identifier": [{
-				"system": "Z33435",
-				"value": "BUILDING A"
+				"system": "https://fhir.nhs.uk/Id/local-location-identifier",
+				"value": "BUILDING-A127"
 			}],
 			"name": "Building A"
 		}
@@ -196,7 +196,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1469444400000",
 				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-schedule-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"]
 			},
 			"modifierExtension": [{
 				"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-practitioner-1",
@@ -280,12 +280,8 @@ Provider systems:
 			"meta": {
 				"versionId": "1471219260000",
 				"lastUpdated": "2016-08-15T01:01:00.000+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-slot-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-slot-1"]
 			},
-			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/gpconnect-schedule-identifier",
-				"value": "1584"
-			}],
 			"type": {
 				"coding": [{
 					"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",

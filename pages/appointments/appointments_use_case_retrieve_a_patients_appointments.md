@@ -117,7 +117,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1503310820000",
 				"lastUpdated": "2017-08-21T10:20:20.000+00:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 			},
 			"status": "booked",
 			"type": {
@@ -176,7 +176,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1503310844000",
 				"lastUpdated": "2017-08-21T10:20:44.000+00:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 			},
 			"status": "booked",
 			"type": {
@@ -223,7 +223,7 @@ Provider systems:
 			"meta": {
 				"versionId": "1503310866000",
 				"lastUpdated": "2017-08-21T10:21:06.000+00:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 			},
 			"status": "booked",
 			"type": {

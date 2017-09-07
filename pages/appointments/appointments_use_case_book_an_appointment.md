@@ -98,7 +98,7 @@ On the wire a JSON serialised request would look something like the following:
 {
 	"resourceType": "Appointment",
 	"meta": {
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"status": "booked",
 	"type": {
@@ -184,7 +184,7 @@ Provider systems:
 	"meta": {
 		"versionId": "636068818095315079",
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"status": "booked",
 	"type": {
