@@ -23,6 +23,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Book an appointment](development_fhir_api_guidance.html#create-resource) emphasised requirement for provider to return Location header describing details of the newly created resource.
   - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html#payload-response-body) includes guidance on what data items should be returned where date range parameters are ommitted in the request querystring.
   - [Search for free slots](appointments_use_case_search_for_free_slots.html) - updated identifier system within examples to match identifiers within new fhir profiles
+  - Added [design decision](appointments_design.html) to clarify responsibilities for consumer, SSP and provider in an implementation which provides a federated appointment management capability. 
   
 #### 1.0.0-beta.1
   - Initial release of the Appointment Management capability pack on Github in early August 2016.
