@@ -156,10 +156,10 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var resource = client.Read<Appointment>("Appointment/1");
-FhirSerializer.SerializeResourceToXml(resource).Dump();
+FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```
 
 ### Java ###
@@ -168,5 +168,8 @@ FhirSerializer.SerializeResourceToXml(resource).Dump();
 ) library." %}
 
 ```java
-Hello World
+FhirContext ctx = FhirContext.forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
+Appointment appointment = client.read().resource(Appointment.class).withId("1").execute();
+System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(appointment));
 ```

@@ -313,15 +313,18 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
+
 var parameters = new Parameters();
 parameters.Add("timePeriod", new Period()
 {
-	Start = new FhirDateTime("2016-08-08").ToString(),
-	End = new FhirDateTime("2016-08-22").ToString()
+	Start = new FhirDateTime("2017-09-07").ToString(),
+	End = new FhirDateTime("2017-09-15").ToString()
 });
+
 var resource = client.InstanceOperation(new Uri("Organization/1",UriKind.Relative),"getschedule",parameters);
+
 FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```
 
@@ -331,5 +334,23 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 ) library." %}
 
 ```java
-TODO
+FhirContext ctx = FhirContext.forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
+
+PeriodDt timePeriod = new PeriodDt();
+timePeriod.setStart(new DateTimeDt("2017-09-07"));
+timePeriod.setEnd(new DateTimeDt("2017-09-15"));
+
+Parameters params = new Parameters();
+params.addParameter().setName("timePeriod").setValue(timePeriod);
+
+Bundle responseBundle = client
+		.operation()
+		.onInstance(new IdDt("Organization", "1"))
+		.named("$gpc.getschedule")
+		.withParameters(params)
+		.returnResourceType(Bundle.class)
+		.execute();
+
+System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
 ```

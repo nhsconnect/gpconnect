@@ -271,5 +271,24 @@ FhirSerializer.SerializeResourceToJson(cancelledAppointment).Dump();
 ) library." %}
 
 ```java
-TODO
+// Read appointment to be updated
+FhirContext ctx = FhirContext.forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
+Appointment appointment = client.read().resource(Appointment.class).withId("1").execute();
+
+// Amend appointment status and cancellation reason
+appointment.setStatus(AppointmentStatusEnum.CANCELLED);
+ExtensionDt extension = new ExtensionDt(false);
+extension.setUrl("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1");
+extension.setValue(new StringDt("Free text cancellation reason."));
+appointment.addUndeclaredExtension(extension);
+
+// Cancel appointment
+MethodOutcome response = client.update()
+	.resource(appointment)
+	.prefer(PreferReturnEnum.REPRESENTATION)
+	.preferResponseType(Appointment.class)
+	.execute();
+
+System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(response.getResource()));
 ```

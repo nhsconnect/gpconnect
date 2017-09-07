@@ -251,9 +251,34 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
-TODO
+
+Appointment appointment = new Appointment();
+
+appointment.Status = Appointment.AppointmentStatus.Booked;
+appointment.Start = System.DateTimeOffset.Now;
+appointment.End = System.DateTimeOffset.Now.AddMinutes(30);
+
+var slotReference = new ResourceReference();
+slotReference.Reference = "Slot/1982";
+appointment.Slot.Add(slotReference);
+
+var patientParticipant = new Appointment.ParticipantComponent();
+patientParticipant.Actor = new ResourceReference();
+patientParticipant.Actor.Reference = "Patient/2";
+patientParticipant.Status = Appointment.ParticipationStatus.Accepted;
+appointment.Participant.Add(patientParticipant);
+
+var locationParticipant = new Appointment.ParticipantComponent();
+locationParticipant.Actor = new ResourceReference();
+locationParticipant.Actor.Reference = "Location/1";
+locationParticipant.Status = Appointment.ParticipationStatus.Accepted;
+appointment.Participant.Add(locationParticipant);
+
+Appointment appointmentCreated = client.Create<Appointment>(appointment);
+
+FhirSerializer.SerializeResourceToJson(appointmentCreated).Dump();
 ```
 
 ### Java ###
@@ -262,5 +287,35 @@ TODO
 ) library." %}
 
 ```java
-TODO
+FhirContext fhirContext = FhirContext.forDstu2();
+IGenericClient client = fhirContext.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+
+Appointment appointment = new Appointment();
+appointment.setStatus(AppointmentStatusEnum.BOOKED);
+
+Calendar startTime = Calendar.getInstance();
+Calendar endTime = Calendar.getInstance();
+endTime.add(Calendar.MINUTE, 30);
+appointment.setStart(new InstantDt(startTime));
+appointment.setEnd(new InstantDt(endTime));
+
+appointment.setSlot(Collections.singletonList(new ResourceReferenceDt("Slot/1982")));
+
+Appointment.Participant patientParticipant = new Appointment.Participant();
+patientParticipant.setActor(new ResourceReferenceDt("Patient/2"));
+patientParticipant.setStatus(ParticipationStatusEnum.ACCEPTED);
+appointment.addParticipant(patientParticipant);
+
+Appointment.Participant locationParticipant = new Appointment.Participant();
+locationParticipant.setActor(new ResourceReferenceDt("Location/1"));
+locationParticipant.setStatus(ParticipationStatusEnum.ACCEPTED);
+appointment.addParticipant(locationParticipant);
+
+MethodOutcome response = client.create()
+	.resource(appointment)
+	.prefer(PreferReturnEnum.REPRESENTATION)
+	.preferResponseType(Appointment.class)
+	.execute();
+
+System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(response.getResource()));
 ```

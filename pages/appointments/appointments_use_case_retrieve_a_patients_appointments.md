@@ -278,9 +278,10 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient(string.Format("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/"));
 client.PreferredFormat = ResourceFormat.Json;
-TODO
+Bundle bundle = (Bundle)client.Get("Patient/2/Appointment");
+FhirSerializer.SerializeResourceToJson(bundle).Dump();
 ```
 
 ### Java ###
@@ -289,6 +290,15 @@ TODO
 ) library." %}
 
 ```java
-TODO
+FhirContext ctx = FhirContext.forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+
+Bundle responseBundle = client.search()
+	.forResource(Patient.class)
+	.withIdAndCompartment("2", "Appointment")
+	.returnBundle(ca.uhn.fhir.model.dstu2.resource.Bundle.class)
+	.execute();
+	
+System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
 ```
 
