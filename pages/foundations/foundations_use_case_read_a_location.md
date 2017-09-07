@@ -89,7 +89,7 @@ Provider systems:
 	"meta": {
 		"versionId": "636064088100870233",
 		"lastUpdated": "2016-08-10T14:27:49.778+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Location-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1"]
 	},
 	"identifier": [{
 		"system": "https://fhir.nhs.uk/Id/ods-site-code",

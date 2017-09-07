@@ -88,19 +88,18 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 	<format value="application/xml+fhir" />
 	<format value="application/json+fhir" />
 	<profile>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-device-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"/>
- 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Appointment-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Schedule-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Slot-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Schedule-Operation-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-GetSchedule-Bundle-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-Register-Patient-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/GPConnect-RegisterPatient-Bundle-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-device-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"/>
+ 		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-slot-1"/>
+		<reference value="https://fhir.nhs.uk/OperationDefinition/gpconnect-schedule-operation-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-getschedule-bundle-1"/>
+		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1"/>
 	</profile>
 	<rest>
 		<mode value="server" />

@@ -139,7 +139,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <documentation value="The searchset bundle resource that has been returned in response to the given input parameters" />
         <type value="Bundle" />
         <profile>
-            <reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-registerpatient-bundle-1" />
+            <reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1" />
         </profile>
     </parameter>
 </OperationDefinition>
