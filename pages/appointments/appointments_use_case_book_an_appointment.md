@@ -29,6 +29,7 @@ The Consumer system:
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
 - SHALL have previously obtained the details for one or more free slots that are to be booked.
+- SHALL have previously performed a GP Connect `Find a Patient` request to obtain the logical identifier for the patient on the organisation's fhir server.
 
 ## API Usage ##
 

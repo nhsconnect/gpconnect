@@ -25,6 +25,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Search for free slots](appointments_use_case_search_for_free_slots.html) - updated identifier system within examples to match identifiers within new fhir profiles
   - Added [design decision](appointments_design.html) to clarify responsibilities for consumer, SSP and provider in an implementation which provides a federated appointment management capability. 
   - [Amend Appointment](appointments_use_case_amend_an_appointment.html), [Book Appointment](appointments_use_case_book_an_appointment.html), [Cancel Appointment](appointments_use_case_cancel_an_appointment.html), [Read Appointment](appointments_use_case_read_an_appointment.html), [Retrieve a patiens appointments](appointments_use_case_retrieve_a_patients_appointments.html), [Search for free slots](appointments_use_case_search_for_free_slots.html) - Added C# and Java code examples for all the appointment management API Use Cases.
+  - [Book and appointment](appointments_use_case_book_an_appointment.html#consumer) - Added clarification around the prerequisites, indicating that the consumer should have performed a "Find a patient" request to obtain the patient logical identifier on the fhir server.
   
 #### 1.0.0-beta.1
   - Initial release of the Appointment Management capability pack on Github in early August 2016.
