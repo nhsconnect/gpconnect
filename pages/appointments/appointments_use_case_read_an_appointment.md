@@ -52,9 +52,10 @@ N/A
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
-For example the:
+For example:
 
-- Logical identifier of the resource is not valid/can't be found on the server.  
+- Where a Logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevent OperationOutcome resource.
+- Where insufficient data about an appointment is present in the provider system to populate an appointment resource which validates to the `GPConnect-Appointment-1` profile, an 500 HTTP Status code should be returned, together with the appropriate OperationOutcome resource providing diagnostic detail.   
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -70,7 +71,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return `Appointment` resources that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned `Appointment` resource.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of the `Appointment` resource.
 - SHALL include all relevant business `identifier` details (if any) for the `Appointment` resource.
 
@@ -81,7 +82,7 @@ Provider systems:
 	"meta": {
 		"versionId": "636068818095315079",
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"status": "booked",
 	"type": {
@@ -142,10 +143,10 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var resource = client.Read<Appointment>("Appointment/1");
-FhirSerializer.SerializeResourceToXml(resource).Dump();
+FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```
 
 ### Java ###
@@ -154,5 +155,8 @@ FhirSerializer.SerializeResourceToXml(resource).Dump();
 ) library." %}
 
 ```java
-Hello World
+FhirContext ctx = FhirContext.forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
+Appointment appointment = client.read().resource(Appointment.class).withId("1").execute();
+System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(appointment));
 ```

@@ -28,6 +28,7 @@ The Consumer system:
 
 - SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
 - SHALL have previously obtained the details for one or more free slots that are to be booked.
+- SHALL have previously performed a GP Connect `Find a Patient` request to obtain the logical identifier for the patient on the organisation's fhir server.
 
 ## API Usage ##
 
@@ -56,9 +57,14 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment` |
 
+
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+
+Consumer systems:
+- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
 The following data-elements are mandatory (i.e data MUST be present).
 
@@ -68,13 +74,31 @@ The following data-elements are mandatory (i.e data MUST be present).
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
 
+The following data-elements SHOULD be included when available.
+
+- a practitioner `participant` of the appointment.
+
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation)." %}
+
+
+The following guidance around Appointment Resource element should be followed when populating any of the listed fields:
+
+| Resource Element        | Guidance |
+| ---                     | --- |
+| Appointment.***comment***     | This field should be used for "Patient specific notes" and any additional comments relating to the appointment. |
+| Appointment.***description*** | This field should be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
+
+
+#### Example Request Body ####
 
 On the wire a JSON serialised request would look something like the following:
 
 ```json
 {
 	"resourceType": "Appointment",
+	"meta": {
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+	},
 	"status": "booked",
 	"type": {
 		"coding": [{
@@ -133,9 +157,9 @@ Provider systems:
 
 - SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
-For example the:
+For example:
 
-- submitted `start` and `end` date range does not match that of the requested `Slot`(s).
+- the submitted `start` and `end` date range does not match that of the requested `Slot`(s).
 - one or more of the requested `Slot` resources does not exist or already has a `status` of busy.
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
@@ -153,9 +177,10 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
+- SHALL return a `Location` header as described in [FHIR API Guidance](development_fhir_api_guidance.html#create-resource).
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL maintain resource state in accordance with their own internal integrity constraints, including the state of any associated resources, such as `Slots`, `Schedules`, etc.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
 - MAY generate a business identifier to allow an individual appointment (i.e. `Appointment` resource) to be uniquely identifiable.
 
@@ -166,7 +191,7 @@ Provider systems:
 	"meta": {
 		"versionId": "636068818095315079",
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"status": "booked",
 	"type": {
@@ -177,7 +202,7 @@ Provider systems:
 		"text": "GP"
 	},
 	"reason": {
-		"text": "Rash"
+		"text": "Free text reason."
 	},
 	"description": "Free text description.",
 	"start": "2016-05-30T10:00:00+01:00",
@@ -227,9 +252,34 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
-TODO
+
+Appointment appointment = new Appointment();
+
+appointment.Status = Appointment.AppointmentStatus.Booked;
+appointment.Start = System.DateTimeOffset.Now;
+appointment.End = System.DateTimeOffset.Now.AddMinutes(30);
+
+var slotReference = new ResourceReference();
+slotReference.Reference = "Slot/1982";
+appointment.Slot.Add(slotReference);
+
+var patientParticipant = new Appointment.ParticipantComponent();
+patientParticipant.Actor = new ResourceReference();
+patientParticipant.Actor.Reference = "Patient/2";
+patientParticipant.Status = Appointment.ParticipationStatus.Accepted;
+appointment.Participant.Add(patientParticipant);
+
+var locationParticipant = new Appointment.ParticipantComponent();
+locationParticipant.Actor = new ResourceReference();
+locationParticipant.Actor.Reference = "Location/1";
+locationParticipant.Status = Appointment.ParticipationStatus.Accepted;
+appointment.Participant.Add(locationParticipant);
+
+Appointment appointmentCreated = client.Create<Appointment>(appointment);
+
+FhirSerializer.SerializeResourceToJson(appointmentCreated).Dump();
 ```
 
 ### Java ###
@@ -238,5 +288,35 @@ TODO
 ) library." %}
 
 ```java
-TODO
+FhirContext fhirContext = FhirContext.forDstu2();
+IGenericClient client = fhirContext.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+
+Appointment appointment = new Appointment();
+appointment.setStatus(AppointmentStatusEnum.BOOKED);
+
+Calendar startTime = Calendar.getInstance();
+Calendar endTime = Calendar.getInstance();
+endTime.add(Calendar.MINUTE, 30);
+appointment.setStart(new InstantDt(startTime));
+appointment.setEnd(new InstantDt(endTime));
+
+appointment.setSlot(Collections.singletonList(new ResourceReferenceDt("Slot/1982")));
+
+Appointment.Participant patientParticipant = new Appointment.Participant();
+patientParticipant.setActor(new ResourceReferenceDt("Patient/2"));
+patientParticipant.setStatus(ParticipationStatusEnum.ACCEPTED);
+appointment.addParticipant(patientParticipant);
+
+Appointment.Participant locationParticipant = new Appointment.Participant();
+locationParticipant.setActor(new ResourceReferenceDt("Location/1"));
+locationParticipant.setStatus(ParticipationStatusEnum.ACCEPTED);
+appointment.addParticipant(locationParticipant);
+
+MethodOutcome response = client.create()
+	.resource(appointment)
+	.prefer(PreferReturnEnum.REPRESENTATION)
+	.preferResponseType(Appointment.class)
+	.execute();
+
+System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(response.getResource()));
 ```

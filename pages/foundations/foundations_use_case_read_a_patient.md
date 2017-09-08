@@ -83,7 +83,7 @@ Provider systems:
 		"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 	},
 	"identifier": [{
-		"system": "http://fhir.nhs.net/Id/nhs-number",
+		"system": "https://fhir.nhs.uk/Id/nhs-number",
 		"value": "P001"
 	}],
 	"name": [{

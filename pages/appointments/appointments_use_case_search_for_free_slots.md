@@ -143,8 +143,11 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" schedule and slot details.
 - SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall within the requested date range.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- SHALL include the `Schedule`, `Slot`, `Practitioner`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`.
+- SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
+- SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. `Practitioner` is required in the searchset `Bundle` only if available.
+ 
+  The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` Resources related to the returned free `Slot` Resources. If no free slots are returned for the requested time period then no Resources should be returned within the response `Bundle`.
+
 
 ```json
 {
@@ -157,15 +160,12 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/ods-organization-code",
+				"system": "https://fhir.nhs.uk/Id/ods-organization-code",
 				"value": "R1A15"
-			},
-			{
-				"system": "http://fhir.nhs.net/Id/ods-site-code",
-				"value": "Z33435"
 			}],
 			"name": "The Hepworth Surgery"
 		}
@@ -177,11 +177,12 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1"]
 			},
 			"identifier": [{
-				"system": "Z33435",
-				"value": "BUILDING A"
+				"system": "https://fhir.nhs.uk/Id/local-location-identifier",
+				"value": "BUILDING-A127"
 			}],
 			"name": "Building A"
 		}
@@ -193,7 +194,8 @@ Provider systems:
 			"id": "1",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"]
 			},
 			"modifierExtension": [{
 				"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-practitioner-1",
@@ -230,10 +232,11 @@ Provider systems:
 			"id": "2",
 			"meta": {
 				"versionId": "1469444400000",
-				"lastUpdated": "2016-07-25T12:00:00.000+01:00"
+				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
+				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Practitioner-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/sds-user-id",
+				"system": "https://fhir.nhs.uk/Id/sds-user-id",
 				"value": "G22345655"
 			},
 			{
@@ -275,12 +278,9 @@ Provider systems:
 			"id": "1584",
 			"meta": {
 				"versionId": "1471219260000",
-				"lastUpdated": "2016-08-15T01:01:00.000+01:00"
+				"lastUpdated": "2016-08-15T01:01:00.000+01:00",
+				"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-slot-1"]
 			},
-			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/gpconnect-schedule-identifier",
-				"value": "1584"
-			}],
 			"type": {
 				"coding": [{
 					"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
@@ -308,15 +308,18 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
+
 var parameters = new Parameters();
 parameters.Add("timePeriod", new Period()
 {
-	Start = new FhirDateTime("2016-08-08").ToString(),
-	End = new FhirDateTime("2016-08-22").ToString()
+	Start = new FhirDateTime("2017-09-07").ToString(),
+	End = new FhirDateTime("2017-09-15").ToString()
 });
+
 var resource = client.InstanceOperation(new Uri("Organization/1",UriKind.Relative),"getschedule",parameters);
+
 FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```
 
@@ -326,5 +329,23 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 ) library." %}
 
 ```java
-TODO
+FhirContext ctx = FhirContext.forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
+
+PeriodDt timePeriod = new PeriodDt();
+timePeriod.setStart(new DateTimeDt("2017-09-07"));
+timePeriod.setEnd(new DateTimeDt("2017-09-15"));
+
+Parameters params = new Parameters();
+params.addParameter().setName("timePeriod").setValue(timePeriod);
+
+Bundle responseBundle = client
+		.operation()
+		.onInstance(new IdDt("Organization", "1"))
+		.named("$gpc.getschedule")
+		.withParameters(params)
+		.returnResourceType(Bundle.class)
+		.execute();
+
+System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
 ```
