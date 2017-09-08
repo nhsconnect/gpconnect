@@ -63,9 +63,9 @@ The concept of "Active" is related to the patients registration ***status*** rat
 
 | Patient Registration Status | GP Connect Considered Active |
 | --- | --- |
-| Pending registration | <span style="color:green">Yes</span> |
+| Registration Pending | <span style="color:green">Yes</span> |
 | Fully registered | <span style="color:green">Yes</span> |
-| Pending deduction | <span style="color:green">Yes</span> |
+| Deduction Pending | <span style="color:green">Yes</span> |
 | Deceased | <span style="color:red">No (Inactive)</span> |
 | Left/Deducted | <span style="color:red">No (Inactive)</span> |
 
