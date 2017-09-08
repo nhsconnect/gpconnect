@@ -111,15 +111,16 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 - Table content SHALL NOT be truncated.
 - Table rows SHALL be ordered by start date descending (i.e. most recent date/time first).
 
-<br/>
+If the Provider system does not support Inactive Problems (INPS), then display a message in the Section Banner to indicate 
 
-Provider systems not supporting Inactive Problems (e.g. INPS) SHALL display a message in the Section Banner to indicate:
+1. as in the HTML Implementation Guide page
+https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#not-supported
 
-- Inactive Problems are not supported as in the [HTML Implementation Guide - Not Supported](https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#not-supported
-) section.
-- That any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section.
+2. that any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section
 
-Provider systems that do support Inactive Problems, but when no records exist for the requested Patient SHALL display the standard [HTML Implementation Guide - Supported But Hasn't Been Recorded](https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
+If the Provider system supports Inactive Problems, but no records exist for the Patient requested, then provide the standard message as specified in the HTML Implementation Guide
+
+https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded
 
 ### Table Columns ###
 

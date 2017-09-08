@@ -56,8 +56,7 @@ GET [base]/AllergyIntolerance?patient=[id]&_list=$current-allergies
 
 The Consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
 - SHALL have resolved the patient's logical id on the server using the patient's NHS Number.
 
 ## API Usage ##

@@ -1,14 +1,10 @@
 ---
 title: HTML Implementation Guide
-keywords: 'getcarerecord, development, html, rendering'
+keywords: getcarerecord, development, html, rendering
+tags: [development,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_implementation_guide.html
-summary: >-
-  Overview of the common HTML view rendering guidance in relation to the Access
-  Record capability.
-tags:
-  - development
-  - getcarerecord
+summary: "Overview of the common HTML view rendering guidance in relation to the Access Record capability."
 ---
 
 ## HTML Implementation Guide ##
@@ -191,7 +187,8 @@ Consumer Systems SHALL display the date range applied to a section's data, as su
 
 ```html
 <div>
-	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>
+	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>  
+
 </div>
 ```
 
@@ -201,7 +198,7 @@ Where the Consumer System has not supplied a date-range, then where applicable a
 
 ```html
 <div>
-	<p>All relevant items</p>
+	<p>All relevant items subject to patient preferences and/or RCGP exclusions</p>
 </div>
 ``` 
 
@@ -226,7 +223,7 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | INV  | All | DiagnosticOrder<sup>2</sup> |
 | MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
 | OBS  | All Relevant | Observation |
-| PAT  | - | Patient<sup>2,3</sup> |
+| PAT  | - | Patient<sup>3</sup> |
 | PRB  | All Relevant | Problem|
 | REF  | All Relevant | Referral |
 | SUM  | - | Summary<sup>3</sup> |
@@ -261,6 +258,5 @@ As outlined in the 'Styling the XHTML' section of the FHIR&reg; standard.
 > In order to minimise manageability and security issues, authoring systems cannot specify the CSS stylesheet to use directly. Instead, the application that displays the resource provides the stylesheets. This means that the rendering system chooses what styles can be used, but the authoring system must use them in advance. Authoring systems can use these classes, which SHALL be supported by all rendering systems.
 > 
 > Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/DSTU2/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/DSTU2/narrative.html#css) on the FHIR website for full details.
-
 
 

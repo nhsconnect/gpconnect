@@ -15,7 +15,7 @@ summary: "All about the common foundation capabilities."
 
 The foundations capability cover the basic API requirements and prerequisites to utilise the GP Connect APIs.
 
-{% include important.html content="In order to successfully make us of the GP Connect APIs, initially a level of pre-existing accredited Spine connectivity will be required along with some FHIR foundation API capabilities." %}
+{% include important.html content="In order to successfully make use of the GP Connect APIs, initially a level of pre-existing accredited Spine connectivity will be required along with some FHIR foundation API capabilities." %}
 
 {% include roadmap.html content="Over time the necessity to have access to pre-existing spine services (i.e. PDS and SDS integration) is likely to be replaced by GP Connect/FHIR based equivalents." %}
 
@@ -23,7 +23,7 @@ The foundations capability cover the basic API requirements and prerequisites to
 
 ### PDS ###
 
-You'll need to be able to provide a verified NHS Number to use an API. This can be achieved using a spine accredited system, a DBs batch-traced record (CSV), or using a Spine Mini Services Provider (HL7v3).
+You'll need to be able to provide a verified NHS Number to use an API. This can be achieved using a spine accredited system, a DBS batch-traced record (CSV), or using a Spine Mini Services Provider (HL7v3).
 
 ### SDS / ODS ###
 
@@ -45,7 +45,7 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 
 - [Get the FHIR conformance profile](foundations_use_case_get_the_fhir_conformance_profile.html)
 - [Find a patient](foundations_use_case_find_a_patient.html)
-- [Find a practitioner](foundations_use_case_find_a_pracitioner.html)
+- [Find a practitioner](foundations_use_case_find_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
 - [Find a location](foundations_use_case_find_a_location.html)
 

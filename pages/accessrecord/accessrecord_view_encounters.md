@@ -67,8 +67,4 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 ```
 {% endraw %}
 
-{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %} 
-
-{% include codepen.html slug-hash="rrNKWb" %}
-
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/rrNKWb) for example of using AngularJS to generate table content" %}
+{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %} {% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/rrNKWb) for example of using AngularJS to generate table content" %}

@@ -1,7 +1,7 @@
 entries:
-- title: Access Record
-  product: Access Record<br/>
-  version: 1.0.0-rc.4
+- title: Access Record HTML
+  product: Access Record HTML<br/>
+  version: 1.0.0-rc.5
   folders:
 
   - title:
@@ -106,21 +106,6 @@ entries:
       - title: Example Conformance Profile
         url: /accessrecord_development_conformance_profile.html
         output: web, pdf
-
-        subfolders:
-        - title: Example Profile Data
-          output: web
-          subfolderitems:
-
-          - title: Example Index
-            url: /accessrecord_examples.html
-            output: web, pdf
-          - title: Request Data
-            url: /accessrecord_examples_getrecordqueryrequest.html
-            output: web
-          - title: Response Data
-            url: /accessrecord_examples_getrecordqueryresponse.html
-            output: web      
 
 #  - title: Safety and Governance
 #    output: web, pdf
