@@ -88,10 +88,10 @@ Provider systems:
 	"meta": {
 		"versionId": "636064088098730113",
 		"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Organization-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
 	},
 	"identifier": [{
-		"system": "http://fhir.nhs.net/Id/ods-organization-code",
+		"system": "https://fhir.nhs.uk/Id/ods-organization-code",
 		"value": "O001"
 	}],
 	"name": "Honley GP Practice"

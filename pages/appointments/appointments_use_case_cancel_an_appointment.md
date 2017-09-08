@@ -54,14 +54,17 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment` |
+| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment` |
 
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+
+Consumer systems:
+- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
 Only the following data-elements can be modified when performing an appointment cancellation.
-
 - the appointment `status` MUST be updated to "cancelled".
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details.
 
@@ -76,7 +79,7 @@ On the wire a JSON serialised request would look something like the following:
 	"meta": {
 		"versionId": "636068818095315079",
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"status": "cancelled",
     "extension": [{
@@ -156,7 +159,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
 - SHALL have updated the appointment `status` to cancelled.
 - SHALL have updated the appointment `cancellation-reason` inline with any details supplied in the request.
@@ -168,7 +171,7 @@ Provider systems:
 	"meta": {
 		"versionId": "636064088104680389",
 		"lastUpdated": "2016-08-15T20:10:20.775+01:00",
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-appointment-1"]
+		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"status": "cancelled",
     "extension": [{
@@ -253,5 +256,24 @@ FhirSerializer.SerializeResourceToJson(cancelledAppointment).Dump();
 ) library." %}
 
 ```java
-TODO
+// Read appointment to be updated
+FhirContext ctx = FhirContext.forDstu2();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
+Appointment appointment = client.read().resource(Appointment.class).withId("1").execute();
+
+// Amend appointment status and cancellation reason
+appointment.setStatus(AppointmentStatusEnum.CANCELLED);
+ExtensionDt extension = new ExtensionDt(false);
+extension.setUrl("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1");
+extension.setValue(new StringDt("Free text cancellation reason."));
+appointment.addUndeclaredExtension(extension);
+
+// Cancel appointment
+MethodOutcome response = client.update()
+	.resource(appointment)
+	.prefer(PreferReturnEnum.REPRESENTATION)
+	.preferResponseType(Appointment.class)
+	.execute();
+
+System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(response.getResource()));
 ```

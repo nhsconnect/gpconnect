@@ -138,7 +138,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <documentation value="The searchset bundle resource that has been returned in response to the given input parameters" />
         <type value="Bundle" />
         <profile>
-            <reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-registerpatient-bundle-1" />
+            <reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1" />
         </profile>
     </parameter>
 </OperationDefinition>
@@ -159,7 +159,7 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/nhs-number",
+				"system": "https://fhir.nhs.uk/Id/nhs-number",
 				"value": "1234569999"
 			}],
 			"active": true,
@@ -228,8 +228,35 @@ Provider systems:
 				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
+			"extension": [{
+				"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+				"extension": [{
+					"url": "registrationPeriod",
+					"valuePeriod": {
+						"start": "2017-09-07T14:17:44+01:00"
+					}
+				},
+				{
+					"url": "registrationType",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-RegistrationType-1",
+							"code": "T"
+						}]
+					}
+				},
+				{
+					"url": "registrationStatus",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-RegistrationStatus-1",
+							"code": "A"
+						}]
+					}
+				}]
+			}],
 			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/nhs-number",
+				"system": "https://fhir.nhs.uk/Id/nhs-number",
 				"value": "1234569999"
 			}],
 			"name": [{
@@ -270,7 +297,7 @@ parameters.Add("registerPatient", new Patient
 	},
 	Identifier =
 	{
-		new Identifier("http://fhir.nhs.net/Id/nhs-number","1234569999")
+		new Identifier("https://fhir.nhs.uk/Id/nhs-number","1234569999")
 	}
 });
 var resource = client.TypeOperation("gpc.registerpatient","Patient",parameters);
@@ -289,7 +316,7 @@ client.registerInterceptor(new LoggingInterceptor(true));
 
 Patient patient = new Patient();
 patient.addIdentifier()
-   .setSystem("http://fhir.nhs.net/Id/nhs-number")
+   .setSystem("https://fhir.nhs.uk/Id/nhs-number")
    .setValue("1234569999");
 patient.addName()
    .addFamily("Smith")

@@ -66,12 +66,10 @@ What provision will be made for making changes to existing appointments?
 - <span class="label label-success">SELECTED</span> Cancel and basic amendments will be provisioned for (i.e. only allowed to the comment/description fields).
 - Cancel and comprehensive amendments will be provisioned for (allowing appointments to move between slots/rescheduled).
 
-{% comment %}
+## Responsibilities in a federated booking context
 
-## Schedule usage ##
+Where there is a requirement for an implementation to provide an appointment management capability in a federated context, the GP Connect consumer implementation has the responsibility for defining the set of organisations which make up the federation. This consumer configuration will enable the consumer to make API calls to the relevent organisation set of endpoints in order to gain a federated view of appointments.
 
-- A schedule resource should only be one encounter set of slots. For example the schedule could have two practitioner references such as a practitioner and a nurse but any slots in that schedule will be attended by both the practitioner and the nurse.
-- To represent two practitioner working independently there should be two schedules, one for each practitioner, referenced and the practitioner extension within the schedules.
-- If a practitioner is going to be in one location but then move to another location they should have one schedule with one actor (location) for the first location. This schedule should stop before another schedule with the changed location starts for the same practitioner.
+Neither Spine Security Proxy, nor the GP Connect Provider will expose such federation configuration or expose any aggregated view of appointments for a federation.
 
-{% endcomment %}
+Please refer to the [glossary](overview_glossary.html) for a definition of a federation in this context.
