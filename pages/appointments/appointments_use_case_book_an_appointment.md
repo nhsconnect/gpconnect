@@ -79,7 +79,7 @@ The following data-elements SHOULD be included when available.
 
 - a practitioner `participant` of the appointment.
 
-{% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation)." %}
+{% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload Response Body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API Use Case page." %}
 
 
 The following guidance around Appointment Resource element should be followed when populating any of the listed fields:
