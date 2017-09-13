@@ -7,7 +7,7 @@ permalink: development_fhir_versioning_specification_guidance.html
 summary: "Details of the common versioning for the GP Connect specification."
 ---
 
-The GP Connect specification is broken up into the following sections allowing for separate releases of the different capability packs. This allows development and uplift of the specification to be done incrementally meaning that a provider and consumer will not have to update all their implemented capabilities each time a change is made. The section and version of the page being viewed within the specification are shown above the navigation menu on the left of the page, just below the NHS Digital logo.
+The GP Connect specification is broken up into the following sections allowing for separate releases of the different parts of the specification. The section name and section version of the page being viewed is shown above the navigation menu on the left of the page, just below the NHS Digital logo.
 
 The following sections of the specification are currently individually versioned, allowing them to be published as separate releases:
 

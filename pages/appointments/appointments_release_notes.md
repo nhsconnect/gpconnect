@@ -7,6 +7,9 @@ permalink: appointments_release_notes.html
 summary: "Release notes for the various versions of the Appointment Management capability."
 ---
 
+#### 1.0.0-rc.1
+  - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body), [Search for free slots](appointments_use_case_search_for_free_slots.html#payload-response-body) - Additional information has been added on how providers should indicate that slots are adjacent and therefore can be use for multi slot appointment booking by consumers.
+
 #### 1.0.0-beta.2
   - Removed practitioner participant as a mandatory element within the appointment resource (Page - Book an appointment).
   - Added location participant as a mandatory element within the appointment resource (Page - Book an appointment).
