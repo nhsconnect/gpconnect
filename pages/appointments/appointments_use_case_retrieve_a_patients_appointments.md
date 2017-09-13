@@ -83,7 +83,7 @@ Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_err
 
 For example:
 
-- Where the use of the `start` search parameter does not define a valid date range, HTTP Status code 422 with error code 'INVALID_PARAMETER' will be returned.
+- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details can be returned in the diagnostics element.
 
 
 ### Request Response ###
