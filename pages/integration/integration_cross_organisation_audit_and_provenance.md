@@ -197,7 +197,7 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 
 ```
 
-### `reason_for_request` = "patientfacing" <br/> `requesting_identity`:`resourceType` = "Citizen" ###
+### `reason_for_request` = "patientfacing" <br/> `requesting_identity`:`resourceType` = "Person" ###
 
 ```json
 {
