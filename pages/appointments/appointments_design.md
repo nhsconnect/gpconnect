@@ -66,6 +66,12 @@ What provision will be made for making changes to existing appointments?
 - <span class="label label-success">SELECTED</span> Cancel and basic amendments will be provisioned for (i.e. only allowed to the comment/description fields).
 - Cancel and comprehensive amendments will be provisioned for (allowing appointments to move between slots/rescheduled).
 
+## Can appointments be re-scheduled? ##
+
+The API will not make provision for re-scheduling of appointments in a single interaction as a result of the limitation on which data elements of an appointment can be amended.
+
+Therefore, a consumer wishing to re-schedule an appointment can do this through two API calls - firstly to cancel the existing appointment, then secondly to create a new appointment at the new date/time.
+
 ## Responsibilities in a federated booking context
 
 Where there is a requirement for an implementation to provide an appointment management capability in a federated context, the GP Connect consumer implementation has the responsibility for defining the set of organisations which make up the federation. This consumer configuration will enable the consumer to make API calls to the relevent organisation set of endpoints in order to gain a federated view of appointments.

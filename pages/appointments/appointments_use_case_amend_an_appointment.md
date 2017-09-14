@@ -9,11 +9,11 @@ summary: "Use case for amending an appointment for a patient with a given organi
 
 ## Use Case ##
 
-The typical flow to cancel an appointment is:
+The typical flow to amend an appointment is:
 
  1.	Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
- 3. Choose an `Appointment` resource and update it's `description` and/or `comment` details.
+ 3. Choose an `Appointment` resource and update it's `description`, `comment` or `reason` details.
 
 ## Security ##
 
