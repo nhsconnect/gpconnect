@@ -144,7 +144,7 @@ On the wire a JSON serialised request would look something like the following:
 
 The Provider system SHALL return an error if:
 
-- any appointment details other than the appointment `reason` field are attempted to be updated.
+- any appointment details other than the appointment `reason`, `comment` or `description` are amended, the passed in appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
