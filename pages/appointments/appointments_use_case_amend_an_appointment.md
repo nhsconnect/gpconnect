@@ -65,10 +65,13 @@ Consumer systems:
 - SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
-Only the following data-elements can be modified when performing an appointment amendment.
-- the appointment `reason` MUST be updated to include any updated appointment reason details.
 
-{% include important.html content="If any content other than the appointment reason is updated the server SHALL reject the amendment and return an error." %}
+Only the following data-elements can be modified when performing an appointment amendment:
+- `reason`
+- `description`
+- `comment`
+- `Appointment cancellation reason` extension, which SHALL only be amended when the appointment status is `cancelled`.
+
 
 On the wire a JSON serialised request would look something like the following:
 
@@ -144,7 +147,7 @@ On the wire a JSON serialised request would look something like the following:
 
 The Provider system SHALL return an error if:
 
-- any appointment details other than the appointment `reason`, `comment` or `description` are amended, the passed in appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
+- any appointment details other than the appointment `reason`, `comment`, `description` or `cancellation reason` are amended, the passed in appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
@@ -163,8 +166,8 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
-- SHALL include the `versionId` of the current version of each `Appointment` resource.
-- SHALL have updated the appointment `reason` according to the details supplied in the request.
+- SHALL include the `versionId` of the current version of the `Appointment` resource.
+- SHALL have updated the appointment in accordance with the details supplied in the request.
 
 ```json
 {
