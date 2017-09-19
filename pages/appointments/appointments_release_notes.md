@@ -11,6 +11,9 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body), [Search for free slots](appointments_use_case_search_for_free_slots.html#payload-response-body) - Additional information has been added on how providers should indicate that slots are adjacent and therefore can be used for multi slot appointment booking by consumers.
   - [Design Decisions](appointments_design.html) - API will not provide appointment re-scheduling through a single API interaction.
   - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - where participants are specified in request body, these must include a actor resource reference.
+  - [Amend Appointment](appointments_use_case_amend_an_appointment.html#error-handling) - Uplifted error handling guidanace around modification of appointment resource elements.
+  - [Amend Appointment](appointments_use_case_amend_an_appointment.html#payload-request-body) - Changed specification to clarify which fields may be amended.
+>>>>>>> 662b62797dd08e239bba8774d96fb97bffd387c7
 
 #### 1.0.0-beta.2
   - Removed practitioner participant as a mandatory element within the appointment resource (Page - Book an appointment).
