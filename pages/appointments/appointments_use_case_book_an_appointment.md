@@ -74,6 +74,7 @@ The following data-elements are mandatory (i.e data MUST be present).
 - the `start` and `end` of the appointment.
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
+- An `actor` reference in any supplied `participant`
 
 The following data-elements SHOULD be included when available.
 
