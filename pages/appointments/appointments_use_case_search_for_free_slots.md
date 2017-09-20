@@ -59,7 +59,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 The following data-elements are mandatory (i.e. data MUST be present):
 
-- the `timePeriod` is the time period over which the requested information is to be returned.
+- the `timePeriod` is the time period over which the requested information is to be returned. Note that the provider will return only details of free slots which have a date/time span fully within the time period specified.  
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-schedule-operation-1` profiled `OperationDefinition`, see below:
 
@@ -143,7 +143,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" schedule and slot details.
-- SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall within the requested date range.
+- SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall fully within the requested date range. I.e. free slots which start before timePeriod.start and free slots which end after timePeriod.end SHALL NOT be returned. 
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
 - SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. `Practitioner` is required in the searchset `Bundle` only if available.
  
