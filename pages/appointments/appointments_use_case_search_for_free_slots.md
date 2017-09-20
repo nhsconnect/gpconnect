@@ -23,7 +23,6 @@ This specification describes a single use case. For complete details and backgro
 The Consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously [resolved the logical ID of the organisation or site](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_an_organisation.html) on the server from the ODS Organisation Code or ODS Site Code.
 - SHALL request a maximum date range covering a two week period.
 
 {% include tip.html content="Multiple separate API calls can be made if a larger date range is required however consideration should be given to the load this placed on the Provider system." %}
@@ -35,13 +34,13 @@ The Consumer system:
 #### FHIR Relative Request ####
 
 ```http
-POST /Organization/[id]/$gpc.getschedule
+POST /Schedule/$gpc.getschedule
 ```
 
 #### FHIR Absolute Request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Organization/[id]/$gpc.getschedule
+POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Schedule/$gpc.getschedule
 ```
 
 #### Request Headers ####
@@ -63,8 +62,6 @@ The following data-elements are mandatory (i.e. data MUST be present):
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-schedule-operation-1` profiled `OperationDefinition`, see below:
 
-{% include tip.html content="This is an instance level operation (i.e. is associated with a given resource instance)." %} 
-
 ```xml
 <OperationDefinition xmlns="http://hl7.org/fhir">
 	<id value="getschedule" />
@@ -79,8 +76,8 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
 	<idempotent value="true" />
 	<code value="gpc.getschedule" />
 	<system value="false" />
-	<type value="Organization" />
-	<instance value="true" />
+	<type value="Schedule" />
+	<instance value="false" />
 	<parameter>
 		<name value="timePeriod" />
 		<use value="in" />
@@ -126,7 +123,6 @@ POST /Organization/1/$gpc.getschedule
 The Provider system SHALL return an error if:
 
 - the `timePeriod` is for more than a two week period.
-- the Provider system isn't responsible for maintaining the organisation's appointment book.
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
@@ -325,7 +321,7 @@ parameters.Add("timePeriod", new Period()
 	End = new FhirDateTime("2017-09-15").ToString()
 });
 
-var resource = client.InstanceOperation(new Uri("Organization/1",UriKind.Relative),"getschedule",parameters);
+var resource = client.InstanceOperation(new Uri("Schedule",UriKind.Relative),"gpc.getschedule",parameters);
 
 FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```
@@ -348,7 +344,7 @@ params.addParameter().setName("timePeriod").setValue(timePeriod);
 
 Bundle responseBundle = client
 		.operation()
-		.onInstance(new IdDt("Organization", "1"))
+		.onType(Schedule.class)
 		.named("$gpc.getschedule")
 		.withParameters(params)
 		.returnResourceType(Bundle.class)

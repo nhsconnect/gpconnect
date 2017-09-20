@@ -103,15 +103,12 @@ Provider systems MAY choose to use the value of the requested_scope claim to aut
 | Endpoint | Acceptable values of requested_scope JWT claim |
 |-------- | -----------------------------------|
 | /Patient | patient/*.[read/write] |
-| /Organization <br/> including /Organisation/[id]/$gpc.getschedule | organization/*.[read/write] |
-|/Appointment |patient/*.[read/write] |
+| /Organization | organization/*.[read/write] |
+| /Appointment |patient/*.[read/write] |
 | /Task | organization/*.[read/write] |
 | /Practitioner | organization/*.[read/write] |
 | /Location | organization/*.[read/write] |
-
-
-
-
+| /Schedule/$gpc.getschedule | organization/*.[read/write] |
 
 
 ## External Documents / Policy Documents ##

@@ -15,6 +15,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Amend Appointment](appointments_use_case_amend_an_appointment.html#payload-request-body) - Changed specification to clarify which fields may be amended.
   - [Book an appointment](appointments_use_case_book_an_appointment.html), [Common API Guidance](development_fhir_api_guidance.html#managing-return-content) - Moved and uplifted guidance on resource state from book appointment to common api guidance.
   - [Search for free slots](appointments_use_case_search_for_free_slots.html) - Provider will return only details of free slots which have a date/time span fully within the time period specified
+  - [Search for free slots Use Case](appointments_use_case_search_for_free_slots.html), [Security Guidance](development_api_security_guidance.html), [Operation Guidance](development_fhir_operation_guidance.html) - Change the "gpc.getschedule" operation from a instance of an organization to the schedule endpoint (`POST /Organization/[id]/$gpc.getschedule` to `POST /Schedule/$gpc.getschedule`).
 
 #### 1.0.0-beta.2
   - Removed practitioner participant as a mandatory element within the appointment resource (Page - Book an appointment).
