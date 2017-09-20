@@ -173,7 +173,6 @@ Provider systems:
 - SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
 - SHALL return a `Location` header as described in [FHIR API Guidance](development_fhir_api_guidance.html#create-resource).
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL maintain resource state in accordance with their own internal integrity constraints, including the state of any associated resources, such as `Slots`, `Schedules`, etc.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
 - MAY generate a business identifier to allow an individual appointment (i.e. `Appointment` resource) to be uniquely identifiable.

@@ -13,7 +13,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - where participants are specified in request body, these must include a actor resource reference.
   - [Amend Appointment](appointments_use_case_amend_an_appointment.html#error-handling) - Uplifted error handling guidanace around modification of appointment resource elements.
   - [Amend Appointment](appointments_use_case_amend_an_appointment.html#payload-request-body) - Changed specification to clarify which fields may be amended.
->>>>>>> 662b62797dd08e239bba8774d96fb97bffd387c7
+  - [Book an appointment](appointments_use_case_book_an_appointment.html), [Common API Guidance](development_fhir_api_guidance.html#managing-return-content) - Moved and uplifted guidance on resource state from book appointment to common api guidance.
 
 #### 1.0.0-beta.2
   - Removed practitioner participant as a mandatory element within the appointment resource (Page - Book an appointment).
