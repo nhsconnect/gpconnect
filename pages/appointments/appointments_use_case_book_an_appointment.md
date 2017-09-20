@@ -82,7 +82,6 @@ The following data-elements SHOULD be included when available.
 
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload Response Body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API Use Case page." %}
 
-
 The following guidance around Appointment Resource element should be followed when populating any of the listed fields:
 
 | Resource Element        | Guidance |
@@ -159,6 +158,10 @@ For example:
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+{% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place to prevent misuse of appointment booking outside of the GPConnect API implementation." %}
+
+
 
 ### Request Response ###
 
