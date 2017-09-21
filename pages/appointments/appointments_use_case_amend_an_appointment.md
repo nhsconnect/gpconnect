@@ -167,7 +167,7 @@ Provider systems:
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of the `Appointment` resource.
-- SHALL have updated the appointment in accordance with the details supplied in the request.
+- SHALL have updated the appointment in accordance with the details supplied in the request. For example, the received `reason` element will replace the existing element. I.e. where the existing element contained only `reason.text`, and the received element contained only `reason.coding`, then the resultant `reason` element would contain only the `reason.coding` sub-element.
 
 ```json
 {
