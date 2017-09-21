@@ -69,7 +69,7 @@ Only the following data-elements can be modified when performing an appointment 
 - the appointment `status` MUST be updated to "cancelled".
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details.
 
-{% include important.html content="If any content other than the appointment reason is updated the server SHALL reject the amendment and return an error." %}
+{% include important.html content="If any content other than the appointment cancellation reason or appointment status is updated the server SHALL reject the amendment and return an error." %}
 
 On the wire a JSON serialised request would look something like the following:
 
