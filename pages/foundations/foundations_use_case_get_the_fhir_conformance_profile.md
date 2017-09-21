@@ -98,8 +98,6 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"/>
 		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-slot-1"/>
 		<reference value="https://fhir.nhs.uk/OperationDefinition/gpconnect-schedule-operation-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-getschedule-bundle-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1"/>
 	</profile>
 	<rest>
 		<mode value="server" />
