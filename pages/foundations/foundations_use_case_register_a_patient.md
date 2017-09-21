@@ -138,9 +138,6 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <max value="1" />
         <documentation value="The searchset bundle resource that has been returned in response to the given input parameters" />
         <type value="Bundle" />
-        <profile>
-            <reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1" />
-        </profile>
     </parameter>
 </OperationDefinition>
 ```
@@ -207,7 +204,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
-- SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
+- SHALL return a searchset `Bundle` resource including the following resources 
 	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
 - SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
   - The "registrationStatus" should be populated with the status `Active`
