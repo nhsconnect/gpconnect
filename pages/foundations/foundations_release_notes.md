@@ -7,6 +7,9 @@ permalink: foundations_release_notes.html
 summary: "Release notes for the various versions of the Foundations capability."
 ---
 
+- 1.0.0-rc.3
+  - Additional fields in patient profile which are marked with Must-Support flag 
+
 - 1.0.0-rc.2
   - Updated the system identifier uri's for Patient (https://fhir.nhs.uk/Id/nhs-number), Practitioner (https://fhir.nhs.uk/Id/sds-user-id), Organization (https://fhir.nhs.uk/Id/ods-organization-code) and Location (https://fhir.nhs.uk/Id/ods-site-code), this affects all the "Find" foundation API Use Cases. (Pages - development_fhir_operation_guidance.html, foundations_design.html, foundations_use_case_find_a_patient.html, foundations_use_case_find_a_practitioner.html, foundations_use_case_find_an_organisation.html, foundations_use_case_find_a_location.html)
   - [Read Organization](foundations_use_case_read_an_organisation.html), [Conformance Profile](foundations_use_case_get_the_fhir_conformance_profile.html), [Read Location](foundations_use_case_read_a_location.html), [Register Patient](foundations_use_case_register_a_patient.html) - Updated examples to conform to Care Connect profile uplifts.
