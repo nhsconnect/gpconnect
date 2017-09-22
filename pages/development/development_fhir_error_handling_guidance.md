@@ -23,7 +23,7 @@ The FHIR standard allows for an `OperationOutcome` to be returned for any/all er
 
 ### Identity Validation Errors ####
 
-Provider systems SHALL respond by returning one of the following `OperationOutcome` error codes in the case of a custom operation error (i.e. `$gpc.getcarerecord`, `$gpc.getschedule`, `$gpc.registerpatient`).
+Provider systems SHALL respond by returning one of the following `OperationOutcome` error codes in the case of a custom operation error (i.e. `$gpc.getcarerecord`, `$gpc.registerpatient`).
 
 | HTTP Code | Error Code | Description |
 | --------- |------------|-------------|

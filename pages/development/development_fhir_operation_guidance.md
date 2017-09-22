@@ -29,7 +29,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 	- `operation` for custom Operation API Interactions.
 - Operation
 	- RESTful syle API = [ `create`, `read`, `update`, `delete`, `search` ] + any more specific actions (i.e. `cancel`).
-	- RPC style API = [ `gpc.getcarerecord`, `gpc.getschedule`, `gpc.registerpatient` ]
+	- RPC style API = [ `gpc.getcarerecord`, `gpc.registerpatient` ]
 - Subject = [ `resourceType`, `operationName` ]
 	- Resource Type is the name of a FHIR resource (i.e. `Patient`, `Appointment`, `Organization` etc).
 	- Operation Name is the name of a custom FHIR operation (i.e. `gpc.getcarerecord`)
@@ -61,7 +61,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
-| [Get Organisation Schedule](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getschedule` | `POST` | `[base]/Organization/$gpc.getschedule` |
+| [Get Organisation Schedule](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getschedule` | `POST` | `[base]/Slot` |
 | [Read Appointment](appointments_use_case_read_an_appointment.html)          | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment` | `GET`  | `[base]/Appointment/[id]` |
 | [Create Appointment](appointments_use_case_book_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment` | `POST` | `[base]/Appointment` |
 | [Amend Appointment](appointments_use_case_amend_an_appointment.html)         | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment` | `PUT`  | `[base]/Appointment/[id]` |

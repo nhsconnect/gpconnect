@@ -89,9 +89,6 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 		<reference value="https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"/>
 		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"/>
 		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-slot-1"/>
-		<reference value="https://fhir.nhs.uk/OperationDefinition/gpconnect-schedule-operation-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-getschedule-bundle-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1"/>
 	</profile>
 	<rest>
 		<mode value="server" />
@@ -193,6 +190,27 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			</searchParam>
 		</resource>
 		<resource>
+			<type value="Slot" />
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<versioning value="versioned" />
+			<readHistory value="false" />
+			<updateCreate value="false" />
+			<searchParam>
+				<name value="start" />
+				<type value="date" />
+			</searchParam>
+			<searchParam>
+				<name value="end" />
+				<type value="date" />
+			</searchParam>
+			<searchParam>
+				<name value="fb-type" />
+				<type value="token" />
+			</searchParam>
+		</resource>
+		<resource>
 			<type value="Order" />
 			<interaction>
 				<code value="create" />
@@ -208,12 +226,6 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			<name value="gpc.getcarerecord" />
 			<definition>
 				<reference value="OperationDefinition/gpc.getcarerecord" />
-			</definition>
-		</operation>
-		<operation>
-			<name value="gpc.getschedule" />
-			<definition>
-				<reference value="OperationDefinition/gpc.getschedule" />
 			</definition>
 		</operation>
 		<operation>
