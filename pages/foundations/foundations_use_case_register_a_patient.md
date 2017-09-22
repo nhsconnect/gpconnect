@@ -160,8 +160,17 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
+				"extension": [{
+					"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+							"code": "01"
+						}]
+					}
+				}],
 				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "1234569999"
+				"value": "9476719931"
 			}],
 			"active": true,
 			"name": [{
@@ -247,8 +256,17 @@ Provider systems:
 				}]
 			}],
 			"identifier": [{
+				"extension": [{
+					"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+							"code": "01"
+						}]
+					}
+				}],
 				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "1234569999"
+				"value": "9476719931"
 			}],
 			"name": [{
 				"use": "official",
