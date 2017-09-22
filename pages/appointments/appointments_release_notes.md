@@ -7,6 +7,18 @@ permalink: appointments_release_notes.html
 summary: "Release notes for the various versions of the Appointment Management capability."
 ---
 
+#### 1.0.0-rc.1
+  - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body), [Search for free slots](appointments_use_case_search_for_free_slots.html#payload-response-body) - Additional information has been added on how providers should indicate that slots are adjacent and therefore can be used for multi slot appointment booking by consumers.
+  - [Design Decisions](appointments_design.html) - API will not provide appointment re-scheduling through a single API interaction.
+  - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - where participants are specified in request body, these must include a actor resource reference.
+  - [Amend Appointment](appointments_use_case_amend_an_appointment.html#error-handling) - Uplifted error handling guidanace around modification of appointment resource elements.
+  - [Amend Appointment](appointments_use_case_amend_an_appointment.html#payload-request-body) - Changed specification to clarify which fields may be amended.
+  - [Book an appointment](appointments_use_case_book_an_appointment.html), [Common API Guidance](development_fhir_api_guidance.html#managing-return-content) - Moved and uplifted guidance on resource state from book appointment to common api guidance.
+  - [Search for free slots](appointments_use_case_search_for_free_slots.html) - Provider will return only details of free slots which have a date/time span fully within the time period specified
+  - [Book an appointment](appointments_use_case_book_an_appointment.html#error-handling) - Added guidance around providers right to implement business rules to prevent misuse of the appointment booking api.
+  - [Amend an appoinment](appointments_use_case_amend_an_appointment.html) - Clarity on use of PUT verb and the effect on the resultant state of the `Appointment.reason` element.
+  - [Search for free slots Use Case](appointments_use_case_search_for_free_slots.html), [Appointment Management Resources](datalibraryappointment.html#search-for-free-slots) - Changed "Search for free slots" from a fhir operation to restful call.
+
 #### 1.0.0-beta.2
   - Removed practitioner participant as a mandatory element within the appointment resource (Page - Book an appointment).
   - Added location participant as a mandatory element within the appointment resource (Page - Book an appointment).
@@ -33,3 +45,4 @@ summary: "Release notes for the various versions of the Appointment Management c
   
 #### 1.0.0-alpha.1
   - Initial release for feedback/comments as part of the late May 2016 release.
+  

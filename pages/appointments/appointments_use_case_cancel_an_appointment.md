@@ -26,8 +26,9 @@ The typical flow to cancel an appointment is:
 
 The Consumer system:
 
-- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
-- SHALL have previously found the appointment id using Retrieve a patient's appointments.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously found the appointment id using [Retrieve a patient's appointments](https://nhsconnect.github.io/gpconnect/appointments_use_case_retrieve_a_patients_appointments.html).
 
 ## API Usage ##
 
@@ -68,7 +69,7 @@ Only the following data-elements can be modified when performing an appointment 
 - the appointment `status` MUST be updated to "cancelled".
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details.
 
-{% include important.html content="If any content other than the appointment reason is updated the server SHALL reject the amendment and return an error." %}
+{% include important.html content="If any content other than the appointment cancellation reason or appointment status is updated the server SHALL reject the amendment and return an error." %}
 
 On the wire a JSON serialised request would look something like the following:
 
@@ -132,6 +133,13 @@ On the wire a JSON serialised request would look something like the following:
 			"display": "Dr. Bob Smith"
 		},
 		"required": "required",
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
 		"status": "accepted"
 	}]
 }
@@ -224,6 +232,13 @@ Provider systems:
 			"display": "Dr. Bob Smith"
 		},
 		"required": "required",
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
 		"status": "accepted"
 	}]
 }

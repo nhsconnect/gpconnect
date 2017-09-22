@@ -26,7 +26,8 @@ The typical flow to book an appointment is:
 
 The Consumer system:
 
-- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
 - SHALL have previously obtained the details for one or more free slots that are to be booked.
 - SHALL have previously performed a GP Connect `Find a Patient` request to obtain the logical identifier for the patient on the organisation's fhir server.
 
@@ -68,18 +69,18 @@ Consumer systems:
 
 The following data-elements are mandatory (i.e data MUST be present).
 
-- the patient `participant` of the appointment.
-- the primary practitioner `participant` of the appointment.
+- a patient `participant` of the appointment.
+- a location `participant` of the appointment.
 - the `start` and `end` of the appointment.
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
+- An `actor` reference in any supplied `participant`
 
 The following data-elements SHOULD be included when available.
 
 - a practitioner `participant` of the appointment.
 
-{% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation)." %}
-
+{% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload Response Body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API Use Case page." %}
 
 The following guidance around Appointment Resource element should be followed when populating any of the listed fields:
 
@@ -134,18 +135,10 @@ On the wire a JSON serialised request would look something like the following:
 		"status": "accepted"
 	},
 	{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "PPRF"
-			}],
-			"text": "Primary Performer"
-		}],
 		"actor": {
-			"reference": "Practitioner/100",
-			"display": "Dr. Bob Smith"
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
 		},
-		"required": "required",
 		"status": "accepted"
 	}]
 }
@@ -166,6 +159,10 @@ Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DST
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
+{% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place to prevent misuse of appointment booking outside of the GPConnect API implementation." %}
+
+
+
 ### Request Response ###
 
 #### Response Headers ####
@@ -179,7 +176,6 @@ Provider systems:
 - SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
 - SHALL return a `Location` header as described in [FHIR API Guidance](development_fhir_api_guidance.html#create-resource).
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL maintain resource state in accordance with their own internal integrity constraints, including the state of any associated resources, such as `Slots`, `Schedules`, etc.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
 - MAY generate a business identifier to allow an individual appointment (i.e. `Appointment` resource) to be uniquely identifiable.
@@ -240,6 +236,13 @@ Provider systems:
 			"display": "Dr. Bob Smith"
 		},
 		"required": "required",
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
 		"status": "accepted"
 	}]
 }

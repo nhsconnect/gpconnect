@@ -415,6 +415,16 @@ Providers SHALL use the following HTTP Header to ensure that no intermediaries c
 
 ### [Managing Return Content](https://www.hl7.org/fhir/DSTU2/http.html#return) ###
 
+Provider SHALL maintain resource state inline with the underlying system, including the state of any associated resources.
+
+For example: 
+
+_If the practitioner associated with a schedule is changed on the providers system, such as when a Locum is standing in for a regular doctor, this should be reflected in all associated resources to that schedule. The diagram below shows the expected change to the appointment resources for this scenario._
+
+_When the appointment is booked, the appointment resource is associated with a slot resource and references the practitioner resource associated with the schedule in which the slot resides. If the schedule is then updated within the provider system to reflect the change of practitioner from the original doctor to a Locum doctor then the practitioner reference with the schedule will be updated. If a consumer then performs a read of the appointment the returned appointment resource should reflected the updated practitioner on the schedule._
+
+![Diagram of reflection of state](images/development/Reseource Reflection of state.png)
+
 Severs SHALL default to the `return=representation` behaviour (i.e. returning the entire resource) for interactions that create or update resources.
 
 Servers SHOULD honour a `return=minimal` or `return=representation` preference indicated in the `Prefer` request header, if present.

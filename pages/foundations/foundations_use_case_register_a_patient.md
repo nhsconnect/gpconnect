@@ -26,8 +26,9 @@ This specification describes a single use case. For complete details and backgro
 
 The Consumer system:
 
-- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
-- SHALL have previously ascertained that the patient isn't already registered at the provider organisation.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+
 
 ## API Usage ##
 
@@ -80,7 +81,7 @@ The following data-elements are mandatory (i.e. data SHALL be present):
 
 - A `registerPatient` patient resource profiled to `CareConnect-GPC-Patient-1`. This is the patient who you want to be registered. Within this resource: 
 	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
-	- Where the gender and name are available these SHALL be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
+	- Where the gender, name, birth date or deceased date are available these SHALL be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
     - The consumer SHALL NOT populate the "registrationDetails" extension within the patient resource.
 	
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
@@ -138,7 +139,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <documentation value="The searchset bundle resource that has been returned in response to the given input parameters" />
         <type value="Bundle" />
         <profile>
-            <reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-registerpatient-bundle-1" />
+            <reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-searchset-bundle-1" />
         </profile>
     </parameter>
 </OperationDefinition>
@@ -159,8 +160,17 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
+				"extension": [{
+					"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+							"code": "01"
+						}]
+					}
+				}],
 				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "1234569999"
+				"value": "9476719931"
 			}],
 			"active": true,
 			"name": [{
@@ -209,7 +219,6 @@ Provider systems:
 - SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
 	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
 - SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
-  - The "registrationStatus" should be populated with the status `Active`
   - The "registrationType" should be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type should be use and more detail around the specific type of registration can be added using the "text" element of the CodeableConcept.
 
 ```json
@@ -244,20 +253,20 @@ Provider systems:
 							"code": "T"
 						}]
 					}
-				},
-				{
-					"url": "registrationStatus",
-					"valueCodeableConcept": {
-						"coding": [{
-							"system": "https://fhir.nhs.uk/CareConnect-RegistrationStatus-1",
-							"code": "A"
-						}]
-					}
 				}]
 			}],
 			"identifier": [{
+				"extension": [{
+					"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+							"code": "01"
+						}]
+					}
+				}],
 				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "1234569999"
+				"value": "9476719931"
 			}],
 			"name": [{
 				"use": "official",

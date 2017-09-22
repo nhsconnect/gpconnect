@@ -22,7 +22,9 @@ This specification describes a single use cases. For complete details and backgr
 
 The Consumer system:
 
-- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS Number
 
 ## API Usage ##
 
@@ -53,7 +55,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Ap
 Providers SHALL support searching within this compartment by `start` date/time, for example:
 
 ```http
-GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{start_prefix}end_date]}
+GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{search_prefix}end_date]}
 ```
 
 #### Request Headers ####
@@ -78,6 +80,11 @@ Provider systems:
 - SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+For example:
+
+- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details can be returned in the diagnostics element.
+
 
 ### Request Response ###
 

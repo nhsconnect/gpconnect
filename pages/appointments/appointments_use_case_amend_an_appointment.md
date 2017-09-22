@@ -9,11 +9,11 @@ summary: "Use case for amending an appointment for a patient with a given organi
 
 ## Use Case ##
 
-The typical flow to cancel an appointment is:
+The typical flow to amend an appointment is:
 
  1.	Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
- 3. Choose an `Appointment` resource and update it's `description` and/or `comment` details.
+ 3. Choose an `Appointment` resource and update it's `description`, `comment` or `reason` details.
 
 ## Security ##
 
@@ -26,8 +26,9 @@ The typical flow to cancel an appointment is:
 
 The Consumer system:
 
-- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
-- SHALL have previously found the appointment id using Retrieve a patient's appointments.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously found the appointment id using [Retrieve a patient's appointments](https://nhsconnect.github.io/gpconnect/appointments_use_case_retrieve_a_patients_appointments.html).
 
 ## API Usage ##
 
@@ -64,10 +65,13 @@ Consumer systems:
 - SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
-Only the following data-elements can be modified when performing an appointment amendment.
-- the appointment `reason` MUST be updated to include any updated appointment reason details.
 
-{% include important.html content="If any content other than the appointment reason is updated the server SHALL reject the amendment and return an error." %}
+Only the following data-elements can be modified when performing an appointment amendment:
+- `reason`
+- `description`
+- `comment`
+- `Appointment cancellation reason` extension, which SHALL only be amended when the appointment status is `cancelled`.
+
 
 On the wire a JSON serialised request would look something like the following:
 
@@ -128,6 +132,13 @@ On the wire a JSON serialised request would look something like the following:
 		},
 		"required": "required",
 		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
+		"status": "accepted"
 	}]
 }
 ```
@@ -136,7 +147,7 @@ On the wire a JSON serialised request would look something like the following:
 
 The Provider system SHALL return an error if:
 
-- any appointment details other than the appointment `reason` field are attempted to be updated.
+- any appointment details other than the appointment `reason`, `comment`, `description` or `cancellation reason` are amended, the passed in appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
@@ -155,8 +166,8 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
-- SHALL include the `versionId` of the current version of each `Appointment` resource.
-- SHALL have updated the appointment `reason` inline with the details supplied in the request.
+- SHALL include the `versionId` of the current version of the `Appointment` resource.
+- SHALL have updated the appointment in accordance with the details supplied in the request. For example, the received `reason` element will replace the existing element. I.e. where the existing element contained only `reason.text`, and the received element contained only `reason.coding`, then the resultant `reason` element would contain only the `reason.coding` sub-element.
 
 ```json
 {
@@ -214,6 +225,13 @@ Provider systems:
 			"display": "Dr. Bob Smith"
 		},
 		"required": "required",
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
 		"status": "accepted"
 	}]
 }

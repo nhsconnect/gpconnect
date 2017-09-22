@@ -1,10 +1,10 @@
 ---
-title: Search for free slots at an organisation
+title: Search for free slots
 keywords: appointments, use case, search, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_search_for_free_slots.html
-summary: "Use case for searching for free slots within a date range at an organisation."
+summary: "Use case for searching for free slots within a date range."
 ---
 
 ## Use Case ##
@@ -22,7 +22,7 @@ This specification describes a single use case. For complete details and backgro
 
 The Consumer system:
 
-- SHALL have previously [resolved the organisation's FHIR Base URL](integration_spine_directory_services.html) using an ODS Code, ODS Site Code or other organisational business identifier.
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 - SHALL request a maximum date range covering a two week period.
 
 {% include tip.html content="Multiple separate API calls can be made if a larger date range is required however consideration should be given to the load this placed on the Provider system." %}
@@ -34,13 +34,24 @@ The Consumer system:
 #### FHIR Relative Request ####
 
 ```http
-POST /Organization/[id]/$gpc.getschedule
+GET /Slot?[start={search_prefix}start_date]
+          [&end=[{search_prefix}end_date]
+          [&fb-type=free]
+          [&_include=Slot:schedule]
+          {&_include:recurse=Schedule:actor:Practitioner}
+          {&_include:recurse=Schedule:actor:Location}
 ```
 
 #### FHIR Absolute Request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Organization/[id]/$gpc.getschedule
+GET https://[proxy_server]/https://[provider_server]/[fhir_base]
+          /Slot?[start={search_prefix}start_date]
+          [&end=[{search_prefix}end_date]
+          [&fb-type=free]
+          [&_include=Slot:schedule]
+          {&_include:recurse=Schedule:actor:Practitioner}
+          {&_include:recurse=Schedule:actor:Location}
 ```
 
 #### Request Headers ####
@@ -56,78 +67,35 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The following data-elements are mandatory (i.e. data MUST be present):
+Consumers SHALL include the following query parameters:
 
-- the `timePeriod` is the time period over which the requested information is to be returned.
+- `start` and `end` define the time period over which the requested information is to be returned. The provider will return only details of free slots which have a date and time span fully within the time period specified.  
 
-The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-schedule-operation-1` profiled `OperationDefinition`, see below:
+- `fb-type=free` specifies that only free slots will be returned. Note: the SlotStatus value of `free` SHALL be specified, other SlotStatus values are not permitted.
+- `_include=Slot:schedule` specifies that associated Schedule resources are returned.
 
-{% include tip.html content="This is an instance level operation (i.e. is associated with a given resource instance)." %} 
+The following search parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
 
-```xml
-<OperationDefinition xmlns="http://hl7.org/fhir">
-	<id value="getschedule" />
-	<version value="1.0.0-beta.1" />
-	<name value="Get Schedule &amp; Slots" />
-	<status value="draft" />
-	<kind value="operation" />
-	<experimental value="true" />
-	<publisher value="NHS Digital" />
-	<date value="2016-08-01" />
-	<description value="Get The Free Schedule &amp; Slots For A Given Organization." />
-	<idempotent value="true" />
-	<code value="gpc.getschedule" />
-	<system value="false" />
-	<type value="Organization" />
-	<instance value="true" />
-	<parameter>
-		<name value="timePeriod" />
-		<use value="in" />
-		<min value="1" />
-		<max value="1" />
-		<documentation value="The time period for the requested information." />
-		<type value="Period" />
-	</parameter>
-	<parameter>
-		<name value="response" />
-		<use value="out" />
-		<min value="1" />
-		<max value="1" />
-		<documentation value="A searchset bundle containing the free slots with associated schedule and organisational details for the queried organisation and site." />
-		<type value="Bundle" />
-	</parameter>
-</OperationDefinition>
-```
+- _include:recurse=Schedule:actor:Practitioner
+- _include:recurse=Schedule:actor:Location
 
-{% include important.html content="Provider systems SHALL only expose `Schedule`, `Slot` and associated resources for organisations whose appointment book they're responsible for maintaining." %}
 
-On the wire a JSON serialised `$gpc.getschedule` request would look something like the following:
+On the wire a `Search for free slots` request would look something like the following:
 
 ```http
-POST /Organization/1/$gpc.getschedule
+GET /Slot?start=ge22-09-2017&end=le06-10-2017&Slot.fh-type=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
 ```
 
-```json
-{
-	"resourceType": "Parameters",
-	"parameter": [{
-		"name": "timePeriod",
-		"valuePeriod": {
-			"start": "2016-08-08",
-			"end": "2016-08-22"
-		}
-	}]
-}
-```
 
 #### Error Handling ####
 
 The Provider system SHALL return an error if:
 
-- the `timePeriod` is for more than a two week period.
-- the Provider system isn't responsible for maintaining the organisation's appointment book.
+- the time period defined by `start` and `end` parameters is greater than a two week period.
+- the `fb-type` parameter is absent or is present with a value other than `free`
+- the `_include=Slot:schedule` is absent
 
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -141,13 +109,20 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" schedule and slot details.
-- SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall within the requested date range.
-- SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
-- SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details for the retrieved schedule(s) in a searchset `Bundle`. `Practitioner` is required in the searchset `Bundle` only if available.
+- SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" slot details.
+- SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall fully within the requested date range. I.e. free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned. 
+- SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
  
   The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` Resources related to the returned free `Slot` Resources. If no free slots are returned for the requested time period then no Resources should be returned within the response `Bundle`.
 
+- SHALL include `Practitioner` and `Location` resources associated with Schedule resources in the response Bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` parameters.
+
+- SHALL manage slot `start` and `end` times to indicate which slots can be considered `adjacent` and therefore be booked against a single appointment as part of a `multi slot appointment booking`. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
+
+  To allow consumers to implement multi slot appointment booking, the consumer needs to be able to identify which slots can be considered adjacent. A provider SHALL indicate which slots are adjacent or not adjacent using the following rules:
+
+  * To indicate two slots (Slot A & Slot B) are adjacent, the two slots SHALL reference the same schedule resource and the ```start``` time of ```Slot B``` SHALL equals ```end``` time of ```Slot A```.
+  * If the slots do not conform to the rule above, either the slots do not link to the same schedule or the start time of one slot is not the same as the end time of the previous slot then these slots SHALL not be considered adjacent.
 
 ```json
 {
@@ -311,14 +286,7 @@ Provider systems:
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
 
-var parameters = new Parameters();
-parameters.Add("timePeriod", new Period()
-{
-	Start = new FhirDateTime("2017-09-07").ToString(),
-	End = new FhirDateTime("2017-09-15").ToString()
-});
-
-var resource = client.InstanceOperation(new Uri("Organization/1",UriKind.Relative),"getschedule",parameters);
+[ to add ]
 
 FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```
@@ -332,20 +300,7 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 FhirContext ctx = FhirContext.forDstu2();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
 
-PeriodDt timePeriod = new PeriodDt();
-timePeriod.setStart(new DateTimeDt("2017-09-07"));
-timePeriod.setEnd(new DateTimeDt("2017-09-15"));
-
-Parameters params = new Parameters();
-params.addParameter().setName("timePeriod").setValue(timePeriod);
-
-Bundle responseBundle = client
-		.operation()
-		.onInstance(new IdDt("Organization", "1"))
-		.named("$gpc.getschedule")
-		.withParameters(params)
-		.returnResourceType(Bundle.class)
-		.execute();
+[ to add ]
 
 System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
 ```

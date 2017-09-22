@@ -17,6 +17,12 @@ This specification describes a single use cases. For complete details and backgr
 - GP Connect utilises TLS Mutual Authentication for system level authorization.
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
 
+## Consumer ##
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+
 ## API Usage ##
 
 ### Request Operation ###
@@ -131,6 +137,13 @@ Provider systems:
 			"display": "Dr. Bob Smith"
 		},
 		"required": "required",
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Location/32",
+			"display": "Leeds GP Clinic"
+		},
 		"status": "accepted"
 	}]
 }
