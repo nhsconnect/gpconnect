@@ -34,23 +34,24 @@ The Consumer system:
 #### FHIR Relative Request ####
 
 ```http
-GET /Slot/?start=[{search_prefix}start_date]
-          &end=[{search_prefix}end_date]
-          &Slot.freeBusyType=free
-          &_include=Slot:schedule
-          &_include:recurse=Schedule:actor:Practitioner
-          &_include:recurse=Schedule:actor:Location
+GET /Slot?[start={search_prefix}start_date]
+          [&end=[{search_prefix}end_date]
+          [&fb-type=free]
+          [&_include=Slot:schedule]
+          {&_include:recurse=Schedule:actor:Practitioner}
+          {&_include:recurse=Schedule:actor:Location}
 ```
 
 #### FHIR Absolute Request ####
 
 ```http
-GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Slot/?start=[{search_prefix}start_date]
-          &end=[{search_prefix}end_date]
-          &Slot.freeBusyType=free
-          &_include=Slot:schedule
-          &_include:recurse=Schedule:actor:Practitioner
-          &_include:recurse=Schedule:actor:Location
+GET https://[proxy_server]/https://[provider_server]/[fhir_base]
+          /Slot?[start={search_prefix}start_date]
+          [&end=[{search_prefix}end_date]
+          [&fb-type=free]
+          [&_include=Slot:schedule]
+          {&_include:recurse=Schedule:actor:Practitioner}
+          {&_include:recurse=Schedule:actor:Location}
 ```
 
 #### Request Headers ####
@@ -66,14 +67,14 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The following search paramters are mandatory (i.e. these querystring elements MUST be present):
+The following search parameters are mandatory (i.e. these querystring elements MUST be present):
 
-- the `start` and `end` paramters define the time period over which the requested information is to be returned. Note that the provider will return only details of free slots which have a date/time span fully within the time period specified.  
+- the `start` and `end` parameters define the time period over which the requested information is to be returned. Note that the provider will return only details of free slots which have a date/time span fully within the time period specified.  
 
-- the Slot.freeBusyType=free is considered a fixed query parameter, and absense of this will result in an OperationOutcome error being returned.
-- &_include=Slot:schedule  (because there is no Schedule endpoint)
+- `fb-type=free` (the parameter value being fixed)
+- `&_include=Slot:schedule`  
 
-The following search paramters are strongly recommended to reduce the number of API calls required to prepare an appointment booking:
+The following search parameters are strongly recommended to reduce the number of API calls required to prepare an appointment booking:
 
 - _include:recurse=Schedule:actor:Practitioner
 - _include:recurse=Schedule:actor:Location
@@ -85,7 +86,7 @@ The following search paramters are strongly recommended to reduce the number of 
 On the wire a `Search for free slots` request would look something like the following:
 
 ```http
-GET /Slot/?start=ge22-09-2017&end=le06-19-2017&Slot.freeBusyType=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+GET /Slot?start=ge22-09-2017&end=le06-10-2017&Slot.fh=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
 ```
 
 
@@ -93,7 +94,9 @@ GET /Slot/?start=ge22-09-2017&end=le06-19-2017&Slot.freeBusyType=free&_include=S
 
 The Provider system SHALL return an error if:
 
-- the time period defined by `start` and `end` paramters is greater than a two week period.
+- the time period defined by `start` and `end` parameters is greater than a two week period.
+- the `fb-type` parameter is absent or is present with a value other than `free`
+- the `_include=Slot:schedule` search result parameter is absent
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
