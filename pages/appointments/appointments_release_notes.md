@@ -18,7 +18,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Search for free slots Use Case](appointments_use_case_search_for_free_slots.html), [Security Guidance](development_api_security_guidance.html), [Operation Guidance](development_fhir_operation_guidance.html) - Change the "gpc.getschedule" operation from a instance of an organization to the schedule endpoint (`POST /Organization/[id]/$gpc.getschedule` to `POST /Schedule/$gpc.getschedule`).
   - [Book an appointment](appointments_use_case_book_an_appointment.html#error-handling) - Added guidance around providers right to implement business rules to prevent misuse of the appointment booking api.
   - [Amend an appoinment](appointments_use_case_amend_an_appointment.html) - Clarity on use of PUT verb and the effect on the resultant state of the `Appointment.reason` element.
-  - [Appointment Management Resources](datalibraryappointment.html#search-for-free-slots) - Changed "Search for free slots" response to use standard fhir bundle resource rather than the "gpconnect-getschedule-bundle-1" profiled bundle resource.
+  - [Appointment Management Resources](datalibraryappointment.html#search-for-free-slots) - Changed "Search for free slots" response to use "gpconnect-searchset-bundle-1" profiled bundle resource rather than the "gpconnect-getschedule-bundle-1" profiled bundle resource.
 
 #### 1.0.0-beta.2
   - Removed practitioner participant as a mandatory element within the appointment resource (Page - Book an appointment).

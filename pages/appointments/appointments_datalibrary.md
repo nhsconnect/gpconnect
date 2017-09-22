@@ -14,10 +14,10 @@ The following profiled FHIR resources are used in the current version of the App
 ---
 ## ***Search for free slots*** ##
 ### Request ###
-* [gpconnect-schedule-operation-1](https://fhir-test.nhs.uk/OperationDefinition/gpconnect-schedule-operation-1) (based on [FHIR Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html))
+N/A - No fhir resource is sent within the request
 
 ### Response ###
-* [FHIR Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html)
+* [gpconnect-searchset-bundle-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-searchset-bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html))
   * [gpconnect-slot-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-slot-1) (based on [FHIR Slot](https://www.hl7.org/fhir/DSTU2/slot.html))
   * [gpconnect-schedule-1](https://fhir-test.nhs.uk/StructureDefinition/gpconnect-schedule-1) (based on [FHIR Schedule](https://www.hl7.org/fhir/DSTU2/schedule.html))
   * [CareConnect-GPC-Practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))

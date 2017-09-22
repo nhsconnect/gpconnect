@@ -10,7 +10,7 @@ summary: "Release notes for the various versions of the Foundations capability."
 - 1.0.0-rc.3
   - Additional fields in patient profile which are marked with Must-Support flag 
   - Added design decision to clarify how GP practice organisations and practice sites are represented in the FHIR Organization and Location resources.
-  - [Foundation Resources](datalibraryfoundation.html#register-a-patient), [Register a patient](foundations_use_case_register_a_patient.html#payload-response-body) - Changed "Register a patient" response to use standard fhir bundle resource rather than the "gpconnect-registerpatient-bundle-1" profiled bundle resource.
+  - [Foundation Resources](datalibraryfoundation.html#register-a-patient), [Register a patient](foundations_use_case_register_a_patient.html#payload-response-body) - Changed "Register a patient" response to use "gpconnect-searchset-bundle-1" profiled bundle resource rather than the "gpconnect-registerpatient-bundle-1" profiled bundle resource.
   - [Register a Patient](foundations_use_case_register_a_patient.html#payload-response-body) - registrationStatus extension element has been removed. Active status can be indicated through Patient.active element.
 
 - 1.0.0-rc.2
