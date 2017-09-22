@@ -86,7 +86,7 @@ The following search parameters are strongly recommended to reduce the number of
 On the wire a `Search for free slots` request would look something like the following:
 
 ```http
-GET /Slot?start=ge22-09-2017&end=le06-10-2017&Slot.fh=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+GET /Slot?start=ge22-09-2017&end=le06-10-2017&Slot.fh-type=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
 ```
 
 
