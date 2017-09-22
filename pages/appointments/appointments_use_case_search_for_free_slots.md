@@ -83,7 +83,9 @@ The following search paramters are strongly recommended to reduce the number of 
 {% include important.html content="Provider systems SHALL only expose `Schedule`, `Slot` and associated resources for organisations whose appointment book they're responsible for maintaining." %}
 
 On the wire a `Search for free slots` request would look something like the following:
-```GET /Slot/?start=ge22-09-2017&end=le06-19-2017&Slot.freeBusyType=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+
+```http
+GET /Slot/?start=ge22-09-2017&end=le06-19-2017&Slot.freeBusyType=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
 ```
 
 
