@@ -1,10 +1,10 @@
 ---
-title: Search for free slots at an organisation
+title: Search for free slots
 keywords: appointments, use case, search, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_search_for_free_slots.html
-summary: "Use case for searching for free slots within a date range at an organisation."
+summary: "Use case for searching for free slots within a date range."
 ---
 
 ## Use Case ##
@@ -67,21 +67,18 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The following search parameters are mandatory (i.e. these querystring elements MUST be present):
+Consumers SHALL include the following query parameters:
 
-- the `start` and `end` parameters define the time period over which the requested information is to be returned. Note that the provider will return only details of free slots which have a date/time span fully within the time period specified.  
+- `start` and `end` define the time period over which the requested information is to be returned. The provider will return only details of free slots which have a date and time span fully within the time period specified.  
 
-- `fb-type=free` (the parameter value being fixed)
-- `&_include=Slot:schedule`  
+- `fb-type=free` specifies that only free slots will be returned. Note: the SlotStatus value of `free` SHALL be specified, other SlotStatus values are not permitted.
+- `_include=Slot:schedule` specifies that associated Schedule resources are returned.
 
-The following search parameters are strongly recommended to reduce the number of API calls required to prepare an appointment booking:
+The following search parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
 
 - _include:recurse=Schedule:actor:Practitioner
 - _include:recurse=Schedule:actor:Location
 
-
-
-{% include important.html content="Provider systems SHALL only expose `Schedule`, `Slot` and associated resources for organisations whose appointment book they're responsible for maintaining." %}
 
 On the wire a `Search for free slots` request would look something like the following:
 
@@ -96,7 +93,7 @@ The Provider system SHALL return an error if:
 
 - the time period defined by `start` and `end` parameters is greater than a two week period.
 - the `fb-type` parameter is absent or is present with a value other than `free`
-- the `_include=Slot:schedule` search result parameter is absent
+- the `_include=Slot:schedule` is absent
 
 Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
@@ -114,9 +111,11 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of a "free" slot details.
 - SHALL include the free `Slot` details for the organisation which have a `freeBusyType` status of "free" and fall fully within the requested date range. I.e. free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned. 
-- SHALL include the `Schedule`, `Slot`, `Organization` and `Location` details associated with the returned `Slot`s as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
+- SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
  
   The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` Resources related to the returned free `Slot` Resources. If no free slots are returned for the requested time period then no Resources should be returned within the response `Bundle`.
+
+- SHALL include `Practitioner` and `Location` resources associated with Schedule resources in the response Bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` parameters.
 
 - SHALL manage slot `start` and `end` times to indicate which slots can be considered `adjacent` and therefore be booked against a single appointment as part of a `multi slot appointment booking`. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
 
@@ -300,10 +299,6 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```java
 FhirContext ctx = FhirContext.forDstu2();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
-
-PeriodDt timePeriod = new PeriodDt();
-timePeriod.setStart(new DateTimeDt("2017-09-07"));
-timePeriod.setEnd(new DateTimeDt("2017-09-15"));
 
 [ to add ]
 
