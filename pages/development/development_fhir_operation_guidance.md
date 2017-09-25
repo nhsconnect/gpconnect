@@ -40,13 +40,13 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 |---------------------------|---------------------------| ----------|---------------------|
 | [Read Metadata](foundations_use_case_get_the_fhir_conformance_profile.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata` | `GET`  | `[base]/metadata` |
 | [Read Patient](foundations_use_case_read_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient` | `GET`  | `[base]/Patient/[id]` |
-| [Patient Search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient` | `GET`  | <code>[base]/Patient?identifier=[nhsNumber]&#124;https://fhir.nhs.uk/Id/nhs-number</code> |
+| [Patient Search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient` | `GET`  | <code>[base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number&#124;[nhsNumber]</code> |
 | [Read Practitioner](foundations_use_case_read_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner` | `GET`  | `[base]/Practitioner/[id]` |
-| [Practitioner Search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner` | `GET`  | <code>[base]/Practitioner?identifier=[sdsUserID]&#124;https://fhir.nhs.uk/Id/sds-user-id</code> |
+| [Practitioner Search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner` | `GET`  | <code>[base]/Practitioner?identifier=https://fhir.nhs.uk/Id/sds-user-id&#124;[sdsUserID]</code> |
 | [Read Organization](foundations_use_case_read_an_organization.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization` | `GET`  | `[base]/Organization/[id]` |
-| [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization` | `GET`  | <code>[base]/Organization?identifier=[odsCode]&#124;https://fhir.nhs.uk/Id/ods-organization-code</code> |
+| [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization` | `GET`  | <code>[base]/Organization?identifier=https://fhir.nhs.uk/Id/ods-organization-code&#124;[odsCode]</code> |
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location` | `GET`  | `[base]/Location/[id]` |
-| [Location Search](foundations_use_case_find_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:location` | `GET`  | <code>[base]/Location?identifier=[odsSiteCode]&#124;https://fhir.nhs.uk/Id/ods-site-code</code> <br/>&nbsp;<br/> <code>[base]/Location?identifier=[odsCode]&#124;https://fhir.nhs.uk/Id/ods-organization-code</code> |
+| [Location Search](foundations_use_case_find_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:location` | `GET`  | <code>[base]/Location?identifier=https://fhir.nhs.uk/Id/ods-site-code&#124;[odsSiteCode]</code> |
 | [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient` | `POST`  | `[base]/Patient/$gpc.registerpatient` |
 
 
