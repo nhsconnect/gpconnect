@@ -9,8 +9,9 @@ summary: "Release notes for the various versions of the GP Connect overview."
 
 #### GP Connect 1.0.0-beta.1
 
-- Added additional information around versioning (pages - development_fhir_versioning_specification_guidance.html, development_fhir_versioning_capability_guidance.html, development_fhir_versioning_provider_guidance.html, development_fhir_versioning_consumer_guidance.html)
-- Updated Security guidance around the protocols suppliers should implement (Page - development_api_security_guidance.html).
+- [Specification Versioning Guidance](development_fhir_versioning_specification_guidance.html), [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html), [Provider API Versioning Guidance](development_fhir_versioning_provider_guidance.html), [Consumer Versioning Guidance](development_fhir_versioning_consumer_guidance.html) - Added additional information around versioning.
+- [Security Guidance](development_api_security_guidance.html) - Updated Security guidance around the protocols suppliers should implement.
+- [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) - Updated JWT spcification examples to use the new profile and valuesets.
 
 
 #### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)

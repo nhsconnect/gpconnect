@@ -162,7 +162,7 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 		"resourceType": "Organization",
 		"id": "[OrganizationID]",
 		"identifier": [{
-			"system": "http://fhir.nhs.net/Id/ods-organization-code",
+			"system": "https://fhir.nhs.uk/Id/ods-organization-code",
 			"value": "[ODSCode]"
 		}],
 		"name": "Requesting Organisation Name"
@@ -267,7 +267,7 @@ var requesting_organization = new Organization {
 	Name = "Requesting Organisation Name",
 	Identifier =
 	{
-		new Identifier("http://fhir.nhs.net/Id/ods-organization-code", "[ODSCode]")
+		new Identifier("https://fhir.nhs.uk/Id/ods-organization-code", "[ODSCode]")
 	}
 };
 
@@ -297,7 +297,7 @@ var requesting_identity = new Practitioner {
 var subject_patient = new Patient {
 	Identifier =
 	{
-		new Identifier("http://fhir.nhs.net/Id/nhs-number","[NHSNumber]")
+		new Identifier("https://fhir.nhs.uk/Id/nhs-number","[NHSNumber]")
 	}
 };
 
