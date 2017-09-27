@@ -74,7 +74,7 @@ Consumers SHALL include the following query parameters:
 - `fb-type=free` specifies that only free slots will be returned. Note: the SlotStatus value of `free` SHALL be specified, other SlotStatus values are not permitted.
 - `_include=Slot:schedule` specifies that associated Schedule resources are returned.
 
-The following search parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
+The following parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
 
 - _include:recurse=Schedule:actor:Practitioner
 - _include:recurse=Schedule:actor:Location
