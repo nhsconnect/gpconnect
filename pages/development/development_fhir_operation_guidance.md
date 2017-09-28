@@ -61,7 +61,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
-| [Get Organisation Schedule](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getschedule` | `POST` | `[base]/Slot` |
+| [Search for free slots](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:slot` | `POST` | `[base]/Slot` |
 | [Read Appointment](appointments_use_case_read_an_appointment.html)          | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment` | `GET`  | `[base]/Appointment/[id]` |
 | [Create Appointment](appointments_use_case_book_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment` | `POST` | `[base]/Appointment` |
 | [Amend Appointment](appointments_use_case_amend_an_appointment.html)         | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment` | `PUT`  | `[base]/Appointment/[id]` |
