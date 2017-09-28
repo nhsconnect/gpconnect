@@ -191,8 +191,7 @@ Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_err
 
 ```http
 HTTP/1.1 200 OK
-Cache-Control: no-cache
-Pragma: no-cache
+Cache-Control: no-store
 Content-Type: application/json+fhir; charset=utf-8
 Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
