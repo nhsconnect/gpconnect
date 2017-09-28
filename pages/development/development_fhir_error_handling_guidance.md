@@ -7,9 +7,7 @@ permalink: development_fhir_error_handling_guidance.html
 summary: "Details of the common error handling pattern(s) across all GP Connect FHIR APIs."
 ---
 
-{% include todo.html content="This page is published as a **work in progress** version and as such is subject to change. Once finalised all error codes presented here will be defined as part of the *gpconnect-error-or-warning-code-1* value set." %}
-
-{% include important.html content="Please ignore any GPC-XXX format error codes defined in the *gpconnect-error-or-warning-code-1* value set / DMS guidance as these have now been superseded and will be removed in a future release." %}
+{% include todo.html content="This page is published as a **work in progress** version and as such is subject to change. Once finalised all error codes presented here will be defined as part of the *spine-error-or-warning-code-1* value set." %}
 
 ### Operation Outcome Usage ####
 
@@ -52,7 +50,7 @@ For example if an invalid NHS Number value is supplied to the `$gpc.getcarerecor
 		"code": "value",
 		"details": {
 			"coding": [{
-				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
 				"code": "INVALID_NHS_NUMBER"
 			}]
 		},
@@ -76,7 +74,7 @@ For example a valid NHS Number value is supplied to the `$gpc.getcarerecord` Ope
 		"code": "not-found",
 		"details": {
 			"coding": [{
-				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
 				"code": "PATIENT_NOT_FOUND"
 			}]
 		},
@@ -109,7 +107,7 @@ For example the patient has requested that their record not be shared via the `$
 		"code": "forbidden",
 		"details": {
 			"coding": [{
-				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
 				"code": "NO_PATIENT_CONSENT"
 			}]
 		},
@@ -141,7 +139,7 @@ For example sending/creating a new Task using the RESTful API fails as an invali
 		"code": "invalid",
 		"details": {
 			"coding": [{
-				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
 				"code": "REFERENCE_NOT_FOUND"
 			}]
 		},
@@ -181,7 +179,7 @@ For example an unexpected internal exception is thrown by either an Operation or
 		"code": "exception",
 		"details": {
 			"coding": [{
-				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
 				"code": "INTERNAL_SERVER_ERROR"
 			}]
 		},
@@ -215,7 +213,7 @@ For example if the request could not be understood by the server due to malforme
 		"code": "invalid",
 		"details": {
 			"coding": [{
-				"system": "http://fhir.nhs.net/ValueSet/gpconnect-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
 				"code": "BAD_REQUEST"
 			}]
 		},
