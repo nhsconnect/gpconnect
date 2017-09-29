@@ -742,11 +742,13 @@ To update an existing resource, a RESTful **PUT** operation with a request body 
 PUT [base]/[resourcetype]/[id]
 ```
 
+The PUT operation will only be used to update existing resources, if the specified resource within the url does not exist on the provider system an error SHALL be returned.
+
 | Capability       | Resource(s) | Field(s) |
 | ------------ | ----------- | -------- |
 | **Foundations**   | &nbsp; | &nbsp; |
 | **Access Record** | &nbsp; | &nbsp; |
-| **Appointments**  | `Appointment` | reason |
+| **Appointments**  | `Appointment` | reason, description, comment |
 | **Tasks**         | &nbsp; | &nbsp; |
 
 ### Update Example: Modify the appointment reason for a patient as their condition has changed ###

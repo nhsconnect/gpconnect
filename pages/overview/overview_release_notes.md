@@ -16,6 +16,7 @@ summary: "Release notes for the various versions of the GP Connect overview."
 - [Error Handling Guidance](development_fhir_error_handling_guidance.html) - Updated page to reflect move from "gpconnect-error-or-warning-code-1" to "spine-error-or-warning-code-1"
 - [Security Guidance](development_api_security_guidance.html) - Removed contradiction within specificaiton for Cache-Control headers
 - [Common API Guidance](development_fhir_api_guidance.html#resource-metadata) - Uplifted guidance around the inclusion of profile details within the fhir resource meta data element when a consumer performs a create or amend interaction.
+- [Common API Guidance](development_fhir_api_guidance.html#update-resource) - Added clarification on use of PUT to make clear an update should not create a resource if the resource being updated does not already exist.
 
 #### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)
 
