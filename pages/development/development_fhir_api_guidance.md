@@ -492,9 +492,11 @@ Resource references SHALL include a short human-readable `display` field for ide
 
 ### [Resource Metadata](https://www.hl7.org/fhir/DSTU2/resource.html#Meta) ###
 
-Servers SHALL provide the `profile` metadata for each item, asserting that the content conforms to one of the GP Connect resource profiles.
+Servers SHALL provide the `profile` metadata for each resource, asserting that the content conforms to one of the GP Connect resource profiles.  
 
 Servers SHALL provide the `version Id` metadata for each item. This SHALL change each time the content of the resource changes.
+
+Consumer creating or amending a resource SHALL provide the `profile` metadata details within the sent resource. The `profile` metadata should be checked for by the Provider to ensure predictable process and for forward compatibility when a server can handle multiple profiles for the same type of resource.
 
 Clients SHALL utilise the `version Id` when performing updates to allow [management of resource contention](https://www.hl7.org/fhir/DSTU2/http.html#concurrency) and to protect against [Lost Updates](http://www.w3.org/1999/04/Editing/).
 
