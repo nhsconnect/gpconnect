@@ -16,6 +16,48 @@ This specification describes a single use case. For complete details and backgro
 - GP Connect utilises TLS Mutual Authentication for system level authorization.
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
 
+
+## Search Parameters ##
+
+Provider systems SHALL implement the following search parameters:
+
+| Name | Type | Description | Paths |
+| `fb-type` | `token` | The free/busy status of the appointment | `Slot.freeBusyType` |
+| `start` | `date` | Slot start date/time. | `Slot.start` |
+| `end` | `date` | Slot end date/time. | `Slot.end` |
+| `_include=Slot:schedule` |   | Include the referenced Schedule Resource | `Slot.schedule` |
+| `_include:recurse=Schedule:actor:Practitioner` |  | Include referenced Practitioner Resources from the returned Schedule Resources | `Schedule.extension("practitioner")` |
+| `_include:recurse=Schedule:actor:Location` |  | Include referenced Location Resources from the returned Schedule Resources | `Schedule.actor:Location` |
+
+
+The following parameters SHALL be included in the request:
+
+- `start` and `end` define the time period over which the requested information is to be returned. The provider will return only details of free slots which have a date and time span fully within the time period specified.
+
+  The `start` and `end` parameters SHOULD include a search prefix to indicate that the date is a boundary of a period. For example `start=ge22-09-2017&end=le26-09-2017` indicates that the consumer wants slots where the slot start date is on or after "22-09-2017" and the slot end date is on or before "26-09-2017".
+  
+  ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
+
+- `fb-type=free` specifies that only free slots will be returned. Note: the SlotStatus value of `free` SHALL be specified, other SlotStatus values are not permitted.
+
+- `_include=Slot:schedule` specifies that associated Schedule resources are returned.
+
+
+The following parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
+
+- _include:recurse=Schedule:actor:Practitioner
+- _include:recurse=Schedule:actor:Location
+
+
+On the wire a `Search for free slots` request would look something like the following:
+
+```http
+GET /Slot?start=ge22-09-2017&end=le06-10-2017&Slot.fh-type=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+```
+
+
+
+
 ## Prerequisites ##
 
 ### Consumer ###
@@ -66,25 +108,6 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:slot` |
 
 #### Payload Request Body ####
-
-Consumers SHALL include the following query parameters:
-
-- `start` and `end` define the time period over which the requested information is to be returned. The provider will return only details of free slots which have a date and time span fully within the time period specified.  
-
-- `fb-type=free` specifies that only free slots will be returned. Note: the SlotStatus value of `free` SHALL be specified, other SlotStatus values are not permitted.
-- `_include=Slot:schedule` specifies that associated Schedule resources are returned.
-
-The following parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
-
-- _include:recurse=Schedule:actor:Practitioner
-- _include:recurse=Schedule:actor:Location
-
-
-On the wire a `Search for free slots` request would look something like the following:
-
-```http
-GET /Slot?start=ge22-09-2017&end=le06-10-2017&Slot.fh-type=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
-```
 
 
 #### Error Handling ####
