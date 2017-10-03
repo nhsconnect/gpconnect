@@ -26,8 +26,8 @@ Provider systems SHALL implement the following search parameters:
 | `start` | `date` | Slot start date/time. | `Slot.start` |
 | `end` | `date` | Slot end date/time. | `Slot.end` |
 | `_include=Slot:schedule` |   | Include the referenced Schedule Resource | `Slot.schedule` |
-| `_include:recurse=Schedule:actor:Practitioner` |  | Include referenced Practitioner Resources from the returned Schedule Resources | `Schedule.extension("practitioner")` |
-| `_include:recurse=Schedule:actor:Location` |  | Include referenced Location Resources from the returned Schedule Resources | `Schedule.actor:Location` |
+| `_include:recurse= Schedule:actor:Practitioner` |  | Include referenced Practitioner Resources from the returned Schedule Resources | `Schedule.extension("practitioner")` |
+| `_include:recurse= Schedule:actor:Location` |  | Include referenced Location Resources from the returned Schedule Resources | `Schedule.actor:Location` |
 
 
 The following parameters SHALL be included in the request:
