@@ -14,7 +14,6 @@ summary: "Use case for reading a location resource."
 The Consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- MAY have previously [resolved the logical ID of the location](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_location.html) from an ODS Site Code
 
 ## API Use Case ##
 

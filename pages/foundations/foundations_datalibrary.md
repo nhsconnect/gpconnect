@@ -12,7 +12,7 @@ The following profiled FHIR resources are used in the current version of the Fou
 {% include important.html content="The profiled FHIR Resources are currently being updated to align with the CareConnect FHIR profiles used by other NHSDigital projects. Currently this section of the specification references the updated profiles for Practitioner, Organization and Location, other Resource profiles will be updated shortly." %}
 
 ---
-## ***Find a patient / Read a patient*** ##
+## ***[Find a patient](foundations_use_case_find_a_patient.html) / [Read a patient](foundations_use_case_read_a_patient.html)*** ##
 ### Request ###
 N/A - No fhir resource is sent within the request
 
@@ -20,7 +20,7 @@ N/A - No fhir resource is sent within the request
 * [CareConnect-GPC-Patient-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/DSTU2/patient.html))
 
 ---
-## ***Find a practitioner / Read a practitioner*** ##
+## ***[Find a practitioner](foundations_use_case_find_a_practitioner.html) / [Read a practitioner](foundations_use_case_read_a_practitioner.html)*** ##
 ### Request ###
 N/A - No fhir resource is sent within the request
 
@@ -28,7 +28,7 @@ N/A - No fhir resource is sent within the request
 * [CareConnect-GPC-Practitioner-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html))
   
 ---
-## ***Find an organisation / Read an organisation*** ##
+## ***[Find an organisation](foundations_use_case_find_an_organisation.html) / [Read an organisation](foundations_use_case_read_an_organisation.html)*** ##
 ### Request ###
 N/A - No fhir resource is sent within the request
 
@@ -36,7 +36,7 @@ N/A - No fhir resource is sent within the request
 * [CareConnect-GPC-Organization-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/DSTU2/organization.html))
   
 ---
-## ***Find a location / Read a location*** ##
+## ***[Read a location](foundations_use_case_read_a_location.html)*** ##
 ### Request ###
 N/A - No fhir resource is sent within the request
 
@@ -44,7 +44,7 @@ N/A - No fhir resource is sent within the request
 * [CareConnect-GPC-Location-1](https://fhir-test.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1) (based on [FHIR Location](https://www.hl7.org/fhir/DSTU2/location.html))
 
 ---
-## ***Register a patient*** ##
+## ***[Register a patient](foundations_use_case_register_a_patient.html)*** ##
 
 ### Request ###
 * [gpconnect-registerpatient-operation-1](https://fhir-test.nhs.uk/OperationDefinition/gpconnect-registerpatient-operation-1) (based on [FHIR Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html))
