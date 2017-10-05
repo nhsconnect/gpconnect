@@ -78,19 +78,12 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 #### Payload Request Body ####
 
 The following data-elements are mandatory (i.e. data SHALL be present):
-- A `registerPatient` parameter containing a patient resource profiled to `CareConnect-GPC-Patient-1`. This is the patient who you want to be registered. Within this resource: 
+
+- A `registerPatient` patient resource profiled to `CareConnect-GPC-Patient-1`. This is the patient who you want to be registered. Within this resource: 
 	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
-	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
+	- Where the gender, name, birth date or deceased date are available these SHALL be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
     - The consumer SHALL NOT populate the "registrationDetails" extension within the patient resource.
-
-The following data-elements SHOULD be populated if available:
-- Within the patient resource of the `registerPatient` parameter:
-  - the `telecom` element SHOULD be populated
-  - the `address` element SHOULD be populated
-
-  {% include note.html content="The consumer SHOULD include telecom and address information within the temporary patient registration so that the receiving system has relevant contact details for the patient." %}
-  {% include note.html content="The provider system receiving the telecom and address details SHOULD store these details in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration." %}
-  
+	
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
 
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
