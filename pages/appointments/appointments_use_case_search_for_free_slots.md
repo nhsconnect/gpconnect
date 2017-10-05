@@ -25,16 +25,22 @@ Provider systems SHALL implement the following search parameters:
 | `fb-type` | `token` | The free/busy status of the appointment | `Slot.freeBusyType` |
 | `start` | `date` | Slot start date/time. | `Slot.start` |
 | `end` | `date` | Slot end date/time. | `Slot.end` |
-| `_include=Slot:schedule` |   | Include the referenced Schedule Resource | `Slot.schedule` |
-| `_include:recurse= Schedule:actor:Practitioner` |  | Include referenced Practitioner Resources from the returned Schedule Resources | `Schedule.extension("practitioner")` |
-| `_include:recurse= Schedule:actor:Location` |  | Include referenced Location Resources from the returned Schedule Resources | `Schedule.actor:Location` |
+
+## _include Parameters ##
+
+Provider systems SHALL implement the following include parameters:
+
+| `_include=Slot:schedule` |   | Include Schedule Resources referenced within the returned Slot Resources | `Slot.schedule` |
+| `_include:recurse= Schedule:Practitioner` |  | Include Practitioner Resources referenced within the returned Schedule Resources | `Schedule.extension("practitioner")` |
+| `_include:recurse= Schedule:actor:Location` |  | Include Location Resources referenced within the returned Schedule Resources | `Schedule.actor:Location` |
 
 
 The following parameters SHALL be included in the request:
 
-- `start` and `end` define the time period over which the requested information is to be returned. The provider will return only details of free slots which have a date and time span fully within the time period specified.
-
-  The `start` and `end` parameters SHOULD include a search prefix to indicate that the date is a boundary of a period. For example `start=ge22-09-2017&end=le26-09-2017` indicates that the consumer wants slots where the slot start date is on or after "22-09-2017" and the slot end date is on or before "26-09-2017".
+- The `start` parameter SHALL only be included once in the request.
+- The `start` parameter SHALL be supplied with the `ge` search prefix. For example 'start=ge22-09-2017' which indicates that the consumer would like slots where the slot start date is on or after "22-09-2017".
+- The `end` parameter SHALL only be included once in the request.
+- The `end` parameter SHALL be supplied with the `le` search prefix. For example 'end=le26-09-2017' which indicates that the consumer would like slots where the slot end date is on or before "26-09-2017".
   
   ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
 
@@ -52,7 +58,7 @@ The following parameters MAY be included to minimise the number of API calls req
 On the wire a `Search for free slots` request would look something like the following:
 
 ```http
-GET /Slot?start=ge22-09-2017&end=le06-10-2017&Slot.fh-type=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+GET /Slot?start=ge22-09-2017&end=le26-09-2017&Slot.fh-type=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
 ```
 
 
