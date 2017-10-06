@@ -46,7 +46,6 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Read Organization](foundations_use_case_read_an_organization.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization` | `GET`  | `[base]/Organization/[id]` |
 | [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization` | `GET`  | <code>[base]/Organization?identifier=[odsCode]&#124;https://fhir.nhs.uk/Id/ods-organization-code</code> |
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location` | `GET`  | `[base]/Location/[id]` |
-| [Location Search](foundations_use_case_find_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:location` | `GET`  | <code>[base]/Location?identifier=[odsSiteCode]&#124;https://fhir.nhs.uk/Id/ods-site-code</code> <br/>&nbsp;<br/> <code>[base]/Location?identifier=[odsCode]&#124;https://fhir.nhs.uk/Id/ods-organization-code</code> |
 | [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient` | `POST`  | `[base]/Patient/$gpc.registerpatient` |
 
 

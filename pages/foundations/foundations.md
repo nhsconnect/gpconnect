@@ -38,7 +38,7 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 ## Scenarios ##
 
 - Search for a patient by `NHS Number`.
-- Search for an organisation by `ODS Code` or `ODS Site Code`.
+- Search for an organisation by `ODS Code`.
 - Search for a practitioner by `SDS UserID`.
 
 ### Use Cases ###
@@ -47,7 +47,6 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 - [Find a patient](foundations_use_case_find_a_patient.html)
 - [Find a practitioner](foundations_use_case_find_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
-- [Find a location](foundations_use_case_find_a_location.html)
 
 ## SPINE Interactions
 
@@ -63,7 +62,6 @@ The Foundation capability message set includes the following set of spine intera
 | [Read Organization](foundations_use_case_read_an_organization.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization` |
 | [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization` |
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location` | 
-| [Location Search](foundations_use_case_find_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:location` |
 
 
 The Register Patient API Use Case, which is included in the Foundations capabilty has a seperate "Register Patient" message set:
