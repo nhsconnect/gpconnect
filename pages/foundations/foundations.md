@@ -38,7 +38,7 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 ## Scenarios ##
 
 - Search for a patient by `NHS Number`.
-- Search for an organisation by `ODS Code` or `ODS Site Code`.
+- Search for an organisation by `ODS Code`.
 - Search for a practitioner by `SDS UserID`.
 
 ### Use Cases ###
@@ -47,5 +47,25 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 - [Find a patient](foundations_use_case_find_a_patient.html)
 - [Find a practitioner](foundations_use_case_find_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
-- [Find a location](foundations_use_case_find_a_location.html)
 
+## SPINE Interactions
+
+The Foundation capability message set includes the following set of spine interactions:
+
+| Operation                 | InteractionID             | 
+|---------------------------|---------------------------| 
+| [Read Metadata](foundations_use_case_get_the_fhir_conformance_profile.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata` |
+| [Read Patient](foundations_use_case_read_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient` |
+| [Patient Search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient` |
+| [Read Practitioner](foundations_use_case_read_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner` |
+| [Practitioner Search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner` |
+| [Read Organization](foundations_use_case_read_an_organization.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization` |
+| [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization` |
+| [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location` | 
+
+
+The Register Patient API Use Case, which is included in the Foundations capabilty has a seperate "Register Patient" message set:
+
+| Operation                 | InteractionID             | 
+|---------------------------|---------------------------| 
+| [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient`

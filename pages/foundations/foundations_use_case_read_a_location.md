@@ -7,6 +7,14 @@ permalink: foundations_use_case_read_a_location.html
 summary: "Use case for reading a location resource."
 ---
 
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+
 ## API Use Case ##
 
 This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).

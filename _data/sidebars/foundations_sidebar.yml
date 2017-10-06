@@ -1,7 +1,7 @@
 entries:
 - title: Foundations
   product: Foundations<br/>
-  version: 1.0.0-rc.2
+  version: 1.0.0-rc.3
   folders:
 
   - title:
@@ -68,9 +68,6 @@ entries:
           output: web, pdf
         - title: Read an organisation 
           url: /foundations_use_case_read_an_organisation.html
-          output: web, pdf
-        - title: Find a location
-          url: /foundations_use_case_find_a_location.html
           output: web, pdf
         - title: Read a location
           url: /foundations_use_case_read_a_location.html

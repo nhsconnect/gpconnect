@@ -92,9 +92,7 @@ Provider and Consumer systems SHALL check the `FQDN` presented in the client cer
 Provider systems SHALL ensure no sensitive data leaks into a browser cache by setting the following cache headers on all responses:
 
 ```http
-Cache-Control: no-cache, no-store
-Expires: 0
-Pragma: no-cache
+Cache-Control: no-store
 ```
 
 

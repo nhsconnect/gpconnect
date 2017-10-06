@@ -85,6 +85,8 @@ Provider systems:
 - SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
 - SHALL include all relevant business `identifier` details (i.e. NHS Number) for each `Patient` resource.
+- SHALL supply gender, name, birth date or deceased date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
+
 
 ```json
 {
@@ -133,7 +135,7 @@ Provider systems:
 ```csharp
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var query = new string[] { "identifier=https://fhir.nhs.uk/Id/nhs-number|P002" };
+var query = new string[] { "identifier=https://fhir.nhs.uk/Id/nhs-number|9476719931" };
 var bundle = client.Search("Patient", query);
 FhirSerializer.SerializeResourceToXml(bundle).Dump();
 ```
@@ -144,7 +146,7 @@ FhirSerializer.SerializeResourceToXml(bundle).Dump();
 FhirContext ctx = new FhirContext();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
 Bundle bundle = client.search().forResource(Patient.class)
-.where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/nhs-number", "P002"))
+.where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/nhs-number", "9476719931"))
 .encodedXml()
 .execute();
 ```

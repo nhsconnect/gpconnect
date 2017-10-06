@@ -20,3 +20,12 @@ The following business identifier types are to be supported by GP Connect system
 | SDS User ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |
 
 {% include important.html content="Support for additional identifier types inline with the existing GPSoC requirements is also under consideration." %}
+
+## Definition of Organisation and Location entities
+
+The GP practice organisation is a legal entities which is represented by the FHIR `Organization` resource. This entity will have an assigned [ODS code](https://digital.nhs.uk/organisation-data-service). 
+
+The practice organisation will have one or more operating locations (a.k.a. sites or branches) which together perform the patient healthcare for which the organisation is legally responsible. Each operating location is represented by a FHIR `Location` resource. 
+
+Where ODS Site codes are defined in SPINE configuration, these map to GP practice operating locations, and hence to Location FHIR resources.
+
