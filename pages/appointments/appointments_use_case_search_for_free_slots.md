@@ -26,6 +26,8 @@ Provider systems SHALL implement the following search parameters:
 | `start` | `date` | Slot start date/time. | `Slot.start` |
 | `end` | `date` | Slot end date/time. | `Slot.end` |
 
+{% include note.html content="The supported search parameters should be included in the [conformance profile](foundations_use_case_get_the_fhir_conformance_profile.html)." %}
+
 ## _include Parameters ##
 
 Provider systems SHALL implement the following include parameters:
