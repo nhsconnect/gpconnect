@@ -68,16 +68,19 @@ Consumer systems:
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
 
 The following data-elements are mandatory (i.e data MUST be present).
-
 - a patient `participant` of the appointment.
 - a location `participant` of the appointment.
 - the `start` and `end` of the appointment.
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
 - An `actor` reference in any supplied `participant`
+- the `bookingOrganisation` extension referencing a contained `organization` resource within the appointment resource.
+  - the contained organization resource SHALL represent the organization booking the appointment.
+  - the contained organization resource SHALL conform to `CareConnect-GPC-Organization-1` profile.
+  - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
+- the `created` extension SHALL be populate with the date and time of the appointment was created.
 
 The following data-elements SHOULD be included when available.
-
 - a practitioner `participant` of the appointment.
 
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload Response Body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API Use Case page." %}
@@ -100,6 +103,28 @@ On the wire a JSON serialised request would look something like the following:
 	"meta": {
 		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
+	"contained": [{
+		"resourceType": "Organization",
+		"id": "1",
+		"meta": {
+			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+		},
+		"name": "Test Organization Name",
+		"telecom": [{
+			"system": "phone",
+			"value": "0300 303 5678"
+		}]
+	}],
+	"extension": [{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1",
+		"valueDateTime": "2017-10-09T13:48:41+01:00"
+	},
+	{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1",
+		"valueReference": {
+			"reference": "#1"
+		}
+	}],
 	"status": "booked",
 	"type": {
 		"coding": [{
@@ -189,6 +214,28 @@ Provider systems:
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
 		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
+	"contained": [{
+		"resourceType": "Organization",
+		"id": "1",
+		"meta": {
+			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+		},
+		"name": "Test Organization Name",
+		"telecom": [{
+			"system": "phone",
+			"value": "0300 303 5678"
+		}]
+	}],
+	"extension": [{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1",
+		"valueDateTime": "2017-10-09T13:48:41+01:00"
+	},
+	{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1",
+		"valueReference": {
+			"reference": "#1"
+		}
+	}],
 	"status": "booked",
 	"type": {
 		"coding": [{
@@ -280,6 +327,22 @@ locationParticipant.Actor.Reference = "Location/1";
 locationParticipant.Status = Appointment.ParticipationStatus.Accepted;
 appointment.Participant.Add(locationParticipant);
 
+appointment.AddExtension("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1", new FhirDateTime(DateTime.Now));
+	
+Organization organization = new Organization();
+organization.Name = "Example Organization Name";
+var contactPoint = new ContactPoint();
+contactPoint.System = ContactPoint.ContactPointSystem.Phone;
+contactPoint.Value = "0300 303 5678";
+organization.Telecom.Add(contactPoint);
+organization.Id = "1";
+appointment.Contained.Add(organization);
+var reference = new ResourceReference
+{
+Reference = "#1",
+};
+appointment.AddExtension("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1", reference);
+
 Appointment appointmentCreated = client.Create<Appointment>(appointment);
 
 FhirSerializer.SerializeResourceToJson(appointmentCreated).Dump();
@@ -314,6 +377,18 @@ Appointment.Participant locationParticipant = new Appointment.Participant();
 locationParticipant.setActor(new ResourceReferenceDt("Location/1"));
 locationParticipant.setStatus(ParticipationStatusEnum.ACCEPTED);
 appointment.addParticipant(locationParticipant);
+
+Organization organization = new Organization();
+organization.setName("Test Organization Name");
+ContactPointDt telecom = new ContactPointDt();
+telecom.setSystem(ContactPointSystemEnum.PHONE);
+telecom.setValue("0300 303 5678");
+organization.setTelecom(Collections.singletonList(telecom));
+
+ExtensionDt extension = new ExtensionDt(false);
+extension.setUrl("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1");
+extension.setValue(new ResourceReferenceDt(organization));
+appointment.addUndeclaredExtension(extension);
 
 MethodOutcome response = client.create()
 	.resource(appointment)

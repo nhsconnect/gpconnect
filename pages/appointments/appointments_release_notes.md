@@ -10,6 +10,7 @@ summary: "Release notes for the various versions of the Appointment Management c
 #### 1.0.0-rc.2
   - [Appointment Management](appointments.html), [Search for free slots](appointments_use_case_search_for_free_slots.html), [Operation Guidance](development_fhir_operation_guidance.html) - Changed to the InteractionId for "Search for free slots" to reflect move to restful endpoint instead of operation.
   - [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) - Updated formatting of search for free slots page and added clarification around the use of start and end parameters.
+  - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - Added guidance around use of bookingOrganization and creation dateTime extension within appointment resource.
 
 #### 1.0.0-rc.1 (Released: 22/09/2017)
   - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body), [Search for free slots](appointments_use_case_search_for_free_slots.html#payload-response-body) - Additional information has been added on how providers should indicate that slots are adjacent and therefore can be used for multi slot appointment booking by consumers.

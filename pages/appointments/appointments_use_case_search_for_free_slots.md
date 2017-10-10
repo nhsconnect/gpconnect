@@ -201,7 +201,7 @@ Provider systems:
 				"lastUpdated": "2016-07-25T12:00:00.000+01:00",
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"]
 			},
-			"modifierExtension": [{
+			"extension": [{
 				"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-practitioner-1",
 				"valueReference": {
 					"reference": "Practitioner/2"

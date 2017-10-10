@@ -82,6 +82,28 @@ On the wire a JSON serialised request would look something like the following:
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
 		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
+	"contained": [{
+		"resourceType": "Organization",
+		"id": "1",
+		"meta": {
+			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+		},
+		"name": "Test Organization Name",
+		"telecom": [{
+			"system": "phone",
+			"value": "0300 303 5678"
+		}]
+	}],
+	"extension": [{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1",
+		"valueDateTime": "2017-10-09T13:48:41+01:00"
+	},
+	{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1",
+		"valueReference": {
+			"reference": "#1"
+		}
+	}],
 	"status": "cancelled",
     "extension": [{
 		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1",
@@ -181,6 +203,28 @@ Provider systems:
 		"lastUpdated": "2016-08-15T20:10:20.775+01:00",
 		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 	},
+	"contained": [{
+		"resourceType": "Organization",
+		"id": "1",
+		"meta": {
+			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+		},
+		"name": "Test Organization Name",
+		"telecom": [{
+			"system": "phone",
+			"value": "0300 303 5678"
+		}]
+	}],
+	"extension": [{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1",
+		"valueDateTime": "2017-10-09T13:48:41+01:00"
+	},
+	{
+		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1",
+		"valueReference": {
+			"reference": "#1"
+		}
+	}],
 	"status": "cancelled",
     "extension": [{
 		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1",
