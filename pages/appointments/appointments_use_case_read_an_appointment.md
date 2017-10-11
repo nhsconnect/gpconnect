@@ -103,11 +103,11 @@ Provider systems:
 		}]
 	}],
 	"extension": [{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1",
+		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
 		"valueDateTime": "2017-10-09T13:48:41+01:00"
 	},
 	{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1",
+		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}

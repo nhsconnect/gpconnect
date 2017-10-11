@@ -116,11 +116,11 @@ On the wire a JSON serialised request would look something like the following:
 		}]
 	}],
 	"extension": [{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1",
+		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
 		"valueDateTime": "2017-10-09T13:48:41+01:00"
 	},
 	{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1",
+		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}
@@ -227,11 +227,11 @@ Provider systems:
 		}]
 	}],
 	"extension": [{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1",
+		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
 		"valueDateTime": "2017-10-09T13:48:41+01:00"
 	},
 	{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1",
+		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}
@@ -327,7 +327,7 @@ locationParticipant.Actor.Reference = "Location/1";
 locationParticipant.Status = Appointment.ParticipationStatus.Accepted;
 appointment.Participant.Add(locationParticipant);
 
-appointment.AddExtension("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-creation-datetime-1", new FhirDateTime(DateTime.Now));
+appointment.AddExtension("https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1", new FhirDateTime(DateTime.Now));
 	
 Organization organization = new Organization();
 organization.Name = "Example Organization Name";
@@ -341,7 +341,7 @@ var reference = new ResourceReference
 {
 Reference = "#1",
 };
-appointment.AddExtension("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1", reference);
+appointment.AddExtension("https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1", reference);
 
 Appointment appointmentCreated = client.Create<Appointment>(appointment);
 
@@ -386,7 +386,7 @@ telecom.setValue("0300 303 5678");
 organization.setTelecom(Collections.singletonList(telecom));
 
 ExtensionDt extension = new ExtensionDt(false);
-extension.setUrl("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-booking-organization-1");
+extension.setUrl("https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1");
 extension.setValue(new ResourceReferenceDt(organization));
 appointment.addUndeclaredExtension(extension);
 
