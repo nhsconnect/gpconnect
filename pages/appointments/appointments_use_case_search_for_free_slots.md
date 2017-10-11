@@ -25,8 +25,11 @@ Provider systems SHALL implement the following search parameters:
 | `fb-type` | `token` | The free/busy status of the appointment | `Slot.freeBusyType` |
 | `start` | `date` | Slot start date/time. | `Slot.start` |
 | `end` | `date` | Slot end date/time. | `Slot.end` |
+| `disposition` | `token` | Disposition Code filter for returned slots. | N/A |
+| `service-id` | `token` | Service ID filter for returned slots. | N/A |
 
 {% include note.html content="The supported search parameters should be included in the [conformance profile](foundations_use_case_get_the_fhir_conformance_profile.html)." %}
+{% include note.html content="The `disposition` and `service-id` parameters are a requirement for urgent care identified use cases." %}
 
 ## _include Parameters ##
 
