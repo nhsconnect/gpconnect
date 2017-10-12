@@ -23,7 +23,9 @@ Demonstrates the ability to provide service users (and patients) with the abilit
 - Enable a service user at 111 to book, cancel or view appointments for a patient at the patients’ own GP and extended access Hub sites.
 - Enable a range of other care settings to book, view or cancel an appointment on behalf of the patient. Any of; A+E, Physio, Acute, Social, Community etc.
 
-## Use Cases ##
+## API Use Cases ##
+
+The following individual API calls are used by consumers to implement the appointment management capability.
 
 - [Retrieve a patients appointments](appointments_use_case_retrieve_a_patients_appointments.html)
 - [Search for free slots](appointments_use_case_search_for_free_slots.html)
@@ -34,8 +36,11 @@ Demonstrates the ability to provide service users (and patients) with the abilit
 
 {% include tip.html content="Creation of `Schedule` and `Slot` resources is out of scope for the GP Connect FoT as these resources are expected to be managed from within an organisation's principal IT system." %}
 
+## Examples of consumer appointment management sessions
 
-## Profiled Fhir Resources ##
+The use of the individual API calls listed above by consumers to fulfill business processes is illustrated, with particular focus on the booking of an appointment.  See [Appointment Consumer Sessions Illustrated](appointments_consumer_sessions.html)
+
+## Profiled FHIR Resources ##
 
 Please refer to the [Appointment Management FHIR Resources](datalibraryappointment.html) page for details of the FHIR profiles utilised for the Appointment Management capability.
 

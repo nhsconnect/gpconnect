@@ -11,6 +11,8 @@ summary: "Use case for searching for free slots within a date range."
 
 This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
 
+Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API Use Case could be used in the context of a typical consumer appointment management session.
+
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization.

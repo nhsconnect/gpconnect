@@ -46,6 +46,9 @@ entries:
     - title: FHIR Resources
       url: /datalibraryappointment.html
       output: web, pdf
+    - title: Consumer sessions illustrated
+      url: /appointments_consumer_sessions.html
+      output: web, pdf
       
       subfolders:
       - title: API Use Cases

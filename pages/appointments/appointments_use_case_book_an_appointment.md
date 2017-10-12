@@ -15,6 +15,8 @@ The typical flow to book an appointment is:
  2. Search for available `Slot` resources by date range.
  3. Create an `Appointment` for the chosen `Slot` and `Patient` resources.
 
+Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API Use Case could be used in the context of a typical consumer appointment management session.
+
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization.

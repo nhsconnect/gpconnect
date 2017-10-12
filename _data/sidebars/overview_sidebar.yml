@@ -139,6 +139,9 @@ entries:
     - title: System Topologies
       url: /integration_system_topologies.html
       output: web     
+    - title: Spine integration illustrated
+      url: /integration_illustrated.html
+      output: web           
     - title: Cross Org Audit & Provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
