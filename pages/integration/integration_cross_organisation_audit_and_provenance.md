@@ -123,7 +123,7 @@ Consumer systems SHALL generate an Unsecured JSON Web Token (JWT) using the "non
 
 Consumer systems SHALL generate an empty signature.
 
-The final output is three Base64 strings separated by dots (note - there is some canonicalisation done to the JSON before it is base64 encoded, which the JWT code libraries will do for you).
+The final output is three Base64url encoded strings separated by dots (note - there is some canonicalisation done to the JSON before it is base64url encoded, which the JWT code libraries will do for you).
 
 For example:
 
