@@ -128,7 +128,7 @@ For example:
 eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0LmV1LXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20vIy9zZWFyY2giLCJzdWIiOiIxIiwiYXVkIjoiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMubmV0L3Rva2VuIiwiZXhwIjoxNDgxMjUyMjc1LCJpYXQiOjE0ODA5NTIyNzUsInJlYXNvbl9mb3JfcmVxdWVzdCI6ImRpcmVjdGNhcmUiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6IlBhdGllbnQiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL25ocy1udW1iZXIiLCJ2YWx1ZSI6IjkwMDAwMDAwMzMifV19LCJyZXF1ZXN0ZWRfc2NvcGUiOiJwYXRpZW50LyoucmVhZCIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IldlYiBJbnRlcmZhY2UiLCJ2YWx1ZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn1dLCJtb2RlbCI6IkRlbW9uc3RyYXRvciIsInZlcnNpb24iOiIxLjAifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IltPRFNDb2RlXSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn0sInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjp7InJlc291cmNlVHlwZSI6IlByYWN0aXRpb25lciIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IkcxMzU3OTEzNSJ9LHsic3lzdGVtIjoibG9jYWxTeXN0ZW0iLCJ2YWx1ZSI6IjEifV0sIm5hbWUiOnsiZmFtaWx5IjpbIkRlbW9uc3RyYXRvciJdLCJnaXZlbiI6WyJHUENvbm5lY3QiXSwicHJlZml4IjpbIk1yIl19fX0.
 ```
 
-NOTE: The final section (the signature) is empty, so the JWT will end with a trailing . - this must not be omitted as it will then not be a valid token.
+NOTE: The final section (the signature) is empty, so the JWT will end with a trailing `.` (this must not be omitted, otherwise it would be an invalid token).
 
 {% include tip.html content="The [JWT.io](https://jwt.io/) website includes a number of rich resources to aid in developing JWT enabled applications." %}
 
@@ -145,7 +145,7 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 	"requested_record": {
 		"resourceType": "Patient",
 		"identifier": [{
-			"system": "http://fhir.nhs.net/Id/nhs-number",
+			"system": "https://fhir.nhs.uk/Id/nhs-number",
 			"value": "[NHSNumber]"
 		}]
 	},
@@ -163,7 +163,7 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 		"resourceType": "Organization",
 		"id": "[OrganizationID]",
 		"identifier": [{
-			"system": "http://fhir.nhs.net/Id/ods-organization-code",
+			"system": "https://fhir.nhs.uk/Id/ods-organization-code",
 			"value": "[ODSCode]"
 		}],
 		"name": "Requesting Organisation Name"
@@ -172,7 +172,7 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 		"resourceType": "Practitioner",
 		"id": "[PractitionerID]",
 		"identifier": [{
-			"system": "http://fhir.nhs.net/sds-user-id",
+			"system": "https://fhir.nhs.uk/Id/sds-user-id",
 			"value": "[SDSUserID]"
 		},
 		{
@@ -187,7 +187,7 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 		"practitionerRole": [{
 			"role": {
 				"coding": [{
-					"system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
+					"system": "https://fhir.nhs.uk/CareConnect-SDSJobRoleName-1",
 					"code": "[SDSJobRoleName]"
 				}]
 			}
