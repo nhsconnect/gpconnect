@@ -513,9 +513,11 @@ Resource references SHALL include a short human-readable `display` field for ide
 
 ### [Resource Metadata](https://www.hl7.org/fhir/DSTU2/resource.html#Meta) ###
 
-Servers SHALL provide the `profile` metadata for each item, asserting that the content conforms to one of the GP Connect resource profiles.
+Servers SHALL provide the `profile` metadata for each resource, asserting that the content conforms to one of the GP Connect resource profiles.  
 
 Servers SHALL provide the `version Id` metadata for each item. This SHALL change each time the content of the resource changes.
+
+Consumer creating or amending a resource SHALL provide the `profile` metadata details within the sent resource. The `profile` metadata should be checked for by the Provider to ensure predictable process and for forward compatibility when a server can handle multiple profiles for the same type of resource.
 
 Clients SHALL utilise the `version Id` when performing updates to allow [management of resource contention](https://www.hl7.org/fhir/DSTU2/http.html#concurrency) and to protect against [Lost Updates](http://www.w3.org/1999/04/Editing/).
 
@@ -761,11 +763,13 @@ To update an existing resource, a RESTful **PUT** operation with a request body 
 PUT [base]/[resourcetype]/[id]
 ```
 
+The PUT operation will only be used to update existing resources, if the specified resource within the url does not exist on the provider system an error SHALL be returned.
+
 | Capability       | Resource(s) | Field(s) |
 | ------------ | ----------- | -------- |
 | **Foundations**   | &nbsp; | &nbsp; |
 | **Access Record** | &nbsp; | &nbsp; |
-| **Appointments**  | `Appointment` | reason |
+| **Appointments**  | `Appointment` | reason, description, comment |
 | **Tasks**         | &nbsp; | &nbsp; |
 
 ### Update Example: Modify the appointment reason for a patient as their condition has changed ###

@@ -12,7 +12,7 @@ The following profiled FHIR resources are used in the current version of the App
 {% include important.html content="The profiled FHIR Resources are currently being updated to align with the CareConnect FHIR profiles used by other NHSDigital projects. Currently this section of the specification references the updated profiles for Practitioner, Organization and Location, other Resource profiles will be updated shortly." %}
 
 ---
-## ***Search for free slots*** ##
+## ***[Search for free slots](appointments_use_case_search_for_free_slots.html)*** ##
 ### Request ###
 N/A - No fhir resource is sent within the request
 
@@ -26,7 +26,7 @@ N/A - No fhir resource is sent within the request
 
   
 ---
-## ***Book an appointment*** ##
+## ***[Book an appointment](appointments_use_case_book_an_appointment.html)*** ##
 ### Request ###
 * [gpconnect-appointment-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html))
 
@@ -35,16 +35,7 @@ N/A - No fhir resource is sent within the request
 
 
 ---
-## ***Retrieve a patients appointments*** ##
-### Request ###
-N/A - No fhir resource is sent within the request
-
-### Response ###
-* [gpconnect-appointment-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html))
-
-
----
-## ***Read an appointment*** ##
+## ***[Retrieve a patients appointments](appointments_use_case_retrieve_a_patients_appointments.html)*** ##
 ### Request ###
 N/A - No fhir resource is sent within the request
 
@@ -53,7 +44,16 @@ N/A - No fhir resource is sent within the request
 
 
 ---
-## ***Amend an appointment*** ##
+## ***[Read an appointment](appointments_use_case_read_an_appointment.html)*** ##
+### Request ###
+N/A - No fhir resource is sent within the request
+
+### Response ###
+* [gpconnect-appointment-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html))
+
+
+---
+## ***[Amend an appointment](appointments_use_case_amend_an_appointment.html)*** ##
 ### Request ###
 * [gpconnect-appointment-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html))
 
@@ -62,7 +62,7 @@ N/A - No fhir resource is sent within the request
 
 
 ---
-## ***Cancel an appointment*** ##
+## ***[Cancel an appointment](appointments_use_case_cancel_an_appointment.html)*** ##
 ### Request ###
 * [gpconnect-appointment-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html))
 
