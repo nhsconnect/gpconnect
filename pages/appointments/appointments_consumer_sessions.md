@@ -13,7 +13,7 @@ The appointment management consumer application will make use of individual API 
 
 The sequence diagram below to illustrates for clarity what individual API calls are required by a consumer in order to book an appointment at GP practice in the simplest case.
 
-The diagram below describes interactions of the consumer with the provider FHIR endpoint at the practice, and does not include details of the pre-requisite interactions with Spine services. Please refer to [Integration with Spine illustrated]() for details of an end-to-end appointment booking scenario with Spine service interactions included.
+The diagram below describes interactions of the consumer with the provider FHIR endpoint at the practice, and does not include details of the pre-requisite interactions with Spine services. Please refer to [Spine Integration Illustrated](integration_illustrated.html) for details of an end-to-end appointment booking scenario with Spine service interactions included.
 
 ![Sequence diagram for booking an appointment - simplest case](images/appointments/sequence_book_simple.png)
 

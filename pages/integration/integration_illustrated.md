@@ -54,6 +54,6 @@ The steps shown in the diagram are detailed below.
 | 5d   | **SSP** forwards the Patient details received from the Provider to the Consumer |
 |      |      |
 | 6a   | **Consumer** calls [Book an appointment](appointments_use_case_book_an_appointment.html) indicating the slots selected in the UI together with the logical ID of the patient. |
-| 5b   | **Spine Security Proxy (SSP)** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
+| 6b   | **Spine Security Proxy (SSP)** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 6c   | **Provider** responds with details of the booked appointment as confirmation of success. |
 | 6d   | **SSP** forwards the Appointment details received from the Provider to the Consumer. |
