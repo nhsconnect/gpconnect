@@ -119,6 +119,28 @@ Provider systems:
 				"lastUpdated": "2017-08-21T10:20:20.000+00:00",
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 			},
+			"contained": [{
+				"resourceType": "Organization",
+				"id": "1",
+				"meta": {
+					"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+				},
+				"name": "Test Organization Name",
+				"telecom": [{
+					"system": "phone",
+					"value": "0300 303 5678"
+				}]
+			}],
+			"extension": [{
+				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
+				"valueDateTime": "2017-10-09T13:48:41+01:00"
+			},
+			{
+				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+				"valueReference": {
+					"reference": "#1"
+				}
+			}],
 			"status": "booked",
 			"type": {
 				"coding": [{
@@ -178,6 +200,28 @@ Provider systems:
 				"lastUpdated": "2017-08-21T10:20:44.000+00:00",
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 			},
+			"contained": [{
+				"resourceType": "Organization",
+				"id": "1",
+				"meta": {
+					"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+				},
+				"name": "Test Organization Name",
+				"telecom": [{
+					"system": "phone",
+					"value": "0300 303 5678"
+				}]
+			}],
+			"extension": [{
+				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
+				"valueDateTime": "2017-10-09T13:48:41+01:00"
+			},
+			{
+				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+				"valueReference": {
+					"reference": "#1"
+				}
+			}],
 			"status": "booked",
 			"type": {
 				"coding": [{
@@ -225,6 +269,28 @@ Provider systems:
 				"lastUpdated": "2017-08-21T10:21:06.000+00:00",
 				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
 			},
+			"contained": [{
+				"resourceType": "Organization",
+				"id": "1",
+				"meta": {
+					"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+				},
+				"name": "Test Organization Name",
+				"telecom": [{
+					"system": "phone",
+					"value": "0300 303 5678"
+				}]
+			}],
+			"extension": [{
+				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
+				"valueDateTime": "2017-10-09T13:48:41+01:00"
+			},
+			{
+				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+				"valueReference": {
+					"reference": "#1"
+				}
+			}],
 			"status": "booked",
 			"type": {
 				"coding": [{

@@ -7,7 +7,18 @@ permalink: appointments_release_notes.html
 summary: "Release notes for the various versions of the Appointment Management capability."
 ---
 
-#### 1.0.0-rc.1
+#### 1.0.0-rc.2 (Released: 13/10/2017)
+  ***Specification Updates***
+  - [Appointment Management](appointments.html), [Search for free slots](appointments_use_case_search_for_free_slots.html), [Operation Guidance](development_fhir_operation_guidance.html) - Changed to the InteractionId for "Search for free slots" to reflect move to restful endpoint instead of operation.
+  - [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) - Updated formatting of search for free slots page and added clarification around the use of start and end parameters.
+  - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - Added guidance around use of bookingOrganization and creation dateTime extension within appointment resource.
+  - [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) - Added `disposition` and `service-id` search parameters for urgent care use cases.
+  - [Appointments - Consumer Sessions Illustrated](appointments_consumer_sessions.html), [Spine Integration Illustrated](integration_illustrated.html) - Added pages to highlight the sequence of interactions required to perform common business processes using the GP Connect API.
+  
+  ***Profile Updates***
+  - [gpconnect-appointment-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-appointment-1) - Added `bookingOrganization` extension and `created` extension within appointment resource profile.
+
+#### 1.0.0-rc.1 (Released: 22/09/2017)
   - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body), [Search for free slots](appointments_use_case_search_for_free_slots.html#payload-response-body) - Additional information has been added on how providers should indicate that slots are adjacent and therefore can be used for multi slot appointment booking by consumers.
   - [Design Decisions](appointments_design.html) - API will not provide appointment re-scheduling through a single API interaction.
   - [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - where participants are specified in request body, these must include a actor resource reference.
@@ -19,7 +30,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Amend an appoinment](appointments_use_case_amend_an_appointment.html) - Clarity on use of PUT verb and the effect on the resultant state of the `Appointment.reason` element.
   - [Search for free slots Use Case](appointments_use_case_search_for_free_slots.html), [Appointment Management Resources](datalibraryappointment.html#search-for-free-slots) - Changed "Search for free slots" from a fhir operation to restful call.
 
-#### 1.0.0-beta.2
+#### 1.0.0-beta.2 (Released: 08/09/2017)
   - Removed practitioner participant as a mandatory element within the appointment resource (Page - Book an appointment).
   - Added location participant as a mandatory element within the appointment resource (Page - Book an appointment).
   - Updated datalibrary to be capability specific, moving it to reside under the "Development" menu within the capability. This is to allow the Profiled FHIR Resources to be referenced per capability and updated independantly. For Appointment Management we have updated specification to reference FHIR profiles stored on FHIR reference server rather than those on the old DMS capability pack.

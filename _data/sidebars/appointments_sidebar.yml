@@ -1,7 +1,7 @@
 entries:
 - title: Appointment Management
   product: Appointment Management<br/>
-  version: 1.0.0-rc.1
+  version: 1.0.0-rc.2
   folders:
 
   - title:
@@ -45,6 +45,9 @@ entries:
     folderitems:
     - title: FHIR Resources
       url: /datalibraryappointment.html
+      output: web, pdf
+    - title: Consumer sessions illustrated
+      url: /appointments_consumer_sessions.html
       output: web, pdf
       
       subfolders:
