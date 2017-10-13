@@ -44,7 +44,7 @@ Where a consumer user interface provides a view of available bookings across a c
 | 1b   | **Provider** responds with details of what slots are available for booking. Should no applicable slots be returned, the consumer may make repeated calls to [Search for free slots](appointments_use_case_search_for_free_slots.html) with amended date ranges. |
 |      |       |
 | 2a   | **Consumer** then makes API call to [Find a patient](foundations_use_case_find_a_patient.html) providing the patient's NHS Number. |
-| 2b   | **Provider** returns zero patient records indicating that the patient with the specified NHS Number does not have an active patient record at the practice. |
+| 2b   | **Provider** finds patient record and returns the logical identifier of the patient record at this practice in their system. See [Patient record not present](appointments_consumer_sessions.html#consumer-session---booking-an-appointment---no-patient-record) for an illustration of the steps required in this case. |
 |      |      |
 | 3a   | **Consumer** calls [Book an appointment](appointments_use_case_book_an_appointment.html) indicating the slots selected in the UI together with the logical ID of the patient. |
 | 3b   | **Provider** responds with details of the booked appointment as confirmation of success. |
