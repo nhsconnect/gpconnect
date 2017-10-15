@@ -23,7 +23,7 @@ gitter_room: gpconnect/Lobby
 tiny_letter: true
 tiny_letter_username: nhsconnectapi
 
-twitter: true
+twitter: false
 twitter_username: nhsconnectapi
 twitter_site_hashtags: GPConnect
 
