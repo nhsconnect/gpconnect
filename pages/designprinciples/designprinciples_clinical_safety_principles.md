@@ -2,7 +2,7 @@
 title: Clinical Safety
 keywords: safety, commissioning
 tags: [clinical_safety, commissioning, first_of_type]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples_clinical_safety_principles.html
 summary: "High-level design principles related to the clinical safety of the system."
 ---

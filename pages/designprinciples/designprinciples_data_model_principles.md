@@ -2,7 +2,7 @@
 title: Data Model Principles
 keywords: development, fhir, logical models
 tags: [development,fhir]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples_data_model_principles.html
 summary: "High-level design principles related to the FHIR data modelling aspects of the system."
 ---

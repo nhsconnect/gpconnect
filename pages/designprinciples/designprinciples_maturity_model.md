@@ -2,12 +2,10 @@
 title: Maturity Model
 keywords: development, roadmap
 tags: [engage,development,fhir]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples_maturity_model.html
 summary: High-level maturity model for GP Connect systems.
 ---
-
-[<i class="fa fa-arrow-left" aria-hidden="true"/> Back to GP Connect - Getting Started.](index.html)
 
 {% include important.html content="All delivery dates are indicative and subject to on-going review." %}
 

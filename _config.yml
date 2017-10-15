@@ -102,7 +102,6 @@ defaults:
 
 sidebars:
 - overview_sidebar
-- designprinciples_sidebar
 - accessrecord_sidebar
 - appointments_sidebar
 - tasks_sidebar
