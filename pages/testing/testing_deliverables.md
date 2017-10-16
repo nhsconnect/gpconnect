@@ -1,7 +1,7 @@
 ---
 title: Testing Assets
 keywords: testing deliverables
-tags: [testing]
+tags: [engagement,testing]
 sidebar: overview_sidebar
 permalink: testing_deliverables.html
 summary: "Details of what test resources have been made available to support the holistic <br/>testing of provider APIs and consumer applications."

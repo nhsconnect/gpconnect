@@ -178,9 +178,6 @@ entries:
     - title: Test Environments
       url: /testing_environments.html
       output: web
-#    - title: Testing Data
-#      url: /testing_data.html
-#      output: web
     - title: Provider Testing
       url: /testing_api_provider_testing.html
       output: web
@@ -261,6 +258,9 @@ entries:
       output: web
     - title: Tasks
       url: /tag_tasks.html
+      output: web
+    - title: Engagement
+      url: /tag_engagement.html
       output: web
     - title: Design
       url: /tag_design.html

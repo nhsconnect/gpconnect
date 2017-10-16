@@ -1,7 +1,7 @@
 ---
 title: Developer Cheat Sheet
 keywords: development deliverables
-tags: [development]
+tags: [engagement,development]
 sidebar: overview_sidebar
 permalink: development_deliverables.html
 summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of GP Connect APIs."
