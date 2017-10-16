@@ -36,7 +36,6 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 - Look through the Design Decisions made so far in relation to each capability packs ([foundation](foundations_design.html), [access record](accessrecord_design.html), [appointments](appointments_design.html) and [tasks](tasks_design.html)) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
-- Have a look at some of the recent [News](news.html) from the programme.
 
 ## 2. Explore ## 
 
