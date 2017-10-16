@@ -581,7 +581,7 @@ As outlined in the FHIR specification, any of these errors SHOULD be accompanied
 
 Refer to [FHIR Guidance - Error Handling](development_fhir_error_handling_guidance.html) for full details of error codes that SHALL be used when returning an operation outcome error.
 
-### [Compartment Based Access](http://hl7.org/fhir/compartments.html) ###
+### [Compartment Based Access](http://hl7.org/fhir/DSTU2/compartments.html) ###
 
 ```
 VERB [base]/[compartment_type]/[id]/[type]{?_format=[mime-type]}
