@@ -19,7 +19,7 @@ This is underpinned by the Information standards for Clinical Risk Management, p
 ## Commissioning Organisations ##
 Commissioning Organisations for GP Connect must have a clinical safety framework compliant with Information Standard:
 
-([SCCI0160: Clinical Risk Management: its Application in the Deployment and Use of Health IT Systems](http://digital.nhs.uk/isce/publication/scci0160){:target="_blank"})
+([SCCI0160: Clinical Risk Management: its Application in the Deployment and Use of Health IT Systems](http://content.digital.nhs.uk/isce/publication/SCCI0160){:target="_blank"})
 	
 and are responsible for  assuring that deployment and implementation of consumer applications using the GP Connect APIs comply with this framework.
 
@@ -27,7 +27,7 @@ and are responsible for  assuring that deployment and implementation of consumer
 
 Consumer and Provider systems using the GP Connect API must comply with the requirements of the SCCI0129 standard, promoting and ensuring the effective application of clinical risk management by suppliers developing and maintaining Health IT systems:
 
-([SCCI0129: Clinical Risk Management:  its Application in the Manufacture of Health IT Systems](http://digital.nhs.uk/isce/publication/scci0129){:target="_blank"})
+([SCCI0129: Clinical Risk Management:  its Application in the Manufacture of Health IT Systems](http://content.digital.nhs.uk/isce/publication/SCCI0129){:target="_blank"})
 
 The GP Principal Providers must also carry through to any GP Connect functionality the clinical safety requirements of the GPSoC framework.
 
