@@ -363,7 +363,14 @@ a.accordion-toggle, a.accordion-collapsed {
     font-size: 19px;
     font-weight: bolder;
 }
+.nav #gpcnavlink > a:before {
+    content: '\25c0';
+    font-size: 10px;
+}
 
+#gpcnavlink {
+    padding-bottom: 10px;
+}
 
 .nav li > a > span:after {
     content: '\25be';
