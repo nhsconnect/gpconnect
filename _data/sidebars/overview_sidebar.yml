@@ -137,11 +137,11 @@ entries:
     - title: Access Record REST
       url: /accessrecord_rest.html
       output: web
-    - title: Task Management
-      url: /tasks.html
-      output: web
     - title: Appointment Management
       url: /appointments.html
+      output: web
+    - title: Task Management
+      url: /tasks.html
       output: web
 
   - title: Integrate with Spine
