@@ -75,8 +75,3 @@ Results for the RAMP test SHALL include the tps and message size profile at the 
 If a SOAK test is performed, results SHALL be provided.  
  
 <sup>1</sup>Note, V&P test profiles will differ according to the supplier based on the proportion of patient population whose GP records are held with that supplier.
-
-## External Documents / Policy Documents ##
-
-| Name | Author | Version | Updated |
-| TODO | NHS Digital | v1.0 | 01/08/2016 |

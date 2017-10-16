@@ -84,9 +84,4 @@ Provider systems SHALL be deployed with the provider APIs enabled by default.
 Provider systems MAY provide a mechanism for a data controller at an organisation to choose to globally disable/enable the provider APIs (i.e. turn on/off the overall GP Connect technical capability).
 
 Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (i.e. Access Record HTML vs. Appointments vs. Tasks).
-
-## External Documents / Policy Documents ##
-
-| Name | Author | Version | Updated |
-| GPSoC Technical Standards | NHS Digital | v1.0 | ??/??/???? |
-| GPSoC Non Functional Requirements | NHS Digital | v1.0 | ??/??/???? |
+	

@@ -15,21 +15,9 @@ entries:
     - title: Getting Started
       url: /overview_engage.html
       output: web
-#    - title: News
-#      url: /news.html
-#      output: web
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-    - title: Workshops and Timeline
-      url: /overview_workshops.html
-      output: web
-#    - title: Webinars
-#      url: /overview_webinars.html
-#      output: web
-#    - title: Work in Progress
-#      url: /overview_work_in_progress.html
-#      output: web
     - title: First of Type
       url: /overview_first_of_type.html
       output: web
@@ -244,9 +232,6 @@ entries:
   - title: Tags
     output: web
     folderitems:
-    - title: News
-      url: /tag_news.html
-      output: web
     - title: Getting Started
       url: /tag_getting_started.html
       output: web
