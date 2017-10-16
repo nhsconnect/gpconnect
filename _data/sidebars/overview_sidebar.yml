@@ -32,13 +32,10 @@ entries:
     output: web
     folderitems:
 
-    - title: Maturity Model
-      url: /designprinciples_maturity_model.html
-      output: web
-      type: homepage
     - title: Development Principles
       url: /designprinciples_development_principles.html
       output: web
+      type: homepage
     - title: Open API Principles
       url: /designprinciples_open_api_principles.html
       output: web
@@ -59,6 +56,9 @@ entries:
       output: web
     - title: Clinical Terminologies
       url: /design_clinical_terminologies.html
+      output: web
+    - title: Maturity Model
+      url: /designprinciples_maturity_model.html
       output: web
 
   - title: Explore
