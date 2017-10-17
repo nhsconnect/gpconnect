@@ -12,13 +12,13 @@ summary: "Release notes for the various versions of the GP Connect overview."
 - [Specification Versioning Guidance](development_fhir_versioning_specification_guidance.html), [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html), [Provider API Versioning Guidance](development_fhir_versioning_provider_guidance.html), [Consumer Versioning Guidance](development_fhir_versioning_consumer_guidance.html) - Added additional information around versioning.
 - [Security Guidance](development_api_security_guidance.html) - Updated Security guidance around the protocols suppliers should implement.
 - [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) - Updated JWT spcification examples to use the new profile and valuesets.
-
-
 - [Operation Guidance](development_fhir_operation_guidance.html#foundations-capability-interactions) - Corrected "Example URL Pattern" for searches so that `System` and `Code` are in the correct order.
 - [Error Handling Guidance](development_fhir_error_handling_guidance.html) - Updated page to reflect move from "gpconnect-error-or-warning-code-1" to "spine-error-or-warning-code-1"
 - [Security Guidance](development_api_security_guidance.html) - Removed contradiction within specificaiton for Cache-Control headers
 - [Common API Guidance](development_fhir_api_guidance.html#resource-metadata) - Uplifted guidance around the inclusion of profile details within the fhir resource meta data element when a consumer performs a create or amend interaction.
 - [Common API Guidance](development_fhir_api_guidance.html#update-resource) - Added clarification on use of PUT to make clear an update should not create a resource if the resource being updated does not already exist.
+- [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#guidance-on-use-of-requested_record) - Added section to clarify the expected use of the `requested_record` claim within the JWT.
+
 
 #### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)
 

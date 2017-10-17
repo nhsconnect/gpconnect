@@ -86,7 +86,7 @@ Consumer system SHALL generate a new JWT for each API request. The Payload secti
 | exp | R | Expiration time integer after which this authorization MUST be considered invalid. | `exp` | (now + 5 minutes) UTC time in seconds |
 | iat | R | The UTC time the JWT was created by the requesting system | `iat` | now UTC time in seconds |
 | reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
-| requested_record | R | The FHIR patient resource being requested (i.e. NHS Number identifier details) | No | FHIR Patient<sup>1</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
+| requested_record | R | A Minimal FHIR resource which describes the resource being requested or searched for. | No | FHIR Patient<sup>1</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
 | requested_scope | R | Data being requested<sup>2</sup> | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
 | requesting_device | R | FHIR device resource making the request | No | FHIR Device<sup>1</sup> |
 | requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
@@ -101,6 +101,26 @@ Consumer system SHALL generate a new JWT for each API request. The Payload secti
 <sup>4</sup> The requesting organisation resource SHALL refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
 
 {% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
+
+#### Guidance on use of requested_record ####
+
+The `requested_record` claim within the JWT should be a minimal FHIR resource which describes the resource being requested or searched for where possible. Currently the FHIR resource can either be a `Patient` or an `Organization` resource and will contain any relevant business identifiers to the request.
+
+The table below shows some of the GP Connect API interactions and the expected content for the JWT requested_record claim:
+
+| Request | Known Business Identifiers | requested_record Resource Type | requested_record Content |
+| --- | --- | --- | --- |
+| Access Record HTML | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as a parameter to the "gpc.getcarerecord" operation. |
+| Patient Search | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as the search parameter of the request. |
+| Patient Read | N/A | Patient | SHOULD contain the logical id of the patient resource being requested. |
+| Organization Search | ODS Code | Organization | SHALL contain an identifier element containing the organization ODS Code which is being passed as the parameter to the search. |
+| Practitioner Search | User Id | Organization | SHOULD contain any relevant identifier for the organization on which the fhir endpoint resides. |
+| Practitioner Read | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the fhir endpoint resides. |
+| Search for free slots | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the fhir endpoint resides. |
+| Book Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
+| Read Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
+
+{% include note.html content="The provider SHALL validate that the requested_record claim details match the request parameters where possible, to ensure valid auditing of the requests end-to-end." %}
 
 #### JWT Generation ####
 Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
