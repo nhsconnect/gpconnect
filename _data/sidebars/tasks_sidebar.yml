@@ -25,31 +25,31 @@ entries:
       url: /tasks.html
       output: web, pdf
       type: homepage
-    - title: Clinical Scenarios
+    - title: Clinical scenarios
       url: /tasks_clinical_scenarios.html
       output: web, pdf
-    - title: Design Decisions
+    - title: Design decisions
       url: /tasks_design.html
       output: web, pdf
     - title: Wireframes
       url: /tasks_wireframes.html
       output: web, pdf
-    - title: Release Notes
+    - title: Release notes
       url: /tasks_release_notes.html
       output: web, pdf
-    - title: Known Issues
+    - title: Known issues
       url: /tasks_known_issues.html
       output: web, pdf
 
   - title: Development
     output: web, pdf
     folderitems:
-    - title: FHIR Resources
+    - title: FHIR resources
       url: /datalibrarytasks.html
       output: web, pdf
       
       subfolders:
-      - title: API Use Cases
+      - title: API use cases
         output: web, pdf
         subfolderitems:
 

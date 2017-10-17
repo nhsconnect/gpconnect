@@ -24,26 +24,26 @@ entries:
     - title: Introduction
       url: /appointments.html
       output: web
-    - title: Clinical Scenarios
+    - title: Clinical scenarios
       url: /appointments_clinical_scenarios.html
       output: web, pdf
-    - title: Design Decisions
+    - title: Design decisions
       url: /appointments_design.html
       output: web
     - title: Wireframes
       url: /appointments_wireframes.html
       output: web
-    - title: Release Notes
+    - title: Release notes
       url: /appointments_release_notes.html
       output: web
-    - title: Known Issues
+    - title: Known issues
       url: /appointments_known_issues.html
       output: web, pdf
 
   - title: Development
     output: web, pdf
     folderitems:
-    - title: FHIR Resources
+    - title: FHIR resources
       url: /datalibraryappointment.html
       output: web, pdf
     - title: Consumer sessions illustrated
@@ -51,7 +51,7 @@ entries:
       output: web, pdf
       
       subfolders:
-      - title: API Use Cases
+      - title: API use cases
         output: web, pdf
         subfolderitems:
 
