@@ -714,25 +714,7 @@ Location: [base]/[type]/[id]/_history/[vid]
 
 ### Create Example: Book an appointment for a patient ###
 
-#### Request ####
-
-```http
-POST [base]/Appointment
-```
-
-*Request Body*
-
-```xml
-<Appointment>
-</Appointment>
-```
-
-#### Response ####
-
-```xml
-<Appointment>
-</Appointment>
-```
+Refer to [Book an appointment](appointments_use_case_book_an_appointment.html) for request and response body examples for a create request.
 
 ## [Update Resource](https://www.hl7.org/fhir/DSTU2/http.html#update) ##
 
@@ -753,25 +735,7 @@ The PUT operation will only be used to update existing resources, if the specifi
 
 ### Update Example: Modify the appointment reason for a patient as their condition has changed ###
 
-#### Request ####
-
-```http
-PUT [base]/Appointment/2A6FFB1C-5540-1613-926C-7DD1306EBBF8
-```
-
-*Request Body*
-
-```xml
-<Appointment>
-</Appointment>
-```
-
-#### Response ####
-
-```xml
-<Appointment>
-</Appointment>
-```
+Refer to [Amend an appointment](appointments_use_case_amend_an_appointment.html) for request and response body examples for a request which updates a resource using the PUT HTTP verb.
 
 ## [Delete Resource](https://www.hl7.org/fhir/DSTU2/http.html#delete) ##
 
