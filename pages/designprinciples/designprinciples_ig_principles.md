@@ -1,13 +1,13 @@
 ---
-title: Information Governance Principles
+title: Information governance principles
 keywords: engage, fot, information, governance, infogov, ig
 tags: [information_governance,engagement,commissioning,first_of_type]
 sidebar: overview_sidebar
 permalink: designprinciples_ig_principles.html
-summary: "High-level principles related to information governance (IG) of data with-in the system for FoT."
+summary: "High-level principles related to information governance (IG) of data with-in the system for FoT"
 ---
 
-## First of Type (FoT) Principles ##
+## First of Type (FoT) principles ##
 
 {% include important.html content="The principles below have been discussed in workshops with the GP Principal Providers, and with their underpinning detailed requirements, are currently undergoing review to obtain the  necessary stakeholder agreement.<br/><br/>
 The detailed requirements supporting these will be available as part of the Provider, Consumer Development and Assurance documentation to be published during November/December 2016.<br/><br/>

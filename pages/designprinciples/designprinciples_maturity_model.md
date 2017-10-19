@@ -1,17 +1,17 @@
 ---
-title: Maturity Model
+title: Maturity model
 keywords: development, roadmap
 tags: [engage,development,fhir]
 sidebar: overview_sidebar
 permalink: designprinciples_maturity_model.html
-summary: High-level maturity model for GP Connect systems.
+summary: High-level maturity model for GP Connect systems
 ---
 
 {% include important.html content="All delivery dates are indicative and subject to on-going review." %}
 
 The maturity roadmap of a compliant Principal GP system is expected to follow the following FHIR&reg; and business capability maturity stages as follows:
 
-## Stage 1 - Current ##
+## Stage 1 - current ##
 - Access Record (v1.0), Appointment (v1.0) and Task (v1.0) capabilities.
  - Access Record includes: HTML Patient Summary, Encounters, Clinical Items, Problems and Issues, Allergies and Adverse Reactions, Medications, Referrals, Observations, Immunisations & Administrative Items.
 - Spine Security Proxy (SSP) integration.
@@ -30,7 +30,7 @@ The maturity roadmap of a compliant Principal GP system is expected to follow th
 - Unbundled direct read-only access to specific resources (see priortisation list below).
 
 
-# Prioritised Structured Content #
+# Prioritised structured content #
 This is the working list of structured resources required for Access Record v2.0 and Stage 3 RESTful access
 
 ## Priority confirmed ##

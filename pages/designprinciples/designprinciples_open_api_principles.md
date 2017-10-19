@@ -1,10 +1,10 @@
 ---
-title: Open API Design Principles
+title: Open API design principles
 keywords: development
 tags: [development,fhir]
 sidebar: overview_sidebar
 permalink: designprinciples_open_api_principles.html
-summary: "High-level design principles related to the Open API design."
+summary: "High-level design principles related to the open API design"
 ---
 
 {% include tip.html content="GP Connect has aligned with [NHS England's Open API Policy](https://www.england.nhs.uk/digitaltechnology/info-revolution/interoperability/open-api/) to support the ambition of moving to a position where significant business functionality available within systems is exposed through interfaces where the definition is open. Download a PDF copy [now](https://www.england.nhs.uk/wp-content/uploads/2014/05/open-api-policy.pdf)." %}
@@ -16,8 +16,8 @@ summary: "High-level design principles related to the Open API design."
   - Synchronous endpoints using `GET`, `POST`, `PUT` and `DELETE` HTTP verbs.
 - [FHIR Operation](https://www.hl7.org/fhir/DSTU2/operations.html){:target="_blank"} APIs to be used in limited "set piece" circumstances.
   - For example, to pull bundles of resources without using the full generic querying syntax.
-- Uniform Resource Identification (URI) as the resource's [Logical Identity](https://www.hl7.org/fhir/DSTU2/resource.html#id){:target="_blank"}.
-- Business Identifiers (such as NHS Number) used to resolve a resource's [Logical Identity](https://www.hl7.org/fhir/DSTU2/resource.html#id){:target="_blank"}.
+- Uniform resource identification (URI) as the resource's [logical identity](https://www.hl7.org/fhir/DSTU2/resource.html#id){:target="_blank"}.
+- Business identifiers (such as NHS number) used to resolve a resource's [logical identity](https://www.hl7.org/fhir/DSTU2/resource.html#id){:target="_blank"}.
 - Resources represented as either [XML or JSON](https://www.hl7.org/fhir/DSTU2/formats.html#wire){:target="_blank"} as requested by the API consumer.  To ensure maximum accessibility, GP Connect is expecting producers to support both formats.  However since XML is on average 30% larger on the wire there is a preference towards use of JSON. 
 - HTML content to utilise XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html){:target="_blank"} guidance.
 - ETags for [managing version aware updates](https://www.hl7.org/fhir/DSTU2/http.html#concurrency){:target="_blank"}.
