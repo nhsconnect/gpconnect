@@ -1,10 +1,10 @@
 ---
-title: Provider API Versioning Guidance
+title: Provider API versioning guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_versioning_provider_guidance.html
-summary: "Details of the versioning requirements for GP Connect providers."
+summary: "Details of the versioning requirements for GP Connect providers"
 ---
 
 Provider systems are required to publish a Service Root URL in the Spine Directory Service in the following format:
@@ -22,14 +22,14 @@ Provider systems are required to publish a Service Root URL in the Spine Directo
 - The FHIR Base URL SHALL NOT contain a trailing `/`
 
 
-#### Example Server Root URL ####
+#### Example server root URL ####
 
 ``` https://provider.nhs.uk/GP0001/DSTU2/3 ```
 
 ``` https://provider.nhs.uk/GP0001/STU3/1 ```
 
 
-#### Supported Interactions ####
+#### Supported interactions ####
 
 A Providers endpoint should support the current and the previous version of each supported interaction (n and n-1) as specified on the [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html) page.
 

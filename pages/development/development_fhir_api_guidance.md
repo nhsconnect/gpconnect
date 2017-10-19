@@ -1,31 +1,31 @@
 ---
-title: Common API Guidance
+title: Common API guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_api_guidance.html
-summary: "Details of the common request handling pattern(s) across all GP Connect FHIR APIs."
+summary: "Details of the common request handling pattern(s) across the GP Connect FHIR API"
 ---
 
 ## Purpose ##
 
 This document is intended for use by software developers looking to build a conformant GP Connect API interface utilising the FHIR&reg; standard.
 
-### Notational Conventions ###
+### Notational conventions ###
 
 The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-## FHIR Implementation Guidance ##
+## FHIR implementation guidance ##
 
 The purpose of the implementation guide is to describe adaptations of the base FHIR specification specific for GP Connect First of Type (FoT) implementations. It therefore focuses mainly on any additional constraints and specialisations from the base specification that apply to GP Connect. The complete specification therefore comprises the base FHIR specification plus the constraints and specialisations described herein. Where there is a conflict between the base specification and this document, this document shall take precedence.
 
-### [FHIR Overview](http://hl7.org/fhir/overview-dev.html) ###
+### [FHIR overview](http://hl7.org/fhir/overview-dev.html) ###
 
 As outlined on the official [HL7&reg; FHIR](http://hl7.org/fhir/) website:
 
 > FHIR (Fast Health Interoperability Resources) is designed to enable information exchange to support the provision of healthcare in a wide variety of settings. The specification builds on and adapts modern, widely used RESTful practices to enable the provision of integrated healthcare across a wide range of teams and organizations.
 
-### [FHIR Timelines](http://hl7.org/fhir/timelines.html) ###
+### [FHIR timelines](http://hl7.org/fhir/timelines.html) ###
 
 {% include note.html content="This document is written to accompany the currently released version of FHIR which is **Draft Standard For Trial Use (DSTU) 2**." %}
 
@@ -39,13 +39,13 @@ When a new release of the FHIR standard has been published for use NHS Digital w
 
 {% include note.html content="[STU3](http://hl7.org/fhir/2016May/) includes the introduction of a new draft `Task` resource which may impact the future implementation direction of the GP Connect Task profile." %}
 
-### [FHIR Implementations](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations) ###
+### [FHIR implementations](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations) ###
 
 The Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on their [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations). Currently five FHIR server implementations and a number of client libraries are available as open source software. These are written in a variety of popular programming languages (e.g. Java, C#.NET, JavaScript and Python).
 
 {% include tip.html content="NHS Digital recommends software vendors consider utilising (and contributing back to) an existing open source FHIR library to both help accelerate development and to grow/mature the open source FHIR ecosystem." %}
 
-### FHIR In Scope ###
+### FHIR in scope ###
 
 To help API implementers deal with the FHIR learning curve NHS Digital has worked to constrain the scope of the FHIR&reg; standard that is expected to be implemented in the first tranche of development work as follows: 
 
@@ -111,7 +111,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 
 {% include important.html content="It is fully expected that over time new areas of the FHIR&reg; standard will be brought into scope as new capabilities are requested and vendors understanding of FHIR&reg; standard matures. This is in-line with the agreed iterative/Agile engagement process that has been agreed between the NHS Digital and the Principal GP system vendors." %}
 
-### FHIR Out Of Scope ###
+### FHIR out of scope ###
 
 GP Connect provider systems are not expected to implement the following aspects of the FHIR&reg; standard under the scope of the first tranche of development work:
 
@@ -172,13 +172,13 @@ GP Connect provider systems are not expected to implement the following aspects 
 
 {% include warning.html content="Vendors are free to implement additional FHIR functionality above that mandated under the GP Connect delivery if they so desire. However, the Spine Security Proxy (SSP) will only forward accredited system interactions." %}
 
-### Maturity Roadmap ###
+### Maturity roadmap ###
 
 At a high-level the maturity roadmap of a compliant Principal GP system is expected to follow the following FHIR and business capability maturity stages.
 
 Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity_model.html) for full details.
 
-### Internet Standards ###
+### Internet standards ###
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
 
@@ -188,7 +188,7 @@ Clients and servers SHALL be conformant to the following Internet Engineering Ta
 
 {% include roadmap.html content="The NHS Digital is currently evaluating how [Cross-Origin Resource Sharing](http://www.w3.org/TR/cors/) (CORS) will be handled for web and mobile based applications." %}
 
-### Endpoint Resolution ###
+### Endpoint resolution ###
 
 Clients SHALL perform a sequence of query operations against existing Spine services to enable FHIR endpoint resolution.
 
@@ -216,7 +216,7 @@ The FHIR&reg; standard specifies that users/clients/servers may be authenticated
 
 For the purpose of GP Connect FoT clients and servers SHALL authenticate using TLS Mutual Authentication (MA) utilising client certificates provided by the NHS Digital for this purpose.
 
-### [System Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) ###
+### [System conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) ###
 
 Servers SHALL provide a read-only FHIR Conformance resource that identifies all of the profiles and operations that the server supports for each resource type.
 
@@ -230,11 +230,11 @@ Refer to [Foundations - Get The FHIR Conformance Profile](foundations_use_case_g
 
 {% include roadmap.html content="NHS Digital is evaluating the benefits of providing a centrally hosted FHIR server to act as a definition repository for *Content* and *Operation Control* [Infrastructure Resources](https://www.hl7.org/fhir/DSTU2/infrastructure.html). However, this is out of scope for the initial GP Connect deployments." %}
 
-### [Resource Conformance](https://www.hl7.org/fhir/DSTU2/profiling.html#2.13.0.3.2) ###
+### [Resource conformance](https://www.hl7.org/fhir/DSTU2/profiling.html#2.13.0.3.2) ###
 
 To help a consumer find the correct set of reports for a use-case, a provider of resources SHALL, for any profile declared in `Conformance.profile` mark resources with profile assertions documenting the profile(s) they conform to. A provider of resources SHOULD also ensure that any resource instance that would reasonably be expected to conform to the declared profiles SHOULD be published in this form.
 
-#### GP Connect API Conformance ####
+#### GP Connect API conformance ####
 
 GP Connect comprises a number of RESTful API bundles. Each API bundle is intended to support sets of related use cases, for example the Appointment API bundle supports viewing, booking and cancelling GP appointments in a number of scenarios.
 
@@ -244,21 +244,21 @@ Individual API bundles may be provided independently of each other. GP Connect c
 
 The RESTful API described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `DELETE /fhir/Patient/1` to remove the patient record.
 
-The FHIR RESTful API Style Guide defines the following URL conventions which are used throughout the remainder of this document:
+The FHIR RESTful API style guide defines the following URL conventions which are used throughout the remainder of this document:
 
 - URL pattern content surrounded by **[ ]** are mandatory.
 - URL pattern content surrounded by **{ }** are optional.
 
-### [Service Root URL](https://www.hl7.org/fhir/DSTU2/http.html#general) ###
+### [Service root URL](https://www.hl7.org/fhir/DSTU2/http.html#general) ###
 
-The Service Root URL is the address where all of the resources defined by this interface are found. 
+The Service root URL is the address where all of the resources defined by this interface are found. 
 
-The Service Root URL is the `[base]` portion of all FHIR APIs.
+The Service root URL is the `[base]` portion of all FHIR APIs.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
 
-#### Example Server Root URL
+#### Example server root URL
 
 The provider will publish the server root URL to Spine Directory Services as follows:
 
@@ -277,7 +277,7 @@ The consumer system would therefore issue a request to the new version of the pr
 
 Clients and servers constructing URLs SHALL conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A) which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
 
-### [HTTP Verbs](http://hl7.org/fhir/valueset-http-verb.html) ###
+### [HTTP verbs](http://hl7.org/fhir/valueset-http-verb.html) ###
 
 The following HTTP verbs SHALL be supported to allow RESTful API interactions with the various FHIR resources:
 
@@ -292,7 +292,7 @@ The following HTTP verbs SHALL be supported to allow RESTful API interactions wi
 
 {% include roadmap.html content="In a future version of the FHIR&reg; standard it is expected that the **PATCH** verb will also be supported." %}
 
-#### [Resource Type](http://hl7.org/fhir/resourcelist.html) ####
+#### [Resource type](http://hl7.org/fhir/resourcelist.html) ####
 
 GP Connect provider systems SHALL support FHIR resource types as profiled within the [GP Connect FHIR Resource Definitions](http://developer.nhs.uk/downloads-data/fhir-resource-definitions-library/). 
 
@@ -306,11 +306,11 @@ Once assigned, the identity SHALL never change. `logical Ids` are always opaque,
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/dstu2/resource.html#id)  
 
-#### External Resource Resolution ####
+#### External resource resolution ####
 
 Inline with work being undertaken in other jurisdictions (see the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide) for details) GP Connect provider systems are not expected to resolve full URLs that are external to their environment.
 
-### [Content Types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
+### [Content types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
 Servers SHALL support both formal MIME-types for FHIR resources:
 
@@ -321,7 +321,7 @@ Servers SHALL support the optional `_format` parameter in order to allow the cli
 
 Servers SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client application.
 
-### [Wire Format Representations](https://www.hl7.org/fhir/DSTU2/formats.html#wire) ###
+### [Wire format representations](https://www.hl7.org/fhir/DSTU2/formats.html#wire) ###
 
 Servers SHALL support two wire formats as ways to represent resources when they are exchanged:
 
@@ -334,17 +334,17 @@ Consumers SHALL ignore unknown extensions and elements in order to foster [forwa
 
 Systems SHALL declare which format(s) they support in their Conformance Statement. If a server receives a request for a format that it does not support it SHALL return a http status code of `415` indicating an `Unsupported Media Type`.
 
-### [Transfer Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
+### [Transfer encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
 Clients and servers SHALL support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
 
-### [Character Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
+### [Character cncoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
 Clients and servers SHALL support the `UTF-8` character encoding as outlined in the FHIR standard.
 
 > FHIR uses `UTF-8` for all request and response bodies. Since the HTTP specification (section 3.7.1) defines a default character encoding of `ISO-8859-1`, requests and responses SHALL explicitly set the character encoding to `UTF-8` using the `charset` parameter of the MIME-type in the `Content-Type` header. Requests MAY also specify this charset parameter in the `Accept` header and/or use the `Accept-Charset` header.
 
-### Content Compression ###
+### Content compression ###
 
 To improve system performances clients/servers SHALL support GZIP compression.
 
@@ -352,17 +352,17 @@ Compression is requested by setting the `Accept-Encoding` header to `gzip`.
 
 {% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %} 
 
-### [Inter-version Compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html) ###
+### [Inter-version compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html) ###
 
 Unrecognized search criteria SHALL always be ignored. As search criteria supported in a query are echoed back as part of the search response there is no risk in ignoring unexpected search criteria.
 
-### HTTP Headers ###
+### HTTP headers ###
 
-#### Proxying Headers ####
+#### Proxying headers ####
 
 Additional HTTP headers SHALL be added into the HTTP request/response for the purpose of allowing the proxy system to disclose information lost in the proxying process (e.g. the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](http://tools.ietf.org/html/rfc7239).
 
-#### Cross Organisation Provenance & Audit Headers ####
+#### Cross organisation provenance and audit headers ####
 
 In order to meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients SHALL provide an oAuth 2.0 Bearer token in the HTTP Authorization header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
 
@@ -387,7 +387,7 @@ The Spine Security Proxy (SSP) SHALL perform the following checks to authenticat
 - Check that the client/sending endpoint has been registered (and accredited) to initiate the given interaction.
 - Check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction.   
 
-#### Caching Headers ####
+#### Caching headers ####
 
 Providers SHALL use the following HTTP Header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
 

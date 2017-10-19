@@ -1,13 +1,13 @@
 ---
-title: Operation Guidance
+title: Operation guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_operation_guidance.html
-summary: "Details of which operations a FHIR server should expose to be a fully compliant GP Connect solution."
+summary: "Details of which operations a FHIR server should expose to be a fully compliant GP Connect solution"
 ---
 
-## Stage 1. & 2. FHIR Operations ##
+## Stage 1 & 2 FHIR Operations ##
 
 *Aim(s)*
 
@@ -34,7 +34,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 	- Resource Type is the name of a FHIR resource (i.e. `Patient`, `Appointment`, `Organization` etc).
 	- Operation Name is the name of a custom FHIR operation (i.e. `gpc.getcarerecord`)
 
-### Foundations Capability Interactions ###
+### Foundations capability interactions ###
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
@@ -49,14 +49,14 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient` | `POST`  | `[base]/Patient/$gpc.registerpatient` |
 
 
-### Access Record HTML Capability Interactions ###
+### Access Record HTML capability interactions ###
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
 | [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` | `POST` | `[base]/Patient/$gpc.getcarerecord` |
 
 
-### Appointments Capability Interactions ###
+### Appointments capability interactions ###
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
@@ -68,7 +68,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Get Patient Appointments](appointments_use_case_retrieve_a_patients_appointments.html)  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments` | `GET`  | `[base]/Patient/[id]/Appointment` |
 
 
-### Task Capability Interactions ###
+### Task capability interactions ###
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|

@@ -1,10 +1,10 @@
 ---
-title: System Demonstrator
+title: System demonstrator
 keywords: system, demonstrator
 tags: [system,demonstrator]
 sidebar: overview_sidebar
 permalink: system_demonstrator.html
-summary: "Demonstrator implementation of the GP Connect FHIR APIs."
+summary: "Demonstrator implementation of the GP Connect FHIR API"
 ---
 
 ## Objective ##
@@ -20,19 +20,19 @@ Take the [Ripple](http://rippleosi.org/){:target="_blank"} open source record vi
 - Can be extended into more focussed use cases in the future (e.g. testing, assurance tooling, developer tools).
 - Using the [HAPI open-source FHIR library](http://hapifhir.io/){:target="_blank"} to bootstrap FHIR compliance.
 
-## System Architecture ##
+## System architecture ##
 
 ![API Consumer talking to API Provider via the Spine Security Proxy](images/systems/API Consumer talking to API Provider via the Spine Security Proxy.png)
 
-## Source Code ##
-The GP Connect Demonstrator is a free open source software (FOSS) project.
+## Source code ##
+The GP Connect demonstrator is a free open source software (FOSS) project.
 
 - Download the source code from the
 [Demonstrator GitHub project repo](https://github.com/nhs-digital/gpconnect){:target="_blank"}
 
 - The project contains step by step instructions to set up a working instance on your own machine.
 
-## Current Status ##
+## Current status ##
 
 We now have a functioning user interface that can drive interactions with the FHIR-based APIs to:
 
@@ -40,18 +40,18 @@ We now have a functioning user interface that can drive interactions with the FH
 - Appointment Management for a patient across practice diaries.
 - Task Management for a patient across organisational boundaries.
 
-## Online System ##
+## Online system ##
 
 View the latest build of the [GP Connect Demonstrator](http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/){:target="_blank"} online now!
 
 {% include tip.html content="All data held in the GP Connect Demonstrator is a cleared down and reseeded each night to allow for easier testing. <br/>Please refer to the Demonstrator's in-built help for further details." %}
 
-## Community Projects ##
+## Community projects ##
 
 Dave Bould has developed a Vagrant config file for building a complete GP Connect Demonstrator environment with only a few commands.
 
 [GP Connect Vagrant](https://github.com/dbould/gpconnect-vagrant)
 
-## Example Screens ##
+## Example screens ##
 
 ![GP Connect Demonstrator Patient Summary](images/systems/GP Connect Demonstrator Patient Summary.png)

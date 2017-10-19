@@ -1,15 +1,15 @@
 ---
-title: Error Handling Guidance
+title: Error handling guidance
 keywords: fhir, development, operation outcome, error
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_error_handling_guidance.html
-summary: "Details of the common error handling pattern(s) across all GP Connect FHIR APIs."
+summary: "Details of the common error handling pattern(s) across the GP Connect API"
 ---
 
 {% include todo.html content="This page is published as a **work in progress** version and as such is subject to change. Once finalised all error codes presented here will be defined as part of the *spine-error-or-warning-code-1* value set." %}
 
-### Operation Outcome Usage ####
+### Operation outcome usage ####
 
 The FHIR standard allows for an `OperationOutcome` to be returned for any/all errors both for Operations and for RESTful CRUD API calls.
 
@@ -19,11 +19,11 @@ The FHIR standard allows for an `OperationOutcome` to be returned for any/all er
 
 {% include download.html content="A spreadsheet of [Expected Error Codes](downloads/development/expected_error_codes.xlsx) is available which covers the most common error scenarios." %}
 
-### Identity Validation Errors ####
+### Identity validation errors ####
 
 Provider systems SHALL respond by returning one of the following `OperationOutcome` error codes in the case of a custom operation error (i.e. `$gpc.getcarerecord`, `$gpc.registerpatient`).
 
-| HTTP Code | Error Code | Description |
+| HTTP code | Error code | Description |
 | --------- |------------|-------------|
 | `400`     | INVALID_IDENTIFIER_SYSTEM | Invalid Identifier System |
 | `400`     | INVALID_IDENTIFIER_VALUE | Invalid Identifier Value |
@@ -35,7 +35,7 @@ Provider systems SHALL respond by returning one of the following `OperationOutco
 | `404`     | PRACTITIONER_NOT_FOUND   | Practitioner Record Not Found |
 | `400`     | INVALID_SDS_USERID   | SDS UserID Invalid |
 
-#### Example 1. Invalid NHS Number Supplied #####
+#### Example 1. Invalid NHS number supplied #####
 
 For example if an invalid NHS Number value is supplied to the `$gpc.getcarerecord` Operation the following error details would be returned:
 
@@ -59,7 +59,7 @@ For example if an invalid NHS Number value is supplied to the `$gpc.getcarerecor
 }
 ```
 
-#### Example 2. Patient Not Found #####
+#### Example 2. Patient not found #####
 
 For example a valid NHS Number value is supplied to the `$gpc.getcarerecord` Operation but no GP record exists for that patient then the following error details would be returned:
 
@@ -83,7 +83,7 @@ For example a valid NHS Number value is supplied to the `$gpc.getcarerecord` Ope
 }
 ```
 
-### Security Validation Errors ###
+### Security validation errors ###
 
 Provider systems SHALL returning one of the following `OperationOutcome` error codes in the case of enforcing their local patient consent rules when responding to consumer API requests.
 
@@ -92,7 +92,7 @@ Provider systems SHALL returning one of the following `OperationOutcome` error c
 | `403` | NO_PATIENT_CONSENT | No Patient Consent To Share |
 | `403` | NON_AUTHORITATIVE | Non Authoritative |
 
-#### Example 3. No Patient Consent To Share #####
+#### Example 3. No patient consent to share #####
 
 For example the patient has requested that their record not be shared via the `$gpc.getcarerecord` Operation then the following error details would be returned:
 
@@ -116,7 +116,7 @@ For example the patient has requested that their record not be shared via the `$
 }
 ```
 
-### Resource Validation Errors ###
+### Resource validation errors ###
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
@@ -124,7 +124,7 @@ For example the patient has requested that their record not be shared via the `$
 | `422`     | INVALID_PARAMETER | Submitted parameter is not valid. |
 | `422`     | REFERENCE_NOT_FOUND | Referenced resource not found. |
 
-#### Example 4. Invalid Reference #####
+#### Example 4. Invalid reference #####
 
 For example sending/creating a new Task using the RESTful API fails as an invalid organisational reference is supplied, then the following error details would be returned:
 
@@ -148,7 +148,7 @@ For example sending/creating a new Task using the RESTful API fails as an invali
 }
 ```
 
-### Internal Server Errors ###
+### Internal server errors ###
 
 When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details.
 
@@ -164,7 +164,7 @@ When the FHIR server has received an request for an operation or FHIR resource w
 
 
 
-#### Example 5. Unexpected Exception #####
+#### Example 5. Unexpected exception #####
 
 For example an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
 
@@ -190,7 +190,7 @@ For example an unexpected internal exception is thrown by either an Operation or
 
 
 
-### Malformed Request Errors ###
+### Malformed request errors ###
 
 When the server cannot or will not process a request due to an apparent client error (e.g., malformed request syntax, too large size etc.) then the following `BAD_REQUEST` error SHALL be used to return debug details.
 
@@ -198,7 +198,7 @@ When the server cannot or will not process a request due to an apparent client e
 | --------- | ---------- | ----------- |
 | `400`     | BAD_REQUEST | Submitted request is malformed / invalid. |
 
-#### Example 6. Malformed Request Syntax #####
+#### Example 6. Malformed request syntax #####
 
 For example if the request could not be understood by the server due to malformed syntax, then the following error details would be returned:
 
@@ -222,11 +222,11 @@ For example if the request could not be understood by the server due to malforme
 }
 ```
 
-### Spine Security Proxy Errors ###
+### Spine security proxy errors ###
 
 When the spine security proxy cannot or will not process a request then the follwoing errors SHALL be used to return debug details.
 
-#### Example 7. Bad Request #####
+#### Example 7. Bad request #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -260,7 +260,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 9. Method Not Allowed #####
+#### Example 9. Method not allowed #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -277,7 +277,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 10. Unsupported Media Type #####
+#### Example 10. Unsupported media type #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -294,7 +294,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 11. Internal Server Error #####
+#### Example 11. Internal server error #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -311,7 +311,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 12. Bad Gateway #####
+#### Example 12. Bad gateway #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -328,7 +328,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 13. Gateway Timeout #####
+#### Example 13. Gateway timeout #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |

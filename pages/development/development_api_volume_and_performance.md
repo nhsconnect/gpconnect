@@ -1,10 +1,10 @@
 ---
-title: Volumetric & Performance
+title: Volumetric & performance
 keywords: development
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_api_volume_and_performance.html
-summary: "Details of the API volume and performance characteristics."
+summary: "Details of the API volume and performance characteristics"
 ---
 
 ## Volumetrics ##
@@ -37,16 +37,16 @@ Provider systems SHOULD process query API calls in &lt;1000ms, as this is the li
 
 Provider systems SHALL process query API calls in &lt;3000ms.
 
-## Volume and Performance Testing ##
+## Volume and performance testing ##
  
 Suppliers of Provider solutions are expected to undertake provider led V&P testing of their solutions.  
  
-### V&P Testing Model ### 
+### V&P testing model ### 
 Suppliers SHALL submit for review a high level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
  
 Suppliers' test approaches SHOULD include a LOAD and a RAMP test and ideally a SOAK test.  Suppliers SHALL supply comprehensive results of the test including timings for round trip API call/response against the message sizes used and the tps at the time of the request was made.
 
-### V&P Testing Infrastructure Scaling ###
+### V&P testing infrastructure scaling ###
 
 Predictive models of load have are provided to give an indication of the likely volume and profile of full production roll out.
 
@@ -56,7 +56,7 @@ Suppliers of provider solutions are expected to scale their infrastructure solut
 
 A plan outlining the points at which infrastructure will be scaled up should be provided after V&P testing is performed.
 
-### V&P Test Environment ###
+### V&P test environment ###
 
 Test environments SHALL simulate consumer applications making API calls against simulated test data (patient records, diaries, tasks etc) 
  
@@ -64,7 +64,7 @@ Test data SHALL be populated with realistic complexity, depth and volume, i.e. i
 
 If a small set of test data is repeatedly used as part of the V&P tests then test setup SHOULD seek to minimise the effects of caching e.g. within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).  
  
-### Volumetric Model ###
+### Volumetric model ###
 
 Suppliers SHOULD test API call volumes against a refined Volumetric Model<sup>1</sup>.
  

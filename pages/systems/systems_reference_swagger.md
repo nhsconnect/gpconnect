@@ -1,17 +1,17 @@
 ---
-title: Swagger API Documentation
+title: Swagger API documentation
 keywords: system, reference, swagger, api
 tags: [system,reference]
 sidebar: overview_sidebar
 permalink: system_reference_swagger.html
-summary: "Machine readable technical API documentation of the GP Connect FHIR APIs."
+summary: "Machine readable technical API documentation of the GP Connect FHIR API"
 ---
 
-## Swagger API Documentation ##
+## Swagger API documentation ##
 
 Download the [Swagger API Documentation](downloads/swagger/swagger.json){:target="_blank"} for the GP Connect APIs.
 
-## Swagger UI Examples Using Postman ##
+## Swagger UI examples using Postman ##
 
 Download the [Postman](https://www.getpostman.com/){:target="_blank" class="no_icon"} Chrome App and import our Swagger defintions to get going fast.
 

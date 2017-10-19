@@ -1,10 +1,10 @@
 ---
-title: Specification Versioning Guidance
+title: Specification versioning guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_versioning_specification_guidance.html
-summary: "Details of the common versioning for the GP Connect specification."
+summary: "Details of the common versioning for the GP Connect specification"
 ---
 
 The GP Connect specification is broken up into the following sections allowing for separate releases of the different parts of the specification. The section name and section version of the page being viewed is shown above the navigation menu on the left of the page, just below the NHS Digital logo.
