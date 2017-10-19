@@ -172,13 +172,47 @@ GP Connect provider systems are not expected to implement the following aspects 
 
 {% include warning.html content="Vendors are free to implement additional FHIR functionality above that mandated under the GP Connect delivery if they so desire. However, the Spine Security Proxy (SSP) will only forward accredited system interactions." %}
 
-### Maturity roadmap ###
+### Use of Must-Support flag on resource elements ###
+
+Some resource profiles used in GP Connect make use of the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) flag. 
+
+Where a Must-Support flag is present on a resource element, a `consumer` system SHALL populate the field in the request body if data is available to do so, irrespective of the fact that field cardinality may be `0..1` or `0..*`. 
+
+Similarly, `provider` systems SHALL populate an element in responses where data is available to do so, irrespective of optional cardinality. When a `provider` system receives data from a consumer for a field marked with the Must-Support flag, the provider system SHALL store this data field in such a way that the data element is preserved and the element can be populated in future responses to consumer requests for the resource in question.  
+
+For example, see the [Register a patient request body](foundations_use_case_register_a_patient.html#payload-request-body)
+
+### FHIR System conformance ###
+
+Servers SHALL provide a read-only [FHIR Conformance resource](https://www.hl7.org/fhir/DSTU2/conformance.html) that identifies all of the profiles and operations that the server supports for each resource type.
+
+A servers conformance statement SHALL be available using the following [conformance interactions](http://hl7.org/fhir/http.html#conformance):
+
+```
+GET [base]/metadata {?_format=[mime-type]}
+```
+
+Refer to [Foundations - Get The FHIR Conformance Profile](foundations_use_case_get_the_fhir_conformance_profile.html) for an example GP Connect FHIR conformance profile.
+
+{% include roadmap.html content="NHS Digital is evaluating the benefits of providing a centrally hosted FHIR server to act as a definition repository for *Content* and *Operation Control* [Infrastructure Resources](https://www.hl7.org/fhir/DSTU2/infrastructure.html). However, this is out of scope for the initial GP Connect deployments." %}
+
+### [FHIR Resource conformance](https://www.hl7.org/fhir/DSTU2/profiling.html#2.13.0.3.2) ###
+
+To help a consumer find the correct set of reports for a use-case, a provider of resources SHALL, for any profile declared in `Conformance.profile` mark resources with profile assertions documenting the profile(s) they conform to. A provider of resources SHOULD also ensure that any resource instance that would reasonably be expected to conform to the declared profiles SHOULD be published in this form.
+
+### GP Connect FHIR API conformance ###
+
+GP Connect comprises a number of RESTful API bundles. Each API bundle is intended to support sets of related use cases, for example the Appointment API bundle supports viewing, booking and cancelling GP appointments in a number of scenarios.
+
+Individual API bundles may be provided independently of each other. GP Connect conformance may be claimed in relation to one or more API bundles. A provider claiming to provide an API bundle must be fully conformant (i.e. implement all of the resource profiles and interactions for the API bundle as specified in this document and all of the general requirements described herein).
+
+## Maturity roadmap ##
 
 At a high-level the maturity roadmap of a compliant Principal GP system is expected to follow the following FHIR and business capability maturity stages.
 
 Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity_model.html) for full details.
 
-### Internet standards ###
+## Internet standards ##
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
 
@@ -188,7 +222,7 @@ Clients and servers SHALL be conformant to the following Internet Engineering Ta
 
 {% include roadmap.html content="The NHS Digital is currently evaluating how [Cross-Origin Resource Sharing](http://www.w3.org/TR/cors/) (CORS) will be handled for web and mobile based applications." %}
 
-### Endpoint resolution ###
+## Endpoint resolution ##
 
 Clients SHALL perform a sequence of query operations against existing Spine services to enable FHIR endpoint resolution.
 
@@ -204,41 +238,19 @@ Clients SHALL perform a sequence of query operations against existing Spine serv
 
 {% include tip.html content="Where a practitioner (with a valid SDS User ID) or organisation (with a valid ODS Code) record already exists with-in the local system the details associated with these existing records may be used for display purposes." %}
 
-### [Security](https://www.hl7.org/fhir/DSTU2/security.html) ###
+## [Security](https://www.hl7.org/fhir/DSTU2/security.html) ##
 
 TLS SHALL be used for all data exchange. The TLS communications are established prior to any HTTP command/response, so the whole FHIR interaction is protected by the TLS communications.
 
 The security of the endpoints of the TLS communications must be risk-managed, so as to prevent inappropriate risks (e.g. audit logging of the GET parameters into an unprotected audit log).
 
-#### [Authentication](https://www.hl7.org/fhir/DSTU2/security.html#authentication) ####
+### [Authentication](https://www.hl7.org/fhir/DSTU2/security.html#authentication) ###
 
 The FHIR&reg; standard specifies that users/clients/servers may be authenticated in any way desired. However, for web-centric use, oAuth ([RFC 6749](http://tools.ietf.org/html/rfc6749)) is recommended but not mandated by the FHIR&reg; standard.
 
 For the purpose of GP Connect FoT clients and servers SHALL authenticate using TLS Mutual Authentication (MA) utilising client certificates provided by the NHS Digital for this purpose.
 
-### [System conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) ###
 
-Servers SHALL provide a read-only FHIR Conformance resource that identifies all of the profiles and operations that the server supports for each resource type.
-
-A servers conformance statement SHALL be available using the following [conformance interactions](http://hl7.org/fhir/http.html#conformance):
-
-```
-GET [base]/metadata {?_format=[mime-type]}
-```
-
-Refer to [Foundations - Get The FHIR Conformance Profile](foundations_use_case_get_the_fhir_conformance_profile.html) for an example GP Connect FHIR conformance profile.
-
-{% include roadmap.html content="NHS Digital is evaluating the benefits of providing a centrally hosted FHIR server to act as a definition repository for *Content* and *Operation Control* [Infrastructure Resources](https://www.hl7.org/fhir/DSTU2/infrastructure.html). However, this is out of scope for the initial GP Connect deployments." %}
-
-### [Resource conformance](https://www.hl7.org/fhir/DSTU2/profiling.html#2.13.0.3.2) ###
-
-To help a consumer find the correct set of reports for a use-case, a provider of resources SHALL, for any profile declared in `Conformance.profile` mark resources with profile assertions documenting the profile(s) they conform to. A provider of resources SHOULD also ensure that any resource instance that would reasonably be expected to conform to the declared profiles SHOULD be published in this form.
-
-#### GP Connect API conformance ####
-
-GP Connect comprises a number of RESTful API bundles. Each API bundle is intended to support sets of related use cases, for example the Appointment API bundle supports viewing, booking and cancelling GP appointments in a number of scenarios.
-
-Individual API bundles may be provided independently of each other. GP Connect conformance may be claimed in relation to one or more API bundles. A provider claiming to provide an API bundle must be fully conformant (i.e. implement all of the resource profiles and interactions for the API bundle as specified in this document and all of the general requirements described herein).
 
 ## [RESTful API](https://www.hl7.org/fhir/DSTU2/http.html) ##
 
