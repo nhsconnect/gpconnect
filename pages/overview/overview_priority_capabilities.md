@@ -16,7 +16,7 @@ Access a patient's care record for the purpose of direct care.
 
 [![Img](images/overview/folder.png) HTML - Access Record HTML](accessrecord.html)
 
-[![Img](images/overview/structured.png) Structured - Access Record REST](accessrecord_rest.html)
+[![Img](images/overview/structured.png) Structured - Access Record Structured Data](accessrecord_rest.html)
 
 ## Appointments ##
 Manage appointments in order to co-ordinate access to care.

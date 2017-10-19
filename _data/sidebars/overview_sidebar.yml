@@ -134,7 +134,7 @@ entries:
     - title: Access Record HTML
       url: /accessrecord.html
       output: web
-    - title: Access Record REST
+    - title: Access Record Structured Data
       url: /accessrecord_rest.html
       output: web
     - title: Appointment Management
