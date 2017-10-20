@@ -105,7 +105,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 	4.  Search result parameters
 		1.  [_include](https://www.hl7.org/fhir/DSTU2/search.html#include) can be used internally inside a named `_query` operation.
 		2.  [_sort](https://www.hl7.org/fhir/DSTU2/search.html#sort) can be used internally inside a named `_query` operation.
-	3.  Chained parameters (limited to patient identifier only)
+	
 3.  [Operations](https://www.hl7.org/fhir/DSTU2/operations.html)
 	1.  [Implementation Defined Operations](https://www.hl7.org/fhir/DSTU2/operations.html#extensibility)
 
@@ -163,7 +163,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 		4. _elements
 		5. _contained 
 		6. _containedType
-	4. Chained parameters (limited to patient identifier only)
+	4. Chained parameters
 	5. Paging / Page Count
 4. Resource Metadata
 	1. lastUpdated
