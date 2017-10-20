@@ -92,7 +92,7 @@ Consumer system SHALL generate a new JWT for each API request. The Payload secti
 | requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
 | requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>1+3</sup> |
 
-<sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s).
+<sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s), conforming to the base fhir resources definition (the resource does not need to conform to the GP Connect fhir profile).
 
 <sup>2</sup> Patient scope for patient centric APIs (i.e. Get Care Record and Patient's Appointments, Patient Task) or scope for organisation centric APIs (i.e. Get Organization Schedule)
 
