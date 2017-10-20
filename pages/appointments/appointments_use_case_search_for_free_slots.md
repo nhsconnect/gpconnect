@@ -65,7 +65,7 @@ The following parameters MAY be included to minimise the number of API calls req
 On the wire a `Search for free slots` request would look something like the following:
 
 ```http
-GET /Slot?start=ge22-09-2017&end=le26-09-2017&Slot.fh-type=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&fb-type=free&_include=Slot:schedule&_include:recurse=Schedule:Practitioner&_include:recurse=Schedule:actor:Location
 ```
 
 
