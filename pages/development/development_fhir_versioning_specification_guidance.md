@@ -15,7 +15,7 @@ The following sections of the specification are currently individually versioned
 | --- | --- |
 | [GP Connect](/index.html) | This section of the specification is targeted at the cross cutting requirements and guidance common to all capabilities. Also included are overarching principles used by the GP Connect project when creating and implementing any aspect of the GP Connect specification and project. |
 | [Access Record HTML](/accessrecord.html) | This section contains requirements and details for development specific to the Access Record HTML capability. |
-| [Access Record Structured Data](/accessrecord_rest.html) |This section contains the requirements and details relating to the Access Record Structured Data capability for access to structured data. |
+| [Access Record REST](/accessrecord_rest.html) |This section contains the requirements and details relating to the Access Record REST capability for access to structured data. |
 | [Foundations](/foundations.html) | This section of the specification relates to the requirements and details required for implementing the Foundation capabilities. |
 | [Appointment Management](/appointments.html) | This section of the specification relates to the requirements and implementation details specifically relating to the Appointment Management capabilities. |
 | [Task Management](/tasks.html) | This section of the specification relates to the requirements and details needed to implement the Task Management capability. |

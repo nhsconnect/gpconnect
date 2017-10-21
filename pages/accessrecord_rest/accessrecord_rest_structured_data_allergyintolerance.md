@@ -11,7 +11,7 @@ summary: "Allergy Intolerance"
 
 Search for all allergies for a patient. Fetches a bundle of all `AllergyIntolerance` resources for the specified patient.
 
-This specification describes a single use cases. For complete details and background please see the [Access Record Structured Data capability bundle](accessrecord_rest.html).
+This specification describes a single use cases. For complete details and background please see the [Access Record REST Capability Bundle](accessrecord_rest.html).
 
 ## Security ##
 

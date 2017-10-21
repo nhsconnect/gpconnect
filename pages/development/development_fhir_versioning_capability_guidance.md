@@ -9,7 +9,7 @@ summary: "Details of the common versioning requirements for GP Connect FHIR APIs
 
 ### Capability pack / interaction versioning ###
 
-For each of the five capability packs (`Foundations`, `Access Record HTML`, `Access Record Structured Data`, `Appointment Management`, `Task Management`) there are a number of `API Use Cases` which make up the capability pack, for example "Find a patient" and "Read an organization" are two of the API Use Cases within the Foundation capability pack.
+For each of the five capability packs (`Foundations`, `Access Record HTML`, `Access Record REST`, `Appointment Management`, `Task Management`) there are a number of `API Use Cases` which make up the capability pack, for example "Find a patient" and "Read an organization" are two of the API Use Cases within the Foundation capability pack.
 
 Each API Use Case has an associated InteractionID. The InteractionID for each API Use Case is specified within the relevant Capability Packs, for example the "Find a patient" interaction is listed in the [Spine Interactions for the Foundations Capability Pack](foundations.html#spine-interactions).
 

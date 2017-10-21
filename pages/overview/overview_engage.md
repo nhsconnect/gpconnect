@@ -33,7 +33,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 
 - Read about the GP Connect [Priority capabilities](overview_priority_capabilities.html).
 - Review our guiding [Design principles](designprinciples.html) which help shape our approach.
-- Look through the design decisions made so far in relation to each capability packs ([Foundations](foundations_design.html), [Access Record HTML](accessrecord_design.html), [Access Record Structured Data](accessrecord_rest.html), [Appointment Management](appointments_design.html) and [Task Management](tasks_design.html)) and get involved:
+- Look through the design decisions made so far in relation to each capability packs ([Foundations](foundations_design.html), [Access Record HTML](accessrecord_design.html), [Access Record REST](accessrecord_rest.html), [Appointment Management](appointments_design.html) and [Task Management](tasks_design.html)) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
@@ -53,7 +53,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
   - [Foundations](foundations.html) (e.g. resolve a patient to their logical identifier for further API calls).
   	- Note the foundation per-requisites are mandatory and may restrict your ability to utilise the GP Connect APIs.
   - [Access Record HTML](accessrecord.html) (e.g. Access html views from the primary care record).
-  - [Access Record Structured Data](accessrecord_rest.html) (e.g. Access structured data from the primary care record).
+  - [Access Record REST](accessrecord_rest.html) (e.g. Access structured data from the primary care record).
   - [Appointment Management](appointments.html) (e.g. Book an appointment for a patient).
   - [Task Management](tasks.html) (e.g. Send a notification task to a general practice organisation).
 - Finally take a look at cross-cutting areas:

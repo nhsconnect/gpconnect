@@ -29,7 +29,7 @@ topnav_dropdowns:
           url: foundations.html
         - title: Access Record HTML
           url: accessrecord.html
-        - title: Access Record Structured Data
+        - title: Access Record REST
           url: accessrecord_rest.html
         - title: Appointment Management
           url: appointments.html
