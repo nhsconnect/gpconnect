@@ -67,8 +67,8 @@ entries:
     - title: System demonstrator
       url: /system_demonstrator.html
       output: web
-    - title: Swagger API documentation
-      url: /system_reference_swagger.html
+    - title: Postman API documentation
+      url: /system_reference_postman.html
       output: web
 
   - title: Development guidance
