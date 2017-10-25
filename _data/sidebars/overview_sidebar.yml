@@ -86,9 +86,12 @@ entries:
         - title: Open source
           url: /development_fhir_open_source_guidance.html
           output: web
-        - title: Common API guidance
+        - title: FHIR implementation guidance
           url: /development_fhir_api_guidance.html
           output: web
+        - title: General API guidance
+          url: /development_general_api_guidance.html
+          output: web          
         - title: Operation guidance
           url: /development_fhir_operation_guidance.html
           output: web
