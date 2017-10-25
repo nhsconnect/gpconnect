@@ -29,6 +29,9 @@ Provider Systems:
 
 - MAY authorise access to API endpoints through examining acceptable values in the JWT requested_scope claim
 
+- SHALL risk manage the security of the endpoints of the TLS communications, so as to prevent inappropriate risks (e.g. audit logging of the GET parameters into an unprotected audit log).
+
+
 ## Security testing ##
 
 Provider systems SHALL as a minimum be tested against the [OWASP top 10 web application vulnerabilities](https://www.owasp.org/index.php/Top_10_2013-Top_10).
