@@ -290,8 +290,6 @@ Provider systems:
 
 {% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (i.e. the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.freeBusyType` are updated inline with any internal integrity constraints)." %}
 
-{% include todo.html content="Decide if when cancelling an appointment we should remove all references to the original slot resources." %}
-
 ## Examples ##
 
 ### C# ###

@@ -11,7 +11,7 @@ summary: "Immunization"
 
 Search for all immunization resources for a patient. Fetches a bundle of all `Immunization` resources for the specified patient.
 
-This specification describes a single use cases. For complete details and background please see the [Access Record Structured Data capability Bundle](accessrecord_rest.html).
+This specification describes a single use cases. For complete details and background please see the [Access Record REST Capability Bundle](accessrecord_rest.html).
 
 ## Security ##
 
