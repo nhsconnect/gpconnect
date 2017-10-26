@@ -18,7 +18,7 @@ Review and agreement as to the IG model for additional and beyond FoT clinical s
 
 - The GP Connect APIs are for use in Direct Patient Care settings only.
 
-- Responsibility to ensure that Consuming organisation use of the GP Connect APIs is compliant with NHS Codes of Practice & Legal Obligations in their use of healthcare records and information, resides with the Commissioning Organisation (not NHS Digital).
+- Responsibility to ensure that Consuming End User Organisations use of the GP Connect APIs is compliant with NHS Codes of Practice & Legal Obligations in their use of healthcare records and information, resides with the Consuming End User Organisations (not NHS Digital).
 
 - FoT Early Adopter deployments will represent organisation groupings where the necessary data sharing agreements between data controllers, augmented by Data Controller-Data Processor contracts, IG process and policy and fair usage notifications are already in place eg existing federation or shared record groups
 
