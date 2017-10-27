@@ -43,7 +43,7 @@ When a new release of the FHIR standard has been published for use NHS Digital w
 
 The Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on their [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations). Currently five FHIR server implementations and a number of client libraries are available as open source software. These are written in a variety of popular programming languages (e.g. Java, C#.NET, JavaScript and Python).
 
-{% include tip.html content="NHS Digital recommends software vendors consider utilising (and contributing back to) an existing open source FHIR library to both help accelerate development and to grow/mature the open source FHIR ecosystem." %}
+{% include tip.html content="NHS Digital strongly recommends software vendors utilise (and contributing back to) an existing open source FHIR library to both help accelerate development and to grow/mature the open source FHIR ecosystem." %}
 
 ### FHIR in scope ###
 

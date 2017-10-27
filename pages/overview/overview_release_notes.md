@@ -19,6 +19,7 @@ summary: "Release notes for the GP Connect Overview"
 - [Common API Guidance](development_fhir_api_guidance.html#update-resource) - Added clarification on use of PUT to make clear an update should not create a resource if the resource being updated does not already exist.
 - [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#guidance-on-use-of-requested_record) - Added section to clarify the expected use of the `requested_record` claim within the JWT.
 - [Information governance principles](designprinciples_ig_principles.html) - Updated teminology around the consumer responsibilities in regards to NHS Codes of Practice & Legal Obligations related to the use of GP Connect API.
+- [Fhir library guidance](development_fhir_open_source_guidance.html) - the Fhir library guidance page has been updated to improve GP Connect guidance around using existing fhir libraries to aid it development.
 
 
 #### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)

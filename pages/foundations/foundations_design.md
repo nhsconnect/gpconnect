@@ -14,7 +14,6 @@ The following business identifier types are to be supported by GP Connect system
 | Identifier | Resource | System |
 | ---------- | -------- | ------ |
 | NHS Number | Patient | `https://fhir.nhs.uk/Id/nhs-number` |
-| Local Identifier | Resource | `http://fhir.nhs.net/Id/local-identifier` |
 | ODS Code | Organisation | `https://fhir.nhs.uk/Id/ods-organization-code` |
 | ODS Site Code | Location | `https://fhir.nhs.uk/Id/ods-site-code` |
 | SDS User ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |

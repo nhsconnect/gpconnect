@@ -83,7 +83,7 @@ entries:
         output: web
         subfolderitems:
 
-        - title: Open source
+        - title: Fhir library guidance
           url: /development_fhir_open_source_guidance.html
           output: web
         - title: FHIR implementation guidance
