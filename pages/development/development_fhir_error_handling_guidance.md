@@ -260,7 +260,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 9. Forbidden #####
+#### Example 9. Not Found #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
