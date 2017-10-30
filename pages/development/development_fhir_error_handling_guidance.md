@@ -261,7 +261,30 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 9. Method not allowed #####
+#### Example 9. Not Found #####
+
+| HTTP Code | HTTP Meaning | Description |
+| --------- | --------- | ----------- |
+| `404`     | Not Found | i.e. requested resource does not exist on provider system. |
+
+```json
+{
+	"resourceType": "OperationOutcome",
+	"issue": [{
+		"severity": "error",
+		"code": "not-found",
+		"details": {
+			"coding": [{
+				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"code": "NO_RECORD_FOUND",
+				"display": "No record found"
+			}]
+		}
+	}]
+}
+```
+
+#### Example 10. Method not allowed #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -278,7 +301,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 10. Unsupported media type #####
+#### Example 11. Unsupported media type #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -295,7 +318,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 11. Internal server error #####
+#### Example 12. Internal server error #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -312,7 +335,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 12. Bad gateway #####
+#### Example 13. Bad gateway #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
@@ -329,7 +352,7 @@ When the spine security proxy cannot or will not process a request then the foll
 }
 ```
 
-#### Example 13. Gateway timeout #####
+#### Example 14. Gateway timeout #####
 
 | HTTP Code | HTTP Meaning | Description |
 | --------- | --------- | ----------- |
