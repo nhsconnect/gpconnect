@@ -11,10 +11,10 @@ summary: "Details of the common error handling pattern(s) across the GP Connect 
 
 ### Operation outcome usage ####
 
-The FHIR standard allows for an `OperationOutcome` to be returned for any/all errors both for Operations and for RESTful CRUD API calls.
+The FHIR standard allows for an `OperationOutcome` to be returned for any/all errors both for Operations and for RESTful CRUD API calls. The GP Connect API requires use of a profiled version of the base OperationOutcome resource - [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1)
 
 - Operation APIs SHALL return an `OperationOutcome` in the event of an error.
-- RESTful APIs SHALL return an `OperationOutcome` when a specific error code has for a certain situation (i.e. no patient consent to share).
+- RESTful APIs SHALL return an `OperationOutcome` when a specific error code has for a certain situation (e.g. no patient consent to share).
 - RESTful APIs SHALL return an `OperationOutcome` when any other unexpected error occurs containing debug details in the `Diagnostics` field.
 
 {% include download.html content="A spreadsheet of [Expected Error Codes](downloads/development/expected_error_codes.xlsx) is available which covers the most common error scenarios." %}
@@ -27,13 +27,14 @@ Provider systems SHALL respond by returning one of the following `OperationOutco
 | --------- |------------|-------------|
 | `400`     | INVALID_IDENTIFIER_SYSTEM | Invalid Identifier System |
 | `400`     | INVALID_IDENTIFIER_VALUE | Invalid Identifier Value |
-| `400`     | INVALID_PATIENT_DEMOGRAPHICS | Invalid Patient Demographics (i.e. PDS Trace Failed) |
-| `404`     | PATIENT_NOT_FOUND   | Patient Record Not Found |
 | `400`     | INVALID_NHS_NUMBER   | NHS Number Invalid |
-| `404`     | ORGANISATION_NOT_FOUND   | Organisation Record Not Found |
 | `400`     | INVALID_ODS_CODE   | ODS Code Invalid |
-| `404`     | PRACTITIONER_NOT_FOUND   | Practitioner Record Not Found |
+| `400`     | INVALID_PATIENT_DEMOGRAPHICS | Invalid Patient Demographics (i.e. PDS Trace Failed) |
 | `400`     | INVALID_SDS_USERID   | SDS UserID Invalid |
+| `404`     | ORGANISATION_NOT_FOUND   | Organisation Record Not Found |
+| `404`     | PATIENT_NOT_FOUND   | Patient Record Not Found |
+| `404`     | PRACTITIONER_NOT_FOUND   | Practitioner Record Not Found |
+
 
 #### Example 1. Invalid NHS number supplied #####
 
@@ -224,7 +225,7 @@ For example if the request could not be understood by the server due to malforme
 
 ### Spine security proxy errors ###
 
-When the spine security proxy cannot or will not process a request then the follwoing errors SHALL be used to return debug details.
+When the spine security proxy cannot or will not process a request then the following errors SHALL be used to return debug details.
 
 #### Example 7. Bad request #####
 
