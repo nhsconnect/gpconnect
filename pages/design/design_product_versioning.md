@@ -1,11 +1,66 @@
 ---
-title: FHIR capability versioning guidance
-keywords: fhir development
-tags: [fhir,development]
+title: GP Connect API Versioning
+keywords: development, versioning
+tags: [development]
 sidebar: overview_sidebar
-permalink: development_fhir_versioning_capability_guidance.html
-summary: "Details of the common versioning requirements for GP Connect FHIR APIs"
+permalink: design_product_versioning.html
+summary: An overview of GP Connect API versioning.
 ---
+
+## Specification Versioning ##
+
+The GP Connect API consists of the following sections but the specification will be versioned by an overarching single version, representing a snapshot of the specification for that release.
+
+| Specification Section | What is included in the specification section |
+| --- | --- |
+| [GP Connect](/index.html) | This section of the specification is targeted at the cross cutting requirements and guidance common to all capabilities. Also included are overarching principles used by the GP Connect project when creating and implementing any aspect of the GP Connect specification and project. |
+| [Access Record HTML](/accessrecord.html) | This section contains requirements and details for development specific to the Access Record HTML capability. |
+| [Access Record REST](/accessrecord_rest.html) |This section contains the requirements and details relating to the Access Record REST capability for access to structured data. |
+| [Foundations](/foundations.html) | This section of the specification relates to the requirements and details required for implementing the Foundation capabilities. |
+| [Appointment Management](/appointments.html) | This section of the specification relates to the requirements and implementation details specifically relating to the Appointment Management capabilities. |
+| [Task Management](/tasks.html) | This section of the specification relates to the requirements and details needed to implement the Task Management capability. |
+
+### Versioning Style ###
+
+Each of the sections above will be versioned using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}, using the format "***MAJOR.MINOR.PATCH***".
+
+The separate components of the version will be updated as per below for each update of the specification:
+
+- MAJOR version when you make incompatible API changes.
+- MINOR version when you add functionality in a backwards-compatible manner.
+- PATCH version when you make backwards-compatible bug fixes.
+
+In addition a pre-release version MAY be denoted by appending a hyphen (refer to [Semantic Versioning - Item 9](http://semver.org/#spec-item-9){:target="_blank"}) along with a pre-release label for the type of release.
+
+### Pre-release Labels ###
+
+The following pre-release labels will be used across all products:
+
+| Pre-release Label | Lifecycle | Description |
+|-------------------|-----------|-------------|
+| `alpha` | &nbsp; | Complete enough for internal testing. |
+| `beta` | early | Complete enough for external testing. |
+| `beta` | late | Complete enough for external testing. Usually feature complete. |
+| `rc` | &nbsp; | Release Candidate - Almost ready for final release. No new feature enhancements. |
+
+Example: 1.0.0-alpha.1 is an example of a valid pre-release version.
+
+
+### Specification Versioning Maturity Levels ###
+
+Taking a similar approach to the [FHIR Maturity Model](http://wiki.hl7.org/index.php?title=FHIR_Maturity_Model){:target="_blank"} GP Connect will only freeze / master a technical specification once it has been independently implemented in at least three commercial systems and demonstrated to interoperate.
+
+| Level | Version | Description | 
+|-------|---------|-------------| 
+| 1 | `X.Y.Z-alpha.n` | Alpha; rapid interactions, fail fast, exploration, proof of concepts, approach flexible. | Draft may not have been implemented at all but has been published. |
+| 2 | `X.Y.Z-beta.n` | Early Beta; rapid iterations, community engaged, scope flexible, high-level approach agreed in principle. | Draft partially implemented in one or more prototype systems. |
+| 3 | `X.Y.Z-beta.n` | Late Beta; slower iterations, community engaged, scope largely agreed, high-level approach fixed. | Draft partially implemented two or more commercial systems. |
+| 4 | `X.Y.Z-rc.n` | Release Candidate; slower iterations, community engaged, scope fixed, detailed approach fixed, no new features, bug fixes and amendments for clinical safety & IG only. | Draft implemented in at least two commercial systems. |
+| 5 | `X.Y.Z` | Stable; release version. | Draft implemented in at least three commercial systems with full accreditation and assurance mechanisms in place. |
+
+
+
+
 
 ### Capability pack / interaction versioning ###
 
@@ -81,3 +136,41 @@ If a new profile is created for a fhir resource the providers fhir server should
 
 ### Valueset versioning ###
 Valuesets are not currently versioned and GP Connect is aware there is a risk surrounding this and the affects it may have on the capabilities if valuesets are uplifted. If a valueset is altered or uplifted the risk will be managed at the time.
+
+
+#### Provider versioning ####
+
+Provider systems are required to publish a Service Root URL in the Spine Directory Service in the following format:
+
+{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS Code]/[FHIR_VERSION_NAME]/{PROVIDER_MAJOR_VERSION}`" %}
+
+- `[FQDN of FHIR Server]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
+
+- `[ODS Code]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
+
+- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
+
+- `{PROVIDER_VERSION}` identifies the version of the provider API. The version is required in the url to aid with error investigation if problems occur when a consumers tries to call a providers endpoint.
+  
+- The FHIR Base URL SHALL NOT contain a trailing `/`
+
+
+#### Example server root URL ####
+
+``` https://provider.nhs.uk/GP0001/DSTU2/3 ```
+
+``` https://provider.nhs.uk/GP0001/STU3/1 ```
+
+
+#### Supported interactions ####
+
+A Providers endpoint should support the current and the previous version of each supported interaction (n and n-1) as specified on the [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html) page.
+
+
+
+#### Consumer versioning ####
+
+In order for a consumer to find the provider endpoint which supports an interaction version, they SHALL perform a sequence of query operations against existing Spine services as described in [Spine Integration Illustrated](integration_illustrated.html)
+
+
+

@@ -8,6 +8,8 @@ topnav_title: GP Connect - FHIR&reg; APIs for GP IT systems
 site_title: GP Connect
 # this appears in the html browser tab for the site title (seen mostly by search engines, not users)
 
+spec_version: GP Connect 1.0.0-rc.1
+
 company_name: NHS Digital
 # this appears in the footer
 

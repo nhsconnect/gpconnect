@@ -1,7 +1,5 @@
 entries:
 - title: GP Connect
-  product: GP Connect<br/>
-  version: 1.0.0-alpha.5
   levels: one
   folders:
 
@@ -60,6 +58,9 @@ entries:
     - title: Maturity model
       url: /designprinciples_maturity_model.html
       output: web
+    - title: API Versioning
+      url: /design_product_versioning.html
+      output: web
 
   - title: Explore
     output: web
@@ -109,23 +110,6 @@ entries:
           output: web          
         - title: NFR guidance
           url: /development_api_non_functional_requirements.html
-          output: web
-          
-      - title: Versioning guidance
-        output: web
-        subfolderitems:
-
-        - title: Specification
-          url: /development_fhir_versioning_specification_guidance.html
-          output: web
-        - title: Capability and resources
-          url: /development_fhir_versioning_capability_guidance.html
-          output: web
-        - title: Provider API
-          url: /development_fhir_versioning_provider_guidance.html
-          output: web
-        - title: Consumer guidance
-          url: /development_fhir_versioning_consumer_guidance.html
           output: web
 
   - title: Implement a capability
