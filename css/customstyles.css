@@ -380,7 +380,7 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav a:hover, .nav li.active > a {
-    background-color: #8D8D8D;
+    background-color: #0077e6;
     color: #f5f5f5;
 }
 
@@ -416,22 +416,18 @@ ul#mysidebar {
     background-color: whitesmoke !important;
 }
 
-
-.nav ul li a {
-    background-color: #FAFAFA;
-}
-
 .nav li a {
     padding-right:10px;
 }
 
 .nav li a:hover {
-    background-color: #8D8D8D;
+    background-color: #0077E6;
 }
 
 .nav ul li a {
     border-top:1px solid whitesmoke;
     padding-left:10px;
+	background-color: #E6F3FF;
 }
 /* end sidebar */
 
