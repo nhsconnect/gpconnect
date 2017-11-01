@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: "Release notes for the GP Connect Overview"
 ---
 
-#### GP Connect 1.0.0-beta.1
+#### GP Connect 1.0.0-rc.1
 
 - [Specification Versioning Guidance](development_fhir_versioning_specification_guidance.html), [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html), [Provider API Versioning Guidance](development_fhir_versioning_provider_guidance.html), [Consumer Versioning Guidance](development_fhir_versioning_consumer_guidance.html) - Added additional information around versioning.
 - [Security Guidance](development_api_security_guidance.html) - Updated Security guidance around the protocols suppliers should implement.
@@ -17,10 +17,12 @@ summary: "Release notes for the GP Connect Overview"
 - [Security Guidance](development_api_security_guidance.html) - Removed contradiction within specificaiton for Cache-Control headers
 - [Common API Guidance](development_fhir_api_guidance.html#resource-metadata) - Uplifted guidance around the inclusion of profile details within the fhir resource meta data element when a consumer performs a create or amend interaction.
 - [Common API Guidance](development_fhir_api_guidance.html#update-resource) - Added clarification on use of PUT to make clear an update should not create a resource if the resource being updated does not already exist.
+- [Common API Guidance](development_fhir_api_guidance.html) - Added guidance on the behaviour of consumer and provider systems where Must-Support flag is present. 
+- [Common API Guidance](development_fhir_api_guidance.html) - Split this page into "General API guidance" and "FHIR implementation guidance" pages.
 - [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#guidance-on-use-of-requested_record) - Added section to clarify the expected use of the `requested_record` claim within the JWT.
 - [Information governance principles](designprinciples_ig_principles.html) - Updated teminology around the consumer responsibilities in regards to NHS Codes of Practice & Legal Obligations related to the use of GP Connect API.
 - [Fhir library guidance](development_fhir_open_source_guidance.html) - the Fhir library guidance page has been updated to improve GP Connect guidance around using existing fhir libraries to aid it development.
-- [Error handling guidance](development_fhir_error_handling_guidance.html) - Updated error handling guidance to include expectations around a resource not found.
+- [Error handling guidance](development_fhir_error_handling_guidance.html) - Updated error handling guidance to include expectations around a resource not found, provide details of spine error codes expected and also restructured to clarify differing error condition types. 
 
 
 #### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)
