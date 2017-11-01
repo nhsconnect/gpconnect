@@ -9,7 +9,7 @@ summary: An overview of GP Connect API versioning.
 
 ## Specification Versioning ##
 
-The GP Connect API consists of the following sections but the specification will be versioned by an overarching single version, representing a snapshot of the specification for that release.
+The GP Connect API specification consists of the following sub sections outlining specific capabilities within the GP Connect API but the GP Connect API specification is versioned by an overarching single version which is shown above the sidebar, below the NHS Digital logo.
 
 | Specification Section | What is included in the specification section |
 | --- | --- |
@@ -20,9 +20,10 @@ The GP Connect API consists of the following sections but the specification will
 | [Appointment Management](/appointments.html) | This section of the specification relates to the requirements and implementation details specifically relating to the Appointment Management capabilities. |
 | [Task Management](/tasks.html) | This section of the specification relates to the requirements and details needed to implement the Task Management capability. |
 
+
 ### Versioning Style ###
 
-Each of the sections above will be versioned using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}, using the format "***MAJOR.MINOR.PATCH***".
+The GP Connect API is versioned using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}, using the format "***MAJOR.MINOR.PATCH***".
 
 The separate components of the version will be updated as per below for each update of the specification:
 
@@ -34,7 +35,7 @@ In addition a pre-release version MAY be denoted by appending a hyphen (refer to
 
 ### Pre-release Labels ###
 
-The following pre-release labels will be used across all products:
+The following pre-release labels will be used:
 
 | Pre-release Label | Lifecycle | Description |
 |-------------------|-----------|-------------|
@@ -60,50 +61,20 @@ Taking a similar approach to the [FHIR Maturity Model](http://wiki.hl7.org/index
 
 
 
-
-
-### Capability pack / interaction versioning ###
+### Interaction versioning ###
 
 For each of the five capability packs (`Foundations`, `Access Record HTML`, `Access Record REST`, `Appointment Management`, `Task Management`) there are a number of `API Use Cases` which make up the capability pack, for example "Find a patient" and "Read an organization" are two of the API Use Cases within the Foundation capability pack.
 
 Each API Use Case has an associated InteractionID. The InteractionID for each API Use Case is specified within the relevant Capability Packs, for example the "Find a patient" interaction is listed in the [Spine Interactions for the Foundations Capability Pack](foundations.html#spine-interactions).
 
-InteractionsIDs in early versions of the specification did not contain a version number, but going forward a major version number will now be added. A new version of the interaction will be issued when there is a breaking change made within the interaction, for example if a Profiled FHIR resources used as part of the interaction is changed but is not backwardly compatible with the previous versions of the profiled FHIR resources, this would result in a new major version of the interaction.
-
-Example of InteractionID versioning:
-
-| Interaction-ID | Reason for interaction version |
-| --- | --- |
-| urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord | Initial InteractionID used for "Access Record HTML 1.0.0-rc.5". |
-| urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2 | A Profiled FHIR Resource breaking change from "GPConnect-Patient-1" FHIR resource to "CareConnect-GPC-Patient-1" FHIR Resource. |
-| urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-3 | This will be the next InteractionID which will be used for the next breaking change to the Access Record HTML interaction. |
-
-
-#### Provider supported versions ####
-
-Providers are expected to maintain both the current and previous version of each interaction as they are released with changes to the specification. ie. "n" and "n-1" where n is the currently version of the interaction within the latest specification and n-1 is the previous version of the interaction.
-
-The requirement for a provider to maiantain both the latest version and the previous version is to maintain interoperability between systems as each of the providers and consumers uplift their product to support the latest version of each interaction.  
-
-Example of a providers endpoint and supported interactions:
-
-| Interaction | Version |
-| --- | --- |
-| ~~urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord~~ | n-2 (interaction can be removed) |
-| urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-2 | n-1 |
-| urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-3 | n |
-| urn:nhs:names:services:gpconnect:fhir:rest:search:patient | n-1 |
-| urn:nhs:names:services:gpconnect:fhir:rest:search:patient-2 | n |
-| urn:nhs:names:services:gpconnect:fhir:rest:read:appointment | n |
-
-Providers SHALL register an endpoint within the SDS for each IntereactionId supported by the FHIR server on the Principal GP system. Information on registering endpoints can be found on the [Spine Directory Services](integration_spine_directory_service.html#provider-system-viewpoint) page.
+InteractionsIDs in early versions of the specification did not contain a version number, but going forward the interactionID will contain the major GP Connect API version number. A new version of the interaction will be issued with each major change to the GP Connect API.
 
 
 ### FHIR resource versioning ###
 
 #### Major FHIR resource profile versions ####
 
-The versioning of profiled FHIR resources will follow the other versioning within the specification where a breaking change will result in a major version change and non-breaking changes will result in a minor version change. The FHIR Resource Profile names contain the major version number for the Profiled FHIR Resource, for example "CareConnect-GPC-Organization-2" is version two of the Organization resource profile. A breaking change will result in a new major version and therefore new FHIR Resource Profile will be created, the name containing that new major version.
+The versioning of profiled FHIR resources will follow semantic versioning where a breaking change will result in a major version change and non-breaking changes will result in a minor version change. The FHIR Resource Profile names contain the major version number for the Profiled FHIR Resource, for example "CareConnect-GPC-Organization-2" is version two of the Organization resource profile. A breaking change within the profile will result in a new major version and therefore new FHIR Resource Profile will be created.
 
 Example Profiled FHIR Resource version changes:
 
@@ -115,30 +86,28 @@ Example Profiled FHIR Resource version changes:
 
 #### Minor FHIR resource profile versions ####
 
-Minor version changes will not result in a change to the FHIR Resource Profile. All the FHIR Resource profiles are made available on the [FHIR Reference Server](https://fhir.nhs.uk/StructureDefinition), the minor version of the FHIR Resource Profile are available using the standard FHIR "_history" capability to specify the exact version of the resource definition that you wish to retrieve. For Example:
+Minor version changes will not result in a change to the FHIR Resource Profile name as the different versions of the FHIR Resource Profiles should be interoprable. All the FHIR Resource profiles are made available on the [FHIR Reference Server](https://fhir.nhs.uk/StructureDefinition), the minor version of the FHIR Resource Profile are available using the standard FHIR "_history" capability to specify the exact version of the resource definition that you wish to retrieve. For Example:
 
 | URL to use for FHIR Reference Server | Version of profile which will be returned|
 | --- | --- |
 | https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.1 | Minor Version 1.1 |
 | https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1/_history/1.2 | Minor Version 1.2 |
 
-If the Profiled FHIR Resource is changed with a new major version this will probably also result in an uplift to the InteractionID  for that capability.
-
-#### Resource identifiers ####
-
-If a new profile is created for a fhir resource the providers fhir server should return the same the logical identifier within the fhir resources whichever profile is used when returning the data for that resource. For example:
-
-| Request | Returned profiled resource | Logical ID within resource |
-| --- | --- | --- |
-| /Patient/3 | CareConnect-GPC-Patient-1 | 20bc84b8-3e02-4da2-b2e8-702562bc53bc |
-| /Patient/3 | CareConnect-GPC-Patient-2 | 20bc84b8-3e02-4da2-b2e8-702562bc53bc |
-
 
 ### Valueset versioning ###
 Valuesets are not currently versioned and GP Connect is aware there is a risk surrounding this and the affects it may have on the capabilities if valuesets are uplifted. If a valueset is altered or uplifted the risk will be managed at the time.
 
 
-#### Provider versioning ####
+## Provider versioning ##
+
+### Provider supported versions ###
+
+Providers are expected to maintain both the current and previous major version of the GP Connect API, ie. "n" and "n-1" where n is the currently major version of the GP Connect API and n-1 is the previous major version of the GP Connect API. The requirement for a provider to maiantain both the latest version and the previous version is to maintain interoperability between systems as each of the providers and consumers uplift their product to support the latest version of GP Connect API.
+
+Minor uplifts to the GP Connect API should retain interopable with other minor versions within the same major version of the GP Connect API. Providers and consumers should update to the latest minor version of the GP Connect API for each of their supported major API versions to make available improvements and fixes to the GP Connect API.
+
+
+### Provider endpoint registration ###
 
 Provider systems are required to publish a Service Root URL in the Spine Directory Service in the following format:
 
@@ -162,15 +131,9 @@ Provider systems are required to publish a Service Root URL in the Spine Directo
 ``` https://provider.nhs.uk/GP0001/STU3/1 ```
 
 
-#### Supported interactions ####
-
-A Providers endpoint should support the current and the previous version of each supported interaction (n and n-1) as specified on the [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html) page.
+Providers SHALL register an endpoint within the SDS for each IntereactionId supported by the FHIR server on the Principal GP system. Information on registering endpoints can be found on the [Spine Directory Services](integration_spine_directory_service.html#provider-system-viewpoint) page.
 
 
+## Consumer versioning ##
 
-#### Consumer versioning ####
-
-In order for a consumer to find the provider endpoint which supports an interaction version, they SHALL perform a sequence of query operations against existing Spine services as described in [Spine Integration Illustrated](integration_illustrated.html)
-
-
-
+As the providers will register on the SDS an endpoint for each InteractionId and the InteractionId contains the specification major version of the interaction, if a consumer wishes to find the endpoint which supports a specific version of an interaction they support, the consumer needs to perform a sequence of query operations against the existing Spine services as described in [Spine Integration Illustrated](integration_illustrated.html). 
