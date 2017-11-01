@@ -7,6 +7,9 @@ permalink: foundations_release_notes.html
 summary: "Release notes for the various versions of the Foundations capability."
 ---
 
+#### 1.0.0-rc.4
+- [Design Decisions](foundations_design.html#definition-of-organisation-and-location-entities), [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - Added additional detail around the expected use of the Location and Organization where there specific meaning within the Appointment resource and the Patient resource.
+
 #### 1.0.0-rc.3 (Released: 06/10/2017)
 - [Register a patient](foundations_use_case_register_a_patient.html#payload-request-body) - Additional fields in patient profile which are marked with Must-Support flag 
 - [Foundations Design](foundations_design.html#definition-of-organisation-and-location-entities) - Added design decision to clarify how GP practice organisations and practice sites are represented in the FHIR Organization and Location resources.
