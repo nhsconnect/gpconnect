@@ -384,6 +384,7 @@ a.accordion-toggle, a.accordion-collapsed {
     color: #f5f5f5;
 }
 
+
 .nav > li.active > a  {
 background-color: #347DBE;
 }
@@ -405,10 +406,6 @@ ul#mysidebar {
     border-radius:0px;
 }
 
-.nav ul li ul li a {
-    padding-left:40px;
-}
-
 .nav li.thirdlevel > a {
     color: #248EC2;
     font-weight:bold;
@@ -427,8 +424,18 @@ ul#mysidebar {
 .nav ul li a {
     border-top:1px solid whitesmoke;
     padding-left:10px;
-	background-color: #E6F3FF;
+	background-color: #c3e6fc;
 }
+
+.nav ul li ul li a {
+	padding-left:40px;
+    background-color: #cfebfd;
+}
+
+.nav ul li ul li a:hover, .nav ul li ul li.active > a {
+    background-color: #1a90ff;
+}
+
 /* end sidebar */
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
@@ -1156,4 +1163,8 @@ div.box.box1 {
     img[src$=".svg"] {
         width: 100%;
     }
+}
+
+div.navbar-collapse .dropdown-menu > li > a {
+    background-color: #FAFAFA;
 }
