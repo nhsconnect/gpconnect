@@ -236,7 +236,7 @@ In line with this, provider systems SHALL NOT version through the use of HTTP he
 
 **7. FHIR version SHALL match version found in FHIR conformance statement**
 
-The FHIR version as returned in a [conformance statement](foundations_use_case_get_the_fhir_conformance_profile.html) from the FHIR server which services the FHIR request SHALL match the FHIR version given in the FHIR Server Root URL.
+The FHIR version as returned in a [conformance statement](foundations_use_case_get_the_fhir_capability_statement.html) from the FHIR server which services the FHIR request SHALL match the FHIR version given in the FHIR Server Root URL.
 
 **8. FHIR Server Root URLs associated with a given product set SHALL use same FHIR Version**
 

@@ -62,4 +62,4 @@ This is an example conformance statement for a GP Connect FHIR server which prov
 </Conformance>
 ```
 
-Please see [Get the FHIR Conformance Profile](foundations_use_case_get_the_fhir_conformance_profile.html) for an example showing all capabilities. 
+Please see [Get the FHIR Conformance Profile](foundations_use_case_get_the_fhir_capability_statement.html) for an example showing all capabilities. 

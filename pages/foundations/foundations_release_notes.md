@@ -8,6 +8,11 @@ summary: "Release notes for the various versions of the Foundations capability."
 ---
 
 #### 1.0.0-rc.4
+
+{% include important.html content="The FHIR version on which GP Connect is built has changed from DSTU2 to STU3 in this release." %}
+
+- [Get the FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) - Conformance statment page has been updated to reflect the change in STU3 to a CapabilityStatement resource.
+- [Foundation Resources](datalibraryfoundation.html) - Updated the resources to be the new GP Connect profiled STU3 resources.
 - [Design Decisions](foundations_design.html#definition-of-organisation-and-location-entities), [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - Added additional detail around the expected use of the Location and Organization where there specific meaning within the Appointment resource and the Patient resource.
 
 #### 1.0.0-rc.3 (Released: 06/10/2017)
@@ -21,7 +26,7 @@ summary: "Release notes for the various versions of the Foundations capability."
 
 #### 1.0.0-rc.2 (Released: 08/09/2017)
 - Updated the system identifier uri's for Patient (https://fhir.nhs.uk/Id/nhs-number), Practitioner (https://fhir.nhs.uk/Id/sds-user-id), Organization (https://fhir.nhs.uk/Id/ods-organization-code) and Location (https://fhir.nhs.uk/Id/ods-site-code), this affects all the "Find" foundation API Use Cases. (Pages - development_fhir_operation_guidance.html, foundations_design.html, foundations_use_case_find_a_patient.html, foundations_use_case_find_a_practitioner.html, foundations_use_case_find_an_organisation.html, foundations_use_case_find_a_location.html)
-- [Read Organization](foundations_use_case_read_an_organisation.html), [Conformance Profile](foundations_use_case_get_the_fhir_conformance_profile.html), [Read Location](foundations_use_case_read_a_location.html), [Register Patient](foundations_use_case_register_a_patient.html) - Updated examples to conform to Care Connect profile uplifts.
+- [Read Organization](foundations_use_case_read_an_organisation.html), [Conformance Profile](foundations_use_case_get_the_fhir_capability_statement.html), [Read Location](foundations_use_case_read_a_location.html), [Register Patient](foundations_use_case_register_a_patient.html) - Updated examples to conform to Care Connect profile uplifts.
 - [Glossary](overview_glossary.html#active-patient) - updated glossary to make definition of Active Patient clear, used in [Find a Patient](foundations_use_case_find_a_patient.html) API Use Case.
 - [Register Patient](foundations_use_case_register_a_patient.html) - Updated register patient example response to include the registration details extension.
 
@@ -35,11 +40,11 @@ summary: "Release notes for the various versions of the Foundations capability."
 - Removed ODS-Site-Code as a search parameter and identifier from the Organization resource for "Find Organization" and "Organization Read"
 
 #### 1.0.0-beta.2 (Released: 11/08/2017)
-- Updated example conformance profile to include GP Connect profile information (Page - [Get the FHIR Conformance Statement](foundations_use_case_get_the_fhir_conformance_profile.html)).
+- Updated example conformance profile to include GP Connect profile information (Page - [Get the FHIR Conformance Statement](foundations_use_case_get_the_fhir_capability_statement.html)).
 - Clarified use of [Register a patient](foundations_use_case_register_a_patient.html) API is only to support local-only temporary patient registrations to support federated appointment booking
 - Added additional clarification around use of identifiers for all foundation search capabilities (Pages - Find a practitioner, Find a patient, Find an organisation, Find a location).
 - Clarity on mandatory data items for [Register a patient](foundations_use_case_register_a_patient.html#payload-request-body) API
-- Moved VRead to out of scope (Pages - [Get the FHIR Conformance Statement, Common API Guidance](foundations_use_case_get_the_fhir_conformance_profile.html))
+- Moved VRead to out of scope (Pages - [Get the FHIR Conformance Statement, Common API Guidance](foundations_use_case_get_the_fhir_capability_statement.html))
 - Added java example code to specification for Read capabilities (Pages - Read a practitioner, Read a patient, Read an organisation, Read a location).
 - Updated example code to bring in line with [FHIR Server Root URL format](development_fhir_api_guidance.html#fhir-api-versioning) guidance.
 - Updates to [Register a patient](foundations_use_case_register_a_patient.html) to include latest operation definition XML, and provide clarity on profiles used on response.

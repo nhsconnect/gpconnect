@@ -48,8 +48,8 @@ entries:
         output: web, pdf
         subfolderitems:
 
-        - title: Get the FHIR&reg; conformance profile
-          url: /foundations_use_case_get_the_fhir_conformance_profile.html
+        - title: Get the FHIR&reg; capability statement
+          url: /foundations_use_case_get_the_fhir_capability_statement.html
           output: web, pdf
         - title: Find a patient
           url: /foundations_use_case_find_a_patient.html

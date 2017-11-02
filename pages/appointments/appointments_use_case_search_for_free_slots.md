@@ -30,7 +30,7 @@ Provider systems SHALL implement the following search parameters:
 | `disposition` | `token` | Reserved for future use. | N/A |
 | `service-id` | `token` | Reserved for future use. | N/A |
 
-{% include note.html content="The supported search parameters should be included in the [conformance profile](foundations_use_case_get_the_fhir_conformance_profile.html)." %}
+{% include note.html content="The supported search parameters should be included in the [conformance profile](foundations_use_case_get_the_fhir_capability_statement.html)." %}
 {% include note.html content="The `disposition` and `service-id` parameters are a requirement for urgent care identified use cases." %}
 
 ## _include Parameters ##
