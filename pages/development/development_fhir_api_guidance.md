@@ -98,7 +98,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 		2. le (less or equal to)
 		3. gt (great than)
 		4. ge (greater or equal to)
-		5. ne (not equal to)
+		5. eq (equal to)
 	3.  Parameters for all resources
 		1.  [_query](https://www.hl7.org/fhir/DSTU2/search.html#query)
 		2.  [_list](https://www.hl7.org/fhir/DSTU2/search.html#list)
