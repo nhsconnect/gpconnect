@@ -49,7 +49,7 @@ N/A - No fhir resource is sent within the request
   * [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/STU3/patient.html)) ![STU3](images/stu3.png)
 
 ### Response ###
-* [gpconnect-searchset-bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/gpconnect-searchset-bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html)) ![STU3](images/stu3.png)
+* [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html)) ![STU3](images/stu3.png)
   * [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/STU3/patient.html)) ![STU3](images/stu3.png)
 
 ---
@@ -58,4 +58,4 @@ N/A - No fhir resource is sent within the request
 If there is a problem with the request or an error occurs during processing of the request then the provider should return a http error along with an "OperationOutcome" Resource within the response payload. Details of the required error responses are available on the [Error Handling Guidance](/development_fhir_error_handling_guidance.html) page within the specification.
 
 ### Response ###
-* [gpconnect-operationoutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/gpconnect-operationoutcome-1) (based on [FHIR OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html)) ![STU3](images/stu3.png)
+* [gpconnect-operationoutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) (based on [FHIR OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html)) ![STU3](images/stu3.png)

@@ -50,7 +50,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
@@ -71,7 +71,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Practitioner` resources in a `Bundle` of `type` searchset.
-- SHALL return `Practitioner` resources that conform to the `CareConnect-GPC-Practitioner-1` profile.
+- SHALL return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `CareConnect-GPC-Practitioner-1` profile StructureDefinition in the `Practitioner.meta.profile` element of the returned `Practitioner` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Practitioner` resource.
 - SHALL include all relevant business `identifier` details (i.e. SDS User Id) for each `Practitioner` resource.
@@ -81,14 +81,14 @@ Provider systems:
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Practitioner/1/_history/636064088099800115",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/15",
 		"resource": {
 			"resourceType": "Practitioner",
-			"id": "1",
+			"id": "15",
 			"meta": {
 				"versionId": "636064088099800115",
 				"lastUpdated": "2016-08-10T13:47:09.966+01:00",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Practitioner-1"]
+				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"]
 			},
 			"identifier": [{
 				"system": "https://fhir.nhs.uk/Id/sds-user-id",
@@ -110,7 +110,7 @@ Provider systems:
 ### C# ###
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var query = new string[] { "identifier=https://fhir.nhs.uk/Id/sds-user-id|S001" };
 var bundle = client.Search("Practitioner", query);
@@ -121,7 +121,7 @@ FhirSerializer.SerializeResourceToJson(bundle).Dump();
 
 ```java
 FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+IGenericClient client = ctx.newRestfulGenericClient("gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 Bundle bundle = client.search().forResource(Practitioner.class)
 .where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/sds-user-id", "S001"))
 .encodedJson()

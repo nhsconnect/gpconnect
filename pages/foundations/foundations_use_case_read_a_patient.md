@@ -59,7 +59,7 @@ N/A
 
 #### Error Handling ####
 
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
@@ -78,43 +78,46 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Patient` resources that conform to the `CareConnect-GPC-Patient-1` profile.
+- SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resource.
 - SHALL include the `versionId` of the current version of the `Patient` resource.
 - SHALL include all relevant business `identifier` details (i.e. NHS Number) for the `Patient` resource.
-- SHALL supply gender, name, birth date or deceased date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
+- SHALL supply gender, name, birth date or deceased date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
 
 
 ```json
 {
-	"resourceType": "Patient",
-	"id": "2",
-	"meta": {
-		"versionId": "636064088097580046",
-		"lastUpdated": "2016-08-10T16:52:39.716+01:00",
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
-	},
-	"identifier": [{
-		"extension": [{
-			"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-			"valueCodeableConcept": {
-				"coding": [{
-					"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
-					"code": "01"
-				}]
-			}
+	"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
+	"resource": {
+		"resourceType": "Patient",
+		"id": "2",
+		"meta": {
+			"versionId": "636064088097580046",
+			"lastUpdated": "2016-08-10T16:52:39.716+01:00",
+			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
+		},
+		"identifier": [{
+			"extension": [{
+				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+				"valueCodeableConcept": {
+					"coding": [{
+						"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+						"code": "01"
+					}]
+				}
+			}],
+			"system": "https://fhir.nhs.uk/Id/nhs-number",
+			"value": "9476719931"
 		}],
-		"system": "https://fhir.nhs.uk/Id/nhs-number",
-		"value": "9476719931"
-	}],
-	"name": [{
-		"use": "official",
-		"family": ["Jackson"],
-		"given": ["Jane"],
-		"prefix": ["Miss"]
-	}],
-	"gender": "female",
-	"birthDate": "22/02/1982"
+		"name": [{
+			"use": "usual",
+			"family": ["Jackson"],
+			"given": ["Jane"],
+			"prefix": ["Miss"]
+		}],
+		"gender": "female",
+		"birthDate": "22/02/1982"
+	}
 }
 ```
 
@@ -125,9 +128,9 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var resource = client.Read<Patient>("Patient/1");
+var resource = client.Read<Patient>("Patient/2");
 FhirSerializer.SerializeResourceToXml(resource).Dump();
 ```
 
@@ -137,7 +140,7 @@ FhirSerializer.SerializeResourceToXml(resource).Dump();
 ) library." %}
 
 ```java
-FhirContext ctx = new FhirContext().forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+FhirContext ctx = new FhirContext().forStu3();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 Patient patient = client.read().resource(Patient.class).withId("2").execute();
 ```

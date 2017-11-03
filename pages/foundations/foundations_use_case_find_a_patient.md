@@ -59,7 +59,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [gpconnect-operationoutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/gpconnect-operationoutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
