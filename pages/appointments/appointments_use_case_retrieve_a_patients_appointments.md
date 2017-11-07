@@ -30,21 +30,26 @@ The Consumer system:
 
 ### Request Operation ###
 
+
+#### Search Parameters ####
+
+Provider systems SHALL implement the following search parameters:
+
+| Name | Type | Description | Paths |
+| `start` | `date` | Appointment start date/time. | `Appointment.start` |
+
+The Provider systems:
+- SHALL support the search prefixes `eq`, `gt`, `lt`, `ge` and `le`.
+
 #### FHIR Relative Request ####
 
 ```http
 GET /Patient/[id]/Appointment
 ```
 
-Providers SHALL support searching within this compartment by `start` date/time, for example:
-
 ```http
 GET /Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{search_prefix}end_date]}
 ```
-
-The Provider systems:
-
-- SHALL support the following search prefixes (eq,gt,lt,ge,le) as outlined in the [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html#search-resources) section.  
 
 #### FHIR Absolute Request ####
 
@@ -52,10 +57,36 @@ The Provider systems:
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment
 ```
 
-Providers SHALL support searching within this compartment by `start` date/time, for example:
+#### Examples ####
 
-```http
-GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{search_prefix}end_date]}
+```text
+Retrieve all appointments for a patient:
+
+GET /Patient/[id]/Appointment
+```
+
+```text
+Retrieve all appointments for a patient which start on or between 2017-07-11 and 2017-09-14:
+
+GET /Patient/[id]/Appointment?start=ge2017-07-11&start=le2017-09-14
+```
+
+```text
+Retrieve all appointments for a patient which start after 2017-07-11:
+
+GET /Patient/[id]/Appointment?start=gt2017-07-11
+```
+
+```text
+Retrieve all appointments for a patient which start before 2017-09-14:
+
+GET /Patient/[id]/Appointment?start=start=le2017-09-14
+```
+
+```text
+Retrieve all appointments for a patient on 2017-08-22:
+
+GET /Patient/[id]/Appointment?start=2017-08-22
 ```
 
 #### Request Headers ####
@@ -73,7 +104,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 N/A
 
-#### Error Handling ####
+### Error Handling ###
 
 Provider systems:
 
@@ -100,10 +131,12 @@ Provider systems:
 - SHALL return zero or more matching `Appointment` resources in a `Bundle` of `type` searchset.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
-- SHALL return all appointments for the patient within the requested period. No additional filtering should be applied by the provider, all appointments including cancelled appointments should be returned as part of the response.
-- Where only start date is specified, provider SHALL return all data items from this date.
-- Where only end date is specified, provider SHALL return all data items until this date.
-- Where no date period is specified in input parameters, provider systems SHOULD return all past, present and future appointments.
+- SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
+  - Where no `start` search parameter is specified the provider systems SHALL return all past, present and future appointments.
+  - Where only a lower boundary `start` search parameter (with prefix 'gt' or 'ge') is included in the request, provider SHALL return all data items from this date on, inclusive or exlusive as per the search prefix.
+  - Where only an upper boundary `start` search parameter (with prefix 'le' or 'lt') is included in the request, provider SHALL return all data items up to this date, inclusive or exlusive as per the search prefix.
+  - Where no search prefix, or only an equals (eq) search prefix, is sent with a single `start` search parameter, provider SHALL return all data items for that specified date.
+  - Where two search parameters are included there should be a lower boundary search prefix on one of the `start` parameter and an upper boundary search prefiex with the other `start` search parameter.
 
 ```json
 {
