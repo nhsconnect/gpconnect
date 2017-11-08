@@ -205,7 +205,6 @@ Provider systems:
 - SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
 - SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
 - SHALL include the `versionId` of the current version of each `Appointment` resource.
-- MAY generate a business identifier to allow an individual appointment (i.e. `Appointment` resource) to be uniquely identifiable.
 
 ```json
 {
