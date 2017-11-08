@@ -72,11 +72,11 @@ Consumer systems:
 The following data-elements are mandatory (i.e data MUST be present).
 - a patient `participant` of the appointment.
 - a location `participant` of the appointment, representing the physical location where the appointment is to take place (see [design decisions](foundations_design.html#location-in-the-appointment-resource) page).
+- an `actor` reference in any supplied `participant`
 - the `start` and `end` of the appointment.
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
-- An `actor` reference in any supplied `participant`
-- the `bookingOrganisation` extension referencing a contained `organization` resource within the appointment resource.
+- the `bookingOrganisation` extension referencing a `contained` `organization` resource within the appointment resource.
   - the contained organization resource SHALL represent the organization booking the appointment.
   - the contained organization resource SHALL conform to `CareConnect-GPC-Organization-1` profile.
   - the contained organization resource SHALL contain at least `Name` and `Telecom` details.

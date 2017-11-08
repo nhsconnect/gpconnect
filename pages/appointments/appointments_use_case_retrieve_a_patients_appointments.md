@@ -108,9 +108,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
 For example:
 
@@ -128,8 +126,8 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return zero or more matching `Appointment` resources in a `Bundle` of `type` searchset.
-- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
+- SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) resources in a `Bundle` of `type` searchset.
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
   - Where no `start` search parameter is specified the provider systems SHALL return all past, present and future appointments.
@@ -149,14 +147,14 @@ Provider systems:
 			"id": "148",
 			"meta": {
 				"versionId": "1503310820000",
-				"lastUpdated": "2017-08-21T10:20:20.000+00:00",
-				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+				"lastUpdated": "2017-11-08T10:20:20.000+00:00",
+				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
 			},
 			"contained": [{
 				"resourceType": "Organization",
 				"id": "1",
 				"meta": {
-					"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+					"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 				},
 				"name": "Test Organization Name",
 				"telecom": [{
@@ -165,24 +163,12 @@ Provider systems:
 				}]
 			}],
 			"extension": [{
-				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-				"valueDateTime": "2017-10-09T13:48:41+01:00"
-			},
-			{
-				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 				"valueReference": {
 					"reference": "#1"
 				}
 			}],
 			"status": "booked",
-			"type": {
-				"coding": [{
-					"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-					"code": "null",
-					"display": "Clinical oncology"
-				}],
-				"text": "Clinical oncology"
-			},
 			"reason": {
 				"coding": [{
 					"system": "http://snomed.info/sct",
@@ -191,6 +177,7 @@ Provider systems:
 				}],
 				"text": "Default Appointment Type"
 			},
+			"description" : "GP Connect Appointment description 148",
 			"start": "2017-08-21T10:20:00.000+00:00",
 			"end": "2017-08-21T10:50:00.000+00:00",
 			"slot": [{
@@ -202,7 +189,8 @@ Provider systems:
 			{
 				"reference": "Slot/546"
 			}],
-			"comment": "Test Appointment 1",
+			"created": "2017-10-09T13:48:41+01:00",
+			"comment": "Test Appointment Comment 148",
 			"participant": [{
 				"actor": {
 					"reference": "Patient/2"
@@ -229,55 +217,36 @@ Provider systems:
 			"resourceType": "Appointment",
 			"id": "149",
 			"meta": {
-				"versionId": "1503310844000",
-				"lastUpdated": "2017-08-21T10:20:44.000+00:00",
-				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+				"versionId": "1503440820000",
+				"lastUpdated": "2016-08-17T10:20:20.000+00:00",
+				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
 			},
 			"contained": [{
 				"resourceType": "Organization",
 				"id": "1",
 				"meta": {
-					"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+					"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 				},
-				"name": "Test Organization Name",
+				"name": "Test Organization Name 2",
 				"telecom": [{
 					"system": "phone",
-					"value": "0300 303 5678"
+					"value": "0300 303 5679"
 				}]
 			}],
 			"extension": [{
-				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-				"valueDateTime": "2017-10-09T13:48:41+01:00"
-			},
-			{
-				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 				"valueReference": {
 					"reference": "#1"
 				}
 			}],
 			"status": "booked",
-			"type": {
-				"coding": [{
-					"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-					"code": "null",
-					"display": "Clinical oncology"
-				}],
-				"text": "Clinical oncology"
-			},
-			"reason": {
-				"coding": [{
-					"system": "http://snomed.info/sct",
-					"code": "00001",
-					"display": "Default Appointment Type"
-				}],
-				"text": "Default Appointment Type"
-			},
-			"start": "2017-08-21T12:40:00.000+00:00",
-			"end": "2017-08-21T12:50:00.000+00:00",
+			"description" : "GP Connect Appointment description 148",
+			"start": "2016-08-16T11:20:00.000+00:00",
+			"end": "2016-08-16T11:30:00.000+00:00",
 			"slot": [{
-				"reference": "Slot/558"
+				"reference": "Slot/303"
 			}],
-			"comment": "Test Appointment 2",
+			"created": "2016-08-14T13:48:41+01:00",
 			"participant": [{
 				"actor": {
 					"reference": "Patient/2"
@@ -287,81 +256,6 @@ Provider systems:
 			{
 				"actor": {
 					"reference": "Location/1"
-				},
-				"status": "accepted"
-			}]
-		}
-	},
-	{
-		"fullUrl": "Appointment/150",
-		"resource": {
-			"resourceType": "Appointment",
-			"id": "150",
-			"meta": {
-				"versionId": "1503310866000",
-				"lastUpdated": "2017-08-21T10:21:06.000+00:00",
-				"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
-			},
-			"contained": [{
-				"resourceType": "Organization",
-				"id": "1",
-				"meta": {
-					"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
-				},
-				"name": "Test Organization Name",
-				"telecom": [{
-					"system": "phone",
-					"value": "0300 303 5678"
-				}]
-			}],
-			"extension": [{
-				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-				"valueDateTime": "2017-10-09T13:48:41+01:00"
-			},
-			{
-				"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
-				"valueReference": {
-					"reference": "#1"
-				}
-			}],
-			"status": "booked",
-			"type": {
-				"coding": [{
-					"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-					"code": "null",
-					"display": "Clinical oncology"
-				}],
-				"text": "Clinical oncology"
-			},
-			"reason": {
-				"coding": [{
-					"system": "http://snomed.info/sct",
-					"code": "00001",
-					"display": "Default Appointment Type"
-				}],
-				"text": "Default Appointment Type"
-			},
-			"start": "2017-08-24T09:10:00.000+00:00",
-			"end": "2017-08-24T09:20:00.000+00:00",
-			"slot": [{
-				"reference": "Slot/681"
-			}],
-			"comment": "Test Appointment 3",
-			"participant": [{
-				"actor": {
-					"reference": "Patient/2"
-				},
-				"status": "accepted"
-			},
-			{
-				"actor": {
-					"reference": "Location/1"
-				},
-				"status": "accepted"
-			},
-			{
-				"actor": {
-					"reference": "Practitioner/2"
 				},
 				"status": "accepted"
 			}]
@@ -377,7 +271,7 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient(string.Format("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/"));
+var client = new FhirClient(string.Format("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/"));
 client.PreferredFormat = ResourceFormat.Json;
 Bundle bundle = (Bundle)client.Get("Patient/2/Appointment");
 FhirSerializer.SerializeResourceToJson(bundle).Dump();
@@ -389,8 +283,8 @@ FhirSerializer.SerializeResourceToJson(bundle).Dump();
 ) library." %}
 
 ```java
-FhirContext ctx = FhirContext.forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+FhirContext ctx = FhirContext.forStu3();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 
 Bundle responseBundle = client.search()
 	.forResource(Patient.class)

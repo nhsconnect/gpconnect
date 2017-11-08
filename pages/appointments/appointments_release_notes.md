@@ -8,6 +8,9 @@ summary: "Release notes for the various versions of the Appointment Management c
 ---
 
 #### 1.0.0-rc.3
+
+{% include important.html content="Release 1.0.0-rc.3 contains a change of FHIR version from DSTU2 to STU3 as the base fhir version for the GP Connect API Capbility." %}
+
   - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html) - Updated the wording and examples relating to the `start` search parameter(s) to clear up the expectations and remove the miss leading wording around start and end of the date range.
 
 #### 1.0.0-rc.2 (Released: 13/10/2017)
