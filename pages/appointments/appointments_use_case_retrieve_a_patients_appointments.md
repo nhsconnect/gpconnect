@@ -36,6 +36,7 @@ The Consumer system:
 Provider systems SHALL implement the following search parameters:
 
 | Name | Type | Description | Paths |
+| --- | --- | --- | --- |
 | `start` | `date` | Appointment start date/time. | `Appointment.start` |
 
 The Provider systems:

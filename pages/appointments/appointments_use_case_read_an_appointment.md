@@ -56,7 +56,7 @@ N/A
 
 #### Error Handling ####
 
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example:
 
@@ -76,25 +76,25 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Appointment` resources that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
-- SHALL include the `versionId` of the current version of the `Appointment` resource.
-- SHALL include all relevant business `identifier` details (if any) for the `Appointment` resource.
+- SHALL return `Appointment` resources that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) resource profile.
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
+- SHALL include the `versionId` of the current version of the appointment resource.
+- SHALL include all relevant business `identifier` details (if any) for the appointment resource.
 
 ```json
 {
 	"resourceType": "Appointment",
-	"id": "9",
+	"id": "148",
 	"meta": {
-		"versionId": "636068818095315079",
-		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+		"versionId": "1503310820000",
+		"lastUpdated": "2017-11-08T10:20:20.000+00:00",
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"contained": [{
 		"resourceType": "Organization",
 		"id": "1",
 		"meta": {
-			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 		},
 		"name": "Test Organization Name",
 		"telecom": [{
@@ -103,68 +103,49 @@ Provider systems:
 		}]
 	}],
 	"extension": [{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-		"valueDateTime": "2017-10-09T13:48:41+01:00"
-	},
-	{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}
 	}],
 	"status": "booked",
-	"type": {
-		"coding": [{
-			"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-			"code": "408443003"
-		}],
-		"text": "GP"
-	},
 	"reason": {
-		"text": "Rash"
+		"coding": [{
+			"system": "http://snomed.info/sct",
+			"code": "00001",
+			"display": "Default Appointment Type"
+		}],
+		"text": "Default Appointment Type"
 	},
-	"description": "Free text description.",
-	"start": "2016-05-30T10:00:00+01:00",
-	"end": "2016-05-30T10:25:00+01:00",
+	"description": "GP Connect Appointment description 148",
+	"start": "2017-08-21T10:20:00.000+00:00",
+	"end": "2017-08-21T10:50:00.000+00:00",
 	"slot": [{
-		"reference": "Slot/1",
-		"display": "Slot 1"
+		"reference": "Slot/544"
+	},
+	{
+		"reference": "Slot/545"
+	},
+	{
+		"reference": "Slot/546"
 	}],
-	"comment": "Free text comment.",
+	"created": "2017-10-09T13:48:41+01:00",
+	"comment": "Test Appointment Comment 148",
 	"participant": [{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "SBJ"
-			}],
-			"text": "Subject"
-		}],
 		"actor": {
-			"reference": "Patient/1",
-			"display": "Mr. Mike Smith"
+			"reference": "Patient/2"
 		},
-		"required": "required",
-		"status": "accepted"
-	},
-	{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "PPRF"
-			}],
-			"text": "Primary Performer"
-		}],
-		"actor": {
-			"reference": "Practitioner/100",
-			"display": "Dr. Bob Smith"
-		},
-		"required": "required",
 		"status": "accepted"
 	},
 	{
 		"actor": {
-			"reference": "Location/32",
-			"display": "Leeds GP Clinic"
+			"reference": "Location/1"
+		},
+		"status": "accepted"
+	},
+	{
+		"actor": {
+			"reference": "Practitioner/2"
 		},
 		"status": "accepted"
 	}]
@@ -178,9 +159,9 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var resource = client.Read<Appointment>("Appointment/1");
+var resource = client.Read<Appointment>("Appointment/148");
 FhirSerializer.SerializeResourceToJson(resource).Dump();
 ```
 
@@ -190,8 +171,8 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 ) library." %}
 
 ```java
-FhirContext ctx = FhirContext.forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
-Appointment appointment = client.read().resource(Appointment.class).withId("1").execute();
+FhirContext ctx = FhirContext.forStu3();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
+Appointment appointment = client.read().resource(Appointment.class).withId("148").execute();
 System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(appointment));
 ```

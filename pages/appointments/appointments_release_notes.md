@@ -14,6 +14,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html) - Uplifted to STU3 profiles.
   - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html) - Updated the wording and examples relating to the `start` search parameter(s) to clear up the expectations and remove the miss leading wording around start and end of the date range.
   - [Search for free slots](appointments_use_case_search_for_free_slots.html) - Uplifted to STU3 FHIR profiles for all resources. Significant changes to note are `freeBusyType` has changed to `status`, the practitioner reference has moved in the schedule resource from an extension to `Schedule.actor`.
+  - [Read an appointment](appointments_use_case_read_an_appointment.html) - Uplifted to STU3 profiles.
 
 #### 1.0.0-rc.2 (Released: 13/10/2017)
   ***Specification Updates***
