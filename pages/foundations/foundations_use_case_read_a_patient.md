@@ -87,37 +87,34 @@ Provider systems:
 
 ```json
 {
-	"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
-	"resource": {
-		"resourceType": "Patient",
-		"id": "2",
-		"meta": {
-			"versionId": "636064088097580046",
-			"lastUpdated": "2016-08-10T16:52:39.716+01:00",
-			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
-		},
-		"identifier": [{
-			"extension": [{
-				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-				"valueCodeableConcept": {
-					"coding": [{
-						"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-						"code": "01"
-					}]
-				}
-			}],
-			"system": "https://fhir.nhs.uk/Id/nhs-number",
-			"value": "9476719931"
+	"resourceType": "Patient",
+	"id": "2",
+	"meta": {
+		"versionId": "636064088097580046",
+		"lastUpdated": "2016-08-10T16:52:39.716+01:00",
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
+	},
+	"identifier": [{
+		"extension": [{
+			"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+			"valueCodeableConcept": {
+				"coding": [{
+					"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+					"code": "01"
+				}]
+			}
 		}],
-		"name": [{
-			"use": "usual",
-			"family": ["Jackson"],
-			"given": ["Jane"],
-			"prefix": ["Miss"]
-		}],
-		"gender": "female",
-		"birthDate": "22/02/1982"
-	}
+		"system": "https://fhir.nhs.uk/Id/nhs-number",
+		"value": "9476719931"
+	}],
+	"name": [{
+		"use": "usual",
+		"family": ["Jackson"],
+		"given": ["Jane"],
+		"prefix": ["Miss"]
+	}],
+	"gender": "female",
+	"birthDate": "22/02/1982"
 }
 ```
 
