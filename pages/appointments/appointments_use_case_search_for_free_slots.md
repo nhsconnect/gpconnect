@@ -24,20 +24,21 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 Provider systems SHALL support the following search parameters:
 
 | Name | Type | Description | Paths |
+|---|---|---|---|
 | `status` | `token` | The free/busy status of the appointment | `Slot.status` |
 | `start` | `date` | Slot start date/time. | `Slot.start` |
 | `end` | `date` | Slot end date/time. | `Slot.end` |
-| `disposition` | `token` | Reserved for future use. | N/A |
-| `service-id` | `token` | Reserved for future use. | N/A |
+| `searchFilter` | `token` | A generic token to allow consumers to pass additional search criteria to the provider. | N/A |
 
 {% include note.html content="The supported search parameters should be included in the [conformance profile](foundations_use_case_get_the_fhir_capability_statement.html)." %}
-{% include note.html content="The `disposition` and `service-id` parameters are a requirement for urgent care identified use cases." %}
+
 
 ## _include Parameters ##
 
 Provider systems SHALL support the following include parameters:
 
 | Name | Description | Paths |
+|---|---|---|
 | `_include=Slot:schedule` | Include Schedule Resources referenced within the returned Slot Resources | `Slot.schedule` |
 | `_include:recurse= Schedule:actor:Practitioner` | Include Practitioner Resources referenced within the returned Schedule Resources | `Schedule.actor:Practitioner` |
 | `_include:recurse= Schedule:actor:Location` | Include Location Resources referenced within the returned Schedule Resources | `Schedule.actor:Location` |
@@ -63,10 +64,31 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-On the wire a `Search for free slots` request would look something like the following:
+### 'searchFilter' parameter ###
+
+The `searchFilter` parameter MAY be included to allow the provider to perform additional filtering on available slots return. The following table outlines some search filters required for urgent care use cases. Additional searchFilter systems may be sent by consumers and providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
+
+| System | Description |
+| --- | --- |
+| consumer-type TBC | SHOULD be used to pass the type of sending system, for example '111 call centre' (For urgent care use cases). |
+| disposition TBC | SHOULD be used to indicate the disposition required for the patients care (For urgent care use cases). |
+| service-id TBC | SHOULD be used to convey the service-id required for the available slot (For urgent care use cases). |
+
+
+## Search for free slots on the wire ##
+
+On the wire a `Search for free slots` request would look something like one of the following:
 
 ```http
 GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+```
+
+```http
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule
+```
+
+```http
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter=[typeSystemTBC]|UC&searchFilter=[dispositonSystemTBC]|DX001
 ```
 
 
