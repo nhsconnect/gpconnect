@@ -63,11 +63,11 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
+- SHALL send an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
 The following data-elements are mandatory (i.e data MUST be present).
 - a patient `participant` of the appointment.
@@ -78,7 +78,7 @@ The following data-elements are mandatory (i.e data MUST be present).
 - the `slot` details of one or more free slots to be booked.
 - the `bookingOrganisation` extension referencing a `contained` `organization` resource within the appointment resource.
   - the contained organization resource SHALL represent the organization booking the appointment.
-  - the contained organization resource SHALL conform to `CareConnect-GPC-Organization-1` profile.
+  - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) ![STU3](images/stu3.png) profile.
   - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
 - the `created` extension SHALL be populate with the date and time of the appointment was created.
 
@@ -103,13 +103,13 @@ On the wire a JSON serialised request would look something like the following:
 {
 	"resourceType": "Appointment",
 	"meta": {
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"contained": [{
 		"resourceType": "Organization",
 		"id": "1",
 		"meta": {
-			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 		},
 		"name": "Test Organization Name",
 		"telecom": [{
@@ -117,27 +117,13 @@ On the wire a JSON serialised request would look something like the following:
 			"value": "0300 303 5678"
 		}]
 	}],
-	"extension": [{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-		"valueDateTime": "2017-10-09T13:48:41+01:00"
-	},
 	{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}
 	}],
 	"status": "booked",
-	"type": {
-		"coding": [{
-			"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-			"code": "408443003"
-		}],
-		"text": "GP"
-	},
-	"reason": {
-		"text": "Free text reason."
-	},
 	"description": "Free text description.",
 	"start": "2016-05-30T10:00:00+01:00",
 	"end": "2016-05-30T10:25:00+01:00",
@@ -145,20 +131,13 @@ On the wire a JSON serialised request would look something like the following:
 		"reference": "Slot/1",
 		"display": "Slot 1"
 	}],
+	"created": "2017-10-09T13:48:41+01:00",
 	"comment": "Free text comment.",
 	"participant": [{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "SBJ"
-			}],
-			"text": "Subject"
-		}],
 		"actor": {
 			"reference": "Patient/1",
 			"display": "Mr. Mike Smith"
 		},
-		"required": "required",
 		"status": "accepted"
 	},
 	{
@@ -175,19 +154,16 @@ On the wire a JSON serialised request would look something like the following:
 
 Provider systems:
 
-- SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example:
 
-- the submitted `start` and `end` date range does not match that of the requested `Slot`(s).
+- the submitted `start` and `end` date range does not match that of the requested `Slot(s)`.
 - one or more of the requested `Slot` resources does not exist or already has a `status` of busy.
-
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
 {% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place to prevent misuse of appointment booking outside of the GPConnect API implementation." %}
-
 
 
 ### Request Response ###
@@ -202,9 +178,9 @@ Provider systems:
 
 - SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
 - SHALL return a `Location` header as described in [FHIR API Guidance](development_fhir_api_guidance.html#create-resource).
-- SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
-- SHALL include the `versionId` of the current version of each `Appointment` resource.
+- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
+- SHALL include the `versionId` of the current version of each appointment resource.
 
 ```json
 {
@@ -213,13 +189,13 @@ Provider systems:
 	"meta": {
 		"versionId": "636068818095315079",
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"contained": [{
 		"resourceType": "Organization",
 		"id": "1",
 		"meta": {
-			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 		},
 		"name": "Test Organization Name",
 		"telecom": [{
@@ -227,27 +203,13 @@ Provider systems:
 			"value": "0300 303 5678"
 		}]
 	}],
-	"extension": [{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-		"valueDateTime": "2017-10-09T13:48:41+01:00"
-	},
 	{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}
 	}],
 	"status": "booked",
-	"type": {
-		"coding": [{
-			"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-			"code": "408443003"
-		}],
-		"text": "GP"
-	},
-	"reason": {
-		"text": "Free text reason."
-	},
 	"description": "Free text description.",
 	"start": "2016-05-30T10:00:00+01:00",
 	"end": "2016-05-30T10:25:00+01:00",
@@ -255,35 +217,13 @@ Provider systems:
 		"reference": "Slot/1",
 		"display": "Slot 1"
 	}],
+	"created": "2017-10-09T13:48:41+01:00",
 	"comment": "Free text comment.",
 	"participant": [{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "SBJ"
-			}],
-			"text": "Subject"
-		}],
 		"actor": {
 			"reference": "Patient/1",
 			"display": "Mr. Mike Smith"
 		},
-		"required": "required",
-		"status": "accepted"
-	},
-	{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "PPRF"
-			}],
-			"text": "Primary Performer"
-		}],
-		"actor": {
-			"reference": "Practitioner/100",
-			"display": "Dr. Bob Smith"
-		},
-		"required": "required",
 		"status": "accepted"
 	},
 	{
@@ -303,7 +243,7 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
 
 Appointment appointment = new Appointment();
@@ -328,8 +268,7 @@ locationParticipant.Actor.Reference = "Location/1";
 locationParticipant.Status = Appointment.ParticipationStatus.Accepted;
 appointment.Participant.Add(locationParticipant);
 
-appointment.AddExtension("https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1", new FhirDateTime(DateTime.Now));
-	
+appointment.created = new FhirDateTime(DateTime.Now);
 Organization organization = new Organization();
 organization.Name = "Example Organization Name";
 var contactPoint = new ContactPoint();
@@ -355,8 +294,8 @@ FhirSerializer.SerializeResourceToJson(appointmentCreated).Dump();
 ) library." %}
 
 ```java
-FhirContext fhirContext = FhirContext.forDstu2();
-IGenericClient client = fhirContext.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+FhirContext fhirContext = FhirContext.forStu3();
+IGenericClient client = fhirContext.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 
 Appointment appointment = new Appointment();
 appointment.setStatus(AppointmentStatusEnum.BOOKED);
