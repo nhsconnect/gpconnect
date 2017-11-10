@@ -3,11 +3,14 @@ title: Data model principles
 keywords: development, fhir, logical models
 tags: [development,fhir]
 sidebar: overview_sidebar
+toc: false
 permalink: designprinciples_data_model_principles.html
 summary: "High-level design principles related to the FHIR data modelling aspects of the system"
 ---
 
-{% include important.html content="GP Connect has adopted the FHIR&reg; standard (DSTU2) and as such the standard FHIR resources will be used unless a clear rationale exists to amend. When an amendment is required this decision will be logged and the rationale clearly communicated (as a resource delta)." %}
+{% include important.html content="GP Connect has adopted the FHIR&reg; standard (STU3) and as such the standard FHIR resources will be used unless a clear rationale exists to amend. When an amendment is required this decision will be logged and the rationale clearly communicated." %}
+
+## GP Connect Data Models ##
 
 - Data model assets to be held on [GitHub](https://github.com/nhsconnect/gpconnect-fhir){:target="_blank"}.
 - Data models to be licensed under the [Apache 2 license](http://www.apache.org/licenses/LICENSE-2.0){:target="_blank"}.
@@ -20,6 +23,5 @@ summary: "High-level design principles related to the FHIR data modelling aspect
 
 It is common for the base FHIR&reg; standard to require further adaptation to a particular context of use.
 
-[Profiling](https://www.hl7.org/fhir/DSTU2/profiling.html){:target="_blank"} is a general term which describes the process of adapting the base standard for use in a specific context. 
-<br/>Typically, the profiling process both restricts and extends APIs, resources and terminologies.
+[Profiling](https://www.hl7.org/fhir/STU3/profiling.html){:target="_blank"} is a general term which describes the process of adapting the base standard for use in a specific context. Typically, the profiling process both restricts and extends APIs, resources and terminologies.
  

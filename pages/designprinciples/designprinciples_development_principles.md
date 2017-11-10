@@ -7,7 +7,7 @@ permalink: designprinciples_development_principles.html
 summary: "High-level principles related to the development of the system"
 ---
 
-1. Software assets to be held on [GitHub](https://github.com/nhs-digital){:target="_blank"}.
+1. Software assets to be held on [GitHub](https://github.com/nhsconnect){:target="_blank"}.
 2. Software to be licensed under the [Apache 2 license](http://www.apache.org/licenses/LICENSE-2.0){:target="_blank"}.
 3. Code repositories will use the [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/){:target="_blank"} branching model.
 	1. Contributors make changes by submitting [Pull Requests](https://help.github.com/articles/using-pull-requests/){:target="_blank"}.

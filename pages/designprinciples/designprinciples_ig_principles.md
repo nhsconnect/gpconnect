@@ -3,16 +3,17 @@ title: Information governance principles
 keywords: engage, fot, information, governance, infogov, ig
 tags: [information_governance,engagement,commissioning,first_of_type]
 sidebar: overview_sidebar
+toc: false
 permalink: designprinciples_ig_principles.html
 summary: "High-level principles related to information governance (IG) of data with-in the system for FoT"
 ---
 
-## First of Type (FoT) principles ##
-
 {% include important.html content="The principles below have been discussed in workshops with the GP Principal Providers, and with their underpinning detailed requirements, are currently undergoing review to obtain the  necessary stakeholder agreement.<br/><br/>
-The detailed requirements supporting these will be available as part of the Provider, Consumer Development and Assurance documentation to be published during November/December 2016.<br/><br/>
+The detailed requirements supporting these will be available as part of the Provider development, Consumer development and Assurance documentation published within this specification.<br/><br/>
 Review and agreement as to the IG model for additional and beyond FoT clinical settings is underway and taking into account other strategic projects and work in this arena.  Changes may arise to these principles and detailed supporting requirements as a result." %}
 
+
+## First of Type (FoT) principles ##
  
 - Provider systems must be compliant with NHS Codes of Practice and Legal Obligations, and their existing NHS contractual IG requirements;  eg the foundational requirements for the GP Principal System  are covered by the GPSoC IG v 4 schedule as well as the other Common Authority  Requirements; requirements additional to these will be documented and  included in GP Connect Development, Assurance and Deployment  activities and documentation  
 
