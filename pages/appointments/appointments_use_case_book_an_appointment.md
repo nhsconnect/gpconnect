@@ -80,7 +80,7 @@ The following data-elements are mandatory (i.e data MUST be present).
   - the contained organization resource SHALL represent the organization booking the appointment.
   - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) ![STU3](images/stu3.png) profile.
   - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
-- the `created` extension SHALL be populate with the date and time of the appointment was created.
+- the `created` element SHALL be populate with the date and time of the appointment was created.
 
 The following data-elements SHOULD be included when available.
 - a practitioner `participant` of the appointment.
