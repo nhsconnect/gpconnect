@@ -117,7 +117,7 @@ On the wire a JSON serialised request would look something like the following:
 			"value": "0300 303 5678"
 		}]
 	}],
-	{
+	"extension": [{
 		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 		"valueReference": {
 			"reference": "#1"
@@ -203,7 +203,7 @@ Provider systems:
 			"value": "0300 303 5678"
 		}]
 	}],
-	{
+	"extension": [{
 		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 		"valueReference": {
 			"reference": "#1"

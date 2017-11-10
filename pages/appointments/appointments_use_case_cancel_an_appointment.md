@@ -59,11 +59,11 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload Request Body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the `Appointment` resource.
+- SHALL send an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
 Only the following data-elements can be modified when performing an appointment cancellation.
 - the appointment `status` MUST be updated to "cancelled".
@@ -76,17 +76,17 @@ On the wire a JSON serialised request would look something like the following:
 ```json
 {
 	"resourceType": "Appointment",
-	"id": "1",
+	"id": "9",
 	"meta": {
 		"versionId": "636068818095315079",
 		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"contained": [{
 		"resourceType": "Organization",
 		"id": "1",
 		"meta": {
-			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 		},
 		"name": "Test Organization Name",
 		"telecom": [{
@@ -95,66 +95,30 @@ On the wire a JSON serialised request would look something like the following:
 		}]
 	}],
 	"extension": [{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-		"valueDateTime": "2017-10-09T13:48:41+01:00"
-	},
-	{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}
-	}],
-	"status": "cancelled",
-    "extension": [{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1",
+	},
+	{
+		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
 		"valueString": "Free text cancellation reason."
 	}],
-	"type": {
-		"coding": [{
-			"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-			"code": "408443003"
-		}],
-		"text": "GP"
-	},
-	"reason": {
-		"text": "Free text reason."
-	},
-	"description": "Free text description.",
+	"status": "cancelled",
+	"description": "Free text description updated.",
 	"start": "2016-05-30T10:00:00+01:00",
 	"end": "2016-05-30T10:25:00+01:00",
 	"slot": [{
 		"reference": "Slot/1",
 		"display": "Slot 1"
 	}],
+	"created": "2017-10-09T13:48:41+01:00",
 	"comment": "Free text comment.",
 	"participant": [{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "SBJ"
-			}],
-			"text": "Subject"
-		}],
 		"actor": {
 			"reference": "Patient/1",
 			"display": "Mr. Mike Smith"
 		},
-		"required": "required",
-		"status": "accepted"
-	},
-	{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "PPRF"
-			}],
-			"text": "Primary Performer"
-		}],
-		"actor": {
-			"reference": "Practitioner/100",
-			"display": "Dr. Bob Smith"
-		},
-		"required": "required",
 		"status": "accepted"
 	},
 	{
@@ -169,11 +133,10 @@ On the wire a JSON serialised request would look something like the following:
 
 #### Error Handling ####
 
-The Provider system SHALL return an error if:
+The Provider system:
 
-- any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
-
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -188,26 +151,26 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return an `Appointment` resource that conform to the `gpconnect-appointment-1` profile.
-- SHALL include the URI of the `gpconnect-appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resource.
-- SHALL include the `versionId` of the current version of each `Appointment` resource.
-- SHALL have updated the appointment `status` to cancelled.
+- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
+- SHALL include the `versionId` of the current version of each appointment resource.
+- SHALL have updated the appointment `status` to "cancelled".
 - SHALL have updated the appointment `cancellation-reason` inline with any details supplied in the request.
 
 ```json
 {
 	"resourceType": "Appointment",
-	"id": "1",
+	"id": "9",
 	"meta": {
-		"versionId": "636064088104680389",
-		"lastUpdated": "2016-08-15T20:10:20.775+01:00",
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"]
+		"versionId": "636068818095315079",
+		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
 	},
 	"contained": [{
 		"resourceType": "Organization",
 		"id": "1",
 		"meta": {
-			"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 		},
 		"name": "Test Organization Name",
 		"telecom": [{
@@ -216,66 +179,30 @@ Provider systems:
 		}]
 	}],
 	"extension": [{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-appointment-created-1",
-		"valueDateTime": "2017-10-09T13:48:41+01:00"
-	},
-	{
-		"url": "https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1",
+		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
 		"valueReference": {
 			"reference": "#1"
 		}
-	}],
-	"status": "cancelled",
-    "extension": [{
-		"url": "http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1",
+	},
+	{
+		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
 		"valueString": "Free text cancellation reason."
 	}],
-	"type": {
-		"coding": [{
-			"system": "http://hl7.org/fhir/ValueSet/c80-practice-codes",
-			"code": "408443003"
-		}],
-		"text": "GP"
-	},
-	"reason": {
-		"text": "Free text reason."
-	},
-	"description": "Free text description.",
+	"status": "cancelled",
+	"description": "Free text description updated.",
 	"start": "2016-05-30T10:00:00+01:00",
 	"end": "2016-05-30T10:25:00+01:00",
 	"slot": [{
 		"reference": "Slot/1",
 		"display": "Slot 1"
 	}],
+	"created": "2017-10-09T13:48:41+01:00",
 	"comment": "Free text comment.",
 	"participant": [{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "SBJ"
-			}],
-			"text": "Subject"
-		}],
 		"actor": {
 			"reference": "Patient/1",
 			"display": "Mr. Mike Smith"
 		},
-		"required": "required",
-		"status": "accepted"
-	},
-	{
-		"type": [{
-			"coding": [{
-				"system": "http://hl7.org/fhir/ValueSet/encounter-participant-type",
-				"code": "PPRF"
-			}],
-			"text": "Primary Performer"
-		}],
-		"actor": {
-			"reference": "Practitioner/100",
-			"display": "Dr. Bob Smith"
-		},
-		"required": "required",
 		"status": "accepted"
 	},
 	{
@@ -288,7 +215,7 @@ Provider systems:
 }
 ```
 
-{% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (i.e. the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.freeBusyType` are updated inline with any internal integrity constraints)." %}
+{% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (i.e. the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.status` are updated inline with any internal integrity constraints)." %}
 
 ## Examples ##
 
@@ -297,12 +224,12 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
 client.PreferredFormat = ResourceFormat.Json;
-var appointment = client.Read<Appointment>("Appointment/1");
+var appointment = client.Read<Appointment>("Appointment/9");
 // Cancel The Appointment
 appointment.Status = Appointment.AppointmentStatus.Cancelled;
-appointment.Extension.Add(new Extension("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1",new FhirString("Free text cancellation reason.")));
+appointment.Extension.Add(new Extension("https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",new FhirString("Free text cancellation reason.")));
 var cancelledAppointment = client.Update<Appointment>(appointment);
 FhirSerializer.SerializeResourceToJson(cancelledAppointment).Dump();
 ```
@@ -314,14 +241,14 @@ FhirSerializer.SerializeResourceToJson(cancelledAppointment).Dump();
 
 ```java
 // Read appointment to be updated
-FhirContext ctx = FhirContext.forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1");
-Appointment appointment = client.read().resource(Appointment.class).withId("1").execute();
+FhirContext ctx = FhirContext.forStu3();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
+Appointment appointment = client.read().resource(Appointment.class).withId("9").execute();
 
 // Amend appointment status and cancellation reason
 appointment.setStatus(AppointmentStatusEnum.CANCELLED);
 ExtensionDt extension = new ExtensionDt(false);
-extension.setUrl("http://fhir.nhs.net/StructureDefinition/extension-gpconnect-appointment-cancellation-reason-1");
+extension.setUrl("https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1");
 extension.setValue(new StringDt("Free text cancellation reason."));
 appointment.addUndeclaredExtension(extension);
 

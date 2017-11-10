@@ -16,6 +16,8 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Search for free slots](appointments_use_case_search_for_free_slots.html) - Uplifted to STU3 FHIR profiles for all resources. Significant changes to note are `freeBusyType` has changed to `status`, the practitioner reference has moved in the schedule resource from an extension to `Schedule.actor`.
   - [Read an appointment](appointments_use_case_read_an_appointment.html) - Uplifted to STU3 profiles.
   - [Book an appointment](appointments_use_case_book_an_appointment.html) - Uplifted to STU3 profiles. A significant change to note is that the create extension has become the standard created element within the appointment resource.
+  - [Amend an appointment](appointments_use_case_amend_an_appointment.html) - Uplifted to STU3 profiles.
+  - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html) - Uplifted to STU3 profiles.
 
 #### 1.0.0-rc.2 (Released: 13/10/2017)
   ***Specification Updates***
