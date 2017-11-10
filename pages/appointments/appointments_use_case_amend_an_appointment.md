@@ -71,6 +71,7 @@ Only the following data-elements can be modified when performing an appointment 
 - `comment`
 - `Appointment cancellation reason` extension, which SHALL only be amended when the appointment status is `cancelled`.
 
+{% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element, if a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
 
 On the wire a JSON serialised request would look something like the following:
 

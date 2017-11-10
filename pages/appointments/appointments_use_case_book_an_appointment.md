@@ -94,6 +94,7 @@ The following guidance around Appointment Resource element should be followed wh
 | Appointment.***comment***     | This field should be used for "Patient specific notes" and any additional comments relating to the appointment. |
 | Appointment.***description*** | This field should be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
 
+{% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element, if a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
 
 #### Example Request Body ####
 

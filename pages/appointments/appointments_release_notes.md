@@ -18,6 +18,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Book an appointment](appointments_use_case_book_an_appointment.html) - Uplifted to STU3 profiles. A significant change to note is that the create extension has become the standard created element within the appointment resource.
   - [Amend an appointment](appointments_use_case_amend_an_appointment.html) - Uplifted to STU3 profiles.
   - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html) - Uplifted to STU3 profiles.
+  - [Book an appointment](appointments_use_case_book_an_appointment.html), [Amend an appointment](appointments_use_case_amend_an_appointment.html) - Added guidanace for providers that do not support both appointment description and appointment comment to append the recieved comment string to the mandatory description element.
 
 #### 1.0.0-rc.2 (Released: 13/10/2017)
   ***Specification Updates***
