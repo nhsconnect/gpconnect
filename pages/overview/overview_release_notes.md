@@ -19,11 +19,12 @@ summary: "Release notes for the GP Connect Overview"
 - [Common API Guidance](development_fhir_api_guidance.html#update-resource) - Added clarification on use of PUT to make clear an update should not create a resource if the resource being updated does not already exist.
 - [Common API Guidance](development_fhir_api_guidance.html) - Added guidance on the behaviour of consumer and provider systems where Must-Support flag is present. 
 - [Common API Guidance](development_fhir_api_guidance.html) - Split this page into "General API guidance" and "FHIR implementation guidance" pages.
-- [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#guidance-on-use-of-requested_record) - Added section to clarify the expected use of the `requested_record` claim within the JWT.
+- [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#population-of-requested_record) - Added section to clarify the expected use of the `requested_record` claim within the JWT.
 - [Information governance principles](designprinciples_ig_principles.html) - Updated teminology around the consumer responsibilities in regards to NHS Codes of Practice & Legal Obligations related to the use of GP Connect API.
 - [Fhir library guidance](development_fhir_open_source_guidance.html) - the Fhir library guidance page has been updated to improve GP Connect guidance around using existing fhir libraries to aid it development.
 - [Error handling guidance](development_fhir_error_handling_guidance.html) - Updated error handling guidance to include expectations around a resource not found, provide details of spine error codes expected and also restructured to clarify differing error condition types. 
 - [FHIR API guidance](development_fhir_api_guidance.html) - Corrected in scope search prefixes to be consistent with other pages
+- [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#population-of-requesting_organization) - Added additional guidance around the population of the requesting_organization claim within the JWT.
 
 
 #### GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)

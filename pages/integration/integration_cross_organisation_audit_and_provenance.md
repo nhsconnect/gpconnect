@@ -102,7 +102,19 @@ Consumer system SHALL generate a new JWT for each API request. The Payload secti
 
 {% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
-#### Guidance on use of requested_record ####
+#### Population of requesting_organization ####
+
+The `requesting_organization` claim within the JWT SHALL be a FHIR `Organization` resource representing the organization making the request.
+
+The organization resource SHALL include the elements:
+
+| Element | Description |
+| --- | --- |
+| name | A textual representation of the name of the organisation. |
+| identifier | An identifier should be included contain a fixed `system` of `"http://fhir.nhs.net/Id/ods-organization-code"` and a identifier `value` containing the ODS code of requesting organsiation. |
+
+
+#### Population of requested_record ####
 
 The `requested_record` claim within the JWT should be a minimal FHIR resource which describes the resource being requested or searched for where possible. Currently the FHIR resource can either be a `Patient` or an `Organization` resource and will contain any relevant business identifiers to the request.
 
