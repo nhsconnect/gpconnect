@@ -194,7 +194,7 @@ In order to ensure that endpoint lookup is reliable, the following guidelines mu
 
 **1. Format of Server Root URL**
 
-The *Server Root URL* for a given ASID SHALL be defined in the nhsMhsEndPoint attribute of the MHS record (i.e. the ldap object of type nhsMhs). This URL SHALL be in the format described in the [API Versioning](development_fhir_api_guidance.html#fhir-api-versioning) guidance.
+The *Server Root URL* for a given ASID SHALL be defined in the nhsMhsEndPoint attribute of the MHS record (i.e. the ldap object of type nhsMhs). This URL SHALL be in the format described in the [API Versioning](development_general_api_guidance.html#fhir-api-versioning) guidance.
 
 
 
@@ -218,7 +218,7 @@ In line with this, provider systems SHOULD perform checks that the FHIR request 
 
 **4. Practice routing identifier to be included in FHIR Server Root URL**
 
-As described in the [API Versioning](development_fhir_api_guidance.html#fhir-api-versioning) guidance, a routing identifier SHALL be placed in the FHIR Servder Root URL. This routing identifier may be the ODS code of the practice, or another logical identifier which acheives reliable routing of the request to the patient's registered practice data store. It is expected that the FHIR server business logic will extract the routing identifier.
+As described in the [API Versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, a routing identifier SHALL be placed in the FHIR Servder Root URL. This routing identifier may be the ODS code of the practice, or another logical identifier which acheives reliable routing of the request to the patient's registered practice data store. It is expected that the FHIR server business logic will extract the routing identifier.
 
 In line with this, HTTP headers SHALL NOT be used to provide this organisation routing.
 
@@ -229,14 +229,14 @@ ODS codes which refer to Principle Clinical Systems as a single entity SHALL NOT
 
 **6. The FHIR Server Root URL SHALL contain the FHIR version name**
 
-The FHIR Server Root URL defined in the nhsMhsEndPoint attribute SHALL contain the FHIR version name as described in the [API Versioning](development_fhir_api_guidance.html#fhir-api-versioning) guidance. This will enable versioning of provider API by FHIR version. 
+The FHIR Server Root URL defined in the nhsMhsEndPoint attribute SHALL contain the FHIR version name as described in the [API Versioning](development_general_api_guidance.html#fhir-api-versioning) guidance. This will enable versioning of provider API by FHIR version. 
 
 In line with this, provider systems SHALL NOT version through the use of HTTP headers.
 
 
 **7. FHIR version SHALL match version found in FHIR conformance statement**
 
-The FHIR version as returned in a [conformance statement](foundations_use_case_get_the_fhir_capability_statement.html) from the FHIR server which services the FHIR request SHALL match the FHIR version given in the FHIR Server Root URL.
+The FHIR version as returned in a [CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) from the FHIR server which services the FHIR request SHALL match the FHIR version given in the FHIR Server Root URL.
 
 **8. FHIR Server Root URLs associated with a given product set SHALL use same FHIR Version**
 
