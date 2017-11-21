@@ -47,9 +47,9 @@ Provider systems SHALL support the following include parameters:
 The following parameters SHALL be included in the request:
 
 - The `start` parameter SHALL only be included once in the request.
-- The `start` parameter SHALL be supplied with the `ge` search prefix. For example 'start=ge22-09-2017' which indicates that the consumer would like slots where the slot start date is on or after "22-09-2017".
+- The `start` parameter SHALL be supplied with the `ge` search prefix. For example 'start=ge2017-09-22' which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
 - The `end` parameter SHALL only be included once in the request.
-- The `end` parameter SHALL be supplied with the `le` search prefix. For example 'end=le26-09-2017' which indicates that the consumer would like slots where the slot end date is on or before "26-09-2017".
+- The `end` parameter SHALL be supplied with the `le` search prefix. For example 'end=le2017-09-26' which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
   
   ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
 
