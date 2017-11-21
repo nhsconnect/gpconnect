@@ -19,7 +19,14 @@ Suppliers and sites will need to agree to a roadmap around delivery and some lig
 
 ## FoT timelines ##
 
-FoT will commence in Nov 2016 as the Principals begin assurance activities of their HTML record access provider capability.  FoT will end following successful completion of all activities needed to allow Business As Usual (BAU) implementation at scale of the phase 1 components.  Regular progress updates will be provided via the GitHub site when key milestones are achieved.
+**HTML Access Record**
+
+FoT commenced in Nov 2016 as the Principals begin assurance activities of their HTML record access provider capability.  FoT will end following successful completion of all activities needed to allow Business As Usual (BAU) implementation at scale of the phase 1 components.  Regular progress updates will be provided via the GitHub site when key milestones are achieved.
+
+
+**Appointments**
+
+FoT implementations of Appointment capabilities are scheduled to commence Q1 2018
 
 ## FoT approach ##
 
@@ -40,7 +47,7 @@ In order to be considered as part of the FoT, NHS organisations who will commiss
 Following initial validation, candidates will be reviewed by both NHS Digital and NHS England to determine which candidates will be provisionally allocated in to a tranche. It is anticipated 2 – 4 Commissioning Organisations will be selected per tranche. Any selections made by the Selection Group will be validated by the GP Connect Project Board. 
 Those applicants that are not successful will be contacted as soon as possible following any decisions being made.
 
-## FoT tranche 1 candidates ##
+## HTML Access Record FoT tranche 1 candidates ##
 
 The following candidates have been selected for Tranche 1
 
@@ -49,9 +56,9 @@ The following candidates have been selected for Tranche 1
 |NHS Kernow CCG| General Practice - Federated Working| North & South Kerrier|
 |Leeds Teaching Hospital NHS Trust| Cross Care Setting Shared Record (Leeds Care Record)|Leeds|
 
-## FoT tranche 2 & 3 selection ##
+## HTML Access Record FoT tranche 2 & 3 selection ##
 
-We are currently accepting applications for future tranches with the selection process expected to start in early 2017. 
+We are currently accepting applications for future tranches. 
 
 ## How to be involved ##
 
