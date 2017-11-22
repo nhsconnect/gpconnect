@@ -37,7 +37,7 @@ The Call Centre will retrieve and select In-Hours or Extended Hours appointments
 
    - a GP Practice within the vicinity of the Patient’s geographic location – eg when the Patient is on holiday
 
-{% include note.html content="Whilst the GP Connect programme primarily assumes that the appointment-hosting (provider) systems are the GP Principal Systems, the API technical design has accommodated the minimum viable features required to support Booking and Managing of Appointments at UC Providers such as Minor Injuries Units and GP Out of Hours services.  This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting.  **This Use Case is currently out of scope for GP Connect FoT deployments.**" %}  
+{% include note.html content="Whilst the GP Connect programme primarily assumes that the appointment-hosting (provider) systems are the GP Principal Systems, the API technical design has accommodated the minimum viable features required to support Booking and Managing of Appointments at UC Providers such as Minor Injuries Units and GP Out of Hours services.  This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting.  **This deployment care setting is currently out of scope for GP Connect FoT deployments.**" %}  
 
 ## API Use Cases ##
 
