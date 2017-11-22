@@ -38,7 +38,7 @@ When requesting the schedule of a particular diary, the level of detail returned
 The following search parameters will be initially included:
 
 - All available common (across all four systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
-- <span class="label label-success">SELECTED</span> Only date ranges will be available to set as part of a diary search (consumers can then apply further filtering, sorting at client side).
+- <span class="label label-success">SELECTED</span> Date Range,  Urgent Care (UC) Disposition Code & Service ID, and Requesting Organisation Type are accommodated to support available appointment slot filtering (consumers can then apply further filtering, sorting at client side).  The last 3 are required to support the use of GP Connect APIs by UC Services.
 
 {% include roadmap.html content="Greater flexibility in available available search parameters is desirable to support finer grained searching, e.g. by gender, by type." %}
 
@@ -63,7 +63,7 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 What provision will be made for making changes to existing appointments?
 
 - Only cancellation will be allowed (must cancel and re-book).
-- <span class="label label-success">SELECTED</span> Cancel and basic amendments will be provisioned for (i.e. only allowed to the comment/description fields).
+- <span class="label label-success">SELECTED</span> Cancellation and Amendments to the Appointment Reason, Description and Comment are accommodated.
 - Cancel and comprehensive amendments will be provisioned for (allowing appointments to move between slots/rescheduled).
 
 ## Can appointments be re-scheduled? ##
