@@ -9,11 +9,11 @@ summary: "All about the appointment management capability."
 
 ## Purpose ##
 
-The Appointment Management Capability (AM) APIs enable consumer system administrative and clinical end-users to more effectively book and manage appointments held in any of the four GP Principal Practice systems, improving access to GP care.  The deployment of the APIs within Patient Apps, to support Patient direct access, is envisaged for a later Phase.
+To meet strategic objectives to improve access to GP care, the Appointment Management(AM) APIs enable consumer system administrative and clinical end-users to more effectively book and manage GP Practice-designated externally-bookable appointments held in any of the four GP Principal Practice systems.  The deployment of the APIs within Patient Apps, to support Patient direct access, is envisaged for a later Phase.
 
 ## Example Scenarios ##
 
-- Administrative staff at a GP practice can book an appointment on behalf of a patient.
+- Administrative staff at a GP practice can book an appointment on behalf of a patient
 - Administrative staff at a GP Extended Access Hub can book an appointment on behalf of a patient at any of its federated GP practices 
 - An Urgent Care 111 Call Centre handler or Triage Clinician can book, cancel or view appointments on behalf of a patient at the patient's registered or federated GP Practices or Extended Access Hubs
 - A patient will be able to book, cancel or view their GP appointments via a GPConnect-enabled App
@@ -21,7 +21,7 @@ The Appointment Management Capability (AM) APIs enable consumer system administr
 
 ## FoT Care Setting Deployments  ##
 
-To support NHS England’s strategic objective to improve access to GPs, the following FoT deployments are being progressed:
+The following FoT deployments are being progressed:
 
 ### Care Setting 1: Within GP Federations ###
 
