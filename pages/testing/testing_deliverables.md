@@ -21,7 +21,7 @@ An automated provider test harness has been made publically available to allow s
 | Provider Terminology     | API Data Layer    | Test Cases |
 | Technical      | API Payload(s)    | FHIR Profile Conformance, ValueSet Usage, Constraint Rules   |
 | Technical      | API Conformance   | URL Format, URL Parameters, HTTP Error Handling |
-| Standards      | FHIR DSTU2 Conformance  | Metadata, RESTful, Identifier Handling, Search Patterns |
+| Standards      | FHIR Conformance  | Metadata, RESTful, Identifier Handling, Search Patterns |
 | Technical      | Spine Integration | SSL Certificate Handling, URL Format, SSP Headers |
 | Standards      | HTTP Conformance  | Accept Encodings, Transfer Encodings, ETags Compression |
 | Standards      | JWT Conformance  | Authentication, Claims, Auditing |

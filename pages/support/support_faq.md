@@ -34,9 +34,9 @@ It may be the case that the DELETE verb is used in future incarnations of GP Con
 
 In writing the FHIR implementation guidance for GP Connect we have worked hard to cut down the scope of the FHIR standard that needs to be considered when implementing the first tranche of development work. The “FHIR Out Of Scope” section was included to be as explicit as possible what FHIR functionality we don’t need at this stage. However, as with all standards there is a minimal viable subset which we should be looking to support.
 
-#### Why is the Task resource in DSTU3 not being used rather than overloading the Order resource which is a less than perfect fit for tasks? ####
+#### Why is the Task resource in STU3 not being used rather than overloading the Order resource which is a less than perfect fit for tasks? ####
 
-Please see the answer above re: timeframes for the FHIR STU3 release.
+GP Connect is currently changing all capability packs to conform to STU3 and the use of the Task resource will be considered as part of the specification uplift.
 
 #### Why is support built in for accessing specific resources when the requirement is for the record for a specified patient? ####
 
