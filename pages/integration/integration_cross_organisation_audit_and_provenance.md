@@ -4,7 +4,7 @@ keywords: spine, ssp, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_cross_organisation_audit_and_provenance.html
-summary: "Overview of how audit and provenance data is expected to be transported over the GP Connect FHIR interfaces."
+summary: "Overview of how audit and provenance data transported over GP Connect FHIR interfaces."
 ---
 
 ## Cross Organisation Audit & Provenance ##
@@ -19,11 +19,11 @@ Provider systems SHALL ensure that access to confidential data, including patien
 
 For implementers that don't have access to the GP SoC Framework / 'IG Requirements for GP Systems V4' requirements then the following extract of requirements covers the main audit trail requirements:
 
-Provider systems SHALL record in an audit trail all access and data changes within the system as a result of API activity in the same way that internal access and changes are required to be recorded.
+- Provider systems SHALL record in an audit trail all access and data changes within the system as a result of API activity in the same way that internal access and changes are required to be recorded.
 
-Provider systems SHALL ensure that all API transactions are recorded in an audit trail, and that audit trails must be subject to the standard IG audit requirements as defined in “IG Requirements for GP Systems V4” or as subsequently amended.
+- Provider systems SHALL ensure that all API transactions are recorded in an audit trail, and that audit trails must be subject to the standard IG audit requirements as defined in “IG Requirements for GP Systems V4” or as subsequently amended.
 
-Provider systems SHALL ensure failed or rejected API transactions are recorded with the same detail as for successful API requests, with error codes as per the [error handling guidance](development_fhir_error_handling_guidance.html).
+- Provider systems SHALL ensure failed or rejected API transactions are recorded with the same detail as for successful API requests, with error codes as per the [error handling guidance](development_fhir_error_handling_guidance.html).
 
 Audit Trail records shall include the following minimum information:
 
@@ -82,27 +82,31 @@ Consumer system SHALL generate a new JWT for each API request. The Payload secti
 |-------|----------|-------------|-------------|------------------|
 | iss | R | Requesting systems issuer URI | No | Yes |
 | sub | R | ID for the user on whose behalf this request is being made. Matches `requesting_practitioner.id` | No | Yes |
-| aud | R | Authorization server's `token_URL` | `https://authorize.fhir.nhs.net/token` | No |
+| aud | R | Requested resource URI<sup>6</sup> | No | Yes |
 | exp | R | Expiration time integer after which this authorization MUST be considered invalid. | `exp` | (now + 5 minutes) UTC time in seconds |
-| iat | R | The UTC time the JWT was created by the requesting system | `iat` | now UTC time in seconds |
-| reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
+| iat | R | The UTC time the JWT was created by the requesting system | No | now UTC time in seconds |
+| reason_for_request | R | Purpose for which access is being requested | No | `directcare`<br/>OR <br/>`patientfacing` |
 | requested_record | R | A Minimal FHIR resource which describes the resource being requested or searched for. | No | FHIR Patient<sup>1</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
 | requested_scope | R | Data being requested<sup>2</sup> | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
-| requesting_device | R | FHIR device resource making the request | No | FHIR Device<sup>1</sup> |
+| requesting_device | R | Device details and/or system url making the request | No | FHIR Device<sup>1</sup> |
 | requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>1+4</sup> | 
 | requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>1+3</sup> |
 
 <sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s), conforming to the base fhir resources definition (the resource does not need to conform to the GP Connect fhir profile).
 
-<sup>2</sup> Patient scope for patient centric APIs (i.e. Get Care Record and Patient's Appointments, Patient Task) or scope for organisation centric APIs (i.e. Get Organization Schedule)
+<sup>2</sup> A list of one or more strings delimited by white space, in the format “patient/[ResourceType].[RightsType]” or “organization/[ResourceType].[RightsType]”. For “patient”, [ResourceType] (e.g. Condition, Appointment, Observation) may be any named Resource in the [HL7 FHIR STU3 Compartment Patient set](http://www.hl7.org/fhir/stu3/compartmentdefinition-patient.html){:target="_blank"} or "`*`". For "organization", [ResourceType] may be any of “practitioner”, “organization”, “location” or "`*`". [RightsType] may only be “read”, “write” or "`*`".
 
 <sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field.
 
-<sup>4</sup> The requesting organisation resource SHALL refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
+<sup>4</sup> The `requesting_organization` claim is Optional **ONLY** when `reason_for_request` = "patientfacing", in which case it should be omitted. When `reason_for_request` = "directcare", it **SHALL** refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
+
+<sup>5</sup>An HL7 FHIR DSTU2 Person resource, used to contain Citizen ID and local system identifier(s) (i.e. login details / username) for a person other than a practitioner requesting access to a GP Connect capability when `reason_for_request` = `"patientfacing"`.
+
+<sup>6</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the Consumer by the [SDS endpoint lookup service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process){:target="_blank"} as the value of `nhsMhsEndPoint`.
 
 {% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
-{% include important.html content="Providers SHALL implement loose validation for identifier system and identifier value used within the JWT to allow for backwards compatibility as a consumer may use an identifier system from an older version of the spec when making a request." %}
+{% include important.html content="Providers SHALL implement loose validation for identifier system and identifier values used within the JWT to allow for backwards compatibility as a consumer may use an identifier system from an older version of the specification when making a request." %}
 
 #### Population of requesting_organization ####
 
@@ -135,6 +139,21 @@ The table below shows some of the GP Connect API interactions and the expected c
 | Read Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
 
 {% include note.html content="The provider SHALL validate that the requested_record claim details match the request parameters where possible, to ensure valid auditing of the requests end-to-end." %}
+
+#### Population of requested_device ####
+
+This claim is used to provide details of the originator of the request for auditing purposes, in the form of a FHIR Device resource. 
+
+Where the request originates from a device (for example a mobile device in a patient facing scenario), details of the device can be provided in manufactere, model and version elements.
+
+Where the request originates from a system, the spine endpoint url of the originating system shall be specified using the url element.
+
+#### Population of iss claim ####
+
+As the consuming system is presently responsible for generating the access token, this SHALL contain the url of the spine endpoint of the consuming system.
+
+In future OAuth2 implementation, the iss claim will contain the url of the OAuth2 authorization server token endpoint.
+
 
 #### JWT Generation ####
 Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
@@ -172,8 +191,8 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 {
 	"iss": "https://[ConsumerSystemURL]",
 	"sub": "[PractitionerID]",
-	"aud": "https://authorize.fhir.nhs.net/token",
-	"exp": 1469436987,
+	"aud": "https://provider.thirdparty.nhs.uk/GP0001/DSTU2/1",
+	"exp": 1469437287,
 	"iat": 1469436687,
 	"reason_for_request": "directcare",
 	"requested_record": {
@@ -191,7 +210,8 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 			"value": "[DeviceID]"
 		}],
 		"model": "[SoftwareName]",
-		"version": "[SoftwareVersion]"
+		"version": "[SoftwareVersion]",
+		"url", "https://[ConsumerSystemURL]"
 	},
 	"requesting_organization": {
 		"resourceType": "Organization",
