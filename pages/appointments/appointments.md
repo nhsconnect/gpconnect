@@ -7,11 +7,9 @@ permalink: appointments.html
 summary: "All about the appointment management capability."
 ---
 
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
-
 ## Purpose ##
 
-The Appointment Management Capability APIs will enable consumer system service users initially (subsequently patients ) to more effectively book and manage appointments held in any of the four GP Principal Practice systems, improving access to GP care.
+The Appointment Management Capability (AM) APIs enable consumer system administrative and clinical end-users to more effectively book and manage appointments held in any of the four GP Principal Practice systems, improving access to GP care.  The deployment of the APIs within Patient Apps, to support Patient direct access, is envisaged for a later Phase.
 
 ## Example Scenarios ##
 
@@ -20,6 +18,26 @@ The Appointment Management Capability APIs will enable consumer system service u
 - An Urgent Care 111 Call Centre handler or Triage Clinician can book, cancel or view appointments on behalf of a patient at the patient's registered or federated GP Practices or Extended Access Hubs
 - A patient will be able to book, cancel or view their GP appointments via a GPConnect-enabled App
 - Administrative staff and Clinicians at a range of other care settings, eg A&E, Physio, Social and Community services,  will be able to book, view or cancel a GP appointment on behalf of the patient
+
+## FoT Care Setting Deployments  ##
+
+To support NHS England’s strategic objective to improve access to GPs, the following FoT deployments are being progressed:
+
+### Care Setting Use Case 1: Within GP Federations ###
+
+Enabling a GP practice or Appointment Hub, to book, amend, cancel, or view a patient’s in-hours or extended hours appointments at the patient’s registered GP Practice or another GP practice within the same federation.  
+
+### Care Setting Use Case 2: From UC Call Centres to GP Practices – In-Hours, Extended Hours Appointments ###
+The requirement to support the use of the GP Connect capability for Unscheduled Care by Urgent Care (UC) Services - ie UC Call Centres booking and managing appointments into GP practices –  has been accommodated where possible in the API design. 
+This scenario envisages that the Call Centre will retrieve and select In-Hours or Extended Hours appointments for booking/managing at either 
+
+   - the Patient’s registered GP Practice
+
+   - GP Practices federated with the Patient’s registered GP Practice
+
+   - a GP Practice within the vicinity of the Patient’s geographic location – eg when the Patient is on holiday
+
+{% include note.html content="Whilst the GP Connect programme primarily assumes that the appointment-hosting (provider) systems are the GP Principal Systems, the API technical design has accommodated the minimum viable features required to support Booking and Managing of Appointments at UC Providers such as Minor Injuries Units and GP Out of Hours services.  This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting.  **This Use Case is currently out of scope for GP Connect FoT deployments.**" %}  
 
 ## API Use Cases ##
 
