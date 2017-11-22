@@ -245,6 +245,25 @@ Severs SHALL default to the `return=representation` behaviour (i.e. returning th
 
 Servers SHOULD honour a `return=minimal` or `return=representation` preference indicated in the `Prefer` request header, if present.
 
+### Demographic Cross Checking ###
+
+Consumer systems SHALL compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
+
+The following data SHALL be cross checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.   
+
+| Item | Resource Field |
+| ---- | -------------- | 
+| Family Name | patient.name.family |
+| Given Name | patient.name.given |
+| Gender | patient.gender |
+| Birth Date | patient.birthDate |
+
+Additionally the following data MAY be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison:
+* Address and Postcode
+* Contact (telephone, mobile, email)
+
+All above may be redacted if patient is flagged on Spine as Sensitive demographics.
+
 ### Managing Resource Contention ###
 
 To facilitate the management of [resource contention](http://hl7.org/fhir/STU3/http.html#concurrency), Servers SHALL always return an `ETag` header with each resource including the resources `versionId`:

@@ -25,6 +25,7 @@ summary: "Release notes for the GP Connect Overview"
 - [Error handling guidance](development_fhir_error_handling_guidance.html) - Updated error handling guidance to include expectations around a resource not found, provide details of spine error codes expected and also restructured to clarify differing error condition types. 
 - [FHIR API guidance](development_fhir_api_guidance.html) - Corrected in scope search prefixes to be consistent with other pages
 - [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#population-of-requesting_organization) - Added additional guidance around the population of the requesting_organization claim within the JWT.
+- [General API guidance](development_general_api_guidance.html#demographic-cross-checking) - Added details relating to the expectations around Demographic Cross Checking of patient details when retrieving patient information.
 
 
 #### [GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)](https://github.com/nhsconnect/gpconnect/releases/tag/GPConnect1.0.0-alpha.5)
