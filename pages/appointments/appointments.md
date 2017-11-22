@@ -17,7 +17,7 @@ The Appointment Management Capability APIs will enable consumer system service u
 
 - Administrative staff at a GP practice can book an appointment on behalf of a patient.
 - Administrative staff at a GP Extended Access Hub can book an appointment on behalf of a patient at any of its federated GP practices 
-- An Urgent Care 111 Call Centre handler or Triage Clinician can book, cancel or view appointments on behalf of a patient at the patients’ registered or federated GP Practices or Extended Access Hubs
+- An Urgent Care 111 Call Centre handler or Triage Clinician can book, cancel or view appointments on behalf of a patient at the patient's registered or federated GP Practices or Extended Access Hubs
 - A patient will be able to book, cancel or view their GP appointments via a GPConnect-enabled App
 - Administrative staff and Clinicians at a range of other care settings, eg A&E, Physio, Social and Community services,  will be able to book, view or cancel a GP appointment on behalf of the patient
 
