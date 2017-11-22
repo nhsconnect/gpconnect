@@ -23,13 +23,13 @@ The Appointment Management Capability (AM) APIs enable consumer system administr
 
 To support NHS England’s strategic objective to improve access to GPs, the following FoT deployments are being progressed:
 
-### Care Setting Use Case 1: Within GP Federations ###
+### Care Setting 1: Within GP Federations ###
 
 Enabling a GP practice or Appointment Hub, to book, amend, cancel, or view a patient’s in-hours or extended hours appointments at the patient’s registered GP Practice or another GP practice within the same federation.  
 
-### Care Setting Use Case 2: From UC Call Centres to GP Practices – In-Hours, Extended Hours Appointments ###
+### Care Setting 2: From UC Call Centres to GP Practices – In-Hours, Extended Hours Appointments ###
 The requirement to support the use of the GP Connect capability for Unscheduled Care by Urgent Care (UC) Services - ie UC Call Centres booking and managing appointments into GP practices –  has been accommodated where possible in the API design. 
-This scenario envisages that the Call Centre will retrieve and select In-Hours or Extended Hours appointments for booking/managing at either 
+The Call Centre will retrieve and select In-Hours or Extended Hours appointments for booking/managing at either 
 
    - the Patient’s registered GP Practice
 
