@@ -66,13 +66,15 @@ The following parameters MAY be included to minimise the number of API calls req
 
 ### 'searchFilter' parameter ###
 
-The `searchFilter` parameter MAY be included to allow the provider to perform additional filtering on available slots return. The following table outlines some search filters required for urgent care use cases. Additional searchFilter systems may be sent by consumers and providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
+{% include note.html content="The searchFilter parameter is intended for future use of the API, but providers and consumers are advised to consider this filtering capabilitiy as part of their implementation." %}
 
-| System | Description |
+The `searchFilter` parameter MAY be included by consumers to allow the provider to perform additional filtering on available slots they return to the consumer. The following table outlines some search filters required for urgent care use cases. Additional searchFilters may be sent by consumers with systems other than those listed in the table below, providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
+
+| System URI | Description |
 | --- | --- |
-| consumer-type TBC | SHOULD be used to pass the type of sending system, for example '111 call centre' (For urgent care use cases). |
-| disposition TBC | SHOULD be used to indicate the disposition required for the patients care (For urgent care use cases). |
-| service-id TBC | SHOULD be used to convey the service-id required for the available slot (For urgent care use cases). |
+| TBC (consumer-type) | SHOULD be used to pass the Consuming Organisation type making the request, for example '111 call centre'. |
+| TBC (disposition) | SHOULD be used to indicate the disposition required for the patients care. |
+| TBC (service-id) | SHOULD be used to convey the service-id required for the available slot. |
 
 
 ## Search for free slots on the wire ##
