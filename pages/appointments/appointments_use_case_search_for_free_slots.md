@@ -66,7 +66,9 @@ The following parameters MAY be included to minimise the number of API calls req
 
 ### 'searchFilter' parameter ###
 
-{% include note.html content="The searchFilter parameter is intended for future use of the API, but providers and consumers are advised to consider this filtering capabilitiy as part of their implementation." %}
+{% include important.html content="The searchFilter parameter is intended for future use of the API." %}
+
+{% include note.html content="Providers and consumers are advised to consider allowing filtering of slots or schedules as part of their implementation. Allowing a practice to choose which slots they make available through the GP Connect API based on specific filters allows for more control of their appointment book. <br/><br/> A common example of appointment book filtering is when a practice reserves a small number of slots specifically for use by urgent care appointment bookings." %}
 
 The `searchFilter` parameter MAY be included by consumers to allow the provider to perform additional filtering on available slots they return to the consumer. The following table outlines some search filters required for urgent care use cases. Additional searchFilters may be sent by consumers with systems other than those listed in the table below, providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
 
