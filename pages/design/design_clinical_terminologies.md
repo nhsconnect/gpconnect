@@ -18,11 +18,11 @@ The [UKTC](http://systems.digital.nhs.uk/data/uktc){:target="_blank"} also maint
 GP Connect systems are expected to handle coded data as follows:
 
 - Data originally entered into a system using the preferred system (i.e. SNOMED CT)
-	- SHALL be returned as SNOMED CT.
-	- If no suitable code exists in the value set (i.e. if only text is available, then just text MAY be used).
+  - SHALL be returned as SNOMED CT. The SNOMED CT DescriptionID should be included in addition to the ConceptID where available. The DescriptionID can convey a different meaning to the ConceptID due to the difference in the specific wording used for the two codes.
+  - If no suitable code exists in the value set (i.e. if only text is available, then just text MAY be used).
 - Data originally entered into a system using an alternate coding system (i.e. READ2 or CTV3)
-	- SHALL be returned in the code system it was originally entered in (i.e. READ2 or CTV3) AND
-	- SHALL also be returned as a preferred code (i.e. SNOMED CT) if a valid mapping/alternate code exists (i.e. there is a NHS Digital assured READ2 or CTV3 to SNOMED CT mapping in place).
+  - SHALL be returned in the code system it was originally entered in (i.e. READ2 or CTV3) AND
+  - SHALL also be returned as a preferred code (i.e. SNOMED CT) if a valid mapping/alternate code exists (i.e. there is a NHS Digital assured READ2 or CTV3 to SNOMED CT mapping in place).
 
 #### Assured mappings ####
 
