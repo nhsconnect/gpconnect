@@ -25,7 +25,7 @@ The ability to create appointments for Patients not known to the GP practice/dia
 
 {% include note.html content="Details of how to [Register a Patient](foundations_use_case_register_a_patient.html) can be found in the Foundations capability pack. " %}
 
-## Content of diaries ##
+## Access to Available Slots ##
 
 When requesting the schedule of a particular diary, the level of detail returned should:
 
@@ -33,14 +33,16 @@ When requesting the schedule of a particular diary, the level of detail returned
 - Only slots that are available (all types).
 - <span class="label label-success">SELECTED</span> Only slots that are available and have been marked/flagged as externally bookable.
 
+{% include roadmap.html content="The requirement for a richer GP Appointment Management functionality within Provider systems is being explored recognising the need for GP Practices to have more granular control of which organisation types, eg Urgent Care, or individual organisations can book into specific slots." %}
+
 ## Search parameters ##
 
 The following search parameters will be initially included:
 
 - All available common (across all four systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
-- <span class="label label-success">SELECTED</span> Date Range,  Urgent Care (UC) Disposition Code & Service ID, and Requesting Organisation Type are accommodated to support available appointment slot filtering (consumers can then apply further filtering, sorting at client side).  The last 3 are required to support the use of GP Connect APIs by UC Services.
+- <span class="label label-success">SELECTED</span> Date Range,  Urgent Care (UC) Disposition Code & Service ID, and Requesting Organisation Type are accommodated to support potential available appointment slot filtering (consumers can then apply further filtering, sorting at client side).  The last 3 are required to support the use of GP Connect APIs by UC Services.  The Search Filter specification is flexible to allow for further search parameters to be defined.
 
-{% include roadmap.html content="Greater flexibility in available available search parameters is desirable to support finer grained searching, e.g. by gender, by type." %}
+
 
 ## Maximum time span of diaries returned ##
 
