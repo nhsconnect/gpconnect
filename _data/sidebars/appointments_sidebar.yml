@@ -27,6 +27,9 @@ entries:
     - title: Clinical scenarios
       url: /appointments_clinical_scenarios.html
       output: web, pdf
+    - title: Information Governance
+      url: /appointments_ig.html
+      output: web, pdf
     - title: Design decisions
       url: /appointments_design.html
       output: web
