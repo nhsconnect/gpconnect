@@ -54,7 +54,7 @@ Provider systems SHALL ensure that data provided to Consumer systems only includ
 
 ## Patient Dissent ##
 
-Provider systems SHALL ensure that Patient Consent is respected (i.e. where express dissent is recorded then data is not shared).
+Provider systems SHALL ensure that Patient Consent is respected (i.e. where express dissent is recorded then the Patient's medical record is not shared) and the suitability of its application will be assessed on a Capability basis. Currently applies to the Access Record capabilities not for Appointment Management.
 
 ## Cross Organisation Audit & Provenance Transport ##
 
