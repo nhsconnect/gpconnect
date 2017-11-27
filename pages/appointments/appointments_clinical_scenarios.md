@@ -7,7 +7,7 @@ permalink: appointments_clinical_scenarios.html
 summary: "Potential clinical scenarios for the Appointments capability."
 ---
 
-The Clinical Scenarios detailed for each main API user story give examples only of how the GP Connect APIs could technically be deployed now or in the future to improve access to GP Practice Appointment Diaries subject to the local GP Practice diary configuration.  
+The Clinical Scenarios below detail the main User Stories which the Appointment Management specification aims to support with possible examples of how the GP Connect APIs could technically be deployed now or in the future to improve access to GP Practice Appointment Diaries subject to the local GP Practice diary configuration.  
 
 {% include note.html content="NB For actual FoT Care Setting deployments, refer to [Appointment Management Introduction](appointment.html)" %}.
 
@@ -25,23 +25,24 @@ Key:
 > 2. Overflow Cover - Overflow telephone cover - federated phone service which can redirect calls from small practice with only 1 receptionist, to larger practice with 4 receptionists, at busy times of the day, to avoid patients getting the engaged tone, or not being answered.  Access required to Appointments for all participating practices.
 > 3. Evening services (e.g. Phlebotomy, Physio) - bookable across the federation, so all practices need to be able to access the appointments book
 
+<i class='fa fa-check'/> As a GP Practice Manager, I would like to be able to manage and control access to the Practice's available appointments so that ultimately patients have access to the right appointment according to their requirement
+
+<i class='fa fa-check'/> As an Urgent Care Service Manager, I would like to have confidence that appointment slots agreed with GP Practices to be designated for the use of Urgent Care are not made available to other organisations so that our patients have access to the right appointment according to their requirement
+
+
 ## Retrieve a Patient's Appointments ##
 
 <i class='fa fa-check'/> As a HealthCare Professional at a HealthCare Organisation I would like to view for a Patient their current/future appointments so that I can arrange their care appropriately
 
 > 1. When receiving a new referral for a Community team, the team will review other healthcare professionals that are providing care to the patient and look at the schedule of visits being provided by any other teams in order that they don’t arrange visits in a schedule that might clash with, or over-burden the patient.
-> 2. As a Clinician, providing care for a patient, I want to see all appointments that are already booked or scheduled for my patient with a GP so that I have a full picture of the care that is planned for my patient.
-> 3. As a Clinician, being able to view all booked and scheduled GP appointments and visits enables me to ensure that I am not duplicating visits, creating appointments or schedules that clash with other appointments,  or over burden my patient by arranging for multiple appointments or visits within too short a period of time.
-> 4. As a Clinician, having a view of all booked and scheduled GP appointments and visits for my patient means that I could arrange a joint visit with other healthcare professionals if appropriate in order to reduce the number of separate visits my patient has.
+> 2. As a Clinician, being able to view all booked and scheduled GP appointments and visits enables me to ensure that I am not duplicating visits, creating appointments or schedules that clash with other appointments,  or over burden my patient by arranging for multiple appointments or visits within too short a period of time.
+> 3. As a Clinician, having a view of all booked and scheduled GP appointments and visits for my patient means that I could arrange a joint visit with other healthcare professionals if appropriate in order to reduce the number of separate visits my patient has.
 
 
 <i class='fa fa-road'/> As a Patient I would like to view all my current/future appointments with any care organization so that I can arrange my time accordingly.
 
 > 1. A Patient would like to view their current/future appointments so that they can manage their time appropriately, they can access Patient Facing Services online and view their booked appointments with any GP Practice
 
-<i class='fa fa-check'/> As a HealthCare Professional at a HealthCare Organisation I would like to view for a Patient their historical appointments so that I can manage their care appropriately.
-
-> 1. As a Clinician, I would like to see whether my patient has already had appointments with specific GP clinics/specialties as part of gaining better understanding of their condition and care
 
 ## Book an appointment ##
 <i class='fa fa-check'/> As a HealthCare Professional at a HealthCare Organisation I would like to book an appointment for a Registered Patient so that I can manage their care appropriately
