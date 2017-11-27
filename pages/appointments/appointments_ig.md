@@ -47,6 +47,3 @@ Whilst it is expected that GP Practices will configure their appointment book to
 
 
 
-
-{% include note.html content="Details of how to [Register a Patient](foundations_use_case_register_a_patient.html) can be found in the Foundations capability pack. " %}
-
