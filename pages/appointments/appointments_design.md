@@ -33,7 +33,7 @@ When requesting the schedule of a particular diary, the level of detail returned
 - Only slots that are available (all types).
 - <span class="label label-success">SELECTED</span> Only slots that are available and have been marked/flagged as externally bookable via GP Connect.
 
-{% include roadmap.html content="Richer GP Appointment Slot access control functionality within Provider systems is being progressed recognising requirements such as access to slots by organisation type." %}
+{% include roadmap.html content="Richer GP Appointment Slot access control within Provider systems is being progressed recognising requirements such as access to slots by organisation type." %}
 
 ## Search parameters ##
 
@@ -42,7 +42,7 @@ The following search parameters will be initially included:
 - All available common (across all four systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
 - <span class="label label-success">SELECTED</span> Date Range,  Urgent Care (UC) Disposition Code & Service ID, and Requesting Organisation Type are accommodated to support potential available appointment slot filtering (consumers can then apply further filtering, sorting at client side).  The last 3 are required to support the use of GP Connect APIs by UC Services.  
 
-{% include note.html content="The Search Filter specification is flexible to allow for further search parameters to be defined. Value sets will be defined for these to be used by subsequent Provider system slot access control functionality." %}
+{% include note.html content="The Search Filter specification is flexible to allow for further search parameters to be defined. Value sets will be defined for these to be used by subsequent Provider system slot access control." %}
 
 
 ## Maximum time span of diaries returned ##
@@ -60,6 +60,10 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 
 - AppointmentResponse resource will be provided in response to a booking request.
 - <span class="label label-success">SELECTED</span> HTTP codes will be used to convey success/failure of a booking request.
+
+## Viewing and Amending Booked Appointments ##
+
+<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case.  Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the Patient's registered GP Practice.  This assumes an update to the patient's registered GP record reflecting any appointments held elsewhere.  
 
 ## Cancelling and Amending booked appointments ##
 
