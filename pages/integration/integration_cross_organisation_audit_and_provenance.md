@@ -74,6 +74,7 @@ It is highly recommended that standard libraries are used for creating the JWT a
 
 
 ### JWT Generation ###
+
 Consumer system SHALL generate a new JWT for each API request. The consumer generated JSON Web Token (JWT) SHALL consisting of three parts seperated by dots (.), which are:
 
 - Header
@@ -103,34 +104,31 @@ NOTE: The final section (the signature) is empty, so the JWT will end with a tra
 
 {% include tip.html content="The [JWT.io](https://jwt.io/) website includes a number of rich resources to aid in developing JWT enabled applications." %}
 
-
 ### JWT Payload ###
 
-Consumer system SHALL generate a new JWT for each API request. The Payload section of the JWT (see "JWT Generation" below for futher details) shall be populated as follows:
+The Payload section of the JWT shall be populated as follows:
 
-| Claim | Optionality | Description | Fixed Value | Dynamic Value |
+| Claim | Priority | Description | Fixed Value | Dynamic Value |
 |-------|----------|-------------|-------------|------------------|
 | iss | R | Requesting systems issuer URI | No | Yes |
 | sub | R | ID for the user on whose behalf this request is being made. Matches `requesting_practitioner.id` | No | Yes |
-| aud | R | Requested resource URI<sup>5</sup> | No | Yes |
-| exp | R | Expiration time integer after which this authorization MUST be considered invalid. | `exp` | (now + 5 minutes) UTC time in seconds |
+| aud | R | Requested resource URI<sup>1</sup> | No | Yes |
+| exp | R | Expiration time integer after which this authorization MUST be considered invalid. | No | (now + 5 minutes) UTC time in seconds |
 | iat | R | The UTC time the JWT was created by the requesting system | No | now UTC time in seconds |
-| reason_for_request | R | Purpose for which access is being requested | No | `directcare`<br/>OR <br/>`patientfacing` |
-| requested_record | R | A Minimal FHIR resource which describes the resource being requested or searched for. | No | FHIR Patient<sup>1</sup> <br/>OR <br/>FHIR Organization<sup>1</sup> |
+| reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
+| requested_record | R | A Minimal FHIR resource which describes the resource being requested or searched for. | No | FHIR Patient<sup>2</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
 | requested_scope | R | Data being requested | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
-| requesting_device | R | Device details and/or system url making the request | No | FHIR Device<sup>1</sup> |
-| requesting_organization | O | FHIR organisation resource making the request | No | FHIR Organization<sup>1+3</sup> | 
-| requesting_identity | R | FHIR practitioner or person resource making the request | No | FHIR Practitioner<sup>1+2</sup><br/>OR<br/>FHIR Person<sup>1+4</sup> |
+| requesting_device | R | Device details and/or system url making the request | No | FHIR Device<sup>2</sup> |
+| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>2+3</sup> | 
+| requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>2+4</sup> |
 
-<sup>1</sup> Minimal FHIR resource to include any relevant business identifier(s), conforming to the base fhir resources definition (the resource does not need to conform to the GP Connect fhir profile).
+<sup>1</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the Consumer by the [SDS endpoint lookup service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process){:target="_blank"} as the value of `nhsMhsEndPoint`.
 
-<sup>2</sup>When `reason_for_request` claim has the value `"directcare"` the `requesting_identity` claim should contain a FHIR Practitioner resource, containing the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field.
+<sup>2</sup> Minimal FHIR resource to include any relevant business identifier(s), conforming to the base STU3 FHIR resources definition (the resource does not need to conform to the GP Connect FHIR resource profile).
 
-<sup>3</sup> The `requesting_organization` claim is Optional **ONLY** when the `reason_for_request` claim has the value "patientfacing", in which case the `requestiong_organization` claim should be omitted. When `reason_for_request` claim has a value of "directcare" the `requesting_organization` **SHALL** refer to the care organisation from where the request originates. 
+<sup>3</sup> The `requesting_organization` **SHALL** refer to the care organisation from where the request originates.
 
-<sup>4</sup>When `reason_for_request` claim has the value `"patientfacing"`, the `requesting_identity` claim should contain a FHIR Person resource, containing their Citizen ID and local system identifier(s) (i.e. login details / username).
-
-<sup>5</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the Consumer by the [SDS endpoint lookup service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process){:target="_blank"} as the value of `nhsMhsEndPoint`.
+<sup>4</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field.
 
 {% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
@@ -183,9 +181,7 @@ As the consuming system is presently responsible for generating the access token
 In future OAuth2 implementation, the iss claim will contain the url of the OAuth2 authorization server token endpoint.
 
 
-### JWT Payload Examples ###
-
-#### `reason_for_request` = "directcare" ####
+### JWT Payload Example ###
 
 ```json
 {
@@ -220,8 +216,7 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 			"value": "[ODSCode]"
 		}],
 		"name": "Requesting Organisation Name"
-	},
-	"requesting_identity": {
+	"requesting_practitioner": {
 		"resourceType": "Practitioner",
 		"id": "[PractitionerID]",
 		"identifier": [{
@@ -243,48 +238,6 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 		}
 	}
 }
-
-```
-
-#### `reason_for_request` = "patientfacing" ####
-
-```json
-{
-	"iss": "https://[AuthenticationSystemURL]",
-	"sub": "[CitizenID]",
-	"aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
-	"exp": 1469436987,
-	"iat": 1469436687,
-	"reason_for_request": "patientfacing",
-	"requested_scope": "patient/*.read",
-	"requesting_device": {
-		"resourceType": "Device",
-		"identifier": [{
-			"system": "[DeviceSystem]",
-			"value": "[DeviceID]"
-		}],
-		"model": "[SoftwareName]",
-		"version": "[SoftwareVersion]",
-		"url": "https://[ConsumerSystemURL]"
-	},
-	"requesting_identity": {
-		"resourceType": "Person",
-		"id": "[CitizenID]",
-		"identifier": [{
-			"system": "http://fhir.nhs.net/citizen-user-id",
-			"value": "[CitizenUserID]"
-		},
-		{
-			"system": "[LocalUserSystem]",
-			"value": "[LocalUserID]"
-		}],
-		"name": {
-			"family": ["[Family]"],
-			"given": ["[Given]"],
-			"prefix": ["[Prefix]"]
-		}
-	}
-}
 ```
 
 {% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't commit to using the SMART on FHIR specification." %}
@@ -292,6 +245,7 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 Where the Practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied.
 
 {% include todo.html content="Spine RBAC role support to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
+
 
 ## Example Code ##
 
