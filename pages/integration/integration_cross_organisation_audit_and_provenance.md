@@ -74,7 +74,7 @@ It is highly recommended that standard libraries are used for creating the JWT a
 
 
 ### JWT Generation ###
-Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
+Consumer system SHALL generate a new JWT for each API request. The consumer generated JSON Web Token (JWT) SHALL consisting of three parts seperated by dots (.), which are:
 
 - Header
 - Payload
@@ -190,28 +190,28 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 ```json
 {
 	"iss": "https://[ConsumerSystemURL]",
-        "sub": "[PractitionerID]",
-        "aud": "https://provider.thirdparty.nhs.uk/GP0001/DSTU2/1",
-        "exp": 1469437287,
-        "iat": 1469436687,
-        "reason_for_request": "directcare",
-		"requested_record": {
-			"resourceType": "Patient",
-			"identifier": [{
-				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "[NHSNumber]"
-			}]
-		},
-        "requested_scope": "patient/*.read",
-        "requesting_device": {
-			"resourceType": "Device",
-			"identifier": [{
-				"system": "[DeviceSystem]",
-				"value": "[DeviceID]"
-			}],
-			"model": "[SoftwareName]",
-			"version": "[SoftwareVersion]",
-			"url", "https://[ConsumerSystemURL]"
+	"sub": "[PractitionerID]",
+	"aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
+	"exp": 1469436987,
+	"iat": 1469436687,
+	"reason_for_request": "directcare",
+	"requested_record": {
+		"resourceType": "Patient",
+		"identifier": [{
+			"system": "https://fhir.nhs.uk/Id/nhs-number",
+			"value": "[NHSNumber]"
+		}]
+	},
+	"requested_scope": "patient/*.read",
+	"requesting_device": {
+		"resourceType": "Device",
+		"identifier": [{
+			"system": "[DeviceSystem]",
+			"value": "[DeviceID]"
+		}],
+		"model": "[SoftwareName]",
+		"version": "[SoftwareVersion]",
+		"url": "https://[ConsumerSystemURL]"
 	},
 	"requesting_organization": {
 		"resourceType": "Organization",
@@ -221,16 +221,20 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 		}],
 		"name": "Requesting Organisation Name"
 	},
- 
 	"requesting_identity": {
 		"resourceType": "Practitioner",
+		"id": "[PractitionerID]",
 		"identifier": [{
 			"system": "https://fhir.nhs.uk/Id/sds-user-id",
 			"value": "[SDSUserID]"
 		},
 		{
-			"system": "[UserSystem]",
-			"value": "[UserID]"
+			"system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+			"value": "[SDSRoleID]"
+		},
+		{
+			"system": "[LocalUserSystem]",
+			"value": "[LocalUserID]"
 		}],
 		"name": {
 			"family": ["[Family]"],
@@ -248,30 +252,31 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 {
 	"iss": "https://[AuthenticationSystemURL]",
 	"sub": "[CitizenID]",
-	"aud": "https://provider.thirdparty.nhs.uk/GP0001/DSTU2/1",
+	"aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
 	"exp": 1469436987,
 	"iat": 1469436687,
 	"reason_for_request": "patientfacing",
 	"requested_scope": "patient/*.read",
 	"requesting_device": {
-			"resourceType": "Device",
-			"identifier": [{
-				"system": "[DeviceSystem]",
-				"value": "[DeviceID]"
-			}],
-			"model": "[SoftwareName]",
-			"version": "[SoftwareVersion]",
-			"url", "https://[ConsumerSystemURL]"
+		"resourceType": "Device",
+		"identifier": [{
+			"system": "[DeviceSystem]",
+			"value": "[DeviceID]"
+		}],
+		"model": "[SoftwareName]",
+		"version": "[SoftwareVersion]",
+		"url": "https://[ConsumerSystemURL]"
 	},
 	"requesting_identity": {
 		"resourceType": "Person",
+		"id": "[CitizenID]",
 		"identifier": [{
 			"system": "http://fhir.nhs.net/citizen-user-id",
 			"value": "[CitizenUserID]"
 		},
 		{
-			"system": "[UserSystem]",
-			"value": "[UserID]"
+			"system": "[LocalUserSystem]",
+			"value": "[LocalUserID]"
 		}],
 		"name": {
 			"family": ["[Family]"],
@@ -284,7 +289,8 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 
 {% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't commit to using the SMART on FHIR specification." %}
 
-Where the Practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied
+Where the Practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied.
+
 {% include todo.html content="Spine RBAC role support to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 ## Example Code ##
