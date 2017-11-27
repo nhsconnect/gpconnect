@@ -73,7 +73,7 @@ It is recognized that the Provider systems must offer GP Practices more function
 For the rc.3 specification, Provider Systems SHALL provide a mechanism by which GP Practices can indicate which slots are available for booking via GP Connect, thereby ensuring that their whole appointment book is not made available to external organisations.  <br/><br/>
  
 
-Additionally, the provision of optional searchFilter parameters has been included in rc.3 in preparation for subsequent release of agreed more granular slot availability control and corresponding searchFilter value sets - eg by organisation type or individual organisation. A common example is when a practice reserves a small number of slots specifically for use by Urgent Care appointment bookings which the Provider system can then match to the searchFilter received. <br/><br/><br/><br/>
+Additionally, the provision of optional searchFilter parameters has been included in rc.3 in preparation for subsequent release of to be agreed more granular slot availability control and corresponding searchFilter value sets - eg by organisation type or individual organisation. A common example is when a practice reserves a small number of slots specifically for use by Urgent Care appointment bookings which the Provider system can then match to the searchFilter received. <br/><br/><br/><br/>
 
  " %}
  
