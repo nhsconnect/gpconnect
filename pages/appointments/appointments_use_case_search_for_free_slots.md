@@ -68,13 +68,15 @@ The following parameters MAY be included to minimise the number of API calls req
 
 {% include important.html content="
 It is recognized that the Provider systems must offer GP Practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. 
-
+ 
 
 For the rc.3 specification, Provider Systems SHALL provide a mechanism by which GP Practices can indicate which slots are available for booking via GP Connect, thereby ensuring that their whole appointment book is not made available to external organisations.  
+ 
 
+Additionally, the provision of optional searchFilter parameters has been included in rc.3 in preparation for subsequent release of agreed Slot 'Access Designation' with corresponding value set definition to meet the requirement for more granular appointment availability control - eg by organisation type or individual organisation. A common example is when a practice reserves a small number of slots specifically for use by Urgent Care appointment bookings which the Provider system can then match to the searchFilter received. 
 
-Additionally, the provision of optional searchFilter parameters has been included in rc.3 in preparation for subsequent release of agreed Slot 'Access Designation' with corresponding value set definition to meet the requirement for more granular appointment availability control - eg by organisation type or individual organisation. A common example is when a practice reserves a small number of slots specifically for use by Urgent Care appointment bookings which the Provider system can then match to the searchFilter received. " %}
-
+ " %}
+ 
 
 
 The `searchFilter` parameter MAY be included by consumers to allow the provider to perform additional filtering on available slots they return to the consumer. The following table outlines some search filters required for urgent care use cases. Additional searchFilters may be sent by consumers with systems other than those listed in the table below, providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
