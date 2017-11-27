@@ -66,17 +66,22 @@ The following parameters MAY be included to minimise the number of API calls req
 
 ### 'searchFilter' parameter ###
 
-{% include important.html content="The searchFilter parameter is intended for future use of the API." %}
+{% include important.html content="
+It is recognized that the Provider systems must offer GP Practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations.  
 
-{% include note.html content="Providers and consumers are advised to consider allowing filtering of slots or schedules as part of their implementation. Allowing a practice to choose which slots they make available through the GP Connect API based on specific filters allows for more control of their appointment book. <br/><br/> A common example of appointment book filtering is when a practice reserves a small number of slots specifically for use by urgent care appointment bookings." %}
+For the RC.3 specification, Provider Systems are expected to provide a mechanism by which GP Practices can indicate which slots are available for booking via GP Connect, thereby ensuring that their whole appointment book is not made available to external organisations.  
 
-The `searchFilter` parameter MAY be included by consumers to allow the provider to perform additional filtering on available slots they return to the consumer. The following table outlines some search filters required for urgent care use cases. Additional searchFilters may be sent by consumers with systems other than those listed in the table below, providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
+Additionally, the provision of optional searchFilter parameters has been included in RC.3 in preparation for subsequent release of agreed Slot 'Access Designation' with corresponding value set definition to meet the requirement for more granular appointment availability control - eg by organisation type or individual organisation. A common example is when a practice reserves a small number of slots specifically for use by Urgent Care appointment bookings which the Provider system can then match to the searchFilter received. " %}
+
+
+
+{The `searchFilter` parameter MAY be included by consumers to allow the provider to perform additional filtering on available slots they return to the consumer. The following table outlines some search filters required for urgent care use cases. Additional searchFilters may be sent by consumers with systems other than those listed in the table below, providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
 
 | System URI | Description |
 | --- | --- |
 | TBC (consumer-type) | SHOULD be used to pass the Consuming Organisation type making the request, for example '111 call centre'. |
-| TBC (disposition) | SHOULD be used to indicate the disposition required for the patients care. |
-| TBC (service-id) | SHOULD be used to convey the service-id required for the available slot. |
+| TBC (disposition) | SHOULD be used to indicate the Urgent Care Disposition Code required for the patients care. |
+| TBC (service-id) | SHOULD be used to convey the Urgent Care Service-Id required for the available slot. |
 
 
 ## Search for free slots on the wire ##
