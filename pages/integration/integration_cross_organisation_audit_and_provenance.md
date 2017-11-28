@@ -140,7 +140,7 @@ The Payload section of the JWT shall be populated as follows:
   <div class="deprecated">
   <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3>
   <p>For backward compatablity with Consumers still using an implementation of GP Connect based on the previous version of the specification, 'providers' SHALL support requests where the 'aud' claim contains the fixed value 'https://authorize.fhir.nhs.net/token'.</p>
-  {% include important.html content="Use of the fixed value '`https://authorize.fhir.nhs.net/token`' in the '`aud`' claim is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to populating the `'aud'` claim with the `'Requested resource URI'`, support for the deprecated fixed value will be removed from the specification." %}
+  {% include important.html content="Use of the fixed value '`https://authorize.fhir.nhs.net/token`' in the '`aud`' claim is being deprecated and should not be used by Consumers when implementing this version of the specification. Once all Consumers have migrated to populating the `'aud'` claim with the `'Requested resource URI'`, support for the deprecated fixed value will be removed from the specification." %}
   </div>
 
 {% include important.html content="In topologies where GP Connect Consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)), it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
