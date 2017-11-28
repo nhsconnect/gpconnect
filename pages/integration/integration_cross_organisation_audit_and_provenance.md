@@ -52,9 +52,10 @@ Provider systems SHALL record the following provenance details of all API person
 
 Provider systems SHALL ensure that data provided to Consumer systems only include data for which the GP practice acts as Data Controller.
 
-## Patient Dissent ##
 
-Provider systems SHALL ensure that Patient Consent is respected (i.e. where express dissent is recorded then the Patient's medical record is not shared) and the suitability of its application will be assessed on a Capability basis. Currently applies to the Access Record capabilities not for Appointment Management.
+## Patient Demographic Cross-Checking##
+
+Consumer systems SHALL always perform a patient demographic check as part of the use of a GP Connect capability to ensure that the patient for whom the information has been provided is the same patient for whom the request was made, and make clear to the End-User any discrepancies. 
 
 ## Cross Organisation Audit & Provenance Transport ##
 
