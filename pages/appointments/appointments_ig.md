@@ -9,7 +9,7 @@ summary: "Information Governance controls applicable to the Appointment Manageme
 
 ## GP Connect Information Governance Principles ##
 
-The GP Connect core [Information Governance Principles](designprinciples_ig_principles.html) apply to the Appointment Management capability, with the application of the following specific controls:
+The GP Connect core [Information Governance Principles](designprinciples_ig_principles.html) govern the Appointment Management capability, with the following capability-specific application:
 
 ## Organisational Data-Sharing ##
 
