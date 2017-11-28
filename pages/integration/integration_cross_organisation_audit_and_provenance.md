@@ -149,17 +149,28 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
   | name | A textual representation of the name of the organisation. |
   | identifier | An identifier should be included contain a fixed `system` of `"https://fhir.nhs.uk/Id/ods-organization-code"` and a identifier `value` containing the ODS code of requesting organsiation. |
 
-For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requesting_organization` conforms to the requirements above but also request where the `requesting_organization` is populated with:
+  <div class="deprecated">
+  <h3>Deprecated - required to supporting AccessRecord 1.0.0-rc.5</h3>
+  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requesting_organization` conforms to the requirements above but also request where the `requesting_organization` is populated with:</p>
 
-* A FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource representing the organization making the request and SHALL include the elements:
-
-  | Element | Description |
-  | --- | --- |
-  | name | A textual representation of the name of the organisation. |
-  | identifier | An identifier should be included contain a fixed `system` of `"http://fhir.nhs.net/Id/ods-organization-code"` and a identifier `value` containing the ODS code of requesting organsiation. |
+  <p>A FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource representing the organization making the request and SHALL include the elements:</p>
+  <table>
+	<tr>
+		<th>Element</th>
+		<th>Description</th>
+	</tr>
+	<tr>
+		<td>name</td>
+		<td>A textual representation of the name of the organisation.</td>
+	</tr>
+	<tr>
+		<td>identifier</td>
+		<td>An identifier should be included contain a fixed `system` of `"http://fhir.nhs.net/Id/ods-organization-code"` and a identifier `value` containing the ODS code of requesting organsiation.</td>
+	</tr>
+  </table>
 
   {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource and 'http://fhir.nhs.net/Id/ods-organization-code' identifier system is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
-
+  </div>
 
 #### Population of requested_record ####
 
@@ -190,21 +201,31 @@ The `consumer` SHALL populate the `requested_record` claim with:
 
   {% include note.html content="The provider SHALL validate that the requested_record claim details match the request parameters where possible, to ensure valid auditing of the requests end-to-end." %}
 
-<br/>
+  <div class="deprecated">
+  <h3>Deprecated - required to supporting AccessRecord 1.0.0-rc.5</h3> 
+  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requested_record` conforms to the requirements above but also request where the `requested_record` is populated with:</p>
 
-For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requested_record` conforms to the requirements above but also request where the `requested_record` is populated with:
-
-* Either a FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource or a FHIR [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) ![DSTU2](images/dstu2.png) resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers as set out by the table above.
-
-  The following identifier sytems SHALL be supported within the resources for the relevant business identifiers:
+  <p>Either a FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource or a FHIR <a href="https://www.hl7.org/fhir/DSTU2/patient.html">Patient</a> <img src="images/dstu2.png" /> resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers as set out by the table above.</p>
   
-  | Known Business Identifiers | Relavant Business Identifiers |
-  | --- | --- |
-  | NHS Number | http://fhir.nhs.net/Id/nhs-number |
-  | ODS Code | http://fhir.nhs.net/Id/ods-organization-code |
+  <p>The following identifier sytems SHALL be supported within the resources for the relevant business identifiers:</p>
+  <table>
+	<tr>
+		<th>Known Business Identifiers</th>
+		<th>Relavant Business Identifiers</th>
+	</tr>
+	<tr>
+		<td>NHS Number</td>
+		<td>http://fhir.nhs.net/Id/nhs-number</td>
+	</tr>
+	<tr>
+		<td>ODS Code</td>
+		<td>http://fhir.nhs.net/Id/ods-organization-code</td>
+	</tr>
+  </table>
 
   {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource, the FHIR [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) ![DSTU2](images/dstu2.png) resource, the 'http://fhir.nhs.net/Id/nhs-number' identifier system and the 'http://fhir.nhs.net/Id/ods-organization-code' identifier system is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
-
+  </div>
+  
 
 #### Population of requested_device ####
 
