@@ -189,13 +189,13 @@ The `consumer` SHALL populate the `requested_record` claim with:
 
   | Request | Known Business Identifiers | requested_record Resource Type | requested_record Content |
   | --- | --- | --- | --- |
-  | Access Record HTML | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as a parameter to the "gpc.getcarerecord" operation. |
+  | Access Record HTML | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as a parameter to the `gpc.getcarerecord` operation. |
   | Patient Search | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as the search parameter of the request. |
   | Patient Read | N/A | Patient | SHOULD contain the logical id of the patient resource being requested. |
   | Organization Search | ODS Code | Organization | SHALL contain an identifier element containing the organization ODS Code which is being passed as the parameter to the search. |
-  | Practitioner Search | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the fhir endpoint resides. |
-  | Practitioner Read | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the fhir endpoint resides. |
-  | Search for free slots | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the fhir endpoint resides. |
+  | Practitioner Search | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the FHIR endpoint resides. |
+  | Practitioner Read | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the FHIR endpoint resides. |
+  | Search for free slots | N/A | Organization | SHOULD contain any relevant identifier for the organization on which the FHIR endpoint resides. |
   | Book Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
   | Read Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
   
@@ -210,7 +210,7 @@ The `consumer` SHALL populate the `requested_record` claim with:
 
   <div class="deprecated">
   <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3> 
-  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requested_record` conforms to the requirements above but also request where the `requested_record` is populated with:</p>
+  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, 'providers' SHALL support requests where the 'requested_record' conforms to the requirements above but also request where the 'requested_record' is populated with:</p>
 
   <p>Either a FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource or a FHIR <a href="https://www.hl7.org/fhir/DSTU2/patient.html">Patient</a> <img src="images/dstu2.png" /> resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers as set out by the table above.</p>
   
@@ -230,7 +230,7 @@ The `consumer` SHALL populate the `requested_record` claim with:
 	</tr>
   </table>
 
-  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource, the FHIR [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) ![DSTU2](images/dstu2.png) resource, the 'http://fhir.nhs.net/Id/nhs-number' identifier system and the 'http://fhir.nhs.net/Id/ods-organization-code' identifier system is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
+  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource, the FHIR [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) ![DSTU2](images/dstu2.png) resource, the 'http://fhir.nhs.net/Id/nhs-number' identifier system and the 'http://fhir.nhs.net/Id/ods-organization-code' identifier system is being deprecated and should not be used by Consumers when implementing this version of the specification. Once all Consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
   </div>
   
 
@@ -238,15 +238,15 @@ The `consumer` SHALL populate the `requested_record` claim with:
 
 This claim is used to provide details of the originator of the request for auditing purposes, in the form of a FHIR Device resource. 
 
-Where the request originates from a device (for example a mobile device in a patient facing scenario), details of the device can be provided in manufactere, model and version elements.
+Where the request originates from a device (for example a mobile device in a patient facing scenario), details of the device can be provided in manufacture, model and version elements.
 
-Where the request originates from a system, the spine endpoint url of the originating system shall be specified using the url element.
+Where the request originates from a system, the Spine endpoint url of the originating system shall be specified using the url element.
 
 #### Population of iss claim ####
 
-As the consuming system is presently responsible for generating the access token, this SHALL contain the url of the spine endpoint of the consuming system.
+As the consuming system is presently responsible for generating the access token, this SHALL contain the url of the Spine endpoint of the consuming system.
 
-In future OAuth2 implementation, the iss claim will contain the url of the OAuth2 authorization server token endpoint.
+In future OAuth2 implementation, the iss claim will contain the url of the OAuth2 authorisation server token endpoint.
 
 
 ### JWT Payload Example ###
@@ -308,7 +308,7 @@ In future OAuth2 implementation, the iss claim will contain the url of the OAuth
 }
 ```
 
-{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't commit to using the SMART on FHIR specification." %}
+{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't committed to using the SMART on FHIR specification." %}
 
 Where the Practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied.
 
