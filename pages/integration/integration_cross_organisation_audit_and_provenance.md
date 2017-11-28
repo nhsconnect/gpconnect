@@ -53,7 +53,7 @@ Provider systems SHALL record the following provenance details of all API person
 Provider systems SHALL ensure that data provided to Consumer systems only include data for which the GP practice acts as Data Controller.
 
 
-## Patient Demographic Cross-Checking##
+## Patient Demographic Cross-Checking ##
 
 Consumer systems SHALL always perform a patient demographic check as part of the use of a GP Connect capability to ensure that the patient for whom the information has been provided is the same patient for whom the request was made, and make clear to the End-User any discrepancies. 
 
