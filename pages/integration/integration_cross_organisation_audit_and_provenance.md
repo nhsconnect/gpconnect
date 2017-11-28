@@ -139,11 +139,11 @@ The Payload section of the JWT shall be populated as follows:
 
   <div class="deprecated">
   <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3>
-  <p>For backward compatablity with Consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `aud` claim contains the fixed value `https://authorize.fhir.nhs.net/token`.</p>
-  {% include important.html content="Use of the fixed value '`https://authorize.fhir.nhs.net/token`' in the '`aud`' claim is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to populating the '`aud`' claim with the 'Requested resource URI', support for the deprecated fixed value will be removed from the specification." %}
+  <p>For backward compatablity with Consumers still using an implementation of GP Connect based on the previous version of the specification, 'providers' SHALL support requests where the 'aud' claim contains the fixed value 'https://authorize.fhir.nhs.net/token'.</p>
+  {% include important.html content="Use of the fixed value '`https://authorize.fhir.nhs.net/token`' in the '`aud`' claim is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to populating the `'aud'` claim with the `'Requested resource URI'`, support for the deprecated fixed value will be removed from the specification." %}
   </div>
 
-{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
+{% include important.html content="In topologies where GP Connect Consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)), it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
 #### Population of requesting_organization ####
 
@@ -158,7 +158,7 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
 
   <div class="deprecated">
   <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3>
-  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requesting_organization` conforms to the requirements above but also request where the `requesting_organization` is populated with:</p>
+  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, 'providers' SHALL support requests where the 'requesting_organization' conforms to the requirements above but also request where the 'requesting_organization' is populated with:</p>
 
   <p>A FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource representing the organization making the request and SHALL include the elements:</p>
   <table>
@@ -172,11 +172,11 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
 	</tr>
 	<tr>
 		<td>identifier</td>
-		<td>An identifier should be included contain a fixed `system` of `http://fhir.nhs.net/Id/ods-organization-code` and a identifier `value` containing the ODS code of requesting organsiation.</td>
+		<td>An identifier should be included contain a fixed 'system' of "http://fhir.nhs.net/Id/ods-organization-code" and a identifier 'value' containing the ODS code of requesting organsiation.</td>
 	</tr>
   </table>
 
-  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource and 'http://fhir.nhs.net/Id/ods-organization-code' identifier system is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
+  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource and "http://fhir.nhs.net/Id/ods-organization-code" identifier system is being deprecated and should not be used by Consumers when implementing this version of the specification. Once all Consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
   </div>
 
 #### Population of requested_record ####
