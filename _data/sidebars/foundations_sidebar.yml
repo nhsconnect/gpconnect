@@ -25,6 +25,9 @@ entries:
       url: /foundations.html
       output: web, pdf
       type: homepage
+    - title: Information Governance
+      url: /foundations_ig.html
+      output: web, pdf
     - title: Design decisions
       url: /foundations_design.html
       output: web, pdf
