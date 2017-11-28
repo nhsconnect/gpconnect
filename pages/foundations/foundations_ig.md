@@ -9,4 +9,4 @@ summary: "Information Governance controls applicable to the Foundations Capabili
 
 ## PDS S-Flagged Patients ##
 
-If in response to the Find or Read a Patient API, the Provider system determines that a patient has a PDS 'S-Flag', then the patients location and contact details are to be replaced by those of the GP Practice
+If, in response to the Find or Read a Patient API, the Provider system determines that a patient has a PDS 'S-Flag', then the Patient's location and contact details are to be replaced by those of the target GP Practice.
