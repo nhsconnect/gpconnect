@@ -9,7 +9,9 @@ summary: "Use case for retrieval of a patient's appointments from an organisatio
 
 ## Use Case ##
 
-This specification describes a single use cases. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patients appointments. As part of IG requirements the view of a patients appointments has been restricted to only viewing future appointments, additional details are available on the [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
@@ -126,6 +128,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
+- SHALL only return appointments where the `start` dateTime is in the future (greater than the the current date and time).
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) resources in a `Bundle` of `type` searchset.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.

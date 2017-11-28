@@ -15,6 +15,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Uplifted to STU3 profiles.
   - Updated the wording and examples relating to the `start` search parameter(s) to clear up the expectations and remove the mis- leading wording around start and end of the date range
   - Updated wording to reflect the decision that only a Patient's future appointments should be available via GP Connect
+  - [Payload Response Body](appointments_use_case_retrieve_a_patients_appointments.html#payload-response-body) - Added requirement to only return appointments in the future.
 - [Search for free slots](appointments_use_case_search_for_free_slots.html)
   - Uplifted to STU3 FHIR profiles for all resources
   - Available Slot Filtering:  Added requirement for Provider Systems to immediately support filtering of available slots such that only those bookable via GP Connect are provided, with strong indication that more granular slot availability control will be required to support the searchFilter parameters whose value sets are to be defined
