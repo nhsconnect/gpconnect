@@ -64,28 +64,28 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-### Slot Access - 'searchFilter' parameter ###
+### Future enhanced slot filtering ###
 
 {% include important.html content="
-It is recognized that the Provider systems must offer GP Practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. <br/><br/>
+It is recognized that Provider Systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. <br/><br/>
  
-
-For the Appointment Management rc.3 specification, Provider Systems SHALL provide a mechanism by which GP Practices can indicate which slots are available for booking via GP Connect, thereby ensuring that their whole appointment book is not made available to external organisations.  <br/><br/>
- 
-
-Additionally, the provision of optional searchFilter parameters has been included in rc.3 in preparation for subsequent release of 'to be agreed' more granular slot availability control and corresponding searchFilter value sets - eg by organisation type or individual organisation. A common example is when a practice reserves a small number of slots specifically for use by Urgent Care appointment bookings which the Provider system can then match to the searchFilter received. <br/><br/>
+For the Appointment Management rc.3 specification, Provider Systems SHALL provide a mechanism by which GP practices can indicate which slots are available for booking via the GP Connect API specifically, thereby ensuring that their whole appointment book is not made available to external organisations.  
  " %}
  
+The GP Connect programme is currently consulting with principle clinical system providers to define a standard API interface to enable more granular slot filtering. A common example of this would be where a practice reserves a small number of slots specifically for use by Urgent Care appointment. 
 
+In view of this, an additional place-holder parameter `searchFilter` has been included in the Appointment Management rc.3 specification. It is envisaged that this parameter will in future be used to specify these additional filtering parameters through the use of agreed valueSets.
+ 
+The following provides some examples of search filters valueSets in consideration to meet requiremens for future fine-grained slot filtering.  
 
-The `searchFilter` parameter MAY be included by consumers to allow the provider to perform additional filtering on available slots they return to the consumer. The following table outlines some search filters required for urgent care use cases. Additional searchFilters may be sent by consumers with systems other than those listed in the table below, providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
-
-| System URI | Description |
+| ValueSet System URI | Description |
 | --- | --- |
-| TBC (consumer-type) | SHOULD be used to pass the Consuming Organisation type making the request, for example '111 call centre'. |
-| TBC (disposition) | SHOULD be used to indicate the Urgent Care Disposition Code required for the patients care. |
-| TBC (service-id) | SHOULD be used to convey the Urgent Care Service-Id required for the available slot. |
+| (TBD) booking-organisation | Booking organisation identifier (ODS code) |
+| (TBD) consumer-type | Consuming Organisation type making the request, for example '111 call centre'. |
+| (TBD) disposition | Urgent Care Disposition Code required for the patients care. |
+| (TBD) service-id | Urgent Care Service-Id required for the available slot. |
 
+Where searchFilters are sent by consumers which are not explicitly supported in this specification (i.e. the valueSet used is not listed here) providers SHALL ignore any such searchFilter parameters and SHALL NOT be returned an error.
 
 ## Search for free slots on the wire ##
 

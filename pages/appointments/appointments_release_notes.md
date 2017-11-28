@@ -18,7 +18,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - [Payload Response Body](appointments_use_case_retrieve_a_patients_appointments.html#payload-response-body) - Added requirement to only return appointments in the future.
 - [Search for free slots](appointments_use_case_search_for_free_slots.html)
   - Uplifted to STU3 FHIR profiles for all resources
-  - Available Slot Filtering:  Added requirement for Provider Systems to immediately support filtering of available slots such that only those bookable via GP Connect are provided, with strong indication that more granular slot availability control will be required to support the searchFilter parameters whose value sets are to be defined
+  - Available Slot Filtering:  Added requirement for Provider Systems to immediately support filtering of available slots such that only those bookable via GP Connect are provided, with strong indication that more granular slot availability control will be required to through the use of a newly added place-holder parameter called searchFilter.
   - `freeBusyType` has changed to `status`
   - The Practitioner reference has moved in the schedule resource from an extension to `Schedule.actor`
 - [Read an appointment](appointments_use_case_read_an_appointment.html) 
