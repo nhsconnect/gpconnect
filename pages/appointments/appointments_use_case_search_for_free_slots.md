@@ -64,7 +64,7 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-### Future enhanced slot filtering ###
+### Enhanced slot filtering ###
 
 {% include important.html content="
 It is recognized that Provider Systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. <br/><br/>
@@ -76,7 +76,7 @@ The GP Connect programme is currently consulting with principle clinical system 
 
 In view of this, an additional place-holder parameter `searchFilter` has been included in the Appointment Management rc.3 specification. It is envisaged that this parameter will in future be used to specify these additional filtering parameters through the use of agreed valueSets.
  
-The following provides some examples of search filters valueSets in consideration to meet requiremens for future fine-grained slot filtering.  
+The following provides some examples of search filters valueSets in consideration to meet requirements for future fine-grained slot filtering.  
 
 | ValueSet System URI | Description |
 | --- | --- |
@@ -85,7 +85,7 @@ The following provides some examples of search filters valueSets in consideratio
 | (TBD) disposition | Urgent Care Disposition Code required for the patients care. |
 | (TBD) service-id | Urgent Care Service-Id required for the available slot. |
 
-Where searchFilters are sent by consumers which are not explicitly supported in this specification (i.e. the valueSet used is not listed here) providers SHALL ignore any such searchFilter parameters and SHALL NOT be returned an error.
+Where searchFilters are sent by consumers which are not explicitly supported in this specification (i.e. the valueSet used is not listed here) providers SHALL ignore any such searchFilter parameters and SHALL NOT return an error.
 
 ## Search for free slots on the wire ##
 
