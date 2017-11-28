@@ -14,6 +14,7 @@ summary: "Release notes for the various versions of the Foundations capability."
 - [Get the FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) - Conformance statment page has been updated to reflect the change in STU3 to a CapabilityStatement resource.
 - [Foundation Resources](datalibraryfoundation.html) - Updated the resources to be the new GP Connect profiled STU3 resources.
 - [Design Decisions](foundations_design.html#definition-of-organisation-and-location-entities), [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - Added additional detail around the expected use of the Location and Organization where there specific meaning within the Appointment resource and the Patient resource.
+- [Information Governance](foundations_ig.html) - Added business rule for application of PDS S-Flag
 
 #### [1.0.0-rc.3 (Released: 06/10/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.1_and_Foundations_rc.3_release)
 - [Register a patient](foundations_use_case_register_a_patient.html#payload-request-body) - Additional fields in patient profile which are marked with Must-Support flag 
