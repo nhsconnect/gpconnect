@@ -90,7 +90,7 @@ The following data-elements SHOULD be populated if available:
 	- the consumer SHOULD populate only one `telecom` per `telecom.use` value
 
   - the `address` element SHOULD be populated
-	- the consumer SHALL NOT populate the `address.use` value with `old` OR `bad`
+	- the consumer SHALL NOT populate the `address.use` value with `old`
 	- the consumer SHOULD populate only one `address` per `address.use` value
 	- the `address.use` value `home` SHOULD be mapped to PDS Address Use `HP` (Primary Home)
 
