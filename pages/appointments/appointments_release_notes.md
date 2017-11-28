@@ -31,7 +31,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Uplifted to STU3 profiles
   - Updated wording to reflect the decision that only a Patient's future appointments should be available via GP Connect
   - Added guidance for providers that do not support both Appointment Description and Appointment Comment to append the received comment string to the mandatory description element
-  
+  - Updated requirements that only future appointments may be amended by a consumer and the provider should return and error if the consumer tries to amend a past appointment.
 - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)
   - Uplifted to STU3 profiles
   
