@@ -27,7 +27,8 @@ summary: "Release notes for the GP Connect Overview"
 - [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html#population-of-requesting_organization) - Added additional guidance around the population of the requesting_organization claim within the JWT.
 - [General API guidance](development_general_api_guidance.html#demographic-cross-checking) - Added details relating to the expectations around Demographic Cross Checking of patient details when retrieving patient information.
 - [Clinical terminologies](design_clinical_terminologies.html) - Added wording around inclusion of SNOMED DescriptionID and ConceptID.
-
+- [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) - Added guidance around temporary support for deprecated values and elements within the JWT.
+- [General API guidance](development_general_api_guidance.html#fhir-api-versioning) - Updating the URL requirements on the API page with the addition of an optional routing segment.
 
 #### [GP Connect 1.0.0-alpha.5 (Released: 17 July 2017)](https://github.com/nhsconnect/gpconnect/releases/tag/GPConnect1.0.0-alpha.5)
 
