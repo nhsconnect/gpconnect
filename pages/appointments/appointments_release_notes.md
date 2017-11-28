@@ -7,7 +7,7 @@ permalink: appointments_release_notes.html
 summary: "Release notes for the various versions of the Appointment Management capability."
 ---
 
-#### 1.0.0-rc.2 (Released: 13/10/2017)
+#### 1.0.0-rc.2 (Released: 13/10/2017) 
   ***Specification Updates***
   - [Appointment Management](appointments.html), [Search for free slots](appointments_use_case_search_for_free_slots.html), [Operation Guidance](development_fhir_operation_guidance.html) - Changed to the InteractionId for "Search for free slots" to reflect move to restful endpoint instead of operation.
   - [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) - Updated formatting of search for free slots page and added clarification around the use of start and end parameters.
