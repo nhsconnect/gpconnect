@@ -7,7 +7,7 @@ permalink: overview_release_notes.html
 summary: "Release notes for the GP Connect Overview"
 ---
 
-#### GP Connect 1.0.0-rc.1
+#### GP Connect 1.0.0-rc.1 (Released: 28/11/2017)
 
 - [Specification Versioning Guidance](development_fhir_versioning_specification_guidance.html), [FHIR Capability Versioning Guidance](development_fhir_versioning_capability_guidance.html), [Provider API Versioning Guidance](development_fhir_versioning_provider_guidance.html), [Consumer Versioning Guidance](development_fhir_versioning_consumer_guidance.html) - Added additional information around versioning.
 - [Security Guidance](development_api_security_guidance.html) - Updated Security guidance around the protocols suppliers should implement.
