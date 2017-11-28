@@ -176,7 +176,7 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
 	</tr>
   </table>
 
-  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource and "http://fhir.nhs.net/Id/ods-organization-code" identifier system is being deprecated and should not be used by Consumers when implementing this version of the specification. Once all Consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
+  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource and '`http://fhir.nhs.net/Id/ods-organization-code`' identifier system is being deprecated and should not be used by Consumers when implementing this version of the specification. Once all Consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
   </div>
 
 #### Population of requested_record ####
