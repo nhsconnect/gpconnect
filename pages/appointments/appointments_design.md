@@ -61,9 +61,13 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 - AppointmentResponse resource will be provided in response to a booking request.
 - <span class="label label-success">SELECTED</span> HTTP codes will be used to convey success/failure of a booking request.
 
+## Patient Dissent To Share ##
+
+<span class="label label-success">SELECTED</span> This is NOT to be applied in the context of the Appointment Management Capability
+
 ## Viewing and Amending Booked Appointments ##
 
-<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case.  Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the Patient's registered GP Practice.  This assumes an update to the patient's registered GP record reflecting any appointments held elsewhere.  
+<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case.  Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the Patient's registered GP Practice.  This assumes an update, according to usual business processes and external to GP Connect, by other GP Practices hosting an appointment for the patient to their registered GP record.  
 
 ## Cancelling and Amending booked appointments ##
 
