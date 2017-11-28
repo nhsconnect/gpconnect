@@ -136,6 +136,12 @@ The Payload section of the JWT shall be populated as follows:
 
 <sup>4</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (e.g. referring to systems or groups) SHALL NOT be used in this field.
 
+  <div class="deprecated">
+  <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3>
+  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `aud` claim contains the fixed value `https://authorize.fhir.nhs.net/token` rather than the "Requested resource URI" as it required in this version of the specification.</p>
+  {% include important.html content="Use a the fixed value '`https://authorize.fhir.nhs.net/token`' in the '`aud`' claim is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to populating the '`aud`' claim with the 'Requested resource URI', support for the deprecated fixed value will be removed from the specification." %}
+  </div>
+
 {% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
 #### Population of requesting_organization ####
@@ -150,7 +156,7 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
   | identifier | An identifier should be included contain a fixed `system` of `"https://fhir.nhs.uk/Id/ods-organization-code"` and a identifier `value` containing the ODS code of requesting organsiation. |
 
   <div class="deprecated">
-  <h3>Deprecated - required to supporting AccessRecord 1.0.0-rc.5</h3>
+  <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3>
   <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requesting_organization` conforms to the requirements above but also request where the `requesting_organization` is populated with:</p>
 
   <p>A FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource representing the organization making the request and SHALL include the elements:</p>
@@ -202,7 +208,7 @@ The `consumer` SHALL populate the `requested_record` claim with:
   {% include note.html content="The provider SHALL validate that the requested_record claim details match the request parameters where possible, to ensure valid auditing of the requests end-to-end." %}
 
   <div class="deprecated">
-  <h3>Deprecated - required to supporting AccessRecord 1.0.0-rc.5</h3> 
+  <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3> 
   <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, `providers` SHALL support requests where the `requested_record` conforms to the requirements above but also request where the `requested_record` is populated with:</p>
 
   <p>Either a FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource or a FHIR <a href="https://www.hl7.org/fhir/DSTU2/patient.html">Patient</a> <img src="images/dstu2.png" /> resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers as set out by the table above.</p>
