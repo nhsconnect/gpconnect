@@ -1,0 +1,12 @@
+---
+title: Foundations Information Governance
+keywords: foundations ig
+tags: [ig,foundations]
+sidebar: foundations_sidebar
+permalink: foundations_ig.html
+summary: "Information Governance Controls in relation to the Foundations Capability."
+---
+
+## PDS S-Flagged Patients ##
+
+If in response to the Find or Read a Patient API, the Provider system determines that a patient has a PDS 'S-Flag', then the patients location and contact details are to be replaced by those of the GP Practice
