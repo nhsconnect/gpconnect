@@ -44,7 +44,7 @@ Key:
 > 1. A Patient would like to view their current/future appointments so that they can manage their time appropriately, they can access Patient Facing Services online and view their booked appointments with any GP Practice
 
 
-## Book an appointment ##
+## Book an Appointment ##
 <i class='fa fa-check'/> As a HealthCare Professional at a HealthCare Organisation I would like to book an appointment for a Registered Patient so that I can manage their care appropriately
 
 > 2. As a GP I want to make an appointment for my patient with one of my local practices which provides a coil fitting clinic. 
