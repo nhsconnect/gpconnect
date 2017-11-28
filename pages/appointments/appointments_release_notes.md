@@ -34,6 +34,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Updated requirements that only future appointments may be amended by a consumer and the provider should return and error if the consumer tries to amend a past appointment.
 - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)
   - Uplifted to STU3 profiles
+  - Updated requirements that only future appointments may be cancelled by a consumer and the provider should return and error if the consumer tries to cancel a past appointment.
   
 - [Introduction](appointments.html)
   - Uplifted wording to reflect inclusion of Urgent Care deployment setting
