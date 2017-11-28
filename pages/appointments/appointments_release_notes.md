@@ -23,6 +23,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - The Practitioner reference has moved in the schedule resource from an extension to `Schedule.actor`
 - [Read an appointment](appointments_use_case_read_an_appointment.html) 
   - Uplifted to STU3 profiles.
+  - Updated requirements that only future appointments may be read by a consumer and the provider should return and error if the consumer tries to read a past appointment.
 - [Book an appointment](appointments_use_case_book_an_appointment.html) 
   - Uplifted to STU3 profiles
   - The 'create' extension has become the standard 'created' element within the Appointment resource
