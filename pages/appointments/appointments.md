@@ -9,7 +9,7 @@ summary: "All about the appointment management capability."
 
 ## Purpose ##
 
-To meet strategic objectives to improve access to GP care, the Appointment Management(AM) APIs enable consumer system administrative and clinical end-users to more effectively book and manage GP Practiceappointments held in any of the four GP Principal Practice systems.  The deployment of the APIs within Patient Apps, to support Patient direct access, is envisaged for a later Phase.
+To meet strategic objectives to improve access to GP care, the Appointment Management(AM) APIs enable consumer system administrative and clinical end-users to more effectively book and manage GP Practice appointments held in any of the four GP Principal Practice systems.  The deployment of the APIs within Patient Apps, to support Patient direct access, is envisaged for a later Phase.
 
 ## Example Scenarios ##
 
