@@ -8,9 +8,10 @@ permalink: designprinciples_ig_principles.html
 summary: "High-level principles related to information governance (IG) of data with-in the system for FoT"
 ---
 
-{% include important.html content="The principles below have been discussed in workshops with the GP Principal Providers, and NHS Digital IG stakeholders.<br/><br/>
+{% include important.html content="The principles below have been discussed and agreed in workshops with the GP Principal Providers and NHS Digital IG stakeholders.<br/><br/>
 The detailed requirements supporting these will be available as part of the Provider development, Consumer development and Assurance documentation published within this specification.<br/><br/>
-Review and agreement as to the IG model changes to accommodate additional capabilities and use cases is ongoing and will take into account any potential changes arising from GDPR and other strategic projects and work in this arena.  " %}
+Review and agreement as to the IG model changes to accommodate additional capabilities and use cases is ongoing and will take into account any potential changes arising from GDPR and other strategic projects and work in this arena. The programme Privacy Impact Assessment is currently under review and will be uplifted accordingly.
+" %}
 
 
 ## First of Type (FoT) principles ##
