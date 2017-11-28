@@ -42,7 +42,7 @@ The Provider System is expected, when identifying an 'S-flagged' Patient, to sub
 
 ## Legally-Restricted Data ##
 
-Whilst it is expected that GP Practices will configure their appointment book to ensure appropriate restriction of appointments being available to external organisation, it is possible that such information may be exposed in the Appointment Reason, Description, and Comment elements, which cannot necessarily be prevented technically.  This risk shall be mitigated by Consumer Organisation end-user policies, procedures, registration and regulation.
+Whilst it is expected that GP Practices will configure their appointment book to ensure appropriate restriction of appointments being available to external organisation, it is possible that such information may be exposed in the Appointment Reason, Description, and Comment elements, which cannot necessarily be prevented technically.  The privacy impact to be mitigated by Consumer Organisation end-user policies, procedures, registration and regulation.
 
 
 
