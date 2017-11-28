@@ -64,13 +64,13 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-### 'searchFilter' parameter ###
+### Slot Access - 'searchFilter' parameter ###
 
 {% include important.html content="
 It is recognized that the Provider systems must offer GP Practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. <br/><br/>
  
 
-For the rc.3 specification, Provider Systems SHALL provide a mechanism by which GP Practices can indicate which slots are available for booking via GP Connect, thereby ensuring that their whole appointment book is not made available to external organisations.  <br/><br/>
+For the Appointment Management rc.3 specification, Provider Systems SHALL provide a mechanism by which GP Practices can indicate which slots are available for booking via GP Connect, thereby ensuring that their whole appointment book is not made available to external organisations.  <br/><br/>
  
 
 Additionally, the provision of optional searchFilter parameters has been included in rc.3 in preparation for subsequent release of 'to be agreed' more granular slot availability control and corresponding searchFilter value sets - eg by organisation type or individual organisation. A common example is when a practice reserves a small number of slots specifically for use by Urgent Care appointment bookings which the Provider system can then match to the searchFilter received. <br/><br/>
