@@ -1,10 +1,10 @@
 ---
-title: Developer Cheat Sheet
+title: Developer cheat sheet
 keywords: development deliverables
 tags: [engagement,development]
 sidebar: overview_sidebar
 permalink: development_deliverables.html
-summary: "Developer Cheat Sheet shortcuts for the <br/>technical build of GP Connect APIs."
+summary: "Developer cheat sheet shortcuts for the technical build of GP Connect API"
 ---
 
 ![Development Flow](images/development/development_flow.png)

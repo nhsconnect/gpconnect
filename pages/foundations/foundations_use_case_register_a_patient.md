@@ -78,20 +78,26 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 #### Payload Request Body ####
 
 The following data-elements are mandatory (i.e. data SHALL be present):
-- A `registerPatient` parameter containing a patient resource profiled to `CareConnect-GPC-Patient-1`. This is the patient who you want to be registered. Within this resource: 
+- A `registerPatient` parameter containing a patient resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) profile. This is the patient who you want to be registered. Within this resource: 
 	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
-	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
+	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
     - The consumer SHALL NOT populate the "registrationDetails" extension within the patient resource.
 
 The following data-elements SHOULD be populated if available:
 - Within the patient resource of the `registerPatient` parameter:
   - the `telecom` element SHOULD be populated
+	- the consumer SHALL NOT populate the `telecom.use` value with `old`
+	- the consumer SHOULD populate only one `telecom` per `telecom.use` value
+
   - the `address` element SHOULD be populated
+	- the consumer SHALL NOT populate the `address.use` value with `old`
+	- the consumer SHOULD populate only one `address` per `address.use` value
+	- the `address.use` value `home` SHOULD be mapped to PDS Address Use `HP` (Primary Home)
 
   {% include note.html content="The consumer SHOULD include telecom and address information within the temporary patient registration so that the receiving system has relevant contact details for the patient." %}
   {% include note.html content="The provider system receiving the telecom and address details SHOULD store these details in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration." %}
   
-The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
+The request payload is a set of [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
 
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
 
@@ -100,14 +106,14 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
     <id value="0857bd2a-9c1f-4e2a-ac48-f6a81f88ab01" />
     <meta>
         <versionId value="1" />
-        <lastUpdated value="2016-11-07T12:21:35.991+00:00" />
+        <lastUpdated value="2017-11-03T12:21:35.991+00:00" />
         <tag>
             <system value="urn:hscic:examples" />
             <code value="Operation-Register-Patient" />
             <display value="Register Patient Operation" />
         </tag>
     </meta>
-    <url value="http://fhir.nhs.net/OperationDefinition/gpconnect-registerpatient-operation-1" />
+    <url value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-Registerpatient-Operation-1" />
     <version value="0.0.1" />
     <name value="GPConnect-RegisterPatient-Operation-1" />
     <status value="active" />
@@ -135,7 +141,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <documentation value="Patient demographic information captured in the patient resource to register the patient." />
         <type value="Patient" />
         <profile>
-            <reference value="http://fhir.nhs.net/StructureDefinition/CareConnect-GPC-Patient-1" />
+            <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1" />
         </profile>
     </parameter>
     <parameter>
@@ -146,7 +152,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
         <documentation value="The searchset bundle resource that has been returned in response to the given input parameters" />
         <type value="Bundle" />
         <profile>
-            <reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-searchset-bundle-1" />
+            <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1" />
         </profile>
     </parameter>
 </OperationDefinition>
@@ -164,14 +170,14 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 		"resource": {
 			"resourceType": "Patient",
 			"meta": {
-				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
+				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
 				"extension": [{
-					"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
 					"valueCodeableConcept": {
 						"coding": [{
-							"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
 							"code": "01"
 						}]
 					}
@@ -179,14 +185,14 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				"system": "https://fhir.nhs.uk/Id/nhs-number",
 				"value": "9476719931"
 			}],
-			"active": true,
 			"name": [{
-				"use": "official",
-				"family": ["Smith"],
-				"given": ["Mike"]
+				"use": "usual",
+				"family": ["Jackson"],
+				"given": ["Jane"],
+				"prefix": ["Miss"]
 			}],
-			"gender": "male",
-			"birthDate": "1976-01-10"
+			"gender": "female",
+			"birthDate": "22/02/1982"
 		}
 	}]
 }
@@ -200,7 +206,7 @@ The Provider system SHALL return an error if:
 - the `registerPatient` doesn't include a single active NHS Number identifier.
 - the `registerPatient` demographics don't match that of the triggered PDS trace.
 
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -222,8 +228,8 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
-- SHALL return a searchset `Bundle` profiled to `gpconnect-searchset-bundle-1` including the following resources 
-	- `Patient` profiled to `CareConnect-GPC-Patient-1` containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
+- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) ![STU3](images/stu3.png) including the following resources 
+	- `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
 - SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
   - The "registrationType" should be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type should be use and more detail around the specific type of registration can be added using the "text" element of the CodeableConcept.
 
@@ -231,7 +237,7 @@ Provider systems:
 {
 	"resourceType": "Bundle",
 	"meta": {
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"]
 	},
 	"type": "searchset",
 	"entry": [{
@@ -241,10 +247,10 @@ Provider systems:
 			"meta": {
 				"versionId": "636180880331209494",
 				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
+				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"extension": [{
-				"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
 				"extension": [{
 					"url": "registrationPeriod",
 					"valuePeriod": {
@@ -263,10 +269,10 @@ Provider systems:
 			}],
 			"identifier": [{
 				"extension": [{
-					"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
 					"valueCodeableConcept": {
 						"coding": [{
-							"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
 							"code": "01"
 						}]
 					}
@@ -275,12 +281,13 @@ Provider systems:
 				"value": "9476719931"
 			}],
 			"name": [{
-				"use": "official",
-				"family": ["Smith"],
-				"given": ["Mike"]
+				"use": "usual",
+				"family": ["Jackson"],
+				"given": ["Jane"],
+				"prefix": ["Miss"]
 			}],
-			"gender": "male",
-			"birthDate": "10/01/1976"
+			"gender": "female",
+			"birthDate": "22/02/1982"
 		}
 	}]
 }
@@ -293,7 +300,7 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var parameters = new Parameters();
 parameters.Add("registerPatient", new Patient
@@ -307,7 +314,7 @@ parameters.Add("registerPatient", new Patient
 		{
 			Given = new[] {"Mike"},
 			Family = new[] {"Smith"},
-			Use = HumanName.NameUse.Official
+			Use = HumanName.NameUse.Usual
 		}
 	},
 	Identifier =
@@ -325,10 +332,8 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 ) library." %}
 
 ```java
-FhirContext ctx = FhirContext.forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
-client.registerInterceptor(new LoggingInterceptor(true));
-
+FhirContext ctx = FhirContext.forStu3();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 Patient patient = new Patient();
 patient.addIdentifier()
    .setSystem("https://fhir.nhs.uk/Id/nhs-number")
@@ -336,7 +341,7 @@ patient.addIdentifier()
 patient.addName()
    .addFamily("Smith")
    .addGiven("Mike")
-   .setUse(NameUseEnum.OFFICIAL);
+   .setUse(NameUseEnum.USUAL);
 patient.setGender(AdministrativeGenderEnum.MALE);
 patient.setBirthDate(new DateDt("1976-01-10"));
 

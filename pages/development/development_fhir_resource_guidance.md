@@ -1,20 +1,18 @@
 ---
-title: Resource Guidance
+title: Resource guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_resource_guidance.html
-summary: "Where to find details of what resources and operations a FHIR server should expose to be a fully compliant GP Connect solution."
+summary: "Where to find details of what resources and operations a FHIR server should expose to be a fully compliant GP Connect solution"
 ---
 
-GP Connect has specified profiled versions of the international [Fhir Resources](https://www.hl7.org/fhir/DSTU2/){:target="_blank"}, tailoring them to meet the requirements of the GP Connect use cases and to aid in interoperability between systems.
+GP Connect has specified profiled versions of the international [FHIR Resources](https://www.hl7.org/fhir/STU3/){:target="_blank"}, tailoring them to meet the requirements of the GP Connect use cases and to aid in interoperability between systems.
 
-The profiled Fhir Resources required for each of the GP Connect capability packs are specified within the specific specification sections for each of the capabilities:
+The profiled FHIR Resources required for each of the GP Connect capability packs are specified within the specific specification sections for each of the capabilities:
 
 * [Foundations](datalibraryfoundation.html)
-* [AccessRecord HTML](datalibraryaccessRecord.html)
+* [Access Record HTML](datalibraryaccessRecord.html)
 * [Appointment Management](datalibraryappointment.html)
 * [Task Management](datalibrarytasks.html)
 
-
-{% include tip.html content="Refer to the [Explore - Swagger API Documentation](system_reference_swagger.html) for further details." %}

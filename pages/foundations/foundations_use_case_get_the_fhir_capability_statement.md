@@ -1,11 +1,19 @@
 ---
-title: Get the FHIR Conformance Statement
+title: Get the FHIR CapabilityStatement
 keywords: foundations, fhir
 tags: [foundations,use_case,fhir]
 sidebar: foundations_sidebar
-permalink: foundations_use_case_get_the_fhir_conformance_profile.html
-summary: "Use case for getting the GP Connect FHIR server's conformance statement."
+permalink: foundations_use_case_get_the_fhir_capability_statement.html
+summary: "Use case for getting the GP Connect FHIR server's capability statement."
 ---
+
+## Prerequisites ##
+
+### Consumer ###
+
+The Consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 
 ## API Usage ##
 
@@ -40,7 +48,7 @@ N/A
 
 #### Error Handling ####
 
-Provider systems are expected to always be able to return a valid conformance statement.
+Provider systems are expected to always be able to return a valid capability statement.
 
 ### Request Response ###
 
@@ -52,43 +60,48 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrival of the conformance statement.
-- SHALL ensure that the FHIR version number returned by the FHIR server endpoint conformance statement matches the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
+- SHALL return a `200` **OK** HTTP status code on successful retrival of the capability statement.
+- SHALL return a capability statement which conforms to the standard [FHIR CapabilityStatement](http://hl7.org/fhir/STU3/capabilitystatement.html)
 
-An example GP Connect Conformance Statement of type `Instance` is shown below ready for customisation and embedding into GP Connect assured provider systems.
+An example GP Connect CapabilityStatement of type `Instance` is shown below:
 
 ```xml
-<Conformance xmlns="http://hl7.org/fhir">
+<CapabilityStatement xmlns="http://hl7.org/fhir">
 	<version value="1.0.0-rc.1" />
 	<name value="GP Connect" />
 	<status value="draft" />
 	<experimental value="true" />
+	<date value="2017-11-02" />
 	<publisher value="NHS Digital" />
 	<contact>
 		<name value="Software Vendor Contact Name" />
 	</contact>
-	<date value="2016-08-08" />
 	<description value="This server is a reference implementation of the GP Connect FHIR APIs" />
 	<copyright value="Copyright NHS Digital 2016" />
 	<software>
 		<name value="Software Name" />
 		<version value="Software Verson" />
-		<releaseDate value="Software Release Date" />
+		<releaseDate value="2017-11-02" />
 	</software>
-	<fhirVersion value="1.0.2" />
+	<fhirVersion value="3.0.1" />
 	<acceptUnknown value="both" />
+	<format value="application/fhir+xml" />
+	<format value="application/fhir+json" />
 	<format value="application/xml+fhir" />
 	<format value="application/json+fhir" />
+	<format value="application/xml" />
+	<format value="application/json" />
+	<format value="text/json" />
 	<profile>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-device-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"/>
- 		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-slot-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Device-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+ 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"/>
 	</profile>
 	<rest>
 		<mode value="server" />
@@ -146,7 +159,7 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			<searchParam>
 				<name value="identifier" />
 				<type value="token" />
-				<documentation value="SDS User Id (i.e. http://fhir.nhs.net/sds-user-id|999999)" />
+				<documentation value="SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)" />
 			</searchParam>
 		</resource>
 		<resource>
@@ -159,6 +172,9 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			</interaction>
 			<interaction>
 				<code value="update" />
+			</interaction>
+			<interaction>
+				<code value="patch" />
 			</interaction>
 			<interaction>
 				<code value="search-type" />
@@ -210,18 +226,6 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 				<type value="token" />
 			</searchParam>
 		</resource>
-		<resource>
-			<type value="Order" />
-			<interaction>
-				<code value="create" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-		</resource>
 		<operation>
 			<name value="gpc.getcarerecord" />
 			<definition>
@@ -235,29 +239,20 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 			</definition>
 		</operation>
 	</rest>
-	<rest>
-		<mode value="server" />
-	</rest>
-</Conformance>
+</CapabilityStatement>
 ```
 
-{% include tip.html content="Please see capability packs for examples of conformance statements specific to those capabilities" %}
-- [Access Record Conformance Statement](accessrecord_development_conformance_profile.html)
-
-
 Consumer Systems:
+- SHOULD, request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
+- SHOULD cache capability statement information retrieved from an endpoint at run-time on a per-session basis.
 
-- SHALL, during development, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
-- SHOULD, at run-time, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
-- SHOULD cache conformance statement information retrieved from an endpoint at run-time on a per-session basis. 
-
-### C# client request to get the conformance statement ###
+### C# client request to get the capability statement ###
 
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var resource = client.Conformance();
+var resource = client.CapabilityStatement();
 FhirSerializer.SerializeResourceToXml(resource).Dump();
 ```

@@ -5,28 +5,26 @@ tags: [use_case,htmlgetcarerecord,getcarerecord,appointments,tasks]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_priority_capabilities.html
-summary: A brief introduction to the priority GP Connect capabilities.
+summary: A brief introduction to the priority GP Connect capabilities
 ---
 
-GP Connect is initially focussing on delivering three main interoperability capabilities:
 
-![GP Connect Priority Capabilities](images/overview/priority_capabilities.png)
+GP Connect is initially focussing on delivering the following three main interoperability capabilities:
 
 ## Access Record ##
+Access a patient's care record for the purpose of direct care.
 
-### HTML ###
+[![Img](images/overview/folder.png) HTML - Access Record HTML](accessrecord.html)
 
-[Access Record HTML](accessrecord.html)
-
-### Structured ###
-
-[Access Record REST](accessrecord_rest.html)
+[![Img](images/overview/structured.png) Structured - Access Record REST](accessrecord_rest.html)
 
 ## Appointments ##
+Manage appointments in order to co-ordinate access to care.
 
-[Appointment Management Capability](appointments.html)
+[![Img](images/overview/calendar.png) Appointment Management](appointments.html)
 
 ## Tasks ##
+Manage tasks in order to work effectively across care settings.
 
-[Task Management Capability](tasks.html)
+[![Img](images/overview/tasks.png) Task Management](tasks.html)
 

@@ -25,22 +25,25 @@ The ability to create appointments for Patients not known to the GP practice/dia
 
 {% include note.html content="Details of how to [Register a Patient](foundations_use_case_register_a_patient.html) can be found in the Foundations capability pack. " %}
 
-## Content of diaries ##
+## Access to Available Slots ##
 
 When requesting the schedule of a particular diary, the level of detail returned should:
 
 - Include all booked appointments and available slots.
 - Only slots that are available (all types).
-- <span class="label label-success">SELECTED</span> Only slots that are available and have been marked/flagged as externally bookable.
+- <span class="label label-success">SELECTED</span> Only slots that are available and have been marked/flagged as externally bookable via GP Connect.
+
+{% include roadmap.html content="Richer GP Appointment Slot access control within Provider systems is being progressed recognising requirements such as access to slots by organisation type." %}
 
 ## Search parameters ##
 
 The following search parameters will be initially included:
 
 - All available common (across all four systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
-- <span class="label label-success">SELECTED</span> Only date ranges will be available to set as part of a diary search (consumers can then apply further filtering, sorting at client side).
+- <span class="label label-success">SELECTED</span> Date Range,  Urgent Care (UC) Disposition Code & Service ID, and Requesting Organisation Type are accommodated to support potential available appointment slot filtering (consumers can then apply further filtering, sorting at client side).  The last 3 are required to support the use of GP Connect APIs by UC Services.  
 
-{% include roadmap.html content="Greater flexibility in available available search parameters is desirable to support finer grained searching, e.g. by gender, by type." %}
+{% include note.html content="The Search Filter specification is flexible to allow for further search parameters to be defined. Value sets will be defined for these to be used by subsequent Provider system slot access control." %}
+
 
 ## Maximum time span of diaries returned ##
 
@@ -53,17 +56,25 @@ When searching for diaries, the results will be:
 
 ## Do we need to use the 'AppointmentResponse' resource? ##
 
-As per the suggested FHIR workflow in the [FHIR DSTU2 Appointment](https://www.hl7.org/fhir/DSTU/appointment.html) Should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource, or are HTTP response codes sufficient for GP Connect use cases?
+As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html) should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource, or are HTTP response codes sufficient for GP Connect use cases?
 
 - AppointmentResponse resource will be provided in response to a booking request.
 - <span class="label label-success">SELECTED</span> HTTP codes will be used to convey success/failure of a booking request.
+
+## Patient Dissent To Share ##
+
+<span class="label label-success">SELECTED</span> This is NOT to be applied in the context of the Appointment Management Capability
+
+## Viewing and Amending Booked Appointments ##
+
+<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case.  Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the Patient's registered GP Practice.  This assumes an update, according to usual business processes and external to GP Connect, by other GP Practices hosting an appointment for the patient to their registered GP record.  
 
 ## Cancelling and Amending booked appointments ##
 
 What provision will be made for making changes to existing appointments?
 
 - Only cancellation will be allowed (must cancel and re-book).
-- <span class="label label-success">SELECTED</span> Cancel and basic amendments will be provisioned for (i.e. only allowed to the comment/description fields).
+- <span class="label label-success">SELECTED</span> Cancellation and Amendments to the Appointment Reason, Description and Comment are accommodated.
 - Cancel and comprehensive amendments will be provisioned for (allowing appointments to move between slots/rescheduled).
 
 ## Can appointments be re-scheduled? ##

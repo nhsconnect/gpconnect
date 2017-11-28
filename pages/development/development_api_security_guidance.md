@@ -1,13 +1,13 @@
 ---
-title: Security Guidance
+title: Security guidance
 keywords: development
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_api_security_guidance.html
-summary: "Details of the API security model and supported protocols."
+summary: "Details of the API security model and supported protocols"
 ---
 
-## Secure Connection Negotiation ##
+## Secure connection negotiation ##
 
 Provider Systems:
 
@@ -29,25 +29,24 @@ Provider Systems:
 
 - MAY authorise access to API endpoints through examining acceptable values in the JWT requested_scope claim
 
-## Security Testing ##
+- SHALL risk manage the security of the endpoints of the TLS communications, so as to prevent inappropriate risks (e.g. audit logging of the GET parameters into an unprotected audit log).
+
+
+## Security testing ##
 
 Provider systems SHALL as a minimum be tested against the [OWASP top 10 web application vulnerabilities](https://www.owasp.org/index.php/Top_10_2013-Top_10).
 
 Provider systems SHOULD be tested for vulnerability to Denial of Service (DoS) and hardened against such attacks.
 
-## Secure Socket Layer (SSL), and Transport Layer Security (TLS) Protocols ##
+## Secure Socket Layer (SSL), and Transport Layer Security (TLS) protocols ##
 
-After consultation with the Infrastructure Security, Operational Security and Spine DDC teams the following SSL protocols SHALL be supported.
+After consultation with the Infrastructure Security, Operational Security and Spine DDC teams the following SSL protocol guidance have been agreed:
 
-{% include important.html content="The list of supported ciphers is ordered in order of preference (i.e. the first item being the most preferred)." %}
+- Suppliers SHALL use `TLS1.2` with mutual authentication enabled for all message interactions.
+- At the current time suppliers may use `TLS1.0` or `TLS1.1`, however these protocols will soon become unsupported and suppliers should move to support `TLS1.2` as soon as possible.
+- Suppliers SHALL NOT use `SSLv2` and `SSLv3` as they are deprecated.
 
-- `TLSv1.2`
-- `TLSv1.1`
-- `TLSv1`
-
-{% include note.html content="SSLv2 and SSLv3 are deprecated and SHALL NOT be used. All consumer and provider systems SHALL be configured to implement TLSv1 and SHOULD be configured to implement TLSv1.1 and above." %}
-
-## Supported Ciphers ##
+## Supported ciphers ##
 
 After consultation with the Infrastructure Security, Operational Security and Spine DDC teams the following SSL protocols SHALL be supported.
 
@@ -68,7 +67,7 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 
 <sup>1</sup>[Digitcert - SSL Support Enabling Perfect Forward Secrecy](https://www.digicert.com/ssl-support/ssl-enabling-perfect-forward-secrecy.htm)
 
-## Tomcat OpenSSL Support Using The APR/Native Provider ##
+## Tomcat OpenSSL support using the APR/Native provider ##
 
 - SSLCipherSuite = `AESGCM+EECDH,AESGCM+EDH,AES256+EECDH,AES256+EDH`
 - SSLHonorCipherOrder = `true`
@@ -77,7 +76,7 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 
 Please see the [Tomcat Config HTTP SSL Support](https://tomcat.apache.org/tomcat-8.0-doc/config/http.html#SSL_Support) webpage for more details.
 
-## Client Certificates (TLSMA) ##
+## Client certificates (TLS/MA) ##
 
 Provider and Consumer systems SHALL only accept client certificates issued by the NHS Digital Deployment Issue and Resolution (DIR) team.
 
@@ -87,7 +86,7 @@ Provider and Consumer systems SHALL only accept client certificates which have n
 
 Provider and Consumer systems SHALL check the `FQDN` presented in the client certificate is that of the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP).
 
-## Response Headers ##
+## Response headers ##
 
 Provider systems SHALL ensure no sensitive data leaks into a browser cache by setting the following cache headers on all responses:
 
@@ -113,7 +112,7 @@ Provider systems MAY choose to use the value of the requested_scope claim to aut
 | /Slot | organization/*.[read/write] |
 
 
-## External Documents / Policy Documents ##
+## External policy documents ##
 
 | Name | Author | Version | Updated |
 | Approved Cryptographic Algorithms Good Practice Guidelines | NHS Digital | v4.0 | 13/07/2016 |

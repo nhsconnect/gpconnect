@@ -7,25 +7,47 @@ permalink: appointments.html
 summary: "All about the appointment management capability."
 ---
 
-[<i class="fa fa-arrow-left" aria-hidden="true"/> Back to GP Connect - Getting Started.](index.html)
-
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
-
 ## Purpose ##
 
-Demonstrates the ability to provide service users (and patients) with the ability to book and manage appointments in a timely fashion and to provide better, quicker access to primary care.
+To meet strategic objectives to improve access to GP care, the Appointment Management(AM) APIs enable consumer system administrative and clinical end-users to more effectively book and manage GP Practice appointments held in any of the four GP Principal Practice systems.  The deployment of the APIs within Patient Apps, to support Patient direct access, is envisaged for a later Phase.
 
-## Scenarios ##
+## Example Scenarios ##
 
-- A service user at a GP practice can book an appointment on behalf of a patient.
-- A service user at an extended access Hub can book an appointment at the GP practice on behalf of a patient.
-- A patient can book, cancel or view their existing appointments (extended access hubs or GP practice) through the organisations on-line service.
-- Enable a service user at 111 to book, cancel or view appointments for a patient at the patients’ own GP and extended access Hub sites.
-- Enable a range of other care settings to book, view or cancel an appointment on behalf of the patient. Any of; A+E, Physio, Acute, Social, Community etc.
+- Administrative staff at a GP Practice can book an appointment on behalf of a patient
+- Administrative staff at a GP Extended Access Hub can book an appointment on behalf of a patient at any of its federated GP practices 
+- An Urgent Care 111 Call Centre handler or Triage Clinician can book, cancel or view appointments on behalf of a patient at the patient's registered or federated GP Practices or Extended Access Hubs
+- A patient will be able to book, cancel or view their GP appointments via a GP Connect-enabled App
+- Administrative staff and Clinicians at a range of other care settings, e.g. A&E, Physio, Social and Community services,  will be able to book, view or cancel a GP appointment on behalf of the patient
+
+## GP Practice Appointment Slot Control ##
+
+GP Practices need to control access to their appointment book by external organisations and it is therefore expected that Provider systems will in the first instance enable Practice users to designate their schedules/slots as bookable by GP Connect, thereby ensuring that only these slots are returned in response to a request.
+
+More granular access control will be required to match the appointment slot filtering support included in the specification and as value sets are defined, so that slots are made available for example dependent on requesting organisation type.
+
+## FoT Care Setting Deployments  ##
+
+The following FoT deployments are being progressed:
+
+### Care Setting 1: Within GP Federations ###
+
+Enabling a GP Practice or Appointment Hub, to book, amend, cancel, or view a patient’s in-hours or extended hours appointments at the patient’s registered GP Practice or another GP practice within the same federation.  
+
+### Care Setting 2: From UC Call Centres to GP Practices – In-Hours, Extended Hours Appointments ###
+The requirement to support the use of the GP Connect capability for Unscheduled Care by Urgent Care (UC) Services - i.e. UC Call Centres booking and managing appointments into GP Practices –  has been accommodated where possible in the API design. 
+The Call Centre will retrieve and select In-Hours or Extended Hours appointments for booking/managing at either: 
+
+   - the Patient’s registered GP Practice
+
+   - GP Practices federated with the Patient’s registered GP Practice
+
+   - a GP Practice within the vicinity of the Patient’s geographic location – e.g. when the Patient is on holiday
+
+{% include note.html content="Whilst the GP Connect programme primarily assumes that the appointment-hosting (Provider) systems are the GP Principal systems, the API technical design has accommodated the minimum viable features required to support Booking and Managing of Appointments at UC Providers such as Minor Injuries Units and GP Out of Hours services.  This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting.  **This deployment care setting is currently out of scope for GP Connect FoT deployments.**" %}  
 
 ## API Use Cases ##
 
-The following individual API calls are used by consumers to implement the appointment management capability.
+The following individual API calls are used by consumers to implement the appointment management capability:
 
 - [Retrieve a patients appointments](appointments_use_case_retrieve_a_patients_appointments.html)
 - [Search for free slots](appointments_use_case_search_for_free_slots.html)
@@ -36,7 +58,7 @@ The following individual API calls are used by consumers to implement the appoin
 
 {% include tip.html content="Creation of `Schedule` and `Slot` resources is out of scope for the GP Connect FoT as these resources are expected to be managed from within an organisation's principal IT system." %}
 
-## Examples of consumer appointment management sessions
+## Examples of Consumer Appointment Management Sessions
 
 The use of the individual API calls listed above by consumers to fulfill business processes is illustrated, with particular focus on the booking of an appointment.  See [Appointment Consumer Sessions Illustrated](appointments_consumer_sessions.html)
 
@@ -46,7 +68,7 @@ Please refer to the [Appointment Management FHIR Resources](datalibraryappointme
 
 ## SPINE Interactions ##
 
-The Appointment Management capability message set includes the following set of spine interactions:
+The Appointment Management capability message set includes the following set of Spine interactions:
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 

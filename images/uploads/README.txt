@@ -1,0 +1,1 @@
+Dummy file to ensures the 'uploads' folder is created.

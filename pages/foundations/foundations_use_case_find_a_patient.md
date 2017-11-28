@@ -24,7 +24,7 @@ Resolve (zero or more) `Patient` resources using a business identifier (i.e. NHS
 
 The `[system]` field SHALL be populated with a valid patient identifier system URL (i.e. `https://fhir.nhs.uk/Id/nhs-number`).
 
-The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+The consumer system SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
 {% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/nhs-number', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
@@ -59,7 +59,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
@@ -81,11 +81,11 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
 - SHALL only return `Patient` resources for `Active` patients ([Definition of a GP Connect Active Patient](overview_glossary.html#active-patient)).
-- SHALL return `Patient` resources that conform to the `CareConnect-GPC-Patient-1` profile.
+- SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
 - SHALL include all relevant business `identifier` details (i.e. NHS Number) for each `Patient` resource.
-- SHALL supply gender, name, birth date or deceased date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) FHIR property)
+- SHALL supply gender, name, birth date or deceased date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
 
 
 ```json
@@ -93,21 +93,21 @@ Provider systems:
 	"resourceType": "Bundle",
 	"type": "searchset",
 	"entry": [{
-		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/2",
+		"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
 		"resource": {
 			"resourceType": "Patient",
 			"id": "2",
 			"meta": {
 				"versionId": "636064088097580046",
 				"lastUpdated": "2016-08-10T16:52:39.716+01:00",
-				"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"]
+				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
 			},
 			"identifier": [{
 				"extension": [{
-					"url": "https://fhir.nhs.uk/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
 					"valueCodeableConcept": {
 						"coding": [{
-							"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
 							"code": "01"
 						}]
 					}
@@ -116,7 +116,7 @@ Provider systems:
 				"value": "9476719931"
 			}],
 			"name": [{
-				"use": "official",
+				"use": "usual",
 				"family": ["Jackson"],
 				"given": ["Jane"],
 				"prefix": ["Miss"]
@@ -133,7 +133,7 @@ Provider systems:
 ### C# ###
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
 var query = new string[] { "identifier=https://fhir.nhs.uk/Id/nhs-number|9476719931" };
 var bundle = client.Search("Patient", query);
@@ -144,7 +144,7 @@ FhirSerializer.SerializeResourceToXml(bundle).Dump();
 
 ```java
 FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 Bundle bundle = client.search().forResource(Patient.class)
 .where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/nhs-number", "9476719931"))
 .encodedXml()
@@ -153,4 +153,4 @@ Bundle bundle = client.search().forResource(Patient.class)
 
 ### cURL ###
 
-{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7CP002'" %}
+{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7CP002'" %}

@@ -1,13 +1,13 @@
 ---
-title: Open API Licence Design Principles
+title: Open API licence design principles
 keywords: commissioning
 tags: [commissioning]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples_open_api_licence_principles.html
-summary: "High-level design principles related to the commercial licence for participation in the Open API ecosystem."
+summary: "High-level design principles related to the commercial licence for participation in the open API ecosystem"
 ---
 
-{% include todo.html content="Coming Soon..." %}
+{% include todo.html content="Coming soon..." %}
 
-- Acceptable Use
-- Reciprocity of Data Access
+- Acceptable use
+- Reciprocity of data access

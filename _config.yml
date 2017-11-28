@@ -2,7 +2,7 @@
 output: web
 # this property is useful for conditional filtering of content that is separate from the PDF.
 
-topnav_title: GP Connect - FHIR&reg; APIs for GP IT Systems
+topnav_title: GP Connect - FHIR&reg; APIs for GP IT systems
 # this appears on the top navigation bar next to the home button
 
 site_title: GP Connect
@@ -23,7 +23,7 @@ gitter_room: gpconnect/Lobby
 tiny_letter: true
 tiny_letter_username: nhsconnectapi
 
-twitter: true
+twitter: false
 twitter_username: nhsconnectapi
 twitter_site_hashtags: GPConnect
 
@@ -39,7 +39,7 @@ exclude:
   - pages/development/development_github_repositories.md
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_email: brian.diggle@nhs.net
+feedback_email: 
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true
@@ -102,7 +102,6 @@ defaults:
 
 sidebars:
 - overview_sidebar
-- designprinciples_sidebar
 - accessrecord_sidebar
 - appointments_sidebar
 - tasks_sidebar

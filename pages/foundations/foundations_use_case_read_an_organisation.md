@@ -57,7 +57,7 @@ N/A
 
 #### Error Handling ####
 
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
@@ -76,7 +76,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Organization` resources that conform to the `CareConnect-GPC-Organization-1` profile.
+- SHALL return `Organization` resources that conform to the [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `CareConnect-GPC-Organization-1` profile StructureDefinition in the `Organization.meta.profile` element of the returned `Organization` resource.
 - SHALL include the `versionId` of the current version of the `Organization` resource.
 - SHALL include all relevant business `identifier` details (i.e. ODS Code) for the `Organization` resource.
@@ -84,11 +84,11 @@ Provider systems:
 ```json
 {
 	"resourceType": "Organization",
-	"id": "1",
+	"id": "23",
 	"meta": {
 		"versionId": "636064088098730113",
-		"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"]
+		"lastUpdated": "2016-08-10T13:52:54.516+01:00",
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
 	},
 	"identifier": [{
 		"system": "https://fhir.nhs.uk/Id/ods-organization-code",
@@ -105,9 +105,9 @@ Provider systems:
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
+var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 client.PreferredFormat = ResourceFormat.Json;
-var resource = client.Read<Organization>("Organization/1");
+var resource = client.Read<Organization>("Organization/23");
 FhirSerializer.SerializeResourceToXml(resource).Dump();
 ```
 
@@ -117,7 +117,7 @@ FhirSerializer.SerializeResourceToXml(resource).Dump();
 ) library." %}
 
 ```java
-FhirContext ctx = new FhirContext().forDstu2();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/");
-Organization organization = client.read().resource(Organization.class).withId("2").execute();
+FhirContext ctx = new FhirContext().forStu3();
+IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
+Organization organization = client.read().resource(Organization.class).withId("23").execute();
 ```
