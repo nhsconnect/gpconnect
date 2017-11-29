@@ -25,7 +25,7 @@ Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity
 
 ## General standards ##
 
-Information on the technical standards that MUST be conformed to can be found in the sections below and throughout the GP Connect specification.
+Information on the technical standards that SHALL be conformed to can be found in the sections below and throughout the GP Connect specification.
 
 {% include important.html content=" Any additional principles highlighted in the GP Connect specification MUST take precedence over those defined in these technical standards.” %}
 
