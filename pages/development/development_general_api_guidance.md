@@ -23,6 +23,12 @@ At a high-level the maturity roadmap of a compliant Principal GP system is expec
 
 Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity_model.html) for full details.
 
+## General standards ##
+
+Information on the technical standards that MUST be conformed to can be found in the sections below and throughout the GP Connect specification.
+
+{% include important.html content=" Any additional principles highlighted in the GP Connect specification MUST take precedence over those defined in these technical standards.” %}
+
 ## Internet standards ##
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
@@ -52,7 +58,7 @@ Clients SHALL perform a sequence of query operations against existing Spine serv
 
 ## RESTful API ##
 
-The [RESTful API](https://www.hl7.org/fhir/DSTU2/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `DELETE /fhir/Patient/1` to remove the patient record.
+The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `DELETE /fhir/Patient/1` to remove the patient record.
 
 The FHIR RESTful API style guide defines the following URL conventions which are used throughout the remainder of this document:
 
@@ -61,7 +67,7 @@ The FHIR RESTful API style guide defines the following URL conventions which are
 
 ### Service root URL ###
 
-The [Service root URL](https://www.hl7.org/fhir/DSTU2/http.html#general) is the address where all of the resources defined by this interface are found. 
+The [Service root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found. 
 
 The Service root URL is the `[base]` portion of all FHIR APIs.
 
@@ -72,16 +78,18 @@ FHIR APIs SHALL be versioned according to  [Semantic Versioning](http://semver.o
 
 Provider systems are required to publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
 
-{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS Code]/[FHIR_VERSION_NAME]/{PROVIDER_MAJOR_VERSION}`" %}
+{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS_CODE]/[FHIR_VERSION_NAME]/{API_MAJOR_VERSION}/{PROVIDER_ROUTING_SEGMENT}`" %}
 
 
-- `[FQDN of FHIR Server]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
+- `[FQDN_OF_FHIR_SERVER]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
 
-- `[ODS Code]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
+- `[ODS_CODE]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
 
 - `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
 
-- `{PROVIDER_VERSION}` identifies the major version number of the provider API. Where the provider version number is omitted, the major version SHALL be assumed to be 1.
+- `{API_MAJOR_VERSION}` identifies the major version number of the provider API. Where the provider API version number is omitted, the major version SHALL be assumed to be 1.
+
+- `{PROVIDER_ROUTING_SEGMENT}` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
   
 - The FHIR Base URL SHALL NOT contain a trailing `/`
 
@@ -89,7 +97,7 @@ Provider systems are required to publish Service Root URLs for major versions of
 
 The provider will publish the server root URL to Spine Directory Services as follows:
 
-`https://provider.nhs.uk/GP0001/DSTU2/2`
+`https://provider.nhs.uk/GP0001/DSTU2/2/gpconnect`
 
 Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
@@ -100,15 +108,15 @@ The consumer system would therefore issue a request to the new version of the pr
 
 ### Resource URL ###
 
-The [Resource URL](http://www.hl7.org/implement/standards/fhir/http.html#2.1.0) will be in the following format:
+The [Resource URL](http://www.hl7.org/implement/standards/fhir/STU3/http.html) will be in the following format:
 
 	VERB [base]/[type]/[id] {?_format=[mime-type]}
 
 Clients and servers constructing URLs SHALL conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A) which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
 
-### HTTP verbs(http://hl7.org/fhir/valueset-http-verb.html ###
+### HTTP verbs ###
 
-The following [HTTP verbs](http://hl7.org/fhir/valueset-http-verb.html) SHALL be supported to allow RESTful API interactions with the various FHIR resources:
+The following [HTTP verbs](http://hl7.org/fhir/STU3/valueset-http-verb.html) SHALL be supported to allow RESTful API interactions with the various FHIR resources:
 
 - **GET**
 - **POST**
@@ -123,17 +131,17 @@ The following [HTTP verbs](http://hl7.org/fhir/valueset-http-verb.html) SHALL be
 
 #### Resource types ####
 
-GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/resourcelist.html) as profiled within the [GP Connect FHIR Resource Definitions](http://developer.nhs.uk/downloads-data/fhir-resource-definitions-library/). 
+GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/STU3/resourcelist.html) as profiled within the [GP Connect FHIR Resource Definitions](http://developer.nhs.uk/downloads-data/fhir-resource-definitions-library/). 
 
 #### Resource ID ####
 
-This is the [logical Id](http://hl7.org/fhir/resource.html#id) of the resource which is assigned by the server responsible for storing it. The logical identity is unique within the space of all resources of the same type on the same server, is case sensitive and can be up to 64 characters long.
+This is the [logical Id](http://hl7.org/fhir/STU3/resource.html#id) of the resource which is assigned by the server responsible for storing it. The logical identity is unique within the space of all resources of the same type on the same server, is case sensitive and can be up to 64 characters long.
 
 Once assigned, the identity SHALL never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
 {% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %} 
 
-For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/dstu2/resource.html#id)  
+For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
 
 #### External resource resolution ####
 
@@ -141,10 +149,18 @@ Inline with work being undertaken in other jurisdictions (see the [Argonaut Impl
 
 ### Content types ###
 
-Servers SHALL support both formal [MIME-types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) for FHIR resources:
+Servers SHALL support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
+- XML: `application/fhir+xml`
+- JSON: `application/fhir+json`
 
+Servers SHALL also support DSTU2 [MIME-types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) for backwards compatibility:
 - XML: `application/xml+fhir`
 - JSON: `application/json+fhir`
+
+Servers SHALL also graceful handling generic XML and JSON MIME types:
+- XML: `application/xml`
+- JSON: `application/json`
+- JSON: `text/json`
 
 Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
@@ -152,24 +168,24 @@ Servers SHALL prefer the encoding specified by the `Content-Type` header if no e
 
 ### Wire format representations ###
 
-Servers SHALL support two [wire formats](https://www.hl7.org/fhir/DSTU2/formats.html#wire) as ways to represent resources when they are exchanged:
+Servers SHALL support two [wire formats](https://www.hl7.org/fhir/STU3/formats.html#wire) as ways to represent resources when they are exchanged:
 
-- [XML](https://www.hl7.org/fhir/DSTU2/xml.html)
-- [JSON](https://www.hl7.org/fhir/DSTU2/json.html)
+- [XML](https://www.hl7.org/fhir/STU3/xml.html)
+- [JSON](https://www.hl7.org/fhir/STU3/json.html)
 
 {% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
 
-Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html#1.10.3) and declare this by setting [Conformance.acceptUnknown](https://www.hl7.org/fhir/DSTU2/conformance-definitions.html#Conformance.acceptUnknown) to 'both' in their conformance profile.
+Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/STU3/compatibility.html#1.10.3) and declare this by setting [CapabilityStatement.acceptUnknown](https://www.hl7.org/fhir/STU3/capabilitystatement-definitions.html#CapabilityStatement.acceptUnknown) to 'both' in their capbility statement.
 
-Systems SHALL declare which format(s) they support in their Conformance Statement. If a server receives a request for a format that it does not support it SHALL return a http status code of `415` indicating an `Unsupported Media Type`.
+Systems SHALL declare which format(s) they support in their CapabilityStatement. If a server receives a request for a format that it does not support it SHALL return a http status code of `415` indicating an `Unsupported Media Type`.
 
 ### Transfer encoding ###
 
-Clients and servers SHALL support the HTTP [Transfer-Encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
+Clients and servers SHALL support the HTTP [Transfer-Encoding](https://www.hl7.org/fhir/STU3/http.html#mime-type) header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
 
 ### Character encoding ###
 
-Clients and servers SHALL support the `UTF-8` [character encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) as outlined in the FHIR standard.
+Clients and servers SHALL support the `UTF-8` [character encoding](https://www.hl7.org/fhir/STU3/http.html#mime-type) as outlined in the FHIR standard.
 
 > FHIR uses `UTF-8` for all request and response bodies. Since the HTTP specification (section 3.7.1) defines a default character encoding of `ISO-8859-1`, requests and responses SHALL explicitly set the character encoding to `UTF-8` using the `charset` parameter of the MIME-type in the `Content-Type` header. Requests MAY also specify this charset parameter in the `Accept` header and/or use the `Accept-Charset` header.
 
@@ -181,7 +197,7 @@ Compression is requested by setting the `Accept-Encoding` header to `gzip`.
 
 {% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %} 
 
-### [Inter-version compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html) ###
+### [Inter-version compatibility](https://www.hl7.org/fhir/STU3/compatibility.html) ###
 
 Unrecognized search criteria SHALL always be ignored. As search criteria supported in a query are echoed back as part of the search response there is no risk in ignoring unexpected search criteria.
 
@@ -221,7 +237,7 @@ The Spine Security Proxy (SSP) SHALL perform the following checks to authenticat
 Providers SHALL use the following HTTP Header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
 
 
-### [Managing Return Content](https://www.hl7.org/fhir/DSTU2/http.html#return) ###
+### [Managing Return Content](https://www.hl7.org/fhir/STU3/http.html#return) ###
 
 Provider SHALL maintain resource state inline with the underlying system, including the state of any associated resources.
 
@@ -237,9 +253,28 @@ Severs SHALL default to the `return=representation` behaviour (i.e. returning th
 
 Servers SHOULD honour a `return=minimal` or `return=representation` preference indicated in the `Prefer` request header, if present.
 
+### Demographic Cross Checking ###
+
+Consumer systems SHALL compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
+
+The following data SHALL be cross checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.   
+
+| Item | Resource Field |
+| ---- | -------------- | 
+| Family Name | patient.name.family |
+| Given Name | patient.name.given |
+| Gender | patient.gender |
+| Birth Date | patient.birthDate |
+
+Additionally the following data MAY be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison:
+* Address and Postcode
+* Contact (telephone, mobile, email)
+
+All above may be redacted if patient is flagged on Spine as Sensitive demographics.
+
 ### Managing Resource Contention ###
 
-To facilitate the management of [resource contention](http://hl7.org/fhir/http.html#concurrency), Servers SHALL always return an `ETag` header with each resource including the resources `versionId`:
+To facilitate the management of [resource contention](http://hl7.org/fhir/STU3/http.html#concurrency), Servers SHALL always return an `ETag` header with each resource including the resources `versionId`:
 
 ```http
 HTTP 200 OK
@@ -268,6 +303,6 @@ For server's that don't persist historical versions of a resource (i.e. any reso
 
 ### Managing Return Errors ###
 
-In order to [manage return errors](http://hl7.org/fhir/http.html#2.1.0.4), FHIR defines an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) resource that can be used to convey specific detailed processable error information. An `OperationOutcome` may be returned with any HTTP `4xx` or `5xx` response, but is not always required.
+In order to [manage return errors](http://hl7.org/fhir/STU3/http.html#2.1.0.4), FHIR defines an [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resource that can be used to convey specific detailed processable error information. An `OperationOutcome` may be returned with any HTTP `4xx` or `5xx` response, but is not always required.
 
 

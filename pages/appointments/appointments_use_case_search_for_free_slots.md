@@ -47,9 +47,9 @@ Provider systems SHALL support the following include parameters:
 The following parameters SHALL be included in the request:
 
 - The `start` parameter SHALL only be included once in the request.
-- The `start` parameter SHALL be supplied with the `ge` search prefix. For example 'start=ge22-09-2017' which indicates that the consumer would like slots where the slot start date is on or after "22-09-2017".
+- The `start` parameter SHALL be supplied with the `ge` search prefix. For example 'start=ge2017-09-22' which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
 - The `end` parameter SHALL only be included once in the request.
-- The `end` parameter SHALL be supplied with the `le` search prefix. For example 'end=le26-09-2017' which indicates that the consumer would like slots where the slot end date is on or before "26-09-2017".
+- The `end` parameter SHALL be supplied with the `le` search prefix. For example 'end=le2017-09-26' which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
   
   ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
 
@@ -64,16 +64,28 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-### 'searchFilter' parameter ###
+### Enhanced slot filtering ###
 
-The `searchFilter` parameter MAY be included to allow the provider to perform additional filtering on available slots return. The following table outlines some search filters required for urgent care use cases. Additional searchFilter systems may be sent by consumers and providers should ignore any searchFilter parameters which they do not understand, an error SHALL NOT be returned.
+{% include important.html content="
+It is recognized that Provider Systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. <br/><br/>
+ 
+For the Appointment Management rc.3 specification, Provider Systems SHALL provide a mechanism by which GP practices can indicate which slots are available for booking via the GP Connect API specifically, thereby ensuring that their whole appointment book is not made available to external organisations.  
+ " %}
+ 
+The GP Connect programme is currently consulting with GP Principal System Providers to define a standard API interface to enable more granular slot filtering. A common example of this would be where a practice reserves a small number of slots specifically for use by Urgent Care appointment. 
 
-| System | Description |
+In view of this, an additional place-holder parameter `searchFilter` has been included in the Appointment Management rc.3 specification. It is envisaged that this parameter will in future be used to specify these additional filtering parameters through the use of agreed valueSets.
+ 
+The following provides some examples of search filters valueSets in consideration to meet requirements for future fine-grained slot filtering.  
+
+| ValueSet System URI | Description |
 | --- | --- |
-| consumer-type TBC | SHOULD be used to pass the type of sending system, for example '111 call centre' (For urgent care use cases). |
-| disposition TBC | SHOULD be used to indicate the disposition required for the patients care (For urgent care use cases). |
-| service-id TBC | SHOULD be used to convey the service-id required for the available slot (For urgent care use cases). |
+| (TBD) booking-organisation | Booking organisation identifier (ODS code) |
+| (TBD) consumer-type | Consuming Organisation type making the request, for example '111 call centre'. |
+| (TBD) disposition | Urgent Care Disposition Code required for the patients care. |
+| (TBD) service-id | Urgent Care Service-Id required for the available slot. |
 
+Where searchFilters are sent by consumers which are not explicitly supported in this specification (i.e. the valueSet used is not listed here) providers SHALL ignore any such searchFilter parameters and SHALL NOT return an error.
 
 ## Search for free slots on the wire ##
 

@@ -9,7 +9,9 @@ summary: "Use case for retrieval of a patient's appointments from an organisatio
 
 ## Use Case ##
 
-This specification describes a single use cases. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patients appointments. As part of IG requirements the view of a patients appointments has been restricted to only viewing future appointments, additional details are available on the [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
@@ -126,12 +128,13 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
+- SHALL only return appointments where the `start` dateTime is in the future (greater than the the current date and time).
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) resources in a `Bundle` of `type` searchset.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
-  - Where no `start` search parameter is specified the provider systems SHALL return all past, present and future appointments.
+  - Where no `start` search parameter is specified the provider systems SHALL return all present and future appointments.
   - Where only a lower boundary `start` search parameter (with prefix 'gt' or 'ge') is included in the request, provider SHALL return all data items from this date on, inclusive or exlusive as per the search prefix.
   - Where only an upper boundary `start` search parameter (with prefix 'le' or 'lt') is included in the request, provider SHALL return all data items up to this date, inclusive or exlusive as per the search prefix.
   - Where no search prefix, or only an equals (eq) search prefix, is sent with a single `start` search parameter, provider SHALL return all data items for that specified date.

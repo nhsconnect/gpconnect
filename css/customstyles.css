@@ -1168,3 +1168,21 @@ div.box.box1 {
 div.navbar-collapse .dropdown-menu > li > a {
     background-color: #FAFAFA;
 }
+
+.deprecated {
+	padding: 10px;
+	background-color: #edffdb;
+	border: solid 2px #2db300;
+	border-radius: 5px;
+}
+
+.deprecated table {
+	background-color: #FFFFFF;
+	margin-top: 10px;
+	width: 100%;
+}
+
+.deprecated h3 {
+	padding-top: 45px;
+	color: #269900;
+}

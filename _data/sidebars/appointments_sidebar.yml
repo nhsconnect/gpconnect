@@ -1,7 +1,7 @@
 entries:
 - title: Appointment Management
   product: Appointment Management<br/>
-  version: 1.0.0-rc.2
+  version: 1.0.0-rc.3
   folders:
 
   - title:
@@ -26,6 +26,9 @@ entries:
       output: web
     - title: Clinical scenarios
       url: /appointments_clinical_scenarios.html
+      output: web, pdf
+    - title: Information Governance
+      url: /appointments_ig.html
       output: web, pdf
     - title: Design decisions
       url: /appointments_design.html

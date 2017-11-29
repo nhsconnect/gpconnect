@@ -27,11 +27,9 @@ As outlined on the official [HL7&reg; FHIR](http://hl7.org/fhir/) website:
 
 ### [FHIR timelines](http://hl7.org/fhir/timelines.html) ###
 
-{% include note.html content="This document is written to accompany the currently released version of FHIR which is **Draft Standard For Trial Use (DSTU) 2**." %}
+{% include note.html content="This document is written to accompany the currently released version of FHIR which is **Standard For Trial Use (STU) 3**." %}
 
-FHIR is currently a draft standard and as such is expected to evolve and develop over time. As such the NHS Digital expects FHIR clients and servers (developed as part of GP Connect) to be maintained and uplifted to newer versions of the FHIR&reg; standard as they become available and are staged into the GP Connect programme.
-
-A pre-release version of FHIR (expected to be the basis of STU3) has been published as the [May 2016](http://hl7.org/fhir/2016May/) release. The FHIR community is expecting the finalised STU3 release to be made available in late 2016/early 2017.
+STU3 is a pre-release version of FHIR standard and as such is expected to evolve and develop over time. As such the NHS Digital expects FHIR clients and servers (developed as part of GP Connect) to be maintained and uplifted to newer versions of the FHIR&reg; standard as they become available and are staged into the GP Connect programme.
 
 When a new release of the FHIR standard has been published for use NHS Digital will carry out an impact assessment of all FHIR resources used by the GP Connect API project to determine the impact of transitioning to the new FHIR release. Following this assessment, the FHIR Resource library will be updated to include resources using this new release. NHS Digital will work with Consumers and Providers throughout this transition phase and are expected to maintain both versions of the FHIR release until it has been agreed that the old version can be deprecated.
 
@@ -49,65 +47,64 @@ The Health Level Seven (HL7&reg;) International standards body maintains a list 
 
 To help API implementers deal with the FHIR learning curve NHS Digital has worked to constrain the scope of the FHIR&reg; standard that is expected to be implemented in the first tranche of development work as follows: 
 
-1. [Resource](https://www.hl7.org/fhir/DSTU2/resource.html)
-	1. [Resource Identity](https://www.hl7.org/fhir/DSTU2/resource.html#id)
-	1. [Business Identifiers](https://www.hl7.org/fhir/DSTU2/resource.html#identifiers)
-2. [Domain Resource](https://www.hl7.org/fhir/DSTU2/domainresource.html)
+1. [Resource](https://www.hl7.org/fhir/STU3/resource.html)
+	1. [Resource Identity](https://www.hl7.org/fhir/STU3/resource.html#id)
+	1. [Business Identifiers](https://www.hl7.org/fhir/STU3/resource.html#identifiers)
+2. [Domain Resource](https://www.hl7.org/fhir/STU3/domainresource.html)
 	1. Common API
-		1. [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) profiled as gpconnect-patient-1.
-		2. [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) profiled as gpconnect-practitioner-1.
-		3. [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) profiled as gpconnect-organization-1.
-		4. [Location](https://www.hl7.org/fhir/DSTU2/location.html) profiled as gpconnect-location-1
+		1. [Patient](https://www.hl7.org/fhir/STU3/patient.html) profiled as gpconnect-patient-1.
+		2. [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) profiled as gpconnect-practitioner-1.
+		3. [Organization](https://www.hl7.org/fhir/STU3/organization.html) profiled as gpconnect-organization-1.
+		4. [Location](https://www.hl7.org/fhir/STU3/location.html) profiled as gpconnect-location-1
 	2. Care Record API
 		1. Please refer to the [Resource Type](#ResourceType) section of this document. 
 	3. Bookings API
-		1. [Schedule](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-schedule-1
-		2. [Slot](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-slot-1
-		3. [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) profiled as gpconnect-appointment-1
+		1. [Schedule](https://www.hl7.org/fhir/STU3/schedule.html) profiled as gpconnect-schedule-1
+		2. [Slot](https://www.hl7.org/fhir/STU3/slot.html) profiled as gpconnect-slot-1
+		3. [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) profiled as gpconnect-appointment-1
 	3. Task API
-		1. [Order](https://www.hl7.org/fhir/DSTU2/order.html) profiled as gpconnect-order-1
-3. [Resource Metadata](https://www.hl7.org/fhir/DSTU2/resource.html#Meta)
-	1. [profile](https://www.hl7.org/fhir/DSTU2/resource.html#metadata)
-	2. [version Id](https://www.hl7.org/fhir/DSTU2/resource.html#metadata)
-4. [Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html)
-5. [Data Types](https://www.hl7.org/fhir/DSTU2/datatypes.html)
-	1. [Primitive Types](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive)
+3. [Resource Metadata](https://www.hl7.org/fhir/STU3/resource.html#Meta)
+	1. [profile](https://www.hl7.org/fhir/STU3/resource.html#metadata)
+	2. [version Id](https://www.hl7.org/fhir/STU3/resource.html#metadata)
+4. [Bundle](https://www.hl7.org/fhir/STU3/bundle.html)
+5. [Data Types](https://www.hl7.org/fhir/STU3/datatypes.html)
+	1. [Primitive Types](https://www.hl7.org/fhir/STU3/datatypes.html#primitive)
 		1. All primitive types SHALL be supported.
-	2. [Complex Types](https://www.hl7.org/fhir/DSTU2/datatypes.html#complex) 
+	2. [Complex Types](https://www.hl7.org/fhir/STU3/datatypes.html#complex) 
 		1. The following complex types SHALL be supported.
-			1. [Identifier](https://www.hl7.org/fhir/DSTU2/datatypes.html#identifier)
-			2. [Coding](https://www.hl7.org/fhir/DSTU2/datatypes.html#codeableconcept)
-			2. [Codeable Concept](https://www.hl7.org/fhir/DSTU2/datatypes.html#coding)
-			3. [Period](https://www.hl7.org/fhir/DSTU2/datatypes.html#period)
+			1. [Identifier](https://www.hl7.org/fhir/STU3/datatypes.html#identifier)
+			2. [Coding](https://www.hl7.org/fhir/STU3/datatypes.html#codeableconcept)
+			2. [Codeable Concept](https://www.hl7.org/fhir/STU3/datatypes.html#coding)
+			3. [Period](https://www.hl7.org/fhir/STU3/datatypes.html#period)
 		4. It is expected that further complex types will be introduced as required to model structured data.
 6. Interactions
 	1.  Instance
-		1.  [READ](https://www.hl7.org/fhir/DSTU2/http.html#read)
-		2.  [UPDATE](https://www.hl7.org/fhir/DSTU2/http.html#update)
-		3.  [DELETE](https://www.hl7.org/fhir/DSTU2/http.html#delete)
+		1.  [READ](https://www.hl7.org/fhir/STU3/http.html#read)
+		2.  [UPDATE](https://www.hl7.org/fhir/STU3/http.html#update)
+		3.  [DELETE](https://www.hl7.org/fhir/STU3/http.html#delete)
 	2.  Type Level
-		1.  [CREATE](https://www.hl7.org/fhir/DSTU2/http.html#create)
-		2.  [SEARCH](https://www.hl7.org/fhir/DSTU2/http.html#search)
-7.  [Search](https://www.hl7.org/fhir/DSTU2/http.html#search)
-	1.  [Search Parameter Types](https://www.hl7.org/fhir/DSTU2/search.html#ptypes)
-		1.  [Date](https://www.hl7.org/fhir/DSTU2/search.html#date)
-		2.  [Token](https://www.hl7.org/fhir/DSTU2/search.html#token)
-		3.  [Reference](https://www.hl7.org/fhir/DSTU2/search.html#reference)
-	2. [Search Prefixes](https://www.hl7.org/fhir/DSTU2/search.html#prefix)
+		1.  [CREATE](https://www.hl7.org/fhir/STU3/http.html#create)
+		2.  [SEARCH](https://www.hl7.org/fhir/STU3/http.html#search)
+7.  [Search](https://www.hl7.org/fhir/STU3/http.html#search)
+	1.  [Search Parameter Types](https://www.hl7.org/fhir/STU3/search.html#ptypes)
+		1.  [Date](https://www.hl7.org/fhir/STU3/search.html#date)
+		2.  [Token](https://www.hl7.org/fhir/STU3/search.html#token)
+		3.  [Reference](https://www.hl7.org/fhir/STU3/search.html#reference)
+	2. [Search Prefixes](https://www.hl7.org/fhir/STU3/search.html#prefix)
 		1. lt (less than)
 		2. le (less or equal to)
 		3. gt (great than)
 		4. ge (greater or equal to)
 		5. eq (equal to)
 	3.  Parameters for all resources
-		1.  [_query](https://www.hl7.org/fhir/DSTU2/search.html#query)
-		2.  [_list](https://www.hl7.org/fhir/DSTU2/search.html#list)
+		1.  [_query](https://www.hl7.org/fhir/STU3/search.html#query)
+		2.  [_list](https://www.hl7.org/fhir/STU3/search.html#list)
 	4.  Search result parameters
-		1.  [_include](https://www.hl7.org/fhir/DSTU2/search.html#include) can be used internally inside a named `_query` operation.
-		2.  [_sort](https://www.hl7.org/fhir/DSTU2/search.html#sort) can be used internally inside a named `_query` operation.
+		1.  [_include](https://www.hl7.org/fhir/STU3/search.html#include) can be used internally inside a named `_query` operation.
+		2.  [_sort](https://www.hl7.org/fhir/STU3/search.html#sort) can be used internally inside a named `_query` operation.
 	
-3.  [Operations](https://www.hl7.org/fhir/DSTU2/operations.html)
-	1.  [Implementation Defined Operations](https://www.hl7.org/fhir/DSTU2/operations.html#extensibility)
+3.  [Operations](https://www.hl7.org/fhir/STU3/operations.html)
+	1.  [Implementation Defined Operations](https://www.hl7.org/fhir/STU3/operations.html#extensibility)
 
 {% include important.html content="It is fully expected that over time new areas of the FHIR&reg; standard will be brought into scope as new capabilities are requested and vendors understanding of FHIR&reg; standard matures. This is in-line with the agreed iterative/Agile engagement process that has been agreed between the NHS Digital and the Principal GP system vendors." %}
 
@@ -129,7 +126,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 2. Interactions
 	1. Instance
 		1. HISTORY
-		2. [VREAD](https://www.hl7.org/fhir/DSTU2/http.html#vread)
+		2. [VREAD](https://www.hl7.org/fhir/STU3/http.html#vread)
 	2. Type Level
 		1. HISTORY
 	3. Whole System
@@ -157,12 +154,11 @@ GP Connect provider systems are not expected to implement the following aspects 
 		7. _content
 		8. _filter
 	3. Search result parameters
-		1. _revinclude
-		2. _count		
-		3. _summary
-		4. _elements
-		5. _contained 
-		6. _containedType
+		1. _count		
+		2. _summary
+		3. _elements
+		4. _contained 
+		5. _containedType
 	4. Chained parameters
 	5. Paging / Page Count
 4. Resource Metadata
@@ -174,7 +170,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 
 ### Use of Must-Support flag ###
 
-Some resource profiles used in GP Connect make use of the [Must-Support](https://www.hl7.org/fhir/DSTU2/conformance-rules.html#mustSupport) flag. 
+Some resource profiles used in GP Connect make use of the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) flag. 
 
 Where a Must-Support flag is present on a resource element, a `consumer` system SHALL populate the field in the request body if data is available to do so, irrespective of the fact that field cardinality may be `0..1` or `0..*`. 
 
@@ -184,21 +180,19 @@ For example, see the [Register a patient request body](foundations_use_case_regi
 
 ### FHIR System conformance ###
 
-Servers SHALL provide a read-only [FHIR Conformance resource](https://www.hl7.org/fhir/DSTU2/conformance.html) that identifies all of the profiles and operations that the server supports for each resource type.
+Servers SHALL provide a read-only [FHIR CapabilityStatement resource](https://www.hl7.org/fhir/STU3/capabilitystatement.html) that identifies all of the profiles and operations that the server supports for each resource type.
 
-A servers conformance statement SHALL be available using the following [conformance interactions](http://hl7.org/fhir/http.html#conformance):
+A servers capability statement SHALL be available using the following [capabilities interactions](http://hl7.org/fhir/STU3/http.html#capabilities):
 
 ```
 GET [base]/metadata {?_format=[mime-type]}
 ```
 
-Refer to [Foundations - Get The FHIR Conformance Profile](foundations_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR conformance profile.
-
-{% include roadmap.html content="NHS Digital is evaluating the benefits of providing a centrally hosted FHIR server to act as a definition repository for *Content* and *Operation Control* [Infrastructure Resources](https://www.hl7.org/fhir/DSTU2/infrastructure.html). However, this is out of scope for the initial GP Connect deployments." %}
+Refer to [Foundations - Get The FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR capbility statement.
 
 ### FHIR Resource conformance ###
 
-To help a consumer find the correct set of reports for a use-case, a provider of resources SHALL, for any profile declared in [Conformance.profile](https://www.hl7.org/fhir/DSTU2/profiling.html#2.13.0.3.2) mark resources with profile assertions documenting the profile(s) they conform to. A provider of resources SHOULD also ensure that any resource instance that would reasonably be expected to conform to the declared profiles SHOULD be published in this form.
+To help a consumer find the correct set of reports for a use-case, a provider of resources SHALL, for any profile declared in [CapbilityStatement.profile](https://www.hl7.org/fhir/STU3/profiling.html#2.13.0.3.2) mark resources with profile assertions documenting the profile(s) they conform to. A provider of resources SHOULD also ensure that any resource instance that would reasonably be expected to conform to the declared profiles SHOULD be published in this form.
 
 ### GP Connect FHIR API conformance ###
 
@@ -222,11 +216,11 @@ When an response bundle contains multiple resources, one or more of which cannot
 
 ### Resource Data Types ###
 
-The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/DSTU2/datatypes.html) that are used for the resource elements.
+The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/STU3/datatypes.html) that are used for the resource elements.
 
 The user locale (i.e. user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems SHALL NOT effect the FHIR on the wire representation of any data types (especially date-time and number formats).
 
-Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) respresentation warrant further consideration and SHALL be taken into consideration when designing and constructing FHIR resources.
+Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/STU3/datatypes.html#primitive) respresentation warrant further consideration and SHALL be taken into consideration when designing and constructing FHIR resources.
 
 For example:
 
@@ -238,15 +232,15 @@ For example:
 - Dates can be partial dates (e.g. just year or year + month).
 - Precision of the decimal value has signficance.
 - Primitive types other than string SHALL NOT have leading or trailing whitespace.
-- [Use of null](https://www.hl7.org/fhir/DSTU2/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/DSTU2/datatypes.html#1.19.0.1.1)
+- [Use of null](https://www.hl7.org/fhir/STU3/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/STU3/datatypes.html#1.19.0.1.1)
 
 ### Resource Narrative ###
 
-The FHIR [resource narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) is not currently expected to be populated. 
+The FHIR [resource narrative](https://www.hl7.org/fhir/STU3/narrative.html) is not currently expected to be populated. 
 
 ### Resource References ###
 
-The FHIR resource model includes [resource references](http://hl7.org/fhir/references.html) from one resource to another.
+The FHIR resource model includes [resource references](http://hl7.org/fhir/STU3/references.html) from one resource to another.
 
 A reference can be either:
 
@@ -269,17 +263,17 @@ Resource references SHALL include a short human-readable `display` field for ide
 
 ### Resource Metadata ###
 
-Servers SHALL provide the `profile` [metadata](https://www.hl7.org/fhir/DSTU2/resource.html#Meta) for each resource, asserting that the content conforms to one of the GP Connect resource profiles.  
+Servers SHALL provide the `profile` [metadata](https://www.hl7.org/fhir/STU3/resource.html#Meta) for each resource, asserting that the content conforms to one of the GP Connect resource profiles.  
 
 Servers SHALL provide the `version Id` metadata for each item. This SHALL change each time the content of the resource changes.
 
 Consumer creating or amending a resource SHALL provide the `profile` metadata details within the sent resource. The `profile` metadata should be checked for by the Provider to ensure predictable process and for forward compatibility when a server can handle multiple profiles for the same type of resource.
 
-Clients SHALL utilise the `version Id` when performing updates to allow [management of resource contention](https://www.hl7.org/fhir/DSTU2/http.html#concurrency) and to protect against [Lost Updates](http://www.w3.org/1999/04/Editing/).
+Clients SHALL utilise the `version Id` when performing updates to allow [management of resource contention](https://www.hl7.org/fhir/STU3/http.html#concurrency) and to protect against [Lost Updates](http://www.w3.org/1999/04/Editing/).
 
 ### Resource Transactions ###
 
-When performing an update or create [resource transactions](https://www.hl7.org/fhir/DSTU2/http.html#transactional-integrity), servers:
+When performing an update or create [resource transactions](https://www.hl7.org/fhir/STU3/http.html#transactional-integrity), servers:
 
 -	SHALL **validate the content against valid profiles** and business rules before creating/updating the resource.
 -	MAY apply business rules that alter the content.
@@ -289,11 +283,11 @@ Servers SHALL validate the existence of any referenced resources when creating o
 
 Refer to the GitHub hosted [GP Connect FHIR Repository](https://github.com/nhsconnect/gpconnect-fhir) for the published FHIR profiles.
 
-Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/DSTU2/validation.html#jar) page for the most upto date details on how FHIR resources can be validated. 
+Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/STU3/validation.html#jar) page for the most upto date details on how FHIR resources can be validated. 
 
 Servers SHALL provide a read interaction for every resource it accepts update interactions on.
 
-Consumers SHALL follow the pattern described in the [Transactional Integrity](https://www.hl7.org/fhir/DSTU2/http.html#transactional-integrity) section of the base FHIR specification, built on top of version-aware updates, for updating resources.
+Consumers SHALL follow the pattern described in the [Transactional Integrity](https://www.hl7.org/fhir/STU3/http.html#transactional-integrity) section of the base FHIR specification, built on top of version-aware updates, for updating resources.
 
 ## FHIR Resource Interactions ##
 
@@ -348,13 +342,13 @@ Servers SHALL produce the following main [HTTP Status Codes](http://www.iana.org
 | `500` | Internal Server Error |
 | `501` | Not Implemented |
 
-#### [Rejecting Updates](https://www.hl7.org/fhir/DSTU2/http.html#2.1.0.10.1) ####
+#### [Rejecting Updates](https://www.hl7.org/fhir/STU3/http.html#2.1.0.10.1) ####
 
-[OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) may be returned with any HTTP `4xx` or `5xx` response, but is not required - many of these errors may be generated by generic server frameworks underlying a FHIR server.
+[OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html) may be returned with any HTTP `4xx` or `5xx` response, but is not required - many of these errors may be generated by generic server frameworks underlying a FHIR server.
 
 Servers are permitted to reject update interactions because of integrity concerns or other business rules, and return HTTP status codes accordingly (usually a `422`).
 
-As outlined in the FHIR specification, any of these errors SHOULD be accompanied by an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail concerning the issue.
+As outlined in the FHIR specification, any of these errors SHOULD be accompanied by an [OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html) resource that provides additional detail concerning the issue.
 
 Refer to [FHIR Guidance - Error Handling](development_fhir_error_handling_guidance.html) for full details of error codes that SHALL be used when returning an operation outcome error.
 
@@ -364,7 +358,7 @@ Refer to [FHIR Guidance - Error Handling](development_fhir_error_handling_guidan
 VERB [base]/[compartment_type]/[id]/[type]{?_format=[mime-type]}
 ```
 
-Each resource type may belong to one or more logical [compartments](http://hl7.org/fhir/DSTU2/compartments.html). A compartment is a logical grouping of resources which share a common property.
+Each resource type may belong to one or more logical [compartments](http://hl7.org/fhir/STU3/compartmentdefinition.html). A compartment is a logical grouping of resources which share a common property.
 
 Servers SHALL support the `Patient` compartment for `Appointment` access.
 
@@ -385,7 +379,7 @@ GET [base]/Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{s
 
 ## Read Resource ##
 
-A [resource read](https://www.hl7.org/fhir/DSTU2/http.html#read) takes the following format:
+A [resource read](https://www.hl7.org/fhir/STU3/http.html#read) takes the following format:
 
 ```http
 GET [base]/[type]/[id]{?_format=[mime-type]}
@@ -465,7 +459,7 @@ GET [base]/Patient/1A6E1B1C-6340-4663-926C-9CD1306EAAF8?_format=application/xml+
 
 ## Create Resource ##
 
-To [create](https://www.hl7.org/fhir/DSTU2/http.html#create) a new resource a RESTful **POST** operation with a request body SHALL be utilised.   
+To [create](https://www.hl7.org/fhir/STU3/http.html#create) a new resource a RESTful **POST** operation with a request body SHALL be utilised.   
 
 ```http
 POST [base]/[resourcetype]
@@ -496,7 +490,7 @@ Refer to [Book an appointment](appointments_use_case_book_an_appointment.html) f
 
 ## Update Resource ##
 
-To [update](https://www.hl7.org/fhir/DSTU2/http.html#update) an existing resource, a RESTful **PUT** operation with a request body SHALL be utilised.
+To [update](https://www.hl7.org/fhir/STU3/http.html#update) an existing resource, a RESTful **PUT** operation with a request body SHALL be utilised.
 
 ```http
 PUT [base]/[resourcetype]/[id]
@@ -517,7 +511,7 @@ Refer to [Amend an appointment](appointments_use_case_amend_an_appointment.html)
 
 ## Delete Resource ##
 
-To [delete](https://www.hl7.org/fhir/DSTU2/http.html#delete) an existing resource, a RESTful **DELETE** operation with no request body SHALL be utilised.
+To [delete](https://www.hl7.org/fhir/STU3/http.html#delete) an existing resource, a RESTful **DELETE** operation with no request body SHALL be utilised.
 
 ```http
 DELETE [base]/[resourcetype]/[id]
@@ -534,13 +528,13 @@ DELETE [base]/[resourcetype]/[id]
 
 ## Operations ##
 
-[Operations](https://www.hl7.org/fhir/DSTU2/operations.html) are used (a) where the server needs to play an active role in formulating the content of the response, not merely return existing information, or (b) where the intended purpose is to cause side effects such as the modification of existing resources, or creation of new resources.
+[Operations](https://www.hl7.org/fhir/STU3/operations.html) are used (a) where the server needs to play an active role in formulating the content of the response, not merely return existing information, or (b) where the intended purpose is to cause side effects such as the modification of existing resources, or creation of new resources.
 
-As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/DSTU2/profiling.html#api) section of the FHIR&reg; standard, the NHS Digital has decided to prefix it's operation names with a short prefix (e.g. `gpc`) followed by a "." to reduce the likelihood of name conflicts.
+As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/STU3/profiling.html#api) section of the FHIR&reg; standard, the NHS Digital has decided to prefix it's operation names with a short prefix (e.g. `gpc`) followed by a "." to reduce the likelihood of name conflicts.
 
 ## Search Resources ##
 
-A simple [search](https://www.hl7.org/fhir/DSTU2/http.html#search) is executed by performing a `GET` request optionally accompanied by zero or more name-value URL encoded parameters:
+A simple [search](https://www.hl7.org/fhir/STU3/http.html#search) is executed by performing a `GET` request optionally accompanied by zero or more name-value URL encoded parameters:
 
 ```http
 GET [base]/[resourcetype]?name=value&...
@@ -556,7 +550,7 @@ GET [base]/Patient/1A6E1B1C-6340-4663-926C-9CD1306EAAF8/Appointment?start=ge2014
 
 ### Chained Parameters ###
 
-Servers SHALL support searching by a [chained](https://www.hl7.org/fhir/DSTU2/search.html#2.1.1.4.13) `Patient` identifier parameter for references to `Patient` resources that conform to the `GP-Patient` profile (and therefore have an NHS Number identifier). For example:
+Servers SHALL support searching by a [chained](https://www.hl7.org/fhir/STU3/search.html#2.1.1.4.13) `Patient` identifier parameter for references to `Patient` resources that conform to the `GP-Patient` profile (and therefore have an NHS Number identifier). For example:
 
 ```http
 GET [base]/AllergyIntolerance?patient.identifier=http://fhir.nhs.net/Id/nhs-number|1234569876
@@ -608,7 +602,7 @@ If a Patient resource for NHS number 9900002831 exists then the server SHALL ret
 
 ### Advanced Search ###
 
-Servers SHALL implement the [_query](https://www.hl7.org/fhir/DSTU2/search.html#query) search parameter to enable custom named search profiles to be defined and used which describe a specific query operation.
+Servers SHALL implement the [_query](https://www.hl7.org/fhir/STU3/search.html#query) search parameter to enable custom named search profiles to be defined and used which describe a specific query operation.
 
 ```http
 GET [base]/[resourcetype]?_query=[query_name]&name=value&...

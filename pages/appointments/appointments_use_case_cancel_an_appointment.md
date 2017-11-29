@@ -15,6 +15,8 @@ The typical flow to cancel an appointment is:
  2. Search for `Appointment` resources for the `Patient` resource.
  3. Choose an `Appointment` resource and cancel it by amending the `status` to `cancelled`.
 
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patients appointments. As a result of IG requirements the cancel appointments capability has been restricted to future appointments, additional details are available on the [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+ 
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization.
@@ -31,6 +33,8 @@ The Consumer system:
 - SHALL have previously found the appointment id using [Retrieve a patient's appointments](https://nhsconnect.github.io/gpconnect/appointments_use_case_retrieve_a_patients_appointments.html).
 
 ## API Usage ##
+
+The Consumer System SHALL only use the cancel appointment capability to cancel future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
 ### Request Operation ###
 
@@ -137,6 +141,7 @@ The Provider system:
 
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
+- SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 

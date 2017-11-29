@@ -245,9 +245,10 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `POST`
 	- `PUT`
 	- `DELETE`^
-	- `PATCH`^ (which is expected in a future FHIR release)
+	- `PATCH`^
 	- `OPTION`^ (which is used in FHIR to retrieve the servers conformance statement)
- **^** HTTP verbs will be made available after the initial GP Connect FoT go-live.
+
+    **^** HTTP verbs will be made available after the initial GP Connect FoT go-live.
 - Request and response HTTP payloads SHALL NOT be modified, as this would require the proxy to have detained knowledge of payload structure and transport encoding. Furthermore, payload modification may introduce problems with asserting digital signatures/payload provenance in the future.
 - Request and response HTTP headers SHALL NOT be modified.
 - The proxy SHOULD validate and SHALL log for audit purposes user and system claims provided in the HTTP authorization header as an oAuth bearer token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).
@@ -257,7 +258,6 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - As outlined in [RFC 6585](http://tools.ietf.org/html/rfc6585) HTTP status code 429 SHALL be used to notify consumer systems that their throttling limit has been reached or that the server is experiencing a DoS attack.
 	- `429`	Too Many Requests
 - HTTP status code `503` SHALL be returned if the cumulative load on the provider system exceeds a global throttling limit or the server is experiencing a DDoS attack.
-- [FHIR DSTU2](http://hl7.org/fhir/index.html) standard will be the first API standard that will be mediated via the proxy.
 - As a variety of payload types (both binary and textual) will be requested via the proxy the proxy SHALL NOT restrict the content types or payload size that can be transported.
 - Additional HTTP headers SHALL be added into the HTTP request/response for the purpose of allowing the proxy system to disclose information lost in the proxying process (e.g. the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](https://tools.ietf.org/html/rfc7239).
 - To enable interoperability with existing implementations of FHIR the proxy SHALL support the return of chunked transfers (utilising the `Transfer-Encoding: chunked` HTTP header) to stream data back to the client without specifying explicitly a payload content length.

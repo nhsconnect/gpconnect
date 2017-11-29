@@ -86,7 +86,13 @@ The following data-elements are mandatory (i.e. data SHALL be present):
 The following data-elements SHOULD be populated if available:
 - Within the patient resource of the `registerPatient` parameter:
   - the `telecom` element SHOULD be populated
+	- the consumer SHALL NOT populate the `telecom.use` value with `old`
+	- the consumer SHOULD populate only one `telecom` per `telecom.use` value
+
   - the `address` element SHOULD be populated
+	- the consumer SHALL NOT populate the `address.use` value with `old`
+	- the consumer SHOULD populate only one `address` per `address.use` value
+	- the `address.use` value `home` SHOULD be mapped to PDS Address Use `HP` (Primary Home)
 
   {% include note.html content="The consumer SHOULD include telecom and address information within the temporary patient registration so that the receiving system has relevant contact details for the patient." %}
   {% include note.html content="The provider system receiving the telecom and address details SHOULD store these details in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration." %}

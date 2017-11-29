@@ -9,12 +9,12 @@ summary: "Details of the common error handling pattern(s) across the GP Connect 
 
 ### Operation outcome usage ####
 
-In the event of an error, provider systems SHALL respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1) 
+In the event of an error, provider systems SHALL respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) 
 
 The `GPConnect-OperationOutcome-1`:
-- SHALL contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/DSTU2/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
-- SHALL contain a definition of the type of error in the `OperationOutcome.issue.code` element, providing a value from the [issue-type](http://hl7.org/fhir/DSTU2/valueset-issue-type.html) value set. 
-- SHALL contain details of the `Spine error code` in the `OperationOutcome.issue.details.coding.code` and `OperationOutcome.issue.details.coding.display` fields. These shall be taken from the standard set of NHS Spine error codes as defined in the [spine-error-or-warning-code-1](https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1) value set. The spine error and warning codes provide a greater degree of error handling granularity, and also ensure a standardised error handling approach across NHS APIs. 
+- SHALL contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/STU3/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
+- SHALL contain a definition of the type of error in the `OperationOutcome.issue.code` element, providing a value from the [issue-type](http://hl7.org/fhir/STU3/valueset-issue-type.html) value set. 
+- SHALL contain details of the `Spine error code` in the `OperationOutcome.issue.details.coding.code` and `OperationOutcome.issue.details.coding.display` fields. These shall be taken from the standard set of NHS Spine error codes as defined in the [spine-error-or-warning-code-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) value set. The spine error and warning codes provide a greater degree of error handling granularity, and also ensure a standardised error handling approach across NHS APIs. 
 - SHOULD provide additional diagnostic details of the error in `OperationOutcome.diagnostics` property where such securely provides additional error context for consumer applications.
 
 
@@ -43,14 +43,14 @@ If an invalid NHS Number value is supplied to the `$gpc.getcarerecord` Operation
 {
 	"resourceType": "OperationOutcome",
 	"meta": {
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
 	},
 	"issue": [{
 		"severity": "error",
 		"code": "value",
 		"details": {
 			"coding": [{
-				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "INVALID_NHS_NUMBER",
 				"dispay": "Invalid NHS number"
 			}]
@@ -67,14 +67,14 @@ For example if a valid NHS number value is supplied to the `$gpc.getcarerecord` 
 {
 	"resourceType": "OperationOutcome",
 	"meta": {
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
 	},
 	"issue": [{
 		"severity": "error",
 		"code": "not-found",
 		"details": {
 			"coding": [{
-				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "PATIENT_NOT_FOUND",
 				"display": "Patient not found"
 			}]
@@ -95,7 +95,7 @@ This is a catch all where are request for a resource instance cannot be found at
 		"code": "not-found",
 		"details": {
 			"coding": [{
-				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "NO_RECORD_FOUND",
 				"display": "No record found"
 			}]
@@ -122,14 +122,14 @@ For example if the patient has requested that their record not be shared then th
 {
 	"resourceType": "OperationOutcome",
 	"meta": {
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
 	},
 	"issue": [{
 		"severity": "error",
 		"code": "forbidden",
 		"details": {
 			"coding": [{
-				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "NO_PATIENT_CONSENT",
 				"display": "Patient has not provided consent to share data" 
 			}]
@@ -165,14 +165,14 @@ For example, when using the 'Book an appointment' API use case, a consumer inclu
 {
 	"resourceType": "OperationOutcome",
 	"meta": {
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
 	},
 	"issue": [{
 		"severity": "error",
 		"code": "invalid",
 		"details": {
 			"coding": [{
-				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "REFERENCE_NOT_FOUND",
 				"display": "FHIR reference not found"
 			}]
@@ -208,14 +208,14 @@ For example if the request contained a null `aud` claim in the JWT, then the fol
  {
 	"resourceType": "OperationOutcome",
 	"meta": {
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
 	},
 	"issue": [{
 		"severity": "error",
 		"code": "invalid",
 		"details": {
 			"coding": [{
-				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "BAD_REQUEST",
 				"display": "Bad request"
 			}]
@@ -249,14 +249,14 @@ For example an unexpected internal exception is thrown by either an Operation or
  {
 	"resourceType": "OperationOutcome",
 	"meta": {
-		"profile": ["https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"]
+		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
 	},
 	"issue": [{
 		"severity": "error",
 		"code": "exception",
 		"details": {
 			"coding": [{
-				"system": "https://fhir.nhs.uk/ValueSet/spine-error-or-warning-code-1",
+				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "INTERNAL_SERVER_ERROR",
 				"display": "Internal server error"
 			}]
