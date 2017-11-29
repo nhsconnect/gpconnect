@@ -72,7 +72,7 @@ It is recognized that Provider Systems must offer GP practices more functionalit
 For the Appointment Management rc.3 specification, Provider Systems SHALL provide a mechanism by which GP practices can indicate which slots are available for booking via the GP Connect API specifically, thereby ensuring that their whole appointment book is not made available to external organisations.  
  " %}
  
-The GP Connect programme is currently consulting with principle clinical system providers to define a standard API interface to enable more granular slot filtering. A common example of this would be where a practice reserves a small number of slots specifically for use by Urgent Care appointment. 
+The GP Connect programme is currently consulting with GP Principal System Providers to define a standard API interface to enable more granular slot filtering. A common example of this would be where a practice reserves a small number of slots specifically for use by Urgent Care appointment. 
 
 In view of this, an additional place-holder parameter `searchFilter` has been included in the Appointment Management rc.3 specification. It is envisaged that this parameter will in future be used to specify these additional filtering parameters through the use of agreed valueSets.
  
