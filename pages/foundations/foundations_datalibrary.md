@@ -45,7 +45,7 @@ N/A - No fhir resource is sent within the request
 ## ***[Register a patient](foundations_use_case_register_a_patient.html)*** ##
 
 ### Request ###
-* [gpconnect-registerpatient-operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/gpconnect-registerpatient-operation-1) (based on [FHIR Parameters](https://www.hl7.org/fhir/STU3/parameters.html)) ![STU3](images/stu3.png)
+* [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1) (based on [FHIR Parameters](https://www.hl7.org/fhir/STU3/parameters.html)) ![STU3](images/stu3.png)
   * [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) (based on [FHIR Patient](https://www.hl7.org/fhir/STU3/patient.html)) ![STU3](images/stu3.png)
 
 ### Response ###
