@@ -7,7 +7,7 @@ permalink: appointments_release_notes.html
 summary: "Release notes for the various versions of the Appointment Management capability."
 ---
 
-#### [1.0.0-rc.3 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1)
+#### [1.0.0-rc.3 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1) 
 
 {% include important.html content="Release 1.0.0-rc.3 contains a change of FHIR version from DSTU2 to STU3 as the base fhir version for the GP Connect API Capbility." %}
 
