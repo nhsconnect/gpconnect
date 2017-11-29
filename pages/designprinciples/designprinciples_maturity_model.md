@@ -7,31 +7,31 @@ permalink: designprinciples_maturity_model.html
 summary: High-level maturity model for GP Connect systems
 ---
 
-{% include important.html content="All delivery dates are indicative and subject to on-going review." %}
+{% include important.html content="The maturity model is currently under review and will be updated before the end of January 2018." %}
 
-The maturity roadmap of a compliant Principal GP system is expected to follow the following FHIR&reg; and business capability maturity stages as follows:
+The maturity roadmap of a compliant principal GP system is expected to follow these FHIR&reg; and business capability maturity stages:
 
 ## Stage 1 - current ##
-- Access Record (v1.0), Appointment (v1.0) and Task (v1.0) capabilities.
- - Access Record includes: HTML Patient Summary, Encounters, Clinical Items, Problems and Issues, Allergies and Adverse Reactions, Medications, Referrals, Observations, Immunisations & Administrative Items.
-- Spine Security Proxy (SSP) integration.
-- Organisational Data Sharing Agreement checking in the SSP.
-- RBAC Auditing of local user roles in the JWT.
+- Access Record (v1.0), Appointment (v1.0) and Task (v1.0) capabilities
+ - Access Record includes: HTML Patient Summary, Encounters, Clinical Items, Problems and Issues, Allergies and Adverse Reactions, Medications, Referrals, Observations, Immunisations & Administrative Items
+- Spine Security Proxy (SSP) integration
+- Organisational Data Sharing Agreement checking in the SSP
+- Role Based Access Control (RBAC) auditing of local user roles in the JSON Web Tokens (JWT)
  
 ## Stage 2 ##
-- Access Record (v2.0) with bundled structured resources.
- - May include some improvements to HTML content such as:  HTML Warnings, Key Indicators, Current Recalls, Patient Details, Investigations, Medications Sections Improvements, Date-Range Improvements.
- - HTML View Clinical Safety, Cross-Vendor Consistency Changes.
- - Structured content for current Medications and Allergies (more resources to follow, see priortisation list below)
-- CORS Support in the SSP.
-- RBAC Auditing of Spine Smartcard user roles in the JWT.
+- Access Record (v2.0) with bundled structured resources
+ - May include some improvements to HTML content such as:  HTML Warnings, Key Indicators, Current Recalls, Patient Details, Investigations, Medications Sections Improvements, Date-Range Improvements
+ - HTML View Clinical Safety, Cross-Vendor Consistency Changes
+ - Structured content for current Medications and Allergies (more resources to follow, see prioritisation list below)
+- Cross-origin resource sharing (CORS) support in the SSP
+- RBAC Auditing of Spine Smartcard user roles in the JWT
 
 ## Stage 3 ##
-- Unbundled direct read-only access to specific resources (see priortisation list below).
+- Unbundled direct read-only access to specific resources (see prioritisation list below)
 
 
 # Prioritised structured content #
-This is the working list of structured resources required for Access Record v2.0 and Stage 3 RESTful access
+This is the working list of structured resources required for Access Record v2.0 and Stage 3 RESTful access.
 
 ## Priority confirmed ##
 
