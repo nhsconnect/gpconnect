@@ -7,37 +7,37 @@ permalink: foundations.html
 summary: "All about the common foundation capabilities."
 ---
 
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
+{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR&reg; based APIs." %}
 
 ## Purpose ##
 
-The foundations capability cover the basic API requirements and prerequisites to utilise the GP Connect APIs.
+The Foundations capability covers the basic API requirements and prerequisites needed to use the GP Connect APIs.
 
-{% include important.html content="In order to successfully make use of the GP Connect APIs, initially a level of pre-existing accredited Spine connectivity will be required along with some FHIR foundation API capabilities." %}
+{% include important.html content="To use the GP Connect APIs, you need a level of pre-existing accredited Spine connectivity along with some FHIR foundation API capabilities." %}
 
-{% include roadmap.html content="Over time the necessity to have access to pre-existing spine services (i.e. PDS and SDS integration) is likely to be replaced by GP Connect/FHIR based equivalents." %}
+{% include roadmap.html content="The necessity to have access to pre-existing Spine services (for example, Personal Demographics Service (PDS) and Spine Directory Service (SDS) integration) is likely to be replaced by GP Connect/FHIR based equivalents." %}
 
 ## Prerequisites ##
 
 ### PDS ###
 
-You'll need to be able to provide a verified NHS Number to use an API. This can be achieved using a spine accredited system, a DBS batch-traced record (CSV), or using a Spine Mini Services Provider (HL7v3).
+You need to be able to provide a verified NHS number to use an API. You can do this using a Spine accredited system, a Demographics Batch Service (DBS) batch-traced record (CSV), or using a Spine Mini Services Provider (HL7v3).
 
 ### SDS / ODS ###
 
-In order to resolve a given GP Practice organisation to their URI you'll need to be able to do a spine SDS query (LDAP) using the practice's ODS Code to perform an [SDS End Point Lookup](integration_spine_directory_service.html).
+To resolve a given GP Practice organisation to its URI you need to be able to do a Spine SDS query (LDAP) using the practice's ODS code to perform an [SDS End Point Lookup](integration_spine_directory_service.html).
 
 ### FHIR ###
 
-In order to be a compliant FHIR server, provider systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) profile.
+To be a compliant FHIR server, provider systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) profile.
 
-Please also refer to [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html) for full details on the common FHIR API patterns used throughout all the GP Connect APIs.
+Refer to [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html) for full details on the common FHIR API patterns used throughout all the GP Connect APIs.
 
 ## Scenarios ##
 
-- Search for a patient by `NHS Number`.
-- Search for an organisation by `ODS Code`.
-- Search for a practitioner by `SDS UserID`.
+- Search for a patient by `NHS Number`
+- Search for an organisation by `ODS Code`
+- Search for a practitioner by `SDS UserID`
 
 ### Use Cases ###
 
@@ -48,7 +48,7 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 
 ## SPINE Interactions
 
-The Foundation capability message set includes the following set of spine interactions:
+The Foundations capability message set includes the following set of Spine interactions:
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
@@ -62,7 +62,7 @@ The Foundation capability message set includes the following set of spine intera
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location` | 
 
 
-The Register Patient API Use Case, which is included in the Foundations capabilty has a seperate "Register Patient" message set:
+The Register Patient API use case, which is included in the Foundations capability, has a separate "Register Patient" message set:
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
