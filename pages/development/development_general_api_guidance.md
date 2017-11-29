@@ -23,6 +23,12 @@ At a high-level the maturity roadmap of a compliant Principal GP system is expec
 
 Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity_model.html) for full details.
 
+## General standards ##
+
+Information on the technical standards that SHALL be conformed to can be found in the sections below and throughout the GP Connect specification.
+
+{% include important.html content="Any additional principles highlighted in the GP Connect specification MUST take precedence over those defined in these technical standards." %}
+
 ## Internet standards ##
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
