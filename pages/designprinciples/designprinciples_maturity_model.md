@@ -55,4 +55,4 @@ This is the working list of structured resources required for Access Record v2.0
 14. Referral
 15. Patient
 
-{% include important.html content="It is expected that unbundled direct read-only access to resources will be undertaken in-line with the high-level approach being pursued in other jurisdictions (i.e. Project Argonaut's and specifically the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide))." %} 
+{% include important.html content="It is expected that unbundled direct read-only access to resources will be undertaken in line with the high-level approach being pursued in other jurisdictions (for example, Project Argonaut and specifically the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide))." %} 
