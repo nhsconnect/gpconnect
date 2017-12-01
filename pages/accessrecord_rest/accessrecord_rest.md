@@ -4,12 +4,10 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_rest_sidebar
 permalink: accessrecord_rest.html
-summary: "Introduction to the GP Connect Access Record REST capability."
+summary: "Introduction to the GP Connect Access Record REST capability pack."
 ---
 
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
-
-FHIR resources in scope for RESTful care record access ([Maturity Model Stage 3.](designprinciples_maturity_model.html#stage-3-q4-2016-into-q1-2017)) are:
+FHIR&reg; resources in scope for RESTful care record access ([Maturity Model Stage 3](designprinciples_maturity_model.html#stage-3-q4-2016-into-q1-2017)) are:
 
 ## Tranche 1. Structured ##
 
@@ -34,16 +32,16 @@ FHIR resources in scope for RESTful care record access ([Maturity Model Stage 3.
 
 ### Purpose ###
 
-This capability delivers the ability to access structured primary care record data for a given patient in order to provide new interoperability opportunities between primary care and other sectors. Access to the structured and coded record will allow much tighter interoperability than the basic HTML Views described above.
+This capability pack delivers the ability to access structured primary care record data for a given patient in order to provide new interoperability opportunities between primary care and other sectors. Access to the structured and coded record will allow much tighter interoperability than the basic HTML views described above.
 
 ### Use Cases ###
 
-- A health professional is able to view and import allergies into their local patient record system.
-- Information is rendered natively in a system rather than embedded in a HTML view to provide a more seamless experience, e.g. mobile device.
-- Information offered in a structured and coded form by the API for the purposes of reconciling medications, problems and allergies e.g. as part of an inpatient spell.
+- A health professional is able to view and import allergies into their local patient record system
+- Information is rendered natively in a system rather than embedded in an HTML view to provide a more seamless experience (for example, a mobile device)
+- Information offered in a structured and coded form by the API for the purposes of reconciling medications, problems and allergies (for example, as part of an inpatient spell)
 
 ### Domain Message Specification ###
 
-Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles utilised:
+Please refer to the Domain Message Specification (DMS) bundle for details of the FHIR profiles used:
 
 {% include dms.html link="http://data.developer.nhs.uk/fhir/candidaterelease-240117-getrecordstructured" content="Get Care Record Structured." %}
