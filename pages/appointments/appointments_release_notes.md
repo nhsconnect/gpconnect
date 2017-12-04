@@ -43,7 +43,7 @@ summary: "Release notes for the various versions of the Appointment Management c
 
 - [Clinical scenarios](appointments_clinical_scenarios.html)
   - Uplifted wording to include the GP Practice requirement to control slot availability via GP Connect 
-  - Uplifted wording to reflect the decision that only a Patient's future booked appointments should be available via GP Connect - see 
+  - Uplifted wording to reflect the decision that only a Patient's future booked appointments should be available via GP Connect
  
 - [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments)
   - Uplifted wording to reflect the decision that only a Patient's future booked appointments should be available for viewing/amending via GP Connect
