@@ -29,7 +29,7 @@ In order to resolve a given GP Practice organisation to their URI you'll need to
 
 ### FHIR ###
 
-In order to be a compliant FHIR server, provider systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) profile.
+In order to be a compliant FHIR server, provider systems need to expose a valid FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) profile.
 
 Please also refer to [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html) for full details on the common FHIR API patterns used throughout all the GP Connect APIs.
 
@@ -41,7 +41,7 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 
 ### Use Cases ###
 
-- [Get the FHIR conformance profile](foundations_use_case_get_the_fhir_capability_statement.html)
+- [Get the FHIR capability statement](foundations_use_case_get_the_fhir_capability_statement.html)
 - [Find a patient](foundations_use_case_find_a_patient.html)
 - [Find a practitioner](foundations_use_case_find_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
