@@ -29,7 +29,7 @@ In order to resolve a given GP Practice organisation to their URI you'll need to
 
 ### FHIR ###
 
-In order to be a compliant FHIR server, provider systems need to expose a valid FHIR [Conformance](https://www.hl7.org/fhir/DSTU2/conformance.html) profile.
+In order to be a compliant FHIR server, provider systems need to expose a valid FHIR [CapabilityStatement](https://www.hl7.org/fhir/STU3/capabilitystatement.html) profile.
 
 Please also refer to [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html) for full details on the common FHIR API patterns used throughout all the GP Connect APIs.
 
@@ -41,7 +41,7 @@ Please also refer to [Development Guidance - FHIR API Guidance - Common API Guid
 
 ### Use Cases ###
 
-- [Get the FHIR conformance profile](foundations_use_case_get_the_fhir_capability_statement.html)
+- [Get the FHIR capability statement](foundations_use_case_get_the_fhir_capability_statement.html)
 - [Find a patient](foundations_use_case_find_a_patient.html)
 - [Find a practitioner](foundations_use_case_find_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
@@ -67,3 +67,23 @@ The Register Patient API Use Case, which is included in the Foundations capabilt
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
 | [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient`
+
+
+## Implementation And Testing ##
+
+Below is the suggested implementation order which developers SHOULD follow when implementing the GP Connect Foundation and Appointment Management API functionality. The specified order has been constructed around the functionality of the GP Connect Automated Test Suite, looking at the API Endpoint dependencies within the test scenarios.
+
+It is advisable to develop against the Automated Test Suite as this will assist with creating a GP Connect compliant product. By implementing the endpoints in the order below, this means that the specific set of tests for that endpoint can be run during development without the developer seeing errors due to pre-test api calls or post test validation api calls relevant to the test being run.
+
+### 1. Foundation Endpoints ###
+
+| Order | API Endpoint | Test Suite Endpoint Dependencies | Reason For Dependency |
+| ------------- | ------------- | ------------- | ------------- |
+| #1 | Find an organization | - | The find an organization capability is not dependent on any other capablitiy within the automated test suite. |
+| #2 | Read an Organization | `Find an organization` | `Find an organization` is a dependancy for `Read an organization` as it is used to lookup the local identifier from the organization code which is setup in the test suite organization mapping csv file. |
+| #3 | Find a practitioner | `Read an Organization` | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource. |
+| #4 | Read a practitioner | `Find a practitioner`,<br/> `Read an organization` | `Find a practitioner` is required to lookup the logical identifier, from the practitioner user id setup in the test suite practitioner mapping csv file, to use for the read. The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource.|
+| #5 | Find a patient | `Read and organization`,<br/> `Read a practitioner` | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource. The `Read a practitioner` endpoint is required to validate the “careProvider” reference if returned within the patient resource. |
+| #6 | Read a patient | `Find a patient`,<br/> `Read an organization`,<br/> `Read a practitioner` | `Find a patient` is required to lookup logical identifier from the patient from the nhs number set up in the test suite nhsNoMap csv file. The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the patient resource. The `Read a practitioner` endpoint is required to validate the “careProvider” reference if returned within the patient resource. |
+| #7 | Read a location | `Read an organization` | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the location resource. |
+| #8 | Register a patient | `Find a patient`, `Read a patient`, `Read an organization`  |The register patient endpoint tests require a number of the foundation search and read endpoints to be implemented and therefore it is advised that this is done as the last foundation capability. The foundation endpoints are used to create rich register patient requests as well as validating the registered patient resource is valid and retrievable on the providers system. |

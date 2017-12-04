@@ -30,7 +30,7 @@ Provider systems SHALL support the following search parameters:
 | `end` | `date` | Slot end date/time. | `Slot.end` |
 | `searchFilter` | `token` | A generic token to allow consumers to pass additional search criteria to the provider. | N/A |
 
-{% include note.html content="The supported search parameters should be included in the [conformance profile](foundations_use_case_get_the_fhir_capability_statement.html)." %}
+{% include note.html content="The supported search parameters should be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
 
 
 ## _include Parameters ##
