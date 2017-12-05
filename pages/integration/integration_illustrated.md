@@ -37,11 +37,11 @@ The steps shown in the diagram are detailed below.
 | 2c   | **Consumer** calls Spine Directory Service again to discover the URL of the FHIR server endpoint at the practice | 
 | 2d   | **SDS** returns details of the FHIR endpoint. | 
 |      |      |
-|      | *Step 3 is optional in the sense that the conformance profile may be used to verify the capability which the endpoint provides should this be required at run time. The results of this call may be cached for future interactions.* |    
-| 3a   | **Consumer** calls the [metadata endpoint](foundations_use_case_get_the_fhir_capability_statement.html) at the practice FHIR server to request full details of which FHIR operations are implemented at that server - the Conformance Profile. |
+|      | *Step 3 is optional in the sense that the Capability Statement may be used to verify the FHIR capabilities which the endpoint provides should this be required at run time. The results of this call may be cached for future interactions.* |    
+| 3a   | **Consumer** calls the [metadata endpoint](foundations_use_case_get_the_fhir_capability_statement.html) at the practice FHIR server to request full details of which FHIR operations are implemented at that server - the Capability Statement. |
 | 3b   | **Spine Security Proxy (SSP)** receives the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
-| 3c   | **Provider** returns the Conformance Profile to the SSP. |
-| 3d   | **SSP** forwards the Conformance Profile received from the Provider to the Consumer. |
+| 3c   | **Provider** returns the Capability Statement to the SSP. |
+| 3d   | **SSP** forwards the Capability Statement received from the Provider to the Consumer. |
 |      |      |
 | 4a   | **Consumer** then makes an API call to [Search for free slots](appointments_use_case_search_for_free_slots.html) at the practice in the specified time-frame. |
 | 4b   | **SSP** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
