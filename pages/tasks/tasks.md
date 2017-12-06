@@ -9,7 +9,7 @@ summary: "Overview of the task management capability pack"
 
 ## Purpose ##
 
-Demonstrates the ability to manage tasks across care settings and organisational boundaries to improve the quality and timeliness of care being provided to patients by enabling health professionals to share information or request a task be performed in real time:
+Demonstrates the ability to manage tasks across care settings and organisational boundaries by enabling health professionals to share information or request a task be performed in real time.
 
 ## Scenarios ##
 
@@ -20,7 +20,7 @@ Demonstrates the ability to manage tasks across care settings and organisational
 - users are presented with confirmation that a task is successfully delivered to the organisation or that it has failed in real time so they can retry or use an alternative channel
 - users can make use of notifications and tasks across a range of care settings to demonstrate its applicability across care domains, such as 111, A&amp;E, Physio, Acute, Social, Community
 
-Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinical Scenarios](tasks_clinical_scenarios.html) page.
+Example clinical scenarios for FoT and beyond can be found on the [Tasks clinical scenarios](tasks_clinical_scenarios.html) page.
 
 ## Use cases ##
 
@@ -29,15 +29,15 @@ Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinica
 - [Receive a task](tasks_receive_a_task.html)
 {% endcomment %}
 
-## Profiled Fhir Resources ##
+## Profiled FHIR&reg; resources ##
 
-Please refer to the [Task Management FHIR Resources](datalibrarytasks.html) page for details of the FHIR&reg; profiles utilised for the Task Management capability pack.
+Please refer to the [Task Management FHIR resources](datalibrarytasks.html) page for details of the FHIR&reg; profiles utilised for the Task Management capability pack.
 
 
-## SPINE interactions
+## Spine interactions
 
 The Tasks Management capability message set includes the following set of Spine interactions:
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
-|  [Create Task](tasks_use_case_send_a_task.html)               | `urn:nhs:names:services:gpconnect:fhir:rest:create:order` |
+|  [Create task](tasks_use_case_send_a_task.html)               | `urn:nhs:names:services:gpconnect:fhir:rest:create:order` |
