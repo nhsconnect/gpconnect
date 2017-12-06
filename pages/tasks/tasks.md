@@ -4,10 +4,8 @@ keywords: tasks
 tags: [tasks]
 sidebar: tasks_sidebar
 permalink: tasks.html
-summary: "All about the task management capability."
+summary: "Overview of the task management capability pack"
 ---
-
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
 
 ## Purpose ##
 
@@ -15,16 +13,16 @@ Demonstrates the ability to manage tasks across care settings and organisational
 
 ## Scenarios ##
 
-- A user can send a notification which is for information purposes only.
-- A user can send a task requesting a user perform an activity.
-- A health professional at a patients registered GP practice sends a task or notification to an extended access hub.
-- A health professional at an extended hub is able to identify the patient’s own GP practice and can send a task or notification to that organisation.
-- Users are presented with confirmation that a task is successfully delivered to the organisation or that it has failed in real time so they can retry or use an alternative channel.
-- Users can make use of notifications and tasks across a range of care settings to demonstrate it applicability across care domains. Any of; 111, A+E, Physio, Acute, Social, Community etc.
+- a user can send a notification which is for information purposes only
+- a user can send a task requesting a user perform an activity
+- a health professional at a patient's registered GP practice sends a task or notification to an extended access hub
+- a health professional at an extended hub is able to identify the patient’s own GP practice and can send a task or notification to that organisation
+- users are presented with confirmation that a task is successfully delivered to the organisation or that it has failed in real time so they can retry or use an alternative channel
+- users can make use of notifications and tasks across a range of care settings to demonstrate its applicability across care domains, such as 111, A&amp;E, Physio, Acute, Social, Community
 
 Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinical Scenarios](tasks_clinical_scenarios.html) page.
 
-## Use Cases ##
+## Use cases ##
 
 - [Send a task](tasks_use_case_send_a_task.html)
 {% comment %}
@@ -33,12 +31,12 @@ Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinica
 
 ## Profiled Fhir Resources ##
 
-Please refer to the [Task Management FHIR Resources](datalibrarytasks.html) page for details of the FHIR profiles utilised for the Task Management capability.
+Please refer to the [Task Management FHIR Resources](datalibrarytasks.html) page for details of the FHIR&reg; profiles utilised for the Task Management capability pack.
 
 
-## SPINE Interactions
+## SPINE interactions
 
-The Tasks capability message set includes the following set of spine interactions:
+The Tasks Management capability message set includes the following set of Spine interactions:
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
