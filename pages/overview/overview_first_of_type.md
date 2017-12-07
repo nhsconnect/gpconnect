@@ -9,11 +9,11 @@ summary: Information regarding First of Type
 
 ## Summary ##
 
-First of Type (FoT) is an iterative cycle that facilitates the development, self-assessment, assurance and live deployment of supplier systems consuming the GP Connect API. The overall scope of the FoT cycle is to test the processes in line with the GP Connect Developer ecosystem, which has been created to assist commissioning organisations and consuming suppliers on their journey to deploying a live service. 
+First of Type (FoT) is an iterative cycle that facilitates the development, self-assessment, assurance and live deployment of supplier systems consuming the GP Connect API. The scope of FoT is to test processes in line with the GP Connect Developer ecosystem, which has been created to assist commissioning organisations and consuming suppliers on their journey to deploying a live service. 
 
-First of Type is limited to a select group of sites and suppliers who have demonstrated the broadest range of usage. This will provide the widest information and lessons to incorporate into general release.
+First of Type is limited to a select group of sites and suppliers that have demonstrated the broadest range of usage. This will provide the widest information and lessons to incorporate into general release.
 
-Suppliers representing all application types, such as electronic patient records (EPR), middleware, and regional care record portals, would be ideal as it will be necessary to understand how third-party accreditation and assurance processes works across all supported system types.
+Suppliers representing all application types (such as electronic patient records (EPR), middleware, and regional care record portals) are ideal, as we'd like to understand how third-party accreditation and assurance processes works across all supported system types.
 
 Participating suppliers and sites will need to agree to a delivery roadmap and to some lightweight reporting and communication obligations.
 
@@ -30,7 +30,7 @@ FoT implementations of appointment capabilities are scheduled to begin in the fi
 
 ## FoT approach ##
 
-Those agreed as FoT candidates will be allocated into a tranche. Each tranche will receive reducing levels of support from the GP Connect project team, with those in the final tranche receiving support replicating the level of resource available when the service enters BAU.
+Those agreed as FoT candidates will be allocated into a tranche. Each tranche will receive reducing levels of support from the GP Connect project team with those in the final tranche receiving support replicating the level of resource available when the service enters BAU.
 
 ## FoT candidate selection ##
 
