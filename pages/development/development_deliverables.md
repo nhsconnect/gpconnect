@@ -7,12 +7,12 @@ permalink: development_deliverables.html
 summary: "Developer cheat sheet shortcuts for the technical build of GP Connect API"
 ---
 
-![Development Flow](images/development/development_flow.png)
+![Development flow](images/development/development_flow.png)
 
 | Explore | Build | Build | Test |
 | :------ | :---: | :---: | :--: |
-| [Structure Definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/StructureDefinitions) | [Access Record Implementation Guide](accessrecord.html) | [Spine Security Proxy Integration Guide](integration_spine_security_proxy_implementation_guide.html) | [System Demonstrator](system_demonstrator.html) |
-| [Value Sets](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/ValueSets) | [Appointment Management Implementation Guide](appointments.html) | [Dotnet Example Code](https://github.com/nhsconnect/gpconnect-dotnet-examples/) | [Automated Test Harness](https://github.com/nhsconnect/gpconnect-provider-testing/) |
-| [Structure Definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/StructureDefinitions) | [Task Management Implementation Guide](tasks.html)  | |
-| [Operation Definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/OperationDefinitions) | | |
-| [FHIR Implementation Guide](development_fhir_api_guidance.html) | | |
+| [Structure definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/StructureDefinitions) | [Access Record implementation guide](accessrecord.html) | [Spine Security Proxy integration guide](integration_spine_security_proxy_implementation_guide.html) | [System demonstrator](system_demonstrator.html) |
+| [Value sets](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/ValueSets) | [Appointment Management implementation guide](appointments.html) | [.NET example code](https://github.com/nhsconnect/gpconnect-dotnet-examples/) | [Automated test harness](https://github.com/nhsconnect/gpconnect-provider-testing/) |
+| [Structure definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/StructureDefinitions) | [Task Management implementation guide](tasks.html)  | |
+| [Operation definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/OperationDefinitions) | | |
+| [FHIR implementation guide](development_fhir_api_guidance.html) | | |
