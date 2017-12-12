@@ -7,11 +7,11 @@ permalink: design_product_versioning.html
 summary: An overview of how capability packs (and other technical assets) are versioned.
 ---
 
-## Product Versioning ##
+## Product versioning ##
 
 Versioning of each technical product or asset (for example, API capability pack, design principle(s), data library) is managed using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}.
 
-### Semantic Versioning ###
+### Semantic versioning ###
 
 Given a version number MAJOR.MINOR.PATCH, increment the:
 
@@ -36,7 +36,7 @@ The following pre-release labels will be used across all products:
 | `beta` | late | Complete enough for external testing. Usually feature complete. |
 | `rc` | &nbsp; | Almost ready for final release. No new feature enhancements. |
 
-> rc = Release Candidate. 
+> rc = Release candidate 
 
 ### Maturity Levels ###
 
