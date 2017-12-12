@@ -9,5 +9,5 @@ summary: "High-level design principles related to the commercial licence for par
 
 {% include todo.html content="Coming soon..." %}
 
-- Acceptable use
-- Reciprocity of data access
+- acceptable use
+- reciprocity of data access
