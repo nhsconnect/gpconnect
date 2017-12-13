@@ -4,10 +4,10 @@ keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_operation_guidance.html
-summary: "Details of which operations a FHIR server should expose to be a fully compliant GP Connect solution"
+summary: "Details of which operations a FHIR&reg; server should expose to be a fully compliant GP Connect solution"
 ---
 
-## Stage 1 and 2 FHIR operations ##
+## Stage 1 and 2 FHIR&reg; operations ##
 
 *Aim(s)*
 
