@@ -1,5 +1,5 @@
 ---
-title: Cross Organisation Audit & Provenance
+title: Cross organisation audit and provenance
 keywords: spine, ssp, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
