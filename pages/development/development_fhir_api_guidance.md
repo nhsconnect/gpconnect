@@ -9,15 +9,15 @@ summary: "Implementation guidance for developers - focusing on FHIR&reg; specifi
 
 ## Purpose ##
 
-This document is intended for use by software developers looking to build a conformant GP Connect API interface using the FHIR&reg; standard, with a particular focus on FHIR specifics.
+This site is intended for use by software developers looking to build a conformant GP Connect API interface using the FHIR&reg; standard, with a particular focus on FHIR specifics.
 
 ### Notational conventions ###
 
-The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+The keywords '**MUST**', '**MUST NOT**', '**REQUIRED**', '**SHALL**', '**SHALL NOT**', '**SHOULD**', '**SHOULD NOT**', '**RECOMMENDED**', '**MAY**', and '**OPTIONAL**' on this site are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## FHIR implementation guidance ##
 
-The purpose of the implementation guide is to describe adaptations of the base FHIR specification specific for GP Connect First of Type (FoT) implementations. It therefore focuses mainly on any additional constraints and specialisations from the base specification that apply to GP Connect. The complete specification therefore comprises the base FHIR specification plus the constraints and specialisations described herein. Where there is a conflict between the base specification and this document, this document shall take precedence.
+The purpose of the implementation guide is to describe adaptations of the base FHIR specification specific for GP Connect First of Type (FoT) implementations. It therefore focuses mainly on any additional constraints and specialisations from the base specification that apply to GP Connect. The complete specification therefore comprises the base FHIR specification plus the constraints and specialisations described herein. Where there is a conflict between the base specification and this web page, this web page shall take precedence.
 
 ### FHIR overview ###
 
@@ -27,7 +27,7 @@ As outlined on the official [HL7&reg; FHIR](http://hl7.org/fhir/) website:
 
 ### [FHIR timelines](http://hl7.org/fhir/timelines.html) ###
 
-{% include note.html content="This document is written to accompany the currently released version of FHIR which is **Standard For Trial Use (STU) 3**". %}
+{% include note.html content="This page is written to accompany the currently released version of FHIR which is **Standard For Trial Use (STU) 3**". %}
 
 STU3 is a pre-release version of FHIR standard and as such is expected to evolve and develop over time. NHS Digital expects FHIR clients and servers (developed as part of GP Connect) to be maintained and uplifted to newer versions of the FHIR&reg; standard as they become available and are staged into the GP Connect programme.
 
@@ -55,7 +55,7 @@ To help API implementers deal with the FHIR learning curve, NHS Digital has work
 		3. [Organisation](https://www.hl7.org/fhir/STU3/organization.html) profiled as gpconnect-organization-1.
 		4. [Location](https://www.hl7.org/fhir/STU3/location.html) profiled as gpconnect-location-1
 	2. Care record API
-		1. Please refer to the [Resource type](#ResourceType) section of this document. 
+		1. Please refer to the [Resource data types](#ResourceDataType) section of this page. 
 	3. Bookings API
 		1. [Schedule](https://www.hl7.org/fhir/STU3/schedule.html) profiled as gpconnect-schedule-1
 		2. [Slot](https://www.hl7.org/fhir/STU3/slot.html) profiled as gpconnect-slot-1
@@ -213,7 +213,7 @@ When a response bundle contains multiple resources, one or more of which cannot 
 ## FHIR resources ##
 
 ### Resource data types ###
-
+<a name="ResourceDataType"></a>
 The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/STU3/datatypes.html) that are used for the resource elements.
 
 The user locale (that is, user's language, region and any special variant preferences that the user may want to see in their user interface) of a system SHALL NOT affect the FHIR on the wire representation of any data types (especially date-time and number formats).
