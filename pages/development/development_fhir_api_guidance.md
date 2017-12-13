@@ -9,7 +9,7 @@ summary: "Implementation guidance for developers - focusing on FHIR&reg; specifi
 
 ## Purpose ##
 
-This document is intended for use by software developers looking to build a conformant GP Connect API interface utilising the FHIR&reg; standard, with a particular focus on FHIR specifics.
+This document is intended for use by software developers looking to build a conformant GP Connect API interface using the FHIR&reg; standard, with a particular focus on FHIR specifics.
 
 ### Notational conventions ###
 
@@ -178,7 +178,7 @@ For example, see the [Register a patient request body](foundations_use_case_regi
 
 ### FHIR system conformance ###
 
-Servers SHALL provide a read-only [FHIR CapabilityStatement resource](https://www.hl7.org/fhir/STU3/capabilitystatement.html) that identifies all of the profiles and operations that the server supports for each resource type.
+Servers SHALL provide a read-only [FHIR CapabilityStatement resource](https://www.hl7.org/fhir/STU3/capabilitystatement.html) that identifies all the profiles and operations that the server supports for each resource type.
 
 A server's capability statement SHALL be available using the following [capabilities interactions](http://hl7.org/fhir/STU3/http.html#capabilities):
 
@@ -186,11 +186,11 @@ A server's capability statement SHALL be available using the following [capabili
 GET [base]/metadata {?_format=[mime-type]}
 ```
 
-Refer to [Foundations - Get The FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR capbility statement.
+Refer to [Foundations - Get The FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR capability statement.
 
 ### FHIR resource conformance ###
 
-To help a consumer find the correct set of reports for a use-case, a provider of resources SHALL, for any profile declared in [CapbilityStatement.profile](https://www.hl7.org/fhir/STU3/profiling.html#2.13.0.3.2) mark resources with profile assertions documenting the profile(s) they conform to. A provider of resources SHOULD also ensure that any resource instance that would reasonably be expected to conform to the declared profiles SHOULD be published in this form.
+To help a consumer find the correct set of reports for a use-case, a provider of resources SHALL, for any profile declared in [CapabilityStatement.profile](https://www.hl7.org/fhir/STU3/profiling.html#2.13.0.3.2), mark resources with profile assertions documenting the profile(s) they conform to. A provider of resources SHOULD also ensure that any resource instance that would reasonably be expected to conform to the declared profiles SHOULD be published in this form.
 
 ### GP Connect FHIR API conformance ###
 
@@ -208,7 +208,7 @@ An HTTP 500 error should be returned with an OperationOutcome resource providing
 
 **Scenario: FHIR response bundles**
 
-When a response bundle contains multiple resources, one or more of which cannot be populated as available data does not enable the resource in question to be populated to validate the associated profile, the provider will behave as follows: The request as a whole will error with an 500 HTTP Status returned, together with the appropriate OperationOutcome resource providing diagnostic detail of the the error.
+When a response bundle contains multiple resources, one or more of which cannot be populated as available data does not enable the resource in question to be populated to validate the associated profile, the provider will behave as follows: The request as a whole will error with a 500 HTTP Status returned, together with the appropriate OperationOutcome resource providing diagnostic detail of the error.
 
 ## FHIR resources ##
 
@@ -216,19 +216,19 @@ When a response bundle contains multiple resources, one or more of which cannot 
 
 The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/STU3/datatypes.html) that are used for the resource elements.
 
-The user locale (i.e. user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems SHALL NOT effect the FHIR on the wire representation of any data types (especially date-time and number formats).
+The user locale (that is, user's language, region and any special variant preferences that the user may want to see in their user interface) of a system SHALL NOT affect the FHIR on the wire representation of any data types (especially date-time and number formats).
 
-Certain aspects of [primitive data type](https://www.hl7.org/fhir/STU3/datatypes.html#primitive) respresentation warrant further consideration and SHALL be taken into consideration when designing and constructing FHIR resources.
+Certain aspects of [primitive data type](https://www.hl7.org/fhir/STU3/datatypes.html#primitive) representation warrant further consideration and SHALL be taken into consideration when designing and constructing FHIR resources.
 
 For example:
 
 - leading 0 digits are not allowed
 - strings SHALL NOT exceed 1MB in size
 - URIs are case sensitive
-- UUID values (urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7) use all lowercase
+- UUID values (urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7) use all lower case
 - dates have no time zone
 - dates can be partial dates (for example, just 'year' or 'year + month')
-- precision of the decimal value has signficance
+- precision of the decimal value has significance
 - primitive types other than string SHALL NOT have leading or trailing whitespace
 - [use of null](https://www.hl7.org/fhir/STU3/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/STU3/datatypes.html#1.19.0.1.1)
 
@@ -488,13 +488,13 @@ Refer to [Book an appointment](appointments_use_case_book_an_appointment.html) f
 
 ## Update resource ##
 
-To [update](https://www.hl7.org/fhir/STU3/http.html#update) an existing resource, a RESTful **PUT** operation with a request body SHALL be utilised.
+To [update](https://www.hl7.org/fhir/STU3/http.html#update) an existing resource, a RESTful **PUT** operation with a request body SHALL be used.
 
 ```http
 PUT [base]/[resourcetype]/[id]
 ```
 
-The PUT operation will only be used to update existing resources, if the specified resource within the url does not exist on the provider system an error SHALL be returned.
+The PUT operation will only be used to update existing resources. If the specified resource within the URL does not exist on the provider system an error SHALL be returned.
 
 | Capability       | Resource(s) | Field(s) |
 | ------------ | ----------- | -------- |
@@ -509,7 +509,7 @@ Refer to [Amend an appointment](appointments_use_case_amend_an_appointment.html)
 
 ## Delete resource ##
 
-To [delete](https://www.hl7.org/fhir/STU3/http.html#delete) an existing resource, a RESTful **DELETE** operation with no request body SHALL be utilised.
+To [delete](https://www.hl7.org/fhir/STU3/http.html#delete) an existing resource, a RESTful **DELETE** operation with no request body SHALL be used.
 
 ```http
 DELETE [base]/[resourcetype]/[id]
@@ -528,7 +528,7 @@ DELETE [base]/[resourcetype]/[id]
 
 [Operations](https://www.hl7.org/fhir/STU3/operations.html) are used (a) where the server needs to play an active role in formulating the content of the response, not merely return existing information, or (b) where the intended purpose is to cause side effects such as the modification of existing resources, or creation of new resources.
 
-As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/STU3/profiling.html#api) section of the FHIR&reg; standard, the NHS Digital has decided to prefix it's operation names with a short prefix (e.g. `gpc`) followed by a "." to reduce the likelihood of name conflicts.
+As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/STU3/profiling.html#api) section of the FHIR&reg; standard,  NHS Digital has decided to prefix its operation names with a short prefix (for example, `gpc`) followed by a '.' to reduce the likelihood of name conflicts.
 
 ## Search resources ##
 
@@ -540,7 +540,7 @@ GET [base]/[resourcetype]?name=value&...
 
 In order to enable searching by date/time range, servers SHALL support the following prefixes as defined in the base FHIR specification for date parameters: eq, gt, lt, ge, le.
 
-To search for all the appointments for a patient that occurred over a 2 year period:
+To search for all the appointments for a patient that occurred over a 2-year period:
 
 ```http
 GET [base]/Patient/1A6E1B1C-6340-4663-926C-9CD1306EAAF8/Appointment?start=ge2014-01-01&start=le2015-12-31
@@ -548,13 +548,13 @@ GET [base]/Patient/1A6E1B1C-6340-4663-926C-9CD1306EAAF8/Appointment?start=ge2014
 
 ### Chained parameters ###
 
-Servers SHALL support searching by a [chained](https://www.hl7.org/fhir/STU3/search.html#2.1.1.4.13) `Patient` identifier parameter for references to `Patient` resources that conform to the `GP-Patient` profile (and therefore have an NHS Number identifier). For example:
+Servers SHALL support searching by a [chained](https://www.hl7.org/fhir/STU3/search.html#2.1.1.4.13) `Patient` identifier parameter for references to `Patient` resources that conform to the `GP-Patient` profile (and therefore have an NHS number identifier). For example:
 
 ```http
 GET [base]/AllergyIntolerance?patient.identifier=http://fhir.nhs.net/Id/nhs-number|1234569876
 ```
 
-{% include important.html content="GP Connect clients and servers are not expected to support arbitrary adhoc searching." %}
+{% include important.html content="GP Connect clients and servers are not expected to support arbitrary ad hoc searching." %}
 
 ### Search example: Search for a patient resource by business ID ###
 
@@ -564,7 +564,7 @@ GET [base]/AllergyIntolerance?patient.identifier=http://fhir.nhs.net/Id/nhs-numb
 GET [base]/Patient?identifier=http://fhir.nhs.net/Id/nhs-number|9900002831 
 ```
 
-If a Patient resource for NHS number 9900002831 exists then the server SHALL return a Bundle containing all Patient resources with the specified NHS number identifier.
+If a patient resource for NHS number 9900002831 exists then the server SHALL return a bundle containing all patient resources with the specified NHS number identifier.
 
 #### Response ####
 
@@ -600,13 +600,13 @@ If a Patient resource for NHS number 9900002831 exists then the server SHALL ret
 
 ### Advanced search ###
 
-Servers SHALL implement the [_query](https://www.hl7.org/fhir/STU3/search.html#query) search parameter to enable custom named search profiles to be defined and used which describe a specific query operation.
+Servers SHALL implement the [_query](https://www.hl7.org/fhir/STU3/search.html#query) search parameter to enable custom-named search profiles to be defined and used which describe a specific query operation.
 
 ```http
 GET [base]/[resourcetype]?_query=[query_name]&name=value&...
 ```
 
-Servers SHOULD implement the standard search equivalent of the advanced custom named search for queries defined under the GP Connect FoT.
+Servers SHOULD implement the standard search equivalent of the advanced custom-named search for queries defined under the GP Connect FoT.
 
 #### Request ####
 
