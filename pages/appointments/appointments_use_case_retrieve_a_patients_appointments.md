@@ -83,7 +83,7 @@ GET /Patient/[id]/Appointment?start=gt2017-07-11
 ```text
 Retrieve all appointments for a patient which start before 2017-09-14:
 
-GET /Patient/[id]/Appointment?start=start=le2017-09-14
+GET /Patient/[id]/Appointment?start=le2017-09-14
 ```
 
 ```text
