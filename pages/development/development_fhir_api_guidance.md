@@ -27,7 +27,7 @@ As outlined on the official [HL7&reg; FHIR](http://hl7.org/fhir/) website:
 
 ### [FHIR timelines](http://hl7.org/fhir/timelines.html) ###
 
-{% include note.html content="This page is written to accompany the currently released version of FHIR which is **Standard For Trial Use (STU) 3**". %}
+{% include note.html content="This page is written to accompany the currently released version of FHIR which is **Standard For Trial Use (STU) 3**." %}
 
 STU3 is a pre-release version of FHIR standard and as such is expected to evolve and develop over time. NHS Digital expects FHIR clients and servers (developed as part of GP Connect) to be maintained and uplifted to newer versions of the FHIR&reg; standard as they become available and are staged into the GP Connect programme.
 
