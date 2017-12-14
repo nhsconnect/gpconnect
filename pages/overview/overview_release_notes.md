@@ -11,6 +11,7 @@ summary: "Release notes for the GP Connect Overview"
 
 - [General API guidance](development_general_api_guidance.html)
   - Updated requirements for support of XML and JSON.
+  - [Content types](development_general_api_guidance.html#content-types) - Added additional guidance of what to do if no `Accept` header or `_format` parameter is receieved as part of the request.
 
 #### [GP Connect 1.0.0-rc.1 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1)
 
