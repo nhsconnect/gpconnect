@@ -19,11 +19,12 @@ To meet strategic objectives to improve access to GP care, the Appointment Manag
 - A patient will be able to book, cancel or view their GP appointments via a GP Connect-enabled App
 - Administrative staff and Clinicians at a range of other care settings, e.g. A&E, Physio, Social and Community services,  will be able to book, view or cancel a GP appointment on behalf of the patient
 
-## GP Practice Appointment Slot Control ##
+## GP Practice Appointment Slot Availability  ##
 
 GP Practices need to control access to their appointment book by external organisations and it is therefore expected that Provider systems will in the first instance enable Practice users to designate their schedules/slots as bookable by GP Connect, thereby ensuring that only these slots are returned in response to a request.
 
-More granular access control will be required to match the appointment slot filtering support included in the specification and as value sets are defined, so that slots are made available for example dependent on requesting organisation type.
+{% include roadmap.html content="More granular slot availability management for GP Practice end-users will be required of Provider Systems.  This will support, where applicable and as value sets are defined, the release via GP Connect of those free slots matching the  specification slot filters eg slots designated for booking by specific types of organisations." %}
+
 
 ## FoT Care Setting Deployments  ##
 
