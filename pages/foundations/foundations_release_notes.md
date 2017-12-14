@@ -11,6 +11,9 @@ summary: "Release notes for the various versions of the Foundations capability."
 
 - [Foundations](foundations.html)
   - The "[Implementation And Testing](foundations.html#implementation-and-testing)" section has been added to indicate the best approach for implementing the foundation capability pack.
+  
+- [Register a patient](foundations_use_case_register_a_patient.html)
+  - [Payload Response Body](foundations_use_case_register_a_patient.html#payload-response-body) - made clear that the registrationType is required within the registration details extension when created by the provider system as part of the register patient operation.
 
 #### [1.0.0-rc.4 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1)
 
