@@ -149,29 +149,31 @@ In line with work being undertaken in other jurisdictions (see the [Argonaut Imp
 
 ### Content types ###
 
-Servers SHALL support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
-- XML: `application/fhir+xml`
-- JSON: `application/fhir+json`
+- Servers should support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
+  - Servers SHALL support JSON: `application/fhir+json`
+  - Servers SHOULD support XML: `application/fhir+xml`
 
-Servers SHALL also support DSTU2 [MIME-types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) for backwards compatibility:
-- XML: `application/xml+fhir`
-- JSON: `application/json+fhir`
+- Servers should also support DSTU2 [MIME-types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) for backwards compatibility:
+  - Servers SHALL support JSON: `application/json+fhir`
+  - Servers SHOULD support XML: `application/xml+fhir`
 
-Servers SHALL also support graceful handling generic XML and JSON MIME types:
-- XML: `application/xml`
-- JSON: `application/json`
-- JSON: `text/json`
+- Servers should also graceful handling generic XML and JSON MIME types:
+  - Servers SHALL support JSON: `application/json`
+  - Servers SHALL support JSON: `text/json`
+  - Servers SHOULD support XML: `application/xml`
 
-Servers SHALL support the optional `_format` parameter to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
+- Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
-Servers SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client application.
+- Where no `Accept` header or `_format` parameter is sent with a request but there is a `Content-Type` header, such as in a POST request, the server SHALL return the response using the format type within the `Content-Type` header.
+
+- Where no `Accept` header, `_format` parameter and no `Content-Type` header is present, as is possible within a GET request, the server SHALL default to JSON.
 
 ### Wire format representations ###
 
-Servers SHALL support two [wire formats](https://www.hl7.org/fhir/STU3/formats.html#wire) as ways to represent resources when they are exchanged:
+Servers should support two [wire formats](https://www.hl7.org/fhir/STU3/formats.html#wire) as ways to represent resources when they are exchanged:
 
-- [XML](https://www.hl7.org/fhir/STU3/xml.html)
-- [JSON](https://www.hl7.org/fhir/STU3/json.html)
+- Servers SHALL support [JSON](https://www.hl7.org/fhir/STU3/json.html)
+- Servers SHOULD support [XML](https://www.hl7.org/fhir/STU3/xml.html)
 
 {% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
 

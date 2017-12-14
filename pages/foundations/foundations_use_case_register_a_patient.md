@@ -231,7 +231,7 @@ Provider systems:
 - SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) ![STU3](images/stu3.png) including the following resources 
 	- `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
 - SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
-  - The "registrationType" should be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type should be use and more detail around the specific type of registration can be added using the "text" element of the CodeableConcept.
+  - The "registrationType" SHALL be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and more detail around the specific type of registration SHOULD be added using the "text" element of the CodeableConcept.
 
 ```json
 {

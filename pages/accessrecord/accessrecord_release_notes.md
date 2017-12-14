@@ -9,7 +9,11 @@ summary: "Release notes for the various versions of the Access Record HTML capab
 
 #### 1.0.0-rc.6
 
-- Updated datalibrary to be capability specific, moving it to reside under the "Development" menu within the capability. This is to allow the Profiled FHIR Resources to be referenced per capability and updated independantly.
+- [Retrieve a care record section](accessrecord_use_case_retrieve_a_care_record_section.html)
+  - Updated example to match requirements for `Cache-Control` header to be `no-store`
+
+- [AccessRecord Resources](datalibraryaccessRecord.html)
+  - Changed the generic datalibrary page to be capability pack specific. This new resource page now resides under the "Development" menu within the capability. This is to allow the Profiled FHIR Resources to be referenced per capability and updated independantly.
 
 
 #### [1.0.0-rc.5 (Released: 16th March 2017)](https://github.com/nhsconnect/gpconnect/releases/tag/v1.0.0-rc.5)
