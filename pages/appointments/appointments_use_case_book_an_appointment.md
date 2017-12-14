@@ -96,6 +96,8 @@ The following guidance around Appointment Resource element should be followed wh
 
 {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element, if a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
 
+{% include note.html content="If the consumer wishes to include ***patient temporary contact details*** for the purposes of the appointment they SHALL include them within the `description` element of the appointment, so that the details are retained against that specific appointment." %}
+
 #### Example Request Body ####
 
 On the wire a JSON serialised request would look something like the following:

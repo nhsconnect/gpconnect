@@ -11,6 +11,8 @@ summary: "Release notes for the various versions of the Appointment Management c
 
 - [Appointment Management](appointments.html)
   - The "[Implementation And Testing](appointments.html#implementation-and-testing)" section has been added to indicate the best approach for implementing the appointment management capability pack.
+- [Book an appointment](appointments_use_case_book_an_appointment.html)
+  - Added note regarding the inclusion of `patient temporary contact details` for the purposes of the appointment and where to include them in the appointment resource.
 
 
 #### [1.0.0-rc.3 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1) 
