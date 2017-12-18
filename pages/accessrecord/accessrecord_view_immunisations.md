@@ -57,6 +57,8 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -72,12 +74,12 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.vaccination}}</td>
-				<td>{{item.part}}</td>
-				<td>{{item.contents}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each immunisation -->
+				<td>{{Immunisation Date}}</td>
+				<td>{{Immunisation Vaccination}}</td>
+				<td>{{Immunisation Part}}</td>
+				<td>{{Immunisation Contents}}</td>
+				<td>{{Immunisation Details}}</td>
 			</tr>
 		</tbody>
 	</table>

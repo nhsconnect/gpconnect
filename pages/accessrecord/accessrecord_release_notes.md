@@ -14,8 +14,38 @@ summary: "Release notes for the various versions of the Access Record HTML capab
 
 - [AccessRecord Resources](datalibraryaccessRecord.html)
   - Changed the generic datalibrary page to be capability pack specific. This new resource page now resides under the "Development" menu within the capability. This is to allow the Profiled FHIR Resources to be referenced per capability and updated independantly.
+  
+- [Encounters HTML View](accessrecord_view_encounters.html)
+  - Updated HTML View section to improve guidance.
 
-
+- [Clinical Items HTML View](accessrecord_view_clinical_items.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Problems HTML View](accessrecord_view_problems.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Allergies HTML View](accessrecord_view_allergies.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Medications HTML View](accessrecord_view_medications.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Referrals HTML View](accessrecord_view_referrals.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Observations HTML View](accessrecord_view_observations.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Investigations HTML View](accessrecord_view_investigations.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Immunisations HTML View](accessrecord_view_immunisations.html)
+  - Updated HTML View section to improve guidance.
+  
+- [Administrative Items HTML View](accessrecord_view_administrative_items.html)
+  - Updated HTML View section to improve guidance.
+  
+  
 #### [1.0.0-rc.5 (Released: 16th March 2017)](https://github.com/nhsconnect/gpconnect/releases/tag/v1.0.0-rc.5)
 
 - Updated [Access Record Landing Page](accessrecord.html)

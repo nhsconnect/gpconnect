@@ -64,6 +64,8 @@ Providers message describing at a summary level how they have populated this sec
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -77,10 +79,10 @@ Providers message describing at a summary level how they have populated this sec
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each administrative item -->
+				<td>{{Administrative Item Date}}</td>
+				<td>{{Administrative Item Entry}}</td>
+				<td>{{Administrative Item Details}}</td>
 			</tr>
 		</tbody>
 	</table>

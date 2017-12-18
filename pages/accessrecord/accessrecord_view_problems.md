@@ -64,6 +64,8 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -78,11 +80,11 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.significance}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each problem or issue -->
+				<td>{{Problem Start Date}}</td>
+				<td>{{Problem Entry}}</td>
+				<td>{{Problem Significance}}</td>
+				<td>{{Problem Details}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -136,6 +138,8 @@ Provider systems that do support Inactive Problems, but when no records exist fo
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -151,12 +155,12 @@ Provider systems that do support Inactive Problems, but when no records exist fo
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.end}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.significance}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each problem or issue -->
+				<td>{{Problem Start Date}}</td>
+				<td>{{Problem End Date}}</td>
+				<td>{{Problem Entry}}</td>
+				<td>{{Problem Significance}}</td>
+				<td>{{Problem Details}}</td>
 			</tr>
 		</tbody>
 	</table>

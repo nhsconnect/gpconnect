@@ -46,6 +46,8 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -60,11 +62,11 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.value}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each observation -->
+				<td>{{Observation Date}}</td>
+				<td>{{Observation Entry}}</td>
+				<td>{{Observation Value}}</td>
+				<td>{{Observation Details}}</td>
 			</tr>
 		</tbody>
 	</table>

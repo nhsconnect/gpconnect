@@ -45,29 +45,31 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
 	<h2>Encounters</h2>
-	<table ng-repeat="item in items">
+	<table>
 		<thead>
 			<tr>
-				<th>{{item.date}}</th>
-				<th>{{item.title}}</th>				
+				<th>Date</th>
+				<th>Title</th>
+				<th>Details</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>&#160;</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each encounter -->
+				<td>{{Encounter Date}}</td>
+				<td>{{Encounter Title}}</td>
+				<td>{{Encounter Details}}</td>
 			</tr>
 		</tbody>
 	</table>
 </div>
 ```
 {% endraw %}
-
-{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %} 
 
 {% include codepen.html slug-hash="rrNKWb" %}
 

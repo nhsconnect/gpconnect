@@ -77,6 +77,8 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -93,13 +95,13 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.drug}}</td>
-				<td>{{item.type}}</td>
-				<td>{{item.scheduledEnd}}</td>
-				<td>{{item.daysDuration}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each medication issue -->
+				<td>{{Medication Issue Date}}</td>
+				<td>{{Medication Issue Drug}}</td>
+				<td>{{Medication Issue Type}}</td>
+				<td>{{Medication Issue ScheduledEnd}}</td>
+				<td>{{Medication Issue DaysDuration}}</td>
+				<td>{{Medication Issue Details}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -143,6 +145,8 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -160,14 +164,14 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.lastIssued}}</td>
-				<td>{{item.drug}}</td>
-				<td>{{item.start}}</td>
-				<td>{{item.review}}</td>
-				<td>{{item.numberIssued}}</td>
-				<td>{{item.maxIssues}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each medication -->
+				<td>{{Medication Last Issued}}</td>
+				<td>{{Medication Drug}}</td>
+				<td>{{Medication Start Date}}</td>
+				<td>{{Medication Review Date}}</td>
+				<td>{{Medication Number Issued}}</td>
+				<td>{{Medication Max Issues}}</td>
+				<td>{{Medication Details}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -232,6 +236,8 @@ For Providers not able to differentiate between prescriptions ended 'normally', 
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -250,15 +256,15 @@ For Providers not able to differentiate between prescriptions ended 'normally', 
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.drug}}</td>
-				<td>{{item.type}}</td>
-				<td>{{item.lastIssued}}</td>
-				<td>{{item.review}}</td>
-				<td>{{item.numberIssued}}</td>
-				<td>{{item.maxIssues}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each medication -->
+				<td>{{Medication Start Date}}</td>
+				<td>{{Medication Drug}}</td>
+				<td>{{Medication Type}}</td>
+				<td>{{Medication Last Issued}}</td>
+				<td>{{Medication Review Date}}</td>
+				<td>{{Medication Number Issued}}</td>
+				<td>{{Medication Max Issues}}</td>
+				<td>{{Medication Details}}</td>
 			</tr>
 		</tbody>
 	</table>

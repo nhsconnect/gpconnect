@@ -57,6 +57,8 @@ Providers to provide meaningful message describing at a summary level how they h
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -70,10 +72,10 @@ Providers to provide meaningful message describing at a summary level how they h
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each clinical item -->
+				<td>{{Clinical Item Date}}</td>
+				<td>{{Clinical Item Entry}}</td>
+				<td>{{Clinical Item Details}}</td>
 			</tr>
 		</tbody>
 	</table>

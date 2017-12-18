@@ -63,6 +63,8 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -75,9 +77,9 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each allergy -->
+				<td>{{Allergy Start Date}}</td>
+				<td>{{Allergy Details}}</td>
 			</tr>
 		</tbody>
 	</table>
@@ -117,6 +119,8 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -130,10 +134,10 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.end}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each allergy -->
+				<td>{{Allergy Start Date}}</td>
+				<td>{{Allergy End Date}}</td>
+				<td>{{Allergy Details}}</td>
 			</tr>
 		</tbody>
 	</table>

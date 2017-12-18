@@ -44,6 +44,8 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 
 ### HTML View ###
 
+The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
+
 {% raw %}
 ```html
 <div>
@@ -59,12 +61,12 @@ All relevant records SHALL be returned with-in Consumer supplied date range.
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.from}}</td>
-				<td>{{item.to}}</td>
-				<td>{{item.priority}}</td>
-				<td>{{item.details}}</td>
+			<tr> <!-- The <tr>...</tr> element will repeat for each referral -->
+				<td>{{Referral Date}}</td>
+				<td>{{Referral From}}</td>
+				<td>{{Referral To}}</td>
+				<td>{{Referral Priority}}</td>
+				<td>{{Referral Details}}</td>
 			</tr>
 		</tbody>
 	</table>
