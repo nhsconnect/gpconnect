@@ -225,6 +225,77 @@ These Views SHALL have the following structure:
 
 {% include note.html content="Note this layout does not apply to the Summary HTML View.  See [Summary HTML View](accessrecord_view_summary.html)" %} 
 
+### Section Title ###
+
+The section title SHALL be inside a `<h1>` tags and sub-section title SHALL be inside a `<h2>` tags.
+
+Single table example:
+
+```html
+<div>
+  <h1>Encounters</h1>
+  
+  <div>
+    <p><!-- Content Banner --></p>
+  </div>
+  
+  <div>
+    <p><!-- Date Banner --></p>
+  </div>
+  
+  <div>
+    <p><!-- Exclusion Banner --></p>
+  </div>
+  
+  <table>
+    <!-- table data -->
+  </table>
+</div>
+```
+
+Multiple table example:
+
+```html
+<div>
+  <h1>Problems and Issues</h1>
+  
+  <div>
+    <p><!-- Content Banner --></p>
+  </div>
+
+  <div>
+    <h2>Active Problems and Issues</h2>
+    
+	<div>
+	  <p><!-- Date Banner --></p>
+	</div>
+    
+	<div>
+	  <p><!-- Exclusion Banner --></p>
+	</div>
+    
+	<table>
+	  <!-- table data -->
+	</table>
+  </div>
+  
+  <div>
+    <h2>Inactive Problems and Issues</h2>
+    
+	<div>
+	  <p><!-- Date Banner --></p>
+	</div>
+    
+	<div>
+	  <p><!-- Exclusion Banner --></p>
+	</div>
+    
+	<table>
+	  <!-- table data -->
+	</table>
+  </div>
+</div>
+```
 
 ### Section Banner ###
 
