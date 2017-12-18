@@ -57,9 +57,13 @@ Glossary of common terms and abbreviations used though-out the GP Connect docume
 
 #### Active Patient ####
 
-An `Active` patient as defined by GP Connect is any patient on a providers system that has `Not Left` and is `Not Deceased`.
+An `Active` patient as defined by GP Connect is any patient on a providers system that has `Not Left` and is `Not Deceased`. The patient SHALL have also been traced and verified using [PDS](integration_personal_demographic_service.html) before their details are shared through the GP Connect API.
 
-The concept of "Active" is related to the patient's registration ***status*** rather than to the patients registration ***type***. A providers system may have a number of different statuses which should be considered "Active", many of those statuses may apply to a number of different registration type. Below is a basic example of a possible GP Practice representation of patient registration type and registration status, to help explain the concept of "Active" patient within GP Connect.
+The concept of "Active" is related to the patient's registration ***status*** rather than to the patients registration ***type***. A providers system may have a number of different statuses which should be considered "Active", many of those statuses may apply to a number of different registration type.
+
+***Example:***
+
+Below is a basic ***example*** of a possible GP Practice representation of patient registration type and registration status, to help explain the concept of "Active" patient within GP Connect.
 
 | Patient Registration Status | GP Connect Considered Active |
 | --- | --- |
