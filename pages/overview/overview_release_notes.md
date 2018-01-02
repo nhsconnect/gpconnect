@@ -9,6 +9,9 @@ summary: "Release notes for the GP Connect"
 
 #### GP Connect 1.0.0-rc.2 (Released: )
 
+- [FHIR API guidance](development_fhir_api_guidance.html)
+  - Updated the must support requirements section to indicate that if an element is marked as must support then all sub elements of that element should also be considered must support.
+
 - [General API guidance](development_general_api_guidance.html)
   - Updated requirements for support of XML and JSON.
   - [Content types](development_general_api_guidance.html#content-types) - Added additional guidance of what to do if no `Accept` header or `_format` parameter is receieved as part of the request.
