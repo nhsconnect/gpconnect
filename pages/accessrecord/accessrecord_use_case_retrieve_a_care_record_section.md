@@ -176,7 +176,8 @@ The Provider system SHALL return an error if:
 
 - the `patientNHSNumber` is invalid (i.e. fails NHS Number format and check digit tests).
 - the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`.
-- the GP organisation is not the patient's nominated primary care provider.
+- the GP organisation is not the patient's `primary care provider`.
+- the patient is not considered `active` as per the GP Connect definition of an [active patient](overview_glossary.html#active-patient).
 - the `recordSection` is invalid (i.e. isn't from the correct value set).
 - an invalid `timePeriod` is requested (i.e. end date > start date).
 - a `timePeriod` is specified for a `recordSection` that is time period agnostic (e.g. Patient Summary, Allergies, Medications etc.)
