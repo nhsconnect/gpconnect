@@ -13,7 +13,6 @@ Take the [Ripple](http://rippleosi.org/){:target="_blank"} open source record vi
 
 ## Methodology ##
 
-- [Answer Digital](http://www.answerdigital.com/){:target="_blank"} has undertaken seven development sprints and seven releases.
 - iterative and rapid design in collaboration with [NHS Digital](http://digital.nhs.uk/){:target="_blank"} 
 - requirements driven by supplier workshops and FHIR&reg; standard releases
 - [open source artefacts on GitHub](https://github.com/nhs-digital/gpconnect){:target="_blank"} for later re-use
