@@ -1,15 +1,15 @@
 ---
-title: Testing Assets
+title: Testing assets
 keywords: testing deliverables
 tags: [engagement,testing]
 sidebar: overview_sidebar
 permalink: testing_deliverables.html
-summary: "Details of what test resources have been made available to support the holistic <br/>testing of provider APIs and consumer applications."
+summary: "Details of what test resources have been made available to support the holistic testing of provider APIs and consumer applications."
 ---
 
-## Provider Testing (SIT) ##
+## Provider testing (SIT) ##
 
-An automated provider test harness has been made publically available to allow standardised testing of the FHIR APIs prior to any formal assurance activities being undertaken. This approach aims to streamline the end-to-end assurance process by ensuring that a common baseline level of technical conformance has been achieved, an thus fewer issues are surfaced during formal assurance.
+An automated provider test harness has been made publically available to allow standardised testing of the FHIR APIs prior to any formal assurance activities being undertaken. This approach aims to streamline the end-to-end assurance process by ensuring that a common baseline level of technical conformance has been achieved and, thus, fewer issues are surfaced during formal assurance.
 
 {% include download.html content="Download the [GP Connect Provider Test Suite](https://github.com/nhsconnect/gpconnect-provider-testing) to help validate the technical conformance of your provider API implementation." %}
 
