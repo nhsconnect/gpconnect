@@ -1,5 +1,5 @@
 ---
-title: Spine Security Proxy Implementation Guide
+title: Spine Security Proxy (SSP) implementation guide
 keywords: spine, proxy, ssp, security
 tags: [integration]
 sidebar: overview_sidebar
@@ -9,19 +9,19 @@ summary: "Technical specification for the Spine Security Proxy (SSP)."
 
 ## Spine Security Proxy (SSP) Implementation Guide ##
 
-Technical overview of the operation of the Spine Security Proxy (SSP).
+Technical overview of the operation of the SSP.
 
 ### Purpose ###
 
-This document is intended for use by software developers looking to build a conformant GP Connect FoT API interfaces or consumer application utilising the Spine Security Proxy (SSP).
+This document is intended for use by software developers looking to build a conformant GP Connect FoT API interfaces or consumer application utilising the SSP.
 
-### Notational Conventions ###
+### Notational conventions ###
 
 The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## Introduction ##
 
-The Spine Security Proxy (SSP) is a forward proxy which will be used as a front-end to control and protect access to GP principal IT systems that will be exposing FHIR based RESTful APIs as defined by the GP Connect programme.  It will provide a single security point for both authentication and authorisation for consumer and provider systems. Additional responsibilities include auditing of all requests and transaction logging for performance and commercial remuneration purposes. In the first instance the proxy will be made available on the N3 network but it is envisaged that in a later phase of the GP Connect programme access via the public internet will also be supported.
+The SSP is a forward proxy which will be used as a front-end to control and protect access to GP principal IT systems that will be exposing FHIR based RESTful APIs as defined by the GP Connect programme.  It will provide a single security point for both authentication and authorisation for consumer and provider systems. Additional responsibilities include auditing of all requests and transaction logging for performance and commercial remuneration purposes. In the first instance the proxy will be made available on the N3 network, but it is envisaged that in a later phase of the GP Connect programme access via the public internet will also be supported.
 
 ## Background ##
 
@@ -30,15 +30,15 @@ The design of the proxy SHALL support the following business goals:
  - The adoption of open APIs & standards (such as FHIR) driven by need.
  - Creation of a level playing field where access to data is governed by the patient & data controller and not the supplier.
 
-## System Architecture ##
+## System architecture ##
 
-### Block Diagram ###
+### Block diagram ###
 
 At a high-level the proxy operates as a content agnostic mediator allowing authorised consumer systems to retrieve HTTPS resources from selected downstream provider systems in a secure and auditable way.
 
 ![Spine Security Proxy Block Diagram](images/integration/Spine Security Proxy Block Diagram.png)
 
-### System Roles ###
+### System roles ###
 
 | Role | Description |
 |------|-------------|
@@ -46,24 +46,24 @@ At a high-level the proxy operates as a content agnostic mediator allowing autho
 | Proxy | HTTPS/TLS Mutual Authentication (MA) enabled proxy with auditing. |
 | Provider | Any system which is capable of servicing HTTPS requests from third-party consumer systems. |
 
-In the First of Type (FoT) instantiation of this system architecture provider systems will be GP principal IT systems from vendors such as (EMIS, TPP, INPS and Microtest), consumer are expected to be a mix of GP principal IT systems and other IT systems. 
+In the First of Type (FoT) instantiation of this system architecture provider systems will be GP principal IT systems from vendors such as (EMIS, TPP, INPS and Microtest), consumers are expected to be a mix of GP principal IT systems and other IT systems. 
 
-As a guiding design principle the Spine Security Proxy (SSP) SHALL NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it MAY block consumer communications on security grounds (i.e. a consumer attempting to access a provider for which it doesn’t have permission).
+As a guiding design principle, the Spine Security Proxy (SSP) SHALL NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it MAY block consumer communications on security grounds (i.e. a consumer attempting to access a provider for which it doesn’t have permission).
 
 <sup>1</sup> consumer applications for FoT are currently expected to be able to populate a small number of additional Spine HTTP headers.
 
-### Proxy Advantages ###
+### Proxy advantages ###
 
-Introducing the Spine Security Proxy (SSP) has the following advantages:
+Introducing the SSP has the following advantages:
 
-- Removes the need for endpoints to open their firewalls to all potential clients; by allowing them to instead open a single channel to the proxy.
-- Removes the need for distributed PKI infrastructure; by allowing endpoints to simply trust the spine PKI certificates.
-- Will provide essential diagnostic information about the movement of data with-in the NHS.
-- Will enable tracking of performance across the system.
-- Will provide a level of protection to provider systems from numerous potential issues (i.e. Distributed Denial of Service attacks).
-- Will provide a central point to enable transaction based payments to data providers to be calculated.
+- removes the need for endpoints to open their firewalls to all potential clients; by allowing them to instead open a single channel to the proxy
+- removes the need for distributed PKI infrastructure; by allowing endpoints to simply trust the spine PKI certificates
+- will provide essential diagnostic information about the movement of data with-in the NHS
+- will enable tracking of performance across the system
+- will provide a level of protection to provider systems from numerous potential issues (for example, Distributed Denial of Service attacks)
+- will provide a central point to enable transaction based payments to data providers to be calculated
 
-### Operating Principle ###
+### Operating principle ###
 
 Servicing a consumer system’s request for a FHIR endpoint located on a provider system requires the following series of interactions:
 
@@ -95,14 +95,14 @@ It is expected that for phase 1 delivery a number of supporting systems won’t 
 
 As such it is planned that the following mitigations will be implemented as part of phase 1:
 
-- Retrieving patient demographics and NHS number (step 1) will have been performed by the consumer system using a PDS or SMSP trace.
-- The Record Location (step 2) and Endpoint Location (step 3a) will be performed internally by the consumer system using the patient’s GP organisational identifier as returned from a PDS lookup with the endpoint look-up being performed via a direct LDAP query to the [Spine Directory Service (SDS)](integration_spine_directory_service.html).
-- The Patient Preferences Repository (step 5) will not be checked.
-- An interim Data Sharing Agreement Repository (Step 6), implemented by the SSP,  will be checked.
+- retrieving patient demographics and NHS number (step 1) will have been performed by the consumer system using a PDS or SMSP trace
+- the Record Location (step 2) and Endpoint Location (step 3a) will be performed internally by the consumer system using the patient’s GP organisational identifier as returned from a PDS lookup with the endpoint look-up being performed via a direct LDAP query to the [Spine Directory Service (SDS)](integration_spine_directory_service.html)
+- the Patient Preferences Repository (step 5) will not be checked
+- an interim Data Sharing Agreement Repository (Step 6), implemented by the SSP,  will be checked
 
 <sup>^</sup> will be made available after the initial GP Connect FoT go-live.
 
-## System Responsibilities ##
+## System responsibilities ##
 
 ### Consumer ###
 
@@ -179,7 +179,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 {% include important.html content="Service Level Agreements (SLA) will be negotiated with principal system vendors prior to go-live to ensure non-functional aspects of system operation are finalised and guaranteed." %}
 
-{% include tip.html content="Non functional testing by the Spine team has indicated a fairly constant 15ms average latency traversing the Spine Security Proxy (SSP) regardless of payload size." %}
+{% include tip.html content="Non-functional testing by the Spine team has indicated a fairly constant 15ms average latency traversing the Spine Security Proxy (SSP) regardless of payload size." %}
 
 ### Provider ###
  
@@ -218,9 +218,9 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - User Authentication.
 - Authorisation of the consumer’s client credentials through verification of a security token.
 - Endpoint Location Service functionality.
-	- In a future phase consumer systems will be expected to integrate with the National Endpoint Locator Service.
+	- In a future phase, consumer systems will be expected to integrate with the National Endpoint Locator Service.
 - Record Location Service functionality.
-	- In a future phase consumer systems will be expected to integrate with the National Record Locator Service.
+	- In a future phase, consumer systems will be expected to integrate with the National Record Locator Service.
 - Patient Preference (Consent) Service functionality.
 	- Provider systems will be expected to respect record access protections at source when the patient’s sharing preferences (as recorded in the provider system) indicate that the patient’s record isn’t to be shared.
 
@@ -230,7 +230,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 {% include roadmap.html content="The roadmap for handling of user level credentials is being explored under the NHS Digital Interoperability Platform (DIP) workstream." %}
 
-### Functional Requirements ###
+### Functional requirements ###
 
 - Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
 - Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).
@@ -246,7 +246,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `PUT`
 	- `DELETE`^
 	- `PATCH`^
-	- `OPTION`^ (which is used in FHIR to retrieve the servers conformance statement)
+	- `OPTION`^ (which is used in FHIR to retrieve the server’s conformance statement)
 
     **^** HTTP verbs will be made available after the initial GP Connect FoT go-live.
 - Request and response HTTP payloads SHALL NOT be modified, as this would require the proxy to have detained knowledge of payload structure and transport encoding. Furthermore, payload modification may introduce problems with asserting digital signatures/payload provenance in the future.
@@ -271,7 +271,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `429`	Too Many Requests
 - If a downstream provider system is unreachable or fails to fulfil a valid request with a valid response then a gateway error SHALL be returned to the consumer system.
 	- `502` Bad Gateway
-- If a downstream provider system fails to fulfil a request within a configured timeout period then the connection should be closed and a HTTP timeout response SHALL be returned to the consumer system. Two HTTP status codes are given below, as implementations vary across technology stacks.
+- If a downstream provider system fails to fulfil a request within a configured timeout period then the connection should be closed, and a HTTP timeout response SHALL be returned to the consumer system. Two HTTP status codes are given below, as implementations vary across technology stacks.
 	- `504` Gateway Timeout
 	- `599` Network Connect Timeout
 - If the following specific error conditions occur then the proxy SHALL return the corresponding HTTP status codes to the consumer system.
@@ -288,4 +288,3 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `499`	Client Closed Request
 		- Used when the client has closed the request before the server could send a response.
 			- To be logged by the proxy as it can’t be sent to client/consumer.
-
