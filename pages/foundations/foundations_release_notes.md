@@ -11,7 +11,9 @@ summary: "Release notes for the various versions of the Foundations capability."
 
 {% include important.html content="Release 1.0.0-rc.4 contains a change of FHIR version from DSTU2 to STU3 as the base fhir version for the GP Connect API Capbility." %}
 
-- [Get the FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) - Conformance statment page has been updated to reflect the change in STU3 to a CapabilityStatement resource.
+- [Get the FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html)
+  - Conformance statment page has been updated to reflect the change in STU3 to a CapabilityStatement resource.
+  - Changed metadata interaction id from `gpconnect:fhir:rest:read:metadata` to `gpconnect:fhir:rest:read:metadata-1`
 - [Foundation Resources](datalibraryfoundation.html) - Updated the resources to be the new GP Connect profiled STU3 resources.
 - [Design Decisions](foundations_design.html#definition-of-organisation-and-location-entities), [Book an appointment](appointments_use_case_book_an_appointment.html#payload-request-body) - Added additional detail around the expected use of the Location and Organization where there specific meaning within the Appointment resource and the Patient resource.
 - [Information Governance](foundations_ig.html) - Added business rule for application of PDS S-Flag

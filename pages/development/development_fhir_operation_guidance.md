@@ -38,7 +38,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
-| [Read Metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata` | `GET`  | `[base]/metadata` |
+| [Read Metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1` | `GET`  | `[base]/metadata` |
 | [Read Patient](foundations_use_case_read_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient` | `GET`  | `[base]/Patient/[id]` |
 | [Patient Search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient` | `GET`  | <code>[base]/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number&#124;[nhsNumber]</code> |
 | [Read Practitioner](foundations_use_case_read_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner` | `GET`  | `[base]/Practitioner/[id]` |
