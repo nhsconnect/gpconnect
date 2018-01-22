@@ -14,7 +14,8 @@ summary: "Release notes for the various versions of the Appointment Management c
 - [Book an appointment](appointments_use_case_book_an_appointment.html)
   - Added note regarding the inclusion of `patient temporary contact details` for the purposes of the appointment and where to include them in the appointment resource.
   - Added additional guidance around the must-support requirement for the bookingOrganization element within the appointment resource.
-
+- [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)
+  - Added additional wording to make clear the expectations around a search where no search prefix is included in the request parameter.
   
 #### [1.0.0-rc.3 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1) 
 

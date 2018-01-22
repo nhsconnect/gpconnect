@@ -43,6 +43,7 @@ Provider systems SHALL implement the following search parameters:
 
 The Provider systems:
 - SHALL support the search prefixes `eq`, `gt`, `lt`, `ge` and `le`.
+- SHALL consider no search prefix to be the same as including the `eq` search prefix.
 
 #### FHIR Relative Request ####
 
