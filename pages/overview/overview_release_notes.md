@@ -9,6 +9,9 @@ summary: "Release notes for the GP Connect"
 
 #### GP Connect 1.0.0-rc.2 (Released: )
 
+- [GP Connect Specification Versions](overview_specification_versions.html)
+  - Added new GP Connect Specification Versions page to list out the previous version of the specification and a link to the published specification. This changed also included a change to the page template to include a version banner on all pages.
+
 - [FHIR API guidance](development_fhir_api_guidance.html)
   - Updated the must support requirements section to indicate that if an element is marked as must support then all sub elements of that element should also be considered must support.
 

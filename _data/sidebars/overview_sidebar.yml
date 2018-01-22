@@ -26,7 +26,11 @@ entries:
       output: web
     - title: Release notes
       url: /overview_release_notes.html
-      output: web      
+      output: web
+    - title: Specification Versions
+      url: /overview_specification_versions.html
+      output: web, pdf
+      type: homepage
 
   - title: Design approach
     output: web
