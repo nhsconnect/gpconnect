@@ -33,9 +33,12 @@ The table below contains the official releases of the GP Connect specification t
 		<th class="tableColumn15">Release Date</th>
 		<th class="tableColumn30">Version</th>
 		<th>Details</th>
+		<th>Testing</th>
 	</tr>
 	<tr>
-		<td>Current Version</td>
+		<td>
+			<a href="https://developer.nhs.uk/apis/gpconnect/" >Current Version</a>
+		</td>
 		<td>GP Connect Core rc.1,<br/>
 			Foundations rc.4,<br/>
 			Appointment rc.3,<br/>
@@ -45,9 +48,11 @@ The table below contains the official releases of the GP Connect specification t
 			<br/>
 			<b>NOTE:</b> the core part of the specification between the two releases has changed from DSTU2 to STU3 and therefore are not compatible.
 		</td>
+		<td><a href="https://github.com/nhsconnect/gpconnect-provider-testing/tree/master">Automated Test Suite</a></td>
 	</tr>
 	<tr class="tableSubHeading">
 		<th>STU3</th>
+		<th/>
 		<th/>
 		<th/>
 	</tr>
@@ -58,9 +63,11 @@ The table below contains the official releases of the GP Connect specification t
 			Foundations rc.4
 		</td>
 		<td>STU3 Update profiles for Appointment Management, Foundations as well as a number of updates to the core, cross cutting, areas of the specification.</td>
+		<td><a href="">Automated Test Suite</a></td>
 	</tr>
 	<tr class="tableSubHeading">
 		<th>DSTU2</th>
+		<th/>
 		<th/>
 		<th/>
 	</tr>
@@ -71,5 +78,6 @@ The table below contains the official releases of the GP Connect specification t
 			Foundations rc.3
 		</td>
 		<td>This version is the release of the specification you should use if you are building Access Record HTML rc.5 as a consumer or a provider.</td>
+		<td><a href="https://github.com/nhsconnect/gpconnect-provider-testing/releases/tag/Foundations_RC3_Appointments_RC2">Automated Test Suite</a></td>
 	</tr>
 </table>
