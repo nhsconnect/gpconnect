@@ -43,6 +43,9 @@ The Call Centre will retrieve and select In-Hours or Extended Hours appointments
    - GP Practices federated with the Patient’s registered GP Practice
 
    - a GP Practice within the vicinity of the Patient’s geographic location – e.g. when the Patient is on holiday
+   
+### Care Setting 3: By patient to Allied Health Professional via a patient facing application ###
+The requirement to support use of the GP Connect capability by patients using online applications to book or cancel an appointment with an Allied Health Professional such as a Physiotherapist once they have been registered by that service.  
 
 {% include note.html content="Whilst the GP Connect programme primarily assumes that the appointment-hosting (Provider) systems are the GP Principal systems, the API technical design has accommodated the minimum viable features required to support Booking and Managing of Appointments at UC Providers such as Minor Injuries Units and GP Out of Hours services.  This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting.  **This deployment care setting is currently out of scope for GP Connect FoT deployments.**" %}  
 
