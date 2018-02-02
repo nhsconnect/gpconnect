@@ -1199,13 +1199,13 @@ table > tbody > tr.tableSubHeading {
     background-color: #f2f2f2;
 }
 
-.versionBanner {
-    width: 100%;
-    background-color: #ffffcc;
-    padding: 5px 15px;
+.banner {
+	padding: 10px;
+	background-color: #fffbdb;
+	border-radius: 5px;
+	margin: 5px;
 }
-
-.previousVersionBanner {
-	display: none;
+	
+.banner.previousVersionBanner {
 	background-color: #ffcccc;
 }
