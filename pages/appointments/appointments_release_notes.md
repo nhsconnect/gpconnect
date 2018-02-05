@@ -16,6 +16,7 @@ summary: "Release notes for the various versions of the Appointment Management c
   - Added additional guidance around the must-support requirement for the bookingOrganization element within the appointment resource.
 - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)
   - Added additional wording to make clear the expectations around a search where no search prefix is included in the request parameter.
+  - Added requirements to restrict the combinations of search parameters that can be used in order to make provider and consumer implementation easier.
   
 #### [1.0.0-rc.3 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1) 
 
