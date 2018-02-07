@@ -72,7 +72,7 @@ Providers must return all the columns as described in the table below:
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
 | <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp;| Descriptive name of medication item (inculding dosage) | `free-text` |
-| <center>3</center> | `Type` | Type of medication issued | `Repeat` <br> `Acute` |
+| <center>3</center> | `Type` | Type of medication issued (values `Repeat` or `Acute`) | `free-text` |
 | <center>4</center> | `Scheduled End` | Scheduled end date of medication issued | `dd-Mmm-yyyy` |
 | <center>5</center> | `Days Duration` | Duration of medication issued | `integer` |
 | <center>6</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `free-text` |
