@@ -50,7 +50,7 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord`|
+| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1`|
 
 Example HTTP request headers:
 
@@ -67,7 +67,7 @@ Connection: Keep-Alive
 Ssp-TraceID: 629ea9ba-a077-4d99-b289-7a9b19fd4e03
 Ssp-From: 200000000115
 Ssp-To: 200000000116
-Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord
+Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1
 ```
 
 #### Payload Request Body ####

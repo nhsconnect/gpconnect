@@ -9,6 +9,7 @@ summary: "Release notes for the GP Connect Overview"
 
 #### [GP Connect 1.0.0-rc.1 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1)
 
+- General uplift of all interactions to include suffix `-1` to indicate new breaking change relating to move from DSTU2 to STU3
 - [Security Guidance](development_api_security_guidance.html) - Updated Security guidance around the protocols suppliers should implement.
 - [Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance.html) - Updated JWT spcification examples to use the new profile and valuesets and included requirement for Patient Demographic cross-checking.
 - [Operation Guidance](development_fhir_operation_guidance.html#foundations-capability-interactions) - Corrected "Example URL Pattern" for searches so that `System` and `Code` are in the correct order.

@@ -63,4 +63,4 @@ The Access Record HTML capability message set includes the following set of spin
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
-| [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` |
+| [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1` |
