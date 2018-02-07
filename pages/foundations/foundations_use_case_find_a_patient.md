@@ -49,7 +49,7 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient`|
+| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1`|
 
 #### Payload Request Body ####
 
@@ -153,4 +153,4 @@ Bundle bundle = client.search().forResource(Patient.class)
 
 ### cURL ###
 
-{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7CP002'" %}
+{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7CP002'" %}

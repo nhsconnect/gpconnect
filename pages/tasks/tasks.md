@@ -40,4 +40,4 @@ The Tasks Management capability message set includes the following set of Spine 
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
-|  [Create task](tasks_use_case_send_a_task.html)               | `urn:nhs:names:services:gpconnect:fhir:rest:create:order` |
+|  [Create task](tasks_use_case_send_a_task.html)               | `urn:nhs:names:services:gpconnect:fhir:rest:create:order-1` |
