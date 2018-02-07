@@ -22,14 +22,14 @@ Contains three sections:
 
 ### Section Banner Content Message ###
 
-Providers message describing at a summary level how they have populated this section, and also the warning message where medications prescribed elsewhere have been excluded:  "Medications prescribed elsewhere have been excluded"
+Providers message describing at a summary level how they have populated this section, and also the warning message where medications prescribed elsewhere have been excluded:
 
 | Provider | Message |
-| ------------ | ------------ |-
-| EMIS|  |
-| TPP|  |
-| INPS|  |
-|Microtest|  |
+| ------------ | ------------ |
+| EMIS| EMIS message here <br> Medications prescribed elsewhere have been excluded|
+| TPP|  TPP message here <br> Medications prescribed elsewhere have been excluded|
+| INPS| INPS message here <br> Medications prescribed elsewhere have been excluded|
+| Microtest| Microtest message here <br> Medications prescribed elsewhere have been excluded|
 
 
 ## Current Medication Issues ##
@@ -40,71 +40,77 @@ A list of all current acute and repeat medications issued to a patient ordered b
 
 {% include warning.html content="The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete." %}
 
-### Structured Data ###
-
-| Logical Item | FHIR Mapping | Narrative Item |
-|---------------|------------|----------------|
-| Medication Material |	MedicationOrder.medication.code | M |
-| Medication Start and End Time	| MedicationOrder.dosageInstruction.schedule[x] | - |
-| Medication Dosage units |	MedicationOrder.dosageInstruction.dose[x] | M |
-| Medication Schedule(when/how often) | MedicationOrder.dosageInstruction.schedule[x] | M |
-| Medication Dosage Rate | MedicationOrder.dosageInstruction.rate | M |
-| Max Medication Dosage quantity | MedicationOrder.dosageInstruction.maxDosePerPeriod | M |
-
 ### Date Horizon ###
 
-All relevant records SHALL be returned.
+All relevant records **SHALL** be returned (i.e. no time limit/filtering is to be applied).
 
-### Table Construction ###
+### Sub Section Banner Content Message ###
 
-- Table header SHALL be "Current Medication Issues".
-- Table columns SHALL be ordered left-to-right (1..N).
-- Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by date descending (i.e. most recent date/time first).
+Providers message describing at a summary level how they have populated this section.
+
+| Provider | Message |
+| ------------ | ------------ |
+| EMIS| message to be added here|
+| TPP|  message to be added here|
+| INPS| message to be added here|
+| Microtest| message to be added here|
+
+### Table Construction Requirements ###
+
+Providers must adhere to the table construction requirements listed below:
+
+- Table header **SHALL** be "Current Medication Issues".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
 ### Table Columns ###
 
-1. Start Date
-2. Medication Item
-3. Type
- - i.e. Repeat or Acute
-4. Scheduled End
-5. Days Duration
-6. Details<sup>1</sup>
-	- longer human readable free-text details for the medication item.
+Providers must return all the columns as described in the table below:
 
-Provider systems SHALL include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative SHALL include the items marked as mandatory in `Narrative Item` column of the `Structured Data` table.
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
+| <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp;| Descriptive name of medication item (inculding dosage) | `free-text` |
+| <center>3</center> | `Type` | Type of medication issued | `Repeat` <br> `Acute` |
+| <center>4</center> | `Scheduled End` | Scheduled end date of medication issued | `dd-Mmm-yyyy` |
+| <center>5</center> | `Days Duration` | Duration of medication issued | `integer` |
+| <center>6</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `free-text` |
+
+Provider systems **SHALL** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **SHALL** include these items: <br>
+- `MedicationOrder.medication.code`
+- `MedicationOrder.dosageInstruction.dose[x]`
+- `MedicationOrder.dosageInstruction.schedule[x]`
+- `MedicationOrder.dosageInstruction.rate`
+- `MedicationOrder.dosageInstruction.maxDosePerPeriod`
+
 
 ### HTML View ###
 
-The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
-
 {% raw %}
 ```html
-<div>
-	<h2>Current Medication Issues</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Start Date</th>
-				<th>Medication Item</th>
-				<th>Type</th>
-				<th>Scheduled End</th>
-				<th>Days Duration</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr> <!-- The <tr>...</tr> element will repeat for each medication issue -->
-				<td>{{Medication Issue Date}}</td>
-				<td>{{Medication Issue Drug}}</td>
-				<td>{{Medication Issue Type}}</td>
-				<td>{{Medication Issue ScheduledEnd}}</td>
-				<td>{{Medication Issue DaysDuration}}</td>
-				<td>{{Medication Issue Details}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div ng-controller="ctrl">
+	<h3>Current Medication Issues</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-sm-2">Start Date</th>
+					<th class="col-sm-2">Medication Item</th>
+					<th class="col-sm-2">Type</th>
+					<th class="col-sm-2">Scheduled End</th>
+					<th class="col-sm-2">Days Duration</th>
+					<th class="col-sm-2">Details</th>
+				</tr>
+			</thead>
+				<tr ng-repeat="x in records" class="table">
+					<td class="col-sm-2">{{x.date}}</td>
+					<td class="col-sm-2">{{x.drug}}</td>
+					<td class="col-sm-2">{{x.type}}</td>
+					<td class="col-sm-2">{{x.scheduledEnd}}</td>
+					<td class="col-sm-2">{{x.daysDuration}}</td>
+					<td class="col-sm-2">{{x.details}}</td>
+				</tr>
+		</table>
 </div>
 ```
 {% endraw %}
@@ -115,66 +121,74 @@ The following content highlights the expected HTML tags and format providers SHA
 
 A list of all current repeat medications issued to a patient ordered by date descending (i.e. most recent Last Issued date/time first).
 
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
 ### Date Horizon ###
 
-All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
+All relevant records **SHALL** be returned (i.e. no time limit/filtering is to be applied).
 
-### Table Construction ###
+### Sub Section Banner Content Message ###
 
-- Table header SHALL be "Current Repeat Medications".
-- Table columns SHALL be ordered left-to-right (1..N).
-- Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by Last Issued date descending (i.e. most recent date/time first).
+Providers message describing at a summary level how they have populated this section.
+
+| Provider | Message |
+| ------------ | ------------ |
+| EMIS| message to be added here|
+| TPP|  message to be added here|
+| INPS| message to be added here|
+| Microtest| message to be added here|
+
+### Table Construction Requirements ###
+
+Providers must adhere to the table construction requirements listed below:
+
+- Table header **SHALL** be "Current Repeat Medications".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by Last Issued date descending (i.e. most recent date/time first).
 
 ### Table Columns ###
 
-1. Last Issued
-2. Medication Item
-3. Start Date
-4. Review Date
-5. Number Issued
-6. Max Issues
-7. Details
-	- longer human readable free-text details for the medication item.
-	
+Providers must return all the columns as described in the table below:
+
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Last Issued` |  Date of medication item last issued | `dd-Mmm-yyyy` |
+| <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp; | Descriptive name of medication item (inculding dosage) | `free-text` |
+| <center>3</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
+| <center>4</center> | `Review Date` | Review date of medication issued | `dd-Mmm-yyyy` |
+| <center>5</center> | `Number Issued` | Number of times medication item issued | `integer` |
+| <center>6</center> | `Max Issues` | Maximum number of issues allowed for medication item | `integer` |
+| <center>7</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `free-text` |
+
 {% include todo.html content="Number Issued, & Max Issues to be reviewed given Provider variances "%}
 
 ### HTML View ###
 
-The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
-
 {% raw %}
 ```html
-<div>
-	<h2>Current Repeat Medications</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Last Issued</th>
-				<th>Medication Item</th>
-				<th>Start Date</th>
-				<th>Review Date</th>
-				<th>Number Issued</th>
-				<th>Max Issues</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr> <!-- The <tr>...</tr> element will repeat for each medication -->
-				<td>{{Medication Last Issued}}</td>
-				<td>{{Medication Drug}}</td>
-				<td>{{Medication Start Date}}</td>
-				<td>{{Medication Review Date}}</td>
-				<td>{{Medication Number Issued}}</td>
-				<td>{{Medication Max Issues}}</td>
-				<td>{{Medication Details}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div ng-controller="ctrl">
+	<h3>Current Repeat Medications</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-sm-2">Last Issued</th>
+					<th class="col-sm-2">Medication Item</th>
+					<th class="col-sm-2">Start Date</th>
+					<th class="col-sm-2">Review Date</th>
+					<th class="col-sm-2">Number Issued</th>
+					<th class="col-sm-2">Max Issues</th>
+					<th class="col-sm-2">Details</th>
+				</tr>
+			</thead>
+				<tr ng-repeat="x in records1" class="table">
+					<td class="col-sm-2">{{x.lastIssued}}</td>
+					<td class="col-sm-2">{{x.drug}}</td>
+					<td class="col-sm-2">{{x.start}}</td>
+					<td class="col-sm-2">{{x.review}}</td>
+					<td class="col-sm-2">{{x.numberIssued}}</td>
+					<td class="col-sm-2">{{x.maxIssues}}</td>
+					<td class="col-sm-2">{{x.details}}</td>
+				</tr>
+		</table>
 </div>
 ```
 {% endraw %}
@@ -187,87 +201,90 @@ A list of all past medications, issued to a patient ordered by date descending (
 
 Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
 
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
 ### Date Horizon ###
 
-All relevant records SHALL be returned according to consumer-supplied date range.
+All relevant records **SHALL** be returned according to consumer-supplied date range.
 
-### Section Banner Content Message ###
+### Sub Section Banner Content Message ###
 
-Providers message describing at a summary level how they have populated this section
+Providers message describing at a summary level how they have populated this section.
 
-For Providers not able to differentiate between prescriptions ended 'normally', and those discontinued/cancelled before the original prescribed end date, this can be mitigated by Banner description: <br>
-"Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date"
+{% include important.html content="For Providers not able to differentiate between prescriptions ended 'normally', and those discontinued, or cancelled, before the original prescribed end date, this can be mitigated by Banner description:
+<br><br>
+<b>Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date</b>" %}
 
 | Provider | Message |
-| ------------ | ------------ |-
-| EMIS| |
-| TPP|  |
-| INPS| |
-|Microtest|  |
+| ------------ | ------------ |
+| EMIS| message to be added here|
+| TPP|  message to be added here|
+| INPS| message to be added here|
+| Microtest| message to be added here|
 
+### Table Construction Requirements ###
 
+Providers must adhere to the table construction requirements listed below:
 
-
-### Table Construction ###
-
-- Table header SHALL be "Past Medications".
-- Table columns SHALL be ordered left-to-right (1..N).
-- Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by date descending (i.e. most recent date/time first).
+- Table header **SHALL** be "Past Medications".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
 ### Table Columns ###
 
-1. Start Date
-2. Medication Item
-3. Type
-	- i.e. Repeat, Acute
-4. Last Issued
-5. Review Date
-6. Number Issued
-7. Max Issues
-8. Details
+Providers must return all the columns as described in the table below:
+
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp;|
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
+| <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp;| Descriptive name of medication item (inculding dosage) | `free-text` |
+| <center>3</center> | `Type` | Type of medication issued (values `Repeat` or `Acute`) | `free-text` |
+| <center>4</center> | `Last Issued` |  Date of medication item last issued | `dd-Mmm-yyyy` |
+| <center>5</center> | `Review Date` | Review date of medication issued | `dd-Mmm-yyyy` |
+| <center>6</center> | `Number Issued` | Number of times medication item issued | `integer` |
+| <center>7</center> | `Max Issues` | Maximum number of issues allowed for medication item | `integer` |
+| <center>8</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | `free-text` |
 
 {% include todo.html content="Number Issued, & Max Issues to be reviewed given Provider variances "%}
 
-
 ### HTML View ###
-
-The following content highlights the expected HTML tags and format providers SHALL use when generating the HTML content:
 
 {% raw %}
 ```html
-<div>
-	<h2>Past Medications</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Start Date</th>
-				<th>Medication Item</th>
-				<th>Type</th>
-				<th>Last Issued</th>
-				<th>Review Date</th>
-				<th>Number Issued</th>
-				<th>Max Issues</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr> <!-- The <tr>...</tr> element will repeat for each medication -->
-				<td>{{Medication Start Date}}</td>
-				<td>{{Medication Drug}}</td>
-				<td>{{Medication Type}}</td>
-				<td>{{Medication Last Issued}}</td>
-				<td>{{Medication Review Date}}</td>
-				<td>{{Medication Number Issued}}</td>
-				<td>{{Medication Max Issues}}</td>
-				<td>{{Medication Details}}</td>
-			</tr>
-		</tbody>
-	</table>
+<div ng-controller="ctrl">
+	<h3>Past Medications</h3>
+		<table class="table">
+			<thead>
+				<tr>
+					<th class="col-sm-2">Start Date</th>
+					<th class="col-sm-2">Medication Item</th>
+					<th class="col-sm-2">Type</th>
+					<th class="col-sm-2">Last Issued</th>
+					<th class="col-sm-2">Review Date</th>
+					<th class="col-sm-2">Number Issued</th>
+					<th class="col-sm-2">Max Issues</th>
+					<th class="col-sm-2">Details</th>
+				</tr>
+			</thead>
+				<tr ng-repeat="x in records2" class="table">
+					<td class="col-sm-2">{{x.start}}</td>
+					<td class="col-sm-2">{{x.drug}}</td>
+					<td class="col-sm-2">{{x.type}}</td>
+					<td class="col-sm-2">{{x.lastIssued}}</td>
+					<td class="col-sm-2">{{x.review}}</td>
+					<td class="col-sm-2">{{x.numberIssued}}</td>
+					<td class="col-sm-2">{{x.maxIssues}}</td>
+					<td class="col-sm-2">{{x.details}}</td>
+				</tr>
+		</table>
 </div>
 ```
 {% endraw %}
+
+{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %}
+
+## Example View ##
+
+<p data-height="1865" data-theme-id="light" data-slug-hash="GyJROK" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Medications" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/GyJROK/">Medications</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/GyJROK) for example of using AngularJS to generate table content" %}
