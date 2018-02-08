@@ -2,7 +2,8 @@
 
 <ul id="mysidebar" class="nav">
 	<img src="{{ "images/logo.png" }}" alt="NHS Digital Logo"/>
-    <li class="sidebarTitle">{{sidebar[0].product}} {{sidebar[0].version}}</li>
+    <li class="sidebarTitle">GP Connect {{ gpconnectVersion }}</li>
+	<li class="sidebarSection">{{sidebar[0].product}}</li>
 
     {% if showbackbutton == true %}
     <li id="gpcnavlink">
