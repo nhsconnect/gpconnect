@@ -358,7 +358,7 @@ Section Default Time Frames SHALL be configurable, to be easily amendable if req
 | Section Code   | Time Frame | FHIR Resource(s) |
 |----------------|------------|------------------|
 | ADM  | All |- |                
-| ALL  | All Relevant | AllergyIntolerance<sup>1</sup> |
+| ALG  | All Relevant | AllergyIntolerance<sup>1</sup> |
 | CLI  | All | Condition, Procedure |
 | ENC  | All | Encounter |
 | IMM  | All Relevant | Immunization<sup>1</sup> |
@@ -380,9 +380,9 @@ Provider systems SHALL return a HTTP *Bad Request* `400` error response if a dat
 
 A total of twelve HTML section views are to be provided.
 
-Provider systems SHALL use XHTML constructs as defined in the [FHIR Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) guidance contained within the FHIR&reg; standard.
+Provider systems SHALL use XHTML constructs as defined in the [FHIR Narrative](https://www.hl7.org/fhir/narrative.html) guidance contained within the FHIR&reg; standard.
 
-### [XHTML Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) ###
+### [XHTML Narrative](https://www.hl7.org/fhir/narrative.html) ###
 
 As outlined in the Narrative section of the FHIR&reg; standard.
 
@@ -393,13 +393,14 @@ As outlined in the Narrative section of the FHIR&reg; standard.
 
 {%include important.html content="The content SHALL NOT contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." %}
 
-### [Styling the XHTML](https://www.hl7.org/fhir/DSTU2/narrative.html#css) ###
+### [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) ###
 
 As outlined in the 'Styling the XHTML' section of the FHIR&reg; standard.
 
 > In order to minimise manageability and security issues, authoring systems cannot specify the CSS stylesheet to use directly. Instead, the application that displays the resource provides the stylesheets. This means that the rendering system chooses what styles can be used, but the authoring system must use them in advance. Authoring systems can use these classes, which SHALL be supported by all rendering systems.
 > 
-> Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/DSTU2/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/DSTU2/narrative.html#css) on the FHIR website for full details.
+> Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/stu3/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) on the FHIR website for full details.
+
 
 
 
