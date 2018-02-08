@@ -10,7 +10,7 @@ summary: "Published GP Connect spcification versions"
 
 The table below contains the official releases of the GP Connect specification.
 
-{% include important.html content="The current published version are as specified but if you are building Appointments and Foundations you should build against the latest version of the specification. If you are building HTML you should build against the '0.5.0-rc' version of the specification, released on 13th Oct 2017.<br/><br/>The core part of the specification between the DSTU2 and STU3 releases have changed and therefore the versions are not compatible and have been assigned a different major version number." %}
+{% include important.html content="The current published version are as specified but if you are building Appointments and Foundations you should build against the latest version of the specification. If you are building HTML you should build against the '0.5.0' version of the specification, released on 13th Oct 2017.<br/><br/>The core part of the specification between the DSTU2 and STU3 releases have changed and therefore the versions are not compatible and have been assigned a different major version number." %}
 
 <table>
 	<tr>
@@ -28,7 +28,7 @@ The table below contains the official releases of the GP Connect specification.
 		<th/>
 	</tr>
 	<tr>
-		<td><a href="https://developer.nhs.uk/apis/gpconnect-TBC/">1.1.0-rc</a></td>
+		<td><a href="https://developer.nhs.uk/apis/gpconnect-TBC/">1.1.0</a></td>
 		<td>TBC</td>
 		<td>GP Connect Core rc.2,<br/>
 			Foundations rc.5,<br/>
@@ -38,7 +38,7 @@ The table below contains the official releases of the GP Connect specification.
 		<td><a href="">Automated Test Suite</a></td>
 	</tr>
 	<tr>
-		<td><a href="https://developer.nhs.uk/apis/gpconnect-18Jan2018/">1.0.0-rc</a></td>
+		<td><a href="https://developer.nhs.uk/apis/gpconnect-18Jan2018/">1.0.0</a></td>
 		<td>18 Jan 2018</td>
 		<td>GP Connect Core rc.1,<br/>
 			Foundations rc.4,<br/>
@@ -55,7 +55,7 @@ The table below contains the official releases of the GP Connect specification.
 		<th/>
 	</tr>
 	<tr>
-		<td><a href="https://developer.nhs.uk/apis/gpconnect-13Oct2017/">0.5.0-rc</a></td>
+		<td><a href="https://developer.nhs.uk/apis/gpconnect-13Oct2017/">0.5.0</a></td>
 		<td>13 Oct 2017</td>
 		<td>Access Record HTML rc.5,<br/>
 			Appointments rc.2,<br/>
