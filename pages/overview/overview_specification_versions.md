@@ -21,48 +21,31 @@ The table below contains the official releases of the GP Connect specification.
 		<th>Testing</th>
 	</tr>
 	<tr class="tableSubHeading">
-		<th>STU3</th>
-		<th/>
-		<th/>
-		<th/>
-		<th/>
+		<th>STU3</th><th/><th/><th/><th/>
 	</tr>
 	<tr>
 		<td><a href="https://developer.nhs.uk/apis/gpconnect-TBC/">1.1.0</a></td>
 		<td>TBC</td>
-		<td>GP Connect Core rc.2,<br/>
-			Foundations rc.5,<br/>
-			Appointments rc.4
-		</td>
+		<td>GP Connect Core rc.2,<br/>Foundations rc.5,<br/>Appointments rc.4</td>
 		<td>Appointment slot availability managment and general specification uplift.</td>
 		<td><a href="">Automated Test Suite</a></td>
 	</tr>
 	<tr>
 		<td><a href="https://developer.nhs.uk/apis/gpconnect-18Jan2018/">1.0.0</a></td>
 		<td>18 Jan 2018</td>
-		<td>GP Connect Core rc.1,<br/>
-			Foundations rc.4,<br/>
-			Appointments rc.3
-		</td>
+		<td>GP Connect Core rc.1,<br/>Foundations rc.4,<br/>Appointments rc.3</td>
 		<td>STU3 Update for Foundations and Appointment. Uplift of the core, cross cutting, areas of the specification.</td>
-		<td><a href="">Automated Test Suite</a></td>
+		<td><a href="https://github.com/nhsconnect/gpconnect-provider-testing/releases/tag/GP_Connect_Core_RC1_Foundations_RC4_Appointments_RC3">Automated Test Suite</a></td>
 	</tr>
 	<tr class="tableSubHeading">
-		<th>DSTU2</th>
-		<th/>
-		<th/>
-		<th/>
-		<th/>
+		<th>DSTU2</th><th/><th/><th/><th/>
 	</tr>
 	<tr>
 		<td><a href="https://developer.nhs.uk/apis/gpconnect-13Oct2017/">0.5.0</a></td>
 		<td>13 Oct 2017</td>
-		<td>Access Record HTML rc.5,<br/>
-			Appointments rc.2,<br/>
-			Foundations rc.3
-		</td>
+		<td>Access Record HTML rc.5,<br/>Appointments rc.2,<br/>Foundations rc.3</td>
 		<td>Access Record HTML rc.5 release.</td>
-		<td><a href="https://github.com/nhsconnect/gpconnect-provider-testing/releases/tag/Foundations_RC3_Appointments_RC2">Automated Test Suite</a></td>
+		<td><a href="https://github.com/nhsconnect/gpconnect-provider-testing/releases/tag/AppointmentsRc.2%2CFoundationsRc.3">Automated Test Suite</a></td>
 	</tr>
 </table>
 
