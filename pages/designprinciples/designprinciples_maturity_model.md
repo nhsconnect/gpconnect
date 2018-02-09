@@ -7,8 +7,6 @@ permalink: designprinciples_maturity_model.html
 summary: High-level maturity model for GP Connect systems.
 ---
 
-[<i class="fa fa-arrow-left" aria-hidden="true"/> Back to GP Connect - Getting Started.](index.html)
-
 {% include important.html content="All delivery dates are indicative and subject to on-going review." %}
 
 The maturity roadmap of a compliant Principal GP system is expected to follow the following FHIR&reg; and business capability maturity stages as follows:
