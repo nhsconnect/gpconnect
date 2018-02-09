@@ -89,16 +89,26 @@ The following data-elements SHOULD be included when available.
 
 {% include note.html content="The provider system receiving the bookingOrganization details SHALL store, return and display these details as required by the [Must-Support](development_fhir_api_guidance.html#use-of-must-support-flag) flag." %}
 
-The following guidance around Appointment Resource element should be followed when populating any of the listed fields:
+
+#### Element specific guidance ####
+
+The following guidance around Appointment Resource element SHALL be followed when populating any of the listed fields:
 
 | Resource Element        | Guidance |
 | ---                     | --- |
-| Appointment.***comment***     | This field should be used for "Patient specific notes" and any additional comments relating to the appointment. |
-| Appointment.***description*** | This field should be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
+| Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. |
+| Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
 
-{% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element, if a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
+#### Resource guidance ####
 
-{% include note.html content="If the consumer wishes to include ***patient temporary contact details*** for the purposes of the appointment they SHALL include them within the `description` element of the appointment, so that the details are retained against that specific appointment." %}
+The following guidance SHALL be followed when populating an appointment resource:
+
+* For providers who only support the mandatory `description` element and not the `comment` element, if a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost.
+* If the consumer wishes to include ***patient temporary contact details*** for the purposes of the appointment they SHALL include them within the `description` element of the appointment, so that the details are retained against that specific appointment.
+* Elements within the appointment (such as 'comment' and 'description') SHALL only contain limited amounts of information to support the appointment. The content of the appointment SHALL NOT be used for "Transfer of Care" clinical information.
+
+{% include warning.html content="Due to differences in the provider systems and the amount of information their data models can hold, there is a risk that information sent within the appointment may be truncated by the Provider system if too large. Consumers and providers should be aware and try to limit risk where possible or make users aware of the risk when booking or amending an appointment." %}
+
 
 #### Example Request Body ####
 
