@@ -426,6 +426,15 @@ ul#mysidebar {
     border-top:1px solid #dfefff;
     padding-left: 15px;
 }
+
+.nav #gpcnavlink > a:before {
+    content: '\25c0';
+    font-size: 10px;
+}
+
+#gpcnavlink {
+    padding-bottom: 10px;
+}
 /* end sidebar */
 
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
