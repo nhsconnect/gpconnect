@@ -10,7 +10,7 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Getting Started
+    - title: Getting started
       url: /overview_engage.html
       output: web
 #    - title: News
@@ -19,87 +19,87 @@ entries:
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-    - title: Workshops and Timeline
-      url: /overview_workshops.html
-      output: web
+#    - title: Workshops and Timeline
+#      url: /overview_workshops.html
+#      output: web
 #    - title: Webinars
 #      url: /overview_webinars.html
 #      output: web
 #    - title: Work in Progress
 #      url: /overview_work_in_progress.html
 #      output: web
-    - title: First of Type
+    - title: First of type
       url: /overview_first_of_type.html
       output: web
     - title: Glossary
       url: /overview_glossary.html
       output: web
-    - title: Release Notes
+    - title: Release notes
       url: /overview_release_notes.html
       output: web      
 
-  - title: Design Approach
+  - title: Design approach
     output: web
     folderitems:
-    - title: Design Principles
+    - title: Design principles
       url: /designprinciples_maturity_model.html
       output: web
-    - title: Clinical Terminologies
+    - title: Clinical terminologies
       url: /design_clinical_terminologies.html
       output: web
-    - title: Product Versioning
+    - title: Product versioning
       url: /design_product_versioning.html
       output: web
 
   - title: Explore
     output: web
     folderitems:
-    - title: System Demonstrator
+    - title: System demonstrator
       url: /system_demonstrator.html
       output: web
-    - title: Swagger API Documentation
+    - title: Swagger API documentation
       url: /system_reference_swagger.html
       output: web
 
-  - title: Development Guidance
+  - title: Development guidance
     output: web
     folderitems:
-    - title: Development Assets
+    - title: Development assets
       url: /development_deliverables.html
       output: web
 
       subfolders:
-      - title: FHIR&reg; API Guidance
+      - title: FHIR&reg; API guidance
         output: web
         subfolderitems:
 
-        - title: Open Source
+        - title: Open source
           url: /development_fhir_open_source_guidance.html
           output: web
-        - title: Common API Guidance
+        - title: Common API guidance
           url: /development_fhir_api_guidance.html
           output: web
-        - title: Operation Guidance
+        - title: Operation guidance
           url: /development_fhir_operation_guidance.html
           output: web
-        - title: Resource Guidance
+        - title: Resource guidance
           url: /development_fhir_resource_guidance.html
           output: web
-        - title: Security Guidance
+        - title: Security guidance
           url: /development_api_security_guidance.html
           output: web
-        - title: Error Handling
+        - title: Error handling
           url: /development_fhir_error_handling_guidance.html
           output: web
-        - title: V&P Guidance
+        - title: V&P guidance
           url: /development_api_volume_and_performance.html
           output: web          
-        - title: NFR Guidance
+        - title: NFR guidance
           url: /development_api_non_functional_requirements.html
           output: web
           
 
-  - title: Implement A Capability
+  - title: Implement a capability
     output: web
     folderitems:
     - title: Foundations
@@ -118,16 +118,16 @@ entries:
       url: /appointments.html
       output: web
 
-  - title: Integrate With Spine
+  - title: Integrate with Spine
     output: web
     folderitems:
-    - title: System Topologies
+    - title: System topologies
       url: /integration_system_topologies.html
       output: web     
     - title: Spine integration illustrated
       url: /integration_illustrated.html
       output: web           
-    - title: Cross Org Audit & Provenance
+    - title: Cross org audit & provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
     - title: Personal Demographic Service
@@ -136,46 +136,46 @@ entries:
     - title: Spine Directory Services
       url: /integration_spine_directory_service.html
       output: web
-    - title: Spine Security Proxy Introduction
+    - title: Spine Security Proxy introduction
       url: /integration_spine_security_proxy.html
       output: web
-    - title: Spine Security Proxy Implementation Guide
+    - title: Spine Security Proxy implementation guide
       url: /integration_spine_security_proxy_implementation_guide.html
       output: web 
 
-  - title: Test & Assure
+  - title: Test & assure
     output: web
     folderitems:
-    - title: Testing Assets
+    - title: Testing assets
       url: /testing_deliverables.html
       output: web
-    - title: Test Environments
+    - title: Test environments
       url: /testing_environments.html
       output: web
 #    - title: Testing Data
 #      url: /testing_data.html
 #      output: web
-    - title: Provider Testing
+    - title: Provider testing
       url: /testing_api_provider_testing.html
       output: web
-    - title: Consumer Testing
+    - title: Consumer testing
       url: /testing_api_consumer_testing.html
       output: web
 
-  - title: Help & Support
+  - title: Help & support
     output: web
     folderitems:
-    - title: Frequently Asked Questions (FAQ)
+    - title: Frequently asked questions (FAQ)
       url: /support_faq.html
       output: web
-    - title: Communication Channels
+    - title: Communication channels
       url: /support_communications.html
       output: web
-    - title: Run Website Locally
+    - title: Run website locally
       url: /support_run_website_locally.html
       output: web
 
-  - title: External Links
+  - title: External links
     output: web
     folderitems:        
     - title: GPC Documentation Repository
