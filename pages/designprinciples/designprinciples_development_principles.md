@@ -2,7 +2,7 @@
 title: Development Principles
 keywords: development, build
 tags: [development]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples_development_principles.html
 summary: "High-level principles related to the development of the system."
 ---

@@ -41,8 +41,29 @@ entries:
   - title: Design approach
     output: web
     folderitems:
-    - title: Design principles
+    - title: Maturity model
       url: /designprinciples_maturity_model.html
+      output: web
+    - title: Development principles
+      url: /designprinciples_development_principles.html
+      output: web
+    - title: Open API principles
+      url: /designprinciples_open_api_principles.html
+      output: web
+    - title: Data Model principles
+      url: /designprinciples_data_model_principles.html
+      output: web
+    - title: Information Governance principles
+      url: /designprinciples_ig_principles.html
+      output: web
+    - title: Clinical Safety principles
+      url: /designprinciples_clinical_safety_principles.html
+      output: web
+    - title: Assurance principles
+      url: /designprinciples_assurance_principles.html
+      output: web
+    - title: Open API licence principles
+      url: /designprinciples_open_api_licence_principles.html
       output: web
     - title: Clinical terminologies
       url: /design_clinical_terminologies.html

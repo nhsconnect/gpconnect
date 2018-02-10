@@ -2,7 +2,7 @@
 title: Assurance Principles
 keywords: development, assurance
 tags: [development,testing,assurance]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples_assurance_principles.html
 summary: "High-level design principles related to the assurance processes."
 ---

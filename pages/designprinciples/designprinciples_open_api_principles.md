@@ -2,7 +2,7 @@
 title: Open API Design Principles
 keywords: development
 tags: [development,fhir]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples_open_api_principles.html
 summary: "High-level design principles related to the Open API design."
 ---

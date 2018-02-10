@@ -7,9 +7,6 @@
 {% assign sidebar = site.data.sidebars.overview_sidebar.entries; %}
 {% assign showbackbutton = false %}
 
-{% elsif page.sidebar == "designprinciples_sidebar" %}
-{% assign sidebar = site.data.sidebars.designprinciples_sidebar.entries %}
-
 {% elsif page.sidebar == "datalibrary_sidebar" %}
 {% assign sidebar = site.data.sidebars.datalibrary_sidebar.entries %}
 
@@ -46,10 +43,6 @@ sidebar configuration for print files
 
 {% if site.product == "overview" %}
 {% assign sidebar_pdf = site.data.sidebars.overview_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "designprinciples" %}
-{% assign sidebar_pdf = site.data.sidebars.designprinciples_sidebar.entries %}
 {% endif %}
 
 {% if site.product == "datalibrary" %}

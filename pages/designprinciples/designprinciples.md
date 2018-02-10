@@ -2,7 +2,7 @@
 title: Design Principles
 keywords: engage
 tags: [engage]
-sidebar: designprinciples_sidebar
+sidebar: overview_sidebar
 permalink: designprinciples.html
 summary: "All about our guiding design principles."
 ---
