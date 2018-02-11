@@ -7,22 +7,6 @@ topnav:
 topnav_dropdowns:
 - title: Topnav dropdowns
   folders:
-    - title: GP External Links
-      folderitems:        
-        - title: GPC NHS Digital
-          external_url: https://digital.nhs.uk/article/1275/GP-Connect
-        - title: GPC Developer Network
-          external_url: http://developer.nhs.uk/library/interoperability/gp-connect/
-        - title: GPC Code4Health
-          external_url: http://interoperability.code4health.org/projects/gp-connect-2/
-        - title: GPC Github FHIR Data Library
-          external_url: https://github.com/nhsconnect/gpconnect-fhir/
-        - title: GPC Github C# Examples
-          external_url: https://github.com/nhsconnect/gpconnect-dotnet-examples/
-        - title: GPC Github Java Examples
-          external_url: https://github.com/nhsconnect/gpconnect-java-examples/
-        - title: GPC Github Provider Test Harness
-          external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
     - title: Capability Packs
       folderitems:
         - title: Foundations
