@@ -7,8 +7,6 @@ permalink: accessrecord_rest.html
 summary: "Introduction to the GP Connect Access Record REST capability."
 ---
 
-[<i class="fa fa-arrow-left" aria-hidden="true"/> Back to GP Connect - Getting Started.](index.html)
-
 {% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
 
 FHIR resources in scope for RESTful care record access ([Maturity Model Stage 3.](designprinciples_maturity_model.html#stage-3-q4-2016-into-q1-2017)) are:
