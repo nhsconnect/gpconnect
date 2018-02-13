@@ -32,7 +32,6 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 ## 1. Get Started ##
 
 - Read about the GP Connect [Priority Capabilities](overview_priority_capabilities.html).
-- Review our guiding [Design Principles](designprinciples.html) which help shape our approach.
 - Look through the Design Decisions made so far in relation to each capability packs ([foundation](foundations_design.html), [access record](accessrecord_design.html), [appointments](appointments_design.html) and [tasks](tasks_design.html)) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.

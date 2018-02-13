@@ -19,13 +19,13 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 The purpose of the implementation guide is to describe adaptations of the base FHIR specification specific for GP Connect First of Type (FoT) implementations. It therefore focuses mainly on any additional constraints and specialisations from the base specification that apply to GP Connect. The complete specification therefore comprises the base FHIR specification plus the constraints and specialisations described herein. Where there is a conflict between the base specification and this document, this document shall take precedence.
 
-### [FHIR Overview](http://hl7.org/DSTU2/fhir/overview-dev.html) ###
+### [FHIR Overview](http://hl7.org/fhir/DSTU2/overview-dev.html) ###
 
-As outlined on the official [HL7&reg; FHIR](http://hl7.org/DSTU2/fhir/) website:
+As outlined on the official [HL7&reg; FHIR](http://hl7.org/fhir/DSTU2/) website:
 
 > FHIR (Fast Health Interoperability Resources) is designed to enable information exchange to support the provision of healthcare in a wide variety of settings. The specification builds on and adapts modern, widely used RESTful practices to enable the provision of integrated healthcare across a wide range of teams and organizations.
 
-### [FHIR Timelines](http://hl7.org/DSTU2/fhir/timelines.html) ###
+### [FHIR Timelines](http://hl7.org/fhir/DSTU2/timelines.html) ###
 
 {% include note.html content="This document is written to accompany the currently released version of FHIR which is **Draft Standard For Trial Use (DSTU) 2**." %}
 
