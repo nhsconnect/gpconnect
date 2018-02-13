@@ -20,7 +20,7 @@ summary: "Release notes for the various versions of the GP Connect overview."
 	- Addition of HTTP Status Code 599 error which can in some circumstances be returned from the Spine Security Proxy.
 - Updated [Security Guidance](development_api_security_guidance.html)
 	- Clarification of provider responsibilities for HTTP header validation.
-- Updated [Cross Organisation Audit and Provenance](/integration_cross_organisation_audit &amp; provenance.html)
+- Updated [Cross Organisation Audit and Provenance](/integration_cross_organisation_audit_and_provenance.html)
 	- Clarification of the usage of JWT token for consumers and providers.
 - Updated [Error Handling Guidance](development_fhir_error_handling_guidance.html)
 	- Addition of 501 HTTP Status code to guidance

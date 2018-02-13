@@ -1,7 +1,7 @@
 ---
 title: Information Governance Principles
 keywords: engage, fot, information, governance, infogov, ig
-tags: [information_governance,engagement,commissioning,first_of_type]
+tags: [information_governance,commissioning,first_of_type]
 sidebar: overview_sidebar
 permalink: designprinciples_ig_principles.html
 summary: "High-level principles related to information governance (IG) of data with-in the system for FoT."
