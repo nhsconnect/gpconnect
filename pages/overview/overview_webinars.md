@@ -1,7 +1,7 @@
 ---
 title: GP Connect Webinars
 keywords: engage, about, webex, webinar
-tags: [getting_started, webinar, presentation, question, faq, engagement]
+tags: [getting_started, webinar, presentation, question, faq]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_webinars.html
