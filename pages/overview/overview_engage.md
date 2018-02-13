@@ -81,7 +81,7 @@ Some early feedback on the May 2016 release of the GP Connect draft specificatio
 
 GP Connect is working closely with a number of interoperability communities:
 
-- [Code4Health Interoperability Community](http://interoperability.code4health.org/){:target="_blank"}
+- [Code4Health Interoperability Community](https://code4health.org/communities/interoperability){:target="_blank"}
 - [INTEROPen Supplier-led Healthcare IT Interoperability Community](http://www.interopen.org/){:target="_blank"}
 
 ## Timescales, benefits and more
