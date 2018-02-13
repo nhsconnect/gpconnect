@@ -32,14 +32,14 @@ summary: "Release notes for the various versions of the Foundations capability."
 - Removed ODS-Site-Code as a search parameter and identifier from the Organization resource for "Find Organization" and "Organization Read"
 
 #### 1.0.0-beta.2 (Released: 11/08/2017)
-- Updated example conformance profile to include GP Connect profile information (Page - [Get the FHIR Conformance Statement](https://nhsconnect.github.io/gpconnect/foundations_use_case_get_the_fhir_conformance_profile.html)).
-- Clarified use of [Register a patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_register_a_patient.html) API is only to support local-only temporary patient registrations to support federated appointment booking
+- Updated example conformance profile to include GP Connect profile information (Page - [Get the FHIR Conformance Statement](foundations_use_case_get_the_fhir_conformance_profile.html)).
+- Clarified use of [Register a patient](foundations_use_case_register_a_patient.html) API is only to support local-only temporary patient registrations to support federated appointment booking
 - Added additional clarification around use of identifiers for all foundation search capabilities (Pages - Find a practitioner, Find a patient, Find an organisation, Find a location).
-- Clarity on mandatory data items for [Register a patient](https://nhsconnect.github.io/gpconnect/(foundations_use_case_register_a_patient.html#payload-request-body) API
-- Moved VRead to out of scope (Pages - [Get the FHIR Conformance Statement, Common API Guidance](https://nhsconnect.github.io/gpconnect/foundations_use_case_get_the_fhir_conformance_profile.html))
+- Clarity on mandatory data items for [Register a patient](foundations_use_case_register_a_patient.html#payload-request-body) API
+- Moved VRead to out of scope (Pages - [Get the FHIR Conformance Statement, Common API Guidance](foundations_use_case_get_the_fhir_conformance_profile.html))
 - Added java example code to specification for Read capabilities (Pages - Read a practitioner, Read a patient, Read an organisation, Read a location).
-- Updated example code to bring in line with [FHIR Server Root URL format](https://nhsconnect.github.io/gpconnect/development_fhir_api_guidance.html#fhir-api-versioning) guidance.
-- Updates to [Register a patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_register_a_patient.htm) to include latest operation definition XML, and provide clarity on profiles used on response.
+- Updated example code to bring in line with [FHIR Server Root URL format](development_fhir_api_guidance.html#fhir-api-versioning) guidance.
+- Updates to [Register a patient](foundations_use_case_register_a_patient.htm) to include latest operation definition XML, and provide clarity on profiles used on response.
 
 #### 1.0.0-beta.1
 - Initial release of the Foundations capability pack on GitHub in early August 2016.

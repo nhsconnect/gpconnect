@@ -53,7 +53,7 @@ When searching for diaries, the results will be:
 
 ## Do we need to use the 'AppointmentResponse' resource? ##
 
-As per the suggested FHIR workflow in the [FHIR DSTU2 Appointment](https://www.hl7.org/fhir/DSTU/appointment.html) Should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource, or are HTTP response codes sufficient for GP Connect use cases?
+As per the suggested FHIR workflow in the [FHIR DSTU2 Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) Should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource, or are HTTP response codes sufficient for GP Connect use cases?
 
 - AppointmentResponse resource will be provided in response to a booking request.
 - <span class="label label-success">SELECTED</span> HTTP codes will be used to convey success/failure of a booking request.
