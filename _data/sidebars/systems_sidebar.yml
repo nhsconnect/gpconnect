@@ -1,7 +1,6 @@
 entries:
 - title: Systems
-  product: Systems<br/>
-  version: 1.0.0-alpha.1
+  product: Systems
   levels: one
   folders:
 

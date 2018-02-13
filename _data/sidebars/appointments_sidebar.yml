@@ -1,7 +1,6 @@
 entries:
 - title: Appointment Management
-  product: Appointment Management<br/>
-  version: 1.0.0-rc.3
+  product: Appointment Management
   folders:
 
   - title:
