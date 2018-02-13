@@ -26,7 +26,7 @@ Example clinical scenarios for FoT and beyond can be found on the [Tasks Clinica
 
 ## Use Cases ##
 
-- [Send a task](tasks_send_a_task.html)
+- [Send a task](tasks_use_case_send_a_task.html)
 {% comment %}
 - [Receive a task](tasks_receive_a_task.html)
 {% endcomment %}
