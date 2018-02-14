@@ -14,7 +14,7 @@ The profiled Fhir Resources required for each of the GP Connect capability packs
 * [Foundations](datalibraryfoundation.html)
 * [Access Record HTML](datalibraryaccessRecord.html)
 * [Appointment Management](appointments.html)
-* [Task Management](datalibrarytasks.html)
+* [Task Management](tasks.html)
 
 
 {% include tip.html content="Refer to the [Explore - Swagger API Documentation](system_reference_swagger.html) for further details." %}
