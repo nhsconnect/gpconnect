@@ -5,17 +5,3 @@ topnav:
   #    url: news.html
 
 topnav_dropdowns:
-- title: Topnav dropdowns
-  folders:
-    - title: Capability Packs
-      folderitems:
-        - title: Foundations
-          url: foundations.html
-        - title: Access Record HTML
-          url: accessrecord.html
-        - title: Access Record REST
-          url: accessrecord_rest.html
-        - title: Appointment Management
-          url: appointments.html
-        - title: Task Management
-          url: tasks.html
