@@ -4,7 +4,7 @@ keywords: foundations
 tags: [foundations]
 sidebar: foundations_sidebar
 permalink: foundations.html
-summary: "All about the common foundation capabilities."
+summary: "Introduction to the GP Connect Foundations capability"
 ---
 
 {% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}

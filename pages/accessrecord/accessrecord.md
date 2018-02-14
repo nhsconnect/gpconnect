@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord.html
-summary: "Introduction to the GP Connect Access Record HTML capability."
+summary: "Introduction to the GP Connect Access Record HTML capability"
 ---
 
 {% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
