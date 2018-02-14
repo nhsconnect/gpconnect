@@ -32,7 +32,7 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 ## 1. Get Started ##
 
 - Read about the GP Connect [Priority Capabilities](overview_priority_capabilities.html).
-- Look through the Design Decisions made so far in relation to each capability packs ([foundation](foundations_design.html), [access record](accessrecord_design.html), [appointments](appointments_design.html) and [tasks](tasks_design.html)) and get involved:
+- Look through the Design Decisions made so far in relation to each capability packs ([foundation](foundations_design.html), [access record](accessrecord_design.html), [appointments](appointments.html) and [tasks](tasks_design.html)) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
@@ -47,7 +47,7 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 - Familiarise yourself with HL7&reg; FHIR&reg; (Fast Health Interoperability Resources) ([developer intro](http://www.hl7.org/implement/standards/fhir/overview-dev.html){:target="_blank"}, [exec summary](http://www.hl7.org/implement/standards/fhir/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/overview-clinical.html){:target="_blank"}).
 - Grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language.
 - Familiarise yourself with our GP Connect [FHIR API Guidance](development_fhir_api_guidance.html) common to all APIs.
-- Explore the GP Connect Profiled Fhir Resources, a variation of the international [Fhir Resources](https://www.hl7.org/fhir/DSTU2/){:target="_blank"}, for [Foundations](datalibraryfoundation.html), [AccessRecord HTML](datalibraryaccessRecord.html) and [Appointment Management](datalibraryappointment.html).
+- Explore the GP Connect Profiled Fhir Resources, a variation of the international [Fhir Resources](https://www.hl7.org/fhir/DSTU2/){:target="_blank"}, for [Foundations](datalibraryfoundation.html), [AccessRecord HTML](datalibraryaccessRecord.html) and [Appointment Management](appointments.html).
 - Dig in deep and explore one or more of the GP Connect Capability Packs and start building new or hitting existing APIs.
   - [Foundations Capability Pack](foundations.html) (e.g. resolve a patient to their logical identifier for further API calls).
   	- Note the foundation per-requisites are mandatory and may restrict your ability to utilise the GP Connect APIs.
