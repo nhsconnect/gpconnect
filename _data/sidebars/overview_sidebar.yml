@@ -135,7 +135,7 @@ entries:
     - title: Task Management
       url: /tasks.html
       output: web
-    - title: <b>Appointment Management</b>
+    - title: <span class="capability-not-available">Appointment Management</span>
       url: /appointments.html
       output: web
 
