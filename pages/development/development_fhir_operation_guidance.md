@@ -33,7 +33,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 	- Resource Type is the name of a FHIR resource (i.e. `Patient`, `Appointment`, `Organization` etc).
 	- Operation Name is the name of a custom FHIR operation (i.e. `gpc.getcarerecord`)
 
-### Foundations Capability Interactions ###
+### Foundations capability interactions ###
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
@@ -41,21 +41,21 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 
 The remaining interactions of the Foundations capability pack are not available at this specification version.
 
-### Access Record HTML Capability Interactions ###
+### Access Record HTML capability interactions ###
 
 | Operation                 | InteractionID             | Http Verb | Example URL Pattern |
 |---------------------------|---------------------------| ----------|---------------------|
 | [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` | `POST` | `[base]/Patient/$gpc.getcarerecord` |
 
-### Access Record Structured Capability Interactions ###
+### Access Record Structured capability interactions ###
 
 Access Record Structured interactions are not available at this specification version.
 
-### Appointments Capability Interactions ###
+### Appointments capability interactions ###
 
 Appointments interactions are not available at this specification version.
 
-### Task Capability Interactions ###
+### Task capability interactions ###
 
 Task interactions are not available at this specification version.
 
