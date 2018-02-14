@@ -12,8 +12,8 @@ GP Connect has specified profiled versions of the international [Fhir Resources]
 The profiled Fhir Resources required for each of the GP Connect capability packs are specified within the specific specification sections for each of the capabilities:
 
 * [Foundations](datalibraryfoundation.html)
-* [AccessRecord HTML](datalibraryaccessRecord.html)
-* [Appointment Management](datalibraryappointment.html)
+* [Access Record HTML](datalibraryaccessRecord.html)
+* [Appointment Management](appointments.html)
 * [Task Management](datalibrarytasks.html)
 
 
