@@ -16,9 +16,6 @@
 {% elsif page.sidebar == "accessrecord_rest_sidebar" %}
 {% assign sidebar = site.data.sidebars.accessrecord_rest_sidebar.entries %}
 
-{% elsif page.sidebar == "appointments_sidebar" %}
-{% assign sidebar = site.data.sidebars.appointments_sidebar.entries %}
-
 {% elsif page.sidebar == "tasks_sidebar" %}
 {% assign sidebar = site.data.sidebars.tasks_sidebar.entries %}
 
@@ -52,10 +49,6 @@ sidebar configuration for print files
 
 {% if site.product == "accessrecord_rest" %}
 {% assign sidebar_pdf = site.data.sidebars.accessrecord_rest_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "appointments" %}
-{% assign sidebar_pdf = site.data.sidebars.appointments_sidebar.entries %}
 {% endif %}
 
 {% if site.product == "tasks" %}
