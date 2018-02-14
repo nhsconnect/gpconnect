@@ -129,7 +129,7 @@ entries:
     - title: Access Record HTML
       url: /accessrecord.html
       output: web
-    - title: Access Record REST
+    - title: <b class="capability-not-available">Access Record Structured</b>
       url: /accessrecord_rest.html
       output: web
     - title: <b class="capability-not-available">Task Management</b>

@@ -13,6 +13,7 @@ The profiled Fhir Resources required for each of the GP Connect capability packs
 
 * [Foundations](datalibraryfoundation.html)
 * [Access Record HTML](datalibraryaccessRecord.html)
+* [Access Record Structured](accessrecord_rest.html)
 * [Appointment Management](appointments.html)
 * [Task Management](tasks.html)
 

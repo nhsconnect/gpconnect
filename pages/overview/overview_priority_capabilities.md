@@ -20,7 +20,7 @@ GP Connect is initially focussing on delivering three main interoperability capa
 
 ### Structured ###
 
-[Access Record REST](accessrecord_rest.html)
+[Access Record Structured](accessrecord_rest.html)
 
 ## Appointments ##
 
