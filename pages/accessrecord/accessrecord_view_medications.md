@@ -63,6 +63,7 @@ All relevant records SHALL be returned.
 	- longer human readable free-text details for the medication item.
 
 <sup>1</sup>Provider systems **SHALL** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **SHALL** include these items: <br>
+
  - Medication Material
  - Medication Start and End Time
  - Medication Dosage units	
