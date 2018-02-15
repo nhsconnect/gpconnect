@@ -9,7 +9,7 @@ summary: "Introduction to the GP Connect Access Record HTML capability"
 
 {% include important.html content="This version of the Access Record HTML capability is undergoing pilot testing with GP system providers, and maybe subject to change following a period of clinical feedback.  If change occurs, a new version of the specification will be released. Please consult the GP Connect programme before starting any work with this capability." %}
 
-For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings.
+For direct patient care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings.
 
 <!-- {% include important.html content="Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care." %} -->
 
@@ -46,16 +46,16 @@ Significant effort has already been made to unify the HTML section views from al
 
 The content displayed in the HTML views has then been used as a common base line of available data to guide the structured and coded 'Access Record' approach.
 
-### Use Cases ###
+### Use cases ###
 
 - Extended access GP practices can view all of the patients primary care views even when the record is held on a different GP system.
 - Other care settings (e.g. 111, Physio, Community, Emergency, Acute/Secondary, Social) can view the patients GP record (those held by the patients recorded GP practice) to better inform care decisions they may be making for a patient.
 
-### Profiled Fhir Resources ###
+### Profiled FHIR&reg; resources ###
 
 Please refer to the [AccessRecord HTML FHIR Resources](datalibraryaccessRecord.html) page for details of the FHIR profiles utilised for the Access Record HTML operation.
 
-### SPINE Interactions ###
+### Spine interactions ###
 
 The Access Record HTML capability message set includes the following set of spine interactions:
 
