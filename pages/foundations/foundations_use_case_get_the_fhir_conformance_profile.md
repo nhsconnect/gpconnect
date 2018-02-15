@@ -108,10 +108,6 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 </Conformance>
 ```
 
-{% include tip.html content="Please see capability packs for examples of conformance statements specific to those capabilities" %}
-- [Access Record Conformance Statement](accessrecord_development_conformance_profile.html)
-
-
 Consumer Systems:
 
 - SHALL, during development, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
