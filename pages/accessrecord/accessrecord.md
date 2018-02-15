@@ -32,7 +32,7 @@ The information "sections" in scope for care record access are:
 
 {% include important.html content="The 'Clinical Items' section exists as it is not currently possible to reliably distinguish procedures, diagnoses, symptoms and other clinically coded items into their own sections due to the way they are stored in the primary care record Principal systems. " %}
 
-{% include important.html content="Initially some sections of the patient care record (marked above with a <sup>*</sup> may not initially be available from all primary care record Principal systems.  The 'Investigations' Section will be considered for Stage 2 so for Stage 1 numeric results will be included in the Observation Section" %}
+{% include important.html content="Initially some sections of the patient care record (marked above with a <sup>*</sup> may not initially be available from all primary care record Principal systems.  The 'Investigations' Section will be considered for future release, so investigation results will be included in the Observation Section" %}
 
 ## HTML View ##
 
