@@ -7,13 +7,13 @@ permalink: accessrecord.html
 summary: "Introduction to the GP Connect Access Record HTML capability"
 ---
 
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
+{% include todo.html content="This capability pack is published as a **candidate release** version and as such is subject to minor change. It has been published to enable Providers and Consumers the necessary detail to develop and consume the GP Connect FHIR based APIs." %}
 
 For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings.
-
+<!--
 {% include important.html content="Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care." %}
-
-The information "sections" initially in scope for care record access (Stage 1.) are:
+-->
+The information "sections" in scope for care record access are:
 
 1. Summary
 2. Encounters
