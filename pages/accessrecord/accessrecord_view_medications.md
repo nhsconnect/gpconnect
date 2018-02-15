@@ -63,11 +63,12 @@ All relevant records SHALL be returned.
 	- longer human readable free-text details for the medication item.
 
 <sup>1</sup>Provider systems **SHALL** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **SHALL** include these items: <br>
-- `MedicationOrder.medication.code`
-- `MedicationOrder.dosageInstruction.dose[x]`
-- `MedicationOrder.dosageInstruction.schedule[x]`
-- `MedicationOrder.dosageInstruction.rate`
-- `MedicationOrder.dosageInstruction.maxDosePerPeriod`
+- Medication Material
+- Medication Start and End Time
+- Medication Dosage units	
+- Medication Schedule(when/how often)
+- Medication Dosage Rate
+- Max Medication Dosage quantity
 
 ### HTML View ###
 
