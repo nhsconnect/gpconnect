@@ -59,36 +59,36 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 
 ```xml
 <Conformance xmlns="http://hl7.org/fhir">
-	<version value="1.0.0-rc.1" />
-	<name value="GP Connect" />
+	<version value="1.0.0-rc.5" />
+	<name value="Access Record HTML" />
 	<status value="draft" />
 	<experimental value="true" />
-	<publisher value="NHS Digital" />
+	<publisher value="[Software Vendor Name]" />
 	<contact>
-		<name value="Software Vendor Contact Name" />
+		<name value="[Software Vendor Contact Name]" />
 	</contact>
 	<date value="2016-08-08" />
-	<description value="This server is a reference implementation of the GP Connect FHIR APIs" />
+	<description value="This server implements the GP Connect Access Record HTML FHIR APIs" />
 	<copyright value="Copyright NHS Digital 2016" />
+	<kind value="capability" />
 	<software>
-		<name value="Software Name" />
-		<version value="Software Verson" />
-		<releaseDate value="Software Release Date" />
+		<name value="[Software Name]" />
+		<version value="[Software Verson]" />
+		<releaseDate value="[Software Release Date]" />
 	</software>
 	<fhirVersion value="1.0.2" />
 	<acceptUnknown value="both" />
 	<format value="application/xml+fhir" />
 	<format value="application/json+fhir" />
-	<profile>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-device-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Location-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-operationoutcome-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Organization-1"/>
- 		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Patient-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/GPConnect-Appointment-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-schedule-1"/>
-		<reference value="https://fhir.nhs.uk/StructureDefinition/gpconnect-slot-1"/>
+ 	<profile>
+ 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-device-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"/>
+		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"/>
 	</profile>
 	<rest>
 		<mode value="server" />
@@ -98,145 +98,12 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 				<blob />
 			</certificate>
 		</security>
-		<resource>
-			<type value="Patient" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Organization" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Practitioner" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="SDS User Id (i.e. http://fhir.nhs.net/sds-user-id|999999)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Appointment" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="create" />
-			</interaction>
-			<interaction>
-				<code value="update" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Location" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="ODS Code (i.e. ODS Site Code (i.e. https://fhir.nhs.uk/Id/ods-site-code|Y12345678)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Slot" />
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="start" />
-				<type value="date" />
-			</searchParam>
-			<searchParam>
-				<name value="end" />
-				<type value="date" />
-			</searchParam>
-			<searchParam>
-				<name value="fb-type" />
-				<type value="token" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Order" />
-			<interaction>
-				<code value="create" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-		</resource>
 		<operation>
 			<name value="gpc.getcarerecord" />
 			<definition>
 				<reference value="OperationDefinition/gpc.getcarerecord" />
 			</definition>
 		</operation>
-		<operation>
-			<name value="gpc.registerpatient" />
-			<definition>
-				<reference value="OperationDefinition/gpc.registerpatient" />
-			</definition>
-		</operation>
-	</rest>
-	<rest>
-		<mode value="server" />
 	</rest>
 </Conformance>
 ```
