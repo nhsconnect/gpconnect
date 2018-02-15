@@ -7,7 +7,7 @@ permalink: accessrecord.html
 summary: "Introduction to the GP Connect Access Record HTML capability"
 ---
 
-{% include todo.html content="This capability pack is published as a **candidate release** version and as such is subject to minor change. It has been published to enable Providers and Consumers the necessary detail to develop and consume the GP Connect FHIR based APIs." %}
+{% include important.html content="TThis version of the Access Record HTML capability is undergoing pilot testing with GP system providers, and maybe subject to change following a period of clinical feedback.  If change occurs, a new version of the specification will be released. Please consult the GP Connect programme before starting any work with this capability." %}
 
 For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings.
 
