@@ -15,11 +15,11 @@ summary: "Summary HTML View."
 
 ### Warnings ###
 
-{% include todo.html content="Warnings to be defined in [Stage 2.](designprinciples_maturity_model.html)" %}
+{% include todo.html content="Warnings to be defined in future release" %}
 
 ### Key Indicators ###
 
-{% include todo.html content="Key Indicators to be defined in [Stage 2.](designprinciples_maturity_model.html)" %}
+{% include todo.html content="Key Indicators to be defined in future release" %}
 
 - End of Life care record exists.
 - Chronic Conditions (top 5% of patients)
@@ -43,7 +43,7 @@ Please see HTML guidance in the [Current Allergies and Adverse Reactions](access
 
 ### Current Recalls ###
 
-{% include todo.html content="Recalls to be defined in [Stage 2.](designprinciples_maturity_model.html)" %}
+{% include todo.html content="Recalls to be defined in future release" %}
 
 > Example: a patient needs to comeback to see the GP in X weeks time (e.g. asthma monitoring, vaccination follow-up etc.)
 
