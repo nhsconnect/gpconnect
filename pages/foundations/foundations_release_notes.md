@@ -14,6 +14,13 @@ summary: "Release notes for the various versions of the Foundations capability."
   
 - [Register a patient](foundations_use_case_register_a_patient.html)
   - [Payload Response Body](foundations_use_case_register_a_patient.html#payload-response-body) - made clear that the registrationType is required within the registration details extension when created by the provider system as part of the register patient operation.
+  - Added wording around expectations for the use of official name within patient resource.
+
+- [Find a patient](foundations_use_case_find_a_patient.html)
+  - Added wording around expectations for the use of official name within patient resource.
+  
+- [Read a patient](foundations_use_case_read_a_patient.html)
+  - Added wording around expectations for the use of official name within patient resource.
 
 #### [1.0.0-rc.4 (Released: 28/11/2017)](https://github.com/nhsconnect/gpconnect/releases/tag/Appointment_rc.3_Foundations_rc.4_GP_Connect_rc.1)
 
