@@ -62,7 +62,7 @@ All relevant records SHALL be returned.
 6. Details<sup>1</sup>
 	- longer human readable free-text details for the medication item.
 
-Provider systems **SHALL** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **SHALL** include these items: <br>
+<sup>1</sup>Provider systems **SHALL** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **SHALL** include these items: <br>
 - `MedicationOrder.medication.code`
 - `MedicationOrder.dosageInstruction.dose[x]`
 - `MedicationOrder.dosageInstruction.schedule[x]`
