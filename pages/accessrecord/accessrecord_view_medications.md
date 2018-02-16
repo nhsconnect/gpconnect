@@ -40,17 +40,6 @@ A list of all current acute and repeat medications issued to a patient ordered b
 
 {% include warning.html content="The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete." %}
 
-### Structured Data ###
-
-| Logical Item | FHIR Mapping | Narrative Item |
-|---------------|------------|----------------|
-| Medication Material |	MedicationOrder.medication.code | M |
-| Medication Start and End Time	| MedicationOrder.dosageInstruction.schedule[x] | - |
-| Medication Dosage units |	MedicationOrder.dosageInstruction.dose[x] | M |
-| Medication Schedule(when/how often) | MedicationOrder.dosageInstruction.schedule[x] | M |
-| Medication Dosage Rate | MedicationOrder.dosageInstruction.rate | M |
-| Max Medication Dosage quantity | MedicationOrder.dosageInstruction.maxDosePerPeriod | M |
-
 ### Date Horizon ###
 
 All relevant records SHALL be returned.
@@ -73,7 +62,14 @@ All relevant records SHALL be returned.
 6. Details<sup>1</sup>
 	- longer human readable free-text details for the medication item.
 
-Provider systems SHALL include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative SHALL include the items marked as mandatory in `Narrative Item` column of the `Structured Data` table.
+<sup>1</sup>Provider systems **SHALL** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **SHALL** include these items: <br>
+
+ - Medication Material
+ - Medication Start and End Time
+ - Medication Dosage units	
+ - Medication Schedule(when/how often)
+ - Medication Dosage Rate
+ - Max Medication Dosage quantity
 
 ### HTML View ###
 
@@ -112,10 +108,6 @@ Provider systems SHALL include all relevant clinical content in the `Details` fr
 ### Purpose ###
 
 A list of all current repeat medications issued to a patient ordered by date descending (i.e. most recent Last Issued date/time first).
-
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 ### Date Horizon ###
 
@@ -182,10 +174,6 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 A list of all past medications, issued to a patient ordered by date descending (i.e. most recent date/time first). The type will include Acute, or Repeat. 
 
 Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
-
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 ### Date Horizon ###
 
