@@ -89,17 +89,11 @@ entries:
           - title: Observations
             url: /accessrecord_view_observations.html
             output: web, pdf
-          - title: Investigations
-            url: /accessrecord_view_investigations.html
-            output: web, pdf
           - title: Immunisations
             url: /accessrecord_view_immunisations.html
             output: web, pdf
           - title: Administrative Items
             url: /accessrecord_view_administrative_items.html
-            output: web, pdf
-          - title: Patient Details
-            url: /accessrecord_view_patient_details.html
             output: web, pdf
         
       - title: Example Conformance Profile
