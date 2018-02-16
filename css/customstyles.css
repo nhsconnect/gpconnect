@@ -1186,8 +1186,17 @@ div.navbar-collapse .dropdown-menu > li > a {
 	color: #269900;
 }
 
+
+.tableColumn10 {
+    width: 10%;
+}
+
 .tableColumn15 {
     width: 15%;
+}
+
+.tableColumn25 {
+    width: 25%;
 }
 
 .tableColumn30 {
