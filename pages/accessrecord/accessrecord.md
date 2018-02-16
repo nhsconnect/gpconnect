@@ -4,16 +4,16 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord.html
-summary: "Introduction to the GP Connect Access Record HTML capability."
+summary: "Introduction to the GP Connect Access Record HTML capability"
 ---
 
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
+{% include important.html content="This version of the Access Record HTML capability is undergoing pilot testing with GP system providers, and maybe subject to change following a period of clinical feedback.  If change occurs, a new version of the specification will be released. Please consult the GP Connect programme before starting any work with this capability." %}
 
-For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings.
+For direct patient care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings.
 
-{% include important.html content="Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care." %}
+<!-- {% include important.html content="Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care." %} -->
 
-The information "sections" initially in scope for care record access (Stage 1.) are:
+The information "sections" in scope for care record access are:
 
 1. Summary
 2. Encounters
@@ -32,7 +32,7 @@ The information "sections" initially in scope for care record access (Stage 1.) 
 
 {% include important.html content="The 'Clinical Items' section exists as it is not currently possible to reliably distinguish procedures, diagnoses, symptoms and other clinically coded items into their own sections due to the way they are stored in the primary care record Principal systems. " %}
 
-{% include important.html content="Initially some sections of the patient care record (marked above with a <sup>*</sup> may not initially be available from all primary care record Principal systems.  The 'Investigations' Section will be considered for Stage 2 so for Stage 1 numeric results will be included in the Observation Section" %}
+{% include important.html content="Initially some sections of the patient care record (marked above with a <sup>*</sup> may not initially be available from all primary care record Principal systems.  The 'Investigations' Section will be considered for future release, so investigation results will be included in the Observation Section" %}
 
 ## HTML View ##
 
@@ -46,19 +46,19 @@ Significant effort has already been made to unify the HTML section views from al
 
 The content displayed in the HTML views has then been used as a common base line of available data to guide the structured and coded 'Access Record' approach.
 
-### Use Cases ###
+### Use cases ###
 
 - Extended access GP practices can view all of the patients primary care views even when the record is held on a different GP system.
 - Other care settings (e.g. 111, Physio, Community, Emergency, Acute/Secondary, Social) can view the patients GP record (those held by the patients recorded GP practice) to better inform care decisions they may be making for a patient.
 
-### Profiled Fhir Resources ###
+### Profiled FHIR&reg; resources ###
 
 Please refer to the [AccessRecord HTML FHIR Resources](datalibraryaccessRecord.html) page for details of the FHIR profiles utilised for the Access Record HTML operation.
 
-### SPINE Interactions ###
+### Spine interactions ###
 
 The Access Record HTML capability message set includes the following set of spine interactions:
 
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
-| [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1` |
+| [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` |
