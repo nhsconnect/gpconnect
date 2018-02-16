@@ -21,8 +21,6 @@ summary: "Release notes for the various versions of the Access Record HTML capab
   - Minor wording tweak "Scheduled End Date" to "Scheduled End" for consistency.
 - Updated [Access Record View Problems](accessrecord_view_problems.html)
   - Minor fix to HTML template to bring thead/tbody tag usage inline with the other templates.
-- Added page [Example Conformance Profile](accessrecord_development_conformance_profile.html)
-  - New page with an example conformance profile for Access Record HTML.
 
 #### 1.0.0-rc.4 (Released: 20th February)
 
