@@ -22,9 +22,30 @@ entries:
     - title: Glossary
       url: /overview_glossary.html
       output: web
-    - title: Release notes
-      url: /overview_release_notes.html
-      output: web      
+      
+      subfolders:
+      - title: Release notes
+        output: web
+        subfolderitems:
+        - title: 1.1.0
+          url: /overview_release_notes_1_1_0.html
+          output: web
+        - title: 1.0.0
+          url: /overview_release_notes_1_0_0.html
+          output: web
+        - title: 0.6.0-deprecated
+          url: /overview_release_notes_0_6_0.html
+          output: web
+        - title: 0.5.1
+          url: /overview_release_notes_0_5_1.html
+          output: web
+        - title: 0.5.0
+          url: /overview_release_notes_0_5_0.html
+          output: web
+    - title: Specification Versions
+      url: /overview_specification_versions.html
+      output: web, pdf
+      type: homepage
 
   - title: Design approach
     output: web

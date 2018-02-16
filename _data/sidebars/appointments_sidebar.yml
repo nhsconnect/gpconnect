@@ -35,9 +35,6 @@ entries:
     - title: Wireframes
       url: /appointments_wireframes.html
       output: web
-    - title: Release notes
-      url: /appointments_release_notes.html
-      output: web
     - title: Known issues
       url: /appointments_known_issues.html
       output: web, pdf
