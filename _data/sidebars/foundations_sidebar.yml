@@ -27,9 +27,6 @@ entries:
     - title: Design Decisions
       url: /foundations_design.html
       output: web, pdf
-#    - title: Wireframes
-#      url: /foundations_wireframes.html
-#      output: web, pdf
     - title: Release Notes
       url: /foundations_release_notes.html
       output: web, pdf
@@ -49,28 +46,4 @@ entries:
 
         - title: Get the FHIR&reg; conformance profile
           url: /foundations_use_case_get_the_fhir_conformance_profile.html
-          output: web, pdf
-        - title: Find a patient
-          url: /foundations_use_case_find_a_patient.html
-          output: web, pdf
-        - title: Read a patient
-          url: /foundations_use_case_read_a_patient.html
-          output: web, pdf
-        - title: Find a practitioner
-          url: /foundations_use_case_find_a_practitioner.html
-          output: web, pdf
-        - title: Read a practitioner
-          url: /foundations_use_case_read_a_practitioner.html
-          output: web, pdf
-        - title: Find an organisation
-          url: /foundations_use_case_find_an_organisation.html
-          output: web, pdf
-        - title: Read an organisation 
-          url: /foundations_use_case_read_an_organisation.html
-          output: web, pdf
-        - title: Read a location
-          url: /foundations_use_case_read_a_location.html
-          output: web, pdf
-        - title: Register a patient
-          url: /foundations_use_case_register_a_patient.html
           output: web, pdf
