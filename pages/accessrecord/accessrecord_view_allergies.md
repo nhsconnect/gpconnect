@@ -39,10 +39,6 @@ Contains two sections:
 
 A list of current allergies and adverse reactions related to a patient ordered by date descending (i.e. most recent date/time first).
 
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
 ### Date Horizon ###
 
 All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
@@ -90,10 +86,6 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 ### Purpose ###
 
 A list of historical allergies and adverse reactions related to a patient ordered by date descending (i.e. most recent date/time first).
-
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 ### Date Horizon ###
 
