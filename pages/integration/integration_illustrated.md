@@ -48,7 +48,7 @@ The steps shown in the diagram are detailed below.
 | 4c   | **Provider** responds with details of what slots are available for booking. Should no applicable slots be returned, the consumer may make repeated calls to [Search for free slots](appointments.html) with amended date ranges. |
 | 4d   | **SSP** forwards the free slots received from the Provider to the Consumer. |   
 |      |      |
-| 5a   | **Consumer** makes API call to [Find a patient](foundations_use_case_find_a_patient.html) providing the patient's NHS Number. |
+| 5a   | **Consumer** makes API call to [Find a patient](foundations.html) providing the patient's NHS Number. |
 | 5b   | **Spine Security Proxy (SSP)** receives the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 5c   | **Provider** finds patient record and returns the logical identifier of the patient record at this practice in their system. See [Patient record not present](appointments.html) for an illustration of the steps required in this case. |
 | 5d   | **SSP** forwards the Patient details received from the Provider to the Consumer |
