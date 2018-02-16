@@ -22,7 +22,7 @@ What is the scope of what views we're aiming to deliver?
 
 <sup>1</sup> Provider SHALL return minimal Patient resource(s).
 
-<span class="label label-info">DECISION</span> Remove the structured clinical data from the bundle until [Stage 2.](designprinciples_maturity_model.html) engagement.
+<span class="label label-info">DECISION</span> Remove the structured clinical data from the bundle.
 
 ## HTML Sections ##
 
@@ -122,7 +122,7 @@ Items designated by the Practice as confidential SHALL not be provided, and proc
 
 ### Sensitive Data Exclusion Set ###
 
-<span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Sensitive Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
+<span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Sensitive Exclusion Set SHALL be applied for FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
 <br>[GP Summary Exclusion Code Lists](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/1/subpack/141/releases)
 
 {% include note.html content="You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link" %}
@@ -151,7 +151,7 @@ If the patient's record is indicated in the Provider system as not fully-integra
 
 #### SCR Consent Model ####
 
-{% include roadmap.html content="Could potentially be brought into scope for Stage 2 or 3." %}
+{% include roadmap.html content="Could potentially be brought into scope for future release." %}
 
 SCR model (between Consumer and Provider's who have an existing Data Sharing Agreement in place).
 
@@ -187,25 +187,6 @@ Date range handling in the HTML view per section:
 #### HTML Section Ordering ####
 
 <span class="label label-info">DECISION</span> Consumer systems SHALL provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML Composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
-
-### Per Section Minimum Free Text For Display ###
-
-{% include todo.html content="Free-text population guidance details to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
-Providers SHALL populate the free-text details field as follows:
-
-| Section Code | Section Name | Mandatory Data Items | 
-| ------------ | ------------ | -------------------- |
-| ENC | Encounters | - |
-| CLI | Clinical Items | - |
-| ADM | Administrative Items | - |
-| REF | Referrals | - |
-| IMM | Immunisations | - |
-| PRB | Problems | - |
-| MED | Medications | - |
-| OBS | Observations | - |
-| INV | Investigations | - |
-| ALL | Allergies and Sensitivities | - |
 
 ## Operation Definition ##
 
