@@ -17,10 +17,6 @@ summary: "Encounters HTML View."
 
 A list of encounters related to a patient ordered by date descending (i.e. most recent date/time first).
 
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
 ### Date Horizon ###
 
 All relevant records SHALL be returned with-in Consumer supplied date range.
