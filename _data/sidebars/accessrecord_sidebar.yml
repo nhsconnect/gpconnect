@@ -33,9 +33,6 @@ entries:
     - title: Wireframes
       url: /accessrecord_wireframes.html
       output: web, pdf
-    - title: Release notes
-      url: /accessrecord_release_notes.html
-      output: web, pdf
     - title: Known issues
       url: /accessrecord_known_issues.html
       output: web, pdf

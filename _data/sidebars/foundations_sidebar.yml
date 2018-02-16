@@ -30,12 +30,6 @@ entries:
     - title: Design decisions
       url: /foundations_design.html
       output: web, pdf
-#    - title: Wireframes
-#      url: /foundations_wireframes.html
-#      output: web, pdf
-    - title: Release notes
-      url: /foundations_release_notes.html
-      output: web, pdf
       
   - title: Development
     output: web, pdf
