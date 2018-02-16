@@ -17,11 +17,11 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 
 To illustrate this, an example is given below of all the steps required consume GP Connect capabilities. For full details, please refer to the relevant spine service pages.
 
-## Example: Integrate with Spine to book an appointment at a GP practice ##
+## Example: Integrate with Spine to retrieve a care record in HTML format ##
 
-The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order to book an appointment at a GP practice.
+The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order retrieve a care record in HTML format
 
-![Sequence diagram for booking an appointment end to end interactions](images/integration/integration_sequence_diagram.png)
+![Sequence diagram for booking an appointment end to end interactions](images/integration/Spine_Integration_Illustrated_AccessRecordHTML.png)
 
 The steps shown in the diagram are detailed below.
 
@@ -43,17 +43,8 @@ The steps shown in the diagram are detailed below.
 | 3c   | **Provider** returns the Conformance Profile to the SSP. |
 | 3d   | **SSP** forwards the Conformance Profile received from the Provider to the Consumer. |
 |      |      |
-| 4a   | **Consumer** then makes an API call to [Search for free slots](appointments.html) at the practice in the specified time-frame. |
+| 4a   | **Consumer** then makes an API call to [Retrieve a care record section](accessrecord_use_case_retrieve_a_care_record_section.html) at the practice in the specified time-frame. |
 | 4b   | **SSP** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
-| 4c   | **Provider** responds with details of what slots are available for booking. Should no applicable slots be returned, the consumer may make repeated calls to [Search for free slots](appointments.html) with amended date ranges. |
-| 4d   | **SSP** forwards the free slots received from the Provider to the Consumer. |   
+| 4c   | **Provider** responds with the requested details of the care record. |
+| 4d   | **SSP** forwards the requested details of the care record to the Consumer. |   
 |      |      |
-| 5a   | **Consumer** makes API call to [Find a patient](foundations.html) providing the patient's NHS Number. |
-| 5b   | **Spine Security Proxy (SSP)** receives the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
-| 5c   | **Provider** finds patient record and returns the logical identifier of the patient record at this practice in their system. See [Patient record not present](appointments.html) for an illustration of the steps required in this case. |
-| 5d   | **SSP** forwards the Patient details received from the Provider to the Consumer |
-|      |      |
-| 6a   | **Consumer** calls [Book an appointment](appointments.html) indicating the slots selected in the UI together with the logical ID of the patient. |
-| 6b   | **Spine Security Proxy (SSP)** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
-| 6c   | **Provider** responds with details of the booked appointment as confirmation of success. |
-| 6d   | **SSP** forwards the Appointment details received from the Provider to the Consumer. |
