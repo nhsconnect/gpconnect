@@ -95,10 +95,7 @@ entries:
           - title: Administrative Items
             url: /accessrecord_view_administrative_items.html
             output: web, pdf
-        
-      - title: Example Conformance Profile
-        url: /accessrecord_development_conformance_profile.html
-        output: web, pdf
+            
 
 #  - title: Safety and Governance
 #    output: web, pdf
