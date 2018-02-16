@@ -37,10 +37,6 @@ Providers message describing at a summary level how they have populated this sec
 
 A list of active problems and issues related to a patient ordered by date descending (i.e. most recent date/time first).
 
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
 ### Date Horizon ###
 
 All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
@@ -95,10 +91,6 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 ### Purpose ###
 
 A list of inactive (i.e. end dated) problems and issues related to a patient ordered by date descending (i.e. most recent end? date/time first).
-
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 ### Date Horizon ###
 
