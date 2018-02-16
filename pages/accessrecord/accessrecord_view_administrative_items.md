@@ -13,17 +13,13 @@ summary: "Administrative Items HTML View."
 | ------------ | ------------ |-----|------|------|-----------|
 | ADM | Administrative Items | Yes | No<sup>1</sup> | Yes | Yes |
 
-<sup>1</sup> EMIS have indicated they can't support extracting administrative items for Stage 1 of the Maturity Model.
+<sup>1</sup> EMIS have indicated they can't currently support extracting administrative items.
 
 ### Purpose ###
 
 A list of all coded administrative items related to a patient ordered by date descending (i.e. most recent date/time first).
 
 {% include tip.html content="This may contain information about letters/mail merging, appointment DNAs, consent recording and other administrative terms recorded by the GP." %}
-
-### Structured Data ###
-
-{% include todo.html content="Structured data mappings to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
 
 ### Date Horizon ###
 
