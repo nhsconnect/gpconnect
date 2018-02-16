@@ -36,10 +36,6 @@ entries:
         - title: 0.5.0
           url: /overview_release_notes_0_5_0.html
           output: web
-    - title: Specification Versions
-      url: /overview_specification_versions.html
-      output: web, pdf
-      type: homepage
 
   - title: Design approach
     output: web
