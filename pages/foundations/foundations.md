@@ -7,7 +7,7 @@ permalink: foundations.html
 summary: "Introduction to the GP Connect Foundations capability"
 ---
 
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR based APIs." %}
+{% include important.html content="This version of the Foundations capability pack is a minimal version including the metadata endpoint only, to support the Access Record HTML capability.  From GP Connect 1.0.0 onwards, it is expanded to include the ability to read Patient, Practitioner, Organization and Location resources." %}
 
 ## Purpose ##
 
