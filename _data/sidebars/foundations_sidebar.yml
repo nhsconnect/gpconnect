@@ -27,9 +27,6 @@ entries:
     - title: Design Decisions
       url: /foundations_design.html
       output: web, pdf
-    - title: Release Notes
-      url: /foundations_release_notes.html
-      output: web, pdf
       
   - title: Development
     output: web, pdf
