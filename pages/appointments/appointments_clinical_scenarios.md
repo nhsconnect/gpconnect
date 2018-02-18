@@ -9,7 +9,7 @@ summary: "Potential clinical scenarios for the Appointments capability."
 
 The Clinical Scenarios below detail the main User Stories which the Appointment Management specification aims to support with possible examples of how the GP Connect APIs could technically be deployed now or in the future to improve access to GP Practice Appointment Diaries subject to the local GP Practice diary configuration.  
 
-{% include note.html content="NB For actual FoT Care Setting deployments, refer to [Appointment Management Introduction](appointment.html)" %}.
+{% include note.html content="For first of type care setting deployments, refer to [Appointment Management Introduction](appointments.html)" %}
 
 Key:
 
