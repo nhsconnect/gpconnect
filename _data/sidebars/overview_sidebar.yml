@@ -46,9 +46,6 @@ entries:
   - title: Design approach
     output: web
     folderitems:
-    - title: Maturity model
-      url: /designprinciples_maturity_model.html
-      output: web
     - title: Development principles
       url: /designprinciples_development_principles.html
       output: web
