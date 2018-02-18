@@ -205,9 +205,6 @@ entries:
     - title: GPC Developer Network
       external_url: http://developer.nhs.uk/library/interoperability/gp-connect/
       output: web
-    - title: GPC Code4Health
-      external_url: http://interoperability.code4health.org/projects/gp-connect-2/
-      output: web
     - title: GPC GitHub FHIR data library
       external_url: https://github.com/nhsconnect/gpconnect-fhir/
       output: web
