@@ -134,11 +134,11 @@ entries:
     - title: <b class="capability-not-available">Access Record Structured</b>
       url: /accessrecord_rest.html
       output: web
-    - title: <b class="capability-not-available">Task Management</b>
-      url: /tasks.html
-      output: web
     - title: <b class="capability-not-available">Appointment Management</b>
       url: /appointments.html
+      output: web
+    - title: <b class="capability-not-available">Task Management</b>
+      url: /tasks.html
       output: web
 
   - title: Integrate with Spine
