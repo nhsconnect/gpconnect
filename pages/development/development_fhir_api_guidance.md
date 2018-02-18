@@ -503,8 +503,6 @@ Resource references SHALL include a short human-readable `display` field for ide
 | `Practitioner` | practitioner.name |
 | `Organization` | organization.name |
 
-{% include todo.html content="Further display field guidance to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
 ### [Resource Metadata](https://www.hl7.org/fhir/DSTU2/resource.html#Meta) ###
 
 Servers SHALL provide the `profile` metadata for each resource, asserting that the content conforms to one of the GP Connect resource profiles.  
