@@ -172,12 +172,6 @@ GP Connect provider systems are not expected to implement the following aspects 
 
 {% include warning.html content="Vendors are free to implement additional FHIR functionality above that mandated under the GP Connect delivery if they so desire. However, the Spine Security Proxy (SSP) will only forward accredited system interactions." %}
 
-### Maturity Roadmap ###
-
-At a high-level the maturity roadmap of a compliant Principal GP system is expected to follow the following FHIR and business capability maturity stages.
-
-Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity_model.html) for full details.
-
 ### Internet Standards ###
 
 Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
