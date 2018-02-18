@@ -1185,3 +1185,8 @@ div.navbar-collapse .dropdown-menu > li > a {
 	padding-top: 45px;
 	color: #269900;
 }
+
+.capability-not-available {
+    color: #aaaaaa;
+    font-weight: normal;
+}
