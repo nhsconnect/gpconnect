@@ -15,14 +15,6 @@ This document is intended for use by software developers looking to build a conf
 
 The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-
-
-## Maturity roadmap ##
-
-At a high-level the maturity roadmap of a compliant Principal GP system is expected to follow the following FHIR and business capability maturity stages.
-
-Refer to [Design - Design Principles - Maturity Model](designprinciples_maturity_model.html) for full details.
-
 ## General standards ##
 
 Information on the technical standards that SHALL be conformed to can be found in the sections below and throughout the GP Connect specification.
