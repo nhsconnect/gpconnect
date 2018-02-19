@@ -42,7 +42,7 @@ We now have a functioning user interface that can drive interactions with the FH
 
 ## Online System ##
 
-View the latest build of the [GP Connect Demonstrator](http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com/){:target="_blank"} online now!
+View the build of the [GP Connect Demonstrator](http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com:380/){:target="_blank"} for this specification.
 
 {% include tip.html content="All data held in the GP Connect Demonstrator is a cleared down and reseeded each night to allow for easier testing. <br/>Please refer to the Demonstrator's in-built help for further details." %}
 
