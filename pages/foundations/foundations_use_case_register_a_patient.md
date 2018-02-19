@@ -82,6 +82,7 @@ The following data-elements are mandatory (i.e. data SHALL be present):
 	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
 	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
     - The consumer SHALL NOT populate the "registrationDetails" extension within the patient resource.
+	- The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name registered on the spine which is returned by a PDS lookup for the patient.
 
 The following data-elements SHOULD be populated if available:
 - Within the patient resource of the `registerPatient` parameter:
@@ -186,7 +187,7 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				"value": "9476719931"
 			}],
 			"name": [{
-				"use": "usual",
+				"use": "official",
 				"family": ["Jackson"],
 				"given": ["Jane"],
 				"prefix": ["Miss"]
@@ -281,7 +282,7 @@ Provider systems:
 				"value": "9476719931"
 			}],
 			"name": [{
-				"use": "usual",
+				"use": "official",
 				"family": ["Jackson"],
 				"given": ["Jane"],
 				"prefix": ["Miss"]

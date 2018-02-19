@@ -86,6 +86,7 @@ Provider systems:
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
 - SHALL include all relevant business `identifier` details (i.e. NHS Number) for each `Patient` resource.
 - SHALL supply gender, name, birth date or deceased date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
+- The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name registered on the spine which is returned by a PDS lookup for the patient.
 
 
 ```json
@@ -116,7 +117,7 @@ Provider systems:
 				"value": "9476719931"
 			}],
 			"name": [{
-				"use": "usual",
+				"use": "official",
 				"family": ["Jackson"],
 				"given": ["Jane"],
 				"prefix": ["Miss"]

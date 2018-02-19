@@ -14,21 +14,23 @@ The table below contains the official releases of the GP Connect specification.
 
 <table>
 	<tr>
-		<th class="tableColumn15">Release Version</th>
+		<th class="tableColumn10">Release Version</th>
 		<th class="tableColumn15">Release Date</th>
-		<th class="tableColumn30">Historical Versions</th>
+		<th class="tableColumn25">Historical Versions</th>
 		<th>Details</th>
 		<th>Testing</th>
+		<th>Demonstrator</th>
 	</tr>
 	<tr class="tableSubHeading">
-		<th>STU3</th><th/><th/><th/><th/>
+		<th>STU3</th><th/><th/><th/><th/><th/>
 	</tr>
 	<tr>
 		<td><a href="https://developer.nhs.uk/apis/gpconnect-TBC/">1.1.0</a></td>
-		<td>TBC</td>
+		<td>23 Feb 2018</td>
 		<td>GP Connect Core rc.2,<br/>Foundations rc.5,<br/>Appointments rc.4</td>
 		<td>Appointment slot availability managment and general specification uplift.</td>
 		<td><a href="">Automated Test Suite</a></td>
+		<td><a href="http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com">GP Connect demonstrator (STU3)</a></td>
 	</tr>
 	<tr>
 		<td><a href="https://developer.nhs.uk/apis/gpconnect-18Jan2018/">1.0.0</a></td>
@@ -36,9 +38,10 @@ The table below contains the official releases of the GP Connect specification.
 		<td>GP Connect Core rc.1,<br/>Foundations rc.4,<br/>Appointments rc.3</td>
 		<td>STU3 Update for Foundations and Appointment. Uplift of the core, cross cutting, areas of the specification.</td>
 		<td><a href="https://github.com/nhsconnect/gpconnect-provider-testing/releases/tag/GP_Connect_Core_RC1_Foundations_RC4_Appointments_RC3">Automated Test Suite</a></td>
+		<td></td>
 	</tr>
 	<tr class="tableSubHeading">
-		<th>DSTU2</th><th/><th/><th/><th/>
+		<th>DSTU2</th><th/><th/><th/><th/><th/>
 	</tr>
 	<tr>
 		<td><a href="https://developer.nhs.uk/apis/gpconnect-13Oct2017/">0.5.0</a></td>
@@ -46,6 +49,7 @@ The table below contains the official releases of the GP Connect specification.
 		<td>Access Record HTML rc.5,<br/>Appointments rc.2,<br/>Foundations rc.3</td>
 		<td>Access Record HTML rc.5 release.</td>
 		<td><a href="https://github.com/nhsconnect/gpconnect-provider-testing/releases/tag/AppointmentsRc.2%2CFoundationsRc.3">Automated Test Suite</a></td>
+		<td><a href="http://ec2-54-194-109-184.eu-west-1.compute.amazonaws.com:380">GP Connect demonstrator (DSTU2)</a></td>
 	</tr>
 </table>
 
