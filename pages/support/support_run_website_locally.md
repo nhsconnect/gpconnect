@@ -1,11 +1,11 @@
 ---
-title: Run Website Locally
+title: Run website locally
 keywords: support, website, jekyll
 tags: [support]
 toc: false
 sidebar: overview_sidebar
 permalink: support_run_website_locally.html
-summary: "How to run the website locally on your own PC."
+summary: "How to run the website locally on your own PC"
 ---
 
 Please follow the following instructions to setting up GitHub Pages to run locally:
@@ -44,9 +44,9 @@ Run the 'jekyll serve' command to compile and serve the HTML content.
 bundle exec jekyll serve 
 ```
 
-By default pages are served from http://localhost:4005/
+By default, pages are served from http://localhost:4005/
 
-You will likely hit two further problems.
+You will likely hit two further problems:
 
 1) Fix warnings related to SSL certificate checking (by configuring the SSL_CERT_FILE env variable)
 
