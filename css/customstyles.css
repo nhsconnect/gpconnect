@@ -1190,3 +1190,9 @@ div.navbar-collapse .dropdown-menu > li > a {
     color: #aaaaaa;
     font-weight: normal;
 }
+
+@media (max-width:768px) {
+    .navbar-brand {
+        width:70vw!important;
+    }
+}
