@@ -4,45 +4,45 @@ keywords: foundations, patient, nhsnumber, pid, read
 tags: [foundations,use_case]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_read_a_patient.html
-summary: "Use case for reading a patient resource."
+summary: "Use case for reading a patient resource"
 ---
 
 ## Prerequisites ##
 
 ### Consumer ###
 
-The Consumer system:
+The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
-- SHALL have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS Number
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- SHALL have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS number
 
-## API Use Case ##
+## API use case ##
 
-This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+This specification describes a single use cases. For complete details and background, please see the [Foundations Capability Bundle](foundations.html).
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
-## API Usage ##
+## API usage ##
 
-### Request Operation ###
+### Request operation ###
 
-#### FHIR Relative Request ####
+#### FHIR relative request ####
 
 ```http
 GET /Patient/[id]
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -53,27 +53,27 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1`|
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 N/A
 
-#### Error Handling ####
+#### Error handling ####
 
 Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
-- Logical identifier of the resource is not valid/can't be found on the server.  
+- logical identifier of the resource is not valid/can't be found on the server 
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
@@ -81,7 +81,7 @@ Provider systems:
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resource.
 - SHALL include the `versionId` of the current version of the `Patient` resource.
-- SHALL include all relevant business `identifier` details (i.e. NHS Number) for the `Patient` resource.
+- SHALL include all relevant business `identifier` details (that is, NHS number) for the `Patient` resource.
 - SHALL supply gender, name, birth date or deceased date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
 - The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name registered on the spine which is returned by a PDS lookup for the patient.
 
