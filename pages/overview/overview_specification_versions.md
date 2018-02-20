@@ -8,6 +8,8 @@ permalink: overview_specification_versions.html
 summary: "Published GP Connect specification versions"
 ---
 
+{% include custom/versionconfig.html %}
+
 {% if showVersionsPage != "true" %}
 
 Please refer the [latest Versions page](https://nhsconnect.github.io/gpconnect/overview_specification_versions.html).
