@@ -1,27 +1,27 @@
 ---
-title: Information Governance
+title: Information governance
 keywords: appointments ig
 tags: [ig,appointments]
 sidebar: appointments_sidebar
 permalink: appointments_ig.html
-summary: "Information Governance controls applicable to the Appointment Management Capability."
+summary: "Information governance controls applicable to the Appointment Management capability pack."
 ---
 
-## GP Connect Information Governance Principles ##
+## GP Connect information governance principles ##
 
 The GP Connect core [Information Governance Principles](designprinciples_ig_principles.html) govern the Appointment Management capability, with the following capability-specific application:
 
-## Organisational Data-Sharing ##
+## Organisational data sharing ##
 
-Currently, all organisations participating in a GP Connect deployment must have a Data-Sharing Agreement (DSA) covering the use of a specific GP Connect Capability API set.  This control was required and implemented to support the need for Data Controller confidence in the organisation having access to patient clinical information. It is intended to be a short/medium term solution given the strategic work underway to agree a national data-sharing model and its implementation.
+Currently, all organisations participating in a GP Connect deployment must have a data-sharing agreement (DSA) covering the use of a specific GP Connect capability API set.  This control was required and implemented to support the need for data controller confidence in the organisation having access to patient clinical information. It is intended to be a short/medium term solution given the strategic work underway to agree a national data-sharing model and its implementation.
 
-The list of participating organisations and Data Controllers who have signed the supporting DSA will be submitted as part of the NHS Digital Solutions Assurance conformance requirements.
+The list of participating organisations and data controllers who have signed the supporting DSA will be submitted as part of the NHS Digital Solutions Assurance conformance requirements.
 
 The participating organisation interoperability relationship is then enforced via the Spine Security Proxy (SSP), ensuring that GP Connect interactions are only forwarded from deployment-assured participating consuming to providing organisations for a specific capability.
 
-### Urgent Care - National Call Centres ###
+### Urgent care - national call centres ###
 
-To support Care Setting 2 FoT deployments, Urgent Care Consumers booking into and managing GP Practice In-Hours and Extended Hours appointments are required to be part of a Data-Sharing group with catchment GP Practices. 
+To support Care Setting 2 FoT deployments, urgent care consumers booking into and managing GP Practice In-Hours and Extended Hours appointments are required to be part of a Data-Sharing group with catchment GP Practices. 
 
 This local UC call centre function is augmented by a national distributed call centre service whose organisations will need to be incorporated into the local DSA covering the GP Connect Appointment Management deployment. 
 
