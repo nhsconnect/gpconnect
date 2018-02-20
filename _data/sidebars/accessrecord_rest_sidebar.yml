@@ -24,19 +24,19 @@ entries:
       url: /accessrecord_rest.html
       output: web, pdf
       type: homepage
-#    - title: Clinical Scenarios
+#    - title: Clinical scenarios
 #      url: /accessrecord_clinical_scenarios.html
 #      output: web, pdf
-#    - title: Design Decisions
+#    - title: Design decisions
 #      url: /accessrecord_design.html
 #      output: web, pdf
 #    - title: Wireframes
 #      url: /accessrecord_wireframes.html
 #      output: web, pdf
-#    - title: Release Notes
+#    - title: Release notes
 #      url: /accessrecord_release_notes.html
 #      output: web, pdf
-#    - title: Known Issues
+#    - title: Known issues
 #      url: /accessrecord_known_issues.html
 #      output: web, pdf
 
