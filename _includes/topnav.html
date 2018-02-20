@@ -47,6 +47,10 @@
                 {% if site.feedback_disable == null or site.feedback_disable == false %}
 			{% include feedback.html %}
 		{% endif %}
+
+                <!-- GitHub icon -->
+                <a href="https://{{site.github.hostname}}/{{site.repository}}" target="_blank" class="fa fa-github fa-lg navbar-brand no_icon" aria-hidden="true">&nbsp;</a>
+
                 <!--comment out this block if you want to hide search-->
                 <li>
                     <!--start search-->
@@ -69,7 +73,6 @@
                     <!--end search-->
                 </li>
             </ul>
-            <a href="https://{{site.github.hostname}}/{{site.repository}}" target="_blank" class="fa fa-github fa-lg navbar-brand no_icon pull-right" aria-hidden="true">&nbsp;</a>
         </div>
         </div>
         <!-- /.container -->
