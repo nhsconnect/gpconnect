@@ -20,9 +20,6 @@
 {% elsif page.sidebar == "appointments_sidebar" %}
 {% assign sidebar = site.data.sidebars.appointments_sidebar.entries %}
 
-{% elsif page.sidebar == "tasks_sidebar" %}
-{% assign sidebar = site.data.sidebars.tasks_sidebar.entries %}
-
 {% elsif page.sidebar == "integration_sidebar" %}
 {% assign sidebar = site.data.sidebars.integration_sidebar.entries %}
 
@@ -61,10 +58,6 @@ sidebar configuration for print files
 
 {% if site.product == "appointments" %}
 {% assign sidebar_pdf = site.data.sidebars.appointments_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "tasks" %}
-{% assign sidebar_pdf = site.data.sidebars.tasks_sidebar.entries %}
 {% endif %}
 
 {% if site.product == "integration" %}

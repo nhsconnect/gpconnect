@@ -12,7 +12,7 @@ summary: "Details of which operations a FHIR&reg; server should expose to be a f
 *Aim(s)*
 
 - HTML Access Record views (with bundled Structured).
-- Appointment and Task management.
+- Appointment Management
 
 *Mechanism*
 
@@ -70,9 +70,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 
 ### Task capability interactions ###
 
-| Operation                 | InteractionID             | HTTP verb | Example URL pattern |
-|---------------------------|---------------------------| ----------|---------------------|
-| [Create task](tasks_use_case_send_a_task.html) | `urn:nhs:names:services:gpconnect:fhir:rest:create:order-1` | `POST` | `[base]/Order/` |
+Task interactions are not available at this specification version.
 
 
 ## Stage 3. FHIR operations ##
@@ -123,4 +121,5 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | Get patient procedures | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Procedure.read-1` | `GET`  | `[base]/Procedure?patient=[id]` |
 | Get patient referrals | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Referral.read-1` | `GET`  | `[base]/Referral?patient=[id]` |
 | Get patient appointments | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Appointment.read-1` | `GET`  | `[base]/Appointment?patient=[id]` |
+
 
