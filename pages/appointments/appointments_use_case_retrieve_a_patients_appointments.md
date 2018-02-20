@@ -7,33 +7,33 @@ permalink: appointments_use_case_retrieve_a_patients_appointments.html
 summary: "Use case for retrieval of a patient's appointments from an organisation."
 ---
 
-## Use Case ##
+## Use case ##
 
 This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
 
-{% include important.html content="The Appointment Management capability pack is aimed at administration of a patients appointments. As part of IG requirements the view of a patients appointments has been restricted to only viewing future appointments, additional details are available on the [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the view of a patient's appointments has been restricted to only viewing future appointments. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## Prerequisites ##
 
 ### Consumer ###
 
-The Consumer system:
+The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
 - SHALL have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS Number
 
-## API Usage ##
+## API usage ##
 
-### Request Operation ###
+### Request operation ###
 
 
-#### Search Parameters ####
+#### Search parameters ####
 
 Provider systems SHALL implement the following search parameters:
 
@@ -41,17 +41,17 @@ Provider systems SHALL implement the following search parameters:
 | --- | --- | --- | --- |
 | `start` | `date` | Appointment start date/time. | `Appointment.start` |
 
-The Provider systems:
-- SHALL support the search prefixes `eq`, `gt`, `lt`, `ge` and `le`.
-- SHALL consider no search prefix to be the same as including the `eq` search prefix.
-- SHALL support the following combinations of start date search parameters.
+The provider systems:
+- SHALL support the search prefixes `eq`, `gt`, `lt`, `ge` and `le`
+- SHALL consider no search prefix to be the same as including the `eq` search prefix
+- SHALL support the following combinations of start date search parameters
   - No search parameter
   - One search parameter with either the "eq" or "" search prefix
   - One search parameter with either the "gt" or "ge" search prefix
   - One search parameter with either the "lt" or "le" search prefix
   - Two search parameters, one "gt" or "ge" prefixed parameter and one "lt" or "le" prefixed parameter
 
-#### FHIR Relative Request ####
+#### FHIR relative request ####
 
 ```http
 GET /Patient/[id]/Appointment
@@ -61,7 +61,7 @@ GET /Patient/[id]/Appointment
 GET /Patient/[id]/Appointment?start=[{search_prefix}start_date]{&start=[{search_prefix}end_date]}
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment
@@ -99,7 +99,7 @@ Retrieve all appointments for a patient on 2017-08-22:
 GET /Patient/[id]/Appointment?start=2017-08-22
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -110,11 +110,11 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1` |
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 N/A
 
-### Error Handling ###
+### Error handling ###
 
 Provider systems:
 
@@ -125,13 +125,13 @@ For example:
 - Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details can be returned in the diagnostics element.
 
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
