@@ -1,16 +1,24 @@
 ---
-title: GP Connect Specification Versions
+title: Specification versions
 keywords: about
 tags: [getting_started]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_specification_versions.html
-summary: "Published GP Connect spcification versions"
+summary: "Directory of published GP Connect specification versions"
 ---
+
+{% include custom/versionconfig.html %}
+
+{% if showVersionsPage != "true" %}
+
+Please refer the [latest Versions page](https://nhsconnect.github.io/gpconnect/overview_specification_versions.html).
+
+{% else %}
 
 The table below contains the official releases of the GP Connect specification.
 
-{% include important.html content="The current published version are as specified but if you are building Appointments and Foundations you should build against the latest version of the specification. If you are building HTML you should build against the '0.5.0' version of the specification, released on 13th Oct 2017.<br/><br/>The core part of the specification between the DSTU2 and STU3 releases have changed and therefore the versions are not compatible and have been assigned a different major version number." %}
+{% include important.html content="The current published version are as specified but if you are building Appointments and Foundations you should build against the latest version of the specification. If you are building HTML you should build against GP Connect 0.5.0, released on 13th Oct 2017.<br/><br/>The core part of the specification between the DSTU2 and STU3 releases have changed and therefore the versions are not compatible and have been assigned a different major version number." %}
 
 <table>
 	<tr>
@@ -69,3 +77,5 @@ Rather than versioning the different parts of the spec with different release ve
 The following diagram shows the current released versions, the intended releases in the near future and which capability packs are included in each release version:
 
 ![Img](images/overview/versionRoadmap.png)
+
+{% endif %}
