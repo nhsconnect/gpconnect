@@ -4,12 +4,12 @@ entries:
   levels: one
   folders:
 
-  - title: Clinical Demonstrator
+  - title: Clinical demonstrator
     url: /system_demonstrator.html
     output: web, pdf
     type: homepage
 
-  - title: Technical Reference
+  - title: Technical reference
     url: /system_reference.html
     output: web, pdf
 
