@@ -11,7 +11,6 @@ summary: "Details of which operations a FHIR&reg; server should expose to be a f
 
 *Aim(s)*
 
-- HTML Access Record views (with bundled Structured).
 - Appointment Management
 
 *Mechanism*
@@ -49,13 +48,6 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Register patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1` | `POST`  | `[base]/Patient/$gpc.registerpatient` |
 
 
-### Access Record HTML capability interactions ###
-
-| Operation                 | InteractionID             | HTTP verb | Example URL pattern |
-|---------------------------|---------------------------| ----------|---------------------|
-| [Get care record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1` | `POST` | `[base]/Patient/$gpc.getcarerecord` |
-
-
 ### Appointments capability interactions ###
 
 | Operation                 | InteractionID             | HTTP verb | Example URL pattern |
@@ -67,11 +59,7 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Cancel appointment](appointments_use_case_cancel_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1` | `PUT`  | `[base]/Appointment/[id]` |
 | [Get patient appointments](appointments_use_case_retrieve_a_patients_appointments.html)  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1` | `GET`  | `[base]/Patient/[id]/Appointment` |
 
-
-### Task capability interactions ###
-
-Task interactions are not available at this specification version.
-
+### Access Record REST capability interactions ###
 
 ## Stage 3. FHIR operations ##
 
@@ -121,5 +109,15 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | Get patient procedures | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Procedure.read-1` | `GET`  | `[base]/Procedure?patient=[id]` |
 | Get patient referrals | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Referral.read-1` | `GET`  | `[base]/Referral?patient=[id]` |
 | Get patient appointments | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Appointment.read-1` | `GET`  | `[base]/Appointment?patient=[id]` |
+
+
+### Access Record HTML capability interactions ###
+Access Record HTML interactions are not available at this specification version.
+
+### Access Record Structured capability interactions ###
+Access Record Structured interactions are not available at this specification version.
+
+### Task capability interactions ###
+Task interactions are not available at this specification version.
 
 
