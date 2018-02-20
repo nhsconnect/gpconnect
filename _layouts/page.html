@@ -2,7 +2,9 @@
 layout: default
 ---
 
- {% include version_latest_0_x.html %}
+ {% include custom/versionconfig.html %}
+
+ {% include {{ bannerVersion }} %}
 
  {% unless jekyll.environment != "production" %}
 
