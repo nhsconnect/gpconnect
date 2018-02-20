@@ -26,7 +26,7 @@ entries:
     - title: Clinical scenarios
       url: /appointments_clinical_scenarios.html
       output: web, pdf
-    - title: Information Governance
+    - title: Information governance
       url: /appointments_ig.html
       output: web, pdf
     - title: Design decisions
@@ -54,7 +54,7 @@ entries:
         output: web, pdf
         subfolderitems:
 
-        - title: Retrieve a patients appointments
+        - title: Retrieve a patient's appointments
           url: /appointments_use_case_retrieve_a_patients_appointments.html
           output: web, pdf
         - title: Search for free slots
