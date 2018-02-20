@@ -72,3 +72,11 @@ entries:
         - title: Cancel an appointment
           url: /appointments_use_case_cancel_an_appointment.html
           output: web, pdf
+          
+      - title: Additional provider requirements
+        output: web, pdf
+        subfolderitems:
+
+        - title: Slot availability management
+          url: /slotavailabilitymanagement.html
+          output: web, pdf
