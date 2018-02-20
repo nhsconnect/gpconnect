@@ -4,15 +4,15 @@ keywords: development
 sidebar: appointments_sidebar
 toc: false
 permalink: datalibraryappointment.html
-summary: "The FHIR profles and interactions required for the Appointment Management capability"
+summary: "The FHIR profiles and interactions required for the Appointment Management capability pack"
 ---
 
-The following profiled FHIR resources are used in the current version of the Appointment Management capability, see "API Use Cases" in the menu on the left. Full details of profiled FHIR resources and worked examples are available on the [FHIR Reference Server](https://fhir.nhs.uk/).
+The following profiled FHIR resources are used in the current version of the Appointment Management capability, see 'API use cases" in the menu on the left. Full details of profiled FHIR resources and worked examples are available on the [FHIR Reference Server](https://fhir.nhs.uk/).
 
 ---
 ## ***[Search for free slots](appointments_use_case_search_for_free_slots.html)*** ##
 ### Request ###
-N/A - No FHIR resource is sent within the request
+**Note:** No FHIR resource is sent within the request.
 
 ### Response ###
 * [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html) ![STU3](images/stu3.png)
@@ -33,9 +33,9 @@ N/A - No FHIR resource is sent within the request
 
 
 ---
-## ***[Retrieve a patients appointments](appointments_use_case_retrieve_a_patients_appointments.html)*** ##
+## ***[Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)*** ##
 ### Request ###
-N/A - No FHIR resource is sent within the request
+**Note:** No FHIR resource is sent within the request.
 
 ### Response ###
 * [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
@@ -44,7 +44,7 @@ N/A - No FHIR resource is sent within the request
 ---
 ## ***[Read an appointment](appointments_use_case_read_an_appointment.html)*** ##
 ### Request ###
-N/A - No FHIR resource is sent within the request
+**Note:** No FHIR resource is sent within the request.
 
 ### Response ###
 * [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
