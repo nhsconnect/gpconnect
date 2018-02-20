@@ -8,6 +8,8 @@ toc: false
 summary: A brief introduction to getting started with the GP Connect FHIR&reg; APIs
 ---
 
+{% include version.html content="This is the latest <b>0.x.x (DSTU2)</b> version of GP Connect for building the <b>Access Record HTML</b> capability only. For other capabilities please see the current 1.x.x (STU3) version available from <a href='versions.html'>the Versions page</a>." %}
+
 {% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities, other parties are advised not to develop against these specifications until a formal announcement has been made." %}
 
 {% comment %}
