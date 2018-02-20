@@ -53,8 +53,3 @@ $(function() {
         }
     });
 });
-
-// Add in version banner, this will not happen on developer network as this JS is removed as part of the page build process
-//$(function(){
-//  $("#bannerSection").load("../pages/bannerDevelopment.html"); 
-//});

@@ -7,8 +7,6 @@ permalink: foundations.html
 summary: "All about the common foundation capabilities."
 ---
 
-{% include todo.html content="This capability pack is published as a **work in progress** version and as such is subject to change. It has been published to show the direction of travel and to serve as a discussion document for parties involved with the implementation and consumption of GP Connect FHIR&reg; based APIs." %}
-
 ## Purpose ##
 
 The Foundations capability covers the basic API requirements and prerequisites needed to use the GP Connect APIs.

@@ -1211,6 +1211,9 @@ table > tbody > tr.tableSubHeading {
 	padding: 15px;
 	background-color: #fffbdb;
 	border-radius: 5px;
+.capability-not-available {
+    color: #aaaaaa;
+    font-weight: normal;
 }
 
 @media (max-width:768px) {
