@@ -1,11 +1,11 @@
 ---
-title: GP Connect Specification Versions
+title: Specification versions
 keywords: about
 tags: [getting_started]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_specification_versions.html
-summary: "Published GP Connect specification versions"
+summary: "Directory of published GP Connect specification versions"
 ---
 
 {% include custom/versionconfig.html %}
