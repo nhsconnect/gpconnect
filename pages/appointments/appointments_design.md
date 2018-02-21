@@ -1,5 +1,5 @@
 ---
-title: Appointments design
+title: Appointment Management design decisions
 keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar
