@@ -42,7 +42,7 @@ entries:
   - title: Development
     output: web, pdf
     folderitems:
-    - title: FHIR resources
+    - title: FHIR&reg; resources 
       url: /datalibraryappointment.html
       output: web, pdf
     - title: Consumer sessions illustrated
