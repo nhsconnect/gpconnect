@@ -1,5 +1,5 @@
 ---
-title: Appointments clinical scenarios
+title: Appointments Management clinical scenarios
 keywords: appointments
 tags: [appointments,first_of_type]
 sidebar: appointments_sidebar
