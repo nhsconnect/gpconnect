@@ -9,7 +9,7 @@ summary: "Information governance controls applicable to the Appointment Manageme
 
 ## GP Connect information governance principles ##
 
-The GP Connect core [Information Governance Principles](designprinciples_ig_principles.html) govern the Appointment Management capability, with the following capability-specific application:
+The GP Connect core [information governance principles](designprinciples_ig_principles.html) govern the Appointment Management capability pack, with the following capability-specific application:
 
 ## Organisational data sharing ##
 
@@ -19,9 +19,9 @@ The list of participating organisations and data controllers who have signed the
 
 The participating organisation interoperability relationship is then enforced via the Spine Security Proxy (SSP), ensuring that GP Connect interactions are only forwarded from deployment-assured participating consuming to providing organisations for a specific capability.
 
-### Urgent care - national call centres ###
+### Urgent care (UC) - national call centres ###
 
-To support Care Setting 2 FoT deployments, urgent care consumers booking into and managing GP Practice in-hours and extended hours appointments are required to be part of a data-sharing group with catchment GP practices. 
+To support Care Setting 2 FoT deployments, urgent care consumers booking into and managing GP practice in-hours and extended hours appointments are required to be part of a data-sharing group with catchment GP practices. 
 
 This local UC call centre function is augmented by a national distributed call centre service whose organisations will need to be incorporated into the local DSA covering the GP Connect Appointment Management deployment. 
 
