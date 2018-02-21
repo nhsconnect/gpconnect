@@ -79,7 +79,7 @@ entries:
     - title: Maturity model
       url: /designprinciples_maturity_model.html
       output: web
-    - title: Product Versioning
+    - title: Product versioning
       url: /design_product_versioning.html
       output: web
 
