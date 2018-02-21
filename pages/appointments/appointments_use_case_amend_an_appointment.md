@@ -138,7 +138,7 @@ On the wire a JSON serialised request would look something like the following:
 The provider system:
 
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-- SHALL return an error if any appointment details other than the appointment `reason`, `comment`, `description` or `cancellation reason` are amended. The passed in appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
+- SHALL return an error if any appointment details other than the appointment `reason`, `comment`, `description` or `cancellation reason` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
 - SHALL return an error if the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
