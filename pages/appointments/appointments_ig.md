@@ -1,5 +1,5 @@
 ---
-title: Information governance
+title: Appointment Management information governance
 keywords: appointments ig
 tags: [ig,appointments]
 sidebar: appointments_sidebar
