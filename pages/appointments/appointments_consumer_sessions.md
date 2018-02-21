@@ -1,17 +1,17 @@
 ---
-title: Appointments - consumer sessions illustrated
+title: Appointment Management consumer sessions illustrated
 keywords: appointments
 tags: [appointments,first_of_type]
 sidebar: appointments_sidebar
 permalink: appointments_consumer_sessions.html
-summary: "Consumer appointment management sessions - illustrated. "
+summary: "An illustration of consumer appointment management sessions. "
 ---
 
 The appointment management consumer application will make use of individual API calls described in 'API use cases' to perform business processes. 
 
 ## Consumer session - booking an appointment ##
 
-The sequence diagram below illustrates which individual API calls are required by a consumer to book an appointment at a GP practice in the simplest case. It describes interactions of the consumer with the provider FHIR endpoint at the practice, and does not include details of the prerequisite interactions with Spine services. See [Spine Integration Illustrated](integration_illustrated.html) for details of an end-to-end appointment booking scenario with Spine service interactions included.
+The sequence diagram below illustrates which individual API calls are required by a consumer to book an appointment at a GP practice in the simplest case. It describes interactions of the consumer with the provider FHIR endpoint at the practice, and does not include details of the prerequisite interactions with Spine services. See [Spine integration illustrated](integration_illustrated.html) for details of an end-to-end appointment booking scenario with Spine service interactions included.
 
 ![Sequence diagram for booking an appointment - simplest case](images/appointments/sequence_book_simple.png)
 
