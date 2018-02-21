@@ -64,6 +64,9 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
+{% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore slots found in the past can not be used to book an appointment." %}
+
+
 ### Enhanced slot filtering ###
 
 {% include important.html content="

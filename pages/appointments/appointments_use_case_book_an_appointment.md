@@ -9,6 +9,8 @@ summary: "Use case for booking an appointment for a patient with a given organis
 
 ## Use Case ##
 
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patients appointments. As a result of IG requirements the book appointment capability has been restricted to future appointments, additional details are available on the [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+
 The typical flow to book an appointment is:
 
  1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
@@ -34,6 +36,8 @@ The Consumer system:
 - SHALL have previously performed a GP Connect `Find a Patient` request to obtain the logical identifier for the patient on the organisation's fhir server.
 
 ## API Usage ##
+
+The Consumer System SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
 ### Request Operation ###
 
