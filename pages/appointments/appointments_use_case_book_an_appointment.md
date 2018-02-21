@@ -7,7 +7,7 @@ permalink: appointments_use_case_book_an_appointment.html
 summary: "Use case for booking an appointment for a patient with a given organisation."
 ---
 
-## Use Case ##
+## Use case ##
 
 The typical flow to book an appointment is:
 
@@ -15,41 +15,41 @@ The typical flow to book an appointment is:
  2. Search for available `Slot` resources by date range.
  3. Create an `Appointment` for the chosen `Slot` and `Patient` resources.
 
-Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API Use Case could be used in the context of a typical consumer appointment management session.
+Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API use case could be used in the context of a typical consumer appointment management session.
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details 
 
 ## Prerequisites ##
 
 ### Consumer ###
 
-The Consumer system:
+The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
 - SHALL have previously obtained the details for one or more free slots that are to be booked.
-- SHALL have previously performed a GP Connect `Find a Patient` request to obtain the logical identifier for the patient on the organisation's fhir server.
+- SHALL have previously performed a GP Connect `Find a Patient` request to obtain the logical identifier for the patient on the organisation's FHIR server.
 
-## API Usage ##
+## API usage ##
 
-### Request Operation ###
+### Request operation ###
 
-#### FHIR Relative Request ####
+#### FHIR&reg; relative request ####
 
 ```http
 POST /Appointment
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -61,18 +61,18 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment-1` |
 
 
-#### Payload Request Body ####
+#### Payload request body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource, see [FHIR Resources](/datalibraryappointment.html) page for more detail.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource. See the [FHIR resources](/datalibraryappointment.html) page for more detail.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
-The following data-elements are mandatory (i.e data MUST be present).
+The following data-elements are mandatory (that is, data MUST be present):
 - a patient `participant` of the appointment.
-- a location `participant` of the appointment, representing the physical location where the appointment is to take place (see [design decisions](foundations_design.html#location-in-the-appointment-resource) page).
-- an `actor` reference in any supplied `participant`
+- a location `participant` of the appointment, representing the physical location where the appointment is to take place (see [Design decisions](foundations_design.html#location-in-the-appointment-resource) page).
+- an `actor` reference in any supplied `participant`.
 - the `start` and `end` of the appointment.
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
@@ -80,12 +80,12 @@ The following data-elements are mandatory (i.e data MUST be present).
   - the contained organization resource SHALL represent the organization booking the appointment.
   - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) ![STU3](images/stu3.png) profile.
   - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
-- the `created` element SHALL be populate with the date and time of the appointment was created.
+- the `created` element SHALL be populated with the date and time the appointment was created.
 
-The following data-elements SHOULD be included when available.
+The following data-elements SHOULD be included when available:
 - a practitioner `participant` of the appointment.
 
-{% include important.html content="Multiple adjacent free slots can be booked using the same appointment (i.e. two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload Response Body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API Use Case page." %}
+{% include important.html content="Multiple adjacent free slots can be booked using the same appointment (that is, two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload response body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API use case page." %}
 
 {% include note.html content="The provider system receiving the bookingOrganization details SHALL store, return and display these details as required by the [Must-Support](development_fhir_api_guidance.html#use-of-must-support-flag) flag." %}
 
@@ -103,14 +103,14 @@ The following guidance around Appointment Resource element SHALL be followed whe
 
 The following guidance SHALL be followed when populating an appointment resource:
 
-* For providers who only support the mandatory `description` element and not the `comment` element, if a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost.
+* For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost.
 * If the consumer wishes to include ***patient temporary contact details*** for the purposes of the appointment they SHALL include them within the `description` element of the appointment, so that the details are retained against that specific appointment.
 * Elements within the appointment (such as 'comment' and 'description') SHALL only contain limited amounts of information to support the appointment. The content of the appointment SHALL NOT be used for "Transfer of Care" clinical information.
 
-{% include warning.html content="Due to differences in the provider systems and the amount of information their data models can hold, there is a risk that information sent within the appointment may be truncated by the Provider system if too large. Consumers and providers should be aware and try to limit risk where possible or make users aware of the risk when booking or amending an appointment." %}
+{% include warning.html content="Due to differences in the provider systems and the amount of information their data models can hold, there is a risk that information sent within the appointment may be truncated by the provider system if too large. Consumers and providers should be aware and try to limit risk where possible or make users aware of the risk when booking or amending an appointment." %}
 
 
-#### Example Request Body ####
+#### Example request body ####
 
 On the wire a JSON serialised request would look something like the following:
 
@@ -165,34 +165,34 @@ On the wire a JSON serialised request would look something like the following:
 }
 ```
 
-#### Error Handling ####
+#### Error handling ####
 
 Provider systems:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example:
 
-- the submitted `start` and `end` date range does not match that of the requested `Slot(s)`.
-- one or more of the requested `Slot` resources does not exist or already has a `status` of busy.
+- the submitted `start` and `end` date range does not match that of the requested `Slot(s)`
+- one or more of the requested `Slot` resources does not exist or already has a `status` of busy
 
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
-{% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place to prevent misuse of appointment booking outside of the GPConnect API implementation." %}
+{% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place, to prevent misuse of appointment booking outside of the GP Connect API implementation." %}
 
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
 - SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
-- SHALL return a `Location` header as described in [FHIR API Guidance](development_fhir_api_guidance.html#create-resource).
+- SHALL return a `Location` header as described in [FHIR API guidance](development_fhir_api_guidance.html#create-resource).
 - SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
@@ -255,7 +255,7 @@ Provider systems:
 
 ### C# ###
 
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
+{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
