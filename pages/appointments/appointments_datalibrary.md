@@ -70,7 +70,7 @@ The following profiled FHIR&reg; resources are used in the current version of th
 ---
 ## ***Errors*** ##
 
-If there is a problem with the request or an error occurs during processing of the request then the provider should return an HTTP error along with an "OperationOutcome" resource within the response payload. Details of the required error responses are available on the [Error Handling Guidance](/development_fhir_error_handling_guidance.html) page within the specification.
+If there is a problem with the request or an error occurs during processing of the request then the provider should return an HTTP error along with an "OperationOutcome" resource within the response payload. Details of the required error responses are available on the [Error handling guidance](/development_fhir_error_handling_guidance.html) page within the specification.
 
 ### Response ###
 * [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) (based on [FHIR OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html)) ![STU3](images/stu3.png)
