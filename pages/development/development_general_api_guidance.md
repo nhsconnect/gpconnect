@@ -65,13 +65,12 @@ The Service root URL is the `[base]` portion of all FHIR APIs.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
-### FHIR API Versioning ###
-FHIR APIs SHALL be versioned according to  [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
+### Service root URL versioning ###
+FHIR API URLs SHALL be aligned with the GP Connect specification they were built against, specifically the [major version number](design_product_versioning.html) SHALL be present in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
 
 Provider systems are required to publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
 
-{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS_CODE]/[FHIR_VERSION_NAME]/{API_MAJOR_VERSION}/{PROVIDER_ROUTING_SEGMENT}`" %}
-
+{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS_CODE]/[FHIR_VERSION_NAME]/[GPC_MAJOR_VERSION]/[PROVIDER_ROUTING_SEGMENT]`" %}
 
 - `[FQDN_OF_FHIR_SERVER]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
 
@@ -79,23 +78,23 @@ Provider systems are required to publish Service Root URLs for major versions of
 
 - `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
 
-- `{API_MAJOR_VERSION}` identifies the major version number of the provider API.
+- `[GPC_MAJOR_VERSION]` identifies the major version number of the GP Connect specification that the API is built to.
 
-- `{PROVIDER_ROUTING_SEGMENT}` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
+- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
   
 - The FHIR Base URL SHALL NOT contain a trailing `/`
 
 #### Example server root URL
 
-The provider will publish the server root URL to Spine Directory Services as follows:
+The provider will publish the server root URL to Spine Directory Services, for example:
 
-`https://provider.nhs.uk/GP0001/DSTU2/2/gpconnect`
+`https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
 
 Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
-The consumer system would therefore issue a request to the new version of the provider FHIR API  to the following URL:
+The consumer system would therefore issue a request to the new version of the provider FHIR API to the following URL:
 
-`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/2`
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
 
 
 ### Resource URL ###
