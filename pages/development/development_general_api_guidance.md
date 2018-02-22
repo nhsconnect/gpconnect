@@ -145,15 +145,6 @@ Servers SHALL support both formal [MIME-types](https://www.hl7.org/fhir/STU3/htt
 - XML: `application/fhir+xml`
 - JSON: `application/fhir+json`
 
-Servers SHALL also support DSTU2 [MIME-types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) for backwards compatibility:
-- XML: `application/xml+fhir`
-- JSON: `application/json+fhir`
-
-Servers SHALL also graceful handling generic XML and JSON MIME types:
-- XML: `application/xml`
-- JSON: `application/json`
-- JSON: `text/json`
-
 Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
 Servers SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client application.
@@ -273,7 +264,7 @@ HTTP 200 OK
 Date: Sat, 09 Feb 2013 16:09:50 GMT
 Last-Modified: Sat, 02 Feb 2013 12:02:47 GMT
 ETag: W/"23"
-Content-Type: application/json+fhir
+Content-Type: application/fhir+json
 ```
 
 `ETag` headers which denote resource `version Id`s SHALL be prefixed with `W/` and enclosed in quotes, for example:
