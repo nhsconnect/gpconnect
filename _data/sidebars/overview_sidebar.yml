@@ -72,7 +72,7 @@ entries:
     - title: Clinical terminologies
       url: /design_clinical_terminologies.html
       output: web
-    - title: Product Versioning
+    - title: Product versioning
       url: /design_product_versioning.html
       output: web
 
