@@ -87,11 +87,6 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 	<acceptUnknown value="both" />
 	<format value="application/fhir+xml" />
 	<format value="application/fhir+json" />
-	<format value="application/xml+fhir" />
-	<format value="application/json+fhir" />
-	<format value="application/xml" />
-	<format value="application/json" />
-	<format value="text/json" />
 	<profile>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Device-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"/>

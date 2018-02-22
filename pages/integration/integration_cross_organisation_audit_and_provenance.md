@@ -139,12 +139,6 @@ The payload section of the JWT shall be populated as follows:
 
 <sup>4</sup> To contain the practitioner's local system identifier(s) (for example, login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter SHALL be provided. Default usernames (for example, referring to systems or groups) SHALL NOT be used in this field.
 
-  <div class="deprecated">
-  <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3>
-  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, 'providers' SHALL support requests where the 'aud' claim contains the fixed value 'https://authorize.fhir.nhs.net/token'.</p>
-  {% include important.html content="Use of the fixed value '`https://authorize.fhir.nhs.net/token`' in the '`aud`' claim is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to populating the `'aud'` claim with the `'Requested resource URI'`, support for the deprecated fixed value will be removed from the specification." %}
-  </div>
-
 {% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)), it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
 #### Population of requesting_organization ####
@@ -158,28 +152,6 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
   | name | A textual representation of the name of the organisation. |
   | identifier | An identifier should be included contain a fixed `system` of `"https://fhir.nhs.uk/Id/ods-organization-code"` and a identifier `value` containing the ODS code of requesting organization. |
 
-  <div class="deprecated">
-  <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3>
-  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, 'providers' SHALL support requests where the 'requesting_organization' conforms to the requirements above but also request where the 'requesting_organization' is populated with:</p>
-
-  <p>A FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource representing the organisation making the request and SHALL include the elements:</p>
-  <table>
-	<tr>
-		<th>Element</th>
-		<th>Description</th>
-	</tr>
-	<tr>
-		<td>name</td>
-		<td>A textual representation of the name of the organisation.</td>
-	</tr>
-	<tr>
-		<td>identifier</td>
-		<td>An identifier should be included contain a fixed 'system' of "http://fhir.nhs.net/Id/ods-organization-code" and a identifier 'value' containing the ODS code of requesting organisation.</td>
-	</tr>
-  </table>
-
-  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource and '`http://fhir.nhs.net/Id/ods-organization-code`' identifier system is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
-  </div>
 
 #### Population of requested_record ####
 
@@ -187,21 +159,28 @@ The `consumer` SHALL populate the `requested_record` claim with:
 
 * Either a FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) ![STU3](images/stu3.png) resource or a FHIR [Patient](https://www.hl7.org/fhir/STU3/patient.html) ![STU3](images/stu3.png) resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers for the request.
 
-  The table below shows some of the GP Connect API interactions and the expected content for the JWT requested_record claim:
+  The table below shows the GP Connect API calls and the expected content for the JWT requested_record claim:
 
   | Request | Known Business Identifiers | requested_record Resource Type | requested_record Content |
   | --- | --- | --- | --- |
   | Access Record HTML | NHS Number | Patient | SHALL contain an identifier element containing the NHS number being passed as a parameter to the `gpc.getcarerecord` operation. |
-  | Patient Search | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as the search parameter of the request. |
-  | Patient Read | N/A | Patient | SHOULD contain the logical id of the patient resource being requested. |
-  | Organisation Search | ODS Code | Organisation | SHALL contain an identifier element containing the organisation ODS Code which is being passed as the parameter to the search. |
-  | Practitioner Search | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
-  | Practitioner Read | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
+  | Find a patient | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as the search parameter of the request. |
+  | Register a patient | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number of the patient to be registered. |
+  | Read a patient | N/A | Patient | SHOULD contain the logical id of the patient resource being requested. |
+  | Find an organisation | ODS Code | Organisation | SHALL contain an identifier element containing the organisation ODS Code which is being passed as the parameter to the search. |
+  | Read an organisation | ODS Code | Organisation | SHOULD contain the logical id of the organization resource being requested. |
+  | Find a practitioner | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
+  | Read a practitioner | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
+  | Read a location | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
   | Search for free slots | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
   | Book Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
-  | Read Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
-  
-  The following identifier sytems SHALL be used when populating the relevant business identifiers:
+  | Read Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |  
+  | Retrieve a patients appointments | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
+  | Amend an appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
+  | Cancel an appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
+
+ 
+  The following identifier systems SHALL be used when populating the relevant business identifiers:
   
   | Known business identifiers | Relevant business identifiers |
   | --- | --- |
@@ -209,31 +188,6 @@ The `consumer` SHALL populate the `requested_record` claim with:
   | ODS code | https://fhir.nhs.uk/Id/ods-organization-code |
 
   {% include note.html content="The provider SHALL validate that the requested_record claim details match the request parameters where possible, to ensure valid auditing of the requests end-to-end." %}
-
-  <div class="deprecated">
-  <h3>Deprecated - required to support AccessRecord 1.0.0-rc.5</h3> 
-  <p>For backward compatablity with consumers still using an implementation of GP Connect based on the previous version of the specification, 'providers' SHALL support requests where the 'requested_record' conforms to the requirements above but also request where the 'requested_record' is populated with:</p>
-
-  <p>Either a FHIR <a href="https://www.hl7.org/fhir/DSTU2/organization.html">Organization</a> <img src="images/dstu2.png" /> resource or a FHIR <a href="https://www.hl7.org/fhir/DSTU2/patient.html">Patient</a> <img src="images/dstu2.png" /> resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers as set out by the table above.</p>
-  
-  <p>The following identifier sytems SHALL be supported within the resources for the relevant business identifiers:</p>
-  <table>
-	<tr>
-		<th>Known Business Identifiers</th>
-		<th>Relavant Business Identifiers</th>
-	</tr>
-	<tr>
-		<td>NHS Number</td>
-		<td>http://fhir.nhs.net/Id/nhs-number</td>
-	</tr>
-	<tr>
-		<td>ODS Code</td>
-		<td>http://fhir.nhs.net/Id/ods-organization-code</td>
-	</tr>
-  </table>
-
-  {% include important.html content="Use of the FHIR [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) ![DSTU2](images/dstu2.png) resource, the FHIR [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) ![DSTU2](images/dstu2.png) resource, the 'http://fhir.nhs.net/Id/nhs-number' identifier system and the 'http://fhir.nhs.net/Id/ods-organization-code' identifier system is being deprecated and should not be used by consumers when implementing this version of the specification. Once all consumers have migrated to use the new FHIR resource and identifier system, support for the deprecated format will be removed from the specification." %}
-  </div>
   
 
 #### Population of requested_device ####

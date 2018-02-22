@@ -1,5 +1,3 @@
-{% assign gpconnectVersion = "1.1.0-alpha" %}
-
 {% assign showbackbutton = true %}
 {% assign backbuttontext = "Back to GP Connect" %}
 
@@ -7,29 +5,11 @@
 {% assign sidebar = site.data.sidebars.overview_sidebar.entries; %}
 {% assign showbackbutton = false %}
 
-{% elsif page.sidebar == "datalibrary_sidebar" %}
-{% assign sidebar = site.data.sidebars.datalibrary_sidebar.entries %}
-
 {% elsif page.sidebar == "foundations_sidebar" %}
 {% assign sidebar = site.data.sidebars.foundations_sidebar.entries %}
 
-{% elsif page.sidebar == "accessrecord_sidebar" %}
-{% assign sidebar = site.data.sidebars.accessrecord_sidebar.entries %}
-
-{% elsif page.sidebar == "accessrecord_rest_sidebar" %}
-{% assign sidebar = site.data.sidebars.accessrecord_rest_sidebar.entries %}
-
 {% elsif page.sidebar == "appointments_sidebar" %}
 {% assign sidebar = site.data.sidebars.appointments_sidebar.entries %}
-
-{% elsif page.sidebar == "tasks_sidebar" %}
-{% assign sidebar = site.data.sidebars.tasks_sidebar.entries %}
-
-{% elsif page.sidebar == "integration_sidebar" %}
-{% assign sidebar = site.data.sidebars.integration_sidebar.entries %}
-
-{% elsif page.sidebar == "system_sidebar" %}
-{% assign sidebar = site.data.sidebars.system_sidebar.entries %}
 
 {% else %}
 {% assign sidebar = site.data.sidebars.overview_sidebar.entries %}
@@ -45,34 +25,10 @@ sidebar configuration for print files
 {% assign sidebar_pdf = site.data.sidebars.overview_sidebar.entries %}
 {% endif %}
 
-{% if site.product == "datalibrary" %}
-{% assign sidebar_pdf = site.data.sidebars.datalibrary_sidebar.entries %}
-{% endif %}
-
 {% if site.product == "foundations" %}
 {% assign sidebar_pdf = site.data.sidebars.foundations_sidebar.entries %}
 {% endif %}
 
-{% if site.product == "accessrecord" %}
-{% assign sidebar_pdf = site.data.sidebars.accessrecord_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "accessrecord_rest" %}
-{% assign sidebar_pdf = site.data.sidebars.accessrecord_rest_sidebar.entries %}
-{% endif %}
-
 {% if site.product == "appointments" %}
 {% assign sidebar_pdf = site.data.sidebars.appointments_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "tasks" %}
-{% assign sidebar_pdf = site.data.sidebars.tasks_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "integration" %}
-{% assign sidebar_pdf = site.data.sidebars.integration_sidebar.entries %}
-{% endif %}
-
-{% if site.product == "system" %}
-{% assign sidebar_pdf = site.data.sidebars.system_sidebar.entries %}
 {% endif %}

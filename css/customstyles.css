@@ -1212,3 +1212,14 @@ table > tbody > tr.tableSubHeading {
 	background-color: #fffbdb;
 	border-radius: 5px;
 }
+
+.capability-not-available {
+    color: #aaaaaa;
+    font-weight: normal;
+}
+
+@media (max-width:700px) {
+    .navbar-brand {
+        width:70vw!important;
+    }
+}

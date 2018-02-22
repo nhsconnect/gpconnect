@@ -42,10 +42,6 @@ entries:
         - title: 0.5.0
           url: /overview_release_notes_0_5_0.html
           output: web
-    - title: Specification versions
-      url: /overview_specification_versions.html
-      output: web, pdf
-      type: homepage
 
   - title: Design approach
     output: web
@@ -76,10 +72,7 @@ entries:
     - title: Clinical terminologies
       url: /design_clinical_terminologies.html
       output: web
-    - title: Maturity model
-      url: /designprinciples_maturity_model.html
-      output: web
-    - title: Product versioning
+    - title: Product Versioning
       url: /design_product_versioning.html
       output: web
 
@@ -139,16 +132,16 @@ entries:
     - title: Foundations
       url: /foundations.html
       output: web
-    - title: Access Record HTML
-      url: /accessrecord.html
-      output: web
-    - title: Access Record REST
-      url: /accessrecord_rest.html
-      output: web
     - title: Appointment Management
       url: /appointments.html
       output: web
-    - title: Task Management
+    - title: <b class="capability-not-available">Access Record HTML</b>
+      url: /accessrecord.html
+      output: web
+    - title: <b class="capability-not-available">Access Record Structured</b>
+      url: /accessrecord_rest.html
+      output: web
+    - title: <b class="capability-not-available">Task Management</b>
       url: /tasks.html
       output: web
 
@@ -217,9 +210,6 @@ entries:
       output: web
     - title: GPC Developer Network
       external_url: http://developer.nhs.uk/library/interoperability/gp-connect/
-      output: web
-    - title: GPC Code4Health
-      external_url: http://interoperability.code4health.org/projects/gp-connect-2/
       output: web
     - title: GPC GitHub FHIR data library
       external_url: https://github.com/nhsconnect/gpconnect-fhir/

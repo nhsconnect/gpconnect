@@ -31,7 +31,7 @@ bundle install
 Run the 'jekyll serve' command to compile and serve the HTML content.
 
 ```bash
-bundle exec jekyll serve
+bundle exec jekyll serve 
 ```
 
 By default pages are served from http://localhost:4005/

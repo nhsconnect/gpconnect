@@ -11,8 +11,7 @@ summary: "Details of which operations a FHIR&reg; server should expose to be a f
 
 *Aim(s)*
 
-- HTML Access Record views (with bundled Structured).
-- Appointment and Task management.
+- Appointment Management
 
 *Mechanism*
 
@@ -49,13 +48,6 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Register patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1` | `POST`  | `[base]/Patient/$gpc.registerpatient` |
 
 
-### Access Record HTML capability interactions ###
-
-| Operation                 | InteractionID             | HTTP verb | Example URL pattern |
-|---------------------------|---------------------------| ----------|---------------------|
-| [Get care record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1` | `POST` | `[base]/Patient/$gpc.getcarerecord` |
-
-
 ### Appointments capability interactions ###
 
 | Operation                 | InteractionID             | HTTP verb | Example URL pattern |
@@ -67,60 +59,13 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 | [Cancel appointment](appointments_use_case_cancel_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1` | `PUT`  | `[base]/Appointment/[id]` |
 | [Get patient appointments](appointments_use_case_retrieve_a_patients_appointments.html)  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1` | `GET`  | `[base]/Patient/[id]/Appointment` |
 
+### Access Record HTML capability interactions ###
+Access Record HTML interactions are not available at this specification version.
+
+### Access Record Structured capability interactions ###
+Access Record Structured interactions are not available at this specification version.
 
 ### Task capability interactions ###
+Task interactions are not available at this specification version.
 
-| Operation                 | InteractionID             | HTTP verb | Example URL pattern |
-|---------------------------|---------------------------| ----------|---------------------|
-| [Create task](tasks_use_case_send_a_task.html) | `urn:nhs:names:services:gpconnect:fhir:rest:create:order-1` | `POST` | `[base]/Order/` |
-
-
-## Stage 3. FHIR operations ##
-
-*Aim*
-
-- direct (unbundled) read-only access to care record resources for a patient
-
-*Mechanism*
-
-- RESTful APIs in line with the FHIR&reg; standard (with no custom operations)
-
-```GET [base]/[ResourceType]?patient=[id]{&other parameters}```
-
-
-{% include important.html content="Whilst several variations to the above URL syntax are possible, GP Connect provider systems are expected to support (as a minimum) the above format." %}
-
-*Interactions*
-
-All `InteractionIDs` are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[claim]`.
-
-{% include note.html content="`InteractionIDs` are to be considered case-insensitive." %}
-
-- Program = `gpconnet`
-- Standard = `fhir`
-- Mechanism = [ `claim` ]
-	- `claim` for logical access to a scoped resource.
-- Claim
-	- claim style API = [ `patient/AllergyIntolerance.read`, `patient/Condition.read`, and so on ]
-
-{% include note.html content="The claims expressed below are in the format specified by the [SMART on FHIR](http://docs.smarthealthit.org/authorization/scopes-and-launch-context/) project." %}
-
-| Operation                       | InteractionID             | Http verb | Example URL pattern |
-|---------------------------------|---------------------------| ----------|---------------------|
-| [Get patient allergy intolerances](accessrecord_rest_structured_data_allergyintolerance.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/AllergyIntolerance.read-1` | `GET`  | `[base]/AllergyIntolerance?patient=[id]` |
-| [Get patient conditions](accessrecord_rest_structured_data_condition.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Condition.read-1` | `GET`  | `[base]/Condition?patient=[id]` |
-| Get patient diagnostic orders | `urn:nhs:names:services:gpconnect:fhir:claim:patient/DiagnosticOrder.read-1` | `GET`  | `[base]/DiagnosticOrder?patient=[id]` |
-| Get patient diagnostic reports | `urn:nhs:names:services:gpconnect:fhir:claim:patient/DiagnosticReport.read-1` | `GET`  | `[base]/DiagnosticReport?patient=[id]` |
-| Get patient encounters | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Encounter.read-1` | `GET`  | `[base]/Encounter?patient=[id]` |
-| Get patient flags | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Flag.read-1` | `GET`  | `[base]/Flag?patient=[id]` |
-| [Get patient immunizations](accessrecord_rest_structured_data_immunization.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Immunization.read-1` | `GET`  | `[base]/Immunization?patient=[id]` |
-| [Get patient medication orders](accessrecord_rest_structured_data_medicationorder.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationOrder.read-1` | `GET`  | `[base]/MedicationOrder?patient=[id]` |
-| [Get patient medication statements](accessrecord_rest_structured_data_medicationstatement.html) | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationStatement.read-1` | `GET`  | `[base]/MedicationStatement?patient=[id]` |
-| Get patient medication dispenses | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationDispense.read-1` | `GET`  | `[base]/MedicationDispense?patient=[id]` |
-| Get patient medication administrations | `urn:nhs:names:services:gpconnect:fhir:claim:patient/MedicationAdministration.read-1` | `GET`  | `[base]/MedicationAdministration?patient=[id]` |
-| Get patient observations | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Observation.read-1` | `GET`  | `[base]/Observation?patient=[id]` |
-| Get patient problems | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Problem.read-1` | `GET`  | `[base]/Problem?patient=[id]` |
-| Get patient procedures | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Procedure.read-1` | `GET`  | `[base]/Procedure?patient=[id]` |
-| Get patient referrals | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Referral.read-1` | `GET`  | `[base]/Referral?patient=[id]` |
-| Get patient appointments | `urn:nhs:names:services:gpconnect:fhir:claim:patient/Appointment.read-1` | `GET`  | `[base]/Appointment?patient=[id]` |
 

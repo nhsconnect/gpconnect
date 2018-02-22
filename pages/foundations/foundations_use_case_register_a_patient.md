@@ -62,10 +62,10 @@ Example HTTP request headers:
 ```http
 POST http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/$gpc.registerpatient HTTP/1.1
 User-Agent: .NET FhirClient for FHIR 1.2.0
-Accept: application/json+fhir;charset=utf-8
+Accept: application/fhir+json;charset=utf-8
 Prefer: return=representation
 Host: michaelm-pc
-Content-Type: application/json+fhir;charset=utf-8
+Content-Type: application/fhir+json;charset=utf-8
 Content-Length: 289
 Expect: 100-continue
 Connection: Keep-Alive
@@ -218,7 +218,7 @@ Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_err
 ```http
 HTTP/1.1 200 OK
 Cache-Control: no-store
-Content-Type: application/json+fhir; charset=utf-8
+Content-Type: application/fhir+json; charset=utf-8
 Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
