@@ -56,12 +56,12 @@ The following GP Connect artefacts are released as part of or alongside the spec
 - [System demonstrator](system_demonstrator.html)
 - [Provider automated test suite](testing_deliverables.html)
 - SDS interaction IDs (see below)
-- Provider service root URL format (see below)
+- Service Root URL format (see below)
 
 ### SDS interaction IDs ###
 
-[SDS interaction IDs](development_fhir_operation_guidance.html) change only when a new major version of the specification is released and are are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
+[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
 
-### Providing service root URL format ###
+### Service Root URL format ###
 
-[Providing system service URLs](development_general_api_guidance.html#service-root-url-versioning) contain the major version number of the specification.
+[Service Root URL formats](development_general_api_guidance.html#service-root-url-versioning) contain the major version number of the specification.

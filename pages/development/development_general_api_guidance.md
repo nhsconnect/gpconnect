@@ -57,18 +57,19 @@ The FHIR RESTful API style guide defines the following URL conventions which are
 - URL pattern content surrounded by **[ ]** are mandatory.
 - URL pattern content surrounded by **{ }** are optional.
 
-### Service root URL ###
+### Service Root URL ###
 
-The [Service root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found. 
+The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found. 
 
-The Service root URL is the `[base]` portion of all FHIR APIs.
+The Service Root URL is the `[base]` portion of all FHIR APIs.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
-### Service root URL versioning ###
-FHIR API URLs SHALL be aligned with the GP Connect specification they were built against, specifically the [major version number](design_product_versioning.html) SHALL be present in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
+### Service Root URL versioning ###
 
-Provider systems are required to publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
+Service Root URLs SHALL be aligned with the GP Connect specification they were built against, specifically the [major version number](design_product_versioning.html#version-number-standard) SHALL be present in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
+
+Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
 
 {% include callout.html content="`https://[FQDN of FHIR Server]/[ODS_CODE]/[FHIR_VERSION_NAME]/[GPC_MAJOR_VERSION]/[PROVIDER_ROUTING_SEGMENT]`" %}
 
@@ -82,11 +83,11 @@ Provider systems are required to publish Service Root URLs for major versions of
 
 - `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
   
-- The FHIR Base URL SHALL NOT contain a trailing `/`
+- The Service Root URL SHALL NOT contain a trailing `/`
 
-#### Example server root URL
+#### Example Service Root URL
 
-The provider will publish the server root URL to Spine Directory Services, for example:
+The provider SHALL publish the Service Rot URL to Spine Directory Services, for example:
 
 `https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
 
