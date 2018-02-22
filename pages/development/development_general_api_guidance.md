@@ -79,7 +79,7 @@ Provider systems are required to publish Service Root URLs for major versions of
 
 - `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
 
-- `{API_MAJOR_VERSION}` identifies the major version number of the provider API. Where the provider API version number is omitted, the major version SHALL be assumed to be 1.
+- `{API_MAJOR_VERSION}` identifies the major version number of the provider API.
 
 - `{PROVIDER_ROUTING_SEGMENT}` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
   

@@ -19,19 +19,19 @@ Please refer to the [Security Guidance](development_api_security_guidance.html) 
 
 #### Volumetric ####
 
-Provider systems MUST meet the agreed volumetric performance targets.
+Provider systems SHALL meet the agreed volumetric performance targets.
 
 Please refer to the [Volumetric Guidance](development_api_volume_and_performance.html#volumetrics) page for technical details.
 
 #### Performance ####
 
-Provider systems MUST meet the agreed response time performance targets.
+Provider systems SHALL meet the agreed response time performance targets.
 
 Please refer to the [Performance Guidance](development_api_volume_and_performance.html#performance) page for technical details.
 
 ### Capacity ###
 
-Provider systems MUST meet the agreed capacity requirements.
+Provider systems SHALL meet the agreed capacity requirements.
 
 ### Scalability ###
 
@@ -73,11 +73,15 @@ Please refer to the 'GPSoC Technical Standards' for details.
 
 ### Accessability ###
 
-Provider and Consumer systems MUST maintain a compliance of minimum Double “A” of the WCAG 1.0 (or equivalent in WCAG 2.0), or as stipulated by UK Government Guidelines, for all user interfaces. Please see the [Web Accessibility Initiative](https://www.w3.org/WAI/) for more details.
+Provider and Consumer systems SHALL maintain a compliance of minimum Double “A” of the WCAG 1.0 (or equivalent in WCAG 2.0), or as stipulated by UK Government Guidelines, for all user interfaces. Please see the [Web Accessibility Initiative](https://www.w3.org/WAI/) for more details.
 
 Please refer to the 'GPSoC Technical Standards' for details.
 
 ### Deployment ###
+
+Provider systems SHALL release a new major version of their GP Connect API alongside a previous major version, until such time as consumers have migrated to the new major version.
+
+Provider systems SHOULD release a new minor or patch version, replacing the previous the previous minor or patch version.
 
 Provider systems SHALL be deployed with the provider APIs enabled by default.
 
