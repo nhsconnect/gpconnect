@@ -69,43 +69,29 @@ The following parameters MAY be included to minimise the number of API calls req
 
 ### Enhanced slot filtering ###
 
-{% include important.html content="
-It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. <br/><br/>
- 
-For the Appointment Management rc.3 specification, provider systems SHALL provide a mechanism by which GP practices can indicate which slots are available for booking via the GP Connect API specifically, thereby ensuring that their whole appointment book is not made available to external organisations.  
- " %}
- 
-The GP Connect programme is currently consulting with GP principal system providers to define a standard API interface to enable more granular slot filtering. A common example of this would be where a practice reserves a small number of slots specifically for use by urgent care appointment. 
+{% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outline on the [Slot Availability Management](slotavailabilitymanagement.html) page" %}
 
-In view of this, an additional placeholder parameter `searchFilter` has been included in the Appointment Management rc.3 specification. It is envisaged that this parameter will in future be used to specify these additional filtering parameters through the use of agreed valueSets.
- 
-The following provides some examples of search filters valueSets in consideration to meet requirements for future fine-grained slot filtering.  
+In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter with both 'System' and 'Value' elements:
 
-| ValueSet System URI | Description |
+| Parameter system URI | Parameter description |
 | --- | --- |
-| (TBD) booking-organisation | Booking organisation identifier (ODS code) |
-| (TBD) consumer-type | Consuming Organisation type making the request, for example '111 call centre'. |
-| (TBD) disposition | Urgent Care Disposition Code required for the patient's care. |
-| (TBD) service-id | Urgent Care Service-Id required for the available slot. |
+| https://fhir.nhs.uk/Id/ods-organization-code | The booking organisation ODS code |
+| https://fhir.nhs.uk/STU3/ValueSet/GPConnect-OrganisationType-1 | The booking organisation type, for example 'Urgent Care'. |
 
-Where searchFilters are sent by consumers which are not explicitly supported in this specification (for example, the valueSet used is not listed here) providers SHALL ignore any such searchFilter parameters and SHALL NOT return an error.
+Where searchFilters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
+
 
 ## Search for free slots on the wire ##
 
 On the wire a `Search for free slots` request would look something like one of the following:
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
-
-```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter=[typeSystemTBC]|UC&searchFilter=[dispositonSystemTBC]|DX001
-```
-
 
 ## Prerequisites ##
 
@@ -131,6 +117,8 @@ GET /Slot?[start={search_prefix}start_date]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+		  {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+		  {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
 #### FHIR&reg; absolute request ####
@@ -143,6 +131,8 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+		  {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+		  {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
 #### Request headers ####
