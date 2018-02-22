@@ -7,19 +7,28 @@ permalink: slotavailabilitymanagement.html
 summary: "Requirements for Provider System End-User to be able to configure what slots are available to GP Connect Booking Organisation Consumers"
 ---
 
-Given the increasing requirement for cross-organisational appointment access, there is a requirement to better ensure that the right appointment slots are made available to the right external organisations via
+Given the increasing requirement for cross-organisational appointment access, there is a requirement to better ensure that the right appointment slots are made available to the right external organisations by
   - enhancing the ability of Provider Organisations to control appointment availability and booking to, and by, external organisations
   - ensuring that Consumer organisations obtain only appointment availability appropriate for them
-
-To meet these requirements, Provider systems SHALL, in addition to enabling end-users to designate Schedules and Slots within their Appointment books as 'GP Connect bookable', provide the following additional functionality:
-  - enable end-users to specify which appointments can be booked by 
-    -- individual and/or 
-    -- groups of external organisations and/or
-  -- booking organisation type
-  - limit the number of slots which can be booked by an external organisation type or organisation(s)
+  - providing more standardised categorisation of available appointment slots across provider systems.
   
-It is recommended that Provider systems also provide the functionality
-  - control how far in advance external organisations should be allowed to book slots and how near to the actual slot time   -  this requirement to be optional
+## Appointment Availability Control ##
+Provider systems SHALL, in addition to enabling end-users to designate the Slots within their Appointment books as 'GP Connect bookable', provide the following additional functionality:
+  - enable end-users to specify which appointment schedules/slots can be booked by an individual organisation and/or group of organisations, and/or  booking organisation type
+  - limit the number of slots which can be booked by this 'organisation access profile'
 
+## Booking Window/Embargo
+It is recommended that Provider systems also provide the functionality to enable the end-user to control how far in advance external organisations should be allowed to book slots and how near to the actual slot time - ie via 'Booking Window' or 'Embargo'.
 
+Where embargo rules have been set, the Provider systems SHALL only return slots according to these.
+
+The consumer system will send the booking Organisation Type and ODS Code which the Provider system will then use to determine the matching availability.
+
+## Appointment Slot Categorisation ##
+
+Providers systems SHALL enable and require the mandatory selection by end-users of a value from the new FHIR 'Practitioner Role' and 'Delivery Channel' value set, as part of the end-user GP Connect Appointment Availability configuration. These values SHALL NOTn be configurable by end-users.
+
+## Organisation Type, Practitioner Role, Delivery Channel FHIR Value Sets ##
+
+Provider systems must maintain alignment with the CareConnect FHIR value sets.
 
