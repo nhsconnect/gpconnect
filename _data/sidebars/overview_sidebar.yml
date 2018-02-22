@@ -16,7 +16,7 @@ entries:
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-    - title: First of type
+    - title: First of Type
       url: /overview_first_of_type.html
       output: web
     - title: Glossary
@@ -119,7 +119,7 @@ entries:
         - title: Error handling
           url: /development_fhir_error_handling_guidance.html
           output: web
-        - title: V&P guidance
+        - title: Volume and performance guidance
           url: /development_api_volume_and_performance.html
           output: web          
         - title: NFR guidance
@@ -154,7 +154,7 @@ entries:
     - title: Spine integration illustrated
       url: /integration_illustrated.html
       output: web           
-    - title: Cross organisation audit & provenance
+    - title: Cross organisation audit and provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
     - title: Personal Demographic Service

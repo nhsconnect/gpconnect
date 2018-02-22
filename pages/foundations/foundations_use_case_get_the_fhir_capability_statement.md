@@ -4,34 +4,34 @@ keywords: foundations, fhir
 tags: [foundations,use_case,fhir]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_get_the_fhir_capability_statement.html
-summary: "Use case for getting the GP Connect FHIR server's capability statement."
+summary: "Use case for getting the GP Connect FHIR server's capability statement"
 ---
 
 ## Prerequisites ##
 
 ### Consumer ###
 
-The Consumer system:
+The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 
-## API Usage ##
+## API usage ##
 
-### Request Operation ###
+### Request operation ###
 
-#### FHIR Relative Request ####
+#### FHIR relative request ####
 
 ```http
 GET /metadata
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/metadata
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -42,25 +42,25 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1`|
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 N/A
 
-#### Error Handling ####
+#### Error handling ####
 
 Provider systems are expected to always be able to return a valid capability statement.
 
-### Request Response ###
+### Request response ###
 
 #### Response Headers ####
 
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrival of the capability statement.
+- SHALL return a `200` **OK** HTTP status code on successful retrival of the capability statement
 - SHALL return a capability statement which conforms to the standard [FHIR CapabilityStatement](http://hl7.org/fhir/STU3/capabilitystatement.html)
 
 An example GP Connect CapabilityStatement of type `Instance` is shown below:
@@ -237,9 +237,9 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 </CapabilityStatement>
 ```
 
-Consumer Systems:
-- SHOULD, request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
-- SHOULD cache capability statement information retrieved from an endpoint at run-time on a per-session basis.
+Consumer systems:
+- SHOULD, request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
+- SHOULD cache capability statement information retrieved from an endpoint at run-time on a per-session basis
 
 ### C# client request to get the capability statement ###
 
