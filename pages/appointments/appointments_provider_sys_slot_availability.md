@@ -7,7 +7,7 @@ permalink: slotavailabilitymanagement.html
 summary: "Requirements for Provider System End-User to be able to configure what slots are available to GP Connect Booking Organisation Consumers"
 ---
 
-Given the increasing requirement for cross-organisational appointment access, there is a requirement to better ensure that the right appointment slots are made available to the right external organisations by
+Given the increasing need for cross-organisational appointment access, there is a requirement to better ensure that the right appointment slots are made available to the right external organisations by
   - enhancing the ability of Provider Organisations to control appointment availability and booking to, and by, external organisations
   - ensuring that Consumer organisations obtain only appointment availability appropriate for them
   - providing more standardised categorisation of available appointment slots across provider systems so that inappropriate appointment booking is reduced
