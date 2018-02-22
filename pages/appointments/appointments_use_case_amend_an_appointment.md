@@ -13,7 +13,7 @@ The typical flow to amend an appointment is:
 
  1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
- 3. Choose an `Appointment` resource and update its `description`, `comment` or `reason` details.
+ 3. Choose an `Appointment` resource and update its `description` or `comment` details.
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -70,12 +70,15 @@ Consumer systems:
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
 Only the following data-elements can be modified when performing an appointment amendment:
-- `reason`
 - `description`
 - `comment`
 - `Appointment cancellation reason` extension, which SHALL only be amended when the appointment status is `cancelled`.
 
 {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
+
+To reduce the risk of information being truncated when stored on the providers side, consumers SHALL impose:
+- a 100 character limit on the appointment `description` element when editing a GP Connect appointment.
+- a 500 character limit on the appointment `comment` element when editing a GP Connect appointment.
 
 On the wire a JSON serialised request would look something like the following:
 
@@ -138,7 +141,7 @@ On the wire a JSON serialised request would look something like the following:
 The provider system:
 
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-- SHALL return an error if any appointment details other than the appointment `reason`, `comment`, `description` or `cancellation reason` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
+- SHALL return an error if any appointment details other than the appointment `comment`, `description` or `cancellation reason` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
 - SHALL return an error if the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
@@ -158,7 +161,6 @@ Provider systems:
 - SHALL return an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of the appointment resource.
-- SHALL have updated the appointment in accordance with the details supplied in the request. For example, the received `reason` element will replace the existing element. That is, where the existing element contained only `reason.text`, and the received element contained only `reason.coding`, then the resultant `reason` element would contain only the `reason.coding` sub-element.
 
 ```json
 {
@@ -224,8 +226,8 @@ Provider systems:
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
 client.PreferredFormat = ResourceFormat.Json;
 var appointment = client.Read<Appointment>("Appointment/9");
-// Update The Reason For The Appointment
-appointment.Reason.Text = "Free text updated reason.";
+// Update The Comment For The Appointment
+appointment.comment = "Free text updated comment.";
 var updatedAppointment = client.Update<Appointment>(appointment);
 FhirSerializer.SerializeResourceToJson(updatedAppointment).Dump();
 ```

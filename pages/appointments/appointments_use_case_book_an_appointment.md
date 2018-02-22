@@ -100,18 +100,19 @@ The following guidance around Appointment Resource element SHALL be followed whe
 
 | Resource Element        | Guidance |
 | ---                     | --- |
-| Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. |
-| Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
+| Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Consumers SHALL impose a character limit of 100 characters for this element. |
+| Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. Consumers SHALL impose a character limit of 500 characters for this element. |
+| Appointment.***reason***     | Consumers and providers SHOULD NOT use the appointment `reason` element as the GP Connect appointment management capability is for administration of appointment booting and should not be used to transfer clinical data between systems. As the reason element is for recording 'clinical' codes it goes against the purpose of the GP Connect Appointment Management capability, so it should not be used by consumers or providers. |
 
 #### Resource guidance ####
 
 The following guidance SHALL be followed when populating an appointment resource:
 
-* For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost.
+* For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost. The consumer imposed character limit specified above should restrict the total number of characters received so that all providers can store any text they receive.
 * If the consumer wishes to include ***patient temporary contact details*** for the purposes of the appointment they SHALL include them within the `description` element of the appointment, so that the details are retained against that specific appointment.
 * Elements within the appointment (such as 'comment' and 'description') SHALL only contain limited amounts of information to support the appointment. The content of the appointment SHALL NOT be used for "Transfer of Care" clinical information.
 
-{% include warning.html content="Due to differences in the provider systems and the amount of information their data models can hold, there is a risk that information sent within the appointment may be truncated by the provider system if too large. Consumers and providers should be aware and try to limit risk where possible or make users aware of the risk when booking or amending an appointment." %}
+{% include warning.html content="Due to differences in the provider systems and the amount of information their data models can hold, there is a risk that information sent within the appointment may be truncated by the provider system if too large. Consumers and providers should be aware and try to limit risk where possible or make users aware of the risk when booking or amending an appointment. The consumer imposed character limit specified above should help mitigate this risk." %}
 
 
 #### Example request body ####

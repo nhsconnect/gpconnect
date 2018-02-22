@@ -180,14 +180,6 @@ Provider systems:
 				}
 			}],
 			"status": "booked",
-			"reason": {
-				"coding": [{
-					"system": "http://snomed.info/sct",
-					"code": "00001",
-					"display": "Default Appointment Type"
-				}],
-				"text": "Default Appointment Type"
-			},
 			"description" : "GP Connect Appointment description 148",
 			"start": "2017-08-21T10:20:00.000+00:00",
 			"end": "2017-08-21T10:50:00.000+00:00",
