@@ -110,7 +110,6 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
 
 Consumer Systems:
 
-- SHALL, during development, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
 - SHOULD, at run-time, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
 - SHOULD cache conformance statement information retrieved from an endpoint at run-time on a per-session basis. 
 
