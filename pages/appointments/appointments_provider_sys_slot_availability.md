@@ -16,19 +16,21 @@ Given the increasing requirement for cross-organisational appointment access, th
 Provider systems SHALL, in addition to enabling end-users to designate the Slots within their Appointment books as 'GP Connect bookable', provide the following additional functionality:
   - enable end-users to specify which appointment schedules/slots can be booked by an individual organisation and/or group of organisations, and/or  booking organisation type
   - limit the number of slots which can be booked by this 'organisation access profile'
+  
+The Organisation Type list from which the end-user must select SHALL reflect the specified FHIR Organisation Type value set. 
 
-## Booking Window/Embargo
+## Booking Window/Embargo ##
 It is recommended that Provider systems also provide the functionality to enable the end-user to control how far in advance external organisations should be allowed to book slots and how near to the actual slot time - ie via 'Booking Window' or 'Embargo'.
 
-Where embargo rules have been set, the Provider systems SHALL only return slots according to these.
+Where embargo rules have been set, the Provider systems SHALL only return slots in respect of the rules.
 
 The consumer system will send the booking Organisation Type and ODS Code which the Provider system will then use to determine the matching availability.
 
 ## Appointment Slot Categorisation ##
 
-Providers systems SHALL enable and require the mandatory selection by end-users of a value from the new FHIR 'Practitioner Role' and 'Delivery Channel' value set, as part of the end-user GP Connect Appointment Availability configuration. These values SHALL NOTn be configurable by end-users.
+Providers systems SHALL enable and require the mandatory selection by end-users of a value from the new FHIR 'Practitioner Role' and 'Delivery Channel' value set, as part of the end-user GP Connect Appointment Availability configuration. These values SHALL NOT be configurable by end-users.
 
-## Organisation Type, Practitioner Role, Delivery Channel FHIR Value Sets ##
+## FHIR Value Sets - Organisation Type, Practitioner Role, Delivery Channel  ##
 
-Provider systems must maintain alignment with the CareConnect FHIR value sets.
+Provider systems SHALL maintain alignment with the CareConnect FHIR value sets.
 
