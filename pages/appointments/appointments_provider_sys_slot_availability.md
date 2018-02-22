@@ -12,14 +12,14 @@ Given the increasing requirement for cross-organisational appointment access, th
   - ensuring that Consumer organisations obtain only appointment availability appropriate for them
   - providing more standardised categorisation of available appointment slots across provider systems so that inappropriate appointment booking is reduced.
   
-## Appointment Availability Control ##
+## Appointment Availability Control by Organisation Type, Specific Organisations ##
 Provider systems SHALL, in addition to enabling end-users to designate the Slots within their Appointment books as 'GP Connect bookable', provide the following additional functionality:
   - enable end-users to specify which appointment schedules/slots can be booked by an individual organisation and/or group of organisations, and/or booking organisation type
   - limit the number of slots which can be booked by this 'organisation access profile'
   
 The Organisation Type list from which the end-user selects SHALL reflect the specified FHIR Organisation Type value set. 
 
-The consumer system will send the booking Organisation Type and ODS Code which the Provider system will then use to determine the matching availability.
+The consumer system will send the booking Organisation Type and ODS Code in the Search Free Slots API SearchFilter which the Provider system will then use to determine the matching availability.
 
 ## Booking Window/Embargo ##
 It is recommended that Provider systems also provide the functionality to enable the end-user to control how far in advance external organisations should be allowed to book slots and how near to the actual slot time - ie via 'Booking Window' or 'Embargo' rules.
