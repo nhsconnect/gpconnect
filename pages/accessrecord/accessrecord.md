@@ -11,7 +11,7 @@ summary: "Introduction to the GP Connect Access Record HTML capability"
 
 For direct patient care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings.
 
-{% include important.html content="Please refer to [HSCIC Guide to Confidentiality 2013 reference document](https://digital.nhs.uk/media/1235/HSCIC-Guide-to-Confidentiality-2013-reference-document/pdf/confidentiality-guide-2013-references){:target='_blank'} for details of what constitutes direct patient care." %}
+{% include important.html content="Please refer to page 28 of [HSCIC Guide to Confidentiality 2013 reference document](https://digital.nhs.uk/media/1235/HSCIC-Guide-to-Confidentiality-2013-reference-document/pdf/confidentiality-guide-2013-references.pdf#page=28){:target='_blank'} for details of what constitutes direct patient care." %}
 
 The information "sections" in scope for care record access are:
 
