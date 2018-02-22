@@ -10,7 +10,8 @@ summary: "Requirements for Provider System End-User to be able to configure what
 Given the increasing requirement for cross-organisational appointment access, there is a requirement to better ensure that the right appointment slots are made available to the right external organisations by
   - enhancing the ability of Provider Organisations to control appointment availability and booking to, and by, external organisations
   - ensuring that Consumer organisations obtain only appointment availability appropriate for them
-  - providing more standardised categorisation of available appointment slots across provider systems so that inappropriate appointment booking is reduced.
+  - providing more standardised categorisation of available appointment slots across provider systems so that inappropriate appointment booking is reduced
+  - providing where applicable the GP Branch Surgery location of available appointment slots.
   
 ## Appointment Availability Control by Organisation Type, Specific Organisations ##
 Provider systems SHALL, in addition to enabling end-users to designate the Slots within their Appointment books as 'GP Connect bookable', provide the following additional functionality:
@@ -33,4 +34,9 @@ Providers systems SHALL enable and require the mandatory selection by end-users 
 ## FHIR Value Sets - Organisation Type, Practitioner Role, Delivery Channel  ##
 
 Provider systems SHALL maintain alignment with the CareConnect FHIR value sets.
+
+## Branch Surgery Location ##
+
+The Schedule resource has a mandatory 'Location' requirement.  Provider systems SHALL populate the text element with the name and address of either the GP Practice where there are no branch surgeries, OR the branch surgery including ODS Site Code where available.
+
 
