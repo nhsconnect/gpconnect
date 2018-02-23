@@ -32,17 +32,13 @@ Where such rules have been set, the Provider systems SHALL only return slots in 
 
 Providers systems SHALL enable and require the mandatory selection by end-users of a 'Practitioner Role' and 'Delivery Channel' for the schedules/slots as part of the end-user GP Connect Appointment configuration.
 
-The 'Practitioner Role' list SHALL reflect the NHS Digital [Practitioner Role](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1) value set.
-
-The 'Delivery Channel' list SHALL reflect the NHS Digital [Delivery Channel](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-DeliveryChannel-1) value set.
-
-Provider systems SHALL maintain alignment with the value sets.
-
-These values SHALL NOT be configurable/modifiable by end-users.
+- The 'Practitioner Role' list SHALL reflect the NHS Digital [Practitioner Role](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1) value set.
+- The 'Delivery Channel' list SHALL reflect the NHS Digital [Delivery Channel](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-DeliveryChannel-1) value set.
+- Provider systems SHALL maintain alignment with the value sets.
+- These values SHALL NOT be configurable/modifiable by end-users.
 
 
 ## Branch Surgery Location ##
 
-The Schedule resource has a mandatory 'Location' requirement.  Provider systems SHALL populate the text element with the name and address of either the GP Practice where there are no branch surgeries, OR the branch surgery including ODS Site Code where available.
-
+The Schedule resource has a mandatory 'Location' reference within the actor element. The referenced location SHALL be populated by the provider systems with the name and address of the location where the appointment will take place, either the GP Practice where there are no branch surgeries OR the branch surgery including ODS Site Code where available.
 
