@@ -1,54 +1,67 @@
 ---
-title: Product versioning
+title: Specification versioning
 keywords: development, versioning
 tags: [development]
 sidebar: overview_sidebar
 permalink: design_product_versioning.html
-summary: An overview of how capability packs (and other technical assets) are versioned.
+summary: An overview of how the specification (and other technical assets) are versioned
 ---
 
-## Product versioning ##
+{% include important.html content="This page describes the standard by which the specification and other artefacts are versioned.  To see a list of specification versions and the capabilities available at those versions, please see the [specification versions](https://developer.nhs.uk/gp-connect-specification-versions/) page." %}
 
-Versioning of each technical product or asset (for example, API capability pack, design principle(s), data library) is managed using [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"}.
+## Introduction ##
 
-### Semantic versioning ###
+**GP Connect specification releases are assigned a single version number from 23 February 2018 onwards.**
 
-Given a version number MAJOR.MINOR.PATCH, increment the:
+The automated test suite, demonstrator and other artefacts released in line with the specification are also assigned the same single version number.
 
-- MAJOR version when you make incompatible API changes
-- MINOR version when you add functionality in a backwards-compatible manner, and
-- PATCH version when you make backwards-compatible bug fixes
+This supersedes the previous scheme whereby the constituent capability packs (Access Record HTML, Appointments etc) were released and versioned independently.
 
-Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
+## Version number standard ##
 
-A pre-release version MAY be denoted by appending a hyphen (refer to [Semantic Versioning - Item 9](http://semver.org/#spec-item-9){:target="_blank"})
+The specification version number is based on the [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"} standard.
 
-For example, 1.0.0-alpha.1 is a valid pre-release version.
+![Semantic versioning diagram](images/design/semantic-versioning.png)
 
-### Pre-release labels ###
+When a specification is released, the version number is incremented as follows:
 
-The following pre-release labels will be used across all products:
+- **Major** version when *breaking changes* are made
+- **Minor** version when larger *non-breaking* changes are made, for example a new capability, or signficant number of small *non-breaking* changes are made
+- **Patch** version when smaller *non-breaking* changes are made
 
-| Pre-release label | Lifecycle | Description |
-|-------------------|-----------|-------------|
-| `alpha` | &nbsp; | Complete enough for internal testing. |
-| `beta` | early | Complete enough for external testing. |
-| `beta` | late | Complete enough for external testing. Usually feature complete. |
-| `rc` | &nbsp; | Almost ready for final release. No new feature enhancements. |
+*Breaking changes* are those that would break a consuming system built to the previous version of the specification, when communicating with a provider system built to the the new version.
 
-> rc = Release candidate 
+The version number is NOT incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
 
-### Maturity Levels ###
+### Pre-release (draft) labels ###
 
-{% include todo.html content="The following table is published as a **work in progress** version and as such is subject to change and extension." %}
+When a **pre-release label** is appended to the version number with a hypen it indicates the specifaction is still in draft, or has been discontinued.
 
-Taking a similar approach to the [FHIR Maturity Model](http://wiki.hl7.org/index.php?title=FHIR_Maturity_Model){:target="_blank"} GP Connect will only freeze/master a technical specification once it has been independently implemented in at least three commercial systems and demonstrated to interoperate.
+{% include important.html content="The pre-release label is used to indicate that a specification is in draft (or has been discontinued), it **does not** indicate that a providing system has made a pre-release of their GP Connect software." %}
 
-| Level | Version | Description | 
-|-------|---------|-------------| 
-| 1 | `X.Y.Z-alpha.n` | Alpha; rapid iterations, fail fast, exploration, proof of concepts, approach flexible. | Draft may not have been implemented at all but has been published. |
-| 2 | `X.Y.Z-beta.n` | Early Beta; rapid iterations, community engaged, scope flexible, high-level approach agreed in principle. | Draft partially implemented in one or more prototype systems. |
-| 3 | `X.Y.Z-beta.n` | Late Beta; slower iterations, community engaged, scope largely agreed, high-level approach fixed. | Draft partially implemented two or more commercial systems. |
-| 4 | `X.Y.Z-rc.n` | Release candidate; slower iterations, community engaged, scope fixed, detailed approach fixed, no new features, bug fixes and amendments for clinical safety and information governance only. | Draft implemented in at least two commercial systems. |
-| 5 | `X.Y.Z` | Stable; release version. | Draft implemented in at least three commercial systems with full accreditation and assurance mechanisms in place. |
+The pre-release labels used are as follows:
 
+| Pre-release Label | Example            | Description |
+|-------------------|--------------------|-------------|
+| `alpha`           | 1.1.0-alpha        | The version of the specification is being authored and is subject to frequent and or major changes. |
+| `beta`            | 1.1.0-beta         | The version of the specification is being internally reviewed and is subject to change. |
+| `rc`              | 1.1.0-rc           | The version of the specification is being reviewed by external parties including providers and consumers and is subject to corrections and minor change. |
+| *(no label)*      | 1.1.0              | The version of the specification is now fixed (immutable).  Further changes (excluding *stylistic change*) require a new version number. |
+| `discontinued`    | 1.1.0-discontinued | The version of the specification is no longer relevant and has been discontinued. |
+
+## Associated technical artefacts ##
+
+The following GP Connect artefacts are released as part of or alongside the specification, taking the same version number as the specification:
+
+- [System demonstrator](system_demonstrator.html)
+- [Provider automated test suite](testing_deliverables.html)
+- SDS interaction IDs (see below)
+- Service Root URL format (see below)
+
+### SDS interaction IDs ###
+
+[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
+
+### Service Root URL format ###
+
+[Service Root URL formats](development_general_api_guidance.html#service-root-url-versioning) contain the major version number of the specification.

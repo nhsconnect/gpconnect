@@ -15,5 +15,5 @@ summary: "High-level principles related to the development of the system"
 	3. Periodically, editors create a `release` candidate (where appropriate, editors will seek wider review of release candidate assets including clinical review, Connectathon testing and so on).
 	4. Following successful review, assets are marked as active and published to `master` branch. 
 8. Software assets will follow [Semantic Versioning](http://semver.org/){:target="_blank"}.
-	1. Major versions will be maintained in parallel for a period of time before deprecation (for at least 12 months).
+	1. Major versions will be maintained in parallel for a period of time before deprecation.
 9. GitHub [webhooks](https://developer.github.com/webhooks/){:target="_blank"} will be used to automatically build and publish software assets to a public test instance.
