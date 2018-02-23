@@ -63,10 +63,10 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload request body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource. See [FHIR resources](/datalibraryappointment.html) page for more detail.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) resource. See [FHIR resources](/datalibraryappointment.html) page for more detail.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL send an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
 Only the following data-elements can be modified when performing an appointment amendment:
@@ -140,7 +140,7 @@ On the wire a JSON serialised request would look something like the following:
 
 The provider system:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if any appointment details other than the appointment `comment`, `description` or `cancellation reason` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
 - SHALL return an error if the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
 
@@ -158,7 +158,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL return an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of the appointment resource.
 

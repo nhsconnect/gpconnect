@@ -49,7 +49,7 @@ N/A
 
 #### Error Handling ####
 
-Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
@@ -68,7 +68,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) ![STU3](images/stu3.png) profile.
+- SHALL return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) profile.
 - SHALL include the URI of the `CareConnect-GPC-Practitioner-1` profile StructureDefinition in the `Practitioner.meta.profile` element of the returned `Practitioner` resource.
 - SHALL include the `versionId` of the current version of the `Practitioner` resource.
 - SHALL include all relevant business `identifier` details (i.e. SDS User ID) for the `Practitioner` resource.
