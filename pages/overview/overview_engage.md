@@ -12,9 +12,6 @@ summary: "Getting involved with GP Connect."
 
 GP Connect is part of the a wider initiative to expose standards based [Open APIs](https://www.england.nhs.uk/digitaltechnology/info-revolution/interoperability/open-api/){:target="_blank"} to promote innovation and improve care across the NHS.
 
-To make use of the ecosystem and GP Connect APIs we're asking all involved to sign-up to an [Open API Licence](designprinciples_open_api_licence_principles.html) which enshrines concepts such as fair-use and expectations around reciprocity of access to data to improve interoperability beyond just primary care.
-
-
 ### Capabilities
 
 A capability is an area of focus for the GP Connect APIs. There are several [initial capabilities defined](overview_priority_capabilities.html).
