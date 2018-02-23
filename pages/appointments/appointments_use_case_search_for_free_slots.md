@@ -69,7 +69,7 @@ The following parameters MAY be included to minimise the number of API calls req
 
 ### Enhanced slot filtering ###
 
-{% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outline on the [Slot Availability Management](slotavailabilitymanagement.html) page" %}
+{% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outline on the [Slot Availability Management](appointments_slotavailabilitymanagement.html) page" %}
 
 In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter with both 'System' and 'Value' elements:
 
