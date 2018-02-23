@@ -117,8 +117,8 @@ GET /Slot?[start={search_prefix}start_date]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
-		  {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
-		  {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
+          {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+          {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
 #### FHIR&reg; absolute request ####
@@ -131,8 +131,8 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
-		  {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
-		  {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
+          {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+          {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
 #### Request headers ####
