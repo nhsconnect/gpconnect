@@ -15,21 +15,21 @@ The following profiled FHIR resources are used in the current version of the App
 N/A - No fhir resource is sent within the request
 
 ### Response ###
-* [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html) ![STU3](images/stu3.png)
-  * [GPConnect-Slot-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1) (based on [FHIR Slot](https://www.hl7.org/fhir/STU3/slot.html)) ![STU3](images/stu3.png)
-  * [GPConnect-Schedule-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1) (based on [FHIR Schedule](https://www.hl7.org/fhir/STU3/schedule.html)) ![STU3](images/stu3.png)
-  * [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html)) ![STU3](images/stu3.png)
-  * [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/STU3/organization.html)) ![STU3](images/stu3.png)
-  * [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) (based on [FHIR Location](https://www.hl7.org/fhir/STU3/location.html)) ![STU3](images/stu3.png)
+* [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html)
+  * [GPConnect-Slot-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1) (based on [FHIR Slot](https://www.hl7.org/fhir/STU3/slot.html))
+  * [GPConnect-Schedule-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1) (based on [FHIR Schedule](https://www.hl7.org/fhir/STU3/schedule.html))
+  * [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html))
+  * [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/STU3/organization.html))
+  * [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) (based on [FHIR Location](https://www.hl7.org/fhir/STU3/location.html))
 
   
 ---
 ## ***[Book an appointment](appointments_use_case_book_an_appointment.html)*** ##
 ### Request ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 ### Response ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 
 ---
@@ -38,7 +38,7 @@ N/A - No fhir resource is sent within the request
 N/A - No fhir resource is sent within the request
 
 ### Response ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 
 ---
@@ -47,25 +47,25 @@ N/A - No fhir resource is sent within the request
 N/A - No fhir resource is sent within the request
 
 ### Response ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 
 ---
 ## ***[Amend an appointment](appointments_use_case_amend_an_appointment.html)*** ##
 ### Request ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 ### Response ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 
 ---
 ## ***[Cancel an appointment](appointments_use_case_cancel_an_appointment.html)*** ##
 ### Request ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 ### Response ###
-* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)) ![STU3](images/stu3.png)
+* [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
 
 ---
 ## ***Errors*** ##
@@ -73,4 +73,4 @@ N/A - No fhir resource is sent within the request
 If there is a problem with the request or an error occurs during processing of the request then the provider should return a http error along with an "OperationOutcome" Resource within the response payload. Details of the required error responses are available on the [Error Handling Guidance](/development_fhir_error_handling_guidance.html) page within the specification.
 
 ### Response ###
-* [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) (based on [FHIR OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html)) ![STU3](images/stu3.png)
+* [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) (based on [FHIR OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html))

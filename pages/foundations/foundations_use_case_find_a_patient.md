@@ -59,7 +59,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example the:
 
@@ -81,7 +81,7 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
 - SHALL only return `Patient` resources for `Active` patients ([Definition of a GP Connect Active Patient](overview_glossary.html#active-patient)).
-- SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) profile.
+- SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 - SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
 - SHALL include all relevant business `identifier` details (i.e. NHS Number) for each `Patient` resource.

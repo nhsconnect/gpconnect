@@ -78,7 +78,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 #### Payload Request Body ####
 
 The following data-elements are mandatory (i.e. data SHALL be present):
-- A `registerPatient` parameter containing a patient resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) profile. This is the patient who you want to be registered. Within this resource: 
+- A `registerPatient` parameter containing a patient resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile. This is the patient who you want to be registered. Within this resource: 
 	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
 	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
     - The consumer SHALL NOT populate the "registrationDetails" extension within the patient resource.
@@ -206,7 +206,7 @@ The Provider system SHALL return an error if:
 - the `registerPatient` doesn't include a single active NHS Number identifier.
 - the `registerPatient` demographics don't match that of the triggered PDS trace.
 
-Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -228,8 +228,8 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
-- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) ![STU3](images/stu3.png) including the following resources 
-	- `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) ![STU3](images/stu3.png) containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
+- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) including the following resources 
+	- `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
 - SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
   - The "registrationType" should be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type should be use and more detail around the specific type of registration can be added using the "text" element of the CodeableConcept.
 

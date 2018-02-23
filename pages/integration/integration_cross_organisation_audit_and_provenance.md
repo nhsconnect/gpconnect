@@ -145,7 +145,7 @@ The payload section of the JWT shall be populated as follows:
 
 The `consumer` SHALL populate the `requesting_organization` claim with:
 
-* A FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) ![STU3](images/stu3.png) resource representing the organisation making the request and SHALL include the elements:
+* A FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource representing the organisation making the request and SHALL include the elements:
 
   | Element | Description |
   | --- | --- |
@@ -157,7 +157,7 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
 
 The `consumer` SHALL populate the `requested_record` claim with:
 
-* Either a FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) ![STU3](images/stu3.png) resource or a FHIR [Patient](https://www.hl7.org/fhir/STU3/patient.html) ![STU3](images/stu3.png) resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers for the request.
+* Either a FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource or a FHIR [Patient](https://www.hl7.org/fhir/STU3/patient.html) resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers for the request.
 
   The table below shows the GP Connect API calls and the expected content for the JWT requested_record claim:
 
