@@ -13,21 +13,9 @@ entries:
     - title: Getting started
       url: /overview_engage.html
       output: web
-#    - title: News
-#      url: /news.html
-#      output: web
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-#    - title: Workshops and Timeline
-#      url: /overview_workshops.html
-#      output: web
-#    - title: Webinars
-#      url: /overview_webinars.html
-#      output: web
-#    - title: Work in Progress
-#      url: /overview_work_in_progress.html
-#      output: web
     - title: First of type
       url: /overview_first_of_type.html
       output: web
@@ -172,9 +160,6 @@ entries:
     - title: Test environments
       url: /testing_environments.html
       output: web
-#    - title: Testing Data
-#      url: /testing_data.html
-#      output: web
     - title: Provider testing
       url: /testing_api_provider_testing.html
       output: web

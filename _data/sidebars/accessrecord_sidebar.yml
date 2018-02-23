@@ -93,14 +93,3 @@ entries:
             url: /accessrecord_view_administrative_items.html
             output: web, pdf
             
-        
-#  - title: Safety and Governance
-#    output: web, pdf
-#
-#    folderitems:
-#    - title: Clinical Safety
-#      url: /accessrecord_clinical_safety.html
-#      output: web, pdf
-#    - title: Information Governance
-#      url: /accessrecord_information_governance.html
-#      output: web, pdf
