@@ -60,9 +60,6 @@ entries:
     - title: Assurance principles
       url: /designprinciples_assurance_principles.html
       output: web
-    - title: Open API licence principles
-      url: /designprinciples_open_api_licence_principles.html
-      output: web
     - title: Clinical terminologies
       url: /design_clinical_terminologies.html
       output: web
