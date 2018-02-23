@@ -26,15 +26,20 @@ The consumer system SHOULD send the booking Organisation Type and booking organi
 ## Booking Window/Embargo ##
 It is recommended that Provider systems also provide the functionality to enable the end-user to control how far in advance external organisations should be allowed to book slots and how near to the actual slot time - ie via 'Booking Window' or 'Embargo' rules.
 
-Where such rules have been set, the Provider systems SHALL only return slots in respect of them.
+Where such rules have been set, the Provider systems SHALL only return slots in respect of the rules.
 
 ## Appointment Slot Categorisation ##
 
-Providers systems SHALL enable and require the mandatory selection by end-users of a value from the new FHIR 'Practitioner Role' and 'Delivery Channel' value set, as part of the end-user GP Connect Appointment configuration. These values SHALL NOT be configurable by end-users.
+Providers systems SHALL enable and require the mandatory selection by end-users of a 'Practitioner Role' and 'Delivery Channel' for the schedules/slots as part of the end-user GP Connect Appointment configuration.
 
-## FHIR Value Sets - Organisation Type, Practitioner Role, Delivery Channel  ##
+The 'Practitioner Role' list SHALL reflect the NHS Digital [Practitioner Role](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1) value set.
 
-Provider systems SHALL maintain alignment with the CareConnect FHIR value sets.
+The 'Delivery Channel' list SHALL reflect the NHS Digital [Delivery Channel](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-DeliveryChannel-1) value set.
+
+Provider systems SHALL maintain alignment with the value sets.
+
+These values SHALL NOT be configurable/modifiable by end-users.
+
 
 ## Branch Surgery Location ##
 
