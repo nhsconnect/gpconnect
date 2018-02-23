@@ -15,14 +15,6 @@ This site is intended for use by software developers looking to build a conforma
 
 The keywords ‘**MUST**’, ‘**MUST NOT**’, ‘**REQUIRED**’, ‘**SHALL**’, ‘**SHALL NOT**’, ‘**SHOULD**’, ‘**SHOULD NOT**’, ‘**RECOMMENDED**’, ‘**MAY**’, and ‘**OPTIONAL**’ on this site are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
-
-
-## Maturity roadmap ##
-
-At a high level, the maturity roadmap of a compliant principal GP system is expected to follow the following FHIR and business capability maturity stages.
-
-Refer to [Design - design principles - maturity model](designprinciples_maturity_model.html) for full details.
-
 ## General standards ##
 
 Information on the technical standards that SHALL be conformed to can be found in the sections below and throughout the GP Connect specification.
@@ -58,52 +50,52 @@ Clients SHALL perform a sequence of query operations against existing Spine serv
 
 ## RESTful API ##
 
-The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`, and so on) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `DELETE /fhir/Patient/1` to remove the patient record.
+The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `DELETE /fhir/Patient/1` to remove the patient record.
 
-The FHIR RESTful API style guide defines the following URL conventions which are used throughout the remainder of this page:
+The FHIR RESTful API style guide defines the following URL conventions which are used throughout the remainder of this document:
 
-- URL pattern content surrounded by **[ ]** are mandatory
-- URL pattern content surrounded by **{ }** are optional
+- URL pattern content surrounded by **[ ]** are mandatory.
+- URL pattern content surrounded by **{ }** are optional.
 
-### Service root URL ###
+### Service Root URL ###
 
-The [service root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all the resources defined by this interface are found. 
+The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found. 
 
-The service root URL is the `[base]` portion of all FHIR APIs.
+The Service Root URL is the `[base]` portion of all FHIR APIs.
 
-{% include important.html content="All URLs (and IDs that form part of the URL) defined by this specification are case sensitive." %}
+{% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
-### FHIR API Versioning ###
-FHIR APIs SHALL be versioned according to [Semantic Versioning](http://semver.org/spec/v2.0.0.html) in the server's service root URL to provide a clear distinction between API versions that are incompatible (that is, contain breaking changes) versus backwards-compatible (that is, contain no breaking changes).
+### Service Root URL versioning ###
 
-Provider systems are required to publish service root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
+Service Root URLs SHALL be aligned with the GP Connect specification they were built against, specifically the [major version number](design_product_versioning.html#version-number-standard) SHALL be present in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
 
-{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS_CODE]/[FHIR_VERSION_NAME]/{API_MAJOR_VERSION}/{PROVIDER_ROUTING_SEGMENT}`" %}
+Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
 
+{% include callout.html content="`https://[FQDN of FHIR Server]/[ODS_CODE]/[FHIR_VERSION_NAME]/[GPC_MAJOR_VERSION]/[PROVIDER_ROUTING_SEGMENT]`" %}
 
 - `[FQDN_OF_FHIR_SERVER]` is the fully qualified domain name where traffic will be routed to the logical FHIR server for the organisation in question
 
-- `[ODS_CODE]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP practice organisation
+- `[ODS_CODE]` is the [Organisation Data Service](https://digital.nhs.uk/organisation-data-service) code which uniquely identifies the GP Practice organisation
 
-- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR version name SHALL be specified in upper case characters
+- `[FHIR_VERSION_NAME]` refers to the textual name identifying the major FHIR version, examples being `DSTU2` and `STU3`. The FHIR Version name SHALL be specified in UPPERCASE characters.
 
-- `{API_MAJOR_VERSION}` identifies the major version number of the provider API. Where the provider API version number is omitted, the major version SHALL be assumed to be 1
+- `[GPC_MAJOR_VERSION]` identifies the major version number of the GP Connect specification that the API is built to.
 
-- `{PROVIDER_ROUTING_SEGMENT}` enables providers to differentiate between GP Connect and non-GP Connect requests (for example, via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
+- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
   
-- The FHIR base URL SHALL NOT contain a trailing `/`
+- The Service Root URL SHALL NOT contain a trailing `/`
 
-#### Example server root URL
+#### Example Service Root URL
 
-The provider will publish the server root URL to Spine Directory Services as follows:
+The provider SHALL publish the Service Rot URL to Spine Directory Services, for example:
 
-`https://provider.nhs.uk/GP0001/DSTU2/2/gpconnect`
+`https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
 
-Consumer systems are required to construct a [service root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
 The consumer system would therefore issue a request to the new version of the provider FHIR API to the following URL:
 
-`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/2`
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
 
 
 ### Resource URL ###
