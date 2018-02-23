@@ -12,6 +12,8 @@ Given the increasing need for cross-organisational appointment access, there is 
   - ensuring that Consumer organisations obtain only available appointments which are appropriate to them
   - providing a more standardised categorisation of available appointment slots across Provider systems so that inappropriate appointment booking is reduced
   - providing where applicable the GP branch surgery location of available appointment slots
+
+{% include note.html content="The requirements below only apply for slot availability mangement so should only apply to the '`Search for free slots`' GP Connect API use case and non of the other GP Connect API use cases such as '`Retrieve a patient's appointments`' or '`Amend an appointment`', for these the returned resources should reflect the complete organization appointment book." %}
   
 ## Appointment availability control ##
 
