@@ -1,13 +1,13 @@
 ---
-title: Non-Functional Requirements
+title: Non-functional requirements
 keywords: development non-functional requirements NFRs
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_api_non_functional_requirements.html
-summary: "Details of NFRs that describe system attributes such as security, reliability, maintainability, scalability, and usability (often referred to as the “ilities”)."
+summary: "Details of NFRs that describe system attributes such as security, reliability, maintainability, scalability, and usability (often referred to as the “ilities”)"
 ---
 
-## Non-Functional Requirements ##
+## Non-functional requirements ##
 
 ### Security ###
 
@@ -15,23 +15,23 @@ Provider systems SHALL resist unauthorised, accidental or unintended usage and p
 
 Please refer to the [Security Guidance](development_api_security_guidance.html) page for technical details.
 
-### Volume & Performance ###
+### Volume & performance ###
 
 #### Volumetric ####
 
-Provider systems MUST meet the agreed volumetric performance targets.
+Provider systems SHALL meet the agreed volumetric performance targets.
 
 Please refer to the [Volumetric Guidance](development_api_volume_and_performance.html#volumetrics) page for technical details.
 
 #### Performance ####
 
-Provider systems MUST meet the agreed response time performance targets.
+Provider systems SHALL meet the agreed response time performance targets.
 
 Please refer to the [Performance Guidance](development_api_volume_and_performance.html#performance) page for technical details.
 
 ### Capacity ###
 
-Provider systems MUST meet the agreed capacity requirements.
+Provider systems SHALL meet the agreed capacity requirements.
 
 ### Scalability ###
 
@@ -45,7 +45,7 @@ Provider systems SHALL meet the agreed availability targets (service time and/or
 
 Provider systems SHALL meet the agreed recoverability targets as documented in the Operational Level Agreement (OLA).
 
-### Audit & Provenance ###
+### Audit & provenance ###
 
 Provider systems SHALL audit all API access and actions.
 
@@ -61,7 +61,7 @@ Provider systesms SHALL be designed to optimise the ability of maintenance perso
 
 Provider systems SHALL be designed so that technical support personnel are able to monitor and manage it in operation.
 
-### Data Retention ###
+### Data retention ###
 
 Provider systems SHALL retain data inline with existing GPSoC framework agreements.
 
@@ -73,20 +73,19 @@ Please refer to the 'GPSoC Technical Standards' for details.
 
 ### Accessability ###
 
-Provider and Consumer systems MUST maintain a compliance of minimum Double “A” of the WCAG 1.0 (or equivalent in WCAG 2.0), or as stipulated by UK Government Guidelines, for all user interfaces. Please see the [Web Accessibility Initiative](https://www.w3.org/WAI/) for more details.
+Provider and Consumer systems SHALL maintain a compliance of minimum Double “A” of the WCAG 1.0 (or equivalent in WCAG 2.0), or as stipulated by UK Government Guidelines, for all user interfaces. Please see the [Web Accessibility Initiative](https://www.w3.org/WAI/) for more details.
 
 Please refer to the 'GPSoC Technical Standards' for details.
 
 ### Deployment ###
+
+Provider systems SHALL release a new major version of their GP Connect API alongside a previous major version, until such time as consumers have migrated to the new major version.
+
+Provider systems SHOULD release a new minor or patch version, replacing the previous the previous minor or patch version.
 
 Provider systems SHALL be deployed with the provider APIs enabled by default.
 
 Provider systems MAY provide a mechanism for a data controller at an organisation to choose to globally disable/enable the provider APIs (i.e. turn on/off the overall GP Connect technical capability).
 
 Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (i.e. Access Record HTML vs. Appointments vs. Tasks).
-
-## External Documents / Policy Documents ##
-
-| Name | Author | Version | Updated |
-| GPSoC Technical Standards | NHS Digital | v1.0 | ??/??/???? |
-| GPSoC Non Functional Requirements | NHS Digital | v1.0 | ??/??/???? |
+	
