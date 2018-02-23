@@ -55,26 +55,24 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful retrival of the conformance statement.
 - SHALL ensure that the FHIR version number returned by the FHIR server endpoint conformance statement matches the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
 
-An example GP Connect Conformance Statement of type `Instance` is shown below ready for customisation and embedding into GP Connect assured provider systems.
+An example GP Connect Conformance Statement of type `capability` is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this conformance statement as a base for their own conformance statement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the conformance statement should represent the GP Connect specification version which the FHIR server implements.
 
 ```xml
 <Conformance xmlns="http://hl7.org/fhir">
-	<version value="1.0.0-rc.5" />
-	<name value="Access Record HTML" />
-	<status value="draft" />
-	<experimental value="true" />
-	<publisher value="[Software Vendor Name]" />
+	<version value="0.5.0" />
+	<name value="GP Connect" />
+	<publisher value="[Provider Software Vendor Name]" />
 	<contact>
-		<name value="[Software Vendor Contact Name]" />
+		<name value="[Provider Software Vendor Contact Name]" />
 	</contact>
-	<date value="2016-08-08" />
-	<description value="This server implements the GP Connect Access Record HTML FHIR APIs" />
+	<date value="2018-02-23" />
+	<description value="This server implements the GP Connect API version 0.5.0" />
 	<copyright value="Copyright NHS Digital 2016" />
 	<kind value="capability" />
 	<software>
-		<name value="[Software Name]" />
-		<version value="[Software Verson]" />
-		<releaseDate value="[Software Release Date]" />
+		<name value="[Provider Software Name]" />
+		<version value="[Provider Software Verson]" />
+		<releaseDate value="[Provider Software Release Date]" />
 	</software>
 	<fhirVersion value="1.0.2" />
 	<acceptUnknown value="both" />
@@ -84,24 +82,16 @@ An example GP Connect Conformance Statement of type `Instance` is shown below re
  		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"/>
 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"/>
 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-location-1"/>
 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-device-1"/>
 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"/>
 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"/>
 	</profile>
 	<rest>
 		<mode value="server" />
-		<security>
-			<cors value="true" />
-			<certificate>
-				<blob />
-			</certificate>
-		</security>
 		<operation>
 			<name value="gpc.getcarerecord" />
 			<definition>
-				<reference value="OperationDefinition/gpc.getcarerecord" />
+				<reference value="https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Profile.GetRecordQueryRequest/gpconnect-carerecord-operation-1.html" />
 			</definition>
 		</operation>
 	</rest>
