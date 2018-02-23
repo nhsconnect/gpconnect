@@ -1,7 +1,6 @@
 entries:
 - title: Appointment Management
-  product: Appointment Management<br/>
-  version: 1.0.0-rc.3
+  product: Appointment Management
   folders:
 
   - title:
@@ -35,9 +34,6 @@ entries:
       output: web
     - title: Wireframes
       url: /appointments_wireframes.html
-      output: web
-    - title: Release notes
-      url: /appointments_release_notes.html
       output: web
     - title: Known issues
       url: /appointments_known_issues.html

@@ -4,6 +4,8 @@ layout: default
 
  {% include custom/versionconfig.html %}
 
+ {% include {{versionBanner}}.html %}
+
  {% unless jekyll.environment != "production" %}
 
  {% if site.github_editme_path %}

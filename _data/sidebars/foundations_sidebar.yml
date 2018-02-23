@@ -1,7 +1,6 @@
 entries:
 - title: Foundations
-  product: Foundations<br/>
-  version: 1.0.0-rc.4
+  product: Foundations
   folders:
 
   - title:
@@ -30,12 +29,6 @@ entries:
       output: web, pdf
     - title: Design decisions
       url: /foundations_design.html
-      output: web, pdf
-#    - title: Wireframes
-#      url: /foundations_wireframes.html
-#      output: web, pdf
-    - title: Release notes
-      url: /foundations_release_notes.html
       output: web, pdf
       
   - title: Development

@@ -1,7 +1,5 @@
 entries:
 - title: GP Connect
-  product: GP Connect<br/>
-  version: 1.0.0-rc.1
   levels: one
   folders:
 
@@ -24,9 +22,17 @@ entries:
     - title: Glossary
       url: /overview_glossary.html
       output: web
-    - title: Release notes
-      url: /overview_release_notes.html
-      output: web      
+      
+      subfolders:
+      - title: Release notes
+        output: web
+        subfolderitems:
+        - title: 1.0.0
+          url: /overview_release_notes_1_0_0.html
+          output: web
+        - title: 0.5.0
+          url: /overview_release_notes_0_5_0.html
+          output: web
 
   - title: Design approach
     output: web
@@ -51,16 +57,10 @@ entries:
     - title: Assurance principles
       url: /designprinciples_assurance_principles.html
       output: web
-    - title: Open API licence principles
-      url: /designprinciples_open_api_licence_principles.html
-      output: web
     - title: Clinical terminologies
       url: /design_clinical_terminologies.html
       output: web
-    - title: Maturity model
-      url: /designprinciples_maturity_model.html
-      output: web
-    - title: Product Versioning
+    - title: Specification versioning
       url: /design_product_versioning.html
       output: web
 
@@ -120,16 +120,16 @@ entries:
     - title: Foundations
       url: /foundations.html
       output: web
-    - title: Access Record HTML
-      url: /accessrecord.html
-      output: web
-    - title: Access Record REST
-      url: /accessrecord_rest.html
-      output: web
     - title: Appointment Management
       url: /appointments.html
       output: web
-    - title: Task Management
+    - title: <b class="capability-not-available">Access Record HTML</b>
+      url: /accessrecord.html
+      output: web
+    - title: <b class="capability-not-available">Access Record Structured</b>
+      url: /accessrecord_rest.html
+      output: web
+    - title: <b class="capability-not-available">Task Management</b>
       url: /tasks.html
       output: web
 
@@ -198,9 +198,6 @@ entries:
       output: web
     - title: GPC Developer Network
       external_url: http://developer.nhs.uk/library/interoperability/gp-connect/
-      output: web
-    - title: GPC Code4Health
-      external_url: http://interoperability.code4health.org/projects/gp-connect-2/
       output: web
     - title: GPC GitHub FHIR data library
       external_url: https://github.com/nhsconnect/gpconnect-fhir/
