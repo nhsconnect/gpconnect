@@ -63,32 +63,31 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful retrival of the capability statement
 - SHALL return a capability statement which conforms to the standard [FHIR CapabilityStatement](http://hl7.org/fhir/STU3/capabilitystatement.html)
 
-An example GP Connect CapabilityStatement of type `Instance` is shown below:
+An example GP Connect CapabilityStatement is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
 
 ```xml
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-	<version value="1.0.0-rc.1" />
+	<version value="1.1.0" />
 	<name value="GP Connect" />
-	<status value="draft" />
-	<experimental value="true" />
-	<date value="2017-11-02" />
-	<publisher value="NHS Digital" />
+	<status value="active" />
+	<date value="2018-02-23" />
+	<publisher value="[Provider Software Vendor Name]" />
 	<contact>
-		<name value="Software Vendor Contact Name" />
+		<name value="[Provider Software Vendor Contact Name]" />
 	</contact>
-	<description value="This server is a reference implementation of the GP Connect FHIR APIs" />
+	<description value="This server implements the GP Connect API version 1.1.0" />
 	<copyright value="Copyright NHS Digital 2016" />
+	<kind value="capability" />
 	<software>
-		<name value="Software Name" />
-		<version value="Software Verson" />
-		<releaseDate value="2017-11-02" />
+		<name value="[Provider Software Name]" />
+		<version value="[Provider Software Verson]" />
+		<releaseDate value="[Provider Software Release Date]" />
 	</software>
 	<fhirVersion value="3.0.1" />
 	<acceptUnknown value="both" />
 	<format value="application/fhir+xml" />
 	<format value="application/fhir+json" />
 	<profile>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Device-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
@@ -102,9 +101,6 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 		<mode value="server" />
 		<security>
 			<cors value="true" />
-			<certificate>
-				<blob />
-			</certificate>
 		</security>
 		<resource>
 			<type value="Patient" />
@@ -114,9 +110,6 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 			<interaction>
 				<code value="search-type" />
 			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
 			<searchParam>
 				<name value="identifier" />
 				<type value="token" />
@@ -131,9 +124,6 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 			<interaction>
 				<code value="search-type" />
 			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
 			<searchParam>
 				<name value="identifier" />
 				<type value="token" />
@@ -148,14 +138,17 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 			<interaction>
 				<code value="search-type" />
 			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
 			<searchParam>
 				<name value="identifier" />
 				<type value="token" />
 				<documentation value="SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)" />
 			</searchParam>
+		</resource>
+		<resource>
+			<type value="Location" />
+			<interaction>
+				<code value="read" />
+			</interaction>
 		</resource>
 		<resource>
 			<type value="Appointment" />
@@ -169,13 +162,8 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 				<code value="update" />
 			</interaction>
 			<interaction>
-				<code value="patch" />
-			</interaction>
-			<interaction>
 				<code value="search-type" />
 			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
 			<updateCreate value="false" />
 			<searchParam>
 				<name value="identifier" />
@@ -184,30 +172,10 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 			</searchParam>
 		</resource>
 		<resource>
-			<type value="Location" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="ODS Code (i.e. ODS Site Code (i.e. https://fhir.nhs.uk/Id/ods-site-code|Y12345678)" />
-			</searchParam>
-		</resource>
-		<resource>
 			<type value="Slot" />
 			<interaction>
 				<code value="search-type" />
 			</interaction>
-			<versioning value="versioned" />
-			<readHistory value="false" />
-			<updateCreate value="false" />
 			<searchParam>
 				<name value="start" />
 				<type value="date" />
@@ -217,20 +185,18 @@ An example GP Connect CapabilityStatement of type `Instance` is shown below:
 				<type value="date" />
 			</searchParam>
 			<searchParam>
-				<name value="fb-type" />
+				<name value="status" />
+				<type value="token" />
+			</searchParam>
+			<searchParam>
+				<name value="searchFilter" />
 				<type value="token" />
 			</searchParam>
 		</resource>
 		<operation>
-			<name value="gpc.getcarerecord" />
-			<definition>
-				<reference value="OperationDefinition/gpc.getcarerecord" />
-			</definition>
-		</operation>
-		<operation>
 			<name value="gpc.registerpatient" />
 			<definition>
-				<reference value="OperationDefinition/gpc.registerpatient" />
+				<reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1" />
 			</definition>
 		</operation>
 	</rest>
