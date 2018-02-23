@@ -33,9 +33,6 @@ entries:
         - title: 1.0.0
           url: /overview_release_notes_1_0_0.html
           output: web
-        - title: 0.5.1
-          url: /overview_release_notes_0_5_1.html
-          output: web
         - title: 0.5.0
           url: /overview_release_notes_0_5_0.html
           output: web
