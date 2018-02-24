@@ -31,7 +31,7 @@ Consumer systems SHALL be tested for technical conformance of the following befo
 Consumer systems SHALL be tested for conformance to one or more of the following capability packs:
 
  - [Access Record HTML](accessrecord.html)
- - [Access Record REST](accessrecord_rest.html)
+ - [Access Record Structured](accessrecord_rest.html)
  - [Appointment Management](appointments.html)
  - [Task Management](tasks.html)
 
