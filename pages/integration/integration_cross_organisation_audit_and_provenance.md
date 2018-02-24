@@ -268,9 +268,6 @@ In future OAuth2 implementation, the ISS claim will contain the URL of the OAuth
 
 Where the practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied.
 
-{% include todo.html content="Spine RBAC role support to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
-
 ## Example code ##
 
 ### C# ###
