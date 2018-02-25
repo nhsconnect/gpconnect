@@ -36,40 +36,38 @@ When a consumer system accesses a patient's record, the provider systems SHALL o
 
 ## Common User Interface Guidance ##
 
-{% include todo.html content="Dec 2016:  The following links need to be reinstated following updates to the NHS Digital Extranet.  Please access the guidance [here](http://webarchive.nationalarchives.gov.uk/+/http://www.isb.nhs.uk/use/baselines/cui) as a temporary measure  ." %}
-
-Where appropriate the following [Common User Interface (CUI)](http://systems.digital.nhs.uk/data/cui/) guidance documents should be followed when generating the GP Connect HTML Views.
+Where appropriate the following [Common User Interface (CUI)](https://digital.nhs.uk/common-user-interface) guidance documents should be followed when generating the GP Connect HTML Views.
 
 ### NHS Number Format ###
 
-[NHS Number input and display](http://systems.digital.nhs.uk/data/cui/uig/inputdisplay.pdf)<br/>
-[NHS Number input and display - Quick Implementation Guide](http://systems.digital.nhs.uk/data/cui/uig/inputdisplayqig.pdf)
+[NHS Number input and display](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/inputdisplay.pdf)<br/>
+[NHS Number input and display - Quick Implementation Guide](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/inputdisplayqig.pdf)
 
 ### Patient Details ###
 
-[Patient Name input and display](http://systems.digital.nhs.uk/data/cui/uig/patnamedisp.pdf)<br/>
-[Patient Name input and display - Quick Implementation Guide](http://systems.digital.nhs.uk/data/cui/uig/patnamedispqig.pdf)
+[Patient Name input and display](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/patnamedisp.pdf)<br/>
+[Patient Name input and display - Quick Implementation Guide](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/patnamedispqig.pdf)
 
-[Sex and current Gender input and display](http://systems.digital.nhs.uk/data/cui/uig/sex.pdf)<br/>
-[Sex and current Gender input and display - Quick Implementation Guide](http://systems.digital.nhs.uk/data/cui/uig/sexqig.pdf)
+[Sex and current Gender input and display](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/sex.pdf)<br/>
+[Sex and current Gender input and display - Quick Implementation Guide](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/sexqig.pdf)
 
 ### Date/Time Format ###
 
-[Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf)<br/>
-[Time display](http://systems.digital.nhs.uk/data/cui/uig/timedisplay.pdf)<br/>
-[Date Time display - Quick Implementation Guide](http://systems.digital.nhs.uk/data/cui/uig/datetimedispqig.pdf)
+[Date display](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf)<br/>
+[Time display](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/timedisplay.pdf)<br/>
+[Date Time display - Quick Implementation Guide](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/datetimedispqig.pdf)
 
 ### GP Details ###
 
-[Address input and display](http://systems.digital.nhs.uk/data/cui/uig/address.pdf)<br/>
-[Telephone Number input and display](http://systems.digital.nhs.uk/data/cui/uig/tele.pdf)
+[Address input and display](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/address.pdf)<br/>
+[Telephone Number input and display](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/tele.pdf)
 
 ## Patient Banner ##
 
 Consumer systems SHALL present a patient banner above the HTML content returned from the GP Connect APIs in-line with the CUI guidance.
 
-[Patient Banner](http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)<br/>
-[Patient Banner - Quick Implementation Guide](http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)
+[Patient Banner](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)<br/>
+[Patient Banner - Quick Implementation Guide](http://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)
 
 ## Minimum Display Resolution ##
 
