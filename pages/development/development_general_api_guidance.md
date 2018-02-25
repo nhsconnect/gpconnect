@@ -151,10 +151,11 @@ Servers SHALL prefer the encoding specified by the `Content-Type` header if no e
 
 ### Wire format representations ###
 
-Servers SHALL support two [wire formats](https://www.hl7.org/fhir/STU3/formats.html#wire) as ways to represent resources when they are exchanged:
+Servers should support two [wire formats](https://www.hl7.org/fhir/STU3/formats.html#wire) as ways to represent resources when they are exchanged:
 
-- [XML](https://www.hl7.org/fhir/STU3/xml.html)
-- [JSON](https://www.hl7.org/fhir/STU3/json.html)
+- Servers SHALL support [JSON](https://www.hl7.org/fhir/STU3/json.html)
+- Server SHOULD support [XML](https://www.hl7.org/fhir/STU3/xml.html)
+
 
 {% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
 
