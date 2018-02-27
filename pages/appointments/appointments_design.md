@@ -20,16 +20,16 @@ The scope of appointment management is to deliver:
 The ability to create appointments for patients not known to the GP practice/diary owner:
 
 - If a patient is not known to the local system the appointment boking will be rejected by booking system. It will not be possible to register the patient.
-- <span class="label label-success">SELECTED</span> If a patient is not known to the local system the appointment booking will be rejected by booking system. It will be possible to register the patient via a separate patient registration endpoint.
+- <span class="label label-success">SELECTED</span> If a patient is not known to the local system the appointment booking will be rejected by booking system. It will be possible to register the patient via the GP Connect 'Register a Patient' API, and then use 'Book an Appointment'.
 - If a patient is not known to the local system the appointment booking will be accepted and a patient record will be created with basic details about the patient (identifier).
 
 {% include note.html content="Details of how to [register a patient](foundations_use_case_register_a_patient.html) can be found in the Foundations capability pack. " %}
 
 ## Access to available slots ##
 
-When requesting the schedule of a particular diary, the level of detail returned should:
+When requesting the schedule of a particular diary, the level of detail returned should include:
 
-- Include all booked appointments and available slots.
+- All booked appointments and available slots.
 - Only slots that are available (all types).
 - <span class="label label-success">SELECTED</span> Only slots that are available, have been marked/flagged as externally bookable via GP Connect and match the Booking Organisation Type and/or ODS Code and 'Embargo/Booking Window' rules.
 
