@@ -32,7 +32,7 @@ Key:
 
 ## Retrieve a patient's appointments ##
 
-<i class='fa fa-check'/> As a HealthCare Professional at a HealthCare Organisation I would like to view for a Patient their current/future appointments so that I can arrange their care appropriately.
+<i class='fa fa-check'/> As a HealthCare Professional at a HealthCare Organisation I would like to view for a Patient their future appointments so that I can arrange their care appropriately.
 
 > 1. When receiving a new referral for a Community team, the team will review other healthcare professionals that are providing care to the patient and look at the schedule of visits being provided by any other teams in order that they don’t arrange visits in a schedule that might clash with, or over-burden the patient.
 > 2. As a Clinician, being able to view all booked and scheduled GP appointments and visits enables me to ensure that I am not duplicating visits, creating appointments or schedules that clash with other appointments,  or over burden my patient by arranging for multiple appointments or visits within too short a period of time.
@@ -47,11 +47,12 @@ Key:
 ## Book an appointment ##
 <i class='fa fa-check'/> As a HealthCare Professional at a HealthCare Organisation I would like to book an appointment for a Registered Patient so that I can manage their care appropriately.
 
+> 1. As an Urgent Care Call Centre Handler requiring an in-hours or extended hours GP appointment for a patient, I would like to make an appropriate appointment directly from within my system. 
 > 2. As a GP I want to make an appointment for my patient with one of my local practices which provides a coil fitting clinic. 
 > 3. A&E triage nurses booking appointments for patients directly into GP systems - diverting patients to the most suitable contact type for their condition, and reducing the cost of inappropriate A&E attendances Service to be available 24/7 so may be an electronic on-line booking service.
-> 5. As a healthcare professional in the Admin Hub of our Federation, I want to book a GP appointment for a patient to have a home visit by our Admissions Prevention team.
-> 6. As a Practice Nurse, I want to make an appointment for my patient to have bloods taken at the local GP phlebotomy service. 
-> 7. As a member of the Discharge Support team in the hospital, I want to book an appointment for my patient with the District Nurse for the removal of sutures the week after discharge.
+> 4. As a healthcare professional in the Admin Hub of our Federation, I want to book a GP appointment for a patient to have a home visit by our Admissions Prevention team.
+> 5. As a Practice Nurse, I want to make an appointment for my patient to have bloods taken at the local GP phlebotomy service. 
+> 6. As a member of the Discharge Support team in the hospital, I want to book an appointment for my patient with the District Nurse for the removal of sutures the week after discharge.
 
 <i class='fa fa-road'/> As a HealthCare Professional at a HealthCare Organisation I would like to book an appointment for a Registered Patient with a Pharmacy so that I can manage their care appropriately
 
@@ -72,13 +73,13 @@ Key:
 
 ## Amend appointment ##
 
-<i class='fa fa-check'/>As a HealthCare Professional at a HealthCare Organisation I would like to update the reason for an appointment with additional information or to correct errors without having to cancel and rebook the appointment so that the Patient's appointment is not taken by another patient.
+<i class='fa fa-check'/>As a HealthCare Professional at a HealthCare Organisation I would like to update the appointment description and/or comment with additional information or to correct errors without having to cancel and rebook the appointment and potentially losing the slot in the process.
 
 > 1.	A nurse realises that an appointment that has been made for a Patient does not highlight that the Patient is a wheelchair user and will require to be seen in a room in the surgery on the ground floor. The nurse is able to update the appointment with this information so that the Patient can be accommodated for their appointment.
 
 ## Cancel appointment ##
 
-<i class='fa fa-check'/>As a HealthCare Professional at a HealthCare Organisation I would like to cancel an appointment that I have made at any HealthCare Organisation so that Appointment lists are kept up to date and accurate.
+<i class='fa fa-check'/>As a HealthCare Professional at a HealthCare Organisation I would like to cancel a patient's appointment on their behalf so that Appointment lists are kept up to date and accurate.
 
 > 1. A Patient realises that she isn’t going to be able to make her GP appointment the next morning but it is already 6pm.  Previously there would have been no way of letting the Surgery know but now she can call the Surgery because there is someone on the phone at the local admin hub from 7am until 8pm.  She is able to cancel her appointment, thus freeing it up for someone else to book.
 
