@@ -32,8 +32,8 @@ The local UC organisation is required to make the data controllers of the GP pra
 This flag must NOT be applied by provider systems based on the following:
 
    -  the objective of the Appointment Management capability is primarily to support administrative cross-organisational workflow whereas this flag currently represents the patient's dissent from sharing their registered GP medical record
-   -  the flag only potentially exists at the patient's registered GP practice, whereas the aim of this capability is to support appointment booking and management at practices other than the registered one
-   -  fair processing communications at participating GP Practices must make clear to patients that limited clinical information may be released in the Appointment Reason, Description or Comment to support the shared appointment availability services operated within the federation
+   -  the flag only potentially exists at the patient's registered GP practice, whereas this capability aims to support appointment booking and management at practices in addition to the registered one
+   -  fair processing communications at participating GP Practices must make clear to patients that limited clinical information may be released in the Appointment Description or Comment to support the shared appointment availability services operated within the federation
    -  At the point of Appointment Booking, Amending or Cancellation, the patient must be given clear communication regarding potential clinical information being visible as part of the activity, so that they have the opportunity then to decline
 
 ## PDS sensitive flag (S-Flag) ##
@@ -42,7 +42,7 @@ The provider system is expected, when identifying an 'S-flagged' patient, to sub
 
 ## Legally-restricted data ##
 
-Whilst it is expected that GP practices will configure their appointment book to ensure appropriate restriction of appointments being available to external organisation, it is possible that such information may be exposed in the Appointment Reason, Description, and Comment elements, which cannot necessarily be prevented technically. The privacy impact to be mitigated by participating organisation (consumer and provider) end-user policies, procedures, registration and regulation.
+Whilst it is expected that GP practices will configure their appointment book to ensure appropriate restriction of appointments being available to external organisations, it is possible that such information may be exposed in the Appointment Description and Comment elements, which cannot necessarily be prevented technically. The privacy impact shall be mitigated by participating organisation (consumer and provider) end-user policies, procedures, registration and regulation.
 
 
 
