@@ -10,7 +10,7 @@ summary: "Use case for reading an appointment resource."
 
 ## API use case ##
 
-This specification describes a single use case. For complete details and background, see the [Appointment Management capability bundle](appointments.html).
+This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted Provider system. 
 
 {% include important.html content="The Appointment Management capability pack is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
