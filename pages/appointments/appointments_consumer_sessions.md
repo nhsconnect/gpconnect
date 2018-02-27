@@ -4,10 +4,10 @@ keywords: appointments
 tags: [appointments,first_of_type]
 sidebar: appointments_sidebar
 permalink: appointments_consumer_sessions.html
-summary: "An illustration of consumer appointment management sessions. "
+summary: "An illustration of consumer Appointment Management sessions. "
 ---
 
-The appointment management consumer application will make use of individual API calls described in 'API use cases' to perform business processes. 
+The Appointment Management consumer application makes use of individual API calls described in 'API use cases' to perform business processes. 
 
 ## Consumer session - booking an appointment ##
 
