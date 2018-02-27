@@ -19,7 +19,7 @@ The scope of appointment management is to deliver:
 
 The ability to create appointments for patients not known to the GP practice/diary owner:
 
-- If a patient is not known to the local system the appointment boking will be rejected by booking system. It will not be possible to register the patient.
+- If a patient is not known to the local system the appointment booking will be rejected by booking system. It will not be possible to register the patient.
 - <span class="label label-success">SELECTED</span> If a patient is not known to the local system the appointment booking will be rejected by booking system. It will be possible to register the patient via a separate patient registration endpoint.
 - If a patient is not known to the local system the appointment booking will be accepted and a patient record will be created with basic details about the patient (identifier).
 
@@ -49,14 +49,14 @@ The following search parameters will be initially included:
 
 When searching for diaries, the results will be:
 
-- Unlimited based on any time span provided as part of the search.
+- Unlimited based on any timespan provided as part of the search.
 - <span class="label label-success">SELECTED</span> Always be limited to a pre-defined maximum time period.
 
-{% include note.html content="A 2 week window was agreed with system suppliers as a reasonable trade off between performance and usefulness initially, with the team seeking feedback from wider industry." %}
+{% include note.html content="A 2-week window was agreed with system suppliers as a reasonable trade-off between performance and usefulness initially, with the team seeking feedback from wider industry." %}
 
 ## Do we need to use the 'AppointmentResponse' resource? ##
 
-As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html) should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource, or are HTTP response codes sufficient for GP Connect use cases?
+As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html) should the booking of an appointment utilise the 'AppointmentResponse' FHIR resource or are HTTP response codes sufficient for GP Connect use cases?
 
 - AppointmentResponse resource will be provided in response to a booking request.
 - <span class="label label-success">SELECTED</span> HTTP codes will be used to convey success/failure of a booking request.
@@ -67,7 +67,7 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 
 ## Viewing and amending booked appointments ##
 
-<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case.  Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the patient's registered GP practice. This assumes an update, according to usual business processes and external to GP Connect, by other GP practices hosting an appointment for the patient to their registered GP record.  
+<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case. Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the patient's registered GP practice. This assumes an update, according to usual business processes and external to GP Connect, by other GP practices hosting an appointment for the patient to their registered GP record.  
 
 ## Cancelling and amending booked appointments ##
 
