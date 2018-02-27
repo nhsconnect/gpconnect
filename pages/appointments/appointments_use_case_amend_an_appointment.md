@@ -66,10 +66,10 @@ Consumers SHALL include the following additional HTTP request headers:
 The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource. See [FHIR resources](/datalibraryappointment.html) page for more detail.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
-Only the following data-elements can be modified when performing an appointment amendment:
+Only the following data elements can be modified when performing an appointment amendment:
 - `reason`
 - `description`
 - `comment`
@@ -77,7 +77,7 @@ Only the following data-elements can be modified when performing an appointment 
 
 {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
 
-On the wire a JSON serialised request would look something like the following:
+On the wire, a JSON serialised request would look something like the following:
 
 ```json
 {
@@ -158,7 +158,7 @@ Provider systems:
 - SHALL return an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of the appointment resource.
-- SHALL have updated the appointment in accordance with the details supplied in the request. For example, the received `reason` element will replace the existing element. That is, where the existing element contained only `reason.text`, and the received element contained only `reason.coding`, then the resultant `reason` element would contain only the `reason.coding` sub-element.
+- SHALL have updated the appointment in accordance with the details supplied in the request. For example, the received `reason` element will replace the existing element. That is, where the existing element contained only `reason.text` and the received element contained only `reason.coding`, then the resultant `reason` element would contain only the `reason.coding` sub-element.
 
 ```json
 {
