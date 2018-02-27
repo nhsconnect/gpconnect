@@ -28,8 +28,8 @@ The steps shown in the diagram are detailed below:
 | Step | Description |
 |------|-------------|
 |      | *Step 1 is optional in the sense that a cached version of previous trace results may be available to the consumer.* |    
-| 1a   | **Consumer** is responsible for performing a  [(PDS)](integration_personal_demographic_service.html) trace to both verify the NHS number and obtain the ODS code of the GP Practice system. |
-| 1b   | **PDS** returns NHS number verification status, and the ODS code of the GP practice system. |
+| 1a   | **Consumer** is responsible for performing a  [(PDS)](integration_personal_demographic_service.html) trace to both verify the NHS Number and obtain the ODS code of the GP practice system. |
+| 1b   | **PDS** returns NHS Number verification status, and the ODS code of the GP practice system. |
 |      |      |
 |      | *Step 2 is optional in the sense that cached or configured endpoint details for the practice may be available from a previous SDS interaction.* |    
 | 2a   | **Consumer** calls [SDS](integration_spine_directory_service.html) to discover the accredited system ID (ASID) of the system which provides a FHIR endpoint at the practice identified by the specified ODS code. |
@@ -48,7 +48,7 @@ The steps shown in the diagram are detailed below:
 | 4c   | **Provider** responds with details of what slots are available for booking. Should no applicable slots be returned, the consumer may make repeated calls to [search for free slots](appointments_use_case_search_for_free_slots.html) with amended date ranges. |
 | 4d   | **SSP** forwards the free slots received from the provider to the consumer. |   
 |      |      |
-| 5a   | **Consumer** makes API call to [find a patient](foundations_use_case_find_a_patient.html) providing the patient's NHS number. |
+| 5a   | **Consumer** makes API call to [find a patient](foundations_use_case_find_a_patient.html) providing the patient's NHS Number. |
 | 5b   | **SSP** receives the call from the consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 5c   | **Provider** finds patient record and returns the logical identifier of the patient record at this practice in their system. See [Patient record not present](appointments_consumer_sessions.html#consumer-session---booking-an-appointment---no-patient-record) for an illustration of the steps required in this case. |
 | 5d   | **SSP** forwards the patient details received from the provider to the consumer. |
