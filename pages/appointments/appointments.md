@@ -17,13 +17,15 @@ To meet strategic objectives to improve access to GP care, the Appointment Manag
 - administrative staff at a GP extended access hub can book an appointment on behalf of a patient at any of its federated GP practices
 - an urgent care (UC) 111 call centre handler or triage clinician can book, cancel or view appointments on behalf of a patient at the patient's registered or federated GP practices or extended access hubs
 - a patient will be able to book, cancel or view their GP appointments via a GP Connect-enabled app
-- administrative staff and clinicians at a range of other care settings (for example, A&amp;E, physio, social and community services) will be able to book, view or cancel a GP appointment on behalf of the patient
+- administrative staff and clinicians at a range of other care settings (for example A&amp;E, physio, social and community services) will be able to book, view or cancel a GP appointment on behalf of the patient
 
 ## GP practice appointment slot availability  ##
 
-GP practices need to control access to their appointment book by external organisations. It is therefore expected that provider systems will enable practice users to designate their schedules/slots as bookable by GP Connect, ensuring that only these slots are returned in response to a request.
+GP practices need to control access by external organisations to their appointment book. Provider systems will enable practice users to designate their schedules/slots as bookable by GP Connect, and by Organisation Type and/or specific Organisations ensuring that only slots matching the booking Organisation/Type are returned in response to a request.
 
-{% include roadmap.html content="More granular slot availability management for GP practice end-users will be required of provider systems. This will support, where applicable and as value sets are defined, the release via GP Connect of those free slots matching the  specification slot filters - for example, slots designated for booking by specific types of organisations." %}
+The Appointment slots available via GP Connect will also be categorised by the end-user according to standardised values representing the role of the Practitioner delivering the appointment, and the channel by which the appointment is to be delivered, eg 'telephone', 'in-person'.  This provides more information to the user booking the appointment on behalf of the patient, thereby reducing the risk of inappropriate appointment booking.
+
+
 
 ## First of Type (FoT) care setting deployments ##
 
@@ -43,11 +45,11 @@ The call centre will retrieve and select in-hours or extended hours appointments
 
    - a GP practice within the vicinity of the patient’s geographic location; for example, when the patient is on holiday
 
-{% include note.html content="While the GP Connect programme primarily assumes that the appointment-hosting (provider) systems are the GP principal systems, the API technical design has accommodated the minimum viable features required to support booking and managing of appointments at UC providers such as minor injuries units and GP out of hours services. This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting. **This deployment care setting is currently out of scope for GP Connect FoT deployments.**" %}  
+{% include note.html content="While the GP Connect Programme primarily assumes that the appointment-hosting (provider) systems are the GP Principal Systems, the API technical design has accommodated the minimum viable features required to support booking and managing of appointments at UC providers such as Minor Injuries Units and GP Out Of Hours services. This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting. **This deployment care setting is currently out of scope for the GP Connect Programme FoT deployments, which only incorporates assurance of the API fulfilment by the GP Principal Provider systems. The assurance and deployment of the APIs by UC Provider systems will be progressed by NHS Digital Integrated Urgent Care programmes.**" %}  
 
 ## API use cases ##
 
-The following individual API calls are used by consumers to implement the appointment management capability:
+The following individual API calls are used by consumers to implement the Appointment Management capability:
 
 - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)
 - [Search for free slots](appointments_use_case_search_for_free_slots.html)
@@ -56,9 +58,9 @@ The following individual API calls are used by consumers to implement the appoin
 - [Amend an appointment](appointments_use_case_amend_an_appointment.html)
 - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)
 
-{% include tip.html content="Creation of `schedule` and `slot` resources is out of scope for the GP Connect First of Type (FoT) pilot as these resources are expected to be managed from within an organisation's principal IT system." %}
 
-## Examples of consumer appointment management sessions
+
+## Examples of consumer Appointment Management sessions
 
 The use of the individual API calls listed above by consumers to fulfil business processes is illustrated with focus on the booking of an appointment. See [Appointment Management consumer sessions illustrated](appointments_consumer_sessions.html).
 
