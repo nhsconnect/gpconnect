@@ -31,16 +31,15 @@ When requesting the schedule of a particular diary, the level of detail returned
 
 - Include all booked appointments and available slots.
 - Only slots that are available (all types).
-- <span class="label label-success">SELECTED</span> Only slots that are available and have been marked/flagged as externally bookable via GP Connect.
+- <span class="label label-success">SELECTED</span> Only slots that are available, have been marked/flagged as externally bookable via GP Connect and match the Booking Organisation Type and/or ODS Code and 'Embargo/Booking Window' rules.
 
-{% include roadmap.html content="Richer GP Appointment Slot access control within provider systems is being progressed recognising requirements such as access to slots by organisation type." %}
 
 ## Search parameters ##
 
 The following search parameters will be initially included:
 
 - All available common (across all four systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
-- <span class="label label-success">SELECTED</span> Date Range,  Urgent Care (UC) Disposition Code and Service ID, and Requesting Organisation Type are accommodated to support potential available appointment slot filtering (consumers can then apply further filtering, sorting at client side). The last 3 are required to support the use of GP Connect APIs by UC Services.  
+- <span class="label label-success">SELECTED</span> Date Range,  Booking Organisation Type, Booking Organisation ODS Code, Urgent Care (UC) Disposition Code and Service ID, are accommodated to reflect more targeted Provider system slot availability and return.  Consumers can then apply further filtering and/or sorting at the client side. The last 2 are required to support the use of GP Connect APIs by UC Services.  
 
 {% include note.html content="The Search Filter specification is flexible to allow for further search parameters to be defined. Value sets will be defined for these to be used by subsequent provider system slot access control." %}
 
@@ -74,7 +73,7 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 What provision will be made for making changes to existing appointments?
 
 - Only cancellation will be allowed (must cancel and re-book).
-- <span class="label label-success">SELECTED</span> Cancellation and amendments to the Appointment Reason, Description and Comment are accommodated.
+- <span class="label label-success">SELECTED</span> Cancellation and amendments to the Appointment Description and Comment are accommodated.
 - Cancel and comprehensive amendments will be provisioned for (allowing appointments to move between slots/rescheduled).
 
 ## Can appointments be rescheduled? ##
