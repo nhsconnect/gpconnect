@@ -9,7 +9,7 @@ summary: "Use case for booking an appointment for a patient with a given organis
 
 ## Use case ##
 
-{% include important.html content="The Appointment Management capability pack is aimed at administration of a patients appointments. As a result of IG requirements the book appointment capability has been restricted to future appointments, additional details are available on the [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements the book appointment capability has been restricted to future appointments. See [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments)." %}
 
 The typical flow to book an appointment is:
 
@@ -37,9 +37,9 @@ The consumer system:
 
 ## API usage ##
 
-The Consumer System SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer system SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
-### Request Operation ###
+### Request operation ###
 
 #### FHIR&reg; relative request ####
 
@@ -73,7 +73,7 @@ Consumer systems:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
-The following data-elements are mandatory (that is, data MUST be present):
+The following data elements are mandatory (that is, data MUST be present):
 - a patient `participant` of the appointment.
 - a location `participant` of the appointment, representing the physical location where the appointment is to take place (see [Design decisions](foundations_design.html#location-in-the-appointment-resource) page).
 - an `actor` reference in any supplied `participant`.
@@ -86,7 +86,7 @@ The following data-elements are mandatory (that is, data MUST be present):
   - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
 - the `created` element SHALL be populated with the date and time the appointment was created.
 
-The following data-elements SHOULD be included when available:
+The following data elements SHOULD be included when available:
 - a practitioner `participant` of the appointment.
 
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (that is, two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload response body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API use case page." %}
@@ -96,12 +96,12 @@ The following data-elements SHOULD be included when available:
 
 #### Element specific guidance ####
 
-The following guidance around Appointment Resource element SHALL be followed when populating any of the listed fields:
+The following guidance around the Appointment resource element SHALL be followed when populating any of the listed fields:
 
 | Resource Element        | Guidance |
 | ---                     | --- |
 | Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. |
-| Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. |
+| Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request or appointment list. |
 
 #### Resource guidance ####
 
@@ -116,7 +116,7 @@ The following guidance SHALL be followed when populating an appointment resource
 
 #### Example request body ####
 
-On the wire a JSON serialised request would look something like the following:
+On the wire, a JSON serialised request would look something like the following:
 
 ```json
 {
