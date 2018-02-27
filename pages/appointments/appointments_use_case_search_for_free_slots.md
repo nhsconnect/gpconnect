@@ -9,7 +9,7 @@ summary: "Use case for searching for free slots within a date range."
 
 ## Use case ##
 
-This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+This specification describes a single use case enabling the Consumer to request from the targeted Provider system slots matching the selected date range, Booking Organisation ODS Code and Type, and other parameters including UC Disposition Code and Service ID. 
 
 Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API use case could be used in the context of a typical consumer appointment management session.
 
@@ -64,12 +64,12 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-{% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore slots found in the past can not be used to book an appointment." %}
+{% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore slots found in the past cannot be used to book an appointment." %}
 
 
 ### Enhanced slot filtering ###
 
-{% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outline on the [Slot Availability Management](appointments_slotavailabilitymanagement.html) page" %}
+{% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outlined on the [Slot Availability Management](appointments_slotavailabilitymanagement.html) page" %}
 
 In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter with both 'System' and 'Value' elements:
 
@@ -174,7 +174,9 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of "free" slot details.
-- SHALL include the free `Slot` details for the organisation which have a `status` of "free" and fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned. 
+- SHALL include the free `Slot` details for the organisation which have a `status` of "free" and fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
+- SHALL only include the free slots which are bookable according to related defined 'Embargo/Booking Window' rules 
+- SHALL only include the free slots which match the Search Filter parameters of Booking Organisation (ODS Code) and/or Type
 - SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
  
   The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
