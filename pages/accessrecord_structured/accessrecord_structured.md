@@ -30,7 +30,7 @@ The Access Record Structured API will expose data for a number of clinical areas
 
 See the [Access Record Structured FHIR resources](accessrecord_structured_development_resources_list.html) page for details of the FHIR profiles used for the Access Record Structured operation.
 
-## SPINE Interactions ##
+## Spine interactions ##
 
 The Access Record Structured capability message set includes the following set of Spine interactions:
 
