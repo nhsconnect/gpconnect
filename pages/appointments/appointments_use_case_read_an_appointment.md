@@ -22,7 +22,7 @@ This specification describes a single use case. For complete details and backgro
 
 ## Consumer ##
 
-The Consumer system:
+The consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 
@@ -67,7 +67,7 @@ Provider systems:
 - SHALL return an error if the appointment being read is in the past (the appointment start dateTime is before the current date and time).
 
 Examples of other scenarios which may result in error being returned:
-- Where a Logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevent OperationOutcome resource.
+- Where a logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevent OperationOutcome resource.
 - Where insufficient data about an appointment is present in the provider system to populate an appointment resource which validates to the `GPConnect-Appointment-1` profile, an 500 HTTP Status code should be returned, together with the appropriate OperationOutcome resource providing diagnostic detail.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
