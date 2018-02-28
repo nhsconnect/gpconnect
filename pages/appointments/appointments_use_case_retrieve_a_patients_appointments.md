@@ -16,7 +16,7 @@ This specification describes a single use case. For complete details and backgro
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
+- GP Connect utilises JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## Prerequisites ##
 
@@ -31,7 +31,6 @@ The consumer system:
 ## API usage ##
 
 ### Request operation ###
-
 
 #### Search parameters ####
 
@@ -118,7 +117,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
 For example:
 
