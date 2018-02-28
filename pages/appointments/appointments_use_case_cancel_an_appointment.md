@@ -28,7 +28,7 @@ The typical flow to cancel an appointment is:
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
 - SHALL have previously found the appointment ID using [Retrieve a patient's appointments](https://nhsconnect.github.io/gpconnect/appointments_use_case_retrieve_a_patients_appointments.html).
 
@@ -56,26 +56,26 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's TraceID (that is, GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1` |
 
 #### Payload request body ####
 
-The request payload is a profiled version of the standard FHIR&reg; [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource. See the [FHIR resources](/datalibraryappointment.html) page for more detail.
+The request payload is a profiled version of the standard FHIR&reg; [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) resource. See the [FHIR resources](/datalibraryappointment.html) page for more details.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
-Only the following data-elements can be modified when performing an appointment cancellation:
+Only the following data elements can be modified when performing an appointment cancellation:
 - the appointment `status` MUST be updated to "cancelled"
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details
 
 {% include important.html content="If any content other than the appointment cancellation reason or appointment status is updated the server SHALL reject the amendment and return an error." %}
 
-On the wire a JSON serialised request would look something like the following:
+On the wire, a JSON serialised request would look something like the following:
 
 ```json
 {
@@ -139,7 +139,7 @@ On the wire a JSON serialised request would look something like the following:
 
 The provider system:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional details when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
 - SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
 
@@ -156,11 +156,11 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
 - SHALL have updated the appointment `status` to "cancelled".
-- SHALL have updated the appointment `cancellation-reason` inline with any details supplied in the request.
+- SHALL have updated the appointment `cancellation-reason` in line with any details supplied in the request.
 
 ```json
 {
@@ -220,7 +220,7 @@ Provider systems:
 }
 ```
 
-{% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (i.e. the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.status` are updated inline with any internal integrity constraints)." %}
+{% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (for example, the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.status` are updated in line with any internal integrity constraints)." %}
 
 ## Examples ##
 
