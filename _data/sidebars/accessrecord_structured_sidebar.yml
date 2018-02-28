@@ -40,7 +40,7 @@ entries:
     output: web, pdf
     folderitems:
     
-    - title: List of FHIR resources
+    - title: FHIR resources
       url: /accessrecord_structured_development_resources_list.html
       output: web
 
