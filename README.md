@@ -4,9 +4,9 @@
 
 This is the source repository for the GP Connect specification.
 
-The current specification version is held in the master branch and published to <a href="https://nhsconnect.github.io/gpconnect/">GitHub pages</a>.
+The current specification version is held in the master branch, and published to <a href="https://nhsconnect.github.io/gpconnect/">GitHub pages</a>.
 
-Older versions of the specification are published to the <a href="https://developer.nhs.uk/gp-connect-specification-versions/">NHS Developer Network</a>.
+Previous versions of the specification are held in release/* branches (and tagged), and published to the <a href="https://developer.nhs.uk/gp-connect-specification-versions/">NHS Developer Network</a>.
 
 ## Building the specification
 
