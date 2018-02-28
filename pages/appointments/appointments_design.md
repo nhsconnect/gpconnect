@@ -11,7 +11,7 @@ summary: "Overview of the design decisions made in relation to the Appointment M
 
 The scope of appointment management is to deliver:
 
-- <span class="label label-success">SELECTED</span> Functionality required to manage appointments in the context of a patient.
+- <span class="label label-success">SELECTED</span> Functionality required for organisations to manage appointments on behalf of a patient.
 - Functionality to view or manage an entire diary/appointment book.
 - Functionality to create, amend, update diaries and/or schedules.
 
