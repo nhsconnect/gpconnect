@@ -11,7 +11,7 @@ summary: "Overview of the design decisions made in relation to the Appointment M
 
 The scope of appointment management is to deliver:
 
-- <span class="label label-success">SELECTED</span> Functionality required to manage appointments in the context of a patient.
+- <span class="label label-success">SELECTED</span> Functionality required for organisations to manage appointments on behalf of a patient.
 - Functionality to view or manage an entire diary/appointment book.
 - Functionality to create, amend, update diaries and/or schedules.
 
@@ -19,28 +19,27 @@ The scope of appointment management is to deliver:
 
 The ability to create appointments for patients not known to the GP practice/diary owner:
 
-- If a patient is not known to the local system the appointment booking will be rejected by booking system. It will not be possible to register the patient.
-- <span class="label label-success">SELECTED</span> If a patient is not known to the local system the appointment booking will be rejected by booking system. It will be possible to register the patient via a separate patient registration endpoint.
+- If a patient is not known to the local system the appointment boking will be rejected by booking system. It will not be possible to register the patient.
+- <span class="label label-success">SELECTED</span> If a patient is not known to the local system the appointment booking will be rejected by booking system. It will be possible to register the patient via the GP Connect 'Register a Patient' API, and then use 'Book an Appointment'.
 - If a patient is not known to the local system the appointment booking will be accepted and a patient record will be created with basic details about the patient (identifier).
 
 {% include note.html content="Details of how to [register a patient](foundations_use_case_register_a_patient.html) can be found in the Foundations capability pack. " %}
 
 ## Access to available slots ##
 
-When requesting the schedule of a particular diary, the level of detail returned should:
+When requesting the schedule of a particular diary, the level of detail returned should include:
 
-- Include all booked appointments and available slots.
+- All booked appointments and available slots.
 - Only slots that are available (all types).
-- <span class="label label-success">SELECTED</span> Only slots that are available and have been marked/flagged as externally bookable via GP Connect.
+- <span class="label label-success">SELECTED</span> Only slots that are available, have been marked/flagged as externally bookable via GP Connect and match the Booking Organisation Type and/or ODS Code and 'Embargo/Booking Window' rules.
 
-{% include roadmap.html content="Richer GP Appointment Slot access control within provider systems is being progressed recognising requirements such as access to slots by organisation type." %}
 
 ## Search parameters ##
 
 The following search parameters will be initially included:
 
 - All available common (across all four systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
-- <span class="label label-success">SELECTED</span> Date Range,  Urgent Care (UC) Disposition Code and Service ID, and Requesting Organisation Type are accommodated to support potential available appointment slot filtering (consumers can then apply further filtering, sorting at client side). The last 3 are required to support the use of GP Connect APIs by UC Services.  
+- <span class="label label-success">SELECTED</span> Date Range,  Booking Organisation Type, Booking Organisation ODS Code, Urgent Care (UC) Disposition Code and Service ID, are accommodated to reflect more targeted Provider system slot availability and return.  Consumers can then apply further filtering and/or sorting at the client side. The last 2 are required to support the use of GP Connect APIs by UC Services.  
 
 {% include note.html content="The Search Filter specification is flexible to allow for further search parameters to be defined. Value sets will be defined for these to be used by subsequent provider system slot access control." %}
 
@@ -74,7 +73,7 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 What provision will be made for making changes to existing appointments?
 
 - Only cancellation will be allowed (must cancel and re-book).
-- <span class="label label-success">SELECTED</span> Cancellation and amendments to the Appointment Reason, Description and Comment are accommodated.
+- <span class="label label-success">SELECTED</span> Cancellation and amendments to the Appointment Description and Comment are accommodated.
 - Cancel and comprehensive amendments will be provisioned for (allowing appointments to move between slots/rescheduled).
 
 ## Can appointments be rescheduled? ##

@@ -79,6 +79,10 @@ Please refer to the 'GPSoC Technical Standards' for details.
 
 ### Deployment ###
 
+Provider systems SHALL release a new major version of their GP Connect API alongside a previous major version, until such time as consumers have migrated to the new major version.
+
+Provider systems SHOULD release a new minor or patch version, replacing the previous the previous minor or patch version.
+
 Provider systems SHALL be deployed with the provider APIs enabled by default.
 
 Provider systems MAY provide a mechanism for a data controller at an organisation to choose to globally disable/enable the provider APIs (that is, turn on/off the overall GP Connect technical capability).

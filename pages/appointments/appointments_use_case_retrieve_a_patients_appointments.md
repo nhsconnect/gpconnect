@@ -9,7 +9,7 @@ summary: "Use case for retrieval of a patient's appointments from an organisatio
 
 ## Use case ##
 
-This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted Provider system. 
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the view of a patient's appointments has been restricted to only viewing future appointments. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -117,7 +117,7 @@ N/A
 
 Provider systems:
 
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
 For example:
 
@@ -136,7 +136,7 @@ Provider systems:
 
 - SHALL only return appointments where the `start` dateTime is in the future (greater than the the current date and time).
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) resources in a `Bundle` of `type` searchset.
+- SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resources in a `Bundle` of `type` searchset.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
@@ -179,14 +179,6 @@ Provider systems:
 				}
 			}],
 			"status": "booked",
-			"reason": {
-				"coding": [{
-					"system": "http://snomed.info/sct",
-					"code": "00001",
-					"display": "Default Appointment Type"
-				}],
-				"text": "Default Appointment Type"
-			},
 			"description" : "GP Connect Appointment description 148",
 			"start": "2017-08-21T10:20:00.000+00:00",
 			"end": "2017-08-21T10:50:00.000+00:00",

@@ -145,7 +145,7 @@ The payload section of the JWT shall be populated as follows:
 
 The `consumer` SHALL populate the `requesting_organization` claim with:
 
-* A FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) ![STU3](images/stu3.png) resource representing the organisation making the request and SHALL include the elements:
+* A FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource representing the organisation making the request and SHALL include the elements:
 
   | Element | Description |
   | --- | --- |
@@ -157,7 +157,7 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
 
 The `consumer` SHALL populate the `requested_record` claim with:
 
-* Either a FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) ![STU3](images/stu3.png) resource or a FHIR [Patient](https://www.hl7.org/fhir/STU3/patient.html) ![STU3](images/stu3.png) resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers for the request.
+* Either a FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource or a FHIR [Patient](https://www.hl7.org/fhir/STU3/patient.html) resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers for the request.
 
   The table below shows the GP Connect API calls and the expected content for the JWT requested_record claim:
 
@@ -267,9 +267,6 @@ In future OAuth2 implementation, the ISS claim will contain the URL of the OAuth
 {% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't committed to using the SMART on FHIR specification." %}
 
 Where the practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied.
-
-{% include todo.html content="Spine RBAC role support to be added in [Stage 2.](designprinciples_maturity_model.html)" %}
-
 
 ## Example code ##
 

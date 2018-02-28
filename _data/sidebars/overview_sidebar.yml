@@ -27,17 +27,11 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
-        - title: 1.1.0
+        - title: 1.1.0-rc
           url: /overview_release_notes_1_1_0.html
           output: web
         - title: 1.0.0
           url: /overview_release_notes_1_0_0.html
-          output: web
-        - title: 0.6.0-deprecated
-          url: /overview_release_notes_0_6_0.html
-          output: web
-        - title: 0.5.1
-          url: /overview_release_notes_0_5_1.html
           output: web
         - title: 0.5.0
           url: /overview_release_notes_0_5_0.html
@@ -66,13 +60,10 @@ entries:
     - title: Assurance principles
       url: /designprinciples_assurance_principles.html
       output: web
-    - title: Open API licence principles
-      url: /designprinciples_open_api_licence_principles.html
-      output: web
     - title: Clinical terminologies
       url: /design_clinical_terminologies.html
       output: web
-    - title: Product versioning
+    - title: Specification versioning
       url: /design_product_versioning.html
       output: web
 

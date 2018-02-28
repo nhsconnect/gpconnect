@@ -78,5 +78,5 @@ entries:
         subfolderitems:
 
         - title: Slot availability management
-          url: /slotavailabilitymanagement.html
+          url: /appointments_slotavailabilitymanagement.html
           output: web, pdf

@@ -67,10 +67,10 @@ Consumers SHALL include the following additional HTTP request headers:
 
 #### Payload request body ####
 
-The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) ![STU3](images/stu3.png) resource. See the [FHIR resources](/datalibraryappointment.html) page for more detail.
+The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) resource. See the [FHIR resources](/datalibraryappointment.html) page for more detail.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
 The following data elements are mandatory (that is, data MUST be present):
@@ -82,7 +82,7 @@ The following data elements are mandatory (that is, data MUST be present):
 - the `slot` details of one or more free slots to be booked.
 - the `bookingOrganisation` extension referencing a `contained` `organization` resource within the appointment resource.
   - the contained organization resource SHALL represent the organization booking the appointment.
-  - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) ![STU3](images/stu3.png) profile.
+  - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile.
   - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
 - the `created` element SHALL be populated with the date and time the appointment was created.
 
@@ -100,18 +100,19 @@ The following guidance around the Appointment resource element SHALL be followed
 
 | Resource Element        | Guidance |
 | ---                     | --- |
-| Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. |
-| Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request or appointment list. |
+| Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Consumers SHALL impose a character limit of 100 characters for this element. |
+| Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. Consumers SHALL impose a character limit of 500 characters for this element. |
+| Appointment.***reason***     | Consumers and providers SHOULD NOT use the appointment `reason` element as the GP Connect appointment management capability is for administration of appointment booting and should not be used to transfer clinical data between systems. As the reason element is for recording 'clinical' codes it goes against the purpose of the GP Connect Appointment Management capability, so it should not be used by consumers or providers. |
 
 #### Resource guidance ####
 
 The following guidance SHALL be followed when populating an appointment resource:
 
-* For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost.
+* For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the booking the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost. The consumer imposed character limit specified above should restrict the total number of characters received so that all providers can store any text they receive.
 * If the consumer wishes to include ***patient temporary contact details*** for the purposes of the appointment they SHALL include them within the `description` element of the appointment, so that the details are retained against that specific appointment.
 * Elements within the appointment (such as 'comment' and 'description') SHALL only contain limited amounts of information to support the appointment. The content of the appointment SHALL NOT be used for "Transfer of Care" clinical information.
 
-{% include warning.html content="Due to differences in the provider systems and the amount of information their data models can hold, there is a risk that information sent within the appointment may be truncated by the provider system if too large. Consumers and providers should be aware and try to limit risk where possible or make users aware of the risk when booking or amending an appointment." %}
+{% include warning.html content="Due to differences in the provider systems and the amount of information their data models can hold, there is a risk that information sent within the appointment may be truncated by the provider system if too large. Consumers and providers should be aware and try to limit risk where possible or make users aware of the risk when booking or amending an appointment. The consumer imposed character limit specified above should help mitigate this risk." %}
 
 
 #### Example request body ####
@@ -173,7 +174,7 @@ On the wire, a JSON serialised request would look something like the following:
 
 Provider systems:
 
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example:
 
@@ -197,7 +198,7 @@ Provider systems:
 
 - SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
 - SHALL return a `Location` header as described in [FHIR API guidance](development_fhir_api_guidance.html#create-resource).
-- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) profile.
+- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
 

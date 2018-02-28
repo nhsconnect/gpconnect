@@ -10,7 +10,7 @@ summary: "Use case for reading an appointment resource."
 
 ## API use case ##
 
-This specification describes a single use case. For complete details and background, see the [Appointment Management capability bundle](appointments.html).
+This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted Provider system. 
 
 {% include important.html content="The Appointment Management capability pack is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -63,7 +63,7 @@ N/A
 #### Error handling ####
 
 Provider systems:
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if the appointment being read is in the past (the appointment start dateTime is before the current date and time).
 
 Examples of other scenarios which may result in error being returned:
@@ -83,7 +83,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Appointment` resources that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) ![STU3](images/stu3.png) resource profile.
+- SHALL return `Appointment` resources that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resource profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of the appointment resource.
 - SHALL include all relevant business `identifier` details (if any) for the appointment resource.
@@ -116,14 +116,6 @@ Provider systems:
 		}
 	}],
 	"status": "booked",
-	"reason": {
-		"coding": [{
-			"system": "http://snomed.info/sct",
-			"code": "00001",
-			"display": "Default Appointment Type"
-		}],
-		"text": "Default Appointment Type"
-	},
 	"description": "GP Connect Appointment description 148",
 	"start": "2017-08-21T10:20:00.000+00:00",
 	"end": "2017-08-21T10:50:00.000+00:00",

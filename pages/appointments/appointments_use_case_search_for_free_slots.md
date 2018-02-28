@@ -9,7 +9,7 @@ summary: "Use case for searching for free slots within a date range."
 
 ## Use case ##
 
-This specification describes a single use case. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+This specification describes a single use case enabling the Consumer to request from the targeted Provider system slots matching the selected date range, Booking Organisation ODS Code and Type, and other parameters including UC Disposition Code and Service ID. 
 
 Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API use case could be used in the context of a typical consumer appointment management session.
 
@@ -64,48 +64,34 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-{% include note.html content="Search for free slots does allow for searching for slots in the past, but all other Appointment Management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore, slots found in the past can not be used to book an appointment." %}
+{% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore slots found in the past cannot be used to book an appointment." %}
 
 
 ### Enhanced slot filtering ###
 
-{% include important.html content="
-It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. <br/><br/>
- 
-For the Appointment Management rc.3 specification, provider systems SHALL provide a mechanism by which GP practices can indicate which slots are available for booking via the GP Connect API specifically, thereby ensuring that their whole appointment book is not made available to external organisations.  
- " %}
- 
-The GP Connect programme is currently consulting with GP principal system providers to define a standard API interface to enable more granular slot filtering. A common example of this would be where a practice reserves a small number of slots specifically for use by urgent care appointment. 
+{% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outlined on the [Slot Availability Management](appointments_slotavailabilitymanagement.html) page" %}
 
-In view of this, an additional placeholder parameter `searchFilter` has been included in the Appointment Management rc.3 specification. It is envisaged that this parameter will in future be used to specify these additional filtering parameters through the use of agreed valueSets.
- 
-The following provides some examples of search filters valueSets in consideration to meet requirements for future fine-grained slot filtering.  
+In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter with both 'System' and 'Value' elements:
 
-| ValueSet System URI | Description |
+| Parameter system URI | Parameter description |
 | --- | --- |
-| (TBD) booking-organisation | Booking organisation identifier (ODS code) |
-| (TBD) consumer-type | Consuming Organisation type making the request, for example '111 call centre'. |
-| (TBD) disposition | Urgent Care Disposition Code required for the patient's care. |
-| (TBD) service-id | Urgent Care Service-Id required for the available slot. |
+| https://fhir.nhs.uk/Id/ods-organization-code | The booking organisation ODS code |
+| https://fhir.nhs.uk/STU3/ValueSet/GPConnect-OrganisationType-1 | The booking organisation type, for example 'Urgent Care'. |
 
-Where searchFilters are sent by consumers which are not explicitly supported in this specification (for example, the valueSet used is not listed here) providers SHALL ignore any such searchFilter parameters and SHALL NOT return an error.
+Where searchFilters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
+
 
 ## Search for free slots on the wire ##
 
 On the wire, a `Search for free slots` request would look something like one of the following:
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
-
-```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter=[typeSystemTBC]|UC&searchFilter=[dispositonSystemTBC]|DX001
-```
-
 
 ## Prerequisites ##
 
@@ -131,6 +117,8 @@ GET /Slot?[start={search_prefix}start_date]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+          {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+          {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
 #### FHIR&reg; absolute request ####
@@ -143,6 +131,8 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+          {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+          {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
 #### Request headers ####
@@ -169,7 +159,7 @@ The provider system SHALL return an error if:
 - the `status` parameter is absent or is present with a value other than `free`
 - the `_include=Slot:schedule` is absent
 
-SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
+SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -184,7 +174,9 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of "free" slot details.
-- SHALL include the free `Slot` details for the organisation which have a `status` of "free" and fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned. 
+- SHALL include the free `Slot` details for the organisation which have a `status` of "free" and fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
+- SHALL only include the free slots which are bookable according to related defined 'Embargo/Booking Window' rules 
+- SHALL only include the free slots which match the Search Filter parameters of Booking Organisation (ODS Code) and/or Type
 - SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
  
   The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
