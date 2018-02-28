@@ -55,7 +55,7 @@ The following parameters SHALL be included in the request:
 
 - `status=free` specifies that only free slots will be returned. Note: the slot status value of `free` SHALL be specified, other slot status values are not permitted.
 
-- `_include=Slot:schedule` specifies that associated Schedule resources are returned.
+- `_include=Slot:schedule` specifies that associated schedule resources are returned.
 
 
 The following parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
@@ -64,7 +64,7 @@ The following parameters MAY be included to minimise the number of API calls req
 - _include:recurse=Schedule:actor:Location
 
 
-{% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore slots found in the past can not be used to book an appointment." %}
+{% include note.html content="Search for free slots does allow for searching for slots in the past, but all other Appointment Management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore, slots found in the past can not be used to book an appointment." %}
 
 
 ### Enhanced slot filtering ###
@@ -92,7 +92,7 @@ Where searchFilters are sent by consumers which are not explicitly supported in 
 
 ## Search for free slots on the wire ##
 
-On the wire a `Search for free slots` request would look something like one of the following:
+On the wire, a `Search for free slots` request would look something like one of the following:
 
 ```http
 GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location
@@ -114,7 +114,7 @@ GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_inc
 The consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL request a maximum date range covering a two week period.
+- SHALL request a maximum date range covering a two-week period.
 
 {% include tip.html content="Multiple separate API calls can be made if a larger date range is required. However, consideration should be given to the load this placed on the provider system." %}
 
@@ -151,7 +151,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's TraceID (that is, GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:slot-1` |
@@ -171,7 +171,7 @@ The provider system SHALL return an error if:
 
 SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) ![STU3](images/stu3.png) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
 
 ### Request response ###
 
@@ -198,7 +198,7 @@ Provider systems:
   * To indicate two slots (Slot A and Slot B) are adjacent, the two slots SHALL reference the same schedule resource and the ```start``` time of ```Slot B``` SHALL equals ```end``` time of ```Slot A```.
   * If the slots do not conform to the rule above, either the slots do not link to the same schedule or the start time of one slot is not the same as the end time of the previous slot then these slots SHALL not be considered adjacent.
   
-- SHALL returned resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management Resources](datalibraryappointment.html) page.
+- SHALL returned resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
 
 ```json
 {
