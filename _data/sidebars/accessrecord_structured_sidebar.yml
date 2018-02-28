@@ -1,0 +1,107 @@
+entries:
+- title: Access Record Structured
+  product: Access Record Structured
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /accessrecord_structured.html
+      output: web, pdf         
+      
+    - title: Business requirements
+      url: /accessrecord_structured_requirements.html
+      output: web, pdf
+      
+    - title: Design decisions
+      url: /accessrecord_structured_design.html
+      output: web, pdf
+      
+    - title: Release notes
+      url: /accessrecord_structured_release_notes.html
+      output: web, pdf     
+      
+    - title: Known issues
+      url: /accessrecord_structured_known_issues.html
+      output: web, pdf
+
+  - title: Development
+    output: web, pdf
+    folderitems:
+    
+    - title: List of FHIR resources
+      url: /accessrecord_structured_development_resources_list.html
+      output: web
+
+      subfolders:
+
+      - title: Allergies
+        output: web
+        subfolderitems:
+
+        - title: Introduction
+          url: /accessrecord_structured_development_allergies_introduction.html
+          output: web
+        - title: Guidance
+          url: /accessrecord_structured_development_allergies_guidance.html
+          output: web
+        - title: Population
+          url: /accessrecord_structured_development_allergies_population.html
+          output: web
+
+      - title: Medications
+        output: web
+        subfolderitems:
+
+        - title: Introduction
+          url: /accessrecord_structured_development_medication_introduction.html
+          output: web
+        - title: Guidance
+          url: /accessrecord_structured_development_medication_guidance.html
+          output: web
+        - title: Population
+          url: /accessrecord_structured_development_medication_population.html
+          output: web
+
+      - title: Cross cutting guidance
+        output: web
+        subfolderitems:
+
+        - title: CodeableConcept
+          url: /accessrecord_structured_development_codeableconcept.html
+          output: web
+
+        - title: Degrade codes
+          url: /accessrecord_structured_development_degradecodes.html
+          output: web
+
+        - title: Negation and query codes
+          url: /accessrecord_structured_development_negationquerycodes.html
+          output: web
+
+        - title: Confidential record items
+          url: /accessrecord_structured_development_confidentialitems.html
+          output: web
+
+      - title: API use cases
+        output: web
+        subfolderitems:
+
+        - title: Retrieve a patient's record
+          url: /accessrecord_structured_development_retrieve_patient_record.html
+          output: web

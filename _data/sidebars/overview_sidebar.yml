@@ -126,11 +126,11 @@ entries:
     - title: Appointment Management
       url: /appointments.html
       output: web
+    - title: Access Record Structured
+      url: /accessrecord_structured.html
+      output: web
     - title: <b class="capability-not-available">Access Record HTML</b>
       url: /accessrecord.html
-      output: web
-    - title: <b class="capability-not-available">Access Record Structured</b>
-      url: /accessrecord_rest.html
       output: web
     - title: <b class="capability-not-available">Task Management</b>
       url: /tasks.html
