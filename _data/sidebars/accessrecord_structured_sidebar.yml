@@ -32,10 +32,6 @@ entries:
       url: /accessrecord_structured_design.html
       output: web, pdf
       
-    - title: Release notes
-      url: /accessrecord_structured_release_notes.html
-      output: web, pdf     
-      
     - title: Known issues
       url: /accessrecord_structured_known_issues.html
       output: web, pdf
