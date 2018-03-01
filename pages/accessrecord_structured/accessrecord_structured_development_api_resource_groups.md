@@ -1,5 +1,5 @@
 ---
-title: Structure access record resource groups
+title: Structured access record resource groups
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
