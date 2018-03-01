@@ -1,10 +1,10 @@
 ---
-title: Clinical scenarios
+title: Appointment Management clinical scenarios
 keywords: appointments
 tags: [appointments,first_of_type]
 sidebar: appointments_sidebar
 permalink: appointments_clinical_scenarios.html
-summary: "Potential clinical scenarios for the Appointment Management capability"
+summary: "Potential clinical scenarios for the Appointment Management capability pack."
 ---
 
 The clinical scenarios below detail the main user stories which the Appointment Management specification aims to support with examples of how the GP Connect APIs could technically be deployed to improve access to GP practice appointment diaries subject to the local GP practice diary configuration.  

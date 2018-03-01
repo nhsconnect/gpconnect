@@ -1,5 +1,5 @@
 ---
-title: Slot availability management
+title: Slot Availability Management
 keywords: development
 sidebar: appointments_sidebar
 toc: false

@@ -4,7 +4,7 @@ keywords: appointments, use case, read
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_read_an_appointment.html
-summary: "Use case for reading an appointment resource"
+summary: "Use case for reading an appointment resource."
 ---
 
 

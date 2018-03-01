@@ -1,10 +1,10 @@
 ---
-title: Introduction
+title: Appointment Management
 keywords: appointments
 tags: [appointments]
 sidebar: appointments_sidebar
 permalink: appointments.html
-summary: "Overview of the Appointment Management capability"
+summary: "Overview of the Appointment Management capability pack."
 ---
 
 ## Purpose ##

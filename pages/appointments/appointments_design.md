@@ -1,10 +1,10 @@
 ---
-title: Design decisions
+title: Appointment Management design decisions
 keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar
 permalink: appointments_design.html
-summary: "Overview of the design decisions made in relation to the Appointment Management capability"
+summary: "Overview of the design decisions made in relation to the Appointment Management capability pack."
 ---
 
 ## Appointment API scope ##

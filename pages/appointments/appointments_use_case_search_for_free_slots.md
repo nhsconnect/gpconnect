@@ -4,7 +4,7 @@ keywords: appointments, use case, search, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_search_for_free_slots.html
-summary: "Use case for searching for free slots within a date range"
+summary: "Use case for searching for free slots within a date range."
 ---
 
 ## Use case ##
