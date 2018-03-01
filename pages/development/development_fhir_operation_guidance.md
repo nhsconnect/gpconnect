@@ -7,11 +7,7 @@ permalink: development_fhir_operation_guidance.html
 summary: "Details of which operations a FHIR&reg; server should expose to be a fully compliant GP Connect solution"
 ---
 
-## Stage 1 and 2 FHIR&reg; operations ##
-
-*Aim(s)*
-
-- Appointment Management
+## FHIR&reg; operations ##
 
 *Mechanism*
 
