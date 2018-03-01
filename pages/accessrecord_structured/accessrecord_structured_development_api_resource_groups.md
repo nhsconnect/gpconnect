@@ -58,7 +58,7 @@ The AllergyIntolerance resource group consists of the following FHIR resources:
 The following describes the part parameters available for filtering in this resource group:
 
 | Name                  | Resource Group | Type | Value | Comments |
-| `includeEndedAllergies.valueBoolean` | `AllergyIntolerance` | `boolean` | `true` or `false` | Include ended allergies in response, or not |
+| `includeResolvedAllergies.valueBoolean` | `AllergyIntolerance` | `boolean` | `true` or `false` | Include ended allergies in response, or not |
 
 
 
