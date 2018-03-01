@@ -1,8 +1,10 @@
 ---
-title: Appointment Management known issues
+title: Known issues
 keywords: appointments, design, known issues, bugs
 tags: [appointments,design]
 sidebar: appointments_sidebar
 permalink: appointments_known_issues.html
-summary: "Known issues related to the Appointment Management capability pack."
+summary: "Known issues related to the Appointment Management capability"
 ---
+
+No current known issues.

@@ -1,10 +1,10 @@
 ---
-title: Cancel an appointment for a patient at an organisation
+title: Cancel an appointment
 keywords: appointments, use case, cancel, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_cancel_an_appointment.html
-summary: "Use case for cancelling an appointment for a patient with a given organisation."
+summary: "Use case for cancelling an appointment for a patient with a given organisation"
 ---
 
 ## Use case ##

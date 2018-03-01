@@ -1223,3 +1223,7 @@ table > tbody > tr.tableSubHeading {
         width:70vw!important;
     }
 }
+
+hr {
+    border-bottom: 1px solid #ccc;
+}

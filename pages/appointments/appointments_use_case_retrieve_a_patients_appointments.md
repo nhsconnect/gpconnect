@@ -4,7 +4,7 @@ keywords: appointments, use case, retrieve
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_retrieve_a_patients_appointments.html
-summary: "Use case for retrieval of a patient's appointments from an organisation."
+summary: "Use case for retrieval of a patient's appointments from an organisation"
 ---
 
 ## Use case ##
