@@ -7,8 +7,6 @@ permalink: accessrecord_structured_resource_groups.html
 summary: "Structured access record resource groups"
 ---
 
-{% include structuredwarning.html %}
-
 ## Structured Resource Groups ##
 
 The following two groups are available to be returned:
