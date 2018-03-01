@@ -40,7 +40,7 @@ entries:
     output: web, pdf
     folderitems:
     
-    - title: FHIR resources
+    - title: FHIR&reg; resources
       url: /accessrecord_structured_development_resources_list.html
       output: web
 
@@ -98,6 +98,6 @@ entries:
         output: web
         subfolderitems:
 
-        - title: Retrieve a patient's record
+        - title: Retrieve a patient's structured record
           url: /accessrecord_structured_development_retrieve_patient_record.html
           output: web
