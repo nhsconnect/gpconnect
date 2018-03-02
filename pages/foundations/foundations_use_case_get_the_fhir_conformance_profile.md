@@ -91,7 +91,7 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
 		<operation>
 			<name value="gpc.getcarerecord" />
 			<definition>
-				<reference value="https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Profile.GetRecordQueryRequest/gpconnect-carerecord-operation-1.html" />
+				<reference value="OperationDefinition/gpc.getcarerecord" />
 			</definition>
 		</operation>
 	</rest>
