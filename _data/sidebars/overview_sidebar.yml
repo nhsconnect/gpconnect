@@ -86,10 +86,10 @@ entries:
     - title: Development assets
       url: /development_deliverables.html
       output: web
-    - title: FHIR library guidance
+    - title: FHIR&reg; library guidance
       url: /development_fhir_open_source_guidance.html
       output: web
-    - title: FHIR implementation guidance
+    - title: FHIR&reg; implementation guidance
       url: /development_fhir_api_guidance.html
       output: web
     - title: General API guidance
