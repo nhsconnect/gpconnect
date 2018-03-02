@@ -1,5 +1,5 @@
 ---
-title: Get the FHIR CapabilityStatement
+title: Get the FHIR&reg; capability statement
 keywords: foundations, fhir
 tags: [foundations,use_case,fhir]
 sidebar: foundations_sidebar
@@ -67,41 +67,69 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 
 ```xml
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-	<version value="1.1.0" />
+
+	<!-- the GP Connect specification name and version ------------------->
+	<version value="1.2.0" />
 	<name value="GP Connect" />
+	
 	<status value="active" />
+
+	<!-- the GP Connect specification publication date ------------------->
 	<date value="2018-02-23" />
-	<publisher value="[Provider Software Vendor Name]" />
+
+	<!-- to be completed by the provider --------------------------------->
+	<publisher value="[Provider software vendor name]" />
 	<contact>
-		<name value="[Provider Software Vendor Contact Name]" />
+		<name value="[Provider software vendor contact name]" />
 	</contact>
-	<description value="This server implements the GP Connect API version 1.1.0" />
-	<copyright value="Copyright NHS Digital 2016" />
+
+	<description value="This FHIR API implements the GP Connect specification" />
+	<copyright value="Copyright NHS Digital 2018" />
 	<kind value="capability" />
+
+	<!-- to be completed by the provider --------------------------------->
 	<software>
-		<name value="[Provider Software Name]" />
-		<version value="[Provider Software Verson]" />
-		<releaseDate value="[Provider Software Release Date]" />
+		<name value="[Provider software product name]" />
+		<version value="[Provider software production version]" />
+		<releaseDate value="[Provider software release date]" />
 	</software>
+
 	<fhirVersion value="3.0.1" />
 	<acceptUnknown value="both" />
-	<format value="application/fhir+xml" />
+
+	<!-- Supported provider formats (remove fhir+xml if unsupp.) --------->
 	<format value="application/fhir+json" />
+	<format value="application/fhir+xml" />
+
 	<profile>
+
+		<!-- Profiles: common to all capabilities -------------------->
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
- 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"/>
+
+		<!-- Profiles: Appointment Management ------------------------>
+ 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"/>
+
+		<!-- Profiles: Access Record Structured ---------------------->
+ 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
+ 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+
 	</profile>
+
 	<rest>
 		<mode value="server" />
 		<security>
 			<cors value="true" />
 		</security>
+		
+		<!-- REST definitions: Foundations --------------------------->
 		<resource>
 			<type value="Patient" />
 			<interaction>
@@ -150,27 +178,8 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 				<code value="read" />
 			</interaction>
 		</resource>
-		<resource>
-			<type value="Appointment" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="create" />
-			</interaction>
-			<interaction>
-				<code value="update" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)" />
-			</searchParam>
-		</resource>
+
+		<!-- REST definitions: Appointment Management ---------------->
 		<resource>
 			<type value="Slot" />
 			<interaction>
@@ -193,18 +202,50 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 				<type value="token" />
 			</searchParam>
 		</resource>
+		<resource>
+			<type value="Appointment" />
+			<interaction>
+				<code value="read" />
+			</interaction>
+			<interaction>
+				<code value="create" />
+			</interaction>
+			<interaction>
+				<code value="update" />
+			</interaction>
+			<interaction>
+				<code value="search-type" />
+			</interaction>
+			<updateCreate value="false" />
+			<searchParam>
+				<name value="identifier" />
+				<type value="token" />
+				<documentation value="NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)" />
+			</searchParam>
+		</resource>
+
+		<!-- Operation definitions: Foundations ---------------------->
 		<operation>
 			<name value="gpc.registerpatient" />
 			<definition>
 				<reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1" />
 			</definition>
 		</operation>
+
+		<!-- Operation definitions: Access Record Structured --------->
+		<operation>
+			<name value="gpc.getstructuredrecord" />
+			<definition>
+				<reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1" />
+			</definition>
+		</operation>
+
 	</rest>
 </CapabilityStatement>
 ```
 
 Consumer systems:
-- SHOULD, request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
+- SHOULD request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
 - Consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to to the target organization's FHIR server.
 
 ### C# client request to get the capability statement ###
