@@ -73,8 +73,6 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 	<name value="GP Connect" />
 	
 	<status value="active" />
-
-	<!-- the GP Connect specification publication date ------------------->
 	<date value="2018-02-23" />
 
 	<!-- to be completed by the provider --------------------------------->
@@ -96,9 +94,9 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 
 	<fhirVersion value="3.0.1" />
 	<acceptUnknown value="both" />
-
-	<!-- Supported provider formats (remove fhir+xml if unsupp.) --------->
 	<format value="application/fhir+json" />
+
+	<!-- include only if provider supports XML --------------------------->
 	<format value="application/fhir+xml" />
 
 	<profile>
