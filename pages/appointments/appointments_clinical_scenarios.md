@@ -39,9 +39,9 @@ Key:
 > 3. As a clinician, having a view of all booked and scheduled GP appointments and visits for my patient means that I could arrange a joint visit with other healthcare professionals if appropriate in order to reduce the number of separate visits my patient has.
 
 
-<i class='fa fa-road'/> As a patient I would like to view all my current/future appointments with any care organization so that I can arrange my time accordingly.
+<i class='fa fa-road'/> As a patient I would like to view all my future appointments with any care organization so that I can arrange my time accordingly.
 
-> 1. A patient would like to view their current/future appointments so that they can manage their time appropriately. They can access patient-facing services online and view their booked appointments with any GP practice.
+> 1. A patient would like to view their future appointments so that they can manage their time appropriately. They can access patient-facing services online and view their booked appointments with any GP practice.
 
 
 ## Book an appointment ##
