@@ -68,24 +68,24 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 ```xml
 <CapabilityStatement xmlns="http://hl7.org/fhir">
 
-	<!-- the GP Connect specification name and version ------------------->
+	<!-- GP Connect specification name and version ----------------------->
 	<version value="1.2.0" />
 	<name value="GP Connect" />
 	
 	<status value="active" />
 	<date value="2018-02-23" />
 
-	<!-- to be completed by the provider --------------------------------->
+	<!-- To be completed by the provider --------------------------------->
 	<publisher value="[Provider software vendor name]" />
 	<contact>
 		<name value="[Provider software vendor contact name]" />
 	</contact>
 
-	<description value="This FHIR API implements the GP Connect specification" />
+	<description value="FHIR API implementing the GP Connect specification" />
 	<copyright value="Copyright NHS Digital 2018" />
 	<kind value="capability" />
 
-	<!-- to be completed by the provider --------------------------------->
+	<!-- To be completed by the provider --------------------------------->
 	<software>
 		<name value="[Provider software product name]" />
 		<version value="[Provider software production version]" />
@@ -96,7 +96,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 	<acceptUnknown value="both" />
 	<format value="application/fhir+json" />
 
-	<!-- include only if provider supports XML --------------------------->
+	<!-- Include only if provider supports XML --------------------------->
 	<format value="application/fhir+xml" />
 
 	<profile>
@@ -118,6 +118,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
  		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
+		<!-- Item awaiting profile curation: <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-List-1"/> -->
 
 	</profile>
 
