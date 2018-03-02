@@ -86,39 +86,33 @@ entries:
     - title: Development assets
       url: /development_deliverables.html
       output: web
-
-      subfolders:
-      - title: FHIR&reg; API guidance
-        output: web
-        subfolderitems:
-
-        - title: FHIR library guidance
-          url: /development_fhir_open_source_guidance.html
-          output: web
-        - title: FHIR implementation guidance
-          url: /development_fhir_api_guidance.html
-          output: web
-        - title: General API guidance
-          url: /development_general_api_guidance.html
-          output: web          
-        - title: Operation guidance
-          url: /development_fhir_operation_guidance.html
-          output: web
-        - title: Resource guidance
-          url: /development_fhir_resource_guidance.html
-          output: web
-        - title: Security guidance
-          url: /development_api_security_guidance.html
-          output: web
-        - title: Error handling
-          url: /development_fhir_error_handling_guidance.html
-          output: web
-        - title: Volume and performance guidance
-          url: /development_api_volume_and_performance.html
-          output: web          
-        - title: NFR guidance
-          url: /development_api_non_functional_requirements.html
-          output: web
+    - title: FHIR library guidance
+      url: /development_fhir_open_source_guidance.html
+      output: web
+    - title: FHIR implementation guidance
+      url: /development_fhir_api_guidance.html
+      output: web
+    - title: General API guidance
+      url: /development_general_api_guidance.html
+      output: web          
+    - title: Operation guidance
+      url: /development_fhir_operation_guidance.html
+      output: web
+    - title: Resource guidance
+      url: /development_fhir_resource_guidance.html
+      output: web
+    - title: Security guidance
+      url: /development_api_security_guidance.html
+      output: web
+    - title: Error handling
+      url: /development_fhir_error_handling_guidance.html
+      output: web
+    - title: Volume and performance guidance
+      url: /development_api_volume_and_performance.html
+      output: web          
+    - title: NFR guidance
+      url: /development_api_non_functional_requirements.html
+      output: web
           
   - title: Implement a capability
     output: web
