@@ -9,7 +9,7 @@ summary: "Overview of the Appointment Management capability pack."
 
 ## Purpose ##
 
-To meet strategic objectives to improve access to GP care, the Appointment Management (AM) APIs enable consumer system administrative and clinical end users to book and manage GP practice appointments held in any of the four GP principal practice systems. The deployment of the APIs within patient apps (to support patient direct access) is envisaged for a later phase.
+To meet strategic objectives to improve access to GP care, the Appointment Management (AM) APIs enable consumer system administrative and clinical end users to book and manage GP practice appointments held in any of the four GP principal practice systems. The deployment of the APIs within patient apps (to support patient direct access) is envisaged for a later phase. Some API specification items may be uplifted in the future to reflect the requirements identified by related Appointment Management initiatives within the GPIT and Interoperability domains.
 
 ## Example scenarios ##
 
@@ -44,7 +44,7 @@ The call centre will retrieve and select in-hours or extended hours appointments
 
    - a GP practice within the vicinity of the patient’s geographic location; for example, when the patient is on holiday
 
-{% include note.html content="While the GP Connect programme primarily assumes that the appointment-hosting (provider) systems are the GP principal systems, the API technical design has accommodated the minimum viable features required to support booking and managing of appointments at UC providers such as minor injuries units and GP out of hours services. This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting. **This deployment care setting is currently out of scope for the GP Connect programme FoT deployments, which only incorporates assurance of the API fulfilment by the GP principal provider systems. The assurance and deployment of the APIs by UC provider systems will be progressed by NHS Digital integrated urgent care programmes.**" %}  
+{% include note.html content="While the GP Connect programme primarily assumes that the appointment-hosting (provider) systems are the GP principal systems, the API technical design has accommodated the minimum viable features required to support booking and managing of appointments at UC providers such as Minor Injuries Units and GP Out Of Hours services. This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting. **This deployment care setting is currently out of scope for the GP Connect programme FoT deployments, which only incorporates assurance of the API fulfilment by the GP principal provider systems. The assurance and deployment of the APIs by UC provider systems will be progressed by NHS Digital Integrated Urgent Care programmes.**" %}  
 
 ## API use cases ##
 
