@@ -205,8 +205,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 
 Consumer systems:
 - SHOULD, request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
-
-Consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of calls they make to to the target organization's FHIR server.
+- Consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to to the target organization's FHIR server.
 
 ### C# client request to get the capability statement ###
 
