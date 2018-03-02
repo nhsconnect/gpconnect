@@ -9,19 +9,20 @@ summary: "Summary of organisational requirements that have informed development 
 
 ## User stories and logical data model ##
 
-The [GP Connect Requirements Catalogue - Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.5.xlsx){:target="_blank"} Excel spreadsheet contains the full set of business requirements that need to be met to support the retrieval of medications and allergy data in a structured format.
+The [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.5.xlsx){:target="_blank"} contains the full set of business requirements that need to be met to support the retrieval of medications and allergy data in a structured format.
 
 The requirements are described as a set of user stories with separate acceptance criteria for the provider and consumer systems.
 
 The logical data model identifies and defines the data items that are required by the business. Each logical data item is mapped to the FHIR&reg; profile that will be used to transmit the data.
 
-The spreadsheet is split into 5 tabs:
+The Excel spreadsheet is split into 6 tabs:
 
 1.	Document Management: Revision history
 2.	NHS England Scenarios:	A set of scenarios defined by NHS England that identify the scope of the work.
 3.	Processes – Use Cases:	An index of the use cases used to develop the user stories and logical model. Links to the individual use cases are given below.
 4.	User Stories:	The user stories that describe the business requirements for the provider and consumer products.
-5.	Logical Data Model:	The logical model that identifies and defines that data items that will be supplied.
+5. User Stories - IG: The user stories that describe the standards and information governance requirements for the provider and consumer products.
+6.	Logical Data Model:	The logical model that identifies and defines that data items that will be supplied.
 
 ## Use cases and business processes ##
 
@@ -31,7 +32,7 @@ The use cases define how and where there is a business need that can be supporte
  - Justification
  - Process Flow (including data requirements)
 
-The level of detail will vary from use case to use case.
+The level of detail varies from use case to use case.
 
  - [3.1	Active Checking of a prescription in Unscheduled Care](pages/accessrecord_structured/use_cases/3.1 Use_case_Allergies_Servelec_v1_1.docx)
 
@@ -76,6 +77,8 @@ The level of detail will vary from use case to use case.
 - [3.21	A care professional user of the Local Care Record reviews a patient’s GP Practice risks and warnings](pages/accessrecord_structured/use_cases/3.21 Use_case_LCR_Risks_Guys_v1_0.docx)
 
 - [3.22	Clinical Triage Platform Consume GP held Patient Data](pages/accessrecord_structured/use_cases/3.22 Use_case_CTP_Input_Data_Consume_GP_Held_Record v0.1.docx)
+
+- [3.23 Midwife views patient record before visiting patient](pages/accessrecord_structured/use_cases/3.23 Use_case_Maternity.docx)
 
 ## Clinical engagement ##
 
