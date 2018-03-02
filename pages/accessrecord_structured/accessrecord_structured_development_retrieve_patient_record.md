@@ -4,12 +4,12 @@ keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_retrieve_patient_record.html
-summary: "Retrieve a patients structured record at a GP practice"
+summary: "Retrieve a patients record in structured format"
 ---
 
 ## Use case ##
 
-Retrieve a patients record in FHIR structured format from a GP practice. Test
+Retrieve a patients record in FHIR structured format from a GP practice.
 
 ## Security ##
 
@@ -32,13 +32,13 @@ The Consumer system:
 #### FHIR relative request ####
 
 ```http
-POST /Patient/$gpc.getstructuredrecord-1
+POST /Patient/$gpc.getstructuredrecord
 ```
 
 #### FHIR absolute request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.getstructuredrecord-1
+POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.getstructuredrecord
 ```
 
 #### Request headers ####
@@ -55,7 +55,7 @@ Consumers **SHALL** include the following additional HTTP request headers:
 Example HTTP request headers:
 
 ```http
-POST http://gpconnect.fhir.nhs.net/fhir/Patient/$gpc.getstructuredrecord-1 HTTP/1.1
+POST http://gpconnect.fhir.nhs.net/fhir/Patient/$gpc.getstructuredrecord HTTP/1.1
 User-Agent: .NET FhirClient for FHIR 1.2.0
 Accept: application/json+fhir;charset=utf-8
 Prefer: return=representation
@@ -92,40 +92,97 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/parameters
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
 
 ```xml
-<Parameters xmlns="http://hl7.org/fhir">
-	<id value="b28bbed9-55b1-46ea-b019-b984a156decc"/>
-	<meta>
-		<profile value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-AccessStructuredRecord-1"/>
-	</meta>	
-	<parameter>
-		<name value="patientNHSnumber"/>
-		<valueIdentifier id="4569871235"/>
-	</parameter>
-	<parameter>
-		<name value="includeResourceGroup:Medication"/>
-			<part>
-				<name value="timePeriod"/>
-				<valuePeriod>
-					<start value="2017-01-01"/>
-					<end value="2018-02-01"/>
-				</valuePeriod>
-			</part>
-			<part>
-				<name value="includeIssues"/>
-				<valueBoolean value="true"/>
-			</part>
-	</parameter>
-	<parameter>
-		<name value="includeResourceGroup:AllergyIntolerance"/>
-			<part>
-				<name value="includeEndedAllergies"/>
-				<valueBoolean value="true"/>
-			</part>
-	</parameter>
-</Parameters>
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <url value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-AccessStructuredRecord-1"/>
+  <version value="1.0.0"/>
+  <name value="GP Connect Access Structured Record"/>
+  <status value="draft"/>
+  <kind value="query"/>
+  <date value="2018-03-02"/>
+  <publisher value="NHS Digital"/>
+  <contact>
+    <name value="Interoperability Team"/>
+    <telecom>
+      <system value="email"/>
+      <value value="interoperabilityteam@nhs.net"/>
+    </telecom>
+  </contact>
+  <description value="Lists the parameters that can be used in a GPConnect request to access a structured clinical record."/>
+  <code value="gpc.accessstructuredrecord"/>
+  <system value="false"/>
+  <type value="true"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="patientNHSnumber"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The NHS Number of the patient whose record is being extracted. This should be a traced and verified NHS Number"/>
+    <type value="Identifier"/>
+    <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
+    </profile>
+  </parameter>
+  <parameter>
+    <name value="includeResourceGroup:Medication"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The Medication Statement(s) for a given Patient"/>
+    <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
+    </profile>
+    <part>
+      <name value="timePeriod"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <documentation value="The effective date/time when the medication was taken by the Patient."/>
+      <type value="Period"/>
+    </part>
+    <part>
+      <name value="includeIssues"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <documentation/>
+      <type value="boolean"/>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="includeResourceGroup:AllergyIntolerance"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The Allergy Intolerence(s) for a given Patient"/>
+    <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"/>
+    </profile>
+    <part>
+      <name value="includeResolvedAllergies"/>
+      <use value="in"/>
+      <min value="0"/>
+      <max value="1"/>
+      <documentation/>
+      <type value="boolean"/>
+    </part>
+  </parameter>
+  <parameter>
+    <name value="response"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The searchset bundle resource that has been returned in response to the given input parameters."/>
+    <type value="Bundle"/>
+    <profile>
+      <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1"/>
+    </profile>
+  </parameter>
+</OperationDefinition>
 ```
 
-{% include tip.html content="Consumer guidance: it is advised that a single call is made to retrieve all structured data required. The parameter filters should be appiied to reduce the payload." %} 
+{% include tip.html content="Consumer guidance: it is advised that a single call is made to retrieve all structured data required. The parameter filters should be applied to reduce the payload." %} 
 
 {% include important.html content="Provider systems **SHALL** only expose `Patient` resources for patient's who have a valid PDS trace status." %}
 
@@ -238,7 +295,6 @@ Content-Length: 1464
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful retrieval of a care record section.
-- **SHALL** return the care record section as valid XHTML inline with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance.
 - **SHALL** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
 - **SHALL** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`.
 
