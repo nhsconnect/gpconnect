@@ -11,20 +11,19 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 
 ## Clinical ##
 
-* [CareConnect-GPC-AllergyIntolerance-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
-* [CareConnect-GPC-Medication-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1)
-* [CareConnect-GPC-MedicationRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)
-* [CareConnect-GPC-MedicationStatement-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)
+* [CareConnect-GPC-AllergyIntolerance-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1) based on [AllergyIntolerance](https://www.hl7.org/fhir/STU3/allergyintolerance.html)
+* [CareConnect-GPC-Medication-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1) based on [Medication](https://www.hl7.org/fhir/STU3/medication.html)
+* [CareConnect-GPC-MedicationRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1) based on [MedicationRequest](https://www.hl7.org/fhir/STU3/medicationrequest.html)
+* [CareConnect-GPC-MedicationStatement-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1) based on [AllergyIntolerance](https://www.hl7.org/fhir/STU3/medicationstatement.html)
 
 ## Administrative ##
 
-* [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) 
-* [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1)
-* [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1)
-* [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1)
-* [CareConnect-GPC-PractitionerRole-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1)
+* [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) based on [Patient](https://www.hl7.org/fhir/STU3/patient.html)
+* [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) based on [Organization](https://www.hl7.org/fhir/STU3/organization.html)
+* [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) based on [Location](https://www.hl7.org/fhir/STU3/location.html)
+* [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) based on [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html)
 
 ## Structural ##
 
-* [GPC-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1)
+* [GPC-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) based on [Bundle](https://www.hl7.org/fhir/STU3/bundle.html)
 * List (TBA)
