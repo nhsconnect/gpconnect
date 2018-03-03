@@ -7,8 +7,6 @@ permalink: accessrecord_structured_design.html
 summary: "Overview of the design decisions made in relation to the Access Record Structured capability"
 ---
 
-The Access Record Structured design has been based upon decisions made for the Access Record HTML capability. Unless otherwise stated, the Access Record HTML design decisions are applicable to the [Access Record Structured capability](accessrecord_design.html#exclusion-warnings.html).
-
 ## Access Record Structured capability scope ##
 
 What is the scope of the Access Record Structured capability?
