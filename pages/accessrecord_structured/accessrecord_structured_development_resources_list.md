@@ -1,5 +1,5 @@
 ---
-title: List of FHIR resources
+title: List of FHIR&reg; resources
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
