@@ -1,3 +1,12 @@
+---
+title: Medication_Introduction
+keywords: getcarerecord
+tags: [getcarerecord]
+sidebar: accessrecord_structured_sidebar
+permalink: accessrecord_structured_development_medication_introduction.html
+summary: "Introduction to populating and reading the Medication resource"
+---
+
 ## Introduction ##
 
 ## The ordering process in GP systems for medications and medical devices 
