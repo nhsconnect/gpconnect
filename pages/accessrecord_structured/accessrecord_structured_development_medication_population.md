@@ -9,7 +9,7 @@ summary: "Guidance for populating and reading the Medication resource"
 
 # Populating the elements in the medication FHIR profiles 
 
-## Medication Profile
+## Medication Profile ##
 
 Element | Usage | Datatype | Optionality | Guidance 
 --------|-------|----------|-------------|------------------------------------------------
@@ -39,13 +39,13 @@ dateAsserted | When this medication Statement was believed true | dateTime | M |
 informationSource | DO NOT USE | Reference(Patient, Practitioner, RelatedPerson, Organization) | O |
 subject | Who the medication is for i.e. who it will be administered to | Reference(Patient) | M | Reference to patient 
 derivedFrom | DO NOT USE| Reference(Any) | O |
-taken | Whether a medication was taken | code | M| Providers MUST use a default value of unk - unkown
+taken | Whether a medication was taken | code | M| Providers MUST use a default value of unk - unknown
 reasonNotTaken | DO NOT USE | CodeableConcept | O |
 reasonCode | The coded reason for authorising the medication | CodeableConcept | O | 
-reasonReference | References the condition or observation that was the reason for this authorisation | Reference(Condition, Observation) | O | Unless there is a specific linkage in the context of medication, indrect linkages to be handled via Problem list
+reasonReference | References the condition or observation that was the reason for this authorisation | Reference(Condition, Observation) | O | Unless there is a specific linkage in the context of medication, indirect linkages to be handled via Problem list
 note  | All notes that are associated with this medication record | Annotation | R | All patient notes and prescriber notes at authorisation(plan) and issue(order) level should be included in this field. They should be concatonated and indicate the level the notes come from eg. 1st Issue and also be prefixed with either 'Patient Notes:' or 'Prescriber Notes:' as appropriate.
 dosage/text | Complete dosage instructions as text | String | M | 
-dosage/patientInstruction | Additional instructions for patient i.e. RHS of prrescription label | String | R |
+dosage/patientInstruction | Additional instructions for patient i.e. RHS of prescription label | String | R |
 lastIssueDate |When the medication was last issued | dateTime | R | This will be the authored on field for the most recent MedicationRequest with an intent of 'order'. For repeat dispense this will be the latest ValidityPeriod/start date that is not in the future
 medicationEpisodeChangeSummary | DO NOT USE | Complex Extension | O | Guidance
 
@@ -75,20 +75,20 @@ context|The encounter within which the medication was authorised|Reference(Encou
 supportingInformation|DO NOT USE|Reference(Any)|O|D
 authoredOn|Authorisation date, when the medication was authorised.|dateTime|M|Unless there is a distinct user modifiable availabilityTime for the authorisation, this is the audit trail datetime for when the authorisation was entered. ** is optional in DDM but if it's audit trail why not have it?
 requester|Person and their organization requesting authorisation for prescription |BackboneElement|R|To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case the onBehalfOf should be completed with a reference to the other organisation
-recorder|The responsible practitioner who authorised the medication| Reference(Practitioner)|M|May not always be the user with who entered the record on the system but where a system supports attribution to a responsible clinician, the attributed clinician
+recorder|The responsible practitioner who authorised the medication| Reference(Practitioner)|M|May not always be the user who entered the record on the system but where a system supports attribution to a responsible clinician, the attributed clinician should be referenced here.
 reasonCode|The coded reason for authorising the medication|CodeableConcept|O|
-reasonReference|References the condition or observation that was the reason for this authorisation| Reference(Condition, Observation)|O|Unless there is a specific linkage in the context of medication, indrect linkages to be handled via Problem list
+reasonReference|References the condition or observation that was the reason for this authorisation| Reference(Condition, Observation)|O|Unless there is a specific linkage in the context of medication, indirect linkages to be handled via Problem list
 note|Notes for dispenser|Annotation|R|Sometimes labelled Pharmacy text or instructions for pharmacy
 dosageInstruction/text|Complete dosage instructions as text|String|M| 
 dosageInstruction/patientInstruction|Additional instructions for patient i.e. RHS of prescription label|String|R|
-dispenseRequest/validityPeriod|Prescription start and end dates|Period|M|Start date is mandatory. Where there is a defined expiry or end date the end date should be supplied. For acute prescriptions no specific end date should be supplied *** TO DO Resolve whether this is to be used or the repeatInformation extension
+dispenseRequest/validityPeriod|Prescription start and end dates|Period|M|Start date is mandatory. Where there is a defined expiry or end date the end date should be supplied. For acute prescriptions no specific end date should be supplied
 dispenseRequest/numberOfRepeatsAllowed|The number of repeat issues allowed  for repeat and repeat dispensed medications where specified|positiveInt|O|DO NOT USE - use the extension repeatInformation/numberOfRepeatPrescriptionsAllowed
 dispenseRequest/quantity|The quantity to dispense|SimpleQuantity|R|If the units are text then the extension dispenseRequest/quantityText should be used
 dispenseRequest/quantityText|textual representation of quantity|string|R|Only to be used if there is no numerical value
 dispenseRequest/expectedSupplyDuration|Number of days supply per dispense|Duration|R|
 dispenseRequest/performer|Nominated pharmacy for dispense |Reference(Organization)|R|
 substitution|DO NOT USE|BackboneElement|O|
-priorPrescription|References prior prescription authorisation|Reference(MedicationRequest)|O|May be used for example to reference prior authorisation where prescription is re-authorised or where amendements have been made, may reference the previous authorisation before the amendment
+priorPrescription|References prior prescription authorisation|Reference(MedicationRequest)|O|May be used for example to reference prior authorisation where prescription is re-authorised or where amendments have been made, may reference the previous authorisation before the amendment
 detectedIssue|Where a medication has been stopped (status == 'stopped'), the reason is provided via as reference to the contained DetectedIssue resource |Reference(DetectedIssue)|R|Mandatory for authorisations with stopped status
 detectedIssue/status|Fixed value of 'final'|code|M
 detectedIssue/date|The datetime the medication was stopped/discontinued|dateTime|M|Mandatory for stopped/discontinued medications as the date will always be known
@@ -100,5 +100,4 @@ repeatInformation.numberOfRepeatPrescriptionsIssued|Running total of number of i
 repeatInformation.authorisationExpiryDate|The date a repeat prescription authorisation will expire|dateTime|R|
 repeatInformation.repeatOrAcute|If a medication is an acute, repeat or repeat dispense|Code|M|Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber
 supplyType|Restricted vocabulary of prescription type related to reimbursement|Code|M|Private, ACBS, NHS Prescription etc.
-prescriptionType|TO DO - vocabulary of wider prescription types|Code|<mark>Wider prescription type - hospital. dental etc ...</mark>
-
+prescriptionType|TO DO - vocabulary of wider prescription types|Code|Wider prescription type - hospital. dental etc ...
