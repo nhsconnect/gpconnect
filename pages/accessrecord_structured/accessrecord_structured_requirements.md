@@ -4,7 +4,7 @@ keywords: requirements
 tags: [requirements]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_requirements.html
-summary: "Summary of organisational requirements that have informed development work"
+summary: "Organisational requirements that have informed development work"
 ---
 
 ## User stories and logical data model ##
@@ -17,12 +17,12 @@ The logical data model identifies and defines the data items that are required b
 
 The Excel spreadsheet is split into 6 tabs:
 
-1.	Document Management: Revision history
-2.	NHS England Scenarios:	A set of scenarios defined by NHS England that identify the scope of the work.
-3.	Processes – Use Cases:	An index of the use cases used to develop the user stories and logical model. Links to the individual use cases are given below.
-4.	User Stories:	The user stories that describe the business requirements for the provider and consumer products.
-5. User Stories - IG: The user stories that describe the standards and information governance requirements for the provider and consumer products.
-6.	Logical Data Model:	The logical model that identifies and defines that data items that will be supplied.
+1.	Document Management: revision history.
+2.	NHS England Scenarios:	a set of scenarios defined by NHS England that identify the scope of the work.
+3.	Processes – Use Cases:	an index of the use cases used to develop the user stories and logical model. Links to the individual use cases are given below.
+4.	User Stories:	the user stories that describe the business requirements for the provider and consumer products.
+5. User Stories - IG: the user stories that describe the standards and information governance requirements for the provider and consumer products.
+6.	Logical Data Model:	the logical model that identifies and defines that data items that will be supplied.
 
 ## Use cases and business processes ##
 
@@ -30,7 +30,7 @@ The use cases define how and where there is a business need that can be supporte
 
  - Description
  - Justification
- - Process Flow (including data requirements)
+ - Process flow (including data requirements)
 
 The level of detail varies from use case to use case.
 
@@ -86,18 +86,18 @@ To help ensure that the functionality being developed will be able to support a 
 
 This engagement has included:
 
- - Hospital Consultants and Doctors
- - Hospital Pharmacists and Technicians
- - Mental Health Nurses
- - Mental Health Pharmacists and Technicians
- - Mental Health Point of Access Centre
- - General Practitioners
- - Community Pharmacists
+ - Hospital consultants and doctors
+ - Hospital pharmacists and technicians
+ - Mental health nurses
+ - Mental health pharmacists and technicians
+ - Mental health point of access centre
+ - General practitioners
+ - Community pharmacists
  - Midwives
- - Health Visitors
- - Health System Suppliers
- - Commissioning Support Units
- - Hospital Trusts
+ - Health visitors
+ - Health system suppliers
+ - Commissioning support units
+ - Hospital trusts
 
-The feedback from these stakeholders has been used to develop the business use cases, user stories and a logical data model available above. These will form the basis of the technical specification and will be used to assure that the GP Connect API meets the needs of the business.
+The feedback from these stakeholders has been used to develop the business use cases, user stories and the [logical data model](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.5.xlsx){:target="_blank"}. These will form the basis of the technical specification and will be used to assure that the GP Connect API meets the needs of the business.
 
