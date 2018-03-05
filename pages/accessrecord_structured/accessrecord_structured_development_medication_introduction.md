@@ -1,5 +1,5 @@
 ---
-title: Medication_Introduction
+title: Medication introduction
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
