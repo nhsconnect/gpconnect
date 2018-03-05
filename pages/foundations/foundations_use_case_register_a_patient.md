@@ -266,6 +266,17 @@ Provider systems:
 							"code": "T"
 						}]
 					}
+				},
+				{
+					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+					"extension": [
+						{
+							"url": "preferredBranchSurgery",
+							"valueReference": {
+								"reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
+							}
+						}
+					]
 				}]
 			}],
 			"identifier": [{
