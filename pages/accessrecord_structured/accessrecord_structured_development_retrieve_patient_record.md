@@ -190,9 +190,6 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look so
 
 ```json
 {
-  "id": {
-    "value": "b28bbed9-55b1-46ea-b019-b984a156decc"
-  },
   "meta": {
     "profile": {
       "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-AccessStructuredRecord-1"
@@ -200,45 +197,31 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look so
   },
   "parameter": [
     {
-      "name": {
-        "value": "patientNHSnumber"
-      },
+      "name": "patientNHSNumber",
       "valueIdentifier": {
-        "id": "4569871235"
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "value": "9999999999"
       }
     },
     {
-      "name": {
-        "value": "includeResourceGroup:Medication"
-      },
+      "name": "includeResourceGroup:Medication",
       "part": [
         {
-          "name": {
-            "value": "timePeriod"
-          },
+          "name": "timePeriod"
           "valuePeriod": {
-            "start": {
-              "value": "2017-01-01"
-            },
-            "end": {
-              "value": "2018-02-01"
-            }
+            "start": "2017-01-01"
+            "end": "2018-02-01"
           }
         },
         {
-          "name": {
-            "value": "includeIssues"
-          },
-          "valueBoolean": {
-            "value": "true"
+          "name": "includeIssues"
+          "valueBoolean": true
           }
         }
       ]
     },
     {
-      "name": {
-        "value": "includeResourceGroup:AllergyIntolerance"
-      }
+      "name": "includeResourceGroup:AllergyIntolerance"
     }
   ]
 }
