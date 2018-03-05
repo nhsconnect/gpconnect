@@ -90,10 +90,5 @@ The AllergyIntolerance/reaction element is optional, but where a severity is ava
 
 By convention, only one reaction should be expressed per allergy with only one manifestation per reaction.
 
-# AllergyIntolerance resource definition
-This guidance should be read in conjunction with the underlying resource definition. (TO DO: Check URL matches correct published StructureDef) [AllergyIntolerance](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
-
-# Common and base element handling
-Guidance for the general handling of common and base elements in GP Connect resources can be found [here - link required]()
 
 
