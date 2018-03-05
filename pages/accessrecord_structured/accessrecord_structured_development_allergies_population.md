@@ -6,6 +6,12 @@ sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_allergies_population.html
 summary: "Guidance for populating and reading the AllergyIntolerance resource"
 ---
+# AllergyIntolerance resource definition
+This guidance should be read in conjunction with the underlying resource definition. (TO DO: Check URL matches correct published StructureDef) [AllergyIntolerance](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
+
+# Common and base element handling
+Guidance for the general handling of common and base elements in GP Connect resources can be found [here - link required]()
+
 # Element usage
 
 | Element  |Usage |Datatype   |Optionality|Guidance 
