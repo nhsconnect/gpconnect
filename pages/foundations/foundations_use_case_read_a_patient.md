@@ -88,35 +88,48 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Patient",
-	"id": "2",
-	"meta": {
-		"versionId": "636064088097580046",
-		"lastUpdated": "2016-08-10T16:52:39.716+01:00",
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
-	},
-	"identifier": [{
-		"extension": [{
-			"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-			"valueCodeableConcept": {
-				"coding": [{
-					"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-					"code": "01"
-				}]
-			}
-		}],
-		"system": "https://fhir.nhs.uk/Id/nhs-number",
-		"value": "9476719931"
-	}],
-	"name": [{
-		"use": "official",
-		"family": ["Jackson"],
-		"given": ["Jane"],
-		"prefix": ["Miss"]
-	}],
-	"gender": "female",
-	"birthDate": "22/02/1982"
-}
+			"resourceType": "Patient",
+			"id": "2",
+			"meta": {
+				"versionId": "636064088097580046",
+				"lastUpdated": "2016-08-10T16:52:39.716+01:00",
+				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
+			},
+			"extension": [
+				{
+					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+					"extension": [
+						{
+							"url": "preferredBranchSurgery",
+							"valueReference": {
+								"reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
+							}
+						}
+					]
+				}
+			],
+			"identifier": [{
+				"extension": [{
+					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+					"valueCodeableConcept": {
+						"coding": [{
+							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+							"code": "01"
+						}]
+					}
+				}],
+				"system": "https://fhir.nhs.uk/Id/nhs-number",
+				"value": "9476719931"
+			}],
+			"name": [{
+				"use": "official",
+				"family": ["Jackson"],
+				"given": ["Jane"],
+				"prefix": ["Miss"]
+			}],
+			"gender": "female",
+			"birthDate": "22/02/1982"
+		}
 ```
 
 ## Examples ##
