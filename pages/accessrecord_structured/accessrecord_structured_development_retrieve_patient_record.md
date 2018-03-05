@@ -207,14 +207,14 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look so
       "name": "includeResourceGroup:Medication",
       "part": [
         {
-          "name": "timePeriod"
+          "name": "timePeriod",
           "valuePeriod": {
-            "start": "2017-01-01"
+            "start": "2017-01-01",
             "end": "2018-02-01"
           }
         },
         {
-          "name": "includeIssues"
+          "name": "includeIssues",
           "valueBoolean": true
           }
         }
