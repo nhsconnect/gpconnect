@@ -73,26 +73,10 @@ entries:
         - title: Population
           url: /accessrecord_structured_development_medication_population.html
           output: web
-
-      - title: Cross cutting guidance
-        output: web
-        subfolderitems:
-
-        - title: CodeableConcept
-          url: /accessrecord_structured_development_codeableconcept.html
+        - title: List and Bundle
+          url: /accessrecord_structured_development_medication_list_and_bundle.html
           output: web
 
-        - title: Degrade codes
-          url: /accessrecord_structured_development_degradecodes.html
-          output: web
-
-        - title: Negation and query codes
-          url: /accessrecord_structured_development_negationquerycodes.html
-          output: web
-
-        - title: Confidential record items
-          url: /accessrecord_structured_development_confidentialitems.html
-          output: web
 
       - title: API use cases
         output: web
@@ -100,4 +84,7 @@ entries:
 
         - title: Retrieve a patient's structured record
           url: /accessrecord_structured_development_retrieve_patient_record.html
+          output: web
+        - title: FHIR Examples
+          url: /accessrecord_structured_development_fhir_examples.html
           output: web
