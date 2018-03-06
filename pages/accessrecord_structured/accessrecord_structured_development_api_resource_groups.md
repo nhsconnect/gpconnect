@@ -14,7 +14,7 @@ The following two include groups are available to be returned in the response bu
 - `includeMedication`
 - `includeAllergyAndIntolerances`
 
-{% include important.html content="At least one include groups listed above must be supplied" %}
+{% include important.html content="At least one of the include groups listed above must be supplied" %}
 
 ?patientNHSnumber - The NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index
 
@@ -41,7 +41,7 @@ The following describes the part parameters available for filtering in this incl
 
 | Name                  | Include Group | Type | Value | Comments |
 | `timePeriod.start` | `Medication` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (start date) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
-| `timePeriod.end` | `Medication` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (end date )[Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
+| `timePeriod.end` | `Medication` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (end date ) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
 | `includePrescriptionIssues.valueBoolean` | `Medication` | `boolean` | `true` or `false` | Include individual prescription issues in the response bundle |
 
 
@@ -64,7 +64,7 @@ The AllergyAndIntolerances include group consists of the following FHIR resource
 The following describes the part parameters available for filtering in this include group:
 
 | Name                  | Include Group | Type | Value | Comments |
-| `includeResolvedAllergies.valueBoolean` | `AllergyAndIntolerances` | `boolean` | `true` or `false` | Include ended allergies in response, or not |
+| `includeResolvedAllergies.valueBoolean` | `AllergyAndIntolerances` | `boolean` | `true` or `false` | Include resolved allergies and intolerances in the response bundle |
 
 
 
