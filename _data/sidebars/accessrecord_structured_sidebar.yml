@@ -76,7 +76,7 @@ entries:
       output: web
 
       subfolders:
-	  
+
       - title: API use cases
         output: web
         subfolderitems:
