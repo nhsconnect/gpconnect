@@ -102,7 +102,7 @@ Provider systems:
             "Leeds"
         ],
         "postalCode": "LS1 6AE"
-    },
+    }
 }
 ```
 
