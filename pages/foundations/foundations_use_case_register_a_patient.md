@@ -171,29 +171,63 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 		"resource": {
 			"resourceType": "Patient",
 			"meta": {
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
+				"profile": [
+					"https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+				]
 			},
-			"identifier": [{
-				"extension": [{
-					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-					"valueCodeableConcept": {
-						"coding": [{
-							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-							"code": "01"
-						}]
-					}
-				}],
-				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "9476719931"
-			}],
-			"name": [{
-				"use": "official",
-				"family": ["Jackson"],
-				"given": ["Jane"],
-				"prefix": ["Miss"]
-			}],
+			"identifier": [
+				{
+					"extension": [
+						{
+							"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+										"code": "01",
+										"display": "Number present and verified"
+									}
+								]
+							}
+						}
+					],
+					"system": "https://fhir.nhs.uk/Id/nhs-number",
+					"value": "9476719931"
+				}
+			],
+			"name": [
+				{
+					"use": "official",
+					"text": "Minnie DAWES",
+					"family": "Jackson",
+					"given": ["Jane"],
+					"prefix": ["Miss"]
+				}
+			],
+			"telecom": [
+				{
+					"system": "phone",
+					"value": "01454587554",
+					"use": "home"
+				}
+			],
 			"gender": "female",
-			"birthDate": "22/02/1982"
+			"birthDate": "1952-05-31",
+			"address": [
+				{
+					"use": "home",
+					"type": "physical",
+					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
+					"address": {
+						"line": [
+							"Trevelyan Square",
+							"Boar Ln",
+							"Leeds"
+						],
+						"postalCode": "LS1 6AE"
+					}
+				}
+			]
 		}
 	}]
 }
@@ -244,62 +278,97 @@ Provider systems:
 	"entry": [{
 		"resource": {
 			"resourceType": "Patient",
-			"id": "9",
+			"id": "2",
 			"meta": {
-				"versionId": "636180880331209494",
-				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
+				"versionId": "1469448000000",
+				"lastUpdated": "2016-07-25T12:00:00.000+00:00",
+				"profile": [
+					"https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+				]
 			},
 			"extension": [{
 				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
 				"extension": [{
-					"url": "registrationPeriod",
-					"valuePeriod": {
-						"start": "2017-09-07T14:17:44+01:00"
-					}
-				},
+						"url": "registrationPeriod",
+						"valuePeriod": {
+							"start": "2017-09-07T14:17:44+01:00"
+						}
+					},
+					{
+						"url": "registrationType",
+						"valueCodeableConcept": {
+							"coding": [{
+								"system": "https://fhir.nhs.uk/CareConnect-RegistrationType-1",
+								"code": "T"
+							}]
+						}
+					},
+					{
+						"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+						"extension": [
+							{
+								"url": "preferredBranchSurgery",
+								"valueReference": {
+									"reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
+								}
+							}
+						]
+					}]
+			}],
+			"identifier": [
 				{
-					"url": "registrationType",
-					"valueCodeableConcept": {
-						"coding": [{
-							"system": "https://fhir.nhs.uk/CareConnect-RegistrationType-1",
-							"code": "T"
-						}]
-					}
-				},
-				{
-					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
 					"extension": [
 						{
-							"url": "preferredBranchSurgery",
-							"valueReference": {
-								"reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
+							"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+										"code": "01",
+										"display": "Number present and verified"
+									}
+								]
 							}
 						}
-					]
-				}]
-			}],
-			"identifier": [{
-				"extension": [{
-					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-					"valueCodeableConcept": {
-						"coding": [{
-							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-							"code": "01"
-						}]
-					}
-				}],
-				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "9476719931"
-			}],
-			"name": [{
-				"use": "official",
-				"family": ["Jackson"],
-				"given": ["Jane"],
-				"prefix": ["Miss"]
-			}],
+					],
+					"system": "https://fhir.nhs.uk/Id/nhs-number",
+					"value": "9476719931"
+				}
+			],
+			"active": true,
+			"name": [
+				{
+					"use": "official",
+					"text": "Minnie DAWES",
+					"family": "Jackson",
+					"given": ["Jane"],
+					"prefix": ["Miss"]
+				}
+			],
+			"telecom": [
+				{
+					"system": "phone",
+					"value": "01454587554",
+					"use": "home"
+				}
+			],
 			"gender": "female",
-			"birthDate": "22/02/1982"
+			"birthDate": "1952-05-31",
+			"address": [
+				{
+					"use": "home",
+					"type": "physical",
+					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
+					"address": {
+						"line": [
+							"Trevelyan Square",
+							"Boar Ln",
+							"Leeds"
+						],
+						"postalCode": "LS1 6AE"
+					}
+				}
+			]
 		}
 	}]
 }
