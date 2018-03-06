@@ -1,5 +1,5 @@
 ---
-title: Structure access record include groups
+title: Access Record Structured include groups
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
@@ -7,14 +7,14 @@ permalink: accessrecord_structured_resource_groups.html
 summary: "Structured access record include groups"
 ---
 
-## Structured Operation Definition - GPConnect-GetStructuredRecord-Operation-1  ##
+## Operation Definition - GPConnect-GetStructuredRecord-Operation-1  ##
 
 The following two include groups are available to be returned in the response bundle:
 
 - `includeMedication`
 - `includeAllergyAndIntolerances`
 
-{% include important.html content="At least one include group must be supplied" %}
+{% include important.html content="At least one include groups listed above must be supplied" %}
 
 ?patientNHSnumber - The NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index
 
