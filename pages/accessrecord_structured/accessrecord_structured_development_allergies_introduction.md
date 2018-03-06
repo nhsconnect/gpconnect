@@ -1,5 +1,5 @@
 ---
-title: Allergy intolerance
+title: Introduction
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
