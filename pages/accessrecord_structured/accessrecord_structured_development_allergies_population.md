@@ -16,6 +16,8 @@ Guidance for the general handling of common and base elements in GP Connect reso
 
 | Element  |Usage |Datatype   |Optionality|Guidance 
 |---|---|---|---|---
+|EndDate|The date the allergy or intolerance was recorded as resolved|Extension(valueDateTime)|R|Must be populated if the status is set to 'resolved'
+|EndReason|The reason why the allergy or intolerance has been resolved|Extension(valueString)|R| 
 |Evidence|Reference to confirmatory diagnostic report e.g. pathology RAST test result|Extension(valueReference)|O||
 |clinicalStatus|'active' for all active allergies. 'resolved' for resolved allergies|Code|M|Producers which support the concept of resolved/ended allergies should set the clinicalStatus of resolved allergies to 'resolved' |
 |verificationStatus|Fixed value of 'unconfirmed'|Code|M|DO NOT USE - this value is mandatory in base FHIR so cannot be removed. It is not a concept in GP systems and as such no meaning should be attributed to this field in consuming systems.|
