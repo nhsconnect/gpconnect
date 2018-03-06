@@ -75,7 +75,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 The following data-elements are mandatory (i.e. data **MUST** be present):
 
 - the `patientNHSNumber` is the NHS number of the patient who's GP record you want to access.
-- the `includeResourceGroup` are the resource groups you wish to return.
+- the `include[includeMedication | includeAllergyAndIntolerances]` are the resource groups you wish to return.
 
 The following data-elements are optional:
 
@@ -85,7 +85,8 @@ The following data-elements are optional:
 	- providing both `start` and `end` returns data within the values provided.
 	- providing `start` only returns all data after that value (including dates in future).
 	- providing `end` only returns all data before that value.
-- the `includeIssues` value idenifies if all medication issues should be returned.
+- the `includePrescriptionIssues` value idenifies if individual prescription issues are included in the response bundle.
+- the `includeResolvedAllergies` value idenifies if resolved allergies and intolerances are included in the response bundle.
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/parameters.html) conforming to the `gpconnect-structuredrecord-operation-1` profiled `OperationDefinition`, see below:
 
@@ -235,13 +236,13 @@ The Provider system **SHALL**:
 
 | Name                  | Type 		| Format 		| Comments |
 |-----------------------|-----------|---------------|--------|
-| `patientNHSnumber.id` | `integer` | | [NHS Number input and display](http://systems.digital.nhs.uk/data/cui/uig/inputdisplay.pdf) |
-| `includeResourceGroup:Medication` | `n/a` | `n/a` | Resource group for Medications |
-| `timePeriod.start` | `date` | `yyyy-mm-dd` | [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
-| `timePeriod.end` | `date` | `yyyy-mm-dd` | [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
-| `includeIssues.valueBoolean` | `boolean` | `true` or `false` | Include associated issues in response, or not |
-| `includeResourceGroup:AllergyIntolerance` | `n/a` | `n/a` | Resource group for Allergies and Intolerances |
-| `includeEndedAllergies.valueBoolean` | `boolean` | `true` or `false` | Include ended allergies in response, or not |
+| `patientNHSnumber.id` | `integer` | | The NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index [NHS Number input and display](http://systems.digital.nhs.uk/data/cui/uig/inputdisplay.pdf) |
+| `includeMedication` | `n/a` | `n/a` | Include resources representing a patient's medication record in the response bundle |
+| `timePeriod.start` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (start date) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
+| `timePeriod.end` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (end date ) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
+| `includePrescriptionIssues.valueBoolean` | `boolean` | `true` or `false` | Include individual prescription issues in the response bundle |
+| `includAllergyAndIntolerances` | `n/a` | `n/a` | Include resources representing a patient's allergies and intolerances in the response bundle. By default, resolved allergies and intolerances are not included. |
+| `includeResolvedAllergies.valueBoolean` | `boolean` | `true` or `false` | Include resolved allergies and intolerances in the response bundle |
 
 #### Error Handling ####
 
