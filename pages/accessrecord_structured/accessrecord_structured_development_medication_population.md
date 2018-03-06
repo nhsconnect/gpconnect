@@ -63,7 +63,7 @@ Element|Usage|Datatype|Optionality|Guidance
 ---|---|---|---|---
 identifier|Logical identifier for resource |Identifier|O|Refer to generic guidance
 definition|DO NOT USE|Reference(ActivityDefinition, PlanDefinition)|O|
-basedOn|DO NOT USE|Reference(CarePlan, MedicationRequest, ProcedureRequest, ReferralRequest)   |R| Do not use for authorisations (intent of 'plan') - it is valid for issue which would always be basedOn the MedicationRequest authorisation resource
+basedOn|To use for intent='order' resources that are based on an intent='plan' resource|Reference(CarePlan, MedicationRequest, ProcedureRequest, ReferralRequest)   |R| Do not use for authorisations (intent of 'plan') - it is valid for issue which would always be basedOn the MedicationRequest authorisation resource
 groupIdentifier|	Composite request this is part of|Identifier|R|All repeat prescribed and repeat dispensed medications should have a group identifier that is populated for the 'plan' and all 'orders' relating to them.
 status|The status of the authorisation|code|M|Use one of active, completed or stopped. 'active' represents an active authorisation - used for active repeat medications, 'stopped' a repeat authorisation which has been discontinued/stopped. 'complete' should be used for all acute authorisations. ** Justification - if we were to use active for acute authorisations when would it transition to complete without introducing complicated date based statuses, perhaps OK for a 'current' medication list but not necessarily OK here
 intent|Distinguished between authorisations and medication issues|code|M|'plan' represents an authorisation, 'order' represents a prescription issue
