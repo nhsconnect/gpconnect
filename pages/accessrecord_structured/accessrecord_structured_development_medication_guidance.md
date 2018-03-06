@@ -37,9 +37,9 @@ Medication issues may be future dated e.g. repeat dispensed medications or a def
 Where an authorisation is amended e.g. Proprietary/Generic switch, altered dates, change of quantities etc. then the existing authorisation/plan should be stopped/discontinued and an appropriate reason supplied via detectedIssue. A new authorisation should be created, in the form of a MedicationStatement and MedicationRequest with intent='plan', to hold the amended details and subsequent issues of the medication should reference the amended authorisation rather than the previous version.
 
 ### Medication discontinuation/stopping ###
-Where a medication is stopped/discontinued then the status of the authorisation should be changed to 'stopped' and a textual stop reason provided via detectedIssue/detail.
+Where a medication is stopped/discontinued then the status of the authorisation should be changed to 'stopped' and a textual stop reason provided via statusReason.reason.
 
-A detectedIssue should not be generated when an authorisation has simply expired (exceeded review date or number of issues)
+A statusReason should not be generated when an authorisation has simply expired (exceeded review date or number of issues)
 
 ### Authorisation ###
 
