@@ -23,15 +23,12 @@ entries:
     - title: Introduction
       url: /accessrecord_structured.html
       output: web, pdf         
-      
     - title: Business requirements
       url: /accessrecord_structured_requirements.html
       output: web, pdf
-      
     - title: Design decisions
       url: /accessrecord_structured_design.html
       output: web, pdf
-      
     - title: Known issues
       url: /accessrecord_structured_known_issues.html
       output: web, pdf
@@ -39,7 +36,7 @@ entries:
   - title: Development
     output: web, pdf
     folderitems:
-    
+
     - title: FHIR&reg; resources
       url: /accessrecord_structured_development_resources_list.html
       output: web
@@ -74,10 +71,12 @@ entries:
           url: /accessrecord_structured_development_medication_population.html
           output: web
 
-      - title: List and Bundle
-        url: /accessrecord_structured_development_medication_list_and_bundle.html
-        output: web
+    - title: List and Bundle
+      url: /accessrecord_structured_development_medication_list_and_bundle.html
+      output: web
 
+	  subfolders:
+	  
       - title: API use cases
         output: web
         subfolderitems:
