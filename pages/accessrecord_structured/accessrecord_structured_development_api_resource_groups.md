@@ -1,10 +1,10 @@
 ---
-title: Access Record Structured include groups
+title: Access Record Structure - Operation Definition
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_resource_groups.html
-summary: "Structured access record include groups"
+summary: "Access record structured operation definition include group details"
 ---
 
 ## Operation Definition - GPConnect-GetStructuredRecord-Operation-1  ##
