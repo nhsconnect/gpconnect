@@ -41,8 +41,6 @@ Rather than split descriptive and user entered text across a number of notes fie
 ## 'Resolved' allergies and intolerances
 On some systems it is possible to explicitly mark an allergy/intolerance as resolved or ended, such that it still appears in the patient record but is no longer active and no longer interacts with prescribing decision support. This inactivation may be achieved by explicit entry of an end date or a user action that alters the status of the allergy and intolerance.
 
-There is currently no support for expressing the end date of a 'resolved' allergy. 
-
 Allergies and intolerances which have been explicitly resolved should only be returned in response to resource queries which have the *includeResolvedAllergies* parameter set to true (see [Retrieve a patient’s structured record](accessrecord_structured_development_retrieve_patient_record.html)).
 
 When the provider is sending resolved allergies it must send them in a separate list to the active allergies as contained resources in that list. The list should have the title 'Resolved Allergies' and resolved allergy resources should be assigned a clinicalStatus of 'resolved'. A title of 'Active Allergies' should be used for the list containing the active allergy resources.
