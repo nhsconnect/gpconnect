@@ -74,7 +74,7 @@ subject|Who the medication is for i.e. who it will be administered to| Reference
 context|The encounter within which the medication was authorised|Reference(Encounter)|R|As per base profile guidance
 supportingInformation|DO NOT USE|Reference(Any)|O|D
 authoredOn|Authorisation date, when the medication was authorised.|dateTime|M|Unless there is a distinct user modifiable availabilityTime for the authorisation, this is the audit trail datetime for when the authorisation was entered. ** is optional in DDM but if it's audit trail why not have it?
-requester|Person and their organization requesting authorisation for prescription |BackboneElement|R|To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case the onBehalfOf should be completed with a reference to the other organisation
+requester|Person and their organization requesting authorisation for prescription |BackboneElement|R|To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case the onBehalfOf should be completed with a reference to the other organisation. If the medication has been prescribed elsewhere and for example is detailed in the sending system as a hospital medication this must be detailed using an organisation.type code in the agent reference in the requester element.
 recorder|The responsible practitioner who authorised the medication| Reference(Practitioner)|M|May not always be the user who entered the record on the system but where a system supports attribution to a responsible clinician, the attributed clinician should be referenced here.
 reasonCode|The coded reason for authorising the medication|CodeableConcept|O|
 reasonReference|References the condition or observation that was the reason for this authorisation| Reference(Condition, Observation)|O|Unless there is a specific linkage in the context of medication, indirect linkages to be handled via Problem list
@@ -89,15 +89,12 @@ dispenseRequest/expectedSupplyDuration|Number of days supply per dispense|Durati
 dispenseRequest/performer|Nominated pharmacy for dispense |Reference(Organization)|R|
 substitution|DO NOT USE|BackboneElement|O|
 priorPrescription|References prior prescription authorisation|Reference(MedicationRequest)|O|May be used for example to reference prior authorisation where prescription is re-authorised or where amendments have been made, may reference the previous authorisation before the amendment
-detectedIssue|Where a medication has been stopped (status == 'stopped'), the reason is provided via as reference to the contained DetectedIssue resource |Reference(DetectedIssue)|R|Mandatory for authorisations with stopped status
-detectedIssue/status|Fixed value of 'final'|code|M
-detectedIssue/date|The datetime the medication was stopped/discontinued|dateTime|M|Mandatory for stopped/discontinued medications as the date will always be known
-detectedIssue/detail|The textual reason either freetext or the term of a code for stopping/discontinuing the medication|string|M|
 eventHistory|DO NOT USE|Reference(Provenance)|O|
 repeatInformation|Extension elements to hold details of repeat authorisation|Extension|M|
 repeatInformation.numberOfRepeatPrescriptionsAllowed|The number of repeat issues authorised if specified|PositiveInt|R|Must be present where a repeat is authorised for a defined number of issues. Must not be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage, therefore the numberOfRepeats allowed is the total number of allowed issues
-repeatInformation.numberOfRepeatPrescriptionsIssued|Running total of number of issues made against a repeat authorisation|PositiveInt|R|
+repeatInformation.numberOfRepeatPrescriptionsIssued|Running total of number of issues made against a repeat authorisation|PositiveInt|M|Must be Zero, if not yet issued.
 repeatInformation.authorisationExpiryDate|The date a repeat prescription authorisation will expire|dateTime|R|
-repeatInformation.repeatOrAcute|If a medication is an acute, repeat or repeat dispense|Code|M|Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber
-supplyType|Restricted vocabulary of prescription type related to reimbursement|Code|M|Private, ACBS, NHS Prescription etc.
-prescriptionType|TO DO - vocabulary of wider prescription types|Code|Wider prescription type - hospital. dental etc ...
+PrescriptionType|If a medication is an acute, delayed caute, repeat, repeat dispense or prescribed elsewhere|Code|M|Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber
+StatusReason|Where a medication has been stopped (status == 'stopped'), the reason is provided in the statusReason extension|extension(StatusReason)|R|Mandatory for authorisations with stopped status
+StatusReason.date|The datetime the medication was stopped/discontinued|extension(valueDateTime)|M|Mandatory for stopped/discontinued medications as the date will always be known
+StatusReason.Reason|The textual reason either freetext or the term of a code for stopping/discontinuing the medication|Extension(valueString)|R|Must be populated when StatusReason.date is populated
