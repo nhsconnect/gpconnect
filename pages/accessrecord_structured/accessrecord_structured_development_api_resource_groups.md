@@ -1,5 +1,5 @@
 ---
-title: Access Record Structure - Operation Definition
+title: Access Record Structured - Operation Definition
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
