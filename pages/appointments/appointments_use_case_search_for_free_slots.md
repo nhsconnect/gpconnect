@@ -253,6 +253,26 @@ Provider systems:
 				"lastUpdated": "2017-11-08T12:00:00.000+01:00",
 				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"]
 			},
+			"extension": [{
+				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+				"valueCodeableConcept": {
+					"coding": [{
+						"system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+						"code": "R0260",
+						"display": "General Medical Practitioner"
+					}]
+				}
+			},
+			{
+				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
+				"valueCodeableConcept": {
+					"coding": [{
+						"system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
+						"code": "In-person",
+						"display": "In-person"
+					}]
+				}
+			}],
 			"actor": [{
 				"reference": "Location/17"
 			},
