@@ -74,10 +74,10 @@ entries:
           url: /accessrecord_structured_development_medication_population.html
           output: web
 
-    - title: List and Bundle
-      url: /accessrecord_structured_development_medication_list_and_bundle.html
-      output: web
-      
+      - title: List and Bundle
+        url: /accessrecord_structured_development_medication_list_and_bundle.html
+        output: web
+
       - title: API use cases
         output: web
         subfolderitems:
