@@ -75,7 +75,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 The following data-elements are mandatory (i.e. data **MUST** be present):
 
 - the `patientNHSNumber` is the NHS number of the patient who's GP record you want to access.
-- the `include[includeMedication | includeAllergyAndIntolerances]` are the resource groups you wish to return.
+- the `include[includeMedication | includeAllergies]` are the resource groups you wish to return.
 
 The following data-elements are optional:
 
@@ -241,7 +241,7 @@ The Provider system **SHALL**:
 | `timePeriod.start` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (start date) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
 | `timePeriod.end` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (end date ) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
 | `includePrescriptionIssues.valueBoolean` | `boolean` | `true` or `false` | Include individual prescription issues in the response bundle |
-| `includAllergyAndIntolerances` | `n/a` | `n/a` | Include resources representing a patient's allergies and intolerances in the response bundle. By default, resolved allergies and intolerances are not included. |
+| `includAllergies` | `n/a` | `n/a` | Include resources representing a patient's allergies and intolerances in the response bundle. By default, resolved allergies and intolerances are not included. |
 | `includeResolvedAllergies.valueBoolean` | `boolean` | `true` or `false` | Include resolved allergies and intolerances in the response bundle |
 
 #### Error Handling ####
@@ -251,9 +251,9 @@ The Provider system **SHALL** return an error if:
 - the `patientNHSNumber` is invalid (i.e. fails NHS number format and check digit tests).
 - the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`.
 - the GP organisation is not the patient's nominated primary care provider.
-- the `includeResourceGroup` is invalid (i.e. isn't from the correct value set).
+- the `include[x]` is invalid (i.e. isn't from the correct value set).
 - an invalid `timePeriod` is requested (i.e. end date > start date).
-- a `timePeriod` is specified for a `includeResourceGroup` that is time period agnostic (e.g. Allergies).
+- a `timePeriod` is specified for a `include[x]` that is time period agnostic (e.g. Allergies).
 <br>
 
 {% include important.html content="Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached." %}
