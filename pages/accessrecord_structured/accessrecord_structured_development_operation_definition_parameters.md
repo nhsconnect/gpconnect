@@ -24,7 +24,6 @@ The `patientNHSnumber` parameter refers to the NHS number of the patient whose r
 `patientNHSnumber` **MUST** be included in the request.
 
 | Name                  |  Type | Value | Optionality | Comments |
-|-----------------------|-------|-------|:-----------:|----------|
 | `patientNHSnumber.Id` | `integer` | [patientNHSNumber](https://fhir.nhs.uk/Id/nhs-number) | Mandatory | Patient's NHS Number |
 
 ### includeAllergies ###
@@ -45,8 +44,7 @@ Including the `includeAllergies` parameter will request resources representing a
 
 The following describes the part parameters available for filtering on this parameter:
 
-| Name                  | Include Group | Type | Value | Optionality | Comments |
-|-----------------------|---------------|------|-------|:-----------:|----------|
+| Name                  | Include Parameter | Type | Value | Optionality | Comments |
 | `includeResolvedAllergies.valueBoolean` | `Allergies` | `boolean` | `true` or `false` | Optional | Include resolved allergies and intolerances in the response bundle |
 
 #### Request Example ####
@@ -96,8 +94,7 @@ Includes the 'includeMedication' parameter will request resources representing a
 
 The following describes the part parameters available for filtering on this parameter:
 
-| Name                  | Include Group | Type | Value | Optionality | Comments |
-|-----------------------|---------------|------|-------|:-----------:|----------|
+| Name                  | Include Parameter | Type | Value | Optionality | Comments |
 | `timePeriod.start` | `Medication` | `date` | `yyyy-mm-dd` | Optional |Restrict the patient's medication record to a specific time period (start date) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
 | `timePeriod.end` | `Medication` | `date` | `yyyy-mm-dd` | Optional | Restrict the patient's medication record to a specific time period (end date ) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
 | `includePrescriptionIssues.valueBoolean` | `Medication` | `boolean` | `true` or `false` | Optional | Include individual prescription issues in the response bundle |
