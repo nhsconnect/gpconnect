@@ -1,15 +1,15 @@
 ---
-title: Access Record Structured - Operation Definition
+title: Access Record Structured - Operation Definition Parameters
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_resource_groups.html
-summary: "Access record structured operation definition include group details"
+summary: "Access record structured operation definition parameter details"
 ---
 
-## Operation Definition - GPConnect-GetStructuredRecord-Operation-1  ##
+## Operation Definition Parameters ##
 
-The following parameters are available to be requested as part of the operation definition:
+The following parameters are available to be requested as part of the operation definition GPConnect-GetStructuredRecord-Operation-1:
 
 - `patientNHSnumber`
 - `includeAllergies`
