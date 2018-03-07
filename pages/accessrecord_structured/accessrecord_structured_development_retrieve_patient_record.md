@@ -185,7 +185,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/parameters
 
 {% include tip.html content="Consumer guidance: it is advised that a single call is made to retrieve all structured data required. The parameter filters should be applied to reduce the payload." %} 
 
-{% include important.html content="Provider systems **SHALL** only expose `Patient` resources for patient's who have a valid PDS trace status." %}
+{% include important.html content="Provider systems **SHALL** only expose `Patient` resources for patients who have a valid PDS trace status." %}
 
 On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look something like the following:
 
