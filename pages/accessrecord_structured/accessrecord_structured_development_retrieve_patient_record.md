@@ -187,45 +187,45 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look so
 
 ```json
 {
-   "meta": {
-      "profile": {
-         "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-AccessStructuredRecord-1"
-      }
-   },
-   "parameter": [
-      {
-         "name": "patientNHSNumber",
-         "valueIdentifier": {
+  "meta": {
+    "profile": {
+      "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
+    }
+  },
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
             "system": "https://fhir.nhs.uk/Id/nhs-number",
             "value": "9999999999"
-         }
-      },
-      {
-         "name": "includeMedication",
-         "part": [
-            {
-               "name": "timePeriod",
-               "valuePeriod": {
-                  "start": "2017-01-01",
-                  "end": "2018-02-01"
-               }
-            },
-            {
-               "name": "includePrescriptionIssues",
-               "valueBoolean": true
-            }
-         ]
-      },
-      {
-         "name": "includeAllergies",
-         "part": [
-            {
-               "name": "includeResolvedAllergies",
-               "valueBoolean": true
-            }
-         ]
       }
-   ]
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+          }
+	  ]
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "timePeriod",
+          "valuePeriod": {
+            "start": "2017-01-01",
+            "end": "2018-02-01"
+          }
+        },
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+          }
+      ]
+    }
+  ]
 }
 ```
 
