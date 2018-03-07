@@ -75,7 +75,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 The following data-elements are mandatory (i.e. data **MUST** be present):
 
 - the `patientNHSNumber` is the NHS number of the patient who's GP record you want to access.
-- the `include[includeMedication | includeAllergies]` are the resource groups you wish to return.
+- the `include[Medication|Allergies]` are the resource groups you wish to return.
 
 The following data-elements are optional:
 
