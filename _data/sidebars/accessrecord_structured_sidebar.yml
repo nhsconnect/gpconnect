@@ -85,5 +85,8 @@ entries:
           url: /accessrecord_structured_development_retrieve_patient_record.html
           output: web
         - title: FHIR&reg; Examples
+          url: /accessrecord_structured_operation_definition_parameters.html
+          output: web
+        - title: FHIR&reg; Examples
           url: /accessrecord_structured_development_fhir_examples.html
           output: web
