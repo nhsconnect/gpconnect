@@ -65,8 +65,8 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request for **Allergi
     },
     {
       "name": "includeAllergies"
-	}
-	]
+    }
+  ]
 }
 ```
 
@@ -118,8 +118,8 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request for **Medicat
     },
     {
       "name": "includeMedication"
-	}
-	]
+    }
+  ]
 }
 ```
 
