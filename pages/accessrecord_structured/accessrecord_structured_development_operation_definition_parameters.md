@@ -21,7 +21,7 @@ The following parameters are available to be requested as part of the operation 
 
 The `patientNHSnumber` parameter refers to the NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index.
 
-`patientNHSnumber` **MUST** be included in the request.
+> `patientNHSnumber` **MUST** be included in the request.
 
 | Name                  |  Type | Value | Optionality | Comments |
 |-----------------------|-------|-------|:-----------:|----------|
