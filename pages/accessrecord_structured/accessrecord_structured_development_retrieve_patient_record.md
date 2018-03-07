@@ -217,7 +217,7 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look so
       ]
     },
     {
-      "name": "includeResourceGroup:Allergies"
+      "name": "includeAllergies",
       "part": [
         {
           "name": "includeResolvedAllergies",
