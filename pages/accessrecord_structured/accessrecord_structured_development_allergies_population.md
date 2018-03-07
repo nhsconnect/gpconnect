@@ -1,5 +1,5 @@
 ---
-title: AllergyIntolerance resource definition
+title: Population
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
@@ -7,7 +7,7 @@ permalink: accessrecord_structured_development_allergies_population.html
 summary: "Guidance for populating and reading the AllergyIntolerance resource"
 ---
 
-You'll find it helpful to read this guidance in conjunction with the underlying resource definition. (TO DO: Check URL matches correct published StructureDef) [AllergyIntolerance](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
+You'll find it helpful to read this guidance in conjunction with the underlying [AllergyIntolerance resource definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1).
 
 Guidance for the general handling of common and base elements in GP Connect resources can be found [here - link required]()
 
