@@ -9,7 +9,7 @@ summary: "Guidance for populating and reading the AllergyIntolerance resource"
 
 The table below shows you how to use each element of the AllergyIntolerance resource. You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance resource definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1).
 
-# AllergyIntolerance element usage
+## AllergyIntolerance element usage
 
 |Element|Usage |Datatype|Optionality|Guidance| 
 |---|---|---|---|---|
