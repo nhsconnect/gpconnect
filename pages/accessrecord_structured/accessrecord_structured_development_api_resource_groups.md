@@ -9,15 +9,18 @@ summary: "Access record structured operation definition include group details"
 
 ## Operation Definition - GPConnect-GetStructuredRecord-Operation-1  ##
 
-The following two include groups are available to be returned in the response bundle:
+The following parameters are available to be returned in the response bundle:
 
+- `patientNHSnumber`
 - `includeAllergies`
 - `includeMedication`
 
 
 {% include important.html content="At least one of the include groups listed above must be supplied" %}
 
-?patientNHSnumber - The NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index
+### patientNHSnumber ###
+
+The NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index
 
 ### includeAllergies ###
 
