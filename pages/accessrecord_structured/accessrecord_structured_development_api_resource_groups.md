@@ -9,7 +9,7 @@ summary: "Access record structured operation definition parameter details"
 
 ## Operation Definition Parameters ##
 
-The following parameters are available to be requested as part of the operation definition GPConnect-GetStructuredRecord-Operation-1:
+The following parameters are available to be requested as part of the operation definition `GPConnect-GetStructuredRecord-Operation-1`:
 
 - `patientNHSnumber`
 - `includeAllergies`
