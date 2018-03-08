@@ -54,7 +54,7 @@ Most of the information in GP systems that GP Connect needs to represent is in t
 Where a medication statement represents an order, it will be 'basedOn' a medication request or medication requests that reflect the ordering/prescribing of that medication or medical device by the practice. 
 The GP Connect profile of the FHIR medication request will be used to represent the 2 stages of the ordering process:
 1. The authorisation - in conjunction with MedicationStatement, a medication request with an intent of 'plan' represents an authorisation for acute, repeat, repeat dispensed medication.
-2. The issue - each time the medication is issued then it SHOULD be represented using a MedicationRequest with the intent element set to 'order'. There will be one 'order' for acutes but may be many for repeats.
+2. The issue - each time the medication is issued then it **SHOULD** be represented using a MedicationRequest with the intent element set to 'order'. There will be one 'order' for acutes but may be many for repeats.
 
 ### Acute medication representation
 Acute UML diagram:
@@ -71,7 +71,7 @@ Repeat prescription and dispensing UML diagram:
 ![Repeat prescription and repeat dispensing diagram](images/access_structured/Repeat prescription and repeat dispensing.png)
 
 Both repeat prescriptions and repeat prescribing are represented in a similar manner to the acute prescriptions. The difference is that there is now a one-to-many relationship where there can be one medication request with intent='Plan' and it can relate to many medication requests that have intent='order'. In this relationship, every time a repeat has been issued it will be represented by a separate medication request with intent='order'.
-For repeat dispensed medication, some of the resources relating to individual issues may be post-dated if the effective period of the medication or medical device has not elapsed. However, for all MedicationRequest resources with intent='order' the authoredOn date SHOULD be the same as the related medication request with intent='plan'.
+For repeat dispensed medication, some of the resources relating to individual issues may be post-dated if the effective period of the medication or medical device has not elapsed. However, for all MedicationRequest resources with intent='order' the authoredOn date **SHOULD** be the same as the related medication request with intent='plan'.
 
 ### Unissued medications and medication prescribed elsewhere
 Unissued prescription and dispensing UML diagram:
@@ -82,4 +82,4 @@ Unissued prescription and dispensing UML diagram:
 Unissued medications and medications that have been prescribed elsewhere that have been added to the system by a clinician at the practice will be represented by a medication statement and a medication request where intent='plan' but with no further resources.
 
 ### Using the list resource for medication queries
-The results of a query for medication details MUST return a list containing references to all MedicationStatement resources that are returned. The list SHOULD be populated in line with the guidance on list resources. If the list is empty, then an empty list MUST be returned with an emptyReason with the value noContent.
+The results of a query for medication details MUST return a list containing references to all MedicationStatement resources that are returned. The list **SHOULD** be populated in line with the guidance on list resources. If the list is empty, then an empty list MUST be returned with an emptyReason with the value noContent.
