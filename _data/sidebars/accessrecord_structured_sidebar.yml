@@ -24,35 +24,38 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: FHIR&reg; resources
-      url: /accessrecord_structured_development_resources_list.html
+    - title: Introduction
+      url: /accessrecord_structured_development_introduction.html
       output: web
 
       subfolders:
 
-      - title: Allergies
+      - title: Allergies &amp; medications guidance
         output: web
         subfolderitems:
 
-        - title: Introduction
+        - title: Medication introduction
+          url: /accessrecord_structured_development_medication_introduction.html
+          output: web
+        - title: Medication guidance
+          url: /accessrecord_structured_development_medication_guidance.html
+          output: web
+        - title: Allergies introduction
           url: /accessrecord_structured_development_allergies_introduction.html
           output: web
-        - title: Guidance
+        - title: Allergies guidance
           url: /accessrecord_structured_development_allergies_guidance.html
+          output: web
+
+      - title: FHIR&reg; resources
+        output: web
+        subfolderitems:
+
+        - title: Overview
+          url: /accessrecord_structured_development_resources_list.html
           output: web
         - title: <b class='resource'>AllergyIntolerance</b>
           url: /accessrecord_structured_development_allergyintolerance.html
-          output: web
-
-      - title: Medications
-        output: web
-        subfolderitems:
-
-        - title: Introduction
-          url: /accessrecord_structured_development_medication_introduction.html
-          output: web
-        - title: Guidance
-          url: /accessrecord_structured_development_medication_guidance.html
           output: web
         - title: <b class='resource'>Medication</b>
           url: /accessrecord_structured_development_medication.html
@@ -63,16 +66,12 @@ entries:
         - title: <b class='resource'>MedicationRequest</b>
           url: /accessrecord_structured_development_medicationrequest.html
           output: web
-
-    - title: List
-      url: /accessrecord_structured_development_list.html
-      output: web
-
-    - title: Bundle
-      url: /accessrecord_structured_development_bundle.html
-      output: web
-
-      subfolders:
+        - title: <b class='resource'>List</b>
+          url: /accessrecord_structured_development_list.html
+          output: web
+        - title: <b class='resource'>Bundle</b>
+          url: /accessrecord_structured_development_bundle.html
+          output: web
 
       - title: API use cases
         output: web

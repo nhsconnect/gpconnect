@@ -25,5 +25,5 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 
 ## Structural ##
 
-* [GPC-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) based on [Bundle](https://www.hl7.org/fhir/STU3/bundle.html)
-* List (TBA)
+* [GPConnect-GetStructuredRecord-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1) based on [Bundle](https://www.hl7.org/fhir/STU3/bundle.html)
+* List (TBA) based on [List](https://www.hl7.org/fhir/STU3/list.html)
