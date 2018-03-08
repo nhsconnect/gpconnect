@@ -1,41 +1,41 @@
 ---
-title: Retrieve a patients structured record
+title: Retrieve a patient's structured record
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_retrieve_patient_record.html
-summary: "Retrieve a patients record in structured format"
+summary: "Retrieve a patient's record in structured format"
 ---
 
 ## Use case ##
 
-Retrieve a patients record in FHIR structured format from a GP practice.
+Retrieve a patient's record in FHIR&reg; structured format from a GP practice.
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises JSON Web Tokens (JWT) to transmit clinical audit and provenance details 
 
 ## Prerequisites ##
 
 ### Consumer ###
 
-The Consumer system:
+The consumer system:
 
 - **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- **SHALL** have previously traced the patient's NHS number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
 
-## API Usage ##
+## API usage ##
 
 ### Request operation ###
 
-#### FHIR relative request ####
+#### FHIR&reg; relative request ####
 
 ```http
 POST /Patient/$gpc.getstructuredrecord
 ```
 
-#### FHIR absolute request ####
+#### FHIR&reg; absolute request ####
 
 ```http
 POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.getstructuredrecord
@@ -72,25 +72,25 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 
 #### Payload request body ####
 
-The following data-elements are mandatory (i.e. data **MUST** be present):
+The following data-elements are mandatory (that is, data **MUST** be present):
 
-- the `patientNHSNumber` is the NHS number of the patient who's GP record you want to access.
-- the `include[Medication|Allergies]` are the resource groups you wish to return.
+- the `patientNHSNumber` is the NHS number of the patient whose GP record you want to access.
+- the `include[Medication|Allergies]` are the resource groups you want to return.
 
 The following data-elements are optional:
 
-- the `timePeriod` defines the period of data you wish to return.
-	-  not providing `timePeriod` returns all data (including dates in future).
-- the `start` and `end` values specify the exact period to be returned.
-	- providing both `start` and `end` returns data within the values provided.
-	- providing `start` only returns all data after that value (including dates in future).
-	- providing `end` only returns all data before that value.
-- the `includePrescriptionIssues` value idenifies if individual prescription issues are included in the response bundle.
-- the `includeResolvedAllergies` value idenifies if resolved allergies and intolerances are included in the response bundle.
+- the `timePeriod` defines the period of data you want to return
+	-  not providing `timePeriod` returns all data (including dates in future)
+- the `start` and `end` values specify the exact period to be returned
+	- providing both `start` and `end` returns data within the values provided
+	- providing `start` only returns all data after that value (including dates in future)
+	- providing `end` only returns all data before that value
+- the `includePrescriptionIssues` value idenifies if individual prescription issues are included in the response bundle
+- the `includeResolvedAllergies` value idenifies if resolved allergies and intolerances are included in the response bundle
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/parameters.html) conforming to the `gpconnect-structuredrecord-operation-1` profiled `OperationDefinition`, see below:
 
-{% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
+{% include tip.html content="This is a type level operation (that is, is not associated with a given resource instance)." %} 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -124,7 +124,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/parameters
       <use value="in" />
       <min value="1" />
       <max value="1" />
-      <documentation value="The NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index." />
+      <documentation value="The NHS Number of the patient whose record is being extracted, which must be traced or verified against the national demographics index." />
       <type value="Identifier" />
    </parameter>
    <parameter>
@@ -183,7 +183,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/parameters
 
 {% include important.html content="Provider systems **SHALL** only expose `Patient` resources for patients who have a valid PDS trace status." %}
 
-On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look something like the following:
+On the wire, a JSON serialised `$gpc.getstructuredrecord-1` request would look something like the following:
 
 ```json
 {
@@ -229,32 +229,32 @@ On the wire a JSON serialised `$gpc.getstructuredrecord-1` request would look so
 }
 ```
 
-The Provider system **SHALL**:
+The provider system **SHALL**:
 
 - return all data if no `timePeriod` parameter is specified for a section that can accept a time period.
 
-#### Parameter Details ####
+#### Parameter details ####
 
 | Name                  | Type 		| Format 		| Comments |
 |-----------------------|-----------|---------------|--------|
-| `patientNHSnumber.id` | `integer` | | The NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index [NHS Number input and display](http://systems.digital.nhs.uk/data/cui/uig/inputdisplay.pdf) |
-| `includeMedication` | `n/a` | `n/a` | Include resources representing a patient's medication record in the response bundle |
-| `timePeriod.start` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (start date) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
-| `timePeriod.end` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (end date ) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
-| `includePrescriptionIssues.valueBoolean` | `boolean` | `true` or `false` | Include individual prescription issues in the response bundle |
+| `patientNHSnumber.id` | `integer` | | The NHS Number of the patient whose record is being extracted, which must be traced or verified against the national demographics index [NHS Number input and display](http://systems.digital.nhs.uk/data/cui/uig/inputdisplay.pdf). |
+| `includeMedication` | `n/a` | `n/a` | Include resources representing a patient's medication record in the response bundle. |
+| `timePeriod.start` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (start date) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf). |
+| `timePeriod.end` | `date` | `yyyy-mm-dd` | Restrict the patient's medication record to a specific time period (end date) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf). |
+| `includePrescriptionIssues.valueBoolean` | `boolean` | `true` or `false` | Include individual prescription issues in the response bundle. |
 | `includAllergies` | `n/a` | `n/a` | Include resources representing a patient's allergies and intolerances in the response bundle. By default, resolved allergies and intolerances are not included. |
-| `includeResolvedAllergies.valueBoolean` | `boolean` | `true` or `false` | Include resolved allergies and intolerances in the response bundle |
+| `includeResolvedAllergies.valueBoolean` | `boolean` | `true` or `false` | Include resolved allergies and intolerances in the response bundle. |
 
-#### Error Handling ####
+#### Error handling ####
 
-The Provider system **SHALL** return an error if:
+The provider system **SHALL** return an error if:
 
-- the `patientNHSNumber` is invalid (i.e. fails NHS number format and check digit tests).
+- the `patientNHSNumber` is invalid (that is, it fails NHS number format and check digit tests).
 - the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`.
 - the GP organisation is not the patient's nominated primary care provider.
-- the `include[x]` is invalid (i.e. isn't from the correct value set).
-- an invalid `timePeriod` is requested (i.e. end date > start date).
-- a `timePeriod` is specified for a `include[x]` that is time period agnostic (e.g. Allergies).
+- the `include[x]` is invalid (that is, it isn't from the correct value set).
+- an invalid `timePeriod` is requested (that is, end date > start date).
+- a `timePeriod` is specified for a `include[x]` that is time period agnostic (for example, Allergies).
 <br>
 
 {% include important.html content="Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached." %}
@@ -263,9 +263,9 @@ The Provider system **SHALL** return an error if:
 
 {% include tip.html content="Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes." %}
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 ```http
 HTTP/1.1 200 OK
@@ -275,7 +275,7 @@ Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
@@ -405,7 +405,7 @@ Provider systems:
 
 ### C# ###
 
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
+{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
 var client = new FhirClient("http://gpconnect.fhir.nhs.net/fhir/");
