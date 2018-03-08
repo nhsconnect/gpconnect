@@ -104,6 +104,8 @@ The following describes the part parameters available for filtering on this para
 
 #### Provider details - `timePeriod` ####
 
+The folowing list describes the expected provider system behaviours based on `timePeriod` parameter:
+
 > - The provider system **MUST** return the medication summary data items for all medications with a `lastIssueDate` which falls within the `timePeriod.start` and `timePeriod.end` date range (inclusive). 
 > - Where a medication does not have a `lastIssueDate`, the provider system **MUST** return the medication summary data items for all medications whose `effective[x]` date range overlaps the `timePeriod.start` and `timePeriod.end` date range (inclusive).
 > - Where a medication does not have a `lastIssueDate` or `effective[x]` date range, the provider system **MUST** return the medication summary data items for all medications whose `effective[x]` start date falls within the `timePeriod.start` and `timePeriod.end` date range (inclusive).
