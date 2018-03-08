@@ -426,7 +426,7 @@ When populating the MedicationRequest profile it may appear that a number of fie
        <td style="font-size: 13px">The number of repeat issues allowed  for repeat and repeat dispensed medications where specified</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">positiveInt</code></td>
       <td style="text-align: center; font-size: 13px">O</td>
-       <td style="font-size: 13px">DO NOT USE - use the extension repeatInformation/numberOfRepeatPrescriptionsAllowed</td>
+       <td style="font-size: 13px">DO NOT USE - use the extension repeatInformation/ numberOfRepeatPrescriptionsAllowed</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">dispenseRequest/quantity</code></td>
@@ -485,14 +485,14 @@ When populating the MedicationRequest profile it may appear that a number of fie
        <td style="font-size: 13px"> </td>
     </tr>
     <tr>
-       <td style="font-size: 13px"><code class="highlighter-rouge">repeatInformation. numberOfRepeatPrescriptionsAllowed</code></td>
+       <td style="font-size: 13px"><code class="highlighter-rouge">repeatInformation. numberOfRepeat PrescriptionsAllowed</code></td>
        <td style="font-size: 13px">The number of repeat issues authorised if specified</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">PositiveInt</code></td>
       <td style="text-align: center; font-size: 13px">R</td>
        <td style="font-size: 13px">Must be present where a repeat is authorised for a defined number of issues. Must not be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage, therefore the numberOfRepeats allowed is the total number of allowed issues</td>
     </tr>
     <tr>
-       <td style="font-size: 13px"><code class="highlighter-rouge">repeatInformation. numberOfRepeatPrescriptionsIssued</code></td>
+       <td style="font-size: 13px"><code class="highlighter-rouge">repeatInformation. numberOfRepeat PrescriptionsIssued</code></td>
        <td style="font-size: 13px">Running total of number of issues made against a repeat authorisation</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">PositiveInt</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
