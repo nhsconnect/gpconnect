@@ -4,7 +4,7 @@ keywords: requirements
 tags: [requirements]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_requirements.html
-summary: "Organisational requirements that have informed development work"
+summary: "Clinical, user and governance requirements that must be supported by the solution"
 ---
 
 ## User stories and logical data model ##
