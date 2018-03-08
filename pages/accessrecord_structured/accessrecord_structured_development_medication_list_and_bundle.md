@@ -8,7 +8,7 @@ summary: "Details of the lists and bundles used in Access Record Structured"
 ---
 ## Using the bundle resource
 
-GP Connect has not created a separate bundle profile and will use the standard FHIR&reg; bundle to contain the resources returned for a query. The bundle SHOULD have the type set to ‘collection’ and contain all the relevant resources as per the standard FHIR guidance, which can be accessed on the [HL7 website.](http://hl7.org/fhir/bundle.html).
+GP Connect has not created a separate bundle profile and will use the standard FHIR&reg; bundle to contain the resources returned for a query. The bundle **SHOULD** have the type set to ‘collection’ and contain all the relevant resources as per the standard FHIR guidance, which can be accessed on the [HL7 website.](http://hl7.org/fhir/bundle.html).
 
 ## Using the list resource
 
@@ -16,13 +16,13 @@ The list resource in FHIR is used to help manage a collection of resources. In G
 
 - When multiple queries in the same API call return data in the same profile, the list will identify which data in the profile has been returned for which query.
 - Where there are no items returned, the list will be empty.
-- Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query, allow some attribution that is common to the resources it references, differentiate between items at different stage of a workflow and provides a mechanism to deal with providing warnings that can be applied to the group of resources.
+- Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
 
 {% include note.html content=" The List resource is still in the process of being curated and may be subject to change depending on the outcome of the curation process. Codes to populate the code and warningCode fields are yet to be confirmed but will be added to the guidance shortly." %}
 
 ### Confidential items
 
-Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this SHOULD be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field SHOULD be populated using the confidential items warning code.
+Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **SHOULD** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **SHOULD** be populated using the confidential items warning code.
 
 ### Data in transit
 
@@ -30,7 +30,7 @@ This only refers to data transmitted from GP to GP when a patient moves GP pract
 
 ### Data awaiting filing
 
-Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this SHOULD be sent in a separate list to the rest of the entries. The list SHOULD be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and contain the warningCode for data awaiting filing.
+Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **SHOULD** be sent in a separate list to the rest of the entries. The list **SHOULD** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and contain the warningCode for data awaiting filing.
 This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
 
 ### List profile population
@@ -51,7 +51,7 @@ This will allow consuming systems to be able to display the data and indicate th
 |`warningCode`|A code warning of an issue related to this list|`CodeableConcept`|R|This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit.
 |`entry`|Entries in the list|`BackBoneElement`|R|
 |`entry.flag`||`CodeableConcept`|O|DO NOT USE - no use defined in the current version of GP Connect.
-|`entry.deleted`|If this item is actually marked as deleted|`Boolean`|O|DO NOT USE - deleted items SHOULD NOT be returned by providers as part of GP Connect.
+|`entry.deleted`|If this item is actually marked as deleted|`Boolean`|O|DO NOT USE - deleted items **SHOULD NOT** be returned by providers as part of GP Connect.
 |`entry.date`|When the item was added to the list|`dateTime`|O|As GP Connect represents a snapshot at the time the request was made by the consuming system this is not required to be populated.
 |`entry.item`|Actual entry|`Reference`|R|Reference to the item that is part of the list.
-|`emptyReason`|Why the list is empty|`CodeableConcept`|R|A null flavour of noContent SHOULD be used if a query returns no results to enter into a list.
+|`emptyReason`|Why the list is empty|`CodeableConcept`|R|A null flavour of noContent **SHOULD** be used if a query returns no results to enter into a list.
