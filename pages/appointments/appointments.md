@@ -22,7 +22,7 @@ To meet strategic objectives to improve access to GP care, the Appointment Manag
 
 GP practices need to control access by external organisations to their appointment book. Provider systems will enable practice users to designate their schedules/slots as bookable by GP Connect, and by Organisation Type and/or specific Organisations ensuring that only slots matching the booking Organisation/Type are returned in response to a request.
 
-The Appointment slots available via GP Connect will also be categorised by the end-user according to standardised values representing the role of the Practitioner delivering the appointment, and the channel by which the appointment is to be delivered, eg 'telephone', 'in-person'.  This provides more information to the user booking the appointment on behalf of the patient, thereby reducing the risk of inappropriate appointment booking.
+The Appointment slots available via GP Connect will also be categorised by the end-user according to standardised values representing the role of the Practitioner delivering the appointment, and the channel by which the appointment is to be delivered, eg 'telephone', 'in-person'.  This provides more information to the user booking the appointment on behalf of the patient, thereby reducing the risk of inappropriate appointment booking. The requirements are described in more details in the Appointment Slot Availability Management page.
 
 
 ## First of Type (FoT) care setting deployments ##
