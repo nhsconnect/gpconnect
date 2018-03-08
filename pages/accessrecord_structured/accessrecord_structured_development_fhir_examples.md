@@ -27,7 +27,7 @@ For the purposes of the example it is assumed that there is a single resolved al
       "resource": {
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-List-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1"
           ]
         },
         "status": "current",
@@ -157,7 +157,7 @@ For the purposes of the example it is assumed that there is a single resolved al
         ],
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergies-List-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1"
           ]
         },
         "status": "current",
@@ -468,7 +468,7 @@ Example of response to getstructuredrecord request with includeAllergies and inc
 
 Assumes - 'No Known Allergies' has not been positively asserted on record and but is not contradicted by presence of active allergies on record.
 
-```josn
+```json
 {
   "resourceType": "Bundle",
   "entry": [
@@ -520,7 +520,7 @@ Example of response to getstructuredrecord request with includeAllergies and inc
 
 Assumes - 'No Known Allergies' has been positively asserted on record and is not contradicted by presence of active allergies on record.
 
-```xml
+```json
 {
   "resourceType": "Bundle",
   "entry": [
