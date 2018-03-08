@@ -40,6 +40,10 @@ layout: default
 
 {% endif %}
 
+{% if page.div %}
+ <div class="{{page.div}}">
+{% endif %}
+
 <div class="post-content">
 
    {% if page.summary %}
@@ -71,6 +75,9 @@ layout: default
     {% endif %}
 
 </div>
+{% if page.div %}
+ </div>
+{% endif %}
 
 {{site.data.alerts.hr_shaded}}
 
