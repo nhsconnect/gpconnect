@@ -27,7 +27,7 @@ summary: "Guidance for populating and reading the medication resources"
       <td style="font-size: 13px">Medication code</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">CodeableConcept</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
-      <td style="font-size: 13px">The code that identifies the medication. A dm+d code SHOULD always be supplied if possible. If not, then a code from another codesystem or the SNOMED degrade code (196421000000109, Transfer-degraded medication entry) MUST be supplied.</td>
+      <td style="font-size: 13px">The code that identifies the medication. A dm+d code **SHOULD** always be supplied if possible. If not, then a code from another codesystem or the SNOMED degrade code (196421000000109, Transfer-degraded medication entry) MUST be supplied.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">status</code></td>
@@ -134,7 +134,7 @@ summary: "Guidance for populating and reading the medication resources"
        <td style="font-size: 13px">The status of the authorisation.</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">code</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
-       <td style="font-size: 13px">Use one of active, completed or stopped: ‘active’ represents an active authorisation - used for active repeat medications, ‘stopped’ a repeat authorisation which has been discontinued/stopped, ‘complete’ SHOULD be used for all acute authorisations.</td>
+       <td style="font-size: 13px">Use one of active, completed or stopped: ‘active’ represents an active authorisation - used for active repeat medications, ‘stopped’ a repeat authorisation which has been discontinued/stopped, ‘complete’ **SHOULD** be used for all acute authorisations.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">category</code></td>
@@ -157,7 +157,7 @@ summary: "Guidance for populating and reading the medication resources"
 <code class="highlighter-rouge">dateTime</code> or <code class="highlighter-rouge">Period</code>
 </td>
       <td style="text-align: center; font-size: 13px">R</td>
-       <td style="font-size: 13px">Start date is mandatory. Where there is a defined expiry or end date the end date SHOULD be supplied. For acute prescriptions no specific end date SHOULD be supplied.</td>
+       <td style="font-size: 13px">Start date is mandatory. Where there is a defined expiry or end date the end date **SHOULD** be supplied. For acute prescriptions no specific end date **SHOULD** be supplied.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">dateAsserted</code></td>
@@ -220,7 +220,7 @@ summary: "Guidance for populating and reading the medication resources"
        <td style="font-size: 13px">All notes that are associated with this medication record.</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">Annotation</code></td>
       <td style="text-align: center; font-size: 13px">R</td>
-       <td style="font-size: 13px">All patient notes and prescriber notes at authorisation(plan) and issue(order) level SHOULD be included in this field. They SHOULD be concatenated and indicate the level the notes come from, e.g. 1st Issue and also be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.</td>
+       <td style="font-size: 13px">All patient notes and prescriber notes at authorisation(plan) and issue(order) level **SHOULD** be included in this field. They **SHOULD** be concatenated and indicate the level the notes come from, e.g. 1st Issue and also be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">dosage/text</code></td>
@@ -256,9 +256,9 @@ summary: "Guidance for populating and reading the medication resources"
 
 ## Principles for populating the medication request profiles ##
 
-When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles SHOULD be applied when populating the MedicationRequest profiles:
+When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **SHOULD** be applied when populating the MedicationRequest profiles:
 1. All mandatory fields MUST be populated.
-2. Required fields SHOULD always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a Medication Request with intent 'plan' the associated MedicationStatement would be the parent profile. For a MedicationRequest with intent 'order', the associated MedicationStatement and MedicationRequest with intent 'plan' are both considered parent profiles.
+2. Required fields **SHOULD** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a Medication Request with intent 'plan' the associated MedicationStatement would be the parent profile. For a MedicationRequest with intent 'order', the associated MedicationStatement and MedicationRequest with intent 'plan' are both considered parent profiles.
 
 
 ## Medication request ##
@@ -300,14 +300,14 @@ When populating the MedicationRequest profile it may appear that fields are dupl
        <td style="font-size: 13px">Composite request this is part of</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">Identifier</code></td>
       <td style="text-align: center; font-size: 13px">R</td>
-       <td style="font-size: 13px">All repeat prescribed and repeat dispensed medications SHOULD have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.</td>
+       <td style="font-size: 13px">All repeat prescribed and repeat dispensed medications **SHOULD** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">status</code></td>
        <td style="font-size: 13px">The status of the authorisation</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">code</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
-       <td style="font-size: 13px">Use one of active, completed or stopped: ‘active’ represents an active authorisation - used for active repeat medications, ‘stopped’ a repeat authorisation which has been discontinued/stopped, ‘complete’ SHOULD be used for all acute authorisations. ** Justification - if we were to use active for acute authorisations when would it transition to complete without introducing complicated date-based statuses (perhaps OK for a ‘current’ medication list but not necessarily OK here).</td>
+       <td style="font-size: 13px">Use one of active, completed or stopped: ‘active’ represents an active authorisation - used for active repeat medications, ‘stopped’ a repeat authorisation which has been discontinued/stopped, ‘complete’ **SHOULD** be used for all acute authorisations. ** Justification - if we were to use active for acute authorisations when would it transition to complete without introducing complicated date-based statuses (perhaps OK for a ‘current’ medication list but not necessarily OK here).</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">intent</code></td>
@@ -370,14 +370,14 @@ When populating the MedicationRequest profile it may appear that fields are dupl
        <td style="font-size: 13px">Person and their organization requesting authorisation for prescription</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">BackboneElement</code></td>
       <td style="text-align: center; font-size: 13px">R</td>
-       <td style="font-size: 13px">To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the onBehalfOf SHOULD be completed with a reference to the other organisation. If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this MUST be detailed using an organisation.type code in the agent reference in the requester element.</td>
+       <td style="font-size: 13px">To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the onBehalfOf **SHOULD** be completed with a reference to the other organisation. If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this MUST be detailed using an organisation.type code in the agent reference in the requester element.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">recorder</code></td>
        <td style="font-size: 13px">The responsible practitioner who authorised the medication</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">Reference (Practitioner)</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
-       <td style="font-size: 13px">May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician SHOULD be referenced here.</td>
+       <td style="font-size: 13px">May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **SHOULD** be referenced here.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">reasonCode</code></td>
@@ -419,7 +419,7 @@ When populating the MedicationRequest profile it may appear that fields are dupl
        <td style="font-size: 13px">Prescription start and end dates.</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">Period</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
-       <td style="font-size: 13px">Start date is mandatory. Where there is a defined expiry or end date the end date SHOULD be supplied. For acute prescriptions no specific end date SHOULD be supplied.</td>
+       <td style="font-size: 13px">Start date is mandatory. Where there is a defined expiry or end date the end date **SHOULD** be supplied. For acute prescriptions no specific end date **SHOULD** be supplied.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">dispenseRequest.numberOfRepeatsAllowed</code></td>
@@ -433,7 +433,7 @@ When populating the MedicationRequest profile it may appear that fields are dupl
        <td style="font-size: 13px">The quantity to dispense.</td>
        <td style="font-size: 13px"><code class="highlighter-rouge">SimpleQuantity</code></td>
       <td style="text-align: center; font-size: 13px">R</td>
-       <td style="font-size: 13px">If the units are text then the extension dispenseRequest.quantityText SHOULD be used.</td>
+       <td style="font-size: 13px">If the units are text then the extension dispenseRequest.quantityText **SHOULD** be used.</td>
     </tr>
     <tr>
        <td style="font-size: 13px"><code class="highlighter-rouge">dispenseRequest.quantityText</code></td>
