@@ -25,7 +25,7 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /accessrecord_structured_development_introduction.html
+      url: /accessrecord_structured_development.html
       output: web
 
       subfolders:

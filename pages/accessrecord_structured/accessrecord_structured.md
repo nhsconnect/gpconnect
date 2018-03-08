@@ -34,7 +34,7 @@ The following API use cases are included in this capability:
 
 ## Profiled FHIR resources ##
 
-See the [FHIR resources](accessrecord_structured_development_resources_list.html) page for details of the FHIR profiles used in this capability.
+See the [FHIR resources](accessrecord_structured_development_resources_overview.html) page for details of the FHIR profiles used in this capability.
 
 ## Spine interactions ##
 
