@@ -3,7 +3,7 @@ title: List and bundle
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_medication_list_and_bundle.html
+permalink: accessrecord_structured_development_list_and_bundle.html
 summary: "Details of the lists and bundles used in Access Record Structured"
 ---
 ## Using the bundle resource
