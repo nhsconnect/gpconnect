@@ -1,18 +1,19 @@
 ---
-title: List and bundle
+title: List
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_list_and_bundle.html
-summary: "Details of the lists and bundles used in Access Record Structured"
+permalink: accessrecord_structured_development_list.html
+summary: "Guidance for populating and consuming the List resource"
 ---
-## Using the bundle resource
 
-GP Connect has not created a separate bundle profile and will use the standard FHIR&reg; bundle to contain the resources returned for a query. The bundle **SHOULD** have the type set to ‘collection’ and contain all the relevant resources as per the standard FHIR guidance, which can be accessed on the [HL7 website.](http://hl7.org/fhir/bundle.html).
+## Introduction ##
 
-## Using the list resource
+The table below shows you how to use each element of the List resource. You’ll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1).
 
-The list resource in FHIR is used to help manage a collection of resources. In GP Connect it is used to identify the data returns for each query. For each clinical area query, GP Connect will return one or more predefined list that identifies the data returned for that query.
+## Using the List resource ##
+
+The List resource in FHIR is used to help manage a collection of resources. In GP Connect it is used to identify the data returns for each query. For each clinical area query, GP Connect will return one or more predefined list that identifies the data returned for that query.
 
 - When multiple queries in the same API call return data in the same profile, the list will identify which data in the profile has been returned for which query.
 - Where there are no items returned, the list will be empty.
@@ -33,7 +34,7 @@ This only refers to data transmitted from GP to GP when a patient moves GP pract
 Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **SHOULD** be sent in a separate list to the rest of the entries. The list **SHOULD** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and contain the warningCode for data awaiting filing.
 This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
 
-### List profile population
+## List element usage
 
 | Element  | Usage | Datatype | Optionality | Guidance 
 |----------|-------|----------|:-----------:|---------------------------------

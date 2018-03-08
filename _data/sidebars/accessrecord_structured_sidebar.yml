@@ -77,8 +77,12 @@ entries:
           url: /accessrecord_structured_development_medicationrequest.html
           output: web
 
-    - title: List and Bundle
-      url: /accessrecord_structured_development_list_and_bundle.html
+    - title: List
+      url: /accessrecord_structured_development_list.html
+      output: web
+
+    - title: Bundle
+      url: /accessrecord_structured_development_bundle.html
       output: web
 
       subfolders:
