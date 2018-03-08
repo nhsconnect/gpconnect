@@ -9,13 +9,15 @@ summary: "Acess Record Structured FHIR examples"
 
 ## Allergies ##
 
-Example of response to getstructuredrecord request with includeAllergies and includeResolvedAllergies set to true
-
-For the purposes of the example it is assumed that there is a single resolved allergy present.
-
 - The GP Connect API is not a full FHIR RESTful interface - therefore not all resources returned are directly accessible
 - The message conventions reflect this e.g. fullURLs for individual resources are not provided
 - It is assumed that the querying system already has patient details so no patient resource is returned, instead the patient is referenced by identifier (NHS #)
+
+### Example 1 ###
+
+Example of response to getstructuredrecord request with includeAllergies and includeResolvedAllergies set to true.
+
+For the purposes of the example it is assumed that there is a single resolved allergy present.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -71,7 +73,7 @@ For the purposes of the example it is assumed that there is a single resolved al
       <resource>
          <List>
             <meta>
-               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergies-List-1" />
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1" />
             </meta>
             <status value="current" />
             <mode value="snapshot" />
@@ -346,6 +348,112 @@ For the purposes of the example it is assumed that there is a single resolved al
                <prefix value="Dr" />
             </name>
          </Practitioner>
+      </resource>
+   </entry>
+</Bundle>
+```
+
+### Example 2 ###
+
+Example of response to getstructuredrecord request with includeAllergies and includeResolvedAllergies missing or false.
+
+Assumes - 'No Known Allergies' has not been positively asserted on record and but is not contradicted by presence of active allergies on record.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+   <meta>
+      <!-- Time response generated -->
+      <lastUpdated value="2018-03-01T10:57:34+00:00" />
+   </meta>
+   <type value="searchset" />
+   <!-- deliberately omitting total here. This isn't a simple flat bundle with homogenous content returned in response to search 
+     so simple count of returned records isn't straightforwartd e.g. is it 2 (the returned lists) or is it the number of allergies - best left out
+-->
+   <!--
+Example of response to getstructuredrecord request with includeAllergyAndIntolerances
+and includeResolvedAllergies missing or false
+
+Assumes - 'No Known Allergies' has not been positively asserted on record and but is not contradicted by presence of active allergies on record
+
+-->
+   <entry>
+      <resource>
+         <List>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1" />
+            </meta>
+            <status value="current" />
+            <mode value="snapshot" />
+            <title value="Active Allergies" />
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct" />
+                  <code value="TBD" />
+                  <display value="Active Allergies" />
+               </coding>
+            </code>
+            <date value="2018-03-01T10:57:34+00:00" />
+            <subject>
+               <identifier>
+                  <system value="https://fhir.nhs.uk/Id/nhs-number" />
+                  <value value="1234567890" />
+               </identifier>
+            </subject>
+            <note>
+               <text value="There are no allergies in the patient record but it has not been confirmed with the patient that they have no allergies (i.e. 'no known allergies' code has not been recorded)." />
+            </note>
+         </List>
+      </resource>
+   </entry>
+</Bundle>
+```
+
+### Example 3 ###
+
+Example of response to getstructuredrecord request with includeAllergies and includeResolvedAllergies missing or false.
+
+Assumes - 'No Known Allergies' has been positively asserted on record and is not contradicted by presence of active allergies on record.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Bundle xmlns="http://hl7.org/fhir">
+   <meta>
+      <lastUpdated value="2018-03-01T10:57:34+00:00" />
+   </meta>
+   <type value="searchset" />
+   <entry>
+      <resource>
+         <List>
+            <meta>
+               <profile value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1" />
+            </meta>
+            <status value="current" />
+            <mode value="snapshot" />
+            <title value="Active Allergies" />
+            <code>
+               <coding>
+                  <system value="http://snomed.info/sct" />
+                  <code value="TBD" />
+                  <display value="Active Allergies" />
+               </coding>
+            </code>
+            <date value="2018-03-01T10:57:34+00:00" />
+            <subject>
+               <identifier>
+                  <system value="https://fhir.nhs.uk/Id/nhs-number" />
+                  <value value="1234567890" />
+               </identifier>
+            </subject>
+            <emptyReason>
+               <coding>
+                  <system value="http://hl7.org/fhir/special-values" />
+                  <code value="nil-known" />
+                  <display value="Nil Known" />
+               </coding>
+               <text value="No Known Allergies" />
+            </emptyReason>
+         </List>
       </resource>
    </entry>
 </Bundle>
