@@ -36,24 +36,24 @@ Where data exists in a provider system workflow that would have been included as
 This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
 
 ### List profile population
- 
-| Element  |Usage |Datatype   |Optionality|Guidance 
-|---|---|---|---|---
-|identifier|Unique identifier for the list|identifier|O||
-|Status|Whether the list is current/retired/entered-in-error|Code|M|'current' for all lists to be used in GP Connect |
-|mode|Whether the list is working/snapshot/changes|Code|M|Fixed value of 'snapshot' for GP Connect|
-|title|Descriptive name for the list|Code|O|To use PRSB SNOMED CT ref set of codes and corresponding human readable description in string
-|code|The purpose of the list|Code|M|The relevant code is specified in the guidance for each of the profiles. (list of codes to be confirmed) 
-|subject|Reference to the patient|Reference|M|
-|encounter|Reference to a relevant encounter|Reference|O|DO NOT USE - items in lists in GP Connect may be relevant to multiple encounters.
-|date|When the list was created|dateTime|O|
-|source|Who and/or what defined the list contents (aka Author) |Reference(Pratitioner/Patient/Device)|O|
-|orderedBy|What order the list has|CodeableConcept|O|As the data where lists are being used in GP Connect is structured it is simple for the consumer to put it in an order
-|note|Comments about this list|Annotation|R|
-|warningCode|A code warning of an issue related to this list|CodeableConcept|R|This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit.
-|entry|Entries in the list|BackBoneElement|R|
-|entry.flag||CodeableConcept|O|DO NOT USE - no use defined in the current version of GP Connect
-|entry.deleted|If this item is actually marked as deleted|Boolean|O|DO NOT USE - deleted items should not be returned by providers as part of GP Connect
-|entry.date|When the item was added to the list|dateTime|O|As GP Connect represents a snapshot at the time the request was made by the consuming system this is not required to be populated
-|entry.item|Actual entry|Reference|R|Reference to the item that is part of the list
-|emptyReason|Why the list is empty|CodeableConcept|R|A null flavour of noContent should be used if a query returns no results to enter into a list.
+
+| Element  | Usage | Datatype | Optionality | Guidance 
+|----------|-------|----------|:-----------:|---------------------------------
+|`identifier`|Unique identifier for the list|`identifier`|O||
+|`Status`|Whether the list is current/retired/entered-in-error|`Code`|M|'current' for all lists to be used in GP Connect |
+|`mode`|Whether the list is working/snapshot/changes|`Code`|M|Fixed value of 'snapshot' for GP Connect|
+|`title`|Descriptive name for the list|`Code`|O|To use PRSB SNOMED CT ref set of codes and corresponding human readable description in string
+|`code`|The purpose of the list|`Code`|M|The relevant code is specified in the guidance for each of the profiles. (list of codes to be confirmed) 
+|`subject`|Reference to the patient|`Reference`|M|
+|`encounter`|Reference to a relevant encounter|`Reference`|O|DO NOT USE - items in lists in GP Connect may be relevant to multiple encounters.
+|`date`|When the list was created|`dateTime`|O|
+|`source`|Who and/or what defined the list contents (aka Author) |`Reference (Pratitioner, Patient, Device)`|O|
+|`orderedBy`|What order the list has|`CodeableConcept`|O|As the data where lists are being used in GP Connect is structured it is simple for the consumer to put it in an order
+|`note`|Comments about this list|`Annotation`|R|
+|`warningCode`|A code warning of an issue related to this list|`CodeableConcept`|R|This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit.
+|`entry`|Entries in the list|`BackBoneElement`|R|
+|`entry.flag`||`CodeableConcept`|O|DO NOT USE - no use defined in the current version of GP Connect
+|`entry.deleted`|If this item is actually marked as deleted|`Boolean`|O|DO NOT USE - deleted items should not be returned by providers as part of GP Connect
+|`entry.date`|When the item was added to the list|`dateTime`|O|As GP Connect represents a snapshot at the time the request was made by the consuming system this is not required to be populated
+|`entry.item`|Actual entry|`Reference`|R|Reference to the item that is part of the list
+|`emptyReason`|Why the list is empty|`CodeableConcept`|R|A null flavour of noContent should be used if a query returns no results to enter into a list.
