@@ -102,7 +102,7 @@ The following describes the part parameters available for filtering on this para
 | `timePeriod.end` | `Medication` | `date` | `yyyy-mm-dd` | Optional | Restrict the patient's medication record to a specific time period (end date ) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
 | `includePrescriptionIssues.valueBoolean` | `Medication` | `boolean` | `true` or `false` | Optional | Include individual prescription issues in the response bundle |
 
-#### Provider details - timePeriod ####
+#### Provider details - `timePeriod` ####
 
 > - The provider system **MUST** return the medication summary data items for all medications with a `lastIssueDate` which falls within the `timePeriod.start` and `timePeriod.end` date range (inclusive). 
 > - Where a medication does not have a `lastIssueDate`, the provider system **MUST** return the medication summary data items for all medications whose `effective[x]` date range overlaps the `timePeriod.start` and `timePeriod.end` date range (inclusive).
