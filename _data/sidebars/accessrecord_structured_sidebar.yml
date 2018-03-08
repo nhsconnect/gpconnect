@@ -52,7 +52,7 @@ entries:
         subfolderitems:
 
         - title: Overview
-          url: /accessrecord_structured_development_resources_list.html
+          url: /accessrecord_structured_development_resources_overview.html
           output: web
         - title: <b class='resource'>AllergyIntolerance</b>
           url: /accessrecord_structured_development_allergyintolerance.html
