@@ -1227,3 +1227,7 @@ table > tbody > tr.tableSubHeading {
 hr {
     border-bottom: 1px solid #ccc;
 }
+
+.resource {
+    font-weight: normal;
+}
