@@ -9,14 +9,13 @@ summary: "Overview of the Appointment Management capability pack."
 
 ## Purpose ##
 
-To meet strategic objectives to improve access to GP care, the Appointment Management (AM) APIs enable consumer system administrative and clinical end users to book and manage GP practice appointments held in any of the four GP principal practice systems. The deployment of the APIs within patient apps (to support patient direct access) is envisaged for a later phase. Some API specification items may be uplifted in the future to reflect the requirements identified by related Appointment Management initiatives within the GPIT and Interoperability domains.
+To meet strategic objectives to improve access to GP care, the Appointment Management (AM) APIs enable consumer system administrative and clinical end users to book and manage GP practice appointments held in any of the four GP principal practice systems. The implementation of the APIs within patient apps (to support patient direct access) is out of scope for initial deployment. Some API specification items may be uplifted in the future to reflect the requirements identified by related Appointment Management initiatives within the GPIT and Interoperability domains.
 
 ## Example scenarios ##
 
 - administrative staff at a GP practice can book an appointment on behalf of a patient
 - administrative staff at a GP extended access hub can book an appointment on behalf of a patient at any of its federated GP practices
 - an urgent care (UC) 111 call centre handler or triage clinician can book, cancel or view appointments on behalf of a patient at the patient's registered or federated GP practices or extended access hubs
-- a patient will be able to book, cancel or view their GP appointments via a GP Connect-enabled app
 - administrative staff and clinicians at a range of other care settings (for example, A&amp;E, physio, social and community services) will be able to book, view or cancel a GP appointment on behalf of the patient
 
 ## GP practice appointment slot availability ##
