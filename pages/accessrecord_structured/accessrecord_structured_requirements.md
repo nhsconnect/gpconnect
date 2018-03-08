@@ -9,7 +9,7 @@ summary: "Organisational requirements that have informed development work"
 
 ## User stories and logical data model ##
 
-The [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.5.xlsx){:target="_blank"} contains the full set of business requirements that need to be met to support the retrieval of medications and allergy data in a structured format.
+The [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.6.xlsx){:target="_blank"} contains the full set of business requirements that need to be met to support the retrieval of medications and allergy data in a structured format.
 
 The requirements are described as a set of user stories with separate acceptance criteria for the provider and consumer systems.
 
