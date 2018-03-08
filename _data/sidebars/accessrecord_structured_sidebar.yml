@@ -53,8 +53,8 @@ entries:
         - title: Guidance
           url: /accessrecord_structured_development_allergies_guidance.html
           output: web
-        - title: Population
-          url: /accessrecord_structured_development_allergies_population.html
+        - title: <b class='resource'>AllergyIntolerance</b>
+          url: /accessrecord_structured_development_allergyintolerance.html
           output: web
 
       - title: Medications
@@ -67,8 +67,14 @@ entries:
         - title: Guidance
           url: /accessrecord_structured_development_medication_guidance.html
           output: web
-        - title: Population
-          url: /accessrecord_structured_development_medication_population.html
+        - title: <b class='resource'>Medication</b>
+          url: /accessrecord_structured_development_medication.html
+          output: web
+        - title: <b class='resource'>MedicationStatement</b>
+          url: /accessrecord_structured_development_medicationstatement.html
+          output: web
+        - title: <b class='resource'>MedicationRequest</b>
+          url: /accessrecord_structured_development_medicationrequest.html
           output: web
 
     - title: List and Bundle

@@ -1,13 +1,15 @@
 ---
-title: Population
+title: AllergyIntolerance population
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_allergies_population.html
-summary: "Guidance for populating and reading the AllergyIntolerance resource"
+permalink: accessrecord_structured_development_allergyintolerance.html
+summary: "Guidance for populating and consuming the AllergyIntolerance resource"
 ---
 
-The table below shows you how to use each element of the AllergyIntolerance resource. You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance resource definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1).
+## Introduction ##
+
+The table below shows you how to use each element of the AllergyIntolerance resource. You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1).
 
 ## AllergyIntolerance element usage ##
 
