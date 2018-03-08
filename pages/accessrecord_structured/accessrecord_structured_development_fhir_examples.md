@@ -43,9 +43,15 @@ For the purposes of the example it is assumed that there is a single resolved al
         },
         "resourceType": "List",
         "entry": [
-          {},
-          {},
-          {}
+          {
+            "item": "AllergyIntolerance/6bff710a-0bdc-4c9b-b98b-40db0a107edc"
+          },
+          {
+            "item": "AllergyIntolerance/5eb0f76a-cecb-4b83-999d-ddb76e551a9b"
+          },
+          {
+            "item": "AllergyIntolerance/d92b7d42-554d-4c92-b829-e76508185702"
+          }
         ],
         "date": "2018-03-01T10:57:34+00:00",
         "mode": "snapshot",
