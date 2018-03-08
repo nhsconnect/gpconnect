@@ -48,25 +48,25 @@ The table below shows you how to use each element of the AllergyIntolerance reso
       <td style="font-size: 13px">‘active’ for all active allergies. ‘resolved’ for resolved allergies.</td>
       <td style="font-size: 13px"><code class="highlighter-rouge">Code</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
-      <td style="font-size: 13px">Producers which support the concept of resolved/ended allergies should set the clinicalStatus of resolved allergies to ‘resolved’.</td>
+      <td style="font-size: 13px">Producers which support the concept of resolved/ended allergies **SHOULD** set the clinicalStatus of resolved allergies to ‘resolved’.</td>
     </tr>
     <tr>
       <td style="font-size: 13px"><code class="highlighter-rouge">verificationStatus</code></td>
       <td style="font-size: 13px">Fixed value of ‘unconfirmed’</td>
       <td style="font-size: 13px"><code class="highlighter-rouge">Code</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
-      <td style="font-size: 13px">DO NOT USE - this value is mandatory in base FHIR so cannot be removed. It is not a concept in GP systems and as such no meaning should be attributed to this field in consuming systems.</td>
+      <td style="font-size: 13px">DO NOT USE - this value is mandatory in base FHIR so cannot be removed. It is not a concept in GP systems and as such no meaning **SHOULD** be attributed to this field in consuming systems.</td>
     </tr>
     <tr>
       <td style="font-size: 13px"><code class="highlighter-rouge">type</code></td>
       <td style="font-size: 13px">Set to ‘allergy’ for reactions which are allergenic in nature (immunological), a value of ‘intolerance may be used to indicate Adverse Reactions (not immunologic in nature). Where the type is unknown the type element may be omitted.</td>
       <td style="font-size: 13px"><code class="highlighter-rouge">Code</code></td>
       <td style="text-align: center; font-size: 13px">O</td>
-      <td style="font-size: 13px">Some systems allow explicit identification of Adverse Reactions and Intolerances and the type should be used to make this distinction where it exists.</td>
+      <td style="font-size: 13px">Some systems allow explicit identification of Adverse Reactions and Intolerances and the type **SHOULD** be used to make this distinction where it exists.</td>
     </tr>
     <tr>
       <td style="font-size: 13px"><code class="highlighter-rouge">category</code></td>
-      <td style="font-size: 13px">Use ‘medication’ for all drug allergy types, ‘environmental’ for all non-drug allergies. The other values in the ValueSet (food and biologic) should not be used by convention.</td>
+      <td style="font-size: 13px">Use ‘medication’ for all drug allergy types, ‘environmental’ for all non-drug allergies. The other values in the ValueSet (food and biologic) **SHOULD NOT** be used by convention.</td>
       <td style="font-size: 13px"><code class="highlighter-rouge">Code</code></td>
       <td style="text-align: center; font-size: 13px">M</td>
       <td style="font-size: 13px">See note on ‘AllergyIntolerance Category’.</td>
@@ -104,7 +104,7 @@ The table below shows you how to use each element of the AllergyIntolerance reso
       <td style="font-size: 13px">Represents the date and/or time of the last known occurrence of a reaction event.</td>
       <td style="font-size: 13px"><code class="highlighter-rouge">dateTime</code></td>
       <td style="text-align: center; font-size: 13px">O</td>
-      <td style="font-size: 13px">May not currently be available from participating systems and may be omitted. Ommission should not prejudice the ability of providers and consumers to process this element if and when it is available.</td>
+      <td style="font-size: 13px">May not currently be available from participating systems and may be omitted. Ommission **SHOULD NOT** prejudice the ability of providers and consumers to process this element if and when it is available.</td>
     </tr>
     <tr>
       <td style="font-size: 13px"><code class="highlighter-rouge">note</code></td>
@@ -118,11 +118,11 @@ The table below shows you how to use each element of the AllergyIntolerance reso
       <td style="font-size: 13px">NOT TO BE USED</td>
       <td style="font-size: 13px"><code class="highlighter-rouge">Annotation</code></td>
       <td style="text-align: center; font-size: 13px">O</td>
-      <td style="font-size: 13px">AllergyIntolerance.note should contain all of the consolidated text from the allergy/intolerance.</td>
+      <td style="font-size: 13px">AllergyIntolerance.note **SHOULD** contain all of the consolidated text from the allergy/intolerance.</td>
     </tr>
     <tr>
       <td style="font-size: 13px"><code class="highlighter-rouge">reaction.manifestation</code></td>
-      <td style="font-size: 13px">Conveys the reaction resulting from the allergy/intolerance as a code. Where no code is available, but a textual description of the reaction is available then the nullFlavor UNC may be used and the textual description conveyed via reaction/description. If no reaction has explicitly been recorded, but the reaction element is present to convey severity, then reaction/manifestation should be coded as the nullFlavor NI. If the patient has been asked, but is unable to specify a reaction the nullFlavor, ‘ASKU’ should be used.</td>
+      <td style="font-size: 13px">Conveys the reaction resulting from the allergy/intolerance as a code. Where no code is available, but a textual description of the reaction is available then the nullFlavor UNC may be used and the textual description conveyed via reaction/description. If no reaction has explicitly been recorded, but the reaction element is present to convey severity, then reaction/manifestation **SHOULD** be coded as the nullFlavor NI. If the patient has been asked, but is unable to specify a reaction the nullFlavor, ‘ASKU’ **SHOULD** be used.</td>
       <td style="font-size: 13px"><code class="highlighter-rouge">CodeableConcept</code></td>
       <td style="text-align: center; font-size: 13px">O</td>
       <td style="font-size: 13px"> </td>
@@ -139,7 +139,7 @@ The table below shows you how to use each element of the AllergyIntolerance reso
       <td style="font-size: 13px">Severities of mild, moderate, severe are mapped directly to the FHIR ValueSet. Map life threatening to severe and populate criticality with high.</td>
       <td style="font-size: 13px">`Code’</td>
       <td style="text-align: center; font-size: 13px">O</td>
-      <td style="font-size: 13px">Unmapped or converted severity codes in original system should be expressed in AllergyIntolerance.note.</td>
+      <td style="font-size: 13px">Unmapped or converted severity codes in original system **SHOULD** be expressed in AllergyIntolerance.note.</td>
     </tr>
     <tr>
       <td style="font-size: 13px"><code class="highlighter-rouge">reaction.exposureRoute</code></td>
