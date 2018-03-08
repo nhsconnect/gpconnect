@@ -38,7 +38,7 @@ Where an authorisation is amended – for example, Proprietary/Generic switch, a
 ### Medication discontinuation/stopping ###
 Where a medication is stopped or discontinued then the status of the authorisation SHOULD be changed to 'stopped' and a textual stop reason provided via statusReason.reason.
 
-A statusReason SHOULD not be generated when an authorisation has simply expired (exceeded review date or number of issues).
+A statusReason SHOULD NOT be generated when an authorisation has simply expired (exceeded review date or number of issues).
 
 ### Authorisation ###
 
