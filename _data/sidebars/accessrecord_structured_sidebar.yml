@@ -87,6 +87,9 @@ entries:
         - title: Retrieve a patient's structured record
           url: /accessrecord_structured_development_retrieve_patient_record.html
           output: web
-        - title: <i class='resource'>Additional parameters guidance</i>
+        - title: <i class='resource'>&gt; Operation definition</i>
+          url: /accessrecord_structured_development_operation_definition.html
+          output: web
+        - title: <i class='resource'>&gt; Additional parameters guidance</i>
           url: /accessrecord_structured_operation_definition_parameters.html
           output: web
