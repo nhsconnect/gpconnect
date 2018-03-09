@@ -41,11 +41,9 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
 
 ## Example response ##
 
-Example of response to `/Patient/$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to false.
+Example of response to `$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to false.
 
 Assumes - 'No Known Allergies' has been positively asserted on record and is not contradicted by presence of active allergies on record.
-
-{% include todo.html content="Add Patient and registered GP Organization resources" %}
 
 ```json
 {
