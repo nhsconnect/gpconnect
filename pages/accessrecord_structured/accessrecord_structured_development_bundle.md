@@ -18,16 +18,6 @@ The headings below list the elements of the Bundle resource and describe how to 
 
 ## Bundle elements ##
 
-### id ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
 The logical identifier of the Bundle resource.
 
 ### meta.profile ###
