@@ -28,24 +28,15 @@ entries:
       url: /accessrecord_structured_development.html
       output: web
 
+    - title: Representing allergies in FHIR&reg;
+      output: web
+      url: /accessrecord_structured_development_allergies_guidance.html
+
+    - title: Representing medication in FHIR&reg;
+      url: /accessrecord_structured_development_medication_guidance.html
+      output: web
+
       subfolders:
-
-      - title: Allergies &amp; medications guidance
-        output: web
-        subfolderitems:
-
-        - title: Medication introduction
-          url: /accessrecord_structured_development_medication_introduction.html
-          output: web
-        - title: Medication guidance
-          url: /accessrecord_structured_development_medication_guidance.html
-          output: web
-        - title: Allergies introduction
-          url: /accessrecord_structured_development_allergies_introduction.html
-          output: web
-        - title: Allergies guidance
-          url: /accessrecord_structured_development_allergies_guidance.html
-          output: web
 
       - title: FHIR&reg; resources
         output: web
@@ -73,16 +64,29 @@ entries:
           url: /accessrecord_structured_development_bundle.html
           output: web
 
-      - title: API use cases
+      - title: API definition
         output: web
         subfolderitems:
 
         - title: Retrieve a patient's structured record
           url: /accessrecord_structured_development_retrieve_patient_record.html
           output: web
-        - title: Operation definition parameters
+        - title: Parameters
           url: /accessrecord_structured_operation_definition_parameters.html
           output: web
-        - title: FHIR&reg; examples
-          url: /accessrecord_structured_development_fhir_examples.html
+
+      - title: FHIR&reg; examples
+        output: web
+        subfolderitems:
+
+        - title: Example 1
+          url: /accessrecord_structured_development_fhir_examples_1.html
+          output: web
+
+        - title: Example 2
+          url: /accessrecord_structured_development_fhir_examples_2.html
+          output: web
+
+        - title: Example 3
+          url: /accessrecord_structured_development_fhir_examples_3.html
           output: web

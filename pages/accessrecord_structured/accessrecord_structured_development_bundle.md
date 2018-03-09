@@ -13,6 +13,4 @@ The table below shows you how to use each element of the Bundle resource. You’
 
 ## Bundle element usage
 
-| Element  | Usage | Datatype | Optionality | Guidance 
-|----------|-------|----------|:-----------:|---------------------------------
-| **TBD**  |       |          |             | 
+{% include todo.html content="TODO" %}

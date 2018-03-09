@@ -1248,21 +1248,30 @@ table.resource-attributes tr td {
     border-top: 0px;
 }
 
+.resource-attributes b {
+    padding-right: 5px;
+}
+
 .resource-attributes tr td:nth-child(1)
 {
     padding-left: 10px;
-    font-weight: bold;
-    width: 100px;
+    width: 33%;
 }
 
 .resource-attributes tr td:nth-child(2) {
     background-color: transparent;
-    font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-    width: 20%;
+    width: 33%;
 }
 
 .resource-attributes tr td:nth-child(3) {
     padding-left: 25px;
+    width: 33%;
+}
+
+.resource-page h3 {
+    border-top: 1px dotted grey;
+    padding-top: 20px;
+    margin-top: 20px;
     font-weight: bold;
-    width: 125px;
+    color: black;
 }

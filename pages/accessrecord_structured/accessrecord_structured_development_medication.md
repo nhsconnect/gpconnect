@@ -1,41 +1,42 @@
 ---
-title: Medication
+title: Medication resource
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medication.html
 summary: "Guidance for populating and consuming the Medication resource"
+div: resource-page
 ---
 
-## Medication resource usage ##
+## Introduction ##
 
-The subheadings below show you how to populate and consume elements of the Medication resource.
+The headings below list the elements of the Medication resource and describe how to populate and consume them.
 
-You'll find it helpful to read it in conjunction with the underlying [Medication profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1).
+{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-Any element not specifically listed **SHOULD NOT** be populated.
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Medication profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1)" %} 
 
-### Medication.id ###
+## Medication elements ##
+
+### id ###
 
 <table class='resource-attributes'>
   <tr>
-    <td class='ra-datatype'>Data type</td>
-    <td class='ra-datatype-value'>Id</td>
-    <td class='ra-optionality'>Optionality</td>
-    <td class='ra-optionality-value'>Mandatory</td>
+    <td><b>Data type:</b> <code>Id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
 The logical identifier of the Medication resource.
 
-### Medication.meta.profile ###
+### meta.profile ###
 
 <table class='resource-attributes'>
   <tr>
-    <td>Data type</td>
-    <td>uri</td>
-    <td>Optionality</td>
-    <td>Mandatory</td>
+    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -43,14 +44,13 @@ The Medication profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1)
 
-### Medication.code ###
+### code ###
 
 <table class='resource-attributes'>
   <tr>
-    <td>Data type</td>
-    <td>CodeableConcept</td>
-    <td>Optionality</td>
-    <td>Mandatory</td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -80,15 +80,15 @@ It is possible for historic/legacy medications to be displayed with a name corre
 
 This name **MUST** be preserved via `CodeableConcept.text` when representing the medication via resources. `CodeableConcept.text` is redundant when the displayed medication name on the original system and the dm+d name is identical, and, in these cases, `CodeableConcept.text` **MUST** be omitted.
 
-### Medication.package ###
+### package ###
 
 <table class='resource-attributes'>
   <tr>
-    <td>Data type</td>
-    <td>BackboneElement</td>
-    <td>Optionality</td>
-    <td>Optional</td>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
 If the GP providing system has data relating to the batch number or expiry date they **MAY** be populated within this element.
+

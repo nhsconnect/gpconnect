@@ -3,7 +3,7 @@ title: FHIR Examples
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_fhir_examples.html
+permalink: accessrecord_structured_development_fhir_examples_1.html
 summary: "Acess Record Structured FHIR examples"
 ---
 
@@ -465,114 +465,5 @@ For the purposes of the example it is assumed that there is a single resolved al
     "lastUpdated": "2018-03-01T10:57:34+00:00"
   },
   "type": "searchset"
-}
-```
-
-### Example 2 ###
-
-Example of response to getstructuredrecord request with includeAllergies and includeResolvedAllergies missing or false.
-
-Assumes - 'No Known Allergies' has not been positively asserted on record and but is not contradicted by presence of active allergies on record.
-
-```json
-{
-  "resourceType": "Bundle",
-  "entry": [
-    {
-      "resource": {
-        "date": "2018-03-01T10:57:34+00:00",
-        "resourceType": "List",
-        "status": "current",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "TBD",
-              "display": "Active Allergies"
-            }
-          ]
-        },
-        "meta": {
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1"
-          ]
-        },
-        "mode": "snapshot",
-        "note": [
-          {
-            "text": "There are no allergies in the patient record but it has not been confirmed with the patient that they have no allergies (i.e. 'no known allergies' code has not been recorded)."
-          }
-        ],
-        "title": "Active Allergies",
-        "subject": {
-          "identifier": {
-            "system": "https://fhir.nhs.uk/Id/nhs-number",
-            "value": "1234567890"
-          }
-        }
-      }
-    }
-  ],
-  "type": "searchset",
-  "meta": {
-    "lastUpdated": "2018-03-01T10:57:34+00:00"
-  }
-}
-```
-
-### Example 3 ###
-
-Example of response to getstructuredrecord request with includeAllergies and includeResolvedAllergies missing or false.
-
-Assumes - 'No Known Allergies' has been positively asserted on record and is not contradicted by presence of active allergies on record.
-
-```json
-{
-  "resourceType": "Bundle",
-  "entry": [
-    {
-      "resource": {
-        "date": "2018-03-01T10:57:34+00:00",
-        "resourceType": "List",
-        "status": "current",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "TBD",
-              "display": "Active Allergies"
-            }
-          ]
-        },
-        "meta": {
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1"
-          ]
-        },
-        "mode": "snapshot",
-        "emptyReason": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/special-values",
-              "code": "nil-known",
-              "display": "Nil Known"
-            }
-          ],
-          "text": "No Known Allergies"
-        },
-        "title": "Active Allergies",
-        "subject": {
-          "identifier": {
-            "system": "https://fhir.nhs.uk/Id/nhs-number",
-            "value": "1234567890"
-          }
-        }
-      }
-    }
-  ],
-  "type": "searchset",
-  "meta": {
-    "lastUpdated": "2018-03-01T10:57:34+00:00"
-  }
 }
 ```
