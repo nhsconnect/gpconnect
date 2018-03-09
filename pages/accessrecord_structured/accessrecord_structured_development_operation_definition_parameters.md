@@ -1,5 +1,5 @@
 ---
-title: Access Record Structured - Operation Definition Parameters
+title: Operation Definition Parameters
 keywords: getstructuredrecord, view
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -7,7 +7,7 @@ permalink: accessrecord_structured_operation_definition_parameters.html
 summary: "Access record structured operation definition parameter details"
 ---
 
-## Operation Definition Parameters ##
+## Parameters ##
 
 The following parameters are available to be requested as part of the operation definition `GPConnect-GetStructuredRecord-Operation-1`:
 
