@@ -5,17 +5,56 @@ tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medicationrequest.html
 summary: "Guidance for populating and consuming the MedicationRequest resource"
+div: resource-page
 ---
 
 ## Introduction ##
 
-The table below shows you how to use each element of the MedicationRequest resource. You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1).
+The headings below list the elements of the MedicationRequest resource and describe how to populate and consume them.
+
+{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
+
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)" %} 
 
 ## Overarching principles ##
 
 When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **SHOULD** be applied when populating the MedicationRequest profiles:
+
 1. All mandatory fields MUST be populated.
-2. Required fields **SHOULD** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a Medication Request with intent 'plan' the associated MedicationStatement would be the parent profile. For a MedicationRequest with intent 'order', the associated MedicationStatement and MedicationRequest with intent 'plan' are both considered parent profiles.
+
+2. Required fields **SHOULD** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a MedicationRequest with `intent` of `plan` the associated MedicationStatement would be the parent profile. For a MedicationRequest with `intent` of `order`, the associated MedicationStatement and MedicationRequest with `intent` of `plan` are both considered parent profiles.
+
+## MedicationRequest elements ##
+
+### id ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The logical identifier of the MedicationRequest resource.
+
+### meta.profile ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The MedicationRequest profile URL.
+
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)
+
+
+
+
 
 ## MedicationRequest element usage ##
 

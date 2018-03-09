@@ -1,5 +1,5 @@
 ---
-title: FHIR Examples
+title: FHIR&reg; example 1
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -7,17 +7,22 @@ permalink: accessrecord_structured_development_fhir_examples_1.html
 summary: "Acess Record Structured FHIR examples"
 ---
 
-## Allergies ##
+## Note ##
 
 - The GP Connect API is not a full FHIR RESTful interface - therefore not all resources returned are directly accessible
 - The message conventions reflect this e.g. fullURLs for individual resources are not provided
-- It is assumed that the querying system already has patient details so no patient resource is returned, instead the patient is referenced by identifier (NHS #)
 
-### Example 1 ###
+## Example request ##
 
-Example of response to getstructuredrecord request with includeAllergies and includeResolvedAllergies set to true.
+{% include todo.html content="TODO" %}
+
+## Example response ##
+
+Example of response to `/Patient/$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to true.
 
 For the purposes of the example it is assumed that there is a single resolved allergy present.
+
+{% include todo.html content="Add Patient and registered GP Organization resources" %}
 
 ```json
 {

@@ -1,5 +1,5 @@
 ---
-title: Access Record Structured - Operation Definition Parameters
+title: Additional parameters guidance
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
