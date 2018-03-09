@@ -1,5 +1,5 @@
 ---
-title: Representing allergies in FHIR&reg;
+title: Allergies guidance
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar

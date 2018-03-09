@@ -1,5 +1,5 @@
 ---
-title: Representing medication in FHIR&reg;
+title: Medication guidance;
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
