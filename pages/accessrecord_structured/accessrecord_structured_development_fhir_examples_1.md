@@ -57,7 +57,7 @@ For the purposes of the example it is assumed that there is a single resolved al
                   "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1"
                ]
             },
-    "type": "collection",
+	"type": "collection",
     "entry": [
       {
          "resource": {
@@ -80,6 +80,9 @@ For the purposes of the example it is assumed that there is a single resolved al
             "resourceType": "List",
             "entry": [
                {
+                  "item": "AllergyIntolerance/561850bd-360c-4d17-b3c8-a837ef0cbfba"
+               },
+			   {
                   "item": "AllergyIntolerance/6bff710a-0bdc-4c9b-b98b-40db0a107edc"
                },
                {
@@ -111,7 +114,7 @@ For the purposes of the example it is assumed that there is a single resolved al
          "resource": {
             "contained": [
                {
-                  "id": "res-1",
+                  "id": "561850bd-360c-4d17-b3c8-a837ef0cbfba",
                   "reaction": [
                      {
                         "manifestation": [
@@ -173,10 +176,7 @@ For the purposes of the example it is assumed that there is a single resolved al
                   "resourceType": "AllergyIntolerance",
                   "clinicalStatus": "resolved",
                   "patient": {
-                     "identifier": {
-                        "system": "https://fhir.nhs.uk/Id/nhs-number",
-                        "value": "1234567890"
-                     }
+                     "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
                   },
                   "note": [
                      {
@@ -299,10 +299,7 @@ For the purposes of the example it is assumed that there is a single resolved al
             "resourceType": "AllergyIntolerance",
             "clinicalStatus": "active",
             "patient": {
-               "identifier": {
-                  "system": "https://fhir.nhs.uk/Id/nhs-number",
-                  "value": "1234567890"
-               }
+                 "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
             },
             "note": [
                {
@@ -387,10 +384,7 @@ For the purposes of the example it is assumed that there is a single resolved al
             "resourceType": "AllergyIntolerance",
             "clinicalStatus": "active",
             "patient": {
-               "identifier": {
-                  "system": "https://fhir.nhs.uk/Id/nhs-number",
-                  "value": "1234567890"
-               }
+                "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
             },
             "note": [
                {
@@ -443,10 +437,7 @@ For the purposes of the example it is assumed that there is a single resolved al
             "resourceType": "AllergyIntolerance",
             "clinicalStatus": "active",
             "patient": {
-               "identifier": {
-                  "system": "https://fhir.nhs.uk/Id/nhs-number",
-                  "value": "1234567890"
-               }
+                "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
             },
             "note": [
                {
@@ -469,7 +460,7 @@ For the purposes of the example it is assumed that there is a single resolved al
       },
       {
          "resourceType": "Patient",
-         "id": "1234567890",
+         "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
          "meta": {
             "lastUpdated": "2018-03-09T07:52:45.466+00:00",
             "profile": [
