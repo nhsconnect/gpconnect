@@ -30,7 +30,8 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
       "name": "includeAllergies"
     }
   ]
-}```
+}
+```
 
 
 ## Example response ##
