@@ -1,7 +1,7 @@
 ---
 title: Allergies guidance
 keywords: getcarerecord
-tags: [getcarerecord]
+tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_allergies_guidance.html
 summary: "Guidance on the representation of allergies and intolerances in GP Connect"
