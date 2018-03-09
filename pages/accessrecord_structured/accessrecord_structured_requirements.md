@@ -99,5 +99,5 @@ This engagement has included:
  - Commissioning support units
  - Hospital trusts
 
-The feedback from these stakeholders has been used to develop the business use cases, user stories and the [logical data model](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.5.xlsx){:target="_blank"}. These will form the basis of the technical specification and will be used to assure that the GP Connect API meets the needs of the business.
+The feedback from these stakeholders has been used to develop the business use cases, user stories and the [logical data model](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.6.xlsx){:target="_blank"}. These will form the basis of the technical specification and will be used to assure that the GP Connect API meets the needs of the business.
 
