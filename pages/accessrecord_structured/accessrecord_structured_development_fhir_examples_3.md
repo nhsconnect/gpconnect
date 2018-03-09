@@ -54,7 +54,7 @@ Assumes - 'No Known Allergies' has been positively asserted on record and is not
                   "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1"
                ]
             },
-    "type": "collection",
+	"type": "collection",
     "entry": [
       {
          "resource": {
@@ -87,17 +87,14 @@ Assumes - 'No Known Allergies' has been positively asserted on record and is not
                "text": "No Known Allergies"
             },
             "title": "Active Allergies",
-            "subject": {
-               "identifier": {
-                  "system": "https://fhir.nhs.uk/Id/nhs-number",
-                  "value": "1234567890"
-               }
+            "patient": {
+                "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
             }
          }
       },
       {
          "resourceType": "Patient",
-         "id": "1234567890",
+         "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
          "meta": {
             "lastUpdated": "2018-03-09T07:52:45.466+00:00",
             "profile": [
