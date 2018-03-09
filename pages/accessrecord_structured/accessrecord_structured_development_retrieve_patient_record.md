@@ -1,7 +1,7 @@
 ---
 title: Retrieve a patient's structured record
 keywords: getstructuredrecord, view
-tags: [use_case,getstructuredrecord]
+tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_retrieve_patient_record.html
 summary: "Retrieve a patient's record in structured format"
