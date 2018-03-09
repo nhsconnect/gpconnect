@@ -7,14 +7,9 @@ permalink: accessrecord_structured_development_fhir_examples_1.html
 summary: "Acess Record Structured FHIR examples"
 ---
 
-## Note ##
-
-- The GP Connect API is not a full FHIR RESTful interface - therefore not all resources returned are directly accessible
-- The message conventions reflect this e.g. fullURLs for individual resources are not provided
-
 ## Example request ##
 
-Example of request to `$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to true.
+Example of request to `$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to `true`.
 
 ```json
 {
@@ -27,17 +22,17 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
     {
       "name": "patientNHSNumber",
       "valueIdentifier": {
-            "system": "https://fhir.nhs.uk/Id/nhs-number",
-            "value": "1234567890"
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "1234567890"
       }
     },
     {
       "name": "includeAllergies"
     },
-	{
-	"name": "includeResolvedAllergies",
-	"value": "1"
-	}
+    {
+      "name": "includeResolvedAllergies",
+      "value": "1"
+    }
   ]
 }
 ```
