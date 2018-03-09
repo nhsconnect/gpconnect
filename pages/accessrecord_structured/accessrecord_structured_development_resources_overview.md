@@ -32,9 +32,9 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 * [Bundle](accessrecord_structured_development_bundle.html)
 * [List](accessrecord_structured_development_list.html)
 
-## Code and identifier systems ##
+## Common code and identifier systems ##
 
-### Code systems ###
+### Common code systems ###
 
 The following common code systems are used when populating `CodeableConcept.coding.system` in resources for this capability:
 
@@ -45,7 +45,7 @@ The following common code systems are used when populating `CodeableConcept.codi
 | Read codes CTV3   | `http://read.info/ctv3` |
 
 
-### Identifier systems ###
+### Common identifier systems ###
 
 The following common identifier systems are used when populating `Identifier.system` in resources for this capability:
 
