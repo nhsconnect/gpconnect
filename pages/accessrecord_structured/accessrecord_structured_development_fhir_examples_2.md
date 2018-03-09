@@ -13,6 +13,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` s
 
 ```json
 {
+  "resourceType": "Parameters",  
   "meta": {
     "profile": {
       "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
