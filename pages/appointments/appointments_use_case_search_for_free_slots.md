@@ -86,11 +86,11 @@ Where searchFilters are sent by consumers which are not explicitly supported in 
 On the wire, a `Search for free slots` request would look something like one of the following:
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00-00:00&end=le2017-10-31T23:59:59-00:00&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00-00:00&end=le2017-10-31T23:59:59-00:00&status=free&_include=Slot:schedule&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ## Prerequisites ##
