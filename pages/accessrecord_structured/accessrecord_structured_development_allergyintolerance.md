@@ -1,7 +1,7 @@
 ---
 title: AllergyIntolerance resource
 keywords: getcarerecord
-tags: [getcarerecord]
+tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_allergyintolerance.html
 summary: "Guidance for populating and consuming the AllergyIntolerance resource"
