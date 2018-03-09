@@ -190,7 +190,9 @@ Unless there is a distinct user modifiable availabilityTime for the authorisatio
 
 Person and their organization requesting authorisation for prescription.
 
-To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **SHOULD** be completed with a reference to the other organisation. If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
+To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **SHOULD** be completed with a reference to the other organisation. 
+
+If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
 
 
 ### recorder ###
@@ -388,7 +390,9 @@ Extension elements to hold details of repeat authorisation.
 
 The number of repeat issues authorised if specified.
 
-Must be present where a repeat is authorised for a defined number of issues. Must not be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
+**MUST** be present where a repeat is authorised for a defined number of issues. 
+
+**MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
 
 
 ### repeatInformation.numberOfRepeatPrescriptionsIssued ###
@@ -403,7 +407,7 @@ Must be present where a repeat is authorised for a defined number of issues. Mus
 
 Running total of number of issues made against a repeat authorisation.
 
-Must be Zero, if not yet issued.
+Must be zero, if not yet issued.
 
 
 ### repeatInformation.authorisationExpiryDate ###
