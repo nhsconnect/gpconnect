@@ -23,7 +23,7 @@ Retrieve a patient's record in FHIR&reg; structured format from a GP practice.
 The consumer system:
 
 - **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
 
@@ -74,8 +74,8 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 
 The following data-elements are mandatory (that is, data **MUST** be present):
 
-- the `patientNHSNumber` is the NHS number of the patient whose GP record you want to access.
-- the `include[Medication|Allergies]` are the resource groups you want to return.
+- the `patientNHSNumber` is the NHS Number of the patient whose GP record you want to access
+- the `include[Medication|Allergies]` are the resource groups you want to return
 
 The following data-elements are optional:
 
@@ -85,10 +85,10 @@ The following data-elements are optional:
 	- providing both `start` and `end` returns data within the values provided
 	- providing `start` only returns all data after that value (including dates in future)
 	- providing `end` only returns all data before that value
-- the `includePrescriptionIssues` value idenifies if individual prescription issues are included in the response bundle
-- the `includeResolvedAllergies` value idenifies if resolved allergies and intolerances are included in the response bundle
+- the `includePrescriptionIssues` value identifies if individual prescription issues are included in the response bundle
+- the `includeResolvedAllergies` value identifies if resolved allergies and intolerances are included in the response bundle
 
-The request payload is a set of [Parameters](https://www.hl7.org/fhir/parameters.html) conforming to the `gpconnect-structuredrecord-operation-1` profiled `OperationDefinition`, see below:
+The request payload is a set of [parameters](https://www.hl7.org/fhir/parameters.html) conforming to the `gpconnect-structuredrecord-operation-1` profiled `OperationDefinition`, see below:
 
 {% include tip.html content="This is a type level operation (that is, is not associated with a given resource instance)." %} 
 
@@ -231,7 +231,7 @@ On the wire, a JSON serialised `$gpc.getstructuredrecord-1` request would look s
 
 The provider system **SHALL**:
 
-- return all data if no `timePeriod` parameter is specified for a section that can accept a time period.
+- return all data if no `timePeriod` parameter is specified for a section that can accept a time period
 
 #### Parameter details ####
 
@@ -249,19 +249,19 @@ The provider system **SHALL**:
 
 The provider system **SHALL** return an error if:
 
-- the `patientNHSNumber` is invalid (that is, it fails NHS number format and check digit tests).
-- the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`.
-- the GP organisation is not the patient's nominated primary care provider.
-- the `include[x]` is invalid (that is, it isn't from the correct value set).
-- an invalid `timePeriod` is requested (that is, end date > start date).
-- a `timePeriod` is specified for a `include[x]` that is time period agnostic (for example, Allergies).
+- the `patientNHSNumber` is invalid (that is, it fails NHS Number format and check digit tests)
+- the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`
+- the GP organisation is not the patient's nominated primary care provider
+- the `include[x]` is invalid (that is, it isn't from the correct value set)
+- an invalid `timePeriod` is requested (that is, end date > start date)
+- a `timePeriod` is specified for an `include[x]` that is time period agnostic (for example, Allergies)
 <br>
 
-{% include important.html content="Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached." %}
+{% include important.html content="Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached." %}
 
 {% include important.html content="Provider systems **SHOULD** return informative messages if an error occurs (for example, Bad Request (400) - An invalid value was specified for one of the query parameters in the request)." %}
 
-{% include tip.html content="Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes." %}
+{% include tip.html content="Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes." %}
 
 ### Request response ###
 
@@ -279,9 +279,9 @@ Content-Length: 1464
 
 Provider systems:
 
-- **SHALL** return a `200` **OK** HTTP status code on successful retrieval of a care record section.
-- **SHALL** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- **SHALL** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`.
+- **SHALL** return a `200` **OK** HTTP status code on successful retrieval of a care record section
+- **SHALL** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response
+- **SHALL** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`
 
 ```json
 {
