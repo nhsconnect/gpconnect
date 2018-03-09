@@ -1,5 +1,5 @@
 ---
-title: Medication guidance;
+title: Medication guidance
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
