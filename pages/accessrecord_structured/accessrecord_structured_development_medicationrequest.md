@@ -1,5 +1,5 @@
 ---
-title: MedicationRequest
+title: MedicationRequest resource
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
