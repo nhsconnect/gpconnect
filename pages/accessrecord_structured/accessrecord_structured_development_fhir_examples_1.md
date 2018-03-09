@@ -23,15 +23,17 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
       "name": "patientNHSNumber",
       "valueIdentifier": {
         "system": "https://fhir.nhs.uk/Id/nhs-number",
-        "value": "1234567890"
+        "value": "9999999999"
       }
     },
     {
-      "name": "includeAllergies"
-    },
-    {
-      "name": "includeResolvedAllergies",
-      "value": "1"
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
     }
   ]
 }
@@ -464,8 +466,8 @@ For the purposes of the example it is assumed that there is a single resolved al
          },
          "identifier": [
             {
-               "system": "https://fhir.nhs.uk/Id/pas-number",
-               "value": "LOCAL1001"
+               "system": "https://fhir.nhs.uk/Id/nhs-number",
+               "value": "9999999999"
             },
             {
                "system": "https://fhir.nhs.uk/Id/PPMIdentifier",
