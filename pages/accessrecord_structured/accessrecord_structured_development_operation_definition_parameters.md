@@ -7,41 +7,15 @@ permalink: accessrecord_structured_operation_definition_parameters.html
 summary: "Access record structured operation definition parameter details"
 ---
 
-## Parameters ##
-
-The following parameters are available to be requested as part of the operation definition `GPConnect-GetStructuredRecord-Operation-1`:
-
-- `patientNHSnumber`
-- `includeAllergies`
-- `includeMedication`
-
-{% include important.html content="At least one of the `include[x]` parameters listed above **MUST** be supplied" %}
-
-### patientNHSnumber ###
-
-The `patientNHSnumber` parameter refers to the NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index.
-
-`patientNHSnumber` **MUST** be included in the request.
-
-| Name                  |  Type | Value | Optionality | Comments |
-|-----------------------|-------|-------|:-----------:|----------|
-| `patientNHSnumber.Id` | `integer` | [patientNHSNumber](https://fhir.nhs.uk/Id/nhs-number) | Mandatory | Patient's NHS Number |
-
 ### includeAllergies ###
 
 Including the `includeAllergies` parameter will request resources representing a patient's allergies and intolerances in the response bundle. By default, resolved allergies and intolerances are not included.
-
-`includeAllergies` consists of the following FHIR resources:
-
-- [AllergyIntolerance](http://www.hl7.org/fhir/STU3/allergyintolerance.html "AllergyIntolerance")
-- [Patient](https://www.hl7.org/fhir/patient.html "Patient")
-- [Practitioner](https://www.hl7.org/fhir/practitioner.html "Practitioner")
 
 {: .center-image }
 ![AlleryIntolerance Resource Group diagram](images/access_structured/AllergyIntoleranceResourceGroup.png)
 
 
-#### Part Parameters ####
+#### includeAllergies sub (part) parameters ####
 
 The following describes the part parameters available for filtering on this parameter:
 
@@ -57,44 +31,9 @@ The folowing list describes the expected provider system behaviours based on `in
 > - The resolved allergy information **MUST** be explicitely segregated from the active allergy information
 
 
-#### Request Example ####
-
-On the wire a JSON serialised `$gpc.getstructuredrecord-1` request for **Allergies only** would look something like the following:
-
-```json
-{
-  "meta": {
-    "profile": {
-      "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
-    }
-  },
-  "parameter": [
-    {
-      "name": "patientNHSNumber",
-      "valueIdentifier": {
-            "system": "https://fhir.nhs.uk/Id/nhs-number",
-            "value": "9999999999"
-      }
-    },
-    {
-      "name": "includeAllergies"
-    }
-  ]
-}
-```
-
 ### includeMedication ###
 
 Includes the 'includeMedication' parameter will request resources representing a patient's medication record in the response bundle.
-
-`includeMedication` consists of the following FHIR resources:
-
-- [MedicationStatement](https://www.hl7.org/fhir/medicationstatement.html "MedicationStatement")
-- [MedicationRequest](https://www.hl7.org/fhir/medicationrequest.html "MedicationRequest")
-- [Medication](http://www.hl7.org/fhir/STU3/medication.html "Medication")
-- [Patient](https://www.hl7.org/fhir/patient.html "Patient")
-- [Practitioner](https://www.hl7.org/fhir/practitioner.html "Practitioner")
-- [Organization](https://www.hl7.org/fhir/organization.html "Organization")
 
 {: .center-image }
 ![Medication Resource Group diagram](images/access_structured/MedicationResourceGroup.png)
@@ -126,29 +65,3 @@ The folowing list describes the expected provider system behaviours based on `in
 > - Where the consumer system has requested `includePrescriptionIssues`, the provider **MUST** return all medication issue data items related to the medication summaries that are returned
 > - Where the consumer system has not requested `includePrescriptionIssues`, the provider **MUST** **NOT** return medication issue data items
 
-
-#### Request Example ####
-
-On the wire a JSON serialised `$gpc.getstructuredrecord-1` request for **Medication only** would look something like the following:
-
-```json
-{
-  "meta": {
-    "profile": {
-      "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
-    }
-  },
-  "parameter": [
-    {
-      "name": "patientNHSNumber",
-      "valueIdentifier": {
-            "system": "https://fhir.nhs.uk/Id/nhs-number",
-            "value": "9999999999"
-      }
-    },
-    {
-      "name": "includeMedication"
-    }
-  ]
-}
-```
