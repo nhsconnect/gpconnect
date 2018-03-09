@@ -27,7 +27,7 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
-        - title: 1.2.0-alpha
+        - title: 1.2.0-beta
           url: /overview_release_notes_1_2_0.html
           output: web
         - title: 1.1.0-rc
