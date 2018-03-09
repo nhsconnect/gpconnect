@@ -49,6 +49,7 @@ The consumer:
 - SHALL not request a date range where any part of the date range is in the past
 - SHALL indicate to the end user that only appointments in the future will be returned from GP Connect and that the earliest that the user can request appointments is todays date
 
+  ![Diagram - Date range parameters](images/appointments/RetrievePatientsApp.png)
 
 The provider systems:
 - SHALL support the search prefixes `ge` and `le`
