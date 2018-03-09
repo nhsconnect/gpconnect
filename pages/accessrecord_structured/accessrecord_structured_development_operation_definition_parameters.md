@@ -1,5 +1,5 @@
 ---
-title: Additional parameters guidance
+title: Access Record Structured - Operation Definition Parameters
 keywords: getstructuredrecord, view
 tags: [use_case,getstructuredrecord]
 sidebar: accessrecord_structured_sidebar
@@ -21,7 +21,7 @@ The following parameters are available to be requested as part of the operation 
 
 The `patientNHSnumber` parameter refers to the NHS number of the patient whose record is being extracted, which must be traced or verified against the national demographics index.
 
-> `patientNHSnumber` **MUST** be included in the request.
+`patientNHSnumber` **MUST** be included in the request.
 
 | Name                  |  Type | Value | Optionality | Comments |
 |-----------------------|-------|-------|:-----------:|----------|
@@ -48,6 +48,14 @@ The following describes the part parameters available for filtering on this para
 | Name                  | Include Parameter | Type | Value | Optionality | Comments |
 |-----------------------|-------------------|------|-------|:-----------:|----------|
 | `includeResolvedAllergies.valueBoolean` | `Allergies` | `boolean` | `true` or `false` | Optional | Include resolved allergies and intolerances in the response bundle |
+
+#### Provider details  ####
+
+The folowing list describes the expected provider system behaviours based on `includeResolvedAllergies` parameter:
+
+> - Where the consumer system has requested `includeResolvedAllergies`, the provider systems **MUST** return all the allergy, adverse reaction, sensitivity and future propensity for an adverse reaction data that is recorded as resolved (ended)
+> - The resolved allergy information **MUST** be explicitely segregated from the active allergy information
+
 
 #### Request Example ####
 
@@ -102,7 +110,8 @@ The following describes the part parameters available for filtering on this para
 | `timePeriod.end` | `Medication` | `date` | `yyyy-mm-dd` | Optional | Restrict the patient's medication record to a specific time period (end date ) [Date display](http://systems.digital.nhs.uk/data/cui/uig/datedisplay.pdf) |
 | `includePrescriptionIssues.valueBoolean` | `Medication` | `boolean` | `true` or `false` | Optional | Include individual prescription issues in the response bundle |
 
-#### Provider details - `timePeriod` ####
+#### Provider details  ####
+
 
 The folowing list describes the expected provider system behaviours based on `timePeriod` parameter:
 
@@ -110,6 +119,13 @@ The folowing list describes the expected provider system behaviours based on `ti
 > - Where a medication does not have a `lastIssueDate`, the provider system **MUST** return the medication summary data items for all medications whose `effective[x]` date range overlaps the `timePeriod.start` and `timePeriod.end` date range (inclusive).
 > - Where a medication does not have a `lastIssueDate` or `effective[x]` date range, the provider system **MUST** return the medication summary data items for all medications whose `effective[x]` start date falls within the `timePeriod.start` and `timePeriod.end` date range (inclusive).
 > - Where a medication does not have a `lastIssueDate`, `effective[x]` date range or `effective[x]` start date, the provider system **MUST** return the medication summary data items for all medications whose `dateAsserted` date falls within the `timePeriod.start` and `timePeriod.end` date range (inclusive).
+
+
+The folowing list describes the expected provider system behaviours based on `includePrescriptionIssues` parameter:
+
+> - Where the consumer system has requested `includePrescriptionIssues`, the provider **MUST** return all medication issue data items related to the medication summaries that are returned
+> - Where the consumer system has not requested `includePrescriptionIssues`, the provider **MUST** **NOT** return medication issue data items
+
 
 #### Request Example ####
 
