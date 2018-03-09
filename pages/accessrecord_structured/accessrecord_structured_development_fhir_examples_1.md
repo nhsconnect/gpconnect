@@ -9,7 +9,7 @@ summary: "Acess Record Structured FHIR examples"
 
 ## Example request ##
 
-Example of request to `$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to `true`.
+Example of request to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to `true`.
 
 ```json
 {
@@ -30,7 +30,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
       "name": "includeAllergies",
       "part": [
         {
-          "name": "includeResolvedAllergies",
+          "name": "includeEndedAllergies",
           "valueBoolean": true
         }
       ]
@@ -41,7 +41,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
 
 ## Example response ##
 
-Example of response to `$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to true.
+Example of response to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to true.
 
 For the purposes of the example it is assumed that there is a single resolved allergy present.
 

@@ -9,7 +9,7 @@ summary: "Acess Record Structured FHIR examples"
 
 ## Example request ##
 
-Example of request to `$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` not set.
+Example of request to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to false.
 
 ```json
 {
@@ -23,11 +23,17 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
       "name": "patientNHSNumber",
       "valueIdentifier": {
         "system": "https://fhir.nhs.uk/Id/nhs-number",
-        "value": "1234567890"
+        "value": "9999999999"
       }
     },
     {
-      "name": "includeAllergies"
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeEndedAllergies",
+          "valueBoolean": false
+        }
+      ]
     }
   ]
 }
@@ -36,7 +42,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
 
 ## Example response ##
 
-Example of response to `$getstructuredrecord` operation with `includeAllergies` and `includeEndedAllergies` set to false.
+Example of response to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to false.
 
 Assumes - 'No Known Allergies' has been positively asserted on record and is not contradicted by presence of active allergies on record.
 
@@ -98,8 +104,8 @@ Assumes - 'No Known Allergies' has been positively asserted on record and is not
          },
          "identifier": [
             {
-               "system": "https://fhir.nhs.uk/Id/pas-number",
-               "value": "LOCAL1001"
+               "system": "https://fhir.nhs.uk/Id/nhs-number",
+               "value": "9999999999"
             },
             {
                "system": "https://fhir.nhs.uk/Id/PPMIdentifier",
