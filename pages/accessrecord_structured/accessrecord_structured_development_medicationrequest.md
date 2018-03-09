@@ -56,7 +56,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (CarePlan, MedicationRequest, ProcedureRequest, ReferralRequest)</code></td>
+    <td><b>Data type:</b> <code>Reference(CarePlan, MedicationRequest, ProcedureRequest, ReferralRequest)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -467,7 +467,7 @@ Mandatory for stopped/discontinued medications as the date will always be known.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>extension valueString)</code></td>
+    <td><b>Data type:</b> <code>extension (valueString)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
