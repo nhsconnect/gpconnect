@@ -1,7 +1,7 @@
 ---
 title: Access Record Structured - Operation Definition Parameters
 keywords: getstructuredrecord, view
-tags: [use_case,getstructuredrecord]
+tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_operation_definition_parameters.html
 summary: "Access record structured operation definition parameter details"
