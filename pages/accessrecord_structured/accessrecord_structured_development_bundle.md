@@ -72,7 +72,7 @@ Items that make up the Bundle.
 
 See below for subelements of this BackboneElement.
 
-### resource ###
+### entry.resource ###
 
 <table class='resource-attributes'>
   <tr>
