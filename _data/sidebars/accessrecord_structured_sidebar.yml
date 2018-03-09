@@ -28,11 +28,11 @@ entries:
       url: /accessrecord_structured_development.html
       output: web
 
-    - title: Representing allergies in FHIR&reg;
+    - title: Allergies guidance
       output: web
       url: /accessrecord_structured_development_allergies_guidance.html
 
-    - title: Representing medication in FHIR&reg;
+    - title: Medication guidance
       url: /accessrecord_structured_development_medication_guidance.html
       output: web
 
@@ -64,17 +64,6 @@ entries:
           url: /accessrecord_structured_development_bundle.html
           output: web
 
-      - title: API definition
-        output: web
-        subfolderitems:
-
-        - title: Retrieve a patient's structured record
-          url: /accessrecord_structured_development_retrieve_patient_record.html
-          output: web
-        - title: Parameters
-          url: /accessrecord_structured_operation_definition_parameters.html
-          output: web
-
       - title: FHIR&reg; examples
         output: web
         subfolderitems:
@@ -89,4 +78,15 @@ entries:
 
         - title: Example 3
           url: /accessrecord_structured_development_fhir_examples_3.html
+          output: web
+
+      - title: API definition
+        output: web
+        subfolderitems:
+
+        - title: Retrieve a patient's structured record
+          url: /accessrecord_structured_development_retrieve_patient_record.html
+          output: web
+        - title: <i class='resource'>Additional parameters guidance</i>
+          url: /accessrecord_structured_operation_definition_parameters.html
           output: web
