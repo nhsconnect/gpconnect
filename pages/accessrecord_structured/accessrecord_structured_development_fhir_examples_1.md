@@ -48,8 +48,6 @@ Example of response to `$getstructuredrecord` operation with `includeAllergies` 
 
 For the purposes of the example it is assumed that there is a single resolved allergy present.
 
-{% include todo.html content="Add Patient and registered GP Organization resources" %}
-
 ```json
 {
    "resourceType": "Bundle",
