@@ -9,8 +9,76 @@ summary: "Guidance for populating and consuming the Bundle resource"
 
 ## Introduction ##
 
-The table below shows you how to use each element of the Bundle resource. You’ll find it helpful to read it in conjunction with the underlying [Bundle profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1).
+The headings below list the elements of the Bundle resource and describe how to populate and consume them.
 
-## Bundle element usage
+{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-{% include todo.html content="TODO" %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Bundle profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1)." %} 
+
+## Bundle elements ##
+
+### id ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The logical identifier of the Bundle resource.
+
+### meta.profile ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The Bundle profile URL.
+
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1)
+
+### type ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>type</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The type of the Bundle.
+
+Fixed value of `collection`.
+
+### entry ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+Items that make up the Bundle.
+
+See below for subelements of this BackboneElement.
+
+### resource ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Resource</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A Resource carried within the Bundle.  This can any type of resource, for example Patient, Organization, AllergyIntolerance.
