@@ -42,11 +42,13 @@ Assumes - 'No Known Allergies' has not been positively asserted on record and bu
 ```json
 {
   "resourceType": "Bundle",
-  "id": "79183513-1382-4cdd-9470-7dbad15ea7b0",
   "meta": {
-    "lastUpdated": "2018-03-01T10:57:34+00:00"
+    "lastUpdated": "2018-03-01T10:57:34+00:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1"
+    ]
   },
-  "type": "searchset",
+  "type": "collection",
   "entry": [
     {
       "resource": {
