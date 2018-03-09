@@ -32,8 +32,29 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 * [Bundle](accessrecord_structured_development_bundle.html)
 * [List](accessrecord_structured_development_list.html)
 
-## Code and Identifier systems ##
+## Code and identifier systems ##
 
-Common Code and Identifier systems found on the xxxx apply to resources within this capability.
+### Code systems ###
 
-{% include todo.html content="TODO" %}
+The following common code systems are used when populating `CodeableConcept.coding.system` in resources for this capability:
+
+| Name | Code system |
+| ----------- | ------ |
+| SNOMED CT   | `http://snomed.info/sct` |
+| Read codes V2     | `http://read.info/readv2` |
+| Read codes CTV3   | `http://read.info/ctv3` |
+
+
+### Identifier systems ###
+
+The following common identifier systems are used when populating `Identifier.system` in resources for this capability:
+
+| Name | Applies to | Identifier system |
+| ---------- | -------- | ------ |
+| NHS number | Patient | `https://fhir.nhs.uk/Id/nhs-number` |
+| ODS code | Organisation | `https://fhir.nhs.uk/Id/ods-organization-code` |
+| ODS site code | Location | `https://fhir.nhs.uk/Id/ods-site-code` |
+| SDS user ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |
+| SDS role profile ID | Practitioner | `https://fhir.nhs.uk/Id/sds-role-profile-id` |
+
+
