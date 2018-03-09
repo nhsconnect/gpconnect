@@ -35,7 +35,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` a
       "name": "includeAllergies"
     },
 	{
-	"name": "includeResolvedAllergies"
+	"name": "includeResolvedAllergies",
 	"value": "1"
 	}
   ]
