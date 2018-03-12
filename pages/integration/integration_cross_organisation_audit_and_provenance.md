@@ -209,58 +209,73 @@ In future OAuth2 implementation, the ISS claim will contain the URL of the OAuth
 
 ```json
 {
-	"iss": "https://[ConsumerSystemURL]",
-	"sub": "[PractitionerID]",
-	"aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
-	"exp": 1469436987,
-	"iat": 1469436687,
-	"reason_for_request": "directcare",
-	"requested_record": {
-		"resourceType": "Patient",
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/nhs-number",
-			"value": "[NHSNumber]"
-		}]
-	},
-	"requested_scope": "patient/*.read",
-	"requesting_device": {
-		"resourceType": "Device",
-		"identifier": [{
-			"system": "[DeviceSystem]",
-			"value": "[DeviceID]"
-		}],
-		"model": "[SoftwareName]",
-		"version": "[SoftwareVersion]",
-		"url": "https://[ConsumerSystemURL]"
-	},
-	"requesting_organization": {
-		"resourceType": "Organization",
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/ods-organization-code",
-			"value": "[ODSCode]"
-		}],
-		"name": "Requesting Organisation Name"
-	"requesting_practitioner": {
-		"resourceType": "Practitioner",
-		"id": "[PractitionerID]",
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/sds-user-id",
-			"value": "[SDSUserID]"
-		},
-		{
-			"system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-			"value": "[SDSRoleID]"
-		},
-		{
-			"system": "[LocalUserSystem]",
-			"value": "[LocalUserID]"
-		}],
-		"name": {
-			"family": ["[Family]"],
-			"given": ["[Given]"],
-			"prefix": ["[Prefix]"]
-		}
-	}
+  "iss": "https://[ConsumerSystemURL]",
+  "sub": "[PractitionerID]",
+  "aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
+  "exp": 1469436987,
+  "iat": 1469436687,
+  "reason_for_request": "directcare",
+  "requested_record": {
+    "resourceType": "Patient",
+    "identifier": [
+      {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "[NHSNumber]"
+      }
+    ]
+  },
+  "requested_scope": "patient/*.read",
+  "requesting_device": {
+    "resourceType": "Device",
+    "identifier": [
+      {
+        "system": "[DeviceSystem]",
+        "value": "[DeviceID]"
+      }
+    ],
+    "model": "[SoftwareName]",
+    "version": "[SoftwareVersion]",
+    "url": "https://[ConsumerSystemURL]"
+  },
+  "requesting_organization": {
+    "resourceType": "Organization",
+    "identifier": [
+      {
+        "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+        "value": "[ODSCode]"
+      }
+    ],
+    "name": "Requesting Organisation Name"
+  },
+  "requesting_practitioner": {
+    "resourceType": "Practitioner",
+    "id": "[PractitionerID]",
+    "identifier": [
+      {
+        "system": "https://fhir.nhs.uk/Id/sds-user-id",
+        "value": "[SDSUserID]"
+      },
+      {
+        "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+        "value": "[SDSRoleID]"
+      },
+      {
+        "system": "[LocalUserSystem]",
+        "value": "[LocalUserID]"
+      }
+    ],
+    "name": [
+      {
+        "family": "[Family]",
+        "given": [
+          "[Given]"
+        ],
+        "prefix": [
+          "[Prefix]"
+        ]
+      }
+    ]
+  }
 }
 ```
 
