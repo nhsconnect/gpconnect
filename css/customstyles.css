@@ -1275,3 +1275,7 @@ table.resource-attributes tr td {
     font-weight: bold;
     color: black;
 }
+
+h5 {
+    font-size: 16px;
+}

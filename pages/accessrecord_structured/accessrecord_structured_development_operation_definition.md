@@ -64,11 +64,11 @@ summary: "Operation definition for retrieving a patient's structured record"
       <max value="1" />
       <documentation value="Include resources representing a patient's medication record in the response bundle." />
       <part>
-         <name value="timePeriod" />
+         <name value="medicationDatePeriod" />
          <use value="in" />
          <min value="0" />
          <max value="1" />
-         <documentation value="Restrict the patient's medication record to a specific time period." />
+         <documentation value="Restrict the patient's medication record to a specific date period. Only date values (and not time) may be provided." />
          <type value="Period" />
       </part>
       <part>
@@ -88,7 +88,7 @@ summary: "Operation definition for retrieving a patient's structured record"
       <documentation value="The patient structured coded record. This is returned as a bundle containing resources representing the record as requested by the given input parameters." />
       <type value="Bundle" />
       <profile>
-         <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1" />
+         <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1" />
       </profile>
    </parameter>
 </OperationDefinition>

@@ -4,12 +4,17 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_fhir_examples_1.html
-summary: "Acess Record Structured FHIR examples"
+summary: "Access Record Structured FHIR examples"
 ---
 
-## Example request ##
+## Overview ##
 
-Example of request to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to `true`.
+Example of a call to return the following items from a patient's structured record:
+
+- Allergies
+- Resolved allergies
+
+## Request payload ##
 
 ```json
 {
@@ -31,7 +36,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` s
       "name": "includeAllergies",
       "part": [
         {
-          "name": "includeEndedAllergies",
+          "name": "includeResolvedAllergies",
           "valueBoolean": true
         }
       ]
@@ -40,11 +45,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` s
 }
 ```
 
-## Example response ##
-
-Example of response to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to true.
-
-For the purposes of the example it is assumed that there is a single resolved allergy present.
+## Response payload ##
 
 ```json
 {

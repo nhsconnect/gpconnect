@@ -4,12 +4,18 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_fhir_examples_3.html
-summary: "Acess Record Structured FHIR examples"
+summary: "Access Record Structured FHIR examples"
 ---
 
-## Example request ##
+## Overview ##
 
-Example of request to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to false.
+Example of a call to return the following items from a patient's structured record:
+
+- Allergies
+
+## Request payload ##
+
+Note: The `includeResolvedAllergies` parameter has explicitly been set to `false`.
 
 ```json
 {
@@ -31,7 +37,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` s
       "name": "includeAllergies",
       "part": [
         {
-          "name": "includeEndedAllergies",
+          "name": "includeResolvedAllergies",
           "valueBoolean": false
         }
       ]
@@ -40,10 +46,7 @@ Example of request to `$getstructuredrecord` operation with `includeAllergies` s
 }
 ```
 
-
-## Example response ##
-
-Example of response to `$getstructuredrecord` operation with `includeAllergies` set, and `includeEndedAllergies` set to false.
+## Response payload ##
 
 Assumes - 'No Known Allergies' has been positively asserted on record and is not contradicted by presence of active allergies on record.
 
