@@ -56,7 +56,8 @@ The provider systems:
 - SHALL return an error if any part of the consumer requested search range is in the past.
   - If the consumer sends todays date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is todays date, then the appointment SHALL still be returned in the response bundle.
   - The error returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
-
+- SHALL return an error if either either of the date parameters contain a time element.
+- SHALL return an error if either of the two start date parameters are not sent with the consumers request.
 
 #### FHIR relative request ####
 
