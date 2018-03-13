@@ -54,7 +54,7 @@ The consumer:
 The provider systems:
 - SHALL support the search prefixes `ge` and `le`
 - SHALL return an error if any part of the consumer requested search range is in the past.
-  - The comparison of the consumer supplied dates with the current date should be done using the date resolution as no time will be sent with the consumer request. Therefore if the consumer sends todays date the provider SHALL return all appointments for the today.
+  - If the consumer sends todays date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is todays date, then the appointment SHALL still be returned in the response bundle.
   - The error returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
 
 
