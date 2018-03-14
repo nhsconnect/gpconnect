@@ -1,5 +1,5 @@
 ---
-title: FHIR&reg; example 2
+title: FHIR&reg; Allergies example 2
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -47,87 +47,103 @@ Assumption - 'No Known Allergies' has not been positively asserted on record and
 ```json
 {
   "resourceType": "Bundle",
-  "meta": {
-    "lastUpdated": "2018-03-01T10:57:34+00:00",
-    "profile": [
-      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1"
-    ]
-  },
+  "id": "79183513-1382-4cdd-9470-7dbad15ea7b0",
   "type": "collection",
+  "meta": {
+	"profile": [
+                  "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
+               ],
+    "lastUpdated": "2018-03-01T10:57:34+00:00"
+  },
   "entry": [
+       {
+         "resource": {
+            "date": "2018-03-01T10:57:34+00:00",
+            "resourceType": "List",
+            "status": "current",
+            "code": {
+               "coding": [
+                  {
+                     "system": "http://snomed.info/sct",
+                     "code": "TBD",
+                     "display": "Active Allergies"
+                  }
+               ]
+            },
+            "meta": {
+               "profile": [
+                  "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1"
+               ]
+            },
+            "mode": "snapshot",
+            "emptyReason": {
+               "coding": [
+                  {
+                     "system": "http://hl7.org/fhir/special-values",
+                     "code": "nil-known",
+                     "display": "Nil Known"
+                  }
+               ],
+               "text": "No Known Allergies"
+            },
+            "title": "Active Allergies",
+            "patient": {
+                "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+            }
+         }
+      },
     {
       "resource": {
-        "date": "2018-03-01T10:57:34+00:00",
-        "resourceType": "List",
-        "status": "current",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "TBD",
-              "display": "Active Allergies"
-            }
-          ]
-        },
+	    "resourceType": "Patient",
+        "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Allergy-List-1"
-          ]
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+          ],
+        "lastUpdated": "2018-03-09T07:52:45.466+00:00"
         },
-        "mode": "snapshot",
-        "note": [
+        "gender": "female",
+        "generalPractitioner": [
           {
-            "text": "There are no allergies in the patient record but it has not been confirmed with the patient that they have no allergies (i.e. 'no known allergies' code has not been recorded)."
+            "reference": "Practitioner/G8133438",
+            "display": "Dr J Bhatia"
           }
         ],
-        "title": "Active Allergies",
-        "patient": {
-          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
-        }
+        "name": [
+          {
+            "use": "official",
+            "prefix": [
+              "Mrs"
+            ],
+            "family": "Munoz",
+            "given": [
+              "Vicky"
+            ]
+          }
+        ],
+        "active": true,
+        "birthDate": "1935-09-20",
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "extension": [
+              {
+                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "code": "K3XZhBz91kCLWKuTUnEArg=='"
+                    }
+                  ]
+                }
+              }
+            ],
+            "value": "99999999"
+          }
+        ]
       }
     },
-    {
-      "resourceType": "Patient",
-      "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
-      "meta": {
-        "lastUpdated": "2018-03-09T07:52:45.466+00:00",
-        "profile": [
-          "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
-        ]
-      },
-      "identifier": [
-        {
-          "system": "https://fhir.nhs.uk/Id/nhs-number",
-          "value": "99999999"
-        },
-        {
-          "system": "https://fhir.nhs.uk/Id/PPMIdentifier",
-          "value": "1234567890"
-        }
-      ],
-      "active": true,
-      "name": [
-        {
-          "use": "official",
-          "family": "Munoz",
-          "given": [
-            "Vicky"
-          ],
-          "prefix": [
-            "Mrs"
-          ]
-        }
-      ],
-      "gender": "female",
-      "birthDate": "1935-09-20",
-      "generalPractitioner": [
-        {
-          "reference": "Practitioner/G8133438",
-          "display": "Dr J Bhatia"
-        }
-      ]
-    },
-    {
+	    {
       "resource": {
         "resourceType": "Practitioner",
         "meta": {
@@ -156,12 +172,13 @@ Assumption - 'No Known Allergies' has not been positively asserted on record and
         "id": "e0244de8-07ef-4274-9f7a-d7067bcc8d21"
       }
     },
-    {
+	{
+	  "resource": {
       "resourceType": "Organization",
       "id": "1",
       "meta": {
         "profile": [
-          "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
         ]
       },
       "identifier": [
@@ -204,10 +221,7 @@ Assumption - 'No Known Allergies' has not been positively asserted on record and
           "postalCode": "NG10 1QQ"
         }
       ],
-      "partOf": {
-        "reference": "Organization/3",
-        "display": "Nhs Erewash Ccg"
-      }
+	}
     }
   ]
 }
