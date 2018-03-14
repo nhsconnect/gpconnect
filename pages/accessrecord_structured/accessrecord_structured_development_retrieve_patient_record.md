@@ -294,7 +294,8 @@ The following diagram illustrates the population of the response `Bundle` accord
 
 Examples of the payload requests and responses can be found here:
 
-- [FHIR example 1](accessrecord_structured_development_fhir_examples_1.html)
-- [FHIR example 2](accessrecord_structured_development_fhir_examples_2.html)
-- [FHIR example 3](accessrecord_structured_development_fhir_examples_3.html)
+- [Allergies - FHIR example 1](accessrecord_structured_development_fhir_examples_1.html)
+- [Allergies - FHIR example 2](accessrecord_structured_development_fhir_examples_2.html)
+- [Allergies - FHIR example 3](accessrecord_structured_development_fhir_examples_3.html)
+- [Medication - FHIR example 3](accessrecord_structured_development_fhir_examples_4.html)
 
