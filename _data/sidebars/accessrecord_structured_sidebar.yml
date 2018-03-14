@@ -68,18 +68,22 @@ entries:
         output: web
         subfolderitems:
 
-        - title: Example 1
+        - title: Example 1 - Allergies
           url: /accessrecord_structured_development_fhir_examples_1.html
           output: web
 
-        - title: Example 2
+        - title: Example 2 - Allergies
           url: /accessrecord_structured_development_fhir_examples_2.html
           output: web
 
-        - title: Example 3
+        - title: Example 3 - Allergies
           url: /accessrecord_structured_development_fhir_examples_3.html
           output: web
-
+          
+        - title: Example 4 - Medication
+          url: /accessrecord_structured_development_fhir_examples_4.html
+          output: web
+          
       - title: API use cases
         output: web
         subfolderitems:
