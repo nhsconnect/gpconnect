@@ -192,7 +192,7 @@ Errors that may be encountered include:
 - the `patientNHSNumber` is invalid, for example it fails format or check digit tests
 - the `patientNHSNumber` has not been traced or cross checked on PDS in the providing system
 - a patient could not be found matching the `patientNHSNumber` provided
-- an invalid `medicationDatePeriod` range is requested (that is, end date > start date)
+- an invalid `medicationDatePeriod` range is requested (that is, end date < start date)
 - `medicationDatePeriod.start` or `medicationDatePeriod.end` contain a partial date, or have a value containing a time or offset component
 - the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](accessrecord_structured_development_operation_definition.html) `OperationDefinition`
 - the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
