@@ -12,6 +12,7 @@ summary: "Access Record Structured FHIR examples"
 Example of a call to return the following items from a patient's structured record:
 
 - Medication
+- Prescription Issues
 
 ## Request payload ##
 
