@@ -1,5 +1,5 @@
 ---
-title: FHIR&reg; example 1
+title: FHIR&reg; Allergies example 1
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
