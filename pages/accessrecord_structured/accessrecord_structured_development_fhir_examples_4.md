@@ -3,7 +3,7 @@ title: FHIR&reg; example 4
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_fhir_examples_3.html
+permalink: accessrecord_structured_development_fhir_examples_4.html
 summary: "Access Record Structured FHIR examples"
 ---
 
