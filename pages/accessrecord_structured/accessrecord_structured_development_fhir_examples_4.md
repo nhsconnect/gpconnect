@@ -1,5 +1,5 @@
 ---
-title: FHIR&reg; example 4
+title: FHIR&reg; Medication example 4
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
