@@ -27,7 +27,7 @@ Information is provided below to clarify how this endpoint lookup functions.
 
 ### Consuming system viewpoint ###
 
-The consuming system will interact with SDS to resolve the FHIR endpoint server root URL to be used when constructing the request to be made to the Spine Security Proxy. 
+The consuming system will interact with SDS to discover the Accredited System ID (ASID) of the target system endpoint, and to resolve the FHIR endpoint server root URL to be used when constructing the request to be made to the Spine Security Proxy. 
 
 This is a two-step process, as follows:
 
@@ -58,7 +58,7 @@ ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs
 	uniqueIdentifier nhsMhsPartyKey
 ```
 
-The ASID will be returned in the uniqueIdentifier attribute which is returned from the LDAPS query above.
+The ASID will be returned in the uniqueIdentifier attribute returned from the LDAPS query above. This ASID will be used as the value for the `Ssp:To` header in the request to the [Spine Security Proxy](https://nhsconnect.github.io/gpconnect/integration_spine_security_proxy_implementation_guide.html#consumer).
 
 Note that ldaps is used to establish a TLS session rather than the StartTLS option. Also note that once the TLS session is established, SASL authentication is not used by SDS and is therefore disabled through the -x option.
 
