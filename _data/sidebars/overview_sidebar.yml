@@ -30,7 +30,7 @@ entries:
         - title: 1.2.0-beta
           url: /overview_release_notes_1_2_0.html
           output: web
-        - title: 1.1.0-rc
+        - title: 1.1.0
           url: /overview_release_notes_1_1_0.html
           output: web
         - title: 1.0.0
