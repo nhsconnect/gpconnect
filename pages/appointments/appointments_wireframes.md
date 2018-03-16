@@ -1,5 +1,5 @@
 ---
-title: Appointments Wireframes
+title: Appointment Management wireframes
 keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar

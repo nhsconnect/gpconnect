@@ -1169,21 +1169,48 @@ div.navbar-collapse .dropdown-menu > li > a {
 }
 
 .deprecated {
-    padding: 10px;
-    background-color: #edffdb;
-    border: solid 2px #2db300;
-    border-radius: 5px;
+	padding: 10px;
+	background-color: #edffdb;
+	border: solid 2px #2db300;
+	border-radius: 5px;
 }
 
 .deprecated table {
-    background-color: #FFFFFF;
-    margin-top: 10px;
-    width: 100%;
+	background-color: #FFFFFF;
+	margin-top: 10px;
+	width: 100%;
 }
 
 .deprecated h3 {
 	padding-top: 45px;
 	color: #269900;
+}
+
+
+.tableColumn10 {
+    width: 10%;
+}
+
+.tableColumn15 {
+    width: 15%;
+}
+
+.tableColumn25 {
+    width: 25%;
+}
+
+.tableColumn30 {
+    width: 30%;
+}
+
+table > tbody > tr.tableSubHeading {
+    background-color: #f2f2f2;
+}
+
+.banner {
+	padding: 15px;
+	background-color: #fffbdb;
+	border-radius: 5px;
 }
 
 .capability-not-available {
@@ -1195,4 +1222,8 @@ div.navbar-collapse .dropdown-menu > li > a {
     .navbar-brand {
         width:70vw!important;
     }
+}
+
+hr {
+    border-bottom: 1px solid #ccc;
 }

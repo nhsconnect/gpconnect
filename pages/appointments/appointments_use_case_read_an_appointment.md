@@ -8,44 +8,44 @@ summary: "Use case for reading an appointment resource."
 ---
 
 
-## API Use Case ##
+## API use case ##
 
-This specification describes a single use cases. For complete details and background please see the [Appointment Management Capability Bundle](appointments.html).
+This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted Provider system. 
 
-{% include important.html content="The Appointment Management capability pack is aimed at administration of a patients appointments. As a result of IG requirements the read appointments capability has been restricted to future appointments, additional details are available on the [Design Decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability pack is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## Consumer ##
 
-The Consumer system:
+The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 
-## API Usage ##
+## API usage ##
 
-The Consumer System SHALL only use the read appointment capability to retrieve future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer system SHALL only use the read appointment capability to retrieve future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
 
-### Request Operation ###
+### Request operation ###
 
-#### FHIR Relative Request ####
+#### FHIR&reg; relative request ####
 
 ```http
 GET /Appointment/[id]
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment/[id]
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -56,29 +56,29 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1`|
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 N/A
 
-#### Error Handling ####
+#### Error handling ####
 
 Provider systems:
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if the appointment being read is in the past (the appointment start dateTime is before the current date and time).
 
 Examples of other scenarios which may result in error being returned:
-- Where a Logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevent OperationOutcome resource.
+- Where a logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevent OperationOutcome resource.
 - Where insufficient data about an appointment is present in the provider system to populate an appointment resource which validates to the `GPConnect-Appointment-1` profile, an 500 HTTP Status code should be returned, together with the appropriate OperationOutcome resource providing diagnostic detail.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
@@ -116,14 +116,6 @@ Provider systems:
 		}
 	}],
 	"status": "booked",
-	"reason": {
-		"coding": [{
-			"system": "http://snomed.info/sct",
-			"code": "00001",
-			"display": "Default Appointment Type"
-		}],
-		"text": "Default Appointment Type"
-	},
 	"description": "GP Connect Appointment description 148",
 	"start": "2017-08-21T10:20:00.000+00:00",
 	"end": "2017-08-21T10:50:00.000+00:00",
@@ -163,7 +155,7 @@ Provider systems:
 
 ### C# ###
 
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
+{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
 
 ```csharp
 var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");

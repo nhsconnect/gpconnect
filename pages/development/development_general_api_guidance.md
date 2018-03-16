@@ -9,11 +9,11 @@ summary: "Implementation guidance for developers - focusing on general API imple
 
 ## Purpose ##
 
-This document is intended for use by software developers looking to build a conformant GP Connect API interface utilising the FHIR&reg; standard, with a focus on general API implementation guidance.
+This site is intended for use by software developers looking to build a conformant GP Connect API interface using the FHIR&reg; standard with a focus on general API implementation guidance.
 
 ### Notational conventions ###
 
-The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+The keywords ‘**MUST**’, ‘**MUST NOT**’, ‘**REQUIRED**’, ‘**SHALL**’, ‘**SHALL NOT**’, ‘**SHOULD**’, ‘**SHOULD NOT**’, ‘**RECOMMENDED**’, ‘**MAY**’, and ‘**OPTIONAL**’ on this site are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## General standards ##
 
@@ -23,29 +23,29 @@ Information on the technical standards that SHALL be conformed to can be found i
 
 ## Internet standards ##
 
-Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) Request for Comments (RFCs) which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
+Clients and servers SHALL be conformant to the following Internet Engineering Task Force (IETF) request for comments (RFCs), which are the principal technical standards that underpin the design and development of the internet and thus FHIR's APIs.
 
-- Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
-- Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).
-- HTTP Strict Transport Security (HSTS) as defined in [RFC 6797](https://tools.ietf.org/html/rfc6797) SHALL be employed to protect against protocol downgrade attacks and cookie hijacking.
+- transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235)
+- transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176)
+- HTTP Strict Transport Security (HSTS) as defined in [RFC 6797](https://tools.ietf.org/html/rfc6797) SHALL be employed to protect against protocol downgrade attacks and cookie hijacking
 
-{% include roadmap.html content="The NHS Digital is currently evaluating how [Cross-Origin Resource Sharing](http://www.w3.org/TR/cors/) (CORS) will be handled for web and mobile based applications." %}
+{% include roadmap.html content="NHS Digital is currently evaluating how [cross-origin resource sharing](http://www.w3.org/TR/cors/) (CORS) will be handled for web and mobile based applications." %}
 
 ## Endpoint resolution ##
 
 Clients SHALL perform a sequence of query operations against existing Spine services to enable FHIR endpoint resolution.
 
-1. Clients SHALL perform (or have previously performed) a PDS lookup for a patient.
-	1. Using the PDS results the client SHALL determine the patient's primary GP organisation. 
-2. Clients SHALL perform (or have previously performed) a SDS lookup using the ODS code of the patient's primary GP organisation.
-	1. Using the SDS results the client SHALL determine the Principal GP system responsible for hosting the most up to date GP care record.
+1. Clients SHALL perform (or have previously performed) a Personal Demographics Service (PDS) lookup for a patient.
+	1. Using the PDS results, the client SHALL determine the patient's primary GP organisation. 
+2. Clients SHALL perform (or have previously performed) a Spine Directory Service (SDS) lookup using the Organisation Data Service (ODS) code of the patient's primary GP organisation.
+	1. Using the SDS results the client SHALL determine the principal GP system responsible for hosting the most up to date GP care record.
 		1. [EMIS Health](http://www.emishealth.com/)
 		2. [INPS](http://www.inps.co.uk/)
-		3. [Micotest](http://www.microtest.co.uk/)
+		3. [Microtest](http://www.microtest.co.uk/)
 		4. [TPP](http://www.tpp-uk.com/)
-2. Clients SHALL construct a [FHIR Service Root URL](#ServiceRootURL) suitable for access to a GP vendor's FHIR server. For GP Connect access to the Principal GP systems will be via the [Spine Security Proxy](#SpineSecurityProxy) and as such the URL will need to be pre-pended with a Proxy Service Root URL.
+2. Clients SHALL construct a [FHIR service root URL](#ServiceRootURL) suitable for access to a GP vendor's FHIR server. For GP Connect, access to the principal GP systems will be via the [Spine Security Proxy](#SpineSecurityProxy) (SSP) and as such the URL will need to be pre-pended with a proxy service root URL.
 
-{% include tip.html content="Where a practitioner (with a valid SDS User ID) or organisation (with a valid ODS Code) record already exists with-in the local system the details associated with these existing records may be used for display purposes." %}
+{% include tip.html content="Where a practitioner (with a valid SDS user ID) or organisation (with a valid ODS code) record already exists within the local system, the details associated with these existing records may be used for display purposes." %}
 
 
 ## RESTful API ##
@@ -115,11 +115,11 @@ The following [HTTP verbs](http://hl7.org/fhir/STU3/valueset-http-verb.html) SHA
 - **PUT**
 - **DELETE**
 
-{% include tip.html content="Please see later sections for which HTTP verbs are expected to be available for which FHIR resources." %}
+{% include tip.html content="Please see later sections for which HTTP verbs are expected to be available for specific FHIR resources." %}
 
 <p/>
 
-{% include roadmap.html content="In a future version of the FHIR&reg; standard it is expected that the **PATCH** verb will also be supported." %}
+{% include roadmap.html content="In a future version of the FHIR&reg; standard, it is expected that the **PATCH** verb will also be supported." %}
 
 #### Resource types ####
 
@@ -131,41 +131,42 @@ This is the [logical Id](http://hl7.org/fhir/STU3/resource.html#id) of the resou
 
 Once assigned, the identity SHALL never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %} 
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring a integer key (for example, 2345)." %} 
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
 
 #### External resource resolution ####
 
-Inline with work being undertaken in other jurisdictions (see the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide) for details) GP Connect provider systems are not expected to resolve full URLs that are external to their environment.
+In line with work being undertaken in other jurisdictions (see the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide) for details) GP Connect provider systems are not expected to resolve full URLs that are external to their environment.
 
 ### Content types ###
 
-Servers SHALL support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
-- XML: `application/fhir+xml`
-- JSON: `application/fhir+json`
+- Servers should support both formal [MIME-types](https://www.hl7.org/fhir/STU3/http.html#mime-type) for FHIR resources:
+  - Servers SHALL support JSON: `application/fhir+json`
+  - Servers SHOULD support XML: `application/fhir+xml`
 
-Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
+- Servers SHALL support the optional `_format` parameter in order to allow the client to specify the response format by its MIME-type. If both are present, the `_format` parameter overrides the `Accept` header value in the request.
 
-Servers SHALL prefer the encoding specified by the `Content-Type` header if no explicit `Accept` header has been provided by a client application.
+- Where no `Accept` header or `_format` parameter is sent with a request but there is a `Content-Type` header, such as in a POST request, the server SHALL return the response using the format type within the `Content-Type` header.
+
+- Where no `Accept` header, `_format` parameter and no `Content-Type` header is present, as is possible within a GET request, the server SHALL default to JSON.
 
 ### Wire format representations ###
 
 Servers should support two [wire formats](https://www.hl7.org/fhir/STU3/formats.html#wire) as ways to represent resources when they are exchanged:
 
 - Servers SHALL support [JSON](https://www.hl7.org/fhir/STU3/json.html)
-- Server SHOULD support [XML](https://www.hl7.org/fhir/STU3/xml.html)
-
+- Servers SHOULD support [XML](https://www.hl7.org/fhir/STU3/xml.html)
 
 {% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
 
-Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/STU3/compatibility.html#1.10.3) and declare this by setting [CapabilityStatement.acceptUnknown](https://www.hl7.org/fhir/STU3/capabilitystatement-definitions.html#CapabilityStatement.acceptUnknown) to 'both' in their capbility statement.
+Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/STU3/compatibility.html#1.10.3) and declare this by setting [CapabilityStatement.acceptUnknown](https://www.hl7.org/fhir/STU3/capabilitystatement-definitions.html#CapabilityStatement.acceptUnknown) to 'both' in their capability statement.
 
-Systems SHALL declare which format(s) they support in their CapabilityStatement. If a server receives a request for a format that it does not support it SHALL return a http status code of `415` indicating an `Unsupported Media Type`.
+Systems SHALL declare which format(s) they support in their CapabilityStatement. If a server receives a request for a format that it does not support, it SHALL return an HTTP status code of `415` indicating an `Unsupported Media Type`.
 
 ### Transfer encoding ###
 
-Clients and servers SHALL support the HTTP [Transfer-Encoding](https://www.hl7.org/fhir/STU3/http.html#mime-type) header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
+Clients and servers SHALL support the HTTP [Transfer-Encoding](https://www.hl7.org/fhir/STU3/http.html#mime-type) header with a value of `chunked`. This indicates that the body of a HTTP response will be returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
 
 ### Character encoding ###
 
@@ -189,83 +190,83 @@ Unrecognized search criteria SHALL always be ignored. As search criteria support
 
 #### Proxying headers ####
 
-Additional HTTP headers SHALL be added into the HTTP request/response for the purpose of allowing the proxy system to disclose information lost in the proxying process (e.g. the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](http://tools.ietf.org/html/rfc7239).
+Additional HTTP headers SHALL be added into the HTTP request/response for allowing the proxy system to disclose information lost in the proxying process (for example, the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](http://tools.ietf.org/html/rfc7239).
 
-#### Cross organisation provenance and audit headers ####
+#### Cross-organisation provenance and audit headers ####
 
-In order to meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients SHALL provide an oAuth 2.0 Bearer token in the HTTP Authorization header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
+To meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients SHALL provide an oAuth 2.0 Bearer token in the HTTP Authorization header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
 
-{% include tip.html content="We are using an open standard (i.e. JWT) to provide a container for the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will **not** be centrally issued and are not signed or encrypted (i.e. are constructed of plain-text). There are JWT libraries available for most programming languages simplify generation of this data in JWT format." %}
+{% include tip.html content="We are using an open standard (JWT) to provide a container for the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will **not** be centrally issued and are not signed or encrypted (that is, they are constructed of plain text). There are JWT libraries available for most programming languages simplifying the generation of this data in JWT format." %}
 
-Refer to [Integration - Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance) for full details of the JWT claims that SHALL be used for passing audit and provenance details between systems.
+Refer to [Integration - cross-organisation audit and provenance](integration_cross_organisation_audit_and_provenance) for full details of the JWT claims that SHALL be used for passing audit and provenance details between systems.
 
 {% include important.html content="We have defined a small number of additional headers which are also required to be included in NHS Digital defined custom headers." %}
 
 Clients SHALL add the following Spine proxy headers for audit and security purposes:
 
-- `Ssp-TraceID` - TraceID (generated per request) which identifiers the sender's message/interaction (i.e. a GUID/UUID).
+- `Ssp-TraceID` - TraceID (generated per request) which identifies the sender's message/interaction (for example, a GUID/UUID).
 - `Ssp-From` - ASID which identifies the sender's FHIR endpoint.
 - `Ssp-To` - ASID which identifies the recipient's FHIR endpoint.
-- `Ssp-InteractionID` - identifies the FHIR interaction that is being performed.<sup>1</sup>
+- `Ssp-InteractionID` - identifies the FHIR interaction that is being performed <sup>1</sup>
 
-<sup>1</sup> please refer to the [Development - FHIR API Guidance - Operation Guidance](development_fhir_operation_guidance.html) for full details.
+<sup>1</sup> please refer to the [Development - FHIR API guidance - operation guidance](development_fhir_operation_guidance.html) for full details.
 
-The Spine Security Proxy (SSP) SHALL perform the following checks to authenticate client request:
+The SSP SHALL perform the following checks to authenticate client request:
 
-- Get the CN from the TLS session and compare the host name to the declared endpoint.
-- Check that the client/sending endpoint has been registered (and accredited) to initiate the given interaction.
-- Check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction.   
+- get the common name (CN) from the TLS session and compare the host name to the declared endpoint
+- check that the client/sending endpoint has been registered (and accredited) to initiate the given interaction
+- check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction   
 
 #### Caching headers ####
 
-Providers SHALL use the following HTTP Header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
+Providers SHALL use the following HTTP header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
 
 
 ### [Managing Return Content](https://www.hl7.org/fhir/STU3/http.html#return) ###
 
-Provider SHALL maintain resource state inline with the underlying system, including the state of any associated resources.
+Provider SHALL maintain resource state in line with the underlying system, including the state of any associated resources.
 
 For example: 
 
-_If the practitioner associated with a schedule is changed on the providers system, such as when a Locum is standing in for a regular doctor, this should be reflected in all associated resources to that schedule. The diagram below shows the expected change to the appointment resources for this scenario._
+_If the practitioner associated with a schedule is changed on the provider's system, such as when a locum is standing in for a regular doctor, this should be reflected in all associated resources to that schedule. The diagram below shows the expected change to the appointment resources for this scenario._
 
-_When the appointment is booked, the appointment resource is associated with a slot resource and references the practitioner resource associated with the schedule in which the slot resides. If the schedule is then updated within the provider system to reflect the change of practitioner from the original doctor to a Locum doctor then the practitioner reference with the schedule will be updated. If a consumer then performs a read of the appointment the returned appointment resource should reflected the updated practitioner on the schedule._
+_When the appointment is booked, the appointment resource is associated with a slot resource and references the practitioner resource associated with the schedule in which the slot resides. If the schedule is then updated within the provider system to reflect the change of practitioner from the original doctor to a locum doctor, then the practitioner reference with the schedule will be updated. If a consumer then performs a read of the appointment the returned appointment resource should reflect the updated practitioner on the schedule._
 
 ![Diagram of reflection of state](images/development/Reseource Reflection of state.png)
 
-Severs SHALL default to the `return=representation` behaviour (i.e. returning the entire resource) for interactions that create or update resources.
+Servers SHALL default to the `return=representation` behaviour (that is, returning the entire resource) for interactions that create or update resources.
 
 Servers SHOULD honour a `return=minimal` or `return=representation` preference indicated in the `Prefer` request header, if present.
 
-### Demographic Cross Checking ###
+### Demographic cross-checking ###
 
 Consumer systems SHALL compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
 
-The following data SHALL be cross checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.   
+The following data SHALL be cross-checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.   
 
-| Item | Resource Field |
+| Item | Resource field |
 | ---- | -------------- | 
-| Family Name | patient.name.family |
-| Given Name | patient.name.given |
+| Family name | patient.name.family |
+| Given name | patient.name.given |
 | Gender | patient.gender |
-| Birth Date | patient.birthDate |
+| Birth date | patient.birthDate |
 
-Additionally the following data MAY be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison:
-* Address and Postcode
+Additionally, the following data MAY be displayed if returned from the provider to assist a visual cross-check and for safe identification, but should not be part of the automatic comparison:
+* Address and postcode
 * Contact (telephone, mobile, email)
 
-All above may be redacted if patient is flagged on Spine as Sensitive demographics.
+All above may be redacted if patient is flagged on Spine as sensitive demographics.
 
-### Managing Resource Contention ###
+### Managing resource contention ###
 
-To facilitate the management of [resource contention](http://hl7.org/fhir/STU3/http.html#concurrency), Servers SHALL always return an `ETag` header with each resource including the resources `versionId`:
+To facilitate the management of [resource contention](http://hl7.org/fhir/STU3/http.html#concurrency), servers SHALL always return an `ETag` header with each resource including the resource’s `versionId`:
 
 ```http
 HTTP 200 OK
 Date: Sat, 09 Feb 2013 16:09:50 GMT
 Last-Modified: Sat, 02 Feb 2013 12:02:47 GMT
 ETag: W/"23"
-Content-Type: application/fhir+json
+Content-type: application/json+fhir
 ```
 
 `ETag` headers which denote resource `version Id`s SHALL be prefixed with `W/` and enclosed in quotes, for example:
@@ -283,10 +284,8 @@ If-Match: W/"23"
 
 If the `version Id` given in the `If-Match` header does not match, the server returns a `409` **Conflict** status code instead of updating the resource.
 
-For server's that don't persist historical versions of a resource (i.e. any resource other than the currently available/latest version) then they SHALL operate in-line with the guidance provided in the following [Hay on FHIR - FHIR versioning with a non-version capable back-end](https://fhirblog.com/2013/11/21/fhir-versioning-with-a-non-version-capable-back-end/) blog post. This is to ensure that GP Connect servers will be compatible with version-aware clients, even though the server itself doesn't support the retrieval of historical versions.
+For servers that don't persist historical versions of a resource (that is, any resource other than the currently available/latest version) then they SHALL operate in line with the guidance provided in the following [Hay on FHIR - FHIR versioning with a non-version capable back-end](https://fhirblog.com/2013/11/21/fhir-versioning-with-a-non-version-capable-back-end/) blog post. This is to ensure that GP Connect servers will be compatible with version-aware clients, even though the server itself doesn't support the retrieval of historical versions.
 
-### Managing Return Errors ###
+### Managing return errors ###
 
-In order to [manage return errors](http://hl7.org/fhir/STU3/http.html#2.1.0.4), FHIR defines an [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resource that can be used to convey specific detailed processable error information. An `OperationOutcome` may be returned with any HTTP `4xx` or `5xx` response, but is not always required.
-
-
+To [manage return errors](http://hl7.org/fhir/STU3/http.html#2.1.0.4), FHIR defines an [OperationOutcome](http://hl7.org/fhir/STU3/operationoutcome.html) resource that can be used to convey specific detailed processable error information. An `OperationOutcome` may be returned with any HTTP `4xx` or `5xx` response, but is not always required.

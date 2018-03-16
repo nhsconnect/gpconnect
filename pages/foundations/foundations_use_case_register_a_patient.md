@@ -82,6 +82,7 @@ The following data-elements are mandatory (i.e. data SHALL be present):
 	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
 	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
     - The consumer SHALL NOT populate the "registrationDetails" extension within the patient resource.
+	- The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name registered on the spine which is returned by a PDS lookup for the patient.
 
 The following data-elements SHOULD be populated if available:
 - Within the patient resource of the `registerPatient` parameter:
@@ -170,29 +171,63 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 		"resource": {
 			"resourceType": "Patient",
 			"meta": {
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
+				"profile": [
+					"https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+				]
 			},
-			"identifier": [{
-				"extension": [{
-					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-					"valueCodeableConcept": {
-						"coding": [{
-							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-							"code": "01"
-						}]
-					}
-				}],
-				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "9476719931"
-			}],
-			"name": [{
-				"use": "usual",
-				"family": ["Jackson"],
-				"given": ["Jane"],
-				"prefix": ["Miss"]
-			}],
+			"identifier": [
+				{
+					"extension": [
+						{
+							"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+										"code": "01",
+										"display": "Number present and verified"
+									}
+								]
+							}
+						}
+					],
+					"system": "https://fhir.nhs.uk/Id/nhs-number",
+					"value": "9476719931"
+				}
+			],
+			"name": [
+				{
+					"use": "official",
+					"text": "Minnie DAWES",
+					"family": "Jackson",
+					"given": ["Jane"],
+					"prefix": ["Miss"]
+				}
+			],
+			"telecom": [
+				{
+					"system": "phone",
+					"value": "01454587554",
+					"use": "home"
+				}
+			],
 			"gender": "female",
-			"birthDate": "22/02/1982"
+			"birthDate": "1952-05-31",
+			"address": [
+				{
+					"use": "home",
+					"type": "physical",
+					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
+					"address": {
+						"line": [
+							"Trevelyan Square",
+							"Boar Ln",
+							"Leeds"
+						],
+						"postalCode": "LS1 6AE"
+					}
+				}
+			]
 		}
 	}]
 }
@@ -231,7 +266,7 @@ Provider systems:
 - SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) including the following resources 
 	- `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
 - SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
-  - The "registrationType" should be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type should be use and more detail around the specific type of registration can be added using the "text" element of the CodeableConcept.
+  - The "registrationType" SHALL be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and more detail around the specific type of registration SHOULD be added using the "text" element of the CodeableConcept.
 
 ```json
 {
@@ -243,51 +278,97 @@ Provider systems:
 	"entry": [{
 		"resource": {
 			"resourceType": "Patient",
-			"id": "9",
+			"id": "2",
 			"meta": {
-				"versionId": "636180880331209494",
-				"lastUpdated": "2016-08-10T13:35:57.319+01:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"]
+				"versionId": "1469448000000",
+				"lastUpdated": "2016-07-25T12:00:00.000+00:00",
+				"profile": [
+					"https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+				]
 			},
 			"extension": [{
 				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
 				"extension": [{
-					"url": "registrationPeriod",
-					"valuePeriod": {
-						"start": "2017-09-07T14:17:44+01:00"
-					}
-				},
+						"url": "registrationPeriod",
+						"valuePeriod": {
+							"start": "2017-09-07T14:17:44+01:00"
+						}
+					},
+					{
+						"url": "registrationType",
+						"valueCodeableConcept": {
+							"coding": [{
+								"system": "https://fhir.nhs.uk/CareConnect-RegistrationType-1",
+								"code": "T"
+							}]
+						}
+					},
+					{
+						"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+						"extension": [
+							{
+								"url": "preferredBranchSurgery",
+								"valueReference": {
+									"reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
+								}
+							}
+						]
+					}]
+			}],
+			"identifier": [
 				{
-					"url": "registrationType",
-					"valueCodeableConcept": {
-						"coding": [{
-							"system": "https://fhir.nhs.uk/CareConnect-RegistrationType-1",
-							"code": "T"
-						}]
-					}
-				}]
-			}],
-			"identifier": [{
-				"extension": [{
-					"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-					"valueCodeableConcept": {
-						"coding": [{
-							"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-							"code": "01"
-						}]
-					}
-				}],
-				"system": "https://fhir.nhs.uk/Id/nhs-number",
-				"value": "9476719931"
-			}],
-			"name": [{
-				"use": "usual",
-				"family": ["Jackson"],
-				"given": ["Jane"],
-				"prefix": ["Miss"]
-			}],
+					"extension": [
+						{
+							"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+										"code": "01",
+										"display": "Number present and verified"
+									}
+								]
+							}
+						}
+					],
+					"system": "https://fhir.nhs.uk/Id/nhs-number",
+					"value": "9476719931"
+				}
+			],
+			"active": true,
+			"name": [
+				{
+					"use": "official",
+					"text": "Minnie DAWES",
+					"family": "Jackson",
+					"given": ["Jane"],
+					"prefix": ["Miss"]
+				}
+			],
+			"telecom": [
+				{
+					"system": "phone",
+					"value": "01454587554",
+					"use": "home"
+				}
+			],
 			"gender": "female",
-			"birthDate": "22/02/1982"
+			"birthDate": "1952-05-31",
+			"address": [
+				{
+					"use": "home",
+					"type": "physical",
+					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
+					"address": {
+						"line": [
+							"Trevelyan Square",
+							"Boar Ln",
+							"Leeds"
+						],
+						"postalCode": "LS1 6AE"
+					}
+				}
+			]
 		}
 	}]
 }

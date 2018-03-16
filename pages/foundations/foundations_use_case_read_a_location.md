@@ -94,7 +94,15 @@ Provider systems:
 		"system": "https://fhir.nhs.uk/Id/ods-site-code",
 		"value": "L001"
 	}],
-	"name": "Honley Highstreet"
+	"name": "Honley Highstreet",
+	"address": {
+        "line": [
+            "Trevelyan Square",
+            "Boar Ln",
+            "Leeds"
+        ],
+        "postalCode": "LS1 6AE"
+    }
 }
 ```
 
