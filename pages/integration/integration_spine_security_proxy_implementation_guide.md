@@ -115,7 +115,7 @@ As such it is planned that the following mitigations will be implemented as part
 	- `Ssp-From`
 		- `ASID` which identifies the sender's FHIR endpoint.
 	- `Ssp-To`
-		- `ASID` which identifies the recipient's FHIR endpoint.
+		- `ASID` which identifies the recipient's FHIR endpoint, as retrieved from [ASID lookup on SDS](integration_spine_directory_service.html#consuming-system-viewpoint)
 	- `Ssp-InteractionID`
 		- `InteractionID` of the operation being performed.<sup>3</sup>
 - Construction of URL formatted for valid consumption by the proxy system, applying percent encoding as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1)

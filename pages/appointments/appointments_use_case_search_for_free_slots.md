@@ -181,7 +181,7 @@ Provider systems:
  
   The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
 
-  - The `Location` referenced within the schedule resource SHALL represent the location where the appointment will take place, either a GP Practice where there are no branch surgeries OR a branch surgery (including ODS Site Code where available). The referenced location resource SHALL contain a minimum of the name and address of the GP Practice.
+  - The `Location` referenced within the schedule resource SHALL represent the location where the appointment will take place, either a GP Practice where there are no branch surgeries (including Organization ODS Code) OR a branch surgery (including ODS Site Code where available). The referenced location resource SHALL contain a minimum of the name and address of the GP Practice.
   
 - SHALL include `Practitioner` and `Location` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` parameters.
 
