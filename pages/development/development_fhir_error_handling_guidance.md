@@ -194,7 +194,6 @@ When the server cannot or will not process a request due to an apparent client e
 BAD_REQUEST Spine error codes should be used in the following types of scenario:
 - JSON Web Tokens (JWT) claims information is not valid JSON, is null, or has an invalid value 
 - invalid FHIR resource in JWT claim (for example, patient resource when practitioner expected)
-- JWT requested_record claim does not match request
 - malformed JSON or XML content in request body
 - an expected header (for example, `interaction ID header`) is missing or invalid
 - invalid HTTP verb used (for example, using POST to read a patient)
