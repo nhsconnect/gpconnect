@@ -16,7 +16,7 @@ XML is currently supported by three of the four GP PCS suppliers (Vision, Microt
  
 NHS Digital are investigating ways to bring XML support across all four GP PCS suppliers, however at the current time our recommendation is to use JSON.
 
-For consumers with less experience working with JSON formats, [implementation tools in your language of choice] https://www.hl7.org/fhir/downloads.html simplify the process of producing FHIR in JSON.
+For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/downloads.html) simplify the process of producing FHIR in JSON.
 
 ## Why is the technical barrier to entry to GP Connect quite high? ##
 
