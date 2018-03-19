@@ -29,7 +29,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 ## 1. Get started ##
 
 - Read about the GP Connect [Priority capabilities](overview_priority_capabilities.html).
-- Look through the design decisions made so far in relation to each capability packs ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_rest.html), [Appointment Management](appointments_design.html) and [Task Management](tasks.html)) and get involved:
+- Look through the design decisions made so far in relation to each capability packs ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html), [Appointment Management](appointments_design.html) and [Task Management](tasks.html)) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
@@ -44,12 +44,12 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 - Familiarise yourself with HL7&reg; FHIR&reg; ([developer introduction](http://www.hl7.org/implement/standards/fhir/overview-dev.html){:target="_blank"}, [executive summary](http://www.hl7.org/implement/standards/fhir/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/overview-clinical.html){:target="_blank"}).
 - Grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language.
 - Familiarise yourself with our GP Connect [FHIR API guidance](development_fhir_api_guidance.html) common to all APIs.
-- Explore the GP Connect profiled FHIR resources, a variation of the international [FHIR resources](https://www.hl7.org/fhir/STU3/){:target="_blank"}, for [Foundations](datalibraryfoundation.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_rest.html), and [Appointment Management](datalibraryappointment.html).
+- Explore the GP Connect profiled FHIR resources, a variation of the international [FHIR resources](https://www.hl7.org/fhir/STU3/){:target="_blank"}, for [Foundations](datalibraryfoundation.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_development_resources_overview.html), and [Appointment Management](datalibraryappointment.html).
 - Dig in deep and explore one or more of the GP Connect capability packs and start building new or hitting existing APIs.
   - [Foundations](foundations.html) (e.g. resolve a patient to their logical identifier for further API calls).
   	- Note the foundation per-requisites are mandatory.
   - [Access Record HTML](accessrecord.html) (e.g. Access html views from the primary care record).
-  - [Access Record Structured](accessrecord_rest.html) (e.g. Access structured data from the primary care record).
+  - [Access Record Structured](accessrecord_structured.html) (e.g. Access structured data from the primary care record).
   - [Appointment Management](appointments.html) (e.g. Book an appointment for a patient).
   - [Task Management](tasks.html) (e.g. Send a notification task to a general practice organisation).
 - Finally take a look at cross-cutting areas:

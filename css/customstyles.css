@@ -1227,3 +1227,55 @@ table > tbody > tr.tableSubHeading {
 hr {
     border-bottom: 1px solid #ccc;
 }
+
+.resource {
+    font-weight: normal;
+}
+
+.resource-attributes {
+    border-left: 4px solid #aaaaaa;
+    padding: 4px 0px 4px 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    background-color: #fafafa;
+    border-bottom: 0px;
+    border-right: 0px;
+    border-top: 0px;
+    width: 100%;
+}
+
+table.resource-attributes tr td {
+    border-top: 0px;
+}
+
+.resource-attributes b {
+    padding-right: 5px;
+}
+
+.resource-attributes tr td:nth-child(1)
+{
+    padding-left: 10px;
+    width: 33%;
+}
+
+.resource-attributes tr td:nth-child(2) {
+    background-color: transparent;
+    width: 33%;
+}
+
+.resource-attributes tr td:nth-child(3) {
+    padding-left: 25px;
+    width: 33%;
+}
+
+.resource-page h3 {
+    border-top: 1px dotted grey;
+    padding-top: 20px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+h5 {
+    font-size: 16px;
+}

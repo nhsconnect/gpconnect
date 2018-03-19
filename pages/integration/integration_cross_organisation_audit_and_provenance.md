@@ -125,7 +125,6 @@ The payload section of the JWT shall be populated as follows:
 | exp | R | Expiration time integer after which this authorisation MUST be considered invalid. | No | (now + 5 minutes) UTC time in seconds |
 | iat | R | The UTC time the JWT was created by the requesting system | No | now UTC time in seconds |
 | reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
-| requested_record | R | A minimal FHIR resource which describes the resource being requested or searched for. | No | FHIR Patient<sup>2</sup> <br/>OR <br/>FHIR Organization<sup>2</sup> |
 | requested_scope | R | Data being requested | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
 | requesting_device | R | Device details and/or system url making the request | No | FHIR Device<sup>2</sup> |
 | requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>2+3</sup> | 
@@ -152,45 +151,7 @@ The `consumer` SHALL populate the `requesting_organization` claim with:
   | name | A textual representation of the name of the organisation. |
   | identifier | An identifier should be included contain a fixed `system` of `"https://fhir.nhs.uk/Id/ods-organization-code"` and a identifier `value` containing the ODS code of requesting organization. |
 
-
-#### Population of requested_record ####
-
-The `consumer` SHALL populate the `requested_record` claim with:
-
-* Either a FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource or a FHIR [Patient](https://www.hl7.org/fhir/STU3/patient.html) resource which describes the resource being requested or searched for, where possible, and will contain any relevant business identifiers for the request.
-
-  The table below shows the GP Connect API calls and the expected content for the JWT requested_record claim:
-
-  | Request | Known Business Identifiers | requested_record Resource Type | requested_record Content |
-  | --- | --- | --- | --- |
-  | Access Record HTML | NHS Number | Patient | SHALL contain an identifier element containing the NHS number being passed as a parameter to the `gpc.getcarerecord` operation. |
-  | Find a patient | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number being passed as the search parameter of the request. |
-  | Register a patient | NHS Number | Patient | SHALL contain an identifier element containing the NHS Number of the patient to be registered. |
-  | Read a patient | N/A | Patient | SHOULD contain the logical id of the patient resource being requested. |
-  | Find an organisation | ODS Code | Organisation | SHALL contain an identifier element containing the organisation ODS Code which is being passed as the parameter to the search. |
-  | Read an organisation | ODS Code | Organisation | SHOULD contain the logical id of the organization resource being requested. |
-  | Find a practitioner | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
-  | Read a practitioner | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
-  | Read a location | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
-  | Search for free slots | N/A | Organisation | SHOULD contain any relevant identifier for the organisation on which the FHIR endpoint resides. |
-  | Book Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
-  | Read Appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |  
-  | Retrieve a patients appointments | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
-  | Amend an appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
-  | Cancel an appointment | NHS Number | Patient | The consumer will have previously used the patients NHS Number to find the patients logical id on the providers system, therefore the requested_record Patient SHOULD contain the NHS number identifier element. |
-
- 
-  The following identifier systems SHALL be used when populating the relevant business identifiers:
-  
-  | Known business identifiers | Relevant business identifiers |
-  | --- | --- |
-  | NHS number | https://fhir.nhs.uk/Id/nhs-number |
-  | ODS code | https://fhir.nhs.uk/Id/ods-organization-code |
-
-  {% include note.html content="The provider SHALL validate that the requested_record claim details match the request parameters where possible, to ensure valid auditing of the requests end-to-end." %}
-  
-
-#### Population of requested_device ####
+#### Population of requesting_device ####
 
 This claim is used to provide details of the originator of the request for auditing purposes, in the form of a FHIR device resource. 
 
@@ -209,58 +170,64 @@ In future OAuth2 implementation, the ISS claim will contain the URL of the OAuth
 
 ```json
 {
-	"iss": "https://[ConsumerSystemURL]",
-	"sub": "[PractitionerID]",
-	"aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
-	"exp": 1469436987,
-	"iat": 1469436687,
-	"reason_for_request": "directcare",
-	"requested_record": {
-		"resourceType": "Patient",
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/nhs-number",
-			"value": "[NHSNumber]"
-		}]
-	},
-	"requested_scope": "patient/*.read",
-	"requesting_device": {
-		"resourceType": "Device",
-		"identifier": [{
-			"system": "[DeviceSystem]",
-			"value": "[DeviceID]"
-		}],
-		"model": "[SoftwareName]",
-		"version": "[SoftwareVersion]",
-		"url": "https://[ConsumerSystemURL]"
-	},
-	"requesting_organization": {
-		"resourceType": "Organization",
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/ods-organization-code",
-			"value": "[ODSCode]"
-		}],
-		"name": "Requesting Organisation Name"
-	"requesting_practitioner": {
-		"resourceType": "Practitioner",
-		"id": "[PractitionerID]",
-		"identifier": [{
-			"system": "https://fhir.nhs.uk/Id/sds-user-id",
-			"value": "[SDSUserID]"
-		},
-		{
-			"system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-			"value": "[SDSRoleID]"
-		},
-		{
-			"system": "[LocalUserSystem]",
-			"value": "[LocalUserID]"
-		}],
-		"name": {
-			"family": ["[Family]"],
-			"given": ["[Given]"],
-			"prefix": ["[Prefix]"]
-		}
-	}
+  "iss": "https://[ConsumerSystemURL]",
+  "sub": "[PractitionerID]",
+  "aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
+  "exp": 1469436987,
+  "iat": 1469436687,
+  "reason_for_request": "directcare",
+  "requested_scope": "patient/*.read",
+  "requesting_device": {
+    "resourceType": "Device",
+    "identifier": [
+      {
+        "system": "[DeviceSystem]",
+        "value": "[DeviceID]"
+      }
+    ],
+    "model": "[SoftwareName]",
+    "version": "[SoftwareVersion]",
+    "url": "https://[ConsumerSystemURL]"
+  },
+  "requesting_organization": {
+    "resourceType": "Organization",
+    "identifier": [
+      {
+        "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+        "value": "[ODSCode]"
+      }
+    ],
+    "name": "Requesting Organisation Name"
+  },
+  "requesting_practitioner": {
+    "resourceType": "Practitioner",
+    "id": "[PractitionerID]",
+    "identifier": [
+      {
+        "system": "https://fhir.nhs.uk/Id/sds-user-id",
+        "value": "[SDSUserID]"
+      },
+      {
+        "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+        "value": "[SDSRoleID]"
+      },
+      {
+        "system": "[LocalUserSystem]",
+        "value": "[LocalUserID]"
+      }
+    ],
+    "name": [
+      {
+        "family": "[Family]",
+        "given": [
+          "[Given]"
+        ],
+        "prefix": [
+          "[Prefix]"
+        ]
+      }
+    ]
+  }
 }
 ```
 
@@ -314,13 +281,6 @@ var requesting_identity = new Practitioner {
 	{
 		new Identifier("http://fhir.nhs.net/sds-user-id", "[SDSUserID]"),
 		new Identifier("[UserSystem]", "[UserID]")
-	}
-};
-
-var subject_patient = new Patient {
-	Identifier =
-	{
-		new Identifier("https://fhir.nhs.uk/Id/nhs-number","[NHSNumber]")
 	}
 };
 

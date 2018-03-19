@@ -66,7 +66,7 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 
 ## Viewing and amending booked appointments ##
 
-<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case. Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the patient's registered GP practice. This assumes an update, according to usual business processes and external to GP Connect, by other GP practices hosting an appointment for the patient to their registered GP record.  
+<span class="label label-success">SELECTED</span> This is only supported for future appointments, given the primacy of the administrative use case. Historic appointments should be considered part of the patient's medical record and therefore accessed via the Access Record HTML 'Encounters' view from the patient's registered GP practice. This assumes an update, according to usual business processes and external to GP Connect, by other GP practices hosting an appointment for the patient to their registered GP record. In the interest of simplicity and clarity in the specification, and taking into account the limited risks, the considered decision has been made that today's appointments will be classed as 'future'.
 
 ## Cancelling and amending booked appointments ##
 

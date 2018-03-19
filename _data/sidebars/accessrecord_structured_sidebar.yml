@@ -1,0 +1,96 @@
+entries:
+- title: Access Record Structured
+  product: Access Record Structured
+  folders:
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /accessrecord_structured.html
+      output: web, pdf         
+    - title: Business requirements
+      url: /accessrecord_structured_requirements.html
+      output: web, pdf
+    - title: Design decisions
+      url: /accessrecord_structured_design.html
+      output: web, pdf
+    - title: Known issues
+      url: /accessrecord_structured_known_issues.html
+      output: web, pdf
+
+  - title: Development
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /accessrecord_structured_development.html
+      output: web
+
+    - title: Allergies guidance
+      output: web
+      url: /accessrecord_structured_development_allergies_guidance.html
+
+    - title: Medication guidance
+      url: /accessrecord_structured_development_medication_guidance.html
+      output: web
+
+      subfolders:
+
+      - title: FHIR&reg; resources
+        output: web
+        subfolderitems:
+
+        - title: Overview
+          url: /accessrecord_structured_development_resources_overview.html
+          output: web
+        - title: <b class='resource'>AllergyIntolerance</b>
+          url: /accessrecord_structured_development_allergyintolerance.html
+          output: web
+        - title: <b class='resource'>Medication</b>
+          url: /accessrecord_structured_development_medication.html
+          output: web
+        - title: <b class='resource'>MedicationStatement</b>
+          url: /accessrecord_structured_development_medicationstatement.html
+          output: web
+        - title: <b class='resource'>MedicationRequest</b>
+          url: /accessrecord_structured_development_medicationrequest.html
+          output: web
+        - title: <b class='resource'>List</b>
+          url: /accessrecord_structured_development_list.html
+          output: web
+        - title: <b class='resource'>Bundle</b>
+          url: /accessrecord_structured_development_bundle.html
+          output: web
+
+      - title: FHIR&reg; examples
+        output: web
+        subfolderitems:
+
+        - title: Example 1 - Allergies
+          url: /accessrecord_structured_development_fhir_examples_1.html
+          output: web
+
+        - title: Example 2 - Allergies
+          url: /accessrecord_structured_development_fhir_examples_2.html
+          output: web
+
+        - title: Example 3 - Allergies
+          url: /accessrecord_structured_development_fhir_examples_3.html
+          output: web
+          
+        - title: Example 4 - Medication
+          url: /accessrecord_structured_development_fhir_examples_4.html
+          output: web
+          
+      - title: API use cases
+        output: web
+        subfolderitems:
+
+        - title: Retrieve a patient's structured record
+          url: /accessrecord_structured_development_retrieve_patient_record.html
+          output: web
+        - title: <i class='resource'>&gt; Operation definition</i>
+          url: /accessrecord_structured_development_operation_definition.html
+          output: web

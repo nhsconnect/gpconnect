@@ -104,6 +104,7 @@ sidebars:
 - overview_sidebar
 - accessrecord_sidebar
 - appointments_sidebar
+- accessrecord_structured_sidebar
 
 description: "GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model."
 # the description is used in the feed.xml file
@@ -115,15 +116,8 @@ url: https://nhsconnect.github.io/gpconnect
 
 repository: nhsconnect/gpconnect
 
-gist:
-  noscript: false
-
 gems:
    - jekyll-github-metadata
-   - jekyll-mentions
-   - jemoji
    - jekyll-redirect-from
    - jekyll-seo-tag
    - jekyll-sitemap
-   - jekyll-feed
-   - jekyll-gist

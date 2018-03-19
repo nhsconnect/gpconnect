@@ -27,7 +27,10 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
-        - title: 1.1.0-rc
+        - title: 1.2.0-beta
+          url: /overview_release_notes_1_2_0.html
+          output: web
+        - title: 1.1.0
           url: /overview_release_notes_1_1_0.html
           output: web
         - title: 1.0.0
@@ -73,7 +76,10 @@ entries:
     - title: System demonstrator
       url: /system_demonstrator.html
       output: web
-    - title: Postman API documentation
+    - title: Interactive API documentation
+      url: /system_swagger.html
+      output: web
+    - title: Postman examples
       url: /system_reference_postman.html
       output: web
 
@@ -120,11 +126,11 @@ entries:
     - title: Appointment Management
       url: /appointments.html
       output: web
+    - title: Access Record Structured
+      url: /accessrecord_structured.html
+      output: web
     - title: <b class="capability-not-available">Access Record HTML</b>
       url: /accessrecord.html
-      output: web
-    - title: <b class="capability-not-available">Access Record Structured</b>
-      url: /accessrecord_rest.html
       output: web
     - title: <b class="capability-not-available">Task Management</b>
       url: /tasks.html
