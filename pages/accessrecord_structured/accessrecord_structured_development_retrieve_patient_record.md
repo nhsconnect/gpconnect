@@ -83,7 +83,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge">patientNHSNumber</code></td>
       <td><code class="highlighter-rouge">Identifier</code></td>
       <td>Mandatory</td>
-      <td>NHS number of the patient to retrieve the structured record for.</td>
+      <td>NHS Number of the patient to retrieve the structured record for.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">includeAllergies</code></td>
@@ -184,13 +184,13 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 #### Error handling ####
 
-The provider system **SHALL** return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+The provider system **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
 Errors that may be encountered include:
 
 - the `patientNHSNumber` parameter is not provided
 - the `patientNHSNumber` is invalid, for example it fails format or check digit tests
-- the `patientNHSNumber` has not been traced or cross checked on PDS in the providing system
+- the `patientNHSNumber` has not been traced or cross-checked on PDS in the providing system
 - a patient could not be found matching the `patientNHSNumber` provided
 - an invalid `medicationDatePeriod` range is requested (that is, end date < start date)
 - `medicationDatePeriod.start` or `medicationDatePeriod.end` contain a partial date, or have a value containing a time or offset component
@@ -220,7 +220,7 @@ Provider systems **SHALL**:
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
 - return a `Bundle` conforming to the [`GPConnect-GetStructured-Bundle-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1) profile definition
 - return the following resources in the `Bundle`:
-  - `Patient` matching the NHS number sent in the body of the request
+  - `Patient` matching the NHS Number sent in the body of the request
   - `Organization` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
   - `Organization` matching the organisation serving the request (if different from above), referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
