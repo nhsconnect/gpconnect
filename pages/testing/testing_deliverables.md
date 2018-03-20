@@ -35,7 +35,7 @@ Please see the [GP Connect Provider Testing Wiki](https://github.com/nhsconnect/
 
 | Category       | Layer               | Details          |
 |----------------|---------------------|------------------|
-| Security       | Penetration Testing | OSWASP Top 10    |
+| Security       | Penetration Testing | OWASP Top 10    |
 | Performance    | API Performance     | Response Times   |
 | Volumetrics    | API TPS             | LOAD, RAMP, SOAK |
 
@@ -53,6 +53,6 @@ An additional UI testing layer is required for consumer systems.
 
 | Category       | Layer               | Details          |
 |----------------|---------------------|------------------|
-| Security       | Penetration Testing | OSWASP Top 10    | 
+| Security       | Penetration Testing | OWASP Top 10    | 
 
 {% include note.html content="Formal V&P testing is not required for consumer applications." %}
