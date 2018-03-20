@@ -114,8 +114,6 @@ Unissued medications and medications that have been prescribed elsewhere that ha
 ![Unissued medications and medications prescribed elsewhere diagram](images/access_structured/Unissued medications and medications prescribed elsewhere.png)
 
 
-## General FHIR medication population guidance
-
 ### Using the `List` resource for medication queries
 The results of a query for medication details **MUST** return a `List` containing references to all `MedicationStatement` resources that are returned.
 
