@@ -34,8 +34,8 @@ Where such rules have been set, Provider systems SHALL only return slots which r
 
 Providers systems SHALL enable and require the mandatory selection by Provider system end-users of a 'Practitioner Role' and 'Delivery Channel' for schedules/slots as part of the end-user GP Connect appointment configuration.
 
-- The 'Practitioner Role' list SHALL reflect the NHS Digital [Practitioner Role](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1) value set.
-- The 'Delivery Channel' list SHALL reflect the NHS Digital [Delivery Channel](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-DeliveryChannel-1) value set.
+- The 'Practitioner Role' list SHALL reflect the GP Connect value subset of NHS Digital [Practitioner Role](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1) .
+- The 'Delivery Channel' list SHALL reflect the GP Connect value set of [Delivery Channel](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-DeliveryChannel-1).
 - Provider systems SHALL maintain alignment with the value sets.
 - These values SHALL NOT be configurable/modifiable by end-users.
 
