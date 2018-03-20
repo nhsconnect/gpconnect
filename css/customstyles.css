@@ -1279,3 +1279,13 @@ table.resource-attributes tr td {
 h5 {
     font-size: 16px;
 }
+
+/* fix for NHS Developer Network ul and ol style reset */
+ul, ol {
+    padding-left: 40px;
+}
+
+ol {
+    list-style: decimal;
+}
+/* end fix */
