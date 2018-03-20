@@ -1174,3 +1174,13 @@ div.box.box1 {
         width:70vw!important;
     }
 }
+
+/* fix for NHS Developer Network ul and ol style reset */
+body ul, body ol {
+    padding-left: 40px;
+}
+
+body ol {
+    list-style: decimal;
+}
+/* end fix */
