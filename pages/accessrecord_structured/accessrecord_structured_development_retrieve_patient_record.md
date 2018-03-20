@@ -222,8 +222,8 @@ Provider systems **SHALL**:
 - return the following resources in the `Bundle`:
   - `Patient` matching the NHS Number sent in the body of the request
   - `Organization` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
-  - `Organization` matching the organisation serving the request (if different from above), referenced from `Patient.managingOrganization`
-  - `Practitioner` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
+  - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
+  - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - resources holding allergies and intolerance and medication information according to the rules below:
 
 ##### Allergies #####
