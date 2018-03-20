@@ -92,7 +92,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Include allergies and intolerances in the response.</td>
     </tr>
     <tr>
-      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeResolveAllergies</code></td>
+      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeResolvedAllergies</code></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
       <td>Optional</td>
       <td>
