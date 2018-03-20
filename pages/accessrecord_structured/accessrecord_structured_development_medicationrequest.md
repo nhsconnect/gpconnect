@@ -20,7 +20,7 @@ The headings below list the elements of the MedicationRequest resource and descr
 
 When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **SHOULD** be applied when populating the MedicationRequest profiles:
 
-1. All mandatory fields MUST be populated.
+1. All mandatory fields **MUST** be populated.
 
 2. Required fields **SHOULD** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a MedicationRequest with `intent` of `plan` the associated MedicationStatement would be the parent profile. For a MedicationRequest with `intent` of `order`, the associated MedicationStatement and MedicationRequest with `intent` of `plan` are both considered parent profiles.
 
