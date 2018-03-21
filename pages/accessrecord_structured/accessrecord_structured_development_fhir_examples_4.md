@@ -236,7 +236,7 @@ Note: The `includePrescriptionIssues` parameter has explicitly been set to `true
                         "valueString": "capsule(s)"
                      }
                   ],
-                  "value": 28
+                  "value": "28"
                },
                "validityPeriod": {
                   "start": "2016-05-10"
@@ -309,7 +309,7 @@ Note: The `includePrescriptionIssues` parameter has explicitly been set to `true
                         "valueString": "capsule(s)"
                      }
                   ],
-                  "value": 28
+                  "value": "28"
                },
                "validityPeriod": {
                   "start": "2016-05-10"
@@ -460,7 +460,7 @@ Note: The `includePrescriptionIssues` parameter has explicitly been set to `true
                         "valueString": "tablets(s)"
                      }
                   ],
-                  "value": 84
+                  "value": "84"
                },
                "validityPeriod": {
                   "start": "2016-08-11"
@@ -549,7 +549,7 @@ Note: The `includePrescriptionIssues` parameter has explicitly been set to `true
                         "valueString": "tablet(s)"
                      }
                   ],
-                  "value": 84
+                  "value": "84"
                },
                "validityPeriod": {
                   "start": "2016-08-11"
@@ -625,7 +625,7 @@ Note: The `includePrescriptionIssues` parameter has explicitly been set to `true
                         "valueString": "tablet(s)"
                      }
                   ],
-                  "value": 84
+                  "value": "84"
                },
                "validityPeriod": {
                   "start": "2016-09-11"
