@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below list the elements of the AllergyIntolerance resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements no used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)." %} 
 
