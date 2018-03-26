@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below list the elements of the MedicationStatement resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
+{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_medicationstatement.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)" %} 
 
@@ -234,3 +234,85 @@ Complete dosage instructions as text.
 
 Additional instructions for patient, i.e. RHS of prescription label.
 
+
+
+<br>
+## Elements **not in use** ##
+
+The following elements **SHOULD NOT** be populated:
+
+### partOf ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(MedicationAdministration, MedicationDispense, MedicationStatement, Procedure, Observation)</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### category ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### informationSource ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Patient, Practitioner, RelatedPerson, Organization)  </code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### derivedFrom ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Any)</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### taken ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>code</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### reasonNotTaken ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### medicationEpisodeChangeSummary ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Complex Extension</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
