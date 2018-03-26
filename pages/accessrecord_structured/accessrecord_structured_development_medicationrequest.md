@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below list the elements of the MedicationRequest resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
+{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_medicationrequest.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)" %} 
 
@@ -480,3 +480,121 @@ Mandatory for stopped/discontinued medications as the date will always be known.
 The textual reason either free text or the term of a code for stopping/discontinuing the medication.
 
 Must be populated when StatusReason.date is populated.
+
+
+<br>
+## Elements **not in use** ##
+
+The following elements **SHOULD NOT** be populated:
+
+### definition ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(ActivityDefinition, PlanDefinition)</code></td>
+  </tr>
+</table>
+
+Not in scope for this release of Care Connect.
+
+
+### basedOn ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(CarePlan, MedicationRequest, ProcedureRequest, ReferralRequest)</code></td>
+  </tr>
+</table>
+
+Do not use for authorisations (intent of `plan`) - it is valid for issue which would be basedOn authorisation resources.
+
+
+### category ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### priority ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>code</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### supportingInformation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Any)</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### dispenseRequest/expectedSupplyDuration ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Duration</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %}  *** Check duplication with extension.
+
+
+### substitution ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### eventHistory ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Provenance)</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+<br><br>
+{% include important.html content="Where the `intent` = `plan` the following two elements **SHOULD NOT** be populated:" %}
+
+
+### groupIdentifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Identifier</code></td>
+  </tr>
+</table>
+
+{% include todo.html content="TODO" %} 
+
+
+### requester ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+  </tr>
+</table>
+
+Uncurated - potential use to flag patient requested medications. Recommend do not use at this point.
