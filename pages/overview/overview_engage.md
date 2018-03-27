@@ -36,8 +36,8 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 ## 2. Explore ## 
 
 - Try out the [GP Connect Demonstrator](system_demonstrator.html) system.
+- Try out our [Interactive API documentation](system_swagger.html) online.
 - Optionally download the [GP Connect Demonstrator Codebase](https://github.com/nhs-digital/gpconnect){:target="_blank"} to see how it works. 
-- Download our [Swagger API](downloads/swagger/swagger.json) definitions to be used with a tool like the [PostMan Chrome App](https://www.getpostman.com/).
 
 ## 3. Develop ##
 
