@@ -38,7 +38,7 @@ Provider systems SHALL implement the following search parameters:
 
 | Name | Type | Description | Paths |
 | --- | --- | --- | --- |
-| `start` | `date` | Appointment start date/time. | `Appointment.start` |
+| `start` | `date` | Appointment start date | `Appointment.start` |
 
 
 The consumer:
