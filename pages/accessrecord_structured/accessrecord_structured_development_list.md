@@ -253,4 +253,4 @@ Reference to the item that is part of the list.
 
 Why the list is empty.
 
-A FHIR code of `No Content recorded` **SHALL** be used if a query returns no results to enter into a list. If this is the case the 'note' field should also be populated with the text 'Information not available'.
+A FHIR code of `No Content recorded` **SHALL** be used if a query returns no results to enter into a list. In this case the 'note' field **SHALL** be populated with the text 'Information not available'.
