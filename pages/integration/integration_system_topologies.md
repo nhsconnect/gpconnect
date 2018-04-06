@@ -1,5 +1,5 @@
 ---
-title: System Topologies
+title: System topologies
 keywords: spine, proxy, endpoint, mhs, asid
 tags: [integration]
 sidebar: overview_sidebar
@@ -7,39 +7,46 @@ permalink: integration_system_topologies.html
 summary: "Overview of the different types of deployment topologies for GP Connect clients"
 ---
 
-{% include important.html content="The topologies depicted are illustrative rather than prescriptive."%}
+{% include important.html content="The topologies depicted are illustrative rather than prescriptive, and a real world implementation may have a mix of styles."%}
 
-{% include important.html content="The Spine Security Proxy includes a mechanism to filter out all requests between organisations that are not registered on the proxy as having a mutual Data Sharing Agreement. Without this then all GP Connect consumers would be able to send request to all GP connect Providers. 
-In order for the filtering solution to work each consumer/provider organisation needs an ASID registered on the SSP."%}
+{% include important.html content="The Spine Security Proxy (SSP) includes a mechanism to filter out all requests between organisations that are not registered on the proxy as having a mutual data sharing agreement. Without this, all GP Connect consumers would be able to send requests to all GP Connect providers. For the filtering solution to work, each consumer/provider organisation needs an ASID registered on the SSP."%}
 
-## Single Consumer System ##
- 
-![Single System](images/integration/topology1-singleSystem.png)
- 
-This represents typically a GP Practice with a single system hosted locally or a single instance hosted elsewhere.  This topology has a single "CMA Endpoint".
- 
-## Supplier Datacentre Hosted Consumer ##
- 
-![Datacentre System](images/integration/topology2-multiSystem.png)
+# Consumer Topologies #
 
-This is typical of a large GP Systems supplier with many Practice instances hosted in a datacentre, where a "MHS Endpoint" is used and each instance has its own ASID.
- 
-## Acute Trust Portal using TIE ##
- 
-![Acute with Portal](images/integration/topology3-acuteWithTIE.png)
+## Simple Model ##
+![Simple Topology](images/integration/consumer-topology1-simple.png)<br>
 
-This represents an acute trust acting as a GP Connect consumer via a Trust Integration Engine, showing the information on a clinical portal and also ingested into an EPR.
-Note the ASID for each system which consumes data from the GP record.  Also please note the acute systems and non GP Connect endpoints depicted are for illustrative purposes.  An e-RS endpoint is **not** a pre-requisite for GP Connect.
+A grouping of different GP Connect consumer systems, all connecting directly to GP Connect via the SSP.  Each consumer in this example is registered as a CMA endpoint.  The key point is that each consumer system has its own ASID.
 
-## Regional Shared Care Record ##
+## Aggregator Model ##
 
-![Shared Care Record](images/integration/topology4-hostedregionalcarerecord.png)
+![Simple Model](images/integration/consumer-topology2-aggregator.png)
 
-A regional shared care initiative hosted by one of the participating organisations might have a topology similar to this.  This  illustrates a consuming portal deployment. The hosting organisation holds the ASID for the consumer application and (subject to the usual governance controls) the data can be shared via the portal to other organisations.  However in such scenarios it is important that the originating clinician and organisation details are provided in the request so that consumer and provider audit requirements can be met. See [Cross Organisation Audit and Provenance](integration_cross_organisation_audit_and_provenance.html) 
+Several different consumer systems connecting to GP Connect via middleware (Message Handling Server / MHS)
 
-## Spine Endpoint Terms ##
+# Provider Topologies #
 
-| MHS Endpoint | An endpoint registered with Spine for use with multiple systems via a MHS.  Each system has its own ASID. |
-| CMA Endpoint | Combined MHS and Accredited System Endpoint. An endpoint registered with Spine for a single system. |
-| ASID | Accredited System Identifer. A unique number allocated to a system on accreditation for connection to Spine. |
-| MHS | Message Handling Server.  A middleware that handles messaging to/from Spine. |
+## Single Practice System ##
+
+![Single Practice System](images/integration/provider-topology1-single.png) 
+
+A discrete instance of a Primary Care System serving a single GP Practice.
+
+## Data Centre Hosted Practice System ##
+
+![Hosted Practice System](images/integration/provider-topology2-datacentre.png) 
+
+A GP Practice system instance hosted in a Primary Care System (PCS) supplier's data centre.  Note each individual practice has a logical CMA endpoint with its own ASID but sharing the Party Key.
+
+![Legend](images/integration/topologies-legend.png)
+
+## Spine endpoint terms ##
+
+| ASID | Accredited system identifier. A unique number allocated to a system on accreditation for connection to Spine. |
+| CMA endpoint | Combined MHS and accredited system endpoint. An endpoint registered with Spine for a single system. |
+| MHS | Message handling server.  A middleware that handles messaging to/from Spine. |
+| MHS endpoint | An endpoint registered with Spine for use with multiple systems via an MHS. Each system has its own ASID. |
+| Party Key | The identity of a MHS handling messages for an Accredited System |
+
+
+
