@@ -9,7 +9,17 @@ summary: "The FHIR&reg; profiles and interactions required for the Appointment M
 
 The following profiled FHIR&reg; resources are used in the current version of the Appointment Management capability - see 'API use cases' in the menu on the left. Full details of profiled FHIR resources and worked examples are available on the [FHIR Reference Server](https://fhir.nhs.uk/).
 
+## ***Links between GP Connect FHIR resources*** ##
+
+The fhir resources are linked to each other by reference as highlighted in the diagram below:
+
+![Diagram - Resource relationship structure](images/appointments/ResourceRelationshipsStructure.png)
+
+
 ---
+
+## ***FHIR resources per GP Connect operation*** ##
+
 ## ***[Search for free slots](appointments_use_case_search_for_free_slots.html)*** ##
 ### Request ###
 **Note:** No FHIR resource is sent within the request.
