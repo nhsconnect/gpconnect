@@ -25,13 +25,19 @@ The specification version number is based on the [Semantic Versioning 2.0.0](htt
 
 When a specification is released, the version number is incremented as follows:
 
-- **Major** version when *breaking changes* are made
-- **Minor** version when larger *non-breaking* changes are made, for example a new capability, or signficant number of small *non-breaking* changes are made
-- **Patch** version when smaller *non-breaking* changes are made
+- **Major** version when *substantive breaking changes* are made
+- **Minor** version when larger *non-breaking changes* or *unsubstantive breaking changes* are made, for example a new capability; or a signficant number of smaller *non-breaking changes* or *unsubstantive breaking changes* are made
+- **Patch** version when smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 
-*Breaking changes* are those that would break a consuming system built to the previous version of the specification, when communicating with a provider system built to the the new version.
+### Types of change ###
 
-The version number is NOT incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
+*Substantive breaking changes* are changes made to a version of the specification that cause a consuming system built to any minor or patch version of the same major version specification to break.  There must be actual consuming systems live, or in development for the change to be considered *substantively breaking* - i.e. actual consuming systems will break - otherwise the change is classified as *unsubstantive*.
+
+*Unsubstantive breaking changes* are changes that are theoretically breaking but where no consuming system has built, or is building against a minor or patch version of the same major version of the specification, and hence are non breaking in practice.  To ensure no consuming system builds against the previous minor or patch versions of the specification in the future, the previous versions will be marked as *discontinued* ([see below](#pre-release-draft-labels)).
+
+*Non-breaking changes* are changes to a version of the specification that do not cause a consuming system built to any minor or patch version of the same specification to break.
+
+The version number may NOT be incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
 
 ### Pre-release (draft) labels ###
 
@@ -54,9 +60,14 @@ The pre-release labels used are as follows:
 The following GP Connect artefacts are released as part of or alongside the specification, taking the same version number as the specification:
 
 - [System demonstrator](system_demonstrator.html)
+- [Interactive API documentation](system_swagger.html)
 - [Provider automated test suite](testing_deliverables.html)
-- SDS interaction IDs (see below)
-- Service Root URL format (see below)
+- SDS interaction IDs ([see below](#sds-interaction-ids))
+- Service Root URL format ([see below](#service-root-url-format))
+
+The following GP Connect artefacts are released alongside the specification, but use their own version number scheme:
+
+- [FHIR profiles](development_fhir_resource_guidance.html)
 
 ### SDS interaction IDs ###
 
