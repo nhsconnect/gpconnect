@@ -67,7 +67,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 
 ```xml
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-	<version value="1.1.0" />
+	<version value="1.1.1" />
 	<name value="GP Connect" />
 	<status value="active" />
 	<date value="2018-02-23" />
@@ -75,7 +75,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 	<contact>
 		<name value="[Provider Software Vendor Contact Name]" />
 	</contact>
-	<description value="This server implements the GP Connect API version 1.1.0" />
+	<description value="This server implements the GP Connect API version 1.1.1" />
 	<copyright value="Copyright NHS Digital 2016" />
 	<kind value="capability" />
 	<software>
