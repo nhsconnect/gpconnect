@@ -174,6 +174,7 @@ On the wire, a JSON serialised request would look something like the following:
 
 Provider systems:
 
+- SHALL return a http status "409" with an error message "DUPLICATE_REJECTED" when an appointment can not be booked because the referenced slots within the appointment resource no longer have the status `free`, such as when the slot has been used to book a different appointment between the "search for free slots" request and the "book appointment" request.
 - SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example:
