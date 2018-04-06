@@ -43,8 +43,7 @@ Provider systems SHOULD be tested for vulnerability to Denial of Service (DoS) a
 After consultation with the Infrastructure Security, Operational Security and Spine DDC teams, the following SSL protocol guidance have been agreed:
 
 - suppliers SHALL use `TLS1.2` with mutual authentication enabled for all message interactions
-- at the current time suppliers may use `TLS1.0` or `TLS1.1`, however these protocols will soon become unsupported and suppliers should move to support `TLS1.2` as soon as possible
-- suppliers SHALL NOT use `SSLv2` and `SSLv3` as they are deprecated
+- suppliers SHALL NOT use `TLS1.0`, `TLS1.1`, `SSLv2` and `SSLv3`
 
 ## Supported ciphers ##
 
@@ -56,12 +55,8 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 - `AESGCM+EDH`
 - `AES256+EECDH`
 - `AES256+EDH`
-- `AES256+SHA` (temporary support for limited roll-out/FoT only)
-- `AES128+SHA` (temporary support for limited roll-out/FoT only)
 
 {% include note.html content="Galois/Counter Mode (GCM) suites are prefered as these are resistant to timing attacks<sup>1</sup>." %}
-
-{% include warning.html content="Support for AES265-SHA and AES128-SHA ciphers is temporary in nature and will be withdrawn." %}
 
 {% include important.html content="A Java Runtime Environment 8 (or above) and/or an up to date version of OpenSSL is required to support the GCM cipher suites." %}
 
@@ -71,7 +66,7 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 
 - SSLCipherSuite = `AESGCM+EECDH,AESGCM+EDH,AES256+EECDH,AES256+EDH`
 - SSLHonorCipherOrder = `true`
-- SSLProtocol = `TLSv1+TLSv1.1+TLSv1.2`
+- SSLProtocol = `TLSv1.2`
 - SSLVerifyClient = `require`
 
 Please see the [Tomcat Config HTTP SSL Support](https://tomcat.apache.org/tomcat-8.0-doc/config/http.html#SSL_Support) web page for more details.
