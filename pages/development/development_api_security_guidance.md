@@ -39,13 +39,9 @@ Provider systems SHOULD be tested for vulnerability to Denial of Service (DoS) a
 
 After consultation with the Infrastructure Security, Operational Security and Spine DDC teams the following SSL protocols SHALL be supported.
 
-{% include important.html content="The list of supported ciphers is ordered in order of preference (i.e. the first item being the most preferred)." %}
-
 - `TLSv1.2`
-- `TLSv1.1`
-- `TLSv1`
 
-{% include note.html content="SSLv2 and SSLv3 are deprecated and SHALL NOT be used. All consumer and provider systems SHALL be configured to implement TLSv1 and SHOULD be configured to implement TLSv1.1 and above." %}
+{% include note.html content="SSLv2, SSLv3, TLSv1.0 and TLSv1.1 are deprecated and SHALL NOT be used. All consumer and provider systems SHALL be configured to implement TLSv1.2." %}
 
 ## Supported Ciphers ##
 
@@ -57,12 +53,8 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 - `AESGCM+EDH`
 - `AES256+EECDH`
 - `AES256+EDH`
-- `AES256+SHA` (temporary support for limited roll-out/FoT only)
-- `AES128+SHA` (temporary support for limited roll-out/FoT only)
 
 {% include note.html content="GCM (Galois Counter Mode) suites are prefered as these are resistant to timing attacks<sup>1</sup>." %}
-
-{% include warning.html content="Support for AES265-SHA and AES128-SHA ciphers is temporary in nature and will withdrawn." %}
 
 {% include important.html content="A Java 8 (or above) Runtime Environment and/or an upto date version of OpenSSL is required to support the GCM cipher suites." %}
 
@@ -72,7 +64,7 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 
 - SSLCipherSuite = `AESGCM+EECDH,AESGCM+EDH,AES256+EECDH,AES256+EDH`
 - SSLHonorCipherOrder = `true`
-- SSLProtocol = `TLSv1+TLSv1.1+TLSv1.2`
+- SSLProtocol = `TLSv1.2`
 - SSLVerifyClient = `require`
 
 Please see the [Tomcat Config HTTP SSL Support](https://tomcat.apache.org/tomcat-8.0-doc/config/http.html#SSL_Support) webpage for more details.
