@@ -108,5 +108,5 @@ Provider systems MAY choose to use the value of the requested_scope claim to aut
 ## External Documents / Policy Documents ##
 
 | Name | Author | Version | Updated |
-| Approved Cryptographic Algorithms Good Practice Guidelines | NHS Digital | v4.0 | 13/07/2016 |
-| Warranted Environment Specification (WES) | NHS Digital | v1.0 | June 2015 |
+| [Approved Cryptographic Algorithms Good Practice Guidelines](http://webarchive.nationalarchives.gov.uk/20161021125701/http:/systems.digital.nhs.uk/infogov/security/infrasec/gpg/acs.pdf) | NHS Digital | v4.0 | July 2016 |
+| [Warranted Environment Specification (WES)](https://digital.nhs.uk/spine/technical-information-warranted-environment-specification) | NHS Digital | v1.0 | June 2015 |
