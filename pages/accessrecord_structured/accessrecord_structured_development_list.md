@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below detail the elements of the `List` resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically detailed below **SHOULD NOT** be populated or consumed." %}
+{% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)" %} 
 
@@ -28,7 +28,7 @@ The `List` resource in FHIR is used to help manage a collection of resources. In
 
 #### Confidential items
 
-Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **SHOULD** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **SHOULD** be populated using the confidential items warning code.
+Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code.
 
 #### Data in transit
 
@@ -36,7 +36,7 @@ This only refers to data transmitted from GP to GP when a patient moves GP pract
 
 #### Data awaiting filing
 
-Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **SHOULD** be sent in a separate list to the rest of the entries. The list **SHOULD** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and contain the warningCode for data awaiting filing.
+Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **MUST** be sent in a separate list to the rest of the entries. The list **MUST** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and contain the warningCode for data awaiting filing.
 This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
 
 ## List elements ##
