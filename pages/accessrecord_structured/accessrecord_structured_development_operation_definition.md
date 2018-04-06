@@ -76,7 +76,7 @@ summary: "Operation definition for retrieving a patient's structured record"
          <use value="in" />
          <min value="0" />
          <max value="1" />
-         <documentation value="Include resources representing a patient's allergies and intolerances in the response bundle. By default, resolved allergies and intolerances are not included." />
+         <documentation value="Include each prescription issue in the response. By default, prescription issues are not included." />
          <type value="boolean" />
       </part>
    </parameter>

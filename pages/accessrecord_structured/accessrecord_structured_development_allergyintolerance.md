@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below list the elements of the AllergyIntolerance resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
+{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)." %} 
 
@@ -325,3 +325,41 @@ Severities of `Mild`, `Moderate`, `Severe` are mapped directly to the ValueSet. 
 The route by which exposure to the substance causing the reaction occurred. Utilise the dm+d route codes.
 
 {% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
+
+<br>
+## Elements **not in use** ##
+
+The following elements **SHOULD NOT** be populated:
+
+### reaction/note ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Annotation</code></td>
+  </tr>
+</table>
+
+`AllergyIntolerance.note` should contain all the consolidated text from the Allergy/Intolerance.
+
+
+### reaction/onset[x] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime</code></td>
+  </tr>
+</table>
+
+Onset explicitly supplied via `AllergyIntolerance.onset[dateTime]`.
+
+
+
+### reaction/substance ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+The causative is explicitly and specifically coded via AllergyIntolerance.

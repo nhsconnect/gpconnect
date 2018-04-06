@@ -84,7 +84,7 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_4.html
           output: web
           
-      - title: API use cases
+      - title: API definition
         output: web
         subfolderitems:
 

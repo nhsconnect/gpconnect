@@ -8,9 +8,12 @@ summary: "Guidance on the representation of medication in GP Connect"
 ---
 
 ## Ordering process in GP systems for medications and medical devices 
-The medication or medical device ordering process in GP systems can be considered to be a 2-stage process.
-1. The authorisation - this is where the medication or medical device is initially added on to the GP systems. It represents a 'plan' that the GP intends to authorise a medication for the patient.
-2. The issue - this is the point the plan is turned into an actual 'order' or prescription. At this point the prescription will either be printed and signed, or the order will be passed on to the Electronic Prescription Service to send to the patient’s nominated pharmacy.
+
+The medication or medical device ordering process in GP systems can be considered to be a 2-stage process:
+
+1. **The authorisation** - this is where the medication or medical device is initially added on to the GP systems. It represents a 'plan' that the GP intends to authorise a medication for the patient.
+
+2. **The issue** - this is the point the plan is turned into an actual 'order' or prescription. At this point the prescription will either be printed and signed, or the order will be passed on to the Electronic Prescription Service to send to the patient’s nominated pharmacy.
 
 There are several clinical reasons why the process is split up in this way. Below are some examples of scenarios when it advantageous to have the separate parts:
 
@@ -19,48 +22,55 @@ There are several clinical reasons why the process is split up in this way. Belo
 * issue rescue steroid/antibiotic pack and add repeats for flares 
 * flu vaccinations
 
-There are 3 different business processes for issuing a medication to a patient that are well established in general practice and are driven by factors such as how often a patient will require the medication, helping practices to create efficient processes for prescribing and applying the appropriate controls to drugs where appropriate. The 3 processes are:
+There are three different business processes for issuing a medication to a patient that are well established in general practice and are driven by factors such as how often a patient will require the medication, helping practices to create efficient processes for prescribing and applying the appropriate controls to drugs where appropriate. The three processes are:
 
  1. Acute prescribing
  2. Repeat prescribing
  3. Repeat dispensing
  
 ### Acute prescriptions
+
 An acute prescription is when a medication or medical device is a one-off prescription. It is usually a course of medication that is issued to treat a specific complaint. 
+
 If the patient needs further medication they would need to see their doctor again for them to assess their condition and decide if another prescription is appropriate.
 
 ### Repeat prescriptions
-A repeat prescription enables a patient to be issued more than one prescription without it being necessary to see their doctor after each individual prescription. The number of prescriptions is usually determined by the doctor when they make the initial order. However, it is also possible to set a review date for a medication or medical device that is prescribed in a regular manner instead of limiting the number of issues. Typically, the duration that repeat prescriptions cover is 6 or 12 months although they are flexible and can be written for any period. 
+
+A repeat prescription enables a patient to be issued more than one prescription without it being necessary to see their doctor after each individual prescription.
+
+The number of prescriptions is usually determined by the doctor when they make the initial order. However, it is also possible to set a review date for a medication or medical device that is prescribed in a regular manner instead of limiting the number of issues.
+
+Typically, the duration that repeat prescriptions cover is 6 or 12 months although they are flexible and can be written for any period. 
 Although the patient does not have to see their doctor to authorise each issue of the medication, they will need to have the prescription authorised by another clinician in the practice. 
 
 ### Repeat dispensing
+
 When a medication or medical device is repeat-dispensed the patient will be able to pick up the item from the pharmacy without the need for each prescription to be issued by the GP practice.
 Apart from the practice not needing to issue each prescription, repeat-dispensing works in a similar manner to repeat prescriptions where the doctor is able to determine the number of issues or the time period before needing to visit the doctor again for the prescription to be re-authorised.
 
-
 ## Medication prescribed elsewhere
-In GP systems, in addition to ordering medications and issuing them to a patient, it is also possible for clinicians to record medication that was not issued by their GP practice. This may happen if a patient has been in hospital and informs a clinician that they were prescribed a medication or allocated a medical device during that episode of care. All GP systems allow for data to be entered to record details of medications that they are informed about, but do not issue within the medication section in the system.
+
+In GP systems, in addition to ordering medications and issuing them to a patient, it is also possible for clinicians to record medication that was not issued by their GP practice. This may happen if a patient has been in hospital and informs a clinician that they were prescribed a medication or allocated a medical device during that episode of care. 
+
+All GP systems allow for data to be entered to record details of medications that they are informed about, but do not issue within the medication section in the system.
+
 The main uses are to record a medication or medical device being managed by another organisation, the requirement to enable interaction checking and decision support to interact with these items.
 
 ## FHIR medication resources
+
 FHIR has a collection of resources that are available to represent different concepts related to medications. These resources are intended to cover the full medication lifecycle:
-* [`Medication`](accessrecord_structured_development_medication.html) - contains details of the actual medication or medical device
-* [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) - is designed to cope with planning, proposing or ordering medications
-* `MedicationDispense` - is to represent exactly what medication was dispensed. In some cases, this can differ slightly from what was ordered/prescribed.
-* `MedicationAdministration` - is to be used to describe when the medication is administered, how it was given and by whom.
-* [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) - this is to make a statement about the medication a person has taken and can be 'basedOn' a record of an historic prescription that would be represented using one or more MedicationRequest resources.  
+
+| Resource name       | Description | Used in GP Connect |
+|---------------------|-------------------| ----------|
+| [`Medication`](accessrecord_structured_development_medication.html) | The actual medication or medical device | Yes |
+| [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) | Planning, proposing or ordering medications | Yes |
+| [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) | Used to make a statement about the medication a person has taken and can be 'basedOn' a record of an historic prescription that would be represented using one or more MedicationRequest resources. | Yes |
+| `MedicationDispense` | Represent exactly what medication was dispensed. In some cases, this can differ slightly from what was ordered/prescribed. | No |
+| `MedicationAdministration` | Describe when the medication is administered, how it was given and by whom | No |
 
 In GP Connect, we are interested in the medication data that is captured in GP clinical systems. This data is about the practice’s record of medication the patient has taken and whether that has been prescribed by a clinician at that practice. 
 
-Therefore, in order be able to represent the information that is available in the GP systems we are interested in 3 of the above FHIR profiles: 
-
-- `Medication`
-- `MedicationRequest`
-- and `MedicationStatement`
-
-`MedicationDispense` and `MedicationAdministration` are not used in this capability.
-
-In later sections these are detailed at a data item level.
+Therefore as shown in the table above, in order be able to represent the information that is available in the GP systems we are interested in three of the above FHIR profiles: `Medication`, `MedicationRequest` and `MedicationStatement`.
 
 ## Using the FHIR profiles to represent the ordering process
 
@@ -105,34 +115,46 @@ Unissued medications and medications that have been prescribed elsewhere that ha
 
 
 ### Using the `List` resource for medication queries
-The results of a query for medication details MUST return a `List` containing references to all `MedicationStatement` resources that are returned. The `List` **SHOULD** be populated in line with the guidance on `List` resources. If the `List` is empty, then an empty `List` MUST be returned with an `emptyReason` with the value `noContent`.
+The results of a query for medication details **MUST** return a `List` containing references to all `MedicationStatement` resources that are returned.
 
-### Degraded medications ###
-Where degraded medication records arising from GP2GP record transfer are present in the patient record then these **SHOULD** be coded using the appropriate degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
+The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-### Medication interoperability ###
-Consumers of medication resources generated by other systems **SHOULD** consider the clinical safety issues arising from processing medication information recorded in different care settings and contexts, and seek clinical safety guidance where appropriate. 
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
 
-Key concerns are the understandability of received medication information and appropriate actions to degrade and identify medication concepts which are not understood by the receiving system. Appropriate clinical workflows may also be required at the receiver - for example, deactivation of received medications such that they MUST be explicitly re-authorised to make them issuable.
+### Degraded medications
+
+Where degraded medication records arising from GP2GP record transfer are present in the patient record then these **MUST** be coded using the appropriate degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
+
+### Medication interoperability
+
+Consumers of medication resources generated by other systems **MUST** consider the clinical safety issues arising from processing medication information recorded in different care settings and contexts, and seek clinical safety guidance where appropriate. 
+
+Key concerns are the understandability of received medication information and appropriate actions to degrade and identify medication concepts which are not understood by the receiving system. Appropriate clinical workflows may also be required at the receiver - for example, deactivation of received medications such that they **MUST** be explicitly re-authorised to make them issuable.
 
 Currently dosage and quantity information are expressed in unstructured/textual form. A system intending to consume dosage and quantity information needs to be capable of handling unstructured quantities and dosages.
 
-### Mixtures ###
-In some systems it is possible to prescribe custom formulations compounded from other medications (extemporaneous preparations). Mixtures **SHOULD** be expressed using the degrade code (`196421000000109`, Transfer-degraded medication entry) with the constituents of the mixture expressed via `CodeableConcept.text`.
+### Mixtures 
 
-### Non dm+d medications ###
-In some cases, drugs may be recorded as free text or may be present in the original system’s drug dictionary, but not in dm+d. Where no dm+d code is available to describe the medication then the medication code **SHOULD** be expressed using the degrade (`196421000000109`, Transfer-degraded medication entry) with the original drug name present in `CodeableConcept.text`. 
+In some systems it is possible to prescribe custom formulations compounded from other medications (extemporaneous preparations). Mixtures **MUST** be expressed using the degrade code (`196421000000109`, Transfer-degraded medication entry) with the constituents of the mixture expressed via `CodeableConcept.text`.
 
-### dm+d name versus displayed name ###
+### Non dm+d medications
+
+In some cases, drugs may be recorded as free text or may be present in the original system’s drug dictionary, but not in dm+d. Where no dm+d code is available to describe the medication then the medication code **MUST** be expressed using the degrade (`196421000000109`, Transfer-degraded medication entry) with the original drug name present in `CodeableConcept.text`. 
+
+### dm+d name versus displayed name
+
 It is possible for historic/legacy medications to be displayed with a name corresponding to the name in the original system’s drug dictionary rather than the dm+d name. This name **SHOULD** be preserved via `CodeableConcept.text` when representing the medication via resources. `CodeableConcept.text` is redundant when the displayed medication name on the original system and the dm+d name is identical, and, in these cases, `CodeableConcept.text` **SHOULD** be omitted.
 
-### Medication reviews ###
+### Medication reviews
+
 The resources required to describe diarised review activities and reminders for medication reviews are out of scope for this guidance. 
 
-### Future-dated prescriptions ###
+### Future-dated prescriptions
+
 Medication issues may be future-dated – for example, repeat dispensed medications or a deferred acute medication that may not be needed if the condition resolves.
 
-### Amendments ###
+### Amendments
+
 Where an authorisation is amended – for example, Proprietary/Generic switch, altered dates, change of quantities and so on, then the existing authorisation/plan **SHOULD** be stopped or discontinued, and an appropriate reason supplied via detectedIssue. A new authorisation **SHOULD** be created, in the form of a `MedicationStatement` and `MedicationRequest` with `intent` of `plan`, to hold the amended details. Subsequent issues of the medication **SHOULD** reference the amended authorisation rather than the previous version.
 
 ### Medication discontinuation/stopping ###
