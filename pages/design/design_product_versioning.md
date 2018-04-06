@@ -25,17 +25,31 @@ The specification version number is based on the [Semantic Versioning 2.0.0](htt
 
 When a specification is released, the version number is incremented as follows:
 
-- **Major** version when *substantive breaking changes* are made
+- **Major** version when *breaking changes* are made
 - **Minor** version when larger *non-breaking changes* or *unsubstantive breaking changes* are made, for example a new capability; or a signficant number of smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 - **Patch** version when smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 
 ### Types of change ###
 
-*Substantive breaking changes* are changes made to a version of the specification that cause a consuming system built to any minor or patch version of the same major version specification to break.  There must be actual consuming systems live, or in development for the change to be considered *substantively breaking* - i.e. actual consuming systems will break - otherwise the change is classified as *unsubstantive*.
+#### Breaking changes ####
 
-*Unsubstantive breaking changes* are changes that are theoretically breaking but where no consuming system has built, or is building against a minor or patch version of the same major version of the specification, and hence are non breaking in practice.  To ensure no consuming system builds against the previous minor or patch versions of the specification in the future, the previous versions will be marked as *discontinued* ([see below](#pre-release-draft-labels)).
+*Breaking changes* are those changes made to the specification that cause a consuming system built to any minor or patch version of the same major version of the specification to break.
 
-*Non-breaking changes* are changes to a version of the specification that do not cause a consuming system built to any minor or patch version of the same specification to break.
+#### Unsubstantive breaking changes ####
+
+An *breaking change* MAY be classified as an *unsubstantive breaking change* where:
+
+- providers and consumers HAVE NOT built against any minor or patch version of the same major version of the specification, and therefore the change is not materially breaking
+
+- in consultation with providers and/or consumers, where those providers and/or consumers ARE in the process of building against a minor or patch version of the same major version of the specification
+
+Where this occurs, previous minor or patch versions of the specifications will either be discontinued ([see below](#pre-release-draft-labels)), or will be amended to include warnings regarding the changed functionality, to ensure consuming (and providing systems) do not build against the changed functionality in the future.
+
+#### Non-breaking changes ####
+
+*Non-breaking changes* are changes made to the specification that DO NOT cause a consuming system built to any minor or patch version of the same specification to break.
+
+#### Stylistic changes and clarifications ####
 
 The version number may NOT be incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
 
