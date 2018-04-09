@@ -217,15 +217,14 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				{
 					"use": "home",
 					"type": "physical",
-					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
-					"address": {
-						"line": [
-							"Trevelyan Square",
-							"Boar Ln",
-							"Leeds"
-						],
-						"postalCode": "LS1 6AE"
-					}
+					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE",
+					"line": [
+						"Trevelyan Square",
+						"Boar Ln"
+					],
+					"city": "Leeds",
+					"district": "West Yorkshire",
+					"postalCode": "LS1 6AE"
 				}
 			]
 		}
@@ -358,15 +357,14 @@ Provider systems:
 				{
 					"use": "home",
 					"type": "physical",
-					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
-					"address": {
-						"line": [
-							"Trevelyan Square",
-							"Boar Ln",
-							"Leeds"
-						],
-						"postalCode": "LS1 6AE"
-					}
+					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE",
+					"line": [
+						"Trevelyan Square",
+						"Boar Ln"
+					],
+					"city": "Leeds",
+					"district": "West Yorkshire",
+					"postalCode": "LS1 6AE"
 				}
 			]
 		}
