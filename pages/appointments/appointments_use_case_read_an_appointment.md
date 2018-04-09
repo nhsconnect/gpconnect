@@ -87,6 +87,7 @@ Provider systems:
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of the appointment resource.
 - SHALL include all relevant business `identifier` details (if any) for the appointment resource.
+- SHALL NOT include a `Appointment.reason` within the returned appointment resource.
 
 ```json
 {

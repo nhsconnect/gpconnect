@@ -102,7 +102,7 @@ The following guidance around the Appointment resource element SHALL be followed
 | ---                     | --- |
 | Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Consumers SHALL impose a character limit of 100 characters for this element. |
 | Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. Consumers SHALL impose a character limit of 500 characters for this element. |
-| Appointment.***reason***     | Consumers and providers SHOULD NOT use the appointment `reason` element as the GP Connect appointment management capability is for administration of appointment booting and should not be used to transfer clinical data between systems. As the reason element is for recording 'clinical' codes it goes against the purpose of the GP Connect Appointment Management capability, so it should not be used by consumers or providers. |
+| Appointment.***reason***     | Consumers and providers SHALL NOT use the appointment `reason` element as the GP Connect appointment management capability is for administration of appointment booking and should not be used to transfer clinical data between systems. As the reason element is for recording 'clinical' codes it goes against the purpose of the GP Connect Appointment Management capability, so it should not be used by consumers or providers. |
 
 #### Resource guidance ####
 
@@ -175,6 +175,7 @@ On the wire, a JSON serialised request would look something like the following:
 Provider systems:
 
 - SHALL return a http status "409" with an error message "DUPLICATE_REJECTED" when an appointment can not be booked because the referenced slots within the appointment resource no longer have the status `free`, such as when the slot has been used to book a different appointment between the "search for free slots" request and the "book appointment" request.
+- SHALL return an error if `Appointment.reason` is included in the appointment resource send by the consumer.
 - SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
 For example:
@@ -202,6 +203,7 @@ Provider systems:
 - SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
+- SHALL NOT include a `Appointment.reason` within the returned appointment resource.
 
 ```json
 {
