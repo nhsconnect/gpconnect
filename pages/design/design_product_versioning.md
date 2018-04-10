@@ -33,11 +33,13 @@ When a specification is released, the version number is incremented as follows:
 
 #### Breaking changes ####
 
-*Breaking changes* are those changes made to the specification that cause a consuming system built to any minor or patch version of the same major version of the specification to break.
+*Breaking changes* are those changes made to the specification that require a provider to update their GP Connect API implementation AND would cause a consuming system built to any minor or patch version of the same major version of the specification to break.
+
+*Breaking changes* are therefore issued in a new major version of the specification, in order to allow consuming systems built to previous versions to continue to operate at that version without breaking.
 
 #### Unsubstantive breaking changes ####
 
-An *breaking change* **MAY** be classified as an *unsubstantive breaking change* where:
+An *breaking change* may be classified as an *unsubstantive breaking change* where:
 
 - providers and consumers have not built against any minor or patch version of the same major version of the specification, and therefore the change is not materially breaking
 
@@ -47,7 +49,10 @@ Where this occurs, previous minor or patch versions of the specifications will e
 
 #### Non-breaking changes ####
 
-*Non-breaking changes* are changes made to the specification that DO NOT cause a consuming system built to any minor or patch version of the same specification to break.
+*Non-breaking changes* are changes made to the specification that:
+
+- DO NOT require a provider to update their API implementation
+- OR DO require a provider to update their API implementation but DO NOT cause a consuming system built to any minor or patch version of the same specification to break
 
 #### Stylistic changes and clarifications ####
 
