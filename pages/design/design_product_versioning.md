@@ -26,12 +26,38 @@ The specification version number is based on the [Semantic Versioning 2.0.0](htt
 When a specification is released, the version number is incremented as follows:
 
 - **Major** version when *breaking changes* are made
-- **Minor** version when larger *non-breaking* changes are made, for example a new capability, or signficant number of small *non-breaking* changes are made
-- **Patch** version when smaller *non-breaking* changes are made
+- **Minor** version when larger *non-breaking changes* or *unsubstantive breaking changes* are made, for example a new capability; or a signficant number of smaller *non-breaking changes* or *unsubstantive breaking changes* are made
+- **Patch** version when smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 
-*Breaking changes* are those that would break a consuming system built to the previous version of the specification, when communicating with a provider system built to the the new version.
+### Types of change ###
 
-The version number is NOT incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
+#### Breaking changes ####
+
+*Breaking changes* are those changes made to the specification that require a provider to update their GP Connect API implementation and would cause a consuming system built to any minor or patch version of the same major version of the specification to break.
+
+*Breaking changes* are therefore issued in a new major version of the specification, in order to allow consuming systems built to previous versions to continue to operate at the previous major version without breaking.
+
+#### Unsubstantive breaking changes ####
+
+An *breaking change* may be classified as an *unsubstantive breaking change* where:
+
+- providers and consumers have not built against any minor or patch version of the same major version of the specification, and therefore the change is not breaking in practice
+
+- or in consultation with providers and/or consumers, where providers and/or consumers are in the process of building against any minor or patch version of the same major version of the specification
+
+Where this occurs, previous minor or patch versions of the specifications will either be discontinued ([see below](#pre-release-draft-labels)), or will be amended to include warnings regarding the changed functionality, to ensure consuming (and providing systems) do not build against the changed functionality in the future.
+
+#### Non-breaking changes ####
+
+*Non-breaking changes* are: 
+
+- changes made to the specification that do not require a provider to update their API implementation
+- changes made to the specification that do require a provider to update their API implementation but do not cause a consuming system built to any minor or patch version of the same specification to break
+- or other types of guidance or supporting material not classified above
+
+#### Stylistic changes and clarifications ####
+
+The version number may not be incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
 
 ### Pre-release (draft) labels ###
 
@@ -54,9 +80,14 @@ The pre-release labels used are as follows:
 The following GP Connect artefacts are released as part of or alongside the specification, taking the same version number as the specification:
 
 - [System demonstrator](system_demonstrator.html)
+- [Interactive API documentation](system_swagger.html)
 - [Provider automated test suite](testing_deliverables.html)
-- SDS interaction IDs (see below)
-- Service Root URL format (see below)
+- SDS interaction IDs ([see below](#sds-interaction-ids))
+- Service Root URL format ([see below](#service-root-url-format))
+
+The following GP Connect artefacts are released alongside the specification, but use their own version number scheme:
+
+- [FHIR profiles](development_fhir_resource_guidance.html)
 
 ### SDS interaction IDs ###
 
