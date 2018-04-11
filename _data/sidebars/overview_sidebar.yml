@@ -19,9 +19,6 @@ entries:
     - title: First of Type
       url: /overview_first_of_type.html
       output: web
-    - title: Glossary
-      url: /overview_glossary.html
-      output: web
       
       subfolders:
       - title: Release notes
@@ -183,104 +180,107 @@ entries:
     - title: Frequently asked questions
       url: /support_faq.html
       output: web
+    - title: Glossary
+      url: /overview_glossary.html
+      output: web
     - title: Communication channels
       url: /support_communications.html
       output: web
+
+      subfolders:
+      - title: External links
+        output: web
+        subfolderitems:        
+        - title: GPC Documentation repository
+          external_url: https://github.com/nhsconnect/gpconnect
+          output: web
+        - title: GPC NHS Digital
+          external_url: https://digital.nhs.uk/article/1275/GP-Connect
+          output: web
+        - title: GPC GitHub FHIR data library
+          external_url: https://github.com/nhsconnect/gpconnect-fhir/
+          output: web
+        - title: GPC GitHub C# examples
+          external_url: https://github.com/nhsconnect/gpconnect-dotnet-examples/
+          output: web
+        - title: GPC GitHub Java examples
+          external_url: https://github.com/nhsconnect/gpconnect-java-examples/
+          output: web
+        - title: GPC GitHub provider test harness
+          external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
+          output: web
+
+      - title: Tags
+        output: web
+        subfolderitems:
+        - title: Getting started
+          url: /tag_getting_started.html
+          output: web
+        - title: First of type
+          url: /tag_first_of_type.html
+          output: web
+        - title: FHIR&reg;
+          url: /tag_fhir.html
+          output: web
+        - title: Structured
+          url: /tag_structured.html
+          output: web
+        - title: Use case
+          url: /tag_use_case.html
+          output: web
+        - title: Foundations
+          url: /tag_foundations.html
+          output: web
+        - title: HTML Get Care Record
+          url: /tag_htmlgetcarerecord.html
+          output: web
+        - title: Get Care Record
+          url: /tag_getcarerecord.html
+          output: web
+        - title: Appointments
+          url: /tag_appointments.html
+          output: web
+        - title: Tasks
+          url: /tag_tasks.html
+          output: web
+        - title: Engagement
+          url: /tag_engagement.html
+          output: web
+        - title: Design
+          url: /tag_design.html
+          output: web   
+        - title: Development
+          url: /tag_development.html
+          output: web
+        - title: Integration
+          url: /tag_integration.html
+          output: web
+        - title: Testing
+          url: /tag_testing.html
+          output: web
+        - title: Assurance
+          url: /tag_assurance.html
+          output: web
+        - title: Deployment
+          url: /tag_deployment.html
+          output: web
+        - title: Support
+          url: /tag_support.html
+          output: web   
+        - title: Clinical safety
+          url: /tag_clinical_safety.html
+          output: web
+        - title: Information governance
+          url: /tag_information_governance.html
+          output: web
+        - title: Commissioning
+          url: /tag_commissioning.html
+          output: web
+        - title: Code snippet
+          url: /tag_code_snippet.html
+          output: web
+
     - title: Run website locally
       url: /support_run_website_locally.html
       output: web
 
-  - title: External links
-    output: web
-    folderitems:        
-    - title: GPC Documentation repository
-      external_url: https://github.com/nhsconnect/gpconnect
-      output: web
-    - title: GPC NHS Digital
-      external_url: https://digital.nhs.uk/article/1275/GP-Connect
-      output: web
-    - title: GPC Developer Network
-      external_url: http://developer.nhs.uk/library/interoperability/gp-connect/
-      output: web
-    - title: GPC GitHub FHIR data library
-      external_url: https://github.com/nhsconnect/gpconnect-fhir/
-      output: web
-    - title: GPC GitHub C# examples
-      external_url: https://github.com/nhsconnect/gpconnect-dotnet-examples/
-      output: web
-    - title: GPC GitHub Java examples
-      external_url: https://github.com/nhsconnect/gpconnect-java-examples/
-      output: web
-    - title: GPC GitHub provider test harness
-      external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
-      output: web
-
-  - title: Tags
-    output: web
-    folderitems:
-    - title: Getting started
-      url: /tag_getting_started.html
-      output: web
-    - title: First of type
-      url: /tag_first_of_type.html
-      output: web
-    - title: FHIR&reg;
-      url: /tag_fhir.html
-      output: web
-    - title: Structured
-      url: /tag_structured.html
-      output: web
-    - title: Use case
-      url: /tag_use_case.html
-      output: web
-    - title: Foundations
-      url: /tag_foundations.html
-      output: web
-    - title: HTML Get Care Record
-      url: /tag_htmlgetcarerecord.html
-      output: web
-    - title: Get Care Record
-      url: /tag_getcarerecord.html
-      output: web
-    - title: Appointments
-      url: /tag_appointments.html
-      output: web
-    - title: Tasks
-      url: /tag_tasks.html
-      output: web
-    - title: Engagement
-      url: /tag_engagement.html
-      output: web
-    - title: Design
-      url: /tag_design.html
-      output: web	  
-    - title: Development
-      url: /tag_development.html
-      output: web
-    - title: Integration
-      url: /tag_integration.html
-      output: web
-    - title: Testing
-      url: /tag_testing.html
-      output: web
-    - title: Assurance
-      url: /tag_assurance.html
-      output: web
-    - title: Deployment
-      url: /tag_deployment.html
-      output: web
-    - title: Support
-      url: /tag_support.html
-      output: web	  
-    - title: Clinical safety
-      url: /tag_clinical_safety.html
-      output: web
-    - title: Information governance
-      url: /tag_information_governance.html
-      output: web
-    - title: Commissioning
-      url: /tag_commissioning.html
-      output: web
-    - title: Code snippet
-      url: /tag_code_snippet.html
-      output: web
