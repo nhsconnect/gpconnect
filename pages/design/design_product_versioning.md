@@ -33,7 +33,7 @@ When a specification is released, the version number is incremented as follows:
 
 #### Breaking changes ####
 
-*Breaking changes* are those changes made to the specification that require a provider to update their GP Connect API implementation AND would cause a consuming system built to any minor or patch version of the same major version of the specification to break.
+*Breaking changes* are those changes made to the specification that require a provider to update their GP Connect API implementation and would cause a consuming system built to any minor or patch version of the same major version of the specification to break.
 
 *Breaking changes* are therefore issued in a new major version of the specification, in order to allow consuming systems built to previous versions to continue to operate at that version without breaking.
 
@@ -43,20 +43,21 @@ An *breaking change* may be classified as an *unsubstantive breaking change* whe
 
 - providers and consumers have not built against any minor or patch version of the same major version of the specification, and therefore the change is not materially breaking
 
-- OR in consultation with providers and/or consumers, where those providers and/or consumers are in the process of building against any minor or patch version of the same major version of the specification
+- or in consultation with providers and/or consumers, where those providers and/or consumers are in the process of building against any minor or patch version of the same major version of the specification
 
 Where this occurs, previous minor or patch versions of the specifications will either be discontinued ([see below](#pre-release-draft-labels)), or will be amended to include warnings regarding the changed functionality, to ensure consuming (and providing systems) do not build against the changed functionality in the future.
 
 #### Non-breaking changes ####
 
-*Non-breaking changes* are changes made to the specification that:
+*Non-breaking changes* are: 
 
-- DO NOT require a provider to update their API implementation
-- OR DO require a provider to update their API implementation but DO NOT cause a consuming system built to any minor or patch version of the same specification to break
+- changes made to the specification that do not require a provider to update their API implementation
+- changes made to the specification that do require a provider to update their API implementation but do not cause a consuming system built to any minor or patch version of the same specification to break
+- or other types of guidance or supporting material not classified above
 
 #### Stylistic changes and clarifications ####
 
-The version number may NOT be incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
+The version number may not be incremented when *stylistic changes* are made for example, section renumbering, broken links, style corrections, typos, and improvements to the clarity of wording that do not change the meaning of the specification.
 
 ### Pre-release (draft) labels ###
 
