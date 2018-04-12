@@ -99,7 +99,7 @@ Whether the List has a `mode` of `working`, `snapshot`, or `changes`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>title</code></td>
+    <td><b>Data type:</b> <code>Code</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -113,7 +113,7 @@ To use PRSB SNOMED CT ref set of codes and corresponding human readable descript
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
