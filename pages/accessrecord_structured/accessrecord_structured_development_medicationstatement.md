@@ -62,7 +62,7 @@ When the medication was last issued.
   <tr>
     <td><b>Data type:</b> <code>Reference</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
