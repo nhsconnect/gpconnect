@@ -58,8 +58,6 @@ The code that identifies the medication.
 
 A SNOMED dm+d code **MUST** be supplied, if available.
 
-This name **MUST** be preserved via `CodeableConcept.text` when representing the medication via resources. `CodeableConcept.text` is redundant when the displayed medication name on the original system and the dm+d name is identical, and, in these cases, `CodeableConcept.text` **MUST** be omitted.
-
 {% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
 
 ### package ###
