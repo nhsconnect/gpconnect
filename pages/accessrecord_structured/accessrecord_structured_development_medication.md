@@ -58,26 +58,6 @@ The code that identifies the medication.
 
 A SNOMED dm+d code **MUST** be supplied, if available.
 
-#### Degraded medications ####
-
-Where degraded medication records arising from GP2GP record transfer are present in the patient record then these **MUST** be coded using the SNOMED degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
-
-#### Mixtures ####
-
-In some systems it is possible to prescribe custom formulations compounded from other medications (extemporaneous preparations).
-
-Mixtures **MUST** be expressed using the degrade code (`196421000000109`, Transfer-degraded medication entry) with the constituents of the mixture expressed via `CodeableConcept.text`.
-
-#### Non dm+d medications ####
-
-In some cases, drugs may be recorded as free text or may be present in the original system’s drug dictionary, but not in dm+d.
-
-Where no dm+d code is available to describe the medication then the medication code **MUST** be expressed using the degrade (`196421000000109`, Transfer-degraded medication entry) with the original drug name present in `CodeableConcept.text`.
-
-#### dm+d name versus displayed name ####
-
-It is possible for historic/legacy medications to be displayed with a name corresponding to the name in the original system’s drug dictionary rather than the dm+d name.
-
 This name **MUST** be preserved via `CodeableConcept.text` when representing the medication via resources. `CodeableConcept.text` is redundant when the displayed medication name on the original system and the dm+d name is identical, and, in these cases, `CodeableConcept.text` **MUST** be omitted.
 
 {% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
