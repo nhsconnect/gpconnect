@@ -41,6 +41,17 @@ GP Connect consuming systems SHOULD cache SDS query results giving details of co
 Consuming systems SHALL NOT cache and re-use consuming system, endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
 
 
+#### Sample SDS client code ####
+
+Sample client code is provided to ease the process of integration with SDS for GP Connect API consumers. This code provides helper classes which hide the details of the LDAP calls which are needed, and provide a simpler interface for endpoint lookup.
+
+| Language | Code repository |
+| -------- | --------------- |
+|C# | [gpconnect-dotnet-examples](https://github.com/nhsconnect/gpconnect-dotnet-examples) |
+|Java | [gpconnect-java-examples](https://github.com/nhsconnect/gpconnect-java-examples) |
+
+Details of the LDAP calls required are given below.
+
 #### Step 1: Accredited System ID (ASID) lookup ####
 
 Using an organisation ODS code, clients SHALL look up the ASID as follows:
@@ -92,10 +103,14 @@ SDS requires Transport Layer Security (TLS) Mutual Authentication. It is therefo
 1. RootCA and SubCA Spine development certificates available from Assurance Support.
 2. Obtain a client certificate by submitting a certificate signing request for your development endpoint to Assurance Support.
 
-##### Server certificate setup #####
+  
+**Server certificate setup**
+
 For the examples above, ldapsearch should be configured to find the RootCA and SubCA certificates using the TLS_CACERT option in the ldap.conf file. This should point to a file, in Privacy Enhanced Mail (PEM) format, which contains both RootCA and SubCA certificates ensuring that the root certificate is placed after the SubCA certificate. The LDAPCONF environment variable can be used to define the location of the ldap.conf 
 
-##### Client certificate setup #####
+  
+**Client certificate setup**
+
 The client certificate and encrypted private key should be defined in the .ldaprc file using the following directives.
 
 `
@@ -106,6 +121,8 @@ TLS_KEY C:\mydir\key.pem
 The location of the .ldaprc file can be defined using the LDAPRC environment variable.
 
 Please contact [Assurance Support service desk](mailto:sa.servicedesk@nhs.net) for certificates and details of the LDAP server for your environment.
+
+
 
 ### Worked example of the endpoint lookup process ###
 
