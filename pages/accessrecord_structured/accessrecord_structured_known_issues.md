@@ -14,7 +14,3 @@ Allergies are currently recorded using multiple schemes across general practice 
 When considering the implementation of use cases involving allergy/intolerance consumers and their suppliers **SHALL** perform an appropriate clinical safety assessment and obtain the necessary clinical safety approvals for the processing performed by their system.
 
 Please read [the following guidance](http://gpconnect.netlify.com/accessrecord_structured_development_allergies_guidance.html#allergyintolerance-interoperability-and-clinical-safety) for further information.
-
-## List resource ##
-
-The [List resource](accessrecord_structured_development_list.html) is still undergoing clinical curation and therefore guidance and examples may change while this specification is still in draft.

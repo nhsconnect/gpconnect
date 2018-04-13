@@ -65,182 +65,176 @@ Provider systems:
 
 An example GP Connect CapabilityStatement is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
 
-```xml
-<CapabilityStatement xmlns="http://hl7.org/fhir">
-
-	<!-- GP Connect specification name and version ----------------------->
-	<version value="1.2.0" />
-	<name value="GP Connect" />
+```json
+{
+	"resourceType": "CapabilityStatement",
 	
-	<status value="active" />
-	<date value="2018-02-23" />
-
-	<!-- To be completed by the provider --------------------------------->
-	<publisher value="[Provider software vendor name]" />
-	<contact>
-		<name value="[Provider software vendor contact name]" />
-	</contact>
-
-	<description value="FHIR API implementing the GP Connect specification" />
-	<copyright value="Copyright NHS Digital 2018" />
-	<kind value="capability" />
-
-	<!-- To be completed by the provider --------------------------------->
-	<software>
-		<name value="[Provider software product name]" />
-		<version value="[Provider software production version]" />
-		<releaseDate value="[Provider software release date]" />
-	</software>
-
-	<fhirVersion value="3.0.1" />
-	<acceptUnknown value="both" />
-	<format value="application/fhir+json" />
-
-	<!-- Include only if provider supports XML --------------------------->
-	<format value="application/fhir+xml" />
-
-	<profile>
-
-		<!-- Profiles: common to all capabilities -------------------->
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"/>
-
-		<!-- Profiles: Appointment Management ------------------------>
- 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"/>
-
-		<!-- Profiles: Access Record Structured ---------------------->
- 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"/>
- 		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"/>
-		<reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"/>
-		<!-- Item awaiting profile curation: <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-List-1"/> -->
-
-	</profile>
-
-	<rest>
-		<mode value="server" />
-		<security>
-			<cors value="true" />
-		</security>
+	"version": "1.2.0",
+	"name": "GP Connect",
+	
+	"status": "active",
+	"date": "2018-02-23",
+	
+	"publisher": "[Provider Software Vendor Name]",
+	"Contact": [{
+		"name": "[Provider Software Vendor Contact Name]"
+	}],
+	
+	"description": "This server implements the GP Connect API version 1.2.0",
+	"copyright": "Copyright NHS Digital 2016",
+	"kind": "capability",
+	
+	
+	"software": {
+		"name": "[Provider Software Name]",
+		"version": "[Provider Software Verson]",
+		"releaseDate": "[Provider Software Release Date]"
+	},
+	
+	
+	"fhirVersion": "3.0.1",
+	"acceptUnknown": "both",
+	"format": [
+		"application/fhir+json",
+		"application/fhir+xml"
+	],
+	
+	
+	"profile": [
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"},
 		
-		<!-- REST definitions: Foundations --------------------------->
-		<resource>
-			<type value="Patient" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Organization" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Practitioner" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Location" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-		</resource>
-
-		<!-- REST definitions: Appointment Management ---------------->
-		<resource>
-			<type value="Slot" />
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<searchParam>
-				<name value="start" />
-				<type value="date" />
-			</searchParam>
-			<searchParam>
-				<name value="end" />
-				<type value="date" />
-			</searchParam>
-			<searchParam>
-				<name value="status" />
-				<type value="token" />
-			</searchParam>
-			<searchParam>
-				<name value="searchFilter" />
-				<type value="token" />
-			</searchParam>
-		</resource>
-		<resource>
-			<type value="Appointment" />
-			<interaction>
-				<code value="read" />
-			</interaction>
-			<interaction>
-				<code value="create" />
-			</interaction>
-			<interaction>
-				<code value="update" />
-			</interaction>
-			<interaction>
-				<code value="search-type" />
-			</interaction>
-			<updateCreate value="false" />
-			<searchParam>
-				<name value="identifier" />
-				<type value="token" />
-				<documentation value="NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)" />
-			</searchParam>
-		</resource>
-
-		<!-- Operation definitions: Foundations ---------------------->
-		<operation>
-			<name value="gpc.registerpatient" />
-			<definition>
-				<reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1" />
-			</definition>
-		</operation>
-
-		<!-- Operation definitions: Access Record Structured --------->
-		<operation>
-			<name value="gpc.getstructuredrecord" />
-			<definition>
-				<reference value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1" />
-			</definition>
-		</operation>
-
-	</rest>
-</CapabilityStatement>
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"},
+		
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"}
+	],
+	
+	
+	"rest": [{
+		"mode": "server",
+		"security": {
+			"cors": "true"
+		},
+		"resource": [
+			{
+				"type": "Patient",
+				"interaction": [{
+					"code": "read"
+				},
+				{
+					"code": "search-type"
+				}],
+				"searchParam": [{
+					"name": "identifier",
+					"type": "token",
+					"documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
+				}]
+			},
+			{
+				"type": "Organization",
+				"interaction": [{
+					"code": "read"
+				},
+				{
+					"code": "search-type"
+				}],
+				"searchParam": [{
+					"name": "identifier",
+					"type": "token",
+					"documentation": "ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)"
+				}]
+			},
+			{
+				"type": "Practitioner",
+				"interaction": [{
+					"code": "read"
+				},
+				{
+					"code": "search-type"
+				}],
+				"searchParam": [{
+					"name": "identifier",
+					"type": "token",
+					"documentation": "SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)"
+				}]
+			},
+			{
+				"type": "Location",
+				"interaction": [{
+					"code": "read"
+				}]
+			},
+			{
+				"type": "Appointment",
+				"interaction": [{
+					"code": "read"
+				},
+				{
+					"code": "create"
+				},
+				{
+					"code": "update"
+				},
+				{
+					"code": "search-type"
+				}],
+				"updateCreate": "false",
+				"searchParam": [{
+					"name": "identifier",
+					"type": "token",
+					"documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
+				}]
+			},
+			{
+				"type": "Slot",
+				"interaction": [{
+					"code": "search-type"
+				}],
+				"searchInclude": ["Schedule:actor:Location",
+				"Schedule:actor:Practitioner",
+				"Slot:schedule"],
+				"searchParam": [{
+					"name": "start",
+					"type": "date"
+				},
+				{
+					"name": "end",
+					"type": "date"
+				},
+				{
+					"name": "status",
+					"type": "token"
+				},
+				{
+					"name": "searchFilter",
+					"type": "token"
+				}]
+			}
+		],
+		"operation": [
+			{
+				"name": "gpc.registerpatient",
+				"definition": {
+					"reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1"
+				}
+			},
+			{
+				"name": "gpc.getstructuredrecord",
+				"definition": {
+					"reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
+				}
+			}
+		]
+	}]
+}
 ```
 
 Consumer systems:

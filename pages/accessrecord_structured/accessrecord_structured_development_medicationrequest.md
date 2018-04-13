@@ -427,7 +427,7 @@ The date a repeat prescription authorisation will expire.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><b>Data type:</b> <code>extension (prescriptionType)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -471,7 +471,7 @@ Mandatory for stopped/discontinued medications as the date will always be known.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>extension (valueString)</code></td>
+    <td><b>Data type:</b> <code>extension (CodeableConcept)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>

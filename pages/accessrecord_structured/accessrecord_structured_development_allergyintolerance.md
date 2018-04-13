@@ -244,7 +244,7 @@ The asserted date is when the allergy related to the patient was asserted. In ma
   <tr>
     <td><b>Data type:</b> <code>dateTime</code></td>
     <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
