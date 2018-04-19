@@ -3,7 +3,7 @@ title: Requirements Catalogue
 keywords: requirements
 tags: [requirements]
 sidebar: accessrecord_structured_sidebar
-permalink: requirements_catalogue.html
+permalink: accessrecord_structured_requirements_catalogue.html
 summary: "GP Connect Requirements Catalogue for Access Record Structured Data"
 ---
 
