@@ -9,7 +9,9 @@ summary: "Clinical, user and governance requirements that must be supported by t
 
 ## User stories and logical data model ##
 
-The [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.0.xlsx){:target="_blank"} contains the full set of business requirements that need to be met to support the retrieval of medications and allergy data in a structured format.
+The GP Connect Requirements Catalogue for Access Record Structured Data contains the full set of business requirements that need to be met to support the retrieval of medications and allergy data in a structured format.
+
+### [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.0.xlsx){:target="_blank"} ###
 
 The requirements are described as a set of user stories with separate acceptance criteria for the provider and consumer systems.
 
@@ -99,5 +101,5 @@ This engagement has included:
  - Commissioning support units
  - Hospital trusts
 
-The feedback from these stakeholders has been used to develop the business use cases, user stories and the [logical data model](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v0.6.xlsx){:target="_blank"}. These will form the basis of the technical specification and will be used to assure that the GP Connect API meets the needs of the business.
+The feedback from these stakeholders has been used to develop the business use cases, user stories and the logical data model. These will form the basis of the technical specification and will be used to assure that the GP Connect API meets the needs of the business.
 
