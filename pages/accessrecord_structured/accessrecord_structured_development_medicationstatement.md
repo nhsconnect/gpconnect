@@ -234,12 +234,10 @@ Complete dosage instructions as text.
 
 Additional instructions for patient, i.e. RHS of prescription label.
 
+<h2 style="color:#e6b8b7;">MedicationStatement elements <b>not in use</b></h2>
 
-<div>
-  <p>
-<h2 style="background-color:#e6b8b7">MedicationStatement elements <b>not in use</b></h2>
-  </p>
-</div>
+<h2 style="background-color:#e6b8b7;">MedicationStatement elements <b>not in use</b></h2>
+
 The following elements **SHOULD NOT** be populated:
 
 ### partOf ###
