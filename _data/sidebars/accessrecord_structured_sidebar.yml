@@ -13,7 +13,7 @@ entries:
     - title: Business requirements
       url: /accessrecord_structured_requirements.html
       output: web, pdf
-    - title: Requirements Catalogue  
+    - title: Requirements catalogue  
       url: /accessrecord_structured_requirements_catalogue.html
       output: web, pdf
     - title: Design decisions
