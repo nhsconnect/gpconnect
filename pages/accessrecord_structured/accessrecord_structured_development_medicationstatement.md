@@ -238,7 +238,7 @@ Additional instructions for patient, i.e. RHS of prescription label.
 <br><br>
 </div>
 <div>
-<h2 id="medicationstatement-elements-not-in-use" class="clickable-header top-level-header" style="background-color:#e6b8b7">MedicationStatement elements <b>not in use</b></h2>
+<h2 style="background-color:#e6b8b7">MedicationStatement elements <b>not in use</b></h2>
 </div>
 The following elements **SHOULD NOT** be populated:
 
