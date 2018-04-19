@@ -234,11 +234,9 @@ Complete dosage instructions as text.
 
 Additional instructions for patient, i.e. RHS of prescription label.
 
-<br>
+<br><br>
 
-<div style="background-color:lightpink">
-  <h2 id="medicationstatement-elements-not-in-use" class="clickable-header top-level-header">MedicationStatement elements <b>not in use</b></h2>
-</div>
+  <h2 id="medicationstatement-elements-not-in-use" class="clickable-header top-level-header" style="background-color:lightpink">MedicationStatement elements <b>not in use</b></h2>
 
 The following elements **SHOULD NOT** be populated:
 
