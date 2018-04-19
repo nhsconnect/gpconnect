@@ -236,11 +236,11 @@ Additional instructions for patient, i.e. RHS of prescription label.
 
 
 
-<h2 style="color:#e6b8b7;">MedicationStatement elements <b>not in use</b></h2>
+<h2 style="color:#ED1951;">MedicationStatement elements <b>not in use</b></h2>
 
 The following elements **SHOULD NOT** be populated:
 
-### partOf ###
+<h3 style="color:#ED1951;"><b>partOf</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -251,7 +251,7 @@ The following elements **SHOULD NOT** be populated:
 {% include todo.html content="TODO" %} 
 
 
-### category ###
+<h3 style="color:#ED1951;"><b>category</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -262,7 +262,7 @@ The following elements **SHOULD NOT** be populated:
 {% include todo.html content="TODO" %} 
 
 
-### informationSource ###
+<h3 style="color:#ED1951;"><b>informationSource</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -273,7 +273,7 @@ The following elements **SHOULD NOT** be populated:
 {% include todo.html content="TODO" %} 
 
 
-### derivedFrom ###
+<h3 style="color:#ED1951;"><b>derivedFrom</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -284,7 +284,7 @@ The following elements **SHOULD NOT** be populated:
 {% include todo.html content="TODO" %} 
 
 
-### taken ###
+<h3 style="color:#ED1951;"><b>taken</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -295,7 +295,7 @@ The following elements **SHOULD NOT** be populated:
 {% include todo.html content="TODO" %} 
 
 
-### reasonNotTaken ###
+<h3 style="color:#ED1951;"><b>reasonNotTaken</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -306,7 +306,7 @@ The following elements **SHOULD NOT** be populated:
 {% include todo.html content="TODO" %} 
 
 
-### medicationEpisodeChangeSummary ###
+<h3 style="color:#ED1951;"><b>medicationEpisodeChangeSummary</b></h3>
 
 <table class='resource-attributes'>
   <tr>
