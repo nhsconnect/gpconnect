@@ -264,9 +264,10 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
   - when the `medicationDatePeriod` parameter is set, the medication summary data **SHALL** be restricted to that whose date falls within, or overlaps (in the case of a range), the `Period.start` and `Period.end`. The date used shall be:
 
-    1. `lastIssueDate`
-    2. `effectiveDate` or `effectivePeriod`, where the medication does not have a `lastIssueDate`
-    3. `dateAsserted`, where the medication does not have a `lastIssueDate`, `effectiveDate` or `effectivePeriod`
+    1 - `effectiveDate` or `effectivePeriod`
+    	- `effectiveStartDate` - the date the prescription (or cycle of prescriptions) is expected to start. For repeat and repeat dispensed prescriptions this is the period covered by the entire cycle of planned issues
+	- `effectiveEndDate` - the date the prescription (or cycle of prescriptions) is expected to finish. For repeat and repeat dispensed prescriptions this is the period covered by the entire cycle of issue. Where this date is not supplied for a repeat dispensed prescription then they are considered ongoing until a date is supplied
+    2 - `dateAsserted`, where the medication does not have a `lastIssueDate`, `effectiveDate` or `effectivePeriod`
 
   - and when the `includePrescriptionIssues` parameter is not set, or is set to `false`:
 
