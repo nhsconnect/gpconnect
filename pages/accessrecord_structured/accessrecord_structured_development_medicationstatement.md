@@ -234,7 +234,7 @@ Complete dosage instructions as text.
 
 Additional instructions for patient, i.e. RHS of prescription label.
 
-
+<br><br>
 
 <h2 style="color:#ED1951;">MedicationStatement elements <b>not in use</b></h2>
 
