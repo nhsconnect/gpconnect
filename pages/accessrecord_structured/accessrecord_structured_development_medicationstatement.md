@@ -233,6 +233,7 @@ Complete dosage instructions as text.
 </table>
 
 Additional instructions for patient, i.e. RHS of prescription label.
+
 <div style="background-color:white">
 <br><br>
 </div>
