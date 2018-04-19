@@ -13,6 +13,7 @@ The GP Connect Requirements Catalogue for Access Record Structured Data contains
 
 -   ### [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.0.xlsx){:target="_blank"} ###
 </br>
+</br>
 
 The requirements are described as a set of user stories with separate acceptance criteria for the provider and consumer systems.
 
