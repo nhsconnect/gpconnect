@@ -234,9 +234,6 @@ Complete dosage instructions as text.
 
 Additional instructions for patient, i.e. RHS of prescription label.
 
-<p>
-<br><br>
-</p>
 
 <div>
   <p>
