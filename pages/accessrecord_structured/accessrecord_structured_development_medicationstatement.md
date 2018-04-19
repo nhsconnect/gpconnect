@@ -237,6 +237,7 @@ Additional instructions for patient, i.e. RHS of prescription label.
 
 
 <br>
+<div style="background-color:crimson">
 ## Elements **not in use** ##
 
 The following elements **SHOULD NOT** be populated:
@@ -316,3 +317,4 @@ The following elements **SHOULD NOT** be populated:
 </table>
 
 {% include todo.html content="TODO" %} 
+</div>
