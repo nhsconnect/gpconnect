@@ -1,8 +1,9 @@
 ---
-title: Requirements Catalogue
+title: Requirements catalogue
 keywords: requirements
 tags: [requirements]
 sidebar: accessrecord_structured_sidebar
+toc: false
 permalink: accessrecord_structured_requirements_catalogue.html
 summary: "GP Connect Requirements Catalogue for Access Record Structured Data"
 ---
