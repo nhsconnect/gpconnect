@@ -13,6 +13,9 @@ entries:
     - title: Business requirements
       url: /accessrecord_structured_requirements.html
       output: web, pdf
+    - title: Requirements Catalogue  
+      url: http://gpconnect.netlify.com/pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.0.xlsx
+      output: web, pdf
     - title: Design decisions
       url: /accessrecord_structured_design.html
       output: web, pdf
