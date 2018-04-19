@@ -234,11 +234,12 @@ Complete dosage instructions as text.
 
 Additional instructions for patient, i.e. RHS of prescription label.
 
-
+<h2 id="medicationstatement-elements" class="clickable-header top-level-header">MedicationStatement elements<a class="anchorjs-link " href="#medicationstatement-elements" aria-label="Anchor link for: medicationstatement elements" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; line-height: 1; padding-left: 0.375em;"></a></h2>
 
 <br>
 <div style="background-color:crimson">
-## Elements **not in use** ##
+  <h2 id="medicationstatement-elements-not-in-use" class="clickable-header top-level-header">MedicationStatement elements <b>not in use</b><a class="anchorjs-link " href="#medicationstatement-elements" aria-label="Anchor link for: medicationstatement elements" data-anchorjs-icon="" style="font-family: anchorjs-icons; font-style: normal; font-variant: normal; font-weight: normal; line-height: 1; padding-left: 0.375em;"></a></h2>
+</div>
 
 The following elements **SHOULD NOT** be populated:
 
@@ -317,4 +318,4 @@ The following elements **SHOULD NOT** be populated:
 </table>
 
 {% include todo.html content="TODO" %} 
-</div>
+
