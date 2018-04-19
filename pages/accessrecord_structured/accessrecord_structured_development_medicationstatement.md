@@ -236,7 +236,7 @@ Additional instructions for patient, i.e. RHS of prescription label.
 
 <br>
 
-<div style="background-color:crimson">
+<div style="background-color:lightpink">
   <h2 id="medicationstatement-elements-not-in-use" class="clickable-header top-level-header">MedicationStatement elements <b>not in use</b></h2>
 </div>
 
