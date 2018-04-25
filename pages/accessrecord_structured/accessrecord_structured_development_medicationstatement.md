@@ -222,7 +222,7 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 
 Complete dosage instructions as text.
 
-### dosage.patientIntstruction ###
+### dosage.patientInstruction ###
 
 <table class='resource-attributes'>
   <tr>
