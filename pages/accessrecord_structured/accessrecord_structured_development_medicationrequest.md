@@ -1,3 +1,4 @@
+
 ---
 title: MedicationRequest resource
 keywords: getcarerecord
@@ -12,17 +13,17 @@ div: resource-page
 
 The headings below list the elements of the MedicationRequest resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_medicationrequest.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_medicationrequest.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)" %} 
 
 ## Overarching principles ##
 
-When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **SHOULD** be applied when populating the MedicationRequest profiles:
+When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **MUST** be applied when populating the MedicationRequest profiles:
 
 1. All mandatory fields **MUST** be populated.
 
-2. Required fields **SHOULD** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a MedicationRequest with `intent` of `plan` the associated MedicationStatement would be the parent profile. For a MedicationRequest with `intent` of `order`, the associated MedicationStatement and MedicationRequest with `intent` of `plan` are both considered parent profiles.
+2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a MedicationRequest with `intent` of `plan` the associated MedicationStatement would be the parent profile. For a MedicationRequest with `intent` of `order`, the associated MedicationStatement and MedicationRequest with `intent` of `plan` are both considered parent profiles.
 
 ## MedicationRequest elements ##
 
@@ -32,11 +33,11 @@ When populating the MedicationRequest profile it may appear that fields are dupl
   <tr>
     <td><b>Data type:</b> <code>Id</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-The logical identifier of the MedicationRequest resource.
+The logical identifier of the MedicationRequest resource. This <b>MUST<b> be a unique and persisted identifier. 
 
 ### meta.profile ###
 
@@ -44,7 +45,7 @@ The logical identifier of the MedicationRequest resource.
   <tr>
     <td><b>Data type:</b> <code>uri</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -62,9 +63,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
   </tr>
 </table>
 
-To use for `intent` set to `order` resources that are based on an `intent` set to `plan` resource.
+This field is used to create the links between `MedicationRequest` resources to represent the medication ordering process as described [here] (add link to representing the ordering process in FHIR) This **MUST** be used when a resource has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` resource that has an `intent` set to `plan`.
 
-Do not use for authorisations (`intent` of `plan`), it is valid for issue which would always be basedOn the `MedicationRequest` authorisation resource.
+**DO NOT USE** for authorisations ie. for a MedicationRequest with `intent` of `plan`.
 
 ### groupIdentifier ###
 
@@ -78,7 +79,7 @@ Do not use for authorisations (`intent` of `plan`), it is valid for issue which 
 
 Composite request this is part of.
 
-All repeat prescribed and repeat dispensed medications **SHOULD** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
+All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
 
 
 ### status ###
@@ -97,7 +98,7 @@ Use one of `active`, `completed` or `stopped`:
 
 - `active` represents an active authorisation - used for active repeat medications.
 - `stopped` represents a repeat authorisation which has been discontinued/stopped.
-- `complete` **SHOULD** be used for all acute authorisations.
+- `complete` **MUST** be used for all acute authorisations.
 
 
 ### intent ###
@@ -114,8 +115,8 @@ Used to distinguish between authorisations and medication issues.
 
 Use one of `plan` or `order`:
 
-- `plan` represents an authorisation.
-- `order` represents a prescription issue.
+- `plan` represents an authorisation of a medication or medical device.
+- `order` represents a prescription or issue of a medication or medical device.
 
 
 ### medication ###
@@ -190,7 +191,7 @@ Unless there is a distinct user modifiable availabilityTime for the authorisatio
 
 Person and their organization requesting authorisation for prescription.
 
-To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **SHOULD** be completed with a reference to the other organisation. 
+To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation. 
 
 If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
 
@@ -207,7 +208,7 @@ If the medication has been prescribed elsewhere and, for example, is detailed in
 
 The responsible `Practitioner` who authorised the medication.
 
-May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **SHOULD** be referenced here.
+May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
 
 
 ### reasonCode ###
@@ -291,7 +292,7 @@ Additional instructions for patient, i.e. RHS of prescription label.
 
 Prescription start and end dates.
 
-Start date is mandatory. Where there is a defined expiry or end date the end date **SHOULD** be supplied. For acute prescriptions no specific end date **SHOULD** be supplied.
+Start date is mandatory. Where there is a defined expiry or end date the end date **MUST** be supplied. For acute prescriptions no specific end date **SHALL** be supplied.
 
 
 ### dispenseRequest.quantity ###
@@ -306,7 +307,7 @@ Start date is mandatory. Where there is a defined expiry or end date the end dat
 
 The quantity to dispense.
 
-If the units are text then the extension dispenseRequest.quantityText **SHOULD** be used.
+If the units are text then the extension dispenseRequest.quantityText **MUST** be used.
 
 
 ### dispenseRequest.quantityText ###
@@ -370,8 +371,8 @@ May be used, for example, to reference prior authorisation where prescription is
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Extension</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -485,9 +486,9 @@ Must be populated when StatusReason.date is populated.
 <br>
 ## Elements **not in use** ##
 
-The following elements **SHOULD NOT** be populated:
+The following elements **MUST NOT** be populated:
 
-### definition ###
+<h3 style="color:#ED1951;"><b>definition</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -498,18 +499,7 @@ The following elements **SHOULD NOT** be populated:
 Not in scope for this release of Care Connect.
 
 
-### basedOn ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(CarePlan, MedicationRequest, ProcedureRequest, ReferralRequest)</code></td>
-  </tr>
-</table>
-
-Do not use for authorisations (intent of `plan`) - it is valid for issue which would be basedOn authorisation resources.
-
-
-### category ###
+<h3 style="color:#ED1951;"><b>category</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -517,10 +507,10 @@ Do not use for authorisations (intent of `plan`) - it is valid for issue which w
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+Not in scope for this release of Care Connect. 
 
 
-### priority ###
+<h3 style="color:#ED1951;"><b>priority</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -528,10 +518,10 @@ Do not use for authorisations (intent of `plan`) - it is valid for issue which w
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+Not in scope for this release of Care Connect. 
 
 
-### supportingInformation ###
+<h3 style="color:#ED1951;"><b>supportingInformation</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -539,21 +529,11 @@ Do not use for authorisations (intent of `plan`) - it is valid for issue which w
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+Not in scope for this release of Care Connect. 
 
 
-### dispenseRequest/expectedSupplyDuration ###
 
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Duration</code></td>
-  </tr>
-</table>
-
-{% include todo.html content="TODO" %}  *** Check duplication with extension.
-
-
-### substitution ###
+<h3 style="color:#ED1951;"><b>substitution</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -561,10 +541,10 @@ Do not use for authorisations (intent of `plan`) - it is valid for issue which w
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+Not in scope for this release of Care Connect. 
 
 
-### eventHistory ###
+<h3 style="color:#ED1951;"><b>eventHistory</b></h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -572,29 +552,6 @@ Do not use for authorisations (intent of `plan`) - it is valid for issue which w
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
-
-<br><br>
-{% include important.html content="Where the `intent` = `plan` the following two elements **SHOULD NOT** be populated:" %}
+Not in scope for this release of Care Connect.  
 
 
-### groupIdentifier ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-  </tr>
-</table>
-
-{% include todo.html content="TODO" %} 
-
-
-### requester ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-  </tr>
-</table>
-
-Uncurated - potential use to flag patient requested medications. Recommend do not use at this point.
