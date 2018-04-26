@@ -152,6 +152,8 @@ INVALID_PARAMETER would be used in the following, or similar, scenarios:
 - Unexpected parameter value for an custom operation. For example, a lowercase value is supplied to the recordSection parameter of the $gpc.getcarerecord operation.
 - An invalid date/time value specified in a custom operaion parameter. For example, a invalid timePeriod defined in the timePeriod input parameter to the $gpc.getcarerecord operation.
 
+Diagnostic information detailing the invalid parameter **MUST** be supplied when erroring on INVALID_PARAMETER.
+
 INVALID_RESOURCE would be used in situations such as the following:
 - Resource does to validate against StructureDefinition (either in request body, of in JWT claim)
 
