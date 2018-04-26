@@ -186,6 +186,8 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 The provider system **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
+Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
+
 Errors that may be encountered include:
 
 - the `patientNHSNumber` parameter is not provided
@@ -198,8 +200,6 @@ Errors that may be encountered include:
 - the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for further information including appropriate error codes.
-
-{% include important.html content="Provider systems **SHOULD** return informative messages when an error occurs." %}
 
 ### Request response ###
 
