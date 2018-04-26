@@ -487,7 +487,7 @@ Must be populated when StatusReason.date is populated.
 
 The following elements **MUST NOT** be populated:
 
-<h3 style="color:#ED1951;"><b>definition</b></h3>
+<h3 style="color:#ED1951;">definition</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -498,7 +498,7 @@ The following elements **MUST NOT** be populated:
 Not in scope for this release of Care Connect.
 
 
-<h3 style="color:#ED1951;"><b>category</b></h3>
+<h3 style="color:#ED1951;">category</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -509,7 +509,7 @@ Not in scope for this release of Care Connect.
 Not in scope for this release of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>priority</b></h3>
+<h3 style="color:#ED1951;">priority</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -520,7 +520,7 @@ Not in scope for this release of Care Connect.
 Not in scope for this release of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>supportingInformation</b></h3>
+<h3 style="color:#ED1951;">supportingInformation</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -532,7 +532,7 @@ Not in scope for this release of Care Connect.
 
 
 
-<h3 style="color:#ED1951;"><b>substitution</b></h3>
+<h3 style="color:#ED1951;">substitution</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -543,7 +543,7 @@ Not in scope for this release of Care Connect.
 Not in scope for this release of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>eventHistory</b></h3>
+<h3 style="color:#ED1951;">eventHistory</h3>
 
 <table class='resource-attributes'>
   <tr>
