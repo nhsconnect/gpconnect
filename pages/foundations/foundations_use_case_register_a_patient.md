@@ -95,8 +95,13 @@ The following data-elements SHOULD be populated if available:
 	- the consumer SHOULD populate only one `address` per `address.use` value
 	- the `address.use` value `home` SHOULD be mapped to PDS Address Use `HP` (Primary Home)
 
-  {% include note.html content="The consumer SHOULD include telecom and address information within the temporary patient registration so that the receiving system has relevant contact details for the patient." %}
-  {% include note.html content="The provider system receiving the telecom and address details SHOULD store these details in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration." %}
+    {% include note.html content="The consumer SHOULD include telecom and address information within the temporary patient registration so that the receiving system has relevant contact details for the patient." %}
+    {% include note.html content="The provider system receiving the telecom and address details SHOULD store these details in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration." %}
+  
+  - the `preferredBranchSurgery` within the `RegistrationDetails` extension element of the patient resource SHOULD be populated with a location reference where available and relevant to the registration.
+  
+    For example when the consumer is using the patient registration as part of an appointment booking they will have previously selected a slot which will be associated with a location. The consumer may use this location as the preferred branch surgery within the patient registration.
+  
   
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
 
@@ -264,8 +269,9 @@ Provider systems:
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `{Resource}.meta.profile` element of the returned resources.
 - SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) including the following resources 
 	- `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) containing details of the newly registered or re-activated patient. This will include details sourced from PDS.
-- SHALL populate the "registrationDetails" extension within the returned patient resource, within the "registrationDetails" extension:
-  - The "registrationType" SHALL be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and more detail around the specific type of registration SHOULD be added using the "text" element of the CodeableConcept.
+- SHALL populate the `registrationDetails` extension within the returned patient resource. Within the "registrationDetails" extension:
+  - the `preferredBranchSurgery` SHALL be populated, with either the preferredBranchSurgery that may have been passed in by the consumer or a location reference which represents the physical location of the main GP Practice of the organization where the "Register a patient" request has been targeted.
+  - the "registrationType" SHALL be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and more detail around the specific type of registration SHOULD be added using the "text" element of the CodeableConcept.
 
 ```json
 {
