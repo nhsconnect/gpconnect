@@ -1,5 +1,5 @@
 ---
-title: FHIR API guidance
+title: FHIR&reg; API guidance 1
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar

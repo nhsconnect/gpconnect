@@ -80,83 +80,92 @@ entries:
       url: /system_reference_postman.html
       output: web
 
-  - title: Development guidance
+  - title: Design and develop
     output: web
     folderitems:
-    - title: Development assets
-      url: /development_deliverables.html
+    - title: Introduction
+      url: /development_introduction.html
       output: web
-    - title: FHIR&reg; library guidance
+    - title: Choosing a FHIR&reg; library
       url: /development_fhir_open_source_guidance.html
       output: web
-    - title: FHIR&reg; implementation guidance
+    - title: FHIR&reg; API guidance 1
       url: /development_fhir_api_guidance.html
       output: web
-    - title: General API guidance
+    - title: FHIR&reg; API guidance 2
       url: /development_general_api_guidance.html
       output: web          
-    - title: Operation guidance
+    - title: FHIR&reg; endpoints
       url: /development_fhir_operation_guidance.html
       output: web
     - title: Resource guidance
       url: /development_fhir_resource_guidance.html
       output: web
-    - title: Security guidance
-      url: /development_api_security_guidance.html
-      output: web
-    - title: Error handling
-      url: /development_fhir_error_handling_guidance.html
-      output: web
-    - title: Volume and performance guidance
-      url: /development_api_volume_and_performance.html
-      output: web          
-    - title: NFR guidance
-      url: /development_api_non_functional_requirements.html
-      output: web
-          
-  - title: Implement a capability
-    output: web
-    folderitems:
-    - title: Foundations
-      url: /foundations.html
-      output: web
-    - title: Appointment Management
-      url: /appointments.html
-      output: web
-    - title: <b class="capability-not-available">Access Record HTML</b>
-      url: /accessrecord.html
-      output: web
-    - title: <b class="capability-not-available">Access Record Structured</b>
-      url: /accessrecord_rest.html
-      output: web
-    - title: <b class="capability-not-available">Task Management</b>
-      url: /tasks.html
-      output: web
 
-  - title: Integrate with Spine
-    output: web
-    folderitems:
-    - title: System topologies
-      url: /integration_system_topologies.html
-      output: web     
-    - title: Spine integration illustrated
-      url: /integration_illustrated.html
-      output: web           
-    - title: Cross organisation audit and provenance
-      url: /integration_cross_organisation_audit_and_provenance.html
-      output: web
-    - title: Personal Demographic Service
-      url: /integration_personal_demographic_service.html
-      output: web	
-    - title: Spine Directory Services
-      url: /integration_spine_directory_service.html
-      output: web
-    - title: Spine Security Proxy introduction
-      url: /integration_spine_security_proxy.html
-      output: web
-    - title: Spine Security Proxy implementation guide
-      url: /integration_spine_security_proxy_implementation_guide.html
-      output: web 
+      subfolders:
+          
+      - title: Implement a capability
+        output: web
+        subfolderitems:        
+
+        - title: Foundations
+          url: /foundations.html
+          output: web
+        - title: Appointment Management
+          url: /appointments.html
+          output: web
+        - title: <b class="capability-not-available">Access Record HTML</b>
+          url: /accessrecord.html
+          output: web
+        - title: <b class="capability-not-available">Access Record Structured</b>
+          url: /accessrecord_rest.html
+          output: web
+        - title: <b class="capability-not-available">Task Management</b>
+          url: /tasks.html
+          output: web
+
+      - title: Cross cutting guidance
+        output: web
+        subfolderitems:        
+
+        - title: Cross organisation audit and provenance
+          url: /integration_cross_organisation_audit_and_provenance.html
+          output: web
+        - title: Security guidance
+          url: /development_api_security_guidance.html
+          output: web
+        - title: Error handling
+          url: /development_fhir_error_handling_guidance.html
+          output: web
+        - title: Volume and performance
+          url: /development_api_volume_and_performance.html
+          output: web          
+        - title: Non-functional requirements
+          url: /development_api_non_functional_requirements.html
+          output: web
+
+      - title: Integrate with Spine
+        output: web
+        subfolderitems:
+
+        - title: System topologies
+          url: /integration_system_topologies.html
+          output: web     
+        - title: Spine integration illustrated
+          url: /integration_illustrated.html
+          output: web
+        - title: Personal Demographic Service
+          url: /integration_personal_demographic_service.html
+          output: web 
+        - title: Spine Directory Services
+          url: /integration_spine_directory_service.html
+          output: web
+        - title: Spine Security Proxy introduction
+          url: /integration_spine_security_proxy.html
+          output: web
+        - title: Spine Security Proxy implementation guide
+          url: /integration_spine_security_proxy_implementation_guide.html
+          output: web 
 
   - title: Test and assure
     output: web

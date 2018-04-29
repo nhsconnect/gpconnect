@@ -16,4 +16,3 @@ The profiled FHIR resources required for each of the GP Connect capability packs
 * [Access Record Structured](accessrecord_rest.html)
 * [Appointment Management](datalibraryappointment.html)
 * [Task Management](tasks.html)
-
