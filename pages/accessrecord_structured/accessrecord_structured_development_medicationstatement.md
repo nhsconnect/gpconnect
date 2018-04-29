@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below list the elements of the MedicationStatement resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_medicationstatement.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_medicationstatement.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)" %} 
 
@@ -24,7 +24,7 @@ The headings below list the elements of the MedicationStatement resource and des
   <tr>
     <td><b>Data type:</b> <code>Id</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -36,7 +36,7 @@ The logical identifier of the MedicationStatement resource.
   <tr>
     <td><b>Data type:</b> <code>uri</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -68,7 +68,7 @@ When the medication was last issued.
 
 Link to the MedicationRequest that this `MedicationStatement` is based on.
 
-Every MedicationStatement MUST be based on a `MedicationRequest` with `intent` set to `plan`.
+Every MedicationStatement **MUST** be based on a `MedicationRequest` with `intent` set to `plan`.
 
 ### context ###
 
@@ -100,7 +100,7 @@ Use one of `active`, `completed` or `stopped`:
 
 - `active` represents an active authorisation - used for active repeat medications
 - `stopped` represents a repeat authorisation which has been discontinued/stopped
-- `complete` **SHOULD** be used for all acute authorisations.
+- `complete` **MUST** be used for all acute authorisations or any inactive repeat medications that have completed by running their course.
 
 ### medicationReference ###
 
@@ -126,7 +126,7 @@ The `Medication` resource provides the coded representation of the medication.
   </tr>
 </table>
 
-Start date is mandatory. Where there is a defined expiry or end date the end date **SHOULD** be supplied. For acute prescriptions no specific end date **SHOULD** be supplied.
+Where a Period is used the start is **MANDATORY**. Where there is a defined expiry or end date in the sending system the end date **MUST** be supplied. For acute prescriptions no specific end date **MUST** be supplied.
 
 ### dateAsserted ###
 
@@ -208,7 +208,7 @@ Unless there is a specific linkage in the context of medication, indirect linkag
 
 All notes that are associated with this medication record.
 
-All patient notes and prescriber notes at authorisation(plan) and issue(order) level **SHOULD** be included in this field. They **SHOULD** be concatenated and indicate the level the notes come from, e.g. 1st Issue and also be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
+All patient notes and prescriber notes at authorisation(plan) and issue(order) level **MUST** be included in this field. They **MUST** be concatenated and indicate the level the notes come from, e.g. 1st Issue and also be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
 
 ### dosage.text ###
 
@@ -238,7 +238,7 @@ Additional instructions for patient, i.e. RHS of prescription label.
 
 <h2 style="color:#ED1951;">MedicationStatement elements <b>not in use</b></h2>
 
-The following elements **SHOULD NOT** be populated:
+The following elements **SHALL NOT** be populated:
 
 <h3 style="color:#ED1951;"><b>partOf</b></h3>
 
@@ -248,7 +248,7 @@ The following elements **SHOULD NOT** be populated:
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+This is not in scope for this version of Care Connect. 
 
 
 <h3 style="color:#ED1951;"><b>category</b></h3>
@@ -259,7 +259,7 @@ The following elements **SHOULD NOT** be populated:
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+This is not in scope for this version of Care Connect. 
 
 
 <h3 style="color:#ED1951;"><b>informationSource</b></h3>
@@ -270,7 +270,7 @@ The following elements **SHOULD NOT** be populated:
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+This is not in scope for this version of Care Connect. 
 
 
 <h3 style="color:#ED1951;"><b>derivedFrom</b></h3>
@@ -281,7 +281,7 @@ The following elements **SHOULD NOT** be populated:
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+This is not in scope for this version of Care Connect. 
 
 
 <h3 style="color:#ED1951;"><b>taken</b></h3>
@@ -292,7 +292,7 @@ The following elements **SHOULD NOT** be populated:
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+This is not in scope for this version of Care Connect. 
 
 
 <h3 style="color:#ED1951;"><b>reasonNotTaken</b></h3>
@@ -303,7 +303,7 @@ The following elements **SHOULD NOT** be populated:
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+This is not in scope for this version of Care Connect. 
 
 
 <h3 style="color:#ED1951;"><b>medicationEpisodeChangeSummary</b></h3>
@@ -314,5 +314,4 @@ The following elements **SHOULD NOT** be populated:
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
-
+This is not in scope for this version of Care Connect. 
