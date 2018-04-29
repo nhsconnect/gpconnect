@@ -1,3 +1,4 @@
+
 ---
 title: AllergyIntolerance resource
 keywords: getcarerecord
@@ -12,7 +13,7 @@ div: resource-page
 
 The headings below list the elements of the AllergyIntolerance resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)." %} 
 
@@ -24,7 +25,7 @@ The headings below list the elements of the AllergyIntolerance resource and desc
   <tr>
     <td><b>Data type:</b> <code>Id</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -36,7 +37,7 @@ The logical identifier of the Medication resource.
   <tr>
     <td><b>Data type:</b> <code>uri</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -56,7 +57,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Allerg
 
 The date the allergy or intolerance was recorded as resolved.
 
-Must be populated if the `status` is set to `resolved`.
+Must be populated if the `clinicalStatus` is set to `resolved`.
 
 ### extension[allergyEnd].endReason ###
 
@@ -122,7 +123,7 @@ Fixed value of `unconfirmed`.
 
 Set to `allergy` for reactions which are allergenic in nature (immunological), a value of `intolerance` **MAY** be used to indicate adverse reactions (not immunologic in nature). Where the type is unknown the type element may be omitted.
 
-Some systems allow explicit identification of adverse reactions and intolerances and the type **SHOULD** be used to make this distinction where it exists.
+Some systems allow explicit identification of adverse reactions and intolerances and the type **MUST** be used to make this distinction where it exists.
 
 ### category ###
 
@@ -134,11 +135,11 @@ Some systems allow explicit identification of adverse reactions and intolerances
   </tr>
 </table>
 
-Use `medication` for all drug allergy types, `environmental` for all non-drug allergies. The other values in the ValueSet (food and biologic) **SHOULD NOT** be used.
+Use `medication` for all drug allergy types, `environmental` for all non-drug allergies. The other values in the ValueSet (food and biologic) **MUST NOT** be used.
 
 It is expected that it will always be possible to assign a category of ‘medication’ for drug allergies or ‘environmental’ for all other types of allergy/intolerance. Generally, the choice in a given system is explicit. 
 
-In some cases, the type of allergy/intolerance may be more general - for example, a system designated type of `Other` or equivalent. In such cases, if the allergy/intolerance entry interacts with prescribing decision support it SHOULD be assigned a category of `medication`. Otherwise, the category of `environmental` **SHOULD** be used.
+In some cases, the type of allergy/intolerance may be more general - for example, a system designated type of `Other` or equivalent. In such cases, if the allergy/intolerance entry interacts with prescribing decision support it **MUST** be assigned a category of `medication`. Otherwise, the category of `environmental` **MUST** be used.
 
 ### criticality ###
 
@@ -191,8 +192,8 @@ A reference to the Patient who has, or had, the allergy or intolerance specified
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -223,20 +224,19 @@ The asserted date is when the allergy related to the patient was asserted. In ma
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
-
-{% include todo.html content="TODO" %} 
+Source of the information about the allergy
 
 ### recorder ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>TBD</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-{% include todo.html content="TODO" %} 
+Who recorded the allergy in the clinical system.
 
 ### lastOccurrence ###
 
@@ -329,7 +329,7 @@ The route by which exposure to the substance causing the reaction occurred. Util
 <br>
 ## Elements **not in use** ##
 
-The following elements **SHOULD NOT** be populated:
+The following elements **MUST NOT** be populated:
 
 ### reaction/note ###
 
