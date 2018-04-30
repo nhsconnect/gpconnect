@@ -325,12 +325,12 @@ The route by which exposure to the substance causing the reaction occurred. Util
 
 {% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
 
-<br>
-## Elements **not in use** ##
 
-The following elements **MUST NOT** be populated:
+<h2 style="color:#ED1951;">AllergyIntolerance elements <b>not in use</b></h2>
 
-### reaction/note ###
+The following elements **SHALL NOT** be populated:
+
+<h3 style="color:#ED1951;">reaction/note</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -341,7 +341,7 @@ The following elements **MUST NOT** be populated:
 `AllergyIntolerance.note` should contain all the consolidated text from the Allergy/Intolerance.
 
 
-### reaction/onset[x] ###
+<h3 style="color:#ED1951;">reaction/onset[x]</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -352,8 +352,7 @@ The following elements **MUST NOT** be populated:
 Onset explicitly supplied via `AllergyIntolerance.onset[dateTime]`.
 
 
-
-### reaction/substance ###
+<h3 style="color:#ED1951;">reaction/substance</h3>
 
 <table class='resource-attributes'>
   <tr>
