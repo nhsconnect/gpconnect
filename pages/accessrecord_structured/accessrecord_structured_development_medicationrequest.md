@@ -482,8 +482,7 @@ The textual reason either free text or the term of a code for stopping/discontin
 Must be populated when StatusReason.date is populated.
 
 
-<br>
-## Elements **not in use** ##
+<h2 style="color:#ED1951;">MedicationRequest elements <b>not in use</b></h2>
 
 The following elements **MUST NOT** be populated:
 
