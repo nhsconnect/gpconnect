@@ -26,15 +26,15 @@ The `List` resource in FHIR is used to help manage a collection of resources. In
 
 {% include todo.html content=" The List resource is still in the process of being curated and may be subject to change depending on the outcome of the curation process. Codes to populate the code and warningCode fields are yet to be confirmed and will be added to the guidance shortly." %}
 
-#### Confidential items
+### Confidential items
 
 Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code.
 
-#### Data in transit
+### Data in transit
 
 This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice has not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned will have the data in transit warning code in the warningcode field.
 
-#### Data awaiting filing
+### Data awaiting filing
 
 Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **MUST** be sent in a separate list to the rest of the entries. The list **MUST** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and contain the warningCode for data awaiting filing.
 This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
