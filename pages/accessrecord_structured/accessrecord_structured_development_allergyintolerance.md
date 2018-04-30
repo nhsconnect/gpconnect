@@ -1,4 +1,3 @@
-
 ---
 title: AllergyIntolerance resource
 keywords: getcarerecord
