@@ -1,4 +1,3 @@
-
 ---
 title: Allergies guidance
 keywords: getcarerecord
