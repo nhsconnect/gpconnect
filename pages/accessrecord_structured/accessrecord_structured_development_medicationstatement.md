@@ -240,7 +240,7 @@ Additional instructions for patient, i.e. RHS of prescription label.
 
 The following elements **SHALL NOT** be populated:
 
-<h3 style="color:#ED1951;"><b>partOf</b></h3>
+<h3 style="color:#ED1951;">partOf</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -251,7 +251,7 @@ The following elements **SHALL NOT** be populated:
 This is not in scope for this version of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>category</b></h3>
+<h3 style="color:#ED1951;">category</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -262,7 +262,7 @@ This is not in scope for this version of Care Connect.
 This is not in scope for this version of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>informationSource</b></h3>
+<h3 style="color:#ED1951;">informationSource</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -273,7 +273,7 @@ This is not in scope for this version of Care Connect.
 This is not in scope for this version of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>derivedFrom</b></h3>
+<h3 style="color:#ED1951;">derivedFrom</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -284,7 +284,7 @@ This is not in scope for this version of Care Connect.
 This is not in scope for this version of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>taken</b></h3>
+<h3 style="color:#ED1951;">taken</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -295,7 +295,7 @@ This is not in scope for this version of Care Connect.
 This is not in scope for this version of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>reasonNotTaken</b></h3>
+<h3 style="color:#ED1951;">reasonNotTaken</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -306,7 +306,7 @@ This is not in scope for this version of Care Connect.
 This is not in scope for this version of Care Connect. 
 
 
-<h3 style="color:#ED1951;"><b>medicationEpisodeChangeSummary</b></h3>
+<h3 style="color:#ED1951;">medicationEpisodeChangeSummary</h3>
 
 <table class='resource-attributes'>
   <tr>
