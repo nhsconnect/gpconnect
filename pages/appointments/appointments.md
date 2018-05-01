@@ -60,6 +60,15 @@ The following individual API calls are used by consumers to implement the Appoin
 
 The use of the individual API calls listed above by consumers to fulfil business processes is illustrated with focus on the booking of an appointment. See [Appointment Management consumer sessions illustrated](appointments_consumer_sessions.html).
 
+## Consumer code examples
+
+Consumer side code examples are available for each of GP Connect interactions within the following github repositories. The respositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
+
+[.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
+
+[JAVA](https://github.com/nhsconnect/gpconnect-java-examples)
+
+
 ## Profiled FHIR resources ##
 
 See the [Appointment Management FHIR&reg; resources](datalibraryappointment.html) page for details of the FHIR profiles used for the Appointment Management capability pack.

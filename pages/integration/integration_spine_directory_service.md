@@ -269,7 +269,11 @@ Source and destination ASID information is passed to the provider system from th
 It is the responsibility of the SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice-specific ODS codes present in the FHIR server root URL. 
 
 
+## Code examples
 
+Code examples for the interaction with the SDS are available in the following github repositories. The respositories contain a `SpineDirectoryService` folder which holds the code examples for interacting with the SDS.
 
+[.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
 
+[JAVA](https://github.com/nhsconnect/gpconnect-java-examples)
 
