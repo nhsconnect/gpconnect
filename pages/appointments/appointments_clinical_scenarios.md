@@ -7,7 +7,7 @@ permalink: appointments_clinical_scenarios.html
 summary: "Potential clinical scenarios for the Appointment Management capability pack."
 ---
 
-The clinical scenarios below detail the high-level business requirements and example representative use cases which the Appointment Management specification aims to support.  
+The clinical scenarios below detail the high-level business requirements and example representative use cases which the Appointment Management specification aims to support, either for First of Type (FoT) deployments, or longer term.  
 
 {% include note.html content="For First of Type (FoT) care setting deployments, refer to [Appointment Management Introduction](appointments.html)" %}
 
@@ -34,10 +34,10 @@ Key:
 
 <i class='fa fa-check'/> As a healthcare professional at a healthcare organisation I would like to view for a patient their future appointments so that I can arrange their care appropriately.
 
-> 2. As a clinician, being able to view all booked and scheduled GP appointments and visits enables me to ensure that I am not duplicating visits, creating appointments or schedules that clash with other appointments or over burden my patient by arranging for multiple appointments or visits within too short a period of time.
-> 3. As a clinician, having a view of all booked and scheduled GP appointments and visits for my patient means that I could arrange a joint visit with other healthcare professionals if appropriate in order to reduce the number of separate visits my patient has.
+> 1. As a clinician, being able to view all booked and scheduled GP appointments and visits enables me to ensure that I am not duplicating visits, creating appointments or schedules that clash with other appointments or over burden my patient by arranging for multiple appointments or visits within too short a period of time.
+> 2. As a clinician, having a view of all booked and scheduled GP appointments and visits for my patient means that I could arrange a joint visit with other healthcare professionals if appropriate in order to reduce the number of separate visits my patient has.
 
-<i class='fa fa-road'/> 1. When receiving a new referral for a community team, the team will review other healthcare professionals that are providing care to the patient and look at the schedule of visits being provided by any other teams in order that they don’t arrange visits in a schedule that might clash with other visits or over-burden the patient.
+<i class='fa fa-road'/> When receiving a new referral for a community team, the team will review other healthcare professionals that are providing care to the patient and look at the schedule of visits being provided by any other teams in order that they don’t arrange visits in a schedule that might clash with other visits or over-burden the patient.
 
 <i class='fa fa-road'/> As a patient I would like to view all my future appointments with any care organization so that I can arrange my time accordingly.
 
@@ -49,7 +49,7 @@ Key:
 
 > 1. As an urgent care call centre handler requiring an in-hours or extended hours GP appointment for a patient, I would like to make an appropriate appointment directly from within my system. 
 > 2. As a GP I want to make an appointment for my patient with one of my local practices which provides a coil fitting clinic. 
-> 3. A&E triage nurses booking appointments for patients directly into GP systems - diverting patients to the most suitable contact type for their condition, and reducing the cost of inappropriate A&E attendances. Service to be available 24/7.
+> 3. A&E triage nurses able to book appointments for patients 24/7 directly into GP systems - diverting patients to the most suitable contact type for their condition, and reducing the cost of inappropriate A&E attendances. Service to be available 24/7.
 > 4. As a practice nurse, I want to make an appointment for my patient to have bloods taken at the local GP phlebotomy service. 
 
 <i class='fa fa-check'/> As a healthcare professional at a healthcare organisation I would like to book an appointment for an unregistered patient so that I can manage their care appropriately.
