@@ -50,12 +50,15 @@ Key:
 > 1. As an urgent care call centre handler requiring an in-hours or extended hours GP appointment for a patient, I would like to make an appropriate appointment directly from within my system. 
 > 2. As a GP I want to make an appointment for my patient with one of my local practices which provides a coil fitting clinic. 
 > 3. A&E triage nurses booking appointments for patients directly into GP systems - diverting patients to the most suitable contact type for their condition, and reducing the cost of inappropriate A&E attendances. Service to be available 24/7.
+> 4. As a practice nurse, I want to make an appointment for my patient to have bloods taken at the local GP phlebotomy service. 
 
-<i class='fa fa-road'/> 4. As a healthcare professional in the admin hub of our federation, I want to book a GP appointment for a patient to have a home visit by our admissions prevention team.
+<i class='fa fa-road'/>  As a healthcare professional in the admin hub of our federation, I want to book a GP appointment for a patient to have a home visit by our admissions prevention team.
 
-> 5. As a practice nurse, I want to make an appointment for my patient to have bloods taken at the local GP phlebotomy service. 
+<i class='fa fa-check'/> As a healthcare professional at a healthcare organisation I would like to book an appointment for an unregistered patient so that I can manage their care appropriately.
 
-<i class='fa fa-road'/>  6. As a member of the discharge support team in the hospital, I want to book an appointment for my patient with the district nurse for the removal of sutures the week after discharge.
+> 1. As an administrator at a hub, I want to book an appointment for a patient who is not registered at a local practice in one of the hub appointment sessions.  
+
+<i class='fa fa-road'/>  As a member of the discharge support team in the hospital, I want to book an appointment for my patient with the district nurse for the removal of sutures the week after discharge.
 
 <i class='fa fa-road'/> As a healthcare professional at a healthcare organisation I would like to book an appointment for a registered patient with a pharmacy so that I can manage their care appropriately.
 
@@ -63,9 +66,6 @@ Key:
 
 > 2. As a triage nurse at A&E, I want to book an appointment with a local pharmacist for the patient who has walked into A&E with a minor illness.
 
-<i class='fa fa-check'/> As a healthcare professional at a healthcare organisation I would like to book an appointment for an unregistered patient so that I can manage their care appropriately.
-
-> 1. As an administrator at a hub, I want to book an appointment for a patient who is not registered at a local practice in one of the hub appointment sessions.  
 
 <i class='fa fa-road'/> As a patient, I would like to book an appointment for myself so that I can manage my own care appropriately.
 
@@ -77,13 +77,13 @@ Key:
 
 ## Amend appointment ##
 
-<i class='fa fa-check'/>As a healthcare professional at a healthcare organisation I would like to update the appointment description and/or comment with additional information or to correct errors without having to cancel and rebook the appointment and potentially losing the slot in the process.
+<i class='fa fa-check'/>As a healthcare professional at a healthcare organisation I would like to update the appointment description and/or comment on behalf of the patient with additional information or to correct errors without having to cancel and rebook the appointment and potentially losing the slot in the process.
 
 > 1.	A nurse realises that an appointment that has been made for a patient does not highlight that the patient is a wheelchair user and will require to be seen in a room in the surgery on the ground floor. The nurse is able to update the appointment with this information so that the patient can be accommodated for their appointment.
 
 ## Cancel appointment ##
 
-<i class='fa fa-check'/>As a healthcare professional at a healthcare organisation I would like to cancel a patient's appointment on their behalf so that appointment lists are kept up to date and accurate.
+<i class='fa fa-check'/>As a healthcare professional at a healthcare organisation I would like to cancel a patient's appointment on their behalf so that missed appointments are reduced and appointment lists are kept up to date and accurate.
 
 > 1. A patient realises that she isn’t going to be able to make her GP appointment the next morning, but it is already 6pm. Previously there would have been no way of letting the surgery know, but now she can call the surgery because there is someone on the phone at the local admin hub from 7am until 8pm who can cancel her appointment via their system, thus freeing it up for someone else to book.
 
