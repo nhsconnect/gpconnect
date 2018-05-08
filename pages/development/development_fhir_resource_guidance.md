@@ -17,3 +17,20 @@ The profiled FHIR resources required for each of the GP Connect capability packs
 * [Appointment Management](datalibraryappointment.html)
 * [Task Management](tasks.html)
 
+
+## General FHIR resource element guidance
+
+### Address
+
+The `address` element exists in many of the FHIR resources used in the GP Connect API. Where an address element is present in a FHIR resource the following population guidance SHALL be followed:
+
+* Where the individual address sub elements are availabe within the suppliers system, the address SHALL be populated using the elements:
+  * line
+  * city
+  * district
+  * postalCode
+  * country
+  
+  The `text` element SHOULD not be populated within the address.
+  
+* Where the address is not store as the individual elements within the suppliers system, the address SHALL be populated using the `text` element. The `line`, `city`, `district`, `postalCode` and `country` SHALL not be populated.
