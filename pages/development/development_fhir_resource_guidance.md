@@ -30,7 +30,7 @@ The profiled FHIR resources required for each of the GP Connect capability packs
 
 The purpose of GP Connect is to make the patient data stored within the GP systems available externally so that it can be used to help improve the quality of patient care accross the NHS. To give patients the best care possible the data made available throught the GP Connect API should be as complete as possible, therefore it is expected that both provider and consumers:
 
-* ***SHALL*** populate all the elements within FHIR resources, where they store the data within their system despite the cardinality of the elements within the FHIR resource profiles.
+* ***SHALL*** populate all the elements within FHIR resources, where data is available within their system despite the cardinality of the elements within the FHIR resource profiles.
 
 As GP Connect has made the FHIR resources open to aid in interoperability this means that there are some elements included in FHIR profiles which are not applicable to our deployment settings, eg 'specialism' in the appointment resource. For these elements if the provider or consumer does not have data stored within their system the element will not be populated.
 
