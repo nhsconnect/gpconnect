@@ -7,7 +7,7 @@ permalink: appointments_clinical_scenarios.html
 summary: "Potential clinical scenarios for the Appointment Management capability pack."
 ---
 
-The clinical scenarios below detail the representative business use cases which the Appointment Management API specification supports for First of Type (FoT) scope but can potentially support in the longer term.  
+The clinical scenarios below detail the representative business use cases which the Appointment Management API specification supports for First of Type (FoT) scope and can potentially support in the longer term.  
 
 {% include note.html content="For First of Type (FoT) care setting deployments, refer to [Appointment Management Introduction](appointments.html)" %}
 
