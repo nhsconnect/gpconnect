@@ -3,7 +3,7 @@ title: Medication guidance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_medication_guidance.html
+permalink: accessrecord_structured_development_medication_resource_relationships.html
 summary: "Guidance on the representation of medication in GP Connect"
 ---
 ## Ordering process in GP systems for medications and medical devices 
