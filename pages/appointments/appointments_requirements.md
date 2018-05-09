@@ -7,10 +7,10 @@ permalink: appointments_requirements.html
 summary: "Clinical, user and governance requirements that must be supported by the solution"
 ---
 
-The GP Connect requirements documentation for the Appointment Management Capability contains the set of business and solution requirements defined in the API specifications. 
+The GP Connect requirements documentation for the Appointment Management Capability contains the set of business and solution requirements as defined in the API specifications. 
 
 ## User stories, API requirements & use cases##
-The business requirements are described as a set of high-level user stories with corrresponding detailed functional specification requirements and use case descriptions and activity diagrams detailing how the Capability APIs are used for booking an appointment, or amending/cancelling an appointment.
+The business requirements are described as a set of high-level user stories with corrresponding detailed API functional specification requirements. Use case descriptions and activity diagrams detail how the Capability APIs are used for booking an appointment, or amending/cancelling an appointment.
 
 ## Physical data model##
 The physical data model identifies and defines the FHIR profile data items populated by Provider and/or Consumer as part of the Appointment Management APIs. 
