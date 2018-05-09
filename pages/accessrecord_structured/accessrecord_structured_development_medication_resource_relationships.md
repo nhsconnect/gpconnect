@@ -6,7 +6,6 @@ sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medication_guidance.html
 summary: "Guidance on the representation of medication in GP Connect"
 ---
-
 ## Ordering process in GP systems for medications and medical devices 
 
 The medication or medical device ordering process in GP systems can be considered to be a 2-stage process:
