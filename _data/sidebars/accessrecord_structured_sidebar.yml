@@ -35,6 +35,10 @@ entries:
       output: web
       url: /accessrecord_structured_development_allergies_guidance.html
 
+    - title: Medication resource relationships
+      url: /accessrecord_structured_development_medication_resource_relationships.html
+      output: web
+
     - title: Medication guidance
       url: /accessrecord_structured_development_medication_guidance.html
       output: web
