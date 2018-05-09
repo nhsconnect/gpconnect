@@ -1,10 +1,10 @@
 ---
-title: Medication guidance
+title: Medication resource relationships
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medication_resource_relationships.html
-summary: "Guidance on the representation of medication in GP Connect"
+summary: "Representation of medication processes using FHIR@ profiles in GP Connect"
 ---
 ## Ordering process in GP systems for medications and medical devices 
 
