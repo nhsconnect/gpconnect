@@ -12,7 +12,7 @@ The GP Connect requirements documentation for the Appointment Management Capabil
 The requirements and resulting API design have been developed in collaboration with NHS England, the GP Principal System Suppliers, clinical and GP Practice administrative stakeholders, FoT CCGs, and NHS Digital Urgent Care teams.
 
 ## User stories, API requirements & use cases ##
-The business requirements are described as a set of high-level user stories with corrresponding detailed API functional specification requirements. Use case descriptions and activity diagrams detail how the Capability APIs are used for booking an appointment, or amending/cancelling an appointment.
+The business requirements are described as a set of high-level user stories with corrresponding detailed API functional specification requirements. System use case descriptions and activity diagrams detail how the Capability APIs are used for booking an appointment, or amending/cancelling an appointment.
 
 ## Physical data model ##
 The physical data model identifies and defines the FHIR profile data items populated by Provider and/or Consumer as part of the Appointment Management APIs. 
