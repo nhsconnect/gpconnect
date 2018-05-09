@@ -15,12 +15,15 @@ The business requirements are described as a set of high-level user stories with
 ## Physical data model ##
 The physical data model identifies and defines the FHIR profile data items populated by Provider and/or Consumer as part of the Appointment Management APIs. 
 
-The requirements documentation consists of:
+
+## Requirements Definition and API Design  ##
+
+The requirements and resulting API design have been developed in collaboration with NHS England, the GP Principal System Suppliers, clinical and GP Practice administrative stakeholders, FoT CCGs, and NHS Digital Urgent Care teams.
+
+## Requirements Documentation ##
+
+This consists of:
 
 - an Excel workbook containing NHS England source clinical scenarios, user stories, API specification requirements, high-level use case model, and physical data model
 - Use case descriptions and activity diagrams in MS Word
-
-## Requirements and API Design Development ##
-
-The requirements and resulting API design have been developed in collaboration with NHS England, the GP Principal System Suppliers, clinical and GP Practice administrative stakeholders, FoT CCGs, and NHS Digital Urgent Care teams.
 
