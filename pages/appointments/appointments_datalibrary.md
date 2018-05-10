@@ -11,7 +11,7 @@ The following profiled FHIR&reg; resources are used in the current version of th
 
 ## ***Links between GP Connect FHIR resources*** ##
 
-The fhir resources are linked to each other by reference as highlighted in the diagram below:
+The FHIR resources are linked to each other by reference as highlighted in the diagram below:
 
 ![Diagram - Resource relationship structure](images/appointments/ResourceRelationshipsStructure.png)
 
