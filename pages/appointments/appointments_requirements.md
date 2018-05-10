@@ -27,7 +27,7 @@ This consists of:
      - [GP Connect Requirements Document for Appointment Management](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20Capability%20Requirements%20-%20Developer%20Portal.xlsx){:target="_blank"} 
         
 
-- Use case descriptions and activity diagrams of end-to-end Book Appointment and Amend/Cancel Appointment processes in MS Word
+- Use case descriptions and activity diagrams of end-to-end Book Appointment and Amend/Cancel Appointment processes 
 
      - [GP Connect Appointment Management API Use Cases](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20API%20Use%20Cases.docx){:target="_blank"}
         
