@@ -4,7 +4,7 @@ keywords: appointments ig
 tags: [ig,appointments]
 sidebar: appointments_sidebar
 permalink: appointments_ig.html
-summary: "Information governance controls applicable to the Appointment Management capability pack."
+summary: "Information governance controls applicable to the Appointment Management capability pack"
 ---
 
 ## GP Connect information governance principles ##
