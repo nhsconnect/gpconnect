@@ -158,6 +158,8 @@ Servers should support two [wire formats](https://www.hl7.org/fhir/STU3/formats.
 - Servers SHALL support [JSON](https://www.hl7.org/fhir/STU3/json.html)
 - Servers SHOULD support [XML](https://www.hl7.org/fhir/STU3/xml.html)
 
+{% include warning.html content="Consumers planning their development should read [the following information](support_faq.html#which-serialisation-format-should-i-choose-as-an-gp-connect-api-consumer---json-or-xml) before choosing whether to use JSON or XML in their implementation." %}
+
 {% include important.html content="The FHIR standard outlines specific rules for formatting XML and JSON on the wire. It is important to read and understand in full the differences between how XML and JSON are required to be represented." %}
 
 Consumers SHALL ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/STU3/compatibility.html#1.10.3) and declare this by setting [CapabilityStatement.acceptUnknown](https://www.hl7.org/fhir/STU3/capabilitystatement-definitions.html#CapabilityStatement.acceptUnknown) to 'both' in their capability statement.
