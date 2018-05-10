@@ -9,7 +9,7 @@ summary: "Details of the common error handling pattern(s) across the GP Connect 
 
 ### Operation outcome usage ####
 
-In the event of an error, provider systems SHALL respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) 
+In the event of an error, provider systems SHALL respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1). 
 
 The `GPConnect-OperationOutcome-1`:
 - SHALL contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/STU3/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
@@ -52,7 +52,7 @@ If an invalid NHS number value is supplied to the `$gpc.getcarerecord` operation
 			"coding": [{
 				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
 				"code": "INVALID_NHS_NUMBER",
-				"dispay": "Invalid NHS number"
+				"display": "Invalid NHS number"
 			}]
 		}
 	}]
@@ -106,7 +106,7 @@ This is a catch-all where a request for a resource instance cannot be found at t
 
 ### Security validation errors ###
 
-When responding to consumer API requests, provider systems SHALL return one of the following `OperationOutcome` details when enforcment of local consent rules result in an error condition: 
+When responding to consumer API requests, provider systems SHALL return one of the following `OperationOutcome` details when enforcement of local consent rules result in an error condition: 
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | -----------|------------|-------------|
@@ -151,11 +151,11 @@ Where FHIR resource validation issues arise during processing of consumer reques
 Detailed diagnostic information **MUST** be supplied when erroring on the codes above.
 
 INVALID_PARAMETER would be used in the following, or similar, scenarios:
-- Unexpected parameter value for an custom operation. For example, a lowercase value is supplied to the recordSection parameter of the $gpc.getcarerecord operation.
-- An invalid date/time value specified in a custom operaion parameter. For example, a invalid timePeriod defined in the timePeriod input parameter to the $gpc.getcarerecord operation.
+- Unexpected parameter value for a custom operation. For example, a lowercase value is supplied to the recordSection parameter of the $gpc.getcarerecord operation.
+- An invalid date/time value specified in a custom operation parameter. For example, an invalid timePeriod defined in the timePeriod input parameter to the $gpc.getcarerecord operation.
 
 INVALID_RESOURCE would be used in situations such as the following:
-- Resource does to validate against StructureDefinition (either in request body, of in JWT claim)
+- Resource does to validate against StructureDefinition (either in request body, of in JWT claim).
 
 REFERENCE_NOT_FOUND describes a scenario where a consumer POSTs a FHIR resource which contains a FHIR reference which are cannot be found. 
 
