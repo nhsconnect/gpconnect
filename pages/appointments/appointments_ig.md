@@ -33,8 +33,8 @@ This flag must NOT be applied by provider systems based on the following:
 
    -  the objective of the Appointment Management capability is primarily to support administrative cross-organisational workflow, whereas this flag currently represents the patient's dissent from sharing their registered GP medical record
    -  the flag only potentially exists at the patient's registered GP practice, whereas the aim of this capability is to support appointment booking and management at practices other than the registered one
-   -  fair processing communications at participating GP Practices must make clear to patients that limited clinical information may be released in the Appointment Description or Comment to support the shared appointment availability services operated within the federation
-   -  At the point of Appointment Booking, Amending or Cancellation, the patient must be given clear communication regarding potential clinical information being visible as part of the activity, so that they have the opportunity then to decline
+   -  fair processing communications at participating GP Practices must make clear to patients that very limited clinical information may be released in the Appointment Description or Comment to support the shared appointment availability services operated within the federation
+   -  at the point of Appointment Booking, Amending or Cancellation, the patient must be given clear communication regarding potential limited clinical information being visible as part of the activity, so that they have the opportunity then to decline
 
 ## PDS sensitive flag (S-Flag) ##
 
