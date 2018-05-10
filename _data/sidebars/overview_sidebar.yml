@@ -110,7 +110,7 @@ entries:
     - title: Volume and performance guidance
       url: /development_api_volume_and_performance.html
       output: web          
-    - title: NFR guidance
+    - title: Non-functional requirements
       url: /development_api_non_functional_requirements.html
       output: web
           
