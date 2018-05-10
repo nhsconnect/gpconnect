@@ -4,7 +4,7 @@ keywords: appointments
 tags: [appointments,first_of_type]
 sidebar: appointments_sidebar
 permalink: appointments_clinical_scenarios.html
-summary: "Potential clinical scenarios for the Appointment Management capability pack."
+summary: "Potential clinical scenarios for the Appointment Management capability pack"
 ---
 
 The clinical scenarios below detail the high-level business requirements and example representative use cases which the Appointment Management specification aims to support.  
