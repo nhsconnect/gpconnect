@@ -16,6 +16,8 @@ The following open source FHIR client libraries are available on GitHub:
 - JavaScript [Smart on FHIR](https://github.com/smart-on-fhir/client-js){:target="_blank"}
 - Python [Smart on FHIR](https://github.com/smart-on-fhir/client-py){:target="_blank"}
 
+{% include important.html content="The FHIR clients above allow serialisation in both JSON and XML, however consumers planning their development should read [the following information](support_faq.html#which-serialisation-format-should-i-choose-as-an-gp-connect-api-consumer---json-or-xml) before setting the serialisation format (JSON or XML) in their chosen FHIR library." %}
+
 ## Open Source FHIR Servers ##
 
 The following open source FHIR server libraries are available on GitHub:

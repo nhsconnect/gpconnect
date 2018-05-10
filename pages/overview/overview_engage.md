@@ -43,6 +43,8 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
 
 - Familiarise yourself with HL7&reg; FHIR&reg; (Fast Health Interoperability Resources) ([developer intro](http://www.hl7.org/implement/standards/fhir/overview-dev.html){:target="_blank"}, [exec summary](http://www.hl7.org/implement/standards/fhir/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/overview-clinical.html){:target="_blank"}).
 - Grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language.
+- If you are a consumer, decide which wire format to use (JSON or XML)
+{% include important.html content="Consumers planning their development should read [the following information](support_faq.html#which-serialisation-format-should-i-choose-as-an-gp-connect-api-consumer---json-or-xml) before choosing whether to use JSON or XML in their implementation." %}
 - Familiarise yourself with our GP Connect [FHIR API Guidance](development_fhir_api_guidance.html) common to all APIs.
 - Explore the GP Connect Profiled Fhir Resources, a variation of the international [FHIR Resources](https://www.hl7.org/fhir/DSTU2/){:target="_blank"}, for [Foundations](datalibraryfoundation.html), [AccessRecord HTML](datalibraryaccessRecord.html) and [Appointment Management](appointments.html).
 - Dig in deep and explore one or more of the GP Connect Capability Packs and start building new or hitting existing APIs.
