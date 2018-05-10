@@ -10,7 +10,7 @@ summary: "Use case for reading an appointment resource."
 
 ## API use case ##
 
-This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted Provider system. 
+This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system. 
 
 {% include important.html content="The Appointment Management capability pack is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -67,8 +67,8 @@ Provider systems:
 - SHALL return an error if the appointment being read is in the past (the appointment start dateTime is before the current date and time).
 
 Examples of other scenarios which may result in error being returned:
-- Where a logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevent OperationOutcome resource.
-- Where insufficient data about an appointment is present in the provider system to populate an appointment resource which validates to the `GPConnect-Appointment-1` profile, an 500 HTTP Status code should be returned, together with the appropriate OperationOutcome resource providing diagnostic detail.
+- Where a logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevant OperationOutcome resource.
+- Where insufficient data about an appointment is present in the provider system to populate an appointment resource which validates to the `GPConnect-Appointment-1` profile, a 500 HTTP Status code should be returned, together with the appropriate OperationOutcome resource providing diagnostic detail.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
