@@ -23,8 +23,8 @@ The physical data model identifies and defines the FHIR profile data items popul
 This consists of:
 
 - an Excel workbook containing NHS England source clinical scenarios, user stories, API specification requirements, high-level use case model, and physical data model
-
-        -  [GP Connect Requirements Document for Appointment Management](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20Capability%20Requirements%20-%20Developer%20Portal.xlsx){:target="_blank"} 
+        - [GP Connect Requirements Document for Appointment Management](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20Capability%20Requirements%20-%20Developer%20Portal.xlsx){:target="_blank"} 
+        
 
 - Use case descriptions and activity diagrams in MS Word
         - [GP Connect Appointment Management API Use Cases](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20API%20Use%20Cases.docx){:target="_blank"}
