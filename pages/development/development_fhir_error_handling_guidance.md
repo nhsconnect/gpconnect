@@ -155,7 +155,7 @@ INVALID_PARAMETER would be used in the following, or similar, scenarios:
 - An invalid date/time value specified in a custom operation parameter. For example, an invalid timePeriod defined in the timePeriod input parameter to the $gpc.getcarerecord operation.
 
 INVALID_RESOURCE would be used in situations such as the following:
-- Resource does to validate against StructureDefinition (either in request body, of in JWT claim).
+- Resource fails to validate against StructureDefinition (either in request body, of in JWT claim).
 
 REFERENCE_NOT_FOUND describes a scenario where a consumer POSTs a FHIR resource which contains a FHIR reference which are cannot be found. 
 
