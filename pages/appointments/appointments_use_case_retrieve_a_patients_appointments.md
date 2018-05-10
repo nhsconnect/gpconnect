@@ -4,12 +4,12 @@ keywords: appointments, use case, retrieve
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_retrieve_a_patients_appointments.html
-summary: "Use case for retrieval of a patient's appointments from an organisation."
+summary: "Use case for retrieval of a patient's appointments from an organisation"
 ---
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted Provider system. 
+This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted provider system. 
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the view of a patient's appointments has been restricted to only viewing future appointments. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -47,15 +47,15 @@ The consumer:
   - One of the 'start' search parameter SHALL be supplied with the `le` search prefix. For example, 'start=le2017-09-25', which indicates that the consumer would like appointments where the appointment start date is on or before "2017-09-25"
 - SHALL only include the date component of the search parameter and not a time component. The date SHALL include day, month and year elements.
 - SHALL not request a date range where any part of the date range is in the past
-- SHALL indicate to the end user that only appointments in the future will be returned from GP Connect and that the earliest that the user can request appointments is todays date
+- SHALL indicate to the end user that only appointments in the future will be returned from GP Connect and that the earliest that the user can request appointments is today's date
 
   ![Diagram - Date range parameters](images/appointments/RetrievePatientsApp.png)
 
 The provider systems:
 - SHALL support the search prefixes `ge` and `le`
 - SHALL return an error if any part of the consumer requested search range is in the past.
-  - If the consumer sends todays date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is todays date, then the appointment SHALL still be returned in the response bundle.
-  - The error returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
+  - If the consumer sends today's date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is today's date, then the appointment SHALL still be returned in the response bundle.
+  - The error returned SHALL include a meaningful error message to indicate that the search parameters cannot request appointments in the past.
 - SHALL return an error if either either of the date parameters contain a time element.
 - SHALL return an error if either of the two start date parameters are not sent with the consumers request.
 
@@ -116,13 +116,13 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL only return appointments where the `start` element is in the future (greater than or equal to the the current date).
+- SHALL only return appointments where the `start` element is in the future (greater than or equal to the current date).
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resources in a `Bundle` of `type` searchset.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
-- SHALL NOT include a `Appointment.reason` within the returned appointment resource.
+- SHALL NOT include an `Appointment.reason` within the returned appointment resource.
 
 ```json
 {
