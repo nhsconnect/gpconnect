@@ -31,7 +31,7 @@ Provider systems SHOULD process command API calls in &lt;100ms, as this is the l
 
 ### Query APIs ###
 
-A query API is any API which performs a user-initiated retrival of data without any side-effects (for example, searching for a patient's medication history).
+A query API is any API which performs a user-initiated retrieval of data without any side-effects (for example, searching for a patient's medication history).
 
 Provider systems SHOULD process query API calls in &lt;1000ms, as this is the limit beyond which a user feels their workflow has been interrupted.
 
@@ -42,7 +42,7 @@ Provider systems SHALL process query API calls in &lt;3000ms.
 Suppliers of provider solutions are expected to undertake provider-led V&P testing of their solutions.  
  
 ### V&P testing model ### 
-Suppliers SHALL submit for review a high level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
+Suppliers SHALL submit for review a high-level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
  
 Suppliers' test approaches SHOULD include a LOAD and a RAMP test and ideally a SOAK test.  Suppliers SHALL supply comprehensive results of the test including timings for round-trip API call/response against the message sizes used and the TPS at the time of the request was made.
 
