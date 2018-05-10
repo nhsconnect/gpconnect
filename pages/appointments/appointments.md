@@ -4,7 +4,7 @@ keywords: appointments
 tags: [appointments]
 sidebar: appointments_sidebar
 permalink: appointments.html
-summary: "Overview of the Appointment Management capability pack."
+summary: "Overview of the Appointment Management capability pack"
 ---
 
 ## Purpose ##
@@ -62,7 +62,7 @@ The use of the individual API calls listed above by consumers to fulfil business
 
 ## Consumer code examples
 
-Consumer side code examples are available for each of GP Connect interactions within the following github repositories. The respositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
+Consumer side code examples are available for each of GP Connect interactions within the following GitHub repositories. The repositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
 
 [.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
 
