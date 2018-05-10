@@ -1,5 +1,5 @@
 ---
-title: Choosing a FHIR&reg; library
+title: FHIR library guidance
 keywords: fhir, development, open source
 tags: [fhir,development]
 sidebar: overview_sidebar

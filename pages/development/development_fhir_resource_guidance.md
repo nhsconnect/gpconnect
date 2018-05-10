@@ -23,7 +23,6 @@ The profiled FHIR resources required for each of the GP Connect capability packs
 * [Appointment Management](datalibraryappointment.html)
 * [Task Management](tasks.html)
 
-
 ## General FHIR reasource populating requirements
 
 ### Population of optional elements
