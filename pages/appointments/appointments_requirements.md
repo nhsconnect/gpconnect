@@ -29,7 +29,7 @@ This consists of:
 
 - Use case descriptions and activity diagrams of end-to-end Book Appointment and Amend/Cancel Appointment processes 
 
-     - [GP Connect Appointment Management API Use Cases](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20API%20Use%20Cases.docx)
+     - [GP Connect Appointment Management API Use Cases](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20%20API%20Use%20Cases.docx)
         
         
 
