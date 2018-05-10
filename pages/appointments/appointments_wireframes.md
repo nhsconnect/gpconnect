@@ -4,7 +4,7 @@ keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar
 permalink: appointments_wireframes.html
-summary: "Wireframe mock-ups of what GP Connect Appointment Management might look like in a consumer application."
+summary: "Wireframe mock-ups of what GP Connect Appointment Management might look like in a consumer application"
 ---
 
 ## Retrieve a patient's appointments ##
