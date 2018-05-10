@@ -4,7 +4,7 @@ keywords: development
 sidebar: appointments_sidebar
 toc: false
 permalink: datalibraryappointment.html
-summary: "The FHIR&reg; profiles and interactions required for the Appointment Management capability pack."
+summary: "The FHIR&reg; profiles and interactions required for the Appointment Management capability pack"
 ---
 
 The following profiled FHIR&reg; resources are used in the current version of the Appointment Management capability - see 'API use cases' in the menu on the left. Full details of profiled FHIR resources and worked examples are available on the [FHIR Reference Server](https://fhir.nhs.uk/).
