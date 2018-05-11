@@ -25,7 +25,6 @@ There is an ever increasing list of open source FHIR libraries appearing on the 
 
 In addition to open source FHIR libraries, many widely used health software systems now support FHIR as a standard message type, which means some consumers and providers may be able to create a GP Connect interface with extensions available on their current system.
 
-
 ## A short list of some open source FHIR clients ##
 
 The following open source FHIR client libraries are available on GitHub:
@@ -35,9 +34,12 @@ The following open source FHIR client libraries are available on GitHub:
 - JavaScript [Smart on FHIR](https://github.com/smart-on-fhir/client-js){:target="_blank"}
 - Python [Smart on FHIR](https://github.com/smart-on-fhir/client-py){:target="_blank"}
 
+{% include important.html content="The FHIR clients above allow serialisation in both JSON and XML, however consumers planning their development should read [the following information](support_faq.html#which-serialisation-format-should-i-choose-as-an-gp-connect-api-consumer---json-or-xml) before setting the serialisation format (JSON or XML) in their chosen FHIR library." %}
+
 ## A short list of some open source FHIR servers ##
 
 The following open source FHIR server libraries are available on GitHub:
 
 - C#.NET [FHIR NET API](https://github.com/furore-fhir/spark){:target="_blank"}
 - Java [HAPI FHIR](https://github.com/jamesagnew/hapi-fhir){:target="_blank"}
+
