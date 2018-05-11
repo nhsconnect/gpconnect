@@ -83,24 +83,23 @@ The following data-elements are mandatory (i.e. data SHALL be present):
 	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
 	- The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name registered on the spine which is returned by a PDS lookup for the patient.
 
-The following data-elements SHOULD be populated if available:
+The following data-elements MAY be populated by the consumer:
 - Within the patient resource of the `registerPatient` parameter:
-  - the `telecom` element SHOULD be populated
-	- the consumer SHALL NOT populate the `telecom.use` value with `old`
-	- the consumer SHOULD populate only one `telecom` per `telecom.use` value
-
-  - the `address` element SHOULD be populated
-	- the consumer SHALL NOT populate the `address.use` value with `old`
-	- the consumer SHOULD populate only one `address` per `address.use` value
-	- the `address.use` value `home` SHOULD be mapped to PDS Address Use `HP` (Primary Home)
-
-    {% include note.html content="The consumer SHOULD include telecom and address information within the temporary patient registration so that the receiving system has relevant contact details for the patient." %}
-    {% include note.html content="The provider system receiving the telecom and address details SHOULD store these details in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration." %}
+  - the `telecom` element MAY be populated with temporary telecom details:
+	- the consumer SHALL only include telecom elements which have a `telecom.use` of type `temp`
+	- the consumer SHALL only include one instance of a telecom element for each `telecom.use` type
+	
+  - the `address` element MAY be populated with temporary address details:
+	- the consumer SHALL only include address details which have an `address.use` of type `temp`
+	- the consumer SHALL only include one instance of a address element for each `address.use` type
   
-  - the `preferredBranchSurgery` within the `RegistrationDetails` extension element of the patient resource SHOULD be populated with a location reference where available and relevant to the registration.
+  - the `preferredBranchSurgery` within the `RegistrationDetails` extension element of the patient resource MAY be populated with a location reference where available and relevant to the registration.
   
     For example when the consumer is using the patient registration as part of an appointment booking they will have previously selected a slot which will be associated with a location. The consumer may use this location as the preferred branch surgery within the patient registration.
-  
+
+	
+The following data-elements SHALL be processed by the provider:
+- When a consumer has sent temporary telecom and/or temporary address details within the patient resource the provider SHALL store these details as temporary telecom and temporary address details within the patient record on the provider system, in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration. The provider SHALL not push/synchronise these temporary telecom or temporary address details with the spine.
   
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
 
@@ -212,16 +211,15 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 				{
 					"system": "phone",
 					"value": "01454587554",
-					"use": "home"
+					"use": "temp"
 				}
 			],
 			"gender": "female",
 			"birthDate": "1952-05-31",
 			"address": [
 				{
-					"use": "home",
+					"use": "temp",
 					"type": "physical",
-					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE",
 					"line": [
 						"Trevelyan Square",
 						"Boar Ln"
@@ -352,24 +350,27 @@ Provider systems:
 			"telecom": [
 				{
 					"system": "phone",
+					"value": "01234567891",
+					"use": "mobile"
+				},
+				{
+					"system": "phone",
 					"value": "01454587554",
-					"use": "home"
+					"use": "temp"
 				}
 			],
 			"gender": "female",
 			"birthDate": "1952-05-31",
 			"address": [
 				{
+					"use": "temp",
+					"type": "physical",
+					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
+				},
+				{
 					"use": "home",
 					"type": "physical",
-					"text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE",
-					"line": [
-						"Trevelyan Square",
-						"Boar Ln"
-					],
-					"city": "Leeds",
-					"district": "West Yorkshire",
-					"postalCode": "LS1 6AE"
+					"text": "Bridgewater Place, 1 Water Ln, Leeds, LS11 5RU"
 				}
 			]
 		}
