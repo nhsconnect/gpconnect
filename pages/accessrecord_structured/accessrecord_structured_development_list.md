@@ -24,7 +24,9 @@ The `List` resource in FHIR is used to help manage a collection of resources. In
 - Where there are no items returned, the list will be empty.
 - Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
 
-{% include todo.html content=" The List resource is still in the process of being curated and may be subject to change depending on the outcome of the curation process. Codes to populate the code and warningCode fields are yet to be confirmed and will be added to the guidance shortly." %}
+{% include todo.html content=" Codes to populate the code field for Resolved Allergies and the warningCode field are yet to be confirmed and will be added to the guidance shortly." %}
+
+###List codes
 
 ### Confidential items
 
@@ -105,7 +107,7 @@ Whether the List has a `mode` of `working`, `snapshot`, or `changes`.
   </tr>
 </table>
 
-Descriptive name for the list.
+Descriptive name for the list. This will be taken from the rubric of the list code.
 
 To use PRSB SNOMED CT ref set of codes and corresponding human readable description in string.
 
@@ -121,7 +123,10 @@ To use PRSB SNOMED CT ref set of codes and corresponding human readable descript
 
 The purpose of the list.
 
-The relevant code is specified in the guidance for each of the profiles. (list of codes to be confirmed)
+There are currently 3 possible purposes of a list in GP connect that will be represented by the following SNOMED codes.
+1. Medications and medical devices - 933361000000108
+2. Allergies and adverse reactions - 886921000000105
+3. Resolved allergies - awaiting confirmation of this SNOMED code from the terminology team
 
 ### subject ###
 
@@ -205,7 +210,7 @@ This extension is used to capture warnings that the list may be incomplete as da
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
