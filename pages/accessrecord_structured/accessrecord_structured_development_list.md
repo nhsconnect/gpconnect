@@ -26,8 +26,6 @@ The `List` resource in FHIR is used to help manage a collection of resources. In
 
 {% include todo.html content=" Codes to populate the code field for Resolved Allergies and the warningCode field are yet to be confirmed and will be added to the guidance shortly." %}
 
-###List codes
-
 ### Confidential items
 
 Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code.
