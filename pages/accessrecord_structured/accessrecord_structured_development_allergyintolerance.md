@@ -146,7 +146,7 @@ In some cases, the type of allergy/intolerance may be more general - for example
   <tr>
     <td><b>Data type:</b> <code>Code</code></td>
     <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
