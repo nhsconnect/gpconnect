@@ -99,7 +99,7 @@ Whether the List has a `mode` of `working`, `snapshot`, or `changes`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><b>Data type:</b> <code>String</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
