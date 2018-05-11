@@ -13,9 +13,9 @@ To meet strategic objectives to improve access to GP care, the Appointment Manag
 
 ## Example scenarios ##
 
-- administrative staff at a GP practice can book an appointment on behalf of a patient
-- administrative staff at a GP extended access hub can book an appointment on behalf of a patient at any of its federated GP practices
-- an urgent care (UC) 111 call centre handler or triage clinician can book, cancel or view appointments on behalf of a patient at the patient's registered or federated GP practices or extended access hubs
+- administrative staff at a GP practice can book, view, amend or cancel appointments on behalf of a patient
+- administrative staff at a GP extended access hub can book, view, amend or cancel appointments on behalf of a patient at any of its federated GP practices
+- an urgent care (UC) 111 call centre handler or triage clinician can book, view, amend or cancel appointments on behalf of a patient at the patient's registered or federated GP practices or extended access hubs
 - administrative staff and clinicians at a range of other care settings (for example, A&amp;E, physio, social and community services) will be able to book, view or cancel a GP appointment on behalf of the patient
 
 ## GP practice appointment slot availability ##
@@ -59,6 +59,15 @@ The following individual API calls are used by consumers to implement the Appoin
 ## Examples of consumer Appointment Management sessions
 
 The use of the individual API calls listed above by consumers to fulfil business processes is illustrated with focus on the booking of an appointment. See [Appointment Management consumer sessions illustrated](appointments_consumer_sessions.html).
+
+## Consumer code examples
+
+Consumer side code examples are available for each of GP Connect interactions within the following github repositories. The respositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
+
+[.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
+
+[JAVA](https://github.com/nhsconnect/gpconnect-java-examples)
+
 
 ## Profiled FHIR resources ##
 

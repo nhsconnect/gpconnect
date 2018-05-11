@@ -37,12 +37,24 @@ Refer to [Development Guidance - FHIR API Guidance - Common API Guidance](develo
 - Search for an organisation by `ODS Code`
 - Search for a practitioner by `SDS UserID`
 
-### Use Cases ###
+## API use cases ##
+
+The following individual API calls make up the Foundations capability and support the other capability packs:
 
 - [Get the FHIR capability statement](foundations_use_case_get_the_fhir_capability_statement.html)
 - [Find a patient](foundations_use_case_find_a_patient.html)
 - [Find a practitioner](foundations_use_case_find_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
+
+
+## Consumer code examples
+
+Consumer side code examples are available for each of GP Connect interactions within the following github repositories. The respositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
+
+[.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
+
+[JAVA](https://github.com/nhsconnect/gpconnect-java-examples)
+
 
 ## SPINE Interactions
 

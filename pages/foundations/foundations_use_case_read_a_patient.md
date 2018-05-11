@@ -152,14 +152,6 @@ Provider systems:
             "use": "home",
             "type": "physical",
             "text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
-			"address": {
-				"line": [
-					"Trevelyan Square",
-					"Boar Ln",
-					"Leeds"
-				],
-				"postalCode": "LS1 6AE"
-			}
         }
     ]
 }

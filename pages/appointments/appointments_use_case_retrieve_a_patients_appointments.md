@@ -116,12 +116,13 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL only return appointments where the `start` element is in the future (greater than the the current date).
+- SHALL only return appointments where the `start` element is in the future (greater than or equal to the the current date).
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resources in a `Bundle` of `type` searchset.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
+- SHALL NOT include a `Appointment.reason` within the returned appointment resource.
 
 ```json
 {
