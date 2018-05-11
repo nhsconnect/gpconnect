@@ -52,6 +52,124 @@ The MedicationRequest profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)
 
+
+### extension[repeatInformation] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Extension</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Extension elements to hold details of repeat authorisation.
+
+
+### extension[repeatInformation].numberOfRepeatPrescriptionsAllowed ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>PositiveInt</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The number of repeat issues authorised if specified.
+
+**MUST** be present where a repeat is authorised for a defined number of issues. 
+
+**MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
+
+
+### extension[repeatInformation].numberOfRepeatPrescriptionsIssued ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>PositiveInt</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+Running total of number of issues made against a repeat authorisation.
+
+Must be zero, if not yet issued.
+
+
+### extension[repeatInformation].authorisationExpiryDate ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The date a repeat prescription authorisation will expire.
+
+
+### extension[statusReason] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>extension (statusReason)</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Where a medication has been stopped (status == ‘stopped’), the reason is provided in the statusReason extension.
+
+Mandatory for authorisations with stopped status.
+
+
+### extension[statusReason].date ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>extension (valueDateTime)</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The dateTime the medication was stopped/discontinued.
+
+Mandatory for stopped/discontinued medications as the date will always be known.
+
+### extension[statusReason].reason ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>extension (CodeableConcept)</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The textual reason either free text or the term of a code for stopping/discontinuing the medication.
+
+Must be populated when StatusReason.date is populated.
+
+
+### extension[prescriptionType] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>extension (prescriptionType)</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+If a medication is an acute, delayed acute, repeat, repeat dispense or prescribed elsewhere.	
+
+Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber.
+
+
 ### basedOn ###
 
 <table class='resource-attributes'>
@@ -363,124 +481,6 @@ Nominated pharmacy for dispense.
 References prior prescription authorisation.
 
 May be used, for example, to reference prior authorisation where prescription is re-authorised or where amendments have been made. May reference the previous authorisation before the amendment.
-
-
-### repeatInformation ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Extension</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Extension elements to hold details of repeat authorisation.
-
-
-### repeatInformation.numberOfRepeatPrescriptionsAllowed ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>PositiveInt</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The number of repeat issues authorised if specified.
-
-**MUST** be present where a repeat is authorised for a defined number of issues. 
-
-**MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
-
-
-### repeatInformation.numberOfRepeatPrescriptionsIssued ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>PositiveInt</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-Running total of number of issues made against a repeat authorisation.
-
-Must be zero, if not yet issued.
-
-
-### repeatInformation.authorisationExpiryDate ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The date a repeat prescription authorisation will expire.
-
-
-### prescriptionType ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>extension (prescriptionType)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-If a medication is an acute, delayed acute, repeat, repeat dispense or prescribed elsewhere.	
-
-Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber.
-
-
-### statusReason ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>extension (statusReason)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Where a medication has been stopped (status == ‘stopped’), the reason is provided in the statusReason extension.
-
-Mandatory for authorisations with stopped status.
-
-
-### statusReason.date ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>extension (valueDateTime)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-The dateTime the medication was stopped/discontinued.
-
-Mandatory for stopped/discontinued medications as the date will always be known.
-
-### statusReason.reason ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>extension (CodeableConcept)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The textual reason either free text or the term of a code for stopping/discontinuing the medication.
-
-Must be populated when StatusReason.date is populated.
-
 
 <h2 style="color:#ED1951;">MedicationRequest elements <b>not in use</b></h2>
 
