@@ -116,7 +116,7 @@ Where there is an explicit assertion of the 'No Known Allergies' concept in the 
 
 Where there are no allergy or intolerance entries in the patient record, but no explicit recording of the ‘No Known Allergies’ concept and equivalents, then systems **MUST** return an empty `List` with an emptyReason FHIR code: "No content recorded" and a `List.note` with the text: 
 
-> There are no allergies in the patient record but it has not been confirmed with the patient that they have no allergies (that is, a ‘no known allergies’ code has not been recorded).
+> Information not available.
 
 Because resolved allergies are queried via the `includeResolvedAllergies` query parameter and resolved allergies are conveyed via a separate `List`, assertions of 'No known allergies' are true only in the context of a given list. Therefore, an empty 'Active Allergies' `List` only asserts that there are no active allergies and "No content recorded" in the context of the active allergies `List` asserts that there are no active allergies to contradict the recorded 'No Known Allergies' code. Similarly, where the `includeResolvedAllergies` flag is present an empty 'Resolved Allergies' `List` asserts the absence of resolved allergies and "No content recorded" asserts that the coding of 'No Known Allergies' is not contradicted by the presence of resolved allergies. Only the inclusion of the `includedResolvedAllergies` flag and emptiness of both lists can fully assert that there are no allergies (active or resolved) in the source record.
 
