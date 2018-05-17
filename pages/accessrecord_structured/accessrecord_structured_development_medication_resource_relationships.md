@@ -47,6 +47,10 @@ Although the patient does not have to see their doctor to authorise each issue o
 When a medication or medical device is repeat-dispensed the patient will be able to pick up the item from the pharmacy without the need for each prescription to be issued by the GP practice.
 Apart from the practice not needing to issue each prescription, repeat-dispensing works in a similar manner to repeat prescriptions where the doctor is able to determine the number of issues or the time period before needing to visit the doctor again for the prescription to be re-authorised.
 
+### Unissued medications
+
+It is possible in GP systems to record an intent to prescribe a medication but not to actually place an order for the medication. These will exist in GP systems without a prescription or EPS request ever being issued. 
+
 ## Medication prescribed elsewhere
 
 In GP systems, in addition to ordering medications and issuing them to a patient, it is also possible for clinicians to record medication that was not issued by their GP practice. This may happen if a patient has been in hospital and informs a clinician that they were prescribed a medication or allocated a medical device during that episode of care. 
@@ -107,7 +111,7 @@ For repeat dispensed medication, some of the resources relating to individual is
 
 ### Unissued medications and medication prescribed elsewhere
 
-Unissued medications and medications that have been prescribed elsewhere that have been added to the system by a clinician at the practice will be represented by a `MedicationStatement` and a `MedicationRequest` with an `intent` of `plan` but with no further resources.
+Unissued medications and medications that have been prescribed elsewhere are different concepts but modelled in a similar manner . they will both have been added to the system by a clinician at the practice will be represented by a `MedicationStatement` and a `MedicationRequest` with an `intent` of `plan` but with no further resources. This reflect that no orders have been placed for these medications by the GP practice. Medications that were prescribed elsewhere will be flagged as such by populating the PrescribingAgency extension in the Medication Statement.
 
 {: .center-image }
 ![Unissued medications and medications prescribed elsewhere diagram](images/access_structured/Unissued medications and medications prescribed elsewhere.png)
