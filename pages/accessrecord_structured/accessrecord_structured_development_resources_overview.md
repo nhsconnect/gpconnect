@@ -22,6 +22,7 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 
 * Patient
 * Organization
+* PractitionerRole
 * Practitioner
 * Location
 
