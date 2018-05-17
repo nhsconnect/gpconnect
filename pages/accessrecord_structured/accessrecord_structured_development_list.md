@@ -24,19 +24,46 @@ The `List` resource in FHIR is used to help manage a collection of resources. In
 - Where there are no items returned, the list will be empty.
 - Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
 
-{% include todo.html content=" Codes to populate the code field for Resolved Allergies and the warningCode field are yet to be confirmed and will be added to the guidance shortly." %}
+{% include todo.html content="A code to populate the code field for Resolved Allergies is yet to be confirmed and will be added to the guidance shortly." %}
+
+### Warning codes
+
+The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
+
+<table class='resource-attributes'>
+  <tr>
+    <td>Display</td>
+    <td>Code</td>
+    <td>Associated text</td>
+  </tr>
+  <tr>
+    <td>Confidential items</td>
+    <td>confidential-items</td>
+    <td>Items excluded due to confidentiality and/or patient preferences.</td>
+  </tr> 
+  <tr>
+    <td>Data in transit</td>
+    <td>data-in-transit</td>
+    <td>Patient record transfer from previous GP Practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded</td>
+  </tr> 
+  <tr>
+    <td>Data awaiting filing</td>
+    <td>data-awaiting-filing</td>
+    <td>Patient data may be incomplete as there is data supplied by a third party awaiting review before becoming available.</td>
+  </tr> 
+</table>
 
 ### Confidential items
 
-Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code.
+Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
 
 ### Data in transit
 
-This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice has not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned will have the data in transit warning code in the warningcode field.
+This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice has not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned  **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
 
 ### Data awaiting filing
 
-Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **MUST** be sent in a separate list to the rest of the entries. The list **MUST** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and contain the warningCode for data awaiting filing.
+Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **MUST** be sent in a separate list to the rest of the entries. The list **MUST** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and **MUST** be populated using the data awaiting filing warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
 This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
 
 ## List elements ##
@@ -200,7 +227,7 @@ Comments about this list.
 
 A code warning of an issue related to this list.
 
-This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit.
+This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It must be populated using the appropriate code from the table in the warning codes section above.
 
 ### entry ###
 
