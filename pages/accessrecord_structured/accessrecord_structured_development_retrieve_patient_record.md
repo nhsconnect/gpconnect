@@ -27,6 +27,10 @@ The consumer system:
 
 ## API usage ##
 
+### Interaction diagram ###
+
+<img style="height: 400px;" alt="Get structured record interaction diagram" src="images/access_structured/get-structured-record-interaction-diagram.png"/>
+
 ### Request operation ###
 
 #### FHIR&reg; relative request ####
