@@ -94,6 +94,34 @@ The List profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)
 
+
+### extension[warningCode] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Extension</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A code warning of an issue related to this list.
+
+This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It must be populated using the appropriate code from the table in the warning codes section above.
+
+
+### extension[clinicalSetting] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Extension</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+For GP Connect this should be set to '1060971000000108 General practice services'.
+
 ### status ###
 
 <table class='resource-attributes'>
@@ -212,20 +240,6 @@ As the data where lists are being used in GP Connect is structured it is simple 
 </table>
 
 Comments about this list.
-
-### warningCode ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Extension</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-A code warning of an issue related to this list.
-
-This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It must be populated using the appropriate code from the table in the warning codes section above.
 
 ### entry ###
 
