@@ -169,6 +169,17 @@ If a medication is an acute, delayed acute, repeat, repeat dispense or prescribe
 
 Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
+### identifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Identifier</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+This is for business identifiers. If it the identifier element is present then the identifier.value is where the EPS Id ***SHOULD*** be added.
 
 ### basedOn ###
 
@@ -180,7 +191,7 @@ Explicit repeat or acute flag rather than deriving it from presence of extension
   </tr>
 </table>
 
-This field is used to create the links between `MedicationRequest` resources to represent the medication ordering process as described [here] (add link to representing the ordering process in FHIR) This **MUST** be used when a resource has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` resource that has an `intent` set to `plan`.
+This field is used to create the links between `MedicationRequest` resources to represent the medication ordering process as described [here](accessrecord_structured_development_medication_resource_relationships.html) This **MUST** be used when a resource has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` resource that has an `intent` set to `plan`.
 
 **DO NOT USE** for authorisations ie. for a MedicationRequest with `intent` of `plan`.
 
@@ -194,7 +205,7 @@ This field is used to create the links between `MedicationRequest` resources to 
   </tr>
 </table>
 
-Composite request this is part of.
+Composite request this is part of. The element in the Identifier data type that ***MUST*** be populated when a groupIdentifier is populated is identifier.value
 
 All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
 
@@ -370,6 +381,18 @@ All notes that are associated with this medication record.
 
 Sometimes labelled Pharmacy text or instructions for pharmacy.
 
+### dosageInstruction ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Dosage</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The elements of the dosage datatype detailed below should be populated as described. All other elements that are part of the dosage datatype are optional.
+
 
 ### dosageInstruction.text ###
 
@@ -424,7 +447,7 @@ Start date is mandatory. Where there is a defined expiry or end date the end dat
 
 The quantity to dispense.
 
-If the units are text then the extension dispenseRequest.quantityText **MUST** be used.
+If the value is text then the extension dispenseRequest.quantityText **MUST** be used.
 
 
 ### dispenseRequest.quantityText ###
@@ -540,6 +563,17 @@ Not in scope for this release of Care Connect.
 </table>
 
 Not in scope for this release of Care Connect. 
+
+
+<h3 style="color:#ED1951;">detectedIssue</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(DetectedIssue)</code></td>
+  </tr>
+</table>
+
+Not in scope for this release of Care Connect.  
 
 
 <h3 style="color:#ED1951;">eventHistory</h3>
