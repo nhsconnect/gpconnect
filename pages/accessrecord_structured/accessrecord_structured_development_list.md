@@ -132,9 +132,7 @@ Whether the List has a `mode` of `working`, `snapshot`, or `changes`.
   </tr>
 </table>
 
-Descriptive name for the list. This will be taken from the rubric of the list code.
-
-To use PRSB SNOMED CT ref set of codes and corresponding human readable description in string.
+Descriptive name for the list. This will be taken from the 'display' column in the warning codes table above.
 
 ### code ###
 
