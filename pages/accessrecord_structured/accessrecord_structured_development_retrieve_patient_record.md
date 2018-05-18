@@ -290,12 +290,10 @@ The following diagram illustrates the population of the response `Bundle` accord
 
 <img style="max-height: 1000px; max-width: 1000px;" alt="Structured Bundle response" src="images/access_structured/structured-bundle-response.png"/>
 
-{% include todo.html content="Update diagram with allergy and medication list population" %}
-
 #### Payload response examples ####
 
 Examples of the payload requests and responses can be found here:
 
-- [Allergies - FHIR example 1-3](accessrecord_structured_development_fhir_examples_allergies.html)
-- [Medication - FHIR example 1](accessrecord_structured_development_fhir_examples_medication.html)
+- [Allergies - FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
+- [Medication - FHIR examples](accessrecord_structured_development_fhir_examples_medication.html)
 
