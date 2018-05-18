@@ -681,8 +681,6 @@ The following is a set of request/response examples for Allergies:
 <br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
-<p>Note: The <code class="highlighter-rouge">includeResolvedAllergies</code> parameter has not been set - by default resolved allergies are NOT returned.</p>
-
 <div class="language-json highlighter-rouge">
 <pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">  
@@ -993,8 +991,6 @@ The following is a set of request/response examples for Allergies:
 <br>
 <br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
-
-<p>Note: The <code class="highlighter-rouge">includeResolvedAllergies</code> parameter has explicitly been set to <code class="highlighter-rouge">false</code>.</p>
 
 <div class="language-json highlighter-rouge">
 <pre class="highlight"><code><span class="p">{</span><span class="w">
