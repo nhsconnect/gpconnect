@@ -70,6 +70,19 @@ This details the care setting in which the medication was prescribed. For instan
 
 {% include todo.html content="The value set for this element is still to be confirmed by the curation process. Details will be added when the curation is complete." %}
 
+### identifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Identifier</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+This is for any relevant business identifiers. 
+
+
 ### basedOn ###
 
 <table class='resource-attributes'>
@@ -320,7 +333,7 @@ This is not in scope for this version of Care Connect.
 This is not in scope for this version of Care Connect. 
 
 
-<h3 style="color:#ED1951;">medicationEpisodeChangeSummary</h3>
+<h3 style="color:#ED1951;">extension[ChangeSummary]</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -328,4 +341,4 @@ This is not in scope for this version of Care Connect.
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect. 
+This is not in scope for this version of GP Connect. 
