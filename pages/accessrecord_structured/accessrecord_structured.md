@@ -26,24 +26,6 @@ The Access Record Structured capability will expose data for a number of clinica
  - A patient is admitted into an acute hospital trust. As part of admission a full set of the patient’s current medication and allergy information is retrieved from the patient’s GP record and imported into the hospital system. By sending the clinical data in a structured format the local system can import the data, reducing the level of data entry required by the local clinician. 
  - During the triage of a patient using a decision support tool the local system imports the patient’s clinical information from their GP record. The data is received in a structured format that allows the system to import the data and use it to support the triage process.  
 
-## API use cases ##
+## Development ##
 
-The following API use cases are included in this capability:
-
-- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
-
-## Profiled FHIR resources ##
-
-See the [FHIR resources](accessrecord_structured_development_resources_overview.html) page for details of the FHIR profiles used in this capability.
-
-## Spine interactions ##
-
-The Access Record Structured capability message set includes the following set of Spine interactions:
-
-| Operation                 | Interaction ID            | 
-|---------------------------|---------------------------| 
-| [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
-
-
-
-
+Please see the [development introduction](accessrecord_structured_development.html) for information on the API use cases supported in this capability.
