@@ -29,7 +29,7 @@ The following is a set of request/response examples for Allergies:
   <li>Resolved allergies</li>
 </ul>
 
-
+<br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
 <div class="language-json highlighter-rouge">
@@ -678,6 +678,8 @@ The following is a set of request/response examples for Allergies:
   <li>Allergies</li>
 </ul>
 
+<br>
+<br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
 <p>Note: The <code class="highlighter-rouge">includeResolvedAllergies</code> parameter has not been set - by default resolved allergies are NOT returned.</p>
@@ -988,6 +990,8 @@ The following is a set of request/response examples for Allergies:
   <li>Allergies</li>
 </ul>
 
+<br>
+<br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
 <p>Note: The <code class="highlighter-rouge">includeResolvedAllergies</code> parameter has explicitly been set to <code class="highlighter-rouge">false</code>.</p>
