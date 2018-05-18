@@ -29,7 +29,7 @@ The following is a set of request/response examples for Medication:
   <li>Prescription Issues</li>
 </ul>
 
-
+<br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
 <p>Note: The <code class="highlighter-rouge">includePrescriptionIssues</code> parameter has explicitly been set to <code class="highlighter-rouge">true</code>.</p>
