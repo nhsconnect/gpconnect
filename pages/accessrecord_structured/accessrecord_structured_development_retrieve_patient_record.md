@@ -94,10 +94,10 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     <tr>
       <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeResolvedAllergies</code></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
-      <td>Optional</td>
+      <td>Mandatory</td>
       <td>
         Include resolved allergies and intolerances in the response.
-        <p><i>Part parameter: may only be provided if <code>includeAllergies</code> is <code>true</code>.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeAllergies</code> is set.</i></p>        
       </td>
     </tr>
     <tr>
@@ -105,6 +105,15 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge">Boolean</code></td>
       <td>Optional</td>
       <td>Include medication in the response.</td>
+    </tr>
+    <tr>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includePrescriptionIssues</code></span></td>
+      <td><code class="highlighter-rouge">Boolean</code></td>
+      <td>Mandatory</td>
+      <td>
+        Include each prescription issue in the response.
+        <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>        
+      </td>
     </tr>
     <tr>
       <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">medicationDatePeriod</code></td>
@@ -119,16 +128,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 	        <li>If <code>Period.end</code> element is populated, medication on or before the end date will be returned.</li>
 	        <li>If <code>Period.start</code> and <code>Period.end</code> are populated, medication between or on the start and end dates will be returned.</li>
     	</ul>
-    	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is <code>true</code>.</i></p>
-      </td>
-    </tr>
-    <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includePrescriptionIssues</code></span></td>
-      <td><code class="highlighter-rouge">Boolean</code></td>
-      <td>Optional</td>
-      <td>
-        Include each prescription issue in the response.
-        <p><i>Part parameter: may only be provided if <code>includeMedication</code> is <code>true</code>.</i></p>        
+    	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
     </tr>
   </tbody>
@@ -166,15 +166,15 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeMedication",
       "part": [
         {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        },
+        {
           "name": "medicationDatePeriod",
           "valuePeriod": {
             "start": "2017-01-01",
             "end": "2018-02-01"
           }
-        },
-        {
-          "name": "includePrescriptionIssues",
-          "valueBoolean": true
         }
       ]
     }
@@ -196,6 +196,8 @@ Errors that may be encountered include:
 - a patient could not be found matching the `patientNHSNumber` provided
 - an invalid `medicationDatePeriod` range is requested (that is, end date < start date)
 - `medicationDatePeriod.start` or `medicationDatePeriod.end` contain a partial date, or have a value containing a time or offset component
+- the `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter
+- the `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter
 - the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](accessrecord_structured_development_operation_definition.html) `OperationDefinition`
 - the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
 
@@ -224,6 +226,7 @@ Provider systems **SHALL**:
   - `Organization` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
+  - `PractitionerRole` matching the usual GP's role
   - resources holding allergies and intolerance and medication information according to the rules below:
 
 ##### Allergies #####
@@ -236,19 +239,17 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
 - when the `includeAllergies` parameter is set:
 
-  - and when the `includeResolvedAllergies` parameter is not set or is set to `false`:
+  - and when the `includeResolvedAllergies` parameter is set to `false`:
 
-    - [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
 
   - and when the `includeResolvedAllergies` parameter is set to `true`:
 
-    - [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
 
-- `Organization`, `Practitioner` and `Location` resources that are referenced by the [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
+- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
 
 <br/>
-
-{% include todo.html content="Allergy list population requirements" %}
 
 ##### Medications #####
 
@@ -260,7 +261,7 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
 - when the `includeMedication` parameter is set:
 
-  - [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
+  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
   - when the `medicationDatePeriod` parameter is set, the medication summary data **SHALL** be restricted to that whose date falls within, or overlaps (in the case of a range), the `Period.start` and `Period.end`. The date used shall be:
 
@@ -270,7 +271,7 @@ Provider systems **SHALL** include the following in the response `Bundle`:
     
     2 - `dateAsserted`, where the medication does not have a `lastIssueDate`, `effectiveDate` or `effectivePeriod`
 
-  - and when the `includePrescriptionIssues` parameter is not set, or is set to `false`:
+  - and when the `includePrescriptionIssues` parameter is set to `false`:
 
     - no prescription issue information should be returned
 
@@ -278,11 +279,9 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
     - [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources with an `intent` of `order` representing the patient's prescription issues, for the above medication summary data
 
-- `Organization`, `Practitioner` and `Location` resources that are referenced by the [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) and [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources
+- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) and [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources
 
 <br/>
-
-{% include todo.html content="Medication list population requirements" %}
 
 #### Bundle population illustrated ####
 

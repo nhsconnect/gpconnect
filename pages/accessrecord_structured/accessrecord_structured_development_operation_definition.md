@@ -51,7 +51,7 @@ summary: "Operation definition for retrieving a patient's structured record"
       <part>
          <name value="includeResolvedAllergies" />
          <use value="in" />
-         <min value="0" />
+         <min value="1" />
          <max value="1" />
          <documentation value="Include resolved allergies and intolerances in the response bundle." />
          <type value="boolean" />
@@ -64,20 +64,20 @@ summary: "Operation definition for retrieving a patient's structured record"
       <max value="1" />
       <documentation value="Include resources representing a patient's medication record in the response bundle." />
       <part>
+         <name value="includePrescriptionIssues" />
+         <use value="in" />
+         <min value="1" />
+         <max value="1" />
+         <documentation value="Include each prescription issue in the response. By default, prescription issues are not included." />
+         <type value="boolean" />
+      </part>
+      <part>
          <name value="medicationDatePeriod" />
          <use value="in" />
          <min value="0" />
          <max value="1" />
          <documentation value="Restrict the patient's medication record to a specific date period. Only date values (and not time) may be provided." />
          <type value="Period" />
-      </part>
-      <part>
-         <name value="includePrescriptionIssues" />
-         <use value="in" />
-         <min value="0" />
-         <max value="1" />
-         <documentation value="Include each prescription issue in the response. By default, prescription issues are not included." />
-         <type value="boolean" />
       </part>
    </parameter>
    <parameter>
