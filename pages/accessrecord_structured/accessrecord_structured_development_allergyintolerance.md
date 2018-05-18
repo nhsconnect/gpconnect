@@ -44,13 +44,39 @@ The AllergyIntolerance profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
 
+### extension[encounter] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b><code>Reference</code></td>
+    <td><b>Optionality:</b>Required</td>
+    <td><b>Cardinality:</b>0..1</td>
+  </tr>
+</table>
+
+Contains a link to the encounter resource.
+
+### extension[allergyEnd] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b><code>extension</code></td>
+    <td><b>Optionality:</b>Required</td>
+    <td><b>Cardinality:</b>0..1</td>
+  </tr>
+</table>
+
+Contains the date and reason the allergy or intolerance was recorded as resolved.
+
+Must be populated if the `clinicalStatus` is set to `resolved`.
+
 ### extension[allergyEnd].endDate ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Data type:</b><code>dateTime</code></td>
+    <td><b>Optionality:</b>Mandatory</td>
+    <td><b>Cardinality:</b>1..1</td>
   </tr>
 </table>
 
@@ -63,8 +89,8 @@ Must be populated if the `clinicalStatus` is set to `resolved`.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b>Mandatory</td>
+    <td><b>Cardinality:</b>1..1</td>
   </tr>
 </table>
 
@@ -81,6 +107,18 @@ The reason why the allergy or intolerance has been resolved.
 </table>
 
 Reference to confirmatory diagnostic report, e.g. pathology RAST test result.
+
+### identifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b><code>Code</code></td>
+    <td><b>Optionality:</b>Optional</td>
+    <td><b>Cardinality:</b>0..1</td>
+  </tr>
+</table>
+
+Can be used to communicate local identifiers.
 
 ### clinicalStatus ###
 
@@ -144,9 +182,9 @@ In some cases, the type of allergy/intolerance may be more general - for example
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Data type:</b><code>Code</code></td>
+    <td><b>Optionality:</b>Required</td>
+    <td><b>Cardinality:</b>0..1</td>
   </tr>
 </table>
 
@@ -186,7 +224,7 @@ Where the AllergyIntolerance has no coded representation in the source system, b
 
 A reference to the Patient who has, or had, the allergy or intolerance specified.
 
-### onsetDateTime ###
+### onset.DateTime ###
 
 <table class='resource-attributes'>
   <tr>
@@ -214,17 +252,6 @@ The datetime the record was recorded or believed to be true.
 
 The asserted date is when the allergy related to the patient was asserted. In many cases, this will be when the allergy is entered onto the system, although some systems may allow this date to be modified.
 
-### asserter ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>TBD</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-Source of the information about the allergy
-
 ### recorder ###
 
 <table class='resource-attributes'>
@@ -236,6 +263,17 @@ Source of the information about the allergy
 </table>
 
 Who recorded the allergy in the clinical system.
+
+### asserter ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>TBD</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+Source of the information about the allergy
 
 ### lastOccurrence ###
 
@@ -303,9 +341,9 @@ A consuming system **MAY** concatenate the contents (appropriately labelled) wit
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Data type:</b><code>Code</code></td>
+    <td><b>Optionality:</b>Required</td>
+    <td><b>Cardinality:</b>0..1</td>
   </tr>
 </table>
 
