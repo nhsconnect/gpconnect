@@ -125,4 +125,4 @@ The `List` **MUST** be populated in line with the guidance on `List` resources.
 If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
 
 {: .center-image }
-![MedicationListDiagram](images/access_structured/MedicationList.png)
+![MedicationList](images/access_structured/MedicationList.png)
