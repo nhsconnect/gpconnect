@@ -995,7 +995,6 @@ The following is a set of request/response examples for Allergies:
 </ul>
 
 <br>
-<br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
 <div class="language-json highlighter-rouge">
