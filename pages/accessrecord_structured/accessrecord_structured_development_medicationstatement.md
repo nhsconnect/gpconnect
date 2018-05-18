@@ -56,6 +56,20 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
 
 When the medication was last issued.
 
+### extension[prescribingAgency] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+This details the care setting in which the medication was prescribed. For instance if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
+
+{% include todo.html content="The value set for this element is still to be confirmed by the curation process. Details will be added when the curation is complete." %}
+
 ### basedOn ###
 
 <table class='resource-attributes'>
