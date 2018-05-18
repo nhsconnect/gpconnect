@@ -30,7 +30,7 @@ The `List` resource in FHIR is used to help manage a collection of resources. In
 
 The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
 
-<table class='resource-attributes'>
+<table class='resource-attributes' border='1'>
   <tr>
     <td>Display</td>
     <td>Code</td>
