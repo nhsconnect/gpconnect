@@ -144,7 +144,7 @@ The following is a set of request/response examples for Allergies:
                         </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                            </span><span class="p">{</span><span class="w">
                               </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"endDate"</span><span class="p">,</span><span class="w">
-                              </span><span class="nt">"valueDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-20-01T09:00:34+00:00"</span><span class="w">
+                              </span><span class="nt">"valueDateTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-01"</span><span class="w">
                            </span><span class="p">},</span><span class="w">
                            </span><span class="p">{</span><span class="w">
                               </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"reasonEnded"</span><span class="p">,</span><span class="w">
@@ -185,7 +185,7 @@ The following is a set of request/response examples for Allergies:
                      </span><span class="p">}</span><span class="w">
                   </span><span class="p">],</span><span class="w">
                   </span><span class="nt">"verificationStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unconfirmed"</span><span class="p">,</span><span class="w">
-                  </span><span class="nt">"assertedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2011-05-07"</span><span class="p">,</span><span class="w">
+                  </span><span class="nt">"assertedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2011-05-07T00:00:00+00:00"</span><span class="p">,</span><span class="w">
                   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"intolerance"</span><span class="p">,</span><span class="w">
                   </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                      </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -312,7 +312,7 @@ The following is a set of request/response examples for Allergies:
                </span><span class="p">}</span><span class="w">
             </span><span class="p">],</span><span class="w">
             </span><span class="nt">"verificationStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unconfirmed"</span><span class="p">,</span><span class="w">
-            </span><span class="nt">"assertedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-07T00:00+00:00"</span><span class="p">,</span><span class="w">
+            </span><span class="nt">"assertedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-07T00:00:00+00:00"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"allergy"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -664,7 +664,6 @@ The following is a set of request/response examples for Allergies:
 </span></code></pre>
 </div>
 
-
 </div>
 
 <div role="tabpanel" class="tab-pane" id="example2">
@@ -768,7 +767,7 @@ The following is a set of request/response examples for Allergies:
       </span><span class="p">{</span><span class="w">
          </span><span class="nt">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"561850bd-360c-4d17-b3c8-a837ef0cbfba"</span><span class="p">,</span><span class="w">
-			</span><span class="nt">"assertedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-07T00:00+00:00"</span><span class="p">,</span><span class="w">
+			</span><span class="nt">"assertedDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-05-07T00:00:00+00:00"</span><span class="p">,</span><span class="w">
 			</span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AllergyIntolerance"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"clinicalStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"active"</span><span class="p">,</span><span class="w">
             </span><span class="nt">"verificationStatus"</span><span class="p">:</span><span class="w"> </span><span class="s2">"unconfirmed"</span><span class="p">,</span><span class="w">
@@ -976,6 +975,7 @@ The following is a set of request/response examples for Allergies:
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
+
 
 </div>
 
