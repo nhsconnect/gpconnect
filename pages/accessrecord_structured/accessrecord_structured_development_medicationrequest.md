@@ -179,7 +179,7 @@ Explicit repeat or acute flag rather than deriving it from presence of extension
   </tr>
 </table>
 
-This is for business identifiers. If it the identifier element is present then the identifier.value is where the EPS Id ***SHOULD*** be added.
+This is for business identifiers. If it the identifier element is present then the identifier.value is where the EPS Id **SHOULD** be added.
 
 ### basedOn ###
 
@@ -191,7 +191,7 @@ This is for business identifiers. If it the identifier element is present then t
   </tr>
 </table>
 
-This field is used to create the links between `MedicationRequest` resources to represent the medication ordering process as described [here](accessrecord_structured_development_medication_resource_relationships.html) This **MUST** be used when a resource has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` resource that has an `intent` set to `plan`.
+This field is used to create the links between `MedicationRequest` resources to represent the medication ordering process as described [here](accessrecord_structured_development_medication_resource_relationships.html). This **MUST** be used when a resource has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` resource that has an `intent` set to `plan`.
 
 **DO NOT USE** for authorisations ie. for a MedicationRequest with `intent` of `plan`.
 
@@ -205,7 +205,7 @@ This field is used to create the links between `MedicationRequest` resources to 
   </tr>
 </table>
 
-Composite request this is part of. The element in the Identifier data type that ***MUST*** be populated when a groupIdentifier is populated is identifier.value
+Composite request this is part of. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is identifier.value
 
 All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
 
