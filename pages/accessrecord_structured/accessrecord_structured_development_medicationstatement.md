@@ -66,7 +66,7 @@ When the medication was last issued.
   </tr>
 </table>
 
-This details the care setting in which the medication was prescribed. For instance if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
+This details the care setting in which the medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
 
 {% include todo.html content="The value set for this element is still to be confirmed by the curation process. Details will be added when the curation is complete." %}
 
@@ -167,7 +167,7 @@ Where a Period is used the start is **MANDATORY**. Where there is a defined expi
 
 When this medication statement was believed true.
 
-Unless there is a distinct user modifiable availability date/time for the authorisation, this is the audit trail date/time for when the authorisation was entered.
+Unless there is a distinct user-modifiable availability date/time for the authorisation, this is the audit trail date/time for when the authorisation was entered.
 
 ### subject ###
 
@@ -179,7 +179,7 @@ Unless there is a distinct user modifiable availability date/time for the author
   </tr>
 </table>
 
-Who the medication is for, i.e. who it will be administered to.
+Who the medication is for- that is, to whom it will be administered.
 
 Reference to patient.
 
@@ -235,7 +235,7 @@ Unless there is a specific linkage in the context of medication, indirect linkag
 
 All notes that are associated with this medication record.
 
-All patient notes and prescriber notes at authorisation(plan) and issue(order) level **MUST** be included in this field. They **MUST** be concatenated and indicate the level the notes come from, e.g. 1st Issue and also be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
+All patient notes and prescriber notes at authorisation(plan) and issue(order) level **MUST** be included in this field. They **MUST** be concatenated and indicate the level the notes come from (for example, 1st Issue) and be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
 
 ### dosage.text ###
 
@@ -259,7 +259,7 @@ Complete dosage instructions as text.
   </tr>
 </table>
 
-Additional instructions for patient, i.e. RHS of prescription label.
+Additional instructions for patient - that is, RHS of prescription label.
 
 <br><br>
 
