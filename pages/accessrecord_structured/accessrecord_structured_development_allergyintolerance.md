@@ -256,7 +256,7 @@ The asserted date is when the allergy related to the patient was asserted. In ma
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>TBD</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -268,7 +268,7 @@ Who recorded the allergy in the clinical system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>TBD</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
