@@ -44,7 +44,7 @@ The following table provides details of the warning codes that are to be used in
   <tr>
     <td>Data in transit</td>
     <td>data-in-transit</td>
-    <td>Patient record transfer from previous GP Practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded</td>
+    <td>Patient record transfer from previous GP practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded.</td>
   </tr> 
   <tr>
     <td>Data awaiting filing</td>
@@ -59,12 +59,11 @@ Where items have been excluded from the returned resources due to patient consen
 
 ### Data in transit
 
-This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice has not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned  **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
+This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice has not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
 
 ### Data awaiting filing
 
-Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **MUST** be sent in a separate list to the rest of the entries. The list **MUST** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and **MUST** be populated using the data awaiting filing warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
-This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
+Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **MUST** be sent in a separate list to the rest of the entries. The list **MUST** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and **MUST** be populated using the data awaiting filing warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
 
 ## List elements ##
 
@@ -174,7 +173,7 @@ Descriptive name for the list. This will be taken from the 'display' column in t
 
 The purpose of the list.
 
-There are currently 3 possible purposes of a list in GP connect that will be represented by the following SNOMED codes.
+There are currently 3 possible purposes of a list in GP Connect that will be represented by the following SNOMED codes.
 1. Medications and medical devices - 933361000000108
 2. Allergies and adverse reactions - 886921000000105
 3. Resolved allergies - awaiting confirmation of this SNOMED code from the terminology team
@@ -213,7 +212,7 @@ When the list was created.
   </tr>
 </table>
 
-Who and/or what defined the list contents (i.e. the author).
+Who and/or what defined the list contents (that is, the author).
 
 ### orderedBy  ###
 
@@ -227,7 +226,7 @@ Who and/or what defined the list contents (i.e. the author).
 
 What order the list has.
 
-As the data where lists are being used in GP Connect is structured it is simple for the consuumer to put in order.
+As the data where lists are being used in GP Connect is structured, it is simple for the consumer to put in order.
 
 ### note ###
 
