@@ -106,7 +106,7 @@ The reason why the allergy or intolerance has been resolved.
   </tr>
 </table>
 
-Reference to confirmatory diagnostic report, e.g. pathology RAST test result.
+Reference to confirmatory diagnostic report - for example, pathology RAST test result.
 
 ### identifier ###
 
@@ -188,9 +188,9 @@ In some cases, the type of allergy/intolerance may be more general - for example
   </tr>
 </table>
 
-Distinguishes between life-threatening (high) and non-life-threatening (low) potential as well as unable-to-assess. It **MAY** be used in addition to severity within the reaction element to express severity, e.g. systems that support a severity of life-threatening **MAY** set criticality to high.
+Distinguishes between life-threatening (high) and non-life-threatening (low) potential as well as unable-to-assess. It **MAY** be used in addition to severity within the reaction element to express severity - for example, systems that support a severity of life-threatening **MAY** set criticality to high.
 
-It **MAY** be used in conjunction with reaction/severity by systems which support a severity of ‘Life Threatening’ or equivalent.
+It **MAY** be used in conjunction with reaction/severity by systems which support a severity of life-threatening or equivalent.
 
 ### code ###
 
@@ -273,7 +273,7 @@ Who recorded the allergy in the clinical system.
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
-Source of the information about the allergy
+Source of the information about the allergy.
 
 ### lastOccurrence ###
 
