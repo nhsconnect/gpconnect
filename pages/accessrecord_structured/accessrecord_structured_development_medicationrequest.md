@@ -179,7 +179,7 @@ Explicit repeat or acute flag rather than deriving it from presence of extension
   </tr>
 </table>
 
-This is for business identifiers. If it the identifier element is present then the identifier.value is where the EPS Id **SHOULD** be added.
+This is for business identifiers. If the identifier element is present then the identifier.value is where the EPS Id **SHOULD** be added.
 
 ### basedOn ###
 
@@ -193,7 +193,7 @@ This is for business identifiers. If it the identifier element is present then t
 
 This field is used to create the links between `MedicationRequest` resources to represent the medication ordering process as described [here](accessrecord_structured_development_medication_resource_relationships.html). This **MUST** be used when a resource has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` resource that has an `intent` set to `plan`.
 
-**DO NOT USE** for authorisations ie. for a MedicationRequest with `intent` of `plan`.
+**DO NOT USE** for authorisations - that is, for a MedicationRequest with `intent` of `plan`.
 
 ### groupIdentifier ###
 
@@ -205,7 +205,7 @@ This field is used to create the links between `MedicationRequest` resources to 
   </tr>
 </table>
 
-Composite request this is part of. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is identifier.value
+Composite request this is part of. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is identifier.value.
 
 All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
 
@@ -272,7 +272,7 @@ The Medication resource provides the coded representation of the medication.
   </tr>
 </table>
 
-Who the medication is for, i.e. who it will be administered to.
+Who the medication is for - that is, to whom it will be administered.
 
 Reference to patient.
 
@@ -304,7 +304,7 @@ As per base profile guidance.
 
 Authorisation date, when the medication was authorised.
 
-Unless there is a distinct user modifiable availabilityTime for the authorisation, this is the audit trail dateTime for when the authorisation was entered.
+Unless there is a distinct user-modifiable availabilityTime for the authorisation, this is the audit trail dateTime for when the authorisation was entered.
 
 
 ### requester ###
@@ -417,7 +417,7 @@ Complete dosage instructions as text.
   </tr>
 </table>
 
-Additional instructions for patient, i.e. RHS of prescription label.
+Additional instructions for patient - that is, RHS of prescription label.
 
 
 ### dispenseRequest.validityPeriod ###
