@@ -275,7 +275,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
 
 
 <h3 style="color:#ED1951;">category</h3>
@@ -286,7 +286,7 @@ This is not in scope for this version of Care Connect.
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
 
 
 <h3 style="color:#ED1951;">informationSource</h3>
@@ -297,7 +297,7 @@ This is not in scope for this version of Care Connect.
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">derivedFrom</h3>
@@ -308,7 +308,7 @@ This is not in scope for this version of Care Connect.
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
 
 
 <h3 style="color:#ED1951;">taken</h3>
@@ -319,7 +319,7 @@ This is not in scope for this version of Care Connect.
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">reasonNotTaken</h3>
@@ -330,7 +330,7 @@ This is not in scope for this version of Care Connect.
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">extension[ChangeSummary]</h3>
