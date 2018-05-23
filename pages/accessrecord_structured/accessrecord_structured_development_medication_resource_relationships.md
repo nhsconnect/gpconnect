@@ -12,7 +12,7 @@ The medication or medical device ordering process in GP systems can be considere
 
 1. **The authorisation** - this is where the medication or medical device is initially added on to the GP systems. It represents a 'plan' that the GP intends to authorise a medication for the patient.
 
-2. **The issue** - this is the point the plan is turned into an actual 'order' or prescription. At this point the prescription will either be printed and signed, or the order will be passed on to the Electronic Prescription Service to send to the patient’s nominated pharmacy.
+2. **The issue** - this is the point the plan is turned into an actual 'order' or prescription. At this point the prescription will either be printed and signed, or the order will be passed on to the Electronic Prescription Service (EPS) to send to the patient’s nominated pharmacy.
 
 There are several clinical reasons why the process is split up in this way. Below are some examples of scenarios when it advantageous to have the separate parts:
 
@@ -65,15 +65,15 @@ FHIR has a collection of resources that are available to represent different con
 
 | Resource name       | Description | Used in GP Connect |
 |---------------------|-------------------| ----------|
-| [`Medication`](accessrecord_structured_development_medication.html) | The actual medication or medical device | Yes |
-| [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) | Planning, proposing or ordering medications | Yes |
+| [`Medication`](accessrecord_structured_development_medication.html) | The actual medication or medical device. | Yes |
+| [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) | Planning, proposing or ordering medications. | Yes |
 | [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) | Used to make a statement about the medication a person has taken and can be 'basedOn' a record of an historic prescription that would be represented using one or more MedicationRequest resources. | Yes |
 | `MedicationDispense` | Represent exactly what medication was dispensed. In some cases, this can differ slightly from what was ordered/prescribed. | No |
-| `MedicationAdministration` | Describe when the medication is administered, how it was given and by whom | No |
+| `MedicationAdministration` | Describe when the medication is administered, how it was given and by whom. | No |
 
 In GP Connect, we are interested in the medication data that is captured in GP clinical systems. This data is about the practice’s record of medication the patient has taken and whether that has been prescribed by a clinician at that practice. 
 
-Therefore as shown in the table above, in order be able to represent the information that is available in the GP systems we are interested in three of the above FHIR profiles: `Medication`, `MedicationRequest` and `MedicationStatement`.
+Therefore, as shown in the table above, in order be able to represent the information that is available in the GP systems we are interested in three of the above FHIR profiles: `Medication`, `MedicationRequest` and `MedicationStatement`.
 
 ## Using the FHIR profiles to represent the ordering process
 
@@ -81,7 +81,7 @@ Most of the information in GP systems that GP Connect needs to represent is in t
 
 To represent this using FHIR, GP suppliers **MUST** create a `MedicationStatement` about each medication or medical device record that is contained on the GP system. Each `MedicationStatement` will reflect an item that was ordered using one of the 3 business processes previously described or a medication or medical device that was prescribed or allocated elsewhere but has been recorded by a clinician at the practice. 
 
-Where a medication statement represents an order, it will be based on a one or more `MedicationRequest` resources that reflect the ordering/prescribing of that medication or medical device by the practice. 
+Where a medication statement represents an order, it will be based on one or more `MedicationRequest` resources that reflect the ordering/prescribing of that medication or medical device by the practice. 
 
 The GP Connect profile of the `MedicationRequest` will be used to represent the 2 stages of the ordering process:
 
@@ -91,7 +91,7 @@ The GP Connect profile of the `MedicationRequest` will be used to represent the 
 
 ### Acute medication
 
-An acute medication is represented by a `MedicationStatement`, and two `MedicationRequest` resources - one with an `intent` of `plan` and the second an `intent` of `order`.
+An acute medication is represented by a `MedicationStatement` and two `MedicationRequest` resources - one with an `intent` of `plan` and the second an `intent` of `order`.
 
 {: .center-image }
 ![Acute medications diagram](images/access_structured/Acute medication representation.png)
@@ -111,7 +111,7 @@ For repeat dispensed medication, some of the resources relating to individual is
 
 ### Unissued medications and medication prescribed elsewhere
 
-Unissued medications and medications that have been prescribed elsewhere are different concepts but modelled in a similar manner . they will both have been added to the system by a clinician at the practice will be represented by a `MedicationStatement` and a `MedicationRequest` with an `intent` of `plan` but with no further resources. This reflect that no orders have been placed for these medications by the GP practice. Medications that were prescribed elsewhere will be flagged as such by populating the PrescribingAgency extension in the Medication Statement.
+Unissued medications and medications that have been prescribed elsewhere are different concepts but modelled in a similar manner. They will both have been added to the system by a clinician at the practice and will be represented by a `MedicationStatement` and a `MedicationRequest` with an `intent` of `plan`, but with no further resources. This reflects that no orders have been placed for these medications by the GP practice. Medications that were prescribed elsewhere will be flagged as such by populating the PrescribingAgency extension in the Medication Statement.
 
 {: .center-image }
 ![Unissued medications and medications prescribed elsewhere diagram](images/access_structured/Unissued medications and medications prescribed elsewhere.png)
