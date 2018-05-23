@@ -87,7 +87,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge">patientNHSNumber</code></td>
       <td><code class="highlighter-rouge">Identifier</code></td>
       <td>Mandatory</td>
-      <td>NHS Number of the patient to retrieve the structured record for.</td>
+      <td>NHS Number of the patient for whom to retrieve the structured record.</td>
     </tr>
     <tr>
       <td><code class="highlighter-rouge">includeAllergies</code></td>
@@ -126,7 +126,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>
         Restrict medication returned to that within the date period specified. Rules:
         <ul>
-	        <li><code>Period.start</code> and <code>Period.end</code> <b>SHALL</b> be populated with whole dates only (e.g. 01-02-2017), i.e. no partial dates, or with a time period or offset.</li>
+	        <li><code>Period.start</code> and <code>Period.end</code> <b>SHALL</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
 	        <li>If the <code>medicationDatePeriod</code> is not specified, all medication will be returned.</li>
 	        <li>If <code>Period.start</code> is populated, medication on or after the start date will be returned.</li>
 	        <li>If <code>Period.end</code> element is populated, medication on or before the end date will be returned.</li>
