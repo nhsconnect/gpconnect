@@ -517,7 +517,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-Not in scope for this release of Care Connect.
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">category</h3>
@@ -528,7 +528,7 @@ Not in scope for this release of Care Connect.
   </tr>
 </table>
 
-Not in scope for this release of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">priority</h3>
@@ -539,7 +539,7 @@ Not in scope for this release of Care Connect.
   </tr>
 </table>
 
-Not in scope for this release of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">supportingInformation</h3>
@@ -550,7 +550,7 @@ Not in scope for this release of Care Connect.
   </tr>
 </table>
 
-Not in scope for this release of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
 
 
 
@@ -562,7 +562,7 @@ Not in scope for this release of Care Connect.
   </tr>
 </table>
 
-Not in scope for this release of Care Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
 
 
 <h3 style="color:#ED1951;">detectedIssue</h3>
@@ -573,7 +573,7 @@ Not in scope for this release of Care Connect.
   </tr>
 </table>
 
-Not in scope for this release of Care Connect.  
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">eventHistory</h3>
@@ -584,6 +584,6 @@ Not in scope for this release of Care Connect.
   </tr>
 </table>
 
-Not in scope for this release of Care Connect.  
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
