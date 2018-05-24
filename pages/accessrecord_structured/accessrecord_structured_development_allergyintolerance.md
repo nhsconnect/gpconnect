@@ -287,7 +287,7 @@ Source of the information about the allergy.
 
 Represents the date and/or time of the last known occurrence of a reaction event.
 
-This data item may not currently be available from providing systems and in this circumstance **MAY** be omitted. Ommission **SHOULD NOT** prejudice the ability of providers and consumers to process this element if and when it is available.
+This data item may not currently be available from providing systems and in this circumstance **MAY** be omitted. Omission **SHOULD NOT** prejudice the ability of providers and consumers to process this element if and when it is available.
 
 ### note ###
 
@@ -317,7 +317,7 @@ Conveys the reaction resulting from the allergy/intolerance as a code.
 
 This element is mandatory in the FHIR base profile and so if no data is present please use the nullFlavour as outlined here.
 
-Where no code is available, but a textual description of the reaction is available then the nullFlavor UNC **MAY** be used and the textual description conveyed via reaction/description. 
+Where no code is available, but a textual description of the reaction is available, then the nullFlavor UNC **MAY** be used and the textual description conveyed via reaction/description. 
 
 If no reaction has explicitly been recorded, but the reaction element is present to convey severity, then reaction/manifestation **SHOULD** be coded as the nullFlavor NI. 
 
