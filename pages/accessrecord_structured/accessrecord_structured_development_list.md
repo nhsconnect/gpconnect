@@ -159,7 +159,7 @@ Whether the List has a `mode` of `working`, `snapshot`, or `changes`.
   </tr>
 </table>
 
-Descriptive name for the list. This will be taken from the 'display' column in the warning codes table above.
+Descriptive name for the list. This will be taken from the 'display' element from the 'code' field.
 
 ### code ###
 
