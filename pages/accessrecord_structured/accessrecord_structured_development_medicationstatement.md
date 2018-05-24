@@ -28,7 +28,7 @@ The headings below list the elements of the MedicationStatement resource and des
   </tr>
 </table>
 
-The logical identifier of the MedicationStatement resource.
+The logical identifier of the MedicationStatement resource. This **MUST** be a GUID and **MUST** be unique and persisted.
 
 ### meta.profile ###
 
