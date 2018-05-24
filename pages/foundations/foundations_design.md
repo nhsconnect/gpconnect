@@ -33,7 +33,7 @@ The above definition of the organization and location are particularly relevant 
 
 ### Organization and location in the patient resource ###
 
-The [Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) resource contains the `managingOrganization` element which should reference an organization resource representing the legal entity which is responsible for the patients record.
+The [Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) resource contains the `managingOrganization` element which should reference an organization resource representing the legal entity which is responsible for the patient's record.
 
 The [Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) resource also contains the `preferredBranchSurgery` element within the [Registration Details](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1) extension. This preferred branch surgery should contain a reference to a location resource representing the patient's preferred operating location which may be a branch surgery or the organization's main surgery.
 
