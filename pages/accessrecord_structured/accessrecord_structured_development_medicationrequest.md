@@ -36,7 +36,7 @@ When populating the MedicationRequest profile it may appear that fields are dupl
   </tr>
 </table>
 
-The logical identifier of the MedicationRequest resource. This **MUST** be a unique and persisted identifier. 
+The logical identifier of the MedicationRequest resource. This **MUST** be a GUID and **MUST** be unique and persisted.
 
 ### meta.profile ###
 
