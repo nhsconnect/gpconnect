@@ -475,7 +475,7 @@ Only to be used if there is no numerical value.
   </tr>
 </table>
 
-Number of days supply per dispense.
+Number of days' supply per dispense.
 
 
 ### dispenseRequest.performer ###
