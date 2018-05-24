@@ -315,6 +315,8 @@ Must be used to contain any textual data relevant to the allergy.
 
 Conveys the reaction resulting from the allergy/intolerance as a code. 
 
+This element is mandatory in the FHIR base profile and so if no data is present please use the nullFlavour as outlined here.
+
 Where no code is available, but a textual description of the reaction is available then the nullFlavor UNC **MAY** be used and the textual description conveyed via reaction/description. 
 
 If no reaction has explicitly been recorded, but the reaction element is present to convey severity, then reaction/manifestation **SHOULD** be coded as the nullFlavor NI. 
