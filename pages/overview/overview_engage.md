@@ -10,7 +10,7 @@ summary: "Getting involved with GP Connect"
 
 ## The Open API ecosystem
 
-GP Connect is part of the a wider initiative to expose standards based [Open APIs](https://www.england.nhs.uk/digitaltechnology/info-revolution/interoperability/open-api/){:target="_blank"} to promote innovation and improve care across the NHS.
+GP Connect is part of a wider initiative to expose standards based [Open APIs](https://www.england.nhs.uk/digitaltechnology/info-revolution/interoperability/open-api/){:target="_blank"} to promote innovation and improve care across the NHS.
 
 ### Capabilities
 
@@ -85,5 +85,5 @@ GP Connect is working closely with a number of interoperability communities:
 
 ## Timescales, benefits and more
 
-The content here is designed for a technical audience (i.e. developers, architects and data scientists) for other details (i.e. the vision, timescales, business benefits and case studies) then please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/article/1275/GP-Connect){:target="_blank"}.
+The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/article/1275/GP-Connect){:target="_blank"}.
 
