@@ -61,7 +61,7 @@ The version number may not be incremented when *stylistic changes* are made for 
 
 ### Pre-release (draft) labels ###
 
-When a **pre-release label** is appended to the version number with a hypen it indicates the specifaction is still in draft, or has been discontinued.
+When a **pre-release label** is appended to the version number with a hyphen it indicates the specificaction is still in draft, or has been discontinued.
 
 {% include important.html content="The pre-release label is used to indicate that a specification is in draft (or has been discontinued), it **does not** indicate that a providing system has made a pre-release of their GP Connect software." %}
 
@@ -91,7 +91,7 @@ The following GP Connect artefacts are released alongside the specification, but
 
 ### SDS interaction IDs ###
 
-[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
+[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
 
 ### Service Root URL format ###
 
