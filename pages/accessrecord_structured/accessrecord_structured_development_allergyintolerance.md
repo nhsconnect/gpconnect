@@ -28,7 +28,7 @@ The headings below list the elements of the AllergyIntolerance resource and desc
   </tr>
 </table>
 
-The logical identifier of the Medication resource.
+The logical identifier of the Medication resource. This **MUST** be a GUID and **MUST** be unique and persisted.
 
 ### meta.profile ###
 
