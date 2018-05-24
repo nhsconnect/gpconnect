@@ -28,7 +28,7 @@ The profiled FHIR resources required for each of the GP Connect capability packs
 
 ### Population of optional elements
 
-The purpose of GP Connect is to make the patient data stored within the GP systems available externally so that it can be used to help improve the quality of patient care across the NHS. To give patients the best care possible the data made available through the GP Connect API should be as complete as possible. Therefore it is expected that both provider and consumers:
+The purpose of GP Connect is to make the patient data stored within the GP systems available externally so that it can be used to help improve the quality of patient care across the NHS. To give patients the best care possible the data made available through the GP Connect API should be as complete as possible. Therefore, it is expected that both provider and consumers:
 
 * ***SHALL*** populate all the elements within FHIR resources where data is available within their system despite the cardinality of the elements within the FHIR resource profiles.
 
@@ -53,7 +53,7 @@ For example, see the [Register a patient request body](foundations_use_case_regi
 
 The `address` element exists in many of the FHIR resources used in the GP Connect API. Where an address element is present in a FHIR resource the following population guidance SHALL be followed:
 
-* Where the individual address sub elements are availabe within the suppliers system, the address SHALL be populated using the elements:
+* Where the individual address sub elements are available within the suppliers system, the address SHALL be populated using the elements:
   * line
   * city
   * district
