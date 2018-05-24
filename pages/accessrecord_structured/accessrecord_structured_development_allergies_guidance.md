@@ -87,7 +87,7 @@ On some systems it is possible to explicitly mark an allergy or intolerance as r
 
 Allergies and intolerances which have been explicitly resolved **MUST** only be returned in response to resource queries which have the *includeResolvedAllergies* parameter set to true (see [Retrieve a patient’s structured record](accessrecord_structured_development_retrieve_patient_record.html)).
 
-When the provider is sending resolved allergies, it **MUST** send them in a separate `List` to the active allergies as contained resources in that `List`. The `List` **MUST** have the title 'Resolved Allergies' and resolved allergy resources **MUST** be assigned a `clinicalStatus` of `resolved`. A title of 'Active Allergies' **MUST** be used for the `List` containing the active `AllergyIntolerance` resources.
+When the provider is sending resolved allergies, it **MUST** send them in a separate `List` to the active allergies as contained resources in that `List`. The `List` **MUST** have the title 'Resolved Allergies' and resolved allergy resources **MUST** be assigned a `clinicalStatus` of `resolved`. A title of 'Allergies and adverse reactions' **MUST** be used for the `List` containing the active `AllergyIntolerance` resources.
 
 Consuming systems **MUST** ensure that resolved allergies are not treated as active - that is, they **MUST NOT** interact with prescribing decision support or be misinterpreted by users as being active.
 
