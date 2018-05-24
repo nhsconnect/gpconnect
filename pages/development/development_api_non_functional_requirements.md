@@ -45,7 +45,7 @@ Provider systems SHALL meet the agreed availability targets (service time and/or
 
 Provider systems SHALL meet the agreed recoverability targets as documented in the Operational Level Agreement (OLA).
 
-### Audit & provenance ###
+### Audit and provenance ###
 
 Provider systems SHALL audit all API access and actions.
 
@@ -71,7 +71,7 @@ Provider and consumer systems SHOULD follow the [ISO 13407](https://www.iso.org/
 
 Please refer to the 'GPSoC Technical Standards' for details.
 
-### Accessability ###
+### Accessibility ###
 
 Provider and consumer systems MUST maintain a compliance of minimum Double “A” of the WCAG 1.0 (or equivalent in WCAG 2.0) or, as stipulated by UK Government guidelines, for all user interfaces. Please see the [Web Accessibility Initiative](https://www.w3.org/WAI/) for more details.
 
