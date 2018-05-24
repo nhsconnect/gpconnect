@@ -56,7 +56,7 @@ After consultation with the Infrastructure Security, Operational Security and Sp
 - `AES256+EECDH`
 - `AES256+EDH`
 
-{% include note.html content="Galois/Counter Mode (GCM) suites are prefered as these are resistant to timing attacks<sup>1</sup>." %}
+{% include note.html content="Galois/Counter Mode (GCM) suites are preferred as these are resistant to timing attacks<sup>1</sup>." %}
 
 {% include important.html content="A Java Runtime Environment 8 (or above) and/or an up to date version of OpenSSL is required to support the GCM cipher suites." %}
 
