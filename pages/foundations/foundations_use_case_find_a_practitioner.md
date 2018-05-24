@@ -4,34 +4,34 @@ keywords: foundations, practitioner, sds, sdsuserid
 tags: [foundations,use_case]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_find_a_practitioner.html
-summary: "Use case for finding a practitioner resource by business identity."
+summary: "Use case for finding a practitioner resource by business identity"
 ---
 
-## API Usage ##
+## API usage ##
 
 Resolve (zero or more) `Practitioner` resources using a business identifier (i.e. SDS User Id).
 
-### Request Operation ###
+### Request operation ###
 
 The `[system]` field SHALL be populated with a valid practitioner identifier system URL (i.e. `https://fhir.nhs.uk/Id/sds-user-id`).
 
-The consumer systerm SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+The consumer system SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
 {% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/sds-user-id', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
-#### FHIR Relative Request ####
+#### FHIR relative request ####
 
 ```http
 GET /Practitioner?identifier=[system]|[value]
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Practitioner?identifier=[system]|[value]
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -52,7 +52,7 @@ Provider systems:
 
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
-For example the:
+For example, the:
 
 - Business identifier `[system]` is not recognised/supported by the Provider system.
 - Business identifier fails any structural validation checks (i.e. length and check digits).
