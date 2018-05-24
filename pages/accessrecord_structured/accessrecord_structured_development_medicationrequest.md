@@ -95,7 +95,7 @@ The number of repeat issues authorised if specified.
 
 Running total of number of issues made against a repeat authorisation.
 
-Must be zero, if not yet issued.
+**MUST** be zero, if not yet issued.
 
 
 ### extension[repeatInformation].authorisationExpiryDate ###
@@ -152,7 +152,7 @@ Mandatory for stopped/discontinued medications as the date will always be known.
 
 The textual reason either free text or the term of a code for stopping/discontinuing the medication.
 
-Must be populated when StatusReason.date is populated.
+**MUST** be populated when StatusReason.date is populated.
 
 
 ### extension[prescriptionType] ###
