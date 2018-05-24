@@ -4,7 +4,7 @@ keywords: foundations
 tags: [foundations]
 sidebar: foundations_sidebar
 permalink: foundations.html
-summary: "All about the common foundation capabilities."
+summary: "All about the common foundation capabilities"
 ---
 
 ## Purpose ##
@@ -49,14 +49,14 @@ The following individual API calls make up the Foundations capability and suppor
 
 ## Consumer code examples
 
-Consumer side code examples are available for each of GP Connect interactions within the following github repositories. The respositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
+Consumer side code examples are available for each of GP Connect interactions within the following GitHub repositories. The repositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
 
 [.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
 
 [JAVA](https://github.com/nhsconnect/gpconnect-java-examples)
 
 
-## SPINE Interactions
+## Spine interactions
 
 The Foundations capability message set includes the following set of Spine interactions:
 
@@ -79,18 +79,18 @@ The Register Patient API use case, which is included in the Foundations capabili
 | [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1`
 
 
-## Implementation And Testing ##
+## Implementation and testing ##
 
-Below is the suggested order in which the foundation capabilities should be implemented. The specified order has been recomended around the functionality of the GP Connect Automated Test Suite and any internal dependancies between the test scenarios for the different foundation endpoints.
+Below is the suggested order in which the foundation capabilities should be implemented. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different foundation endpoints.
 
-It is advisable to develop against the Automated Test Suite as this will assist with creating a GP Connect compliant product. By implementing the endpoints in the order below, this means that the automated test suite set of tests for that endpoint can be run during development without the developer seeing errors due to pre-test api calls or post test validation api calls relevant to the test being run and failing as they have not been developed yet.
+It is advisable to develop against the Automated Test Suite as this will assist with creating a GP Connect compliant product. By implementing the endpoints in the order below, this means that the automated test suite set of tests for that endpoint can be run during development without the developer seeing errors due to pre-test API calls or post test validation API calls relevant to the test being run and failing as they have not been developed yet.
 
-### 1. Foundation Endpoints ###
+### 1. Foundation endpoints ###
 
 | Order | API Endpoint | Test Suite Endpoint Dependencies | Reason For Dependency |
 | ------------- | ------------- | ------------- | ------------- |
-| #1 | Find an organization | - | The find an organization capability is not dependent on any other capablitiy within the automated test suite. |
-| #2 | Read an Organization | Find an organization | `Find an organization` is a dependancy for `Read an organization` as it is used to lookup the local identifier from the organization code which is setup in the test suite organization mapping csv file. |
+| #1 | Find an organization | - | The find an organization capability is not dependent on any other capability within the automated test suite. |
+| #2 | Read an Organization | Find an organization | `Find an organization` is a dependency for `Read an organization` as it is used to lookup the local identifier from the organization code which is setup in the test suite organization mapping csv file. |
 | #3 | Find a practitioner | Read an Organization | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource. |
 | #4 | Read a practitioner | Find a practitioner / Read an organization | `Find a practitioner` is required to lookup the logical identifier, from the practitioner user id setup in the test suite practitioner mapping csv file, to use for the read. The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource.|
 | #5 | Find a patient | Read and organization / Read a practitioner | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource. The `Read a practitioner` endpoint is required to validate the “careProvider” reference if returned within the patient resource. |
