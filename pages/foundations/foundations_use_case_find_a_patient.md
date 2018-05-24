@@ -61,7 +61,7 @@ Provider systems:
 
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
 
-For example the:
+For example, the:
 
 - business identifier `[system]` is not recognised/supported by the Provider system
 - business identifier fails structural validation checks (that is, not enough digits to be a valid NHS number)
@@ -86,7 +86,7 @@ Provider systems:
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
 - SHALL include all relevant business `identifier` details (that is, NHS number) for each `Patient` resource.
 - SHALL supply gender, name and birth date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
-- SHALL populate the preferred branch surgery within the registration details extension of the patient resource with a reference to a location resource which represents the patients preferred branch surgery including ODS Site Code where available OR the GP Practice where they are registered if there is no preferred branch surgery including the Organization ODS Code identifier.
+- SHALL populate the preferred branch surgery within the registration details extension of the patient resource with a reference to a location resource which represents the patient's preferred branch surgery including ODS Site Code where available OR the GP Practice where they are registered if there is no preferred branch surgery including the Organization ODS Code identifier.
 - The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name registered on the spine which is returned by a PDS lookup for the patient.
 
 
