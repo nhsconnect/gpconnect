@@ -4,7 +4,7 @@ keywords: foundations, location, nhsnumber, pid, read
 tags: [foundations,use_case]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_read_a_location.html
-summary: "Use case for reading a location resource."
+summary: "Use case for reading a location resource"
 ---
 
 ## Prerequisites ##
