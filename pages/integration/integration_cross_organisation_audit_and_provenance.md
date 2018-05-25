@@ -4,7 +4,7 @@ keywords: spine, ssp, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_cross_organisation_audit_and_provenance.html
-summary: "Overview of how audit and provenance data transported over GP Connect FHIR interfaces."
+summary: "Overview of how audit and provenance data transported over GP Connect FHIR interfaces"
 ---
 
 ## Governance ##
@@ -69,7 +69,7 @@ An example such an HTTP header is given below:
      Authorization: Bearer jwt_token_string
 ```
 
-Provider systems SHALL respond to oAuth Bearer Token errors inline with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
+Provider systems SHALL respond to oAuth Bearer Token errors in line with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
 
 It is highly recommended that standard libraries are used for creating the JWT as constructing and encoding the token manually may lead to issues with parsing the token. A good source of information about JWT and libraries to use can be found on the [JWT.io site](https://jwt.io/).
 
