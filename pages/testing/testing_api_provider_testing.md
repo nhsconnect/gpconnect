@@ -15,7 +15,7 @@ Provider systems SHALL undertake a three-stage testing process:
 
 ## Technical accreditation ##
 
-Provider systems SHALL be (or have previously been) tested and accreditated to establish baseline Spine connectivity prerequisites:
+Provider systems SHALL be (or have previously been) tested and accredited to establish baseline Spine connectivity prerequisites:
 
  - N3 connectivity / ASID / PKI Certificate
  - [Personal Demographic Service (PDS) integration](integration_personal_demographic_service.html)
