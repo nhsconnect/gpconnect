@@ -4,49 +4,49 @@ keywords: foundations, patient, nhsnumber, pid, register
 tags: [foundations,use_case]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_register_a_patient.html
-summary: "Use case for registering a patient with an organization."
+summary: "Use case for registering a patient with an organization"
 ---
 
-## API Use Case ##
+## API use case ##
 
-The "Register a patient" capability should either create a new temporary patient registration or re-activate an existing "Inactive" patient registration, as a temporary patient registration within the GP Practice system ([Definition of a GP Connect Active Patient](/overview_glossary.html#active-patient)).
+The "Register a patient" capability should either create a new temporary patient registration or re-activate an existing "Inactive" patient registration, as a temporary patient registration within the GP practice system ([Definition of a GP Connect active patient](/overview_glossary.html#active-patient)).
 
-This specification describes a single use case. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+This specification describes a single use case. For complete details and background please see the [Foundations capability bundle](foundations.html).
 
-{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It is not a full patient registration endpoint, and does not change a patients' registered practice information as held on Personal Demographics Service (PDS)" %}
+{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It is not a full patient registration endpoint and does not change a patient's registered practice information as held on Personal Demographics Service (PDS)." %}
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details 
 
 ## Prerequisites ##
 
 ### Consumer ###
 
-The Consumer system:
+The consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
 
 
-## API Usage ##
+## API usage ##
 
-### Request Operation ###
+### Request operation ###
 
-#### FHIR Relative Request ####
+#### FHIR relative request ####
 
 ```http
 POST /Patient/$gpc.registerpatient
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.registerpatient
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -75,7 +75,7 @@ Ssp-To: 200000000116
 Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1
 ```
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 The following data-elements are mandatory (i.e. data SHALL be present):
 - A `registerPatient` parameter containing a patient resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile. This is the patient who you want to be registered. Within this resource: 
@@ -95,7 +95,7 @@ The following data-elements MAY be populated by the consumer:
   
   - the `preferredBranchSurgery` within the `RegistrationDetails` extension element of the patient resource MAY be populated with a location reference where available and relevant to the registration.
   
-    For example when the consumer is using the patient registration as part of an appointment booking they will have previously selected a slot which will be associated with a location. The consumer may use this location as the preferred branch surgery within the patient registration.
+    For example, when the consumer is using the patient registration as part of an appointment booking they will have previously selected a slot which will be associated with a location. The consumer may use this location as the preferred branch surgery within the patient registration.
 
 	
 The following data-elements SHALL be processed by the provider:
@@ -246,9 +246,9 @@ Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 ```http
 HTTP/1.1 200 OK
@@ -258,7 +258,7 @@ Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
