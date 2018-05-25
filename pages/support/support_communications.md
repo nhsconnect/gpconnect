@@ -14,7 +14,7 @@ For general enquires please send an email to the [GP Connect team inbox](mailto:
 
 ## Forums
 
-> A two-way channel to allow the supplier community to engage with each other and NHS Digital to seek suport related to product development.
+> A two-way channel to allow the supplier community to engage with each other and NHS Digital to seek support related to product development.
 
 - [GP Connect forum](https://interopen.ryver.com/index.html#forums/1108379)
 
@@ -22,7 +22,7 @@ For general enquires please send an email to the [GP Connect team inbox](mailto:
 
 ## Issues
 
-> A system used so that suppliers can report errors and ommisions in the documentation, and to help keep track of the progress of resolving these.
+> A system used so that suppliers can report errors and omissions in the documentation, and to help keep track of the progress of resolving these.
 
 - [GP Connect issues](https://github.com/nhsconnect/gpconnect/issues){:target="_blank"}
 
