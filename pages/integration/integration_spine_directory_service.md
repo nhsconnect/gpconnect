@@ -4,7 +4,7 @@ keywords: spine, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_spine_directory_service.html
-summary: "Overview of the role of the Spine Directory Services (SDS) within GP Connect."
+summary: "Overview of the role of the Spine Directory Services (SDS) within GP Connect"
 ---
 
 ## Spine Directory Service (SDS) ##
@@ -271,7 +271,7 @@ It is the responsibility of the SSP to perform lookups to determine consumer acc
 
 ## Code examples
 
-Code examples for the interaction with the SDS are available in the following github repositories. The respositories contain a `SpineDirectoryService` folder which holds the code examples for interacting with the SDS.
+Code examples for the interaction with the SDS are available in the following github repositories. The repositories contain a `SpineDirectoryService` folder which holds the code examples for interacting with the SDS.
 
 [.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
 
