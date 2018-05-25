@@ -4,7 +4,7 @@ keywords: spine, proxy, ssp, security
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_spine_security_proxy.html
-summary: "Overview of the role of the Spine Security Proxy (SSP) within GP Connect."
+summary: "Overview of the role of the Spine Security Proxy (SSP) within GP Connect"
 ---
 
 ## Spine Security Proxy (SSP) ##
@@ -27,7 +27,7 @@ Once the provider server's endpoint is determined using the SDS, an HTTP request
 GET https:/[proxy_server]/https://[provider_server]/[fhir_base]/[fhir_request]
 ```
 
-A numder of Spine specific HTTP headers also need to be populated with the intended Spine interactionID and system ASIDs.
+A number of Spine specific HTTP headers also need to be populated with the intended Spine interactionID and system ASIDs.
 
 | Header               | Value |
 |----------------------|-------|
