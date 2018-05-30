@@ -199,7 +199,23 @@ Content-Length: 1464
 
 #### Payload Response Body ####
 
-Provider systems:
+***Consumer systems:***
+
+Consumers need to be aware of the following variance in the returned FHIR resources by the different providers:
+
+* The `Bundle` resource within the response will contain a different value within the `type` elemnet from the different providers as per the table below:
+
+  | Provider | Bundle type element value |
+  |---|---|
+  | MicroTest | document |
+  | Vision | document |
+  | EMIS | searchset |
+  | TPP | - |
+
+  Consumers SHALL not validate the bundle `type` element when processing the response from the provider, the bundle can be processed as a `searchset` type bundle even if the returned type is `document` and this should not cause a processing issues as the structure is the same.
+  
+
+***Provider systems:***
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of a care record section.
 - SHALL return the care record section as valid XHTML inline with the [FHIR Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) guidance.
