@@ -74,7 +74,9 @@ Provider systems SHALL respond to oAuth Bearer Token errors inline with [RFC 675
 
 ### JSON Web Tokens (JWT) ###
 
-Consumer system SHALL generate a new JWT for each API request.
+- Consumer system SHALL generate a new JWT for each API request containing the claims outlined in the table below.
+- Where the claim contains a FHIR resource the FHIR resource should conform to the GP Connect FHIR resource profiles outlined on the [FHIR Resources](datalibraryaccessRecord.html) page.
+  - An exeption to this requirement is that in the `requesting_practitioner` claim the `Practitioner` resource should contain an identifier with the system `"http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was a error during testing and assurance which resulted in the providers validate that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included.
 
 | Claim | Priority | Description | Fixed Value | Dynamic Value |
 |-------|----------|-------------|-------------|------------------|
@@ -118,7 +120,7 @@ Consumer systems SHALL generate an Unsecured JSON Web Token (JWT) using the "non
 
 Consumer systems SHALL generate an empty signature.
 
-The final output is three Base64 strings separated by dots.
+The final output is three base64url encoded strings separated by dots.
 
 For example:
 
