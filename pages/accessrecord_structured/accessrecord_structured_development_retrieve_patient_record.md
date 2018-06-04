@@ -144,45 +144,38 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 ```json
 {
-  "meta": {
-    "profile": {
-      "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
-    }
-  },
-  "parameter": [
-    {
-      "name": "patientNHSNumber",
-      "valueIdentifier": {
-        "system": "https://fhir.nhs.uk/Id/nhs-number",
-        "value": "9999999999"
-      }
-    },
-    {
-      "name": "includeAllergies",
-      "part": [
-        {
-          "name": "includeResolvedAllergies",
-          "valueBoolean": true
-        }
-      ]
-    },
-    {
-      "name": "includeMedication",
-      "part": [
-        {
-          "name": "includePrescriptionIssues",
-          "valueBoolean": true
-        },
-        {
-          "name": "medicationDatePeriod",
-          "valuePeriod": {
-            "start": "2017-01-01",
-            "end": "2018-02-01"
-          }
-        }
-      ]
-    }
-  ]
+	"meta": {
+		"profile": ["https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"]
+	},
+	"resourceType": "Parameters",
+	"parameter": [{
+		"name": "patientNHSNumber",
+		"valueIdentifier": {
+			"system": "https://fhir.nhs.uk/Id/nhs-number",
+			"value": "9999999999"
+		}
+	},
+	{
+		"name": "includeAllergies",
+		"part": [{
+			"name": "includeResolvedAllergies",
+			"valueBoolean": true
+		}]
+	},
+	{
+		"name": "includeMedication",
+		"part": [{
+			"name": "includePrescriptionIssues",
+			"valueBoolean": true
+		},
+		{
+			"name": "medicationDatePeriod",
+			"valuePeriod": {
+				"start": "2017-06-04",
+				"end": "2018-06-19"
+			}
+		}]
+	}]
 }
 ```
 
