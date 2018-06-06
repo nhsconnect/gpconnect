@@ -23,14 +23,13 @@ The profiled FHIR resources required for each of the GP Connect capability packs
 * [Appointment Management](datalibraryappointment.html)
 * [Task Management](tasks.html)
 
-
 ## General FHIR resource populating requirements
 
 ### Population of optional elements
 
 The purpose of GP Connect is to make the patient data stored within the GP systems available externally so that it can be used to help improve the quality of patient care across the NHS. To give patients the best care possible the data made available through the GP Connect API should be as complete as possible. Therefore, it is expected that both provider and consumers:
 
-* ***SHALL*** populate all the elements within FHIR resources where data is available within their system despite the cardinality of the elements within the FHIR resource profiles.
+* ***SHALL*** populate all the elements within FHIR resources subject to any Capability-specific variance, where data is available within their system irrespective of the cardinality of the elements within the FHIR resource profiles.
 
 As GP Connect has made the FHIR resources open to aid in interoperability this means that there are some elements included in FHIR profiles which are not applicable to our deployment settings, for example 'specialism' in the appointment resource. For these elements if the provider or consumer does not have data stored within their system the element will not be populated.
 
