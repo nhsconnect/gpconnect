@@ -13,7 +13,7 @@ The typical flow to amend an appointment is:
 
  1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
- 3. Choose an `Appointment` resource and update its `description` or `comment` details.
+ 3. Choose an `Appointment` resource and update its `description` and/or `comment`. If the appointment has been cancelled then the `cancellation reason` may also be updated.
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
