@@ -84,6 +84,7 @@ The following data elements are mandatory (that is, data MUST be present):
   - the contained organization resource SHALL represent the organization booking the appointment.
   - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile.
   - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
+  - the contained organization resource SHALL include the `type` element with a value matching the organization type sent as a `searchFilter` with the `Search for free slots` request.
 - the `created` element SHALL be populated with the date and time the appointment was created.
 
 The following data elements SHOULD be included when available:
