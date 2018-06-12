@@ -20,9 +20,9 @@ GP Connect has a number of architectural design principles, some of which have d
 
 ### GP Connect API implemented at an organization level
 
-The GP Connect API has been designed and developed to expose data at an organization level with a single fhir server per organization. GP Connects definition of an organization is the legal entity of an organization represented by an ODS Code. 
+The GP Connect API has been designed and developed to expose data at an organization level with a single fhir server per organization. The GP Connect definition of an organization is the legal entity of an organization represented by an ODS Code. 
 
-The decision was made to expose the API at and organization level and use the organization ODS code as it is the only commonly used identifier across the different GP system providers. The organization ODS code of a patients registered GP practice is also stored with their demographics record on the Spine, therefore making it available to a consumer of the GP Connect API and allowing them to perform the endpoint lookup process required to target their request at the GP Practice system which holds the patient record.
+The decision was made to expose the API at and organization level and tie the organization ODS code to the fhir server endpoint, as the ODS code is the only commonly used identifier across the different GP system providers. The organization ODS code of a patients registered GP practice is stored with their demographics record on the Spine, therefore making it available to a consumer of the GP Connect API and this allows the consumer to perform the endpoint lookup process required to target their request at the GP Practice system which holds the patient record.
 
 As the GP Connect API and fhir server is exposed at an organization level this results in the following architectural requirements:
 - Branch surgeries of the main organization will expose their patient data and appointment books through the main organization fhir server and not their own GP Connect fhir server.
@@ -31,9 +31,9 @@ As the GP Connect API and fhir server is exposed at an organization level this r
 
 ### Distribution of complexity
 
-GP Connect follows the basic principle of API design that "APIs interfaces are designed always with consumers in mind". The design goal is where possible to present an interface which maximises ease of use for a consumer.
+GP Connect follows the basic principle of API design that "APIs interfaces are designed always with consumers in mind". The design goal is to present an interface which maximises ease of use for a consumer.
 
-The expected GP Connect ecosystem sees few "providers" and many "consumers" and therefore it is sensible to place complexity on the provider rather than in the consumer. Therefore where a design decision is required in which the question of where to place complexity is a key point, the default GP Connect position is that complexity should be hidden behind the API interface in providers business logic. GP Connect may diverge from this principle where there is a demonstrated overriding need to have complexity within the consumer rather than the provider.
+The expected GP Connect ecosystem sees few "providers" and many "consumers" and therefore it is sensible to place complexity on the provider rather than in the consumer. Therefore where a design decision is required in which the question of where to place complexity is a key point, the default GP Connect position is that complexity should be hidden behind the API interface in providers business logic. GP Connect may diverge from this principle where there is a demonstrated overriding need to have complexity within the consumer rather than in the provider.
 
 
 ## Core API design principles
@@ -54,4 +54,4 @@ Examples of FHIR principles that GP Connect follows are:
 
 ### Care Connect
 
-GP Connect aims to align and work with Care Connect where possible to maintain a wider interoperability.
+GP Connect has worked to align as closely as possible with the Care Connect API, with an aim to maintain a wider interoperability. 
