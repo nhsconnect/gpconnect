@@ -257,7 +257,7 @@ Provider systems:
 				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
 				"valueCodeableConcept": {
 					"coding": [{
-						"system": "https://fhir.nhs.uk/STU3/ValueSet/GPConnect-PractitionerRole-1",
+						"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
 						"code": "R0260",
 						"display": "General Medical Practitioner"
 					}]
