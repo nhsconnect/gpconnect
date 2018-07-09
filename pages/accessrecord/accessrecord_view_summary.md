@@ -1,34 +1,151 @@
 ---
-title: Summary
-keywords: getcarerecord, view, section, summary
+title: Administrative Items
+keywords: getcarerecord, view, section, administrative items
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
-permalink: accessrecord_view_summary.html
-summary: "Summary HTML View."
+permalink: accessrecord_view_administrative_items.html
+summary: "Administrative Items HTML View."
 ---
 
-## Summary ##
+## Administrative Items ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
-| ------------ | ------------ |
-| SUM | Summary | Yes | Yes | Yes | Yes |
+| ------------ | ------------ |-----|------|------|-----------|
+| ADM | Administrative Items | Yes | No<sup>1</sup> | Yes | Yes |
 
-### Active Problems and Issues ###
+<sup>1</sup> EMIS have indicated they can't support extracting administrative items.
 
-Please see HTML guidance in the [Active Problems and Issues](accessrecord_view_problems.html#active-problems-and-issues) section.
+### Clinical Narrative ###
 
-### Current Medication Issues ###
+These include tasks such as scheduling and administering clinical care encounters, Clinical communication with other care organisations, administering and monitoring of critical safety processes such as repeat medication administration and call/recall for care.
 
-Please see HTML guidance in the [Current Medication Issues](accessrecord_view_medications.html#current-medication-issues) section.
+### Purpose ###
 
-### Current Repeat Medications ###
+The purpose of this section is to provide information for the health care teams on the recorded management and administrative processes and activity to support safe and effective care.
 
-Please see HTML guidance in the [Current Repeat Medications](accessrecord_view_medications.html#current-repeat-medications) section.
+### Sections and Subsections ###
 
-### Current Allergies and Adverse Reactions ###
+There is only a single main section for Administrative Items with no subsections.
 
-Please see HTML guidance in the [Current Allergies and Adverse Reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions) section.
+### Date Filter ###
 
-### Last 3 Encounters ###
+A date filter is applicable for the Administrative Items section.
 
-Please see HTML guidance in the [Encounters](accessrecord_view_encounters.html) section.
+### Section Banner Content ###
+
+Providers message describing at a summary level how they have populated this section:
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>This system does not support retrieval of Administrative Items data.</li>
+				<li>This data may still exist in the source system.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
+  </div>
+  <div class="panel-body">
+		<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
+			<ul>
+				<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
+			</ul>
+		<p><b>Displayed dependent on date range:</b></p>
+			<ul>
+				<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+				<li>All Data Items from DD-MMM-YYYY.</li>
+				<li>All Data Items until DD-MMM-YYYY.</li>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>If GP2GP in progress:</b></p>
+			<ul>
+				<li>Record is in transit and may be incomplete.</li>
+			</ul> 
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is not applied:</b></p>
+			<ul>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is applied:</b></p>
+			<ul>
+				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions etc.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is not applied:</b></p>
+			<ul>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is applied:</b></p>
+			<ul>
+				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+			</ul>
+  </div>
+</div>
+
+### Table Construction Requirements ###
+
+Providers must adhere to the table construction requirements listed below:
+
+- Table header **SHALL** be "Administrative Items".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+
+
+### Table Columns ###
+
+Providers must return all the columns as described in the table below:
+
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Date` | The date of the administrative item | `dd-Mmm-yyyy` |
+| <center>2</center> | `Entry` | A short human readable free-text title for the administrative item | `free-text` |
+| <center>3</center> | `Details` | Longer human readable details for the administrative item, codes such as READ or SNOMED **SHALL NOT** be included. | `free-text` |
+
+
+
+### HTML View ###
+
+{% raw %}
+```html
+<div>
+	<h2>Administrative Items</h2>
+	<table>
+		<thead>
+			<tr>
+				<th>Date</th>
+				<th>Entry</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in items">
+				<td>{{item.date}}</td>
+				<td>{{item.entry}}</td>
+				<td>{{item.details}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+```
+{% endraw %}
