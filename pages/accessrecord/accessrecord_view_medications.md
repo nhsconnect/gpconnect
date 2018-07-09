@@ -86,7 +86,7 @@ Providers message describing at a summary level how they have populated this sec
 | INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to acute and repeat medications). |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups. <br><br> This categorisation is a flag on the database maintained either manually by the doctor or, more likely, automatically by the system (if a drug hasn’t been issued for more than a configurable period, typically 6 months, then a drug will be automatically moved from the ‘current’ list to the ‘removed’ list). <br><br> Whichever list a drug is in has no bearing on what other data is held on the system about the patient’s history with the drug. No data is lost when moving a drug from one list to the other. |
 
-### Discontinued/Cancelled/Naturally endded Medications ###
+### Discontinued/Cancelled/Naturally ended Medications ###
 
 {% include note.html content="It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally Ended” medications." %} 
 
