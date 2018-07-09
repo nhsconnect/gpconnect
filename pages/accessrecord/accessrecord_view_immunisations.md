@@ -13,42 +13,89 @@ summary: "Immunisations HTML View."
 | ------------ | ------------ |-----|------|------|-----------|
 | IMM | Immunisations | Yes | Yes | Yes | Yes |
 
+### Clinical Narrative ###
+
+Immunisation is the process whereby a person is treated to provide immunity or resistance to an infectious disease, typically by the administration of a vaccine.
+
 ### Purpose ###
 
-A list of all immunisations related to a patient ordered by date descending (i.e. most recent date/time first).
+The purpose of this section is to provide the health care professional with information about any immunisations that have been administered to the patient.
 
-### Section Banner Content Message ###
+### Sections and Subsections ###
 
-Providers message describing at a summary level how they have populated this section, to include the following:
+There is only a single main section for the Immunisations section with no subsections.
 
-| Provider | Message |
-| ------------ | ------------ |-
-| EMIS| Part and Content not supported |
-| TPP|  |
-| INPS|  Part = Stage, Contents = Type of Immunisation  |
-|Microtest|   |
+### Date Filter ###
 
+Date filters are not supported for this section all relevant records shall be returned.
 
-### Date Horizon ###
+### Section Banner Content ###
 
-All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
+Providers message describing at a summary level how they have populated this section:
 
-### Table Construction ###
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains coded immunisations on the patient record; some immunisations may exist as issued medications also.</li>
+				<li>Content and Part not supported.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
+  </div>
+  <div class="panel-body">
+		<p><b>Displayed dependent on date range:</b></p>
+			<ul>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>If GP2GP in progress:</b></p>
+			<ul>
+				<li>Record is in transit and may be incomplete.</li>
+			</ul> 
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+	No section banner text displayed.
+  </div>
+</div>
 
-- Table header SHALL be "Immunisations".
-- Table columns SHALL be ordered left-to-right (1..N).
-- Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by date descending (i.e. most recent date/time first).
+### Table Construction Requirements ###
+
+Providers must adhere to the table construction requirements listed below:
+
+- Table header **SHALL** be "Immunisations".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+
 
 ### Table Columns ###
 
-1. Date
-	- the date of immunisation.
-2. Vaccination 
-3. Part
-4. Contents
-5. Details
-	- longer human readable free-text details for the immunisation.
+Providers must return all the columns as described in the table below:
+
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Date` | The date of the immunisation | `dd-Mmm-yyyy` |
+| <center>2</center> | `Vaccination` | A short human readable free-text title for the immunisation | `free-text` |
+| <center>3</center> | `Part` | Part number of immunisation | `integer` |
+| <center>4</center> | `Contents` | Contents of the immunisation | `free-text` |
+| <center>5</center> | `Details` | Longer human readable details for the immunisation | `free-text` |
+
 
 ### HTML View ###
 
@@ -79,3 +126,12 @@ All relevant records SHALL be returned (i.e. no time limit/filtering is to be ap
 </div>
 ```
 {% endraw %}
+
+{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %} 
+
+## Example View ##
+
+<p data-height="425" data-theme-id="light" data-slug-hash="MXxLwX" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Immunisations" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/MXxLwX/">Immunisations</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/MXxLwX) for example of using AngularJS to generate table content" %}
