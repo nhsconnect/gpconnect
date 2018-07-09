@@ -13,50 +13,116 @@ summary: "Administrative Items HTML View."
 | ------------ | ------------ |-----|------|------|-----------|
 | ADM | Administrative Items | Yes | No<sup>1</sup> | Yes | Yes |
 
-<sup>1</sup> EMIS have indicated they can't currently support extracting administrative items.
+<sup>1</sup> EMIS have indicated they can't support extracting administrative items.
+
+### Clinical Narrative ###
+
+These include tasks such as scheduling and administering clinical care encounters, Clinical communication with other care organisations, administering and monitoring of critical safety processes such as repeat medication administration and call/recall for care.
 
 ### Purpose ###
 
-A list of all coded administrative items related to a patient ordered by date descending (i.e. most recent date/time first).
+The purpose of this section is to provide information for the health care teams on the recorded management and administrative processes and activity to support safe and effective care.
 
-{% include tip.html content="This may contain information about letters/mail merging, appointment DNAs, consent recording and other administrative terms recorded by the GP." %}
+### Sections and Subsections ###
 
-### Date Horizon ###
+There is only a single main section for Administrative Items with no subsections.
 
-All relevant<sup>^</sup> records SHALL be returned with-in Consumer supplied date range.
+### Date Filter ###
 
-<sup>^</sup> For GP Connect FoT relevant records are all coded items held in the GP CIS system under the READ code hierarchy for administrative content.
+A date filter is applicable for the Administrative Items section.
 
+### Section Banner Content ###
 
-### Section Banner Content Message ###
+Providers message describing at a summary level how they have populated this section:
 
-Providers message describing at a summary level how they have populated this section, to include the following:
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>This system does not support retrieval of Administrative Items data.</li>
+				<li>This data may still exist in the source system.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
+  </div>
+  <div class="panel-body">
+		<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
+			<ul>
+				<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
+			</ul>
+		<p><b>Displayed dependent on date range:</b></p>
+			<ul>
+				<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+				<li>All Data Items from DD-MMM-YYYY.</li>
+				<li>All Data Items until DD-MMM-YYYY.</li>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>If GP2GP in progress:</b></p>
+			<ul>
+				<li>Record is in transit and may be incomplete.</li>
+			</ul> 
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is not applied:</b></p>
+			<ul>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is applied:</b></p>
+			<ul>
+				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions etc.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is not applied:</b></p>
+			<ul>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is applied:</b></p>
+			<ul>
+				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+			</ul>
+  </div>
+</div>
 
-| Provider | Message |
-| ------------ | ------------ |-
-| EMIS|  |
-| TPP|   |
-| INPS|  |
-|Microtest| Chapter Heading - Read 2 to distinguish the administrative codes (those starting '9' (Administration) and '0' (Occupation)   |
+### Table Construction Requirements ###
 
+Providers must adhere to the table construction requirements listed below:
 
-### Table Construction ###
+- Table header **SHALL** be "Administrative Items".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
-- Table header SHALL be "Administrative Items".
-- Table columns SHALL be ordered left-to-right (1..N).
-- Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by date descending (i.e. most recent date/time first).
 
 ### Table Columns ###
 
-1. Date
-	- the date of administrative item.
-2. Entry<sup>1</sup>
-	- a short free-text human readable description of the administrative item. 
-3. Details<sup>1</sup>
-	- a longer free-text human readable description of the administrative item.  
+Providers must return all the columns as described in the table below:
 
-<sup>1</sup> Codes such as READ or SNOMED SHALL not be included.
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Date` | The date of the administrative item | `dd-Mmm-yyyy` |
+| <center>2</center> | `Entry` | A short human readable free-text title for the administrative item | `free-text` |
+| <center>3</center> | `Details` | Longer human readable details for the administrative item, codes such as READ or SNOMED **SHALL NOT** be included. | `free-text` |
+
+
 
 ### HTML View ###
 
