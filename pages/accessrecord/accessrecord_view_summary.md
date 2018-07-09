@@ -1,35 +1,42 @@
 ---
-title: Administrative Items
-keywords: getcarerecord, view, section, administrative items
+title: Summary
+keywords: getcarerecord, view, section, summary
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
-permalink: accessrecord_view_administrative_items.html
-summary: "Administrative Items HTML View."
+permalink: accessrecord_view_summary.html
+summary: "Summary HTML View."
 ---
 
-## Administrative Items ##
+## Summary ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
-| ------------ | ------------ |-----|------|------|-----------|
-| ADM | Administrative Items | Yes | No<sup>1</sup> | Yes | Yes |
+| ------------ | ------------ |
+| SUM | Summary | Yes | Yes | Yes | Yes |
 
-<sup>1</sup> EMIS have indicated they can't support extracting administrative items.
 
 ### Clinical Narrative ###
 
-These include tasks such as scheduling and administering clinical care encounters, Clinical communication with other care organisations, administering and monitoring of critical safety processes such as repeat medication administration and call/recall for care.
+Clinicians work in busy and time-pressured environments. They need access to high quality, relevant and wherever possible consistent information to support safe, effective and efficient assessment of their patients.
+
+Timely sharing of clinical information is key to the delivery and improvement of safe and effective clinical care.
 
 ### Purpose ###
 
-The purpose of this section is to provide information for the health care teams on the recorded management and administrative processes and activity to support safe and effective care.
+The purpose of this section is to provide a summarised view of the pertinent clinical information regarding a patient within a single screen. This allows a clinician to efficiently peruse key information from the patient’s clinical record and supports clinical decision making.
 
 ### Sections and Subsections ###
 
-There is only a single main section for Administrative Items with no subsections.
+There is only a single main section for the Summary section with 5 subsections:
 
+ - [Active Problems and Issues](accessrecord_view_summary.html#active-problems-and-issues)
+ - [Current Medication Issues](accessrecord_view_summary.html#current-medication-issues)
+ - [Current Repeat Medications](accessrecord_view_summary.html#current-repeat-medications)
+ - [Current Allergies and Adverse Reactions](accessrecord_view_summary.html#current-allergies-and-adverse-reactions)
+ - [Last 3 Encounters](accessrecord_view_summary.html#last-3-encounters)
+ 
 ### Date Filter ###
 
-A date filter is applicable for the Administrative Items section.
+Date filters are not supported for this section all relevant records shall be returned.
 
 ### Section Banner Content ###
 
@@ -42,8 +49,8 @@ Providers message describing at a summary level how they have populated this sec
   <div class="panel-body">
 		<p><b>Always displays this text:</b></p>
 			<ul>
-				<li>This system does not support retrieval of Administrative Items data.</li>
-				<li>This data may still exist in the source system.</li>
+				<li>Non - BNF designated items e.g. local mixtures, have been excluded.</li>
+				<li>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</li>
 			</ul>
   </div>
   <div class="panel-heading">
@@ -53,13 +60,6 @@ Providers message describing at a summary level how they have populated this sec
 		<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
 			<ul>
 				<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
-			</ul>
-		<p><b>Displayed dependent on date range:</b></p>
-			<ul>
-				<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
-				<li>All Data Items from DD-MMM-YYYY.</li>
-				<li>All Data Items until DD-MMM-YYYY.</li>
-				<li>All relevant items.</li>
 			</ul>
 		<p><b>If GP2GP in progress:</b></p>
 			<ul>
@@ -72,80 +72,59 @@ Providers message describing at a summary level how they have populated this sec
   <div class="panel-body">
 		<p><b>Always displays this text:</b></p>
 			<ul>
-				<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</li>
-			</ul>
-		<p><b>Only displayed if a date filter is not applied:</b></p>
-			<ul>
-				<li>All relevant items.</li>
-			</ul>
-		<p><b>Only displayed if a date filter is applied:</b></p>
-			<ul>
-				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+				<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
 			</ul>
   </div>
   <div class="panel-heading">
     <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
   </div>
   <div class="panel-body">
-		<p><b>Always displays this text:</b></p>
-			<ul>
-				<li>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions etc.</li>
-			</ul>
-		<p><b>Only displayed if a date filter is not applied:</b></p>
-			<ul>
-				<li>All relevant items.</li>
-			</ul>
-		<p><b>Only displayed if a date filter is applied:</b></p>
-			<ul>
-				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
-			</ul>
+	No section banner text displayed.
   </div>
 </div>
 
-### Table Construction Requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+## Active Problems and Issues ##
 
-- Table header **SHALL** be "Administrative Items".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+This section is an exact replica of the Active Problems and Issues section, which is the first subsection within the Problems and Issues section. Further detail about this subsection can be found there including any date range filtering and business rules.
+
+Please see HTML guidance in the [Active Problems and Issues](accessrecord_view_problems.html#active-problems-and-issues) section.
 
 
-### Table Columns ###
+## Current Medication Issues ##
 
-Providers must return all the columns as described in the table below:
+This section is an exact replica of the Current Medication Issues section, which is the first subsection within the Medications section. Further detail about this subsection can be found there including any date range filtering and business rules.
 
-| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
-| ------------ | ------------ | ------------ |
-| <center>1</center> | `Date` | The date of the administrative item | `dd-Mmm-yyyy` |
-| <center>2</center> | `Entry` | A short human readable free-text title for the administrative item | `free-text` |
-| <center>3</center> | `Details` | Longer human readable details for the administrative item, codes such as READ or SNOMED **SHALL NOT** be included. | `free-text` |
+Please see HTML guidance in the [Current Medication Issues](accessrecord_view_medications.html#current-medication-issues) section.
 
 
+## Current Repeat Medications ##
 
-### HTML View ###
+This section is an exact replica of the Current Repeat Medications section, which is the second subsection within the Medications section. Further detail about this subsection can be found there including any date range filtering and business rules.
 
-{% raw %}
-```html
-<div>
-	<h2>Administrative Items</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Date</th>
-				<th>Entry</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.details}}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-```
-{% endraw %}
+Please see HTML guidance in the [Current Repeat Medications](accessrecord_view_medications.html#current-repeat-medications) section.
+
+
+## Current Allergies and Adverse Reactions ##
+
+This section is an exact replica of the Current Allergies and Adverse Reactions section, which is the first subsection within the Allergies and Adverse Reactions section. Further detail about this subsection can be found there including any date range filtering and business rules.
+
+Please see HTML guidance in the [Current Allergies and Adverse Reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions) section.
+
+
+## Last 3 Encounters ##
+
+This section is an exact replica of the Encounters section with a filter applied to show the three most recent encounters. Further detail about this section can be found there including any date range filtering and business rules.
+
+{% include important.html content="the Section title for Encounters on the Summary View should explicitly state 'Last 3 Encounters'.  The columns and content should be as per the HTML guidance for Encounters with the exception of only 3 rows in the table." %}  
+Please see HTML guidance in the [Encounters](accessrecord_view_encounters.html) section.
+
+
+
+
+## Example View ##
+
+<p data-height="1420" data-theme-id="light" data-slug-hash="opXBjM" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Patient Summary" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/opXBjM/">Patient Summary</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/opXBjM) for example of using AngularJS to generate table content" %}
