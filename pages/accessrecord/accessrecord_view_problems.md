@@ -13,146 +13,319 @@ summary: "Problems HTML View."
 | ------------ | ------------ |-----|------|------|-----------|
 | PRB | Problems and Issues | Yes | Yes | Yes | Yes |
 
+
+### Clinical Narrative ###
+
+Any issue that is significant to a patient that impacts their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
+
+### Purpose ###
+
+The purpose of this section is to provide information about a patient’s significant problems and issues which will inform, or may have previously informed the clinical decision-making process.
+
+
+### Sections and Subsections ###
+
 Contains two sections:
 
  - [Active Problems and Issues](accessrecord_view_problems.html#active-problems-and-issues)
  - [Inactive Problems and Issues](accessrecord_view_problems.html#inactive-problems-and-issues)
 
+### Date Filter ###
 
-### Section Banner Content Message ###
+A date filter is applicable for the Problems and Issues section.
 
-Providers message describing at a summary level how they have populated this section, to include the following:
+### Section Banner Content ###
 
-| Provider | Message |
-| ------------ | ------------ |-
-| EMIS|  |
-| TPP| Section includes Summary Items  |
-| INPS| All problems included in Active Section |
-|Microtest|  Significance represents Priority of High, Medium, Low  |
+Providers message describing at a summary level how they have populated this section:
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</li>
+				<li>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is applied:</b></p>
+			<ul>
+				<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or RCGP exclusions.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Section includes problem and summary items.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+    No section banner text displayed.
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+    No section banner text displayed.
+  </div>
+</div>
 
 
 ## Active Problems and Issues ##
 
+### Clinical Narrative ###
+
+Any active issue that is significant to a patient and affects their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
+
 ### Purpose ###
 
-A list of active problems and issues related to a patient ordered by date descending (i.e. most recent date/time first).
+The purpose of this section is to provide information about a patient’s current and potentially relevant significant problems and issues which will inform the clinical decision-making process.
 
-### Date Horizon ###
+### Subsection Banner Content ###
 
-All relevant records SHALL be returned (i.e. no time limit/filtering is to be applied).
+Providers message describing at a summary level how they have populated this section:
 
-### Table Construction ###
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
+  </div>
+  <div class="panel-body">
+		<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
+			<ul>
+				<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
+			</ul>
+		<p><b>Displayed dependent on date range:</b></p>
+			<ul>
+				<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+				<li>All Data Items from DD-MMM-YYYY.</li>
+				<li>All Data Items until DD-MMM-YYYY.</li>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>If GP2GP in progress:</b></p>
+			<ul>
+				<li>Record is in transit and may be incomplete.</li>
+			</ul> 
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
+				<li>All problems included in Active Section.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is applied:</b></p>
+			<ul>
+				<li>For the period 'DD-MMM-YYYY' to 'DD-MMM-YYYY'.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms & Conditions that have been designated as Problems used to link together related information.</li>
+			</ul>
+  </div>
+</div>
 
-- Table header SHALL be "Active Problems and Issues".
-- Table columns SHALL be ordered left-to-right (1..N).
-- Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by start date descending (i.e. most recent date/time first).
+### Table Construction Requirements ###
+
+Providers must adhere to the table construction requirements listed below:
+
+- Table header **SHALL** be "Active Problems and Issues".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
 ### Table Columns ###
 
-1. Start Date
-	- the start date of the problem.
-2. Entry
-	- a short human readable free-text title for the problem.
-3. Significance
-	- the significance of the problem (i.e. Major or Minor).
-4. Details
+Providers must return all the columns as described in the table below:
+
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
+| <center>2</center> | `Entry`| A short human readable title for the problem | `free-text` |
+| <center>3</center> | `Significance`| The significance of the problem (i.e. Major or Minor) | `free-text` |
+| <center>4</center> | `Details` | Longer human readable details for the problem | `free-text` |
+
+
 
 ### HTML View ###
 
 {% raw %}
 ```html
-<div>
-	<h2>Active Problems and Issues</h2>
-	<table>
+<div ng-controller="ctrl">
+	<h3>Active Problems and Issues</h3>
+	<table class="table">
 		<thead>
 			<tr>
-				<th>Start Date</th>
-				<th>Entry</th>
-				<th>Significance</th>
-				<th>Details</th>
+				<th class="col-sm-2">Start Date</th>
+				<th class="col-sm-2">Entry</th>
+				<th class="col-sm-2">Significance</th>
+				<th class="col-sm-2">Details</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.significance}}</td>
-				<td>{{item.details}}</td>
+			<tr ng-repeat="x in records" class="table">
+				<td class="col-sm-2">{{x.start}}</td>
+				<td class="col-sm-2">{{x.entry}}</td>
+				<td class="col-sm-2">{{x.significance}}</td>
+				<td class="col-sm-2">{{x.details}}</td>
 			</tr>
-		</tbody>
 	</table>
 </div>
 ```
 {% endraw %}
+
 
 ## Inactive Problems and Issues ##
 
+### Clinical Narrative ###
+
+Any inactive issue that was significant to a patient and affected their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
+
 ### Purpose ###
 
-A list of inactive (i.e. end dated) problems and issues related to a patient ordered by date descending (i.e. most recent end? date/time first).
+The purpose of this section is to provide information about a patient’s previous significant problems and issues which may have informed the clinical decision-making process.
 
-### Date Horizon ###
+### Subsection Banner Content ###
 
-All relevant records SHALL be returned with-in Consumer supplied date range.
+Providers message describing at a summary level how they have populated this section:
 
-### Table Construction ###
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</li>
+			</ul>
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
+  </div>
+  <div class="panel-body">
+		<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
+			<ul>
+				<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
+			</ul>
+		<p><b>Displayed dependent on date range:</b></p>
+			<ul>
+				<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+				<li>All Data Items from DD-MMM-YYYY.</li>
+				<li>All Data Items until DD-MMM-YYYY.</li>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>If GP2GP in progress:</b></p>
+			<ul>
+				<li>Record is in transit and may be incomplete.</li>
+			</ul> 
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+	No section banner text to be displayed.
+  </div>
+  <div class="panel-heading">
+    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
+  </div>
+  <div class="panel-body">
+		<p><b>Always displays this text:</b></p>
+			<ul>
+				<li>All relevant items.</li>
+			</ul>
+		<p><b>Only displayed if a date filter is applied:</b></p>
+			<ul>
+				<li>For the period 'DD-MMM-YYYY' to 'DD-MMM-YYYY'</li>
+			</ul>
+  </div>
+</div>
 
-- Table header SHALL be "Inactive Problems and Issues".
-- Table columns SHALL be ordered left-to-right (1..N).
-- Table content SHALL NOT be truncated.
-- Table rows SHALL be ordered by start date descending (i.e. most recent date/time first).
+### Table Construction Requirements ###
 
-If the Provider system does not support Inactive Problems (INPS), then display a message in the Section Banner to indicate 
+Providers must adhere to the table construction requirements listed below:
 
-1. as in the HTML Implementation Guide page
-https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#not-supported
-
-2. that any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section
-
-If the Provider system supports Inactive Problems, but no records exist for the Patient requested, then provide the standard message as specified in the HTML Implementation Guide
-
-https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded
+- Table header **SHALL** be "Inactive Problems and Issues".
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
 ### Table Columns ###
 
-1. Start Date
-	- the start date of the problem.
-2. End Date
-	- the end date of the problem.
-3. Entry
-	- a short human readable free-text title for the problem.
-4. Significance
-	- the significance of the problem (i.e. Major or Minor).
-5. Details
-	- longer human readable free-text details for the problem.
+Providers must return all the columns as described in the table below:
+
+| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| ------------ | ------------ | ------------ |
+| <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
+| <center>2</center> | `End Date` | The end date of the problem | `dd-Mmm-yyyy` |
+| <center>3</center> | `Entry`| A short human readable title for the problem | `free-text` |
+| <center>4</center> | `Significance`| The significance of the problem (i.e. Major or Minor) | `free-text` |
+| <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
+
+
+
+Provider systems not supporting Inactive Problems (e.g. INPS) **SHALL** display a message in the Section Banner to indicate:
+
+- Inactive Problems are not supported as in the [HTML Implementation Guide - Not Supported](https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#not-supported
+) section.
+- That any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section.
+
+Provider systems that do support Inactive Problems, but when no records exist for the requested Patient **SHALL** display the standard [HTML Implementation Guide - Supported But Hasn't Been Recorded](https://nhsconnect.github.io/gpconnect/accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
+
+
 
 ### HTML View ###
 
 {% raw %}
 ```html
-<div>
-	<h2>Inactive Problems and Issues</h2>
-	<table>
+<div ng-controller="ctrl">
+	<h3>Inactive Problems and Issues</h3>
+	<table class="table">
 		<thead>
 			<tr>
-				<th>Start Date</th>
-				<th>End Date</th>
-				<th>Entry</th>
-				<th>Significance</th>
-				<th>Details</th>
+				<th class="col-sm-2">Start Date</th>
+				<th class="col-sm-2">End Date</th>
+				<th class="col-sm-2">Entry</th>
+				<th class="col-sm-2">Significance</th>
+				<th class="col-sm-2">Details</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.start}}</td>
-				<td>{{item.end}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.significance}}</td>
-				<td>{{item.details}}</td>
+			<tr ng-repeat="x in records1" class="table">
+				<td class="col-sm-2">{{x.start}}</td>
+				<td class="col-sm-2">{{x.end}}</td>
+				<td class="col-sm-2">{{x.entry}}</td>
+				<td class="col-sm-2">{{x.significance}}</td>
+				<td class="col-sm-2">{{x.details}}</td>
 			</tr>
-		</tbody>
 	</table>
 </div>
 ```
 {% endraw %}
+
+{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %} 
+
+## Example View ##
+
+<p data-height="500" data-theme-id="light" data-slug-hash="gopbVv" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Problems" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/gopbVv/">Problems</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/gopbVv) for example of using AngularJS to generate table content" %}
