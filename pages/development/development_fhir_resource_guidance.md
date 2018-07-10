@@ -48,6 +48,11 @@ For example, see the [Register a patient request body](foundations_use_case_regi
 
 ## FHIR resource `element type` specific populating requirements
 
+### id
+
+The logical id of all FHIR resources SHALL be populated in accordance with the [FHIR specification requirements](https://www.hl7.org/fhir/STU3/resource.html#id), meaning that population of the element is expected.
+
+
 ### Address
 
 The `address` element exists in many of the FHIR resources used in the GP Connect API. Where an address element is present in a FHIR resource the following population guidance SHALL be followed:
