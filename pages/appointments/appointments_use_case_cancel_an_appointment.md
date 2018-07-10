@@ -74,6 +74,7 @@ Only the following data elements can be modified when performing an appointment 
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details
 
 {% include important.html content="If any content other than the appointment cancellation reason or appointment status is updated the server SHALL reject the amendment and return an error." %}
+{% include note.html content="GP Connect does not impose a character limit on the cancellation reason extension within the cancellation request, but due to differences in the provider system the cancellation reason may be truncated when stored in the provider system due to character limits." %}
 
 On the wire, a JSON serialised request would look something like the following:
 
