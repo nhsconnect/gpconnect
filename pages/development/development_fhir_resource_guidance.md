@@ -1,5 +1,5 @@
 ---
-title: Resource guidance
+title: FHIR Resource guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -11,7 +11,7 @@ GP Connect has specified profiled versions of the international [FHIR Resources]
 
 When creating the profiled FHIR resources GP Connect have aimed to improve interoperability by:
 
-* aligning, where possible, to base FHIR profiles
+* aligning, where possible, to the base FHIR profiles. GP Connect has also aligned, where possible, to the FHIR resource profiles produced by CareConnect and InterOpen
 * not making FHIR profile elements mandatory unless absolute certainty that this cardinality will apply for all existing and future use cases
 * applying must support flags to elements which hold key information within the resources
 
