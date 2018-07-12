@@ -21,7 +21,7 @@ To illustrate this, an example is given below of all the steps required consume 
 
 The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order retrieve a care record in HTML format
 
-![Sequence diagram for booking an appointment end to end interactions](images/integration/Spine_Integration_Illustrated_AccessRecordHTML.png)
+![Sequence diagram for booking an appointment end to end interactions](images/integration/integration_sequence_diagram_html.png)
 
 The steps shown in the diagram are detailed below.
 
