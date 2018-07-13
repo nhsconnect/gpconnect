@@ -135,8 +135,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                         <div id="collapseEleven" class="panel-collapse collapse">
                             <div class="panel-body">
                                 <b>e.g. for wound dressing, suture removal, physiotherapy and general care in the weeks post-discharge.</b>
-
-								<p>Whilst visiting the patient, clinicians can access the patient’s record in order to check on any history and other interventions appropriate to the care being provided.</p>
+<p>Whilst visiting the patient, clinicians can access the patient’s record in order to check on any history and other interventions appropriate to the care being provided.</p>
                             </div>
                         </div>
                     </div>
