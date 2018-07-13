@@ -42,38 +42,61 @@ Date filters are not supported for this section all relevant records shall be re
 
 Providers message describing at a summary level how they have populated this section:
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-		<p><b>Always displays this text:</b></p>
-			<ul>
-				<li>All relevant items.</li>
-				<li>Historical Allergies and Adverse Reactions data is not supported by this system.</li>
-			</ul>
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
-  </div>
-  <div class="panel-body">
-	No section banner text displayed.
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    No section banner text displayed.
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    No section banner text displayed.
-  </div>
+<div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">EMIS banner content (click here to expand/collapse) </a>
+						</div>
+                        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+                                <p><b>Always displays this text:</b></p>
+									<ul>
+										<li>All relevant items.</li>
+										<li>Historical Allergies and Adverse Reactions data is not supported by this system.</li>
+									</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">TPP banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+                                	No section banner text displayed.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+                                	No section banner text displayed.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                	No section banner text displayed.
+                            </div>
+                        </div>
+                    </div>
 </div>
 
+
+
 ### Section Business Rules ###
+
+The following business rules are applicable:
 
 | Supplier | Business Rules |
 |----------|----------------|
@@ -97,43 +120,63 @@ The purpose of this section is to provide the clinician with a list of current a
 
 Providers message describing at a summary level how they have populated this section:
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    No section banner text displayed
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
-  </div>
-  <div class="panel-body">
-		<p><b>Displayed dependent on date range:</b></p>
-			<ul>
-				<li>All relevant items.</li>
-			</ul>
-		<p><b>If GP2GP in progress:</b></p>
-			<ul>
-				<li>Record is in transit and may be incomplete.</li>
-			</ul> 
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-		<p><b>Always displays this text:</b></p>
-			<ul>
-				<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
-				<li>All Allergies Listed in Current Section.</li>
-			</ul>
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    No section banner text displayed.
-  </div>
+<div class="panel-group" id="accordion2">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">EMIS banner content (click here to expand/collapse) </a>
+						</div>
+                        <div id="collapseFive" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+										<p><b>Displayed dependent on date range:</b></p>
+											<ul>
+												<li>All relevant items.</li>
+											</ul>
+										<p><b>If GP2GP in progress:</b></p>
+											<ul>
+												<li>Record is in transit and may be incomplete.</li>
+											</ul> 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">TPP banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+                                	No section banner text displayed.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">INPS banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+                                			<p><b>Always displays this text:</b></p>
+												<ul>
+													<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
+													<li>All Allergies Listed in Current Section.</li>
+												</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">MicroTest banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseEight" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                	No section banner text displayed.
+                            </div>
+                        </div>
+                    </div>
 </div>
+
 
 ### Table Construction Requirements ###
 
@@ -193,41 +236,60 @@ The purpose of this section is to provide the clinician with a list of historica
 
 Providers message describing at a summary level how they have populated this section:
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-		<p><b>Always displays this text:</b></p>
-			<ul>
-				<li>Historical Allergies and Adverse Reactions data is not supported by this system.</li>
-			</ul>
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
-  </div>
-  <div class="panel-body">
-		<p><b>Displayed dependent on date range:</b></p>
-			<ul>
-				<li>All relevant items.</li>
-			</ul>
-		<p><b>If GP2GP in progress:</b></p>
-			<ul>
-				<li>Record is in transit and may be incomplete.</li>
-			</ul> 
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    No section banner text displayed.
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    No section banner text displayed.
-  </div>
+<div class="panel-group" id="accordion3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseNine">EMIS banner content (click here to expand/collapse) </a>
+						</div>
+                        <div id="collapseNine" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+								<p><b>Always displays this text:</b></p>
+									<ul>
+										<li>Historical Allergies and Adverse Reactions data is not supported by this system.</li>
+									</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTen">TPP banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseTen" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+								<p><b>Displayed dependent on date range:</b></p>
+									<ul>
+										<li>All relevant items.</li>
+									</ul>
+								<p><b>If GP2GP in progress:</b></p>
+									<ul>
+										<li>Record is in transit and may be incomplete.</li>
+									</ul> 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">INPS banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseEleven" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+									No section banner text displayed.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTweleve">MicroTest banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseTweleve" class="panel-collapse collapse">
+                            <div class="panel-body">
+                                	No section banner text displayed.
+                            </div>
+                        </div>
+                    </div>
 </div>
 
 
@@ -279,7 +341,7 @@ Providers must return all the columns as described in the table below:
 
 ## Example View ##
 
-<p data-height="500" data-theme-id="light" data-slug-hash="NXqqZW" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Allergies" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/NXqqZW/">Allergies</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="530" data-theme-id="light" data-slug-hash="NXqqZW" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Allergies" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/NXqqZW/">Allergies</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 {% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/NXqqZW) for example of using AngularJS to generate table content" %}

@@ -40,71 +40,90 @@ A date filter is applicable for the Clinical Items section.
 
 Providers message describing at a summary level how they have populated this section:
 
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> EMIS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-		<p><b>Always displays this text:</b></p>
-			<ul>
-				<li>Contains coded clinical items relating to a patients care e.g. procedures, test results, conditions.</li>
-			</ul>
-		<p><b>Only displayed if a date filter is applied:</b></p>
-			<ul>
-				<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or RCGP exclusions.</li>
-			</ul>
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> TPP banner content (click here to expand/collapse)</p>
-  </div>
-  <div class="panel-body">
-		<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
-			<ul>
-				<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
-			</ul>
-		<p><b>Displayed dependent on date range:</b></p>
-			<ul>
-				<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
-				<li>All Data Items from DD-MMM-YYYY.</li>
-				<li>All Data Items until DD-MMM-YYYY.</li>
-				<li>All relevant items.</li>
-			</ul>
-		<p><b>If GP2GP in progress:</b></p>
-			<ul>
-				<li>Record is in transit and may be incomplete.</li>
-			</ul> 
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> INPS banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    	<p><b>Always displays this text:</b></p>
-			<ul>
-				<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
-				<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</li>
-			</ul>
-		<p><b>Only displayed if a date filter is applied:</b></p>
-			<ul>
-				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
-			</ul>
-  </div>
-  <div class="panel-heading">
-    <p class="panel-title"><span class="icon">+</span> MicroTest banner content (click here to expand/collapse) </p>
-  </div>
-  <div class="panel-body">
-    	<p><b>Always displays this text:</b></p>
-			<ul>
-				<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</li>
-			</ul>
-		<p><b>Only displayed if a date filter is not applied:</b></p>
-			<ul>
-				<li>All relevant items.</li>
-			</ul>	
-		<p><b>Only displayed if a date filter is applied:</b></p>
-			<ul>
-				<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
-			</ul>
-  </div>
+<div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">EMIS banner content (click here to expand/collapse) </a>
+						</div>
+                        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+							<p><b>Always displays this text:</b></p>
+								<ul>
+									<li>Contains coded clinical items relating to a patients care e.g. procedures, test results, conditions.</li>
+								</ul>
+							<p><b>Only displayed if a date filter is applied:</b></p>
+								<ul>
+									<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or RCGP exclusions.</li>
+								</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">TPP banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+								<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
+									<ul>
+										<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
+									</ul>
+								<p><b>Displayed dependent on date range:</b></p>
+									<ul>
+										<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+										<li>All Data Items from DD-MMM-YYYY.</li>
+										<li>All Data Items until DD-MMM-YYYY.</li>
+										<li>All relevant items.</li>
+									</ul>
+								<p><b>If GP2GP in progress:</b></p>
+									<ul>
+										<li>Record is in transit and may be incomplete.</li>
+									</ul> 
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse noCrossRef">
+                            <div class="panel-body">
+								<p><b>Always displays this text:</b></p>
+									<ul>
+										<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
+										<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</li>
+									</ul>
+								<p><b>Only displayed if a date filter is applied:</b></p>
+									<ul>
+										<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+									</ul>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /.panel -->
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest banner content (click here to expand/collapse)</a>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <div class="panel-body">
+								<p><b>Always displays this text:</b></p>
+									<ul>
+										<li>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</li>
+									</ul>
+								<p><b>Only displayed if a date filter is not applied:</b></p>
+									<ul>
+										<li>All relevant items.</li>
+									</ul>	
+								<p><b>Only displayed if a date filter is applied:</b></p>
+									<ul>
+										<li>For the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
+									</ul>
+                            </div>
+                        </div>
+                    </div>
 </div>
 
 
@@ -130,6 +149,8 @@ Providers must return all the columns as described in the table below:
 
 
 ### Section Business Rules ###
+
+The following business rules are applicable:
 
 | Supplier | Business Rules |
 |----------|----------------|
@@ -169,7 +190,7 @@ Providers must return all the columns as described in the table below:
 
 ## Example View ##
 
-<p data-height="265" data-theme-id="light" data-slug-hash="ooQORw" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Clinical Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/ooQORw/">Clinical Items</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="400" data-theme-id="light" data-slug-hash="ooQORw" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Clinical Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/ooQORw/">Clinical Items</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 {% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/ooQORw) for example of using AngularJS to generate table content" %}
