@@ -6,7 +6,6 @@ sidebar: accessrecord_sidebar
 permalink: accessrecord_clinical_scenarios.html
 summary: "Potential clinical scenarios for the Access Record capability."
 toc: false
-folder: accessrecord
 ---
 
 <i class='fa fa-check'/> In scope for FoT.
