@@ -1165,6 +1165,27 @@ div.box.box1 {
     }
 }
 
+span.status-draft {
+    background: #babdb6;
+    border: solid #babdb6;
+}
+span.stu3, span.dstu2, span.status-draft, span.status-active, span.status-retired, span.status-unknown {
+    border-radius: 8px;
+    font-size: 8pt;
+    color: white;
+}
+span.stu3 {
+    background: #ad7fa8;
+    border: solid #ad7fa8;
+}
+span.dstu2 {
+    background: #8ae234;
+    border: solid #8ae234;
+}
+span.status-active {
+    background: #008000;
+    border: solid #008000;
+
 div.navbar-collapse .dropdown-menu > li > a {
     background-color: #FAFAFA;
 }
@@ -1185,8 +1206,4 @@ div.navbar-collapse .dropdown-menu > li > a {
 .deprecated h3 {
 	padding-top: 45px;
 	color: #269900;
-}
-
-.panel-body {
-  display: none;
 }
