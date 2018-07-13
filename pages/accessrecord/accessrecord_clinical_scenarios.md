@@ -19,7 +19,7 @@ These have been assembled through engagement during 2015/16 with various clinica
 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class='fa fa-check'></i>Patient's allergies and adverse reactions available to MIU</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class='fa fa-check'></i>&nbsp;Patient's allergies and adverse reactions available to MIU</a>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -119,7 +119,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTen">Community Pharmacy Access</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTen"><i class='fa fa-road'></i>&nbsp;Community Pharmacy Access</a>
                         </div>
                         <div id="collapseTen" class="panel-collapse collapse">
                             <div class="panel-body">
