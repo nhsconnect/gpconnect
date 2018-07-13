@@ -46,8 +46,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
                                 <p>Patient visits GP during a morning appointment and then is presented to A&E later that evening.  Clinician needs to understand all encounters over past 24 hrs to build a complete picture.</p>
-
-								<p>Emergency department able to confirm elderly patient’s known health problems.</p>
+<p>Emergency department able to confirm elderly patient’s known health problems.</p>
                             </div>
                         </div>
                     </div>
