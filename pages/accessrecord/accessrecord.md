@@ -38,7 +38,7 @@ The information "sections" in scope for care record access are:
 11. Patient Demographics (minimal)
 12. Patient's GP Practice and Organisation (minimal)
 
-{% include customcallout.html content="**Important:** The 'Clinical Items' section exists as it is not currently possible to reliably distinguish procedures, diagnoses, symptoms and other clinically coded items into their own sections due to the way they are stored in the primary care record Principal systems. <br/><br/>Initially some sections of the patient care record (marked above with a <sup>*</sup> may not initially be available from all primary care record Principal systems. " type="warning" %}
+{% include customcallout.html content="**Important:** The 'Clinical Items' section exists as it is not currently possible to reliably distinguish procedures, diagnoses, symptoms and other clinically coded items into their own sections due to the way they are stored in the primary care record Principal systems. <br/><br/>Initially some sections of the patient care record (marked above with a <sup>*</sup>) may not initially be available from all primary care record Principal systems. " type="warning" %}
 
 ### Use Cases ###
 
