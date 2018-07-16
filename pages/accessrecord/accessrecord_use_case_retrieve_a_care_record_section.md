@@ -22,8 +22,9 @@ This specification describes a single use cases. For complete details and backgr
 
 The Consumer system:
 
-- SHALL have previously traced the patient's NHS Number using PDS or an equivalent service.
-- SHALL render HTML content in-line with the [Access Record - Development - HTML Implementation Guide](accessrecord_development_html_implementation_guide.html).
+- **SHALL** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- **SHALL** render HTML content in-line with the [Access Record - Development - HTML Implementation Guide](accessrecord_development_html_implementation_guide.html).
 
 ## API Usage ##
 
@@ -43,7 +44,7 @@ POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.g
 
 #### Request Headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -81,7 +82,7 @@ The following data-elements are optional (i.e. can be supplied for certain care 
 
 - the `timePeriod` is the time period over which the requested information is to be returned.
 
-The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/parameters.html) conforming to the `gpconnect-carerecord-operation-1` profiled `OperationDefinition`, see below:
+The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/parameters.html) conforming to the `gpconnect-carerecord-operation-1` profiled `OperationDefinition`, see below:
 
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
 
@@ -136,7 +137,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/DSTU2/para
 </OperationDefinition>
 ```
 
-{% include important.html content="Provider systems SHALL only expose `Patient` resources for patient's who have a valid PDS trace status." %}
+{% include important.html content="Provider systems **SHALL** only expose `Patient` resources for patient's who have a valid PDS trace status." %}
 
 On the wire a JSON serialised `$gpc.getcarerecord` request would look something like the following:
 
@@ -162,16 +163,16 @@ On the wire a JSON serialised `$gpc.getcarerecord` request would look something 
 }
 ```
 
-The Provider system SHALL:
+The Provider system **SHALL**:
 
 - use a default time period if no `timePeriod` parameter is specified for a section that can accept a time period.
 
 <br/>
-Refer to [Access Record - Development - HTML Implementation Guide - Per Section Default Time Frames](accessrecord_development_html_implementation_guide.html#per-section-default-time-frames) for details of the default time periods that SHALL be applied per care record section.
+Refer to [Access Record - Development - HTML Implementation Guide - Per Section Default Time Frames](accessrecord_development_html_implementation_guide.html#per-section-default-time-frames) for details of the default time periods that **SHALL** be applied per care record section.
 
 #### Error Handling ####
 
-The Provider system SHALL return an error if:
+The Provider system **SHALL** return an error if:
 
 - the `patientNHSNumber` is invalid (i.e. fails NHS Number format and check digit tests).
 - the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`.
@@ -180,7 +181,7 @@ The Provider system SHALL return an error if:
 - an invalid `timePeriod` is requested (i.e. end date > start date).
 - a `timePeriod` is specified for a `recordSection` that is time period agnostic (e.g. Patient Summary, Allergies, Medications etc.)
 
-Provider systems SHALL return an [OperationOutcome](https://www.hl7.org/fhir/DSTU2/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -190,8 +191,7 @@ Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_err
 
 ```http
 HTTP/1.1 200 OK
-Cache-Control: no-cache
-Pragma: no-cache
+Cache-Control: no-store
 Content-Type: application/json+fhir; charset=utf-8
 Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
@@ -199,28 +199,12 @@ Content-Length: 1464
 
 #### Payload Response Body ####
 
-***Consumer systems:***
+Provider systems:
 
-Consumers need to be aware of the following variance in the returned FHIR resources by the different providers:
-
-* The `Bundle` resource within the response will contain a different value within the `type` elemnet from the different providers as per the table below:
-
-  | Provider | Bundle type element value |
-  |---|---|
-  | MicroTest | document |
-  | Vision | document |
-  | EMIS | searchset |
-  | TPP | - |
-
-  Consumers SHALL not validate the bundle `type` element when processing the response from the provider, the bundle can be processed as a `searchset` type bundle even if the returned type is `document` and this should not cause a processing issues as the structure is the same.
-  
-
-***Provider systems:***
-
-- SHALL return a `200` **OK** HTTP status code on successful retrieval of a care record section.
-- SHALL return the care record section as valid XHTML inline with the [FHIR Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html) guidance.
-- SHALL include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- SHALL include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`.
+- **SHALL** return a `200` **OK** HTTP status code on successful retrieval of a care record section.
+- **SHALL** return the care record section as valid XHTML inline with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance.
+- **SHALL** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- **SHALL** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`.
 
 ```json
 {
@@ -300,7 +284,7 @@ FhirSerializer.SerializeResourceToJson(resource).Dump();
 ) library." %}
 
 ```java
-FhirContext ctx = FhirContext.forDstu2();
+FhirContext ctx = FhirContext.forstu3();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.fhir.nhs.net/fhir/");
 client.registerInterceptor(new LoggingInterceptor(true));
 
