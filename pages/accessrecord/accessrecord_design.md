@@ -149,18 +149,6 @@ If the patient's record is indicated in the Provider system as not fully-integra
 - <span class="label label-success">SELECTED</span> Provider to supply a warning that the record could be incomplete.
 - Other.
 
-#### SCR Consent Model ####
-
-{% include roadmap.html content="Could potentially be brought into scope for Stage 2 or 3." %}
-
-SCR model (between Consumer and Provider's who have an existing Data Sharing Agreement in place).
-
-- No explicit consent (implied consent).
-	- Core Data Set (Allergies, Adverse Reactions and Medications).
-- Given explicit consent.
-	- Diagnosis, Immunisations, Problems, Procedures and End of Life Preferences.
-- Explicit consent needed (exclusion set).
-	- Sexually Transmitted Infections, Terminations, Gender Reassignment.
 
 ### Section-by-section Time Frames for data ###
 
@@ -171,7 +159,6 @@ Date range handling in the summary per section:
  - No date range due to clinical safety.
  - <span class="label label-success">SELECTED</span> Date range to match workshop agreements.
 	 - Current XYZ (what does it mean for each section)
-	 - Last 3 Months Recent Investigations.
 	 - Last 3 Encounters
 	 - etc.
  - Date range to match SCR time-frames for all sub sections.
@@ -202,8 +189,7 @@ Providers SHALL populate the free-text details field as follows:
 | PRB | Problems | - |
 | MED | Medications | - |
 | OBS | Observations | - |
-| INV | Investigations | - |
-| ALG | Allergies and Sensitivities | - |
+| ALL | Allergies and Sensitivities | - |
 
 ## Operation Definition ##
 
