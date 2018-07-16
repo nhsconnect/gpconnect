@@ -73,7 +73,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarere
 
 #### Payload Request Body ####
 
-The following data-elements are mandatory (i.e. data MUST be present):
+The following data-elements are mandatory (i.e. data **MUST** be present):
 
 - the `patientNHSNumber` is the NHS Number of the patient who's GP care record you want to access.
 - the `recordSection` is the GP care record section you wish to retrieve.
