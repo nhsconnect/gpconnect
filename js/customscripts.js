@@ -53,24 +53,3 @@ $(function() {
         }
     });
 });
-
-//added to expand rows in table
-$(document).ready(function() {
-  $('.panel-title').click(
-    function() {
-      var contentDiv = $(this).parent().next('.panel-body');
-      var icon = $(this).children('span.icon');
-      var isVisible = contentDiv.is(":visible");
-      if (isVisible)
-      {
-        contentDiv.slideUp();        
-        icon.html('+');
-      }
-      else
-      {
-        contentDiv.slideDown();
-        icon.html('-');        
-      }
-    }
-  );
-});
