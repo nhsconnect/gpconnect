@@ -23,7 +23,7 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 ## Near Real Time View ##
 
-{% include important.html content="The record returned from the Provider system is near real time." %}
+{% include custominfocallout.html content="**Information:** The record returned from the Provider system is near real time." type="warning" %}
 
 - Local pending changes (i.e. within a consultation that is actively ongoing) may not be available.
 - The record is machine generated and therefore is not owned or attested by any single clinician.
@@ -221,7 +221,7 @@ These Views **SHALL** have the following structure:
 
 ...etc
 
-{% include note.html content="Note this layout does not apply to the Summary HTML View.  See [Summary HTML View](accessrecord_view_summary.html)" %} 
+{% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML View.  See [Summary HTML View](accessrecord_view_summary.html)" type="info" %}
 
 
 ### Section Banner ###
@@ -280,7 +280,7 @@ Where any exclusions have been applied to the data in the section, the following
 
 Section Default Time Frames **SHALL** be configurable, by the Provider, to be easily amendable if required in response to FoT feedback 
 
-{% include custominfocallout.html content="**Information** Section default time frames to be reviewed following FoT feedback." type="warning" %}
+{% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback." type="warning" %}
 
 | Section Code   | Time Frame | FHIR Resource(s) |
 |----------------|------------|------------------|
@@ -302,8 +302,6 @@ Provider systems **SHALL** return a HTTP *Bad Request* `400` error response if a
 
 # HTML Section Views #
 
-A total of twelve HTML section views are to be provided.
-
 Provider systems **SHALL** use XHTML constructs as defined in the [FHIR Narrative](https://www.hl7.org/fhir/narrative.html) guidance contained within the FHIR&reg; standard.
 
 ### [XHTML Narrative](https://www.hl7.org/fhir/narrative.html) ###
@@ -312,7 +310,7 @@ As outlined in the Narrative section of the FHIR&reg; standard:
 
 {% include callout.html content="The XHTML content **SHALL NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;``` etc. Unicode characters **SHALL** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
 
-{%include important.html content="The content **SHALL NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." %}
+{% include custominfocallout.html content="**Information:** The content **SHALL NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning" %}
 
 ### [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) ###
 
