@@ -42,18 +42,21 @@ body {
 }
 .bs-callout-danger {
     border-left-color: #d9534f;
+	background-color: #f2dede;
 }
 .bs-callout-danger h4 {
     color: #d9534f;
 }
 .bs-callout-warning {
     border-left-color: #f0ad4e;
+	background-color: #fcf8e3;
 }
 .bs-callout-warning h4 {
     color: #f0ad4e;
 }
 .bs-callout-info {
     border-left-color: #5bc0de;
+	background-color: #d9edf7;
 }
 .bs-callout-info h4 {
     color: #5bc0de;
