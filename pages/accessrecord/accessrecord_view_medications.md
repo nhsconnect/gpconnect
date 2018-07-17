@@ -7,7 +7,6 @@ permalink: accessrecord_view_medications.html
 summary: "Medications HTML View."
 ---
 
-
 ## Medications ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
@@ -104,10 +103,10 @@ The following business rules are applicable:
 
 | Supplier | Business Rules |
 |----------|----------------|
-| EMIS | Medication item appears in this section if it has been 28 days or less for from the last issued date (applies to acute and repeat medications). |
+| EMIS | Medication items appear in this section if it has been 28 days or less from the last issued date (applies to acute and repeat medications). |
 | TPP | TBC |
-| INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to acute and repeat medications). |
-| MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups. <br><br> This categorisation is a flag on the database maintained either manually by the doctor or, more likely, automatically by the system (if a drug hasn’t been issued for more than a configurable period, typically 6 months, then a drug will be automatically moved from the ‘current’ list to the ‘removed’ list). <br><br> Whichever list a drug is in has no bearing on what other data is held on the system about the patient’s history with the drug. No data is lost when moving a drug from one list to the other. |
+| INPS | Medication items appear in this section if it has been 12 months or less from the last issued date (applies to acute and repeat medications). |
+| MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups. <br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
 ### Discontinued/Cancelled/Naturally endded Medications ###
 
@@ -192,7 +191,7 @@ A list of drugs or other forms of medicines that are currently being used to tre
 
 The purpose of this section is to provide a view of medications that the patient is currently taking which informs the clinical decision-making process.
 
-A list of all current acute and repeat medications issued to a patient ordered by date descending (i.e. most recent date/time first).
+A list of all current acute and repeat medications prescribed to a patient ordered by date descending (i.e. most recent date/time first).
 
 {% include warning.html content="The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete." %}
 
@@ -344,7 +343,7 @@ A list of repeat drugs or other forms of medicines that are currently being used
 
 ### Purpose ###
 
-The purpose of this section is to provide a view of repeat medications that the patient is currently taking which informs the clinical decision-making process.
+The purpose of this section is to provide a view of repeat medications that the patient is currently prescribed, which informs the clinical decision-making process.
 
 ### Date Filter ###
 
@@ -488,9 +487,7 @@ A history view of drugs or other forms of medicines that have been used to treat
 ### Purpose ###
 
 The purpose of this section is to provide a historical view of repeat medications that the patient has been recorded to have been prescribed or taken. This informs the clinical decision-making process.
-
-A list of all past medications, issued to a patient ordered by date descending (i.e. most recent date/time first). The type will include Acute, or Repeat. 
-
+ 
 Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
 
 ### Date Filter ###
