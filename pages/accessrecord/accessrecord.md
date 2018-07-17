@@ -5,6 +5,7 @@ tags: [getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord.html
 summary: "Introduction to the GP Connect Access Record HTML capability."
+toc: false
 ---
 
 ## HTML View ##
