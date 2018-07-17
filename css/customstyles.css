@@ -571,7 +571,8 @@ i.border {
 }
 
 a[data-toggle] {
-    color: #77777a;
+    color: #000000
+;;
 }
 
 .summary {
