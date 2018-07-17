@@ -7,6 +7,10 @@ permalink: development_fhir_error_handling_guidance.html
 summary: "Details of the common error handling pattern(s) across the GP Connect API"
 ---
 
+As a nationally brokered FHIR&reg; API, the GP Connect error handling approach defined below closely follows the approach of the FHIR Spine Core API.  
+
+However, the guidance given below is the definitive error handling definition for the GP Connect API and thus the [Spine Core error handling guidance](https://nhsconnect.github.io/FHIR-SpineCore/resources_error_handling.html) should be viewed for context only.
+
 ### Operation outcome usage ####
 
 In the event of an error, provider systems SHALL respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1). 
