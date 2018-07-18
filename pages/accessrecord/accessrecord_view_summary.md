@@ -137,9 +137,7 @@ This section is an exact replica of the Encounters section with a filter applied
 
 {% include callout.html content="Please see HTML guidance in the [Encounters](accessrecord_view_encounters.html) section. " type="primary" %} 
 
-{% include important.html content="the Section title for Encounters on the Summary View should explicitly state 'Last 3 Encounters'.  The columns and content should be as per the HTML guidance for Encounters with the exception of only 3 rows in the table." %}  
-
-
+{% include custominfocallout.html content="**Important:** the Section title for Encounters on the Summary View should explicitly state 'Last 3 Encounters'.  The columns and content should be as per the HTML guidance for Encounters with the exception of only 3 rows in the table." type="warning" %}
 
 ## Example View ##
 

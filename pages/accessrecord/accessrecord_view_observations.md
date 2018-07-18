@@ -140,8 +140,9 @@ Providers must return all the columns as described in the table below:
 | <center>3</center> | `Value` | Value and range (where available) of the observation | `free-text` |
 | <center>4</center> | `Details` | Longer human readable details for the observation | `free-text` |
 
+
+{% include custominfocallout.html content="**Important:** In recent workshops the GP Principal suppliers have indicated this section will contain all clinical items that represent measurement data (i.e. blood pressure, temperature, heart rate etc.)." type="warning" %}
 	
-{% include important.html content="In recent workshops the GP Principal suppliers have indicated this section will contain all clinical items that represent measurement data (i.e. blood pressure, temperature, heart rate etc.)." %}	
 	
 ### HTML View ###
 
@@ -169,7 +170,7 @@ Providers must return all the columns as described in the table below:
 ```
 {% endraw %}
 
-{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %} 
+{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
 ## Example View ##
 

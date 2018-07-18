@@ -110,7 +110,7 @@ The following business rules are applicable:
    
 ### Discontinued/Cancelled/Naturally endded Medications ###
 
-{% include note.html content="It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally Ended” medications." %} 
+{% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally Ended” medications." type="info" %}
 
 The definitions for each of these are supplied below:
 
@@ -193,7 +193,8 @@ The purpose of this section is to provide a view of medications that the patient
 
 A list of all current acute and repeat medications prescribed to a patient ordered by date descending (i.e. most recent date/time first).
 
-{% include warning.html content="The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete." %}
+{% include customcallout.html content="**Warning:** The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete. " type="danger" %} 
+
 
 ### Date Filter ###
 
@@ -631,7 +632,7 @@ Providers must return all the columns as described in the table below:
 ```
 {% endraw %}
 
-{% include important.html content="AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." %}
+{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
 ## Example View ##
 

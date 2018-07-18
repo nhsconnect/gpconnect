@@ -170,6 +170,7 @@ The Provider system **SHALL**:
 <br/>
 Refer to [Access Record - Development - HTML Implementation Guide - Per Section Default Time Frames](accessrecord_development_html_implementation_guide.html#per-section-default-time-frames) for details of the default time periods that **SHALL** be applied per care record section.
 
+
 #### Error Handling ####
 
 The Provider system **SHALL** return an error if:
