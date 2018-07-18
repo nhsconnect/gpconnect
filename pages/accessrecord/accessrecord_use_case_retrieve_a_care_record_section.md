@@ -137,7 +137,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 </OperationDefinition>
 ```
 
-{% include important.html content="Provider systems **SHALL** only expose `Patient` resources for patient's who have a valid PDS trace status." %}
+{% include custominfocallout.html content="**Important:** Provider systems **SHALL** only expose `Patient` resources for patient's who have a valid PDS trace status." type="warning" %}
 
 On the wire a JSON serialised `$gpc.getcarerecord` request would look something like the following:
 

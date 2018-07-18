@@ -141,7 +141,7 @@ Providers must return all the columns as described in the table below:
 | <center>4</center> | `Details` | Longer human readable details for the observation | `free-text` |
 
 
-{% include custominfocallout.html content="**Important:** In recent workshops the GP Principal suppliers have indicated this section will contain all clinical items that represent measurement data (i.e. blood pressure, temperature, heart rate etc.)." type="warning" %}
+{% include custominfocallout.html content="**Important:** GP Principal suppliers have indicated this section will contain all clinical items that represent measurement data (i.e. blood pressure, temperature, heart rate etc.)." type="warning" %}
 	
 	
 ### HTML View ###

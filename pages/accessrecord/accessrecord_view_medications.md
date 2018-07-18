@@ -114,9 +114,9 @@ The following business rules are applicable:
 
 The definitions for each of these are supplied below:
 
-- Naturally Ended: Medication naturally came to an end, i.e. no manual intervention via the user (auto system transition)
-- Cancelled: Actively stopped acute medication by user
-- Discontinued: Actively stopped repeat medication by user
+- **Naturally Ended:** Medication naturally came to an end, i.e. no manual intervention via the user (auto system transition)
+- **Cancelled:** Actively stopped acute medication by user
+- **Discontinued:** Actively stopped repeat medication by user
 
 Not all suppliers can supply the details (date and reason) for the ending of a medication (either through discontinuation or cancellation).
 
