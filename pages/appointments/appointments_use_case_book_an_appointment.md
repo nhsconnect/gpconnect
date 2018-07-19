@@ -39,6 +39,8 @@ The consumer system:
 
 The consumer system SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
+Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of Slots.
+
 ### Request operation ###
 
 #### FHIR&reg; relative request ####
