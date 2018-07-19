@@ -78,7 +78,7 @@ What provision will be made for making changes to existing future appointments?
 
 Are appointment amendments and/or cancellations only able to be made by organisations which booked them originally?
 
-- <span class="label label-success">SELECTED</span> Cancellation and amendments to future Appointment Description and Comment can be made by any organisation participating in a GP Connect Appointment Management data-sharing agreement with the appointment-hosting organisation.
+<span class="label label-success">SELECTED</span> Cancellation and amendments to future Appointment Description and Comment can be made by any organisation participating in a GP Connect Appointment Management data-sharing agreement with the appointment-hosting organisation.
 
 
 ## Tentative appointment booking ##
@@ -86,7 +86,7 @@ Are appointment amendments and/or cancellations only able to be made by organisa
 Is it possible to 'hold' an appointment slot obtained via GP Connect, and then confirm the booking at the end of a consultation/triage process?
 
 
-- <span class="label label-success">SELECTED</span> This functional requirement is not supported due to the additional technical complexity it would demand.  End-users will need to book the appointment then cancel if necessary, and good practice will need to be locally specified in business rules and policies agreed by participating organisations.  For example the practice of reserving numerous slots at the start of a '111' Urgent Care Call triage by using the 'Book Appointment' API, and then cancelling, would be considered bad practice and could contravene such agreements.
+<span class="label label-success">SELECTED</span> This functional requirement is not supported due to the additional technical complexity it would demand.  End-users will need to book the appointment then cancel if necessary, and good practice will need to be locally specified in business rules and policies agreed by participating organisations.  For example the practice of reserving numerous slots at the start of a '111' Urgent Care Call triage by using the 'Book Appointment' API, and then cancelling, would be considered bad practice and could contravene such agreements.
 
 ## Can appointments be rescheduled? ##
 
