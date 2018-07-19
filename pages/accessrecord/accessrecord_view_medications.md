@@ -259,6 +259,16 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
 
+### Subsection Business Rules ###
+
+The following business rules are applicable:
+
+| Supplier | Business Rules |
+|----------|----------------|
+| EMIS | Medication item appears in this section if it has been 28 days or less for from the last issued date (applies to acute and repeat medications) |
+| TPP | TBC |
+| INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to acute and repeat medications) |
+| MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
 ### Table Construction Requirements ###
 
@@ -406,6 +416,16 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
 
+### Subsection Business Rules ###
+
+The following business rules are applicable:
+
+| Supplier | Business Rules |
+|----------|----------------|
+| EMIS | Medication item appears in this section if it has been 28 days or less for from the last issued date (applies to repeat medications only) |
+| TPP | TBC |
+| INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to repeat medications only) |
+| MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
 ### Table Construction Requirements ###
 
@@ -566,9 +586,9 @@ The following business rules are applicable:
 
 | Supplier | Business Rules |
 |----------|----------------|
-| EMIS | Medication items appear in this section if it has been 28 days or less from the last issued date (applies to acute and repeat medications). |
+| EMIS | EMIS Web marks a current medication as a past medication 28 days after its last issue date. |
 | TPP | TBC |
-| INPS | Medication items appear in this section if it has been 12 months or less from the last issued date (applies to acute and repeat medications). |
+| INPS | Past medication will show all past medication including any discontinued. This will be 12 months after the last issue date (prescription date). |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
 ### Table Construction Requirements ###
