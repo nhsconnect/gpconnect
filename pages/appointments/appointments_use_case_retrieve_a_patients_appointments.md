@@ -11,7 +11,9 @@ summary: "Use case for retrieval of a patient's appointments from an organisatio
 
 This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted provider system. 
 
-{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the view of a patient's appointments has been restricted to only viewing future appointments. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+All future appointments for the requested patient, irrespective of the booking organisation, will be returned from the Provider system
+
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the retrieval of a patient's appointments has been restricted to future appointments only. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
