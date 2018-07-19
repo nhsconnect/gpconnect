@@ -191,7 +191,7 @@ A list of drugs or other forms of medicines that are currently being used to tre
 
 The purpose of this section is to provide a view of medications that the patient is currently taking which informs the clinical decision-making process.
 
-A list of all current acute and repeat medications prescribed to a patient ordered by date descending (i.e. most recent date/time first).
+A list of all current acute and repeat medications issued to a patient ordered by date descending (i.e. most recent date/time first).
 
 {% include customcallout.html content="**Warning:** The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete. " type="danger" %} 
 
