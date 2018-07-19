@@ -100,7 +100,7 @@ Must be populated if the `clinicalStatus` is set to `resolved`.
   </tr>
 </table>
 
-The reason why the allergy or intolerance has been resolved.
+The reason why the allergy or intolerance has been resolved. In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
 
 ### extension[evidence] ###
 
@@ -180,7 +180,7 @@ Some systems allow explicit identification of adverse reactions and intolerances
 
 Use `medication` for all drug allergy types, `environmental` for all non-drug allergies. The other values in the ValueSet (food and biologic) **MUST NOT** be used.
 
-It is expected that it will always be possible to assign a category of ‘medication’ for drug allergies or ‘environmental’ for all other types of allergy/intolerance. Generally, the choice in a given system is explicit. 
+It is expected that it will always be possible to assign a category of ‘medication’ for drug allergies or ‘environmental’ for all other types of allergy/intolerance. Generally, the choice in a given system is explicit. The GP suppliers MUST follow the categorisation already in use in populating the GP2GP message.
 
 In some cases, the type of allergy/intolerance may be more general - for example, a system designated type of `Other` or equivalent. In such cases, if the allergy/intolerance entry interacts with prescribing decision support it **MUST** be assigned a category of `medication`. Otherwise, the category of `environmental` **MUST** be used.
 
