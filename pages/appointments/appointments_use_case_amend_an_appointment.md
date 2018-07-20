@@ -9,7 +9,7 @@ summary: "Use case for amending an appointment for a patient with a given organi
 
 ## Use case ##
 
-This API is used to amend the Description or Comment of a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.  Any appointment can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+This API is used to amend the Description or Comment, or Cancellation Reason where applicable, of a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.  Any appointment, ie irrespective of booking organisation, can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
 
 The typical flow to amend an appointment is:
 
