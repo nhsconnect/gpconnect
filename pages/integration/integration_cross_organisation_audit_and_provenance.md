@@ -130,7 +130,7 @@ The payload section of the JWT shall be populated as follows:
 | requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>2+3</sup> | 
 | requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>2+4</sup> |
 
-<sup>1</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the consumer by the [SDS endpoint lookup service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process){:target="_blank"} as the value of `nhsMhsEndPoint`.
+<sup>1</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the consumer by the [SDS endpoint lookup service](integration_spine_directory_service.html){:target="_blank"} as the value of `nhsMhsEndPoint`.
 
 <sup>2</sup> Minimal FHIR resource to include any relevant business identifier(s), conforming to the base STU3 FHIR resources definition (the resource does not need to conform to the GP Connect FHIR resource profile).
 
