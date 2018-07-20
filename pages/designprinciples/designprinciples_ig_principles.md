@@ -25,7 +25,7 @@ Review and agreement as to IG model changes (to accommodate additional capabilit
 
 - FoT early adopter deployments will represent organisation groupings where the necessary data sharing agreements between data controllers, augmented by data controller-data processor contracts, IG process and policy and fair usage notifications are already in place - for example, existing federation or shared record groups
 
-- organisational data-sharing validation will be implemented as part of the Spine Security Proxy (SSP) and therefore provider GP Connect go-live must not be dependent on local organisational data-sharing configuration to support this;  local organisational data-sharing rules SHALL NOT be applied as part of GP Connect operation and SHALL NOT be changed as a result of GP Connect 
+- organisational data-sharing validation will be implemented as part of the Spine Secure Proxy (SSP) and therefore provider GP Connect go-live must not be dependent on local organisational data-sharing configuration to support this;  local organisational data-sharing rules SHALL NOT be applied as part of GP Connect operation and SHALL NOT be changed as a result of GP Connect 
 
 - FoT early adopter consuming organisations are N3, IGSoC and IG Toolkit compliant, and meet national requirements for:
   - technical (endpoint) security

@@ -13,7 +13,7 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 
 - [Personal Demographics Service (PDS)](integration_personal_demographic_service.html)
 - [Spine Directory Service (SDS)](integration_spine_directory_service.html)
-- [Spine Security Proxy (SSP)](integration_spine_security_proxy.html)
+- [Spine Secure Proxy (SSP)](integration_spine_secure_proxy.html)
 
 To illustrate this, an example is given below of all the steps required to consume GP Connect capabilities. For full details, please refer to the relevant Spine service pages:
 
@@ -39,7 +39,7 @@ The steps shown in the diagram are detailed below:
 |      |      |
 |      | *Step 3 is optional in the sense that the capability statement may be used to verify the FHIR capabilities which the endpoint provides, should this be required at run time. The results of this call may be cached for future interactions.* |    
 | 3a   | **Consumer** calls the [metadata endpoint](foundations_use_case_get_the_fhir_capability_statement.html) at the practice FHIR server to request full details of which FHIR operations are implemented at that server - the capability statement. |
-| 3b   | **Spine Security Proxy (SSP)** receives the call from the consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
+| 3b   | **Spine Secure Proxy (SSP)** receives the call from the consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 3c   | **Provider** returns the capability statement to the SSP. |
 | 3d   | **SSP** forwards the capability statement received from the provider to the consumer. |
 |      |      |

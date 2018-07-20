@@ -98,6 +98,6 @@ Therefore, a consumer wishing to reschedule an appointment can do this through 2
 
 Where there is a requirement for an implementation to provide an appointment management capability in a federated context, the GP Connect consumer implementation has the responsibility for defining the set of organisations which make up the federation. This consumer configuration will enable the consumer to make API calls to the relevant organisation set of endpoints in order to gain a federated view of appointments.
 
-Neither Spine Security Proxy, nor the GP Connect provider will expose such federation configuration or expose any aggregated view of appointments for a federation.
+Neither the Spine Secure Proxy, nor the GP Connect provider will expose such federation configuration or expose any aggregated view of appointments for a federation.
 
 Please refer to the [glossary](overview_glossary.html) for a definition of a federation in this context.

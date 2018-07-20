@@ -26,7 +26,7 @@ We now have a functioning user interface that can drive interactions with the FH
 
 ## System architecture ##
 
-![API Consumer talking to API Provider via the Spine Security Proxy](images/systems/API Consumer talking to API Provider via the Spine Security Proxy.png)
+![API Consumer talking to API Provider via the Spine Secure Proxy](images/systems/API Consumer talking to API Provider via the Spine Security Proxy.png)
 
 ## Source code ##
 

@@ -11,7 +11,7 @@ summary: "Details of the API security model and supported protocols"
 
 Provider systems:
 
-- SHALL only accept connections from the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP)
+- SHALL only accept connections from the [Spine Secure Proxy](integration_spine_secure_proxy.html) (SSP)
 
 - SHALL authenticate the SSP prior to responding to any requests using its [client certificate](development_api_security_guidance.html#client-certificates-tlsma)
 
@@ -23,7 +23,7 @@ Provider systems:
 
 - SHALL check that the `Ssp-InteractionID` value is consistent with the endpoint being requested
 
-- SHALL check for the presence of all [SSP headers](integration_spine_security_proxy_implementation_guide.html#consumer)
+- SHALL check for the presence of all [SSP headers](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#consumer)
 
 - SHALL check that an [authorization bearer token](integration_cross_organisation_audit_and_provenance.html#json-web-tokens-jwt) is present and correctly formed
 
@@ -79,7 +79,7 @@ Provider and consumer systems SHALL only accept client certificates with a valid
 
 Provider and consumer systems SHALL only accept client certificates which have not expired or been revoked.
 
-Provider and consumer systems SHALL check the `FQDN` presented in the client certificate is that of the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP).
+Provider and consumer systems SHALL check the `FQDN` presented in the client certificate is that of the [Spine Security Proxy](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html) (SSP).
 
 ## Response headers ##
 

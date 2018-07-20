@@ -164,7 +164,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 	2. security
 	2. tag
 
-{% include warning.html content="Vendors are free to implement additional FHIR functionality above that mandated under the GP Connect delivery if they so desire. However, the Spine Security Proxy (SSP) will only forward accredited system interactions." %}
+{% include warning.html content="Vendors are free to implement additional FHIR functionality above that mandated under the GP Connect delivery if they so desire. However, the Spine Secure Proxy (SSP) will only forward accredited system interactions." %}
 
 
 ### FHIR system conformance ###

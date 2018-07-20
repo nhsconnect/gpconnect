@@ -154,12 +154,9 @@ entries:
     - title: Spine Directory Services
       url: /integration_spine_directory_service.html
       output: web
-    - title: Spine Security Proxy introduction
-      url: /integration_spine_security_proxy.html
+    - title: Spine Secure Proxy
+      url: /integration_spine_secure_proxy.html
       output: web
-    - title: Spine Security Proxy implementation guide
-      url: /integration_spine_security_proxy_implementation_guide.html
-      output: web 
 
   - title: Test and assure
     output: web

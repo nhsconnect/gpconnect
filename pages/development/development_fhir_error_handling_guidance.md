@@ -272,9 +272,9 @@ For example, an unexpected internal exception is thrown by either an Operation o
 ```
 
 
-### Spine Security Proxy (SSP) errors ###
+### Spine Secure Proxy (SSP) errors ###
 
-When the Spine security proxy cannot or will not process a request then one of the following errors SHALL be used to return debug details:
+When the Spine Secure Proxy cannot or will not process a request then one of the following errors SHALL be used to return debug details:
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |

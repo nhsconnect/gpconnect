@@ -25,7 +25,7 @@ Consumer systems SHALL be (or have previously been) tested and accredited to est
 
 Consumer systems SHALL be tested for technical conformance of the following before they can be listed on the product catalogue:
 
- - [Spine Security Proxy (SSP) integration](integration_spine_security_proxy.html)
+ - [Spine Secure Proxy (SSP) integration](integration_spine_secure_proxy.html)
  - [Foundations](foundations.html)
 
 Consumer systems SHALL be tested for conformance to one or more of the following capability packs:

@@ -56,7 +56,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
   - [Task Management](tasks.html) (e.g. Send a notification task to a general practice organisation).
 - Finally take a look at cross-cutting areas:
   - JSON Web Token - Provides [Cross organisation audit and provenance](integration_cross_organisation_audit_and_provenance.html) details.
-  - Additional HTTP headers and proxy URL - This gives you access to the [Spine Security Proxy](integration_spine_security_proxy.html), the secure 'front door' of GP Connect APIs.
+  - Additional HTTP headers and proxy URL - This gives you access to the [Spine Secure Proxy](integration_spine_secure_proxy.html), the secure 'front door' of GP Connect APIs.
   - Configure HTTPS and TLS/MA - [Security guidance](development_api_security_guidance.html) allows you to secure and mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time). 
 
 ## 4. Assure ##

@@ -11,8 +11,8 @@ summary: "Overview of the role of the Spine Directory Services (SDS) within GP C
 
 In order to use the GP Connect API, consumer systems need to integrate with the Spine SDS service to resolve the following two pieces of information which are needed to make an API call:
 
-1. The Accredited System Identifier (ASID) of the organisation which is the target of the request. The ASID will be specified in the `Ssp-To` HTTP header in their request to the [Spine Security Proxy](integration_spine_security_proxy.html#spine-security-proxy-ssp)
-2. The FHIR Endpoint Server Root URL of the organisation which is the target of the request. This is used when constructing the URL of the request to the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html#consumer)
+1. The Accredited System Identifier (ASID) of the organisation which is the target of the request. The ASID will be specified in the `Ssp-To` HTTP header in their request to the [Spine Secure Proxy](integration_spine_secure_proxy.html)
+2. The FHIR Endpoint Server Root URL of the organisation which is the target of the request. This is used when constructing the URL of the request to the [Spine Security Proxy](integration_spine_secure_proxy.html)
 
 Full details of how to integrate with SDS to carry out these two steps are outlined at [Spine Core FHIR API Framework - Spine Endpoints](https://developer.nhs.uk/apis/spine-core-1-0/build_endpoints.html). Note that in order to resolve the ASID, Step 1a described there is not required.
 

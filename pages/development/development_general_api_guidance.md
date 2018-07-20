@@ -43,7 +43,7 @@ Clients SHALL perform a sequence of query operations against existing Spine serv
 		2. [INPS](http://www.inps.co.uk/)
 		3. [Microtest](http://www.microtest.co.uk/)
 		4. [TPP](http://www.tpp-uk.com/)
-2. Clients SHALL construct a [FHIR service root URL](#ServiceRootURL) suitable for access to a GP vendor's FHIR server. For GP Connect, access to the principal GP systems will be via the [Spine Security Proxy](#SpineSecurityProxy) (SSP) and as such the URL will need to be pre-pended with a proxy service root URL.
+2. Clients SHALL construct a [FHIR service root URL](#ServiceRootURL) suitable for access to a GP vendor's FHIR server. For GP Connect, access to the principal GP systems will be via the [Spine Secure Proxy](integration_spine_secure_proxy.html) (SSP) and as such the URL will need to be pre-pended with a proxy service root URL.
 
 {% include tip.html content="Where a practitioner (with a valid SDS user ID) or organisation (with a valid ODS code) record already exists within the local system, the details associated with these existing records may be used for display purposes." %}
 
@@ -91,7 +91,7 @@ The provider SHALL publish the Service Rot URL to Spine Directory Services, for 
 
 `https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
 
-Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
 The consumer system would therefore issue a request to the new version of the provider FHIR API to the following URL:
 
