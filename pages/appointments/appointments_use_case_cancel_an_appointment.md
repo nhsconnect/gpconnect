@@ -9,6 +9,8 @@ summary: "Use case for cancelling an appointment for a patient with a given orga
 
 ## Use case ##
 
+This API is used to cancel a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.  Any appointment, irrespective of booking organisation, can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+
 The typical flow to cancel an appointment is:
 
  1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
