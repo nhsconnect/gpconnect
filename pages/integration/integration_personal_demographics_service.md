@@ -9,7 +9,7 @@ summary: "Overview of the role of the Personal Demographic Service within GP Con
 
 ## PDS tracing ##
 
-GP Connect systems SHALL be capable of performing [Personal Demographic Service](https://digital.nhs.uk/Demographics){:target="_blank"} (PDS) tracing of patients to obtain their NHS number, date of birth and current GM-registered GP organisation.
+GP Connect systems SHALL be capable of performing [Personal Demographic Service](https://digital.nhs.uk/Demographics){:target="_blank"} (PDS) tracing of patients to obtain their NHS number, date of birth and current registered GP organisation.
 
 [Spine Core FHIR API Framework - Personal Demographics Service](https://developer.nhs.uk/apis/spine-core-1-0/pds_overview.html) provides a summary of the role of PDS in the NHS Spine architecture, and describes three options for accessing it. Systems SHALL perform this tracing using one of the three options.
 
