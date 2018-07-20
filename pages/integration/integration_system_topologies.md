@@ -42,11 +42,8 @@ A GP Practice system instance hosted in a Primary Care System (PCS) supplier's d
 
 ## Spine endpoint terms ##
 
-| ASID | Accredited system identifier. A unique number allocated to a system on accreditation for connection to Spine. |
-| CMA endpoint | Combined MHS and accredited system endpoint. An endpoint registered with Spine for a single system. |
-| MHS | Message handling server.  A middleware that handles messaging to/from Spine. |
-| MHS endpoint | An endpoint registered with Spine for use with multiple systems via an MHS. Each system has its own ASID. |
-| Party Key | The identity of a MHS handling messages for an Accredited System |
+The [NHS Spine FHIR API Framework](https://developer.nhs.uk/apis/spine-core-1-0/build_endpoints.html#spine-accredited-systems-and-endpoints) presents an introduction to Spine endpoints, and provides definitions of terms used above.
+
 
 
 
