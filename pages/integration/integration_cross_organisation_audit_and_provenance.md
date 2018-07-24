@@ -279,7 +279,7 @@ var requesting_identity = new Practitioner {
 	},
 	Identifier =
 	{
-		new Identifier("http://fhir.nhs.net/sds-user-id", "[SDSUserID]"),
+		new Identifier("https://fhir.nhs.uk/Id/sds-user-id", "[SDSUserID]"),
 		new Identifier("[UserSystem]", "[UserID]")
 	}
 };
