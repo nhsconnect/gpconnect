@@ -144,7 +144,7 @@ Mandatory for authorisations with stopped status.
 
 The dateTime the medication was stopped/discontinued.
 
-Mandatory for stopped/discontinued medications as the date will always be known.
+Mandatory for stopped/discontinued medications as the date will always be known. In exceptional cases where for legacy data there is no statusReason recorder in the system then this MUST be populated with the text 'No information available'.
 
 ### extension[statusReason].reason ###
 
@@ -174,6 +174,8 @@ The textual reason either free text or the term of a code for stopping/discontin
 If a medication is an acute, delayed acute, repeat, repeat dispense or prescribed elsewhere.	
 
 Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber.
+
+In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
 
 ### identifier ###
 
@@ -411,6 +413,8 @@ The elements of the dosage datatype detailed below should be populated as descri
 </table>
 
 Complete dosage instructions as text.
+
+In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
 
 
 ### dosageInstruction.patientInstruction ###

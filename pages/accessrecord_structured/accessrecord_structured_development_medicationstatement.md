@@ -255,6 +255,8 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 
 Complete dosage instructions as text.
 
+In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
+
 ### dosage.patientInstruction ###
 
 <table class='resource-attributes'>
