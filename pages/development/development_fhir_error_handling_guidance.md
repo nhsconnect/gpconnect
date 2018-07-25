@@ -13,20 +13,20 @@ However, the guidance given below is the definitive error handling definition fo
 
 ### Operation outcome usage ####
 
-In the event of an error, provider systems SHALL respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1). 
+In the event of an error, provider systems **SHALL** respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1). 
 
 The `GPConnect-OperationOutcome-1`:
-- SHALL contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/STU3/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
-- SHALL contain a definition of the type of error in the `OperationOutcome.issue.code` element, providing a value from the [issue-type](http://hl7.org/fhir/STU3/valueset-issue-type.html) value set. 
-- SHALL contain details of the `Spine error code` in the `OperationOutcome.issue.details.coding.code` and `OperationOutcome.issue.details.coding.display` fields. These shall be taken from the standard set of NHS Spine error codes as defined in the [spine-error-or-warning-code-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) value set. The Spine error and warning codes provide a greater degree of error handling granularity, and also ensure a standardised error handling approach across NHS APIs. 
-- SHOULD provide additional diagnostic details of the error in `OperationOutcome.diagnostics` property where such securely provides additional error context for consumer applications.
+- **SHALL** contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/STU3/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
+- **SHALL** contain a definition of the type of error in the `OperationOutcome.issue.code` element, providing a value from the [issue-type](http://hl7.org/fhir/STU3/valueset-issue-type.html) value set. 
+- **SHALL** contain details of the `Spine error code` in the `OperationOutcome.issue.details.coding.code` and `OperationOutcome.issue.details.coding.display` fields. These shall be taken from the standard set of NHS Spine error codes as defined in the [spine-error-or-warning-code-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) value set. The Spine error and warning codes provide a greater degree of error handling granularity, and also ensure a standardised error handling approach across NHS APIs. 
+- **SHOULD** provide additional diagnostic details of the error in the `OperationOutcome.diagnostics` property where such securely provides additional error context for consumer applications.
 
 
 The sections below provide guidance on the error details to be returned in a number of key scenarios.
 
 ### Identity validation errors ####
 
-Provider systems SHALL respond by returning one of the following `OperationOutcome` error codes where FHIR resource identity error scenarios are encountered: 
+Provider systems **SHALL** respond by returning one of the following `OperationOutcome` error codes where FHIR resource identity error scenarios are encountered: 
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | -----------|------------|-------------|
@@ -65,7 +65,7 @@ If an invalid NHS number value is supplied to the `$gpc.getcarerecord` operation
 
 #### Example: Patient not found #####
 
-For example, if a valid NHS number value is supplied to the `$gpc.getcarerecord` Operation but no GP record exists for that patient, then the following error details would be returned:
+For example, if a valid NHS number value is supplied to the `$gpc.getcarerecord` operation but no GP record exists for that patient, then the following error details would be returned:
 
 ```json
 {
@@ -110,7 +110,7 @@ This is a catch-all where a request for a resource instance cannot be found at t
 
 ### Security validation errors ###
 
-When responding to consumer API requests, provider systems SHALL return one of the following `OperationOutcome` details when enforcement of local consent rules result in an error condition: 
+When responding to consumer API requests, provider systems **SHALL** return one of the following `OperationOutcome` details when enforcement of local consent rules result in an error condition: 
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | -----------|------------|-------------|
@@ -144,7 +144,7 @@ For example, if the patient has requested that their record should not be shared
 
 ### Resource validation errors ###
 
-Where FHIR resource validation issues arise during processing of consumer requests, provider systems SHALL utilise one the following error details:
+Where FHIR resource validation issues arise during processing of consumer requests, provider systems **SHALL** utilise one the following error details:
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
@@ -159,9 +159,9 @@ INVALID_PARAMETER would be used in the following, or similar, scenarios:
 - An invalid date/time value specified in a custom operation parameter. For example, an invalid timePeriod defined in the timePeriod input parameter to the $gpc.getcarerecord operation.
 
 INVALID_RESOURCE would be used in situations such as the following:
-- Resource fails to validate against StructureDefinition (either in request body, of in JWT claim).
+- Resource fails to validate against StructureDefinition (either in request body or in JSON Web Tokens (JWT) claim).
 
-REFERENCE_NOT_FOUND describes a scenario where a consumer POSTs a FHIR resource which contains a FHIR reference which are cannot be found. 
+REFERENCE_NOT_FOUND describes a scenario where a consumer POSTs a FHIR resource which contains a FHIR reference that cannot be found. 
 
 #### Example: Reference not found #####
 
@@ -191,14 +191,14 @@ For example, when using the 'Book an appointment' API use case, a consumer inclu
 
 ### Malformed request errors ###
 
-When the server cannot or will not process a request due to an apparent client error then the following `BAD_REQUEST` error SHALL be used to return debug details.
+When the server cannot or will not process a request due to an apparent client error then the following `BAD_REQUEST` error **SHALL** be used to return debug details.
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
-| `400`     | invalid | BAD_REQUEST | Submitted request is malformed / invalid. |
+| `400`     | invalid | BAD_REQUEST | Submitted request is malformed/invalid. |
 
 BAD_REQUEST Spine error codes should be used in the following types of scenario:
-- JSON Web Tokens (JWT) claims information is not valid JSON, is null, or has an invalid value 
+- JWT claims information is not valid JSON, is null, or has an invalid value 
 - invalid FHIR resource in JWT claim (for example, patient resource when practitioner expected)
 - malformed JSON or XML content in request body
 - an expected header (for example, `interaction ID header`) is missing or invalid
@@ -234,13 +234,13 @@ For example, if the request contained a null `aud` claim in the JWT, then the fo
 
 ### Internal server errors ###
 
-When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED Spine error code SHALL be used.
+When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED Spine error code **SHALL** be used.
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
 | `501`     | not-supported | NOT_IMPLEMENTED | FHIR resource or operation not implemented at server |
 
-When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the `INTERNAL_SERVER_ERROR` Spine error code SHALL be used, and diagnostics SHALL be included to provide detail of the error.
+When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the `INTERNAL_SERVER_ERROR` Spine error code **SHALL** be used, and diagnostics **SHALL** be included to provide detail of the error.
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ------- | ---------- | ----------- |
@@ -248,7 +248,7 @@ When the error is **unexpected** and the server can't be more specific on the ex
 
 #### Example: Unexpected exception #####
 
-For example, an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
+For example, if an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
 
 ```json
  {
@@ -274,7 +274,7 @@ For example, an unexpected internal exception is thrown by either an Operation o
 
 ### Spine Secure Proxy (SSP) errors ###
 
-When the Spine Secure Proxy cannot or will not process a request then one of the following errors SHALL be used to return debug details:
+When the Spine Secure Proxy cannot or will not process a request then one of the following errors **SHALL** be used to return debug details:
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
