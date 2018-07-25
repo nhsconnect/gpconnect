@@ -7,13 +7,13 @@ permalink: integration_spine_secure_proxy.html
 summary: "Overview of the role of the Spine Secure Proxy (SSP) within GP Connect"
 ---
 
-## Spine Secure Proxy (SSP)  - Overview ##
+## Spine Secure Proxy (SSP) - overview ##
 
 The SSP acts as a broker for all requests which GP Connect consumers make to the GP Connect FHIR API.
 
 Please refer to [Spine Core FHIR API Framework - SSP](https://developer.nhs.uk/apis/spine-core-1-0/ssp_overview.html) for an overview to the role of the SSP.
 
-## Spine Secure Proxy (SSP)  - Implementation Guide ##
+## Spine Secure Proxy (SSP) - implementation guide ##
 
 The [Spine Core FHIR API Framework - SSP Implementation Guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html) describes the SSP in more depth and provides the following:
 
