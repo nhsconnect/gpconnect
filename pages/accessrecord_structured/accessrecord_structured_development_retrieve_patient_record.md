@@ -266,7 +266,7 @@ Provider systems **SHALL** include the following in the response `Bundle`:
       - `effectiveStartDate` - the date the prescription (or cycle of prescriptions) is expected to start. For repeat and repeat dispensed prescriptions this is the period covered by the entire cycle of planned issues
       - `effectiveEndDate` - the date the prescription (or cycle of prescriptions) is expected to finish. For repeat and repeat dispensed prescriptions this is the period covered by the entire cycle of issue. Where this date is not supplied for a repeat dispensed prescription then they are considered ongoing until a date is supplied
     
-    2 - `dateAsserted`, where the medication does not have a `lastIssueDate`, `effectiveDate` or `effectivePeriod`
+    2 - `dateAsserted`, where the medication does not have an `effectiveDate` or `effectivePeriod`
 
   - and when the `includePrescriptionIssues` parameter is set to `false`:
 
