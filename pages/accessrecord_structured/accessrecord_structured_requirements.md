@@ -17,15 +17,6 @@ The requirements are described as a set of user stories with separate acceptance
 
 The logical data model identifies and defines the data items that are required by the business. Each logical data item is mapped to the FHIR&reg; profile that will be used to transmit the data.
 
-The Excel spreadsheet is split into 6 tabs:
-
-1.	Document Management: revision history.
-2.	NHS England Scenarios:	a set of scenarios defined by NHS England that identify the scope of the work.
-3.	Processes – Use Cases:	an index of the use cases used to develop the user stories and logical model. Links to the individual use cases are given below.
-4.	User Stories:	the user stories that describe the business requirements for the provider and consumer products.
-5. User Stories - IG: the user stories that describe the standards and information governance requirements for the provider and consumer products.
-6.	Logical Data Model:	the logical model that identifies and defines that data items that will be supplied.
-
 ## Use cases and business processes ##
 
 The use cases define how and where there is a business need that can be supported by GP Connect structured data. They contain the following key components:
