@@ -260,7 +260,7 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
   - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
-  - when the `medicationDatePeriod` parameter is set, the medication summary data **SHALL** be restricted to that whose date falls within, or overlaps (in the case of a range), the `Period.start` and `Period.end`. The date used shall be:
+  - when the `medicationDatePeriod` parameter is set, the medication summary data **SHALL** be restricted to that whose date falls within (inclusive), or overlaps (in the case of a range), the `Period.start` and `Period.end`. Where only a start date is supplied, the medication summary data **SHALL** be restricted to that whose date is on or after `Period.start`. Where only and end date is supplied, the medication summary data **SHALL** be restricted to that whose date is on or before `Period.start`. The date used shall be:
 
     1 - `effectiveDate` or `effectivePeriod`
       - `effectiveStartDate` - the date the prescription (or cycle of prescriptions) is expected to start. For repeat and repeat dispensed prescriptions this is the period covered by the entire cycle of planned issues
