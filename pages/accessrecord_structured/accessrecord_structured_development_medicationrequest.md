@@ -181,7 +181,7 @@ In exceptional cases where for legacy data there is no endReason recorder in the
   </tr>
 </table>
 
-This is for business identifiers. If the identifier element is present then the identifier.value is where the EPS Id **SHOULD** be added.
+This is for business identifiers. 
 
 This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is https://fhir.nhs.uk/Id/cross-care-setting-identifier 
 
@@ -191,6 +191,7 @@ This **MUST** be a GUID.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
+If the EPS identifier is present then the identifier.value is where the EPS Id **SHOULD** also be added.
 
 ### basedOn ###
 
