@@ -118,7 +118,7 @@ Reference to confirmatory diagnostic report - for example, pathology RAST test r
   </tr>
 </table>
 
-This is for business identifiers. If the identifier element is present then the identifier.value is where the EPS Id **SHOULD** be added.
+This is for business identifiers.
 
 This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is https://fhir.nhs.uk/Id/cross-care-setting-identifier 
 
