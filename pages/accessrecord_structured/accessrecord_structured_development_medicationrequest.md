@@ -38,12 +38,6 @@ When populating the MedicationRequest profile it may appear that fields are dupl
 
 The logical identifier of the MedicationRequest resource.
 
-This **MUST** be a GUID.
-
-*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn't change between requests and therefore stored with the source data).
-
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
-
 ### meta.profile ###
 
 <table class='resource-attributes'>
@@ -182,12 +176,21 @@ In exceptional cases where for legacy data there is no endReason recorder in the
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatroy</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
 This is for business identifiers. If the identifier element is present then the identifier.value is where the EPS Id **SHOULD** be added.
+
+This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is https://fhir.nhs.uk/Id/cross-care-setting-identifier 
+
+This **MUST** be a GUID.
+
+*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn't change between requests and therefore stored with the source data).
+
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+
 
 ### basedOn ###
 
