@@ -80,7 +80,7 @@ This details the care setting in which the medication was prescribed. For instan
   </tr>
 </table>
 
-This is for business identifiers. If the identifier element is present then the identifier.value is where the EPS Id **SHOULD** be added.
+This is for business identifiers. 
 
 This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is https://fhir.nhs.uk/Id/cross-care-setting-identifier 
 
