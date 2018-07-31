@@ -178,6 +178,8 @@ There are currently 3 possible purposes of a list in GP Connect that will be rep
 2. Allergies and adverse reactions - 886921000000105
 3. Resolved allergies - awaiting confirmation of this SNOMED code from the terminology team
 
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
+
 ### subject ###
 
 <table class='resource-attributes'>

@@ -33,7 +33,13 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 * [Bundle](accessrecord_structured_development_bundle.html)
 * [List](accessrecord_structured_development_list.html)
 
-## Common code and identifier systems ##
+## CodeableConcept and common code and identifier systems ##
+
+### Population of CodeableConcept ###
+
+The `CodeableConcept` data type is used throughout this capability and the following guidance **SHALL** be followed in order to ensure consistent representation of coded data:
+
+{% include note.html content="Please see [Guidance on the population of CodeableConcept](Guidance on the population of CodeableConcept.pdf)." %} 
 
 ### Common code systems ###
 

@@ -218,7 +218,7 @@ In the interim this coded element will hold the primary code for the AllergyInto
 
 Where the AllergyIntolerance has no coded representation in the source system, but is identified as such in the source record then the appropriate degrade code may be used and the text of the AllergyIntolerance placed in the text of the code.
 
-{% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
 ### patient ###
 
@@ -331,7 +331,7 @@ If no reaction has explicitly been recorded, but the reaction element is present
 
 If the patient has been asked, but is unable to specify a reaction the nullFlavor, ‘ASKU’ **SHOULD** be used.
 
-{% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
 ### reaction.description ###
 
@@ -371,7 +371,7 @@ Severities of `Mild`, `Moderate`, `Severe` are mapped directly to the ValueSet. 
 
 The route by which exposure to the substance causing the reaction occurred. Utilise the dm+d route codes.
 
-{% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
 
 <h2 style="color:#ED1951;">AllergyIntolerance elements <b>not in use</b></h2>

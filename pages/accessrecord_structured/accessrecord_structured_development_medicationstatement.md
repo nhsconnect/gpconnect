@@ -216,6 +216,8 @@ Providers **MUST** use a default value of `unk` – unknown.
 
 The coded reason for authorising the medication.
 
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
+
 ### reasonReference ###
 
 <table class='resource-attributes'>

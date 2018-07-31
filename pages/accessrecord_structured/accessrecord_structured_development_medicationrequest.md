@@ -154,6 +154,8 @@ The textual reason either free text or the term of a code for stopping/discontin
 
 **MUST** be populated when StatusReason.date is populated.
 
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
+
 
 ### extension[prescriptionType] ###
 
@@ -363,6 +365,7 @@ May not always be the user who entered the record on the system but, where a sys
 
 The coded reason for authorising the medication.
 
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
 ### reasonReference ###
 

@@ -58,7 +58,7 @@ The code that identifies the medication.
 
 A SNOMED dm+d code **MUST** be supplied, if available.
 
-{% include tip.html content="Please see [Common code systems](accessrecord_structured_development_resources_overview.html#common-code-systems) when populating `CodeableConcept.coding.system`." %}
+{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
 ### package ###
 
