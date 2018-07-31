@@ -93,7 +93,7 @@ The following is a set of request/response examples for Medication:
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"933361000000108"</span><span class="p">,</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medications and medical devices (record artifact)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Medications and medical devices"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
                </span><span class="p">]</span><span class="w">
@@ -185,14 +185,10 @@ The following is a set of request/response examples for Medication:
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionID"</span><span class="p">,</span><span class="w">
                                  </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56966201000001112"</span><span class="w">
                               </span><span class="p">},</span><span class="w">
-                              </span><span class="p">{</span><span class="w">
-                                 </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionDisplay"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amoxicillin 250mg capsules"</span><span class="w">
-                              </span><span class="p">}</span><span class="w">
                            </span><span class="p">]</span><span class="w">
                         </span><span class="p">}</span><span class="w">
                      </span><span class="p">],</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product containing amoxicillin 250 mg/1 each oral capsule (clinical drug)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amoxicillin 250mg capsules"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"323509004"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
@@ -404,16 +400,16 @@ The following is a set of request/response examples for Medication:
                            </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                               </span><span class="p">{</span><span class="w">
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionID"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"56962301000001119"</span><span class="w">
+                                 </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"462888013"</span><span class="w">
                               </span><span class="p">},</span><span class="w">
                               </span><span class="p">{</span><span class="w">
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionDisplay"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aspirin 75mg dispersible tablets"</span><span class="w">
+                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aspirin 75mg dispersible tablet"</span><span class="w">
                               </span><span class="p">}</span><span class="w">
                            </span><span class="p">]</span><span class="w">
                         </span><span class="p">}</span><span class="w">
                      </span><span class="p">],</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aspirin 75mg dispersible tablet (product)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aspirin 75mg dispersible tablets"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"319773006"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
@@ -784,7 +780,7 @@ The following is a set of request/response examples for Medication:
                      </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"394745000"</span><span class="p">,</span><span class="w">
-                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation) (qualifier value)"</span><span class="w">
+                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation)"</span><span class="w">
                      </span><span class="p">}</span><span class="w">
                   </span><span class="p">]</span><span class="w">
                </span><span class="p">}</span><span class="w">
