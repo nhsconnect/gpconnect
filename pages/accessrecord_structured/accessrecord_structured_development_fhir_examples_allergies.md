@@ -89,7 +89,7 @@ The following is a set of request/response examples for Allergies:
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allergies and adverse reaction (record artifact)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allergies and adverse reaction"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"886921000000105"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
@@ -159,7 +159,7 @@ The following is a set of request/response examples for Allergies:
                            </span><span class="p">{</span><span class="w">
                               </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                  </span><span class="p">{</span><span class="w">
-                                    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vomiting (disorder)"</span><span class="p">,</span><span class="w">
+                                    </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Vomiting"</span><span class="p">,</span><span class="w">
                                     </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"422400008"</span><span class="p">,</span><span class="w">
                                     </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                                     </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -190,7 +190,7 @@ The following is a set of request/response examples for Allergies:
                   </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                      </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                         </span><span class="p">{</span><span class="w">
-                           </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aspirin 75mg dispersible tablet (product)"</span><span class="p">,</span><span class="w">
+                           </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Aspirin 75mg dispersible tablet"</span><span class="p">,</span><span class="w">
                            </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"319773006"</span><span class="p">,</span><span class="w">
                            </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                            </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -286,7 +286,7 @@ The following is a set of request/response examples for Allergies:
                      </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                            </span><span class="p">{</span><span class="w">
-                              </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"On examination - itchy rash (disorder)"</span><span class="p">,</span><span class="w">
+                              </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"O/E - itchy rash"</span><span class="p">,</span><span class="w">
                               </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"304386008"</span><span class="p">,</span><span class="w">
                               </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                               </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -317,7 +317,7 @@ The following is a set of request/response examples for Allergies:
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Product containing amoxicillin 250 mg/1 each oral capsule (clinical drug)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Amoxicillin 250mg capsules"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"323509004"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -371,7 +371,7 @@ The following is a set of request/response examples for Allergies:
                      </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                            </span><span class="p">{</span><span class="w">
-                              </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peanut-induced anaphylaxis (disorder)"</span><span class="p">,</span><span class="w">
+                              </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peanut-induced anaphylaxis"</span><span class="p">,</span><span class="w">
                               </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"241933001"</span><span class="p">,</span><span class="w">
                               </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                               </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -382,10 +382,6 @@ The following is a set of request/response examples for Allergies:
                                           </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionID"</span><span class="p">,</span><span class="w">
                                           </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"362151013"</span><span class="w">
                                        </span><span class="p">},</span><span class="w">
-                                       </span><span class="p">{</span><span class="w">
-                                          </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionDisplay"</span><span class="p">,</span><span class="w">
-                                          </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peanut-induced anaphylaxis"</span><span class="w">
-                                       </span><span class="p">}</span><span class="w">
                                     </span><span class="p">]</span><span class="w">
                                  </span><span class="p">}</span><span class="w">
                               </span><span class="p">]</span><span class="w">
@@ -402,7 +398,7 @@ The following is a set of request/response examples for Allergies:
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peanut - dietary (substance)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peanut - dietary"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"256349002"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -411,11 +407,11 @@ The following is a set of request/response examples for Allergies:
                            </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                               </span><span class="p">{</span><span class="w">
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionID"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"381850016"</span><span class="w">
+                                 </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"381852012"</span><span class="w">
                               </span><span class="p">},</span><span class="w">
                               </span><span class="p">{</span><span class="w">
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionDisplay"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peanut - dietary"</span><span class="w">
+                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Peanut"</span><span class="w">
                               </span><span class="p">}</span><span class="w">
                            </span><span class="p">]</span><span class="w">
                         </span><span class="p">}</span><span class="w">
@@ -455,7 +451,7 @@ The following is a set of request/response examples for Allergies:
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transfer-degraded drug allergy (record artifact)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transfer-degraded drug allergy"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"196461000000101"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -466,10 +462,6 @@ The following is a set of request/response examples for Allergies:
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionID"</span><span class="p">,</span><span class="w">
                                  </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"294801000000114"</span><span class="w">
                               </span><span class="p">},</span><span class="w">
-                              </span><span class="p">{</span><span class="w">
-                                 </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionDisplay"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Transfer-degraded drug allergy"</span><span class="w">
-                              </span><span class="p">}</span><span class="w">
                            </span><span class="p">]</span><span class="w">
                         </span><span class="p">}</span><span class="w">
                      </span><span class="p">]</span><span class="w">
@@ -630,7 +622,7 @@ The following is a set of request/response examples for Allergies:
                      </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"394745000"</span><span class="p">,</span><span class="w">
-                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation) (qualifier value)"</span><span class="w">
+                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation)"</span><span class="w">
                      </span><span class="p">}</span><span class="w">
                   </span><span class="p">]</span><span class="w">
                </span><span class="p">}</span><span class="w">
@@ -742,7 +734,7 @@ The following is a set of request/response examples for Allergies:
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allergies and adverse reaction (record artifact)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allergies and adverse reaction"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"886921000000105"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
@@ -779,7 +771,7 @@ The following is a set of request/response examples for Allergies:
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No known allergy (situation)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No known allergy"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"716186003"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
@@ -788,11 +780,11 @@ The following is a set of request/response examples for Allergies:
                            </span><span class="nt">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                               </span><span class="p">{</span><span class="w">
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionID"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3304950010"</span><span class="w">
+                                 </span><span class="nt">"valueId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3305010017"</span><span class="w">
                               </span><span class="p">},</span><span class="w">
                               </span><span class="p">{</span><span class="w">
                                  </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"DescriptionDisplay"</span><span class="p">,</span><span class="w">
-                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"No known"</span><span class="w">
+                                 </span><span class="nt">"valueString"</span><span class="p">:</span><span class="w"> </span><span class="s2">"NKA - No known allergy"</span><span class="w">
                               </span><span class="p">}</span><span class="w">
                            </span><span class="p">]</span><span class="w">
                         </span><span class="p">}</span><span class="w">
@@ -946,7 +938,7 @@ The following is a set of request/response examples for Allergies:
                      </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"394745000"</span><span class="p">,</span><span class="w">
-                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation) (qualifier value)"</span><span class="w">
+                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation)"</span><span class="w">
                      </span><span class="p">}</span><span class="w">
                   </span><span class="p">]</span><span class="w">
                </span><span class="p">}</span><span class="w">
@@ -1055,7 +1047,7 @@ The following is a set of request/response examples for Allergies:
             </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                </span><span class="nt">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                   </span><span class="p">{</span><span class="w">
-                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allergies and adverse reaction (record artifact)"</span><span class="p">,</span><span class="w">
+                     </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Allergies and adverse reaction"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                      </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"886921000000105"</span><span class="w">
                   </span><span class="p">}</span><span class="w">
@@ -1221,7 +1213,7 @@ The following is a set of request/response examples for Allergies:
                      </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://snomed.info/sct"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"394745000"</span><span class="p">,</span><span class="w">
-                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation) (qualifier value)"</span><span class="w">
+                        </span><span class="nt">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"General practice (organisation)"</span><span class="w">
                      </span><span class="p">}</span><span class="w">
                   </span><span class="p">]</span><span class="w">
                </span><span class="p">}</span><span class="w">
