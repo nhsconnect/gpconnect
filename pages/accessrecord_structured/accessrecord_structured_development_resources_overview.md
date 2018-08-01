@@ -63,5 +63,4 @@ The following common identifier systems are used when populating `Identifier.sys
 | ODS site code | Location | `https://fhir.nhs.uk/Id/ods-site-code` |
 | SDS user ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |
 | SDS role profile ID | Practitioner | `https://fhir.nhs.uk/Id/sds-role-profile-id` |
-
-
+| Cross care setting identifier | (multiple) | `https://fhir.nhs.uk/Id/cross-care-setting-identifier` |
