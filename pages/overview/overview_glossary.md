@@ -4,11 +4,9 @@ keywords: abbreviations, definitions, glossaries, terms
 tags: [getting_started]
 sidebar: overview_sidebar
 permalink: overview_glossary.html
-summary: "Glossary of terms used by GP Connect"
+summary: "Glossary of terms used in the GP Connect FHIR&reg; API specification"
 toc: false
 ---
-
-Glossary of common terms and abbreviations used though-out the GP Connect documentation.
 
 <div>
 {% assign gs = site.data.glossary | sort:[0] %}
