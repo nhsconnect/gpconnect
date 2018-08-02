@@ -61,14 +61,14 @@ When the medication was last issued.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-This details the care setting in which the medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
+This details the care setting in which the medication was prescribed. Currently this will only detail if the medication was prescribed by the GP practice or by another organisation, however in the future this valueset could be built on to be more specific about where a medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
 
-{% include todo.html content="The value set for this element is still to be confirmed by the curation process. Details will be added when the curation is complete." %}
+
 
 ### identifier ###
 
