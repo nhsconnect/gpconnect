@@ -176,7 +176,9 @@ The purpose of the list.
 There are currently 3 possible purposes of a list in GP Connect that will be represented by the following SNOMED codes.
 1. Medications and medical devices - 933361000000108
 2. Allergies and adverse reactions - 886921000000105
-3. Resolved allergies - awaiting confirmation of this SNOMED code from the terminology team
+3. Ended allergies (record artifact) - 1103671000000101 
+
+The above code for 'Ended Alergies' should be used for resolved allergies this code is new at the time of publishing this version of the specification and will be included in the October 2018 SNOMED release.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
