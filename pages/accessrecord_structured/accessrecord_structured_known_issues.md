@@ -14,3 +14,9 @@ Allergies are currently recorded using multiple schemes across general practice 
 When considering the implementation of use cases involving allergy/intolerance consumers and their suppliers **SHALL** perform an appropriate clinical safety assessment and obtain the necessary clinical safety approvals for the processing performed by their system.
 
 Please read [the following guidance](http://gpconnect.netlify.com/accessrecord_structured_development_allergies_guidance.html#allergyintolerance-interoperability-and-clinical-safety) for further information.
+
+## PractitionerRole
+
+There is an issue with the PractitionerRole resource in the base FHIR specification. It occurs in GP Connect when a Practitioner has more than one PractitionerRole associated with them and both are returned in the same bundle. 
+An example of where this happens would be if a list of Medications contained 2 Medications that were prescribed by the same Practitioner but 1 had been prescribed while working at a GP Practice and the other while working at an Out Of Hours provider then 2 PractitionerRole resources would be created that both relate to the same Practitioner. However as the MedicationRequest resource only references the Practitioner and not PractitionerRole it will be impossible to ascertain which PractitionerRole relates to which medication.
+As a workaround for this issue in GP Connect when providing responses to queries systems MUST only supply 1 PractitionerRole per Practitioner. If more than 1 should exist then the system MUST NOT supply any.
