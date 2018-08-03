@@ -421,7 +421,7 @@ The elements of the dosage datatype detailed below should be populated as descri
 
 Complete dosage instructions as text.
 
-In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
+In exceptional cases where for legacy data there is no dosage information recorded in the system then this MUST be populated with the text 'No information available'.
 
 
 ### dosageInstruction.patientInstruction ###
