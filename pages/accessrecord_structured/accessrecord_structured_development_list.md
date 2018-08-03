@@ -277,7 +277,7 @@ As GP Connect represents a snapshot at the time the request was made by the cons
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Any)</code></td>
-    <td><b>Optionality:</b> Required</td>
+    <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
