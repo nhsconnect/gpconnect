@@ -32,7 +32,7 @@ The logical identifier of the Bundle resource.
 
 The Bundle profile URL.
 
-Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-GetStructuredRecord-Bundle-1)
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1)
 
 ### meta.lastUpdated ###
 
