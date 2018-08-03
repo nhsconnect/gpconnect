@@ -11,8 +11,8 @@ summary: "Developer cheat sheet shortcuts for the technical build of GP Connect 
 
 | Explore | Build | Build | Test |
 | :------ | :---: | :---: | :--: |
-| [Structure definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/StructureDefinitions) | [Access Record implementation guide](accessrecord.html) | [Spine Secure Proxy integration guide](integration_spine_secure_proxy.html) | [System demonstrator](system_demonstrator.html) |
-| [Value sets](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/ValueSets) | [Appointment Management implementation guide](appointments.html) | [.NET example code](https://github.com/nhsconnect/gpconnect-dotnet-examples/)| [Automated test harness](https://github.com/nhsconnect/gpconnect-provider-testing/) |
-| [Structure definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/StructureDefinitions) | [Task Management implementation guide](tasks.html)  |  [Java example code](https://github.com/nhsconnect/gpconnect-java-examples/) |
-| [Operation definitions](https://github.com/nhsconnect/gpconnect-fhir/tree/develop/OperationDefinitions) | | |
+| [Structure definitions](https://fhir.nhs.uk/StructureDefinition) | [Access Record implementation guide](accessrecord.html) | [Spine Secure Proxy integration guide](integration_spine_secure_proxy.html) | [System demonstrator](system_demonstrator.html) |
+| [Value sets](https://fhir.nhs.uk/ValueSet) | [Appointment Management implementation guide](appointments.html) | [.NET example code](https://github.com/nhsconnect/gpconnect-dotnet-examples/)| [Automated test harness](https://github.com/nhsconnect/gpconnect-provider-testing/) |
+| [Extensions](https://fhir.nhs.uk/Extensions) | [Task Management implementation guide](tasks.html)  |  [Java example code](https://github.com/nhsconnect/gpconnect-java-examples/) |
+| [Operation definitions](https://fhir.nhs.uk/OperationDefinition) | | |
 | [FHIR implementation guide](development_fhir_api_guidance.html) | | |
