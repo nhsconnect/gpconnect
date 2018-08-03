@@ -123,7 +123,7 @@ The following [HTTP verbs](http://hl7.org/fhir/STU3/valueset-http-verb.html) SHA
 
 #### Resource types ####
 
-GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/STU3/resourcelist.html) as profiled within the [GP Connect FHIR Resource Definitions](http://developer.nhs.uk/downloads-data/fhir-resource-definitions-library/). 
+GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/STU3/resourcelist.html) as detailed within the [FHIR Resource Guidance](development_fhir_resource_guidance.html). 
 
 #### Resource ID ####
 
