@@ -202,7 +202,9 @@ Reference to patient.
 
 Whether a medication was taken.
 
-Providers **MUST** use a default value of `unk` – unknown.
+Providers **MUST** use a default value of `unk` – unknown. 
+
+This item is mandatory in the base FHIR profile but GP systems do not record this detail therefore we have been forced to pick a default value and this information should not be used. 
 
 ### reasonCode ###
 
@@ -258,7 +260,7 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 
 Complete dosage instructions as text.
 
-In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
+In exceptional cases where for legacy data there is no dosage recorded in the system then this MUST be populated with the text 'No information available'.
 
 ### dosage.patientInstruction ###
 
