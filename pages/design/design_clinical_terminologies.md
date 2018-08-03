@@ -7,11 +7,11 @@ permalink: design_clinical_terminologies.html
 summary: "Brief guidance on how clinical terminologies are expected to be used within GP Connect"
 ---
 
-## UK Terminology Centre (UKTC) ## 
+## Terminology and classifications ## 
 
-The [UKTC](http://systems.digital.nhs.uk/data/uktc){:target="_blank"} is responsible for the UK management of [SNOMED CT](https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct){:target="_blank"}, [Read Codes](https://digital.nhs.uk/services/terminology-and-classifications/read-codes){:target="_blank"} and other healthcare terminology products.
+NHS Digital Information Standards(https://digital.nhs.uk/services/terminology-and-classifications){:target="_blank"} are responsible for the UK management of [SNOMED CT](https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct){:target="_blank"}, [Read Codes](https://digital.nhs.uk/services/terminology-and-classifications/read-codes){:target="_blank"} and other healthcare terminology products.
 
-The [UKTC](http://systems.digital.nhs.uk/data/uktc){:target="_blank"} also maintains the [NHS Dictionary of Medicines and Devices (dm+d)](http://www.nhsbsa.nhs.uk/1121.aspx){:target="_blank"} in partnership with the NHS Business Service Authority.
+They also maintain the [NHS Dictionary of Medicines and Devices (dm+d)](http://www.nhsbsa.nhs.uk/1121.aspx){:target="_blank"} in partnership with the NHS Business Service Authority.
 
 ### SNOMED CT, READ2 & CTV3 code usage ###
 
