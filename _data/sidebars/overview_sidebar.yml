@@ -222,9 +222,6 @@ entries:
         - title: Structured
           url: /tag_structured.html
           output: web
-        - title: Use case
-          url: /tag_use_case.html
-          output: web
         - title: Foundations
           url: /tag_foundations.html
           output: web
@@ -277,7 +274,7 @@ entries:
           url: /tag_code_snippet.html
           output: web
         - title: Use case
-          url: /tag_use_case.html
+          url: /tag_usecase.html
           output: web
 
     - title: Run website locally

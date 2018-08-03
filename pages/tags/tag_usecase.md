@@ -2,7 +2,7 @@
 title: "Use Case"
 tagName: usecase
 search: exclude
-permalink: tag_use_case.html
+permalink: tag_usecase.html
 sidebar: overview_sidebar
 folder: tags
 ---
