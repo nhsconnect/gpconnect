@@ -276,6 +276,9 @@ entries:
         - title: Code snippet
           url: /tag_code_snippet.html
           output: web
+        - title: Use case
+          url: /tag_use_case.html
+          output: web
 
     - title: Run website locally
       url: /support_run_website_locally.html

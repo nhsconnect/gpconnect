@@ -1,6 +1,6 @@
 ---
 title: "Use Case"
-tagName: use_case
+tagName: usecase
 search: exclude
 permalink: tag_use_case.html
 sidebar: overview_sidebar
