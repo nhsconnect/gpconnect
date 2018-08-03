@@ -19,6 +19,11 @@ Please read [the following guidance](http://gpconnect.netlify.com/accessrecord_s
 
 There is an issue with the PractitionerRole resource in the base FHIR specification. It occurs in GP Connect when a Practitioner has more than one PractitionerRole associated with them and both are returned in the same bundle. 
 
-An example of where this happens would be if a list of Medications contained 2 Medications that were prescribed by the same Practitioner but 1 had been prescribed while working at a GP Practice and the other while working at an Out Of Hours provider then 2 PractitionerRole resources would be created that both relate to the same Practitioner. However as the MedicationRequest resource only references the Practitioner and not PractitionerRole it will be impossible to ascertain which PractitionerRole relates to which medication.
+An example of where this happens would be if a list of Medications contained 2 Medications that were prescribed by the same Practitioner,
+
+1. Mediaction 1, prescribed by Practitioner at Practice A
+2. Medication 2, prescribed by Practitioner at Out of Hours service B
+
+2 PractitionerRole resources would be created that both relate to the same Practitioner. However as the MedicationRequest resource only references the Practitioner and not PractitionerRole it will be impossible to ascertain which PractitionerRole relates to which medication.
 
 As a workaround for this issue in GP Connect when providing responses to queries systems MUST only supply 1 PractitionerRole per Practitioner. If more than 1 should exist then the system MUST NOT supply any.
