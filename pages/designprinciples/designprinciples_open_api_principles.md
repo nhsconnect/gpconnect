@@ -10,8 +10,7 @@ summary: "High-level design principles related to the API design"
 
 ## Open API
 
-GP Connect has aligned with [NHS England's Open API Policy](https://www.england.nhs.uk/digitaltechnology/info-revolution/interoperability/open-api/) to support the ambition of moving to a position where significant business functionality, available within systems, is exposed through interfaces where the definition is open ([Download a PDF copy](https://www.england.nhs.uk/wp-content/uploads/2014/05/open-api-policy.pdf)).
-
+GP Connect has aligned with [NHS England's Open API Policy](open-api-policy.pdf) to support the ambition of moving to a position where significant business functionality, available within systems, is exposed through interfaces where the definition is open.
 
 ## Architectural design principals
 
