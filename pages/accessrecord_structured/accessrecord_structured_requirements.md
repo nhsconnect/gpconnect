@@ -1,7 +1,7 @@
 ---
 title: Business requirements
 keywords: requirements
-tags: [requirements]
+tags: 
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_requirements.html
 summary: "Clinical, user and governance requirements that must be supported by the solution"
