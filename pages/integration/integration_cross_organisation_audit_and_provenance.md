@@ -138,7 +138,7 @@ The payload section of the JWT **SHALL** be populated as follows:
 
 <sup>4</sup> To contain the practitioner's local system identifier(s) (for example, login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter **SHALL** be provided. Default usernames (for example, referring to systems or groups) **SHALL** NOT be used in this field.
 
-{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)), it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
+{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](https://developer.nhs.uk/apis/spine-core-1-0/ssp_system_topologies.html)), it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
 #### Population of requesting_organization ####
 
