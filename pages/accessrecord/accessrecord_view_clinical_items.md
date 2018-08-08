@@ -4,41 +4,41 @@ keywords: getcarerecord, view, section, clinical items
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_clinical_items.html
-summary: "Clinical Items HTML View."
+summary: "Clinical Items HTML view"
 ---
 
-## Clinical Items ##
+## Clinical items ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | CLI | Clinical Items | Yes | Yes | Yes | Yes |
 
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 Items of information relating to the care, health or wellbeing of the patient. Examples of this type of information are: childhood and travel vaccinations, screening information and past medical history. It does not include administrative items such as invitations for health-related information.
 
 
 ### Purpose ###
 
-The purpose of supplying Clinical Items within GP Connect is to allow a clinician to view a history of items relating to the health and wellbeing of a patient.
+The purpose of supplying clinical items within GP Connect is to allow a clinician to view a history of items relating to the health and wellbeing of a patient.
 
-The list of clinical items is based on a consumer supplied date range and is ordered by date descending (i.e. most recent date/time first).
-
-
-### Sections and Subsections ###
-
-There is only a single main section for Clinical Items with no subsections.
+The list of clinical items is based on a consumer-supplied date range and is ordered by date descending (for example, most recent date/time first).
 
 
-### Date Filter ###
+### Sections and subsections ###
 
-A date filter is applicable for the Clinical Items section.
+There is a single main section for clinical items with no subsections.
 
 
-### Section Banner Content Message ###
+### Date filter ###
 
-Providers message describing at a summary level how they have populated this section:
+A date filter is applicable for the Clinical items section.
+
+
+### Section banner content message ###
+
+Provider's message describing at a summary level how they have populated this section:
 
 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
@@ -127,17 +127,17 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
 - Table header **SHALL** be "Clinical Items".
 - Table columns **SHALL** be ordered left-to-right (1..N).
 - Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table rows **SHALL** be ordered by date descending (that is, most recent date/time first).
 
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -148,19 +148,19 @@ Providers must return all the columns as described in the table below:
 | <center>3</center> | `Details` | Longer human readable details for the clinical item | `free-text` |
 
 
-### Section Business Rules ###
+### Section business rules ###
 
 The following business rules are applicable:
 
 | Supplier | Business Rules |
 |----------|----------------|
 | EMIS | N/A |
-| TPP | Message to include indication of inclusion of Practice-specific codes |
+| TPP | Message to include indication of inclusion of practice-specific codes |
 | INPS | Message to include meaningful interpretation of Read Chapter 1 with Chapters A - Z |
 | MicroTest | Message to include meaningful interpretation of items excluding Read Code Chapter 2 and Codes starting 9 and 0 |
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -188,9 +188,9 @@ The following business rules are applicable:
 
 {% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
-## Example View ##
+## Example view ##
 
-<p data-height="400" data-theme-id="light" data-slug-hash="ooQORw" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Clinical Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/ooQORw/">Clinical Items</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="400" data-theme-id="light" data-slug-hash="ooQORw" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Clinical Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/ooQORw/">clinical items</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/ooQORw) for example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/ooQORw) for an example of using AngularJS to generate table content" %}
