@@ -128,7 +128,7 @@ This section is an exact replica of the Current repeat medications section, whic
 
 This section is an exact replica of the Current allergies and adverse reactions section, which is the first subsection within the Allergies and adverse reactions section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
-{% include callout.html content="Please see HTML guidance in the [Current Allergies and Adverse Reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions) section." type="primary" %} 
+{% include callout.html content="Please see HTML guidance in the [Current allergies and adverse reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions) section." type="primary" %} 
 
 
 ## Last 3 encounters ##
