@@ -24,7 +24,7 @@ The headings below list the elements of the Medication resource and describe how
   <tr>
     <td><b>Data type:</b> <code>Id</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -36,7 +36,7 @@ The logical identifier of the Medication resource.
   <tr>
     <td><b>Data type:</b> <code>uri</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
