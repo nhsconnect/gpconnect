@@ -9,7 +9,7 @@ summary: "Encounters HTML view"
 
 ## Encounters ##
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | ENC | Encounters | Yes | Yes | Yes | Yes |
 
@@ -93,7 +93,7 @@ Provider's message describing at a summary level how they have populated this se
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS banner content (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision banner content (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
