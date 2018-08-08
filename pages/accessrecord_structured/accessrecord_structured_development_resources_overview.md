@@ -50,17 +50,21 @@ The following common code systems are used when populating `CodeableConcept.codi
 | SNOMED CT   | `http://snomed.info/sct` |
 | Read codes V2     | `http://read.info/readv2` |
 | Read codes CTV3   | `http://read.info/ctv3` |
-
+| EMIS drug codes | `https://fhir.hl7.org.uk/Id/emis-drug-codes` |
+| Egton codes | `https://fhir.hl7.org.uk/Id/egton-drug-codes` |
+| Multilex drug codes | `https://fhir.hl7.org.uk/Id/multilex-drug-codes` |
 
 ### Common identifier systems ###
 
 The following common identifier systems are used when populating `Identifier.system` in resources for this capability:
 
-| Name | Applies to | Identifier system |
-| ---------- | -------- | ------ |
-| NHS number | Patient | `https://fhir.nhs.uk/Id/nhs-number` |
-| ODS code | Organisation | `https://fhir.nhs.uk/Id/ods-organization-code` |
-| ODS site code | Location | `https://fhir.nhs.uk/Id/ods-site-code` |
-| SDS user ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |
-| SDS role profile ID | Practitioner | `https://fhir.nhs.uk/Id/sds-role-profile-id` |
-| Cross care setting identifier | (multiple) | `https://fhir.nhs.uk/Id/cross-care-setting-identifier` |
+| Name | Identifier system |
+| ---------- | -------- |
+| NHS number | `https://fhir.nhs.uk/Id/nhs-number` |
+| ODS organisation code | `https://fhir.nhs.uk/Id/ods-organization-code` |
+| ODS site code | `https://fhir.nhs.uk/Id/ods-site-code` |
+| SDS user ID | `https://fhir.nhs.uk/Id/sds-user-id` |
+| SDS role profile ID | `https://fhir.nhs.uk/Id/sds-role-profile-id` |
+| General Medical Council (GMC) number | `https://fhir.hl7.org.uk/Id/gmc-number` |
+| General Practitioner (GMP) number | `https://fhir.hl7.org.uk/Id/gmp-number` |
+| Cross care setting identifier | `https://fhir.nhs.uk/Id/cross-care-setting-identifier` |
