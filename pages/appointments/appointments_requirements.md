@@ -19,7 +19,7 @@ The business requirements are described as a set of high-level user stories with
 
 This consists of:
 
-- an Excel workbook containing NHS England source clinical scenarios, user stories, API specification requirements, high-level use case model, and physical data model
+- an Excel workbook containing NHS England source clinical scenarios, user stories, API specification requirements, high-level use case model
 
      - [GP Connect Requirements Document for Appointment Management](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20Capability%20Requirements%20-%20Developer%20Portal.xlsx)
         
