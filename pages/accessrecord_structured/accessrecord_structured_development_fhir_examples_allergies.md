@@ -32,34 +32,36 @@ The following is a set of request/response examples for Allergies:
 <br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
-```
-{
-  "resourceType": "Parameters",
-  "meta": {
-    "profile": {
-      "value": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
-    }
-  },
-  "parameter": [
-    {
-      "name": "patientNHSNumber",
-      "valueIdentifier": {
-        "system": "https://fhir.nhs.uk/Id/nhs-number",
-        "value": "9999999999"
-      }
-    },
-    {
-      "name": "includeAllergies",
-      "part": [
-        {
-          "name": "includeResolvedAllergies",
-          "valueBoolean": true
-        }
-      ]
-    }
-  ]
-}
-```
+<div class="language-json highlighter-rouge">
+<pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Parameters"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"patientNHSNumber"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"valueIdentifier"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nt">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/Id/nhs-number"</span><span class="p">,</span><span class="w">
+        </span><span class="nt">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9999999999"</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"includeAllergies"</span><span class="p">,</span><span class="w">
+      </span><span class="nt">"part"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="p">{</span><span class="w">
+          </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"includeResolvedAllergies"</span><span class="p">,</span><span class="w">
+          </span><span class="nt">"valueBoolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+</div>
+
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
