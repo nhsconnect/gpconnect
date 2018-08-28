@@ -60,7 +60,7 @@ When the medication was last issued.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
