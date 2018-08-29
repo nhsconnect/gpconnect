@@ -16,6 +16,8 @@ The headings below list the elements of the MedicationStatement resource and des
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)" %} 
 
+{% include note.html content="It is not expected that suppliers will provide resources for data types that reference resources that have not been curated and published by GP Connect. In the case where these fields are required it is not expected they will be populated until the resources have been developed by the suppliers and completed the relevant NHS Digital assurance." %}
+
 ## MedicationStatement elements ##
 
 ### id ###
@@ -205,6 +207,8 @@ Whether a medication was taken.
 Providers **MUST** use a default value of `unk` – unknown. 
 
 This item is mandatory in the base FHIR profile but GP systems do not record this detail therefore we have been forced to pick a default value and this information should not be used. 
+
+This element has been included in this section as providers **MUST** populate it. However, as the data should not be used it has also been included in the ‘Do not use’ section below. 
 
 ### reasonCode ###
 
