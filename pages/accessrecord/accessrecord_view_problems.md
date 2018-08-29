@@ -212,7 +212,7 @@ Providers must return all the columns as described in the table below:
 {% raw %}
 ```html
 <div ng-controller="ctrl">
-	<h3>Active Problems and Issues</h3>
+	<h2>Active Problems and Issues</h2>
 	<table class="table">
 		<thead>
 			<tr>
@@ -357,7 +357,7 @@ Provider systems that do support Inactive Problems, but when no records exist fo
 {% raw %}
 ```html
 <div ng-controller="ctrl">
-	<h3>Inactive Problems and Issues</h3>
+	<h2>Inactive Problems and Issues</h2>
 	<table class="table">
 		<thead>
 			<tr>
