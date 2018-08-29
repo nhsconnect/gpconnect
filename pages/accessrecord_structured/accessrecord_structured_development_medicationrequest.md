@@ -171,7 +171,7 @@ If a medication is an acute, acute-handwritten, delayed acute, repeat or repeat 
 
 This field provides an explicit repeat/acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
-In exceptional cases where for legacy data there is no prescriptionType recorded in the system then this MUST be populated with the text ‘No information available’.
+In exceptional cases where for legacy data there is no prescriptionType recorded in the system then this **MUST** be populated with the text ‘No information available’.
 
 
 ### identifier ###
