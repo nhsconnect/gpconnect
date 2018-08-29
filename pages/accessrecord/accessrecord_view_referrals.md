@@ -148,7 +148,7 @@ Providers must return all the columns as described in the table below:
 {% raw %}
 ```html
 <div ng-controller="ctrl">
-	<h3>Referrals</h3>
+	<h2>Referrals</h2>
 	<table class="table">
 		<thead>
 			<tr>
