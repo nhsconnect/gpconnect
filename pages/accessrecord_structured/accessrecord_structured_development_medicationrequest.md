@@ -163,15 +163,16 @@ The textual reason either free text or the term of a code for stopping/discontin
   <tr>
     <td><b>Data type:</b> <code>extension (prescriptionType)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-If a medication is an acute, delayed acute, repeat, repeat dispense or prescribed elsewhere.	
+If a medication is an acute, acute-handwritten, delayed acute, repeat or repeat dispense.
 
-Explicit repeat or acute flag rather than deriving it from presence of extension elements or repeatNumber.
+This field provides an explicit repeat/acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
-In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
+In exceptional cases where for legacy data there is no prescriptionType recorded in the system then this MUST be populated with the text ‘No information available’.
+
 
 ### identifier ###
 
