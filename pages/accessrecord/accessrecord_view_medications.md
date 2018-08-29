@@ -305,7 +305,7 @@ Provider systems **SHALL** include all relevant clinical content in the `Details
 {% raw %}
 ```html
 <div ng-controller="ctrl">
-	<h3>Current Medication Issues</h3>
+	<h2>Current Medication Issues</h2>
 		<table class="table">
 			<thead>
 				<tr>
@@ -457,7 +457,7 @@ Providers must return all the columns as described in the table below:
 {% raw %}
 ```html
 <div ng-controller="ctrl">
-	<h3>Current Repeat Medications</h3>
+	<h2>Current Repeat Medications</h2>
 		<table class="table">
 			<thead>
 				<tr>
@@ -621,7 +621,7 @@ Providers must return all the columns as described in the table below:
 {% raw %}
 ```html
 <div ng-controller="ctrl">
-	<h3>Past Medications</h3>
+	<h2>Past Medications</h2>
 		<table class="table">
 			<thead>
 				<tr>
