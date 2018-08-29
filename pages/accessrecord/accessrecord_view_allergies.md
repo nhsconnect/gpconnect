@@ -318,7 +318,7 @@ Providers must return all the columns as described in the table below:
 {% raw %}
 ```html
 <div ng-controller="ctrl">
-	<h3>Historical Allergies and Adverse Reactions</h3>
+	<h2>Historical Allergies and Adverse Reactions</h2>
 	<table class="table">
 		<thead>
 			<tr>
