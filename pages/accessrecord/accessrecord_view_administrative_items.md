@@ -169,3 +169,12 @@ Providers must return all the columns as described in the table below:
 </div>
 ```
 {% endraw %}
+
+{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+
+## Example View ##
+
+<p data-height="530" data-theme-id="light" data-slug-hash="NXqqZW" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Administrative Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/QBoqNR/">Allergies</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/QBoqNR) for example of using AngularJS to generate table content" %}
