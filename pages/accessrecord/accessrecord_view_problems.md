@@ -7,14 +7,14 @@ permalink: accessrecord_view_problems.html
 summary: "Problems HTML View."
 ---
 
-## Problems and Issues ##
+## Problems and issues ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | PRB | Problems and Issues | Yes | Yes | Yes | Yes |
 
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 Any issue that is significant to a patient that impacts their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
 
@@ -23,18 +23,18 @@ Any issue that is significant to a patient that impacts their health or wellbein
 The purpose of this section is to provide information about a patient’s significant problems and issues which will inform, or may have previously informed the clinical decision-making process.
 
 
-### Sections and Subsections ###
+### Sections and subsections ###
 
 Contains two sections:
 
  - [Active Problems and Issues](accessrecord_view_problems.html#active-problems-and-issues)
  - [Inactive Problems and Issues](accessrecord_view_problems.html#inactive-problems-and-issues)
 
-### Date Filter ###
+### Date filter ###
 
 A date filter is applicable for the Problems and Issues section.
 
-### Section Banner Content ###
+### Section content banner ###
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -96,9 +96,9 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-## Active Problems and Issues ##
+## Active problems and issues ##
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 Any active issue that is significant to a patient and affects their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
 
@@ -106,7 +106,7 @@ Any active issue that is significant to a patient and affects their health or we
 
 The purpose of this section is to provide information about a patient’s current and potentially relevant significant problems and issues which will inform the clinical decision-making process.
 
-### Subsection Banner Content ###
+### Subsection content banner ###
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -185,7 +185,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
@@ -194,7 +194,7 @@ Providers must adhere to the table construction requirements listed below:
 - Table content **SHALL NOT** be truncated.
 - Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -207,7 +207,7 @@ Providers must return all the columns as described in the table below:
 
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -234,9 +234,9 @@ Providers must return all the columns as described in the table below:
 {% endraw %}
 
 
-## Inactive Problems and Issues ##
+## Inactive problems and issues ##
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 Any inactive issue that was significant to a patient and affected their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
 
@@ -244,7 +244,7 @@ Any inactive issue that was significant to a patient and affected their health o
 
 The purpose of this section is to provide information about a patient’s previous significant problems and issues which may have informed the clinical decision-making process.
 
-### Subsection Banner Content ###
+### Subsection content banner ###
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -319,7 +319,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
@@ -328,7 +328,7 @@ Providers must adhere to the table construction requirements listed below:
 - Table content **SHALL NOT** be truncated.
 - Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -352,7 +352,7 @@ Provider systems that do support Inactive Problems, but when no records exist fo
 
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -382,7 +382,7 @@ Provider systems that do support Inactive Problems, but when no records exist fo
 
 {% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
-## Example View ##
+## Example view ##
 
 <p data-height="550" data-theme-id="light" data-slug-hash="gopbVv" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Problems" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/gopbVv/">Problems</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
