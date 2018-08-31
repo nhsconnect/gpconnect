@@ -98,7 +98,7 @@ Providers message describing at a summary level how they have populated this sec
   
 ### Discontinued/cancelled/naturally ended medications ###
 
-{% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally Ended” medications." type="info" %}
+{% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally ended” medications." type="info" %}
 
 The definitions for each of these are supplied below:
 
