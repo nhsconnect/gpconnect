@@ -207,15 +207,15 @@ HTML Views with multiple tables and hence multiple Sections are:
 These Views **SHALL** have the following structure:
 
 - Section Title
-- Content Banner* (*if applicable*)
+- Content Banner<sup>1</sup> (*if applicable*)
 - Subsection (*repeated for each subsection*)
 	- Subsection Title (*e.g. Current Medications*)
 	- Date Banner (*if applicable: section date range applied*)
-	- Exclusion Banner (*where applicable, to indicate excluded items*)
+	- Exclusion Banner<sup>2</sup> (*where applicable, to indicate excluded items*)
 	- Table
 	
->* Any content description for a section **MUST** be applicable to the whole section (apply to all subsections) and **MUST NOT** be replicated in the Subsection Content Banner
->** Any content descriptions for a subsection **MUST** be applicable to that subsection only. Where the content description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection content description **MUST NOT** be replicated as section content.
+<sup>1</sup> Any content description for a section **MUST** be applicable to the whole section (apply to all subsections) and **MUST NOT** be replicated in the subsection exclusion banner.
+<sup>2</sup> Any exclusion descriptions for a subsection **MUST** be applicable to that subsection only. Where the exclusion description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **MUST NOT** be replicated as section content.
 
 {% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML View.  See [Summary HTML View](accessrecord_view_summary.html)" type="info" %}
 
