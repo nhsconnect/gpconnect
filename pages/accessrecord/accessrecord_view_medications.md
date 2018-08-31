@@ -14,7 +14,7 @@ summary: "Medications HTML View."
 | MED | Medications | Yes | Yes | Yes | Yes |
 
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 A drug or other form of medicine that is used to treat or prevent disease. 
 
@@ -22,7 +22,7 @@ A drug or other form of medicine that is used to treat or prevent disease.
 
 The purpose of this section is to provide a chronological history of medication prescribing as recorded.
 
-### Sections and Subsections ###
+### Sections and subsections ###
 
 Contains one main section, and three subsections:
 
@@ -30,7 +30,7 @@ Contains one main section, and three subsections:
  - [Current Repeat Medications](accessrecord_view_medications.html#current-repeat-medications)
  - [Past Medications](accessrecord_view_medications.html#past-medications)
  
-### Section Banner Content ###
+### Section content banner ###
 
 Providers message describing at a summary level how they have populated this section, and also the warning message where medications prescribed elsewhere have been excluded:
 
@@ -96,13 +96,13 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
   
-### Discontinued/Cancelled/Naturally ended Medications ###
+### Discontinued/cancelled/naturally ended medications ###
 
 {% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally Ended” medications." type="info" %}
 
 The definitions for each of these are supplied below:
 
-- **Naturally Ended:** Medication naturally came to an end, i.e. no manual intervention via the user (auto system transition)
+- **Naturally ended:** Medication naturally came to an end, i.e. no manual intervention via the user (auto system transition)
 - **Cancelled:** Actively stopped acute medication by user
 - **Discontinued:** Actively stopped repeat medication by user
 
@@ -169,9 +169,9 @@ The current behaviour of the suppliers is as follows:
 
 
 
-## Current Medication Issues ##
+## Current medication issues ##
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 A list of drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient.
 
@@ -184,11 +184,11 @@ A list of all current acute and repeat medications issued to a patient ordered b
 {% include customcallout.html content="**Warning:** The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete. " type="danger" %} 
 
 
-### Date Filter ###
+### Date filter ###
 
 All relevant records **SHALL** be returned (i.e. no time limit/filtering is to be applied).
 
-### Subsection Banner Content Message ###
+### Subsection content banner ###
 
 Providers message describing at a summary level how they have populated this section.
 
@@ -259,7 +259,7 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
 
-### Subsection Business Rules ###
+### Subsection business rules ###
 
 The following business rules are applicable:
 
@@ -270,7 +270,7 @@ The following business rules are applicable:
 | INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to acute and repeat medications) |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
@@ -279,7 +279,7 @@ Providers must adhere to the table construction requirements listed below:
 - Table content **SHALL NOT** be truncated.
 - Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -300,7 +300,7 @@ Provider systems **SHALL** include all relevant clinical content in the `Details
 - `MedicationOrder.dosageInstruction.maxDosePerPeriod`
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -334,9 +334,9 @@ Provider systems **SHALL** include all relevant clinical content in the `Details
 
 
 
-## Current Repeat Medications##
+## Current repeat medications##
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication e.g. EpiPen, antihistamines, monitoring or continence products etc.
 
@@ -344,11 +344,11 @@ A list of repeat drugs or other forms of medicines that are currently being used
 
 The purpose of this section is to provide a view of repeat medications that the patient is currently prescribed, which informs the clinical decision-making process.
 
-### Date Filter ###
+### Date filter ###
 
 All relevant records **SHALL** be returned (i.e. no time limit/filtering is to be applied).
 
-### Subsection Banner Content Message ###
+### Subsection content banner ###
 
 Providers message describing at a summary level how they have populated this section.
 
@@ -416,7 +416,7 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
 
-### Subsection Business Rules ###
+### Subsection business rules ###
 
 The following business rules are applicable:
 
@@ -427,7 +427,7 @@ The following business rules are applicable:
 | INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to repeat medications only) |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
@@ -436,7 +436,7 @@ Providers must adhere to the table construction requirements listed below:
 - Table content **SHALL NOT** be truncated.
 - Table rows **SHALL** be ordered by Last Issued date descending (i.e. most recent date/time first).
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -452,7 +452,7 @@ Providers must return all the columns as described in the table below:
 
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -487,9 +487,9 @@ Providers must return all the columns as described in the table below:
 
 
 
-## Past Medications ##
+## Past medications ##
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 A history view of drugs or other forms of medicines that have been used to treat or prevent disease for the patient.
 
@@ -499,7 +499,7 @@ The purpose of this section is to provide a historical view of repeat medication
  
 Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
 
-### Date Filter ###
+### Date filter ###
 
 A date filter is applicable for the Past Medications subsection:
 
@@ -507,7 +507,7 @@ A date filter is applicable for the Past Medications subsection:
 - If a date is not supplied all records **SHALL** be returned
 
 
-### Subsection Banner Content Message ###
+### Subsection content banner ###
 
 Providers message describing at a summary level how they have populated this section.
 
@@ -580,7 +580,7 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
 
-### Subsection Business Rules ###
+### Subsection business rules ###
 
 The following business rules are applicable:
 
@@ -591,7 +591,7 @@ The following business rules are applicable:
 | INPS | Past medication will show all past medication including any discontinued. This will be 12 months after the last issue date (prescription date). |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
@@ -600,7 +600,7 @@ Providers must adhere to the table construction requirements listed below:
 - Table content **SHALL NOT** be truncated.
 - Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -616,7 +616,7 @@ Providers must return all the columns as described in the table below:
 | <center>8</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | `free-text` |
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -652,7 +652,7 @@ Providers must return all the columns as described in the table below:
 
 {% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
-## Example View ##
+## Example view ##
 
 <p data-height="2000" data-theme-id="light" data-slug-hash="GyJROK" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Medications" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/GyJROK/">Medications</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
