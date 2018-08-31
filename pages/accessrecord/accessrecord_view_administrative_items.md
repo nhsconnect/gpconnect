@@ -31,7 +31,7 @@ There is only a single main section for Administrative Items with no subsections
 
 A date filter is applicable for the Administrative Items section.
 
-### Section Banner Content ###
+### Section Content Banner ###
 
 Providers message describing at a summary level how they have populated this section:
 
