@@ -15,7 +15,7 @@ summary: "Administrative Items HTML View."
 
 <sup>1</sup> EMIS have indicated they can't support extracting administrative items.
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 These include tasks such as scheduling and administering clinical care encounters, Clinical communication with other care organisations, administering and monitoring of critical safety processes such as repeat medication administration and call/recall for care.
 
@@ -23,15 +23,15 @@ These include tasks such as scheduling and administering clinical care encounter
 
 The purpose of this section is to provide information for the health care teams on the recorded management and administrative processes and activity to support safe and effective care.
 
-### Sections and Subsections ###
+### Sections and subsections ###
 
 There is only a single main section for Administrative Items with no subsections.
 
-### Date Filter ###
+### Date filter ###
 
 A date filter is applicable for the Administrative Items section.
 
-### Section Content Banner ###
+### Section content banner ###
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -122,7 +122,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
@@ -132,7 +132,7 @@ Providers must adhere to the table construction requirements listed below:
 - Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -144,7 +144,7 @@ Providers must return all the columns as described in the table below:
 
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -172,7 +172,7 @@ Providers must return all the columns as described in the table below:
 
 {% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
-## Example View ##
+## Example view ##
 
 <p data-height="400" data-theme-id="light" data-slug-hash="QBoqNR" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Administrative Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/QBoqNR/">Allergies</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
