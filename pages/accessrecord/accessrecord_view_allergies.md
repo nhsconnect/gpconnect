@@ -38,7 +38,7 @@ Contains two sections:
 Date filters are not supported for this section all relevant records shall be returned for the Current and Historic Allergies and Adverse Reactions.
  
  
-### Section Banner Content Message ###
+### Section Content Banner Message ###
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -116,7 +116,7 @@ A reaction to a substance not intended to occur. Allergies are caused by hyperse
 
 The purpose of this section is to provide the clinician with a list of current allergies to enable safe prescribing and treatment recommendations for a patient.
 
-### Subsection Banner Content Message ###
+### Subsection Content Banner Message ###
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -232,7 +232,7 @@ A reaction to a substance not intended to occur. Allergies are caused by hyperse
 The purpose of this section is to provide the clinician with a list of historical allergies to enable safe prescribing and treatment recommendations for a patient.
 
 
-### Subsection Banner Content Message ###
+### Subsection Content Banner Message ###
 
 Providers message describing at a summary level how they have populated this section:
 
