@@ -7,7 +7,7 @@ permalink: accessrecord_view_administrative_items.html
 summary: "Administrative Items HTML View."
 ---
 
-## Administrative Items ##
+## Administrative items ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
