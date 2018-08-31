@@ -43,7 +43,7 @@ There is a single main section for encounters with no subsections.
 A date filter is applicable for the encounters section.
 
 
-### Section banner content message ###
+### Section content banner ###
 
 Provider's message describing at a summary level how they have populated this section.
 
@@ -154,7 +154,7 @@ Providers must return all the columns as described in the table below:
 | <center>3</center> | `Details` | Longer human readable details for the encounter | `free-text` |
 
 
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
