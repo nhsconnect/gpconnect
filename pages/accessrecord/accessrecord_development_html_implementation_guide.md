@@ -211,7 +211,7 @@ These Views **SHALL** have the following structure:
 - Subsection (*repeated for each subsection*)
 	- Subsection Title (*e.g. Current Medications*)
 	- Date Banner (*if applicable: section date range applied*)
-	- Exclusion Banner<sup>2</sup> (*where applicable, to indicate excluded items*)
+	- Exclusion Banner<sup>2</sup> (*if applicable, to indicate excluded items*)
 	- Table
 	
 <sup>1</sup> Any content description for a section **MUST** be applicable to the whole section (apply to all subsections) and **MUST NOT** be replicated in the subsection exclusion banner.
