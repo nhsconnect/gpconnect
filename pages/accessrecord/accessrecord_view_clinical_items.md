@@ -36,7 +36,7 @@ There is a single main section for clinical items with no subsections.
 A date filter is applicable for the Clinical items section.
 
 
-### Section banner content message ###
+### Section content banner ###
 
 Provider's message describing at a summary level how they have populated this section:
 
