@@ -13,7 +13,7 @@ summary: "Observations HTML View."
 | ------------ | ------------ |-----|------|------|-----------|
 | OBS | Observations | Yes | Yes | Yes | Yes |
 
-### Clinical Narrative ###
+### Clinical narrative ###
 
 A clinical observation is a repeatable data element recorded by health professionals in the course of assessment or care of their patients or clients. Examples include, blood pressure measurement, weight, height or temperature.
 
@@ -21,15 +21,15 @@ A clinical observation is a repeatable data element recorded by health professio
 
 The purpose of this section is to enable the clinician to view and compare chronologically data recorded in structured form pertaining to a patient’s physical condition.
 
-### Sections and Subsections ###
+### Sections and subsections ###
 
 There is only a single main section for Observations with no subsections.
 
-### Date Filter ###
+### Date filter ###
 
 A date filter is applicable for the Observations section.
 
-### Section Banner Content ###
+### Section content banner ###
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -119,7 +119,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table Construction Requirements ###
+### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
@@ -129,7 +129,7 @@ Providers must adhere to the table construction requirements listed below:
 - Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
 
-### Table Columns ###
+### Table columns ###
 
 Providers must return all the columns as described in the table below:
 
@@ -144,7 +144,7 @@ Providers must return all the columns as described in the table below:
 {% include custominfocallout.html content="**Important:** GP Principal suppliers have indicated this section will contain all clinical items that represent measurement data (i.e. blood pressure, temperature, heart rate etc.)." type="warning" %}
 	
 	
-### HTML View ###
+### HTML view ###
 
 {% raw %}
 ```html
@@ -172,7 +172,7 @@ Providers must return all the columns as described in the table below:
 
 {% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
-## Example View ##
+## Example view ##
 
 <p data-height="425" data-theme-id="light" data-slug-hash="aENJMQ" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Observations" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/aENJMQ/">Observations</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
