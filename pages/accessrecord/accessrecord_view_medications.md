@@ -6,6 +6,7 @@ sidebar: accessrecord_sidebar
 permalink: accessrecord_view_medications.html
 summary: "Medications HTML View."
 ---
+{% include customcallout.html content="**Warning:** The content of the Medications view is currently under review following intial First of Type feeback, and will be uplifted in version 0.6.0 of the specification." type="danger" %}
 
 ## Medications ##
 
