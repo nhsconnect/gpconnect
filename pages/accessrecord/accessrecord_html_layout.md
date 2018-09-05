@@ -59,17 +59,21 @@ These Views **SHALL** have the following structure:
 ```html
 <div>
   <h1>Encounters</h1>
-  
+	
   <div>
-    <p><!-- Content Banner --></p>
+    <p><!-- GP transfer banner --></p>
+  </div>
+	
+  <div>
+    <p><!-- Content banner --></p>
   </div>
   
   <div>
-    <p><!-- Date Banner --></p>
+    <p><!-- Date banner --></p>
   </div>
   
   <div>
-    <p><!-- Exclusion Banner --></p>
+    <p><!-- Exclusion banner --></p>
   </div>
   
   <table>
@@ -83,20 +87,24 @@ These Views **SHALL** have the following structure:
 ```html
 <div>
   <h1>Problems and Issues</h1>
-  
+   
   <div>
-    <p><!-- Content Banner --></p>
+    <p><!-- GP transfer banner --></p>
+  </div>
+	
+  <div>
+    <p><!-- Content banner --></p>
   </div>
 
   <div>
     <h2>Active Problems and Issues</h2>
     
 	<div>
-	  <p><!-- Date Banner --></p>
+	  <p><!-- Date banner --></p>
 	</div>
     
 	<div>
-	  <p><!-- Exclusion Banner --></p>
+	  <p><!-- Exclusion banner --></p>
 	</div>
     
 	<table>
@@ -108,11 +116,11 @@ These Views **SHALL** have the following structure:
     <h2>Inactive Problems and Issues</h2>
     
 	<div>
-	  <p><!-- Date Banner --></p>
+	  <p><!-- Date banner --></p>
 	</div>
     
 	<div>
-	  <p><!-- Exclusion Banner --></p>
+	  <p><!-- Exclusion banner --></p>
 	</div>
     
 	<table>
@@ -245,4 +253,3 @@ Providers must adhere to the table construction requirements listed below:
 - Table content **SHALL NOT** be truncated.
 - Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
 
-Table header text can be found on the specfic HTML view pages.
