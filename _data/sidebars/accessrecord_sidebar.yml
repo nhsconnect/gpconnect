@@ -57,13 +57,12 @@ entries:
             url: /accessrecord_use_case_retrieve_a_care_record_section.html
             output: web, pdf
 
-      - title: HTML layout guide
-        url: /accessrecord_development_html_layout_guide.html
-        output: web, pdf
-
         - title: HTML views
           output: web, pdf
           subfolderitems:
+          - title: HTML layout guide
+            url: /accessrecord_development_html_layout_guide.html
+            output: web, pdf
           - title: Summary
             url: /accessrecord_view_summary.html
             output: web, pdf
