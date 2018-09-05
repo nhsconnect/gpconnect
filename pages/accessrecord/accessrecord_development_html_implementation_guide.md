@@ -1,5 +1,5 @@
 ---
-title: HTML Implementation Guide
+title: HTML Implementation Standards
 keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_implementation_guide.html
