@@ -44,11 +44,11 @@ entries:
       - title: HTML implementation standards
         url: /accessrecord_development_html_implementation_guide.html
         output: web, pdf
-            
+
       - title: FHIR resources
         url: /datalibraryaccessRecord.html
         output: web, pdf
-        
+
         subfolders:
         - title: API Use Cases
           output: web, pdf
