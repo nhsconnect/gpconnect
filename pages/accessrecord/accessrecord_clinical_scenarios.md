@@ -1,5 +1,5 @@
 ---
-title: Access Record HTML Clinical Scenarios
+title: Access Record HTML clinical scenarios
 keywords: getcarerecord
 tags: [getcarerecord,first_of_type]
 sidebar: accessrecord_sidebar
