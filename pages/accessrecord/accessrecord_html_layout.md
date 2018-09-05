@@ -232,7 +232,7 @@ The following message **SHALL** be supplied by the Provider if any items were ex
 </div>
 ```
 
-## Section Content Message ##
+## Section content message ##
 
 Following the Section Header & Date Range Applied, Consumer Systems **SHALL** display the Provider-returned message describing the contents of the section and indicating where contents may vary - e.g. where Historical Allergies are included in the Current Allergies sub-section, or where a particular column is not provided
 
