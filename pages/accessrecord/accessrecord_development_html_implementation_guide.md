@@ -17,6 +17,8 @@ tags:
 
 This document is intended for use by software developers looking to build a conformant GP Connect HTML care record viewer application.
 
+{% include custominfocallout.html content="**Information:** See section [HTML layout guide](accessrecord_development_html_layout_guide.html) for details of the layout of the HTML views." type="info" %}
+
 ### Notational conventions ###
 
 The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
