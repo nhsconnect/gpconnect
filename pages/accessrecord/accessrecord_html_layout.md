@@ -237,5 +237,12 @@ The following message **SHALL** be supplied by the Provider if any items were ex
 Following the Section Header & Date Range Applied, Consumer Systems **SHALL** display the Provider-returned message describing the contents of the section and indicating where contents may vary - e.g. where Historical Allergies are included in the Current Allergies sub-section, or where a particular column is not provided
 
 
+## Table construction requirements ##
 
+Providers must adhere to the table construction requirements listed below:
 
+- Table columns **SHALL** be ordered left-to-right (1..N).
+- Table content **SHALL NOT** be truncated.
+- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+
+Table header text can be found on the specfic HTML view pages.
