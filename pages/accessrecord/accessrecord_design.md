@@ -7,12 +7,12 @@ permalink: accessrecord_design.html
 summary: "Overview of the design decisions made in relation to the Access Record capability."
 ---
 
-## GP Organisation Location ##
+## GP organisation location ##
 
 - <span class="label label-success">SELECTED</span> NHS Number must be used to resolve the ODS Code for the patient's usual GP.
 - Other mechanism.
 
-### Scope of HTML View ###
+### Scope of HTML view ###
 
 What is the scope of what views we're aiming to deliver?
 
@@ -24,26 +24,26 @@ What is the scope of what views we're aiming to deliver?
 
 <span class="label label-info">DECISION</span> Remove the structured clinical data from the bundle until Access Record Structured delivery.
 
-## HTML Sections ##
+## HTML sections ##
 
-### Delivery Mechanism ###
+### Delivery mechanism ###
 
 - <span class="label label-success">SELECTED</span> Desktop
 - Web
 - Mobile
 
-### Render Guidance ###
+### Render guidance ###
 
 - <span class="label label-success">SELECTED</span> Reuse Common User Interface (CUI) Guidance
 - Roll our own.
 
-### Patient Trace Handling ###
+### Patient trace handling ###
 
 - <span class="label label-success">SELECTED</span> Consumer and Provider to have traced in both
 - Consumer only.
 - Provider only.
 
-#### Timeliness of Trace ####
+#### Timeliness of trace ####
 
 - Immediately prior to all API calls.
 - Once per user session.
@@ -51,7 +51,7 @@ What is the scope of what views we're aiming to deliver?
 
 <sup>1</sup> period of renewal/rechecking to be determined by commissioning organization.
 
-### Patient Identity Cross Check ###
+### Patient identity cross check ###
 
 Although a traced national identifier is initially mandated for use with the GP Connect APIs, there are edge case scenarios where the the patient record being retrieved from the GP system may have different patient details than the source system. The basic Patient resource has been bundled into the response so that a cross check may be performed in the consuming system.
    
@@ -61,7 +61,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 
 <span class="label label-info">DECISION</span> As per GPSoC requirements make minimal registration details mandatory (i.e. First Name, Surname, Gender, DOB) in the FHIR profile.
 
-#### Minimum Patient Demographics  ####
+#### Minimum patient demographics  ####
 
 - <span class="label label-success">SELECTED</span> Patient Banner as defined in the CUI guidance.
 - Community driven (i.e. just add Gender).
@@ -69,7 +69,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 
 <span class="label label-info">DECISION</span> Consumer SHALL cross-check with demographics returned from the Provider system.
 
-### View Non-Retrieval ###
+### View non-retrieval ###
 
 Potential grounds for not returning an HTML view:
 
@@ -83,7 +83,7 @@ Potential grounds for not returning an HTML view:
 - PDS Status
 	- Corrupt Record etc.
 
-### Record Locking ###
+### Record locking ###
 
 Behaviour when Access Record query/request received while patient record being updated in provider system:
 
@@ -91,14 +91,14 @@ Behaviour when Access Record query/request received while patient record being u
 - Return error message in lieu of record section. 
 - Return snapshot of record as-is at the time of request including any non-committed changes.
 
-### Patient Consent ###
+### Patient consent ###
 
 Patient Consent Preferences:
 
 - <span class="label label-success">SELECTED</span> Patient consent enforced by the Provider system and cannot be overridden.
 - Patient consent enforced by the Provider BUT can be overridden by Consumer.
 
-### Patient Data Exclusions ###
+### Patient data exclusions ###
 
 <span class="label label-info">DECISION</span> Provider system SHALL enforce exclusion rules, either for the complete patient record, or sections/data-items.
 
@@ -113,14 +113,14 @@ These can be determined by two potential sets of exclusion settings:
 
 <sup>2</sup> Automatic or inferred exclusions are not supported as this would be technically impractical (i.e. it's not possible to filter out all free-text and other fields which could potentially contain data which should ideally be excluded).
 
-### 'Confidential' (GP Practice-designated) Data Exclusions ###
+### 'Confidential' (GP Practice-designated) data exclusions ###
 
 <span class="label label-info">DECISION</span> Provider system SHALL enforce exclusion rules, either for the complete patient record, or sections/data-items.
 
 Items designated by the Practice as confidential SHALL not be provided, and processed in the same way as Patient Data Exclusions.
 
 
-### Sensitive Data Exclusion Set ###
+### Sensitive data exclusion set ###
 
 <span class="label label-info">DECISION</span> Provider API processing SHALL support the application of an exclusion set, which SHALL be configurable, including containing Null values.  The current RGCP Sensitive Exclusion Set SHALL be applied for Stage 1 FoT, for the complete patient record, or sections/data-items, but is likely to to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
 <br>[GP Summary Exclusion Code Lists](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/1/subpack/141/releases)
@@ -128,12 +128,12 @@ Items designated by the Practice as confidential SHALL not be provided, and proc
 {% include note.html content="You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link" %}
 
 
-### Data Sharing Agreements ###
+### Data sharing agreements ###
 
 - Data-Sharing Agreement must be in place between the consuming organisation and the providing organisation
 - The Spine Security Proxy validates this requirement, therefore Provider Systems SHALL NOT apply or change locally-configured Data-Sharing validation
 
-### Exclusion Warnings ###
+### Exclusion warnings ###
 
 - No indication that data has been excluded.
 - <span class="label label-success">SELECTED</span> Warning indication per section that data has been excluded (within the time frame).
@@ -142,7 +142,7 @@ Items designated by the Practice as confidential SHALL not be provided, and proc
 
 <span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld due to patient preferences, gp-practice designation of 'Confidential' or as a result of the application of the Sensitive Exclusion set - to be displayed both within the Section Banner as well as at line item level.
 
-### Record 'In-transit' As A Result of GP Transfer ###
+### Record 'In-transit' as a result of GP transfer ###
 
 If the patient's record is indicated in the Provider system as not fully-integrated following a GP to GP transfer, then only data which has been entered to the current GP record should be returned, and NOT the contents of the previous GP record.  Where data is excluded according to this, a warning should be included in the Section Banner indicating that some data has been excluded as a result of the transfer.    
 
@@ -150,9 +150,9 @@ If the patient's record is indicated in the Provider system as not fully-integra
 - Other.
 
 
-### Section-by-section Time Frames for data ###
+### Section-by-section time frames for data ###
 
-#### Summary Time Frames ####
+#### Summary time frames ####
 
 Date range handling in the summary per section:
 
@@ -163,7 +163,7 @@ Date range handling in the summary per section:
 	 - etc.
  - Date range to match SCR time-frames for all sub sections.
 
-#### Section Time Frames ####
+#### Section time frames ####
 
 Date range handling in the HTML view per section:
 
@@ -171,11 +171,11 @@ Date range handling in the HTML view per section:
 - Fixed date ranges for sections.
 - <span class="label label-success">SELECTED</span> Date Ranges to be applied as indicated in the relevant Section implementation guidance (e.g. always return all allergies) with clinical sign off.
 
-#### HTML Section Ordering ####
+#### HTML section ordering ####
 
 <span class="label label-info">DECISION</span> Consumer systems SHALL provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML Composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
 
-### Per Section Minimum Free Text For Display ###
+### Per section minimum free text for display ###
 
 Providers SHALL populate the free-text details field as follows:
 
@@ -191,9 +191,9 @@ Providers SHALL populate the free-text details field as follows:
 | OBS | Observations | - |
 | ALL | Allergies and Sensitivities | - |
 
-## Operation Definition ##
+## Operation definition ##
 
-### Requesting A Section ###
+### Requesting a section ###
 
 - [0..N] Return a variety of views.
 - [0..1] Return everything vs. Return summary.
