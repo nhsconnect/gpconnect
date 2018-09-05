@@ -12,7 +12,7 @@ toc: false
 
 <i class='fa fa-road'/> Out of scope for FoT.
 
-# FoT Clinical Settings & User Stories #
+## FoT clinical settings & user stories ##
 
 These have been assembled through engagement during 2015/16 with various clinical communities and examples are as follows (click title to expand/collapse):
 
@@ -143,7 +143,7 @@ These have been assembled through engagement during 2015/16 with various clinica
 </div>
 <!-- /.panel-group -->
 
-## Provide Feedback
+## Provide Feedback ##
 
 To provide feedback or add your own Use Cases please contact GP Connect by sending  an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
