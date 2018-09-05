@@ -194,9 +194,9 @@ HTML Views with a single table and hence a single Section are:
 These Views **SHALL** have the following structure:
 
 - Section Title
-- Content Banner (*if applicable*)
-- Date Banner (*if applicable: section date range applied*)
-- Exclusion Banner (*if applicable: to indicate excluded items*)
+- Content Banner (where applicable)
+- Date Banner (where applicable: section date range applied)
+- Exclusion Banner (where applicable: to indicate excluded items)
 - Table
 
 ### HTML Views with Multiple Tables ###
@@ -207,90 +207,22 @@ HTML Views with multiple tables and hence multiple Sections are:
 These Views **SHALL** have the following structure:
 
 - Section Title
-- Content Banner<sup>1</sup> (*if applicable*)
-- Subsection (*repeated for each subsection*)
-	- Subsection Title (*e.g. Current Medications*)
-	- Date Banner (*if applicable: section date range applied*)
-	- Exclusion Banner<sup>2</sup> (*if applicable, to indicate excluded items*)
+- Content Banner (where applicable)
+- Sub-section 
+	- Sub-section Title (*e.g. Current Medications*)
+	- Date Banner (*where applicable: section date range applied*)
+	- Exclusion Banner (*where applicable, to indicate excluded items*)
 	- Table
-	
-<sup>1</sup> Any content description for a section **MUST** be applicable to the whole section (apply to all subsections) and **MUST NOT** be replicated in the subsection exclusion banner.
+- Sub-section 
+	- Sub-section Title (*e.g. Past Medications*)
+	- Date Banner (*where applicable: section date range applied*)
+	- Exclusion Banner (*where applicable: to indicate excluded items*)
+	- Table
 
-<sup>2</sup> Any exclusion descriptions for a subsection **MUST** be applicable to that subsection only. Where the exclusion description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **MUST NOT** be replicated as section content.
+...etc
 
 {% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML View.  See [Summary HTML View](accessrecord_view_summary.html)" type="info" %}
 
-### Section Title ###
-
-The section title SHALL be inside a `<h1>` tags and sub-section title SHALL be inside a `<h2>` tags.
-
-Single table example:
-
-```html
-<div>
-  <h1>Encounters</h1>
-  
-  <div>
-    <p><!-- Content Banner --></p>
-  </div>
-  
-  <div>
-    <p><!-- Date Banner --></p>
-  </div>
-  
-  <div>
-    <p><!-- Exclusion Banner --></p>
-  </div>
-  
-  <table>
-    <!-- table data -->
-  </table>
-</div>
-```
-
-Multiple table example:
-
-```html
-<div>
-  <h1>Problems and Issues</h1>
-  
-  <div>
-    <p><!-- Content Banner --></p>
-  </div>
-
-  <div>
-    <h2>Active Problems and Issues</h2>
-    
-	<div>
-	  <p><!-- Date Banner --></p>
-	</div>
-    
-	<div>
-	  <p><!-- Exclusion Banner --></p>
-	</div>
-    
-	<table>
-	  <!-- table data -->
-	</table>
-  </div>
-  
-  <div>
-    <h2>Inactive Problems and Issues</h2>
-    
-	<div>
-	  <p><!-- Date Banner --></p>
-	</div>
-    
-	<div>
-	  <p><!-- Exclusion Banner --></p>
-	</div>
-    
-	<table>
-	  <!-- table data -->
-	</table>
-  </div>
-</div>
-```
 
 ### Section Banner ###
 
