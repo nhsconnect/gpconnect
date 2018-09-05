@@ -7,7 +7,7 @@ permalink: accessrecord_use_case_retrieve_a_care_record_section.html
 summary: "Use case for retrieving a care record section for a patient from a given organisation."
 ---
 
-## Use Case ##
+## Use case ##
 
 This specification describes a single use cases. For complete details and background please see the [Access Record Capability Bundle](accessrecord.html).
 
@@ -26,23 +26,23 @@ The Consumer system:
 - **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
 - **SHALL** render HTML content in-line with the [Access Record - Development - HTML Implementation Guide](accessrecord_development_html_implementation_guide.html).
 
-## API Usage ##
+## API usage ##
 
-### Request Operation ###
+### Request operation ###
 
-#### FHIR Relative Request ####
+#### FHIR relative request ####
 
 ```http
 POST /Patient/$gpc.getcarerecord
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.getcarerecord
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
@@ -71,7 +71,7 @@ Ssp-To: 200000000116
 Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord
 ```
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 The following data-elements are mandatory (i.e. data **MUST** be present):
 
@@ -171,7 +171,7 @@ The Provider system **SHALL**:
 Refer to [Access Record - Development - HTML Implementation Guide - Per Section Default Time Frames](accessrecord_development_html_implementation_guide.html#per-section-default-time-frames) for details of the default time periods that **SHALL** be applied per care record section.
 
 
-#### Error Handling ####
+#### Error handling ####
 
 The Provider system **SHALL** return an error if:
 
@@ -186,9 +186,9 @@ Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 ```http
 HTTP/1.1 200 OK
@@ -198,7 +198,7 @@ Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
