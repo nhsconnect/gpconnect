@@ -185,7 +185,7 @@ If no Consumer Start date:
 </div>
 ``` 
 
-### Default Date Ranges ###
+### Default date ranges ###
 
 Where the Consumer System has not supplied a date-range, then where applicable and while the default is for ALL items to be provided, the following message **SHALL** be supplied by the Provider and displayed by the Consumer System beneath the Section Header.
 
@@ -195,7 +195,7 @@ Where the Consumer System has not supplied a date-range, then where applicable a
 </div>
 ``` 
 
-### Per Section Default Time Frames ###
+### Per section default time frames ###
 
 Section Default Time Frames **SHALL** be configurable, by the Provider, to be easily amendable if required in response to FoT feedback 
 
