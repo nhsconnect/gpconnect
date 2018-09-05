@@ -50,22 +50,20 @@ entries:
         output: web, pdf
 
         subfolders:
-        - title: API Use Cases
+        - title: API use cases
           output: web, pdf
           subfolderitems:
-
           - title: Retrieve a care record section
             url: /accessrecord_use_case_retrieve_a_care_record_section.html
             output: web, pdf
 
-      - title: HTML layout Guide
+      - title: HTML layout guide
         url: /accessrecord_development_html_layout_guide.html
         output: web, pdf
 
         - title: HTML views
           output: web, pdf
           subfolderitems:
-
           - title: Summary
             url: /accessrecord_view_summary.html
             output: web, pdf
@@ -96,4 +94,3 @@ entries:
           - title: Administrative items
             url: /accessrecord_view_administrative_items.html
             output: web, pdf
-            
