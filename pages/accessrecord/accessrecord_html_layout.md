@@ -11,7 +11,7 @@ tags:
   - getcarerecord
 ---
 
-### Purpose ###
+## Purpose ##
 
 This document is intended for use by software developers looking to build a conformant GP Connect HTML care record viewer application.
 
@@ -52,7 +52,7 @@ These Views **SHALL** have the following structure:
 
 {% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML View.  See [Summary HTML View](accessrecord_view_summary.html)" type="info" %}
 
-#### Single table example ####
+### Single table example ###
 
 ```html
 <div>
@@ -80,7 +80,7 @@ These Views **SHALL** have the following structure:
 </div>
 ```
 
-#### Multiple table example ####
+### Multiple table example ###
 
 ```html
 <div>
@@ -134,7 +134,9 @@ The section title **SHALL** be inside a `<h1>` tags and sub-section title **SHAL
 
 The section and subsection titles are defined in the individual html view pages.
 
-## GP transfer banner ##
+## Banners ##
+
+### GP transfer banner ###
 
 In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **SHALL** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **SHALL** be provided and displayed.
 
@@ -144,20 +146,20 @@ In the scenario where the patient's GP record is not 'fully integrated' into the
 </div>
 ```
 
-## Content banners ##
+### Content banners ###
 
 The content banner **SHALL** be used by the provider to detail any specific business rules applied to the section content which is not standard across providers, or any non-compliance with the specification due to constraints of their GP system. 
 
-### Section content banner ###
+#### Section content banner ####
 
 Any content description for a section **MUST** be applicable to the whole section (apply to all subsections) and **MUST NOT** be replicated in the subsection content banner.
 
-### Subsection content banner ###
+#### Subsection content banner ####
 
 Any exclusion descriptions for a subsection **MUST** be applicable to that subsection only. Where the exclusion description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **MUST NOT** be replicated as section content.
 
 
-## Date banner ##
+### Date banner ###
 
 The Provider **SHALL** supply all matching dates/times, e.g. the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
 
@@ -165,7 +167,7 @@ If no end date is supplied, the Provider **SHALL** supply all data from start da
 
 If no start date is supplied, the Provider **SHALL** supply all data until the end date.
 
-### Applied date ranges ###
+#### Applied date ranges ####
 
 Consumer Systems **SHALL** display the date range applied to a section's data, as supplied by the Provider where applicable, beneath the Section Header.
 
@@ -191,7 +193,7 @@ If no Consumer Start date:
 </div>
 ``` 
 
-### Default date ranges ###
+#### Default date ranges ####
 
 Where the Consumer System has not supplied a date-range, then where applicable and while the default is for ALL items to be provided, the following message **SHALL** be supplied by the Provider and displayed by the Consumer System beneath the Section Header.
 
@@ -201,7 +203,7 @@ Where the Consumer System has not supplied a date-range, then where applicable a
 </div>
 ``` 
 
-### Per section default time frames ###
+#### Per section default time frames ####
 
 Section Default Time Frames **SHALL** be configurable, by the Provider, to be easily amendable if required in response to FoT feedback 
 
@@ -225,7 +227,7 @@ Section Default Time Frames **SHALL** be configurable, by the Provider, to be ea
 
 Provider systems **SHALL** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
 
-## Section exclusion banner ##
+### Section exclusion banner ###
 
 Exclusions may be applied to the section / subsections in various circumstances. Where any exclusions have been applied a message banner **SHALL** be included. As shown in the layout, the exclusion banner will only be included against the specific table where exclusions have been applied, therefore it will only be at section level where it is a single table section.
 
@@ -237,11 +239,6 @@ The following message **SHALL** be supplied by the Provider if any items were ex
 	<p>Items excluded due to confidentiality, patient preferences and/or RCGP sensitive dataset exclusions</p>
 </div>
 ```
-
-## Section content message ##
-
-Following the Section Header & Date Range Applied, Consumer Systems **SHALL** display the Provider-returned message describing the contents of the section and indicating where contents may vary - e.g. where Historical Allergies are included in the Current Allergies sub-section, or where a particular column is not provided
-
 
 ## Table construction requirements ##
 
