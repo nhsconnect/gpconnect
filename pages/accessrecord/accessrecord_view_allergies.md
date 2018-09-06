@@ -1,5 +1,5 @@
 ---
-title: Allergies and Adverse Reactions
+title: Allergies and adverse reactions
 keywords: getcarerecord, view, section, allergies
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
@@ -7,7 +7,6 @@ permalink: accessrecord_view_allergies.html
 summary: "Allergies HTML View."
 ---
 
-## Allergies and adverse reactions ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
@@ -18,27 +17,31 @@ summary: "Allergies HTML View."
 <sup>2</sup> INPS have indicated they don't record end dates for allergies & sensitivities. Hence, no History view is possible.
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 A reaction to a substance not intended to occur. Allergies are caused by hypersensitivity of the immune system to an external agent
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide the clinician with a list of patient allergies to enable safe prescribing and treatment recommendations for a patient.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 Contains two sections:
 
  - [Current Allergies and Adverse Reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions)
  - [Historical Allergies and Adverse Reactions](accessrecord_view_allergies.html#historical-allergies-and-adverse-reactions)
 
-### Date filter ###
+## Section title ##
+
+The section title **SHALL** be "Allergies and Adverse Reactions".
+ 
+## Date filter ##
 
 Date filters are not supported for this section all relevant records shall be returned for the Current and Historic Allergies and Adverse Reactions.
  
  
-### Section content banner ###
+## Section content banner ##
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -93,8 +96,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-
-### Section business rules ###
+## Section business rules ##
 
 The following business rules are applicable:
 
@@ -115,6 +117,10 @@ A reaction to a substance not intended to occur. Allergies are caused by hyperse
 ### Purpose ###
 
 The purpose of this section is to provide the clinician with a list of current allergies to enable safe prescribing and treatment recommendations for a patient.
+
+### Subsection title ###
+
+The subsection title **SHALL** be "Current Allergies and Adverse Reactions".
 
 ### Subsection content banner ###
 
@@ -177,17 +183,6 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
 
-
-### Table construction requirements ###
-
-Providers must adhere to the table construction requirements listed below:
-
-- Table header **SHALL** be "Current Allergies and Adverse Reactions".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
-
-
 ### Table columns ###
 
 Providers must return all the columns as described in the table below:
@@ -197,29 +192,6 @@ Providers must return all the columns as described in the table below:
 | <center>1</center> | `Start Date` | The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
 | <center>2</center> | `Details` | Longer human readable details for the allergy or adverse reaction | `free-text` |
 
-
-### HTML view ###
-
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Current Allergies and Adverse Reactions</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
 
 ## Historical Allergies and Adverse Reactions ##
 
@@ -231,6 +203,9 @@ A reaction to a substance not intended to occur. Allergies are caused by hyperse
 
 The purpose of this section is to provide the clinician with a list of historical allergies to enable safe prescribing and treatment recommendations for a patient.
 
+### Subsection title ###
+
+The subsection title **SHALL** be "Historical Allergies and Adverse Reactions".
 
 ### Subsection content banner ###
 
@@ -293,15 +268,6 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table construction requirements ###
-
-Providers must adhere to the table construction requirements listed below:
-
-- Table header **SHALL** be "Historical Allergies and Adverse Reactions".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
-
 ### Table columns ###
 
 Providers must return all the columns as described in the table below:
@@ -313,31 +279,9 @@ Providers must return all the columns as described in the table below:
 | <center>3</center> | `Details` | Longer human readable details for the allergy or adverse reaction | `free-text` |
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Historical Allergies and Adverse Reactions</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">End Date</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records1" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.end}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
-
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+{% include accessrecord/allergies.html %}
 
 ## Example view ##
 

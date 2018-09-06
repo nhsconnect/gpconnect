@@ -7,30 +7,33 @@ permalink: accessrecord_view_referrals.html
 summary: "Referrals HTML View."
 ---
 
-## Referrals ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | REF | Referrals | Yes | Yes | Yes | Yes |
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 This is a request for transfer of care or request to provide assessment, treatment or clinical advice on the care a patient.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide details of any referrals to other care providers.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 There is only a single main section for Referrals with no subsections.
 
-### Date filter ###
+## Section title ##
+
+The section title **SHALL** be "Referrals".
+
+## Date filter ##
 
 A date filter is applicable for the Referrals section.
 
 
-### Section content banner ###
+## Section content banner ##
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -120,17 +123,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table construction requirements ###
-
-Providers must adhere to the table construction requirements listed below:
-
-- Table header **SHALL** be "Referrals".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
-
-
-### Table columns ###
+## Table columns ##
 
 Providers must return all the columns as described in the table below:
 
@@ -143,35 +136,10 @@ Providers must return all the columns as described in the table below:
 | <center>5</center> | `Details` | Longer human readable details for the referral | `free-text` |
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Referrals</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Date</th>
-				<th class="col-sm-2">From</th>
-				<th class="col-sm-2">To</th>
-				<th class="col-sm-2">Priority</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records" class="angular-with-newlines">
-				<td class="col-sm-2">{{x.date}}</td>
-				<td class="col-sm-2">{{x.from}}</td>
-				<td class="col-sm-2">{{x.to}}</td>
-				<td class="col-sm-2">{{x.priority}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
+{% include accessrecord/referrals.html %}
 
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
 
 ## Example view ##
 

@@ -7,24 +7,23 @@ permalink: accessrecord_view_summary.html
 summary: "Summary HTML view"
 ---
 
-## Summary ##
 
 | Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |
 | SUM | Summary | Yes | Yes | Yes | Yes |
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 Clinicians work in busy and time-pressured environments. They need access to high-quality, relevant and wherever possible consistent information to support safe, effective and efficient assessment of their patients.
 
 Timely sharing of clinical information is key to the delivery and improvement of safe and effective clinical care.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide a summarised view of the pertinent clinical information regarding a patient within a single screen. This allows a clinician to efficiently peruse key information from the patient’s clinical record and supports clinical decision making.
 
-### Sections and subsections ###
+## Sections ##
 
 There is only a single main section for the summary section with 5 subsections:
 
@@ -34,11 +33,11 @@ There is only a single main section for the summary section with 5 subsections:
  - [Current allergies and adverse reactions](accessrecord_view_summary.html#current-allergies-and-adverse-reactions)
  - [Last 3 encounters](accessrecord_view_summary.html#last-3-encounters)
  
-### Date filter ###
+## Date filter ##
 
 Date filters are not supported for this section. All relevant records shall be returned.
 
-### Section banner content ###
+## Section banner content ##
 
 Provider's message describing at a summary level how they have populated this section:
 
@@ -102,36 +101,37 @@ Provider's message describing at a summary level how they have populated this se
                     </div>
 </div>
 
+## Sections detail ##
 
-## Active problems and issues ##
+### Active problems and issues ###
 
 This section is an exact replica of the Active problems and issues section, which is the first subsection within the Problems and issues section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Active problems and issues](accessrecord_view_problems.html#active-problems-and-issues) section." type="primary" %} 
 
 
-## Current medication issues ##
+### Current medication issues ###
 
 This section is an exact replica of the Current medication issues section, which is the first subsection within the Medications section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Current medication issues](accessrecord_view_medications.html#current-medication-issues) section." type="primary" %} 
 
 
-## Current repeat medications ##
+### Current repeat medications ###
 
 This section is an exact replica of the Current repeat medications section, which is the second subsection within the Medications section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Current repeat medications](accessrecord_view_medications.html#current-repeat-medications) section." type="primary" %} 
 
 
-## Current allergies and adverse reactions ##
+### Current allergies and adverse reactions ###
 
 This section is an exact replica of the Current allergies and adverse reactions section, which is the first subsection within the Allergies and adverse reactions section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Current allergies and adverse reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions) section." type="primary" %} 
 
 
-## Last 3 encounters ##
+### Last 3 encounters ###
 
 This section is an exact replica of the Encounters section with a filter applied to show the three most recent encounters. Further details about this section can be found there including any date range filtering and business rules.
 

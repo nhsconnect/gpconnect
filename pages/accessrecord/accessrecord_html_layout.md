@@ -1,5 +1,5 @@
 ---
-title: HTML Layout Guide
+title: HTML layout guide
 keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_layout_guide.html
@@ -10,8 +10,6 @@ tags:
   - development
   - getcarerecord
 ---
-
-## HTML layout guide ##
 
 ### Purpose ###
 
@@ -132,7 +130,7 @@ These Views **SHALL** have the following structure:
 
 ## Section and subsection title ##
 
-The section title **SHALL** be inside a `<h1>` tags and sub-section title SHALL be inside a `<h2>` tags.
+The section title **SHALL** be inside a `<h1>` tags and sub-section title **SHALL** be inside a `<h2>` tags.
 
 The section and subsection titles are defined in the individual html view pages.
 

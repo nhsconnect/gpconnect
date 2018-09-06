@@ -7,29 +7,32 @@ permalink: accessrecord_view_immunisations.html
 summary: "Immunisations HTML View."
 ---
 
-## Immunisations ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | IMM | Immunisations | Yes | Yes | Yes | Yes |
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 Immunisation is the process whereby a person is treated to provide immunity or resistance to an infectious disease, typically by the administration of a vaccine.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide the health care professional with information about any immunisations that have been administered to the patient.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 There is only a single main section for the Immunisations section with no subsections.
 
-### Date filter ###
+## Section title ##
+
+The section title **SHALL** be "Immunisations".
+
+## Date filter ##
 
 Date filters are not supported for this section all relevant records shall be returned.
 
-### Section content banner ###
+## Section content banner ##
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -94,17 +97,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table construction requirements ###
-
-Providers must adhere to the table construction requirements listed below:
-
-- Table header **SHALL** be "Immunisations".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
-
-
-### Table columns ###
+## Table columns ##
 
 Providers must return all the columns as described in the table below:
 
@@ -117,37 +110,9 @@ Providers must return all the columns as described in the table below:
 | <center>5</center> | `Details` | Longer human readable details for the immunisation | `free-text` |
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div>
-	<h2>Immunisations</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Date</th>
-				<th>Vaccination</th>
-				<th>Part</th>
-				<th>Contents</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.vaccination}}</td>
-				<td>{{item.part}}</td>
-				<td>{{item.contents}}</td>
-				<td>{{item.details}}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-```
-{% endraw %}
-
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+{% include accessrecord/immunisations.html %}
 
 ## Example view ##
 

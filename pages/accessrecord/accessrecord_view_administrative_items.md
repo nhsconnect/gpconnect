@@ -1,5 +1,5 @@
 ---
-title: Administrative Items
+title: Administrative items
 keywords: getcarerecord, view, section, administrative items
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
@@ -7,7 +7,6 @@ permalink: accessrecord_view_administrative_items.html
 summary: "Administrative Items HTML View."
 ---
 
-## Administrative items ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
@@ -15,23 +14,27 @@ summary: "Administrative Items HTML View."
 
 <sup>1</sup> EMIS have indicated they can't support extracting administrative items.
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 These include tasks such as scheduling and administering clinical care encounters, Clinical communication with other care organisations, administering and monitoring of critical safety processes such as repeat medication administration and call/recall for care.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide information for the health care teams on the recorded management and administrative processes and activity to support safe and effective care.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 There is only a single main section for Administrative Items with no subsections.
 
-### Date filter ###
+## Section title ##
+
+The section title **SHALL** be "Administrative Items".
+
+## Date filter ##
 
 A date filter is applicable for the Administrative Items section.
 
-### Section content banner ###
+## Section content banner ##
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -122,17 +125,7 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table construction requirements ###
-
-Providers must adhere to the table construction requirements listed below:
-
-- Table header **SHALL** be "Administrative Items".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
-
-
-### Table columns ###
+## Table columns ##
 
 Providers must return all the columns as described in the table below:
 
@@ -144,33 +137,9 @@ Providers must return all the columns as described in the table below:
 
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div>
-	<h2>Administrative Items</h2>
-	<table>
-		<thead>
-			<tr>
-				<th>Date</th>
-				<th>Entry</th>
-				<th>Details</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr ng-repeat="item in items">
-				<td>{{item.date}}</td>
-				<td>{{item.entry}}</td>
-				<td>{{item.details}}</td>
-			</tr>
-		</tbody>
-	</table>
-</div>
-```
-{% endraw %}
-
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+{% include accessrecord/adminitems.html %}
 
 ## Example view ##
 

@@ -1,40 +1,43 @@
 ---
-title: Problems and Issues
+title: Problems and issues
 keywords: getcarerecord, view, section, problems
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_problems.html
-summary: "Problems HTML View."
+summary: "Problems and issues HTML View."
 ---
 
-## Problems and issues ##
 
 | Section Code | Section Name | TPP | EMIS | INPS | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | PRB | Problems and Issues | Yes | Yes | Yes | Yes |
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 Any issue that is significant to a patient that impacts their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide information about a patient’s significant problems and issues which will inform, or may have previously informed the clinical decision-making process.
 
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 Contains two sections:
 
  - [Active Problems and Issues](accessrecord_view_problems.html#active-problems-and-issues)
  - [Inactive Problems and Issues](accessrecord_view_problems.html#inactive-problems-and-issues)
 
-### Date filter ###
+## Section title ##
+
+The section title **SHALL** be "Problems and Issues".
+ 
+## Date filter ##
 
 A date filter is applicable for the Problems and Issues section.
 
-### Section content banner ###
+## Section content banner ##
 
 Providers message describing at a summary level how they have populated this section:
 
@@ -105,6 +108,10 @@ Any active issue that is significant to a patient and affects their health or we
 ### Purpose ###
 
 The purpose of this section is to provide information about a patient’s current and potentially relevant significant problems and issues which will inform the clinical decision-making process.
+
+### Subsection title ###
+
+The subsection title **SHALL** be "Active Problems and Issues".
 
 ### Subsection content banner ###
 
@@ -184,16 +191,6 @@ Providers message describing at a summary level how they have populated this sec
                     </div>
 </div>
 
-
-### Table construction requirements ###
-
-Providers must adhere to the table construction requirements listed below:
-
-- Table header **SHALL** be "Active Problems and Issues".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
-
 ### Table columns ###
 
 Providers must return all the columns as described in the table below:
@@ -207,32 +204,6 @@ Providers must return all the columns as described in the table below:
 
 
 
-### HTML view ###
-
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Active Problems and Issues</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">Entry</th>
-				<th class="col-sm-2">Significance</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.entry}}</td>
-				<td class="col-sm-2">{{x.significance}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
-
 
 ## Inactive problems and issues ##
 
@@ -243,6 +214,10 @@ Any inactive issue that was significant to a patient and affected their health o
 ### Purpose ###
 
 The purpose of this section is to provide information about a patient’s previous significant problems and issues which may have informed the clinical decision-making process.
+
+### Subsection title ###
+
+The subsection title **SHALL** be "Inactive Problems and Issues".
 
 ### Subsection content banner ###
 
@@ -319,15 +294,6 @@ Providers message describing at a summary level how they have populated this sec
 </div>
 
 
-### Table construction requirements ###
-
-Providers must adhere to the table construction requirements listed below:
-
-- Table header **SHALL** be "Inactive Problems and Issues".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
-
 ### Table columns ###
 
 Providers must return all the columns as described in the table below:
@@ -352,35 +318,9 @@ Provider systems that do support Inactive Problems, but when no records exist fo
 
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Inactive Problems and Issues</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">End Date</th>
-				<th class="col-sm-2">Entry</th>
-				<th class="col-sm-2">Significance</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records1" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.end}}</td>
-				<td class="col-sm-2">{{x.entry}}</td>
-				<td class="col-sm-2">{{x.significance}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
-
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+{% include accessrecord/problems.html %}
 
 ## Example view ##
 
