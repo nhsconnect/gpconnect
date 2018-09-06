@@ -1,0 +1,72 @@
+{% raw %}
+```html
+<div>
+   <h1>Allergies and Adverse Reactions</h1>
+   <div>
+      <p>
+         <!-- GP transfer banner -->
+      </p>
+   </div>
+   <div>
+      <p>
+         <!-- Content banner -->
+      </p>
+   </div>
+   <div>
+      <h2>Current Allergies and Adverse Reactions</h2>
+      <div>
+         <p>
+            <!-- Exclusion banner -->
+         </p>
+      </div>
+      <table>
+         <thead>
+            <tr>
+               <th>Start Date</th>
+               <th>Details</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <!-- the <tr>...</tr> element will repeat for each current allergy and adverse reaction-->
+               <td>{{allergyadversereaction.startdate}}</td>
+               <td>{{allergyadversereaction.details}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div>
+      <h2>Historical Allergies and Adverse Reactions</h2>
+      <div>
+         <p>
+            <!-- Exclusion banner -->
+         </p>
+      </div>
+      <table>
+         <thead>
+            <tr>
+               <th>Start Date</th>
+               <th>End Date</th>
+               <th>Details</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <!-- the <tr>...</tr> element will repeat for each historical allergy and adverse reaction-->
+               <td>{{allergyadversereaction.startdate}}</td>
+               <td>{{allergyadversereaction.enddate}}</td>
+               <td>{{allergyadversereaction.details}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
+```
+{% endraw %}
+
+
+
+
+
+
+
