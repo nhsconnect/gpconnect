@@ -111,7 +111,7 @@ The current behaviour of the suppliers is as follows:
 
 
 
-## Recent acute medication ##
+## Recent Acute Medication ##
 
 ### Clinical narrative ###
 
