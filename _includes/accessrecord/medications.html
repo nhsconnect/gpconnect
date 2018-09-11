@@ -53,9 +53,10 @@
       <table>
          <thead>
             <tr>
-               <th>Last Issued</th>
+               <th>Start Date</th>
                <th>Medication Item</th>
                <th>Start Date</th>
+               <th>Last Issued Date</th>
                <th>Review Date</th>
                <th>Number Issued</th>
                <th>Max Issues</th>
@@ -65,10 +66,11 @@
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each current repeat medication-->
-               <td>{{medication.lastIssued}}</td>
+               <td>{{medication.startDate}}</td>
                <td>{{medication.drug}}</td>
-               <td>{{medication.start}}</td>
-               <td>{{medication.review}}</td>
+               <td>{{medication.type}}</td>
+               <td>{{medication.lastIssued}}</td>
+               <td>{{medication.reviewDate}}</td>
                <td>{{medication.numberIssued}}</td>
                <td>{{medication.maxIssues}}</td>
                <td>{{medication.details}}</td>
@@ -94,7 +96,7 @@
                <th>First Prescribed Date</th>
                <th>Medication Item</th>
                <th>Type</th>
-               <th>Last Issued</th>
+               <th>Last Issued Date</th>
                <th>Number Issued</th>
                <th>Details (last issue)</th>
             </tr>
