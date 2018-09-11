@@ -219,7 +219,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 
 
 
-## Current Repeat Medication##
+## Current Repeat Medication ##
 
 ### Clinical narrative ###
 
