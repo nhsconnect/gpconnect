@@ -25,7 +25,7 @@
                <th>Start Date</th>
                <th>Medication Item</th>
                <th>Type</th>
-               <th>Scheduled End</th>
+               <th>Scheduled End Date</th>
                <th>Days Duration</th>
                <th>Details</th>
             </tr>
@@ -77,7 +77,7 @@
       </table>
    </div>
    <div>
-      <h2>Past Medications</h2>
+      <h2>All Medication (Summary)</h2>
       <div>
          <p>
             <!-- Date banner -->
@@ -91,38 +91,62 @@
       <table>
          <thead>
             <tr>
-               <th>Start Date</th>
+               <th>First Prescribed Date</th>
                <th>Medication Item</th>
                <th>Type</th>
                <th>Last Issued</th>
-               <th>Review Date</th>
                <th>Number Issued</th>
-               <th>Max Issues</th>
-               <th>Details</th>
+               <th>Details (last issue)</th>
             </tr>
          </thead>
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each past medication-->
-               <td>{{medication.start}}</td>
+               <td>{{medication.firstPrescribedDate}}</td>
                <td>{{medication.drug}}</td>
                <td>{{medication.type}}</td>
                <td>{{medication.lastIssued}}</td>
-               <td>{{medication.review}}</td>
                <td>{{medication.numberIssued}}</td>
-               <td>{{medication.maxIssues}}</td>
                <td>{{medication.details}}</td>
             </tr>
          </tbody>
       </table>
    </div>
+   <div>
+      <h2>All Medication Issues</h2>
+      <div>
+         <p>
+            <!-- Date banner -->
+         </p>
+      </div>
+      <div>
+         <p>
+            <!-- Exclusion banner -->
+         </p>
+      </div>
+      <table>
+         <thead>
+            <tr>
+               <th>Issue Date</th>
+               <th>Medication Item</th>
+               <th>Type</th>
+               <th>Scheduled End Date</th>
+               <th>Days Duration</th>
+               <th>Details</th>
+            </tr>
+         </thead>
+         <tr>
+            <!-- the <tr>...</tr> element will repeat for each past medication-->
+            <td>{{medication.issueDate}}</td>
+            <td>{{medication.drug}}</td>
+            <td>{{medication.type}}</td>
+            <td>{{medication.scheduledEndDate}}</td>
+            <td>{{medication.daysDuration}}</td>
+            <td>{{medication.details}}</td>
+         </tr>
+      </table>
+   </div>
+</div>
 </div>
 ```
 {% endraw %}
-
-
-
-
-
-
-
