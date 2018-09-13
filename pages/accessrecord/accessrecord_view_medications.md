@@ -266,8 +266,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
 <thead>
   <tr class="header">
 	<th width="5%">Order</th>
-	<th width="22%">Name</th>
-	<th width="59%">Description</th>
+	<th width="23%">Name</th>
+	<th width="58%">Description</th>
 	<th width="14%">Value Details</th>
   </tr>
  </thead>
@@ -399,8 +399,8 @@ Providers **MUST** return all the columns as described in the table below, it wi
 <thead>
   <tr class="header">
 	<th width="5%">Order</th>
-	<th width="22%">Name</th>
-	<th width="59%">Description</th>
+	<th width="23%">Name</th>
+	<th width="58%">Description</th>
 	<th width="14%">Value Details</th>
   </tr>
  </thead>
@@ -515,8 +515,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
 <thead>
   <tr class="header">
 	<th width="5%">Order</th>
-	<th width="22%">Name</th>
-	<th width="59%">Description</th>
+	<th width="23%">Name</th>
+	<th width="58%">Description</th>
 	<th width="14%">Value Details</th>
   </tr>
  </thead>
