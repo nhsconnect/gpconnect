@@ -213,7 +213,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
     <td><code>integer</code></td>
   </tr>
   <tr>
-    <td align="center">6</td>
+    <td align="center">8</td>
     <td><code>Additional Information</code></td>
     <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 		<ul>
