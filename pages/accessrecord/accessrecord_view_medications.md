@@ -148,8 +148,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
 <thead>
   <tr class="header">
 	<th width="5%">Order</th>
-	<th width="22%">Name</th>
-	<th width="59%">Description</th>
+	<th width="23%">Name</th>
+	<th width="58%">Description</th>
 	<th width="14%">Value Details</th>
   </tr>
  </thead>
@@ -166,47 +166,63 @@ Providers **MUST** return all the columns as described in the table below, sorte
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Medication Item</code></td>
-    <td>Descriptive name of medication item (including dosage)  e.g. Ibuprofen 400mg tablets.</td>
+    <td><code>Type</code></td>
+    <td>Type of medication issued (e.g. <code>Acute, Acute Post-Dated, Prescribed Elsewhere – [Agency]<sup><b>1</b></sup></code>).</td>
     <td><code>free-text</code></td>
-  </tr>  
+  </tr> 
   <tr>
     <td align="center">3</td>
-    <td><code>Type</code></td>
-    <td>Type of medication issued (e.g. Acute, Acute Post-Dated, Prescribed Elsewhere – [Agency]<sup><b>1</b></sup>, etc).</td>
+    <td><code>Medication Item</code></td>
+    <td>Descriptive name of medication item (including dosage)  e.g. <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
-  </tr>  
+  </tr>
   <tr>
     <td align="center">4</td>
+    <td><code>Dosage Instruction</code></td>
+    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Dosage Rate</li>
+			<li>Schedule (when / how often)</li>
+		</ul>
+	<p>e.g. <code>two to be taken daily</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td><code>Quantity</code></td>
+    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Quantity</li>
+			<li>Quantity unit</li>
+		</ul>
+	<p>e.g. <code>14 capsule</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">6</td>
     <td><code>Scheduled End Date</code></td>
     <td>The date the prescription is expected to finish</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
-    <td align="center">5</td>
+    <td align="center">7</td>
     <td><code>Days Duration</code></td>
     <td>Duration of medication issued in days</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
     <td align="center">6</td>
-    <td><code>Details</code></td>
-    <td>Longer human readable free-text details for the medication item. As a minimum, this <b>MUST</b> include:
+    <td><code>Additional Information</code></td>
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 		<ul>
-			<li>Quantity</li>
-			<li>Quantity unit</li>
-			<li>Dosage Rate</li>
-			<li>Schedule (when / how often)</li>
-		</ul>
-	<p>e.g. 14 tablets, two to be taken daily</p>
-	<p>If the medication record includes the information, the following details are <b>REQUIRED</b>:</p>
-			<ul>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
-			<li>‘CANCELLED:’ label with cancellation date and reason</li>
+			<li><code>CANCELLED: </code> label with cancellation date and reason</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. Linked Problem : Ear Infection).</p>
+	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. <code>Linked Problem : Ear Infection</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -219,7 +235,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 
 
 
-## Current Repeat Medication ##
+## Current Repeat Medication##
 
 ### Clinical narrative ###
 
@@ -258,63 +274,79 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">1</td>
     <td><code>Start Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
-    <td>TThe original date of authorisation of the repeat medication (if a provider system allows re-authorisation of a repeat medication the start date <b>MUST</b> be the first authorisation). If this is not known (e.g. for prescribed elsewhere) then date of entry of the repeat medication record <b>MUST</b> be returned.</td>
+    <td>The original date of authorisation of the repeat medication (if a provider system allows re-authorisation of a repeat medication the start date <b>MUST</b> be the first authorisation). If this is not known (e.g. for prescribed elsewhere) then date of entry of the repeat medication record <b>MUST</b> be returned.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Medication Item</code></td>
-    <td>Descriptive name of medication item (including dosage)  e.g. Ibuprofen 400mg tablets.</td>
+    <td><code>Type</code></td>
+    <td>Type of medication issued (e.g. <code>Repeat, Repeat Dispense, Repeat – [Prescribing Agency]</code>).</td>
     <td><code>free-text</code></td>
-  </tr>  
+  </tr>
   <tr>
     <td align="center">3</td>
-    <td><code>Type</code></td>
-    <td>Type of medication issued (e.g. Repeat, Repeat Dispense, Repeat – [Prescribing Agency], etc.).</td>
+    <td><code>Medication Item</code></td>
+    <td>Descriptive name of medication item (including dosage)  e.g. <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
   </tr>  
   <tr>
     <td align="center">4</td>
+    <td><code>Dosage Instruction</code></td>
+    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Dosage Rate</li>
+			<li>Schedule (when / how often)</li>
+		</ul>
+	<p>e.g. <code>two to be taken daily</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td><code>Quantity</code></td>
+    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Quantity</li>
+			<li>Quantity unit</li>
+		</ul>
+	<p>e.g. <code>14 capsule</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>  
+  <tr>
+    <td align="center">6</td>
     <td><code>Last Issued Date</code></td>
     <td>The last issue date. If the medication is repeat dispense or prescribed elsewhere this <b>MUST</b> be null.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
-    <td align="center">5</td>
-    <td><code>Review Date</code></td>
-    <td>The date the repeat medication is due for review.</td>
-    <td><code>dd-Mmm-yyyy</code></td>
-  </tr>
-  <tr>
-    <td align="center">6</td>
-    <td><code>Number Issued</code></td>
+    <td align="center">7</td>
+    <td><code>Number of Prescriptions Issued</code></td>
     <td>This <b>MUST</b> be the number issued up to the current date inclusive. For a repeat dispense this will be null. This <b>MUST</b> be null where no issues of the repeat have been made at the current date. If the medication is repeat dispensed or prescribed elsewhere this <b>MUST</b> be null.</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
-    <td align="center">7</td>
+    <td align="center">8</td>
     <td><code>Max Issues</code></td>
     <td>The maximum number of issues the repeat prescription has authorised.</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
-    <td align="center">8</td>
-    <td><code>Details</code></td>
-    <td>Longer human readable free-text details for the medication item. As a minimum, this <b>MUST</b> include:
-		<ul>
-			<li>Quantity</li>
-			<li>Quantity unit</li>
-			<li>Dosage Rate</li>
-			<li>Schedule (when / how often)</li>
-		</ul>
-	<p>e.g. 14 tablets, two to be taken daily</p>
-	<p>If the medication record includes the information, the following details are <b>REQUIRED</b>:</p>
+    <td align="center">9</td>
+    <td><code>Review Date</code></td>
+    <td>The date the repeat medication is due for review.</td>
+    <td><code>dd-Mmm-yyyy</code></td>
+  </tr>  
+  <tr>
+    <td align="center">10</td>
+    <td><code>Additional Information</code></td>
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 			<ul>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. Linked Problem : Heart Failure).</p>
+	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. <code>Linked Problem : Heart Failure</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -380,47 +412,63 @@ Providers **MUST** return all the columns as described in the table below, it wi
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Medication Item</code> <i class="fa fa-object-group" aria-hidden="true"></i> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
-    <td>Descriptive name of medication item (including dosage)  e.g. Ibuprofen 400mg tablets.</td>
+    <td><code>Type</code> <i class="fa fa-object-group" aria-hidden="true"></i></td>
+    <td>Type of medication issued (e.g. <code>Acute, Repeat, Repeat Dispense, Acute - [prescribing agency], Repeat - [prescribing agency]</code>).</td>
     <td><code>free-text</code></td>
-  </tr>  
+  </tr>
   <tr>
     <td align="center">3</td>
-    <td><code>Type</code> <i class="fa fa-object-group" aria-hidden="true"></i></td>
-    <td>Type of medication issued (e.g. Acute, Repeat, Repeat Dispense, Acute - [prescribing agency], Repeat - [prescribing agency]).</td>
+    <td><code>Medication Item</code> <i class="fa fa-object-group" aria-hidden="true"></i> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
+    <td>Descriptive name of medication item (including dosage)  e.g. <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
   </tr>  
   <tr>
     <td align="center">4</td>
+    <td><code>Dosage Instruction</code></td>
+    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Dosage Rate</li>
+			<li>Schedule (when / how often)</li>
+		</ul>
+	<p>e.g. <code>two to be taken daily</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td><code>Quantity</code></td>
+    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Quantity</li>
+			<li>Quantity unit</li>
+		</ul>
+	<p>e.g. <code>14 capsule</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>   
+  <tr>
+    <td align="center">6</td>
     <td><code>Last Issued Date</code></td>
     <td>The last issue of the medication item (acute or repeat). If the medication is repeat dispense or prescribed elsewhere this <b>MUST</b> be null.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
-    <td align="center">5</td>
-    <td><code>Number Issued</code></td>
+    <td align="center">7</td>
+    <td><code>Number of Prescriptions Issued</code></td>
     <td>The sum of the number of issues of the medication – actual issues not the max issues. If this is not known (e.g. for medication prescribed elsewhere or repeat dispense, this <b>MUST</b> be null).</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
-    <td align="center">6</td>
-    <td><code>Details (last issue)</code></td>
-    <td>Longer human readable free-text details for the medication item. As a minimum, this <b>MUST</b> include:
-		<ul>
-			<li>Quantity</li>
-			<li>Quantity unit</li>
-			<li>Dosage Rate</li>
-			<li>Schedule (when / how often)</li>
-		</ul>
-	<p>e.g. 14 tablets, two to be taken daily</p>
-	<p>If the medication record includes the information, the following details are <b>REQUIRED</b>:</p>
+    <td align="center">8</td>
+    <td><code>Additional Information</code></td>
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 			<ul>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
-			<li>‘CANCELLED:’ label with cancellation date and reason (acute) or ‘DISCONTINUED:‘ label with discontinued date and reason (repeat)</li>
+			<li><code>CANCELLED: </code> label with cancellation date and reason (acute) or <code>DISCONTINUED: </code> label with discontinued date and reason (repeat)</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. Linked Problem : Heart Failure).</p>
+	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. <code>Linked Problem : Heart Failure</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -480,47 +528,64 @@ Providers **MUST** return all the columns as described in the table below, sorte
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Medication Item</code></td>
-    <td>Descriptive name of medication item (including dosage)  e.g. Ibuprofen 400mg tablets.</td>
+    <td><code>Type</code></td>
+    <td>Type of medication issued (e.g. <code>Acute, Repeat, Repeat Dispense, Acute - [prescribing agency], Repeat - [prescribing agency]</code>).</td>
     <td><code>free-text</code></td>
-  </tr>  
+  </tr>
   <tr>
     <td align="center">3</td>
-    <td><code>Type</code></td>
-    <td>Type of medication issued (e.g. Acute, Repeat, Repeat Dispense, Acute - [prescribing agency], Repeat - [prescribing agency]).</td>
+    <td><code>Medication Item</code></td>
+    <td>Descriptive name of medication item (including dosage)  e.g. <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
   </tr>  
+
   <tr>
     <td align="center">4</td>
+    <td><code>Dosage Instruction</code></td>
+    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Dosage Rate</li>
+			<li>Schedule (when / how often)</li>
+		</ul>
+	<p>e.g. <code>two to be taken daily</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td><code>Quantity</code></td>
+    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Quantity</li>
+			<li>Quantity unit</li>
+		</ul>
+	<p>e.g. <code>14 capsule</code></p>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>   
+  <tr>
+    <td align="center">6</td>
     <td><code>Scheduled End Date</code></td>
     <td>The date the prescription is expected to finish.</td>
     <td><code>dd-Mmm-yyyy</code></td>
-  </tr>  
+  </tr>
   <tr>
-    <td align="center">5</td>
+    <td align="center">7</td>
     <td><code>Days Duration</code></td>
     <td>Duration of the medication issued in days.</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
-    <td align="center">6</td>
-    <td><code>Details (last issue)</code></td>
-    <td>Longer human readable free-text details for the medication item. As a minimum, this <b>MUST</b> include:
-		<ul>
-			<li>Quantity</li>
-			<li>Quantity unit</li>
-			<li>Dosage Rate</li>
-			<li>Schedule (when / how often)</li>
-		</ul>
-	<p>e.g. 14 tablets, two to be taken daily</p>
-	<p>If the medication record includes the information, the following details are <b>REQUIRED</b>:</p>
+    <td align="center">8</td>
+    <td><code>Additional Information</code></td>
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 			<ul>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
-			<li>‘CANCELLED:’ label with cancellation date and reason (acute) or ‘DISCONTINUED:‘ label with discontinued date and reason (repeat)</li>
+			<li><code>CANCELLED: </code> label with cancellation date and reason (acute) or <code>DISCONTINUED: </code> label with discontinued date and reason (repeat)</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. Linked Problem : Ear Infection).</p>
+	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (e.g. <code>Linked Problem : Ear Infection</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
