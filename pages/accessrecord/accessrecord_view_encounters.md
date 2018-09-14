@@ -17,7 +17,7 @@ summary: "Encounters HTML view"
 
 An encounter is an interaction between a patient and a health care professional (HCP) that is recorded on the patient record. This can include:
 
-- Planned encounters - such as pre-arranged Appointments with a GP
+- Planned encounters - such as pre-arranged appointments with a GP
 - Unplanned encounters - such as at an out of hours clinic and those unrecorded through appointment module(s)
 - Direct encounters - such as a face-to-face session with a GP
 - Indirect encounters - such as a GP reviewing and updating a patient record on receipt of some test results
@@ -29,7 +29,7 @@ The purpose of supplying encounters within GP Connect is to allow a clinician to
 
 The list of encounters is based on a consumer-supplied date range and is ordered by date descending (that is, most recent date/time first).
 
-Data will include the date, the practitioner (and role) and organisation (and code), then a block of free text which will include any free text narrative recorded during the consultation and some basic details of related activities will also be shown (for example - meds prescribed, procedures performed, diagnosis recorded, examinations, history recorded, care plans created, allergies or sensitivities recorded).
+Data will include the date, the practitioner (and role) and organisation (and code), then a block of free text which will include any free text narrative recorded during the consultation and some basic details of related activities will also be shown (for example, meds prescribed, procedures performed, diagnosis recorded, examinations, history recorded, care plans created, allergies or sensitivities recorded).
 
 
 ## Sections and subsections ##
@@ -115,7 +115,7 @@ Provider's message describing at a summary level how they have populated this se
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Microtest message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -144,7 +144,7 @@ Providers must return all the columns as described in the table below:
 | Order | Name | Description | Value Details |
 | ----- | ---- | ----------- | ------------- |
 | <center>1</center> | `Date` | The date of the encounter | `dd-Mmm-yyyy` |
-| <center>2</center> | `Title`| A short human readable title for the encounter, to be composed of a subset of the `Practitioner` and `Organization` details linked to the encounter| `free-text` |
+| <center>2</center> | `Title`| A short human-readable title for the encounter, to be composed of a subset of the `Practitioner` and `Organization` details linked to the encounter| `free-text` |
 | <center>3</center> | `Details` | Longer human readable details for the encounter | `free-text` |
 
 
