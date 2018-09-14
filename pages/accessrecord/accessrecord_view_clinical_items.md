@@ -8,7 +8,7 @@ summary: "Clinical items HTML view"
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | CLI | Clinical Items | Yes | Yes | Yes | Yes |
 
