@@ -4,11 +4,11 @@ keywords: getcarerecord, view, section, problems
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_problems.html
-summary: "Problems and issues HTML View."
+summary: "Problems and issues HTML view."
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | PRB | Problems and Issues | Yes | Yes | Yes | Yes |
 
@@ -19,7 +19,7 @@ Any issue that is significant to a patient that impacts their health or wellbein
 
 ## Purpose ##
 
-The purpose of this section is to provide information about a patient’s significant problems and issues which will inform, or may have previously informed the clinical decision-making process.
+The purpose of this section is to provide information about a patient’s significant problems and issues which will inform or may have previously informed the clinical decision-making process.
 
 
 ## Sections and subsections ##
@@ -35,7 +35,7 @@ The section title **SHALL** be "Problems and Issues".
  
 ## Date filter ##
 
-A date filter is applicable for the Problems and Issues section.
+A date filter is applicable for the ‘Problems and Issues’ section.
 
 ## Section content banner ##
 
@@ -51,11 +51,11 @@ Providers message describing at a summary level how they have populated this sec
 								<p><b>Always displays this text:</b></p>
 									<ul>
 										<li>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</li>
-										<li>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</li>
+										<li>Contains items coded as problems within the patient’s record; Can also contain details on medications linked to problems if available.</li>
 									</ul>
 								<p><b>Only displayed if a date filter is applied:</b></p>
 									<ul>
-										<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or RCGP exclusions.</li>
+										<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or Royal College of General Practitioners (RCGP) exclusions.</li>
 									</ul>
                             </div>
                         </div>
@@ -88,7 +88,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Microtest message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -115,7 +115,7 @@ The subsection title **SHALL** be "Active Problems and Issues".
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section:
+Provider’s message describing at a summary level how they have populated this section:
 
 <div class="panel-group" id="accordion2">
                     <div class="panel panel-default">
@@ -126,7 +126,7 @@ Providers message describing at a summary level how they have populated this sec
                             <div class="panel-body">
 								<p><b>Always displays this text:</b></p>
 									<ul>
-										<li>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</li>
+										<li>Contains items coded as problems within the patients record; can also contain details on medications linked to problems if available.</li>
 									</ul>
                             </div>
                         </div>
@@ -178,7 +178,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">MicroTest message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">Microtest message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseEight" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -221,7 +221,7 @@ The subsection title **SHALL** be "Inactive Problems and Issues".
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section:
+Provider’s message describing at a summary level how they have populated this section:
 
 <div class="panel-group" id="accordion3">
                     <div class="panel panel-default">
@@ -232,7 +232,7 @@ Providers message describing at a summary level how they have populated this sec
                             <div class="panel-body">
 									<p><b>Always displays this text:</b></p>
 										<ul>
-											<li>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</li>
+											<li>Contains items coded as problems within the patient’s record; can also contain details on medications linked to problems if available.</li>
 										</ul>
                             </div>
                         </div>
@@ -276,9 +276,9 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTweleve">MicroTest message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwelve">Microtest message descriptions (click here to expand/collapse)</a>
                         </div>
-                        <div id="collapseTweleve" class="panel-collapse collapse">
+                        <div id="collapseTwelve" class="panel-collapse collapse">
                             <div class="panel-body">
 								<p><b>Always displays this text:</b></p>
 									<ul>
@@ -302,21 +302,17 @@ Providers must return all the columns as described in the table below:
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
 | <center>2</center> | `End Date` | The end date of the problem | `dd-Mmm-yyyy` |
-| <center>3</center> | `Entry`| A short human readable title for the problem | `free-text` |
-| <center>4</center> | `Significance`| The significance of the problem (i.e. Major or Minor) | `free-text` |
+| <center>3</center> | `Entry`| A short human-readable title for the problem | `free-text` |
+| <center>4</center> | `Significance`| The significance of the problem (that is, Major or Minor) | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
 
+Provider systems not supporting Inactive Problems (for example, Vision) **SHALL** display a message in the Section Banner to indicate:
 
-
-Provider systems not supporting Inactive Problems (e.g. INPS) **SHALL** display a message in the Section Banner to indicate:
-
-- Inactive Problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
+- Inactive problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
 ) section.
-- That any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section.
+- That any problems and issues recorded for the patient are included in the ‘Active Problems and Issues’ section.
 
-Provider systems that do support Inactive Problems, but when no records exist for the requested Patient **SHALL** display the standard [HTML Implementation Guide - Supported But Hasn't Been Recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
-
-
+Provider systems that do support inactive problems, but when no records exist for the requested patient **SHALL** display the standard [HTML implementation guide - supported but hasn't been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
 
 ## HTML view ##
 
