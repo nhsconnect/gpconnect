@@ -4,7 +4,7 @@ keywords: getcarerecord, view, section, clinical items
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_clinical_items.html
-summary: "Clinical Items HTML view"
+summary: "Clinical items HTML view"
 ---
 
 
@@ -51,11 +51,11 @@ Provider's message describing at a summary level how they have populated this se
                             <div class="panel-body">
 							<p><b>Always displays this text:</b></p>
 								<ul>
-									<li>Contains coded clinical items relating to a patients care e.g. procedures, test results, conditions.</li>
+									<li>Contains coded clinical items relating to a patient’s care – for example, procedures, test results, conditions.</li>
 								</ul>
 							<p><b>Only displayed if a date filter is applied:</b></p>
 								<ul>
-									<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or RCGP exclusions.</li>
+									<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or Royal College of General Practitioners (RCGP) exclusions.</li>
 								</ul>
                             </div>
                         </div>
@@ -149,14 +149,13 @@ The following business rules are applicable:
 |----------|----------------|
 | EMIS | N/A |
 | TPP | Message to include indication of inclusion of practice-specific codes |
-| INPS | Message to include meaningful interpretation of Read Chapter 1 with Chapters A - Z |
-| MicroTest | Message to include meaningful interpretation of items excluding Read Code Chapter 2 and Codes starting 9 and 0 |
+| Vision | Message to include meaningful interpretation of Read Chapter 1 with Chapters A - Z |
+| Microtest | Message to include meaningful interpretation of items excluding Read Code Chapter 2 and Codes starting 9 and 0 |
 
 
 ## HTML view ##
 
 {% include accessrecord/clinical.html %}
-
 
 
 ## Example view ##
