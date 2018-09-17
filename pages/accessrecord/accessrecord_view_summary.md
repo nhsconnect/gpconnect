@@ -8,7 +8,7 @@ summary: "Summary HTML view"
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
+| Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |
 | SUM | Summary | Yes | Yes | Yes | Yes |
 
@@ -27,11 +27,11 @@ The purpose of this section is to provide a summarised view of the pertinent cli
 
 There is only a single main section for the summary section with 5 subsections:
 
- - [Active problems and issues](accessrecord_view_summary.html#active-problems-and-issues)
- - [Current medication issues](accessrecord_view_summary.html#current-medication-issues)
- - [Current repeat medications](accessrecord_view_summary.html#current-repeat-medications)
- - [Current allergies and adverse reactions](accessrecord_view_summary.html#current-allergies-and-adverse-reactions)
- - [Last 3 encounters](accessrecord_view_summary.html#last-3-encounters)
+ - [Active Problems and Issues](accessrecord_view_summary.html#active-problems-and-issues)
+ - [Current Medication Issues](accessrecord_view_summary.html#current-medication-issues)
+ - [Current Repeat Medications](accessrecord_view_summary.html#current-repeat-medications)
+ - [Current Allergies and Adverse Reactions](accessrecord_view_summary.html#current-allergies-and-adverse-reactions)
+ - [Last 3 Encounters](accessrecord_view_summary.html#last-3-encounters)
  
 ## Date filter ##
 
