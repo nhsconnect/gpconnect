@@ -4,10 +4,10 @@ keywords: getcarerecord, view, section, medications
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_medications.html
-summary: "Medications HTML View."
+summary: "Medications HTML view"
 ---
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | MED | Medications | Yes | Yes | Yes | Yes |
 
@@ -35,22 +35,22 @@ The section title **MUST** be "Medications".
  
 ## Section content banner ##
 
-Providers message describing at a summary level how they have populated this section, and also the warning message where medications prescribed elsewhere have been excluded.
+Provider's message describing at a summary level how they have populated this section. Also includes the warning message where medications prescribed elsewhere have been excluded.
 
   
 ### Discontinued/cancelled/naturally ended medications ###
 
-{% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally ended” medications." type="info" %}
+{% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” and “Naturally ended” medications." type="info" %}
 
 The definitions for each of these are supplied below:
 
-- **Naturally ended:** Medication naturally came to an end, i.e. no manual intervention via the user (auto system transition)
+- **Naturally ended:** Medication naturally came to an end - that is, no manual intervention via the user (auto system transition)
 - **Cancelled:** Actively stopped acute medication by user
 - **Discontinued:** Actively stopped repeat medication by user
 
 Not all suppliers can supply the details (date and reason) for the ending of a medication (either through discontinuation or cancellation).
 
-It is extremely important for the details regarding the ending of a medication to be available to a clinician, as this will highlight any clinical issues (e.g. stopping a medication due to an allergy etc.) and allow the clinician to make an efficient and informed clinical decision.
+It is extremely important for the details regarding the ending of a medication to be available to a clinician, as this will highlight any clinical issues (for example, stopping a medication due to an allergy) and allow the clinician to make an efficient and informed clinical decision.
 
 Refer to decision log item (HDL-212) which contains significant detail around this issue.
 
@@ -68,9 +68,9 @@ The current behaviour of the suppliers is as follows:
 									<ul>
 										<li>The mitigating banner EMIS have implemented is used for pilots only.</li>
 										<li>The mitigating banner is complemented by providing pilot users with additional guidance on the behaviour of past medications as part of a wider guidance document (again, pilots only).</li>
-										<li>The cancellation/end reason field is included as part of future HTML view specification release, which providers must support as soon as possible (after initial pilots once further pilot feedback has been received). It should be noted the a strategic programme decision has been made to confine the next version of HTML View Access Record to only include resolutions for clinical issues.</li>
+										<li>The cancellation/end reason field is included as part of future HTML view specification release, which providers must support as soon as possible (after initial pilots once further pilot feedback has been received). It should be noted that a strategic programme decision has been made to confine the next version of HTML View Access Record to only include resolutions for clinical issues.</li>
 									</ul>
-								<p>NOTE: EMIS cannot meet the original requirement of displaying discontinued date for discontinued and cancelled medications due to the way data is stored within EMIS Web. In light of this, the end date and reason suggested as a long term solution would also include the end date and reason for naturally ended medications.</p>
+								<p>NOTE: EMIS cannot meet the original requirement of displaying discontinued date for discontinued and cancelled medications due to the way data is stored within EMIS Web. In light of this, the end date and reason suggested as a long-term solution would also include the end date and reason for naturally ended medications.</p>
                             </div>
                         </div>
                     </div>
@@ -92,18 +92,18 @@ The current behaviour of the suppliers is as follows:
                         </div>
                         <div id="collapseFifteen" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-								INPS does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the details column. Note: INPS use the term de-activated in Vision as opposed to discontinued.
+								Vision does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the details column. Note: Vision use the term de-activated as opposed to discontinued.
                             </div>
                         </div>
                     </div>
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseSixteen">MicroTest behaviour  (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseSixteen">Microtest behaviour  (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseSixteen" class="panel-collapse collapse">
                             <div class="panel-body">
-								MicroTest only show that the medication has been actively stopped by a user. They do not hold the date or reason for the ending of a medication (these are not viewable in their GP system).
+								Microtest only show that the medication has been actively stopped by a user. They do not hold the date or reason for the ending of a medication (these are not viewable in their GP system).
                             </div>
                         </div>
                     </div>
@@ -136,7 +136,7 @@ All relevant records **MUST** be returned.
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section.
+Provider's message describing at a summary level how they have populated this section.
 
 
 ### Table columns ###
@@ -158,7 +158,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
     <td><code>Start Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
     <td>The date of issue of the acute medications, except where:
 		<ul>
-			<li>the medication is post dated it <b>MUST</b> be the post date</li>
+			<li>the medication is post-dated it <b>MUST</b> be the post date</li>
 			<li>the medication is prescribed elsewhere it <b>MUST</b> be the expected start date if known, else the entered date </li>
 		</ul>
 	</td>
@@ -229,17 +229,13 @@ Providers **MUST** return all the columns as described in the table below, sorte
 </table>
 </div>
 
-<sup><b>1</b></sup> Where the medication type is Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the type of Prescribed Elsewhere e.g. ‘Prescribed Elsewhere – Dentist’.
-
-
-
-
+<sup><b>1</b></sup> Where the medication type is Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the type of Prescribed Elsewhere - for example, ‘Prescribed Elsewhere – Dentist’.
 
 ## Current Repeat Medication##
 
 ### Clinical narrative ###
 
-A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication e.g. EpiPen, antihistamines, monitoring or continence products etc.
+A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication - for example, EpiPen, antihistamines, monitoring or continence products.
 
 ### Purpose ###
 
@@ -251,11 +247,11 @@ The subsection title **MUST** be "Current Repeat Medication".
 
 ### Date filter ###
 
-All relevant records **MUST** be returned (i.e. no time limit/filtering is to be applied).
+All relevant records **MUST** be returned (that is, no time limit/filtering is to be applied).
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section.
+Provider's message describing at a summary level how they have populated this section.
 
 ### Table columns ###
 
@@ -353,7 +349,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 </table>
 </div>
 
-{% include custominfocallout.html content="**Note:** If the provider system allows the repeat medication (master / template) details to be altered pending or as new repeat issues are generated, then the latest details **MUST** be returned by the provider in the detail column (e.g. TPP current include the guidance text ‘The medication above is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. You should look at the Current Medication Issues section to see what the patient has been given.’)" type="info" %}
+{% include custominfocallout.html content="**Note:** If the provider system allows the repeat medication (master / template) details to be altered pending or as new repeat issues are generated, then the latest details **MUST** be returned by the provider in the detail column (for example, TPP current include the guidance text ‘The medication above is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. You should look at the Current Medication Issues section to see what the patient has been given.’)" type="info" %}
 
 
 
@@ -387,12 +383,12 @@ A date filter is applicable for the Past Medications subsection:
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section.
+Provider's message describing at a summary level how they have populated this section.
 
 
 ### Table columns ###
 
-Providers **MUST** return all the columns as described in the table below, it will be grouped by `Medication Item` and `Type` and sorted alphabetically:
+Providers **MUST** return all the columns as described in the table below. It will be grouped by `Medication Item` and `Type` and sorted alphabetically:
 
 <div>
 <table>
@@ -504,7 +500,7 @@ A date filter is applicable for the Repeat Medication Issues subsection:
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section.
+Provider's message describing at a summary level how they have populated this section.
 
 ### Table columns ###
 
@@ -602,4 +598,4 @@ Providers **MUST** return all the columns as described in the table below, sorte
 <p data-height="2000" data-theme-id="light" data-slug-hash="EeQJyW" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Medications" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/EeQJyW/">Medications</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/EeQJyW) for example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/EeQJyW) for example of using AngularJS to generate table content." %}
