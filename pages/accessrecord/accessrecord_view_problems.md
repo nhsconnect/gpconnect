@@ -8,7 +8,7 @@ summary: "Problems and issues HTML view."
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
+| Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | PRB | Problems and Issues | Yes | Yes | Yes | Yes |
 
@@ -195,7 +195,7 @@ Provider’s message describing at a summary level how they have populated this 
 
 Providers must return all the columns as described in the table below:
 
-| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry`| A short human readable title for the problem | `free-text` |
@@ -298,7 +298,7 @@ Provider’s message describing at a summary level how they have populated this 
 
 Providers must return all the columns as described in the table below:
 
-| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
 | <center>2</center> | `End Date` | The end date of the problem | `dd-Mmm-yyyy` |
@@ -306,7 +306,7 @@ Providers must return all the columns as described in the table below:
 | <center>4</center> | `Significance`| The significance of the problem (that is, Major or Minor) | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
 
-Provider systems not supporting Inactive Problems (for example, Vision) **SHALL** display a message in the Section Banner to indicate:
+Provider systems not supporting inactive problems (for example, Vision) **SHALL** display a message in the section banner to indicate:
 
 - Inactive problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
 ) section.
@@ -323,4 +323,4 @@ Provider systems that do support inactive problems, but when no records exist fo
 <p data-height="550" data-theme-id="light" data-slug-hash="gopbVv" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Problems" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/gopbVv/">Problems</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/gopbVv) for example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/gopbVv) for example of using AngularJS to generate table content." %}
