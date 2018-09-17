@@ -22,7 +22,7 @@ There are two styles of HTML view: pages where multiple tables are provided in t
 ### HTML views with a single table ###
 HTML views with a single table and hence a single section are:  
 
-**Encounters**, **Clinical items**, **Administrative items**, **Observations**, **Referrals**, **Immunisations**.
+**Encounters**, **Clinical Items**, **Administrative Items**, **Observations**, **Referrals**, **Immunisations**.
 
 These views **SHALL** have the following structure:
 
@@ -44,13 +44,13 @@ These views **SHALL** have the following structure:
 - GP transfer banner
 - Content banner (*if applicable*)
 - Subsection (*repeated for each subsection*)
-	- Subsection title (*for example, Current medications*)
+	- Subsection title (*for example, Current Medications*)
 	- Subsection content banner (*if applicable*)
 	- Date banner (*if applicable: section date range applied*)
 	- Exclusion banner (*if applicable, to indicate excluded items*)
 	- Table
 
-{% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML view.  See [Summary HTML View](accessrecord_view_summary.html)" type="info" %}
+{% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML view.  See [Summary HTML view](accessrecord_view_summary.html)" type="info" %}
 
 ### Single table example ###
 
@@ -246,5 +246,5 @@ Providers must adhere to the table construction requirements listed below:
 
 - Table columns **SHALL** be ordered left-to-right (1..N).
 - Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table rows **SHALL** be ordered by date descending (that is, most recent date/time first).
 
