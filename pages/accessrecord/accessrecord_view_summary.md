@@ -103,35 +103,35 @@ Provider's message describing at a summary level how they have populated this se
 
 ## Sections detail ##
 
-### Active problems and issues ###
+### Active Problems and Issues ###
 
 This section is an exact replica of the ‘Active problems and issues’ section, which is the first subsection within the ‘Problems and issues’ section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Active problems and issues](accessrecord_view_problems.html#active-problems-and-issues) section." type="primary" %} 
 
 
-### Current medication issues ###
+### Current Medication Issues ###
 
 This section is an exact replica of the ‘Current medication issues’ section, which is the first subsection within the ‘Medications’ section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Current medication issues](accessrecord_view_medications.html#current-medication-issues) section." type="primary" %} 
 
 
-### Current repeat medications ###
+### Current Repeat Medications ###
 
 This section is an exact replica of the ‘Current repeat medications’ section, which is the second subsection within the ‘Medications’ section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Current repeat medications](accessrecord_view_medications.html#current-repeat-medications) section." type="primary" %} 
 
 
-### Current allergies and adverse reactions ###
+### Current Allergies and Adverse Reactions ###
 
 This section is an exact replica of the ‘Current allergies and adverse reactions’ section, which is the first subsection within the ‘Allergies and adverse reactions’ section. Further details about this subsection can be found there, including any date range filtering and business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Current allergies and adverse reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions) section." type="primary" %} 
 
 
-### Last 3 encounters ###
+### Last 3 Encounters ###
 
 This section is an exact replica of the ‘Encounters’ section with a filter applied to show the three most recent encounters. Further details about this section can be found there including any date range filtering and business rules.
 
@@ -144,4 +144,4 @@ This section is an exact replica of the ‘Encounters’ section with a filter a
 <p data-height="2500" data-theme-id="light" data-slug-hash="opXBjM" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Patient Summary" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/opXBjM/">Patient Summary</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/opXBjM) for an example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/opXBjM) for an example of using AngularJS to generate table content." %}
