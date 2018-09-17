@@ -8,7 +8,7 @@ summary: "Encounters HTML view"
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
+| Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | ENC | Encounters | Yes | Yes | Yes | Yes |
 
@@ -121,7 +121,7 @@ Provider's message describing at a summary level how they have populated this se
                             <div class="panel-body">
 								<p><b>Always displays this text:</b></p>
 									<ul>
-										<li>Contains Appointment information and any related information recorded during the consultation; related items may also occur in other sections.</li>
+										<li>Contains appointment information and any related information recorded during the consultation; related items may also occur in other sections.</li>
 									</ul>
 								<p><b>Only displayed if a date filter is not applied:</b></p>
 									<ul>
@@ -158,4 +158,4 @@ Providers must return all the columns as described in the table below:
 <p data-height="930" data-theme-id="light" data-slug-hash="JMdYpm" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Encounters" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/JMdYpm/">Encounters</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/JMdYpm) for an example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/JMdYpm) for an example of using AngularJS to generate table content." %}
