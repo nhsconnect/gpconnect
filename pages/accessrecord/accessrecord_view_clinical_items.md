@@ -8,7 +8,7 @@ summary: "Clinical items HTML view"
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
+| Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | CLI | Clinical Items | Yes | Yes | Yes | Yes |
 
@@ -35,7 +35,7 @@ The section title **SHALL** be "Clinical Items".
 
 ## Date filter ##
 
-A date filter is applicable for the Clinical items section.
+A date filter is applicable for the Clinical Items section.
 
 
 ## Section content banner ##
@@ -134,7 +134,7 @@ Provider's message describing at a summary level how they have populated this se
 
 Providers must return all the columns as described in the table below:
 
-| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Date` | The date of entry of the clinical item | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry`| A short human readable title for the clinical item | `free-text` |
@@ -163,4 +163,4 @@ The following business rules are applicable:
 <p data-height="400" data-theme-id="light" data-slug-hash="ooQORw" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Clinical Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/ooQORw/">clinical items</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/ooQORw) for an example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/ooQORw) for an example of using AngularJS to generate table content." %}
