@@ -64,7 +64,7 @@ Provider's message describing at a summary level how they have populated this se
 									</ul>
 								<p><b>Only displayed if a date filter is applied:</b></p>
 									<ul>
-										<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or RCGP exclusions.</li>
+										<li>For the selected date range DD-MMM-YYYY to DD-MMM-YYYY subject to patient preferences and/or Royal College of General Practitioners (RCGP) exclusions.</li>
 									</ul>
                             </div>
                         </div>
