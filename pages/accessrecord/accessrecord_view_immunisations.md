@@ -4,11 +4,11 @@ keywords: getcarerecord, view, section, immunisations
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_immunisations.html
-summary: "Immunisations HTML View."
+summary: "Immunisations HTML view."
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | IMM | Immunisations | Yes | Yes | Yes | Yes |
 
@@ -34,7 +34,7 @@ Date filters are not supported for this section all relevant records shall be re
 
 ## Section content banner ##
 
-Providers message describing at a summary level how they have populated this section:
+Provider's message describing at a summary level how they have populated this section:
 
 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
@@ -72,7 +72,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -86,7 +86,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Microtest message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -101,7 +101,7 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers must return all the columns as described in the table below:
 
-| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Date` | The date of the immunisation | `dd-Mmm-yyyy` |
 | <center>2</center> | `Vaccination` | A short human readable free-text title for the immunisation | `free-text` |
@@ -119,4 +119,4 @@ Providers must return all the columns as described in the table below:
 <p data-height="425" data-theme-id="light" data-slug-hash="MXxLwX" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Immunisations" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/MXxLwX/">Immunisations</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/MXxLwX) for example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/MXxLwX) for example of using AngularJS to generate table content." %}
