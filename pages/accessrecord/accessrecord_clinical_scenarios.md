@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord,first_of_type]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_clinical_scenarios.html
-summary: "Potential clinical scenarios for the Access Record capability."
+summary: "Potential clinical scenarios for the Access Record capability"
 toc: false
 ---
 
@@ -12,18 +12,18 @@ toc: false
 
 <i class='fa fa-road'/> Out of scope for FoT.
 
-## FoT clinical settings & user stories ##
+## FoT clinical settings and user stories ##
 
 These have been assembled through engagement during 2015/16 with various clinical communities and examples are as follows (click title to expand/collapse):
 
 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class='fa fa-check'></i>&nbsp;Patient's allergies and adverse reactions available to MIU</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class='fa fa-check'></i>&nbsp;Patient's allergies and adverse reactions available to Minor Injuries Units (MIU)</a>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                                A patient falls off his bike and hurts his arm and leg.  He attends local MIU, is assessed and told he will need stitches.  MIU Nurse views his allergies and adverse reactions and sees he has an intolerance to nylon stitches and uses an alternative
+                                A patient falls off his bike and hurts his arm and leg. He attends local MIU, is assessed and told he will need stitches. MIU nurse views his allergies and adverse reactions and sees he has an intolerance to nylon stitches and uses an alternative.
                             </div>
                         </div>
                     </div>
@@ -34,7 +34,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-                                A patient has painful bites and her situation worsens at the weekend.  She is seen by OOH GP who concludes a number of bites are infected.  GP asks if she is on any regular medication/any known allergies.  She is taking regular medication and has an allergy to a type of antibiotic but cannot remember the exact details. The GP is able to view details of the medication she is taking and the known allergies. The GP prescribes appropriate antibiotics.
+                                A patient has painful bites and her situation worsens at the weekend. She is seen by OOH GP who concludes a number of bites are infected. GP asks if she is on any regular medication/any known allergies. She is taking regular medication and has an allergy to a type of antibiotic but cannot remember the exact details. The GP is able to view details of the medication she is taking and the known allergies. The GP prescribes appropriate antibiotics.
                             </div>
                         </div>
                     </div>
@@ -57,25 +57,25 @@ These have been assembled through engagement during 2015/16 with various clinica
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
-                                A patient is admitted to hospital via A&E and the hospital pharmacist needs to reconcile current meds against the inpatient prescription.  They have access to the patient's current medications from GP record in order to do this and check for any contradictions, interactions or allergies.
+                                A patient is admitted to hospital via A&E and the hospital pharmacist needs to reconcile current meds against the inpatient prescription. They have access to the patient's current medications from GP record in order to do this and check for any contradictions, interactions or allergies.
                             </div>
                         </div>
                     </div>
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Extended Hours Access</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFive">Extended hours access</a>
                         </div>
                         <div id="collapseFive" class="panel-collapse collapse">
                             <div class="panel-body">
-                                For GPs to Care Records for patients being seen who are not registered at their own practice.
+                                For GPs to access care records for patients being seen who are not registered at their own practice.
                             </div>
                         </div>
                     </div>
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Consultant Out-patient Appointment</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseSix">Consultant outpatient appointment</a>
                         </div>
                         <div id="collapseSix" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -90,14 +90,14 @@ These have been assembled through engagement during 2015/16 with various clinica
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse">
                             <div class="panel-body">
-                                A&E triage nurses, with the patient’s consent, can view a patient’s GP record to help them assess the appropriate pathway for that patient, diverting away from A&E to GP, Pharmacy, MIU etc if appropriate.
+                                A&E triage nurses, with the patient’s consent, can view a patient’s GP record to help them assess the appropriate pathway for that patient, diverting away from A&E to GP, pharmacy, MIU, etc. if appropriate.
                             </div>
                         </div>
                     </div>
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Hospital Admission</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseEight">Hospital admission</a>
                         </div>
                         <div id="collapseEight" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -108,7 +108,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">GP Urgent Care & Minor Injuries Unit</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseNine">GP Urgent Care and Minor Injuries Unit</a>
                         </div>
                         <div id="collapseNine" class="panel-collapse collapse">
                             <div class="panel-body">
@@ -134,7 +134,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                         </div>
                         <div id="collapseEleven" class="panel-collapse collapse">
                             <div class="panel-body">
-                                <b>e.g. for wound dressing, suture removal, physiotherapy and general care in the weeks post-discharge.</b>
+                                <b>for example, for wound dressing, suture removal, physiotherapy and general care in the weeks post-discharge.</b>
 <p>Whilst visiting the patient, clinicians can access the patient’s record in order to check on any history and other interventions appropriate to the care being provided.</p>
                             </div>
                         </div>
@@ -143,8 +143,8 @@ These have been assembled through engagement during 2015/16 with various clinica
 </div>
 <!-- /.panel-group -->
 
-## Provide Feedback ##
+## Provide feedback ##
 
-To provide feedback or add your own Use Cases please contact GP Connect by sending  an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
+To provide feedback or add your own use cases please contact GP Connect by sending  an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
 Some early feedback on the May 2016 release of the GP Connect draft specification can be found on the [Openhealthhub Forum](https://www.openhealthhub.org/c/fhir-implementation){:target="_blank"} under the category of "FHIR Implementation".
