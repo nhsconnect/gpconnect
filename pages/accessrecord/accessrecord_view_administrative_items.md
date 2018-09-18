@@ -4,11 +4,11 @@ keywords: getcarerecord, view, section, administrative items
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_administrative_items.html
-summary: "Administrative Items HTML View."
+summary: "Administrative Items HTML view"
 ---
 
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | ADM | Administrative Items | Yes | No<sup>1</sup> | Yes | Yes |
 
@@ -16,7 +16,7 @@ summary: "Administrative Items HTML View."
 
 ## Clinical narrative ##
 
-These include tasks such as scheduling and administering clinical care encounters, Clinical communication with other care organisations, administering and monitoring of critical safety processes such as repeat medication administration and call/recall for care.
+These include tasks such as scheduling and administering clinical care encounters, clinical communication with other care organisations, administering and monitoring of critical safety processes such as repeat medication administration and call/recall for care.
 
 ## Purpose ##
 
@@ -36,7 +36,7 @@ A date filter is applicable for the Administrative Items section.
 
 ## Section content banner ##
 
-Providers message describing at a summary level how they have populated this section:
+Provider's message describing at a summary level how they have populated this section:
 
 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
@@ -81,7 +81,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -103,13 +103,13 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Microtest message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
 								<p><b>Always displays this text:</b></p>
 									<ul>
-										<li>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions etc.</li>
+										<li>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions, etc.</li>
 									</ul>
 								<p><b>Only displayed if a date filter is not applied:</b></p>
 									<ul>
@@ -129,7 +129,7 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers must return all the columns as described in the table below:
 
-| Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
+| Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Date` | The date of the administrative item | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry` | A short human readable free-text title for the administrative item | `free-text` |
@@ -146,4 +146,4 @@ Providers must return all the columns as described in the table below:
 <p data-height="400" data-theme-id="light" data-slug-hash="QBoqNR" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Administrative Items" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/QBoqNR/">Allergies</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/QBoqNR) for example of using AngularJS to generate table content" %}
+{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/QBoqNR) for example of using AngularJS to generate table content." %}
