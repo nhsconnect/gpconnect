@@ -30,9 +30,6 @@ entries:
     - title: Design decisions
       url: /accessrecord_design.html
       output: web, pdf
-    - title: Wireframes
-      url: /accessrecord_wireframes.html
-      output: web, pdf
     - title: Known issues
       url: /accessrecord_known_issues.html
       output: web, pdf
@@ -40,10 +37,6 @@ entries:
   - title: Development
     output: web, pdf
     folderitems:
-
-      - title: HTML implementation standards
-        url: /accessrecord_development_html_implementation_guide.html
-        output: web, pdf
 
       - title: FHIR resources
         url: /datalibraryaccessRecord.html
@@ -57,12 +50,19 @@ entries:
             url: /accessrecord_use_case_retrieve_a_care_record_section.html
             output: web, pdf
 
+        - title: HTML implementation guidance
+          output: web, pdf
+          subfolderitems:
+          - title: Standards
+            url: /accessrecord_development_html_implementation_guide.html
+            output: web, pdf
+          - title: Layout
+            url: /accessrecord_development_html_layout_guide.html
+            output: web, pdf
+
         - title: HTML views
           output: web, pdf
           subfolderitems:
-          - title: HTML layout guide
-            url: /accessrecord_development_html_layout_guide.html
-            output: web, pdf
           - title: Summary
             url: /accessrecord_view_summary.html
             output: web, pdf
@@ -72,10 +72,10 @@ entries:
           - title: Clinical items
             url: /accessrecord_view_clinical_items.html
             output: web, pdf
-          - title: Problems
+          - title: Problems and issues
             url: /accessrecord_view_problems.html
             output: web, pdf
-          - title: Allergies
+          - title: Allergies and adverse reactions
             url: /accessrecord_view_allergies.html
             output: web, pdf
           - title: Medications
