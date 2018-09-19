@@ -31,28 +31,37 @@ Contains one main section, and three subsections:
 
 ## Section title ##
 
-The section title **SHALL** be "Medications".
+The section title **SHALL** be 'Medications'.
  
 ## Section content banner ##
 
 Provider's message describing at a summary level how they have populated this section. Also includes the warning message where medications prescribed elsewhere have been excluded.
 
-  
-### Discontinued/cancelled/naturally ended medications ###
+## Additional Information ##
 
-{% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” and “Naturally ended” medications." type="info" %}
-
-The definitions for each of these are supplied below:
-
-- **Naturally ended:** Medication naturally came to an end - that is, no manual intervention via the user (auto system transition)
-- **Cancelled:** Actively stopped acute medication by user
-- **Discontinued:** Actively stopped repeat medication by user
-
-Not all suppliers can supply the details (date and reason) for the ending of a medication (either through discontinuation or cancellation).
+### Ended medications ###
 
 It is extremely important for the details regarding the ending of a medication to be available to a clinician, as this will highlight any clinical issues (for example, stopping a medication due to an allergy) and allow the clinician to make an efficient and informed clinical decision.
 
-Refer to decision log item (HDL-212) which contains significant detail around this issue.
+Any information relevant to the circumstances of ending a medication **SHALL** be provided in the Additional Information column. The following definitions are provided to support the labelling of the information within Additional Information:
+
+- Naturally ended: Medication naturally came to an end, that is, no manual intervention via the user (auto system transition)
+- Cancelled: Actively stopped acute medication by user
+- Discontinued: Actively stopped repeat medication by user
+
+For Cancelled and Discontinued the reason **SHALL** be included as human readable text where coded or free text information is captured as part of the cancellation or discontinuation action. The date **SHALL** also be included. The date **SHALL** be the date recorded as the date cancelled or discontinued if a user entered date in supported or the transaction date if not.
+
+For Naturally Ended medications the end date and reason **SHALL NOT** be included in additional information.
+
+If a system provider cannot differentiate between naturally ended, discontinued and cancelled or cannot provide clear details for cancelled and discontinued in the form of an accurate date or clearly display reason text which will differentiate a clinical discontinuation (e.g. stopping a medication due to an allergy etc.) from any other reason for ending the medication (e.g. change to an alternative, equivalent medication without clinical issues having occurred) a section / subsection banner message(s) as appropriate **SHALL** be included to describe the extent or limitation of compliance.
+
+### Prescribed elsewhere ###
+
+All subsections (except All Medication Issues) **SHALL** include items which are recorded on the system as a prescription but prescribed elsewhere (for example, hospitals or special clinics) or ‘Over The Counter’ drugs taken by the patient and recorded on the system as a prescription.
+
+### GP2GP transfer ###
+
+Repeat medications transferred as part of GP2GP **SHALL** only be included in the Current Repeat Medications subsection if authorised by a clinician at the new practice, otherwise they are treated as not current i.e. appear in All Medication (Summary) and All Medication Issues but not in Current Repeat Medication.
 
 
 ## Recent Acute Medication ##
@@ -61,27 +70,22 @@ Refer to decision log item (HDL-212) which contains significant detail around th
 
 A list of acute medicines that are currently being, or have recently been, used to treat or prevent disease for the patient.
 
-
 ### Purpose ###
 
 The purpose of this section is to provide a view of acute medications that the patient has recently been taking which informs the clinical decision-making process.
 
-
 ### Subsection title ###
 
-The subsection title **SHALL** be "Recent Acute Medication".
-
+The subsection title **SHALL** be 'Recent Acute Medication'.
 
 ### Date filter ###
 
 The provider **SHALL** include all acute medication whose `Start Date` (the date the prescription is expected to start) is greater than the current date minus 365 days.
 All relevant records **SHALL** be returned.
 
-
 ### Subsection content banner ###
 
 Provider's message describing at a summary level how they have populated this section.
-
 
 ### Table columns ###
 
@@ -191,7 +195,7 @@ The purpose of this section is to provide a view of all repeat medications that 
 
 ### Subsection title ###
 
-The subsection title **SHALL** be "Current Repeat Medication".
+The subsection title **SHALL** be 'Current Repeat Medication'.
 
 ### Date filter ###
 
@@ -318,15 +322,18 @@ Where the medication was cancelled (Acute) or Discontinued (Repeat), this should
 
 ### Subsection title ###
 
-The subsection title **SHALL** be "All Medication (Summary)".
+The subsection title **SHALL** be 'All Medication (Summary)'.
 
 ### Date filter ###
 
-A date filter is applicable for the Past Medications subsection:
+If a consumer submits a date filter for this section the dates will be applied as follows:
 
-- The date filter **SHALL** be applied to the `First Prescribed` field
-- All relevant records **SHALL** be returned according to the consumer-supplied date range
-- If a date is not supplied all records **SHALL** be returned
+1. The `Start Date` **SHALL** be the date of the earliest prescription within the period of the date filter (including prescriptions issued on the date to the filter start date, or all prescription if no start date is specified)
+2. The `Last Issued Date` **SHALL** be the date of the last prescription within the period of the date filter (including prescriptions issued on the date to the filter end date, or all prescription if no end date is specified)
+3. The definitions in points 1 and 2 **SHALL** be applied to the date recorded for medications prescribed elsewhere and date authorised for repeat dispense
+4. The `Number of Prescriptions Issued` **SHALL** be the count of prescription issued between the `First Prescribed Date` and the `Last Issued Date` inclusive (as dates are defined in points 1 and 2) or null for medication prescribed elsewhere and repeat dispense
+5. Additional Information **SHALL** include discontinued or cancelled details (where identifiable) for any medications which fall within the date filter definitions in points 1 to 3 regardless of whether the date discontinued/cancelled falls within the date filter range
+6. Additional Information **SHALL NOT** include ended date and reason if the date falls outside of the date filter range
 
 
 ### Subsection content banner ###
@@ -436,15 +443,18 @@ The purpose of this section is to provide a historical view of all issues (presc
 
 ### Subsection title ###
 
-The subsection title **SHALL** be "All Medication Issues".
+The subsection title **SHALL** be 'All Medication Issues'.
 
 ### Date filter ###
 
-A date filter is applicable for the Repeat Medication Issues subsection:
+If a consumer submits a date filter for this section the dates will be applied as follows:
 
-- The date filter **SHALL** be applied to the `Issued Date` field
-- All relevant records **SHALL** be returned according to the consumer-supplied date range
-- If a date is not supplied all records **SHALL** be returned
+1. The `Start Date` **SHALL** be the date of the earliest prescription within the period of the date filter (including prescriptions issued on the date to the filter start date, or all prescription if no start date is specified)
+2. The `Last Issued Date` **SHALL** be the date of the last prescription within the period of the date filter (including prescriptions issued on the date to the filter end date, or all prescription if no end date is specified)
+3. The definitions in points 1 and 2 **SHALL** be applied to the date recorded for medications prescribed elsewhere and date authorised for repeat dispense
+4. The `Number of Prescriptions Issued` **SHALL** be the count of prescription issued between the `First Prescribed Date` and the `Last Issued Date` inclusive (as dates are defined in points 1 and 2) or null for medication prescribed elsewhere and repeat dispense
+5. Additional Information **SHALL** include discontinued or cancelled details (where identifiable) for any medications which fall within the date filter definitions in points 1 to 3 regardless of whether the date discontinued/cancelled falls within the date filter range
+6. Additional Information **SHALL NOT** include ended date and reason if the date falls outside of the date filter range
 
 ### Subsection content banner ###
 
