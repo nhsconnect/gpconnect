@@ -72,3 +72,23 @@ A SNOMED dm+d code **MUST** be supplied, if available.
 
 If the GP providing system has data relating to the batch number or expiry date they **MAY** be populated within this element.
 
+
+<h2 style="color:#ED1951;">Medication elements <b>not in use</b></h2>
+
+The following elements **SHALL NOT** be populated:
+
+<h3 style="color:#ED1951;">meta.versionId</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Instant</code></td>
+  </tr>
+</table>

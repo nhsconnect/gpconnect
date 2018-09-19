@@ -378,7 +378,23 @@ The route by which exposure to the substance causing the reaction occurred. Util
 
 The following elements **SHALL NOT** be populated:
 
-<h3 style="color:#ED1951;">reaction/note</h3>
+<h3 style="color:#ED1951;">meta.versionId</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Instant</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">reaction.note</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -389,7 +405,7 @@ The following elements **SHALL NOT** be populated:
 `AllergyIntolerance.note` should contain all the consolidated text from the Allergy/Intolerance.
 
 
-<h3 style="color:#ED1951;">reaction/onset[x]</h3>
+<h3 style="color:#ED1951;">reaction.onset[x]</h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -400,7 +416,7 @@ The following elements **SHALL NOT** be populated:
 Onset explicitly supplied via `AllergyIntolerance.onset[dateTime]`.
 
 
-<h3 style="color:#ED1951;">reaction/substance</h3>
+<h3 style="color:#ED1951;">reaction.substance</h3>
 
 <table class='resource-attributes'>
   <tr>

@@ -527,6 +527,22 @@ May be used, for example, to reference prior authorisation where prescription is
 
 The following elements **MUST NOT** be populated:
 
+<h3 style="color:#ED1951;">meta.versionId</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Instant</code></td>
+  </tr>
+</table>
+
 <h3 style="color:#ED1951;">definition</h3>
 
 <table class='resource-attributes'>

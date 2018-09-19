@@ -284,6 +284,22 @@ Additional instructions for patient - that is, RHS of prescription label.
 
 The following elements **SHALL NOT** be populated:
 
+<h3 style="color:#ED1951;">meta.versionId</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Instant</code></td>
+  </tr>
+</table>
+
 <h3 style="color:#ED1951;">partOf</h3>
 
 <table class='resource-attributes'>

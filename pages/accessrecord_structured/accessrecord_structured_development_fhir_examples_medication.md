@@ -74,8 +74,7 @@ The following is a set of request/response examples for Medication:
   </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
       </span><span class="s2">"https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"</span><span class="w">
-    </span><span class="p">],</span><span class="w">
-    </span><span class="nt">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-01T10:57:34+00:00"</span><span class="w">
+    </span><span class="p">],</span><span class="w"></span><span class="w">
   </span><span class="p">},</span><span class="w">
   </span><span class="nt">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
@@ -83,7 +82,6 @@ The following is a set of request/response examples for Medication:
         </span><span class="nt">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"04603d77-1a4e-4d63-b246-d7504f8bd833"</span><span class="p">,</span><span class="w">
         </span><span class="nt">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
-          </span><span class="nt">"lastUpdated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2018-03-09T07:52:45.466+00:00"</span><span class="p">,</span><span class="w">
           </span><span class="nt">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
             </span><span class="s2">"https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"</span><span class="w">
           </span><span class="p">]</span><span class="w">

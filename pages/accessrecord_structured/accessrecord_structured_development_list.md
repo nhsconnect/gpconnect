@@ -299,3 +299,24 @@ Reference to the item that is part of the list.
 Why the list is empty.
 
 A FHIR code of `No Content recorded` **SHALL** be used if a query returns no results to enter into a list. In this case the 'note' field **SHALL** be populated with the text 'Information not available'.
+
+<h2 style="color:#ED1951;">List elements <b>not in use</b></h2>
+
+The following elements **SHALL NOT** be populated:
+
+<h3 style="color:#ED1951;">meta.versionId</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Instant</code></td>
+  </tr>
+</table>
+
