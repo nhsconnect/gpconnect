@@ -107,7 +107,7 @@ Provider's message describing at a summary level how they have populated this se
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Microtest message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse">
                             <div class="panel-body">
