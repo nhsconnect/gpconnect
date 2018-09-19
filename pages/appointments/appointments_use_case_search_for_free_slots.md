@@ -276,18 +276,6 @@ Provider systems:
                 }
               ]
             }
-          },
-          {
-            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
-                  "code": "In-person",
-                  "display": "In-person"
-                }
-              ]
-            }
           }
         ],
         "actor": [
@@ -320,15 +308,9 @@ Provider systems:
           }
         ],
         "name": {
-          "family": [
-            "Black"
-          ],
-          "given": [
-            "Sarah"
-          ],
-          "prefix": [
-            "Mrs"
-          ]
+          "family": [ "Black" ],
+          "given": [ "Sarah" ],
+          "prefix": [ "Mrs" ]
         },
         "gender": "female"
       }
@@ -345,6 +327,20 @@ Provider systems:
             "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
           ]
         },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
+                  "code": "In-person",
+                  "display": "In-person"
+                }
+              ]
+            }
+          }
+        ],
         "schedule": {
           "reference": "Schedule/14"
         },
@@ -365,6 +361,20 @@ Provider systems:
             "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
           ]
         },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
+                  "code": "In-person",
+                  "display": "In-person"
+                }
+              ]
+            }
+          }
+        ],
         "schedule": {
           "reference": "Schedule/14"
         },
