@@ -4,7 +4,7 @@ keywords: getcarerecord, view, section, problems
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_problems.html
-summary: "Problems and issues HTML view."
+summary: "Problems and issues HTML view"
 ---
 
 
@@ -77,7 +77,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -126,7 +126,7 @@ Provider’s message describing at a summary level how they have populated this 
                             <div class="panel-body">
 								<p><b>Always displays this text:</b></p>
 									<ul>
-										<li>Contains items coded as problems within the patients record; can also contain details on medications linked to problems if available.</li>
+										<li>Contains items coded as problems within the patient's record; can also contain details on medications linked to problems if available.</li>
 									</ul>
                             </div>
                         </div>
@@ -159,7 +159,7 @@ Provider’s message describing at a summary level how they have populated this 
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -265,7 +265,7 @@ Provider’s message describing at a summary level how they have populated this 
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseEleven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
