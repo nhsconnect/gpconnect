@@ -179,9 +179,9 @@ Provider systems **SHALL** use XHTML constructs as defined in the [FHIR narrativ
 
 As outlined in the Narrative section of the FHIR&reg; standard:
 
-{% include callout.html content="The XHTML content **SHALL NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;``` etc. Unicode characters **SHALL** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default". %}
+{% include callout.html content="The XHTML content **SHALL NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;``` etc. Unicode characters **SHALL** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
 
-{% include custominfocallout.html content="**Information:** The content **SHALL NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning". %}
+{% include custominfocallout.html content="**Information:** The content **SHALL NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning" %}
 
 ### [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) ###
 
