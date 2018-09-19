@@ -226,6 +226,14 @@ Provider systems **SHALL**:
   - `PractitionerRole` matching the usual GP's role
   - resources holding allergies and intolerance and medication information according to the rules below:
 
+Provider systems **SHOULD**:
+
+- provide a consistent order to elements within the `Bundle` resource.  It is recommended to follow the order described in the [Bundle population illustrated](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) diagram.
+
+Consumers systems **SHALL NOT**:
+
+- rely on order or index of elements within the `Bundle` resource in order to parse encapsulated resources.
+
 ##### Allergies #####
 
 Provider systems **SHALL** include the following in the response `Bundle`:
