@@ -4,27 +4,27 @@ keywords: getcarerecord, section, html, view
 tags: [use_case,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_use_case_retrieve_a_care_record_section.html
-summary: "Use case for retrieving a care record section for a patient from a given organisation."
+summary: "Use case for retrieving a care record section for a patient from a given organisation"
 ---
 
 ## Use case ##
 
-This specification describes a single use cases. For complete details and background please see the [Access Record Capability Bundle](accessrecord.html).
+This specification describes a single use case. For complete details and background please see the [Access Record Capability Bundle](accessrecord.html).
 
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises JSON Web Tokens (JWT) to transmit clinical audit and provenance details. 
 
 ## Prerequisites ##
 
 ### Consumer ###
 
-The Consumer system:
+The consumer system:
 
-- **SHALL** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html).
 - **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
-- **SHALL** render HTML content in-line with the [Access Record - Development - HTML Implementation Guide](accessrecord_development_html_implementation_guide.html).
+- **SHALL** render HTML content in line with the [Access Record - Development - HTML Implementation Guide](accessrecord_development_html_implementation_guide.html).
 
 ## API usage ##
 
@@ -73,18 +73,18 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarere
 
 #### Payload request body ####
 
-The following data-elements are mandatory (i.e. data **MUST** be present):
+The following data-elements are mandatory (that is, data **MUST** be present):
 
-- the `patientNHSNumber` is the NHS Number of the patient who's GP care record you want to access.
+- the `patientNHSNumber` is the NHS Number of the patient whose GP care record you want to access.
 - the `recordSection` is the GP care record section you wish to retrieve.
 
-The following data-elements are optional (i.e. can be supplied for certain care record sections):
+The following data-elements are optional (that is, can be supplied for certain care record sections):
 
 - the `timePeriod` is the time period over which the requested information is to be returned.
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/parameters.html) conforming to the `gpconnect-carerecord-operation-1` profiled `OperationDefinition`, see below:
 
-{% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
+{% include tip.html content="This is a type level operation (that is, not associated with a given resource instance)." %} 
 
 ```xml
 <OperationDefinition xmlns="http://hl7.org/fhir">
@@ -137,7 +137,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 </OperationDefinition>
 ```
 
-{% include custominfocallout.html content="**Important:** Provider systems **SHALL** only expose `Patient` resources for patient's who have a valid PDS trace status." type="warning" %}
+{% include custominfocallout.html content="**Important:** Provider systems **SHALL** only expose `Patient` resources for patients who have a valid PDS trace status." type="warning" %}
 
 On the wire a JSON serialised `$gpc.getcarerecord` request would look something like the following:
 
@@ -163,7 +163,7 @@ On the wire a JSON serialised `$gpc.getcarerecord` request would look something 
 }
 ```
 
-The Provider system **SHALL**:
+The provider system **SHALL**:
 
 - use a default time period if no `timePeriod` parameter is specified for a section that can accept a time period.
 
@@ -173,14 +173,14 @@ Refer to [Access Record - Development - HTML Implementation Guide - Per Section 
 
 #### Error handling ####
 
-The Provider system **SHALL** return an error if:
+The provider system **SHALL** return an error if:
 
-- the `patientNHSNumber` is invalid (i.e. fails NHS Number format and check digit tests).
+- the `patientNHSNumber` is invalid (that is, fails NHS Number format and check digit tests).
 - the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`.
 - the GP organisation is not the patient's nominated primary care provider.
-- the `recordSection` is invalid (i.e. isn't from the correct value set).
-- an invalid `timePeriod` is requested (i.e. end date > start date).
-- a `timePeriod` is specified for a `recordSection` that is time period agnostic (e.g. Patient Summary, Allergies, Medications etc.)
+- the `recordSection` is invalid (that is, it isn't from the correct value set).
+- an invalid `timePeriod` is requested (that is, end date > start date).
+- a `timePeriod` is specified for a `recordSection` that is time period agnostic (for example, Patient Summary, Allergies, Medications.)
 
 Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
@@ -203,7 +203,7 @@ Content-Length: 1464
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful retrieval of a care record section.
-- **SHALL** return the care record section as valid XHTML inline with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance.
+- **SHALL** return the care record section as valid XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance.
 - **SHALL** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
 - **SHALL** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`.
 
