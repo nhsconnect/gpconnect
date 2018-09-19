@@ -23,9 +23,75 @@ Provider systems SHALL:
 
 The provider system end-user SHALL be presented with an 'Organisation Type' list which reflects the NHS Digital [FHIR Organisation Type](https://fhir.nhs.uk/STU3/ValueSet/GPConnect-OrganisationType-1) value set.
 
-The consumer system SHOULD send their booking Organisation Type and booking organization ODS Code in the 'SearchFilter' parameter, as specified in the [Search free slots](appointments_use_case_search_for_free_slots.html) page, which the provider system will then use to determine the matching availability.
+The consumer system SHOULD send their booking Organisation Type and booking organization ODS Code in the 'SearchFilter' parameter, as specified in the [Search for free slots](appointments_use_case_search_for_free_slots.html) page, which the provider system will then use to determine the matching availability.
+
+If the consumer system does not send any 'SearchFilter' parameters then the provider system will only return slots that are not restricted for booking to an individual organisation, a group of organisations, or by organisation type.
+
+The following table describes the matching rules for a provider system when applying the search filter passed by a consumer to the [Search for free slots](appointments_use_case_search_for_free_slots.html) call:
+
+<table>
+  <thead>
+    <tr>
+      <th>Search filter sent by consumer</th>
+      <th>Slots are returned that:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>(no search filter)</td>
+      <td>
+      	&bull; Are marked as GP Connect bookable<br/>
+      	&bull; AND have no organisation type restriction set<br/>
+      	&bull; AND have no organisation/organisation group restriction set
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	searchFilter<br/>
+       	&nbsp; with organisation type set
+      </td>
+      <td>
+      	&bull; Are marked as GP Connect bookable<br/>
+      	&bull; AND have no organisation/organisation group restriction set<br/>
+      	&bull; AND [<br/>
+		&nbsp; &nbsp; &bull; have no organisation type restriction set<br/>
+		&nbsp; &nbsp; &bull; OR have an organisation type restriction matching that passed in the searchFilter ]
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	searchFilter<br/>
+       	&nbsp; with organisation code set
+      </td>
+      <td>
+      	&bull; Are marked as GP Connect bookable<br/>
+      	&bull; AND have no organisation type restriction set<br/>
+      	&bull; AND [<br/>
+		&nbsp; &nbsp; &bull; have no organisation code/group restriction set<br/>
+		&nbsp; &nbsp; &bull; OR have an organisation code/group restriction matching that passed in the searchFilter ]
+      </td>
+    </tr>
+    <tr>
+      <td>
+      	searchFilter<br/>
+       	&nbsp; with organisation type set<br/>
+       	&nbsp; and organisation code set
+      </td>
+      <td>
+      	&bull; Are marked as GP Connect bookable<br/>
+      	&bull; AND [<br/>
+		&nbsp; &nbsp; &bull; have no organisation type restriction set<br/>
+		&nbsp; &nbsp; &bull; OR have an organisation type restriction matching that passed in the searchFilter ]<br/>
+      	&bull; AND [<br/>
+		&nbsp; &nbsp; &bull; have no organisation code/group restriction set<br/>
+		&nbsp; &nbsp; &bull; OR have an organisation code/group restriction matching that passed in the searchFilter ]
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 ## Booking window/embargo ##
+
 It is recommended that provider systems also provide the functionality to enable the provider system end-user to control how far in advance external organisations should be allowed to book slots and how near to the actual slot time - that is, via 'Booking Window' or 'Embargo' rules.
 
 Where such rules have been set, provider systems SHALL only return slots which respect these rules.
