@@ -67,7 +67,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 - Community driven (that is, just add Gender).
 - Absolute minimum (Name, DOB and NHS Number).
 
-<span class="label label-info">DECISION</span> Consumer **SHALL(( cross-check with demographics returned from the provider system.
+<span class="label label-info">DECISION</span> Consumer **SHALL** cross-check with demographics returned from the provider system.
 
 ### View non-retrieval ###
 
