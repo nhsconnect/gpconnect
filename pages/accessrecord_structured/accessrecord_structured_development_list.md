@@ -119,7 +119,7 @@ This extension is used to capture warnings that the list may be incomplete as da
   </tr>
 </table>
 
-For GP Connect this should be set to '1060971000000108 General practice services'.
+For GP Connect this should be set to '1060971000000108 General practice service'.
 
 ### status ###
 
