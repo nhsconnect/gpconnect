@@ -117,7 +117,7 @@ Providers **SHALL** return all the columns as described in the table below, sort
   <tr>
     <td align="center">3</td>
     <td><code>Medication Item</code></td>
-    <td>Descriptive name of medication item (including dosage)  for example, <code>Ibuprofen 400mg tablets</code>.</td>
+    <td>Descriptive name of medication item (including dosage) - for example, <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
@@ -183,7 +183,7 @@ Providers **SHALL** return all the columns as described in the table below, sort
 
 ### Clinical narrative ###
 
-A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication for example, EpiPen, antihistamines, monitoring or continence products
+A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication - for example, EpiPen, antihistamines, monitoring or continence products
 
 ### Purpose ###
 
@@ -230,7 +230,7 @@ Providers **SHALL** return all the columns as described in the table below, sort
   <tr>
     <td align="center">3</td>
     <td><code>Medication Item</code></td>
-    <td>Descriptive name of medication item (including dosage)  for example, <code>Ibuprofen 400mg tablets</code>.</td>
+    <td>Descriptive name of medication item (including dosage) - for example, <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
   </tr>  
   <tr>
@@ -363,7 +363,7 @@ Providers **SHALL** return all the columns as described in the table below. It *
   <tr>
     <td align="center">3</td>
     <td><code>Medication Item</code> <i class="fa fa-object-group" aria-hidden="true"></i> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
-    <td>Descriptive name of medication item (including dosage)  for example, <code>Ibuprofen 400mg tablets</code>.</td>
+    <td>Descriptive name of medication item (including dosage) - for example, <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
   </tr>  
   <tr>
@@ -479,7 +479,7 @@ Providers **SHALL** return all the columns as described in the table below, sort
   <tr>
     <td align="center">3</td>
     <td><code>Medication Item</code></td>
-    <td>Descriptive name of medication item (including dosage)  for example, <code>Ibuprofen 400mg tablets</code>.</td>
+    <td>Descriptive name of medication item (including dosage) - for example, <code>Ibuprofen 400mg tablets</code>.</td>
     <td><code>free-text</code></td>
   </tr>  
 
