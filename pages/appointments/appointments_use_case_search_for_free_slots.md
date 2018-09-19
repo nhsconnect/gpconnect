@@ -196,150 +196,184 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Bundle",
-	"type": "searchset",
-	"entry": [{
-		"fullUrl": "Organisation/23",
-		"resource": {
-			"fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
-			"resource": {
-				"resourceType": "Organization",
-				"id": "23",
-				"meta": {
-					"versionId": "636064088098730113",
-					"lastUpdated": "2016-08-10T13:52:54.516+01:00",
-					"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
-				},
-				"identifier": [{
-					"system": "https://fhir.nhs.uk/Id/ods-organization-code",
-					"value": "O001"
-				}],
-				"name": "Honley GP Practice"
-			}
-		}
-	},
-	{
-		"fullUrl": "Location/17",
-		"resource": {
-			"resourceType": "Location",
-			"id": "17",
-			"meta": {
-				"versionId": "636064088100870233",
-				"lastUpdated": "2016-08-10T14:27:49.778+01:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"]
-			},
-			"identifier": [{
-				"system": "https://fhir.nhs.uk/Id/ods-site-code",
-				"value": "L001"
-			}],
-			"name": "Honley Highstreet",
-			"address": {
-				"line": [
-					"Trevelyan Square",
-					"Boar Ln",
-					"Leeds"
-				],
-				"postalCode": "LS1 6AE"
-			},
-		}
-	},
-	{
-		"fullUrl": "Schedule/14",
-		"resource": {
-			"resourceType": "Schedule",
-			"id": "14",
-			"meta": {
-				"versionId": "1469444400000",
-				"lastUpdated": "2017-11-08T12:00:00.000+01:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"]
-			},
-			"extension": [{
-				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
-				"valueCodeableConcept": {
-					"coding": [{
-						"system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
-						"code": "R0260",
-						"display": "General Medical Practitioner"
-					}]
-				}
-			},
-			{
-				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
-				"valueCodeableConcept": {
-					"coding": [{
-						"system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
-						"code": "In-person",
-						"display": "In-person"
-					}]
-				}
-			}],
-			"actor": [{
-				"reference": "Location/17"
-			},
-			{
-				"reference": "Practitioner/2"
-			}],
-			"comment": "Schedule 1 for general appointments"
-		}
-	},
-	{
-		"fullUrl": "Practitioner/2",
-		"resource": {
-			"resourceType": "Practitioner",
-			"id": "2",
-			"meta": {
-				"versionId": "636064088099800115",
-				"lastUpdated": "2016-08-10T13:47:09.966+01:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"]
-			},
-			"identifier": [{
-				"system": "https://fhir.nhs.uk/Id/sds-user-id",
-				"value": "S001"
-			}],
-			"name": {
-				"family": ["Black"],
-				"given": ["Sarah"],
-				"prefix": ["Mrs"]
-			},
-			"gender": "female"
-		}
-	},
-	{
-		"fullUrl": "Slot/1584",
-		"resource": {
-			"resourceType": "Slot",
-			"id": "1584",
-			"meta": {
-				"versionId": "1471219260000",
-				"lastUpdated": "2017-11-09T01:01:00.000+01:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"]
-			},
-			"schedule": {
-				"reference": "Schedule/14"
-			},
-			"status": "free",
-			"start": "2016-08-15T11:30:00.000+01:00",
-			"end": "2016-08-15T11:59:59.000+01:00"
-		}
-	},
-	{
-		"fullUrl": "Slot/1644",
-		"resource": {
-			"resourceType": "Slot",
-			"id": "1644",
-			"meta": {
-				"versionId": "1471219260112",
-				"lastUpdated": "2017-11-09T02:13:05.000+01:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"]
-			},
-			"schedule": {
-				"reference": "Schedule/14"
-			},
-			"status": "free",
-			"start": "2016-08-15T12:00:00.000+01:00",
-			"end": "2016-08-15T12:29:59.000+01:00"
-		}
-	}]	
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "fullUrl": "Organisation/23",
+      "resource": {
+        "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
+        "resource": {
+          "resourceType": "Organization",
+          "id": "23",
+          "meta": {
+            "versionId": "636064088098730113",
+            "lastUpdated": "2016-08-10T13:52:54.516+01:00",
+            "profile": [
+              "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+            ]
+          },
+          "identifier": [
+            {
+              "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+              "value": "O001"
+            }
+          ],
+          "name": "Honley GP Practice"
+        }
+      }
+    },
+    {
+      "fullUrl": "Location/17",
+      "resource": {
+        "resourceType": "Location",
+        "id": "17",
+        "meta": {
+          "versionId": "636064088100870233",
+          "lastUpdated": "2016-08-10T14:27:49.778+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/ods-site-code",
+            "value": "L001"
+          }
+        ],
+        "name": "Honley Highstreet",
+        "address": {
+          "line": [
+            "Trevelyan Square",
+            "Boar Ln",
+            "Leeds"
+          ],
+          "postalCode": "LS1 6AE"
+        }
+      }
+    },
+    {
+      "fullUrl": "Schedule/14",
+      "resource": {
+        "resourceType": "Schedule",
+        "id": "14",
+        "meta": {
+          "versionId": "1469444400000",
+          "lastUpdated": "2017-11-08T12:00:00.000+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
+                  "code": "In-person",
+                  "display": "In-person"
+                }
+              ]
+            }
+          }
+        ],
+        "actor": [
+          {
+            "reference": "Location/17"
+          },
+          {
+            "reference": "Practitioner/2"
+          }
+        ],
+        "comment": "Schedule 1 for general appointments"
+      }
+    },
+    {
+      "fullUrl": "Practitioner/2",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "2",
+        "meta": {
+          "versionId": "636064088099800115",
+          "lastUpdated": "2016-08-10T13:47:09.966+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/sds-user-id",
+            "value": "S001"
+          }
+        ],
+        "name": {
+          "family": [
+            "Black"
+          ],
+          "given": [
+            "Sarah"
+          ],
+          "prefix": [
+            "Mrs"
+          ]
+        },
+        "gender": "female"
+      }
+    },
+    {
+      "fullUrl": "Slot/1584",
+      "resource": {
+        "resourceType": "Slot",
+        "id": "1584",
+        "meta": {
+          "versionId": "1471219260000",
+          "lastUpdated": "2017-11-09T01:01:00.000+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
+          ]
+        },
+        "schedule": {
+          "reference": "Schedule/14"
+        },
+        "status": "free",
+        "start": "2016-08-15T11:30:00.000+01:00",
+        "end": "2016-08-15T11:59:59.000+01:00"
+      }
+    },
+    {
+      "fullUrl": "Slot/1644",
+      "resource": {
+        "resourceType": "Slot",
+        "id": "1644",
+        "meta": {
+          "versionId": "1471219260112",
+          "lastUpdated": "2017-11-09T02:13:05.000+01:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
+          ]
+        },
+        "schedule": {
+          "reference": "Schedule/14"
+        },
+        "status": "free",
+        "start": "2016-08-15T12:00:00.000+01:00",
+        "end": "2016-08-15T12:29:59.000+01:00"
+      }
+    }
+  ]
 }
 ```
 
