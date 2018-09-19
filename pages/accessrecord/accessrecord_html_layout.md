@@ -138,11 +138,11 @@ The section and subsection titles are defined in the individual HTML view pages.
 
 ### GP transfer banner ###
 
-In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **SHALL** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **SHALL** be provided and displayed.
+In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **SHALL** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **SHALL** be provided and displayed. The message **SHALL** include the date that the data has been excluded from.
 
 ```html
 <div>
-	<p>GP transfer underway – record may be incomplete</p>
+	<p>Patient record transfer from previous GP Practice not yet complete; any information recorded before 'dd-mmm-yyyy' has been excluded</p>
 </div>
 ```
 
@@ -236,7 +236,7 @@ The following message **SHALL** be supplied by the provider if any items were ex
 
 ```html
 <div>
-	<p>Items excluded due to confidentiality, patient preferences and/or Royal College of General Practitioners (RCGP) sensitive dataset exclusions</p>
+	<p>Items excluded due to confidentiality and/or patient preferences</p>
 </div>
 ```
 
