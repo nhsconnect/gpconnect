@@ -67,6 +67,10 @@ Where appropriate the following [Common User Interface (CUI)](https://digital.nh
 [Address input and display](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/address.pdf)<br/>
 [Telephone Number input and display](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/tele.pdf)
 
+### Medication representation ###
+
+[Medications Management - Medication Line](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig)
+
 ## Patient banner ##
 
 Consumer systems **SHALL** present a patient banner above the HTML content returned from the GP Connect APIs in line with the CUI guidance.
@@ -109,8 +113,6 @@ The following data **SHALL** be cross checked between consumer and returned prov
 | Birth Date | patient.birthDate |
 | GP Practice Code | patient.managingOrganization | 
 
-<sup>1</sup>May be redacted if patient is flagged on Spine as Sensitive demographics.
-
 Additionally, the following data **MAY** be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
 
 * Address and Postcode
@@ -118,7 +120,9 @@ Additionally, the following data **MAY** be displayed if returned from the provi
 * Responsible GP Code and Name
 * GP Practice Name and Address
 
-All above may be redacted if patient is flagged on Spine as Sensitive demographics.
+Where a patient is flagged on the GP clinical system as sensitive (and as such the GP practice must not identify that the patient is registered at this location), the provider system **MUST NOT** return any clinical records and instead return the error `Patient not found`.
+
+Where a patient is flagged on PDS as sensitive (and as such it is not possible to confirm their registered GP practice), the consumer system **MUST NOT** use GP Connect.
 
 ## Section retrieval ##
 
