@@ -4,7 +4,7 @@ keywords: htmlgetcarerecord, getcarerecord, design
 tags: [design,htmlgetcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_wireframes.html
-summary: "Wireframe mock-ups of what GP Connect Access Record HTML might look like in a consumer application."
+summary: "Wireframe mock-ups of what GP Connect Access Record HTML might look like in a consumer application"
 toc: false
 ---
 
