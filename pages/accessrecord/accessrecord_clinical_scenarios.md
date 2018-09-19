@@ -146,5 +146,3 @@ These have been assembled through engagement during 2015/16 with various clinica
 ## Provide feedback ##
 
 To provide feedback or add your own use cases please contact GP Connect by sending  an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
-
-Some early feedback on the May 2016 release of the GP Connect draft specification can be found on the [Openhealthhub Forum](https://www.openhealthhub.org/c/fhir-implementation){:target="_blank"} under the category of "FHIR Implementation".
