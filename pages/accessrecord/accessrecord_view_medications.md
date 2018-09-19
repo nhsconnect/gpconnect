@@ -88,7 +88,7 @@ The current behaviour of the suppliers is as follows:
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseFifteen">INPS behaviour (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseFifteen">Vision behaviour (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseFifteen" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
