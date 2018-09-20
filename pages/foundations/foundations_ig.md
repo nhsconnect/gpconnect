@@ -14,8 +14,6 @@ When Foundations APIs are used to support the Appointment Management capability,
 
 ## PDS S-flagged patients ##
 
-Consumer systems SHALL NOT send requests for S-flagged patients.
+Consumer systems SHALL NOT send GP Connect requests for S-flagged patients.
 
-Provider systems SHALL handle requests for Patients recognised as S-flagged, as Patient Not Found.
-
-
+In cases where a request for an S-flagged patient is sent, provider systems SHALL return a 'Patient Not Found' error.
