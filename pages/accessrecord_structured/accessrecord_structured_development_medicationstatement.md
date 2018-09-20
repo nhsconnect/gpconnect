@@ -135,8 +135,12 @@ The status of the authorisation.
 Use one of `active`, `completed` or `stopped`:
 
 - `active` represents an active authorisation - used for active repeat medications
-- `stopped` represents a repeat authorisation which has been discontinued/stopped
-- `complete` **MUST** be used for all acute authorisations or any inactive repeat medications that have completed by running their course.
+- `stopped` represents an authorisation which has been discontinued, cancelled or stopped
+- `complete` represents an authorisation which has run its course
+
+For repeat and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
+
+For acute the status refers to the status of the prescription issue.
 
 ### medicationReference ###
 
@@ -156,13 +160,17 @@ The `Medication` resource provides the coded representation of the medication.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime or Period</code></td>
+    <td><b>Data type:</b> <code>Period</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-Where a Period is used the start is **MANDATORY**. Where there is a defined expiry or end date in the sending system the end date **MUST** be supplied. For acute prescriptions no specific end date **MUST** be supplied.
+`Period.start` is **MANDATORY**. Where there is a defined expiry or end date the end date **MUST** be supplied.
+
+For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
+
+For acutes this refers to the period of the prescription issue.
 
 ### dateAsserted ###
 

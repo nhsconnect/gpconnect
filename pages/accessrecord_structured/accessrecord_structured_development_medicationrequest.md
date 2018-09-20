@@ -239,10 +239,18 @@ The status of the authorisation.
 
 Use one of `active`, `completed` or `stopped`:
 
-- `active` represents an active authorisation - used for active repeat medications.
-- `stopped` represents a repeat authorisation which has been discontinued/stopped.
-- `complete` **MUST** be used for all acute authorisations.
+- `active` represents an active authorisation - used for active medications.
+- `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
+- `complete` represents an authorisation which has run its course.
 
+For `MedicationRequest` instances where `intent` is set to `plan`:
+
+* For repeats and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
+* For acutes the status refers to the status of the prescription issue.
+
+For `MedicationRequest` instances where `intent` is set to `order`:
+
+* The status refers to the status of the prescription issue.
 
 ### intent ###
 
@@ -450,8 +458,16 @@ Additional instructions for patient - that is, RHS of prescription label.
 
 Prescription start and end dates.
 
-Start date is mandatory. Where there is a defined expiry or end date the end date **MUST** be supplied. For acute prescriptions no specific end date **SHALL** be supplied.
+Start date is mandatory. Where there is a defined expiry or end date the end date **MUST** be supplied.
 
+For `MedicationRequest` instances where `intent` is set to `plan`:
+
+* For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
+* For acutes this refers to the period of the prescription issue
+
+For `MedicationRequest` instances where `intent` is set to `order`:
+
+* This refers to the period of the prescription issue.
 
 ### dispenseRequest.quantity ###
 
