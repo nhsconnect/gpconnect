@@ -692,7 +692,7 @@ The following content highlights the expected HTML tags and format providers **S
 
 ## Example view ##
 
-<p data-height="2000" data-theme-id="light" data-slug-hash="EeQJyW" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Medications" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/EeQJyW/">Medications</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="2000" data-theme-id="light" data-slug-hash="bxOYYZ" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Medications" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/bxOYYZ/">Medications</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 {% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/EeQJyW) for example of using AngularJS to generate table content." %}
