@@ -19,8 +19,7 @@ What is the scope of what views we're aiming to deliver?
 - Initially a set of views covering the majority of the primary care record have been included based on workshops with principal suppliers to agree how the data can be most sensible sectioned.
 	- Some desirable headings such as Procedures, Diagnosis, Symptoms have been amalgamated into the 'Clinical Items' heading because the underlying data structure of the GP systems cannot reliably extract these coded elements.
 - The scope of the views will be reviewed and added to as future versions of the API are produced.
-
-<sup>1</sup> Provider **SHALL** return minimal patient resource(s).
+- Provider **SHALL** return minimal patient resource(s).
 
 <span class="label label-info">DECISION</span> Remove the structured clinical data from the bundle until Access Record Structured delivery.
 
@@ -47,9 +46,7 @@ What is the scope of what views we're aiming to deliver?
 
 - Immediately prior to all API calls.
 - Once per user session.
-- <span class="label label-success">SELECTED</span> Once per multiple user sessions (for example, monthly<sup>1</sup>, and so on.)
-
-<sup>1</sup> period of renewal/rechecking to be determined by commissioning organization.
+- <span class="label label-success">SELECTED</span> Within the last 24 hours.
 
 ### Patient identity cross check ###
 
@@ -122,7 +119,7 @@ Items designated by the practice as confidential **SHALL NOT** be provided, and 
 
 ### Sensitive data exclusion set ###
 
-<span class="label label-info">DECISION</span> Provider API processing **SHALL** support the application of an exclusion set, which **SHALL** be configurable, including containing null values.  The current Royal College of General Practitioners (RCGP) sensitive exclusion set **SHALL** be applied for Stage 1 First of Type (FoT), for the complete patient record, or sections/data-items, but is likely to amended pending the results of the current national review, expected February 2017 to be approved by the Joint GP IT Committee (JGPIT).
+<span class="label label-info">DECISION</span> Provider API processing **SHALL** support the application of an exclusion set, which **SHALL** be configurable, including containing null values. The current Royal College of General Practitioners (RCGP) sensitive exclusion set **SHALL** be applied, for the complete patient record, or sections/data-items, but is likely to amended pending future guidance and review (to be approved by the Joint GP IT Committee (JGPIT)).
 <br>[GP summary exclusion code Lists](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/1/subpack/141/releases)
 
 {% include note.html content="You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link." %}
@@ -130,8 +127,8 @@ Items designated by the practice as confidential **SHALL NOT** be provided, and 
 
 ### Data sharing agreements ###
 
-- Data-sharing agreement must be in place between the consuming organisation and the providing organisation.
-- The Spine Security Proxy validates this requirement. Therefore, provider systems **SHALL NOT** apply or change locally-configured data-sharing validation.
+<span class="label label-info">DECISION</span> Data-sharing agreement must be in place between the consuming organisation and the providing organisation.
+<span class="label label-info">DECISION</span> The Spine Security Proxy validates this requirement. Therefore, provider systems **SHALL NOT** apply or change locally-configured data-sharing validation.
 
 ### Exclusion warnings ###
 
@@ -175,21 +172,6 @@ Date range handling in the HTML view per section:
 
 <span class="label label-info">DECISION</span> Consumer systems **SHALL** provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
 
-### Per section minimum free text for display ###
-
-Providers **SHALL** populate the free-text details field as follows:
-
-| Section code | Section name | Mandatory data items | 
-| ------------ | ------------ | -------------------- |
-| ENC | Encounters | - |
-| CLI | Clinical Items | - |
-| ADM | Administrative Items | - |
-| REF | Referrals | - |
-| IMM | Immunisations | - |
-| PRB | Problems | - |
-| MED | Medications | - |
-| OBS | Observations | - |
-| ALL | Allergies and Sensitivities | - |
 
 ## Operation definition ##
 
@@ -199,4 +181,4 @@ Providers **SHALL** populate the free-text details field as follows:
 - [0..1] Return everything vs. Return summary.
 - <span class="label label-info">SELECTED</span> [1] Only return a single section at a time.
 
-- <span class="label label-info">DECISION</span> The ability to return multiple or all HTML care record sections in one request will not be provided.
+<span class="label label-info">DECISION</span> The ability to return multiple or all HTML care record sections in one request will not be provided.
