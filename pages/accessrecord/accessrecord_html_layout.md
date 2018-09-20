@@ -96,7 +96,11 @@ These views **SHALL** have the following structure:
 
   <div>
     <h2>Active Problems and Issues</h2>
-    
+
+	<div>
+	  <p><!-- Subsection banner --></p>
+	</div>	  
+
 	<div>
 	  <p><!-- Date banner --></p>
 	</div>
@@ -112,6 +116,10 @@ These views **SHALL** have the following structure:
   
   <div>
     <h2>Inactive Problems and Issues</h2>
+	  
+	<div>
+	  <p><!-- Subsection banner --></p>
+	</div>	  
     
 	<div>
 	  <p><!-- Date banner --></p>
