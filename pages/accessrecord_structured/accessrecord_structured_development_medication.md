@@ -92,3 +92,13 @@ The following elements **SHALL NOT** be populated:
     <td><b>Data type:</b> <code>Instant</code></td>
   </tr>
 </table>
+
+<h3 style="color:#ED1951;">package</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+  </tr>
+</table>
+
+Also do not populate any subelements of package.
