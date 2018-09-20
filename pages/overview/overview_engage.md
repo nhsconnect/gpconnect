@@ -78,10 +78,7 @@ Some early feedback on the May 2016 release of the GP Connect draft specificatio
 
 ## Community engagement
 
-GP Connect is working closely with a number of interoperability communities:
-
-- [Code4Health interoperability community](https://code4health.org/communities/interoperability){:target="_blank"}
-- [INTEROPen supplier-led healthcare IT interoperability community](http://www.interopen.org/){:target="_blank"}
+GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
 
 ## Timescales, benefits and more
 
