@@ -8,7 +8,7 @@ summary: "Guidance on the representation of medication in GP Connect"
 ---
 ## Degraded medications
 
-Where degraded medication records arising from GP2GP record transfer are present in the patient record then these **MUST** be coded using the appropriate degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
+Where degraded medication records arising from GP2GP record transfer or any other means are present in the patient record then these **MUST** be coded using the appropriate degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
 
 ## Medication interoperability
 
@@ -21,10 +21,6 @@ Currently dosage and quantity information are expressed in unstructured/textual 
 ## Mixtures 
 
 In some systems it is possible to prescribe custom formulations compounded from other medications (extemporaneous preparations). Mixtures **MUST** be expressed using the degrade code (`196421000000109`, Transfer-degraded medication entry) with the constituents of the mixture expressed via `CodeableConcept.text`.
-
-## Non dm+d medications
-
-In some cases, drugs may be recorded as free text or may be present in the original system’s drug dictionary, but not in dm+d. Where no dm+d code is available to describe the medication then the medication code **MUST** be expressed using the degrade (`196421000000109`, Transfer-degraded medication entry) with the original drug name present in `CodeableConcept.text`. 
 
 ## dm+d name versus displayed name
 
