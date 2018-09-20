@@ -24,8 +24,6 @@ The `List` resource in FHIR is used to help manage a collection of resources. In
 - Where there are no items returned, the list will be empty.
 - Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
 
-{% include todo.html content="A code to populate the code field for Resolved Allergies is yet to be confirmed and will be added to the guidance shortly." %}
-
 ### Warning codes
 
 The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
