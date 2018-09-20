@@ -70,7 +70,7 @@ When the medication was last issued.
 
 This details the care setting in which the medication was prescribed. Currently this will only detail if the medication was prescribed by the GP practice or by another organisation, however in the future this valueset could be built on to be more specific about where a medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
 
-For repeat and repeat dispensed mediations the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
+For repeat and repeat dispensed medications the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
 ### identifier ###
 
