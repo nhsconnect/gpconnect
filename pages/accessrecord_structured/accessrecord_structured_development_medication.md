@@ -60,19 +60,6 @@ A SNOMED dm+d code **MUST** be supplied, if available.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
-### package ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-If the GP providing system has data relating to the batch number or expiry date they **MAY** be populated within this element.
-
-
 <h2 style="color:#ED1951;">Medication elements <b>not in use</b></h2>
 
 The following elements **SHALL NOT** be populated:
