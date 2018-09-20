@@ -14,8 +14,8 @@ When Foundations APIs are used to support the Appointment Management capability,
 
 ## PDS S-flagged patients ##
 
-If, in response to the Find or Read a Patient API, the provider system determines that a patient has a PDS 'S-Flag', then the patient's location and contact details are to be replaced by those of the target GP practice.
+Consumer systems SHALL NOT send requests for S-flagged patients.
 
-When these APIs are used as part of the Appointment Management Capability, then the Provider system SHALL NOT process requests for Patients it recognises as being S-flagged.
+Provider systems SHALL handle requests for Patients recognised as S-flagged, as Patient Not Found.
 
 
