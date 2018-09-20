@@ -38,7 +38,7 @@ This flag must NOT be applied by provider systems based on the following:
 
 ## PDS sensitive flag (S-Flag) ##
 
-Due to complexity around the handling of patients with a PDS 'Sensitive' flag (S-flag), and the limited likelihood of this edge case occurrence, it has been agreed that GP Connect will not support Appointment Management functionality for such patients.  This means that if provider systems receive such a request then it will not be processed but a message indicating the reason will be returned.
+Due to complexity around the handling of patients with a PDS 'Sensitive' flag (S-flag), and the limited likelihood of this edge case occurrence, it has been agreed that GP Connect will not support Appointment Management functionality for such patients.  This means that if provider systems receive such a request then it will not be processed but a message indicating 'Patient Not Found' will be returned.
 
 ## Legally-restricted data ##
 
