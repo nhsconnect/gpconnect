@@ -61,7 +61,7 @@ This only refers to data transmitted from GP to GP when a patient moves GP pract
 
 ### Data awaiting filing
 
-Where data exists in a provider system workflow that would have been included as part of the bundle returned had it been integrated in the system, then this **MUST** be sent in a separate list to the rest of the entries. The list **MUST** be sent using the appropriate list.code relevant to the type of resource that it contains as defined in the guidance for that resource group and **MUST** be populated using the data awaiting filing warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. This will allow consuming systems to be able to display the data and indicate that it has not been reviewed by an appropriate person at the providing practice.
+Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent.
 
 ## List elements ##
 
