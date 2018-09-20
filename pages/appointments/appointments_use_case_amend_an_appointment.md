@@ -86,55 +86,69 @@ On the wire a JSON serialised request would look something like the following:
 
 ```json
 {
-	"resourceType": "Appointment",
-	"id": "9",
-	"meta": {
-		"versionId": "636068818095315079",
-		"lastUpdated": "2016-08-15T19:16:49.971+01:00",
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
-	},
-	"contained": [{
-		"resourceType": "Organization",
-		"id": "1",
-		"meta": {
-			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
-		},
-		"name": "Test Organization Name",
-		"telecom": [{
-			"system": "phone",
-			"value": "0300 303 5678"
-		}]
-	}],
-	"extension": [{
-		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
-		"valueReference": {
-			"reference": "#1"
-		}
-	}],
-	"status": "booked",
-	"description": "Free text description updated.",
-	"start": "2016-05-30T10:00:00+01:00",
-	"end": "2016-05-30T10:25:00+01:00",
-	"slot": [{
-		"reference": "Slot/1",
-		"display": "Slot 1"
-	}],
-	"created": "2017-10-09T13:48:41+01:00",
-	"comment": "Free text comment.",
-	"participant": [{
-		"actor": {
-			"reference": "Patient/1",
-			"display": "Mr. Mike Smith"
-		},
-		"status": "accepted"
-	},
-	{
-		"actor": {
-			"reference": "Location/32",
-			"display": "Leeds GP Clinic"
-		},
-		"status": "accepted"
-	}]
+  "resourceType": "Appointment",
+  "id": "9",
+  "meta": {
+    "versionId": "636068818095315079",
+    "lastUpdated": "2016-08-15T19:16:49.971+01:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Organization",
+      "id": "1",
+      "meta": {
+        "profile": [
+          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+        ]
+      },
+      "name": "Test Organization Name",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "0300 303 5678"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+      "valueReference": {
+        "reference": "#1"
+      }
+    }
+  ],
+  "status": "booked",
+  "description": "Free text description updated.",
+  "start": "2016-05-30T10:00:00+01:00",
+  "end": "2016-05-30T10:25:00+01:00",
+  "slot": [
+    {
+      "reference": "Slot/1",
+      "display": "Slot 1"
+    }
+  ],
+  "created": "2017-10-09T13:48:41+01:00",
+  "comment": "Free text comment.",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/1",
+        "display": "Mr. Mike Smith"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Location/32",
+        "display": "Leeds GP Clinic"
+      },
+      "status": "accepted"
+    }
+  ]
 }
 ```
 
@@ -166,55 +180,69 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Appointment",
-	"id": "9",
-	"meta": {
-		"versionId": "6360688180953112345",
-		"lastUpdated": "2017-09-12T19:16:50.971+01:00",
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
-	},
-	"contained": [{
-		"resourceType": "Organization",
-		"id": "1",
-		"meta": {
-			"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
-		},
-		"name": "Test Organization Name",
-		"telecom": [{
-			"system": "phone",
-			"value": "0300 303 5678"
-		}]
-	}],
-	"extension": [{
-		"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
-		"valueReference": {
-			"reference": "#1"
-		}
-	}],
-	"status": "booked",
-	"description": "Free text description updated.",
-	"start": "2016-05-30T10:00:00+01:00",
-	"end": "2016-05-30T10:25:00+01:00",
-	"slot": [{
-		"reference": "Slot/1",
-		"display": "Slot 1"
-	}],
-	"created": "2017-10-09T13:48:41+01:00",
-	"comment": "Free text comment.",
-	"participant": [{
-		"actor": {
-			"reference": "Patient/1",
-			"display": "Mr. Mike Smith"
-		},
-		"status": "accepted"
-	},
-	{
-		"actor": {
-			"reference": "Location/32",
-			"display": "Leeds GP Clinic"
-		},
-		"status": "accepted"
-	}]
+  "resourceType": "Appointment",
+  "id": "9",
+  "meta": {
+    "versionId": "6360688180953112345",
+    "lastUpdated": "2017-09-12T19:16:50.971+01:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+    ]
+  },
+  "contained": [
+    {
+      "resourceType": "Organization",
+      "id": "1",
+      "meta": {
+        "profile": [
+          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+        ]
+      },
+      "name": "Test Organization Name",
+      "telecom": [
+        {
+          "system": "phone",
+          "value": "0300 303 5678"
+        }
+      ]
+    }
+  ],
+  "extension": [
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+      "valueReference": {
+        "reference": "#1"
+      }
+    }
+  ],
+  "status": "booked",
+  "description": "Free text description updated.",
+  "start": "2016-05-30T10:00:00+01:00",
+  "end": "2016-05-30T10:25:00+01:00",
+  "slot": [
+    {
+      "reference": "Slot/1",
+      "display": "Slot 1"
+    }
+  ],
+  "created": "2017-10-09T13:48:41+01:00",
+  "comment": "Free text comment.",
+  "participant": [
+    {
+      "actor": {
+        "reference": "Patient/1",
+        "display": "Mr. Mike Smith"
+      },
+      "status": "accepted"
+    },
+    {
+      "actor": {
+        "reference": "Location/32",
+        "display": "Leeds GP Clinic"
+      },
+      "status": "accepted"
+    }
+  ]
 }
 ```
 
