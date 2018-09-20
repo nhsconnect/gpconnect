@@ -22,7 +22,7 @@ The purpose of this section is to provide a chronological history of medication 
 
 ## Sections and subsections ##
 
-Contains one main section, and three subsections:
+Contains one main section, and five subsections:
 
  - [Recent Acute Medication](accessrecord_view_medications.html#recent-acute-medication)
  - [Current Repeat Medication](accessrecord_view_medications.html#current-repeat-medication)
