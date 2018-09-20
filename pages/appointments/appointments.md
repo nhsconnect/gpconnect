@@ -31,7 +31,8 @@ The following FoT deployments are being progressed:
 
 ### Care Setting 1: Within GP federations ###
 
-Enabling a GP practice or appointment hub to book, view, amend or cancel a patient’s in-hours or extended hours appointments at the patient’s registered GP practice or another GP practice within the same federation. 
+Enabling a GP practice or appointment hub to book, view, amend or cancel a patient’s in-hours or extended hours appointments at the patient’s registered GP practice or another GP practice within the same federation.  See the [Glossary](overview_glossary.html)
+ for the definition of Federation.
 
 ### Care Setting 2: From UC call centres to GP practices – in-hours, extended hours appointments ###
 The requirement to support the use of the GP Connect capability for unscheduled care by UC services (UC call centres booking and managing appointments into GP practices) has been accommodated where possible in the API design. 
