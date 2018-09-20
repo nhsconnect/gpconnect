@@ -35,7 +35,7 @@ What is the scope of what views we're aiming to deliver?
 ### Render guidance ###
 
 - <span class="label label-success">SELECTED</span> Reuse Common User Interface (CUI) Guidance
-- Roll our own.
+- Define our own.
 
 ### Patient trace handling ###
 
