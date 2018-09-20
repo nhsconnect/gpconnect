@@ -14,7 +14,7 @@ To meet strategic objectives to improve access to GP care, the Appointment Manag
 ## Example scenarios ##
 
 - administrative staff at a GP practice can book, view, amend or cancel appointments on behalf of a patient
-- administrative staff at a GP extended access hub can book, view, amend or cancel appointments on behalf of a patient at any of its federated GP practices
+- administrative staff at a GP extended access hub can book, view, amend or cancel appointments on behalf of a patient at any of its <a href="overview_glossary.html" data-toggle="tooltip" data-original-title="{{site.data.glossary.Federation}}">federated GP practices</a>
 - an urgent care (UC) 111 call centre handler or triage clinician can book, view, amend or cancel appointments on behalf of a patient at the patient's registered or federated GP practices or extended access hubs
 - administrative staff and clinicians at a range of other care settings (for example, A&amp;E, physio, social and community services) will be able to book, view or cancel a GP appointment on behalf of the patient
 

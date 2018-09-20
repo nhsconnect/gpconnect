@@ -12,7 +12,7 @@ toc: false
 {% assign gs = site.data.glossary | sort:[0] %}
 {% for kv in gs %}
 <dl>
-  <dt><h3>{{ kv[0] }}<h3></dt>
+  <dt><h3>{{ kv[0] }}</h3></dt>
   <dd>{{ kv[1] }}</dd>
 </dl>
 {% endfor %}
