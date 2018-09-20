@@ -128,121 +128,151 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Bundle",
-	"type": "searchset",
-	"entry": [{
-		"fullUrl": "Appointment/148",
-		"resource": {
-			"resourceType": "Appointment",
-			"id": "148",
-			"meta": {
-				"versionId": "1503310820000",
-				"lastUpdated": "2017-11-08T10:20:20.000+00:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
-			},
-			"contained": [{
-				"resourceType": "Organization",
-				"id": "1",
-				"meta": {
-					"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
-				},
-				"name": "Test Organization Name",
-				"telecom": [{
-					"system": "phone",
-					"value": "0300 303 5678"
-				}]
-			}],
-			"extension": [{
-				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
-				"valueReference": {
-					"reference": "#1"
-				}
-			}],
-			"status": "booked",
-			"description" : "GP Connect Appointment description 148",
-			"start": "2017-08-21T10:20:00.000+00:00",
-			"end": "2017-08-21T10:50:00.000+00:00",
-			"slot": [{
-				"reference": "Slot/544"
-			},
-			{
-				"reference": "Slot/545"
-			},
-			{
-				"reference": "Slot/546"
-			}],
-			"created": "2017-10-09T13:48:41+01:00",
-			"comment": "Test Appointment Comment 148",
-			"participant": [{
-				"actor": {
-					"reference": "Patient/2"
-				},
-				"status": "accepted"
-			},
-			{
-				"actor": {
-					"reference": "Location/1"
-				},
-				"status": "accepted"
-			},
-			{
-				"actor": {
-					"reference": "Practitioner/2"
-				},
-				"status": "accepted"
-			}]
-		}
-	},
-	{
-		"fullUrl": "Appointment/149",
-		"resource": {
-			"resourceType": "Appointment",
-			"id": "149",
-			"meta": {
-				"versionId": "1503440820000",
-				"lastUpdated": "2016-08-17T10:20:20.000+00:00",
-				"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"]
-			},
-			"contained": [{
-				"resourceType": "Organization",
-				"id": "1",
-				"meta": {
-					"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
-				},
-				"name": "Test Organization Name 2",
-				"telecom": [{
-					"system": "phone",
-					"value": "0300 303 5679"
-				}]
-			}],
-			"extension": [{
-				"url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
-				"valueReference": {
-					"reference": "#1"
-				}
-			}],
-			"status": "booked",
-			"description" : "GP Connect Appointment description 148",
-			"start": "2016-08-16T11:20:00.000+00:00",
-			"end": "2016-08-16T11:30:00.000+00:00",
-			"slot": [{
-				"reference": "Slot/303"
-			}],
-			"created": "2016-08-14T13:48:41+01:00",
-			"participant": [{
-				"actor": {
-					"reference": "Patient/2"
-				},
-				"status": "accepted"
-			},
-			{
-				"actor": {
-					"reference": "Location/1"
-				},
-				"status": "accepted"
-			}]
-		}
-	}]
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "fullUrl": "Appointment/148",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "148",
+        "meta": {
+          "versionId": "1503310820000",
+          "lastUpdated": "2017-11-08T10:20:20.000+00:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "name": "Test Organization Name",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0300 303 5678"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "description": "GP Connect Appointment description 148",
+        "start": "2017-08-21T10:20:00.000+00:00",
+        "end": "2017-08-21T10:50:00.000+00:00",
+        "slot": [
+          {
+            "reference": "Slot/544"
+          },
+          {
+            "reference": "Slot/545"
+          },
+          {
+            "reference": "Slot/546"
+          }
+        ],
+        "created": "2017-10-09T13:48:41+01:00",
+        "comment": "Test Appointment Comment 148",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/2"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "Appointment/149",
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "149",
+        "meta": {
+          "versionId": "1503440820000",
+          "lastUpdated": "2016-08-17T10:20:20.000+00:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "name": "Test Organization Name 2",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0300 303 5679"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          }
+        ],
+        "status": "booked",
+        "description": "GP Connect Appointment description 148",
+        "start": "2016-08-16T11:20:00.000+00:00",
+        "end": "2016-08-16T11:30:00.000+00:00",
+        "slot": [
+          {
+            "reference": "Slot/303"
+          }
+        ],
+        "created": "2016-08-14T13:48:41+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
