@@ -21,9 +21,9 @@ There is an issue with the PractitionerRole resource in the base FHIR specificat
 
 An example of where this happens would be if a list of Medications contained 2 Medications that were prescribed by the same Practitioner,
 
-1. Mediaction 1, prescribed by Practitioner at Practice A
+1. Medication 1, prescribed by Practitioner at Practice A
 2. Medication 2, prescribed by Practitioner at Out of Hours service B
 
-2 PractitionerRole resources would be created that both relate to the same Practitioner. However as the MedicationRequest resource only references the Practitioner and not PractitionerRole it will be impossible to ascertain which PractitionerRole relates to which medication.
+2 PractitionerRole resources would be created that both relate to the same Practitioner. However, as the MedicationRequest resource only references the Practitioner and not PractitionerRole it will be impossible to ascertain which PractitionerRole relates to which medication.
 
-As a workaround for this issue in GP Connect when providing responses to queries systems MUST only supply 1 PractitionerRole per Practitioner. If more than 1 should exist then the system MUST NOT supply any.
+As a workaround for this issue in GP Connect when providing responses to queries systems **MUST** only supply 1 PractitionerRole per Practitioner. If more than 1 should exist then the system **MUST NOT** supply any.
