@@ -40,7 +40,7 @@ Medication issues may be future-dated – for example, repeat dispensed medicati
 
 ## Amendments
 
-Where an authorisation is amended – for example, Proprietary/Generic switch, altered dates, change of quantities and so on, then the existing authorisation/plan **SHOULD** be stopped or discontinued, and an appropriate reason supplied via detectedIssue. A new authorisation **SHOULD** be created, in the form of a `MedicationStatement` and `MedicationRequest` with `intent` of `plan`, to hold the amended details. Subsequent issues of the medication **SHOULD** reference the amended authorisation rather than the previous version.
+Where an authorisation is amended – for example, Proprietary/Generic switch, altered dates, change of quantities and so on, then the existing authorisation/plan **SHOULD** be stopped or discontinued, and an appropriate reason supplied via `statusReason.reason`. A new authorisation **SHOULD** be created, in the form of a `MedicationStatement` and `MedicationRequest` with `intent` of `plan`, to hold the amended details. Subsequent issues of the medication **SHOULD** reference the amended authorisation rather than the previous version.
 
 ## Medication discontinuation/stopping ###
 
