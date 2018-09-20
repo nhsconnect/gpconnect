@@ -89,11 +89,11 @@ This guidance is applicable to user interfaces displayed on desktop or laptop co
 Provider systems **SHALL** return a minimal set of structured data along with the HTML content as follows:
 
 | FHIR resource(s) | Composition section  |
-|------------------|--------|-------------|
-| `Patient`          | Subject              |
-| `Practitioner`     |                      |
-| `Organization`     | Custodian            |
-| `Device`           | Author<sup>1</sup>   |
+|------------------|----------------------|
+| `Patient`        | Subject              |
+| `Practitioner`   | User                 |
+| `Organization`   | Custodian            |
+| `Device`         | Author<sup>1</sup>   |
 
 <sup>1</sup> As the composition is machine-generated the concept of a single Author does not make logical sense. It is expected that the Author field will be populated with the details of the software system which generated the composition.
 
