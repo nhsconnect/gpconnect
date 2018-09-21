@@ -671,18 +671,12 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   </tr>   
   <tr>
     <td align="center">6</td>
-    <td><code>Scheduled End Date</code></td>
-    <td>The date the prescription is expected to finish.</td>
-    <td><code>dd-Mmm-yyyy</code></td>
-  </tr>
-  <tr>
-    <td align="center">7</td>
     <td><code>Days Duration</code></td>
     <td>Duration of the medication issued in days.</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
-    <td align="center">8</td>
+    <td align="center">7</td>
     <td><code>Additional Information</code></td>
     <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 			<ul>
