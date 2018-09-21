@@ -625,7 +625,6 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
     <td>Grouped distinct descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
     <td><code>free-text</code></td>
   </tr>
-  <tr>
    <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
