@@ -630,7 +630,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
-    <td>Type of medication issued (for example, <code>Acute, Repeat, Repeat Dispense, Acute - [Prescribing Agency Type], Repeat - [Prescribing Agency Type]</code>).</td>
+    <td>Type of medication issued (for example, <code>Acute, Repeat</code>).</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
