@@ -184,6 +184,8 @@ The provider **MUST** include all repeat and repeat dispensed medications (templ
 
 The purpose of this section is to provide a view of all repeat medications that the patient is currently prescribed, which informs the clinical decision-making process.
 
+This is aligned to the Repeat Medications section in Summary Care Records (SCR).
+
 ### Subsection title ###
 
 The subsection title **MUST** be "Current Repeat Medication".
