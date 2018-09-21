@@ -225,6 +225,7 @@ The following HTML classes **MUST** be applied across the HTML view:
 | `content-banner`   | Applied within the `<div>` tag of any section/subsection content banner                  | All views
 | `date-banner`      | Applied within the `<div>` tag of any section/subsection date filter banner              | All views
 | `exclusion-banner` | Applied within the `<div>` tag of any section/subsection exclusion banner                | All views
+| `gptransfer-banner`| Applied within the `<div>` tag of any section/subsection exclusion banner                | All views
 | `date-column` 	 | Applied within the `<td>` tag of any table column with a `dd-Mmm-yyyy` date format       | All views
 | `med-item-column`  | Applied within the `<td>` tag of a grouped distinct `Medication Item`       				| Medications (All Medication (Summary) & All Medication Issues only)
 
