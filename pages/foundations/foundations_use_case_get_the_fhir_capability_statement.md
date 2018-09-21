@@ -104,6 +104,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"},
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"},
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"},
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"},
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"},
 		
@@ -114,7 +115,9 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1"},
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"},
 		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"},
-		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"}
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"},
+		{"reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"}
 	],
 	
 	
