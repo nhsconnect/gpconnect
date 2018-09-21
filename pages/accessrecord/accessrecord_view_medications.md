@@ -469,7 +469,9 @@ Provider message describing at a summary level how they have populated this sect
 
 ### Table columns ###
 
-Providers **MUST** return all the columns as described in the table below. It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Start Date` descending.
+Providers **MUST** return all the columns as described in the table below. 
+
+It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Start Date` descending.
 
 Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded exampled of displaying this subsection.
 
@@ -601,7 +603,9 @@ Providers message describing at a summary level how they have populated this sec
 
 ### Table columns ###
 
-Providers **MUST** return all the columns as described in the table below. It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Issue Date` descending.
+Providers **MUST** return all the columns as described in the table below. 
+
+It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Issue Date` descending.
 
 Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded exampled of displaying this subsection.
 
