@@ -69,7 +69,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 {
 	"resourceType": "CapabilityStatement",
 	
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"name": "GP Connect",
 	
 	"status": "active",
@@ -80,7 +80,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 		"name": "[Provider Software Vendor Contact Name]"
 	}],
 	
-	"description": "This server implements the GP Connect API version 1.2.0",
+	"description": "This server implements the GP Connect API version 1.2.1",
 	"copyright": "Copyright NHS Digital 2016",
 	"kind": "capability",
 	
