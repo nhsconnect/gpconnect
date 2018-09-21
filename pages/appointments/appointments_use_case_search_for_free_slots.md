@@ -60,23 +60,21 @@ The following parameters SHALL be included in the request:
 
 The following parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
 
-- _include:recurse=Schedule:actor:Practitioner
-- _include:recurse=Schedule:actor:Location
-
+- `_include:recurse=Schedule:actor:Practitioner`
+- `_include:recurse=Schedule:actor:Location`
 
 {% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore, slots found in the past cannot be used to book an appointment." %}
-
 
 ### Enhanced slot filtering ###
 
 {% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outlined on the [Slot availability management](appointments_slotavailabilitymanagement.html) page" %}
 
-In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter with both 'System' and 'Value' elements:
+In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter with both `system` and `code` elements of the search [token](https://www.hl7.org/fhir/STU3/search.html#token):
 
-| Parameter system URI | Parameter description |
+| Parameter system | Parameter code |
 | --- | --- |
-| https://fhir.nhs.uk/Id/ods-organization-code | The booking organisation ODS code |
-| https://fhir.nhs.uk/STU3/ValueSet/GPConnect-OrganisationType-1 | The booking organisation type, for example 'Urgent Care'. |
+| `https://fhir.nhs.uk/Id/ods-organization-code` | The booking organisation ODS code, e.g. `A11111`|
+| `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | The booking organisation type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1), e.g. `urgent-care` |
 
 Where searchFilters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
@@ -86,11 +84,11 @@ Where searchFilters are sent by consumers which are not explicitly supported in 
 On the wire, a `Search for free slots` request would look something like one of the following:
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter={OrgTypeSystem}|{OrgTypeValue}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ## Prerequisites ##
@@ -117,7 +115,7 @@ GET /Slot?[start={search_prefix}start_date]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
-          {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+          {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
@@ -131,7 +129,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
-          {&searchFilter={OrgTypeSystem}|{OrgTypeValue}}
+          {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
