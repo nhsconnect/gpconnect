@@ -213,6 +213,30 @@ Provider systems:
       "valueReference": {
         "reference": "#1"
       }
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+            "code": "R0260",
+            "display": "General Medical Practitioner"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
+            "code": "In-person",
+            "display": "In-person"
+          }
+        ]
+      }
     }
   ],
   "status": "booked",
