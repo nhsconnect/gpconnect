@@ -57,23 +57,23 @@ These views **MUST** have the following structure:
 <div>
   <h1>Encounters</h1>
 	
-  <div>
+  <div class="gptransfer-banner">
     <p><!-- GP transfer banner --></p>
   </div>
 	
-  <div>
+  <div class="content-banner">
     <p><!-- Content banner --></p>
   </div>
   
-  <div>
+  <div class="date-banner">
     <p><!-- Date banner --></p>
   </div>
   
-  <div>
+  <div class="exclusion-banner">
     <p><!-- Exclusion banner --></p>
   </div>
   
-  <table>
+  <table id="enc-tab">
     <!-- table data -->
   </table>
 </div>
@@ -85,42 +85,50 @@ These views **MUST** have the following structure:
 <div>
   <h1>Problems and Issues</h1>
    
-  <div>
+  <div class="gptransfer-banner">
     <p><!-- GP transfer banner --></p>
   </div>
 	
-  <div>
+  <div class="content-banner">
     <p><!-- Content banner --></p>
   </div>
 
   <div>
     <h2>Active Problems and Issues</h2>
+	
+	<div class="content-banner">
+	  <p><!-- Content banner --></p>
+	</div>
     
-	<div>
+	<div class="date-banner">
 	  <p><!-- Date banner --></p>
 	</div>
     
-	<div>
+	<div class="exclusion-banner">
 	  <p><!-- Exclusion banner --></p>
 	</div>
     
-	<table>
+	<table id="prb-tab-act">
 	  <!-- table data -->
 	</table>
   </div>
   
   <div>
     <h2>Inactive Problems and Issues</h2>
+
+	<div class="content-banner">
+	  <p><!-- Content banner --></p>
+	</div>
     
-	<div>
+	<div class="date-banner">
 	  <p><!-- Date banner --></p>
 	</div>
     
-	<div>
+	<div class="exclusion-banner">
 	  <p><!-- Exclusion banner --></p>
 	</div>
     
-	<table>
+	<table id="prb-tab-inact">
 	  <!-- table data -->
 	</table>
   </div>
@@ -140,7 +148,7 @@ The section and subsection titles are defined in the individual HTML view pages.
 In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **MUST** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **MUST** be provided and displayed. The message **MUST** include the date that the data has been excluded from.
 
 ```html
-<div>
+<div class="gptransfer-banner">
 	<p>Patient record transfer from previous GP Practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded</p>
 </div>
 ```
@@ -171,7 +179,7 @@ If no start date is supplied, the provider **MUST** supply all data until the en
 Consumer systems **MUST** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section header.
 
 ```html
-<div>
+<div class="date-banner">
 	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>
 </div>
 ```
@@ -179,7 +187,7 @@ Consumer systems **MUST** display the date range applied to a section's data, as
 If no consumer end date: 
 
 ```html
-<div>
+<div class="date-banner">
 	<p>All data items from [Start Date]</p>
 </div>
 ``` 
@@ -187,7 +195,7 @@ If no consumer end date:
 If no consumer start date:
 
 ```html
-<div>
+<div class="date-banner">
 	<p>All data items until [End Date]</p> 
 </div>
 ``` 
@@ -197,7 +205,7 @@ If no consumer start date:
 Where the consumer system has not supplied a date range, then where applicable and while the default is for ALL items to be provided, the following message **MUST** be supplied by the provider and displayed by the consumer system beneath the section header.
 
 ```html
-<div>
+<div class="date-banner">
 	<p>All relevant items</p>
 </div>
 ``` 
@@ -234,16 +242,17 @@ The following message **MUST** be supplied by the provider if any items were exc
 
 
 ```html
-<div>
+<div class="exclusion-banner">
 	<p>Items excluded due to confidentiality and/or patient preferences</p>
 </div>
 ```
 
-## Table construction requirements ##
+## Generic table construction requirements ##
 
 Providers must adhere to the table construction requirements listed below:
 
 - Table columns **MUST** be ordered left-to-right (1..N).
 - Table content **MUST NOT** be truncated.
-- Table rows **MUST** be ordered by date descending (that is, most recent date/time first).
+
+{% include custominfocallout.html content="**Information:** All other table requirements can be found on their associated HTML view page." type="info" %}
 
