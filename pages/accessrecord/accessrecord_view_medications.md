@@ -41,7 +41,7 @@ A date filter is applicable to this section. The date filter **MUST** be applied
  
 ## Section content banner ##
 
-Provider message describing at a summary level how they have populated this section. Also includes the warning message where medications prescribed elsewhere have been excluded.
+Provider message describing at a summary level how they have populated this section.
 
 
 
@@ -50,7 +50,9 @@ Provider message describing at a summary level how they have populated this sect
 
 ### Clinical narrative ###
 
-A list of acute medicines that are currently being, or have recently been, used to treat or prevent disease for the patient.
+A list of acute medicines that are currently being, or have recently been, used to treat or prevent disease for the patient. The provider **MUST** include all acute medication whose `Start Date` (the date the prescription is expected to start) is greater than the current date minus 365 days.
+
+This is aligned to the Acute Medications section in Summary Care Records (SCR). 
 
 ### Purpose ###
 
@@ -62,15 +64,13 @@ The subsection title **MUST** be "Recent Acute Medication".
 
 ### Date filter ###
 
-The provider **MUST** include all acute medication whose `Start Date` (the date the prescription is expected to start) is greater than the current date minus 365 days.
-
 All relevant records **MUST** be returned.
 
 ### Subsection content banner ###
 
 Provider message describing at a summary level how they have populated this subsection.
 
-Providers **MUST** return the following message:
+Providers **MUST** return the following message, if applicable:
 
 ```html
 <div>
@@ -95,7 +95,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
-    <td>Type of medication issued (for example, <code>Acute, Acute Post-Dated, Prescribed Elsewhere – [Agency]<sup><b>1</b></sup></code>).</td>
+    <td>Type of medication issued (for example, <code>Acute, Acute Post-Dated, Acute - [Prescribing Agency Type]<sup><b>1</b></sup></code>).</td>
     <td><code>free-text</code></td>
   </tr> 
   <tr>
@@ -156,10 +156,10 @@ Providers **MUST** return all the columns as described in the table below, sorte
     <td><code>Additional Information</code></td>
     <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 		<ul>
+			<li><code>CANCELLED: </code> label with cancellation date and reason</li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
-			<li><code>CANCELLED: </code> label with cancellation date and reason</li>
 		</ul>
 	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Ear Infection</code>).</p>
 	</td>
@@ -168,9 +168,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 </table>
 </div>
 
-<sup><b>1</b></sup> Where the medication type is Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the type of Prescribed Elsewhere - for example, ‘Prescribed Elsewhere – Dentist’.
-
-
+<sup><b>1</b></sup> Where the medication was Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the Type, for example, ‘Acute – Dentist’. If the medication item is identifiable as prescribed elsewhere but the type of organisation who prescribed it is not recorded, then the Type **MUST** be returned as ‘Acute – Unknown Prescriber’.
 
 
 
@@ -179,6 +177,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
 ### Clinical narrative ###
 
 A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication - for example, EpiPen, antihistamines, monitoring or continence products.
+
+The provider **MUST** include all repeat and repeat dispensed medications (templates/plans/courses **NOT** individual issues) which have not been discontinued or otherwise ended. Repeat medications (including repeat dispense) which have not been discontinued are considered current where the Effective End Date (the date the cycle of prescriptions is expected to end) is either greater than the current date or is null. This **MUST** include those which has been authorised but not yet issued (Last Issued and Number Issued will be null).
 
 ### Purpose ###
 
@@ -196,7 +196,7 @@ All relevant records **MUST** be returned (that is, no time limit/filtering is t
 
 Provider message describing at a summary level how they have populated this subsection.
 
-Providers **MUST** return the following message:
+Providers **MUST** return the following message, if applicable:
 
 ```html
 <div>
@@ -221,7 +221,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
-    <td>Type of medication issued (for example, <code>Repeat, Repeat Dispense, Repeat – [Prescribing Agency]</code>).</td>
+    <td>Type of medication issued (for example, <code>Repeat, Repeat Dispense, Repeat – [Prescribing Agency Type]</code>).</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
@@ -300,7 +300,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
 </table>
 </div>
 
-{% include custominfocallout.html content="**Note:** If the provider system allows the repeat medication (master/template) details to be altered pending or as new repeat issues are generated, then the latest details **MUST** be returned by the provider in the detail column (for example, TPP current include the guidance text ‘The medication above is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. You should look at the Current Medication Issues section to see what the patient has been given.’)" type="info" %}
+{% include custominfocallout.html content="**Note:** If the provider system allows the repeat medication (master/template) details to be altered pending or as new repeat issues are generated, then the latest details **MUST** be returned by the provider in the Additional Information column. A subsection banner message should be added if applicable (for example ‘The medication above is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. You should look at the All Medication Issues section to see what the patient has been given)." type="info" %}
+
 
 
 ## Discontinued Repeat Medication##
@@ -391,7 +392,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   </tr>  
   <tr>
     <td align="center">6</td>
-    <td><code>Discontiuned Date</code></td>
+    <td><code>Discontinued Date</code></td>
     <td>The date the medication item was discontinued.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
