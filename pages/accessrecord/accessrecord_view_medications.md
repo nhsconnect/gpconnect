@@ -438,7 +438,8 @@ A history view of drugs or other forms of medicines that have been used to treat
 
 ### Purpose ###
 
-The purpose of this subsection is to provide a distinct list of all the medications recorded for the patient and to present the list alphabetically to make it easier to view for specific medication items The list is also presented alphabetically to enable easier identification of changes to a medication over time e.g. change in dosage.
+The purpose of this subsection is to provide a distinct list of all the medications recorded for the patient and to present the list alphabetically to make it easier to view for specific medication items The list is also presented alphabetically to enable easier identification of changes to a medication over time, for example, change in dosage.
+
 Items included in the Recent Acute Medication and Current Repeat Medication **MUST** also be included within this subsection as well as past medications.
 
 ### Subsection title ###
@@ -456,7 +457,7 @@ If a consumer submits a date filter for this subsection the dates will be applie
 	2.	Where the medication is prescribed elsewhere and does not identify itself as acute or repeat then treat it as repeat for the filter to ensure the clinician has higher likelihood of visibility of the item and can decide themselves if it is relevant
  3.	If the medication has an effective start date, does not have an effective end date and is acute (acute or prescribed elsewhere acute), filter using the effective start date 
 	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during the date range (inclusive) sent by the consuming system
- 4.	If the medication does not have an effective start date (e.g. prescribed elsewhere), filter using the date it was recorded on the local system 
+ 4.	If the medication does not have an effective start date (for example, prescribed elsewhere), filter using the date it was recorded on the local system 
 	1.	The provider system **MUST** return the medication summary data items for all medications whose recorded date is during the date range (inclusive) sent by the consuming system
 	2.	Where no effective period is available use the date the item was recorded on the system
 
@@ -625,7 +626,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
     <td>Grouped distinct descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
     <td><code>free-text</code></td>
   </tr>
-   <tr>
+  <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
     <td>Type of medication issued (for example, <code>Acute, Repeat, Repeat Dispense, Acute - [Prescribing Agency Type], Repeat - [Prescribing Agency Type]</code>).</td>
