@@ -407,7 +407,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">7</td>
     <td><code>Discontinued Reason</code></td>
-    <td></td>
+    <td>The coded reason for the ending of the medication returned as its text description and/or free text narrative as available.</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
@@ -560,6 +560,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
     <td><code>Additional Information</code></td>
     <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 		<ul>
+			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
