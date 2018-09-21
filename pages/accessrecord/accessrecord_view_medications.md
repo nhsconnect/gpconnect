@@ -367,7 +367,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">2</td>
     <td><code>Last Issued Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
-    <td>The last issue date. If the medication is repeat dispense this <b>MUST</b> be null.</td>
+    <td>The last issue date. If the medication is repeat dispense or prescribed elsewhere this <b>MUST</b> be null.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>
   <tr>
