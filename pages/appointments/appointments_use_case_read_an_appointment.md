@@ -138,16 +138,8 @@ Provider systems:
       }
     },
     {
-      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-1",
-      "valueCodeableConcept": {
-        "coding": [
-          {
-            "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-DeliveryChannel-1",
-            "code": "In-person",
-            "display": "In-person"
-          }
-        ]
-      }
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+      "valueCode": "In-person"
     }
   ],
   "status": "booked",
