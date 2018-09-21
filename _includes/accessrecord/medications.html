@@ -2,29 +2,29 @@
 ```html
 <div>
    <h1>Medications</h1>
-   <div>
+   <div class="gptransfer-banner">
       <p>
          <!-- GP transfer banner -->
       </p>
    </div>
-   <div>
+   <div class="content-banner">
       <p>
          <!-- Content banner -->
       </p>
    </div>
    <div>
       <h2>Recent Medication Issues</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table>
+      <table id="med-tab-rec-acu">
          <thead>
             <tr>
                <th>Type</th>
@@ -32,8 +32,8 @@
                <th>Medication Item</th>
                <th>Dosage Instruction</th>
                <th>Quantity</th>
-               <th>Days Duration</th>
                <th>Scheduled End Date</th>
+               <th>Days Duration</th>
                <th>Additional Information</th>
             </tr>
          </thead>
@@ -41,12 +41,12 @@
             <tr>
                <!-- the <tr>...</tr> element will repeat for each current medication issue-->
                <td>{{medication.type}}</td>
-               <td>{{medication.startDate}}</td>
+               <td class="date-column">{{medication.startDate}}</td>
                <td>{{medication.drug}}</td>
                <td>{{medication.dosageInstruction}}</td>
                <td>{{medication.quantity}}</td>
-               <td>{{medication.daysDuration}}</td>
-               <td>{{medication.scheduledEndDate}}</td>
+               <td class="date-column">{{medication.scheduledEndDate}}</td>
+			   <td>{{medication.daysDuration}}</td>
                <td>{{medication.additionalInformation}}</td>
             </tr>
          </tbody>
@@ -54,17 +54,17 @@
    </div>
    <div>
       <h2>Current Repeat Medications</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table>
+      <table id="med-tab-curr-rep">
          <thead>
             <tr>
                <th>Type</th>
@@ -83,14 +83,14 @@
             <tr>
                <!-- the <tr>...</tr> element will repeat for each current repeat medication-->
                <td>{{medication.type}}</td>
-               <td>{{medication.startDate}}</td>
+               <td class="date-column">{{medication.startDate}}</td>
                <td>{{medication.drug}}</td>
                <td>{{medication.dosageInstruction}}</td>
                <td>{{medication.quantity}}</td>
-               <td>{{medication.lastIssuedDate}}</td>
+               <td class="date-column">{{medication.lastIssuedDate}}</td>
                <td>{{medication.numberIssued}}</td>
                <td>{{medication.maxIssues}}</td>
-               <td>{{medication.reviewDate}}</td>
+               <td class="date-column">{{medication.reviewDate}}</td>
                <td>{{medication.additionalInformation}}</td>
             </tr>
          </tbody>
@@ -98,17 +98,17 @@
    </div>
    <div>
       <h2>Discontinued Repeat Medications</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table>
+      <table id="med-tab-dis-rep">
          <thead>
             <tr>
                <th>Type</th>
@@ -125,11 +125,11 @@
             <tr>
                <!-- the <tr>...</tr> element will repeat for each discontinued repeat medication-->
                <td>{{medication.type}}</td>
-               <td>{{medication.lastIssuedDate}}</td>
+               <td class="date-column">{{medication.lastIssuedDate}}</td>
                <td>{{medication.drug}}</td>
                <td>{{medication.dosageInformation}}</td>
                <td>{{medication.quantity}}</td>
-               <td>{{medication.discontinuedDate}}</td>
+               <td class="date-column">{{medication.discontinuedDate}}</td>
                <td>{{medication.discontinuedReason}}</td>
                <td>{{medication.additionalInformation}}</td>
             </tr>
@@ -138,22 +138,22 @@
    </div>
    <div>
       <h2>All Medication (Summary)</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="date-banner">
          <p>
             <!-- Date banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table>
+      <table id="med-tab-all-sum">
          <thead>
             <tr>
                <th>Type</th>
@@ -163,23 +163,25 @@
                <th>Quantity</th>
                <th>Last Issued Date</th>
                <th>Number of Prescriptions Issued</th>
+			   <th>Discontinued Details</th>
                <th>Additional Information</th>
             </tr>
          </thead>
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will group and display each distinct medication item-->
-               <td colspan="8"> <b>{{medication.drug}}</b></td>
+               <td colspan="8" class="med-item-column"> <b>{{medication.drug}}</b></td>
             </tr>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each medication in the group-->
                <td>{{medication.type}}</td>
-               <td>{{medication.firstPrescribedDate}}</td>
+               <td class="date-column">{{medication.startDate}}</td>
                <td>{{medication.drug}}</td>
                <td>{{medication.dosageInstruction}}</td>
                <td>{{medication.quantity}}</td>
-               <td>{{medication.lastIssuedDate}}</td>
+               <td class="date-column">{{medication.lastIssuedDate}}</td>
                <td>{{medication.numberIssued}}</td>
+			   <td>{{medication.discontinuedDetails}}</td>
                <td>{{medication.additionalInformation}}</td>
             </tr>
          </tbody>
@@ -187,22 +189,22 @@
    </div>
    <div>
       <h2>All Medication Issues</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="date-banner">
          <p>
             <!-- Date banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table>
+      <table id="med-tab-all-iss">
          <thead>
             <tr>
                <th>Type</th>
@@ -217,12 +219,12 @@
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will group and display each distinct medication item-->
-               <td colspan="7"> <b>{{medication.drug}}</b></td>
+               <td colspan="7" class="med-item-column"> <b>{{medication.drug}}</b></td>
             </tr>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each medication in the group-->
                <td>{{medication.type}}</td>
-               <td>{{medication.issueDate}}</td>
+               <td class="date-column">{{medication.issueDate}}</td>
                <td>{{medication.drug}}</td>
                <td>{{medication.dosageInstruction}}</td>
                <td>{{medication.quantity}}</td>
@@ -236,3 +238,6 @@
 </div>
 ```
 {% endraw %}
+
+
+

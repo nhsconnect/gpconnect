@@ -2,34 +2,34 @@
 ```html
 <div>
    <h1>Problems and Issues</h1>
-   <div>
+   <div class="gptransfer-banner">
       <p>
          <!-- GP transfer banner -->
       </p>
    </div>
-   <div>
+   <div class="content-banner">
       <p>
          <!-- Content banner -->
       </p>
    </div>
    <div>
       <h2>Active Problems and Issues</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="date-banner">
          <p>
             <!-- Date banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table>
+      <table id="prb-tab-act">
          <thead>
             <tr>
                <th>Start Date</th>
@@ -41,7 +41,7 @@
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each active problem and issue-->
-               <td>{{problemissue.startdate}}</td>
+               <td class="date-column">{{problemissue.startdate}}</td>
                <td>{{problemissue.entry}}</td>
                <td>{{problemissue.significance}}</td>
                <td>{{problemissue.details}}</td>
@@ -51,22 +51,22 @@
    </div>
    <div>
       <h2>Inactive Problems and Issues</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="date-banner">
          <p>
             <!-- Date banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table>
+      <table id="prb-tab-inact">
          <thead>
             <tr>
                <th>Start Date</th>
@@ -79,8 +79,8 @@
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each inactive problem and issue-->
-               <td>{{problemissue.startdate}}</td>
-               <td>{{problemissue.enddate}}</td>
+               <td class="date-column">{{problemissue.startdate}}</td>
+               <td class="date-column">{{problemissue.enddate}}</td>
                <td>{{problemissue.entry}}</td>
                <td>{{problemissue.significance}}</td>
                <td>{{problemissue.details}}</td>

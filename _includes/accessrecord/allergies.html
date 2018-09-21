@@ -2,24 +2,24 @@
 ```html
 <div>
    <h1>Allergies and Adverse Reactions</h1>
-   <div>
+   <div class="gptransfer-banner">
       <p>
          <!-- GP transfer banner -->
       </p>
    </div>
-   <div>
+   <div class="content-banner">
       <p>
          <!-- Content banner -->
       </p>
    </div>
    <div>
       <h2>Current Allergies and Adverse Reactions</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div>
-      <div>
+      <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
@@ -34,7 +34,7 @@
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each current allergy and adverse reaction-->
-               <td>{{allergyadversereaction.startdate}}</td>
+               <td class="date-column">{{allergyadversereaction.startdate}}</td>
                <td>{{allergyadversereaction.details}}</td>
             </tr>
          </tbody>
@@ -42,12 +42,12 @@
    </div>
    <div>
       <h2>Historical Allergies and Adverse Reactions</h2>
-      <div>
+      <div class="content-banner">
          <p>
             <!-- Content banner -->
          </p>
       </div> 
-	  <div>
+	  <div class="exclusion-banner">
          <p>
             <!-- Exclusion banner -->
          </p>
@@ -63,8 +63,8 @@
          <tbody>
             <tr>
                <!-- the <tr>...</tr> element will repeat for each historical allergy and adverse reaction-->
-               <td>{{allergyadversereaction.startdate}}</td>
-               <td>{{allergyadversereaction.enddate}}</td>
+               <td class="date-column">{{allergyadversereaction.startdate}}</td>
+               <td class="date-column">{{allergyadversereaction.enddate}}</td>
                <td>{{allergyadversereaction.details}}</td>
             </tr>
          </tbody>

@@ -2,22 +2,22 @@
 ```html
 <div>
    <h1>Immunisations</h1>
-   <div>
+   <div class="gptransfer-banner">
       <p>
          <!-- GP transfer banner -->
       </p>
    </div>
-   <div>
+   <div class="content-banner">
       <p>
          <!-- Content banner -->
       </p>
    </div>
-   <div>
+   <div class="exclusion-banner">
       <p>
          <!-- Exclusion banner -->
       </p>
    </div>
-   <table>
+   <table id="imm-tab">
       <thead>
          <tr>
             <th>Date</th>
@@ -30,7 +30,7 @@
       <tbody>
          <tr>
             <!-- the <tr>...</tr> element will repeat for each immunisation-->
-            <td>{{immunisation.date}}</td>
+            <td class="date-column">{{immunisation.date}}</td>
             <td>{{immunisation.vaccination}}</td>
             <td>{{immunisation.part}}</td>
             <td>{{immunisation.contents}}</td>

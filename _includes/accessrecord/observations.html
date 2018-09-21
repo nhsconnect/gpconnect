@@ -2,27 +2,27 @@
 ```html
 <div>
    <h1>Observations</h1>
-   <div>
+   <div class="gptransfer-banner">
       <p>
          <!-- GP transfer banner -->
       </p>
    </div>
-   <div>
+   <div class="content-banner">
       <p>
          <!-- Content banner -->
       </p>
    </div>
-   <div>
+   <div class="date-banner">
       <p>
          <!-- Date banner -->
       </p>
    </div>
-   <div>
+   <div class="exclusion-banner">
       <p>
          <!-- Exclusion banner -->
       </p>
    </div>
-   <table>
+   <table id="obs-tab">
       <thead>
          <tr>
             <th>Date</th>
@@ -34,7 +34,7 @@
       <tbody>
          <tr>
             <!-- the <tr>...</tr> element will repeat for each observation-->
-            <td>{{observation.date}}</td>
+            <td class="date-column">{{observation.date}}</td>
             <td>{{observation.entry}}</td>
             <td>{{observation.value}}</td>
             <td>{{observation.details}}</td>

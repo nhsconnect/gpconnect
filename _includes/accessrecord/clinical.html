@@ -2,27 +2,27 @@
 ```html
 <div>
    <h1>Clinical Items</h1>
-   <div>
+   <div class="gptransfer-banner">
       <p>
          <!-- GP transfer banner -->
       </p>
    </div>
-   <div>
+   <div class="content-banner">
       <p>
          <!-- Content banner -->
       </p>
    </div>
-   <div>
+   <div class="date-banner">
       <p>
          <!-- Date banner -->
       </p>
    </div>
-   <div>
+   <div class="exclusion-banner">
       <p>
          <!-- Exclusion banner -->
       </p>
    </div>
-   <table>
+   <table id="cli-tab">
       <thead>
          <tr>
             <th>Date</th>
@@ -33,7 +33,7 @@
       <tbody>
          <tr>
             <!-- the <tr>...</tr> element will repeat for each clinical item-->
-            <td>{{item.date}}</td>
+            <td class="date-column">{{item.date}}</td>
             <td>{{item.entry}}</td>
             <td>{{item.details}}</td>
          </tr>
