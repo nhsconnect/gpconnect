@@ -19,7 +19,7 @@ What is the scope of what views we're aiming to deliver?
 - Initially a set of views covering the majority of the primary care record have been included based on workshops with principal suppliers to agree how the data can be most sensible sectioned.
 	- Some desirable headings such as Procedures, Diagnosis, Symptoms have been amalgamated into the 'Clinical Items' heading because the underlying data structure of the GP systems cannot reliably extract these coded elements.
 - The scope of the views will be reviewed and added to as future versions of the API are produced.
-- Provider **SHALL** return minimal patient resource(s).
+- Provider **MUST** return minimal patient resource(s).
 
 <span class="label label-info">DECISION</span> Remove the structured clinical data from the bundle until Access Record Structured delivery.
 
@@ -64,7 +64,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 - Community driven (that is, just add Gender).
 - Absolute minimum (Name, DOB and NHS Number).
 
-<span class="label label-info">DECISION</span> Consumer **SHALL** cross-check with demographics returned from the provider system.
+<span class="label label-info">DECISION</span> Consumer **MUST** cross-check with demographics returned from the provider system.
 
 ### View non-retrieval ###
 
@@ -97,7 +97,7 @@ Patient consent preferences:
 
 ### Patient data exclusions ###
 
-<span class="label label-info">DECISION</span> Provider system **SHALL** enforce exclusion rules, either for the complete patient record, or sections/data-items.
+<span class="label label-info">DECISION</span> Provider system **MUST** enforce exclusion rules, either for the complete patient record, or sections/data-items.
 
 These can be determined by two potential sets of exclusion settings:
 
@@ -106,20 +106,20 @@ These can be determined by two potential sets of exclusion settings:
 	- Summary Care Record (SCR) standard patient preferences (in addition).<sup>1</sup>
 - Automatic exclusion (based on implied patient preference).<sup>2</sup>
 
-<sup>1</sup> Providers are not initially expected to enforce SCR patient preferences in relation to returning API data. They **SHALL** only respect their own principal patient preferences.
+<sup>1</sup> Providers are not initially expected to enforce SCR patient preferences in relation to returning API data. They **MUST** only respect their own principal patient preferences.
 
 <sup>2</sup> Automatic or inferred exclusions are not supported as this would be technically impractical (it's not possible to filter out all free-text and other fields which could potentially contain data which should ideally be excluded).
 
 ### 'Confidential' (GP practice-designated) data exclusions ###
 
-<span class="label label-info">DECISION</span> Provider system **SHALL** enforce exclusion rules, either for the complete patient record, or sections/data-items.
+<span class="label label-info">DECISION</span> Provider system **MUST** enforce exclusion rules, either for the complete patient record, or sections/data-items.
 
-Items designated by the practice as confidential **SHALL NOT** be provided, and processed in the same way as patient data exclusions.
+Items designated by the practice as confidential **MUST NOT** be provided, and processed in the same way as patient data exclusions.
 
 
 ### Sensitive data exclusion set ###
 
-<span class="label label-info">DECISION</span> Provider API processing **SHALL** support the application of an exclusion set, which **SHALL** be configurable, including containing null values. The current Royal College of General Practitioners (RCGP) sensitive exclusion set **SHALL** be applied, for the complete patient record, or sections/data-items, but is likely to amended pending future guidance and review (to be approved by the Joint GP IT Committee (JGPIT)).
+<span class="label label-info">DECISION</span> Provider API processing **MUST** support the application of an exclusion set, which **MUST** be configurable, including containing null values. The current Royal College of General Practitioners (RCGP) sensitive exclusion set **MUST** be applied, for the complete patient record, or sections/data-items, but is likely to amended pending future guidance and review (to be approved by the Joint GP IT Committee (JGPIT)).
 <br>[GP summary exclusion code Lists](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/1/subpack/141/releases)
 
 {% include note.html content="You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link." %}
@@ -128,7 +128,7 @@ Items designated by the practice as confidential **SHALL NOT** be provided, and 
 ### Data sharing agreements ###
 
 <span class="label label-info">DECISION</span> Data-sharing agreement must be in place between the consuming organisation and the providing organisation.
-<span class="label label-info">DECISION</span> The Spine Security Proxy validates this requirement. Therefore, provider systems **SHALL NOT** apply or change locally-configured data-sharing validation.
+<span class="label label-info">DECISION</span> The Spine Security Proxy validates this requirement. Therefore, provider systems **MUST NOT** apply or change locally-configured data-sharing validation.
 
 ### Exclusion warnings ###
 
@@ -170,7 +170,7 @@ Date range handling in the HTML view per section:
 
 #### HTML section ordering ####
 
-<span class="label label-info">DECISION</span> Consumer systems **SHALL** provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
+<span class="label label-info">DECISION</span> Consumer systems **MUST** provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
 
 
 ## Operation definition ##

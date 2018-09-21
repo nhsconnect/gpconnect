@@ -22,9 +22,9 @@ This specification describes a single use case. For complete details and backgro
 
 The consumer system:
 
-- **SHALL** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html).
-- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
-- **SHALL** render HTML content in line with the [Access Record - Development - HTML Implementation Guide](accessrecord_development_html_implementation_guide.html).
+- **MUST** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html).
+- **MUST** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- **MUST** render HTML content in line with the [Access Record - Development - HTML Implementation Guide](accessrecord_development_html_implementation_guide.html).
 
 ## API usage ##
 
@@ -44,7 +44,7 @@ POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.g
 
 #### Request headers ####
 
-Consumers **SHALL** include the following additional HTTP request headers:
+Consumers **MUST** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -137,7 +137,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 </OperationDefinition>
 ```
 
-{% include custominfocallout.html content="**Important:** Provider systems **SHALL** only expose `Patient` resources for patients who have a valid PDS trace status." type="warning" %}
+{% include custominfocallout.html content="**Important:** Provider systems **MUST** only expose `Patient` resources for patients who have a valid PDS trace status." type="warning" %}
 
 On the wire a JSON serialised `$gpc.getcarerecord` request would look something like the following:
 
@@ -163,17 +163,17 @@ On the wire a JSON serialised `$gpc.getcarerecord` request would look something 
 }
 ```
 
-The provider system **SHALL**:
+The provider system **MUST**:
 
 - use a default time period if no `timePeriod` parameter is specified for a section that can accept a time period.
 
 <br/>
-Refer to [Access Record - Development - HTML Implementation Guide - Per Section Default Time Frames](accessrecord_development_html_implementation_guide.html#per-section-default-time-frames) for details of the default time periods that **SHALL** be applied per care record section.
+Refer to [Access Record - Development - HTML Implementation Guide - Per Section Default Time Frames](accessrecord_development_html_implementation_guide.html#per-section-default-time-frames) for details of the default time periods that **MUST** be applied per care record section.
 
 
 #### Error handling ####
 
-The provider system **SHALL** return an error if:
+The provider system **MUST** return an error if:
 
 - the `patientNHSNumber` is invalid (that is, fails NHS Number format and check digit tests).
 - the `patientNHSNumber` is not associated with a `NHS Number Status Indicator Code` of `Number present and verified`.
@@ -182,7 +182,7 @@ The provider system **SHALL** return an error if:
 - an invalid `timePeriod` is requested (that is, end date > start date).
 - a `timePeriod` is specified for a `recordSection` that is time period agnostic (for example, Patient Summary, Allergies, Medications.)
 
-Provider systems **SHALL** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems **MUST** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -202,10 +202,10 @@ Content-Length: 1464
 
 Provider systems:
 
-- **SHALL** return a `200` **OK** HTTP status code on successful retrieval of a care record section.
-- **SHALL** return the care record section as valid XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance.
-- **SHALL** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
-- **SHALL** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`.
+- **MUST** return a `200` **OK** HTTP status code on successful retrieval of a care record section.
+- **MUST** return the care record section as valid XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance.
+- **MUST** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response.
+- **MUST** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`.
 
 ```json
 {

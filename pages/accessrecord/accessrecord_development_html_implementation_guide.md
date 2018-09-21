@@ -33,11 +33,11 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 GP Connect queries/requests may be received while the patient's record is being updated.
 
-Record locking inside a provider system **SHALL NOT** impact the ability of the system to fulfil read/query requests of the patient's record.
+Record locking inside a provider system **MUST NOT** impact the ability of the system to fulfil read/query requests of the patient's record.
 
 However, it is understood that there are differing approaches to record locking within the GP principal systems which have an effect when any local/pending changes are actually committed back to the patient's record.
 
-When a consumer system accesses a patient's record, the provider systems **SHALL** only return data that has been successfully committed back to the patient's record and thus has become available to all users (including users of the provider APIs).
+When a consumer system accesses a patient's record, the provider systems **MUST** only return data that has been successfully committed back to the patient's record and thus has become available to all users (including users of the provider APIs).
 
 ## Common user interface guidance ##
 
@@ -73,7 +73,7 @@ Where appropriate the following [Common User Interface (CUI)](https://digital.nh
 
 ## Patient banner ##
 
-Consumer systems **SHALL** present a patient banner above the HTML content returned from the GP Connect APIs in line with the CUI guidance.
+Consumer systems **MUST** present a patient banner above the HTML content returned from the GP Connect APIs in line with the CUI guidance.
 
 [Patient Banner](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)<br/>
 [Patient Banner - Quick Implementation Guide](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)
@@ -86,10 +86,10 @@ This guidance is applicable to user interfaces displayed on desktop or laptop co
 
 ### FHIR resources ###
 
-Provider systems **SHALL** return a minimal set of structured data along with the HTML content as follows:
+Provider systems **MUST** return a minimal set of structured data along with the HTML content as follows:
 
 | FHIR resource(s) | Composition section  |
-|------------------|----------------------|
+|------------------|--------|-------------|
 | `Patient`        | Subject              |
 | `Practitioner`   | User                 |
 | `Organization`   | Custodian            |
@@ -99,11 +99,11 @@ Provider systems **SHALL** return a minimal set of structured data along with th
 
 ### Demographic cross checking ###
 
-Consumer systems **SHALL** compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
+Consumer systems **MUST** compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
 
-If differences exist then the consumer system **SHALL** show an alert/warning and provide details of which fields/values are different between the two systems.
+If differences exist then the consumer system **MUST** show an alert/warning and provide details of which fields/values are different between the two systems.
 
-The following data **SHALL** be cross checked between consumer and returned provider data. Any differences between these fields **SHALL** be brought to the attention of the user.   
+The following data **MUST** be cross checked between consumer and returned provider data. Any differences between these fields **MUST** be brought to the attention of the user.   
 
 | Item | Resource field |
 | ---- | -------------- | 
@@ -128,7 +128,7 @@ Where a patient is flagged on PDS as sensitive (and as such it is not possible t
 
 ### Error handling ###
 
-If a GP principal system can't meaningfully supply content for a requested HTML section (or subset of the Summary View) then the system **SHALL** return the following HTML fragment in place of the HTML table.
+If a GP principal system can't meaningfully supply content for a requested HTML section (or subset of the Summary View) then the system **MUST** return the following HTML fragment in place of the HTML table.
 
 #### Supported but hasn't been recorded ####
 
@@ -177,18 +177,18 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 # HTML section views #
 
-Provider systems **SHALL** use XHTML constructs as defined in the [FHIR narrative](https://www.hl7.org/fhir/narrative.html) guidance contained within the FHIR&reg; standard.
+Provider systems **MUST** use XHTML constructs as defined in the [FHIR narrative](https://www.hl7.org/fhir/narrative.html) guidance contained within the FHIR&reg; standard.
 
 ### [XHTML narrative](https://www.hl7.org/fhir/narrative.html) ###
 
 As outlined in the Narrative section of the FHIR&reg; standard:
 
-{% include callout.html content="The XHTML content **SHALL NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;``` etc. Unicode characters **SHALL** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
+{% include callout.html content="The XHTML content **MUST NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;``` etc. Unicode characters **MUST** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
 
-{% include custominfocallout.html content="**Information:** The content **SHALL NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning" %}
+{% include custominfocallout.html content="**Information:** The content **MUST NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning" %}
 
 ### [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) ###
 
 As outlined in the 'Styling the XHTML' section of the FHIR&reg; standard:
 
-{% include callout.html content="In order to minimise manageability and security issues, authoring systems cannot specify the CSS stylesheet to use directly. Instead, the application that displays the resource provides the stylesheets. This means that the rendering system chooses what styles can be used, but the authoring system must use them in advance. Authoring systems can use these classes, which **SHALL** be supported by all rendering systems.<br/><br/> Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/stu3/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) on the FHIR website for full details." type="default" %}
+{% include callout.html content="In order to minimise manageability and security issues, authoring systems cannot specify the CSS stylesheet to use directly. Instead, the application that displays the resource provides the stylesheets. This means that the rendering system chooses what styles can be used, but the authoring system must use them in advance. Authoring systems can use these classes, which **MUST** be supported by all rendering systems.<br/><br/> Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/stu3/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) on the FHIR website for full details." type="default" %}
