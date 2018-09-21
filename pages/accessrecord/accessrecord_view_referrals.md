@@ -26,7 +26,7 @@ There is only a single main section for Referrals with no subsections.
 
 ## Section title ##
 
-The section title **SHALL** be "Referrals".
+The section title **MUST** be "Referrals".
 
 ## Date filter ##
 
@@ -34,15 +34,15 @@ A date filter is applicable for the Referrals section.
 
 ## Section content banner ##
 
-Provider's message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Table columns ##
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date` | The date of the referral | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the referral | `dd-Mmm-yyyy` |
 | <center>2</center> | `From` | Practitioner or Organization referred from | `free-text` |
 | <center>3</center> | `To` | Practitioner or Organization referred to | `free-text` |
 | <center>4</center> | `Priority` | The priority of the referral | `free-text` |

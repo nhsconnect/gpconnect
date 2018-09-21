@@ -28,7 +28,7 @@ There is only a single main section for Administrative Items with no subsections
 
 ## Section title ##
 
-The section title **SHALL** be "Administrative Items".
+The section title **MUST** be "Administrative Items".
 
 ## Date filter ##
 
@@ -36,21 +36,22 @@ A date filter is applicable for the Administrative Items section.
 
 ## Section content banner ##
 
-Provider's message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Table columns ##
 
-Providers must return all the columns as described in the table below:
+Providers **MUST** return all the columns as described in the table below, sorted by `Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date` | The date of the administrative item | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the administrative item | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry` | A short human readable free-text title for the administrative item | `free-text` |
-| <center>3</center> | `Details` | Longer human readable details for the administrative item, codes such as READ or SNOMED **SHALL NOT** be included. | `free-text` |
-
+| <center>3</center> | `Details` | Longer human readable details for the administrative item, codes such as READ or SNOMED **MUST NOT** be included. | `free-text` |
 
 
 ## HTML view ##
+
+The following content highlights the expected HTML tags and format providers **MUST** use when generating the HTML content:
 
 {% include accessrecord/adminitems.html %}
 

@@ -26,7 +26,7 @@ There is only a single main section for observations with no subsections.
 
 ## Section title ##
 
-The section title **SHALL** be "Observations".
+The section title **MUST** be "Observations".
 
 ## Date filter ##
 
@@ -34,15 +34,15 @@ A date filter is applicable for the Observations section.
 
 ## Section content banner ##
 
-Provider's message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Table columns ##
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date` | The date of the observation | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the observation | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry` | A short human readable free-text title for the observation | `free-text` |
 | <center>3</center> | `Value` | Value and range (where available) of the observation | `free-text` |
 | <center>4</center> | `Details` | Longer human readable details for the observation | `free-text` |

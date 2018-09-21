@@ -30,7 +30,7 @@ There is a single main section for clinical items with no subsections.
 
 ## Section title ##
 
-The section title **SHALL** be "Clinical Items".
+The section title **MUST** be "Clinical Items".
 
 ## Date filter ##
 
@@ -38,15 +38,15 @@ A date filter is applicable for the Clinical Items section.
 
 ## Section content banner ##
 
-Provider's message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Table columns ##
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date` | The date of entry of the clinical item | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The date of entry of the clinical item | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry`| A short human readable title for the clinical item | `free-text` |
 | <center>3</center> | `Details` | Longer human readable details for the clinical item | `free-text` |
 
@@ -56,7 +56,7 @@ The following business rules are applicable:
 
 | Supplier | Business Rules |
 |----------|----------------|
-| EMIS | N/A |
+| EMIS | Includes coded clinical items relating to a patients care e.g. procedures, test results, conditions |
 | TPP | Message to include indication of inclusion of practice-specific codes |
 | Vision | Message to include meaningful interpretation of Read Chapter 1 with Chapters A - Z |
 | Microtest | Message to include meaningful interpretation of items excluding Read Code Chapter 2 and Codes starting 9 and 0 |

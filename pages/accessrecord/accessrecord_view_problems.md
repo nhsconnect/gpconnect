@@ -31,7 +31,7 @@ Contains two sections:
 
 ## Section title ##
 
-The section title **SHALL** be "Problems and Issues".
+The section title **MUST** be "Problems and Issues".
  
 ## Date filter ##
 
@@ -39,7 +39,7 @@ A date filter is applicable for the ‘Problems and Issues’ section.
 
 ## Section content banner ##
 
-Providers message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Active problems and issues ##
 
@@ -53,19 +53,19 @@ The purpose of this section is to provide information about a patient’s curren
 
 ### Subsection title ###
 
-The subsection title **SHALL** be "Active Problems and Issues".
+The subsection title **MUST** be "Active Problems and Issues".
 
 ### Subsection content banner ###
 
-Provider’s message describing at a summary level how they have populated this subsection.
+Provider message describing at a summary level how they have populated this subsection.
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `Start Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The start date of the problem | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry`| A short human readable title for the problem | `free-text` |
 | <center>3</center> | `Significance`| The significance of the problem (i.e. Major or Minor) | `free-text` |
 | <center>4</center> | `Details` | Longer human readable details for the problem | `free-text` |
@@ -83,31 +83,31 @@ The purpose of this section is to provide information about a patient’s previo
 
 ### Subsection title ###
 
-The subsection title **SHALL** be "Inactive Problems and Issues".
+The subsection title **MUST** be "Inactive Problems and Issues".
 
 ### Subsection content banner ###
 
-Provider’s message describing at a summary level how they have populated this subsection.
+Provider message describing at a summary level how they have populated this subsection.
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `End Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date` | The end date of the problem | `dd-Mmm-yyyy` |
+| <center>2</center> | `End Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
 | <center>3</center> | `Entry`| A short human-readable title for the problem | `free-text` |
 | <center>4</center> | `Significance`| The significance of the problem (that is, Major or Minor) | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
 
-Provider systems not supporting inactive problems (for example, Vision) **SHALL** display a message in the section banner to indicate:
+Provider systems not supporting inactive problems (for example, Vision) **MUST** display a message in the section banner to indicate:
 
 - Inactive problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
 ) section.
 - That any problems and issues recorded for the patient are included in the ‘Active Problems and Issues’ section.
 
-Provider systems that do support inactive problems, but when no records exist for the requested patient **SHALL** display the standard [HTML implementation guide - supported but hasn't been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
+Provider systems that do support inactive problems, but when no records exist for the requested patient **MUST** display the standard [HTML implementation guide - supported but hasn't been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
 
 ## HTML view ##
 

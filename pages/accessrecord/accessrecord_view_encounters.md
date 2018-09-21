@@ -29,7 +29,7 @@ The purpose of supplying encounters within GP Connect is to allow a clinician to
 
 The list of encounters is based on a consumer-supplied date range and is ordered by date descending (that is, most recent date/time first).
 
-Data will include the date, the practitioner (and role) and organisation (and code), then a block of free text which will include any free text narrative recorded during the consultation and some basic details of related activities will also be shown (for example, meds prescribed, procedures performed, diagnosis recorded, examinations, history recorded, care plans created, allergies or sensitivities recorded).
+Data will include the date, the practitioner (and role) and organisation (and code), then a block of free text which will include any free text narrative recorded during the consultation and some basic details of related activities will also be shown (for example, medications prescribed, procedures performed, diagnosis recorded, examinations, history recorded, care plans created, allergies or sensitivities recorded).
 
 ## Sections and subsections ##
 
@@ -37,7 +37,7 @@ There is a single main section for encounters with no subsections.
 
 ## Section title ##
 
-The section title **SHALL** be "Encounters".
+The section title **MUST** be "Encounters".
 
 ## Date filter ##
 
@@ -45,15 +45,15 @@ A date filter is applicable for the encounters section.
 
 ## Section content banner ##
 
-Provider's message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Table columns ##
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `Date` descending:
 
 | Order | Name | Description | Value Details |
 | ----- | ---- | ----------- | ------------- |
-| <center>1</center> | `Date` | The date of the encounter | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the encounter | `dd-Mmm-yyyy` |
 | <center>2</center> | `Title`| A short human-readable title for the encounter, to be composed of a subset of the `Practitioner` and `Organization` details linked to the encounter| `free-text` |
 | <center>3</center> | `Details` | Longer human readable details for the encounter | `free-text` |
 

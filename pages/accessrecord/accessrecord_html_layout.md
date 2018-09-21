@@ -1,11 +1,10 @@
 ---
-title: HTML layout guide
+title: Layout guide
 keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_layout_guide.html
 summary: >-
-  Overview of the common HTML view layout guidance in relation to the Access
-  Record capability
+  Overview of the common HTML view layout guidance in relation to the Access Record capability
 tags:
   - development
   - getcarerecord
@@ -24,7 +23,7 @@ HTML views with a single table and hence a single section are:
 
 **Encounters**, **Clinical Items**, **Administrative Items**, **Observations**, **Referrals**, **Immunisations**.
 
-These views **SHALL** have the following structure:
+These views **MUST** have the following structure:
 
 - Section title
 - GP transfer banner
@@ -38,7 +37,7 @@ HTML views with multiple tables and hence multiple sections are:
  
 **Problems**, **Allergies**, **Medications**.
 
-These views **SHALL** have the following structure:
+These views **MUST** have the following structure:
 
 - Section title
 - GP transfer banner
@@ -50,7 +49,7 @@ These views **SHALL** have the following structure:
 	- Exclusion banner (*if applicable, to indicate excluded items*)
 	- Table
 
-{% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML view.  See [Summary HTML view](accessrecord_view_summary.html)." type="info" %}
+{% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML view. See [Summary HTML view](accessrecord_view_summary.html)." type="info" %}
 
 ### Single table example ###
 
@@ -96,11 +95,7 @@ These views **SHALL** have the following structure:
 
   <div>
     <h2>Active Problems and Issues</h2>
-
-	<div>
-	  <p><!-- Subsection banner --></p>
-	</div>	  
-
+    
 	<div>
 	  <p><!-- Date banner --></p>
 	</div>
@@ -116,10 +111,6 @@ These views **SHALL** have the following structure:
   
   <div>
     <h2>Inactive Problems and Issues</h2>
-	  
-	<div>
-	  <p><!-- Subsection banner --></p>
-	</div>	  
     
 	<div>
 	  <p><!-- Date banner --></p>
@@ -138,7 +129,7 @@ These views **SHALL** have the following structure:
 
 ## Section and subsection title ##
 
-The section title **SHALL** be inside a `<h1>` tags and subsection title **SHALL** be inside a `<h2>` tags.
+The section title **MUST** be inside a `<h1>` tags and subsection title **MUST** be inside a `<h2>` tags.
 
 The section and subsection titles are defined in the individual HTML view pages.
 
@@ -146,17 +137,17 @@ The section and subsection titles are defined in the individual HTML view pages.
 
 ### GP transfer banner ###
 
-In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **SHALL** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **SHALL** be provided and displayed. The message **SHALL** include the date that the data has been excluded from.
+In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **MUST** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **MUST** be provided and displayed. The message **MUST** include the date that the data has been excluded from.
 
 ```html
 <div>
-	<p>Patient record transfer from previous GP Practice not yet complete; any information recorded before 'dd-mmm-yyyy' has been excluded</p>
+	<p>Patient record transfer from previous GP Practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded</p>
 </div>
 ```
 
 ### Content banners ###
 
-The content banner **SHALL** be used by the provider to detail any specific business rules applied to the section content which is not standard across providers, or any non-compliance with the specification due to constraints of their GP system. 
+The content banner **MUST** be used by the provider to detail any specific business rules applied to the section content which is not standard across providers, or any non-compliance with the specification due to constraints of their GP system. 
 
 #### Section content banner ####
 
@@ -169,15 +160,15 @@ Any exclusion descriptions for a subsection **MUST** be applicable to that subse
 
 ### Date banner ###
 
-The provider **SHALL** supply all matching dates/times - for example, the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
+The provider **MUST** supply all matching dates/times, e.g. the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
 
-If no end date is supplied, the provider **SHALL** supply all data from start date onwards (including future where applicable).
+If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
 
-If no start date is supplied, the provider **SHALL** supply all data until the end date.
+If no start date is supplied, the provider **MUST** supply all data until the end date.
 
 #### Applied date ranges ####
 
-Consumer systems **SHALL** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section header.
+Consumer systems **MUST** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section header.
 
 ```html
 <div>
@@ -203,7 +194,7 @@ If no consumer start date:
 
 #### Default date ranges ####
 
-Where the consumer system has not supplied a date range, then where applicable and while the default is for ALL items to be provided, the following message **SHALL** be supplied by the provider and displayed by the consumer system beneath the section header.
+Where the consumer system has not supplied a date range, then where applicable and while the default is for ALL items to be provided, the following message **MUST** be supplied by the provider and displayed by the consumer system beneath the section header.
 
 ```html
 <div>
@@ -213,7 +204,7 @@ Where the consumer system has not supplied a date range, then where applicable a
 
 #### Per section default time frames ####
 
-Section default time frames **SHALL** be configurable, by the provider, to be easily amendable if required in response to First of Type (FoT) feedback 
+Section default time frames **MUST** be configurable, by the provider, to be easily amendable if required in response to First of Type (FoT) feedback.
 
 {% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback." type="warning" %}
 
@@ -230,16 +221,16 @@ Section default time frames **SHALL** be configurable, by the provider, to be ea
 | REF  | All Relevant | Referral |
 | SUM  | - | Summary<sup>2</sup> |
 
-<sup>1</sup> An explicit time frame is not allowed to be specified as the system **SHALL** return 'All Relevant' resources.<br>
-<sup>2</sup> An explicit time frame is not allowed as these are set piece views, the system **SHALL** return 'All Relevant' resources.
+<sup>1</sup> An explicit time frame is not allowed to be specified as the system **MUST** return 'All Relevant' resources.<br>
+<sup>2</sup> An explicit time frame is not allowed as these are set piece views, the system **MUST** return 'All Relevant' resources.
 
-Provider systems **SHALL** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
+Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
 
 ### Section exclusion banner ###
 
-Exclusions may be applied to the section/subsections in various circumstances. Where any exclusions have been applied a message banner **SHALL** be included. As shown in the layout, the exclusion banner will only be included against the specific table where exclusions have been applied. Therefore, it will only be at section level where it is a single table section.
+Exclusions may be applied to the section/subsections in various circumstances. Where any exclusions have been applied a message banner **MUST** be included. As shown in the layout, the exclusion banner will only be included against the specific table where exclusions have been applied. Therefore, it will only be at section level where it is a single table section.
 
-The following message **SHALL** be supplied by the provider if any items were excluded for these reasons.
+The following message **MUST** be supplied by the provider if any items were excluded for these reasons.
 
 
 ```html
@@ -252,7 +243,7 @@ The following message **SHALL** be supplied by the provider if any items were ex
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (that is, most recent date/time first).
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+- Table rows **MUST** be ordered by date descending (that is, most recent date/time first).
 

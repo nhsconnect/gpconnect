@@ -25,7 +25,7 @@ The purpose of this section is to provide a summarised view of the pertinent cli
 
 ## Sections ##
 
-There is only a single main section for the summary section with 5 subsections:
+There is only a single main section for the summary section with five subsections:
 
  - [Last 3 Encounters](accessrecord_view_summary.html#last-3-encounters)
  - [Active Problems and Issues](accessrecord_view_summary.html#active-problems-and-issues)
@@ -40,7 +40,7 @@ Date filters are not supported for this section. All relevant records shall be r
 
 ## Section banner content ##
 
-Provider's message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Sections detail ##
 
@@ -75,3 +75,5 @@ This section is an exact replica of the Recent Acute Medication issues subsectio
 This section is an exact replica of the Current Repeat Medication subsection, which is the second subsection within the Medications section. Further details about this subsection can be found there, including any business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Current repeat medication](accessrecord_view_medications.html#current-repeat-medication) section." type="primary" %} 
+
+

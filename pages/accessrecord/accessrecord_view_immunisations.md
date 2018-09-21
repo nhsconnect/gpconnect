@@ -26,7 +26,7 @@ There is only a single main section for the Immunisations section with no subsec
 
 ## Section title ##
 
-The section title **SHALL** be "Immunisations".
+The section title **MUST** be "Immunisations".
 
 ## Date filter ##
 
@@ -34,15 +34,15 @@ Date filters are not supported for this section all relevant records shall be re
 
 ## Section content banner ##
 
-Provider's message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Table columns ##
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date` | The date of the immunisation | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the immunisation | `dd-Mmm-yyyy` |
 | <center>2</center> | `Vaccination` | A short human readable free-text title for the immunisation | `free-text` |
 | <center>3</center> | `Part` | Part number of immunisation | `integer` |
 | <center>4</center> | `Contents` | Contents of the immunisation | `free-text` |

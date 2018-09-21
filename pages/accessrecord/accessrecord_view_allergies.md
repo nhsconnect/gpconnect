@@ -10,11 +10,9 @@ summary: "Allergies HTML view"
 
 | Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
-| ALL | Allergies and Adverse Reactions| Yes | Yes<sup>1</sup> | Yes<sup>2</sup> | Yes |
+| ALL | Allergies and Adverse Reactions| Yes | Yes<sup>1</sup> | Yes<sup>1</sup> | Yes |
 
-<sup>1</sup> EMIS have indicated that they are including all allergies and sensitivities in the 'Current Allergies .....' section.
-
-<sup>2</sup> Vision have indicated they don't record end dates for allergies and sensitivities. Hence, no History view is possible.
+<sup>1</sup> See [Section business rules](accessrecord_view_allergies.html#section-business-rules)
 
 
 ## Clinical narrative ##
@@ -27,23 +25,22 @@ The purpose of this section is to provide the clinician with a list of patient a
 
 ## Sections and subsections ##
 
-Contains two sections:
+Contains two subsections:
 
  - [Current Allergies and Adverse Reactions](accessrecord_view_allergies.html#current-allergies-and-adverse-reactions)
  - [Historical Allergies and Adverse Reactions](accessrecord_view_allergies.html#historical-allergies-and-adverse-reactions)
 
 ## Section title ##
 
-The section title **SHALL** be ‘Allergies and Adverse Reactions’.
+The section title **MUST** be ‘Allergies and Adverse Reactions’.
  
 ## Date filter ##
 
 Date filters are not supported for this section all relevant records shall be returned for the current and historic allergies and adverse reactions.
- 
- 
+
 ## Section content banner ##
 
-Provider’s message describing at a summary level how they have populated this section.
+Provider message describing at a summary level how they have populated this section.
 
 ## Section business rules ##
 
@@ -69,20 +66,19 @@ The purpose of this section is to provide the clinician with a list of current a
 
 ### Subsection title ###
 
-The subsection title **SHALL** be "Current Allergies and Adverse Reactions".
+The subsection title **MUST** be "Current Allergies and Adverse Reactions".
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this subsection.
-
+Provider message describing at a summary level how they have populated this subsection.
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
 | <center>2</center> | `Details` | Longer human-readable details for the allergy or adverse reaction | `free-text` |
 
 
@@ -98,20 +94,20 @@ The purpose of this section is to provide the clinician with a list of historica
 
 ### Subsection title ###
 
-The subsection title **SHALL** be "Historical Allergies and Adverse Reactions".
+The subsection title **MUST** be "Historical Allergies and Adverse Reactions".
 
 ### Subsection content banner ###
 
-Provider’s message describing at a summary level how they have populated this subsection.
+Provider message describing at a summary level how they have populated this subsection.
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, sorted by `End Date` descending:
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date` | The end date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
+| <center>2</center> | `End Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The end date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
 | <center>3</center> | `Details` | Longer human readable details for the allergy or adverse reaction | `free-text` |
 
 
