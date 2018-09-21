@@ -1165,6 +1165,28 @@ h4.panel-title {
     margin-top: 0px;
 }
 
+.capability-not-available {
+    color: #aaaaaa;
+    font-weight: normal;
+}
+
+@media (max-width: 700px) {
+    .navbar-brand {
+        width:70vw!important;
+    }
+}
+
+/* fix for NHS Developer Network ul and ol style reset */
+body ul, body ol {
+    padding-left: 40px;
+}
+
+body ol {
+    list-style: decimal;
+}
+/* end fix */
+
+
 /*set navbar breakpoint so that it converts to hamburger earlier */
 
 @media (max-width: 1200px) {
