@@ -179,7 +179,7 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 Provider systems **MUST** use XHTML constructs as defined in the [FHIR narrative](https://www.hl7.org/fhir/narrative.html) guidance contained within the FHIR&reg; standard.
 
-### [XHTML narrative](https://www.hl7.org/fhir/narrative.html) ###
+## [XHTML narrative](https://www.hl7.org/fhir/narrative.html) ##
 
 As outlined in the Narrative section of the FHIR&reg; standard:
 
@@ -187,8 +187,45 @@ As outlined in the Narrative section of the FHIR&reg; standard:
 
 {% include custominfocallout.html content="**Information:** The content **MUST NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning" %}
 
-### [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) ###
+## [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) ##
 
 As outlined in the 'Styling the XHTML' section of the FHIR&reg; standard:
 
 {% include callout.html content="In order to minimise manageability and security issues, authoring systems cannot specify the CSS stylesheet to use directly. Instead, the application that displays the resource provides the stylesheets. This means that the rendering system chooses what styles can be used, but the authoring system must use them in advance. Authoring systems can use these classes, which **MUST** be supported by all rendering systems.<br/><br/> Please see the [FHIR Runtime CSS](https://www.hl7.org/fhir/stu3/fhir-runtime.css) or [Styling the XHTML](https://www.hl7.org/fhir/narrative.html#css) on the FHIR website for full details." type="default" %}
+
+## CSS IDs and classes  ##
+
+The following HTML IDs **MUST** be applied across the HTML views:
+
+
+| ID name            | Description                                                                              | HTML view(s)
+| ------------------ | ---------------------------------------------------------------------------------------- | --------------------------------------
+| `adm-tab`          | Applied within the `<table>` tag of the Administrative Items table                       | Administrative Items
+| `all-tab-curr`     | Applied within the `<table>` tag of the Current Allergies and Adverse Reactions table    | Allergies and Adverse Reactions & Summary
+| `all-tab-hist`     | Applied within the `<table>` tag of the Historical Allergies and Adverse Reactions table | Allergies and Adverse Reactions
+| `cli-tab`          | Applied within the `<table>` tag of the Clinical Item table                              | Clinical Items
+| `enc-tab`          | Applied within the `<table>` tag of the Encounters table                                 | Encounters & Summary
+| `imm-tab`          | Applied within the `<table>` tag of the Immunisations table                              | Immunisations
+| `med-tab-rec-acu`  | Applied within the `<table>` tag of the Recent Acute Medication table                    | Medications & Summary
+| `med-tab-curr-rep` | Applied within the `<table>` tag of the Current Repeat Medication table                  | Medications & Summary
+| `med-tab-dis-rep`  | Applied within the `<table>` tag of the Discontinued Repeat Medication table             | Medications
+| `med-tab-all-sum`  | Applied within the `<table>` tag of the All Medication (Summary) table                   | Medications
+| `med-tab-all-iss`  | Applied within the `<table>` tag of the All Medication Issues table                      | Medications
+| `obs-tab`          | Applied within the `<table>` tag of the Observations table                               | Observations
+| `prb-tab-act`      | Applied within the `<table>` tag of the Active Problems and Issues table                 | Problems and Issues & Summary
+| `prb-tab-inact`   | Applied within the `<table>` tag of the Inactive Problems and Issues table               | Problems and Issues
+| `ref-tab`          | Applied within the `<table>` tag of the Referrals table                                  | Referrals
+
+
+The following HTML classes **MUST** be applied across the HTML view:
+
+
+| Class name         | Description                                                                              | HTML view(s)
+| ------------------ | ---------------------------------------------------------------------------------------- | --------------------------------------
+| `content-banner`   | Applied within the `<div>` tag of any section/subsection content banner                  | All views
+| `date-banner`      | Applied within the `<div>` tag of any section/subsection date filter banner              | All views
+| `exclusion-banner` | Applied within the `<div>` tag of any section/subsection exclusion banner                | All views
+| `date-column` 	 | Applied within the `<td>` tag of any table column with a `dd-Mmm-yyyy` date format       | All views
+| `med-item-column`  | Applied within the `<td>` tag of a grouped distinct `Medication Item`       				| Medications (All Medication (Summary) & All Medication Issues only)
+
+
