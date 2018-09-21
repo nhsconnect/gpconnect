@@ -18,7 +18,7 @@ A drug or other form of medicine that is used to treat or prevent disease.
 
 ## Purpose ##
 
-The purpose of this section is to provide a chronological history of medication prescribing as recorded.
+The purpose of this section is to provide a history of medication prescribing as recorded.
 
 ## Sections and subsections ##
 
