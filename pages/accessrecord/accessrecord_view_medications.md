@@ -291,6 +291,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 			<ul>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
+			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
 			<li>Other supporting information</li>
 		</ul>
 	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
@@ -312,7 +313,14 @@ A list of discontinued repeat drugs or other forms of medicines. This may also i
 
 ### Purpose ###
 
-The purpose of this section is to provide a view of all discontinued repeat medications that the patient has been prescribed, which informs the clinical decision-making process.
+The purpose of this section is to provide a view of all discontinued repeat medications that the patient has been prescribed and the circumstances for discontinuing the medication, which informs the clinical decision-making process.
+
+This **MUST** include repeat medications discontinued by a clinician action.
+
+This **MUST NOT** include repeat medications expired by system processes, for example, automatically expiring a medication which has not been issued for a given period of time.
+
+This is aligned to the Discontinued Repeat Medications section in SCR, but is not limited to six months.
+
 
 ### Subsection title ###
 
@@ -351,7 +359,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
-    <td>Type of medication issued (for example, <code>Repeat, Repeat Dispense, Repeat – [Prescribing Agency]</code>).</td>
+    <td>Type of medication issued (for example, <code>Repeat, Repeat Dispense, Repeat – [Prescribing Agency Type]</code>).</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
@@ -393,7 +401,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">6</td>
     <td><code>Discontinued Date</code></td>
-    <td>The date the medication item was discontinued.</td>
+    <td>The date the medication item was discontinued. This should be the date the clinician has entered as the discontinued date if available, otherwise the system date of the discontinue action.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
@@ -408,7 +416,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
     <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 			<ul>
 			<li>Reason for the medication</li>
-			<li>Linked problems / diagnoses</li>
+			<li>Linked problems/diagnoses</li>
+			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
 			<li>Other supporting information</li>
 		</ul>
 	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
@@ -429,9 +438,8 @@ A history view of drugs or other forms of medicines that have been used to treat
 
 ### Purpose ###
 
-The purpose of this section is to provide a distinct list of all the medications recorded for the patient. 
- 
-Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
+The purpose of this subsection is to provide a distinct list of all the medications recorded for the patient and to present the list alphabetically to make it easier to view for specific medication items The list is also presented alphabetically to enable easier identification of changes to a medication over time e.g. change in dosage.
+Items included in the Recent Acute Medication and Current Repeat Medication **MUST** also be included within this subsection as well as past medications.
 
 ### Subsection title ###
 
@@ -439,14 +447,19 @@ The subsection title **MUST** be "All Medication (Summary)".
 
 ### Date filter ###
 
-If a consumer submits a date filter for this section the dates will be applied as follows:
+If a consumer submits a date filter for this subsection the dates will be applied as follows (this applies equivalent rules to structured medication date filtering):
 
-1. The `Start Date` **MUST** be the date of the earliest prescription within the period of the date filter (including prescriptions issued on the date to the filter start date, or all prescription if no start date is specified)
-2. The `Last Issued Date` **MUST** be the date of the last prescription within the period of the date filter (including prescriptions issued on the date to the filter end date, or all prescription if no end date is specified)
-3. The definitions in points 1 and 2 **MUST** be applied to the date recorded for medications prescribed elsewhere and date authorised for repeat dispense
-4. The `Number of Prescriptions Issued` **MUST** be the count of prescription issued between the `Start Date` and the `Last Issued Date` inclusive (as dates are defined in points 1 and 2) or null for medication prescribed elsewhere and repeat dispense
-5. Additional Information **MUST** include discontinued or cancelled details (where identifiable) for any medications which fall within the date filter definitions in points 1 to 3 regardless of whether the date discontinued/cancelled falls within the date filter range
-6. Additional Information **MUST NOT** include ended date and reason if the date falls outside of the date filter range
+ 1.	If the medication has an effective period (a start date and a scheduled end date), filter using the effective period 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose effective date range overlaps the date range (inclusive) sent by the consuming system
+ 2.	If the medication has an effective start date, does not have an effective end date and is repeat (repeat prescribed, repeat dispensed or prescribed elsewhere repeat), treat the effective period as ongoing for the filter 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during or before the date range (inclusive) sent by the consuming system
+	2.	Where the medication is prescribed elsewhere and does not identify itself as acute or repeat then treat it as repeat for the filter to ensure the clinician has higher likelihood of visibility of the item and can decide themselves if it is relevant
+ 3.	If the medication has an effective start date, does not have an effective end date and is acute (acute or prescribed elsewhere acute), filter using the effective start date 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during the date range (inclusive) sent by the consuming system
+ 4.	If the medication does not have an effective start date (e.g. prescribed elsewhere), filter using the date it was recorded on the local system 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose recorded date is during the date range (inclusive) sent by the consuming system
+	2.	Where no effective period is available use the date the item was recorded on the system
+
 
 
 ### Subsection content banner ###
@@ -456,7 +469,9 @@ Provider message describing at a summary level how they have populated this sect
 
 ### Table columns ###
 
-Providers **MUST** return all the columns as described in the table below. It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a group title, then sorted alphabetically. `Medication Items` within a group **MUST** be sorted by `Start Date` descending:
+Providers **MUST** return all the columns as described in the table below. It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Start Date` descending.
+
+Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded exampled of displaying this subsection.
 
 <div>
 <table>
@@ -469,9 +484,15 @@ Providers **MUST** return all the columns as described in the table below. It **
   </tr>
  </thead>
   <tr>
+    <td align="center"><i class="fa fa-object-group" aria-hidden="true"></i></td>
+    <td><code>Medication Item</code> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
+    <td>Grouped distinct descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
+    <td><code>free-text</code></td>
+  </tr>
+  <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
-    <td>Type of medication issued (for example, <code>Acute, Repeat, Repeat Dispense, Acute - [prescribing agency], Repeat - [prescribing agency]</code>).</td>
+    <td>Type of medication issued (for example, <code>Acute, Repeat, Repeat Dispense, Acute - [Prescribing Agency Type], Repeat - [Prescribing Agency Type]</code>).</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
@@ -482,7 +503,7 @@ Providers **MUST** return all the columns as described in the table below. It **
   </tr>
   <tr>
     <td align="center">3</td>
-    <td><code>Medication Item</code> <i class="fa fa-object-group" aria-hidden="true"></i> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
+    <td><code>Medication Item</code></i></td>
     <td>Descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -524,13 +545,21 @@ Providers **MUST** return all the columns as described in the table below. It **
   </tr>
   <tr>
     <td align="center">8</td>
+    <td><code>Discontinued Details</code></td>
+    <td>
+		<p><code>CANCELLED: </code>label with cancellation date and reason (acute) or DISCONTINUED: label with discontinued date and reason (repeat)</p>
+		<p>Details will be equivalent to the combined discontinued date and discontinued reason columns in Discontinued Repeat Medication, but will apply to Acute medication (labelled cancelled) as well repeat.</p>
+	</td>
+    <td><code>free-text</code></td>
+  </tr>  
+  <tr>
+    <td align="center">9</td>
     <td><code>Additional Information</code></td>
     <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 		<ul>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
-			<li><code>CANCELLED: </code> label with cancellation date and reason (acute) or <code>DISCONTINUED: </code> label with discontinued date and reason (repeat)</li>
 		</ul>
 	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
 	</td>
@@ -554,6 +583,8 @@ A history view of drugs or other forms of medicines that have been used to treat
 
 The purpose of this section is to provide a historical view of all issues (prescribed elsewhere and repeat dispense are not included as their issues are not recorded on the GP system).
 
+This is the only subsection to include the individual issues of a repeat medication.
+
 ### Subsection title ###
 
 The subsection title **MUST** be "All Medication Issues".
@@ -562,12 +593,7 @@ The subsection title **MUST** be "All Medication Issues".
 
 If a consumer submits a date filter for this section the dates will be applied as follows:
 
-1. The `Start Date` **MUST** be the date of the earliest prescription within the period of the date filter (including prescriptions issued on the date to the filter start date, or all prescription if no start date is specified)
-2. The `Last Issued Date` **MUST** be the date of the last prescription within the period of the date filter (including prescriptions issued on the date to the filter end date, or all prescription if no end date is specified)
-3. The definitions in points 1 and 2 **MUST** be applied to the date recorded for medications prescribed elsewhere and date authorised for repeat dispense
-4. The `Number of Prescriptions Issued` **MUST** be the count of prescription issued between the `Start Date` and the `Last Issued Date` inclusive (as dates are defined in points 1 and 2) or null for medication prescribed elsewhere and repeat dispense
-5. Additional Information **MUST** include discontinued or cancelled details (where identifiable) for any medications which fall within the date filter definitions in points 1 to 3 regardless of whether the date discontinued/cancelled falls within the date filter range
-6. Additional Information **MUST NOT** include ended date and reason if the date falls outside of the date filter range
+The provider **MUST** return all medication issues which relate to the medication items returned for that subsection. This may result in records which have an issue date outside of the consumer date filter range.
 
 ### Subsection content banner ###
 
@@ -575,7 +601,9 @@ Providers message describing at a summary level how they have populated this sec
 
 ### Table columns ###
 
-Providers **MUST** return all the columns as described in the table below. It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a group title, then sorted alphabetically. `Medication Items` within a group **MUST** be sorted by `Issue Date` descending:
+Providers **MUST** return all the columns as described in the table below. It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Issue Date` descending.
+
+Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded exampled of displaying this subsection.
 
 <div>
 <table>
@@ -587,25 +615,31 @@ Providers **MUST** return all the columns as described in the table below. It **
 	<th width="14%">Value details</th>
   </tr>
  </thead>
+  <tr>
+    <td align="center"><i class="fa fa-object-group" aria-hidden="true"></i></td>
+    <td><code>Medication Item</code> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
+    <td>Grouped distinct descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
+    <td><code>free-text</code></td>
+  </tr>
+  <tr>
    <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
-    <td>Type of medication issued (for example, <code>Acute, Repeat, Repeat Dispense, Acute - [prescribing agency], Repeat - [prescribing agency]</code>).</td>
+    <td>Type of medication issued (for example, <code>Acute, Repeat, Repeat Dispense, Acute - [Prescribing Agency Type], Repeat - [Prescribing Agency Type]</code>).</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Issue Date</code> <i class="fa fa-sort-desc" aria-hidden="true"> <sub>2</sub></i></td>
+    <td><code>Issue Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
     <td>The date the medication item was issued.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>
   <tr>
     <td align="center">3</td>
-    <td><code>Medication Item</code> <i class="fa fa-object-group" aria-hidden="true"></i> <i class="fa fa-sort-asc" aria-hidden="true"></i> <sup>1</sup></td>
+    <td><code>Medication Item</code></td>
     <td>Descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
     <td><code>free-text</code></td>
   </tr>  
-
   <tr>
     <td align="center">4</td>
     <td><code>Dosage Instruction</code></td>
@@ -650,7 +684,6 @@ Providers **MUST** return all the columns as described in the table below. It **
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
-			<li><code>CANCELLED: </code> label with cancellation date and reason (acute) or <code>DISCONTINUED: </code> label with discontinued date and reason (repeat)</li>
 		</ul>
 	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Ear Infection</code>).</p>
 	</td>
@@ -666,21 +699,20 @@ Providers **MUST** return all the columns as described in the table below. It **
 
 It is extremely important for the details regarding the ending of a medication to be available to a clinician, as this will highlight any clinical issues (for example, stopping a medication due to an allergy) and allow the clinician to make an efficient and informed clinical decision.
 
-Any information relevant to the circumstances of ending a medication **MUST** be provided in the `Additional Information` column. The following definitions are provided to support the labelling of the information within Additional Information:
+Any information relevant to the circumstances of ending a medication **MUST** be provided in the `Additional Information` column or `Discontinued Details` column as applicable to the subsection tables. The following definitions are provided to support the labelling of the information within `Additional Information`:
 
 - **Naturally ended**: Medication naturally came to an end, that is, no manual intervention via the user (auto system transition)
 - **Cancelled**: Actively stopped acute medication by user
 - **Discontinued**: Actively stopped repeat medication by user
 
-For Cancelled and Discontinued the reason **MUST** be included as human readable text where coded or free text information if captured as part of the cancellation or discontinuation action. The date **MUST** also be included. The date **MUST** be the date recorded as the date cancelled or discontinued if a user entered a date, or the transaction date if not.
+Naturally Ended medications **MUST NOT** be included in the Discontinued Repeat Medication subsection and end date and reason **MUST NOT** be included in `Additional Information` in Recent Acute Medications or the Discontinued Details in All Medication (Summary).
 
-For Naturally Ended medications the end date and reason **MUST NOT** be included in additional information.
+If a system provider cannot differentiate between naturally ended, discontinued and cancelled section/subsection banner message(s) **MUST** be included as appropriate to describe the extent or limitation of compliance.
 
-If a system provider cannot differentiate between naturally ended, discontinued and cancelled, or cannot provide clear details for cancelled and discontinued in the form of an accurate date, or clearly display reason text which will differentiate a clinical discontinuation (for example, stopping a medication due to an allergy), from any other reason for ending the medication (for example, change to an alternative, equivalent medication without clinical issues having occurred) a section/subsection banner message(s) as appropriate **MUST** be included to describe the extent or limitation of compliance.
 
 ### Prescribed elsewhere ###
 
-All subsections (except All Medication Issues) **MUST** include items which are recorded on the system as a prescription but prescribed elsewhere (for example, hospitals or special clinics) or ‘Over The Counter’ drugs taken by the patient and recorded on the system as a prescription.
+All subsections (except All Medication Issues) **MUST** include items which are recorded on the system as a prescription but prescribed elsewhere (for example, hospitals or special clinics) or ‘Over The Counter’ drugs taken by the patient and recorded on the system as a prescription. This Type column will identify a medication item as prescribed elsewhere by including the Agency Type after the medication type (Acute / Repeat) or ‘Unknown Prescriber’ where an agency type cannot be determined.
 
 ### GP2GP transfer ###
 
