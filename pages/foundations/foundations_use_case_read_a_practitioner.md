@@ -75,23 +75,33 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Practitioner",
-	"id": "15",
-	"meta": {
-		"versionId": "636064088099800115",
-		"lastUpdated": "2016-08-10T13:47:09.966+01:00",
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"]
-	},
-	"identifier": [{
-		"system": "https://fhir.nhs.uk/Id/sds-user-id",
-		"value": "S001"
-	}],
-	"name": {
-		"family": ["Black"],
-		"given": ["Sarah"],
-		"prefix": ["Mrs"]
-	},
-	"gender": "female"
+  "resourceType": "Practitioner",
+  "id": "15",
+  "meta": {
+    "versionId": "636064088099800115",
+    "lastUpdated": "2016-08-10T13:47:09.966+01:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/sds-user-id",
+      "value": "S001"
+    }
+  ],
+  "name": {
+    "family": [
+      "Black"
+    ],
+    "given": [
+      "Sarah"
+    ],
+    "prefix": [
+      "Mrs"
+    ]
+  },
+  "gender": "female"
 }
 ```
 

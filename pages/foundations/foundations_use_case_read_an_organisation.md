@@ -83,18 +83,22 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Organization",
-	"id": "23",
-	"meta": {
-		"versionId": "636064088098730113",
-		"lastUpdated": "2016-08-10T13:52:54.516+01:00",
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"]
-	},
-	"identifier": [{
-		"system": "https://fhir.nhs.uk/Id/ods-organization-code",
-		"value": "O001"
-	}],
-	"name": "Honley GP Practice"
+  "resourceType": "Organization",
+  "id": "23",
+  "meta": {
+    "versionId": "636064088098730113",
+    "lastUpdated": "2016-08-10T13:52:54.516+01:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+      "value": "O001"
+    }
+  ],
+  "name": "Honley GP Practice"
 }
 ```
 

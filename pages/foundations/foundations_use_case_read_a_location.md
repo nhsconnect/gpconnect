@@ -83,26 +83,30 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Location",
-	"id": "17",
-	"meta": {
-		"versionId": "636064088100870233",
-		"lastUpdated": "2016-08-10T14:27:49.778+01:00",
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"]
-	},
-	"identifier": [{
-		"system": "https://fhir.nhs.uk/Id/ods-site-code",
-		"value": "L001"
-	}],
-	"name": "Honley Highstreet",
-	"address": {
-        "line": [
-            "Trevelyan Square",
-            "Boar Ln",
-            "Leeds"
-        ],
-        "postalCode": "LS1 6AE"
+  "resourceType": "Location",
+  "id": "17",
+  "meta": {
+    "versionId": "636064088100870233",
+    "lastUpdated": "2016-08-10T14:27:49.778+01:00",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/ods-site-code",
+      "value": "L001"
     }
+  ],
+  "name": "Honley Highstreet",
+  "address": {
+    "line": [
+      "Trevelyan Square",
+      "Boar Ln",
+      "Leeds"
+    ],
+    "postalCode": "LS1 6AE"
+  }
 }
 ```
 
