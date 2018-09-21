@@ -95,7 +95,6 @@ Provider systems:
   "id": "148",
   "meta": {
     "versionId": "1503310820000",
-    "lastUpdated": "2017-11-08T10:20:20.000+00:00",
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
     ]

@@ -79,7 +79,6 @@ Provider systems:
   "id": "15",
   "meta": {
     "versionId": "636064088099800115",
-    "lastUpdated": "2016-08-10T13:47:09.966+01:00",
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
     ]

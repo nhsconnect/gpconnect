@@ -208,7 +208,6 @@ Provider systems:
           "id": "23",
           "meta": {
             "versionId": "636064088098730113",
-            "lastUpdated": "2016-08-10T13:52:54.516+01:00",
             "profile": [
               "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
             ]
@@ -230,7 +229,6 @@ Provider systems:
         "id": "17",
         "meta": {
           "versionId": "636064088100870233",
-          "lastUpdated": "2016-08-10T14:27:49.778+01:00",
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
           ]
@@ -259,7 +257,6 @@ Provider systems:
         "id": "14",
         "meta": {
           "versionId": "1469444400000",
-          "lastUpdated": "2017-11-08T12:00:00.000+01:00",
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"
           ]
@@ -296,7 +293,6 @@ Provider systems:
         "id": "2",
         "meta": {
           "versionId": "636064088099800115",
-          "lastUpdated": "2016-08-10T13:47:09.966+01:00",
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
           ]
@@ -322,7 +318,6 @@ Provider systems:
         "id": "1584",
         "meta": {
           "versionId": "1471219260000",
-          "lastUpdated": "2017-11-09T01:01:00.000+01:00",
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
           ]
@@ -348,7 +343,6 @@ Provider systems:
         "id": "1644",
         "meta": {
           "versionId": "1471219260112",
-          "lastUpdated": "2017-11-09T02:13:05.000+01:00",
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
           ]

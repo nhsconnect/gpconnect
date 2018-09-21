@@ -92,7 +92,6 @@ Provider systems:
   "id": "2",
   "meta": {
     "versionId": "1469448000000",
-    "lastUpdated": "2016-07-25T12:00:00.000+00:00",
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
     ]

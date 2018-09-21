@@ -87,7 +87,6 @@ Provider systems:
   "id": "17",
   "meta": {
     "versionId": "636064088100870233",
-    "lastUpdated": "2016-08-10T14:27:49.778+01:00",
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
     ]
