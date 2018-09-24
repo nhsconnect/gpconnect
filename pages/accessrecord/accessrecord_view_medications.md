@@ -508,7 +508,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   </tr>
   <tr>
     <td align="center">3</td>
-    <td><code>Medication Item</code></i></td>
+    <td><code>Medication Item</code></td>
     <td>Descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
     <td><code>free-text</code></td>
   </tr>  
