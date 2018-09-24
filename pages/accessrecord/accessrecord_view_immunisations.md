@@ -4,7 +4,7 @@ keywords: getcarerecord, view, section, immunisations
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_immunisations.html
-summary: "Immunisations HTML view."
+summary: "Immunisations HTML view"
 ---
 
 
