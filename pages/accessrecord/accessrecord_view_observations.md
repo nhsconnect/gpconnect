@@ -45,7 +45,7 @@ Providers must return all the columns as described in the table below, sorted by
 | <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the observation | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry` | A short human readable free-text title for the observation | `free-text` |
 | <center>3</center> | `Value` | Value and range (where available) of the observation | `free-text` |
-| <center>4</center> | `Details` | Longer human readable details for the observation. Number formatting must follow the guidlines published on page 5 of the [CUI Medication Line](http://webarchive.nationalarchives.gov.uk/20160921162642/http://systems.digital.nhs.uk/data/cui/uig/medlineqig.pdf) document.  | `free-text` |
+| <center>4</center> | `Details` | Longer human readable details for the observation. Number formatting must follow the guidelines published on page 5 of the [CUI Medication Line](http://webarchive.nationalarchives.gov.uk/20160921162642/http://systems.digital.nhs.uk/data/cui/uig/medlineqig.pdf) document.  | `free-text` |
 
 {% include custominfocallout.html content="**Important:** GP principal suppliers have indicated this section will contain all clinical items that represent measurement data (for example, blood pressure, temperature, heart rate)." type="warning" %}
 		
