@@ -200,13 +200,10 @@ Provider systems:
 
 - SHALL return a http status "409" with an error message "DUPLICATE_REJECTED" when an appointment can not be booked because the referenced slots within the appointment resource no longer have the status `free`, such as when the slot has been used to book a different appointment between the "search for free slots" request and the "book appointment" request.
 - SHALL return an error if `Appointment.reason` is included in the appointment resource send by the consumer.
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-
-For example:
-
-- the submitted `start` and `end` date range does not match that of the requested `Slot(s)`
-- one or more of the requested `Slot` resources does not exist or already has a `status` of busy
-- a business rule imposed by [Slot Availability Management](appointments_slotavailabilitymanagement.html) is breached, e.g. an organisational slot limit
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. For example:
+  - the submitted `start` and `end` date range does not match that of the requested `Slot(s)`
+  - one or more of the requested `Slot` resources does not exist or already has a `status` of busy
+  - a business rule imposed by [Slot Availability Management](appointments_slotavailabilitymanagement.html) is breached, e.g. an organisational slot limit
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
