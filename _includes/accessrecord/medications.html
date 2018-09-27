@@ -13,7 +13,7 @@
       </p>
    </div>
    <div>
-      <h2>Recent Medication Issues</h2>
+      <h2>Recent Acute Medication</h2>
       <div class="content-banner">
          <p>
             <!-- Content banner -->
@@ -46,14 +46,14 @@
                <td>{{medication.dosageInstruction}}</td>
                <td>{{medication.quantity}}</td>
                <td class="date-column">{{medication.scheduledEndDate}}</td>
-	       <td>{{medication.daysDuration}}</td>
+			   <td>{{medication.daysDuration}}</td>
                <td>{{medication.additionalInformation}}</td>
             </tr>
          </tbody>
       </table>
    </div>
    <div>
-      <h2>Current Repeat Medications</h2>
+      <h2>Current Repeat Medication</h2>
       <div class="content-banner">
          <p>
             <!-- Content banner -->
@@ -97,7 +97,7 @@
       </table>
    </div>
    <div>
-      <h2>Discontinued Repeat Medications</h2>
+      <h2>Discontinued Repeat Medication</h2>
       <div class="content-banner">
          <p>
             <!-- Content banner -->
@@ -163,7 +163,7 @@
                <th>Quantity</th>
                <th>Last Issued Date</th>
                <th>Number of Prescriptions Issued</th>
-	       <th>Discontinued Details</th>
+			   <th>Discontinued Details</th>
                <th>Additional Information</th>
             </tr>
          </thead>
@@ -181,7 +181,7 @@
                <td>{{medication.quantity}}</td>
                <td class="date-column">{{medication.lastIssuedDate}}</td>
                <td>{{medication.numberIssued}}</td>
-	       <td>{{medication.discontinuedDetails}}</td>
+			   <td>{{medication.discontinuedDetails}}</td>
                <td>{{medication.additionalInformation}}</td>
             </tr>
          </tbody>
@@ -238,6 +238,3 @@
 </div>
 ```
 {% endraw %}
-
-
-
