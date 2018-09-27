@@ -151,6 +151,12 @@ Provider systems:
                 "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
               ]
             },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A00001"
+              }
+            ],
             "name": "Test Organization Name",
             "telecom": [
               {
@@ -243,6 +249,12 @@ Provider systems:
                 "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
               ]
             },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A00001"
+              }
+            ],
             "name": "Test Organization Name 2",
             "telecom": [
               {
