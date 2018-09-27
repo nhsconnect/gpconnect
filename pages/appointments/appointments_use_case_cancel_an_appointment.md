@@ -62,6 +62,7 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1` |
+| `If-Match`           | The Appointment's current [ETag](development_general_api_guidance.html#managing-resource-contention), e.g. `W/"23"` |
 
 #### Payload request body ####
 
@@ -164,6 +165,7 @@ The provider system:
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional details when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
 - SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
+- SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
