@@ -160,6 +160,7 @@ INVALID_PARAMETER would be used in the following, or similar, scenarios:
 
 INVALID_RESOURCE would be used in situations such as the following:
 - Resource fails to validate against StructureDefinition (either in request body or in JSON Web Tokens (JWT) claim).
+- A resource fails to be processed because of a FHIR constraint, or other rule application, where the error is not already covered by other error codes
 
 REFERENCE_NOT_FOUND describes a scenario where a consumer POSTs a FHIR resource which contains a FHIR reference that cannot be found. 
 
