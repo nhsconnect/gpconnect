@@ -206,6 +206,7 @@ For example:
 
 - the submitted `start` and `end` date range does not match that of the requested `Slot(s)`
 - one or more of the requested `Slot` resources does not exist or already has a `status` of busy
+- a business rule imposed by [Slot Availability Management](appointments_slotavailabilitymanagement.html) is breached, e.g. an organisational slot limit
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
