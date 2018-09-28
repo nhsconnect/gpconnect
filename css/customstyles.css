@@ -1165,6 +1165,28 @@ h4.panel-title {
     margin-top: 0px;
 }
 
+.capability-not-available {
+    color: #aaaaaa;
+    font-weight: normal;
+}
+
+@media (max-width: 700px) {
+    .navbar-brand {
+        width:70vw!important;
+    }
+}
+
+/* fix for NHS Developer Network ul and ol style reset */
+body ul, body ol {
+    padding-left: 40px;
+}
+
+body ol {
+    list-style: decimal;
+}
+/* end fix */
+
+
 /*set navbar breakpoint so that it converts to hamburger earlier */
 
 @media (max-width: 1200px) {
@@ -1201,4 +1223,19 @@ h4.panel-title {
     .collapse.in{
         display:block !important;
     }
+}
+
+a.back-to-top {
+	display: none;
+	width: 60px;
+	height: 60px;
+	text-indent: -9999px;
+	position: fixed;
+	z-index: 999;
+	right: 20px;
+	bottom: 20px;
+	background: #27AE61 url("up-arrow.png") no-repeat center 43%;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	border-radius: 30px;
 }
