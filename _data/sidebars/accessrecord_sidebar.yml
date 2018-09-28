@@ -24,14 +24,11 @@ entries:
       url: /accessrecord.html
       output: web, pdf
       type: homepage
-    - title: Clinical Scenarios
+    - title: Clinical scenarios
       url: /accessrecord_clinical_scenarios.html
       output: web, pdf
-    - title: Design Decisions
+    - title: Design decisions
       url: /accessrecord_design.html
-      output: web, pdf
-    - title: Wireframes
-      url: /accessrecord_wireframes.html
       output: web, pdf
     - title: Known issues
       url: /accessrecord_known_issues.html
@@ -41,40 +38,44 @@ entries:
     output: web, pdf
     folderitems:
 
-      - title: HTML Implementation Guide
-        url: /accessrecord_development_html_implementation_guide.html
-        output: web, pdf
-            
-      - title: FHIR Resources
+      - title: FHIR resources
         url: /datalibraryaccessRecord.html
         output: web, pdf
-        
+
         subfolders:
-        - title: API Use Cases
+        - title: API use cases
           output: web, pdf
           subfolderitems:
-
           - title: Retrieve a care record section
             url: /accessrecord_use_case_retrieve_a_care_record_section.html
             output: web, pdf
 
-        - title: HTML Views
+        - title: HTML implementation guidance
           output: web, pdf
           subfolderitems:
+          - title: Standards
+            url: /accessrecord_development_html_implementation_guide.html
+            output: web, pdf
+          - title: Layout
+            url: /accessrecord_development_html_layout_guide.html
+            output: web, pdf
 
+        - title: HTML views
+          output: web, pdf
+          subfolderitems:
           - title: Summary
             url: /accessrecord_view_summary.html
             output: web, pdf
           - title: Encounters
             url: /accessrecord_view_encounters.html
             output: web, pdf
-          - title: Clinical Items
+          - title: Clinical items
             url: /accessrecord_view_clinical_items.html
             output: web, pdf
-          - title: Problems
+          - title: Problems and issues
             url: /accessrecord_view_problems.html
             output: web, pdf
-          - title: Allergies
+          - title: Allergies and adverse reactions
             url: /accessrecord_view_allergies.html
             output: web, pdf
           - title: Medications
@@ -89,7 +90,6 @@ entries:
           - title: Immunisations
             url: /accessrecord_view_immunisations.html
             output: web, pdf
-          - title: Administrative Items
+          - title: Administrative items
             url: /accessrecord_view_administrative_items.html
             output: web, pdf
-            
