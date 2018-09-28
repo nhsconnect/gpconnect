@@ -1,0 +1,100 @@
+{% raw %}
+```html
+<div>
+   <h1>Problems and Issues</h1>
+   <div>
+      <p>
+         <!-- GP transfer banner -->
+      </p>
+   </div>
+   <div>
+      <p>
+         <!-- Content banner -->
+      </p>
+   </div>
+   <div>
+      <h2>Active Problems and Issues</h2>
+      <div>
+         <p>
+            <!-- Content banner -->
+         </p>
+      </div>
+      <div>
+         <p>
+            <!-- Date banner -->
+         </p>
+      </div>
+      <div>
+         <p>
+            <!-- Exclusion banner -->
+         </p>
+      </div>
+      <table>
+         <thead>
+            <tr>
+               <th>Start Date</th>
+               <th>Entry</th>
+               <th>Significance</th>
+               <th>Details</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <!-- the <tr>...</tr> element will repeat for each active problem and issue-->
+               <td>{{problemissue.startdate}}</td>
+               <td>{{problemissue.entry}}</td>
+               <td>{{problemissue.significance}}</td>
+               <td>{{problemissue.details}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div>
+      <h2>Inactive Problems and Issues</h2>
+      <div>
+         <p>
+            <!-- Content banner -->
+         </p>
+      </div>
+      <div>
+         <p>
+            <!-- Date banner -->
+         </p>
+      </div>
+      <div>
+         <p>
+            <!-- Exclusion banner -->
+         </p>
+      </div>
+      <table>
+         <thead>
+            <tr>
+               <th>Start Date</th>
+               <th>End Date</th>
+               <th>Entry</th>
+               <th>Significance</th>
+               <th>Details</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <!-- the <tr>...</tr> element will repeat for each inactive problem and issue-->
+               <td>{{problemissue.startdate}}</td>
+               <td>{{problemissue.enddate}}</td>
+               <td>{{problemissue.entry}}</td>
+               <td>{{problemissue.significance}}</td>
+               <td>{{problemissue.details}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+</div>
+```
+{% endraw %}
+
+
+
+
+
+
+
