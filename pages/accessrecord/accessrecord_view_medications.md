@@ -4,26 +4,26 @@ keywords: getcarerecord, view, section, medications
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_medications.html
-summary: "Medications HTML View."
+summary: "Medications HTML view"
 ---
-{% include customcallout.html content="**Warning:** The content of the Medications view is currently under review following intial First of Type feeback, and will be uplifted in version 0.6.0 of the specification." type="danger" %}
+{% include customcallout.html content="**Warning:** The content of the Medications view is currently under review following initial First of Type feedback, and will be uplifted in version 0.7.0 of the specification." type="danger" %}
 
-## Medications ##
+<a href="#" class="back-to-top">Back to Top</a>
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | MED | Medications | Yes | Yes | Yes | Yes |
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 A drug or other form of medicine that is used to treat or prevent disease. 
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide a chronological history of medication prescribing as recorded.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 Contains one main section, and three subsections:
 
@@ -76,7 +76,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -147,11 +147,11 @@ The current behaviour of the suppliers is as follows:
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseFifteen">INPS behaviour (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseFifteen">Vision behaviour (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseFifteen" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
-								INPS does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the details column. Note: INPS use the term de-activated in Vision as opposed to discontinued.
+								Vision does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the details column. Note: Vision use the term de-activated in Vision as opposed to discontinued.
                             </div>
                         </div>
                     </div>
@@ -187,7 +187,7 @@ A list of all current acute and repeat medications issued to a patient ordered b
 
 ### Date filter ###
 
-All relevant records **SHALL** be returned (i.e. no time limit/filtering is to be applied).
+All relevant records **MUST** be returned (i.e. no time limit/filtering is to be applied).
 
 ### Subsection content banner ###
 
@@ -236,7 +236,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -268,68 +268,38 @@ The following business rules are applicable:
 |----------|----------------|
 | EMIS | Medication item appears in this section if it has been 28 days or less for from the last issued date (applies to acute and repeat medications) |
 | TPP | TBC |
-| INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to acute and repeat medications) |
+| Vision | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to acute and repeat medications) |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
 ### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Current Medication Issues".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Current Medication Issues".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date`  <i class="fa fa-sort-desc" aria-hidden="true">  | Start date of medication item issued | `dd-Mmm-yyyy` |
 | <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp;| Descriptive name of medication item (inculding dosage) | `free-text` |
 | <center>3</center> | `Type` | Type of medication issued (values `Repeat` or `Acute`) | `free-text` |
 | <center>4</center> | `Scheduled End` | Scheduled end date of medication issued | `dd-Mmm-yyyy` |
 | <center>5</center> | `Days Duration` | Duration of medication issued | `integer` |
 | <center>6</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `free-text` |
 
-Provider systems **SHALL** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **SHALL** include these items: <br>
+Provider systems **MUST** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **MUST** include these items: <br>
 - `MedicationOrder.medication.code`
 - `MedicationOrder.dosageInstruction.dose[x]`
 - `MedicationOrder.dosageInstruction.schedule[x]`
 - `MedicationOrder.dosageInstruction.rate`
 - `MedicationOrder.dosageInstruction.maxDosePerPeriod`
 
-
-### HTML view ###
-
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Current Medication Issues</h2>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Start Date</th>
-					<th>Medication Item</th>
-					<th>Type</th>
-					<th>Scheduled End</th>
-					<th>Days Duration</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-				<tr ng-repeat="x in records" class="table">
-					<td>{{x.date}}</td>
-					<td>{{x.drug}}</td>
-					<td>{{x.type}}</td>
-					<td>{{x.scheduledEnd}}</td>
-					<td>{{x.daysDuration}}</td>
-					<td>{{x.details}}</td>
-				</tr>
-		</table>
-</div>
-```
-{% endraw %}
 
 
 
@@ -347,7 +317,7 @@ The purpose of this section is to provide a view of repeat medications that the 
 
 ### Date filter ###
 
-All relevant records **SHALL** be returned (i.e. no time limit/filtering is to be applied).
+All relevant records **MUST** be returned (i.e. no time limit/filtering is to be applied).
 
 ### Subsection content banner ###
 
@@ -396,7 +366,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseEleven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -425,25 +395,25 @@ The following business rules are applicable:
 |----------|----------------|
 | EMIS | Medication item appears in this section if it has been 28 days or less for from the last issued date (applies to repeat medications only) |
 | TPP | TBC |
-| INPS | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to repeat medications only) |
+| Vision | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to repeat medications only) |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
 ### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Current Repeat Medications".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by Last Issued date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Current Repeat Medications".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `Last Issued` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Last Issued` |  Date of medication item last issued | `dd-Mmm-yyyy` |
+| <center>1</center> | `Last Issued`  <i class="fa fa-sort-desc" aria-hidden="true">  |  Date of medication item last issued | `dd-Mmm-yyyy` |
 | <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp; | Descriptive name of medication item (inculding dosage) | `free-text` |
 | <center>3</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
 | <center>4</center> | `Review Date` | Review date of medication issued | `dd-Mmm-yyyy` |
@@ -451,39 +421,6 @@ Providers must return all the columns as described in the table below:
 | <center>6</center> | `Max Issues` | Maximum number of issues allowed for medication item | `integer` |
 | <center>7</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `free-text` |
 
-
-
-### HTML view ###
-
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Current Repeat Medications</h2>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Last Issued</th>
-					<th>Medication Item</th>
-					<th>Start Date</th>
-					<th>Review Date</th>
-					<th>Number Issued</th>
-					<th>Max Issues</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-				<tr ng-repeat="x in records1" class="table">
-					<td>{{x.lastIssued}}</td>
-					<td>{{x.drug}}</td>
-					<td>{{x.start}}</td>
-					<td>{{x.review}}</td>
-					<td>{{x.numberIssued}}</td>
-					<td>{{x.maxIssues}}</td>
-					<td>{{x.details}}</td>
-				</tr>
-		</table>
-</div>
-```
-{% endraw %}
 
 
 
@@ -504,8 +441,8 @@ Where the medication was cancelled (Acute) or Discontinued (Repeat), this should
 
 A date filter is applicable for the Past Medications subsection:
 
-- All relevant records **SHALL** be returned according to the consumer-supplied date range
-- If a date is not supplied all records **SHALL** be returned
+- All relevant records **MUST** be returned according to the consumer-supplied date range
+- If a date is not supplied all records **MUST** be returned
 
 
 ### Subsection content banner ###
@@ -554,7 +491,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseNineteen">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseNineteen">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseNineteen" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -589,25 +526,25 @@ The following business rules are applicable:
 |----------|----------------|
 | EMIS | EMIS Web marks a current medication as a past medication 28 days after its last issue date. |
 | TPP | TBC |
-| INPS | Past medication will show all past medication including any discontinued. This will be 12 months after the last issue date (prescription date). |
+| Vision | Past medication will show all past medication including any discontinued. This will be 12 months after the last issue date (prescription date). |
 | MicroTest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
 
 ### Table construction requirements ###
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Past Medications".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Past Medications".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp;|
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date`   <i class="fa fa-sort-desc" aria-hidden="true"> | Start date of medication item issued | `dd-Mmm-yyyy` |
 | <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp;| Descriptive name of medication item (inculding dosage) | `free-text` |
 | <center>3</center> | `Type` | Type of medication issued (values `Repeat` or `Acute`) | `free-text` |
 | <center>4</center> | `Last Issued` |  Date of medication item last issued | `dd-Mmm-yyyy` |
@@ -617,45 +554,8 @@ Providers must return all the columns as described in the table below:
 | <center>8</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | `free-text` |
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Past Medications</h2>
-		<table class="table">
-			<thead>
-				<tr>
-					<th>Start Date</th>
-					<th>Medication Item</th>
-					<th>Type</th>
-					<th>Last Issued</th>
-					<th>Review Date</th>
-					<th>Number Issued</th>
-					<th>Max Issues</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-				<tr ng-repeat="x in records2" class="table">
-					<td>{{x.start}}</td>
-					<td>{{x.drug}}</td>
-					<td>{{x.type}}</td>
-					<td>{{x.lastIssued}}</td>
-					<td>{{x.review}}</td>
-					<td>{{x.numberIssued}}</td>
-					<td>{{x.maxIssues}}</td>
-					<td>{{x.details}}</td>
-				</tr>
-		</table>
-</div>
-```
-{% endraw %}
+The following content highlights the expected HTML tags and format providers **MUST** use when generating the HTML content:
 
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
-
-## Example view ##
-
-<p data-height="2000" data-theme-id="light" data-slug-hash="GyJROK" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Medications" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/GyJROK/">Medications</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/GyJROK) for example of using AngularJS to generate table content" %}
+{% include accessrecord/medications.html %}

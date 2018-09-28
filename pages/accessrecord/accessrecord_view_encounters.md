@@ -7,14 +7,13 @@ permalink: accessrecord_view_encounters.html
 summary: "Encounters HTML view"
 ---
 
-## Encounters ##
 
 | Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | ENC | Encounters | Yes | Yes | Yes | Yes |
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 An encounter is an interaction between a patient and a health care professional (HCP) that is recorded on the patient record. This can include:
 
@@ -24,7 +23,7 @@ An encounter is an interaction between a patient and a health care professional 
 - Indirect encounters - such as a GP reviewing and updating a patient record on receipt of some test results
 
 
-### Purpose ###
+## Purpose ##
 
 The purpose of supplying encounters within GP Connect is to allow a clinician to view a history of a patient’s interactions with a clinician or an HCP.
 
@@ -33,7 +32,7 @@ The list of encounters is based on a consumer-supplied date range and is ordered
 Data will include the date, the practitioner (and role) and organisation (and code), then a block of free text which will include any free text narrative recorded during the consultation and some basic details of related activities will also be shown (for example - meds prescribed, procedures performed, diagnosis recorded, examinations, history recorded, care plans created, allergies or sensitivities recorded).
 
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 There is a single main section for encounters with no subsections.
 
@@ -137,52 +136,26 @@ Provider's message describing at a summary level how they have populated this se
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Encounters".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (that is, most recent date/time first).
+- Table header **MUST** be "Encounters".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `Date` descending:
 
 | Order | Name | Description | Value Details |
 | ----- | ---- | ----------- | ------------- |
-| <center>1</center> | `Date` | The date of the encounter | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date` <i class="fa fa-sort-desc" aria-hidden="true">| The date of the encounter | `dd-Mmm-yyyy` |
 | <center>2</center> | `Title`| A short human readable title for the encounter, to be composed of a subset of the `Practitioner` and `Organization` details linked to the encounter| `free-text` |
 | <center>3</center> | `Details` | Longer human readable details for the encounter | `free-text` |
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Encounters</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Date</th>
-				<th class="col-sm-2">Title</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records"  class="angular-with-newlines">
-				<td class="col-sm-2">{{x.date}}</td>
-				<td class="col-sm-2">{{x.title}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
+The following content highlights the expected HTML tags and format providers **MUST** use when generating the HTML content:
 
-{% include custominfocallout.html content="**Important:** AngularJS tags (for example, ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+{% include accessrecord/encounters.html %}
 
-## Example view ##
-
-<p data-height="930" data-theme-id="light" data-slug-hash="JMdYpm" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Encounters" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/JMdYpm/">Encounters</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/JMdYpm) for an example of using AngularJS to generate table content" %}

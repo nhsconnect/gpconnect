@@ -1,32 +1,32 @@
 ---
-title: Allergies and Adverse Reactions
+title: Allergies and adverse reactions
 keywords: getcarerecord, view, section, allergies
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_allergies.html
-summary: "Allergies HTML View."
+summary: "Allergies HTML view"
 ---
 
-## Allergies and adverse reactions ##
+<a href="#" class="back-to-top">Back to Top</a>
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | ALL | Allergies and Adverse Reactions| Yes | Yes<sup>1</sup> | Yes<sup>2</sup> | Yes |
 
 <sup>1</sup> EMIS have indicated that they are including all allergies & sensitivities in the 'Current Allergies .....' section.
 
-<sup>2</sup> INPS have indicated they don't record end dates for allergies & sensitivities. Hence, no History view is possible.
+<sup>2</sup> Vision have indicated they don't record end dates for allergies & sensitivities. Hence, no History view is possible.
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 A reaction to a substance not intended to occur. Allergies are caused by hypersensitivity of the immune system to an external agent
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide the clinician with a list of patient allergies to enable safe prescribing and treatment recommendations for a patient.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 Contains two sections:
 
@@ -71,7 +71,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -102,7 +102,7 @@ The following business rules are applicable:
 |----------|----------------|
 | EMIS | All allergies and adverse reactions will be recorded in the Current Allergies and Adverse Reactions subsection.  Historical allergies and adverse reactions data is not supported by EMIS. |
 | TPP | TBC |
-| INPS | All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection Vision do not record end dates for allergies & adverse reactions, therefore a history view is not possible. |
+| Vision | All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection Vision do not record end dates for allergies & adverse reactions, therefore a history view is not possible. |
 | MicroTest | N/A |
 
 
@@ -152,7 +152,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -182,44 +182,23 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Current Allergies and Adverse Reactions".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Current Allergies and Adverse Reactions".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date` <i class="fa fa-sort-desc" aria-hidden="true">| The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
 | <center>2</center> | `Details` | Longer human readable details for the allergy or adverse reaction | `free-text` |
 
 
-### HTML view ###
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Current Allergies and Adverse Reactions</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
 
 ## Historical Allergies and Adverse Reactions ##
 
@@ -271,7 +250,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseEleven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -297,51 +276,25 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Historical Allergies and Adverse Reactions".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Historical Allergies and Adverse Reactions".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `End Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date` | The end date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
+| <center>2</center> | `End Date` <i class="fa fa-sort-desc" aria-hidden="true"> | The end date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
 | <center>3</center> | `Details` | Longer human readable details for the allergy or adverse reaction | `free-text` |
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Historical Allergies and Adverse Reactions</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">End Date</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records1" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.end}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
+The following content highlights the expected HTML tags and format providers **MUST** use when generating the HTML content:
 
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+{% include accessrecord/allergies.html %}
 
-## Example view ##
-
-<p data-height="530" data-theme-id="light" data-slug-hash="NXqqZW" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Allergies" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/NXqqZW/">Allergies</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/NXqqZW) for example of using AngularJS to generate table content" %}

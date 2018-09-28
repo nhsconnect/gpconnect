@@ -1,18 +1,20 @@
 ---
-title: Access Record HTML Clinical Scenarios
+title: Clinical scenarios
 keywords: getcarerecord
 tags: [getcarerecord,first_of_type]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_clinical_scenarios.html
-summary: "Potential clinical scenarios for the Access Record capability."
+summary: "Potential clinical scenarios for the Access Record capability"
 toc: false
 ---
+
+<a href="#" class="back-to-top">Back to Top</a>
 
 <i class='fa fa-check'/> In scope for FoT.
 
 <i class='fa fa-road'/> Out of scope for FoT.
 
-# FoT Clinical Settings & User Stories #
+# FoT clinical settings and user stories #
 
 These have been assembled through engagement during 2015/16 with various clinical communities and examples are as follows (click title to expand/collapse):
 
@@ -143,8 +145,6 @@ These have been assembled through engagement during 2015/16 with various clinica
 </div>
 <!-- /.panel-group -->
 
-## Provide Feedback
+## Provide feedback
 
 To provide feedback or add your own Use Cases please contact GP Connect by sending  an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
-
-Some early feedback on the May 2016 release of the GP Connect draft specification can be found on the [Openhealthhub Forum](https://www.openhealthhub.org/c/fhir-implementation){:target="_blank"} under the category of "FHIR Implementation".

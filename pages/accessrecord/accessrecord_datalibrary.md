@@ -7,6 +7,8 @@ permalink: datalibraryaccessRecord.html
 summary: "The FHIR&reg; profiles and interactions required for the Access Record HTML capability"
 ---
 
+<a href="#" class="back-to-top">Back to Top</a>
+
 The following profiled FHIR&reg; resources are used in the current version of the Access Record HTML capability, see "API Use Cases" in the menu on the left. Full details of profiled FHIR&reg; resources and worked examples are available on the [Access Record HTML DMS Bundle](http://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/index.html).
 
 ## Access Record HTML ##

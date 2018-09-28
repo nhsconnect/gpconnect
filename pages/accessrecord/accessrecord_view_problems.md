@@ -1,29 +1,29 @@
 ---
-title: Problems and Issues
+title: Problems and issues
 keywords: getcarerecord, view, section, problems
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_problems.html
-summary: "Problems HTML View."
+summary: "Problems HTML view"
 ---
 
-## Problems and issues ##
+<a href="#" class="back-to-top">Back to Top</a>
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | PRB | Problems and Issues | Yes | Yes | Yes | Yes |
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 Any issue that is significant to a patient that impacts their health or wellbeing. It includes disease, surgery and social issues such as bereavement or unemployment.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide information about a patient’s significant problems and issues which will inform, or may have previously informed the clinical decision-making process.
 
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 Contains two sections:
 
@@ -74,7 +74,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -152,7 +152,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseSeven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -189,49 +189,24 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Active Problems and Issues".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Active Problems and Issues".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The start date of the problem | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry`| A short human readable title for the problem | `free-text` |
 | <center>3</center> | `Significance`| The significance of the problem (i.e. Major or Minor) | `free-text` |
 | <center>4</center> | `Details` | Longer human readable details for the problem | `free-text` |
 
 
 
-### HTML view ###
-
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Active Problems and Issues</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">Entry</th>
-				<th class="col-sm-2">Significance</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.entry}}</td>
-				<td class="col-sm-2">{{x.significance}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
 
 
 ## Inactive problems and issues ##
@@ -290,7 +265,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseEleven" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -323,68 +298,38 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Inactive Problems and Issues".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Inactive Problems and Issues".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `End Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date` | The end date of the problem | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date`  | The start date of the problem | `dd-Mmm-yyyy` |
+| <center>2</center> | `End Date` <i class="fa fa-sort-desc" aria-hidden="true">  | The end date of the problem | `dd-Mmm-yyyy` |
 | <center>3</center> | `Entry`| A short human readable title for the problem | `free-text` |
 | <center>4</center> | `Significance`| The significance of the problem (i.e. Major or Minor) | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
 
 
 
-Provider systems not supporting Inactive Problems (e.g. INPS) **SHALL** display a message in the Section Banner to indicate:
+Provider systems not supporting Inactive Problems (e.g. Vision) **MUST** display a message in the Section Banner to indicate:
 
 - Inactive Problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
 ) section.
 - That any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section.
 
-Provider systems that do support Inactive Problems, but when no records exist for the requested Patient **SHALL** display the standard [HTML Implementation Guide - Supported But Hasn't Been Recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
+Provider systems that do support Inactive Problems, but when no records exist for the requested Patient **MUST** display the standard [HTML Implementation Guide - Supported But Hasn't Been Recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
 
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Inactive Problems and Issues</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Start Date</th>
-				<th class="col-sm-2">End Date</th>
-				<th class="col-sm-2">Entry</th>
-				<th class="col-sm-2">Significance</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records1" class="table">
-				<td class="col-sm-2">{{x.start}}</td>
-				<td class="col-sm-2">{{x.end}}</td>
-				<td class="col-sm-2">{{x.entry}}</td>
-				<td class="col-sm-2">{{x.significance}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
+The following content highlights the expected HTML tags and format providers **MUST** use when generating the HTML content:
 
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
+{% include accessrecord/problems.html %}
 
-## Example view ##
-
-<p data-height="550" data-theme-id="light" data-slug-hash="gopbVv" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Problems" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/gopbVv/">Problems</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/gopbVv) for example of using AngularJS to generate table content" %}

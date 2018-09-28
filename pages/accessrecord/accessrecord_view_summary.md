@@ -7,24 +7,24 @@ permalink: accessrecord_view_summary.html
 summary: "Summary HTML view"
 ---
 
-## Summary ##
+<a href="#" class="back-to-top">Back to Top</a>
 
 | Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |
 | SUM | Summary | Yes | Yes | Yes | Yes |
 
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 Clinicians work in busy and time-pressured environments. They need access to high-quality, relevant and wherever possible consistent information to support safe, effective and efficient assessment of their patients.
 
 Timely sharing of clinical information is key to the delivery and improvement of safe and effective clinical care.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide a summarised view of the pertinent clinical information regarding a patient within a single screen. This allows a clinician to efficiently peruse key information from the patient’s clinical record and supports clinical decision making.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 There is only a single main section for the summary section with 5 subsections:
 
@@ -138,10 +138,3 @@ This section is an exact replica of the Encounters section with a filter applied
 {% include callout.html content="Please see HTML guidance in the [Encounters](accessrecord_view_encounters.html) section. " type="primary" %} 
 
 {% include custominfocallout.html content="**Important:** the section title for Encounters on the Summary view should explicitly state 'Last 3 encounters'.  The columns and content should be as per the HTML guidance for encounters with the exception of only 3 rows in the table." type="warning" %}
-
-## Example view ##
-
-<p data-height="2500" data-theme-id="light" data-slug-hash="opXBjM" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Patient Summary" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/opXBjM/">Patient Summary</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/opXBjM) for an example of using AngularJS to generate table content" %}

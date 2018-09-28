@@ -4,24 +4,24 @@ keywords: getcarerecord, view, section, referrals
 tags: [view,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_view_referrals.html
-summary: "Referrals HTML View."
+summary: "Referrals HTML view"
 ---
 
-## Referrals ##
+<a href="#" class="back-to-top">Back to Top</a>
 
-| Section Code | Section Name | TPP | EMIS | INPS | Microtest |
+| Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
 | REF | Referrals | Yes | Yes | Yes | Yes |
 
-### Clinical narrative ###
+## Clinical narrative ##
 
 This is a request for transfer of care or request to provide assessment, treatment or clinical advice on the care a patient.
 
-### Purpose ###
+## Purpose ##
 
 The purpose of this section is to provide details of any referrals to other care providers.
 
-### Sections and subsections ###
+## Sections and subsections ##
 
 There is only a single main section for Referrals with no subsections.
 
@@ -80,7 +80,7 @@ Providers message describing at a summary level how they have populated this sec
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">INPS message descriptions (click here to expand/collapse)</a>
+                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -124,58 +124,27 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table header **SHALL** be "Referrals".
-- Table columns **SHALL** be ordered left-to-right (1..N).
-- Table content **SHALL NOT** be truncated.
-- Table rows **SHALL** be ordered by date descending (i.e. most recent date/time first).
+- Table header **MUST** be "Referrals".
+- Table columns **MUST** be ordered left-to-right (1..N).
+- Table content **MUST NOT** be truncated.
+
 
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below:
+Providers must return all the columns as described in the table below, ordered by `Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date` | The date of the referral | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The date of the referral | `dd-Mmm-yyyy` |
 | <center>2</center> | `From` | Practitioner or Organization referred from | `free-text` |
 | <center>3</center> | `To` | Practitioner or Organization referred to | `free-text` |
 | <center>4</center> | `Priority` | The priority of the referral | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the referral | `free-text` |
 
 
-### HTML view ###
+## HTML view ##
 
-{% raw %}
-```html
-<div ng-controller="ctrl">
-	<h2>Referrals</h2>
-	<table class="table">
-		<thead>
-			<tr>
-				<th class="col-sm-2">Date</th>
-				<th class="col-sm-2">From</th>
-				<th class="col-sm-2">To</th>
-				<th class="col-sm-2">Priority</th>
-				<th class="col-sm-2">Details</th>
-			</tr>
-		</thead>
-			<tr ng-repeat="x in records" class="angular-with-newlines">
-				<td class="col-sm-2">{{x.date}}</td>
-				<td class="col-sm-2">{{x.from}}</td>
-				<td class="col-sm-2">{{x.to}}</td>
-				<td class="col-sm-2">{{x.priority}}</td>
-				<td class="col-sm-2">{{x.details}}</td>
-			</tr>
-	</table>
-</div>
-```
-{% endraw %}
+The following content highlights the expected HTML tags and format providers **MUST** use when generating the HTML content:
 
-{% include custominfocallout.html content="**Important:** AngularJS tags (e.g ng-repeat) are present merely to indicate to a developer the structure of the table content. Presence of these tags are not intended to imply use of any specific technology." type="warning" %}
-
-## Example view ##
-
-<p data-height="580" data-theme-id="light" data-slug-hash="jYPVxN" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Referrals" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/jYPVxN/">Referrals</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-{% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/jYPVxN) for example of using AngularJS to generate table content" %}
+{% include accessrecord/referrals.html %}
