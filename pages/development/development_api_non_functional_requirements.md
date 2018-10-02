@@ -87,5 +87,5 @@ Provider systems SHALL be deployed with the provider APIs enabled by default.
 
 Provider systems MAY provide a mechanism for a data controller at an organisation to choose to globally disable/enable the provider APIs (that is, turn on/off the overall GP Connect technical capability).
 
-Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (Access Record HTML vs. Appointments vs. Tasks).
+Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (Access Record HTML vs. Appointments vs Access Record Structured).
 	

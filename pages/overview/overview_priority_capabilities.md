@@ -1,7 +1,7 @@
 ---
 title: Priority capabilities for GP Connect
 keywords: usecases
-tags: [use_case,htmlgetcarerecord,getcarerecord,appointments,tasks]
+tags: [use_case,htmlgetcarerecord,getcarerecord,appointments]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_priority_capabilities.html
@@ -22,9 +22,3 @@ Access a patient's care record for the purpose of direct care.
 Manage appointments in order to co-ordinate access to care.
 
 [![Img](images/overview/calendar.png) Appointment Management](appointments.html)
-
-## Tasks ##
-Manage tasks in order to work effectively across care settings.
-
-[![Img](images/overview/tasks.png) Task Management](tasks.html)
-

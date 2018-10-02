@@ -24,6 +24,9 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
+        - title: 1.2.2
+          url: /overview_release_notes_1_2_2.html
+          output: web
         - title: 1.2.1
           url: /overview_release_notes_1_2_1.html
           output: web
@@ -135,9 +138,6 @@ entries:
     - title: <b class="capability-not-available">Access Record HTML</b>
       url: /accessrecord.html
       output: web
-    - title: <b class="capability-not-available">Task Management</b>
-      url: /tasks.html
-      output: web
 
   - title: Integrate with Spine
     output: web
@@ -236,9 +236,6 @@ entries:
           output: web
         - title: Appointments
           url: /tag_appointments.html
-          output: web
-        - title: Tasks
-          url: /tag_tasks.html
           output: web
         - title: Engagement
           url: /tag_engagement.html

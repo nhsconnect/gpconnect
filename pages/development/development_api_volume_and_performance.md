@@ -58,7 +58,7 @@ A plan outlining the points at which infrastructure will be scaled up should be 
 
 ### V&P test environment ###
 
-Test environments SHALL simulate consumer applications making API calls against simulated test data (such as, patient records, diaries, tasks.) 
+Test environments SHALL simulate consumer applications making API calls against simulated test data (such as, patient records, diaries.) 
  
 Test data SHALL be populated with realistic complexity, depth and volume - for example, in the case of patients the data should be representative of clinical records of a mix of healthy patients and patients with multiple long-term conditions.  
 

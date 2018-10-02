@@ -64,7 +64,3 @@ All `InteractionIDs` are expected to follow the following format `urn:nhs:names:
 ### Access Record HTML capability interactions ###
 Access Record HTML interactions are not available at this specification version.
 
-### Task capability interactions ###
-Task interactions are not available at this specification version.
-
-

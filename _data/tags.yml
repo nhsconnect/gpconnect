@@ -8,7 +8,6 @@ allowed-tags:
   - htmlgetcarerecord
   - getcarerecord
   - appointments
-  - tasks
   - engagement
   - design  
   - development

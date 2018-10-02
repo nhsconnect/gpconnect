@@ -101,7 +101,6 @@ Provider systems MAY choose to use the value of the requested_scope claim to aut
 | /Patient | patient/*.[read/write] |
 | /Organization | organization/*.[read/write] |
 | /Appointment |patient/*.[read/write] |
-| /Task | organization/*.[read/write] |
 | /Practitioner | organization/*.[read/write] |
 | /Location | organization/*.[read/write] |
 | /Slot | organization/*.[read/write] |

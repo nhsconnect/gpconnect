@@ -29,7 +29,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 ## 1. Get started ##
 
 - Read about the GP Connect [Priority capabilities](overview_priority_capabilities.html).
-- Look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html), [Appointment Management](appointments_design.html) and [Task Management](tasks.html)) and get involved:
+- Look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
@@ -53,7 +53,6 @@ If you're planning on providing data using GP Connect APIs then you're a provide
   - [Access Record HTML](accessrecord.html) (e.g. Access html views from the primary care record).
   - [Access Record Structured](accessrecord_structured.html) (e.g. Access structured data from the primary care record).
   - [Appointment Management](appointments.html) (e.g. Book an appointment for a patient).
-  - [Task Management](tasks.html) (e.g. Send a notification task to a general practice organisation).
 - Finally take a look at cross-cutting areas:
   - JSON Web Token - Provides [Cross organisation audit and provenance](integration_cross_organisation_audit_and_provenance.html) details.
   - Additional HTTP headers and proxy URL - This gives you access to the [Spine Secure Proxy](integration_spine_secure_proxy.html), the secure 'front door' of GP Connect APIs.

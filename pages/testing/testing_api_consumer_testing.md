@@ -33,7 +33,6 @@ Consumer systems SHALL be tested for conformance to one or more of the following
  - [Access Record HTML](accessrecord.html)
  - [Access Record Structured](accessrecord_structured.html)
  - [Appointment Management](appointments.html)
- - [Task Management](tasks.html)
 
 ## Solution assurance ##
 
