@@ -101,3 +101,7 @@ Where there is a requirement for an implementation to provide an appointment man
 Neither the Spine Secure Proxy, nor the GP Connect provider will expose such federation configuration or expose any aggregated view of appointments for a federation.
 
 Please refer to the [glossary](overview_glossary.html) for a definition of a federation in this context.
+
+## Branch surgeries
+
+Please see [Branch surgeries](development_branch_surgeries.html) for more information GP Connect handling of branch surgeries, and implications for appointment booking.
