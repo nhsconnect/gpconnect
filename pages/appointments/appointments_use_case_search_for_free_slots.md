@@ -198,36 +198,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "Location/17",
-      "resource": {
-        "resourceType": "Location",
-        "id": "17",
-        "meta": {
-          "versionId": "636064088100870233",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
-          ]
-        },
-        "name": "Trevelyan surgery",
-        "address": {
-          "line": [
-            "Trevelyan Square",
-            "Boar Ln",
-            "Leeds"
-          ],
-          "postalCode": "LS1 6AE"
-        },
-        "telecom": {
-          "system": "phone",
-          "value": "03003035678",
-          "use": "work"
-        },
-        "managingOrganization": {
-          "reference": "Organization/14"
-        }
-      }
-    },
-    {
       "fullUrl": "Schedule/14",
       "resource": {
         "resourceType": "Schedule",
@@ -261,6 +231,36 @@ Provider systems:
           }
         ],
         "comment": "Schedule 1 for general appointments"
+      }
+    },
+    {
+      "fullUrl": "Location/17",
+      "resource": {
+        "resourceType": "Location",
+        "id": "17",
+        "meta": {
+          "versionId": "636064088100870233",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+          ]
+        },
+        "name": "Trevelyan surgery",
+        "address": {
+          "line": [
+            "Trevelyan Square",
+            "Boar Ln",
+            "Leeds"
+          ],
+          "postalCode": "LS1 6AE"
+        },
+        "telecom": {
+          "system": "phone",
+          "value": "03003035678",
+          "use": "work"
+        },
+        "managingOrganization": {
+          "reference": "Organization/14"
+        }
       }
     },
     {
