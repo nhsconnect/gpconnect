@@ -69,7 +69,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 
 #### Payload request body ####
 
-The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-GetStructuredRecord-Operation-1](accessrecord_structured_development_operation_definition.html) `OperationDefinition` profile.
+The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` profile.
 
 The `Parameters` resource is populated with the parameters shown below.  Note: The ↳ character indicates a part parameter.
 
@@ -195,7 +195,7 @@ Errors that may be encountered include:
 - `medicationDatePeriod.start` or `medicationDatePeriod.end` contain a partial date, or have a value containing a time or offset component
 - the `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter
 - the `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter
-- the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](accessrecord_structured_development_operation_definition.html) `OperationDefinition`
+- the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition`
 - the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for further information including appropriate error codes.

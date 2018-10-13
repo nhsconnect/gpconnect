@@ -90,6 +90,3 @@ entries:
         - title: Retrieve a patient's structured record
           url: /accessrecord_structured_development_retrieve_patient_record.html
           output: web
-        - title: <i class='resource'>&gt; Operation definition</i>
-          url: /accessrecord_structured_development_operation_definition.html
-          output: web

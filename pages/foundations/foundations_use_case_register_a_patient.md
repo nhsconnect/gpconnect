@@ -9,7 +9,7 @@ summary: "Use case for registering a patient with an organization"
 
 ## API use case ##
 
-The "Register a patient" capability should either create a new temporary patient registration or re-activate an existing "Inactive" patient registration, as a temporary patient registration within the GP practice system ([Definition of a GP Connect active patient](/overview_glossary.html#active-patient)).
+The "Register a patient" capability should either create a new temporary patient registration or re-activate an existing "inactive" patient registration, as a temporary patient registration within the GP practice system ([Definition of a GP Connect active patient](/overview_glossary.html#active-patient)).
 
 This specification describes a single use case. For complete details and background please see the [Foundations capability bundle](foundations.html).
 
@@ -27,7 +27,7 @@ This specification describes a single use case. For complete details and backgro
 The consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
 
 
 ## API usage ##
@@ -107,68 +107,9 @@ The following data-elements SHALL be processed by the provider:
 
 - When a consumer has sent temporary telecom and/or temporary address details within the patient resource the provider SHALL store (and subsequently send) these details as temporary telecom and temporary address details within the patient record on the provider system, in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration. The provider SHALL not push/synchronise these temporary telecom or temporary address details with the spine.
 
-
-
-The request payload is a set of [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) conforming to the `gpconnect-registerpatient-operation-1` profiled `OperationDefinition`, see below:
+The request payload is a set of [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) conforming to the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) profiled `OperationDefinition`.
 
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
-
-```xml
-<OperationDefinition>
-    <id value="0857bd2a-9c1f-4e2a-ac48-f6a81f88ab01" />
-    <meta>
-        <versionId value="1" />
-        <lastUpdated value="2017-11-03T12:21:35.991+00:00" />
-        <tag>
-            <system value="urn:hscic:examples" />
-            <code value="Operation-Register-Patient" />
-            <display value="Register Patient Operation" />
-        </tag>
-    </meta>
-    <url value="https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-Registerpatient-Operation-1" />
-    <version value="0.0.1" />
-    <name value="GPConnect-RegisterPatient-Operation-1" />
-    <status value="active" />
-    <kind value="operation" />
-    <publisher value="NHS Digital" />
-    <contact>
-        <name value="Interoperability Team" />
-        <telecom>
-            <system value="email" />
-            <value value="interoperabilityteam@nhs.net" />
-            <use value="work" />
-        </telecom>
-    </contact>
-    <date value="2016-08-03T00:00:00+01:00" />
-    <description value="Request to register a patient at a healthcare organisation" />
-    <code value="gpc.registerpatient" />
-    <system value="false" />
-    <type value="Patient" />
-    <instance value="false" />
-    <parameter>
-        <name value="registerPatient" />
-        <use value="in" />
-        <min value="1" />
-        <max value="1" />
-        <documentation value="Patient demographic information captured in the patient resource to register the patient." />
-        <type value="Patient" />
-        <profile>
-            <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1" />
-        </profile>
-    </parameter>
-    <parameter>
-        <name value="response" />
-        <use value="out" />
-        <min value="1" />
-        <max value="1" />
-        <documentation value="The searchset bundle resource that has been returned in response to the given input parameters" />
-        <type value="Bundle" />
-        <profile>
-            <reference value="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1" />
-        </profile>
-    </parameter>
-</OperationDefinition>
-```
 
 {% include important.html content="Provider systems SHALL register the new `Patient` resource as a temporary patient record once a PDS trace has been confirmed." %}
 
