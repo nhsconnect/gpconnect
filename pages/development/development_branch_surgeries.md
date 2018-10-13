@@ -21,7 +21,7 @@ When a patient registers at a GP practice with multiple surgeries, they are assi
 
 ### ODS codes
 
-In GP Connect, an ODS code represents a GP practice as a whole, and is populated in the `Organization.identifier` element.
+In GP Connect, an ODS code identifies a GP practice as a whole, and is populated in the `Organization.identifier` element.
 
 {% include important.html content="While ODS *site* codes do exist to identify some branch surgeries, GP systems DO NOT use these and hence they are NOT available via the GP Connect interface, and cannot be used to route requests to individual surgeries." %}
 
@@ -29,7 +29,7 @@ In GP Connect, an ODS code represents a GP practice as a whole, and is populated
 
 The [Personal Demographics Service](integration_personal_demographic_service.html) is used by GP Connect consuming systems to verify a patient's identity, and also to retrieve the ODS code of a patient's registered GP practice.
 
-The ODS code stored in a patient's PDS record represents the GP practice as a whole, and does not identify the patient's preferred branch surgery.
+The ODS code stored in a patient's PDS record represents the GP practice as a whole, and does not identify the patient's preferred surgery.
 
 #### GP Connect routing
 
