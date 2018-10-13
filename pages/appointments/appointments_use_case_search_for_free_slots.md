@@ -177,7 +177,7 @@ Provider systems:
 - SHALL only include the free slots which match the Search Filter parameters of Booking Organisation (ODS Code) and/or Type
 - SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
  
-- The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
+- The response `Bundle` SHALL only contain `Schedule`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
 
   - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  See [Branch surgeries](development_branch_surgeries.html) for more details. The `Location` resource SHALL contain the surgery's `name`, `address`, `telecom`, and a reference to the GP practice `Organization` in the `managingOrganization` element.
   
@@ -197,29 +197,6 @@ Provider systems:
   "resourceType": "Bundle",
   "type": "searchset",
   "entry": [
-    {
-      "fullUrl": "Organisation/23",
-      "resource": {
-        "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
-        "resource": {
-          "resourceType": "Organization",
-          "id": "23",
-          "meta": {
-            "versionId": "636064088098730113",
-            "profile": [
-              "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
-            ]
-          },
-          "identifier": [
-            {
-              "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-              "value": "O001"
-            }
-          ],
-          "name": "Honley GP Practice"
-        }
-      }
-    },
     {
       "fullUrl": "Location/17",
       "resource": {
