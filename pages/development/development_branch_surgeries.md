@@ -47,4 +47,4 @@ Because a GP practice's appointment book can hold appointments across multiple s
 
 In order to do this, every `Schedule` resource has an associated `Location` resource which represents the surgery that the appointment will take place at, including the surgery's name, address and contact details.
 
-To retrieve the patient's preferred surgery (assigned when they registered with the practice), a reference to the surgery `Location` is held in `Patient.registrationDetails.preferredBranchSurgery`.  This can be used to identify appointments at their preferred surgery by comparing the logical id against that of `Location` resources held in a `Schedule`.
+To retrieve the patient's preferred surgery (assigned when they registered with the practice), a reference to the surgery `Location` is held in `Patient.registrationDetails.preferredBranchSurgery`.  This can be used to identify appointments at the patient's preferred surgery by comparing it's logical id with that of the `Location` resource referenced from a `Schedule`.
