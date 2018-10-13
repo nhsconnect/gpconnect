@@ -177,20 +177,20 @@ Provider systems:
 - SHALL only include the free slots which match the Search Filter parameters of Booking Organisation (ODS Code) and/or Type
 - SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
  
-  The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
+- The response `Bundle` SHALL only contain `Schedule`, `Organization`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
 
-  - The `Location` referenced within the schedule resource SHALL represent the location where the appointment will take place, either a GP Practice where there are no branch surgeries (including Organization ODS Code) OR a branch surgery (including ODS Site Code where available). The referenced location resource SHALL contain a minimum of the name and address of the GP practice.
+  - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  See [Branch surgeries](development_branch_surgeries.html) for more details. The `Location` resource SHALL contain the surgery's `name`, `address`, `telecom`, and a reference to the GP practice `Organization` in the `managingOrganization` element.
   
-- SHALL include `Practitioner` and `Location` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` parameters.
+  - SHALL include `Practitioner` and `Location` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` parameters.
 
-- SHALL manage slot `start` and `end` times to indicate which slots can be considered `adjacent` and therefore be booked against a single appointment as part of a `multi slot appointment booking`. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
+- SHALL manage slot `start` and `end` times to indicate which slots can be considered adjacent and therefore be booked against a single appointment as part of a multi slot appointment booking. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
 
   To allow consumers to implement multi-slot appointment booking, the consumer needs to be able to identify which slots can be considered adjacent. A provider SHALL indicate which slots are adjacent or not adjacent using the following rules:
 
   * To indicate two slots (Slot A and Slot B) are adjacent, the two slots SHALL reference the same schedule resource and the ```start``` time of ```Slot B``` SHALL equals ```end``` time of ```Slot A```.
   * If the slots do not conform to the rule above, either the slots do not link to the same schedule or the start time of one slot is not the same as the end time of the previous slot then these slots SHALL not be considered adjacent.
   
-- SHALL returned resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
+- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
 
 ```json
 {
@@ -231,13 +231,7 @@ Provider systems:
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
           ]
         },
-        "identifier": [
-          {
-            "system": "https://fhir.nhs.uk/Id/ods-site-code",
-            "value": "L001"
-          }
-        ],
-        "name": "Honley Highstreet",
+        "name": "Trevelyan surgery",
         "address": {
           "line": [
             "Trevelyan Square",
@@ -245,6 +239,14 @@ Provider systems:
             "Leeds"
           ],
           "postalCode": "LS1 6AE"
+        },
+        "telecom": {
+          "system": "phone",
+          "value": "03003035678",
+          "use": "work"
+        },
+        "managingOrganization": {
+          "reference": "Organization/14"
         }
       }
     },

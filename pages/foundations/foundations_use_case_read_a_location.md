@@ -79,7 +79,9 @@ Provider systems:
 - SHALL return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) profile.
 - SHALL include the URI of the `CareConnect-GPC-Location-1` profile StructureDefinition in the `Location.meta.profile` element of the returned `Location` resource.
 - SHALL include the `versionId` of the current version of the `Location` resource.
-- SHALL include all relevant business `identifier` details (i.e. ODS Site Code) for the `Location` resource.
+- SHALL populate `name`
+- SHALL populate `address` and `telecom` where available
+- SHALL populate `managingOrganization` with a reference to to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
 
 ```json
 {
@@ -91,13 +93,7 @@ Provider systems:
       "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
     ]
   },
-  "identifier": [
-    {
-      "system": "https://fhir.nhs.uk/Id/ods-site-code",
-      "value": "L001"
-    }
-  ],
-  "name": "Honley Highstreet",
+  "name": "Trevelyan Surgery",
   "address": {
     "line": [
       "Trevelyan Square",
@@ -105,6 +101,14 @@ Provider systems:
       "Leeds"
     ],
     "postalCode": "LS1 6AE"
+  },
+  "telecom": {
+    "system": "phone",
+    "value": "03003035678",
+    "use": "work"
+  },
+  "managingOrganization": {
+    "reference": "Organization/14"
   }
 }
 ```
