@@ -23,11 +23,11 @@ When a patient registers at a GP practice with multiple surgeries, they are assi
 
 In GP Connect, an ODS code represents a GP practice as a whole, and is populated in the `Organization.identifier` element.
 
-{% include important.html content="While ODS *site* codes do exist to identify branch surgeries, GP systems DO NOT use these and hence they are NOT available via the GP Connect interface, and cannot be used to route requests to individual surgeries." %}
+{% include important.html content="While ODS *site* codes do exist to identify some branch surgeries, GP systems DO NOT use these and hence they are NOT available via the GP Connect interface, and cannot be used to route requests to individual surgeries." %}
 
-#### Personal Demographic Service
+#### Personal Demographics Service
 
-The [Personal Demographic Service](integration_personal_demographic_service.html) is used by GP Connect consuming systems to verify a patient's identity, and also to retrieve the ODS code of a patient's registered GP practice.
+The [Personal Demographics Service](integration_personal_demographic_service.html) is used by GP Connect consuming systems to verify a patient's identity, and also to retrieve the ODS code of a patient's registered GP practice.
 
 The ODS code stored in a patient's PDS record represents the GP practice as a whole, and does not identify the patient's preferred branch surgery.
 
@@ -37,13 +37,13 @@ GP Connect uses ODS codes in order to route requests to a GP practice by includi
 
 Therefore a GP Connect request is sent, it is sent to a practice as a whole, and not to a specific surgery.
 
-The following query to read a patient is being sent to the patient's GP practice identified by the ODS code `D82809`:
+The following query to read a `Patient` resource is being sent to the patient's GP practice identified by the ODS code `D82809`:
 
 <code class="highlighter-rouge">https://provider.nhs.uk/<b>D82809</b>/STU3/1/gpconnect/Patient/1</code>
 
 ### Implications for Appointment booking
 
-Because a GP practice's appointment book can hold appointments across multiple surgeries, it is important to distinguish which surgery an appointment is held at to allow the patient to decide where they wish to attend.
+Because a GP practice's appointment book can hold appointments across multiple surgeries (locations), it is important to distinguish which surgery an appointment is held at, to allow the patient to decide where they wish to attend.
 
 In order to do this, every `Schedule` resource has an associated `Location` resource which represents the surgery that the appointment will take place at, including the surgery's name, address and contact details.
 
