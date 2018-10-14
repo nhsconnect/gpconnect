@@ -56,7 +56,7 @@ The logical id of all FHIR resources SHALL be populated in accordance with the [
 
 The `address` element exists in many of the FHIR resources used in the GP Connect API. Where an address element is present in a FHIR resource the following population guidance SHALL be followed:
 
-* Where the individual address sub elements are available within the suppliers system, the address SHALL be populated using the elements:
+* The address SHALL be populated using the elements:
   * line
   * city
   * district
@@ -64,5 +64,3 @@ The `address` element exists in many of the FHIR resources used in the GP Connec
   * country
   
   The `text` element SHOULD not be populated within the address.
-  
-* Where the address is not store as the individual elements within the suppliers system, the address SHALL be populated using the `text` element. The `line`, `city`, `district`, `postalCode` and `country` SHALL not be populated.
