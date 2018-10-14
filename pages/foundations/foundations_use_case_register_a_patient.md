@@ -258,6 +258,7 @@ The Provider system SHALL return an error if:
 - the PDS record contains an invalid, sensitive or superseded flag
 - the patient is marked as deceased on PDS, or on the provider system
 - PDS is unavailable, or could not be contacted
+- the patient is already registered in which case a `409` `DUPLICATE_REJECTED` error shall be returned
 
 Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
