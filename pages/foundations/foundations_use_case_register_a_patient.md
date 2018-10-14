@@ -13,7 +13,7 @@ The "Register a patient" capability should either create a new temporary patient
 
 This specification describes a single use case. For complete details and background please see the [Foundations capability bundle](foundations.html).
 
-{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It is not a full patient registration endpoint and does not change a patient's registered practice information as held on Personal Demographics Service (PDS)." %}
+{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It does not change a patient's registered practice information as held on Personal Demographics Service (PDS)." %}
 
 ## Security ##
 
@@ -81,7 +81,7 @@ The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.h
 
 Within the `Patient` resource: 
 
-- The following fields SHALL be populated to allow the providing system to verify the patient's identity on PDS:
+- The following fields SHALL be populated to allow the provider system to verify the patient's identity on PDS:
   - `identifier` with the patient's NHS number
   - `birthDate`
   - `name` including `family` and `given`, with the `use` element set to `official`
@@ -224,16 +224,16 @@ Before registering the patient record on the local system, the provider SHALL ch
   - and is **active** (i.e. a currently registered patient, of any registration type):
 
     - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
-      - The providing system SHALL not push/synchronise these temporary telecom or temporary address details with Spine or NHAIS.
+      - The provider system SHALL not push/synchronise these temporary telecom or temporary address details with PDS.
 
     - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
 
-  - and is **inactive** (i.e. a patient who's registration has lapsed of any registration type):
+  - and is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
     - The patient's record SHOULD be re-activated as a **temporary** patient
 
     - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
-      - The providing system SHALL not push/synchronise these temporary telecom or temporary address details with Spine or NHAIS.
+      - The provider system SHALL not push/synchronise these temporary telecom or temporary address details with PDS.
 
     - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
 
@@ -247,11 +247,11 @@ Before registering the patient record on the local system, the provider SHALL ch
 
     - using the demographic details returned from the PDS record
     - and temporary address or telecom details sent by the consuming system (where provided), and marked as *temporary* address and telecom details
-      - The providing system SHALL not push/synchronise these temporary telecom or temporary address details with Spine or NHAIS.
+      - The provider system SHALL not push/synchronise these temporary telecom or temporary address details to PDS.
     - the patient's preferred branch surgery SHOULD be set if provided by the consumer
     - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
 
-{% include warning.html content="Providing systems MUST NEVER create or re-activate a patient as a GMS (regular) patient.  Doing so would adversely affect national systems and interfere with the practice's caseload." %}
+{% include warning.html content="Provider systems MUST NOT create or re-activate a patient as a GMS (regular) patient.  Doing so would adversely affect national systems and interfere with the practice's caseload." %}
 
 #### Error Handling ####
 
@@ -374,7 +374,7 @@ Provider systems:
         "name": [
           {
             "use": "official",
-            "text": "Minnie DAWES",
+            "text": "JACKSON Jane (Miss)",
             "family": "Jackson",
             "given": [
               "Jane"
