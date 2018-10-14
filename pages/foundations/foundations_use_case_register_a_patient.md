@@ -216,7 +216,7 @@ Before registering the patient record on the local system, the provider SHALL re
 
 #### Local system registration requirements
 
-Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients, and then:
+Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using NHS number, and then:
 
 - **If a matching patient record IS found**:
   
@@ -227,6 +227,8 @@ Before registering the patient record on the local system, the provider SHALL ch
   - and is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
     - The patient's record SHOULD be re-activated as a **temporary** patient
+
+      {% include note.html content="Provider systems MAY create a new **temporary** record in this instance but only in line with existing system handling for re-activation of inactive records for temporary patients." %}
 
     - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
       - The provider system SHALL not push/synchronise these temporary telecom or temporary address details with PDS.
