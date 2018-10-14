@@ -134,7 +134,7 @@ Provider systems:
   "name": [
     {
       "use": "official",
-      "text": "Minnie DAWES",
+      "text": "JACKSON Jane (Miss)",
       "family": "Jackson",
       "given": [
         "Jane"
@@ -157,7 +157,15 @@ Provider systems:
     {
       "use": "home",
       "type": "physical",
-      "text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
+      "address": {
+        "line": [
+          "Trevelyan Square",
+          "Boar Ln"
+        ],
+        "city": "Leeds",
+        "district": "West Yorkshire",
+        "postalCode": "LS1 6AE"
+      }
     }
   ]
 }

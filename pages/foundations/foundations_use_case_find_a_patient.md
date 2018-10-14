@@ -143,7 +143,7 @@ Provider systems:
         "name": [
           {
             "use": "official",
-            "text": "Minnie DAWES",
+            "text": "JACKSON Jane (Miss)",
             "family": "Jackson",
             "given": [
               "Jane"

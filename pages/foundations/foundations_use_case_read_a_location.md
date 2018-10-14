@@ -98,8 +98,9 @@ Provider systems:
     "line": [
       "Trevelyan Square",
       "Boar Ln",
-      "Leeds"
     ],
+    "city": "Leeds",
+    "district": "West Yorkshire",
     "postalCode": "LS1 6AE"
   },
   "telecom": {
