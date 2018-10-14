@@ -165,7 +165,6 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
             "use": "temp"
           }
         ],
-        "gender": "female",
         "birthDate": "1952-05-31",
         "address": [
           {
@@ -210,23 +209,20 @@ Before registering the patient record on the local system, the provider SHALL re
 
 - **If any of the following conditions occur, the registration MUST be halted and an error returned to the consuming system**:
 
-  - If the patient is recorded as deceased
-  - If the patient has a flagged status shown above
-  - If the patient's record could not be found on PDS
-  - If the connection to PDS could not be made
+  - the patient is recorded as deceased
+  - the patient's record has a PDS flag shown above
+  - the patient's record could not be found on PDS
+  - the connection to PDS could not be made
 
 #### Local system registration requirements
 
-Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using the same identity check shown in the PDS requirements above, and then:
+Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients, and then:
 
 - **If a matching patient record IS found**:
   
   - and is **active** (i.e. a currently registered patient, of any registration type):
 
-    - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
-      - The provider system SHALL not push/synchronise these temporary telecom or temporary address details with PDS.
-
-    - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
+    - The registration SHALL be halted and an a `409` `DUPLICATE_REJECTED` returned to the consumer
 
   - and is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
