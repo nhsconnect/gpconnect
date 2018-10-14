@@ -77,41 +77,25 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 #### Payload request body ####
 
-The following data-elements are mandatory (i.e. data SHALL be present):
+The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) resource conforming to the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) profile, with a single parameter of `registerPatient` containing a `Patient` resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.  This is the patient to be registered.
 
-- A `registerPatient` parameter containing a patient resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile. This is the patient who you want to be registered. Within this resource: 
+Within the `Patient` resource: 
 
-	- The NHS Number and Date of Birth as a minimum SHALL be populated to enable a provider to perform a PDS trace.
-	- Where the gender, name or birth date are available these SHALL also be supplied (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
-	- The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name registered on the spine which is returned by a PDS lookup for the patient.
+- The following fields SHALL be populated to allow the providing system to verify the patient's identity on PDS:
+  - `identifier` with the patient's NHS number
+  - `birthDate`
+  - `name` including `family` and `given`, with the `use` element set to `official`
 
-The following data-elements MAY be populated by the consumer:
+- The following fields MAY be populated in order to record temporary details known to the consuming system:
+  - `telecom` with temporary telecom details, with the `use` element set to `temp`.  No more than one instance of this SHALL be populated.
+  - `address` with temporary address details, with the `use` element set to `temp`.  No more than one instance of this SHALL be populated.
 
-- Within the patient resource of the `registerPatient` parameter:
-  - the `telecom` element MAY be populated with temporary telecom details:
-	- the consumer SHALL only include telecom elements which have a `telecom.use` of type `temp`
-	- the consumer SHALL only include one instance of a telecom element for each `telecom.use` type
-	
-  - the `address` element MAY be populated with temporary address details:
-	- the consumer SHALL only include address details which have an `address.use` of type `temp`
-	- the consumer SHALL only include one instance of a address element for each `address.use` type
+- The following field MAY be populated by appointment booking consumers:
+    - the `preferredBranchSurgery` within the `registrationDetails` extension, with a location reference where available and relevant to the registration.
   
-  - the `preferredBranchSurgery` within the `RegistrationDetails` extension element of the patient resource MAY be populated with a location reference where available and relevant to the registration.
-  
-    For example, when the consumer is using the patient registration as part of an appointment booking they will have previously selected a slot which will be associated with a location. The consumer may use this location as the preferred branch surgery within the patient registration.
+      When a consumer is using the patient registration as part of an appointment booking they will have previously selected a Slot which will be associated with a Location. The consumer may use this location as the preferred branch surgery within the patient registration.
 
-The following data elements MUST NOT be populated by the consumer:
-- `ethnicCategory`, `religiousAffiliation`, `patient-cadavericDonor`, `maritalStatus`.
-	
-The following data-elements SHALL be processed by the provider:
-
-- When a consumer has sent temporary telecom and/or temporary address details within the patient resource the provider SHALL store (and subsequently send) these details as temporary telecom and temporary address details within the patient record on the provider system, in addition to any telecom or address details obtained through the PDS trace done as part of the patient registration. The provider SHALL not push/synchronise these temporary telecom or temporary address details with the spine.
-
-The request payload is a set of [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) conforming to the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) profiled `OperationDefinition`.
-
-{% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
-
-{% include important.html content="Provider systems SHALL register the new `Patient` resource as a temporary patient record once a PDS trace has been confirmed." %}
+- **All other fields MUST NOT be populated.**
 
 On the wire a JSON serialised `$gpc.registerpatient` request would look something like the following:
 
@@ -128,6 +112,19 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
           ]
         },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+            "extension": [
+              {
+                "url": "preferredBranchSurgery",
+                "valueReference": {
+                  "reference": "Location/14"
+                }
+              }
+            ]
+          }
+        ],
         "identifier": [
           {
             "extension": [
@@ -189,13 +186,82 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 }
 ```
 
+### Provider system registration handling requirements ###
+
+The following registration handling requirements MUST be implemented by providers, however due to provider system variances the implemented flow MAY deviate where required to accomodate these:
+
+#### PDS registration requirements
+
+Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record from PDS using NHS number, and then:
+
+- **Verify the patient's NHS number according to the following rules**:
+
+  - The NHS number within the request is considered verified if:
+    - The NHS number is found on PDS and the date of birth in the request exactly matches the date of birth held on PDS
+    - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the family name match and the initial character of the forename match that held for the record on PDS.
+  - If both of the above checks fail to find a match then the NHS number is treated as not verified
+
+- **Check that the patient is not recorded as deceased on PDS**
+
+- **Check that patient's PDS record does not have any of the following PDS flags**:
+  - Invalid
+  - Sensitive
+  - Superseded
+
+- **If any of the following conditions occur, the registration MUST be halted and an error returned to the consuming system**:
+
+  - If the patient is recorded as deceased
+  - If the patient has a flagged status shown above
+  - If the patient's record could not be found on PDS
+  - If the connection to PDS could not be made
+
+#### Local system registration requirements
+
+Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using the same identity check shown in the PDS requirements above, and then:
+
+- **If a matching patient record IS found**:
+  
+  - and is **active** (i.e. a currently registered patient, of any registration type):
+
+    - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
+      - The providing system SHALL not push/synchronise these temporary telecom or temporary address details with Spine or NHAIS.
+
+    - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
+
+  - and is **inactive** (i.e. a patient who's registration has lapsed of any registration type):
+
+    - The patient's record SHOULD be re-activated as a **temporary** patient
+
+    - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
+      - The providing system SHALL not push/synchronise these temporary telecom or temporary address details with Spine or NHAIS.
+
+    - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
+
+  - AND is recorded as **deceased**:
+
+    - The registration MUST be halted and an error returned to the consuming system
+
+- **If a matching patient record IS NOT found**:
+
+  - A new **temporary** patient record SHALL be created:
+
+    - using the demographic details returned from the PDS record
+    - and temporary address or telecom details sent by the consuming system (where provided), and marked as *temporary* address and telecom details
+      - The providing system SHALL not push/synchronise these temporary telecom or temporary address details with Spine or NHAIS.
+    - the patient's preferred branch surgery SHOULD be set if provided by the consumer
+    - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
+
+{% include warning.html content="Providing systems MUST NEVER create or re-activate a patient as a GMS (regular) patient.  Doing so would adversely affect national systems and interfere with the practice's caseload." %}
+
 #### Error Handling ####
 
 The Provider system SHALL return an error if:
 
-- the `registerPatient` is invalid.
-- the `registerPatient` doesn't include a single active NHS Number identifier.
-- the `registerPatient` demographics don't match that of the triggered PDS trace.
+- the `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details (see above)
+- the NHS number could not be found on PDS, or verified against a PDS record (see above)
+- the PDS record contains an invalid, sensitive or superseded flag
+- the patient is marked as deceased on PDS, or on the provider system
+- PDS is unavailable, or could not be contacted
 
 Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
@@ -219,11 +285,13 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `Patient.meta.profile` element of the returned resources.
-- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) including the following resources 
-	- `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) containing details of the newly registered or re-activated patient including any details sourced from PDS as well as consumer-sent temporary contact (telecom and/or address) details.
-- SHALL populate the `registrationDetails` extension within the returned patient resource. Within the "registrationDetails" extension:
-  - the `preferredBranchSurgery` SHALL be populated, with either the preferred branch surgery that may have been passed in by the consumer or a location reference which represents the physical location of the main GP Practice of the organization where the "Register a patient" request has been targeted.
-  - the "registrationType" SHALL be populated with a value from the valueset which matches the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and more detail around the specific type of registration SHOULD be added using the "text" element of the CodeableConcept.
+- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1):
+
+  The patient SHALL contain details of the newly registered or re-activated patient including details sourced from PDS as well as consumer-sent temporary contact (telecom and/or address) details, AND:
+
+  - SHALL populate the sub-elements of the `registrationDetails` extension:
+    - `preferredBranchSurgery` with either the preferred branch surgery location passed in by the consumer or main surgery location
+    - `registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
 - SHALL NOT populate `ethnicCategory`, `religiousAffiliation`, `patient-cadavericDonor`, `maritalStatus`.
 
 
