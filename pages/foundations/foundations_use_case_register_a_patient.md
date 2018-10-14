@@ -398,12 +398,24 @@ Provider systems:
           {
             "use": "temp",
             "type": "physical",
-            "text": "Trevelyan Square, Boar Ln, Leeds, LS1 6AE"
+            "line": [
+              "Trevelyan Square",
+              "Boar Ln"
+            ],
+            "city": "Leeds",
+            "district": "West Yorkshire",
+            "postalCode": "LS1 6AE"
           },
           {
             "use": "home",
             "type": "physical",
-            "text": "Bridgewater Place, 1 Water Ln, Leeds, LS11 5RU"
+            "line": [
+              "Bridgewater Place",
+              "1 Water Ln"
+            ],
+            "city": "Leeds",
+            "district": "West Yorkshire",
+            "postalCode": "LS11 5RU"
           }
         ]
       }
