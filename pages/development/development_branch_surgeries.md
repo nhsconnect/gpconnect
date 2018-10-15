@@ -17,7 +17,7 @@ In GP Connect, a GP practice is represented by an `Organization` resource, and t
 
 A GP practice operating multiple surgeries usually designates one of the surgeries as a *main* surgery and the rest as *branch* surgeries.  The designation of surgeries as *main* and *branch* doesn't have significant impact on GP Connect, other than the main surgery normally having the same name and address as the GP practice, and the branch surgeries having different names and addresses.
 
-When a patient registers at a GP practice with multiple surgeries, they are assigned a 'preferred' surgery, even though the patient is formally registered to the GP practice (organisation) as a whole, and usually can attend appointments at any of the surgeries (locations).
+When a patient registers at a GP practice with multiple surgeries, they are assigned a 'preferred' surgery, even though the patient is formally registered to the GP practice (organisation) as a whole, and can usually attend appointments at any of the surgeries (locations).
 
 ### ODS codes
 
@@ -45,10 +45,10 @@ The following query to read a `Patient` resource is being sent to the patient's 
 
 There are no implications for Access Record because the patient's record is requested from the GP practice as a whole and not from an individual surgery.
 
-### Implications for Appointment booking
+### Implications for Appointment Management
 
 Because a GP practice's appointment book can hold appointments across multiple surgeries (locations), it is important to distinguish which surgery an appointment is held at, to allow the patient to decide where they wish to attend.
 
 In order to do this, every `Schedule` resource has an associated `Location` resource which represents the surgery that the appointment will take place at, including the surgery's name, address and contact details.
 
-To retrieve the patient's preferred surgery (assigned when they registered with the practice), a reference to the surgery `Location` is held in `Patient.registrationDetails.preferredBranchSurgery`.  This can be used to identify appointments at the patient's preferred surgery by comparing it's logical id with that of the `Location` resource referenced from a `Schedule`.
+To retrieve the patient's preferred surgery (assigned when they registered with the practice), a reference to the surgery `Location` is held in `Patient.registrationDetails.preferredBranchSurgery`.  This can be used to identify  appointment slots at the patient's preferred surgery by comparing its logical id with that of the `Location` resource referenced from the `Schedule.actor` element.
