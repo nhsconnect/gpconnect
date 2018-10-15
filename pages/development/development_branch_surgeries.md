@@ -35,7 +35,7 @@ The ODS code stored in a patient's PDS record represents the GP practice as a wh
 
 GP Connect uses ODS codes in order to route requests to a GP practice by including the practice's ODS code in the URL (see [Service Root URL](development_general_api_guidance.html#service-root-url)).
 
-Therefore a GP Connect request is sent, it is sent to a practice as a whole, and not to a specific surgery.
+Therefore when a GP Connect request is sent, it is sent to a practice as a whole, and not to a specific surgery.
 
 The following query to read a `Patient` resource is being sent to the patient's GP practice identified by the ODS code `D82809`:
 
