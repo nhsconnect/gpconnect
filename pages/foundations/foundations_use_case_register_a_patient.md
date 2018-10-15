@@ -207,13 +207,6 @@ Before registering the patient record on the local system, the provider SHALL re
   - Sensitive
   - Superseded
 
-- **If any of the following conditions occur, the registration MUST be halted and an error returned to the consuming system**:
-
-  - the patient is recorded as deceased
-  - the patient's record has a PDS flag shown above
-  - the patient's record could not be found on PDS
-  - the connection to PDS could not be made
-
 #### Local system registration requirements
 
 Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using NHS number, and then:
@@ -231,7 +224,7 @@ Before registering the patient record on the local system, the provider SHALL ch
       {% include note.html content="Provider systems MAY create a new **temporary** record in this instance but only in line with existing system handling for re-activation of inactive records for temporary patients." %}
 
     - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
-      - The provider system SHALL not push/synchronise these temporary telecom or temporary address details with PDS.
+      - The provider system SHALL NOT push/synchronise these temporary telecom or temporary address details with PDS.
 
     - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
 
@@ -245,7 +238,7 @@ Before registering the patient record on the local system, the provider SHALL ch
 
     - using the demographic details returned from the PDS record
     - and temporary address or telecom details sent by the consuming system (where provided), and marked as *temporary* address and telecom details
-      - The provider system SHALL not push/synchronise these temporary telecom or temporary address details to PDS.
+      - The provider system SHALL NOT push/synchronise these temporary telecom or temporary address details to PDS.
     - the patient's preferred branch surgery SHOULD be set if provided by the consumer
     - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
 
