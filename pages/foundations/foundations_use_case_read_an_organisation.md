@@ -80,6 +80,8 @@ Provider systems:
 - SHALL include the URI of the `CareConnect-GPC-Organization-1` profile StructureDefinition in the `Organization.meta.profile` element of the returned `Organization` resource.
 - SHALL include the `versionId` of the current version of the `Organization` resource.
 - SHALL include all relevant business `identifier` details (i.e. ODS Code) for the `Organization` resource.
+- SHALL populate `name`
+- SHALL populate `address` and `telecom` where available
 
 ```json
 {
@@ -97,7 +99,21 @@ Provider systems:
       "value": "O001"
     }
   ],
-  "name": "Honley GP Practice"
+  "name": "The Trevelyan Practice",
+  "address": {
+    "line": [
+      "Trevelyan Square",
+      "Boar Ln",
+    ],
+    "city": "Leeds",
+    "district": "West Yorkshire",
+    "postalCode": "LS1 6AE"
+  },
+  "telecom": {
+    "system": "phone",
+    "value": "03003035678",
+    "use": "work"
+  }
 }
 ```
 
