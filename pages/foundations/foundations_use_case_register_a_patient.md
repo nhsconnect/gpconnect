@@ -90,11 +90,6 @@ Within the `Patient` resource:
   - `telecom` with temporary telecom details, with the `use` element set to `temp`.  No more than one instance of this SHALL be populated.
   - `address` with temporary address details, with the `use` element set to `temp`.  No more than one instance of this SHALL be populated.
 
-- The following field MAY be populated by appointment booking consumers:
-    - the `preferredBranchSurgery` within the `registrationDetails` extension, with a location reference where available and relevant to the registration.
-  
-      When a consumer is using the patient registration as part of an appointment booking they will have previously selected a Slot which will be associated with a Location. The consumer may use this location as the preferred branch surgery within the patient registration.
-
 - **All other fields MUST NOT be populated.**
 
 On the wire a JSON serialised `$gpc.registerpatient` request would look something like the following:
@@ -112,19 +107,6 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
           ]
         },
-        "extension": [
-          {
-            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
-            "extension": [
-              {
-                "url": "preferredBranchSurgery",
-                "valueReference": {
-                  "reference": "Location/14"
-                }
-              }
-            ]
-          }
-        ],
         "identifier": [
           {
             "extension": [
@@ -239,7 +221,6 @@ Before registering the patient record on the local system, the provider SHALL ch
     - using the demographic details returned from the PDS record
     - and temporary address or telecom details sent by the consuming system (where provided), and marked as *temporary* address and telecom details
       - The provider system SHALL NOT push/synchronise these temporary telecom or temporary address details to PDS.
-    - the patient's preferred branch surgery SHOULD be set if provided by the consumer
     - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
 
 {% include warning.html content="Provider systems MUST NOT create or re-activate a patient as a GMS (regular) patient.  Doing so would adversely affect national systems and interfere with the practice's caseload." %}
@@ -282,8 +263,8 @@ Provider systems:
   The patient SHALL contain details of the newly registered or re-activated patient including details sourced from PDS as well as consumer-sent temporary contact (telecom and/or address) details, AND:
 
   - SHALL populate the sub-elements of the `registrationDetails` extension:
-    - `preferredBranchSurgery` with either the preferred branch surgery location passed in by the consumer or main surgery location
     - `registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
+
 - SHALL NOT populate `ethnicCategory`, `religiousAffiliation`, `patient-cadavericDonor`, `maritalStatus`.
 
 
@@ -327,17 +308,6 @@ Provider systems:
                     }
                   ]
                 }
-              },
-              {
-                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
-                "extension": [
-                  {
-                    "url": "preferredBranchSurgery",
-                    "valueReference": {
-                      "reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
-                    }
-                  }
-                ]
               }
             ]
           }
