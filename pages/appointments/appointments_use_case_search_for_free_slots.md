@@ -18,7 +18,6 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 - GP Connect utilises TLS Mutual Authentication for system level authorization
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
-
 ## Search parameters ##
 
 Provider systems SHALL support the following search parameters:
@@ -39,29 +38,32 @@ Provider systems SHALL support the following include parameters:
 
 | Name | Description | Paths |
 |---|---|---|
-| `_include=Slot:schedule` | Include Schedule Resources referenced within the returned Slot Resources | `Slot.schedule` |
-| `_include:recurse= Schedule:actor:Practitioner` | Include Practitioner Resources referenced within the returned Schedule Resources | `Schedule.actor:Practitioner` |
-| `_include:recurse= Schedule:actor:Location` | Include Location Resources referenced within the returned Schedule Resources | `Schedule.actor:Location` |
+| `_include=Slot:schedule` | Include `Schedule` resources referenced within the returned `Slot` Resources | `Slot.schedule` |
+| `_include:recurse= Schedule:actor:Practitioner` | Include `Practitioner` resources referenced within the returned `Schedule` resources | `Schedule.actor:Practitioner` |
+| `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
+| `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
+| `_include:recurse= Location:managingOrganization` | Include `Organization` resources referenced within the returned `Location` resources | `Location.managingOrganization` |
 
 
 The following parameters SHALL be included in the request:
 
 - The `start` parameter SHALL only be included once in the request.
-- The `start` parameter SHALL be supplied with the `ge` search prefix. For example, 'start=ge2017-09-22', which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
+- The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
 - The `end` parameter SHALL only be included once in the request.
-- The `end` parameter SHALL be supplied with the `le` search prefix. For example, 'end=le2017-09-26', which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
+- The `end` parameter SHALL be supplied with the `le` search prefix. For example, `end=le2017-09-26`, which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
   
   ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
 
 - `status=free` specifies that only free slots will be returned. Note: the slot status value of `free` SHALL be specified, other slot status values are not permitted.
 
-- `_include=Slot:schedule` specifies that associated schedule resources are returned.
+- `_include=Slot:schedule` specifies that associated `Schedule` resources are returned.
 
 
 The following parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
 
 - `_include:recurse=Schedule:actor:Practitioner`
 - `_include:recurse=Schedule:actor:Location`
+- `_include:recurse=Location:managingOrganization`
 
 {% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore, slots found in the past cannot be used to book an appointment." %}
 
@@ -76,15 +78,15 @@ In order for providers to return the appropriate slots for the consumer, the con
 | `https://fhir.nhs.uk/Id/ods-organization-code` | The booking organisation ODS code, e.g. `A11111`|
 | `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | The booking organisation type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1), e.g. `urgent-care` |
 
-Where searchFilters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
+Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
 
 ## Search for free slots on the wire ##
 
-On the wire, a `Search for free slots` request would look something like one of the following:
+On the wire, a Search for free slots request would look something like one of the following:
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ```http
@@ -115,6 +117,7 @@ GET /Slot?[start={search_prefix}start_date]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+          {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
@@ -129,6 +132,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+          {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
@@ -174,14 +178,14 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of "free" slot details.
 - SHALL include the free `Slot` details for the organisation which have a `status` of "free" and fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
 - SHALL only include the free slots which are bookable according to related defined 'Embargo/Booking Window' rules 
-- SHALL only include the free slots which match the Search Filter parameters of Booking Organisation (ODS Code) and/or Type
+- SHALL only include the free slots which match the search filter parameters of Booking Organisation (ODS Code) and/or Type
 - SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
  
-- The response `Bundle` SHALL only contain `Schedule`, `Practitioner` and `Location` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
+- The response `Bundle` SHALL contain `Schedule`, `Practitioner`, `Location` and `Organization` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
 
   - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  See [Branch surgeries](development_branch_surgeries.html) for more details. The `Location` resource SHALL contain the surgery's `name`, `address`, `telecom`, and a reference to the GP practice `Organization` in the `managingOrganization` element.
   
-  - SHALL include `Practitioner` and `Location` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` parameters.
+  - SHALL include `Practitioner`, `Location` and `Organization` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` and/or `_include:recurse=Location:managingOrganization` parameters.
 
 - SHALL manage slot `start` and `end` times to indicate which slots can be considered adjacent and therefore be booked against a single appointment as part of a multi slot appointment booking. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
 
@@ -197,98 +201,7 @@ Provider systems:
   "resourceType": "Bundle",
   "type": "searchset",
   "entry": [
-    {
-      "fullUrl": "Schedule/14",
-      "resource": {
-        "resourceType": "Schedule",
-        "id": "14",
-        "meta": {
-          "versionId": "1469444400000",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"
-          ]
-        },
-        "extension": [
-          {
-            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
-            "valueCodeableConcept": {
-              "coding": [
-                {
-                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
-                  "code": "R0260",
-                  "display": "General Medical Practitioner"
-                }
-              ]
-            }
-          }
-        ],
-        "actor": [
-          {
-            "reference": "Location/17"
-          },
-          {
-            "reference": "Practitioner/2"
-          }
-        ],
-        "comment": "Schedule 1 for general appointments"
-      }
-    },
-    {
-      "fullUrl": "Location/17",
-      "resource": {
-        "resourceType": "Location",
-        "id": "17",
-        "meta": {
-          "versionId": "636064088100870233",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
-          ]
-        },
-        "name": "Trevelyan surgery",
-        "address": {
-          "line": [
-            "Trevelyan Square",
-            "Boar Ln",
-            "Leeds"
-          ],
-          "postalCode": "LS1 6AE"
-        },
-        "telecom": {
-          "system": "phone",
-          "value": "03003035678",
-          "use": "work"
-        },
-        "managingOrganization": {
-          "reference": "Organization/14"
-        }
-      }
-    },
-    {
-      "fullUrl": "Practitioner/2",
-      "resource": {
-        "resourceType": "Practitioner",
-        "id": "2",
-        "meta": {
-          "versionId": "636064088099800115",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
-          ]
-        },
-        "identifier": [
-          {
-            "system": "https://fhir.nhs.uk/Id/sds-user-id",
-            "value": "S001"
-          }
-        ],
-        "name": {
-          "family": [ "Black" ],
-          "given": [ "Sarah" ],
-          "prefix": [ "Mrs" ]
-        },
-        "gender": "female"
-      }
-    },
-    {
+        {
       "fullUrl": "Slot/1584",
       "resource": {
         "resourceType": "Slot",
@@ -336,6 +249,129 @@ Provider systems:
         "status": "free",
         "start": "2016-08-15T12:00:00.000+01:00",
         "end": "2016-08-15T12:29:59.000+01:00"
+      }
+    },
+    {
+      "fullUrl": "Schedule/14",
+      "resource": {
+        "resourceType": "Schedule",
+        "id": "14",
+        "meta": {
+          "versionId": "1469444400000",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          }
+        ],
+        "actor": [
+          {
+            "reference": "Location/17"
+          },
+          {
+            "reference": "Practitioner/2"
+          }
+        ],
+        "comment": "Schedule 1 for general appointments"
+      }
+    },
+    {
+      "fullUrl": "Location/17",
+      "resource": {
+        "resourceType": "Location",
+        "id": "17",
+        "meta": {
+          "versionId": "636064088100870233",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+          ]
+        },
+        "name": "The Trevelyan Practice",
+        "address": {
+          "line": [
+            "Trevelyan Square",
+            "Boar Ln",
+            "Leeds"
+          ],
+          "postalCode": "LS1 6AE"
+        },
+        "telecom": {
+          "system": "phone",
+          "value": "03003035678",
+          "use": "work"
+        },
+        "managingOrganization": {
+          "reference": "Organization/14"
+        }
+      }
+    },
+    {
+      "fullUrl": "Practitioner/2",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "2",
+        "meta": {
+          "versionId": "636064088099800115",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/sds-user-id",
+            "value": "S001"
+          }
+        ],
+        "name": {
+          "family": [ "Black" ],
+          "given": [ "Sarah" ],
+          "prefix": [ "Mrs" ]
+        },
+        "gender": "female"
+      }
+    },
+    {
+      "fullUrl": "Organization/14",
+      "resourceType": "Organization",
+      "id": "14",
+      "meta": {
+        "versionId": "636064088098730113",
+        "profile": [
+          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+        ]
+      },
+      "identifier": [
+        {
+          "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+          "value": "A12345"
+        }
+      ],
+      "name": "The Trevelyan Practice",
+      "address": {
+        "line": [
+          "Trevelyan Square",
+          "Boar Ln",
+        ],
+        "city": "Leeds",
+        "district": "West Yorkshire",
+        "postalCode": "LS1 6AE"
+      },
+      "telecom": {
+        "system": "phone",
+        "value": "03003035678",
+        "use": "work"
       }
     }
   ]
