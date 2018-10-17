@@ -81,14 +81,20 @@ The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.h
 
 Within the `Patient` resource: 
 
-- The following fields SHALL be populated to allow the provider system to verify the patient's identity on PDS:
+- The following fields SHALL be populated as a minimum:
   - `identifier` with the patient's NHS number
-  - `birthDate`
   - `name` including `family` and `given`, with the `use` element set to `official`
+  - `birthDate`
+
+- The following fields SHOULD be populated:
+  - `gender`
+  - `address` with home address details, with `use` set to `home`. No more than one instance of this SHALL be populated.
+  - `telecom` with telephone details for the patient, with `use` of `home`, `work` or `mobile`, and `system` of `phone`. No more than one instance of each `use` SHALL be populated.
+  - `telecom` with the email address for the patient if available, with `system` of `email`. No more than one instance of this SHALL be populated.
 
 - The following fields MAY be populated in order to record temporary details known to the consuming system:
-  - `telecom` with temporary telecom details, with the `use` element set to `temp`.  No more than one instance of this SHALL be populated.
-  - `address` with temporary address details, with the `use` element set to `temp`.  No more than one instance of this SHALL be populated.
+  - `telecom` with temporary telephone details, with the `use` of `temp` and `system` of `phone`.  No more than one instance of this SHALL be populated.
+  - `address` with temporary address details, with the `use` of `temp`.  No more than one instance of this SHALL be populated.
 
 - **All other fields MUST NOT be populated.**
 
@@ -144,21 +150,27 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
           {
             "system": "phone",
             "value": "01454587554",
-            "use": "temp"
+            "use": "home"
+          },
+          {
+            "system": "phone",
+            "value": "07777111222",
+            "use": "mobile"
           }
         ],
+        "gender": "female",
         "birthDate": "1952-05-31",
         "address": [
           {
-            "use": "temp",
+            "use": "home",
             "type": "physical",
             "line": [
-              "Trevelyan Square",
-              "Boar Ln"
+              "1 Withings Lane",
+              "Shadwell"
             ],
             "city": "Leeds",
             "district": "West Yorkshire",
-            "postalCode": "LS1 6AE"
+            "postalCode": "LS18 1AE"
           }
         ]
       }
@@ -167,11 +179,11 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 }
 ```
 
-### Provider system registration handling requirements ###
+### Provider system registration requirements ###
 
-The following registration handling requirements MUST be implemented by providers, however due to provider system variances the implemented flow MAY deviate where required to accomodate these:
+{% include important.html content="The following registration requirements MUST be implemented by providers, however due to provider system variances the implemented flow MAY deviate where required to accomodate these and should be documented accordingly." %}
 
-#### PDS registration requirements
+#### PDS requirements ####
 
 Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record from PDS using NHS number, and then:
 
@@ -189,48 +201,54 @@ Before registering the patient record on the local system, the provider SHALL re
   - Sensitive
   - Superseded
 
-#### Local system registration requirements
+#### Duplicate record prevention
 
 Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using NHS number, and then:
 
 - **If a matching patient record IS found**:
-  
+
   - and is **active** (i.e. a currently registered patient, of any registration type):
 
     - The registration SHALL be halted and an a `409` `DUPLICATE_REJECTED` returned to the consumer
 
   - and is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
-    - The patient's record SHOULD be re-activated as a **temporary** patient
+    - If the local record's NHS number has not been traced or verified, it SHALL be verified using the [rules shown above](foundations_use_case_register_a_patient.html#pds-requirements)
+    - The patient record SHALL be re-activated as a **temporary** patient 
+    - Follow the [Local registration requirements](foundations_use_case_register_a_patient.html#local-registration-requirements) when updating the patient's demographics
 
-      {% include note.html content="Provider systems MAY create a new **temporary** record in this instance but only in line with existing system handling for re-activation of inactive records for temporary patients." %}
+  - and is recorded as **deceased**:
 
-    - Temporary address or telecom details sent by the consuming system (where provided) SHALL be added to the record, and marked as *temporary* address and telecom details
-      - The provider system SHALL NOT push/synchronise these temporary telecom or temporary address details with PDS.
-
-    - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
-
-  - AND is recorded as **deceased**:
-
-    - The registration MUST be halted and an error returned to the consuming system
+    - The registration SHALL be halted and an error returned to the consuming system
 
 - **If a matching patient record IS NOT found**:
 
-  - A new **temporary** patient record SHALL be created:
-
-    - using the demographic details returned from the PDS record
-    - and temporary address or telecom details sent by the consuming system (where provided), and marked as *temporary* address and telecom details
-      - The provider system SHALL NOT push/synchronise these temporary telecom or temporary address details to PDS.
-    - the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below.
+  - A new **temporary** patient record SHALL be created
+  - Follow the [Local registration requirements](foundations_use_case_register_a_patient.html#local-registration-requirements) when creating the patient record
 
 {% include warning.html content="Provider systems MUST NOT create or re-activate a patient as a GMS (regular) patient.  Doing so would adversely affect national systems and interfere with the practice's caseload." %}
+
+#### Local registration requirements
+
+- **The patient record SHOULD be created or updated using**:
+
+  - demographic details sent by the consumer
+  - supplemented by demographics retrieved from PDS where elements were omitted by the consumer
+  - temporary address or temporary telecom details sent by the consumer SHOULD be marked with an end date aligned with the expiry date of the temporary record.
+
+- **If the provider system synchronises temporary patient records with PDS**:
+  - an update SHALL NOT automatically be sent to PDS.
+  - PDS synchronisation SHALL occur where a user is present during the next routine synchronisation event (for example, a receptionist opening the patient's record).
+  - temporary address or temporary telecom details SHOULD be marked with an end date.
+
+- **the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below**.
 
 #### Error Handling ####
 
 The Provider system SHALL return an error if:
 
-- the `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details (see above)
-- the NHS number could not be found on PDS, or verified against a PDS record (see above)
+- the `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details
+- the NHS number could not be found on PDS, or verified against a PDS record
 - the PDS record contains an invalid, sensitive or superseded flag
 - the patient is marked as deceased on PDS, or on the provider system
 - PDS is unavailable, or could not be contacted
@@ -260,12 +278,12 @@ Provider systems:
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `Patient.meta.profile` element of the returned resources.
 - SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1):
 
-  The patient SHALL contain details of the newly registered or re-activated patient including details sourced from PDS as well as consumer-sent temporary contact (telecom and/or address) details, AND:
+  The patient SHALL contain details of the newly registered or re-activated patient, AND:
 
   - SHALL populate the sub-elements of the `registrationDetails` extension:
     - `registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
 
-- SHALL NOT populate `ethnicCategory`, `religiousAffiliation`, `patient-cadavericDonor`, `maritalStatus`.
+  - SHALL NOT populate `ethnicCategory`, `religiousAffiliation`, `patient-cadavericDonor`, `maritalStatus`.
 
 
 ```json
@@ -349,39 +367,28 @@ Provider systems:
         "telecom": [
           {
             "system": "phone",
-            "value": "01234567891",
-            "use": "mobile"
+            "value": "01454587554",
+            "use": "home"
           },
           {
             "system": "phone",
-            "value": "01454587554",
-            "use": "temp"
+            "value": "07777111222",
+            "use": "mobile"
           }
         ],
         "gender": "female",
         "birthDate": "1952-05-31",
         "address": [
           {
-            "use": "temp",
-            "type": "physical",
-            "line": [
-              "Trevelyan Square",
-              "Boar Ln"
-            ],
-            "city": "Leeds",
-            "district": "West Yorkshire",
-            "postalCode": "LS1 6AE"
-          },
-          {
             "use": "home",
             "type": "physical",
             "line": [
-              "Bridgewater Place",
-              "1 Water Ln"
+              "1 Withings Lane",
+              "Shadwell"
             ],
             "city": "Leeds",
             "district": "West Yorkshire",
-            "postalCode": "LS11 5RU"
+            "postalCode": "LS18 1AE"
           }
         ]
       }
