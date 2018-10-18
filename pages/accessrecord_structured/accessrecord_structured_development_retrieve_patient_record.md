@@ -22,8 +22,8 @@ Retrieve a patient's record in FHIR&reg; structured format from a GP practice.
 
 The consumer system:
 
-- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- **MUST** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **MUST** have previously traced the patient's NHS Number using the [Personal Demographics Service](https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
 
@@ -47,7 +47,7 @@ POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.g
 
 #### Request headers ####
 
-Consumers **SHALL** include the following additional HTTP request headers:
+Consumers **MUST** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -126,11 +126,10 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>
         Restrict medication returned to that within the date period specified. Rules:
         <ul>
-	        <li><code>Period.start</code> and <code>Period.end</code> <b>SHALL</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
+	        <li><code>Period.start</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
 	        <li>If the <code>medicationDatePeriod</code> is not specified, all medication will be returned.</li>
 	        <li>If <code>Period.start</code> is populated, medication on or after the start date will be returned.</li>
-	        <li>If <code>Period.end</code> element is populated, medication on or before the end date will be returned.</li>
-	        <li>If <code>Period.start</code> and <code>Period.end</code> are populated, medication between or on the start and end dates will be returned.</li>
+	        <li><code>Period.end</code> <b>MUST NOT</b> be populated.</li>
     	</ul>
     	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
@@ -171,8 +170,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
 		{
 			"name": "medicationDatePeriod",
 			"valuePeriod": {
-				"start": "2017-06-04",
-				"end": "2018-06-19"
+				"start": "2017-06-04"
 			}
 		}]
 	}]
@@ -181,7 +179,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 #### Error handling ####
 
-The provider system **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
 Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
@@ -191,8 +189,8 @@ Errors that may be encountered include:
 - the `patientNHSNumber` is invalid, for example it fails format or check digit tests
 - the `patientNHSNumber` has not been traced or cross-checked on PDS in the providing system
 - a patient could not be found matching the `patientNHSNumber` provided
-- an invalid `medicationDatePeriod` range is requested (that is, end date < start date)
-- `medicationDatePeriod.start` or `medicationDatePeriod.end` contain a partial date, or have a value containing a time or offset component
+- the `medicationDatePeriod.end` part parameter is populated
+- the `medicationDatePeriod.start` part parameter contains a partial date, or has a value containing a time or offset component
 - the `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter
 - the `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter
 - the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition`
@@ -214,7 +212,7 @@ Content-Length: 1464
 
 #### Payload response body ####
 
-Provider systems **SHALL**:
+Provider systems **MUST**:
 
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
 - return a `Bundle` conforming to the [`GPConnect-StructuredRecord-Bundle-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1) profile definition
@@ -230,13 +228,13 @@ Provider systems **SHOULD**:
 
 - provide a consistent order to elements within the `Bundle` resource.  It is recommended to follow the order described in the [Bundle population illustrated](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) diagram.
 
-Consumers systems **SHALL NOT**:
+Consumers systems **MUST NOT**:
 
 - rely on order or index of elements within the `Bundle` resource in order to parse encapsulated resources.
 
 ##### Allergies #####
 
-Provider systems **SHALL** include the following in the response `Bundle`:
+Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeAllergies` parameter is not set:
 
@@ -258,7 +256,7 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
 ##### Medications #####
 
-Provider systems **SHALL** include the following in the response `Bundle`:
+Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeMedication` parameter is not set:
 
@@ -266,15 +264,16 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
 - when the `includeMedication` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
+  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
-  - when the `medicationDatePeriod` parameter is set, the medication summary data **SHALL** be restricted to that whose date falls within (inclusive), or overlaps (in the case of a range), the `Period.start` and `Period.end`. Where only a start date is supplied, the medication summary data **SHALL** be restricted to that whose date is on or after `Period.start`. Where only and end date is supplied, the medication summary data **SHALL** be restricted to that whose date is on or before `Period.start`. The date used shall be:
-
-    1 - `effectiveDate` or `effectivePeriod`
-      - `effectiveStartDate` - the date the prescription (or cycle of prescriptions) is expected to start. For repeat and repeat dispensed prescriptions this is the period covered by the entire cycle of planned issues
-      - `effectiveEndDate` - the date the prescription (or cycle of prescriptions) is expected to finish. For repeat and repeat dispensed prescriptions this is the period covered by the entire cycle of issue. Where this date is not supplied for a repeat dispensed prescription then they are considered ongoing until a date is supplied
-    
-    2 - `dateAsserted`, where the medication does not have an `effectiveDate` or `effectivePeriod`
+  - when the `medicationDatePeriod` parameter is set, the medication summary data **MUST** return all medications which are active on or after the the `Period.start`. The `Period.start` **MUST** be on or before the current date. A medication is considered active between its `effectiveStartDate` and `effectiveEndDate` (inclusive).
+  
+	  - when a medication does not have an `effectiveEndDate`: 
+		- An acute medication is considered active on its `effectiveStartDate` only
+		- A repeat medication is considered on-going and is active from its `effectiveStartDate`
+		- when a medication is not defined as an acute or repeat it is treated as repeat for search purposes
+	  - when a medication does not have an `effectiveStartDate` 
+		- The `dateAsserted` is used in its place
 
   - and when the `includePrescriptionIssues` parameter is set to `false`:
 
@@ -284,15 +283,75 @@ Provider systems **SHALL** include the following in the response `Bundle`:
 
     - [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources with an `intent` of `order` representing the patient's prescription issues, for the above medication summary data
 
-- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) and [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources
+- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) and &nbsp; [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources
 
 <br/>
+<br/>
+
+
+#### Example medication date filter scenarios ####
+
+The scenarios below represent how a selection of acute and repeat medications are returned based on the search filter applied. Each scenario has a different search date. Medications that have been greyed out are not returned in the response.
+
+<ul id="profileTabs" class="nav nav-tabs">
+    <li class="active"><a href="#scenario1" data-toggle="tab">Scenario 1</a></li>
+    <li><a href="#scenario2" data-toggle="tab">Scenario 2</a></li>
+    <li><a href="#scenario3" data-toggle="tab">Scenario 3</a></li>
+	<li><a href="#scenario4" data-toggle="tab">Scenario 4</a></li>
+</ul>
+  <div class="tab-content">
+<div role="tabpanel" class="tab-pane active" id="scenario1">
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Search date:</b> <code>15/01/2018</code></td>
+	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+  </tr>
+</table>
+
+{% include image.html file="access_structured/data_filter_scenario1.jpg" url="images/access_structured/data_filter_scenario1.jpg"  max-width="100" caption="click image for full size view" %}
+</div>
+
+<div role="tabpanel" class="tab-pane" id="scenario2">
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Search date:</b> <code>01/03/2018</code></td>
+	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+  </tr>
+</table>
+
+{% include image.html file="access_structured/data_filter_scenario2.jpg" url="images/access_structured/data_filter_scenario2.jpg"  max-width="100" caption="click image for full size view" %}
+</div>
+
+<div role="tabpanel" class="tab-pane" id="scenario3">
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Search date:</b> <code>08/07/2018</code></td>
+	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+  </tr>
+</table>
+
+{% include image.html file="access_structured/data_filter_scenario3.jpg" url="images/access_structured/data_filter_scenario3.jpg"  max-width="100" caption="click image for full size view" %}
+</div>
+
+<div role="tabpanel" class="tab-pane" id="scenario4">
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Search date:</b> <code>08/10/2018</code></td>
+	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+  </tr>
+</table>
+
+{% include image.html file="access_structured/data_filter_scenario4.jpg" url="images/access_structured/data_filter_scenario4.jpg"  max-width="100" caption="click image for full size view" %}
+</div>
+</div>
+
+
 
 #### Bundle population illustrated ####
 
 The following diagram illustrates the population of the response `Bundle` according to the parameters in the inbound `Parameters` request resource:
 
-<img style="max-height: 1000px; max-width: 1000px;" alt="Structured Bundle response" src="images/access_structured/structured-bundle-response.png"/>
+<img style="max-height: 100%; max-width: 100%" alt="Structured Bundle response" src="images/access_structured/structured-bundle-response.png"/>
 
 #### Payload response examples ####
 
