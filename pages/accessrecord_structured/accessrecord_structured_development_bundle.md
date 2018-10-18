@@ -26,25 +26,13 @@ The logical identifier of the Bundle resource.
   <tr>
     <td><b>Data type:</b> <code>uri</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
 The Bundle profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1)
-
-### meta.lastUpdated ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>instant</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The date and time when the Bundle was created.
 
 ### type ###
 
