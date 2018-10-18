@@ -488,6 +488,7 @@ figcaption {
     padding-bottom:12px;
     padding-top:6px;
     max-width: 90%;
+	text-align: center;
     margin-bottom:20px;
     font-style: italic;
     color: gray;
@@ -638,8 +639,8 @@ div#toc ul li ul li {
 }
 
 .tab-content {
-    padding: 15px;
-    background-color: #FAFAFA;
+    padding: 0px;
+    background-color: #ffffff;
 }
 
 span.tagTitle {font-weight: 500;}
