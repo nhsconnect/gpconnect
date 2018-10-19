@@ -26,7 +26,7 @@ The logical identifier of the Bundle resource.
   <tr>
     <td><b>Data type:</b> <code>uri</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
