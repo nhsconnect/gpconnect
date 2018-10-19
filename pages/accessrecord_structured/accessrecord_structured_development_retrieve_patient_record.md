@@ -120,16 +120,16 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       </td>
     </tr>
     <tr>
-      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">medicationDatePeriod</code></td>
-      <td><code class="highlighter-rouge">Period</code></td>
+      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">medicationSearchDate</code></td>
+      <td><code class="highlighter-rouge">Date</code></td>
       <td>Optional</td>
       <td>
-        Restrict medication returned to that within the date period specified. Rules:
+        Restrict medications returned on or after the date specified. Rules:
         <ul>
-	        <li><code>Period.start</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
-	        <li>If the <code>medicationDatePeriod</code> is not specified, all medication will be returned.</li>
-	        <li>If <code>Period.start</code> is populated, medication on or after the start date will be returned.</li>
-	        <li><code>Period.end</code> <b>MUST NOT</b> be populated.</li>
+			<li>If the <code>medicationSearchDate</code> is not specified, all medication will be returned.</li> 
+			<li>If the <code>medicationSearchDate</code> is populated, all medications which are active on or after the <code>medicationSearchDate</code> <b>MUST</b> be returned.</li>
+			<li><code>medicationSearchDate</code> <b>MUST</b> be populated with with a date less than or equal to the current date.</li>
+	        <li><code>medicationSearchDate</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li> 
     	</ul>
     	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
@@ -168,9 +168,8 @@ The example below shows a fully populated `Parameters` resource as a request to 
 			"valueBoolean": true
 		},
 		{
-			"name": "medicationDatePeriod",
-			"valuePeriod": {
-				"start": "2017-06-04"
+			"name": "medicationSearchDate",
+			"valueDate": "2017-06-04"
 			}
 		}]
 	}]
@@ -189,8 +188,8 @@ Errors that may be encountered include:
 - the `patientNHSNumber` is invalid, for example it fails format or check digit tests
 - the `patientNHSNumber` has not been traced or cross-checked on PDS in the providing system
 - a patient could not be found matching the `patientNHSNumber` provided
-- the `medicationDatePeriod.end` part parameter is populated
-- the `medicationDatePeriod.start` part parameter contains a partial date, or has a value containing a time or offset component
+- the `medicationSearchDate` part parameter contains a partial date, or has a value containing a time or offset component
+- the `medicationSearchDate` part parameter is greater than the current date
 - the `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter
 - the `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter
 - the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition`
@@ -250,7 +249,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
     - [`List`](accessrecord_structured_development_list.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
 
-- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
+- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
 
 <br/>
 
@@ -266,14 +265,15 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
-  - when the `medicationDatePeriod` parameter is set, the medication summary data **MUST** return all medications which are active on or after the the `Period.start`. The `Period.start` **MUST** be on or before the current date. A medication is considered active between its `effectiveStartDate` and `effectiveEndDate` (inclusive).
-  
-	  - when a medication does not have an `effectiveEndDate`: 
-		- An acute medication is considered active on its `effectiveStartDate` only
-		- A repeat medication is considered on-going and is active from its `effectiveStartDate`
-		- when a medication is not defined as an acute or repeat it is treated as repeat for search purposes
-	  - when a medication does not have an `effectiveStartDate` 
-		- The `dateAsserted` is used in its place
+  - when the `medicationSearchDate` parameter is set:
+	- all medications which are active on or after the `medicationSearchDate` **MUST** be returned 
+	  - A medication is considered active between its `effectiveStartDate` and `effectiveEndDate` (inclusive)
+		  - when a medication does not have an `effectiveEndDate`: 
+			- an acute medication is considered active on its `effectiveStartDate` only
+			- a repeat medication is considered on-going and is active from its `effectiveStartDate`
+			- when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
+		  - when a medication does not have an `effectiveStartDate` 
+			- the `dateAsserted` is used
 
   - and when the `includePrescriptionIssues` parameter is set to `false`:
 
@@ -286,12 +286,13 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) and &nbsp; [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources
 
 <br/>
-<br/>
 
 
-#### Example medication date filter scenarios ####
+#### Medication search date ####
 
-The scenarios below represent how a selection of acute and repeat medications are returned based on the search filter applied. Each scenario has a different search date. Medications that have been greyed out are not returned in the response.
+The `medicationSearchDate` identifies the start date of the requested medications search period. An end date cannot be requested by a consumer. The end date is defined as any date recorded ( `effectiveStartDate` or `effectiveEndDate`) that is greater than the current date (thereby including medications prescribed in the future).
+
+The scenarios below represent how a selection of acute and repeat medications are returned based on the search date in the request. Each scenario has a different search date. Medications that have been greyed out are not returned in the response.
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a href="#scenario1" data-toggle="tab">Scenario 1</a></li>
