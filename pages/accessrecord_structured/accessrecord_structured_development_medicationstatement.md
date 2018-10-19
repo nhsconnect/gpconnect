@@ -166,7 +166,10 @@ The `Medication` resource provides the coded representation of the medication.
   </tr>
 </table>
 
-`Period.start` is **MANDATORY**. Where there is a defined expiry or end date the end date **MUST** be supplied.
+`Period.start` is **MANDATORY**. Where there is no defined start date this is populated with the recorded date.
+a defined expiry or end date the end date **MUST** be supplied.
+
+`Period.end` is **REQUIRED**. Where there is a defined expiry or end date or where the end date can be derived (for example - from the duration) the end date MUST be supplied. 
 
 For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
 
