@@ -72,12 +72,15 @@ Consumer systems:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
+  {% include important.html content="Consumers SHALL first read the Appointment they wish to amend, then update only the fields below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
+
 Only the following data elements can be modified when performing an appointment cancellation:
 - the appointment `status` MUST be updated to "cancelled"
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details
 
-{% include important.html content="If any content other than the appointment cancellation reason or appointment status is updated the server SHALL reject the amendment and return an error." %}
-{% include note.html content="GP Connect does not impose a character limit on the cancellation reason extension within the cancellation request, but due to differences in the provider system the cancellation reason may be truncated when stored in the provider system due to character limits." %}
+  {% include important.html content="If any content other than the appointment cancellation reason or appointment status is updated the server SHALL reject the amendment and return an error." %}
+
+  {% include note.html content="GP Connect does not impose a character limit on the cancellation reason extension within the cancellation request, but due to differences in the provider system the cancellation reason may be truncated when stored in the provider system due to character limits." %}
 
 On the wire, a JSON serialised request would look something like the following:
 

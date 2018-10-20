@@ -72,12 +72,14 @@ Consumer systems:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
+  {% include important.html content="Consumers SHALL first read the Appointment they wish to amend, then update only the fields below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
+
 Only the following data-elements can be modified when performing an appointment amendment:
 - `description`
 - `comment`
 - `Appointment cancellation reason` extension, which SHALL only be amended when the appointment status is `cancelled`.
 
-{% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
+  {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
 
 To reduce the risk of information being truncated when stored on the providers side, consumers SHALL impose:
 - a 100 character limit on the appointment `description` element when editing a GP Connect appointment.
