@@ -83,12 +83,13 @@ Within the `Patient` resource:
 
 - The following fields SHALL be populated as a minimum:
   - `identifier` with the patient's NHS number
-  - `name` including `family` and `given`, with the `use` element set to `official`
+  - `name` including `family` and `given`, with the `use` element set to `official`.
+    - No more than one instance of `name` where `use` is set to `official` SHALL be provided.
   - `birthDate`
 
 - The following fields SHOULD be populated:
   - `gender`
-  - `address` with home address details, with `use` set to `home`. No more than one instance of this SHALL be populated.
+  - `address` with home address details, with `use` set to `home`. No more than one instance of each `use` SHALL be populated.
   - `telecom` with telephone details for the patient, with `use` of `home`, `work` or `mobile`, and `system` of `phone`. No more than one instance of each `use` SHALL be populated.
   - `telecom` with the email address for the patient if available, with `system` of `email`. No more than one instance of this SHALL be populated.
 
@@ -191,7 +192,7 @@ Before registering the patient record on the local system, the provider SHALL re
 
   - The NHS number within the request is considered verified if:
     - The NHS number is found on PDS and the date of birth in the request exactly matches the date of birth held on PDS
-    - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the family name match and the initial character of the forename match that held for the record on PDS.
+    - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the first family name match and the initial character of the given match that held for the record on PDS.
   - If both of the above checks fail to find a match then the NHS number is treated as not verified
 
 - **Check that the patient is not recorded as deceased on PDS**
