@@ -283,8 +283,15 @@ Provider systems:
   - SHALL populate the sub-elements of the `registrationDetails` extension:
     - `registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
 
-  - SHALL NOT populate `ethnicCategory`, `religiousAffiliation`, `patient-cadavericDonor`, `maritalStatus`.
-
+  - SHALL NOT populate the following fields:
+    - `ethnicCategory`
+    - `religiousAffiliation`
+    - `patient-cadavericDonor`
+    - `residentialStatus`
+    - `treatmentCategory`
+    - `birthPlace`
+    - `maritalStatus`
+    - `multipleBirthBoolean`
 
 ```json
 {

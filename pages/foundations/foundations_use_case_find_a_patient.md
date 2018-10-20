@@ -88,7 +88,15 @@ Provider systems:
 - SHALL supply gender, name and birth date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
 - SHALL populate the `preferredBranchSurgery` within the `registrationDetails` extension with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details).
 - The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name synchronised with Spine which is returned by a PDS lookup for the patient.
-- SHALL NOT populate `ethnicCategory`, `religiousAffiliation`, `patient-cadavericDonor`, `maritalStatus`.
+- SHALL NOT populate the following fields:
+  - `ethnicCategory`
+  - `religiousAffiliation`
+  - `patient-cadavericDonor`
+  - `residentialStatus`
+  - `treatmentCategory`
+  - `birthPlace`
+  - `maritalStatus`
+  - `multipleBirthBoolean`
 
 ```json
 {
