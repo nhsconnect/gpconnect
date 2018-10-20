@@ -4,20 +4,20 @@ keywords: foundations, patient, nhsnumber, pid, register
 tags: [foundations,use_case]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_register_a_patient.html
-summary: "Use case for registering a patient with an organization"
+summary: "Use case for registering a patient with an organisation"
 ---
 
 ## API use case ##
 
-The "Register a patient" capability should either create a new temporary patient registration or re-activate an existing "inactive" patient registration, as a temporary patient registration within the GP practice system ([Definition of a GP Connect active patient](/overview_glossary.html#active-patient)).
+The "Register a patient" use case creates a new temporary patient registration, or re-activates an existing "inactive" patient registration as a temporary patient registration within the GP practice system ([Definition of a GP Connect active patient](/overview_glossary.html#active-patient)).
 
 This specification describes a single use case. For complete details and background please see the [Foundations capability bundle](foundations.html).
 
-{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It does not change a patient's registered practice information as held on Personal Demographics Service (PDS)." %}
+{% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It does not change a patient's registered practice information as held on the Personal Demographics Service (PDS)." %}
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises TLS Mutual Authentication for system level authorisation
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details 
 
 ## Prerequisites ##
@@ -187,7 +187,7 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 
 Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record from PDS using NHS number, and then:
 
-- **Verify the patient's NHS number according to the following rules**:
+- **Verify the patient's NHS number according to the rules below, either by performing a Cross Check Query or implementing the logic locally, as follows**:
 
   - The NHS number within the request is considered verified if:
     - The NHS number is found on PDS and the date of birth in the request exactly matches the date of birth held on PDS
