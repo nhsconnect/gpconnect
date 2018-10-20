@@ -293,7 +293,7 @@ Provider systems:
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details), for a re-activated patient where available
   - `registrationDetails.registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
   - `nhsCommunication` with the patient's language information, where available
-
+  - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice which may be different
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all  fields where data is available, excluding those listed below
 
@@ -411,7 +411,10 @@ Provider systems:
             "district": "West Yorkshire",
             "postalCode": "LS18 1AE"
           }
-        ]
+        ],
+        "managingOrganization": {
+          "reference": "Organization/14"
+        }
       }
     }
   ]

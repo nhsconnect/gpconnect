@@ -96,6 +96,7 @@ Provider systems:
   - `telecom` where available
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details)
   - `nhsCommunication` with the patient's language information, where available
+  - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice which may be different
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
@@ -195,7 +196,10 @@ Provider systems:
               "postalCode": "LS1 6AE"
             }
           }
-        ]
+        ],
+        "managingOrganization": {
+          "reference": "Organization/14"
+        }
       }
     }
   ]
