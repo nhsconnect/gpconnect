@@ -185,6 +185,7 @@ Provider systems:
 - SHALL include the `versionId` of the current version of each appointment resource.
 - SHALL have updated the appointment `status` to "cancelled".
 - SHALL have updated the appointment `cancellation-reason` in line with any details supplied in the request.
+- SHALL NOT populate the `specialty` field
 
 ```json
 {

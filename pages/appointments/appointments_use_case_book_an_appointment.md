@@ -93,6 +93,9 @@ The following data elements are mandatory (that is, data MUST be present):
 The following data elements SHOULD be included when available:
 - a practitioner `participant` of the appointment.
 
+The following data elements MUST NOT be included:
+- the `specialty` field
+
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (that is, two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload response body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API use case page." %}
 
 {% include note.html content="The provider system receiving the bookingOrganization details SHALL store, return and display these details as required by the [Must-Support](development_fhir_api_guidance.html#use-of-must-support-flag) flag." %}
@@ -107,6 +110,7 @@ The following guidance around the Appointment resource element SHALL be followed
 | Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Consumers SHALL impose a character limit of 100 characters for this element. |
 | Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. Consumers SHALL impose a character limit of 500 characters for this element. |
 | Appointment.***reason***     | Consumers and providers SHALL NOT use the appointment `reason` element as the GP Connect appointment management capability is for administration of appointment booking and should not be used to transfer clinical data between systems. As the reason element is for recording 'clinical' codes it goes against the purpose of the GP Connect Appointment Management capability, so it should not be used by consumers or providers. |
+| Appointment.***specialty*** | This field SHALL NOT be populated |
 
 #### Resource guidance ####
 
@@ -229,6 +233,7 @@ Provider systems:
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
 - SHALL NOT include a `Appointment.reason` within the returned appointment resource.
+- SHALL NOT populate the `specialty` field
 
 ```json
 {

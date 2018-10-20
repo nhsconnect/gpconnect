@@ -188,11 +188,13 @@ Provider systems:
   - SHALL include `Practitioner`, `Location` and `Organization` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` and/or `_include:recurse=Location:managingOrganization` parameters.
 
   - SHALL NOT populate the following `Practitioner` fields:
-    - telecom
-    - address
-    - birthDate
-    - photo
-    - qualification
+    - `telecom`
+    - `address`
+    - `birthDate`
+    - `photo`
+    - `qualification`
+
+  - SHALL NOT populate the `specialty` field on `Schedule` or `Slot`
 
 - SHALL manage slot `start` and `end` times to indicate which slots can be considered adjacent and therefore be booked against a single appointment as part of a multi slot appointment booking. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
 
