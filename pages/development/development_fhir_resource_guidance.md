@@ -1,5 +1,5 @@
 ---
-title: FHIR Resource guidance
+title: FHIR resource guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -54,13 +54,27 @@ The logical id of all FHIR resources SHALL be populated in accordance with the [
 
 ### Address
 
-The `address` element exists in many of the FHIR resources used in the GP Connect API. Where an address element is present in a FHIR resource the following population guidance SHALL be followed:
+The `Address` data type is used in many of the FHIR resources across the GP Connect API. Where an element using the `Address` data type is present in a FHIR resource the following population guidance SHALL be followed:
 
-* The address SHALL be populated using the elements:
-  * line
-  * city
-  * district
-  * postalCode
-  * country
+- The address SHALL be populated using the elements:
+  - `line`
+  - `city`
+  - `district`
+  - `postalCode`
+  - `country`
   
-  The `text` element SHOULD not be populated within the address.
+- The `text` element SHOULD not be populated within the address.
+
+- `use` SHALL be populated for patient addresses
+
+
+### ContactPoint
+
+The `ContactPoint` data type is used in many of the FHIR resources across the GP Connect API. Where an element using the `ContactPoint` data type is present in a FHIR resource the following population guidance SHALL be followed:
+
+- The telecom detail (telephone number, email address etc) SHALL be populated using the element:
+	- `value`
+
+- `system` SHALL be populated in all circumstances
+
+- `use` SHALL be populated for patient or patient contact telecom details
