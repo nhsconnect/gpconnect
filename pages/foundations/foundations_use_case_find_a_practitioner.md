@@ -75,6 +75,12 @@ Provider systems:
 - SHALL include the URI of the `CareConnect-GPC-Practitioner-1` profile StructureDefinition in the `Practitioner.meta.profile` element of the returned `Practitioner` resources.
 - SHALL include the `versionId` and `fullUrl` of the current version of each `Practitioner` resource.
 - SHALL include all relevant business `identifier` details (i.e. SDS User Id) for each `Practitioner` resource.
+- SHALL NOT populate the following fields:
+  - telecom
+  - address
+  - birthDate
+  - photo
+  - qualification
 
 ```json
 {
