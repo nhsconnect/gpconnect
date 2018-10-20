@@ -45,7 +45,7 @@ If an element within a fhir profile is marked as must support then all sub eleme
 For example, see the [Register a patient request body](foundations_use_case_register_a_patient.html#payload-request-body).
 
 
-## FHIR resource `element type` specific populating requirements
+## FHIR resource element/data type specific population requirements
 
 ### id
 
