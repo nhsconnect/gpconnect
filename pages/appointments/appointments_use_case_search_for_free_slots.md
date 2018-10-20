@@ -41,9 +41,6 @@ Provider systems SHALL support the following include parameters:
 | `_include=Slot:schedule` | Include `Schedule` resources referenced within the returned `Slot` Resources | `Slot.schedule` |
 | `_include:recurse= Schedule:actor:Practitioner` | Include `Practitioner` resources referenced within the returned `Schedule` resources | `Schedule.actor:Practitioner` |
 | `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
-| `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
-| `_include:recurse= Location:managingOrganization` | Include `Organization` resources referenced within the returned `Location` resources | `Location.managingOrganization` |
-
 
 The following parameters SHALL be included in the request:
 
@@ -63,7 +60,6 @@ The following parameters MAY be included to minimise the number of API calls req
 
 - `_include:recurse=Schedule:actor:Practitioner`
 - `_include:recurse=Schedule:actor:Location`
-- `_include:recurse=Location:managingOrganization`
 
 {% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore, slots found in the past cannot be used to book an appointment." %}
 
@@ -86,7 +82,7 @@ Where search filters are sent by consumers which are not explicitly supported in
 On the wire, a Search for free slots request would look something like one of the following:
 
 ```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
 
 ```http
@@ -117,7 +113,6 @@ GET /Slot?[start={search_prefix}start_date]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
-          {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
@@ -132,7 +127,6 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
-          {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
@@ -175,27 +169,48 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrieval of "free" slot details.
-- SHALL include the free `Slot` details for the organisation which have a `status` of "free" and fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
-- SHALL only include the free slots which are bookable according to related defined 'Embargo/Booking Window' rules 
-- SHALL only include the free slots which match the search filter parameters of Booking Organisation (ODS Code) and/or Type
-- SHALL include the `Schedule` and `Slot` details associated with the returned slots as defined by the search parameter which have been specified. `Practitioner` is required in the searchset `Bundle` only if available.
- 
-- The response `Bundle` SHALL contain `Schedule`, `Practitioner`, `Location` and `Organization` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
+- SHALL return a `200` **OK** HTTP status code on successful retrieval of free slot details.
 
-  - SHALL include `Practitioner`, `Location` and `Organization` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` and/or `_include:recurse=Location:managingOrganization` parameters.
+- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
 
-  - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  `Location.managingOrganization` SHALL be populated.  See [Branch surgeries](development_branch_surgeries.html) for more details.
+- SHALL return a `Bundle` of type `searchset` containing:
 
-  - SHALL populate the `Location` resource according to population requirements for [Read a location](foundations_use_case_read_a_location.html#payload-response-body)
+  - `Slot` resources for the organisation which:
+    - have a `status` of `free`
+    - **and** fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
+    - **and** are bookable according to related defined 'Embargo/Booking Window' rules 
+    - **and** which match the search filter parameters of Booking Organisation (ODS Code) and/or organisation type, or are not restricted for booking by ODS code and/or organisation type
 
-  - SHALL populate the `Practitioner` resource according to population requirements for [Read a practitioner](foundations_use_case_read_a_practitioner.html#payload-response-body)
+  - `Schedule` resources associated with the returned `Slot` resources
 
-  - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
+  - `Practitioner` resources associated to the returned `Schedule` resources, where available, and where requested by the consumer using the `_include:recurse=Schedule:actor:Practitioner` parameter
 
-  - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
+    - SHALL populate the `Practitioner` resource according to population requirements for [Read a practitioner](foundations_use_case_read_a_practitioner.html#payload-response-body)
 
-  - SHALL NOT populate the `specialty` field on `Schedule` or `Slot`
+  - `Location` resources associated with the returned `Schedule` resources, where requested by the consumer using the `_include:recurse=Schedule:actor:Location` parameter
+
+    - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  `Location.managingOrganization` SHALL be populated.  See [Branch surgeries](development_branch_surgeries.html) for more details.
+
+    - SHALL populate the `Location` resource according to population requirements for [Read a location](foundations_use_case_read_a_location.html#payload-response-body)
+
+  - an `Organization` resource associated with the `Location` resources (via `Location.managingOrganization`) associated with the `Schedule`
+
+    - This resource SHALL always be present, regardless of parameters, except where no slots are returned.  Please see [Known issues](appointments_known_issues.html) for more details.
+
+      - Provider systems SHALL accept the `_include:recurse=Schedule:actor:Location` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
+
+      - Consumer systems SHALL NOT send the `_include:recurse=Schedule:actor:Location` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details.
+
+    - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
+
+
+- If no free slots are returned for the requested time period then an empty response `Bundle` SHALL be returned.
+
+- Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are are associated with the `Slot` resources matching the query
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
+
+- SHALL NOT populate the `specialty` field on `Schedule` or `Slot`
 
 - SHALL manage slot `start` and `end` times to indicate which slots can be considered adjacent and therefore be booked against a single appointment as part of a multi slot appointment booking. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
 
@@ -204,14 +219,13 @@ Provider systems:
   * To indicate two slots (Slot A and Slot B) are adjacent, the two slots SHALL reference the same schedule resource and the ```start``` time of ```Slot B``` SHALL equals ```end``` time of ```Slot A```.
   * If the slots do not conform to the rule above, either the slots do not link to the same schedule or the start time of one slot is not the same as the end time of the previous slot then these slots SHALL not be considered adjacent.
   
-- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
 
 ```json
 {
   "resourceType": "Bundle",
   "type": "searchset",
   "entry": [
-        {
+    {
       "fullUrl": "Slot/1584",
       "resource": {
         "resourceType": "Slot",
@@ -298,6 +312,31 @@ Provider systems:
       }
     },
     {
+      "fullUrl": "Practitioner/2",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "2",
+        "meta": {
+          "versionId": "636064088099800115",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/sds-user-id",
+            "value": "S001"
+          }
+        ],
+        "name": {
+          "family": [ "Black" ],
+          "given": [ "Sarah" ],
+          "prefix": [ "Mrs" ]
+        },
+        "gender": "female"
+      }
+    },
+    {
       "fullUrl": "Location/17",
       "resource": {
         "resourceType": "Location",
@@ -328,60 +367,37 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "Practitioner/2",
+      "fullUrl": "Organization/14",
       "resource": {
-        "resourceType": "Practitioner",
-        "id": "2",
+        "resourceType": "Organization",
+        "id": "23",
         "meta": {
-          "versionId": "636064088099800115",
+          "versionId": "636064088098730113",
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
           ]
         },
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/sds-user-id",
-            "value": "S001"
+            "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+            "value": "O001"
           }
         ],
-        "name": {
-          "family": [ "Black" ],
-          "given": [ "Sarah" ],
-          "prefix": [ "Mrs" ]
+        "name": "The Trevelyan Practice",
+        "address": {
+          "line": [
+            "Trevelyan Square",
+            "Boar Ln",
+          ],
+          "city": "Leeds",
+          "district": "West Yorkshire",
+          "postalCode": "LS1 6AE"
         },
-        "gender": "female"
-      }
-    },
-    {
-      "fullUrl": "Organization/14",
-      "resourceType": "Organization",
-      "id": "14",
-      "meta": {
-        "versionId": "636064088098730113",
-        "profile": [
-          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
-        ]
-      },
-      "identifier": [
-        {
-          "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-          "value": "A12345"
+        "telecom": {
+          "system": "phone",
+          "value": "03003035678",
+          "use": "work"
         }
-      ],
-      "name": "The Trevelyan Practice",
-      "address": {
-        "line": [
-          "Trevelyan Square",
-          "Boar Ln",
-        ],
-        "city": "Leeds",
-        "district": "West Yorkshire",
-        "postalCode": "LS1 6AE"
-      },
-      "telecom": {
-        "system": "phone",
-        "value": "03003035678",
-        "use": "work"
       }
     }
   ]
