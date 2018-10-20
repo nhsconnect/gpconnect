@@ -81,17 +81,20 @@ The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.h
 
 Within the `Patient` resource: 
 
-- The following fields SHALL be populated as a minimum:
+- The following fields SHALL be populated as a minimum to allow the provider system to perform a PDS trace:
   - `identifier` with the patient's NHS number
   - `name` including `family` and `given`, with the `use` element set to `official`.
     - No more than one instance of `name` where `use` is set to `official` SHALL be provided.
   - `birthDate`
 
-- The following fields SHOULD be populated:
+- The following fields SHOULD be populated, to create the patient's record in the provider system:
   - `gender`
-  - `address` with home address details, with `use` set to `home`. No more than one instance of each `use` SHALL be populated.
-  - `telecom` with telephone details for the patient, with `use` of `home`, `work` or `mobile`, and `system` of `phone`. No more than one instance of each `use` SHALL be populated.
-  - `telecom` with the email address for the patient if available, with `system` of `email`. No more than one instance of this SHALL be populated.
+  - `address` with the patient's address(es). No more than one instance of each `use` SHALL be populated.
+  - `telecom` with the patient's telephone number(s), with `use` of `home`, `work` or `mobile`, and `system` of `phone`. No more than one instance of each `use` SHALL be populated.
+  - `telecom` with the patient's email address if available, with `system` of `email`. No more than one instance of this SHALL be populated.
+  - a single instance of `nhsCommunication` if available, specifically the `language` and `interpreterRequired` sub-elements
+  
+    {% include important.html content="If the above *\"SHOULD\"* fields are not provided, the provider system will use demographics retrieved from PDS in order to create the patient's record." %}
 
 - The following fields MAY be populated in order to record temporary details known to the consuming system:
   - `telecom` with temporary telephone details, with the `use` of `temp` and `system` of `phone`.  No more than one instance of this SHALL be populated.
@@ -182,11 +185,11 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 
 ### Provider system registration requirements ###
 
-{% include important.html content="The following registration requirements MUST be implemented by providers, however due to provider system variances the implemented flow MAY deviate where required to accomodate these and should be documented accordingly." %}
+{% include important.html content="The following registration requirements MUST be implemented by providers, however due to provider system variances the implemented flow MAY deviate where required to accomodate these and shall be agreed and documented accordingly." %}
 
 #### PDS requirements ####
 
-Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record from PDS using NHS number, and then:
+Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record from PDS using their NHS number, and then:
 
 - **Verify the patient's NHS number according to the rules below, either by performing a Cross Check Query or implementing the logic locally, as follows**:
 
@@ -204,23 +207,28 @@ Before registering the patient record on the local system, the provider SHALL re
 
 #### Duplicate record prevention
 
-Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using NHS number, and then:
+Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using the patient's NHS number, and then:
 
 - **If a matching patient record IS found**:
 
-  - and is **active** (i.e. a currently registered patient, of any registration type):
+  - and the matching patient record's NHS number has not previously been traced or verified, it SHALL be verified using the [rules shown above](foundations_use_case_register_a_patient.html#pds-requirements)
 
-    - The registration SHALL be halted and an a `409` `DUPLICATE_REJECTED` returned to the consumer
+    - If the verification fails the registration SHALL be halted and an error returned to the consuming system
 
-  - and is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
+  - Then, if the matching patient record:
 
-    - If the local record's NHS number has not been traced or verified, it SHALL be verified using the [rules shown above](foundations_use_case_register_a_patient.html#pds-requirements)
-    - The patient record SHALL be re-activated as a **temporary** patient 
-    - Follow the [Local registration requirements](foundations_use_case_register_a_patient.html#local-registration-requirements) when updating the patient's demographics
+    - is **active** (i.e. a currently registered patient, of any registration type):
 
-  - and is recorded as **deceased**:
+      - The registration SHALL be halted and a `409` `DUPLICATE_REJECTED` error is returned to the consumer
 
-    - The registration SHALL be halted and an error returned to the consuming system
+    - is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
+
+      - The patient record SHALL be re-activated as a **temporary** patient 
+      - Follow the [Local registration requirements](foundations_use_case_register_a_patient.html#local-registration-requirements) when updating the patient's demographics
+
+    - is recorded as **deceased**:
+
+      - The registration SHALL be halted and an error returned to the consuming system
 
 - **If a matching patient record IS NOT found**:
 
@@ -238,11 +246,11 @@ Before registering the patient record on the local system, the provider SHALL ch
   - temporary address or temporary telecom details sent by the consumer SHOULD be marked with an end date aligned with the expiry date of the temporary record.
 
 - **If the provider system synchronises temporary patient records with PDS**:
-  - an update SHALL NOT automatically be sent to PDS.
-  - PDS synchronisation SHALL occur where a user is present during the next routine synchronisation event (for example, a receptionist opening the patient's record).
+  - an update SHALL NOT automatically be sent to PDS
+  - PDS synchronisation SHALL occur where a user is present during the next routine synchronisation event (for example, a receptionist opening the patient's record)
   - temporary address or temporary telecom details SHOULD be marked with an end date.
 
-- **the patient's record SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below**.
+- **a populated `Patient` resource representing the record created, or reactivated and updated, SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below**.
 
 #### Error Handling ####
 
