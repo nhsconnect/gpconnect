@@ -80,14 +80,22 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-- SHALL only return `Patient` resources for `Active` patients ([Definition of a GP Connect Active Patient](overview_glossary.html#active-patient)).
+  - SHALL populate `entry.fullUrl` for each resource in the `Bundle`
+- SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient).
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
-- SHALL include the URI of the `CareConnect-GPC-Patient-1` profile StructureDefinition in the `Patient.meta.profile` element of the returned `Patient` resources.
-- SHALL include the `versionId` and `fullUrl` of the current version of each `Patient` resource.
-- SHALL include all relevant business `identifier` details (that is, NHS number) for each `Patient` resource.
-- SHALL supply gender, name and birth date where these are available (as indicated by the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) FHIR property)
-- SHALL populate the `preferredBranchSurgery` within the `registrationDetails` extension with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details).
-- The patient resource SHALL contain at least a single name element. The patient resource SHALL contain a single instance of the name element with the `use` of `official`. This official name should contain the name synchronised with Spine which is returned by a PDS lookup for the patient.
+
+- SHALL populate the following fields:
+  - `meta.profile` with the profile URI
+  - `versionId` with the current version of each `Patient` resource.
+  - `identifier` with relvent business identifiers, including a minimum of the patient's NHS number
+  - `name`
+    - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
+  - `birthDate`
+  - `gender`
+  - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details)
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all optional fields where data is available, excluding those listed below
+
 - SHALL NOT populate the following fields:
   - `ethnicCategory`
   - `religiousAffiliation`
