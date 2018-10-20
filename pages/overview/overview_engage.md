@@ -64,9 +64,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 
 ## 5. Deploy ##
 
-- Become a [First of Type](overview_first_of_type.html) deployment!
-
-
+- Become a first of type deployment - see below to get in touch with the GP Connect programme.
 
 
 ## Provide feedback
