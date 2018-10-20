@@ -186,7 +186,7 @@ Errors that may be encountered include:
 
 - the `patientNHSNumber` parameter is not provided
 - the `patientNHSNumber` is invalid, for example it fails format or check digit tests
-- the `patientNHSNumber` has not been traced or cross-checked on PDS in the providing system
+- the `patientNHSNumber` has not been traced or verified on PDS in the providing system
 - a patient could not be found matching the `patientNHSNumber` provided
 - the `medicationSearchDate` part parameter contains a partial date, or has a value containing a time or offset component
 - the `medicationSearchDate` part parameter is greater than the current date
@@ -194,6 +194,9 @@ Errors that may be encountered include:
 - the `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter
 - the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition`
 - the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
+- the patient has dissented to sharing their clinical record
+- the request is for the record of an [inactive](overview_glossary.html#active-patient) patient
+- the request is for the record of a non-Regular/GMS patient (i.e. the patient's registered practice is somewhere else)
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for further information including appropriate error codes.
 
