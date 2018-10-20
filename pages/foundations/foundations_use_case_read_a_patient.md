@@ -82,15 +82,18 @@ Provider systems:
 
 - SHALL populate the following fields:
   - `meta.profile` with the profile URI
-  - `versionId` with the current version of each `Patient` resource.
-  - `identifier` with relvent business identifiers, including a minimum of the patient's NHS number
+  - `versionId` with the current version of the `Patient` resource.
+  - `identifier` with relevent business identifiers, including a minimum of the patient's NHS number
   - `name`
     - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
   - `birthDate`
   - `gender`
+  - `address` where available
+  - `telecom` where available
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details)
+  - `nhsCommunication` with the patient's language information, where available
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all optional fields where data is available, excluding those listed below
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `ethnicCategory`

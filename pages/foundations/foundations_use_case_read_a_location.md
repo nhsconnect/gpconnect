@@ -77,11 +77,19 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) profile.
-- SHALL include the URI of the `CareConnect-GPC-Location-1` profile StructureDefinition in the `Location.meta.profile` element of the returned `Location` resource.
-- SHALL include the `versionId` of the current version of the `Location` resource.
-- SHALL populate `name`
-- SHALL populate `address` and `telecom` where available
-- SHALL populate `managingOrganization` with a reference to to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
+
+- SHALL populate the following `Location` fields:
+  - `meta.profile` with the profile URI
+  - `versionId` with the current version of each `Location` resource.
+  - `name`
+  - `address` where available
+  - `telecom` where available
+  - `managingOrganization` with a reference to to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+
+- SHALL NOT populate the following fields:
+  - `endpoint`
 
 ```json
 {

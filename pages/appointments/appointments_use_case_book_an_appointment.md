@@ -94,7 +94,8 @@ The following data elements SHOULD be included when available:
 - a practitioner `participant` of the appointment.
 
 The following data elements MUST NOT be included:
-- the `specialty` field
+  - `reason`
+  - `specialty`
 
 {% include important.html content="Multiple adjacent free slots can be booked using the same appointment (that is, two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload response body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API use case page." %}
 
@@ -232,8 +233,12 @@ Provider systems:
 - SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
-- SHALL NOT include a `Appointment.reason` within the returned appointment resource.
-- SHALL NOT populate the `specialty` field
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+
+- SHALL NOT populate the following fields:
+  - `reason`
+  - `specialty`
 
 ```json
 {

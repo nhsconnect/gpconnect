@@ -84,17 +84,20 @@ Provider systems:
 - SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient).
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 
-- SHALL populate the following fields:
+- SHALL populate the following `Patient` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of each `Patient` resource.
-  - `identifier` with relvent business identifiers, including a minimum of the patient's NHS number
+  - `identifier` with relevent business identifiers, including a minimum of the patient's NHS number
   - `name`
     - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
   - `birthDate`
   - `gender`
+  - `address` where available
+  - `telecom` where available
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details)
+  - `nhsCommunication` with the patient's language information, where available
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all optional fields where data is available, excluding those listed below
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `ethnicCategory`

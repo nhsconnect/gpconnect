@@ -183,16 +183,17 @@ Provider systems:
  
 - The response `Bundle` SHALL contain `Schedule`, `Practitioner`, `Location` and `Organization` resources related to the returned free `Slot` resources. If no free slots are returned for the requested time period then no resources should be returned within the response `Bundle`.
 
-  - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  See [Branch surgeries](development_branch_surgeries.html) for more details. The `Location` resource SHALL contain the surgery's `name`, `address`, `telecom`, and a reference to the GP practice `Organization` in the `managingOrganization` element.
-  
   - SHALL include `Practitioner`, `Location` and `Organization` resources associated with Schedule resources in the response bundle ONLY where requested to do so by the consumer using the `_include:recurse=Schedule:actor:Practitioner` and/or `_include:recurse=Schedule:actor:Location` and/or `_include:recurse=Location:managingOrganization` parameters.
 
-  - SHALL NOT populate the following `Practitioner` fields:
-    - `telecom`
-    - `address`
-    - `birthDate`
-    - `photo`
-    - `qualification`
+  - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  `Location.managingOrganization` SHALL be populated.  See [Branch surgeries](development_branch_surgeries.html) for more details.
+
+  - SHALL populate the `Location` resource according to population requirements for [Read a location](foundations_use_case_read_a_location.html#payload-response-body)
+
+  - SHALL populate the `Practitioner` resource according to population requirements for [Read a practitioner](foundations_use_case_read_a_practitioner.html#payload-response-body)
+
+  - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
+
+  - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
   - SHALL NOT populate the `specialty` field on `Schedule` or `Slot`
 

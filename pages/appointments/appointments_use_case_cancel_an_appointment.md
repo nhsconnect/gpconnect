@@ -185,7 +185,12 @@ Provider systems:
 - SHALL include the `versionId` of the current version of each appointment resource.
 - SHALL have updated the appointment `status` to "cancelled".
 - SHALL have updated the appointment `cancellation-reason` in line with any details supplied in the request.
-- SHALL NOT populate the `specialty` field
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+
+- SHALL NOT populate the following fields:
+  - `reason`
+  - `specialty`
 
 ```json
 {

@@ -277,24 +277,35 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `Patient.meta.profile` element of the returned resources.
-- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1):
+- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) 
+- SHALL populate the `Patient` resource with details of the newly registered or re-activated patient
 
-  The patient SHALL contain details of the newly registered or re-activated patient, AND:
+- SHALL populate the following fields:
+  - `meta.profile` with the profile URI
+  - `versionId` with the current version of the `Patient` resource.
+  - `identifier` with relevent business identifiers, including a minimum of the patient's NHS number
+  - `name`
+    - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
+  - `birthDate`
+  - `gender`
+  - `address` where available
+  - `telecom` where available
+  - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details), for a re-activated patient where available
+  - `registrationDetails.registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
+  - `nhsCommunication` with the patient's language information, where available
 
-  - SHALL populate the sub-elements of the `registrationDetails` extension:
-    - `registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
 
-  - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all  fields where data is available, excluding those listed below
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all  fields where data is available, excluding those listed below
 
-  - SHALL NOT populate the following fields:
-    - `ethnicCategory`
-    - `religiousAffiliation`
-    - `patient-cadavericDonor`
-    - `residentialStatus`
-    - `treatmentCategory`
-    - `birthPlace`
-    - `maritalStatus`
-    - `multipleBirthBoolean`
+- SHALL NOT populate the following fields:
+  - `ethnicCategory`
+  - `religiousAffiliation`
+  - `patient-cadavericDonor`
+  - `residentialStatus`
+  - `treatmentCategory`
+  - `birthPlace`
+  - `maritalStatus`
+  - `multipleBirthBoolean`
 
 ```json
 {

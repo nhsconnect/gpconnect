@@ -87,8 +87,12 @@ Provider systems:
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of the appointment resource.
 - SHALL include all relevant business `identifier` details (if any) for the appointment resource.
-- SHALL NOT include a `Appointment.reason` within the returned appointment resource.
-- SHALL NOT populate the `specialty` field
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+
+- SHALL NOT populate the following fields:
+  - `reason`
+  - `specialty`
 
 ```json
 {

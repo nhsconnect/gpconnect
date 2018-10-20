@@ -124,8 +124,13 @@ Provider systems:
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
-- SHALL NOT include an `Appointment.reason` within the returned appointment resource.
-- SHALL NOT populate the `specialty` field
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+
+- SHALL NOT populate the following fields:
+  - `reason`
+  - `specialty`
+
 
 ```json
 {
