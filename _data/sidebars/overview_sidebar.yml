@@ -101,7 +101,7 @@ entries:
     - title: General API guidance
       url: /development_general_api_guidance.html
       output: web          
-    - title: Branch surgeries
+    - title: Branch surgeries data model
       url: /development_branch_surgeries.html
       output: web          
     - title: Operation guidance
