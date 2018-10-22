@@ -104,4 +104,4 @@ Please refer to the [glossary](overview_glossary.html) for a definition of a fed
 
 ## Branch surgeries
 
-Please see [Branch surgeries](development_branch_surgeries.html) for more information GP Connect handling of branch surgeries, and implications for appointment booking.
+Please see [Branch surgeries](development_branch_surgeries.html) for more information GP Connect handling of branch surgeries, and implications for Appointment Management.
