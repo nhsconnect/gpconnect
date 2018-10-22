@@ -17,6 +17,6 @@ In order to ensure the known issue does not cause problems for providers or cons
 
 - Provider systems SHALL continue to return the `Organization` resource in the Search for free slots `Bundle`, except where no matching `Slot` resources were found
 
-- Provider systems SHALL accept the `_include:recurse=Schedule:actor:Location` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
+- Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
 
-- Consumer systems SHALL NOT send the `_include:recurse=Schedule:actor:Location` parameter at the current time.  This cannot currently be sent due to upcoming target consumer and provider version deployments.  Consumers will be notified when this can be sent.
+- Consumer systems SHALL NOT send the `_include:recurse=Location:managingOrganization` parameter at the current time.  This cannot currently be sent due to upcoming target consumer and provider version deployments.  Consumers will be notified when this can be sent.

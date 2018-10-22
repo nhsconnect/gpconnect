@@ -197,9 +197,9 @@ Provider systems:
 
     - This resource SHALL always be present, regardless of parameters, except where no slots are returned.  Please see [Known issues](appointments_known_issues.html) for more details.
 
-      - Provider systems SHALL accept the `_include:recurse=Schedule:actor:Location` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
+      - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
 
-      - Consumer systems SHALL NOT send the `_include:recurse=Schedule:actor:Location` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details.
+      - Consumer systems SHALL NOT send the `_include:recurse=Location:managingOrganization` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details.
 
     - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
 
