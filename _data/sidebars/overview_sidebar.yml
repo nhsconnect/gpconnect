@@ -107,7 +107,7 @@ entries:
     - title: Operation guidance
       url: /development_fhir_operation_guidance.html
       output: web
-    - title: FHIR resource guidance
+    - title: FHIR&reg; resource guidance
       url: /development_fhir_resource_guidance.html
       output: web
     - title: Security guidance
