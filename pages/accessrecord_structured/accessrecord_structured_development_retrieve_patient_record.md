@@ -174,7 +174,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
           "valueBoolean": true
         },
         {
-          "name": "medicationSearchDate",
+          "name": "medicationSearchFromDate",
           "valueDate": "2017-06-04"
         }
       ]
