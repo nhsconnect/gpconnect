@@ -9,17 +9,16 @@
   },
   "type": "collection",
   "entry": [
-    {
-      "resource": {
-        "resourceType": "Patient",
-        "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
-        "meta": {
-          "versionId": "1521806400000",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
-          ]
-        },
-        "extension": [
+	{
+	  "resourceType": "Patient",
+	  "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
+	  "meta": {
+		"versionId": "1469448000000",
+		"profile": [
+		  "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+		]
+	  },
+	  "extension": [
           {
             "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
             "extension": [
@@ -32,116 +31,102 @@
             ]
           }
         ],
-        "identifier": [
-          {
-            "extension": [
-              {
-                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
-                "valueCodeableConcept": {
-                  "coding": [
-                    {
-                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-                      "code": "01",
-                      "display": "Number present and verified"
-                    }
-                  ]
-                }
-              }
-            ],
-            "system": "https://fhir.nhs.uk/Id/nhs-number",
-            "value": "9999999999"
-          }
-        ],
-        "active": true,
-        "name": [
-          {
-            "use": "official",
-            "text": "Garth WRIGHT",
-            "family": "WRIGHT",
-            "given": [
-              "Garth"
-            ],
-            "prefix": [
-              "MR"
-            ]
-          }
-        ],
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "01454587554",
-            "use": "home"
-          }
-        ],
-        "gender": "male",
-        "birthDate": "1933-11-14",
-        "address": [
-          {
-            "use": "home",
-            "type": "physical",
-            "text": "23 MARSH LANE, DN18 5JD"
-          }
-        ],
-        "maritalStatus": {
-          "coding": [
-            {
-              "system": "http://hl7.org/fhir/v3/MaritalStatus",
-              "code": "S",
-              "display": "Married"
-            }
-          ]
-        },
-        "generalPractitioner": {
-            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-        },
-        "managingOrganization": {
-          "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Organization",
-        "id": "db67f447-b30d-442a-8e31-6918d1367eeb",
-        "meta": {
-          "versionId": "1469448000000",
-          "lastUpdated": "2016-07-25T12:00:00.000+00:00",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
-          ]
-        },
-        "identifier": [
-          {
-            "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-            "value": "A20047"
-          }
-        ],
-        "type": [
-          {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/ValueSet/organization-type",
-                "code": "dept",
-                "display": "Hospital Department"
-              }
-            ]
-          }
-        ],
-        "name": "HSCIC test Practice",
-        "telecom": [
-          {
-            "system": "phone",
-            "use": "work"
-          }
-        ],
-        "address": [
-          {
-            "use": "work",
-            "type": "physical"
-          }
-        ]
-      }
-    },
+	  "identifier": [
+		{
+		  "extension": [
+			{
+			  "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+			  "valueCodeableConcept": {
+				"coding": [
+				  {
+					"system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+					"code": "01",
+					"display": "Number present and verified"
+				  }
+				]
+			  }
+			}
+		  ],
+		  "system": "https://fhir.nhs.uk/Id/nhs-number",
+		  "value": "9999999999"
+		}
+	  ],
+	  "active": true,
+	  "name": [
+		{
+		  "use": "official",
+		  "text": "JACKSON Jane (Miss)",
+		  "family": "Jackson",
+		  "given": [
+			"Jane"
+		  ],
+		  "prefix": [
+			"Miss"
+		  ]
+		}
+	  ],
+	  "telecom": [
+		{
+		  "system": "phone",
+		  "value": "01454587554",
+		  "use": "home"
+		}
+	  ],
+	  "gender": "female",
+	  "birthDate": "1952-05-31",
+	  "address": [
+		{
+		  "use": "home",
+		  "type": "physical",
+		  "address": {
+			"line": [
+			  "Trevelyan Square",
+			  "Boar Ln"
+			],
+			"city": "Leeds",
+			"district": "West Yorkshire",
+			"postalCode": "LS1 6AE"
+		  }
+		}
+	  ],
+	  "generalPractitioner": {
+		"reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+		},
+	  "managingOrganization": {
+		"reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
+		}
+	},
+	{
+	  "resourceType": "Organization",
+	  "id": "db67f447-b30d-442a-8e31-6918d1367eeb",
+	  "meta": {
+		"versionId": "636064088098730113",
+		"profile": [
+		  "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+		]
+	  },
+	  "identifier": [
+		{
+		  "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+		  "value": "O001"
+		}
+	  ],
+	  "name": "The Trevelyan Practice",
+	  "address": {
+		"line": [
+		  "Trevelyan Square",
+		  "Boar Ln",
+		],
+		"city": "Leeds",
+		"district": "West Yorkshire",
+		"postalCode": "LS1 6AE"
+	  },
+	  "telecom": {
+		"system": "phone",
+		"value": "03003035678",
+		"use": "work"
+	  }
+	},
     {
       "resource": {
         "resourceType": "Practitioner",
