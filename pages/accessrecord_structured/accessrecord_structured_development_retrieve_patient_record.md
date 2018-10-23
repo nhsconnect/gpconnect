@@ -120,16 +120,16 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       </td>
     </tr>
     <tr>
-      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">medicationSearchDate</code></td>
+      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">medicationSearchFromDate</code></td>
       <td><code class="highlighter-rouge">Date</code></td>
       <td>Optional</td>
       <td>
         Restrict medications returned on or after the date specified. Rules:
         <ul>
-			<li>If the <code>medicationSearchDate</code> is not specified, all medication will be returned.</li> 
-			<li>If the <code>medicationSearchDate</code> is populated, all medications which are active on or after the <code>medicationSearchDate</code> <b>MUST</b> be returned.</li>
-			<li><code>medicationSearchDate</code> <b>MUST</b> be populated with with a date less than or equal to the current date.</li>
-	        <li><code>medicationSearchDate</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li> 
+			<li>If the <code>medicationSearchFromDate</code> is not specified, all medication will be returned.</li> 
+			<li>If the <code>medicationSearchFromDate</code> is populated, all medications which are active on or after the <code>medicationSearchFromDate</code> <b>MUST</b> be returned.</li>
+			<li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with with a date less than or equal to the current date.</li>
+	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li> 
     	</ul>
     	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
@@ -143,43 +143,36 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 ```json
 {
-  "meta": {
-    "profile": [
-      "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
-    ]
-  },
-  "resourceType": "Parameters",
-  "parameter": [
-    {
-      "name": "patientNHSNumber",
-      "valueIdentifier": {
-        "system": "https://fhir.nhs.uk/Id/nhs-number",
-        "value": "9999999999"
-      }
-    },
-    {
-      "name": "includeAllergies",
-      "part": [
-        {
-          "name": "includeResolvedAllergies",
-          "valueBoolean": true
-        }
-      ]
-    },
-    {
-      "name": "includeMedication",
-      "part": [
-        {
-          "name": "includePrescriptionIssues",
-          "valueBoolean": true
-        },
-        {
-          "name": "medicationSearchDate",
-          "valueDate": "2017-06-04"
-        }
-      ]
-    }
-  ]
+	"meta": {
+		"profile": ["https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"]
+	},
+	"resourceType": "Parameters",
+	"parameter": [{
+		"name": "patientNHSNumber",
+		"valueIdentifier": {
+			"system": "https://fhir.nhs.uk/Id/nhs-number",
+			"value": "9999999999"
+		}
+	},
+	{
+		"name": "includeAllergies",
+		"part": [{
+			"name": "includeResolvedAllergies",
+			"valueBoolean": true
+		}]
+	},
+	{
+		"name": "includeMedication",
+		"part": [{
+			"name": "includePrescriptionIssues",
+			"valueBoolean": true
+		},
+		{
+			"name": "medicationSearchFromDate",
+			"valueDate": "2017-06-04"
+			}
+		}]
+	}]
 }
 ```
 
@@ -193,17 +186,14 @@ Errors that may be encountered include:
 
 - the `patientNHSNumber` parameter is not provided
 - the `patientNHSNumber` is invalid, for example it fails format or check digit tests
-- the `patientNHSNumber` has not been traced or verified on PDS in the providing system
+- the `patientNHSNumber` has not been traced or cross-checked on PDS in the providing system
 - a patient could not be found matching the `patientNHSNumber` provided
-- the `medicationSearchDate` part parameter contains a partial date, or has a value containing a time or offset component
-- the `medicationSearchDate` part parameter is greater than the current date
+- the `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component
+- the `medicationSearchFromDate` part parameter is greater than the current date
 - the `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter
 - the `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter
 - the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition`
 - the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
-- the patient has dissented to sharing their clinical record
-- the request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient
-- the request is for the record of a non-Regular/GMS patient (i.e. the patient's registered practice is somewhere else)
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for further information including appropriate error codes.
 
@@ -275,15 +265,13 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
-  - when the `medicationSearchDate` parameter is set:
-	- all medications which are active on or after the `medicationSearchDate` **MUST** be returned 
-	  - A medication is considered active between its `effectiveStartDate` and `effectiveEndDate` (inclusive)
-		  - when a medication **does not** have an `effectiveEndDate`: 
-			- an acute medication is considered active on its `effectiveStartDate` only
-			- a repeat medication is considered on-going and is active from its `effectiveStartDate`
+  - when the `medicationSearchFromDate` parameter is set:
+	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned 
+	  - A medication is considered active between its `effective.Period.start` and `effective.Period.end` (inclusive)
+		  - when a medication **does not** have an `effective.Period.end`: 
+			- an acute medication is considered active on its `effective.Period.start` only
+			- a repeat medication is considered on-going and is active from its `effective.Period.start`
 			- when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
-		  - when a medication **does not** have an `effectiveStartDate` 
-			- the `dateAsserted` **MUST** be used
 
   - and when the `includePrescriptionIssues` parameter is set to `false`:
 
@@ -300,7 +288,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 #### Medication search date ####
 
-The `medicationSearchDate` identifies the start date of the requested medications search period. An end date cannot be requested by a consumer. The end date is defined as any date recorded ( `effectiveStartDate` or `effectiveEndDate`) that is greater than the current date (thereby including medications prescribed in the future).
+The `medicationSearchFromDate` identifies the start date of the requested medications search period. An end date cannot be requested by a consumer, so that all searches go to the end of the patient's record.
 
 The scenarios below represent how a selection of acute and repeat medications are returned based on the search date in the request. Each scenario has a different search date. Medications that have been greyed out are not returned in the response.
 
@@ -314,8 +302,8 @@ The scenarios below represent how a selection of acute and repeat medications ar
 <div role="tabpanel" class="tab-pane active" id="scenario1">
 <table class='resource-attributes'>
   <tr>
-    <td><b>Search date:</b> <code>15/01/2018</code></td>
-	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+    <td style="font-size:14px"><b>Search date:</b> <code>15/01/2018</code></td>
+	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
@@ -325,8 +313,8 @@ The scenarios below represent how a selection of acute and repeat medications ar
 <div role="tabpanel" class="tab-pane" id="scenario2">
 <table class='resource-attributes'>
   <tr>
-    <td><b>Search date:</b> <code>01/03/2018</code></td>
-	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+    <td style="font-size:14px"><b>Search date:</b> <code>01/03/2018</code></td>
+	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
@@ -336,8 +324,8 @@ The scenarios below represent how a selection of acute and repeat medications ar
 <div role="tabpanel" class="tab-pane" id="scenario3">
 <table class='resource-attributes'>
   <tr>
-    <td><b>Search date:</b> <code>08/07/2018</code></td>
-	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+    <td style="font-size:14px"><b>Search date:</b> <code>08/07/2018</code></td>
+	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
@@ -347,8 +335,8 @@ The scenarios below represent how a selection of acute and repeat medications ar
 <div role="tabpanel" class="tab-pane" id="scenario4">
 <table class='resource-attributes'>
   <tr>
-    <td><b>Search date:</b> <code>08/10/2018</code></td>
-	<td align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+    <td style="font-size:14px"><b>Search date:</b> <code>08/10/2018</code></td>
+	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
