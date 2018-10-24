@@ -51,7 +51,7 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1`|
 
-#### Payload request bdy ####
+#### Payload request body ####
 
 N/A
 

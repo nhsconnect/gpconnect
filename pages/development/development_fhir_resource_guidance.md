@@ -58,23 +58,47 @@ The `Address` data type is used in many of the FHIR resources across the GP Conn
 
 - The address SHALL be populated using the elements:
   - `line`
+    - E.g. House name, flat number, house number and street & village or locality.  Multiple `line` elements SHALL be populated, where more than one line is present.
   - `city`
   - `district`
+    - This element is to carry county, where present.
   - `postalCode`
   - `country`
+- Where an element is not present, the element SHALL NOT be populated.
   
 - The `text` element SHOULD NOT be populated within the address.
 
-- `use` SHALL be populated for patient addresses
+- `use` SHALL be populated for patient or patient contact addresses and SHOULD be populated in other contexts.
 
+Example:
+
+```
+{
+  "use": "home",
+  "line": [
+    "Trevelyan Square",
+    "Boar Ln"
+  ],
+  "city": "Leeds",
+  "district": "West Yorkshire",
+  "postalCode": "LS1 6AE"
+}
+```
 
 ### ContactPoint
 
 The `ContactPoint` data type is used in many of the FHIR resources across the GP Connect API. Where an element using the `ContactPoint` data type is present in a FHIR resource the following population guidance SHALL be followed:
 
-- The telecom detail (telephone number, email address etc) SHALL be populated using the element:
-	- `value`
-
+- The telecom number or address (telephone number, email address etc) SHALL be populated in the `value` element
 - `system` SHALL be populated in all circumstances
+- `use` SHALL be populated for patient or patient contact telecom details and SHOULD be populated in other contexts.
 
-- `use` SHALL be populated for patient or patient contact telecom details
+Example:
+
+```
+{
+  "system": "phone",
+  "value": "01454587554",
+  "use": "home"
+}
+```
