@@ -139,7 +139,6 @@ On the wire, a JSON serialised request would look something like the following:
   "contained": [
     {
       "resourceType": "Organization",
-      "id": "1",
       "meta": {
         "profile": [
           "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
