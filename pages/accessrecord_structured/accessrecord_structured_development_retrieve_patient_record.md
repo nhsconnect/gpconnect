@@ -203,6 +203,7 @@ Errors that may be encountered include:
 - the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
 - the patient has dissented to sharing their clinical record
 - the request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient
+- the request is for a sensitive patient
 - the request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else)
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for further information including appropriate error codes.
