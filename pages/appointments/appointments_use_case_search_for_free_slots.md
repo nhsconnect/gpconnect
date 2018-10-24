@@ -387,7 +387,7 @@ Provider systems:
         "address": {
           "line": [
             "Trevelyan Square",
-            "Boar Ln",
+            "Boar Ln"
           ],
           "city": "Leeds",
           "district": "West Yorkshire",
