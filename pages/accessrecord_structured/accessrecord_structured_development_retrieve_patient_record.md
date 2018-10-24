@@ -192,8 +192,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 Errors that may be encountered include:
 
 - the `patientNHSNumber` parameter is not provided
-- the `patientNHSNumber` is invalid, for example it fails format or check digit tests
-- the `patientNHSNumber` has not been traced or cross-checked on PDS in the providing system
+- the `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests
+- the patient's NHS number was not previously traced on PDS or confirmed via NHAIS in the providing system
 - a patient could not be found matching the `patientNHSNumber` provided
 - the `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component
 - the `medicationSearchFromDate` part parameter is greater than the current date
