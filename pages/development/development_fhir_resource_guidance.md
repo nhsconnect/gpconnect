@@ -63,7 +63,7 @@ The `Address` data type is used in many of the FHIR resources across the GP Conn
   - `postalCode`
   - `country`
   
-- The `text` element SHOULD not be populated within the address.
+- The `text` element SHOULD NOT be populated within the address.
 
 - `use` SHALL be populated for patient addresses
 
