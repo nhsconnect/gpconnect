@@ -277,10 +277,10 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - when the `medicationSearchFromDate` parameter is set:
 	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned 
-	  - A medication is considered active between its `effective.Period.start` and `effective.Period.end` (inclusive)
-		  - when a medication **does not** have an `effective.Period.end`: 
-			- an acute medication is considered active on its `effective.Period.start` only
-			- a repeat medication is considered on-going and is active from its `effective.Period.start`
+	  - A medication is considered active between its `effective.start` and `effective.end` (inclusive)
+		  - when a medication **does not** have an `effective.end`: 
+			- an acute medication is considered active on its `effective.start` only
+			- a repeat medication is considered on-going and is active from its `effective.start`
 			- when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
 
   - and when the `includePrescriptionIssues` parameter is set to `false`:
