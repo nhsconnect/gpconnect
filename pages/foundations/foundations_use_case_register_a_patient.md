@@ -298,6 +298,7 @@ Provider systems:
   - `gender`
   - `address` where available
   - `telecom` where available
+  - `contact` with the patient's contacts - see [Patient.contact population](development_fhir_resource_guidance.html#patientcontact) for further details
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details), for a re-activated patient where available
   - `registrationDetails.registrationType` with the registration type used within the provider system. If an appropriate registration type is not available within the valueset then the `Other` type SHALL be use and the name of the registration type SHOULD be added using the `text` element of the CodeableConcept
   - `nhsCommunication` with the patient's language information, where available
