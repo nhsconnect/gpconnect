@@ -6,7 +6,8 @@
   "meta": {
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
-    ],
+    ]
+	},
     "entry": [
 	{
 	  "resourceType": "Patient",
@@ -113,7 +114,7 @@
 		{
 			"line": [
 			"Trevelyan Square",
-			"Boar Ln",
+			"Boar Ln"
 			],
 			"city": "Leeds",
 			"district": "West Yorkshire",
@@ -193,7 +194,7 @@
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         },
         "organization": {
-          "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb",
+          "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
         },
         "code": [
           {
