@@ -193,7 +193,6 @@ Provider systems:
             "city": "Leeds",
             "district": "West Yorkshire",
             "postalCode": "LS1 6AE"
-            }
           }
         ],
         "managingOrganization": {
