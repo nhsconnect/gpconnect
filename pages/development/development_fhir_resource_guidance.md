@@ -109,7 +109,7 @@ The Patient.contact element SHALL be populated where demographic information is 
 
 - `relationship.text` SHALL be populated with the type of relationship, for example *Emergency context*, *Next of kin*, or *Carer*.  The element SHALL also be used where a family relationship is recorded, for example *Daughter*.  Multiple relationship entries are allowed.
 - `relationship.coding` SHALL NOT be populated
-- `name`, `telecom`, `address`, and `gender` SHALL be populated where data is available
+- `name`, `telecom`, `address`, `gender`, `organization` and `period` SHALL be populated where data is available
 - `address` and `telecom` SHALL follow the [Address](development_fhir_resource_guidance.html#address) and [ContactPoint](development_fhir_resource_guidance.html#contactpoint) rules above for population of these elements
 
 Example:
