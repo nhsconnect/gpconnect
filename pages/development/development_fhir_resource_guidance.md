@@ -105,7 +105,7 @@ Example:
 
 ### Patient.contact
 
-The Patient.contact element SHALL be populated with ...
+The Patient.contact element SHALL be populated where demographic information is available in the Patient record for those individuals who may need to be contacted in connection with the Patient’s appointment.  In accordance with the FHIR definition, it is "Not applicable to register pedigree and family ties beyond use of having contact".
 
 - `relationship.text` SHALL be populated with the type of relationship, for example *Emergency context*, *Next of kin*, or *Carer*.  The element SHALL also be used where a family relationship is recorded, for example *Daughter*.  Multiple relationship entries are allowed.
 - `relationship.coding` SHALL NOT be populated
