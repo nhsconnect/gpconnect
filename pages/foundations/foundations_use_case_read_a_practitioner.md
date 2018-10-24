@@ -103,17 +103,19 @@ Provider systems:
       "value": "S001"
     }
   ],
-  "name": {
-    "family": [
-      "Black"
-    ],
-    "given": [
-      "Sarah"
-    ],
-    "prefix": [
-      "Mrs"
-    ]
-  },
+  "name": [
+    {
+      "family": [
+        "Black"
+      ],
+      "given": [
+        "Sarah"
+      ],
+      "prefix": [
+        "Mrs"
+      ]
+    }
+  ],
   "gender": "female"
 }
 ```
