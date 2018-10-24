@@ -110,20 +110,24 @@ Provider systems:
     }
   ],
   "name": "The Trevelyan Practice",
-  "address": {
-    "line": [
-      "Trevelyan Square",
-      "Boar Ln",
-    ],
-    "city": "Leeds",
-    "district": "West Yorkshire",
-    "postalCode": "LS1 6AE"
-  },
-  "telecom": {
-    "system": "phone",
-    "value": "03003035678",
-    "use": "work"
-  }
+  "address": [
+    {
+      "line": [
+        "Trevelyan Square",
+        "Boar Ln",
+      ],
+      "city": "Leeds",
+      "district": "West Yorkshire",
+      "postalCode": "LS1 6AE"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "03003035678",
+      "use": "work"
+    }
+  ]
 }
 ```
 
