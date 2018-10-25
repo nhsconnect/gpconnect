@@ -187,26 +187,28 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
+The table below shown errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
+
 Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
-Errors that may be encountered include:
-
-- the `patientNHSNumber` parameter is not provided
-- the `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests
-- the patient's NHS number was not previously traced on PDS or confirmed via NHAIS in the providing system
-- a patient could not be found matching the `patientNHSNumber` provided
-- the `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component
-- the `medicationSearchFromDate` part parameter is greater than the current date
-- the `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter
-- the `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter
-- the `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition`
-- the provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource
-- the patient has dissented to sharing their clinical record
-- the request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient
-- the request is for a sensitive patient
-- the request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else)
-
-Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for further information including appropriate error codes.
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` | `INVALID_RESOURCE` |
+| The provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource | `INVALID_RESOURCE` |
+| The `patientNHSNumber` parameter is not provided | `INVALID_PARAMETER` | 
+| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | `INVALID_NHS_NUMBER` | 
+| The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | `INVALID_PARAMETER` |
+| The `medicationSearchFromDate` part parameter is greater than the current date | `INVALID_PARAMETER` |
+| The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | `INVALID_PARAMETER` |
+| The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | `INVALID_PARAMETER` |
+| The patient has dissented to sharing their clinical record | `NO_PATIENT_CONSENT` |
+| A patient could not be found matching the `patientNHSNumber` provided | `PATIENT_NOT_FOUND` |
+| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | `PATIENT_NOT_FOUND` |
+| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | `PATIENT_NOT_FOUND` |
+| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | `PATIENT_NOT_FOUND` |
+| The request is for a sensitive patient | `PATIENT_NOT_FOUND` |
+|-------------------------|-------------------|
 
 ### Request response ###
 
