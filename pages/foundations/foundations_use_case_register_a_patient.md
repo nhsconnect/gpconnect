@@ -189,14 +189,18 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 
 #### PDS requirements ####
 
-Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record from PDS using their NHS number, and then:
+Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record using a PDS Retrieval Query, and then:
 
-- **Verify the patient's NHS number according to the rules below, either by performing a Cross Check Query or implementing the logic locally, as follows**:
+- **Verify the patient's NHS number according to the rules below**:
 
   - The NHS number within the request is considered verified if:
     - The NHS number is found on PDS and the date of birth in the request exactly matches the date of birth held on PDS
     - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the first family name match and the initial character of the given match that held for the record on PDS.
   - If both of the above checks fail to find a match then the NHS number is treated as not verified
+
+    {% include note.html content="The provider **MAY** use a [PDS Cross Check Trace](https://data.developer.nhs.uk/dms/mim/6.3.01/Domains/PDS/Document%20files/PDS%20IM.htm#_Toc_Section_2.10) to perform this step, instead of using a [PDS Retrieval](https://data.developer.nhs.uk/dms/mim/6.3.01/Domains/PDS/Document%20files/PDS%20IM.htm#_Toc_Section_2.4) and implementing the rules local locally.
+    <br/>
+    If using the Cross Check Trace, the provider **MUST** then perform a subsequent Retrieval Query in order to return the patient's full PDS record to supplement the patient's demographics when creating or updating the patient's record (in [Local registration requirements](foundations_use_case_register_a_patient.html#local-registration-requirements))." %}
 
 - **Check that the patient is not recorded as deceased on PDS**
 
@@ -204,6 +208,7 @@ Before registering the patient record on the local system, the provider SHALL re
   - Invalid
   - Sensitive
   - Superseded
+
 
 #### Duplicate record prevention
 
@@ -242,7 +247,7 @@ Before registering the patient record on the local system, the provider SHALL ch
 - **The patient record SHOULD be created or updated using**:
 
   - demographic details sent by the consumer
-  - supplemented by demographics retrieved from PDS where elements were omitted by the consumer
+  - supplemented by demographics returned from a PDS Retrieval Query where elements were omitted by the consumer or not part of the payload request message
   - temporary address or temporary telecom details sent by the consumer SHOULD be marked with an end date aligned with the expiry date of the temporary record.
 
 - **If the provider system synchronises temporary patient records with PDS**:
