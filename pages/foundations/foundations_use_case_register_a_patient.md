@@ -219,7 +219,7 @@ Before registering the patient record on the local system, the provider SHALL ch
 
     - is **active** (i.e. a currently registered patient, of any registration type):
 
-      - The registration SHALL be halted and a `409` `DUPLICATE_REJECTED` error is returned to the consumer
+      - The registration SHALL be halted and error is returned to the consumer
 
     - is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
@@ -254,18 +254,23 @@ Before registering the patient record on the local system, the provider SHALL ch
 
 #### Error Handling ####
 
-The Provider system SHALL return an error if:
+The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-- the `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details
-- the NHS number could not be found on PDS, or verified against a PDS record
-- the PDS record contains an invalid, sensitive or superseded flag
-- the patient is marked as deceased on PDS, or on the provider system
-- PDS is unavailable, or could not be contacted
-- the patient is already registered in which case a `409` `DUPLICATE_REJECTED` error shall be returned
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
 
-Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | `INVALID_RESOURCE` |
+| The NHS number could not be found on PDS, or verified against a PDS record | `INVALID_PATIENT_DEMOGRAPHICS` |
+| The patient is marked as deceased on PDS, or on the provider system | `INVALID_PATIENT_DEMOGRAPHICS` |
+| The registration request is for a sensitive patient | `INVALID_PATIENT_DEMOGRAPHICS` |
+| The PDS record contains an invalid or superseded flag | `INVALID_NHS_NUMBER` |
+| PDS is unavailable, or could not be contacted | `INTERNAL_SERVER_ERROR` |
+| The patient is already registered | `DUPLICATE_REJECTED` |
+|-------------------------|-------------------|
 
 ### Request response ###
 
