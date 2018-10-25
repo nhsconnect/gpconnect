@@ -91,7 +91,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     </tr>
     <tr>
       <td><code class="highlighter-rouge">includeAllergies</code></td>
-      <td><code class="highlighter-rouge">Boolean</code></td>
+      <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
       <td>Include allergies and intolerances in the response.</td>
     </tr>
@@ -106,7 +106,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     </tr>
     <tr>
       <td><code class="highlighter-rouge">includeMedication</code></td>
-      <td><code class="highlighter-rouge">Boolean</code></td>
+      <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
       <td>Include medication in the response.</td>
     </tr>
