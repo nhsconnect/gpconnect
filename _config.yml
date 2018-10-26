@@ -61,9 +61,6 @@ kramdown:
  hard_wrap: false
  syntax_highlighter: rouge
 # filter used to process markdown. note that kramdown differs from github-flavored markdown in some subtle ways
-  syntax_highlighter_opts:
-   # Use existing pygments syntax highlighting css
-   css_class: 'highlight'
 
 excerpt_separator: ""
 
