@@ -194,20 +194,20 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 |-------------------------|-------------------|
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
-| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` | `INVALID_RESOURCE` |
-| The provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource | `INVALID_RESOURCE` |
-| The `patientNHSNumber` parameter is not provided | `INVALID_PARAMETER` | 
-| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | `INVALID_NHS_NUMBER` | 
-| The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | `INVALID_PARAMETER` |
-| The `medicationSearchFromDate` part parameter is greater than the current date | `INVALID_PARAMETER` |
-| The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | `INVALID_PARAMETER` |
-| The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | `INVALID_PARAMETER` |
-| The patient has dissented to sharing their clinical record | `NO_PATIENT_CONSENT` |
-| A patient could not be found matching the `patientNHSNumber` provided | `PATIENT_NOT_FOUND` |
-| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | `PATIENT_NOT_FOUND` |
-| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | `PATIENT_NOT_FOUND` |
-| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | `PATIENT_NOT_FOUND` |
-| The request is for a sensitive patient | `PATIENT_NOT_FOUND` |
+| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `patientNHSNumber` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) | 
+| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) | 
+| The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `medicationSearchFromDate` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 |-------------------------|-------------------|
 
 ### Request response ###
