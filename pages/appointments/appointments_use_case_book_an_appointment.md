@@ -41,6 +41,14 @@ The consumer system SHALL only use the book appointment capability to book futur
 
 Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of Slots.
 
+### Booking multiple adjacent slots ###
+
+To book more than one slot in the same Book Appointment message, a consumer needs to be able to identify which adjacent slots may be booked together.  This is determined by the following rules:
+  - Two slots (Slot A and Slot B) are adjacent when the start time of Slot B equals the end time of Slot A
+  - The adjacent slots SHALL reference the same `Schedule` resource
+  - The adjacent slots SHALL both have the same `deliveryChannel` value
+  - If the slots do not conform to one or more of the rules above, they SHALL NOT be accepted as part of the same appointment booking
+
 ### Request operation ###
 
 #### FHIR&reg; relative request ####
@@ -80,8 +88,10 @@ The following data elements are mandatory (that is, data MUST be present):
 - a location `participant` of the appointment, representing the physical location where the appointment is to take place (see [Design decisions](foundations_design.html#location-in-the-appointment-resource) page).
 - an `actor` reference in any supplied `participant`.
 - the `start` and `end` of the appointment.
+  - where multiple slots are being booked, the `start` SHALL be the start time of the earlier slot, and the `end` shall be the end time of the latest slot
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
+  - where multiple slots are being booked, they SHALL meet the conditions required to be booked together - see [Booking multiple adjacent slots](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots)
 - the `bookingOrganisation` extension referencing a `contained` `organization` resource within the appointment resource.
   - the contained organization resource SHALL represent the organization booking the appointment.
   - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile.
@@ -96,8 +106,6 @@ The following data elements SHOULD be included when available:
 The following data elements MUST NOT be included:
   - `reason`
   - `specialty`
-
-{% include important.html content="Multiple adjacent free slots can be booked using the same appointment (that is, two 15 minute slots to obtain one 30 minute consultation). Details on how providers will indicate that slots can be considered adjacent can be found in the [Payload response body](appointments_use_case_search_for_free_slots.html#payload-response-body) section of the [Search for free slots](appointments_use_case_search_for_free_slots.html) API use case page." %}
 
 {% include note.html content="The provider system receiving the bookingOrganization details SHALL store, return and display these details as required by the [Must-Support](development_fhir_api_guidance.html#use-of-must-support-flag) flag." %}
 
@@ -211,6 +219,7 @@ For example:
 - the submitted `start` and `end` date range does not match that of the requested `Slot(s)`
 - one or more of the requested `Slot` resources does not exist or already has a `status` of busy
 - a business rule imposed by [Slot Availability Management](appointments_slotavailabilitymanagement.html) is breached, e.g. an organisational slot limit
+- multiple slots were requested for booking but do not meet the criteria for [booking multiple adjacent slots](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots)
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 

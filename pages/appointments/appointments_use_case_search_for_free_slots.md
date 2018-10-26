@@ -76,6 +76,9 @@ In order for providers to return the appropriate slots for the consumer, the con
 
 Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
+### Booking multiple adjacent slots ###
+
+Please see the conditions in which a consumer may book multiple adjacent slots on the [Book appointment](appointments_use_case_book_an_appointment.html#payload-request-body) page.
 
 ## Search for free slots on the wire ##
 
@@ -210,15 +213,7 @@ Provider systems:
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
-- SHALL NOT populate the `specialty` field on `Schedule` or `Slot`
-
-- SHALL manage slot `start` and `end` times to indicate which slots can be considered adjacent and therefore be booked against a single appointment as part of a multi slot appointment booking. Providers are responsible for the implementation of business rules that forbid the booking of non-adjacent slots according to their own practices.
-
-  To allow consumers to implement multi-slot appointment booking, the consumer needs to be able to identify which slots can be considered adjacent. A provider SHALL indicate which slots are adjacent or not adjacent using the following rules:
-
-  * To indicate two slots (Slot A and Slot B) are adjacent, the two slots SHALL reference the same schedule resource and the ```start``` time of ```Slot B``` SHALL equals ```end``` time of ```Slot A```.
-  * If the slots do not conform to the rule above, either the slots do not link to the same schedule or the start time of one slot is not the same as the end time of the previous slot then these slots SHALL not be considered adjacent.
-  
+- SHALL NOT populate the `specialty` field on `Schedule` or `Slot`  
 
 ```json
 {
