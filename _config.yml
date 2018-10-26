@@ -116,7 +116,7 @@ url: https://nhsconnect.github.io/gpconnect
 
 repository: nhsconnect/gpconnect
 
-gems:
+plugins:
    - jekyll-github-metadata
    - jekyll-redirect-from
    - jekyll-seo-tag
