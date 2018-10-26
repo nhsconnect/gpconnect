@@ -9,11 +9,11 @@ toc: false
 ---
 
 <div>
-{% assign gs = site.data.glossary | sort:[0] %}
-{% for kv in gs %}
+{% assign gloss = site.data.glossary | sort:'title' %}
+{% for item in gloss %}
 <dl>
-  <dt><h3>{{ kv[0] }}</h3></dt>
-  <dd>{{ kv[1] }}</dd>
+  <dt><h3>{{ item.title }}</h3></dt>
+  <dd>{{ item.value }}</dd>
 </dl>
 {% endfor %}
 </div>
