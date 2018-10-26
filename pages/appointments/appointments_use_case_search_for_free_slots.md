@@ -78,7 +78,7 @@ Where search filters are sent by consumers which are not explicitly supported in
 
 ### Booking multiple adjacent slots ###
 
-Please see the conditions in which a consumer may book multiple adjacent slots on the [Book appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
+Please see the conditions in which a consumer may book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
 
 ## Search for free slots on the wire ##
 
