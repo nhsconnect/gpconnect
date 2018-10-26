@@ -268,13 +268,13 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 |-------------------------|-------------------|
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
-| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | `INVALID_RESOURCE` |
-| The NHS number could not be found on PDS, or verified against a PDS record | `INVALID_PATIENT_DEMOGRAPHICS` |
-| The patient is marked as deceased on PDS, or on the provider system | `INVALID_PATIENT_DEMOGRAPHICS` |
-| The registration request is for a sensitive patient | `INVALID_PATIENT_DEMOGRAPHICS` |
-| The PDS record contains an invalid or superseded flag | `INVALID_NHS_NUMBER` |
-| PDS is unavailable, or could not be contacted | `INTERNAL_SERVER_ERROR` |
-| The patient is already registered | `DUPLICATE_REJECTED` |
+| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The NHS number could not be found on PDS, or verified against a PDS record | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The patient is marked as deceased on PDS, or on the provider system | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The registration request is for a sensitive patient | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The PDS record contains an invalid or superseded flag | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| PDS is unavailable, or could not be contacted | [`INTERNAL_SERVER_ERROR`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+| The patient is already registered | [`DUPLICATE_REJECTED`](development_fhir_error_handling_guidance.html#duplicate-errors) |
 |-------------------------|-------------------|
 
 ### Request response ###
