@@ -76,10 +76,6 @@ In order for providers to return the appropriate slots for the consumer, the con
 
 Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
-## Booking multiple adjacent slots ##
-
-Please see the conditions in which a consumer may book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
-
 ## Search for free slots on the wire ##
 
 On the wire, a Search for free slots request would look something like one of the following:
@@ -91,6 +87,10 @@ GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_inc
 ```http
 GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
 ```
+
+## Booking multiple adjacent slots ##
+
+Please see the conditions in which a consumer may book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
 
 ## Prerequisites ##
 
