@@ -268,6 +268,18 @@
           {
             "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1",
             "valueDateTime": "2016-05-10"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1",
+                  "code": "prescribed-at-gp-practice",
+                  "display": "Prescribed at GP practice"
+                }
+              ]
+            }
           }
         ],
         "basedOn": {
@@ -309,6 +321,18 @@
           {
             "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-MedicationStatementLastIssueDate-1",
             "valueDateTime": "2016-09-11"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1",
+                  "code": "prescribed-at-gp-practice",
+                  "display": "Prescribed at GP practice"
+                }
+              ]
+            }
           }
         ],
         "basedOn": {
