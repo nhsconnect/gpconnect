@@ -6,7 +6,7 @@ sidebar: accessrecord_sidebar
 permalink: accessrecord_view_encounters.html
 summary: "Encounters HTML view"
 ---
-
+<a href="#" class="back-to-top">Back to Top</a>
 
 | Section Code | Section Name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
