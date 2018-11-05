@@ -22,7 +22,7 @@ Timely sharing of clinical information is key to the delivery and improvement of
 
 ## Purpose ##
 
-The purpose of this section is to provide a summarised view of the pertinent clinical information regarding a patient within a single screen. This allows a clinician to efficiently peruse key information from the patient’s clinical record and supports clinical decision making.
+The purpose of this section is to provide a summarised view of the pertinent clinical information regarding a patient within a page. This allows a clinician to efficiently peruse key information from the patient’s clinical record and supports clinical decision making.
 
 ## Sections and subsections ##
 
@@ -37,70 +37,6 @@ There is only a single main section for the summary section with 5 subsections:
 ### Date filter ###
 
 Date filters are not supported for this section. All relevant records shall be returned.
-
-### Section banner content ###
-
-Provider's message describing at a summary level how they have populated this section:
-
-<div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">EMIS banner content (click here to expand/collapse) </a>
-						</div>
-                        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>Non - BNF designated items e.g. local mixtures, have been excluded.</li>
-										<li>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">TPP banner content (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
-									<ul>
-										<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
-									</ul>
-								<p><b>If GP2GP in progress:</b></p>
-									<ul>
-										<li>Record is in transit and may be incomplete.</li>
-									</ul> 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision banner content (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Microtest banner content (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                	No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-</div>
 
 
 ## Active problems and issues ##

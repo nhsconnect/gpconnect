@@ -33,70 +33,9 @@ Contains one main section, and three subsections:
  
 ### Section content banner ###
 
-Providers message describing at a summary level how they have populated this section, and also the warning message where medications prescribed elsewhere have been excluded:
+Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#medications).
 
-<div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">EMIS message descriptions (click here to expand/collapse) </a>
-						</div>
-                        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>Non - BNF designated items e.g. local mixtures, have been excluded.</li>
-										<li>May also contain immunisations issued as medications.</li>
-										<li>Can also contain details on problems linked to medications if available.</li>
-										<li>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</li>
-										<li>Medication Max Issues are not shared currently.</li>
-						  
-									</ul>
-								<p><b>Only displayed if a record is in transit:</b></p>
-									<ul>
-										<li>Data may be incomplete due to a pending GP transfer.</li>
-									</ul>
-								<p><b>Only if line item(s) have been excluded:</b></p>
-									<ul>
-									  <li>Data items removed due to patient preference, confidentiality and / or RCGP exclusions.</li>
-									</ul>
-													</div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">TPP message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-                                	No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-                                	No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                	No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-</div>
-  
+
 ### Discontinued/cancelled/naturally ended medications ###
 
 {% include custominfocallout.html content="**Note:** It is not currently possible for all GP system suppliers to distinguish between “Discontinued”, “Cancelled” & “Naturally ended” medications." type="info" %}
@@ -180,8 +119,6 @@ A list of drugs or other forms of medicines that are currently being used to tre
 
 The purpose of this section is to provide a view of medications that the patient is currently taking which informs the clinical decision-making process.
 
-A list of all current acute and repeat medications issued to a patient ordered by date descending (i.e. most recent date/time first).
-
 {% include customcallout.html content="**Warning:** The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete. " type="danger" %} 
 
 
@@ -191,74 +128,7 @@ All relevant records **MUST** be returned (i.e. no time limit/filtering is to be
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section.
-
-<div class="panel-group" id="accordion2">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFive">EMIS message descriptions (click here to expand/collapse) </a>
-						</div>
-                        <div id="collapseFive" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>All relevant items subject to patient preferences and / or RCGP exclusions.</li>
-									</ul>
-								<p><b>Only displayed if a record is in transit:</b></p>
-									<ul>
-										<li>Data may be incomplete due to a pending GP transfer.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSix">TPP message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseSix" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
-									<ul>
-										<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
-									</ul>
-								<p><b>Displayed dependent on date range:</b></p>
-									<ul>
-										<li>All relevant items.</li>
-									</ul>
-								<p><b>If GP2GP in progress:</b></p>
-									<ul>
-										<li>Record is in transit and may be incomplete.</li>
-									</ul> 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseSeven">Vision message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseSeven" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseEight">MicroTest message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseEight" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                	No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-</div>
+There are no content banner messages for this subsection.
 
 ### Subsection business rules ###
 
@@ -321,71 +191,7 @@ All relevant records **MUST** be returned (i.e. no time limit/filtering is to be
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section.
-
-<div class="panel-group" id="accordion3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseNine">EMIS message descriptions (click here to expand/collapse) </a>
-						</div>
-                        <div id="collapseNine" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>All relevant items subject to patient preferences and / or RCGP exclusions.</li>
-									</ul>
-								<p><b>Only displayed if a record is in transit:</b></p>
-									<ul>
-										<li>Data may be incomplete due to a pending GP transfer.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTen">TPP message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseTen" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
-									<ul>
-										<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
-									</ul>
-								<p><b>Displayed dependent on date range:</b></p>
-									<ul>
-										<li>All relevant items.</li>
-									</ul>
-								<p><b>If GP2GP in progress:</b></p>
-									<ul>
-										<li>Record is in transit and may be incomplete.</li>
-									</ul> 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseEleven">Vision message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseEleven" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-									No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseTwelve">MicroTest message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseTwelve" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                	No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-</div>
+Provider messages describing at a summary level how they have populated this subsection can be found [here](accessrecord_provider_variance.html#current-repeat-medications-subsection).
 
 ### Subsection business rules ###
 
@@ -439,7 +245,7 @@ Where the medication was cancelled (Acute) or Discontinued (Repeat), this should
 
 ### Date filter ###
 
-A date filter is applicable for the Past Medications subsection:
+A date filter is applicable for the Past Medications subsection (details of the banner message returned can be found [here](accessrecord_provider_variance.html#date-banner-message)):
 
 - All relevant records **MUST** be returned according to the consumer-supplied date range
 - If a date is not supplied all records **MUST** be returned
@@ -447,76 +253,7 @@ A date filter is applicable for the Past Medications subsection:
 
 ### Subsection content banner ###
 
-Providers message describing at a summary level how they have populated this section.
-
-<div class="panel-group" id="accordion5">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseSeventeen">EMIS message descriptions (click here to expand/collapse) </a>
-						</div>
-                        <div id="collapseSeventeen" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text when date filtered:</b></p>
-									<ul>
-										<li>For the period 'dd-Mmm-yyyy' to 'dd-Mmm-yyyy' subject to patient preferences and/or RCGP exclusions.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseEighteen">TPP message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseEighteen" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>If data is hidden due to sharing preferences (only shows if data is contained within current date range):</b></p>
-									<ul>
-										<li>Some patient data is hidden by sharing rules. The data in this section may be incomplete.</li>
-									</ul>
-								<p><b>Displayed dependent on date range:</b></p>
-									<ul>
-										<li>Data for the period DD-MMM-YYYY to DD-MMM-YYYY.</li>
-										<li>All Data Items from DD-MMM-YYYY.</li>
-										<li>All Data Items until DD-MMM-YYYY.</li>
-										<li>All relevant items.</li>
-									</ul>
-								<p><b>If GP2GP in progress:</b></p>
-									<ul>
-										<li>Record is in transit and may be incomplete.</li>
-									</ul> 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseNineteen">Vision message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseNineteen" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text when date filtered:</b></p>
-									<ul>
-										<li>For the period 'dd-Mmm-yyyy' to 'dd-Mmm-yyyy'.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseTwenty">MicroTest message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseTwenty" class="panel-collapse collapse">
-                            <div class="panel-body">
-								<p><b>Always displays this text when date filtered:</b></p>
-									<ul>
-										<li>For the period 'dd-Mmm-yyyy' to 'dd-Mmm-yyyy'.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-</div>
+There are no content banner messages for this subsection.
 
 ### Subsection business rules ###
 

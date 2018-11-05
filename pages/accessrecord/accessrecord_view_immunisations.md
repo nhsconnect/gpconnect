@@ -31,67 +31,7 @@ Date filters are not supported for this section all relevant records shall be re
 
 ### Section content banner ###
 
-Providers message describing at a summary level how they have populated this section:
-
-<div class="panel-group" id="accordion">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">EMIS message descriptions (click here to expand/collapse) </a>
-						</div>
-                        <div id="collapseOne" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>Contains coded immunisations on the patient record; some immunisations may exist as issued medications also.</li>
-										<li>Content and Part not supported.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">TPP message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Displayed dependent on date range:</b></p>
-									<ul>
-										<li>All relevant items.</li>
-									</ul>
-								<p><b>If GP2GP in progress:</b></p>
-									<ul>
-										<li>Record is in transit and may be incomplete.</li>
-									</ul> 
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Vision message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse noCrossRef">
-                            <div class="panel-body">
-								<p><b>Always displays this text:</b></p>
-									<ul>
-										<li>All relevant items subject to patient preferences and/or RCGP exclusions.</li>
-									</ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- /.panel -->
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseFour">MicroTest message descriptions (click here to expand/collapse)</a>
-                        </div>
-                        <div id="collapseFour" class="panel-collapse collapse">
-                            <div class="panel-body">
-                                	No section banner text displayed.
-                            </div>
-                        </div>
-                    </div>
-</div>
+Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#immunisations).
 
 
 ### Table construction requirements ###

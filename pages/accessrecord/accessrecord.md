@@ -26,27 +26,25 @@ The content displayed in the HTML views has then been used as a common baseline 
 
 ### Scope ###
 
-The information "sections" in scope for care record access are:
+The information sections in scope for care record access are:
 
-1. Summary
-2. Encounters
-3. Clinical Items
-4. Problems and Issues
-5. Allergies and Adverse Reactions
-6. Medications
-7. Referrals
-8. Observations
-9. Immunisations
-10. *Administrative Items*<sup>*</sup>
-11. Patient Demographics (minimal)
-12. Patient's GP Practice and Organisation (minimal)
+1. [Summary](accessrecord_view_summary.html)
+2. [Encounters](accessrecord_view_encounters.html)
+3. [Clinical Items](accessrecord_view_clinical_items.html)
+4. [Problems and Issues](accessrecord_view_problems.html)
+5. [Allergies and Adverse Reactions](accessrecord_view_allergies.html)
+6. [Medications](accessrecord_view_medications.html)
+7. [Referrals](accessrecord_view_referrals.html)
+8. [Observations](accessrecord_view_observations.html)
+9. [Immunisations](accessrecord_view_immunisations.html)
+10. *[Administrative Items](accessrecord_view_administrative_items.html)*<sup>*</sup>
 
-{% include customcallout.html content="**Important:** The 'Clinical Items' section exists as it is not currently possible to reliably distinguish procedures, diagnoses, symptoms and other clinically coded items into their own sections due to the way they are stored in the primary care record Principal systems. <br/><br/>Initially some sections of the patient care record (marked above with a <sup>*</sup>) may not initially be available from all primary care record Principal systems. " type="warning" %}
+{% include customcallout.html content="**Note:** sections of the patient care record (marked above with a <sup>*</sup>) may not initially be available from all primary care record Principal systems. " type="info" %}
 
 ### Use cases ###
 
-- Extended access GP practices can view all of the patients primary care views even when the record is held on a different GP system.
-- Other care settings (e.g. 111, Physio, Community, Emergency, Acute/Secondary, Social) can view the patients GP record (those held by the patients recorded GP practice) to better inform care decisions they may be making for a patient.
+- Extended access GP practices can view all of the patient's primary care views even when the record is held on a different GP system.
+- Other care settings (e.g. 111, Physio, Community, Emergency, Acute/Secondary, Social) can view the patient's GP record (those held by the patient's recorded GP practice) to better inform care decisions they may be making for a patient.
 
 ### Profiled FHIR resources ###
 
