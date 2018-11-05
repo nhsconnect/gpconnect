@@ -6,6 +6,7 @@ sidebar: accessrecord_sidebar
 permalink: accessrecord_known_issues.html
 summary: "Known issues related to the Access Record capability"
 ---
+<a href="#" class="back-to-top">Back to Top</a>
 
 ## Specification documentation ##
 
