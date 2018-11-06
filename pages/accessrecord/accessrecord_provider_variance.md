@@ -38,7 +38,7 @@ The following messages are returned by the provider systems when a GP to GP tran
 		<td>This patient has been registered since dd/mm/yyyy but there is no record of successful completion of the GP2GP process. Some information may not yet be incorporated into the local patient record.</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>GP transfer underway - record may be incomplete due to the transfer.</td>
 	  </tr>
 	</tbody>
@@ -70,7 +70,7 @@ The following messages are returned by the provider systems when a date filter i
 		<td>For the period 'dd-Mmm-yyyy' to 'dd-Mmm-yyyy'.</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>For the period 'dd-Mmm-yyyy' to 'dd-Mmm-yyyy'.</td>
 	  </tr>
 	</tbody>
@@ -98,7 +98,7 @@ The following messages are returned by the provider systems when data has been e
 	  <tr>
 		<td><b>EMIS</b></td>
 		<td>Data items removed due to patient preference, confidentiality and / or RCGP exclusions.</td>
-		<td>N/A</td>
+		<td><i>N/A, EMIS do not support line item exclusion</i></td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -106,7 +106,7 @@ The following messages are returned by the provider systems when data has been e
 		<td>***********</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>Items excluded due to confidentiality, patient preferences and/or RCGP sensitive dataset exclusions.</td>
 		<td>Excluded items</td>
 	  </tr>
@@ -140,7 +140,7 @@ The following content section messages are returned by the provider systems for 
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>Contains Appointment information and any related information recorded during the consultation; related items may also occur in other sections.</td>
 	  </tr>
 	</tbody>
@@ -171,7 +171,7 @@ The following content section messages are returned by the provider systems for 
 		<td>Read Chapter 1, Read Chapters A-Z.</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</td>
 	  </tr>
 	</tbody>
@@ -202,7 +202,7 @@ The following content section messages are returned by the provider systems for 
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -233,7 +233,7 @@ The following content subsection messages are returned by the provider systems f
 		<td>All problems included in Active Section.</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms & Conditions that have been designated as Problems used to link together related information.</td>
 	  </tr>
 	</tbody>
@@ -264,7 +264,7 @@ The following content subsection messages are returned by the provider systems f
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -296,7 +296,7 @@ The following content section messages are returned by the provider systems for 
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -327,7 +327,7 @@ The following content subsection messages are returned by the provider systems f
 		<td>All Allergies Listed in Current Section.</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -358,7 +358,7 @@ The following content subsection messages are returned by the provider systems f
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -395,7 +395,7 @@ The following content section messages are returned by the provider systems for 
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -431,7 +431,7 @@ The following content subsection messages are returned by the provider systems f
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -469,7 +469,7 @@ The following content section messages are returned by the provider systems for 
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>Contains items relating to 'Referral for Further Care'; may include repeated entries due to duplicated data in the source system.</td>
 	  </tr>
 	</tbody>
@@ -500,7 +500,7 @@ The following content section messages are returned by the provider systems for 
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>Contains Observations with numeric and other measurement ranges.</td>
 	  </tr>
 	</tbody>
@@ -531,7 +531,7 @@ The following content section messages are returned by the provider systems for 
 		<td>N/A</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>N/A</td>
 	  </tr>
 	</tbody>
@@ -562,7 +562,7 @@ The following content section messages are returned by the provider systems for 
 		<td>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</td>
 	  </tr>
 	  <tr>
-		<td><b>MicroTest</b></td>
+		<td><b>Microtest</b></td>
 		<td>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions etc.</td>
 	  </tr>
 	</tbody>

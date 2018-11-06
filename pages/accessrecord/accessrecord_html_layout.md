@@ -14,7 +14,7 @@ tags:
 
 ## Purpose ##
 
-This document is intended for use by software developers looking to build a conformant GP Connect HTML care record viewer application.
+This document is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
 
 ## Section layout ##
 
@@ -25,7 +25,7 @@ HTML views with a single table and hence a single section are:
 
 **Encounters**, **Clinical Items**, **Administrative Items**, **Observations**, **Referrals**, **Immunisations**.
 
-These views **MUST** have the following structure:
+These views **MUST** contain the following sections, where applicable:
 
 - Section title
 - GP transfer banner
@@ -34,12 +34,14 @@ These views **MUST** have the following structure:
 - Exclusion banner (*if applicable: to indicate excluded items*)
 - Table
 
+{% include custominfocallout.html content="**Warning:** The Section title **MUST** be displayed first, the table **MUST** be displayed last. The applicable banners can be in any order." type="warning" %}
+
 ### HTML views with multiple tables ###
 HTML views with multiple tables and hence multiple sections are:
  
 **Problems**, **Allergies**, **Medications**.
 
-These views **MUST** have the following structure:
+These views **MUST** contain the following sections, where applicable:
 
 - Section title
 - GP transfer banner
@@ -51,6 +53,8 @@ These views **MUST** have the following structure:
 	- Exclusion banner (*if applicable, to indicate excluded items*)
 	- Table
 
+{% include custominfocallout.html content="**Warning:** The Section title **MUST** be displayed first. Within a Subsection, the Subsection title **MUST** be displayed first, the table **MUST** be displayed last. The applicable banners can be in any order." type="warning" %}
+	
 {% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML view. See [Summary HTML view](accessrecord_view_summary.html)." type="info" %}
 
 ### Single table example ###
@@ -218,21 +222,19 @@ Section default time frames **MUST** be configurable, by the provider, to be eas
 
 {% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback." type="warning" %}
 
-| Section code   | Time frame | FHIR resource(s) |
-|----------------|------------|------------------|
-| ADM  | All |- |                
-| ALL  | All Relevant | AllergyIntolerance<sup>1</sup> |
-| CLI  | All | Condition, Procedure |
-| ENC  | All | Encounter |
-| IMM  | All Relevant | Immunization<sup>1</sup> |
-| MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
-| OBS  | All Relevant | Observation |
-| PRB  | All Relevant | Problem|
-| REF  | All Relevant | Referral |
-| SUM  | - | Summary<sup>2</sup> |
+| Section code   | Time frame   |
+|----------------|--------------|
+| ADM            | All          |              
+| ALL            | All Relevant |
+| CLI            | All          |
+| ENC            | All          |
+| IMM            | All Relevant |
+| MED            | All Relevant |
+| OBS            | All Relevant |
+| PRB            | All Relevant |
+| REF            | All Relevant |
+| SUM            | N/A          |
 
-<sup>1</sup> An explicit time frame is not allowed to be specified as the system **MUST** return 'All Relevant' resources.<br>
-<sup>2</sup> An explicit time frame is not allowed as these are set piece views, the system **MUST** return 'All Relevant' resources.
 
 Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
 

@@ -24,14 +24,10 @@ This list is of known issues at the time of publication of this version of the s
 
 ## Known issues with provider variance ##
 
-{% include customcallout.html content="**Warning:** The following variances are a record of known significant variances at the time of publication and will often relate to compliance against an early version. Providers may address these during the life of this version of the specification without update to the issue list below." type="warning" %} 
-
-- JSON and XML may not be supported by all providers.
-
-- The handling of S-flag (address sensitive) patient records may vary between providers.
+- XML is not supported by all providers.
 
 - Some sections/subsections are not supported by some providers. Check each section description in the HTML views for details. 
 
-- The scope of the contents for sections and subsections will sometimes vary across providers. Some provider content is described in the sample provider content banner details in each of the HTML views section descriptions.  
+- The scope of the contents for sections and subsections will sometimes vary across providers. Where variances are known, these are described in the sample provider content banner details in each of the HTML view section descriptions.  
 
 - Not all provider variances (differences between the content returned by each provider within the scope of the specification) are listed within this specification. Consumers should consider this in their testing and training approaches.

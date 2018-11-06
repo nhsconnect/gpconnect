@@ -53,7 +53,7 @@ The following business rules are applicable:
 | EMIS | All allergies and adverse reactions will be recorded in the Current Allergies and Adverse Reactions subsection.  Historical allergies and adverse reactions data is not supported by EMIS. |
 | TPP | TBC |
 | Vision | All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection Vision do not record end dates for allergies & adverse reactions, therefore a history view is not possible. |
-| MicroTest | N/A |
+| Microtest | N/A |
 
 
 ## Current Allergies and Adverse Reactions ##

@@ -10,18 +10,15 @@ toc: false
 
 <a href="#" class="back-to-top">Back to Top</a>
 
-<i class='fa fa-check'/> In scope for FoT.
 
-<i class='fa fa-road'/> Out of scope for FoT.
+# Clinical settings and user stories #
 
-# FoT clinical settings and user stories #
-
-These have been assembled through engagement during 2015/16 with various clinical communities and examples are as follows (click title to expand/collapse):
+These have been assembled through engagement with various clinical communities and examples are as follows (click title to expand/collapse):
 
 <div class="panel-group" id="accordion">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><i class='fa fa-check'></i>&nbsp;Patient's allergies and adverse reactions available to MIU</a>
+                                Patient's allergies and adverse reactions available to MIU
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
@@ -48,7 +45,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                         <div id="collapseThree" class="panel-collapse collapse noCrossRef">
                             <div class="panel-body">
                                 <p>Patient visits GP during a morning appointment and then is presented to A&E later that evening.  Clinician needs to understand all encounters over past 24 hrs to build a complete picture.</p>
-<p>Emergency department able to confirm elderly patient’s known health problems.</p>
+								<p>Emergency department able to confirm elderly patient’s known health problems.</p>
                             </div>
                         </div>
                     </div>
@@ -121,7 +118,7 @@ These have been assembled through engagement during 2015/16 with various clinica
                     <!-- /.panel -->
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                                <a class="noCrossRef accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseTen"><i class='fa fa-road'></i>&nbsp;Community Pharmacy Access</a>
+                                Community Pharmacy Access
                         </div>
                         <div id="collapseTen" class="panel-collapse collapse">
                             <div class="panel-body">
