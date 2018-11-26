@@ -16,9 +16,6 @@ entries:
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-    - title: First of type
-      url: /overview_first_of_type.html
-      output: web
       
       subfolders:
       - title: Release notes
@@ -96,7 +93,7 @@ entries:
     - title: Error handling
       url: /development_fhir_error_handling_guidance.html
       output: web
-    - title: V&P guidance
+    - title: Volume and performance guidance
       url: /development_api_volume_and_performance.html
       output: web          
     - title: Non-functional requirements
@@ -126,13 +123,10 @@ entries:
   - title: Integrate with Spine
     output: web
     folderitems:
-    - title: System topologies
-      url: /integration_system_topologies.html
-      output: web     
-    - title: Spine integration illustrated
-      url: /integration_illustrated.html
-      output: web           
-    - title: Cross org audit & provenance
+    - title: Overview
+      url: /integration_overview.html
+      output: web              
+    - title: Cross organisation audit and provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
     - title: Personal Demographic Service
@@ -144,9 +138,6 @@ entries:
     - title: Spine Security Proxy introduction
       url: /integration_spine_security_proxy.html
       output: web
-    - title: Spine Security Proxy implementation guide
-      url: /integration_spine_security_proxy_implementation_guide.html
-      output: web 
 
   - title: Test & assure
     output: web
@@ -175,9 +166,6 @@ entries:
       output: web
     - title: Communication channels
       url: /support_communications.html
-      output: web
-    - title: Run website locally
-      url: /support_run_website_locally.html
       output: web
 
       subfolders:
