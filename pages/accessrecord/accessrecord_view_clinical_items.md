@@ -60,18 +60,6 @@ Providers must return all the columns as described in the table below, ordered b
 | <center>3</center> | `Details` | Longer human readable details for the clinical item | `free-text` |
 
 
-### Section business rules ###
-
-The following business rules are applicable:
-
-| Supplier | Business Rules |
-|----------|----------------|
-| EMIS | N/A |
-| TPP | Message to include indication of inclusion of practice-specific codes |
-| Vision | Message to include meaningful interpretation of Read Chapter 1 with Chapters A - Z |
-| Microtest | Message to include meaningful interpretation of items excluding Read Code Chapter 2 and Codes starting 9 and 0 |
-
-
 ## HTML view ##
 
 The following content highlights the expected HTML tags and format providers **MUST** use when generating the HTML content:
