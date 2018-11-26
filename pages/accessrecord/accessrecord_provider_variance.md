@@ -76,6 +76,8 @@ The following messages are returned by the provider systems when a date filter i
 	</tbody>
 </table>
 
+{% include custominfocallout.html content="**Information:** TPP display the section message for all sections regardless of whether there is an exclusion applicable to that section. <br/>TPP only include a table line item message in the Encounters section (or Last 3 Encounters table in the Summary section) and only for items marked private (as opposed to those relating to the exclusion data set). All other sections will not identify if an entry is absent or not." type="info" %} 
+
 
 ### Exclusion banner message ###
 
@@ -112,6 +114,42 @@ The following messages are returned by the provider systems when data has been e
 	  </tr>
 	</tbody>
 </table>
+
+{% include custominfocallout.html content="**Information:** TPP only include a table line item message in the Encounters section (or Last 3 Encounters table in the Summary section) and only for items marked private (as opposed to those relating to the exclusion data set). All other sections will not identify if an entry is absent or not." type="info" %} 
+
+
+### Incomplete dates ###
+
+The following explains how the provider systems deal with incomplete dates, where applicable:
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Message</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>Incomplete dates will be returned with the incomplete element missing, for example, dates may be returned as 2008 or Apr 2009. For the chronology, incomplete elements are treated as the first day of the month and first month of the year respectively.</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>Incomplete elements of a date will be returned as the first day of the month or the first month of the year as applicable e.g. a date entered as ??/??/2011 will be returned as 01 Jan 2011.</td>
+	  </tr>
+	</tbody>
+</table>
+
+
 
 ## HTML view content banner variances ##
 
@@ -493,7 +531,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>N/A</td>
+		<td>Contains observations with numeric and other measurement ranges.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
