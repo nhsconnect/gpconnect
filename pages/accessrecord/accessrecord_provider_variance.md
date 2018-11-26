@@ -76,7 +76,7 @@ The following messages are returned by the provider systems when a date filter i
 	</tbody>
 </table>
 
-{% include custominfocallout.html content="**Information:** TPP display the section message for all sections regardless of whether there is an exclusion applicable to that section. <br/>TPP only include a table line item message in the Encounters section (or Last 3 Encounters table in the Summary section) and only for items marked private (as opposed to those relating to the exclusion data set). All other sections will not identify if an entry is absent or not." type="info" %} 
+{% include custominfocallout.html content="**Information:** TPP display the section message for all sections regardless of whether there is an exclusion applicable to that section. <br/><br/>TPP only include a table line item message in the Encounters section (or Last 3 Encounters table in the Summary section) and only for items marked private (as opposed to those relating to the exclusion data set). All other sections will not identify if an entry is absent or not." type="info" %} 
 
 
 ### Exclusion banner message ###
