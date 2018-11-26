@@ -4,74 +4,16 @@ keywords: abbreviations, definitions, glossaries, terms
 tags: [getting_started]
 sidebar: overview_sidebar
 permalink: overview_glossary.html
-summary: "Glossary of terms used by GP Connect"
+summary: "Glossary of terms used in the GP Connect FHIR&reg; API specification"
 toc: false
 ---
 
-Glossary of common terms and abbreviations used though-out the GP Connect documentation.
-
-#### Direct Patient Care ####
-: {{site.data.glossary.direct_patient_care}}
-
-#### First of Type ####
-: {{site.data.glossary.first_of_type}}
-
-#### Consumer ####
-: {{site.data.glossary.consumer}}
-
-#### Provider ####
-: {{site.data.glossary.provider}}
-
-#### Principal Supplier ####
-: {{site.data.glossary.principal_supplier}}
-
-#### Accreditation ####
-: {{site.data.glossary.accreditation}}
-
-#### Assurance ####
-: {{site.data.glossary.assurance}}
-
-#### GPSoC Contract ####
-: {{site.data.glossary.gpsoc_contract}}
-
-#### GP Connect Licence ####
-: {{site.data.glossary.gpconnect_licence}}
-
-#### Proxy Server ####
-: {{site.data.glossary.proxy_server}}
-
-#### Spine ####
-: {{site.data.glossary.spine}}
-
-#### PDS ####
-: {{site.data.glossary.pds}}
-
-#### SDS ####
-: {{site.data.glossary.sds}}
-
-#### ODS ####
-: {{site.data.glossary.ods}}
-
-#### Federation ####
-: {{site.data.glossary.federation}}
-
-#### Active Patient ####
-
-An `Active` patient as defined by GP Connect is any patient on a providers system that has `Not Left` and is `Not Deceased`.
-
-The concept of "Active" is related to the patients registration ***status*** rather than to the patients registration ***type***. A providers system may have a number of different statuses which should be considered "Active", many of those statuses may apply to a number of different registration type. Below is a basic example of a possible GP Practice representation of patient registration type and registration status, to help explain the concept of "Active" patient within GP Connect.
-
-| Patient Registration Status | GP Connect Considered Active |
-| --- | --- |
-| Registration Pending | <span style="color:green">Yes</span> |
-| Fully registered | <span style="color:green">Yes</span> |
-| Deduction Pending | <span style="color:green">Yes</span> |
-| Deceased | <span style="color:red">No (Inactive)</span> |
-| Left/Deducted | <span style="color:red">No (Inactive)</span> |
-
-| Patient Registration Type | Associated Registration Status |
-| --- | --- |
-| Regular / GMS | "Registration Pending", "Fully registered", "Deduction Pending",<br/> "Deceased", "Left/Deducted" |
-| Temporary - Long Stay | "Fully registered", "Deceased", "Left/Deducted" |
-| Temporary - Short Stay | "Fully registered", "Deceased", "Left/Deducted" |
-| Emergency | "Fully registered", "Deceased", "Left/Deducted" |
+<div>
+{% assign gloss = site.data.glossary | sort:'title' %}
+{% for item in gloss %}
+<dl>
+  <dt><h3>{{ item.title }}</h3></dt>
+  <dd>{{ item.value }}</dd>
+</dl>
+{% endfor %}
+</div>
