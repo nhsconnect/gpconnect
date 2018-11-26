@@ -43,19 +43,6 @@ Date filters are not supported for this section all relevant records shall be re
 Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#allergies-and-adverse-reactions).
 
 
-
-### Section business rules ###
-
-The following business rules are applicable:
-
-| Supplier | Business Rules |
-|----------|----------------|
-| EMIS | All allergies and adverse reactions will be recorded in the Current Allergies and Adverse Reactions subsection.  Historical allergies and adverse reactions data is not supported by EMIS. |
-| TPP | TBC |
-| Vision | All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection Vision do not record end dates for allergies & adverse reactions, therefore a history view is not possible. |
-| Microtest | N/A |
-
-
 ## Current Allergies and Adverse Reactions ##
 
 ### Clinical narrative ###
