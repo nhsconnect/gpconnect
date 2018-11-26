@@ -8,7 +8,7 @@ summary: "Known provider variance to the Access Record capability"
 
 ## Purpose ##
 
-The purpose of this page is to identify the variances between provider response banner messages, to better aid consumers during development.
+The purpose of this page is to identify the variances between provider response banner messages, and detail any business rules applied, to better aid consumers during development.
 
 
 ## Cross section/subsection banner variances ##
@@ -151,9 +151,38 @@ The following explains how the provider systems deal with incomplete dates, wher
 
 
 
-## HTML view content banner variances ##
+## HTML view business rules and content banner variances ##
 
 ### Encounters ###
+
+The following business rules apply for [encounters](accessrecord_view_encounters.html):
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Rule</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>Encounters is a representation of the SystmOne journal which is a full chronology. It therefore covers more than the clinical narrative definition.</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>N/A</td>
+	  </tr>
+	</tbody>
+</table>
 
 The following content section messages are returned by the provider systems for [encounters](accessrecord_view_encounters.html):
 
@@ -186,6 +215,35 @@ The following content section messages are returned by the provider systems for 
 
 ### Clinical items ###
 
+The following business rules apply for [clinical items](accessrecord_view_clinical_items.html):
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Rule</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>Returns practice-specific codes categorised as clinical. Codes are categorised as either clinical or administrative by default according to practice specific configuration. The default can be overridden by users.</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>Includes all coded items (clinical and administrative) except those which will be returned as observations (have numeric or associated values).</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>Includes coded items from Read Chapter 1 with Read Chapters A-Z.</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>Coded items excluding Read Code Chapter 2 & codes starting ‘9’ & ‘0’, not filtering out Observations.</td>
+	  </tr>
+	</tbody>
+</table>
+
 The following content section messages are returned by the provider systems for [clinical items](accessrecord_view_clinical_items.html):
 
 <table width="100%">
@@ -216,6 +274,35 @@ The following content section messages are returned by the provider systems for 
 </table>
 
 ### Problems and issues ###
+
+The following business rules apply for [problems and issues](accessrecord_view_problems.html):
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Rule</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>Inactive Problems not supported; problems included in 'Active Problems' table. Includes active problem headers and priority 1 medical history. Significance not supported.</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>Low priority mapped to ‘Minor’; Medium mapped to ‘Routine’; High mapped to ‘Major’.</td>
+	  </tr>
+	</tbody>
+</table>
 
 The following content section messages are returned by the provider systems for [problems and issues](accessrecord_view_problems.html):
 
@@ -310,6 +397,35 @@ The following content subsection messages are returned by the provider systems f
 
 
 ### Allergies and adverse reactions ###
+
+The following business rules apply for [allergies and adverse reactions](accessrecord_view_allergies.html):
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Rule</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>All allergies and adverse reactions will be recorded in the Current Allergies and Adverse Reactions subsection. Historical allergies and adverse reactions data is not supported by EMIS.</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection. Vision do not record end dates for allergies & adverse reactions, therefore a history view is not possible.</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>N/A</td>
+	  </tr>
+	</tbody>
+</table>
 
 The following content section messages are returned by the provider systems for [allergies and adverse reactions](accessrecord_view_allergies.html):
 
@@ -406,6 +522,69 @@ The following content subsection messages are returned by the provider systems f
 
 ### Medications ###
 
+The following business rules apply for [medications](accessrecord_view_medications.html):
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Rule</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>Acute/repeat issues are current until the scheduled end date (issue date plus days duration). Repeat templates are current until actively ended by a system user action.</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>An acute medication is current for 28 days from issue or the issue date plus the days duration plus 14 days, whichever is the greater. <br/>Repeat medication courses are subject to a local configuration setting. When enabled, repeat courses will automatically expire after a configurable period from the last issue date plus the course duration. The period can be set from days to years. <br/>Repeat medication issues are included as current whilst the repeat course is current (meaning, has not been stopped/expired). </td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>All acute medications stay in the current medication issues (acute) section for 1 year (from prescription date) before being moved to Past Medication.</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list. A medication can be moved between ‘current’ and ‘removed’ lists <br/>
+			<ul>
+				<li>automatically if a drug hasn’t been issued for more than a configurable period, typically 6 months, it will be moved from ‘current’ to ‘removed’</li>
+				<li>manually by the doctor in either direction</li>
+			</ul>
+		</td>
+	  </tr>
+	</tbody>
+</table>
+
+The following has been documented to explain the capture of cancelled/discontinued medication:
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Information</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>Acute medications will return an ‘Ended on’ label and the date ended in the Details column, repeat medications will return ‘Stopped:’ and the date stopped. A description from a coded list will be return along with any free text narrative if available.</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>Does not distinguish between cancelled, discontinued or ended (always says expired for naturally ended).</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>Does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the details column. Note: INPS use the term de-activated in Vision as opposed to discontinued.</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>Can only show that the medication has been actively stopped by a user. They do not hold the date or reason for the ending of a medication (these are not viewable in their GP system).</td>
+	  </tr>
+	</tbody>
+</table>
+
 The following content section messages are returned by the provider systems for [medications](accessrecord_view_medications.html):
 
 <table width="100%">
@@ -484,6 +663,8 @@ There are no content subsection messages returned by the provider systems for [p
 
 ### Referrals ###
 
+There are no business rules associated with referrals.
+
 The following content section messages are returned by the provider systems for [referrals](accessrecord_view_referrals.html):
 
 <table width="100%">
@@ -514,6 +695,8 @@ The following content section messages are returned by the provider systems for 
 </table>
 
 ### Observations ###
+
+There are no business rules associated with observations.
 
 The following content section messages are returned by the provider systems for [observations](accessrecord_view_observations.html):
 
@@ -546,6 +729,36 @@ The following content section messages are returned by the provider systems for 
 
 ### Immunisations ###
 
+The following business rules apply for [immunisations](accessrecord_view_immunisations.html):
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Rule</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>All immunisations recorded as Vaccinations are included. Immunisations recorded on SystmOne as Read codes (not using SystmOne's Vaccinations functionality) are not included in the Immunisations view. All Read coded immunisations will be included in the Encounters view.</td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>Includes a record of an invitation for a vaccination and consent / refusal for vaccinations in addition to immunisations administered.</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>Microtest don't have a recognizable Immunisations 'table'; immunisations are extracted from their Recalls & History repositories based on the following Read Codes; <br/>
+        7L1gz14b65670670068N8BMb.8BQ1.8I238MC8ME9DN9ki9Oo9OXZV03ZV04 where the code is less than five characters long it will include all codes below it in the Read2 hierarchy.</td>
+	  </tr>
+	</tbody>
+</table>
+
 The following content section messages are returned by the provider systems for [immunisations](accessrecord_view_immunisations.html):
 
 <table width="100%">
@@ -576,6 +789,37 @@ The following content section messages are returned by the provider systems for 
 </table>
 
 ### Administrative items ###
+
+### Immunisations ###
+
+The following business rules apply for [administrative items](accessrecord_view_administrative_items.html):
+
+<table width="100%">
+	<thead>
+		<tr>
+			<th width="15%">Supplier</th>
+			<th width="85%">Rule</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+		<td><b>TPP</b></td>
+		<td>Returns practice-specific codes categorised as administrative. Codes are categorised as either clinical or administrative by default according to practice specific configuration. The default can be overridden by users. </td>
+	  </tr>
+	  <tr>
+		<td><b>EMIS</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Vision</b></td>
+		<td>N/A</td>
+	  </tr>
+	  <tr>
+		<td><b>Microtest</b></td>
+		<td>N/A</td>
+	  </tr>
+	</tbody>
+</table>
 
 The following content section messages are returned by the provider systems for [administrative items](accessrecord_view_administrative_items.html):
 
