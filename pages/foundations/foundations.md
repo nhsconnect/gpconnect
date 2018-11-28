@@ -33,11 +33,11 @@ In order to be a compliant FHIR server, provider systems need to expose a valid 
 
 Please also refer to [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html) for full details on the common FHIR API patterns used throughout all the GP Connect APIs.
 
-### Use Cases ###
+### Use cases ###
 
 - [Get the FHIR conformance profile](foundations_use_case_get_the_fhir_conformance_profile.html)
 
-## Spine Interactions
+## Spine interactions
 
 The Foundation capability message set includes the following set of spine interactions:
 

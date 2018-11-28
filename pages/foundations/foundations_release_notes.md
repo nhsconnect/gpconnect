@@ -1,5 +1,5 @@
 ---
-title: Foundations Release Notes
+title: Foundations release notes
 keywords: foundations, release notes
 tags: []
 sidebar: foundations_sidebar

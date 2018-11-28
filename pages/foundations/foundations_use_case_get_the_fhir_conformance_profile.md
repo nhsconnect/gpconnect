@@ -1,5 +1,5 @@
 ---
-title: Get the FHIR Conformance Statement
+title: Get the FHIR conformance statement
 keywords: foundations, fhir
 tags: [foundations,use_case,fhir]
 sidebar: foundations_sidebar
@@ -7,9 +7,9 @@ permalink: foundations_use_case_get_the_fhir_conformance_profile.html
 summary: "Use case for getting the GP Connect FHIR server's conformance statement."
 ---
 
-## API Usage ##
+## API usage ##
 
-### Request Operation ###
+### Request operation ###
 
 #### FHIR Relative Request ####
 
@@ -17,13 +17,13 @@ summary: "Use case for getting the GP Connect FHIR server's conformance statemen
 GET /metadata
 ```
 
-#### FHIR Absolute Request ####
+#### FHIR absolute request ####
 
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/metadata
 ```
 
-#### Request Headers ####
+#### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
@@ -34,21 +34,21 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata`|
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 N/A
 
-#### Error Handling ####
+#### Error handling ####
 
 Provider systems are expected to always be able to return a valid conformance statement.
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
@@ -98,7 +98,7 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
 </Conformance>
 ```
 
-Consumer Systems:
+Consumer systems:
 
 - SHOULD, at run-time, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
 - SHOULD cache conformance statement information retrieved from an endpoint at run-time on a per-session basis. 

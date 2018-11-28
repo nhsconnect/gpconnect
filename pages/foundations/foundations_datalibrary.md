@@ -1,5 +1,5 @@
 ---
-title: Foundation Resources
+title: Foundation resources
 keywords: development
 sidebar: foundations_sidebar
 toc: false
