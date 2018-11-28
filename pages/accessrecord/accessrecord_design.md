@@ -241,3 +241,6 @@ Date range handling in the HTML view per section:
 - <span class="label label-success">SELECTED</span> Date ranges to be applied as indicated in the relevant section implementation guidance (for example, always return all allergies) with clinical sign off.
 
 <span class="label label-info">DECISION</span> Date ranges are applied, where permitted, throughout Access Record HTML, please see each HTML view page for details.
+
+
+

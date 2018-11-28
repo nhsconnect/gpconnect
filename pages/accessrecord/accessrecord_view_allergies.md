@@ -43,6 +43,7 @@ Date filters are not supported for this section all relevant records shall be re
 Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#allergies-and-adverse-reactions).
 
 
+
 ## Current Allergies and Adverse Reactions ##
 
 ### Clinical narrative ###
