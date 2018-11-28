@@ -1,5 +1,5 @@
 ---
-title: Communication Channels
+title: Communication channels
 keywords: support, communications, community 
 tags: [support]
 toc: false

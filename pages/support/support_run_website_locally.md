@@ -1,5 +1,5 @@
 ---
-title: Run Website Locally
+title: Run website locally
 keywords: support, website, jekyll
 tags: [support]
 toc: false
