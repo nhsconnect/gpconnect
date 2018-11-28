@@ -31,19 +31,19 @@ entries:
   - title: Design approach
     output: web
     folderitems:
+    - title: API principles
+      url: /designprinciples_open_api_principles.html
+      output: web
     - title: Development principles
       url: /designprinciples_development_principles.html
-      output: web
-    - title: Open API principles
-      url: /designprinciples_open_api_principles.html
       output: web
     - title: Data Model principles
       url: /designprinciples_data_model_principles.html
       output: web
-    - title: Information Governance principles
+    - title: Information governance principles
       url: /designprinciples_ig_principles.html
       output: web
-    - title: Clinical Safety principles
+    - title: Clinical safety principles
       url: /designprinciples_clinical_safety_principles.html
       output: web
     - title: Assurance principles
@@ -116,16 +116,13 @@ entries:
     - title: <b class="capability-not-available">Appointment Management</b>
       url: /appointments.html
       output: web
-    - title: <b class="capability-not-available">Task Management</b>
-      url: /tasks.html
-      output: web
 
   - title: Integrate with Spine
     output: web
     folderitems:
     - title: Overview
       url: /integration_overview.html
-      output: web              
+      output: web       
     - title: Cross organisation audit and provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
@@ -135,11 +132,11 @@ entries:
     - title: Spine Directory Services
       url: /integration_spine_directory_service.html
       output: web
-    - title: Spine Security Proxy introduction
-      url: /integration_spine_security_proxy.html
+    - title: Spine Secure Proxy
+      url: /integration_spine_secure_proxy.html
       output: web
 
-  - title: Test & assure
+  - title: Test and assure
     output: web
     folderitems:
     - title: Testing assets
@@ -155,10 +152,10 @@ entries:
       url: /testing_api_consumer_testing.html
       output: web
 
-  - title: Help & support
+  - title: Help and support
     output: web
     folderitems:
-    - title: Frequently asked questions (FAQ)
+    - title: Frequently asked questions
       url: /support_faq.html
       output: web
     - title: Glossary
@@ -172,35 +169,32 @@ entries:
       - title: External links
         output: web
         subfolderitems:        
-        - title: GPC Documentation Repository
+        - title: GPC Documentation repository
           external_url: https://github.com/nhsconnect/gpconnect
           output: web
         - title: GPC NHS Digital
           external_url: https://digital.nhs.uk/article/1275/GP-Connect
           output: web
-        - title: GPC Developer Network
-          external_url: http://developer.nhs.uk/library/interoperability/gp-connect/
-          output: web
-        - title: GPC Github FHIR Data Library
+        - title: GPC GitHub FHIR data library
           external_url: https://github.com/nhsconnect/gpconnect-fhir/
           output: web
-        - title: GPC Github C# Examples
+        - title: GPC GitHub C# examples
           external_url: https://github.com/nhsconnect/gpconnect-dotnet-examples/
           output: web
-        - title: GPC Github Java Examples
+        - title: GPC GitHub Java examples
           external_url: https://github.com/nhsconnect/gpconnect-java-examples/
           output: web
-        - title: GPC Github Provider Test Harness
+        - title: GPC GitHub provider test harness
           external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
           output: web
 
       - title: Tags
         output: web
         subfolderitems:
-        - title: Getting Started
+        - title: Getting started
           url: /tag_getting_started.html
           output: web
-        - title: First of Type
+        - title: First of type
           url: /tag_first_of_type.html
           output: web
         - title: FHIR&reg;
@@ -208,9 +202,6 @@ entries:
           output: web
         - title: Structured
           url: /tag_structured.html
-          output: web
-        - title: Use Case
-          url: /tag_use_case.html
           output: web
         - title: Foundations
           url: /tag_foundations.html
@@ -224,12 +215,12 @@ entries:
         - title: Appointments
           url: /tag_appointments.html
           output: web
-        - title: Tasks
-          url: /tag_tasks.html
+        - title: Engagement
+          url: /tag_engagement.html
           output: web
         - title: Design
           url: /tag_design.html
-          output: web	  
+          output: web   
         - title: Development
           url: /tag_development.html
           output: web
@@ -247,16 +238,23 @@ entries:
           output: web
         - title: Support
           url: /tag_support.html
-          output: web	  
-        - title: Clinical Safety
+          output: web   
+        - title: Clinical safety
           url: /tag_clinical_safety.html
           output: web
-        - title: Information Governance
+        - title: Information governance
           url: /tag_information_governance.html
           output: web
         - title: Commissioning
           url: /tag_commissioning.html
           output: web
-        - title: Code Snippet
+        - title: Code snippet
           url: /tag_code_snippet.html
           output: web
+        - title: Use case
+          url: /tag_usecase.html
+          output: web
+
+    - title: Run website locally
+      url: /support_run_website_locally.html
+      output: web

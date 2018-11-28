@@ -24,7 +24,7 @@ entries:
       url: /foundations.html
       output: web, pdf
       type: homepage
-    - title: Design Decisions
+    - title: Design decisions
       url: /foundations_design.html
       output: web, pdf
       
@@ -32,12 +32,12 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: FHIR Resources
+    - title: FHIR resources
       url: /datalibraryfoundation.html
       output: web, pdf
 
       subfolders:
-      - title: API Use Cases
+      - title: API use cases
         output: web, pdf
         subfolderitems:
 
