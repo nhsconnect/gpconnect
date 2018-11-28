@@ -1,5 +1,5 @@
 ---
-title: "Use Case"
+title: "Use case"
 tagName: use_case
 search: exclude
 permalink: tag_use_case.html

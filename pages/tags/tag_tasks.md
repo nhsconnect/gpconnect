@@ -1,5 +1,5 @@
 ---
-title: "Task Managment"
+title: "Task Management"
 tagName: tasks
 search: exclude
 permalink: tag_tasks.html

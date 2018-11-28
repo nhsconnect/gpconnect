@@ -1,5 +1,5 @@
 ---
-title: "HTML Get Care Record"
+title: "HTML get care record"
 tagName: htmlgetcarerecord
 search: exclude
 permalink: tag_htmlgetcarerecord.html
