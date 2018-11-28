@@ -53,7 +53,6 @@ If you're planning on providing data using GP Connect APIs then you're a Provide
   - [Access Record HTML capability pack](accessrecord.html) (e.g. Access html views from the primary care record).
   - [Access Record Structured capability pack](accessrecord_rest.html) (e.g. Access structured data from the primary care record).
   - [Appointment Management capability pack](appointments.html) (e.g. Book an appointment for a patient).
-  - [Task Management Capability Pack](tasks.html) (e.g. Send a notification task to a general practice organisation).
 - Finally take a look at cross-cutting areas:
   - JSON Web Token - Provides [Cross Organisation Audit and Provenance](integration_cross_organisation_audit_and_provenance.html) details.
   - Additional HTTP headers and Proxy URL - This gives you access to the [Spine Security Proxy](integration_spine_security_proxy.html), the secure 'front door' of GP Connect APIs.
