@@ -1,5 +1,5 @@
 ---
-title: Data Model Principles
+title: Data model principles
 keywords: development, fhir, logical models
 tags: [development,fhir]
 sidebar: overview_sidebar

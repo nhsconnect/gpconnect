@@ -1,5 +1,5 @@
 ---
-title: Open API Design Principles
+title: Open API design principles
 keywords: development
 tags: [development,fhir]
 sidebar: overview_sidebar

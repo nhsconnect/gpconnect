@@ -1,5 +1,5 @@
 ---
-title: Assurance Principles
+title: Assurance principles
 keywords: development, assurance
 tags: [development,testing,assurance]
 sidebar: overview_sidebar
