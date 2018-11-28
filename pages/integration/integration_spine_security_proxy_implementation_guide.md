@@ -1,5 +1,5 @@
 ---
-title: Spine Security Proxy Implementation Guide
+title: Spine Security Proxy implementation guide
 keywords: spine, proxy, ssp, security
 tags: [integration]
 sidebar: overview_sidebar
@@ -7,7 +7,7 @@ permalink: integration_spine_security_proxy_implementation_guide.html
 summary: "Technical specification for the Spine Security Proxy (SSP)."
 ---
 
-## Spine Security Proxy (SSP) Implementation Guide ##
+## Spine Security Proxy (SSP) implementation guide ##
 
 Technical overview of the operation of the Spine Security Proxy (SSP).
 
@@ -15,7 +15,7 @@ Technical overview of the operation of the Spine Security Proxy (SSP).
 
 This document is intended for use by software developers looking to build a conformant GP Connect FoT API interfaces or consumer application utilising the Spine Security Proxy (SSP).
 
-### Notational Conventions ###
+### Notational conventions ###
 
 The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
@@ -30,15 +30,15 @@ The design of the proxy SHALL support the following business goals:
  - The adoption of open APIs & standards (such as FHIR) driven by need.
  - Creation of a level playing field where access to data is governed by the patient & data controller and not the supplier.
 
-## System Architecture ##
+## System architecture ##
 
-### Block Diagram ###
+### Block diagram ###
 
 At a high-level the proxy operates as a content agnostic mediator allowing authorised consumer systems to retrieve HTTPS resources from selected downstream provider systems in a secure and auditable way.
 
 ![Spine Security Proxy Block Diagram](images/integration/Spine Security Proxy Block Diagram.png)
 
-### System Roles ###
+### System roles ###
 
 | Role | Description |
 |------|-------------|
@@ -52,7 +52,7 @@ As a guiding design principle the Spine Security Proxy (SSP) SHALL NOT impose an
 
 <sup>1</sup> consumer applications for FoT are currently expected to be able to populate a small number of additional Spine HTTP headers.
 
-### Proxy Advantages ###
+### Proxy advantages ###
 
 Introducing the Spine Security Proxy (SSP) has the following advantages:
 
@@ -63,11 +63,11 @@ Introducing the Spine Security Proxy (SSP) has the following advantages:
 - Will provide a level of protection to provider systems from numerous potential issues (i.e. Distributed Denial of Service attacks).
 - Will provide a central point to enable transaction based payments to data providers to be calculated.
 
-### Operating Principle ###
+### Operating principle ###
 
 Servicing a consumer system’s request for a FHIR endpoint located on a provider system requires the following series of interactions:
 
-![Proxy Operating Principle](images/integration/Proxy%20Operating%20Principle.png)
+![Proxy operating principle](images/integration/Proxy%20Operating%20Principle.png)
 
 | Step | Description | System | Phase 1. Deliverable |
 |------|-------------|--------|----------------------|
@@ -102,7 +102,7 @@ As such it is planned that the following mitigations will be implemented as part
 
 <sup>^</sup> will be made available after the initial GP Connect FoT go-live.
 
-## System Responsibilities ##
+## System responsibilities ##
 
 ### Consumer ###
 
@@ -198,9 +198,9 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 <sup>2</sup> The content of the HTTP headers must not be used for internal business logic or message routing within provider systems other than the stated requirement for auditing.  For example: routing all GP Connect requests from a provider supplier's N3 facing gateway to a specific practice endpoint within the supplier's estate, based solely on the header information, would not be acceptable.  The URL is the only approved mechanism for request routing.
 
-## Proxy Requirements ##
+## Proxy requirements ##
 
-### In Scope for FoT ###
+### In scope for FoT ###
 
 - Authentication of consumer/provider systems.
 - Authorisation of consumer requests against a Data Sharing Repository.
@@ -210,7 +210,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - Audit & transaction logging to existing Spine centralised audit logging infrastructure (i.e. Splunk). 
 - Reporting of volumetric and performance statistics to allow activity based remuneration back to the supplying vendor of the provider system(s).
 
-### Out of Scope for FoT ###
+### Out of scope for FoT ###
 
 - Distributed Denial of Service (DDoS) protection / throttling to protect provider systems from being swamped (either intentionally or unintentionally) by consumer systems.
 - Patient Index search/trace functionality.
@@ -230,7 +230,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 {% include roadmap.html content="The roadmap for handling of user level credentials is being explored under the NHS Digital Interoperability Platform (DIP) workstream." %}
 
-### Functional Requirements ###
+### Functional requirements ###
 
 - Transport level integration SHALL be via HTTP as defined in the following RFCs: [RFC 7230](https://tools.ietf.org/html/rfc7230), [RFC 7231](https://tools.ietf.org/html/rfc7231), [RFC 7232](https://tools.ietf.org/html/rfc7232), [RFC 7233](https://tools.ietf.org/html/rfc7233), [RFC 7234](https://tools.ietf.org/html/rfc7234) and [RFC 7235](https://tools.ietf.org/html/rfc7235).
 - Transport level security SHALL be via TLS/HTTPS as defined in [RFC 5246](https://tools.ietf.org/html/rfc5246) and [RFC 6176](https://tools.ietf.org/html/rfc6176).

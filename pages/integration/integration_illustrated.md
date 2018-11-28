@@ -1,5 +1,5 @@
 ---
-title: Spine Integration Illustrated
+title: Spine integration illustrated
 keywords: spine, pds, ssp, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar

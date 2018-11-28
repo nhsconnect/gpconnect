@@ -11,30 +11,30 @@ summary: "Overview of the different types of deployment topologies for GP Connec
 
 {% include important.html content="The Spine Security Proxy (SSP) includes a mechanism to filter out all requests between organisations that are not registered on the proxy as having a mutual data sharing agreement. Without this, all GP Connect consumers would be able to send requests to all GP Connect providers. For the filtering solution to work, each consumer/provider organisation needs an ASID registered on the SSP."%}
 
-# Consumer Topologies #
+# Consumer topologies #
 
-## Simple Model ##
+## Simple model ##
 ![Simple Topology](images/integration/consumer-topology1-simple.png)<br>
 
 A grouping of different GP Connect consumer systems, all connecting directly to GP Connect via the SSP.  Each consumer in this example is registered as a CMA endpoint.  The key point is that each consumer system has its own ASID.
 
-## Aggregator Model ##
+## Aggregator model ##
 
-![Simple Model](images/integration/consumer-topology2-aggregator.png)
+![Simple model](images/integration/consumer-topology2-aggregator.png)
 
 Several different consumer systems connecting to GP Connect via middleware (Message Handling Server / MHS)
 
-# Provider Topologies #
+# Provider topologies #
 
-## Single Practice System ##
+## Single practice system ##
 
-![Single Practice System](images/integration/provider-topology1-single.png) 
+![Single practice system](images/integration/provider-topology1-single.png) 
 
 A discrete instance of a Primary Care System serving a single GP Practice.
 
-## Data Centre Hosted Practice System ##
+## Data centre hosted practice system ##
 
-![Hosted Practice System](images/integration/provider-topology2-datacentre.png) 
+![Hosted practice system](images/integration/provider-topology2-datacentre.png) 
 
 A GP Practice system instance hosted in a Primary Care System (PCS) supplier's data centre.  Note each individual practice has a logical CMA endpoint with its own ASID but sharing the Party Key.
 

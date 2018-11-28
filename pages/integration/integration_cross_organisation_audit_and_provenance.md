@@ -1,5 +1,5 @@
 ---
-title: Cross Organisation Audit & Provenance
+title: Cross organisation audit and provenance
 keywords: spine, ssp, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
@@ -7,13 +7,13 @@ permalink: integration_cross_organisation_audit_and_provenance.html
 summary: "Overview of how audit and provenance data is expected to be transported over the GP Connect FHIR interfaces."
 ---
 
-## Cross Organisation Audit & Provenance ##
+## Cross organisation audit and provenance ##
 
 ### Governance ###
 
 Provider systems SHALL ensure that access to confidential data, including patient or clinical data, through the API must meet, as a minimum, the same requirements for information governance, authentication and authorisation, and auditing as that of the host system the API exposes.
 
-### Audit Trail ###
+### Audit trail ###
 
 {% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework, Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' and 'GP Systems Interface Mechanism' requirements." %}
 
@@ -25,7 +25,7 @@ Provider systems SHALL ensure that all API transactions are recorded in an audit
 
 Provider systems SHALL ensure failed or rejected API transactions are recorded with the same detail as for successful API requests, with error codes as per the [error handling guidance](development_fhir_error_handling_guidance.html).
 
-Audit Trail records shall include the following minimum information:
+Audit trail records shall include the following minimum information:
 
 - a record of the user identity. This is the User ID, Name, Role profile (including Role and Organisation, URP id when Smartcard authenticated) attribute values, obtained from the user’s Session structure;
 - a record of the identify of the authority – the person authorising the entry of, or access to data (if different from the user);
@@ -34,7 +34,7 @@ Audit Trail records shall include the following minimum information:
 - a sequence number to protect against malicious attempts to subvert the audit trail by, for example, altering the system date.
 - Audit trail records should include details of the end-user device (or system) involved in the recorded activity.
 
-Audit Trails shall be enabled at all times and there shall be no means for users, or any other individuals, to disable any Audit Trail.
+Audit trails shall be enabled at all times and there shall be no means for users, or any other individuals, to disable any Audit Trail.
 
 {% include note.html content="Whilst some details (such as name, role) associated with individual users are likely to change over time, the display of user information must reflect the state of such information as it was at the time of the associated event (such as data entry)." %}
 
@@ -50,17 +50,17 @@ Provider systems SHALL record the following provenance details of all API person
 - Originating organisation
 - API interaction
 
-### Legal Processing ###
+### Legal processing ###
 
 Provider systems SHALL ensure that data provided to Consumer systems only include data for which the GP practice acts as Data Controller.
 
-### Patient Dissent ###
+### Patient dissent ###
 
 Provider systems SHALL ensure that Patient Consent is respected (i.e. where express dissent is recorded then data is not shared).
 
-## Cross Organisation Audit & Provenance Transport ##
+## Cross organisation audit and provenance transport ##
 
-### Bearer Token ###
+### Bearer token ###
 
 Consumer systems SHALL provide audit and provenance details in the HTTP authorization header as an oAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"}) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
 
@@ -102,7 +102,7 @@ Provider systems SHALL respond to oAuth Bearer Token errors inline with [RFC 675
 
 {% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](integration_system_topologies.html)) it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
 
-#### JWT Generation ####
+#### JWT generation ####
 Consumer systems SHALL generate the JSON Web Token (JWT) consisting of three parts seperated by dots (.), which are:
 
 - Header
@@ -130,7 +130,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 
 {% include tip.html content="The [JWT.io](https://jwt.io/) website includes a number of rich resources to aid in developing JWT enabled applications." %}
 
-## JWT Payload Example ##
+## JWT payload example ##
 
 ```json
 {
@@ -198,7 +198,7 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 
 Where the Practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role SHALL be supplied
 
-### Example Code ###
+### Example code ###
 
 #### C# ####
 
@@ -206,7 +206,7 @@ Where the Practitioner has both a local system role as well as a Spine RBAC role
 
 {% gist michaelmeasures/d6a75e52acdbee93c4c30d23e639fb1a %}
 
-## External Documents / Policy Documents ##
+## External documents/policy documents ##
 
 | Name | Author | Version | Updated |
 | GPSoC IG Requirements for GP Systems | NHS Digital | v4.0 | 19/09/2014 |
