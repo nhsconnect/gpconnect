@@ -88,6 +88,8 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 
 {% include tip.html content="This is a type level operation (i.e. is not associated with a given resource instance)." %} 
 
+{% include custominfocallout.html content="**Important:** In order to ensure no provider changes are necessary in this release, provider systems are not expected to uplift the <code>version value</code> from 0.5.0." type="warning" %}
+
 ```xml
 <OperationDefinition xmlns="http://hl7.org/fhir">
 	<id value="getcarerecord" />
