@@ -1,5 +1,5 @@
 ---
-title: Resource Guidance
+title: Resource guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -15,4 +15,3 @@ The profiled Fhir Resources required for each of the GP Connect capability packs
 * [Access Record HTML](datalibraryaccessRecord.html)
 * [Access Record Structured](accessrecord_rest.html)
 * [Appointment Management](appointments.html)
-* [Task Management](tasks.html)

@@ -35,7 +35,7 @@ Provider systems SHALL meet the agreed capacity requirements.
 
 ### Scalability ###
 
-Provider systems SHALL be designed to accomodate increased volumes, workloads and users.
+Provider systems SHALL be designed to accommodate increased volumes, workloads and users.
 
 ### Availability ###
 
@@ -55,7 +55,7 @@ Provider systems SHALL record audit & provenance data inline with existing GPSoC
 
 ### Maintainability ###
 
-Provider systesms SHALL be designed to optimise the ability of maintenance personnel to revise or enhance it.
+Provider systems SHALL be designed to optimise the ability of maintenance personnel to revise or enhance it.
 
 ### Serviceability ###
 
@@ -71,7 +71,7 @@ Provider and Consumer systems SHOULD follow the [ISO 13407](https://www.iso.org/
 
 Please refer to the 'GPSoC Technical Standards' for details.
 
-### Accessability ###
+### Accessibility ###
 
 Provider and Consumer systems SHALL maintain a compliance of minimum Double “A” of the WCAG 1.0 (or equivalent in WCAG 2.0), or as stipulated by UK Government Guidelines, for all user interfaces. Please see the [Web Accessibility Initiative](https://www.w3.org/WAI/) for more details.
 
@@ -87,5 +87,5 @@ Provider systems SHALL be deployed with the provider APIs enabled by default.
 
 Provider systems MAY provide a mechanism for a data controller at an organisation to choose to globally disable/enable the provider APIs (i.e. turn on/off the overall GP Connect technical capability).
 
-Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (i.e. Access Record HTML vs. Appointments vs. Tasks).
+Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (i.e. Access Record HTML vs. Appointments).
 	

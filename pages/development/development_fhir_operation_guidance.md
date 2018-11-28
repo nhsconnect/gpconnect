@@ -1,5 +1,5 @@
 ---
-title: Operation Guidance
+title: Operation guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -7,11 +7,11 @@ permalink: development_fhir_operation_guidance.html
 summary: "Details of which operations a FHIR server should expose to be a fully compliant GP Connect solution."
 ---
 
-## FHIR Operations ##
+## FHIR operations ##
 
 *Aim(s)*
 
-- Access Record Views
+- Access Record views
 
 *Mechanism*
 
