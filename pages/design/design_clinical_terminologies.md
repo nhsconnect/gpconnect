@@ -1,5 +1,5 @@
 ---
-title: Clinical Terminologies
+title: Clinical terminologies
 keywords: development
 tags: [design,development]
 sidebar: overview_sidebar
@@ -13,7 +13,7 @@ The [UKTC](http://systems.digital.nhs.uk/data/uktc){:target="_blank"} is respons
 
 The [UKTC](http://systems.digital.nhs.uk/data/uktc){:target="_blank"} also maintains the [NHS Dictionary of Medicines and Devices (dm+d)](http://www.nhsbsa.nhs.uk/1121.aspx){:target="_blank"} in partnership with the NHS Business Service Authority.
 
-### SNOMED CT, READ2 & CTV3 Code Usage ###
+### SNOMED CT, READ2 & CTV3 code usage ###
 
 GP Connect systems are expected to handle coded data as follows:
 
@@ -24,7 +24,7 @@ GP Connect systems are expected to handle coded data as follows:
 	- SHALL be returned in the code system it was originally entered in (i.e. READ2 or CTV3) AND
 	- SHALL also be returned as a preferred code (i.e. SNOMED CT) if a valid mapping/alternate code exists (i.e. there is a NHS Digital assured READ2 or CTV3 to SNOMED CT mapping in place).
 
-#### Assured Mappings ####
+#### Assured mappings ####
 
 [Assured Mappings](https://isd.hscic.gov.uk/trud3/user/guest/group/2/pack/8){:target="_blank"} can be found in the **NHS Data Migration** download.
 
