@@ -2,7 +2,7 @@
 title: Provider variance
 sidebar: accessrecord_sidebar
 permalink: accessrecord_provider_variance.html
-summary: "Known provider variance to the Access Record capability"
+summary: "Known provider variance to the Access Record HTML capability"
 ---
 <a href="#" class="back-to-top">Back to Top</a>
 
@@ -49,7 +49,7 @@ The following messages are returned by the provider systems when a GP to GP tran
 
 ### Date banner message ###
 
-The following messages are returned by the provider systems when a date filter is applied, please see each HTML view page for details on where date filters are applicable:
+The following messages are returned by the provider systems when a date filter is applied. Please see each HTML view page for details on where date filters are applicable:
 
 <table width="100%">
 	<thead>
@@ -104,7 +104,7 @@ The following messages are returned by the provider systems when data has been e
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>One or more items have been suppressed due to privacy exclusion rules</td>
+		<td>One or more items have been suppressed due to privacy exclusion rules.</td>
 		<td>***********</td>
 	  </tr>
 	  <tr>
@@ -133,7 +133,7 @@ The following explains how the provider systems deal with incomplete dates, wher
 	<tbody>
 	  <tr>
 		<td><b>TPP</b></td>
-		<td>Incomplete dates will be returned with the incomplete element missing, for example, dates may be returned as 2008 or Apr 2009. For the chronology, incomplete elements are treated as the first day of the month and first month of the year respectively.</td>
+		<td>Incomplete dates will be returned with the incomplete element missing - for example, dates may be returned as 2008 or Apr 2009. For the chronology, incomplete elements are treated as the first day of the month and first month of the year respectively.</td>
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
@@ -145,7 +145,7 @@ The following explains how the provider systems deal with incomplete dates, wher
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
-		<td>Incomplete elements of a date will be returned as the first day of the month or the first month of the year as applicable e.g. a date entered as ??/??/2011 will be returned as 01 Jan 2011.</td>
+		<td>Incomplete elements of a date will be returned as the first day of the month or the first month of the year as applicable - for example, a date entered as ??/??/2011 will be returned as 01 Jan 2011.</td>
 	  </tr>
 	</tbody>
 </table>
@@ -261,7 +261,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains coded clinical items relating to a patients care e.g. procedures, test results, conditions.</td>
+		<td>Contains coded clinical items relating to a patient's care - for example, procedures, test results, conditions.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -321,7 +321,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date. Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</td>
+		<td>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date. Contains items coded as problems within the patient's record; can also contain details on medications linked to problems if available.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -352,7 +352,7 @@ The following content subsection messages are returned by the provider systems f
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</td>
+		<td>Contains items coded as problems within the patient's record; can also contain details on medications linked to problems if available.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -383,7 +383,7 @@ The following content subsection messages are returned by the provider systems f
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains items coded as problems within the patients record; Can also contain details on medications linked to problems if available.</td>
+		<td>Contains items coded as problems within the patient's record; can also contain details on medications linked to problems if available.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -419,7 +419,7 @@ The following business rules apply for [allergies and adverse reactions](accessr
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection. Vision do not record end dates for allergies & adverse reactions, therefore a history view is not possible.</td>
+		<td>All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection. Vision do not record end dates for allergies & adverse reactions. Therefore, a history view is not possible.</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
@@ -577,7 +577,7 @@ The following has been documented to explain the capture of cancelled/discontinu
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>Does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the details column. Note: INPS use the term de-activated in Vision as opposed to discontinued.</td>
+		<td>Does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the Details column. Note: INPS use the term de-activated in Vision as opposed to discontinued.</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
@@ -602,11 +602,11 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Non - BNF designated items e.g. local mixtures, have been excluded. <br/>
+		<td>Non - BNF designated items - for example, local mixtures, have been excluded. <br/>
 			May also contain immunisations issued as medications; <br/>
-			Can also contain details on problems linked to medications if available. <br/>
-			Medication Max Issues are not shared currently <br/>
-			Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date</td>
+			can also contain details on problems linked to medications if available. <br/>
+			Medication Max Issues are not shared currently. <br/>
+			Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -844,7 +844,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
-		<td>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions etc.</td>
+		<td>Contains non-clinical items including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions.</td>
 	  </tr>
 	</tbody>
 </table>
