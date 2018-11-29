@@ -4,7 +4,7 @@ keywords: getcarerecord design
 tags: [design,getcarerecord]
 sidebar: accessrecord_sidebar
 permalink: accessrecord_design.html
-summary: "Overview of the design decisions made in relation to the Access Record capability"
+summary: "Overview of the design decisions made in relation to the Access Record HTML capability"
 ---
 
 <a href="#" class="back-to-top">Back to Top</a>
@@ -45,7 +45,7 @@ If the patient's record is indicated in the provider system as not fully-integra
 - <span class="label label-success">SELECTED</span> Provider to supply a warning that the record could be incomplete.
 - Other.
 
-<span class="label label-info">DECISION</span> The provider **MUST** display a banner message when a record in in-transit.
+<span class="label label-info">DECISION</span> The provider **MUST** display a banner message when a record is in-transit.
 
 
 ### Record locking ###
