@@ -143,7 +143,7 @@ These views **SHOULD** contain the following sections, where applicable:
 
 ## Section and subsection title ##
 
-The section title **MUST** be inside a `<h1>` tags and subsection title **MUST** be inside a `<h2>` tags.
+The section title **SHOULD** be inside a `<h1>` tags and subsection title **SHOULD** be inside a `<h2>` tags.
 
 The section and subsection titles are defined in the individual HTML view pages.
 
@@ -151,7 +151,7 @@ The section and subsection titles are defined in the individual HTML view pages.
 
 ### GP transfer banner ###
 
-In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **MUST** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **MUST** be provided and displayed. The message **MUST** include the date that the data has been excluded from.
+In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **MUST** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **MUST** be provided and displayed. The message **SHOULD** include the date that the data has been excluded from.
 
 ```html
 <div>
@@ -165,11 +165,11 @@ The content banner **MUST** be used by the provider to detail any specific busin
 
 #### Section content banner ####
 
-Any content description for a section **MUST** be applicable to the whole section (apply to all subsections) and **MUST NOT** be replicated in the subsection content banner.
+Any content description for a section **MUST** be applicable to the whole section (apply to all subsections) and **SHOULD NOT** be replicated in the subsection content banner.
 
 #### Subsection content banner ####
 
-Any exclusion descriptions for a subsection **MUST** be applicable to that subsection only. Where the exclusion description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **MUST NOT** be replicated as section content.
+Any exclusion descriptions for a subsection **MUST** be applicable to that subsection only. Where the exclusion description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **SHOULD NOT** be replicated as section content.
 
 
 ### Date banner ###
