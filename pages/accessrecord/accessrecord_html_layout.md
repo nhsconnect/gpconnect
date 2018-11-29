@@ -25,7 +25,7 @@ HTML views with a single table and hence a single section are:
 
 **Encounters**, **Clinical Items**, **Administrative Items**, **Observations**, **Referrals**, **Immunisations**.
 
-These views **MUST** contain the following sections, where applicable:
+These views **SHOULD** contain the following sections, where applicable:
 
 - Section title
 - GP transfer banner
@@ -41,7 +41,7 @@ HTML views with multiple tables and hence multiple sections are:
  
 **Problems**, **Allergies**, **Medications**.
 
-These views **MUST** contain the following sections, where applicable:
+These views **SHOULD** contain the following sections, where applicable:
 
 - Section title
 - GP transfer banner
@@ -242,7 +242,7 @@ Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a 
 
 Exclusions may be applied to the section/subsections in various circumstances. Where any exclusions have been applied a message banner **MUST** be included. As shown in the layout, the exclusion banner will only be included against the specific table where exclusions have been applied. Therefore, it will only be at section level where it is a single table section.
 
-The following message **MUST** be supplied by the provider if any items were excluded for these reasons.
+The following message **SHOULD** be supplied by the provider if any items were excluded for these reasons.
 
 
 ```html
