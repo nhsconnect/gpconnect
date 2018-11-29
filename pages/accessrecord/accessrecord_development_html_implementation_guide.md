@@ -28,7 +28,7 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 {% include custominfocallout.html content="**Information:** The record returned from the provider system is near real time." type="warning" %}
 
-- Local pending changes (that is, within a consultation that is actively ongoing) may not be available.
+- Changes to the GP practice clinical record that are in progress (for example, where a patient consultation that is currently taking place), may not be available.
 - The record is machine generated and therefore is not owned or attested by any single clinician.
 
 ## Record locking ##

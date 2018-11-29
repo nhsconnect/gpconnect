@@ -113,11 +113,11 @@ How will the patient's usual GP practice be identified?
 
 Is the consumer or provider responsible for running a trace?
 
-- <span class="label label-success">SELECTED</span> Consumer and provider to have traced in both.
+- <span class="label label-success">SELECTED</span> Ideally the consumer and provider to have traced in both.
 - Consumer only.
 - Provider only.
 
-<span class="label label-info">DECISION</span> Both the consumer and provider **MUST** perform a trace.
+<span class="label label-info">DECISION</span> Consumers **MUST** perform a trace.
 
 #### Timeliness of trace for consumers ####
 
@@ -138,7 +138,7 @@ Although a traced national identifier is initially mandated for use with the GP 
 - Provider system to cross-check. 
 - Spine Security Proxy (SSP) to cross-check.
 
-<span class="label label-info">DECISION</span> As per GPSoC requirements make minimal registration details mandatory (for example, First Name, Surname, Gender, DOB) in the FHIR profile.
+<span class="label label-info">DECISION</span> Consumer **MUST** cross-check with demographics returned from the provider system.
 
 #### Minimum patient demographics  ####
 
@@ -148,7 +148,7 @@ What are the minimum patient demographics that must be returned?
 - Community driven (that is, just add Gender).
 - Absolute minimum (Name, DOB and NHS Number).
 
-<span class="label label-info">DECISION</span> Consumer **MUST** cross-check with demographics returned from the provider system.
+<span class="label label-info">DECISION</span> As per GPSoC requirements make minimal registration details mandatory (for example, First Name, Surname, Gender, DOB) in the FHIR profile.
 
 
 ## Consent and exclusions ##
@@ -201,8 +201,10 @@ How are sensitive data items dealt with?
 
 What data sharing agreements need to be in place?
 
-<span class="label label-info">DECISION</span> Data-sharing agreement must be in place between the consuming organisation and the providing organisation.
-<span class="label label-info">DECISION</span> The Spine Security Proxy validates this requirement. Therefore, provider systems **MUST NOT** apply or change locally-configured data-sharing validation.
+- <span class="label label-info">DECISION</span> Data-sharing agreement must be in place between the consuming organisation and the providing organisation.
+- <span class="label label-info">DECISION</span> The Spine Security Proxy validates this requirement. 
+
+Therefore, provider systems **MUST NOT** apply or change locally-configured data-sharing validation.
 
 ### Exclusion warnings ###
 
