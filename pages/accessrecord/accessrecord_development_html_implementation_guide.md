@@ -4,7 +4,7 @@ keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_implementation_guide.html
 summary: >-
-  Overview of the common HTML view rendering guidance in relation to the Access Record capability
+  Overview of the common HTML view rendering guidance in relation to the Access Record HTML capability
 tags:
   - development
   - getcarerecord
@@ -16,13 +16,13 @@ tags:
 
 ### Purpose ###
 
-This document is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
+This information is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
 
 {% include custominfocallout.html content="**Information:** See section [HTML layout guide](accessrecord_development_html_layout_guide.html) for details of the layout of the HTML views." type="info" %}
 
 ### Notational conventions ###
 
-The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this site are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## Near real time view ##
 
