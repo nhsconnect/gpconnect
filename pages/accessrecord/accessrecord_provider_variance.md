@@ -790,8 +790,6 @@ The following content section messages are returned by the provider systems for 
 
 ### Administrative items ###
 
-### Immunisations ###
-
 The following business rules apply for [administrative items](accessrecord_view_administrative_items.html):
 
 <table width="100%">
