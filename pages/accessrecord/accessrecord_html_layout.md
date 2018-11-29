@@ -4,7 +4,7 @@ keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_layout_guide.html
 summary: >-
-  Overview of the common HTML view layout guidance in relation to the Access Record capability
+  Overview of the common HTML view layout guidance in relation to the Access Record HTML capability
 tags:
   - development
   - getcarerecord
@@ -14,7 +14,7 @@ tags:
 
 ## Purpose ##
 
-This document is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
+This information is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
 
 ## Section layout ##
 
@@ -174,7 +174,7 @@ Any exclusion descriptions for a subsection **MUST** be applicable to that subse
 
 ### Date banner ###
 
-The provider **MUST** supply all matching dates/times, e.g. the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
+The provider **MUST** supply all matching dates/times - for example, the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
 
 If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
 
