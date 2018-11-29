@@ -182,7 +182,7 @@ If no start date is supplied, the provider **MUST** supply all data until the en
 
 #### Applied date ranges ####
 
-Consumer systems **SHOULD** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section header.
+Consumer systems **MUST** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section header.
 
 ```html
 <div>
