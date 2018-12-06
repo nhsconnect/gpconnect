@@ -60,11 +60,11 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 
 ## 4. Assure ##
 
-- read about the [Provider testing](testing_api_provider_testing.html) and [Consumer testing](testing_api_consumer_testing.html) process.
+- read about the [Provider testing](testing_api_provider_testing.html) and [Consumer testing](testing_api_consumer_testing.html) process
 
 ## 5. Deploy ##
 
-- become a first of type deployment - see below to get in touch with the GP Connect programme.
+- become a first of type deployment - see below to get in touch with the GP Connect programme
 
 
 ## Provide feedback
