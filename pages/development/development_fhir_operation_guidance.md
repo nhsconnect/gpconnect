@@ -4,34 +4,30 @@ keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_operation_guidance.html
-summary: "Details of which operations a FHIR server should expose to be a fully compliant GP Connect solution."
+summary: "Details of which operations a FHIR&reg; server should expose to be a fully compliant GP Connect solution"
 ---
 
-## FHIR operations ##
-
-*Aim(s)*
-
-- Access Record views
+## FHIR&reg; operations ##
 
 *Mechanism*
 
-- RESTful APIs in-line with the FHIR&reg; standard (with limited/targeted usage of custom operations as/if required).
+- RESTful APIs in line with the FHIR&reg; standard (with limited/targeted usage of custom operations as/if required)
 
 *Interactions*
 
 All `InteractionIDs` are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`.
 
-- Program = `gpconnect`
-- Standard = `fhir`
-- Mechanism = [ `rest`, `operation` ]
-	- `rest` for RESTful API Interactions.
-	- `operation` for custom Operation API Interactions.
-- Operation
-	- RESTful syle API = [ `create`, `read`, `update`, `delete`, `search` ] + any more specific actions (i.e. `cancel`).
-	- RPC style API = [ `gpc.getcarerecord`, `gpc.registerpatient` ]
-- Subject = [ `resourceType`, `operationName` ]
-	- Resource Type is the name of a FHIR resource (i.e. `Patient`, `Appointment`, `Organization` etc).
-	- Operation Name is the name of a custom FHIR operation (i.e. `gpc.getcarerecord`)
+- program = `gpconnect`
+- standard = `fhir`
+- mechanism = [ `rest`, `operation` ]
+	- `rest` for RESTful API interactions
+	- `operation` for custom Operation API interactions
+- operation
+	- RESTful style API = [ `create`, `read`, `update`, `delete`, `search` ] + any more specific actions (for example, `cancel`)
+	- Remote Procedure Call (RPC) style API = [ `gpc.getcarerecord`, `gpc.registerpatient` ]
+- subject = [ `resourceType`, `operationName` ]
+	- Resource Type is the name of a FHIR resource, such as `Patient`, `Appointment`, `Organization`
+	- Operation Name is the name of a custom FHIR operation, such as `gpc.getcarerecord`
 
 ### Foundations capability interactions ###
 

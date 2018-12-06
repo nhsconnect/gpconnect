@@ -7,23 +7,21 @@ permalink: development_fhir_error_handling_guidance.html
 summary: "Details of the common error handling pattern(s) across all GP Connect FHIR APIs."
 ---
 
-{% include todo.html content="This page is published as a **work in progress** version and as such is subject to change. Once finalised all error codes presented here will be defined as part of the *gpconnect-error-or-warning-code-1* value set." %}
-
 {% include important.html content="Please ignore any GPC-XXX format error codes defined in the *gpconnect-error-or-warning-code-1* value set / DMS guidance as these have now been superseded and will be removed in a future release." %}
 
 ### Operation outcome usage ####
 
 The FHIR standard allows for an `OperationOutcome` to be returned for any/all errors both for Operations and for RESTful CRUD API calls.
 
-- Operation APIs SHALL return an `OperationOutcome` in the event of an error.
-- RESTful APIs SHALL return an `OperationOutcome` when a specific error code has for a certain situation (i.e. no patient consent to share).
-- RESTful APIs SHALL return an `OperationOutcome` when any other unexpected error occurs containing debug details in the `Diagnostics` field.
+- operation APIs **MUST** return an `OperationOutcome` in the event of an error
+- RESTful APIs **MUST** return an `OperationOutcome` when a specific error code has for a certain situation (i.e. no patient consent to share)
+- RESTful APIs **MUST** return an `OperationOutcome` when any other unexpected error occurs containing debug details in the `Diagnostics` field
 
 {% include download.html content="A spreadsheet of [Expected Error Codes](downloads/development/expected_error_codes.xlsx) is available which covers the most common error scenarios." %}
 
 ### Identity validation errors ####
 
-Provider systems SHALL respond by returning one of the following `OperationOutcome` error codes in the case of a custom operation error (i.e. `$gpc.getcarerecord`, `$gpc.registerpatient`).
+Provider systems **MUST** respond by returning one of the following `OperationOutcome` error codes in the case of a custom operation error (i.e. `$gpc.getcarerecord`, `$gpc.registerpatient`).
 
 | HTTP Code | Error Code | Description |
 | --------- |------------|-------------|
@@ -86,7 +84,7 @@ For example a valid NHS Number value is supplied to the `$gpc.getcarerecord` Ope
 
 ### Security validation errors ###
 
-Provider systems SHALL returning one of the following `OperationOutcome` error codes in the case of enforcing their local patient consent rules when responding to consumer API requests.
+Provider systems **MUST** returning one of the following `OperationOutcome` error codes in the case of enforcing their local patient consent rules when responding to consumer API requests.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
@@ -151,13 +149,13 @@ For example if the RESTful API fails when an invalid organisational reference is
 
 ### Internal server errors ###
 
-When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` SHALL be used to return debug details.
+When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the following `INTERNAL_SERVER_ERROR` **MUST** be used to return debug details.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
 | `500`     | INTERNAL_SERVER_ERROR | Unexpected internal server error. |
 
-When the FHIR server has received an request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED SHOULD be used.
+When the FHIR server has received an request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED **SHOULD** be used.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
@@ -193,7 +191,7 @@ For example an unexpected internal exception is thrown by either an Operation or
 
 ### Malformed request errors ###
 
-When the server cannot or will not process a request due to an apparent client error (e.g., malformed request syntax, too large size etc.) then the following `BAD_REQUEST` error SHALL be used to return debug details.
+When the server cannot or will not process a request due to an apparent client error (e.g., malformed request syntax, too large size etc.) then the following `BAD_REQUEST` error **MUST** be used to return debug details.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
@@ -225,7 +223,7 @@ For example if the request could not be understood by the server due to malforme
 
 ### Spine Security Proxy errors ###
 
-When the spine security proxy cannot or will not process a request then the follwoing errors SHALL be used to return debug details.
+When the spine security proxy cannot or will not process a request then the follwoing errors **MUST** be used to return debug details.
 
 #### Example 7. Bad Request #####
 

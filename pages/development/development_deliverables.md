@@ -11,8 +11,7 @@ summary: "Developer cheat sheet shortcuts for the <br/>technical build of GP Con
 
 | Explore | Build | Build | Test |
 | :------ | :---: | :---: | :--: |
-| [Structure definitions](https://fhir.nhs.uk/StructureDefinition) | [Access Record HTML implementation guide](accessrecord.html) | [Spine Secure Proxy integration guide](integration_spine_secure_proxy.html) | [System demonstrator](system_demonstrator.html) |
-| [Value sets](https://fhir.nhs.uk/ValueSet) | [Retrieve a care record section](accessrecord_use_case_retrieve_a_care_record_section.html)  | [.NET example code](https://github.com/nhsconnect/gpconnect-dotnet-examples/)| [Automated test harness](https://github.com/nhsconnect/gpconnect-provider-testing/) |
-| [Extensions](https://fhir.nhs.uk/Extensions) |  |  [Java example code](https://github.com/nhsconnect/gpconnect-java-examples/) |
-| [Operation definitions](https://fhir.nhs.uk/OperationDefinition) | | |
-| [FHIR implementation guide](development_fhir_api_guidance.html) | | |
+| [Get Record Query request](https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Profile.GetRecordQueryRequest/gpconnect-carerecord-operation-1.html) | [Access Record HTML implementation guide](accessrecord.html) | [Spine Secure Proxy integration guide](integration_spine_secure_proxy.html) | [System demonstrator](system_demonstrator.html) |
+| [Get Record Query response](https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Profile.GetRecordQueryResponse-HTMLView/Profile.GetRecordQueryResponse-HTMLView.html) | [Retrieve a care record section (instructions)](accessrecord_use_case_retrieve_a_care_record_section.html)  | [.NET example code](https://github.com/nhsconnect/gpconnect-dotnet-examples/)| [Automated test harness](https://github.com/nhsconnect/gpconnect-provider-testing/) |
+| [Valuesets](https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Chapter.7.Valuesets/valuesets.html) |  |  [Java example code](https://github.com/nhsconnect/gpconnect-java-examples/) |
+| [FHIR implementation guide](https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Chapter.4.API%20Implementation/index.html) | | |
