@@ -72,7 +72,7 @@ How can the HTML sections be requested?
 
 How should the HTML sections be ordered?
 
-<span class="label label-info">DECISION</span> Consumer systems **MUST** provide access to record sections in the order agreed in the workshops, which is captured in the ordering of the HTML composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
+<span class="label label-info">DECISION</span> Consumer systems **MUST** provide access to record sections in the order specified, which is captured in the ordering of the HTML composition sections with-in the FHIR `gpconnect-carerecord-composition-1` data model.
 
 
 
@@ -148,7 +148,7 @@ What are the minimum patient demographics that must be returned?
 - community driven (that is, just add Gender)
 - absolute minimum (Name, DOB and NHS Number)
 
-<span class="label label-info">DECISION</span> As per GPSoC requirements make minimal registration details mandatory (for example, First Name, Surname, Gender, DOB) in the FHIR profile.
+<span class="label label-info">DECISION</span> As per GPSoC requirements make minimal registration details mandatory (meaning, First Name, Surname, Gender, DOB) in the FHIR profile.
 
 
 ## Consent and exclusions ##
@@ -225,8 +225,8 @@ How are exclusion warnings identified within Access Record HTML?
 
 Date range handling in the summary per section:
 
- - no date range due to clinical safety
- - <span class="label label-success">SELECTED</span> date range to match requirements identified on each HTML view page
+ - <span class="label label-success">SELECTED</span> no date range due to clinical safety
+ - date range to match requirements identified on each HTML view page
 	 - Active problems and issues
 	 - Current medications issues
 	 - Last 3 encounters
