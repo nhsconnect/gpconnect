@@ -4,7 +4,7 @@ keywords: test environments
 tags: [testing,deployment]
 sidebar: overview_sidebar
 permalink: testing_environments.html
-summary: "Details of what environments are available to support the <br/>technical accreditation and solution assurance process"
+summary: "Details of what environments are available to support the technical accreditation and solution assurance process"
 ---
 
 ## Path to Live ##
@@ -13,16 +13,16 @@ GP Connect utilises the following "Path to Live" environments:
 
 ### Internet facing (WWW) ###
 
-To support the technical design and development of both Provider and Consumer systems, before entering the formal assurance process.
+To support the technical design and development of both provider and consumer systems before entering the formal assurance process.
 
-### Spine development (DEV) ###
+### Spine Development (DEV) ###
 
-To support the technical accreditation of Provider systems (i.e. unaccredited / unstable provider APIs).
+To support the technical accreditation of provider systems (that is, unaccredited/unstable provider APIs).
 
-### Spine integration (INT) ###
+### Spine Integration (INT) ###
 
-To support the technical accreditation of Consumer systems (i.e. consumers of accredited / stable provider APIs).
+To support the technical accreditation of consumer systems (that is, consumers of accredited/stable provider APIs).
 
-### Spine production (LIVE) ###
+### Spine Production (LIVE) ###
 
-To support production use of both Provider and Consumer systems.
+To support production use of both provider and consumer systems.
