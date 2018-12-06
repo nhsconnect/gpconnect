@@ -78,9 +78,9 @@ The pre-release labels used are as follows:
 
 The following GP Connect artefacts are released as part of or alongside the specification, taking the same version number as the specification:
 
-- [System demonstrator](system_demonstrator.html)
-- [Interactive API documentation](system_swagger.html)
-- [Provider automated test suite](testing_deliverables.html)
+- [system demonstrator](system_demonstrator.html)
+- [interactive API documentation](system_swagger.html)
+- [provider automated test suite](testing_deliverables.html)
 - SDS interaction IDs ([see below](#sds-interaction-ids))
 - Service Root URL format ([see below](#service-root-url-format))
 
