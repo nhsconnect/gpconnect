@@ -109,7 +109,7 @@ If differences exist then the consumer system **MUST** show an alert/warning and
 
 The following data **MUST** be cross checked between consumer and returned provider data. Any differences between these fields **MUST** be brought to the attention of the user.   
 
-| Item | Resource field |
+| Item | Resource element |
 | ---- | -------------- | 
 | Family Name | `patient.name.family` |
 | Given Name | `patient.name.given` |
