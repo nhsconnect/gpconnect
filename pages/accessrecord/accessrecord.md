@@ -12,16 +12,16 @@ toc: false
 
 ## HTML view ##
 
-{% include custominfocallout.html content="**Information:** For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings. <br/><br/>Access Record HTML is delivering the capability to view a patient record and **MUST** be used in real time. <br/><br/> Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care. " type="danger" %} 
+{% include custominfocallout.html content="**Information:** For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings. <br/><br/>Access Record HTML is delivering the capability to view a patient record and **MUST** be used in real time for read only. <br/><br/> Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care. " type="danger" %} 
 
 
 ### Purpose ###
 
 In an unstructured and pre-rendered format (HTML), this capability will provide health professionals with access to a patient's primary care record by requesting sections or headings. Where appropriate, a date range can be defined to filter the retrieval of larger sections. These views can be incorporated directly into Electronic Patient Record systems.
 
-Significant effort has already been made to unify the HTML section views from all four principal suppliers but it is expected that this will be an iterative process during development, UAT and FoT.
-
 The content displayed in the HTML views has then been used as a common baseline of available data to guide the structured and coded 'Access Record' approach.
+
+Significant effort has already been made to unify the HTML section views from all four principal suppliers but it is expected that this will be an iterative process during development, UAT and FoT.
 
 
 ### Scope ###
@@ -43,8 +43,8 @@ The information sections in scope for care record access are:
 
 ### Use cases ###
 
-- Extended access GP practices can view all of the patient's primary care views even when the record is held on a different GP system.
-- Other care settings (e.g. 111, Physio, Community, Emergency, Acute/Secondary, Social) can view the patient's GP record (those held by the patient's recorded GP practice) to better inform care decisions they may be making for a patient.
+- extended access GP practices can view all of the patient's primary care views even when the record is held on a different GP system
+- other care settings (e.g. 111, Physio, Community, Emergency, Acute/Secondary, Social) can view the patient's GP record (those held by the patient's recorded GP practice) to better inform care decisions they may be making for a patient
 
 ### Profiled FHIR resources ###
 

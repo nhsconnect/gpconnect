@@ -4,7 +4,7 @@ keywords: 'getcarerecord, development, html, rendering'
 sidebar: accessrecord_sidebar
 permalink: accessrecord_development_html_implementation_guide.html
 summary: >-
-  Overview of the common HTML view rendering guidance in relation to the Access Record HTML capability
+  Overview of the common HTML view rendering guidance in relation to the Access Record capability
 tags:
   - development
   - getcarerecord
@@ -16,20 +16,20 @@ tags:
 
 ### Purpose ###
 
-This information is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
+This document is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
 
 {% include custominfocallout.html content="**Information:** See section [HTML layout guide](accessrecord_development_html_layout_guide.html) for details of the layout of the HTML views." type="info" %}
 
 ### Notational conventions ###
 
-The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this site are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
+The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL NOT**", "**SHOULD**", "**SHOULD NOT**", "**RECOMMENDED**", "**MAY**", and "**OPTIONAL**" in this document are to be interpreted as described in [RFC 2119](https://www.ietf.org/rfc/rfc2119.txt).
 
 ## Near real time view ##
 
 {% include custominfocallout.html content="**Information:** The record returned from the provider system is near real time." type="warning" %}
 
-- Changes to the GP practice clinical record that are in progress (for example, where a patient consultation that is currently taking place), may not be available.
-- The record is machine generated and therefore is not owned or attested by any single clinician.
+- changes to the GP practice clinical record that are in progress (for example, where a patient consultation that is currently taking place), may not be available
+- the record is machine generated and therefore is not owned or attested by any single clinician
 
 ## Record locking ##
 
@@ -43,7 +43,7 @@ When a consumer system accesses a patient's record, the provider systems **MUST*
 
 ## Common user interface guidance ##
 
-Where appropriate the following [Common User Interface (CUI)](https://digital.nhs.uk/data-and-information/information-standards/common-user-interface-cui) guidance documents should be followed when generating the GP Connect HTML views.
+Where appropriate the following [Common User Interface (CUI)](https://digital.nhs.uk/data-and-information/information-standards/common-user-interface-cui) guidance documents **SHOULD** be followed when generating the GP Connect HTML views.
 
 ### NHS Number format ###
 
@@ -109,13 +109,13 @@ The following data **MUST** be cross checked between consumer and returned provi
 
 | Item | Resource field |
 | ---- | -------------- | 
-| Family Name | patient.name.family |
-| Given Name | patient.name.given |
-| Gender | patient.gender |
-| Birth Date | patient.birthDate |
-| GP Practice Code | patient.managingOrganization | 
+| Family Name | `patient.name.family` |
+| Given Name | `patient.name.given` |
+| Gender | `patient.gender` |
+| Birth Date | `patient.birthDate` |
+| GP Practice Code | `patient.managingOrganization` | 
 
-Additionally, the following data **MAY** be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
+Additionally, the following data **MAY** be displayed if returned from the provider to assist a visual cross check and for safe identification but **SHOULD NOT** be part of the automatic comparison.
 
 * Address and Postcode
 * Contact (telephone, mobile, email)
@@ -124,18 +124,18 @@ Additionally, the following data **MAY** be displayed if returned from the provi
 
 Where a patient is flagged on the GP clinical system as sensitive (and as such the GP practice must not identify that the patient is registered at this location), the provider system **MUST NOT** return any clinical records and instead return the error `Patient not found`.
 
-Where a patient is flagged on PDS as sensitive (and as such it is not possible to confirm their registered GP practice), the consumer system **MUST NOT** use GP Connect.
+Where a patient is flagged on PDS as sensitive (and as such it is not possible to confirm their registered GP practice), the consumer system **SHOULD NOT** use GP Connect.
 
 ## Section retrieval ##
 
 ### Error handling ###
 
-If a GP principal system can't meaningfully supply content for a requested HTML section (or subset of the Summary View) then the system **MUST** return the following HTML fragment in place of the HTML table.
+If a GP principal system can't meaningfully supply content for a requested HTML view (or subset of the view) then the system **MUST** return the following HTML fragment in place of the HTML table.
 
 #### Supported but hasn't been recorded ####
 
-- System can store the data.
-- BUT no data has been recorded for the patient.
+- system can store the data
+- BUT no data has been recorded for the patient
 
 ```html
 <div>
@@ -145,8 +145,8 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Supported but can't be technically provided ####
 
-- System can store the data.
-- BUT no data is available for the patient via the GP Connect APIs due to a technical limitation.
+- system can store the data
+- BUT no data is available for the patient via the GP Connect APIs due to a technical limitation
 
 ```html
 <div>
@@ -157,8 +157,8 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Supported but is masked/access denied ####
 
-- System can store the data.
-- BUT no data is available for the patient via the GP Connect APIs due to a IG/DS rule.
+- system can store the data
+- BUT no data is available for the patient via the GP Connect APIs due to a IG/DS rule
 
 ```html
 <div>
@@ -169,7 +169,7 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Not supported ####
 
-- System doesn't store the data.
+- system doesn't store the data
 
 ```html
 <div>

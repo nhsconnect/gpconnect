@@ -18,40 +18,33 @@ summary: "Clinical Items HTML view"
 
 Items of information relating to the care, health or wellbeing of the patient. Examples of this type of information are: childhood and travel vaccinations, screening information and past medical history. It does not include administrative items such as invitations for health-related information.
 
-
 ## Purpose ##
 
 The purpose of supplying clinical items within GP Connect is to allow a clinician to view a history of items relating to the health and wellbeing of a patient.
-
 
 ## Sections and subsections ##
 
 There is a single main section for clinical items with no subsections.
 
-
 ### Date filter ###
 
 A date filter is applicable for the Clinical items section. Provider messages for a date filter can be found [here](accessrecord_provider_variance.html#date-banner-message).
 
-
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#clinical-items).
-
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#clinical-items).
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Clinical Items".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
-
+- table header **MUST** be "Clinical Items"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |

@@ -40,7 +40,7 @@ Date filters are not supported for this section all relevant records shall be re
  
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#allergies-and-adverse-reactions).
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#allergies-and-adverse-reactions).
 
 
 
@@ -60,17 +60,17 @@ Provider messages describing at a summary level how they have populated this sub
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Current Allergies and Adverse Reactions".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
+- table header **MUST** be "Current Allergies and Adverse Reactions"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
@@ -97,16 +97,16 @@ Provider messages describing at a summary level how they have populated this sub
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Historical Allergies and Adverse Reactions".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
+- table header **MUST** be "Historical Allergies and Adverse Reactions"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `End Date` descending:
+Providers **MUST** return all the columns as described in the table below, date descending ordering **MUST** be applied (`End Date` **SHOULD** be the date field used in the sort):
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |

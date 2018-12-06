@@ -15,11 +15,11 @@ summary: "Observations HTML view"
 
 ## Clinical narrative ##
 
-A clinical observation is a repeatable data element recorded by health professionals in the course of assessment or care of their patients or clients. Examples include, blood pressure measurement, weight, height or temperature.
+A clinical observation is a repeatable data element recorded by health professionals in the course of assessment or care of their patients or clients. Examples include, blood pressure measurement, weight, height or temperature measurement.
 
 ## Purpose ##
 
-The purpose of this section is to enable the clinician to view and compare chronologically data recorded in structured form pertaining to a patient’s physical condition.
+The purpose of this section is to enable the clinician to view and compare chronological data pertaining to a patient’s physical condition.
 
 ## Sections and subsections ##
 
@@ -31,21 +31,19 @@ A date filter is applicable for the Observations section. Provider messages for 
 
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#observations).
-
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#observations).
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Observations".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
+- table header **MUST** be "Observations"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Date` descending:
 
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
@@ -53,7 +51,7 @@ Providers must return all the columns as described in the table below, ordered b
 | <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The date of the observation | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry`   | A short human readable free-text title for the observation | `free-text` |
 | <center>3</center> | `Value`   | Value and range (where available) of the observation | `free-text` |
-| <center>4</center> | `Details` | Longer human readable details for the observation. Number formatting must follow the guidelines published on page 5 of the [CUI Medication Line](http://webarchive.nationalarchives.gov.uk/20160921162642/http://systems.digital.nhs.uk/data/cui/uig/medlineqig.pdf) document.  | `free-text` |
+| <center>4</center> | `Details` | Longer human readable details for the observation. Number formatting **MUST** follow the guidelines published on page 5 of the [CUI Medication Line](http://webarchive.nationalarchives.gov.uk/20160921162642/http://systems.digital.nhs.uk/data/cui/uig/medlineqig.pdf) document.  | `free-text` |
 
 
 

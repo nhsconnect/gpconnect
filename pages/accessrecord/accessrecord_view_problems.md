@@ -36,7 +36,7 @@ A date filter is only applicable for the [Inactive Problems and Issues](accessre
 
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#problems-and-issues).
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#problems-and-issues).
 
 
 ## Active problems and issues ##
@@ -56,16 +56,16 @@ Provider messages describing at a summary level how they have populated this sub
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Active Problems and Issues".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
+- table header **MUST** be "Active Problems and Issues"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
@@ -92,19 +92,18 @@ The purpose of this section is to provide information about a patient’s previo
 
 Provider messages describing at a summary level how they have populated this subsection can be found [here](accessrecord_provider_variance.html#inactive-problems-and-issues-subsection):
 
-
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Inactive Problems and Issues".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
+- table header **MUST** be "Inactive Problems and Issues"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `End Date` descending:
+Providers **MUST** return all the columns as described in the table below, date descending ordering **MUST** be applied (`End Date` **SHOULD** be the date field used in the sort):
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
@@ -116,11 +115,11 @@ Providers must return all the columns as described in the table below, ordered b
 
 
 
-Provider systems not supporting Inactive Problems (e.g. Vision) **MUST** display a message in the Section Banner to indicate:
+Provider systems not supporting Inactive Problems **MUST** display a message in the Section Banner to indicate:
 
 - Inactive Problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
-) section.
-- That any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section.
+) section
+- that any Problems and Issues recorded for the Patient are included in the Active Problems and Issues section
 
 Provider systems that do support Inactive Problems, but when no records exist for the requested Patient **MUST** display the standard [HTML Implementation Guide - Supported But Hasn't Been Recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
 

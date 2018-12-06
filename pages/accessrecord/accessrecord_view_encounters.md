@@ -31,30 +31,25 @@ The purpose of supplying encounters within GP Connect is to allow a clinician to
 
 There is a single main section for encounters with no subsections.
 
-
 ### Date filter ###
 
 A date filter is applicable for the encounters section. Provider messages for a date filter can be found [here](accessrecord_provider_variance.html#date-banner-message).
 
-
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#encounters).
-
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#encounters).
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Encounters".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
-
+- table header **MUST** be "Encounters"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Date` descending:
 
 | Order | Name | Description | Value Details |
 | ----- | ---- | ----------- | ------------- |

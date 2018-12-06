@@ -2,18 +2,17 @@
 title: Provider variance
 sidebar: accessrecord_sidebar
 permalink: accessrecord_provider_variance.html
-summary: "Known provider variance to the Access Record HTML capability"
+summary: "Known provider variance to the Access Record capability"
 ---
 <a href="#" class="back-to-top">Back to Top</a>
 
 ## Purpose ##
 
-The purpose of this page is to identify the variances between provider response banner messages, and detail any business rules applied, to better aid consumers during development.
+The purpose of this page is to aid consumers by identifying the variances between provider response banner messages, and detail any business rules applied, where known. The messages provided are NOT requirements; they are for the information of consumers. Providers may change these messages over time.
 
 
 ## Cross section/subsection banner variances ##
 
-{% include custominfocallout.html content="**Information:** TPP display the section message for all sections regardless of whether there is an exclusion applicable to that section." type="info" %} 
 
 ### GP transfer banner message ###
 
@@ -49,7 +48,7 @@ The following messages are returned by the provider systems when a GP to GP tran
 
 ### Date banner message ###
 
-The following messages are returned by the provider systems when a date filter is applied. Please see each HTML view page for details on where date filters are applicable:
+The following messages are returned by the provider systems when a date filter is applied, please see each HTML view page for details on where date filters are applicable:
 
 <table width="100%">
 	<thead>
@@ -65,7 +64,7 @@ The following messages are returned by the provider systems when a date filter i
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>For the selected date range dd-Mmm-yyyy to dd-Mmm-yyyy subject to patient preferences and/or RCGP exclusions.</td>
+		<td>For the period 'dd-Mmm-yyyy' to 'dd-Mmm-yyyy' subject to patient preferences and/or RCGP exclusions.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -104,7 +103,7 @@ The following messages are returned by the provider systems when data has been e
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>One or more items have been suppressed due to privacy exclusion rules.</td>
+		<td>One or more items have been suppressed due to privacy exclusion rules</td>
 		<td>***********</td>
 	  </tr>
 	  <tr>
@@ -115,6 +114,7 @@ The following messages are returned by the provider systems when data has been e
 	</tbody>
 </table>
 
+{% include custominfocallout.html content="**Information:** TPP display the section message for all sections regardless of whether there is an exclusion applicable to that section." type="info" %} 
 
 {% include custominfocallout.html content="**Information:** TPP only include a table line item message in the Encounters section (or Last 3 Encounters table in the Summary section) and only for items marked private (as opposed to those relating to the exclusion data set). All other sections will not identify if an entry is absent or not." type="info" %} 
 
@@ -133,26 +133,28 @@ The following explains how the provider systems deal with incomplete dates, wher
 	<tbody>
 	  <tr>
 		<td><b>TPP</b></td>
-		<td>Incomplete dates will be returned with the incomplete element missing - for example, dates may be returned as 2008 or Apr 2009. For the chronology, incomplete elements are treated as the first day of the month and first month of the year respectively.</td>
+		<td>Incomplete dates will be returned with the incomplete element missing, for example, dates may be returned as 2008 or Apr 2009. For the chronology, incomplete elements are treated as the first day of the month and first month of the year respectively.</td>
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>N/A</td>
+		<td>Incomplete dates will be returned with the incomplete element missing - for example, dates may be returned as 2008 or Apr 2009.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>N/A</td>
+		<td>Not known</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
-		<td>Incomplete elements of a date will be returned as the first day of the month or the first month of the year as applicable - for example, a date entered as ??/??/2011 will be returned as 01 Jan 2011.</td>
+		<td>Incomplete elements of a date will be returned as the first day of the month or the first month of the year as applicable e.g. a date entered as ??/??/2011 will be returned as 01 Jan 2011.</td>
 	  </tr>
 	</tbody>
 </table>
 
 
 
-## HTML view business rules and content banner variances ##
+## Business rules and content banner variances ##
+
+The following sections give details of variances in how providers populate the HTML view sections and their subsections and the banner messages they provide to inform users. As the Summary view contains subsections of the listed views it has not been listed to avoid duplication.
 
 ### Encounters ###
 
@@ -201,7 +203,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains information recorded during consultations with the patient.</td>
+		<td>N/A</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -261,7 +263,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains coded clinical items relating to a patient's care - for example, procedures, test results, conditions.</td>
+		<td>N/A</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -321,7 +323,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date. Contains items coded as problems within the patient's record; can also contain details on medications linked to problems if available.</td>
+		<td>Past medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -352,7 +354,7 @@ The following content subsection messages are returned by the provider systems f
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains items coded as problems within the patient's record; can also contain details on medications linked to problems if available.</td>
+		<td>N/A</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -367,34 +369,8 @@ The following content subsection messages are returned by the provider systems f
 
 #### Inactive problems and issues subsection ####
 
-The following content subsection messages are returned by the provider systems for [inactive problems and issues](accessrecord_view_problems.html#inactive-problems-and-issues):
+There are no content subsection messages returned by the provider systems for [inactive problems and issues](accessrecord_view_problems.html#inactive-problems-and-issues).
 
-<table width="100%">
-	<thead>
-		<tr>
-			<th width="15%">Supplier</th>
-			<th width="85%">Message</th>
-		</tr>
-	</thead>
-	<tbody>
-	  <tr>
-		<td><b>TPP</b></td>
-		<td>N/A</td>
-	  </tr>
-	  <tr>
-		<td><b>EMIS</b></td>
-		<td>Contains items coded as problems within the patient's record; can also contain details on medications linked to problems if available.</td>
-	  </tr>
-	  <tr>
-		<td><b>Vision</b></td>
-		<td>N/A</td>
-	  </tr>
-	  <tr>
-		<td><b>Microtest</b></td>
-		<td>N/A</td>
-	  </tr>
-	</tbody>
-</table>
 
 
 ### Allergies and adverse reactions ###
@@ -419,7 +395,7 @@ The following business rules apply for [allergies and adverse reactions](accessr
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection. Vision do not record end dates for allergies & adverse reactions. Therefore, a history view is not possible.</td>
+		<td>All allergy and adverse reactions data will be recorded in the Current Allergies and Adverse Reactions subsection. Vision do not record end dates for allergies & adverse reactions, therefore a history view is not possible.</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
@@ -428,34 +404,8 @@ The following business rules apply for [allergies and adverse reactions](accessr
 	</tbody>
 </table>
 
-The following content section messages are returned by the provider systems for [allergies and adverse reactions](accessrecord_view_allergies.html):
+There are no content section messages returned by the provider systems for [allergies and adverse reactions](accessrecord_view_allergies.html):
 
-<table width="100%">
-	<thead>
-		<tr>
-			<th width="15%">Supplier</th>
-			<th width="85%">Message</th>
-		</tr>
-	</thead>
-	<tbody>
-	  <tr>
-		<td><b>TPP</b></td>
-		<td>N/A</td>
-	  </tr>
-	  <tr>
-		<td><b>EMIS</b></td>
-		<td>Historical Allergies and Adverse Reactions data is not supported by this system.</td>
-	  </tr>
-	  <tr>
-		<td><b>Vision</b></td>
-		<td>N/A</td>
-	  </tr>
-	  <tr>
-		<td><b>Microtest</b></td>
-		<td>N/A</td>
-	  </tr>
-	</tbody>
-</table>
 
 #### Current allergies and adverse reactions subsection ####
 
@@ -535,29 +485,62 @@ The following business rules apply for [medications](accessrecord_view_medicatio
 	<tbody>
 	  <tr>
 		<td><b>TPP</b></td>
-		<td>Acute/repeat issues are current until the scheduled end date (issue date plus days duration). Repeat templates are current until actively ended by a system user action.</td>
+		<td>
+			<ul>
+				<li>Acute/repeat issues are current until the scheduled end date (issue date plus days duration)</li>
+				<li>Repeat templates are current until actively ended by a system user action</li>
+			</ul>
+		</td>
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>An acute medication is current for 28 days from issue or the issue date plus the days duration plus 14 days, whichever is the greater. <br/>Repeat medication courses are subject to a local configuration setting. When enabled, repeat courses will automatically expire after a configurable period from the last issue date plus the course duration. The period can be set from days to years. <br/>Repeat medication issues are included as current whilst the repeat course is current (meaning, has not been stopped/expired). </td>
+		<td>
+			<ul>
+				<li>An acute medication is current for 28 days from issue or the issue date plus the days duration plus 14 days, whichever is the greater</li>
+				<li>Repeat medication courses are subject to a local configuration setting. When enabled, repeat courses will automatically expire after a configurable period from the last issue date plus the course duration. The period can be set from days to years. </li>
+				<li>Repeat medication issues are included as current whilst the repeat course is current (meaning, has not been stopped/expired)</li>
+			</ul>
+		</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>All acute medications stay in the current medication issues (acute) section for 1 year (from prescription date) before being moved to Past Medication.</td>
+		<td>
+			<ul>
+				<li>All acute medications stay in the current medication issues (acute) section for 1 year (from prescription date) before being moved to Past Medication</li>
+			</ul>
+		</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
-		<td>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list. A medication can be moved between ‘current’ and ‘removed’ lists <br/>
+		<td>
 			<ul>
-				<li>automatically if a drug hasn’t been issued for more than a configurable period, typically 6 months, it will be moved from ‘current’ to ‘removed’</li>
-				<li>manually by the doctor in either direction</li>
+				<li>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list</li>
+			</ul>
+			<ul>
+				<li>A medication can be moved between ‘current’ and ‘removed’ lists</li> 
+					<ul>
+						<li>automatically if a drug hasn’t been issued for more than a configurable period, typically 6 months, it will be moved from ‘current’ to ‘removed’</li>
+						<li>manually by the doctor in either direction</li>
+					</ul>
 			</ul>
 		</td>
 	  </tr>
 	</tbody>
 </table>
 
-The following has been documented to explain the capture of cancelled/discontinued medication:
+
+
+It is extremely important for the details regarding the ending of a medication to be available to a clinician, as this will highlight any clinical issues (e.g. stopping a medication due to an allergy etc.) and allow the clinician to make an efficient and informed clinical decision. 
+
+For the purpose of the specification the different circumstances of ending a medication are classified as: 
+
+- naturally ended: medication naturally came to an end, i.e. no manual intervention via the user (auto system transition) 
+- cancelled: actively stopped acute medication by user 
+- discontinued: actively stopped repeat medication by user 
+
+Available details for Cancelled and Discontinued (ideally including date and reason) **MUST** be provided in the Details column in the applicable subsections.
+
+It is not currently possible for all GP system suppliers to distinguish between discontinued or cancelled and/or provide full details of the date and reason. Details of provider variance can be found here:
 
 <table width="100%">
 	<thead>
@@ -577,7 +560,7 @@ The following has been documented to explain the capture of cancelled/discontinu
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>Does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the Details column. Note: INPS use the term de-activated in Vision as opposed to discontinued.</td>
+		<td>Does not have a concept of cancelled. For discontinued medications they hold a date and reason within their system and this should be included in the details column. Note: INPS use the term de-activated in Vision as opposed to discontinued.</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
@@ -585,6 +568,7 @@ The following has been documented to explain the capture of cancelled/discontinu
 	  </tr>
 	</tbody>
 </table>
+
 
 The following content section messages are returned by the provider systems for [medications](accessrecord_view_medications.html):
 
@@ -602,11 +586,9 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Non - BNF designated items - for example, local mixtures, have been excluded. <br/>
-			May also contain immunisations issued as medications; <br/>
-			can also contain details on problems linked to medications if available. <br/>
-			Medication Max Issues are not shared currently. <br/>
-			Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date.</td>
+		<td>Non - BNF designated items e.g. local mixtures, have been excluded. <br/>
+			Medication Max Issues are not shared currently <br/>
+			Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -682,7 +664,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains referrals related to the patient.</td>
+		<td>N/A</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -715,7 +697,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains observations with numeric and other measurement ranges.</td>
+		<td>N/A</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -755,7 +737,8 @@ The following business rules apply for [immunisations](accessrecord_view_immunis
 	  <tr>
 		<td><b>Microtest</b></td>
 		<td>Microtest don't have a recognizable Immunisations 'table'; immunisations are extracted from their Recalls & History repositories based on the following Read Codes; <br/>
-        7L1gz14b65670670068N8BMb.8BQ1.8I238MC8ME9DN9ki9Oo9OXZV03ZV04 where the code is less than five characters long it will include all codes below it in the Read2 hierarchy.</td>
+        Read Codes; 7L1gz 14b 65 670 6700 68N 8BMb. 8BQ1. 8I23 8MC 8ME 9DN 9ki 9Oo 9OX ZV03 ZV04 <br/>
+		where the code is less than five characters long it will include all codes below it in the Read2 hierarchy.</td>
 	  </tr>
 	</tbody>
 </table>
@@ -776,7 +759,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>EMIS</b></td>
-		<td>Contains coded immunisations on the patient record; some immunisations may exist as issued medications also. <br/>Content and Part not supported.</td>
+		<td>Content and Part not supported.</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
@@ -844,7 +827,7 @@ The following content section messages are returned by the provider systems for 
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
-		<td>Contains non-clinical items including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions.</td>
+		<td>Contains non-clinical items - including, but not limited to, administrative, occupational, social context, carer information, communications preferences, legal information, learning disability, advance decisions etc.</td>
 	  </tr>
 	</tbody>
 </table>

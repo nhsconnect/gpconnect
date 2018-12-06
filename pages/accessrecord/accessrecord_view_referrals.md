@@ -19,7 +19,7 @@ This is a request for transfer of care or request to provide assessment, treatme
 
 ## Purpose ##
 
-The purpose of this section is to provide details of any referrals to other care providers.
+The purpose of this section is to provide details of any referrals to or from other care providers.
 
 ## Sections and subsections ##
 
@@ -29,31 +29,27 @@ There is only a single main section for Referrals with no subsections.
 
 A date filter is applicable for the Referrals section. Provider messages for a date filter can be found [here](accessrecord_provider_variance.html#date-banner-message).
 
-
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#referrals).
-
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#referrals).
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Referrals".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
-
+- table header **MUST** be "Referrals"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The date of the referral | `dd-Mmm-yyyy` |
-| <center>2</center> | `From` | Practitioner or Organization referred from | `free-text` |
-| <center>3</center> | `To` | Practitioner or Organization referred to | `free-text` |
+| <center>2</center> | `From` | Practitioner and/or Organization referred from | `free-text` |
+| <center>3</center> | `To` | Practitioner and/or Organization referred to | `free-text` |
 | <center>4</center> | `Priority` | The priority of the referral | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the referral | `free-text` |
 

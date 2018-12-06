@@ -13,7 +13,7 @@ toc: false
 
 ## Clinical settings and user stories ##
 
-These have been assembled through engagement with various clinical communities and examples are as follows (click title to expand/collapse):
+Listed below are some of the clinical scenarios Access Record HTML view may support:
 
 ### Patient's allergies and adverse reactions available to MIU ###
 

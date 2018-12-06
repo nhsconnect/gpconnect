@@ -33,20 +33,19 @@ A date filter is applicable for the Administrative Items section. Provider messa
 
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#administrative-items).
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#administrative-items).
 
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Administrative Items".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
+- table header **MUST** be "Administrative Items"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |

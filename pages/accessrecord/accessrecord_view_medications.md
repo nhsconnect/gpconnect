@@ -6,7 +6,7 @@ sidebar: accessrecord_sidebar
 permalink: accessrecord_view_medications.html
 summary: "Medications HTML view"
 ---
-{% include customcallout.html content="**Warning:** The content of the Medications view is currently under review following initial First of Type feedback, and will be uplifted in version 0.7.0 of the specification." type="danger" %}
+{% include customcallout.html content="**Warning:** The content of the Medications view is currently under review following initial First of Type feedback, and will be uplifted in a future version of the specification." type="danger" %}
 
 <a href="#" class="back-to-top">Back to Top</a>
 
@@ -33,7 +33,7 @@ Contains one main section, and three subsections:
  
 ### Section content banner ###
 
-Provider messages describing at a summary level how they have populated this section can be found [here](accessrecord_provider_variance.html#medications).
+Provider message(s) describing at a summary level how this section has been populated. Provider content messages can be found [here](accessrecord_provider_variance.html#medications).
 
 
 
@@ -46,42 +46,29 @@ A list of drugs or other forms of medicines that are currently being used to tre
 
 ### Purpose ###
 
-The purpose of this section is to provide a view of medications that the patient is currently taking which informs the clinical decision-making process.
+The purpose of this subsection is to provide a view of medications that the patient is currently taking which informs the clinical decision-making process.
 
 {% include customcallout.html content="**Warning:** The current medications list will only contain those items prescribed by the patient's current GP organization. Hence, if the patient has been issued prescriptions elsewhere or has recently moved GP practice then this list may not be complete. " type="danger" %} 
 
-
 ### Date filter ###
 
-All relevant records **MUST** be returned (i.e. no time limit/filtering is to be applied).
+A default or consumer provided date range **MUST NOT** be applied by the provider for this section. The current issue of repeat or acute medication will be returned
 
 ### Subsection content banner ###
 
 There are no content banner messages for this subsection.
 
-### Subsection business rules ###
-
-The following business rules are applicable:
-
-| Supplier | Business Rules |
-|----------|----------------|
-| EMIS | Medication items appear in this section based on a local configurable setting, for example, if set to 28 days then medication items will be displayed for items 28 days or less from the last issued date (applies to acute and repeat medications) |
-| TPP | TBC |
-| Vision | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to acute and repeat medications) |
-| Microtest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
-
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Current Medication Issues".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
+- table header **MUST** be "Current Medication Issues"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
@@ -91,15 +78,6 @@ Providers must return all the columns as described in the table below, ordered b
 | <center>4</center> | `Scheduled End` | Scheduled end date of medication issued | `dd-Mmm-yyyy` |
 | <center>5</center> | `Days Duration` | Duration of medication issued | `integer` |
 | <center>6</center> | `Details` | Longer human readable free-text details for the medication item &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | `free-text` |
-
-Provider systems **MUST** include all relevant clinical content in the `Details` free-text field. As a minimum the free-text narrative **MUST** include these items: <br>
-- `MedicationOrder.medication.code`
-- `MedicationOrder.dosageInstruction.dose[x]`
-- `MedicationOrder.dosageInstruction.schedule[x]`
-- `MedicationOrder.dosageInstruction.rate`
-- `MedicationOrder.dosageInstruction.maxDosePerPeriod`
-
-
 
 
 
@@ -112,39 +90,27 @@ A list of repeat drugs or other forms of medicines that are currently being used
 
 ### Purpose ###
 
-The purpose of this section is to provide a view of repeat medications that the patient is currently prescribed, which informs the clinical decision-making process.
+The purpose of this subsection is to provide a view of repeat medications that the patient is currently prescribed, which informs the clinical decision-making process.
 
 ### Date filter ###
 
-All relevant records **MUST** be returned (i.e. no time limit/filtering is to be applied).
+A default or consumer provided date range **MUST NOT** be applied by the provider for this section. All current repeat medication (templates/courses) will be returned.
 
 ### Subsection content banner ###
 
 Provider messages describing at a summary level how they have populated this subsection can be found [here](accessrecord_provider_variance.html#current-repeat-medications-subsection).
 
-### Subsection business rules ###
-
-The following business rules are applicable:
-
-| Supplier | Business Rules |
-|----------|----------------|
-| EMIS |Medication items appear in this section based on a local configurable setting, for example, if set to 28 days then medication items will be displayed for items 28 days or less from the last issued date (applies to acute and repeat medications). |
-| TPP | TBC |
-| Vision | Medication item appears in this section if it has been 12 months or less for from the last issued date (applies to repeat medications only). |
-| Microtest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
-
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Current Repeat Medications".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
+- table header **MUST** be "Current Repeat Medications"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Last Issued` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Last Issued` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
@@ -168,9 +134,9 @@ A history view of drugs or other forms of medicines that have been used to treat
 
 ### Purpose ###
 
-The purpose of this section is to provide a historical view of repeat medications that the patient has been recorded to have been prescribed or taken. This informs the clinical decision-making process.
+The purpose of this subsection is to provide a historical view of repeat medications that the patient has been recorded to have been prescribed or taken. This informs the clinical decision-making process.
  
-Where the medication was cancelled (Acute) or Discontinued (Repeat), this should be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
+Where the medication was Cancelled (Acute) or Discontinued (Repeat), this *SHOULD* be included in the Details column as Cancelled followed by Date of Cancellation or Discontinued, followed by Date when discontinued.
 
 ### Date filter ###
 
@@ -179,34 +145,21 @@ A date filter is applicable for the Past Medications subsection (details of the 
 - All relevant records **MUST** be returned according to the consumer-supplied date range
 - If a date is not supplied all records **MUST** be returned
 
-
 ### Subsection content banner ###
 
 There are no content banner messages for this subsection.
 
-### Subsection business rules ###
-
-The following business rules are applicable:
-
-| Supplier | Business Rules |
-|----------|----------------|
-| EMIS | EMIS Web marks a current medication as a past medication 28 days after its last issue date. |
-| TPP | TBC |
-| Vision | Past medication will show all past medication including any discontinued. This will be 12 months after the last issue date (prescription date). |
-| Microtest | Microtest use two ‘lists’ to present the patient drugs to the user who can then toggle between the two as they choose. The lists are headed ‘current’ and ‘removed’ and aim to break a potentially long list of drugs into two more relevant groups.<br><br>‘Current Medication Issues’ are repeat and acute medications in the patient’s ‘current’ list, the ‘Current Repeat Medications’ are repeat medications in the patient’s ‘current’ list and the ‘Past Medication’ are repeat and acute medications in the patient’s ‘removed’ list.<br><br> This categorisation is either set manually by the doctor, or is automatically moved after a configurable period – typically 6 months from the last issued date.|
-
 ### Table construction requirements ###
 
-Providers must adhere to the table construction requirements listed below:
+Providers **MUST** adhere to the table construction requirements listed below:
 
-- Table header **MUST** be "Past Medications".
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
-
+- table header **MUST** be "Past Medications"
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 ### Table columns ###
 
-Providers must return all the columns as described in the table below, ordered by `Start Date` descending:
+Providers **MUST** return all the columns as described in the table below, ordered by `Start Date` descending:
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp;|
 | ------------ | ------------ | ------------ |
