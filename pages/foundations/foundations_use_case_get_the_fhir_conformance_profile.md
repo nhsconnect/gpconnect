@@ -25,7 +25,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/metadata
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **MUST** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -52,8 +52,8 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrival of the conformance statement.
-- SHALL ensure that the FHIR version number returned by the FHIR server endpoint conformance statement matches the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
+- **MUST** return a `200` **OK** HTTP status code on successful retrival of the conformance statement
+- **MUST** ensure that the FHIR version number returned by the FHIR server endpoint conformance statement matches the FHIR version stated in the endpoint base URL. Refer to [Spine Directory Services](integration_spine_directory_service.html) for details of the format of the FHIR base URL to be used. 
 
 An example GP Connect Conformance Statement of type `capability` is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this conformance statement as a base for their own conformance statement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the conformance statement should represent the GP Connect specification version which the FHIR server implements.
 
@@ -100,8 +100,8 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
 
 Consumer systems:
 
-- SHOULD, at run-time, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server.
-- SHOULD cache conformance statement information retrieved from an endpoint at run-time on a per-session basis. 
+- **SHOULD**, at run-time, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server
+- **SHOULD** cache conformance statement information retrieved from an endpoint at run-time on a per-session basis
 
 ### C# client request to get the conformance statement ###
 
