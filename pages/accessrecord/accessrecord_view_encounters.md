@@ -17,10 +17,10 @@ summary: "Encounters HTML view"
 
 An encounter is an interaction between a patient and a health care professional (HCP) that is recorded on the patient record. This can include:
 
-- Planned encounters - such as pre-arranged Appointments with a GP
-- Unplanned encounters - such as at an out of hours clinic and those unrecorded through appointment module(s)
-- Direct encounters - such as a face-to-face session with a GP
-- Indirect encounters - such as a GP reviewing and updating a patient record on receipt of some test results
+- planned encounters - such as pre-arranged Appointments with a GP
+- unplanned encounters - such as at an out of hours clinic and those unrecorded through appointment module(s)
+- direct encounters - such as a face-to-face session with a GP
+- indirect encounters - such as a GP reviewing and updating a patient record on receipt of some test results
 
 
 ## Purpose ##
