@@ -274,7 +274,7 @@ The provider **MUST** publish the Service Root URL to Spine Directory Services, 
 
 `https://provider.nhs.uk/GP0001/DSTU2/0/gpconnect`
 
-Consumer systems are required to construct a [Service root URL containing the SSP URL followed by the FHIR Server root URL of the logical practice FHIR server](integration_spine_security_proxy.html#proxied-fhir-requests) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+Consumer systems are required to construct a [Service root URL containing the SSP URL followed by the FHIR Server root URL of the logical practice FHIR server](integration_spine_secure_proxy.html) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
 The consumer system would therefore issue a request to the new version of the provider FHIR API to the following URL:
 
@@ -303,7 +303,7 @@ The following HTTP verbs **MUST** be supported to allow RESTful API interactions
 
 #### [Resource type](http://hl7.org/fhir/resourcelist.html) ####
 
-GP Connect provider systems **MUST** support FHIR resource types as profiled within the [GP Connect FHIR Resource Definitions](http://developer.nhs.uk/downloads-data/fhir-resource-definitions-library/). 
+GP Connect provider systems **MUST** support FHIR resource types as profiled within the [GP Connect FHIR Resources](datalibraryaccessrecord). 
 
 #### [Resource ID](http://hl7.org/fhir/resource.html#id) ####
 
