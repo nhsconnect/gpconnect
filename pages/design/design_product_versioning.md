@@ -94,4 +94,4 @@ The following GP Connect artefacts are released alongside the specification, but
 
 ### Service Root URL format ###
 
-[Service Root URL formats](development_general_api_guidance.html#service-root-url-versioning) contain the major version number of the specification.
+[Service Root URL formats](development_fhir_api_guidance.html#service-root-url-versioning) contain the major version number of the specification.
