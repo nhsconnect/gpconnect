@@ -5,7 +5,7 @@ tags: [support]
 toc: false
 sidebar: overview_sidebar
 permalink: support_run_website_locally.html
-summary: "How to run the website locally on your own PC."
+summary: "How to run the website locally on your own PC"
 ---
 
 Please follow the following instructions to setting up GitHub Pages to run locally:
@@ -44,17 +44,17 @@ Run the 'jekyll serve' command to compile and serve the HTML content.
 bundle exec jekyll serve 
 ```
 
-By default pages are served from http://localhost:4005/
+By default, pages are served from http://localhost:4005/
 
-You will likely hit two further problems.
+You will likely hit two further problems:
 
-1) Fix warnings related to SSL certificate checking (by configuring the SSL_CERT_FILE env variable)
+1) fix warnings related to SSL certificate checking (by configuring the SSL_CERT_FILE env variable)
 
 I followed the following instructions to download and reference a cacert.pem file.
 
 [cacert_file](https://gist.github.com/fnichol/867550)
 
-2) Fix warnings related to the Jekyll GitHub Metadata plugin (by configuring the JEKYLL_GITHUB_TOKEN env veriable)
+2) fix warnings related to the Jekyll GitHub Metadata plugin (by configuring the JEKYLL_GITHUB_TOKEN env variable)
 
 [github-metadata](https://github.com/jekyll/github-metadata)
 
