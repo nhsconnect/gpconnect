@@ -60,9 +60,6 @@ It is a key principle of the FHIR RESTful APIs that all resources are versioned;
 
 You are welcome to use your own ODS index (i.e. to find an organisation by name/address etc.). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of exposing the Access Record and Appointment APIs.
 
-## It will be necessary in some use cases to support a search on GMC or NMC number rather than SDS User Id to find a staff member. ##
-
-This has been added to our known issue list so we can provide more guidance on how this could work. However, it is important to note that the [Find A Practitioner](foundations_use_case_find_a_practitioner.html) section gives an example of using a SDS User Id but the same API call could in fact also be used to search by other identifiers by changing the ‘system’ component of the search parameter.
 
 ## Why does the guide suggest that all resources should include text in the display property when this information is also in the HTML view? ##
 
