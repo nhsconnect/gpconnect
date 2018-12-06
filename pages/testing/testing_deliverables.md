@@ -29,7 +29,7 @@ An automated provider test harness has been made publicly available to allow sta
 
 Please see the [GP Connect Provider Testing Wiki](https://github.com/nhsconnect/gpconnect-provider-testing/wiki) for further details.
 
-{% include note.html content="Generic FHIR test harness such as [Crucible](https://www.projectcrucible.org/), [Sprinklr](https://github.com/furore-fhir/sprinkler) and [TouchStone](http://www.aegis.net/touchstone.html) may also be of interest to implementers." %}
+{% include note.html content="Generic FHIR test harness such as [Crucible](http://www.projectcrucible.org/), [Sprinklr](https://github.com/furore-fhir/sprinkler) and [TouchStone](http://www.aegis.net/touchstone.html) may also be of interest to implementers." %}
 
 ### Non functional ###
 
