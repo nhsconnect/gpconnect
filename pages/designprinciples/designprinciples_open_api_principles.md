@@ -7,7 +7,7 @@ permalink: designprinciples_open_api_principles.html
 summary: "High-level design principles related to the Open API design."
 ---
 
-{% include tip.html content="GP Connect has aligned with [NHS England's Open API Policy](https://www.england.nhs.uk/digitaltechnology/info-revolution/interoperability/open-api/) to support the ambition of moving to a position where significant business functionality available within systems is exposed through interfaces where the definition is open. Download a PDF copy [now](https://www.england.nhs.uk/wp-content/uploads/2014/05/open-api-policy.pdf)." %}
+{% include tip.html content="GP Connect has aligned with [NHS England's Open API Policy](https://www.england.nhs.uk/digitaltechnology/info-revolution/interoperability/open-api/) to support the ambition of moving to a position where significant business functionality available within systems is exposed through interfaces where the definition is open." %}
 
 {% include important.html content="GP Connect has adopted the [FHIR&reg; standard (DSTU2)](https://www.hl7.org/fhir/DSTU2/) and as such the FHIR API design principles will be followed unless a clear rationale exists to amend. When an amendment is required this decision will be logged and the rationale clearly communicated." %}
 
