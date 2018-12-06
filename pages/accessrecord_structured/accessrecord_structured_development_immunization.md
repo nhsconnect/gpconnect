@@ -358,7 +358,7 @@ The route by which exposure to the substance causing the reaction occurred. Util
   <tr>
     <td><b>Data type:</b> <code>positiveInt</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
