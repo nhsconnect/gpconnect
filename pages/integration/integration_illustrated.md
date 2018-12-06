@@ -13,7 +13,7 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 
 - [Personal Demographics Service (PDS)](integration_personal_demographic_service.html)
 - [Spine Directory Service (SDS)](integration_spine_directory_service.html)
-- [Spine Security Proxy (SSP)](integration_spine_security_proxy.html)
+- [Spine Security Proxy (SSP)](integration_spine_secure_proxy.html)
 
 To illustrate this, an example is given below of all the steps required consume GP Connect capabilities. For full details, please refer to the relevant spine service pages.
 
