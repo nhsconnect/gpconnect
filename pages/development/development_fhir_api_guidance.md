@@ -48,64 +48,64 @@ The Health Level Seven (HL7&reg;) International standards body maintains a list 
 
 To help API implementers deal with the FHIR learning curve NHS Digital has worked to constrain the scope of the FHIR&reg; standard that is expected to be implemented in the first tranche of development work as follows: 
 
-1. [Resource](https://www.hl7.org/fhir/DSTU2/resource.html)
-	1. [Resource identity](https://www.hl7.org/fhir/DSTU2/resource.html#id)
-	1. [Business identifiers](https://www.hl7.org/fhir/DSTU2/resource.html#identifiers)
-2. [Domain resource](https://www.hl7.org/fhir/DSTU2/domainresource.html)
-	1. Common API
-		1. [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) profiled as gpconnect-patient-1.
-		2. [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) profiled as gpconnect-practitioner-1.
-		3. [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) profiled as gpconnect-organization-1.
+1. [resource](https://www.hl7.org/fhir/DSTU2/resource.html)
+	1. [resource identity](https://www.hl7.org/fhir/DSTU2/resource.html#id)
+	1. [business identifiers](https://www.hl7.org/fhir/DSTU2/resource.html#identifiers)
+2. [domain resource](https://www.hl7.org/fhir/DSTU2/domainresource.html)
+	1. common API
+		1. [Patient](https://www.hl7.org/fhir/DSTU2/patient.html) profiled as gpconnect-patient-1
+		2. [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) profiled as gpconnect-practitioner-1
+		3. [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) profiled as gpconnect-organization-1
 		4. [Location](https://www.hl7.org/fhir/DSTU2/location.html) profiled as gpconnect-location-1
-	2. Care record API
-		1. Please refer to the [Resource Type](#ResourceType) section of this document. 
-	3. Bookings API
-		1. [Schedule](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-schedule-1
-		2. [Slot](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-slot-1
-		3. [Appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) profiled as gpconnect-appointment-1
-3. [Resource metadata](https://www.hl7.org/fhir/DSTU2/resource.html#Meta)
+	2. care record API
+		1. please refer to the [Resource Type](#ResourceType) section of this document
+	3. bookings API
+		1. [schedule](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-schedule-1
+		2. [slot](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-slot-1
+		3. [appointment](https://www.hl7.org/fhir/DSTU2/appointment.html) profiled as gpconnect-appointment-1
+3. [resource metadata](https://www.hl7.org/fhir/DSTU2/resource.html#Meta)
 	1. [profile](https://www.hl7.org/fhir/DSTU2/resource.html#metadata)
 	2. [version Id](https://www.hl7.org/fhir/DSTU2/resource.html#metadata)
-4. [Bundle](https://www.hl7.org/fhir/DSTU2/bundle.html)
-5. [Data types](https://www.hl7.org/fhir/DSTU2/datatypes.html)
-	1. [Primitive types](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive)
-		1. All primitive types **MUST** be supported.
-	2. [Complex types](https://www.hl7.org/fhir/DSTU2/datatypes.html#complex) 
-		1. The following complex types **MUST** be supported.
-			1. [Identifier](https://www.hl7.org/fhir/DSTU2/datatypes.html#identifier)
-			2. [Coding](https://www.hl7.org/fhir/DSTU2/datatypes.html#codeableconcept)
-			2. [Codeable concept](https://www.hl7.org/fhir/DSTU2/datatypes.html#coding)
-			3. [Period](https://www.hl7.org/fhir/DSTU2/datatypes.html#period)
-		4. It is expected that further complex types will be introduced as required to model structured data.
-6. Interactions
-	1.  Instance
+4. [bundle](https://www.hl7.org/fhir/DSTU2/bundle.html)
+5. [data types](https://www.hl7.org/fhir/DSTU2/datatypes.html)
+	1. [primitive types](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive)
+		1. all primitive types **MUST** be supported.
+	2. [complex types](https://www.hl7.org/fhir/DSTU2/datatypes.html#complex) 
+		1. the following complex types **MUST** be supported.
+			1. [identifier](https://www.hl7.org/fhir/DSTU2/datatypes.html#identifier)
+			2. [coding](https://www.hl7.org/fhir/DSTU2/datatypes.html#codeableconcept)
+			2. [codeable concept](https://www.hl7.org/fhir/DSTU2/datatypes.html#coding)
+			3. [period](https://www.hl7.org/fhir/DSTU2/datatypes.html#period)
+		4. it is expected that further complex types will be introduced as required to model structured data.
+6. interactions
+	1.  instance
 		1.  [READ](https://www.hl7.org/fhir/DSTU2/http.html#read)
 		2.  [UPDATE](https://www.hl7.org/fhir/DSTU2/http.html#update)
 		3.  [DELETE](https://www.hl7.org/fhir/DSTU2/http.html#delete)
 		4.  [VREAD](https://www.hl7.org/fhir/DSTU2/http.html#vread)
-	2.  Type level
+	2.  type level
 		1.  [CREATE](https://www.hl7.org/fhir/DSTU2/http.html#create)
 		2.  [SEARCH](https://www.hl7.org/fhir/DSTU2/http.html#search)
-7.  [Search](https://www.hl7.org/fhir/DSTU2/http.html#search)
-	1.  [Search parameter types](https://www.hl7.org/fhir/DSTU2/search.html#ptypes)
+7.  [search](https://www.hl7.org/fhir/DSTU2/http.html#search)
+	1.  [search parameter types](https://www.hl7.org/fhir/DSTU2/search.html#ptypes)
 		1.  [Date](https://www.hl7.org/fhir/DSTU2/search.html#date)
 		2.  [Token](https://www.hl7.org/fhir/DSTU2/search.html#token)
 		3.  [Reference](https://www.hl7.org/fhir/DSTU2/search.html#reference)
-	2. [Search prefixes](https://www.hl7.org/fhir/DSTU2/search.html#prefix)
+	2. [search prefixes](https://www.hl7.org/fhir/DSTU2/search.html#prefix)
 		1. lt (less than)
 		2. le (less or equal to)
 		3. gt (great than)
 		4. ge (greater or equal to)
 		5. ne (not equal to)
-	3.  Parameters for all resources
+	3.  parameters for all resources
 		1.  [_query](https://www.hl7.org/fhir/DSTU2/search.html#query)
 		2.  [_list](https://www.hl7.org/fhir/DSTU2/search.html#list)
-	4.  Search result parameters
+	4.  search result parameters
 		1.  [_include](https://www.hl7.org/fhir/DSTU2/search.html#include) can be used internally inside a named `_query` operation.
 		2.  [_sort](https://www.hl7.org/fhir/DSTU2/search.html#sort) can be used internally inside a named `_query` operation.
-	3.  Chained parameters (limited to patient identifier only)
-3.  [Operations](https://www.hl7.org/fhir/DSTU2/operations.html)
-	1.  [Implementation defined operations](https://www.hl7.org/fhir/DSTU2/operations.html#extensibility)
+	3.  chained parameters (limited to patient identifier only)
+3.  [operations](https://www.hl7.org/fhir/DSTU2/operations.html)
+	1.  [implementation defined operations](https://www.hl7.org/fhir/DSTU2/operations.html#extensibility)
 
 {% include important.html content="It is fully expected that over time new areas of the FHIR&reg; standard will be brought into scope as new capabilities are requested and vendors understanding of FHIR&reg; standard matures. This is in-line with the agreed iterative/Agile engagement process that has been agreed between the NHS Digital and the Principal GP system vendors." %}
 
@@ -113,38 +113,38 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 
 GP Connect provider systems are not expected to implement the following aspects of the FHIR&reg; standard under the scope of the first tranche of development work:
 
-1. Operations
-	1. Validate a resource
-	2. Meta operations
-	3. Generate a document
-	4. Process message
-	5. Find a functional list
-	6. ConceptMap operations
-	7. Closure table maintenance
-	8. Fetch records
-	9. Questionnaire operations
-	10. Terminology operations
-2. Interactions
-	1. Instance
+1. operations
+	1. validate a resource
+	2. meta operations
+	3. generate a document
+	4. process message
+	5. find a functional list
+	6. conceptMap operations
+	7. closure table maintenance
+	8. fetch records
+	9. questionnaire operations
+	10. terminology operations
+2. interactions
+	1. instance
 		1. HISTORY
-	2. Type level
+	2. type level
 		1. HISTORY
-	3. Whole system
+	3. whole system
 		1. BATCH TRANSACTION
 		2. HISTORY
 		3. SEARCH
-	4. Conditional interactions
+	4. conditional interactions
 		1. CREATE
 		2. UPDATE
 		3. DELETE
-3. Search
-	1. Parameter types
+3. search
+	1. parameter types
 		1. Number
 		2. String
 		3. Quantity
 		4. Composite
 		5. URL
-	2. Parameters for all resources
+	2. parameters for all resources
 		1. _language
 		2. _lastUpdate
 		3. _tag
@@ -153,16 +153,16 @@ GP Connect provider systems are not expected to implement the following aspects 
 		6. _text
 		7. _content
 		8. _filter
-	3. Search result parameters
+	3. search result parameters
 		1. _revinclude
 		2. _count		
 		3. _summary
 		4. _elements
 		5. _contained 
 		6. _containedType
-	4. Chained parameters (limited to patient identifier only)
-	5. Paging / page count
-4. Resource metadata
+	4. chained parameters (limited to patient identifier only)
+	5. paging / page count
+4. resource metadata
 	1. lastUpdated
 	2. security
 	2. tag
