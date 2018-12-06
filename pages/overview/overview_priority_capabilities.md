@@ -16,9 +16,11 @@ Access a patient's care record for the purpose of direct care.
 
 [![Img](images/overview/folder.png) Access Record HTML](accessrecord.html)
 
-[![Img](images/overview/structured.png) Access Record Structured](accessrecord_structured.html)
+[![Img](images/overview/structured.png) Access Record Structured](accessrecord_rest.html)
 
 ## Appointments ##
 Manage appointments in order to co-ordinate access to care.
 
 [![Img](images/overview/calendar.png) Appointment Management](appointments.html)
+
+{% include custominfocallout.html content="**Information:** Access Record Structured and Appointment Management are not available in this specification. See the [GP Connect versions](https://developer.nhs.uk/gp-connect-specification-versions/) page for the latest specification for these capabilities." type="info" %}
