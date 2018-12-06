@@ -86,7 +86,7 @@ The following GP Connect artefacts are released as part of or alongside the spec
 
 The following GP Connect artefacts are released alongside the specification, but use their own version number scheme:
 
-- [FHIR profiles](development_fhir_resource_guidance.html)
+- [FHIR profiles](https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Chapter.1.About/index.html)
 
 ### SDS interaction IDs ###
 
