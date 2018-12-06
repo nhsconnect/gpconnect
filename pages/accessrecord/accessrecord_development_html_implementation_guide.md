@@ -43,7 +43,7 @@ When a consumer system accesses a patient's record, the provider systems **MUST*
 
 ## Common user interface guidance ##
 
-Where appropriate the following [Common User Interface (CUI)](https://digital.nhs.uk/data-and-information/information-standards/common-user-interface-cui) guidance documents **SHOULD** be followed when generating the GP Connect HTML views.
+Where appropriate the following [Common User Interface (CUI)](https://webarchive.nationalarchives.gov.uk/20160921140920/http://systems.digital.nhs.uk/data/cui) guidance documents **SHOULD** be followed when generating the GP Connect HTML views.
 
 ### NHS Number format ###
 
