@@ -59,6 +59,9 @@ entries:
           - title: Layout
             url: /accessrecord_development_html_layout_guide.html
             output: web, pdf
+          - title: Provider variance
+            url: /accessrecord_provider_variance.html
+            output: web, pdf
 
         - title: HTML views
           output: web, pdf
