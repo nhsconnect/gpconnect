@@ -26,8 +26,8 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 
 {% include custominfocallout.html content="**Information:** The record returned from the provider system is near real time." type="warning" %}
 
-- Local pending changes (that is, within a consultation that is actively ongoing) may not be available.
-- The record is machine generated and therefore is not owned or attested by any single clinician.
+- local pending changes (that is, within a consultation that is actively ongoing) may not be available
+- the record is machine generated and therefore is not owned or attested by any single clinician
 
 ## Record locking ##
 
@@ -41,7 +41,7 @@ When a consumer system accesses a patient's record, the provider systems **MUST*
 
 ## Common user interface guidance ##
 
-Where appropriate the following [Common User Interface (CUI)](https://digital.nhs.uk/data-and-information/information-standards/common-user-interface-cui) guidance documents should be followed when generating the GP Connect HTML views.
+Where appropriate the following [Common User Interface (CUI)](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui) guidance documents should be followed when generating the GP Connect HTML views.
 
 ### NHS Number format ###
 
@@ -105,13 +105,13 @@ If differences exist then the consumer system **MUST** show an alert/warning and
 
 The following data **MUST** be cross checked between consumer and returned provider data. Any differences between these fields **MUST** be brought to the attention of the user.   
 
-| Item | Resource field |
+| Item | Resource element |
 | ---- | -------------- | 
-| Family Name | patient.name.family |
-| Given Name | patient.name.given |
-| Gender | patient.gender |
-| Birth Date | patient.birthDate |
-| GP Practice Code | patient.managingOrganization | 
+| Family Name | `patient.name.family` |
+| Given Name | `patient.name.given` |
+| Gender | `patient.gender` |
+| Birth Date | `patient.birthDate` |
+| GP Practice Code | `patient.managingOrganization` | 
 
 Additionally, the following data **MAY** be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
 
@@ -216,7 +216,7 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `prb-tab-inact`   | Applied within the `<table>` tag of the Inactive Problems and Issues table               | Problems and Issues
 | `ref-tab`          | Applied within the `<table>` tag of the Referrals table                                  | Referrals
 
-
+<br/>
 The following HTML classes **MUST** be applied across the HTML view:
 
 
