@@ -251,8 +251,8 @@ The following message **MUST** be supplied by the provider if any items were exc
 
 Providers must adhere to the table construction requirements listed below:
 
-- Table columns **MUST** be ordered left-to-right (1..N).
-- Table content **MUST NOT** be truncated.
+- table columns **MUST** be ordered left-to-right (1..N)
+- table content **MUST NOT** be truncated
 
 {% include custominfocallout.html content="**Information:** All other table requirements can be found on their associated HTML view page." type="info" %}
 
