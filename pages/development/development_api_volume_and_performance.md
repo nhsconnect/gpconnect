@@ -1,5 +1,5 @@
 ---
-title: Volumetric & Performance
+title: Volumetric and performance
 keywords: development
 tags: [development]
 sidebar: overview_sidebar
@@ -13,11 +13,11 @@ summary: "Details of the API volume and performance characteristics."
 
 {% include download.html content="Draft GP Connect API [Volumetric Model](downloads/testing/HSCIC.GPSOC.GPCONNECT.API.CallUsageModelTotals.xlsx) sent to principle suppliers on the 2nd September 2016." %}
 
-Provider systems SHALL NOT use this volumetric model as a 'gold standard' but MAY use it as the basis of developing their own volumetric models.
+Provider systems **MUST NOT** use this volumetric model as a 'gold standard' but **MAY** use it as the basis of developing their own volumetric models.
 
 ### Scalability ###
 
-Provider systems SHALL through V&P profiling and solution assurance activities demonstrate how the system can scale as demand increases.
+Provider systems **MUST** through V&P profiling and solution assurance activities demonstrate how the system can scale as demand increases.
 
 ## Performance ##
 
@@ -25,28 +25,28 @@ Provider systems SHALL through V&P profiling and solution assurance activities d
 
 A command API is any API which performs a user initiated operation with a side-effect (i.e. booking an appointment, registering a patient etc.). 
 
-Provider systems SHALL process command API calls in &lt;250ms.
+Provider systems **MUST** process command API calls in &lt;250ms.
 
-Provider systems SHOULD process command API calls in &lt;100ms, as this is the limit beyond which a user no longer feels that the system is reacting instantaneously.
+Provider systems **SHOULD** process command API calls in &lt;100ms, as this is the limit beyond which a user no longer feels that the system is reacting instantaneously.
 
 ### Query APIs ###
 
-A query API is any API which performs a user initiated retrival of data without any side-effects (i.e. searching for a patient's medication history).
+A query API is any API which performs a user initiated retrieval of data without any side-effects (i.e. searching for a patient's medication history).
 
-Provider systems SHOULD process query API calls in &lt;1000ms, as this is the limit beyond which a user feels their workflow has been interrupted.
+Provider systems **MUST** process query API calls in &lt;3000ms.
 
-Provider systems SHALL process query API calls in &lt;3000ms.
+Provider systems **SHOULD** process query API calls in &lt;1000ms, as this is the limit beyond which a user feels their workflow has been interrupted.
 
-## Volume and Performance Testing ##
+## Volume and performance testing ##
  
 Suppliers of Provider solutions are expected to undertake provider led V&P testing of their solutions.  
  
-### V&P Testing Model ### 
-Suppliers SHALL submit for review a high level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
+### V&P testing model ### 
+Suppliers **MUST** submit for review a high level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
  
-Suppliers' test approaches SHOULD include a LOAD and a RAMP test and ideally a SOAK test.  Suppliers SHALL supply comprehensive results of the test including timings for round trip API call/response against the message sizes used and the tps at the time of the request was made.
+Suppliers' test approaches **SHOULD** include a LOAD and a RAMP test and ideally a SOAK test.  Suppliers **MUST** supply comprehensive results of the test including timings for round trip API call/response against the message sizes used and the tps at the time the request was made.
 
-### V&P Testing Infrastructure Scaling ###
+### V&P testing infrastructure scaling ###
 
 Predictive models of load have are provided to give an indication of the likely volume and profile of full production roll out.
 
@@ -56,27 +56,27 @@ Suppliers of provider solutions are expected to scale their infrastructure solut
 
 A plan outlining the points at which infrastructure will be scaled up should be provided after V&P testing is performed.
 
-### V&P Test Environment ###
+### V&P test environment ###
 
-Test environments SHALL simulate consumer applications making API calls against simulated test data (patient records, diaries, tasks etc) 
+Test environments **MUST** simulate consumer applications making API calls against simulated test data (patient records, diaries, tasks etc) 
  
-Test data SHALL be populated with realistic complexity, depth and volume, i.e. in the case of patients the data should be representative of clinical records of a mix of healthy patients and patients with multiple long term conditions.  
+Test data **MUST** be populated with realistic complexity, depth and volume, i.e. in the case of patients the data should be representative of clinical records of a mix of healthy patients and patients with multiple long term conditions.  
 
-If a small set of test data is repeatedly used as part of the V&P tests then test setup SHOULD seek to minimise the effects of caching e.g. within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).  
+If a small set of test data is repeatedly used as part of the V&P tests then test setup **SHOULD** seek to minimise the effects of caching e.g. within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).  
  
-### Volumetric Model ###
+### Volumetric model ###
 
-Suppliers SHOULD test API call volumes against a refined Volumetric Model<sup>1</sup>.
+Suppliers **SHOULD** test API call volumes against a refined Volumetric Model<sup>1</sup>.
  
-During the LOAD test, the timings for end to end API calls SHALL NOT exceed the maximum stated (250ms for command APIs, 3000ms for query APIs) and SHOULD NOT exceed the lower limits (100ms and 1000ms respectively).
+During the LOAD test, the timings for end to end API calls **MUST NOT** exceed the maximum stated (250ms for command APIs, 3000ms for query APIs) and **SHOULD** NOT exceed the lower limits (100ms and 1000ms respectively).
  
-Results for the RAMP test SHALL include the tps and message size profile at the threshold where the above limits were exceeded, if applicable. 
+Results for the RAMP test **MUST** include the tps and message size profile at the threshold where the above limits were exceeded, if applicable. 
  
-If a SOAK test is performed, results SHALL be provided.  
+If a SOAK test is performed, results **MUST** be provided.  
  
 <sup>1</sup>Note, V&P test profiles will differ according to the supplier based on the proportion of patient population whose GP records are held with that supplier.
 
-## External Documents / Policy Documents ##
+## External documents/policy documents ##
 
 | Name | Author | Version | Updated |
 | TODO | NHS Digital | v1.0 | 01/08/2016 |

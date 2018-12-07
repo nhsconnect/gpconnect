@@ -1,5 +1,5 @@
 ---
-title: Appointment Management
+title: Appointment management
 keywords: appointments
 tags: [appointments]
 sidebar: overview_sidebar

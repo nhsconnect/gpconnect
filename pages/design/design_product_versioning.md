@@ -39,10 +39,9 @@ When a specification is released, the version number is incremented as follows:
 
 #### Unsubstantive breaking changes ####
 
-An *breaking change* may be classified as an *unsubstantive breaking change* where:
+A *breaking change* may be classified as an *unsubstantive breaking change* where:
 
 - providers and consumers have not built against any minor or patch version of the same major version of the specification, and therefore the change is not breaking in practice
-
 - or in consultation with providers and/or consumers, where providers and/or consumers are in the process of building against any minor or patch version of the same major version of the specification
 
 Where this occurs, previous minor or patch versions of the specifications will either be discontinued ([see below](#pre-release-draft-labels)), or will be amended to include warnings regarding the changed functionality, to ensure consuming (and providing systems) do not build against the changed functionality in the future.
@@ -61,7 +60,7 @@ The version number may not be incremented when *stylistic changes* are made for 
 
 ### Pre-release (draft) labels ###
 
-When a **pre-release label** is appended to the version number with a hypen it indicates the specifaction is still in draft, or has been discontinued.
+When a **pre-release label** is appended to the version number with a hyphen it indicates the specificaction is still in draft, or has been discontinued.
 
 {% include important.html content="The pre-release label is used to indicate that a specification is in draft (or has been discontinued), it **does not** indicate that a providing system has made a pre-release of their GP Connect software." %}
 
@@ -79,19 +78,19 @@ The pre-release labels used are as follows:
 
 The following GP Connect artefacts are released as part of or alongside the specification, taking the same version number as the specification:
 
-- [System demonstrator](system_demonstrator.html)
-- [Interactive API documentation](system_swagger.html)
-- [Provider automated test suite](testing_deliverables.html)
+- [system demonstrator](system_demonstrator.html)
+- [interactive API documentation](system_swagger.html)
+- [provider automated test suite](testing_deliverables.html)
 - SDS interaction IDs ([see below](#sds-interaction-ids))
 - Service Root URL format ([see below](#service-root-url-format))
 
 The following GP Connect artefacts are released alongside the specification, but use their own version number scheme:
 
-- [FHIR profiles](development_fhir_resource_guidance.html)
+- [FHIR profiles](https://data.developer.nhs.uk/fhir/candidaterelease-170816-getrecord/Chapter.1.About/index.html)
 
 ### SDS interaction IDs ###
 
-[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
+[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
 
 ### Service Root URL format ###
 

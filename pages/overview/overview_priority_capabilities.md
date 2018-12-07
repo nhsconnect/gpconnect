@@ -1,32 +1,26 @@
 ---
 title: Priority capabilities for GP Connect
 keywords: usecases
-tags: [use_case,htmlgetcarerecord,getcarerecord,appointments,tasks]
+tags: [use_case,htmlgetcarerecord,getcarerecord,appointments]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_priority_capabilities.html
-summary: A brief introduction to the priority GP Connect capabilities.
+summary: A brief introduction to the priority GP Connect capabilities
 ---
 
-GP Connect is initially focussing on delivering three main interoperability capabilities:
 
-![GP Connect Priority Capabilities](images/overview/priority_capabilities.png)
+GP Connect is initially focussing on delivering the following three main interoperability capabilities:
 
 ## Access Record ##
+Access a patient's care record for the purpose of direct care.
 
-### HTML ###
+[![Img](images/overview/folder.png) Access Record HTML](accessrecord.html)
 
-[Access Record HTML](accessrecord.html)
-
-### Structured ###
-
-[Access Record Structured](accessrecord_rest.html)
+[![Img](images/overview/structured.png) Access Record Structured](accessrecord_rest.html)
 
 ## Appointments ##
+Manage appointments in order to co-ordinate access to care.
 
-[Appointment Management Capability](appointments.html)
+[![Img](images/overview/calendar.png) Appointment Management](appointments.html)
 
-## Tasks ##
-
-[Task Management Capability](tasks.html)
-
+{% include custominfocallout.html content="**Information:** Access Record Structured and Appointment Management are not available in this specification. See the [GP Connect versions](https://developer.nhs.uk/gp-connect-specification-versions/) page for the latest specification for these capabilities." type="info" %}
