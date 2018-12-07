@@ -10,10 +10,11 @@ summary: "Allergies HTML view"
 
 | Section code | Section name | TPP | EMIS | Vision | Microtest |
 | ------------ | ------------ |-----|------|------|-----------|
-| ALL | Allergies and Adverse Reactions| Yes | Yes<sup>1</sup> | Yes<sup>1</sup> | Yes |
+| ALL | Allergies and Adverse Reactions| Yes | Yes<sup>1</sup> | Yes<sup>2</sup> | Yes |
 
-<sup>1</sup> See [Section business rules](accessrecord_view_allergies.html#section-business-rules)
+<sup>1</sup> EMIS have indicated that they are including all allergies & sensitivities in the ‘Current Allergies …..’ section
 
+<sup>2</sup> Vision have indicated they don’t record end dates for allergies & sensitivities. Hence, no History view is possible
 
 ## Clinical narrative ##
 
@@ -42,16 +43,6 @@ Date filters are not supported for this section all relevant records shall be re
 
 Provider message describing at a summary level how they have populated this section.
 
-## Section business rules ##
-
-The following business rules are applicable:
-
-| Supplier | Business rules |
-|----------|----------------|
-| EMIS | All allergies and adverse reactions will be recorded in the ‘Current Allergies and Adverse Reactions’ subsection.  Historical allergies and adverse reactions data is not supported by EMIS. |
-| TPP | TBC |
-| Vision | All allergy and adverse reactions data will be recorded in the ‘Current Allergies and Adverse Reactions’ subsection. Vision do not record end dates for allergies and adverse reactions. Therefore, a history view is not possible. |
-| Microtest | N/A |
 
 
 ## Current allergies and adverse reactions ##

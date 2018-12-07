@@ -14,11 +14,11 @@ summary: "Observations HTML view"
 
 ## Clinical narrative ##
 
-A clinical observation is a repeatable data element recorded by health professionals in the course of assessment or care of their patients or clients. Examples include, blood pressure measurement, weight, height or temperature.
+A clinical observation is a repeatable data element recorded by health professionals in the course of assessment or care of their patients or clients. Examples include, blood pressure measurement, weight, height or temperature measurement.
 
 ## Purpose ##
 
-The purpose of this section is to enable the clinician to view and compare chronologically data recorded in structured form pertaining to a patient’s physical condition.
+The purpose of this section is to enable the clinician to view and compare chronological data pertaining to a patient’s physical condition.
 
 ## Sections and subsections ##
 

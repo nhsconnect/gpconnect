@@ -17,19 +17,15 @@ summary: "Encounters HTML view"
 
 An encounter is an interaction between a patient and a health care professional (HCP) that is recorded on the patient record. This can include:
 
-- Planned encounters - such as pre-arranged appointments with a GP
-- Unplanned encounters - such as at an out of hours clinic and those unrecorded through appointment module(s)
-- Direct encounters - such as a face-to-face session with a GP
-- Indirect encounters - such as a GP reviewing and updating a patient record on receipt of some test results
+- planned encounters - such as pre-arranged appointments with a GP
+- unplanned encounters - such as at an out of hours clinic and those unrecorded through appointment module(s)
+- direct encounters - such as a face-to-face session with a GP
+- indirect encounters - such as a GP reviewing and updating a patient record on receipt of some test results
 
 
 ## Purpose ##
 
 The purpose of supplying encounters within GP Connect is to allow a clinician to view a history of a patient’s interactions with a clinician or an HCP.
-
-The list of encounters is based on a consumer-supplied date range and is ordered by date descending (that is, most recent date/time first).
-
-Data will include the date, the practitioner (and role) and organisation (and code), then a block of free text which will include any free text narrative recorded during the consultation and some basic details of related activities will also be shown (for example, medications prescribed, procedures performed, diagnosis recorded, examinations, history recorded, care plans created, allergies or sensitivities recorded).
 
 ## Sections and subsections ##
 

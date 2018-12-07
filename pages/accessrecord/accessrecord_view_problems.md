@@ -101,11 +101,11 @@ Providers must return all the columns as described in the table below, sorted by
 | <center>4</center> | `Significance`| The significance of the problem (that is, Major or Minor) | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
 
-Provider systems not supporting inactive problems (for example, Vision) **MUST** display a message in the section banner to indicate:
+Provider systems not supporting inactive problems **MUST** display a message in the section banner to indicate:
 
-- Inactive problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
-) section.
-- That any problems and issues recorded for the patient are included in the ‘Active Problems and Issues’ section.
+- inactive problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported
+) section
+- that any problems and issues recorded for the patient are included in the ‘Active Problems and Issues’ section
 
 Provider systems that do support inactive problems, but when no records exist for the requested patient **MUST** display the standard [HTML implementation guide - supported but hasn't been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
 
