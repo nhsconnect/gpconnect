@@ -33,7 +33,7 @@ These views **MUST** have the following structure:
 - Table
 
 ### HTML views with multiple tables ###
-HTML views with multiple tables and hence multiple sections are:
+HTML views with multiple tables and hence multiple subsections are:
  
 **Problems**, **Allergies**, **Medications**.
 
@@ -45,7 +45,7 @@ These views **MUST** have the following structure:
 - Subsection (*repeated for each subsection*)
 	- Subsection title (*for example, Current Medications*)
 	- Subsection content banner (*if applicable*)
-	- Date banner (*if applicable: section date range applied*)
+	- Date banner (*if applicable: subsection date range applied*)
 	- Exclusion banner (*if applicable, to indicate excluded items*)
 	- Table
 
@@ -143,6 +143,8 @@ The section and subsection titles are defined in the individual HTML view pages.
 
 ## Banners ##
 
+The provider **MUST** return banner messages as described in this section. The consumer system **MUST** present the banner messages as returned by the provider system.
+
 ### GP transfer banner ###
 
 In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **MUST** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **MUST** be provided and displayed. The message **MUST** include the date that the data has been excluded from.
@@ -216,21 +218,19 @@ Section default time frames **MUST** be configurable, by the provider, to be eas
 
 {% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback." type="warning" %}
 
-| Section code   | Time frame | FHIR resource(s) |
-|----------------|------------|------------------|
-| ADM  | All |- |                
-| ALL  | All Relevant | AllergyIntolerance<sup>1</sup> |
-| CLI  | All | Condition, Procedure |
-| ENC  | All | Encounter |
-| IMM  | All Relevant | Immunization<sup>1</sup> |
-| MED  | All Relevant | Medication, MedicationOrder, MedicationDispense, MedicationAdministration |
-| OBS  | All Relevant | Observation |
-| PRB  | All Relevant | Problem|
-| REF  | All Relevant | Referral |
-| SUM  | - | Summary<sup>2</sup> |
+|Section                          | Section code   | Time frame   |
+|---------------------------------|----------------|--------------|
+| Administrative items            | ADM            | Consumer supplied |              
+| Allergies and adverse reactions | ALL            | All          |
+| Clinical items                  | CLI            | Consumer supplied |
+| Encounters                      | ENC            | Consumer supplied |
+| Immunisations                   | IMM            | All          |
+| Medications                     | MED            | Consumer supplied (for past medications only) |
+| Observations                    | OBS            | Consumer supplied |
+| Problems and issues             | PRB            | Consumer supplied (for inactive problems and issues only) |
+| Referrals                       | REF            | Consumer supplied |
+| Summary                         | SUM            | All          |
 
-<sup>1</sup> An explicit time frame is not allowed to be specified as the system **MUST** return 'All Relevant' resources.<br>
-<sup>2</sup> An explicit time frame is not allowed as these are set piece views, the system **MUST** return 'All Relevant' resources.
 
 Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
 
@@ -256,3 +256,4 @@ Providers must adhere to the table construction requirements listed below:
 
 {% include custominfocallout.html content="**Information:** All other table requirements can be found on their associated HTML view page." type="info" %}
 
+Consumer systems **MUST** display all content supplied by the provider system
