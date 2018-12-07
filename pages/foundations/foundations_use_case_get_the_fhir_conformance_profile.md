@@ -57,18 +57,16 @@ Provider systems:
 
 An example GP Connect Conformance Statement of type `capability` is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this conformance statement as a base for their own conformance statement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the conformance statement should represent the GP Connect specification version which the FHIR server implements.
 
-{% include custominfocallout.html content="**Important:** In order to ensure no provider changes are necessary in this release, provider systems are not expected to uplift the <code>version value</code> from 0.5.0." type="warning" %}
-
 ```xml
 <Conformance xmlns="http://hl7.org/fhir">
-	<version value="0.5.0" />
+	<version value="0.7.0" />
 	<name value="GP Connect" />
 	<publisher value="[Provider Software Vendor Name]" />
 	<contact>
 		<name value="[Provider Software Vendor Contact Name]" />
 	</contact>
 	<date value="2018-02-23" />
-	<description value="This server implements the GP Connect API version 0.5.1" />
+	<description value="This server implements the GP Connect API version 0.7.0" />
 	<copyright value="Copyright NHS Digital 2016" />
 	<kind value="capability" />
 	<software>
