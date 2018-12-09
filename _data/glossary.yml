@@ -65,7 +65,7 @@
 - title: PEM
   value: "Privacy Enhanced Mail: a file format for storing and sending cryptographic keys, certificates, and other data."
 - title: GP principal clinical systems suppliers
-  value: "The name given to a group of suppliers that provide GPs with the core system available under the GPSoC contract. The current suppliers are:<ul><li>EMIS Health</li><li>Microtest</li><li>TPP</li><li>Vision</li></ul>"
+  value: "The name given to a group of suppliers that provide GPs with the core system available under the GPSoC contract (also known as 'providers'). The current suppliers are:<ul><li>EMIS Health</li><li>Microtest</li><li>TPP</li><li>Vision</li></ul>"
 - title: Provider supplier
   value: "The provider of a clinical system that is the source of GP data."
 - title: Provider system
