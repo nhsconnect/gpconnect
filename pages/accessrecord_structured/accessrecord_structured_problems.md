@@ -245,18 +245,6 @@ The date time that the problem was recorded on the clinical system.
 
 Reference to the resource for the Practitioner that recorded the problem.
 
-### reportOrigin ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Indicates the source of a secondary reported record.
-
 ### note ###
 
 <table class='resource-attributes'>
