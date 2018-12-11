@@ -8,9 +8,7 @@ permalink: overview_engage.html
 summary: "Getting involved with GP Connect"
 ---
 
-## The Open API ecosystem
-
-GP Connect is part of a wider initiative to expose standards based [Open APIs](designprinciples_open_api_principles.html#open-api){:target="_blank"} to promote innovation and improve care across the NHS.
+## Background
 
 ### Capabilities
 
@@ -75,7 +73,15 @@ Some early feedback on the May 2016 release of the GP Connect draft specificatio
 
 ## Community engagement
 
-GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
+### The Open API ecosystem
+
+GP Connect is part of a wider initiative to expose standards based [Open APIs](designprinciples_open_api_principles.html#open-api){:target="_blank"} to promote innovation and improve care across the NHS.
+
+### INTEROPen
+
+GP Connect FHIR profiles specified within this site have been developed by NHS Digital and where available use CareConnect profiles created in collaboration with the INTEROPen community.
+
+The INTEROPen vision is to create a library of nationally defined HL7® FHIR® resources and interaction patterns that implementers can adopt to simplify integration and interoperability within England’s health and social care systems. Find out more on the [INTEROPen website](https://www.interopen.org/)
 
 ## Timescales, benefits and more
 
