@@ -19,13 +19,13 @@ GP Connect has a number of architectural design principles, some of which have d
 
 ### GP Connect API implemented at an organization level
 
-The GP Connect API has been designed and developed to expose data at an organization level with a single fhir server per organization. The GP Connect definition of an organization is the legal entity of an organization represented by an ODS Code. 
+The GP Connect API has been designed and developed to expose data at an organization level with a single FHIR server per organization. The GP Connect definition of an organization is the legal entity of an organization represented by an ODS Code. 
 
-The decision was made to expose the API at and organization level and tie the organization ODS code to the fhir server endpoint, as the ODS code is the only commonly used identifier across the different GP system providers. The organization ODS code of a patients registered GP practice is stored with their demographics record on the Spine, therefore making it available to a consumer of the GP Connect API and this allows the consumer to perform the endpoint lookup process required to target their request at the GP Practice system which holds the patient record.
+The decision was made to expose the API at and organization level and tie the organization ODS code to the FHIR server endpoint, as the ODS code is the only commonly used identifier across the different GP system providers. The organization ODS code of a patients registered GP practice is stored with their demographics record on the Spine, therefore making it available to a consumer of the GP Connect API and this allows the consumer to perform the endpoint lookup process required to target their request at the GP Practice system which holds the patient record.
 
-As the GP Connect API and fhir server is exposed at an organization level this results in the following architectural requirements:
-- Branch surgeries of the main organization will expose their patient data and appointment books through the main organization fhir server and not their own GP Connect fhir server.
-- Organization FHIR server url's are registered on the SDS against the organization ODS code, therefore the consumer API calls are targeted at a single organization represented by an ODS code. If a consumer wishes to get data from a group of organization such as their federation they must make a separate GP Connect API call to each organization from which they want data.
+As the GP Connect API and FHIR server is exposed at an organization level this results in the following architectural requirements:
+- [Branch surgeries](development_branch_surgeries.html) of the main organization will expose their patient data and appointment books through the main organization FHIR server and not their own GP Connect FHIR server.
+- Organization FHIR server URLs are registered on the SDS against the organization ODS code, therefore the consumer API calls are targeted at a single organization represented by an ODS code. If a consumer wishes to get data from a group of organization such as their federation they must make a separate GP Connect API call to each organization from which they want data.
 
 
 ### Distribution of complexity
