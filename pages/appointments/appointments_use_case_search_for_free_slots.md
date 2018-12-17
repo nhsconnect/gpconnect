@@ -71,8 +71,8 @@ In order for providers to return the appropriate slots for the consumer, the con
 
 | Parameter system | Parameter code |
 | --- | --- |
-| `https://fhir.nhs.uk/Id/ods-organization-code` | The booking organisation (i.e. consumer) ODS code, e.g. `A11111`|
-| `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | The booking organisation (i.e. consumer) type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1), e.g. `urgent-care` |
+| `https://fhir.nhs.uk/Id/ods-organization-code` | The booking (consumer) organisation ODS code, e.g. `A11111`|
+| `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | The booking (consumer) organisation type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1), e.g. `urgent-care` |
 
 Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
