@@ -128,6 +128,27 @@ Provider systems:
           }
         }
       ]
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1",
+      "extension": [
+        {
+          "url": "language",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
+                "code": "bn",
+                "display": "Main spoken language Bengali"
+              }
+            ]
+          }
+        },
+        {
+          "url": "interpreterRequired",
+          "valueBoolean": false
+        }
+      ]
     }
   ],
   "identifier": [
