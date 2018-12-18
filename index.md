@@ -12,24 +12,23 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-GP Connect is a service that will allow authorised clinical staff in GP practices and other care settings to share and view GP practice clinical information and data between IT systems, quickly and efficiently. This will make sure patient medical information is available to clinicians when and where they need it, improving patient care.
+GP Connect is a service that will allow authorised clinical staff in GP practices and other care settings to share GP practice clinical information and data between IT systems, quickly and efficiently. This will make sure patient medical information is available to clinicians when and where they need it, improving patient care.
 
 The GP Connect programme is developing standardised specifications for [Application Programming Interfaces (APIs)](overview_glossary.html#API®) to be used by any system for the sharing of data, so that clinicians in different care settings can:
 
 * view a patient’s GP practice record
-*	manage GP appointments
-*	import or download data on a patient’s medicines and allergies
+* import or download medication and allergies information from this record 
+*	manage a patient's GP appointments
 
-This will save time for clinicians, and provide better, more convenient care for patients. It will also help meet targets under [NHS England’s improving access to general practice programme](https://www.england.nhs.uk/gp/gpfv/redesign/improving-access/).
+This will provide better, safer, more convenient care for patients and save time for clinicians. It will also help meet targets under [NHS England’s improving access to general practice programme](https://www.england.nhs.uk/gp/gpfv/redesign/improving-access/).
 
 ## GP Connect overview ##
 
 ![Img](images/overview/GP Connect Model.png)
 
-## GP Connect APIs ##
-GP Connect APIs make data from clinical systems available in a standard form that can be used across different systems and be made available to clinicians who need access to the data for direct patient care. 
+## GP Connect APIs and capabilities ##
+The APIs are grouped into sets which enable specific business functionality or ‘capabilities'. GP Connect has worked with GP clinical system suppliers to deliver the following capabilities:
 
-The APIs currently available are:
 *	Access Record HTML – enables clinicians to view a patient’s medical record
 *	Appointment Management – enables clinical staff to book, amend or cancel an appointment for a patient
 *	Access Record Structured – enables an export of a patient’s medications and allergies 
@@ -37,14 +36,14 @@ The APIs currently available are:
 [Find out more about the APIs](https://gpconnect-specrestructure.netlify.com/overview_priority_capabilities.html)
 
 ## Pilot using the GP Connect APIs ##
-The GP Connect programme is now supporting the development of products that connect with the APIs to use data from patient records and appointment schedulers for patient care by integrating it or importing it into local clinical systems.
+The GP Connect programme is now supporting the development of systems that connect with the APIs to use data from patient records and appointment schedulers for patient care by integrating it or importing it into local clinical systems.
 
 We’re working with selected partnerships of health and care organisations and software suppliers. Partnerships will use the APIs to develop technical solutions to local issues with sharing patient records and appointment booking across system boundaries.
 We’ve developed a process called ‘First of Type’ to support this development and provide assurance for these early products.
 
 [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect)
 
-## Development pathways ##
+## Pathways ##
 GP Connect has identified three main customer groups:
  
 * consumer supplier
