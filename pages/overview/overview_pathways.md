@@ -1,57 +1,14 @@
 ---
-title: Introduction - what is GP Connect?
-keywords: homepage
-tags: [introduction]
+title: Pathways 
+keywords: pathways
+tags: [pathways]
 sidebar: home_sidebar
-permalink: index.html
+permalink: overview_pathways.html
 toc: false
-summary: An introduction to the GP Connect FHIR® APIs
+summary: Your GP Connect development pathway
 ---
 
-{% comment %}
-[![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
-{% endcomment %}
-
-GP Connect is a service that will allow GP practices and authorised clinical staff to share and view GP practice clinical information and data between IT systems, quickly and efficiently. This will make sure patient medical information is available to clinicians when and where they need it, improving patient care.
-
-The GP Connect programme is working to develop products which will enable different systems to communicate so that clinicians in different care settings can:
-
-* view a patient’s GP practice record
-*	manage GP appointments
-*	import or download data on a patient’s medicines and allergies
-
-This will save time for clinicians, and provide better, more convenient care for patients. It will also help meet targets under [NHS England’s improving access to general practice programme](https://www.england.nhs.uk/gp/gpfv/redesign/improving-access/).
-
-## GP Connect overview ##
-
-![Img](images/overview/GP Connect Model.png)
-
-## GP Connect APIs ##
-GP Connect has worked with GP clinical system suppliers to develop Application Programming Interfaces (APIs). These APIs make data from clinical systems available in a standard form that can be used across different systems and be made available to clinicians who need access to the data for direct patient care. 
-
-The APIs currently available are:
-*	Access Record HTML – enables clinicians to view a patient’s medical record
-*	Appointment Management – enables clinical staff to book, amend or cancel an appointment for a patient
-*	Access Record Structured – enables an export of a patient’s medications and allergies 
-
-[Find out more about the APIs](https://gpconnect-specrestructure.netlify.com/overview_priority_capabilities.html)
-
-## Pilot using the GP Connect APIs ##
-The GP Connect programme is now supporting the development of products that connect with the APIs to use data from patient records and appointment schedulers for patient care by integrating it or importing it into local clinical systems.
-
-We’re working with selected partnerships of health and care organisations and software suppliers. Partnerships will use the APIs to develop technical solutions to local issues with sharing patient records and appointment booking across system boundaries.
-We’ve developed a process called ‘First of Type’ to support this development and provide assurance for these early products.
-
-[Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect)
-
-## Development pathways ##
-GP Connect has identified three main customer groups:
- 
-* consumer supplier
-*	clinical system supplier (also known as a 'provider')
-*	end-user organisation
-
-This GitHub repository contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our [FHIR®](overview_glossary.html#fhir®) APIs. To continue on your development journey, follow the relevant pathway below.
+This GitHub repository contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our FHIR® APIs. To continue on your development journey, follow the relevant pathway below.
 
 If you are an end-user organisation and you want to find out more about working with GP Connect, email us at [gpconnect@nhs.net](mailto: gpconnect@nhs.net).
 
@@ -107,7 +64,7 @@ If you are an end-user organisation and you want to find out more about working 
          </div>
          </div> 
 </div>
-              
+     
 {% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect provider APIs or consuming applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. See our GitHub [releases page](https://github.com/nhsconnect/gpconnect/releases) for more information." %}
 
 {% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities. Other parties are advised not to develop against these specifications until a formal announcement has been made." %}
@@ -115,6 +72,7 @@ If you are an end-user organisation and you want to find out more about working 
 {% include twitterfollow.html %}
 
 {% include gitterbadge.html %}
+
 
 
 
