@@ -51,7 +51,7 @@ GP Connect has identified three main customer groups:
 *	clinical system supplier (also known as a 'provider')
 *	end-user organisation
 
-This GitHub repository contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our [FHIR®](overview_glossary.html#fhir®) APIs. To continue on your development journey, follow the relevant pathway below.
+This GitHub repository contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our [FHIR®](overview_glossary.html#fhir®) [APIs](overview_glossary.html#API®). To continue on your development journey, follow the relevant pathway below.
 
 If you are an end-user organisation and you want to find out more about working with GP Connect, email us at [gpconnect@nhs.net](mailto: gpconnect@nhs.net).
 
