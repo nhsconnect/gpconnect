@@ -8,9 +8,7 @@ toc: false
 summary: Your GP Connect development pathway
 ---
 
-This GitHub repository contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our FHIR® APIs. To continue on your development journey, follow the relevant pathway below.
-
-If you are an end-user organisation and you want to find out more about working with GP Connect, email us at [gpconnect@nhs.net](mailto: gpconnect@nhs.net).
+This website contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our FHIR® APIs. To find out more, follow the relevant pathway below.
 
 <div class="row">
          <div class="col-lg-12">
@@ -25,7 +23,7 @@ If you are an end-user organisation and you want to find out more about working 
                  </div>
                  <div class="panel-body" align="left">
                       <h4>Consumer supplier</h4>
-                         <p align="left">You're a software development company already working with the NHS or would like to work with the NHS. You have checked that you comply with IG requirements.</p>
+                         <p align="left">You're a software development company already working with the NHS or would like to work with the NHS.</p>
                          <p align="left">You want to use GP Connect to develop an API to consume GP data.  You intend to work with a suitable end-user organisation, which you may or not have already identified.</p>
                      <a href="overview_consumer_pathway.html" class="btn btn-primary">Learn more</a>
                  </div>
@@ -58,7 +56,7 @@ If you are an end-user organisation and you want to find out more about working 
                  <div class="panel-body" align="left">
                      <h4>End-user organisation</h4>
                      <p align="left">You're a CCG with GP practices organised in a federation or hub; you're a hospital or provider of emergency care.</p>
-                              <p align="left">You want to use an existing GP Connect API - or commission someone to create a new one - to access GP data from more than one GP clinical data provider to improve direct patient care.</p>
+                              <p align="left">You want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care.</p>
                       <a href="https://digital.nhs.uk/services/gp-connect" class="btn btn-primary">Learn more</a>
                                      </div>
          </div>
