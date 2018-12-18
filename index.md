@@ -27,7 +27,7 @@ This will save time for clinicians, and provide better, more convenient care for
 ![Img](images/overview/GP Connect Model.png)
 
 ## GP Connect APIs ##
-GP Connect has worked with GP clinical system suppliers to develop Application Programming Interfaces (APIs). These APIs make data from clinical systems available in a standard form that can be used across different systems and be made available to clinicians who need access to the data for direct patient care. 
+GP Connect has worked with GP clinical system suppliers to develop [Application Programming Interfaces (APIs)](overview_glossary.html#API®). These APIs make data from clinical systems available in a standard form that can be used across different systems and be made available to clinicians who need access to the data for direct patient care. 
 
 The APIs currently available are:
 *	Access Record HTML – enables clinicians to view a patient’s medical record
@@ -51,7 +51,7 @@ GP Connect has identified three main customer groups:
 *	clinical system supplier (also known as a 'provider')
 *	end-user organisation
 
-This GitHub repository contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our [FHIR®](overview_glossary.html#fhir®) [APIs](overview_glossary.html#API®). To continue on your development journey, follow the relevant pathway below.
+This GitHub repository contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our [FHIR®](overview_glossary.html#fhir®) APIs. To continue on your development journey, follow the relevant pathway below.
 
 If you are an end-user organisation and you want to find out more about working with GP Connect, email us at [gpconnect@nhs.net](mailto: gpconnect@nhs.net).
 
