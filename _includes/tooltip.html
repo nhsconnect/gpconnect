@@ -1,0 +1,5 @@
+{% for item in site.data.glossary.glossary %}
+	{% if item.title == {{include.type}} %}
+		<a href="overview_glossary.html#spine" data-toggle="tooltip" data-original-title="{{item.value}}">{{item.title}}</a>
+	{% endif %}
+{% endfor %}
