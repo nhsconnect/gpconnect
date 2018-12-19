@@ -74,3 +74,4 @@ Our developer ecosystem takes you through each stage of a typical GP Connect API
   
 {% include developer_journey.html %}
 
+![Clinical supplier ecosystem](images/overview/clinical_supplier_ecosystem.png)
