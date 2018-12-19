@@ -55,7 +55,7 @@ This website contains all the technical resources that a potential supplier need
                  </div>
                  <div class="panel-body" align="left">
                      <h4>End-user organisation</h4>
-                     <p align="left">You're a CCG with GP practices organised in a federation or hub; you're a hospital or provider of emergency care.</p>
+                     <p align="left">You're a CCG with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting.</p>
                               <p align="left">You want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care.</p>
                       <a href="https://digital.nhs.uk/services/gp-connect" class="btn btn-primary">Learn more</a>
                                      </div>
