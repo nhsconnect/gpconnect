@@ -11,7 +11,7 @@ toc: false
 {% assign gloss = site.data.glossary | sort:'title' %}
 {% for item in gloss %}
 
-## {{ item.title }} ##
+### {{ item.title }} ###
 {{ item.value }}
 
 {% endfor %}
