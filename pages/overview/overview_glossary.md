@@ -12,7 +12,7 @@ toc: false
 {% assign gloss = site.data.glossary | sort:'title' %}
 {% for item in gloss %}
 <dl>
-  <dt><h3>{{ item.title }}</h3></dt>
+  <dt><h2>{{ item.title }}</h2></dt>
   <dd>{{ item.value }}</dd>
 </dl>
 {% endfor %}
