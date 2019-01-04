@@ -34,7 +34,7 @@ Provider systems:
 
 ## Security testing ##
 
-Provider systems SHALL as a minimum be tested against the [OWASP top 10 web application vulnerabilities](https://www.owasp.org/index.php/Top_10_2013-Top_10).
+Provider systems SHALL as a minimum be tested against the [OWASP top 10 web application vulnerabilities](https://www.owasp.org/images/7/72/OWASP_Top_10-2017_%28en%29.pdf.pdf).
 
 Provider systems SHOULD be tested for vulnerability to Denial of Service (DoS) and hardened against such attacks.
 
