@@ -12,6 +12,7 @@ toc: false
 {% for item in gloss %}
 
 ### {{ item.title }} ###
-{{ item.value }}
+
+<p> {{ item.value }} </p>
 
 {% endfor %}
