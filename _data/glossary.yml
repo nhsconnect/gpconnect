@@ -5,7 +5,8 @@
 - title: ASID
   value: "Accredited System Identifier: a unique number allocated to a system on accreditation for connection to Spine."
 - title: Capability
-  value: "The GP Connect FHIR® APIs are managed within ‘capabilities’ that focus on a particular business area of general practice and wider cross-organisational interoperability. Capabilities are organised within ‘capability packs’, which include:<ul><li>Appointment Management</li><li>Access Record HTML</li><li>Access Record Structured</li></ul>"
+  value: "The GP Connect FHIR® APIs are managed within ‘capabilities’ that focus on a particular business area of general practice and wider cross-organisational interoperability. Capabilities are organised within ‘capability packs’, which include:"
+  html: <ul><li>Appointment Management</li><li>Access Record HTML</li><li>Access Record Structured</li></ul>
 - title: CATR
   value: "Clinical Authority To Release: granted by NHS Digital Clinical Safety Group. It confirms that all clinical safety documents have been completed to the required standard."
 - title: Clinical safety
@@ -90,4 +91,3 @@
   value: "Threat Protection System: a category of security solutions that defend against sophisticated malware or hacking-based attacks targeting sensitive data."
 - title: Active patient
   value: "An Active patient as defined by GP Connect is any patient on a provider's system that has <i>Not Left</i> and is <i>Not Deceased</i>. The patient SHALL have also been traced and verified using PDS before their details are shared through the GP Connect API. <p></p><p>The concept of Active is related to the patient's registration <i>status</i> rather than to the patient's registration <i>type</i>. A provider's system may have a number of different statuses which should be considered Active, many of those statuses may apply to a number of different registration type.</p>"
-
