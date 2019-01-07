@@ -5,7 +5,7 @@
 - title: ASID
   value: "Accredited System Identifier: a unique number allocated to a system on accreditation for connection to Spine."
 - title: Capability
-  value: "The GP Connect FHIR® APIs are managed within ‘capabilities’ that focus on a particular business area of general practice and wider cross-organisational interoperability. Capabilities are organised within ‘capability packs’, which include:<ul><li>Appointment Management</li><li>Access Record HTML</li><li>Access Record Structured</li></ul>"
+  value: "The GP Connect FHIR® APIs are managed within ‘capabilities’ that focus on a particular business area of general practice and wider cross-organisational interoperability. Capabilities are organised within ‘capability packs’, which include:" <ul><li>Appointment Management</li><li>Access Record HTML</li><li>Access Record Structured</li></ul>
 - title: CATR
   value: "Clinical Authority To Release: granted by NHS Digital Clinical Safety Group. It confirms that all clinical safety documents have been completed to the required standard."
 - title: Clinical safety
