@@ -14,5 +14,6 @@ toc: false
 ### {{ item.title }} ###
 
 <p> {{ item.value }} </p>
+ {{ item.html }} 
 
 {% endfor %}
