@@ -12,7 +12,7 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-GP Connect is a service that will allow authorised clinical staff in GP practices and other care settings to share GP practice clinical information and data between IT systems, quickly and efficiently. This will make sure patient medical information is available to clinicians when and where they need it, improving patient care.
+GP Connect is a service that can allow authorised clinical staff in GP practices and other care settings to share GP practice clinical information and data between IT systems, quickly and efficiently. This makes sure patient medical information is available to clinicians when and where they need it, improving patient care.
 
 GP Connect is developing standardised specifications for [Application Programming Interfaces (APIs)](overview_glossary.html#API®) to be used by any system for the sharing of data, so that clinicians in different care settings can:
 
@@ -43,14 +43,14 @@ We’ve developed a process called ‘First of Type’ to support this developme
 
 [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect)
 
-## Pathways ##
-GP Connect has identified three main customer groups:
+## Customer types ##
+GP Connect has identified three main customer types:
  
 * consumer supplier
 *	clinical system supplier (also known as a 'provider')
 *	end-user organisation
 
-This website contains all the technical resources that a potential supplier needs to connect between clinical systems and GP data using our [FHIR®](overview_glossary.html#fhir®) APIs. To find out more, follow the relevant pathway below.
+This website contains all the technical resources you need to connect between clinical systems and GP data using our [FHIR®](overview_glossary.html#fhir®) APIs. To find out more, follow the relevant link below:
 
 <div class="row">
          <div class="col-lg-12">
