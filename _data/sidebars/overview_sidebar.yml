@@ -44,11 +44,11 @@ entries:
     output: web
     folderitems:
     - title: ...for consumer suppliers
-      url: /overview_consumer_pathway.html
+      url: /overview_consumer_supplier.html
       output: web, pdf
       type: web
     - title: ...for clinical system suppliers
-      url: /overview_provider_pathway.html
+      url: /overview_clinical_system_supplier.html
       output: web
     - title: ...for end-user organisations
       external_url: https://digital.nhs.uk/services/gp-connect
