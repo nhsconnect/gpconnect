@@ -67,7 +67,7 @@ This website contains all the technical resources you need to connect between cl
                       <h4>Consumer supplier</h4>
                          <p align="left">You're a software development company already working with the NHS or would like to work with the NHS.</p>
                          <p align="left">You want to use GP Connect to develop an API to consume GP data.  You intend to work with a suitable end-user organisation, which you may or may not have already identified.</p>
-                     <a href="overview_consumer_pathway.html" class="btn btn-primary">Learn more</a>
+                     <a href="overview_consumer_supplier.html" class="btn btn-primary">Learn more</a>
                  </div>
              </div>
          </div>
@@ -83,7 +83,7 @@ This website contains all the technical resources you need to connect between cl
                      <h4>Clinical system supplier</h4>
                          <p align="left">You're a GP clinical data supplier/provider.</p>
                      <p align="left">You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.</p>
-                     <a href="overview_provider_pathway.html" class="btn btn-primary">Learn more</a>
+                     <a href="overview_clinical_system_supplier.html" class="btn btn-primary">Learn more</a>
                  </div>
              </div>
          </div>
