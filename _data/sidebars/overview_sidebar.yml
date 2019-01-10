@@ -10,9 +10,6 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Getting started
-      url: /overview_engage.html
-      output: web
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
