@@ -40,15 +40,15 @@ entries:
           url: /overview_release_notes_0_5_0.html
           output: web
 
-  - title: Getting started for...
+  - title: Getting started...
     output: web
     folderitems:
-    - title: Introduction
-      url: /index.html
+    - title: ...for consumer suppliers
+      url: /overview_consumer_pathway.html
       output: web, pdf
-      type: homepage
-    - title: Capabilities
-      url: /overview_priority_capabilities.html
+      type: web
+    - title: ...for clinical system suppliers
+      url: /overview_provider_pathway.html
       output: web
       
       subfolders:
