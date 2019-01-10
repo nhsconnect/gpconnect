@@ -14,7 +14,7 @@ summary: An introduction to the GP Connect FHIR® APIs
 
 GP Connect is a service that can allow authorised clinical staff in GP practices and other care settings to share GP practice clinical information and data between IT systems, quickly and efficiently. This makes sure patient medical information is available to clinicians when and where they need it, improving patient care.
 
-<p>GP Connect is developing standardised specifications for API{% include tooltip.html type="API" %}s to be used by any system for the sharing of data, so that clinicians in different care settings can:</p>
+<p>GP Connect is developing standardised specifications for {% include tooltip.html type="API" %} to be used by any system for the sharing of data, so that clinicians in different care settings can:</p>
 
 * view a patient’s GP practice record
 * import or download medication and allergies information from this record 
