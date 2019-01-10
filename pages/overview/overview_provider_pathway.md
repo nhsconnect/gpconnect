@@ -1,6 +1,6 @@
 ---
-title: Clinical system supplier pathway
-keywords: clinical, provider, pathway
+title: Getting started for clinical system suppliers
+keywords: clinical, provider
 tags: [provider,clinical]
 sidebar: overview_sidebar
 permalink: overview_provider_pathway.html
