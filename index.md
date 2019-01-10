@@ -50,7 +50,7 @@ GP Connect has identified three main customer types:
 *	clinical system supplier (also known as a 'provider')
 *	end-user organisation
 
-This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. To find out more, follow the relevant link below:
+<p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. To find out more, follow the relevant link below:</p>
 
 <div class="row">
          <div class="col-lg-12">
