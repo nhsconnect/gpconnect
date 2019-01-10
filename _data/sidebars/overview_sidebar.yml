@@ -50,6 +50,9 @@ entries:
     - title: ...for clinical system suppliers
       url: /overview_provider_pathway.html
       output: web
+    - title: ...for end-user organisations
+      external_url: https://digital.nhs.uk/services/gp-connect
+      output: web      
       
       subfolders:
       - title: Pathways
