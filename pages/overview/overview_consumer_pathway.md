@@ -1,6 +1,6 @@
 ---
-title: Consumer supplier pathway
-keywords: consumer, pathway
+title: Getting started for consumer suppliers
+keywords: consumer
 tags: [consumer]
 sidebar: overview_sidebar
 permalink: overview_consumer_pathway.html
