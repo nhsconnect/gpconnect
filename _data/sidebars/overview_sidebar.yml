@@ -10,29 +10,48 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Getting started
-      url: /overview_engage.html
-      output: web
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-      
-      subfolders:
-      - title: Pathways
+
+      - title: Release notes
         output: web
         subfolderitems:
-        - title: About GP Connect pathways
-          url: /overview_pathways.html
-          output: web        
-        - title: Consumer supplier pathway
-          url: /overview_consumer_pathway.html
+        - title: 1.2.2
+          url: /overview_release_notes_1_2_2.html
           output: web
-        - title: Clinical system supplier pathway
-          url: /overview_provider_pathway.html
-          output: web   
-        - title: End-user organisation pathway
-          external_url: https://digital.nhs.uk/services/gp-connect
-          output: web   
+        - title: 1.2.1
+          url: /overview_release_notes_1_2_1.html
+          output: web
+        - title: 1.2.0
+          url: /overview_release_notes_1_2_0.html
+          output: web
+        - title: 1.1.1
+          url: /overview_release_notes_1_1_1.html
+          output: web
+        - title: 1.1.0
+          url: /overview_release_notes_1_1_0.html
+          output: web
+        - title: 1.0.0
+          url: /overview_release_notes_1_0_0.html
+          output: web
+        - title: 0.5.0
+          url: /overview_release_notes_0_5_0.html
+          output: web
+
+  - title: Getting started as...
+    output: web
+    folderitems:
+    - title: ...a consumer supplier
+      url: /overview_consumer_pathway.html
+      output: web, pdf
+      type: homepage
+    - title: ...a clinical system supplier
+      url: /overview_provider_pathway.html
+      output: web
+    - title: ...an end-user organisation
+      external_url: https://digital.nhs.uk/services/gp-connect
+      output: web
 
       - title: Release notes
         output: web
