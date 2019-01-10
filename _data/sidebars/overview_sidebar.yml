@@ -14,23 +14,7 @@ entries:
       url: /overview_priority_capabilities.html
       output: web
           
-      subfolders:
-      - title: Pathwaysr
-        output: web
-        subfolderitems:
-        - title: About GP Connect pathways
-          url: /overview_pathways.html
-          output: web        
-        - title: Consumer supplier pathway
-          url: /overview_consumer_pathway.html
-          output: web
-        - title: Clinical system supplier pathway
-          url: /overview_provider_pathway.html
-          output: web   
-        - title: End-user organisation pathway
-          external_url: https://digital.nhs.uk/services/gp-connect
-          output: web         
-      
+      subfolders:      
       - title: Release notes
         output: web
         subfolderitems:
