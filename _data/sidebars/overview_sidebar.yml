@@ -40,7 +40,7 @@ entries:
           url: /overview_release_notes_0_5_0.html
           output: web
 
-  - title: Getting started as...
+  - title: Getting started for...
     output: web
     folderitems:
     - title: Introduction
@@ -67,32 +67,7 @@ entries:
         - title: End-user organisation pathway
           external_url: https://digital.nhs.uk/services/gp-connect
           output: web   
-
-      - title: Release notes
-        output: web
-        subfolderitems:
-        - title: 1.2.2
-          url: /overview_release_notes_1_2_2.html
-          output: web
-        - title: 1.2.1
-          url: /overview_release_notes_1_2_1.html
-          output: web
-        - title: 1.2.0
-          url: /overview_release_notes_1_2_0.html
-          output: web
-        - title: 1.1.1
-          url: /overview_release_notes_1_1_1.html
-          output: web
-        - title: 1.1.0
-          url: /overview_release_notes_1_1_0.html
-          output: web
-        - title: 1.0.0
-          url: /overview_release_notes_1_0_0.html
-          output: web
-        - title: 0.5.0
-          url: /overview_release_notes_0_5_0.html
-          output: web
-
+          
   - title: Design approach
     output: web
     folderitems:
