@@ -46,9 +46,9 @@ We’ve developed a process called ‘First of Type’ to support this developme
 ## Customer types ##
 GP Connect has identified three main customer types:
  
-* <p> {% include tooltip.html type="Consumer supplier" %} </p>
-*	<p> {% include tooltip.html type="Clinical system supplier" %} (also known as a 'provider') </p>
-*	<p> {% include tooltip.html type="End-user organisation" %} </p>
+* <p> {% include tooltip.html type="Consumer supplier" %} 
+*	<p> {% include tooltip.html type="Clinical system supplier" %} 
+*	<p> {% include tooltip.html type="End-user organisation" %} 
 
 <p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. To find out more, follow the relevant link below:</p>
 
