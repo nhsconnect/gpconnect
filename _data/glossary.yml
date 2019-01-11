@@ -13,6 +13,10 @@ glossary:
   value: "Clinical Authority To Release: granted by NHS Digital Clinical Safety Group. It confirms that all clinical safety documents have been completed to the required standard."
 - title: Clinical safety
   value: "The process of evaluating clinical safety risk. See <a href='https://digital.nhs.uk/services/solution-assurance/the-clinical-safety-team/clinical-risk-management-standards' target='_blank'>clinical risk management standards</a>."
+- title: Clinical system supplier
+  value: "The supplier of a clinical system that is the source of GP data."
+  tooltip: "The supplier of a clinical system that is the source of GP data."
+  id: clinical
 - title: CMA endpoint
   value: "Combined Message Handling Server and Accredited System endpoint: an endpoint registered with Spine for a single system."
 - title: Connection agreement
@@ -21,6 +25,8 @@ glossary:
   value: "A technically accredited software application that uses GP Connect FHIR® APIs."
 - title: Consumer supplier
   value: "The developer of an application that uses GP Connect FHIR® API – for example, a system supplier in an acute or mental health care setting."
+  tooltip: "The developer of an application that uses GP Connect FHIR® API – for example, a system supplier in an acute or mental health care setting."
+  id: consumer
 - title: CORS
   value: "Cross-Origin Resource Sharing: a mechanism that allows restricted resources (such as fonts) on a web page to be requested from another domain outside the domain from which the first resource was served."
 - title: CRL
@@ -33,6 +39,8 @@ glossary:
   value: "Defined by the Caldicott Review as a clinical, social or public health activity concerned with the prevention, investigation and treatment of illness and the alleviation of suffering of individuals. It includes supporting individuals' ability to function and improve their participation in life and society. It also includes the assurance of safe and high quality care and treatment through local audit, the management of untoward or adverse incidents, personal satisfaction including measurement of outcomes undertaken by one or more registered and regulated health or social care professionals and their team with whom the individual has a legitimate relationship for their care."
 - title: End User Organisation (EUO)
   value: "An organisation that uses a GP Connect service (or commissions the development of a new GP Connect service ) to access GP data from more than one clinical system provider to improve direct patient care. For example:<ul><li>a GP practice that is part of a federation, club or hub and is sharing data with other practices in the group</li><li>a Commissioning Support Unit (CSU)</li><li>an acute or mental health trust that is receiving GP data from a group of practices in its area</li><li>an A&E or 111 service that is receiving data or booking appointments on behalf of a patient</li></ul>"
+  tooltip: "Organisation that uses a GP Connect service (or commissions the development of a new GP Connect service ) to access GP data from more than one clinical system provider."
+  id: enduser
 - title: End User Organisation Policy (EUOP)
   value: "The legal and commercial agreement between NHS Digital and an end user organisation."
 - title: EPMA
@@ -73,6 +81,8 @@ glossary:
   value: "The name given to a group of suppliers that provide GPs with the core system available under the GPSoC contract (also known as 'providers'). The current suppliers are:<ul><li>EMIS Health</li><li>Microtest</li><li>TPP</li><li>Vision</li></ul>"
 - title: Provider supplier
   value: "The provider of a clinical system that is the source of GP data."
+  tooltip: "The provider of a clinical system that is the source of GP data."
+  id: provider
 - title: Provider system
   value: "A GP clinical system that provides data through the GP Connect FHIR® APIs."
 - title: Proxy server
