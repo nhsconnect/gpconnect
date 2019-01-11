@@ -55,14 +55,6 @@ Once your consumer product has been assured it will be added to the NHSD Service
 
 - Become a first of type deployment - see below to get in touch with the GP Connect programme.
 
-## Provide feedback ##
-
-To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
-
-## Community engagement ##
-
-GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
-
 Our developer ecosystem takes you through each stage of a typical GP Connect API project:
   
 {% include developer_journey.html %}
