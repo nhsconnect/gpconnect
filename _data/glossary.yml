@@ -41,7 +41,7 @@ glossary:
   value: "A group of GP practices working together within the context of a locally-defined agreement to deliver services such as out of hours care. GP federations go by many names: federations, networks, collaborations, joint ventures, alliances. These terms are often used interchangeably to describe multiple practices coming together in some form of collaboration."
 - title: FHIR&reg;
   value: "Fast Healthcare Interoperability Resources: a standard describing data formats and elements (known as ‘resources’) and an application programming interface (API) for exchanging electronic health records. The standard was created by the Health Level Seven International (HL7) health-care standards organisation."
-  tooltip: "Fast Healthcare Interoperability Resources is an interoperability standard for the electronic exchange of healthcare information."
+  tooltip: "Fast Healthcare Interoperability Resources: a standard describing data formats and elements for the electronic exchange of healthcare information."
   id: fhir®
 - title: First of Type (FoT)
   value: "A scheme that facilitates the onboarding, testing, governance, assurance and live deployment stage of an end user organisation and its consuming system on its journey to consuming a GP Connect FHIR® API. FoT also represents the process by which the provider API fulfilment is proven to meet set criteria prior to gaining approval for wider rollout and piloting."
