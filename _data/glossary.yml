@@ -4,7 +4,7 @@ glossary:
 - title: API
   value: "Application Programming Interface: a set of functions and procedures that allows the creation of applications which access the features or data of an application or other service to deliver specific cross-organisational business capability. The aim of GP Connect FHIR&reg; APIs is to provide access to data and workflow within GP clinical systems."
   tooltip: "Application Programming Interface: a set of functions and procedures that allows the creation of applications which access the features or data of an application or other service to deliver specific cross-organisational business capability"
-  id: api
+  id: apis
 - title: ASID
   value: "Accredited System Identifier: a unique number allocated to a system on accreditation for connection to Spine."
 - title: Capability
