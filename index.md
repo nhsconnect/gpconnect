@@ -46,7 +46,7 @@ We’ve developed a process called ‘First of Type’ to support this developme
 ## Customer types ##
 GP Connect has identified three main customer types:
  
-* consumer supplier
+* {% include tooltip.html type="Consumer supplier" %}
 *	clinical system supplier (also known as a 'provider')
 *	end-user organisation
 
