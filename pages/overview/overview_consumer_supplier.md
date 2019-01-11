@@ -12,6 +12,10 @@ summary: Step-by-step guide to developing consumer applications
 
 As a {% include tooltip.html type="Consumer supplier" %}, you want to use GP Connect to develop an API to consume GP data. You intend to work with a suitable end-user organisation, which you may or may not have already identified.
 
+{% include tooltip.html type="Consumer supplier" %}
+
+<p> {% include tooltip.html type="Consumer supplier" %}
+
 This page guides you through the development process, 
 
 
