@@ -219,7 +219,7 @@ How are exclusion warnings identified within Access Record HTML?
 <span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld due to patient preferences, GP practice designation of 'Confidential' or as a result of the application of the sensitive exclusion set - to be displayed both within the section banner as well as at line item level.
 
 
-## Data handling ##
+## Date handling ##
 
 ### Summary time frames ###
 
