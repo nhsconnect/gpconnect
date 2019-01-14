@@ -172,7 +172,7 @@ The provider system **MUST**:
 - use a default time period if no `timePeriod` parameter is specified for a section that can accept a time period
 
 <br/>
-Refer to [HTML Implementation Guidance - Per Section Default Time Frames](accessrecord_development_html_implementation_guide.html#per-section-default-time-frames) for details of the default time periods that **MUST** be applied per care record section.
+Refer to [HTML Implementation Guidance - Per Section Default Time Frames](accessrecord_development_html_layout_guide.html#per-section-default-time-frames) for details of the default time periods that **MUST** be applied per care record section.
 
 
 #### Error handling ####
