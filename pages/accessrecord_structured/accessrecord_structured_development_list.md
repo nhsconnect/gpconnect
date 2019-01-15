@@ -65,18 +65,6 @@ Where data exists in a provider system workflow that has not yet been integrated
 
 ## List elements ##
 
-### id ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-The logical identifier of the List resource.
-
 ### meta.profile ###
 
 <table class='resource-attributes'>
@@ -301,6 +289,14 @@ A FHIR code of `No Content recorded` **SHALL** be used if a query returns no res
 <h2 style="color:#ED1951;">List elements <b>not in use</b></h2>
 
 The following elements **SHALL NOT** be populated:
+
+<h3 style="color:#ED1951;">id</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+  </tr>
+</table>
 
 <h3 style="color:#ED1951;">meta.versionId</h3>
 

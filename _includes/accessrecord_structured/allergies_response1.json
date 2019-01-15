@@ -1,7 +1,6 @@
 {% highlight json %}
 {
   "resourceType": "Bundle",
-  "id": "79183513-1382-4cdd-9470-7dbad15ea7b0",
   "meta": {
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
