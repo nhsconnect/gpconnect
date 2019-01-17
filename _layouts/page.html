@@ -5,6 +5,18 @@ layout: default
  {% include custom/versionconfig.html %}
 
  {% include {{versionBanner}}.html %}
+ 
+     <div class="pathways">
+        {% if page.pathways != null %}
+        <b>Pathways: </b>
+        {% assign projectPathways = site.data.pathways.allowed-pathways %}
+        {% for pathway in page.pathways %}
+        {% if projectPathways contains pathway %}
+        <a href="{{ "pathway_" | append: pathway | append: ".html" }}" class="btn btn-default navbar-btn cursorNorm" role="button">{{page.pathwayName}}{{pathway}}</a>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+    </div>
 
  {% unless jekyll.environment != "production" %}
 
