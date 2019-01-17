@@ -10,9 +10,6 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
-    - title: Capabilities
-      url: /overview_priority_capabilities.html
-      output: web
           
       subfolders:      
       - title: Release notes
