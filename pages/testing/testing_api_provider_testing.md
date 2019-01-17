@@ -5,7 +5,7 @@ tags: [testing,integration,deployment]
 sidebar: overview_sidebar
 permalink: testing_api_provider_testing.html
 summary: "Details of what activities form the basis of testing for API provider systems"
-pathways [provider]
+pathways: [provider]
 ---
 
 Provider systems SHALL undertake a three-stage testing process:
