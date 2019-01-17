@@ -5,6 +5,7 @@ tags: [testing,integration,deployment]
 sidebar: overview_sidebar
 permalink: testing_api_consumer_testing.html
 summary: "Details of what activities form the basis of testing for consumer applications"
+pathways: [consumer]
 ---
 
 Consumer systems SHALL undertake a three stage testing process:
@@ -15,7 +16,7 @@ Consumer systems SHALL undertake a three stage testing process:
 
 ## Technical accreditation ##
 
-Consumer systems SHALL be (or have previously been) tested and accredited to establish baseline Spine connectivity prerequisites:
+Consumer systems SHALL be (or have previously been) tested and accreditated to establish baseline Spine connectivity prerequisites:
 
  - N3 connectivity / ASID / PKI Certificate
  - [Personal Demographic Service (PDS) integration](integration_personal_demographic_service.html)
@@ -25,7 +26,7 @@ Consumer systems SHALL be (or have previously been) tested and accredited to est
 
 Consumer systems SHALL be tested for technical conformance of the following before they can be listed on the product catalogue:
 
- - [Spine Secure Proxy (SSP) integration](integration_spine_secure_proxy.html)
+ - [Spine Security Proxy (SSP) integration](integration_spine_security_proxy.html)
  - [Foundations](foundations.html)
 
 Consumer systems SHALL be tested for conformance to one or more of the following capability packs:
@@ -33,6 +34,7 @@ Consumer systems SHALL be tested for conformance to one or more of the following
  - [Access Record HTML](accessrecord.html)
  - [Access Record Structured](accessrecord_structured.html)
  - [Appointment Management](appointments.html)
+ - [Task Management](tasks.html)
 
 ## Solution assurance ##
 
