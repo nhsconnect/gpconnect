@@ -33,7 +33,7 @@ The APIs are grouped into sets, known as 'capabilities', which enable specific b
 *	Appointment Management – enables clinical staff to book, amend or cancel an appointment for a patient
 *	Access Record Structured – enables an export of a patient’s medications and allergies 
 
-[Find out more about the capabilities](https://gpconnect-specrestructure.netlify.com/overview_priority_capabilities.html)
+[Find out more about the capabilities](/overview_priority_capabilities.html)
 
 ## Pilot using the GP Connect APIs ##
 The GP Connect programme is now supporting the development of systems that connect with the APIs to use data from patient records and appointment schedulers for patient care by integrating it or importing it into local clinical systems.
