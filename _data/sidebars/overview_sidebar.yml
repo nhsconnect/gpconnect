@@ -84,6 +84,10 @@ entries:
   - title: Explore
     output: web
     folderitems:
+    - title: Exploring GP Connect
+      url: /overview_explore.html
+      output: web, pdf
+      type: web
     - title: System demonstrator
       url: /system_demonstrator.html
       output: web
