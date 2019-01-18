@@ -105,74 +105,76 @@ entries:
       url: /overview_development.html
       output: web, pdf
       type: web
+      type: homepage 
     - title: Development assets
       url: /development_deliverables.html
       output: web
-    - title: FHIR&reg; library guidance
-      url: /development_fhir_open_source_guidance.html
-      output: web
-    - title: FHIR&reg; implementation guidance
-      url: /development_fhir_api_guidance.html
-      output: web
-    - title: General API guidance
-      url: /development_general_api_guidance.html
-      output: web          
-    - title: Branch surgeries data model
-      url: /development_branch_surgeries.html
-      output: web          
-    - title: Operation guidance
-      url: /development_fhir_operation_guidance.html
-      output: web
-    - title: FHIR&reg; resource guidance
-      url: /development_fhir_resource_guidance.html
-      output: web
-    - title: Security guidance
-      url: /development_api_security_guidance.html
-      output: web
-    - title: Error handling
-      url: /development_fhir_error_handling_guidance.html
-      output: web
-    - title: Volume and performance guidance
-      url: /development_api_volume_and_performance.html
-      output: web          
-    - title: Non-functional requirements
-      url: /development_api_non_functional_requirements.html
-      output: web
-          
-  - title: Implement a capability
-    output: web
-    folderitems:
-    - title: Foundations
-      url: /foundations.html
-      output: web
-    - title: Appointment Management
-      url: /appointments.html
-      output: web
-    - title: Access Record Structured
-      url: /accessrecord_structured.html
-      output: web
-    - title: <b class="capability-not-available">Access Record HTML</b>
-      url: /accessrecord.html
-      output: web
 
-  - title: Integrate with Spine
-    output: web
-    folderitems:
-    - title: Overview
-      url: /integration_overview.html
-      output: web       
-    - title: Cross organisation audit and provenance
-      url: /integration_cross_organisation_audit_and_provenance.html
-      output: web
-    - title: Personal Demographic Service
-      url: /integration_personal_demographic_service.html
-      output: web	
-    - title: Spine Directory Services
-      url: /integration_spine_directory_service.html
-      output: web
-    - title: Spine Secure Proxy
-      url: /integration_spine_secure_proxy.html
-      output: web
+      subfolders:
+      - title: FHIR&reg; API guidance
+        output: web
+        subfolderitems:
+
+        - title: FHIR library
+          url: /development_fhir_open_source_guidance.html
+          output: web
+        - title: FHIR implementation
+          url: /development_fhir_api_guidance.html
+          output: web
+        - title: General API guidance
+          url: /development_general_api_guidance.html
+          output: web          
+        - title: Operations
+          url: /development_fhir_operation_guidance.html
+          output: web
+        - title: Resources
+          url: /development_fhir_resource_guidance.html
+          output: web
+        - title: Security guidance
+          url: /development_api_security_guidance.html
+          output: web
+        - title: Error handling
+          url: /development_fhir_error_handling_guidance.html
+          output: web
+        - title: Volume and performance
+          url: /development_api_volume_and_performance.html
+          output: web          
+        - title: Non-functional requirements
+          url: /development_api_non_functional_requirements.html
+          output: web
+        - title: First of type
+          url: /overview_first_of_type.html
+          output: web
+          
+      - title: Design approach
+        output: web
+        subfolderitems:
+
+        - title: Development principles
+          url: /designprinciples_development_principles.html
+          output: web
+          type: homepage
+        - title: Open API principles
+          url: /designprinciples_open_api_principles.html
+          output: web
+        - title: Data model principles
+          url: /designprinciples_data_model_principles.html
+          output: web
+        - title: Information governance principles
+          url: /designprinciples_ig_principles.html
+          output: web
+        - title: Clinical safety principles
+          url: /designprinciples_clinical_safety_principles.html
+          output: web
+        - title: Assurance principles
+          url: /designprinciples_assurance_principles.html
+          output: web
+        - title: Clinical terminologies
+          url: /design_clinical_terminologies.html
+          output: web
+        - title: Specification versioning
+          url: /design_product_versioning.html
+          output: web 
 
   - title: Test and assure
     output: web
