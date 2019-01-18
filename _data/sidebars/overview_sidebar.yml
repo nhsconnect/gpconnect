@@ -98,7 +98,7 @@ entries:
       url: /system_reference_postman.html
       output: web
 
-  - title: Development
+  - title: Develop
     output: web
     folderitems:
     - title: Developing with GP Connect
@@ -194,6 +194,14 @@ entries:
       url: /testing_api_consumer_testing.html
       output: web
 
+  - title: Deploy
+    output: web
+    folderitems:
+    - title: Deploying your system
+      url: /overview_deployment.html
+      output: web, pdf
+      type: web
+      
   - title: Help and support
     output: web
     folderitems:
