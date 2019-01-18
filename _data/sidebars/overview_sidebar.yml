@@ -49,38 +49,8 @@ entries:
       output: web
     - title: ...for end-user organisations
       external_url: https://digital.nhs.uk/services/gp-connect
-      output: web  
-          
-  - title: Design approach
-    output: web
-    folderitems:
-
-    - title: API principles
-      url: /designprinciples_open_api_principles.html
       output: web
-    - title: Development principles
-      url: /designprinciples_development_principles.html
-      output: web
-      type: homepage
-    - title: Data model principles
-      url: /designprinciples_data_model_principles.html
-      output: web
-    - title: Information governance principles
-      url: /designprinciples_ig_principles.html
-      output: web
-    - title: Clinical safety principles
-      url: /designprinciples_clinical_safety_principles.html
-      output: web
-    - title: Assurance principles
-      url: /designprinciples_assurance_principles.html
-      output: web
-    - title: Clinical terminologies
-      url: /design_clinical_terminologies.html
-      output: web
-    - title: Specification versioning
-      url: /design_product_versioning.html
-      output: web
-
+      
   - title: Explore
     output: web
     folderitems:
