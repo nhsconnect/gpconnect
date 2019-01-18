@@ -98,9 +98,13 @@ entries:
       url: /system_reference_postman.html
       output: web
 
-  - title: Development guidance
+  - title: Development
     output: web
     folderitems:
+    - title: Developing with GP Connect
+      url: /overview_development.html
+      output: web, pdf
+      type: web
     - title: Development assets
       url: /development_deliverables.html
       output: web
@@ -173,6 +177,10 @@ entries:
   - title: Test and assure
     output: web
     folderitems:
+    - title: Test and assurance
+      url: /overview_test_and_assurance.html
+      output: web, pdf
+      type: web
     - title: Testing assets
       url: /testing_deliverables.html
       output: web
