@@ -7,4 +7,12 @@ permalink: overview_deployment.html
 summary: "Technical accreditation, licensing and deployment certificates"
 ---
 
-- Become a [First of Type](overview_first_of_type.html) deployment!
+## Consumer suppliers ##
+
+Once your consumer product has been assured it will be added to the NHSD Service Catalogue and you will be able to work with an NHS organisation to deliver the GP Connect API.
+
+- become a [First of Type](overview_first_of_type.html) deployment
+
+
+## Clinical system supplier ##
+*Text for providers* 
