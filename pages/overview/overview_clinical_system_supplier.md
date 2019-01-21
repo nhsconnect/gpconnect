@@ -18,10 +18,8 @@ Follow this pathway if you're a GP clinical data supplier,such as EMIS Health, I
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
-**Next step:** [Explore](/overview_explore.html)
-
 Our developer ecosystem takes you through each stage of a typical GP Connect API project:
   
 {% include developer_journey.html %}
 
-![Clinical supplier ecosystem](images/overview/clinical_supplier_ecosystem.png)
+**Next step:** [Explore](/overview_explore.html)
