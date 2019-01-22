@@ -1306,3 +1306,128 @@ a.back-to-top {
 	-moz-border-radius: 30px;
 	border-radius: 30px;
 }
+
+/* changes in btn for pathways */
+
+.consumer-btn {
+  position: relative;
+  float: right;
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-color: white;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.consumer-btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.consumer-btn:hover,
+.consumer-btn:focus {
+  color: #FDFEFE;
+  text-decoration: none;
+  background-color: #cccccc;
+}
+.consumer-btn:active,
+.consumer-btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.consumer-btn-default {
+  color: #FDFEFE;
+  background-color: #005EB8;
+  border-color: #cccccc;
+}
+
+.navbar-btn-consumer {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.provider-btn {
+  position: relative;
+  float: right;
+  display: inline-block;
+  padding: 4px 10px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  font-color: white;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.provider-btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+.provider-btn:hover,
+.provider-btn:focus {
+  color: #FDFEFE;
+  text-decoration: none;
+  background-color: #cccccc;
+}
+.provider-btn:active,
+.provider-btn.active {
+  outline: 0;
+  background-image: none;
+  -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.provider-btn-default {
+  color: #FDFEFE;
+  background-color: #AF7AC5;
+  border-color: #cccccc;
+}
+
+.navbar-btn-provider {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.pathways {
+  position: relative;
+  float: right;
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.428571429;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  white-space: nowrap;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
