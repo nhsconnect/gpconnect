@@ -75,7 +75,6 @@ entries:
       url: /overview_development.html
       output: web, pdf
       type: web
-      type: homepage 
     - title: Development assets
       url: /development_deliverables.html
       output: web
