@@ -73,7 +73,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
   "status": "active",
   "date": "2018-02-23",
   "publisher": "[Provider Software Vendor Name]",
-  "Contact": [
+  "contact": [
     {
       "name": "[Provider Software Vendor Contact Name]"
     }
