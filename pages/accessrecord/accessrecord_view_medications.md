@@ -74,7 +74,7 @@ Providers **MUST** return the following message, if applicable:
 
 ```html
 <div>
-	<p>Scheduled End Date is not always captured in the source, where it was not recorded the displayed date is calculated from start date and days duration</p>
+	<p>Scheduled End Date is not always captured in the source; where it was not recorded, the displayed date is calculated from start date and days duration</p>
 </div>
 ```
 
@@ -303,7 +303,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 </table>
 </div>
 
-{% include custominfocallout.html content="**Note:** If the provider system allows the repeat medication (master/template) details to be altered pending or as new repeat issues are generated, then the latest details **MUST** be returned by the provider in the Additional Information column. A subsection banner message should be added if applicable (for example ‘The medication above is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. You should look at the All Medication Issues section to see what the patient has been given)." type="info" %}
+{% include custominfocallout.html content="**Note:** The medication below is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. See the All Medication Issues subsection for all repeat prescriptions issued." type="info" %}
 
 
 
@@ -403,12 +403,12 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">6</td>
     <td><code>Discontinued Date</code></td>
-    <td>The date the medication item was discontinued. This should be the date the clinician has entered as the discontinued date if available, otherwise the system date of the discontinue action.</td>
+    <td>The date the medication item was discontinued. This should be the date the clinician has entered as the discontinuation date if available, otherwise the system date of the discontinuation action.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
     <td align="center">7</td>
-    <td><code>Discontinued Reason</code></td>
+    <td><code>Discontinuation Reason</code></td>
     <td>The coded reason for the ending of the medication returned as its text description and/or free text narrative as available.</td>
     <td><code>free-text</code></td>
   </tr>
@@ -453,7 +453,7 @@ The subsection title **MUST** be "All Medication (Summary)".
 If a consumer submits a date filter for this subsection the dates will be applied as follows (this applies equivalent rules to structured medication date filtering):
 
  1.	If the medication has an effective period (a start date and a scheduled end date), filter using the effective period 
-	1.	The provider system **MUST** return the medication summary data items for all medications whose effective date range overlaps the date range (inclusive) sent by the consuming system
+	1.	The provider system **MUST** return the medication summary data items for all medications whose effective periods overlaps the date range (inclusive) sent by the consuming system
  2.	If the medication has an effective start date, does not have an effective end date and is repeat (repeat prescribed, repeat dispensed or prescribed elsewhere repeat), treat the effective period as ongoing for the filter 
 	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during or before the date range (inclusive) sent by the consuming system
 	2.	Where the medication is prescribed elsewhere and does not identify itself as acute or repeat then treat it as repeat for the filter to ensure the clinician has higher likelihood of visibility of the item and can decide themselves if it is relevant
@@ -550,10 +550,10 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   </tr>
   <tr>
     <td align="center">8</td>
-    <td><code>Discontinued Details</code></td>
+    <td><code>Discontinuation Details</code></td>
     <td>
-		<p><code>CANCELLED: </code>label with cancellation date and reason (acute) or DISCONTINUED: label with discontinued date and reason (repeat)</p>
-		<p>Details will be equivalent to the combined discontinued date and discontinued reason columns in Discontinued Repeat Medication, but will apply to Acute medication (labelled cancelled) as well repeat.</p>
+		<p><code>CANCELLED: </code>label with cancellation date and reason (acute) or <code>DISCONTINUED: </code>label with discontinued date and discontinuation reason (repeat)</p>
+		<p>Details will be equivalent to the combined discontinued date and discontinuation reason columns in Discontinued Repeat Medication, but will apply to Acute medication (labelled cancelled) as well repeat.</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -700,13 +700,13 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
 
 It is extremely important for the details regarding the ending of a medication to be available to a clinician, as this will highlight any clinical issues (for example, stopping a medication due to an allergy) and allow the clinician to make an efficient and informed clinical decision.
 
-Any information relevant to the circumstances of ending a medication **MUST** be provided in the `Additional Information` column or `Discontinued Details` column as applicable to the subsection tables. The following definitions are provided to support the labelling of the information within `Additional Information`:
+Details of change to follow as a comment:
 
 - **Naturally ended**: Medication naturally came to an end, that is, no manual intervention via the user (auto system transition)
 - **Cancelled**: Actively stopped acute medication by user
 - **Discontinued**: Actively stopped repeat medication by user
 
-Naturally Ended medications **MUST NOT** be included in the Discontinued Repeat Medication subsection and end date and reason **MUST NOT** be included in `Additional Information` in Recent Acute Medications or the Discontinued Details in All Medication (Summary).
+Naturally Ended medications **MUST NOT** be included in the Discontinued Repeat Medication subsection and end date and reason **MUST NOT** be included in Additional Information in Recent Acute Medications or the Discontinuation Details in All Medication (Summary).
 
 If a system provider cannot differentiate between naturally ended, discontinued and cancelled section/subsection banner message(s) **MUST** be included as appropriate to describe the extent or limitation of compliance.
 
