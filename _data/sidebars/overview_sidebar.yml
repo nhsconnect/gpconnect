@@ -21,6 +21,9 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
+        - title: 0.7.1
+          url: /overview_release_notes_0_7_1.html
+          output: web
         - title: 0.7.0
           url: /overview_release_notes_0_7_0.html
           output: web
