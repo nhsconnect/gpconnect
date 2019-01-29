@@ -27,7 +27,7 @@ The keywords "**MUST**", "**MUST NOT**", "**REQUIRED**", "**SHALL**", "**SHALL N
 {% include custominfocallout.html content="**Information:** The record returned from the provider system is near real time." type="warning" %}
 
 - local pending changes (that is, within a consultation that is actively ongoing) may not be available
-- the record is machine generated and therefore is not owned or attested by any single clinician
+- the record is machine-generated and therefore is not owned or attested by any single clinician
 
 ## Record locking ##
 
@@ -124,7 +124,7 @@ Additionally, the following data **MAY** be displayed if returned from the provi
 
 Where a patient is flagged on the GP clinical system as sensitive (and as such the GP practice must not identify that the patient is registered at this location), the provider system **MUST NOT** return any clinical records and instead return the error `Patient not found`.
 
-Where a patient is flagged on PDS as sensitive (and as such it is not possible to confirm their registered GP practice), the consumer system **MUST NOT** use GP Connect.
+Where a patient is flagged on the Personal Demographics Service (PDS) as sensitive (and as such it is not possible to confirm their registered GP practice), the consumer system **MUST NOT** use GP Connect.
 
 ## Section retrieval ##
 
@@ -134,8 +134,8 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Supported but hasn't been recorded ####
 
-- System can store the data.
-- BUT no data has been recorded for the patient.
+- system can store the data
+- BUT no data has been recorded for the patient
 
 ```html
 <div>
@@ -145,8 +145,8 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Supported but can't be technically provided ####
 
-- System can store the data.
-- BUT no data is available for the patient via the GP Connect APIs due to a technical limitation.
+- system can store the data
+- BUT no data is available for the patient via the GP Connect APIs due to a technical limitation
 
 ```html
 <div>
@@ -157,8 +157,8 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Supported but is masked/access denied ####
 
-- System can store the data.
-- BUT no data is available for the patient via the GP Connect APIs due to a IG/DS rule.
+- system can store the data
+- BUT no data is available for the patient via the GP Connect APIs due to a IG/DS rule
 
 ```html
 <div>
@@ -169,7 +169,7 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 
 #### Not supported ####
 
-- System doesn't store the data.
+- system doesn't store the data
 
 ```html
 <div>
@@ -185,7 +185,7 @@ Provider systems **MUST** use XHTML constructs as defined in the [FHIR narrative
 
 As outlined in the Narrative section of the FHIR&reg; standard:
 
-{% include callout.html content="The XHTML content **MUST NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;``` etc. Unicode characters **MUST** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
+{% include callout.html content="The XHTML content **MUST NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;```. Unicode characters **MUST** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
 
 {% include custominfocallout.html content="**Information:** The content **MUST NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning" %}
 
@@ -219,6 +219,7 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `ref-tab`          | Applied within the `<table>` tag of the Referrals table                                  | Referrals
 
 <br/>
+
 The following HTML classes **MUST** be applied across the HTML view:
 
 
