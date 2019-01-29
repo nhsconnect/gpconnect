@@ -26,7 +26,7 @@ There is only a single main section for observations with no subsections.
 
 ## Section title ##
 
-The section title **MUST** be "Observations".
+The section title **MUST** be 'Observations'.
 
 ## Date filter ##
 
