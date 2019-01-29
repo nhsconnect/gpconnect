@@ -170,7 +170,7 @@ Any exclusion descriptions for a subsection **MUST** be applicable to that subse
 
 ### Date banner ###
 
-The provider **MUST** supply all matching dates/times, e.g. the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
+The provider **MUST** supply all matching dates/times - for example, the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
 
 If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
 
@@ -238,7 +238,7 @@ Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a 
 
 Exclusions may be applied to the section/subsections in various circumstances. Where any exclusions have been applied a message banner **MUST** be included. As shown in the layout, the exclusion banner will only be included against the specific table where exclusions have been applied. Therefore, it will only be at section level where it is a single table section.
 
-The following message **MUST** be supplied by the provider if any items were excluded for these reasons.
+The following message **MUST** be supplied by the provider if any items were excluded for these reasons:
 
 
 ```html
@@ -256,4 +256,4 @@ Providers must adhere to the table construction requirements listed below:
 
 {% include custominfocallout.html content="**Information:** All other table requirements can be found on their associated HTML view page." type="info" %}
 
-Consumer systems **MUST** display all content supplied by the provider system
+Consumer systems **MUST** display all content supplied by the provider system.
