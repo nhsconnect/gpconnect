@@ -49,7 +49,7 @@ These views **MUST** have the following structure:
 	- Exclusion banner (*if applicable, to indicate excluded items*)
 	- Table
 
-{% include custominfocallout.html content="**Note:** This layout does not apply to the Summary HTML view. See [Summary HTML view](accessrecord_view_summary.html)." type="info" %}
+{% include custominfocallout.html content="**Note:** This layout does not fully apply to the Summary HTML view. Subsection content banner messages **MUST** be included only when associated with table content visible in the Summary view. See [Summary HTML view](accessrecord_view_summary.html)." type="info" %}
 
 ### Single table example ###
 
