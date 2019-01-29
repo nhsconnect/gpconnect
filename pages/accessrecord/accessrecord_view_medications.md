@@ -33,7 +33,7 @@ Contains one main section, and five subsections:
  
 ## Section title ##
 
-The section title **MUST** be "Medications".
+The section title **MUST** be 'Medications'.
 
 ## Date filter ##
 
@@ -56,11 +56,11 @@ This is aligned to the Acute Medications section in Summary Care Records (SCR).
 
 ### Purpose ###
 
-The purpose of this section is to provide a view of acute medications that the patient has recently been taking which informs the clinical decision-making process.
+The purpose of this section is to provide a view of acute medications that the patient has recently been taking, which informs the clinical decision-making process.
 
 ### Subsection title ###
 
-The subsection title **MUST** be "Recent Acute Medication".
+The subsection title **MUST** be 'Recent Acute Medication'.
 
 ### Date filter ###
 
@@ -142,13 +142,13 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">6</td>
     <td><code>Scheduled End Date</code></td>
-    <td>The date the prescription is expected to finish</td>
+    <td>The date the prescription is expected to finish.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
     <td align="center">7</td>
     <td><code>Days Duration</code></td>
-    <td>Duration of medication issued in days</td>
+    <td>Duration of medication issued in days.</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
@@ -178,7 +178,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 
 A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication - for example, EpiPen, antihistamines, monitoring or continence products.
 
-The provider **MUST** include all repeat and repeat dispensed medications (templates/plans/courses **NOT** individual issues) which have not been discontinued or otherwise ended. Repeat medications (including repeat dispense) which have not been discontinued are considered current where the Effective End Date (the date the cycle of prescriptions is expected to end) is either greater than the current date or is null. This **MUST** include those which has been authorised but not yet issued (Last Issued and Number Issued will be null).
+The provider **MUST** include all repeat and repeat dispensed medications (templates/plans/courses **NOT** individual issues) which have not been discontinued or otherwise ended. Repeat medications (including repeat dispense) which have not been discontinued are considered current where the Effective End Date (the date the cycle of prescriptions is expected to end) is either greater than the current date or is null. This **MUST** include those which have been authorised but not yet issued (Last Issued and Number Issued will be null).
 
 ### Purpose ###
 
@@ -188,7 +188,7 @@ This is aligned to the Repeat Medications section in Summary Care Records (SCR).
 
 ### Subsection title ###
 
-The subsection title **MUST** be "Current Repeat Medication".
+The subsection title **MUST** be 'Current Repeat Medication'.
 
 ### Date filter ###
 
@@ -326,7 +326,7 @@ This is aligned to the Discontinued Repeat Medications section in SCR, but is no
 
 ### Subsection title ###
 
-The subsection title **MUST** be "Discontinued Repeat Medication".
+The subsection title **MUST** be 'Discontinued Repeat Medication'.
 
 ### Date filter ###
 
@@ -418,7 +418,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
     <td>If the medication record includes the information, the following details <b>MUST</b> be included:
 			<ul>
 			<li>Reason for the medication</li>
-			<li>Linked problems/diagnoses</li>
+			<li>Linked problems / diagnoses</li>
 			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
 			<li>Other supporting information</li>
 		</ul>
@@ -440,28 +440,28 @@ A history view of drugs or other forms of medicines that have been used to treat
 
 ### Purpose ###
 
-The purpose of this subsection is to provide a distinct list of all the medications recorded for the patient and to present the list alphabetically to make it easier to view for specific medication items The list is also presented alphabetically to enable easier identification of changes to a medication over time, for example, change in dosage.
+The purpose of this subsection is to provide a distinct list of all the medications recorded for the patient and to present the list alphabetically to make it easier to view for specific medication items. The list is also presented alphabetically to enable easier identification of changes to a medication over time, for example, change in dosage.
 
-Items included in the Recent Acute Medication and Current Repeat Medication **MUST** also be included within this subsection as well as past medications.
+Items included in the Recent Acute Medication and Current Repeat Medication **MUST** also be included within this subsection, as well as past medications.
 
 ### Subsection title ###
 
-The subsection title **MUST** be "All Medication (Summary)".
+The subsection title **MUST** be 'All Medication (Summary)'.
 
 ### Date filter ###
 
 If a consumer submits a date filter for this subsection the dates will be applied as follows (this applies equivalent rules to structured medication date filtering):
 
- 1.	If the medication has an effective period (a start date and a scheduled end date), filter using the effective period 
-	1.	The provider system **MUST** return the medication summary data items for all medications whose effective periods overlaps the date range (inclusive) sent by the consuming system
- 2.	If the medication has an effective start date, does not have an effective end date and is repeat (repeat prescribed, repeat dispensed or prescribed elsewhere repeat), treat the effective period as ongoing for the filter 
-	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during or before the date range (inclusive) sent by the consuming system
-	2.	Where the medication is prescribed elsewhere and does not identify itself as acute or repeat then treat it as repeat for the filter to ensure the clinician has higher likelihood of visibility of the item and can decide themselves if it is relevant
- 3.	If the medication has an effective start date, does not have an effective end date and is acute (acute or prescribed elsewhere acute), filter using the effective start date 
-	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during the date range (inclusive) sent by the consuming system
- 4.	If the medication does not have an effective start date (for example, prescribed elsewhere), filter using the date it was recorded on the local system 
-	1.	The provider system **MUST** return the medication summary data items for all medications whose recorded date is during the date range (inclusive) sent by the consuming system
-	2.	Where no effective period is available use the date the item was recorded on the system
+ 1.	If the medication has an effective period (a start date and a scheduled end date), filter using the effective period: 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose effective periods overlap the date range (inclusive) sent by the consuming system.
+ 2.	If the medication has an effective start date, does not have an effective end date and is repeat (repeat prescribed, repeat dispensed or prescribed elsewhere repeat), treat the effective period as ongoing for the filter: 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during or before the date range (inclusive) sent by the consuming system.
+	2.	Where the medication is prescribed elsewhere and does not identify itself as acute or repeat then treat it as repeat for the filter to ensure the clinician has higher likelihood of visibility of the item and can decide themselves if it is relevant.
+ 3.	If the medication has an effective start date, does not have an effective end date and is acute (acute or prescribed elsewhere acute), filter using the effective start date: 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose effective start date is during the date range (inclusive) sent by the consuming system.
+ 4.	If the medication does not have an effective start date (for example, prescribed elsewhere), filter using the date it was recorded on the local system: 
+	1.	The provider system **MUST** return the medication summary data items for all medications whose recorded date is during the date range (inclusive) sent by the consuming system.
+	2.	Where no effective period is available use the date the item was recorded on the system.
 
 
 
@@ -476,7 +476,7 @@ Providers **MUST** return all the columns as described in the table below.
 
 It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Start Date` descending.
 
-Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded exampled of displaying this subsection.
+Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded example of displaying this subsection.
 
 <div>
 <table>
@@ -553,7 +553,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
     <td><code>Discontinuation Details</code></td>
     <td>
 		<p><code>CANCELLED: </code>label with cancellation date and reason (acute) or <code>DISCONTINUED: </code>label with discontinued date and discontinuation reason (repeat)</p>
-		<p>Details will be equivalent to the combined discontinued date and discontinuation reason columns in Discontinued Repeat Medication, but will apply to Acute medication (labelled cancelled) as well repeat.</p>
+		<p>Details will be equivalent to the combined discontinued date and discontinuation reason columns in Discontinued Repeat Medication, but will apply to Acute medication (labelled cancelled) as well as repeat.</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -593,7 +593,7 @@ This is the only subsection to include the individual issues of a repeat medicat
 
 ### Subsection title ###
 
-The subsection title **MUST** be "All Medication Issues".
+The subsection title **MUST** be 'All Medication Issues'.
 
 ### Date filter ###
 
@@ -611,7 +611,7 @@ Providers **MUST** return all the columns as described in the table below.
 
 It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Issue Date` descending.
 
-Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded exampled of displaying this subsection.
+Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded example of displaying this subsection.
 
 <div>
 <table>
@@ -708,7 +708,7 @@ Details of change to follow as a comment:
 
 Naturally Ended medications **MUST NOT** be included in the Discontinued Repeat Medication subsection and end date and reason **MUST NOT** be included in Additional Information in Recent Acute Medications or the Discontinuation Details in All Medication (Summary).
 
-If a system provider cannot differentiate between naturally ended, discontinued and cancelled section/subsection banner message(s) **MUST** be included as appropriate to describe the extent or limitation of compliance.
+If a system provider cannot differentiate between naturally ended, discontinued and cancelled section/subsection, banner message(s) **MUST** be included as appropriate to describe the extent or limitation of compliance.
 
 
 ### Prescribed elsewhere ###
@@ -717,7 +717,7 @@ All subsections (except All Medication Issues) **MUST** include items which are 
 
 ### GP2GP transfer ###
 
-Repeat medications transferred as part of GP2GP **MUST** only be included in the Current Repeat Medications subsection if authorised by a clinician at the new practice, otherwise they are treated as not current, therefore they appear in All Medication (Summary) and All Medication Issues, but not in Current Repeat Medication.
+Repeat medications transferred as part of GP2GP **MUST** only be included in the Current Repeat Medications subsection if authorised by a clinician at the new practice, otherwise they are treated as not current. Therefore, they appear in All Medication (Summary) and All Medication Issues, but not in Current Repeat Medication.
  
 
 
