@@ -13,7 +13,7 @@
       </p>
    </div>
    <div>
-      <h2>Recent Acute Medication</h2>
+      <h2>Acute Medication (Last 12 Months)</h2>
       <div class="content-banner">
          <p>
             <!-- Content banner -->
@@ -137,7 +137,7 @@
       </table>
    </div>
    <div>
-      <h2>All Medication (Summary)</h2>
+      <h2>All Medication</h2>
       <div class="content-banner">
          <p>
             <!-- Content banner -->
@@ -163,7 +163,7 @@
                <th>Quantity</th>
                <th>Last Issued Date</th>
                <th>Number of Prescriptions Issued</th>
-	           <th>Discontinuation Details</th>
+               <th>Discontinuation Details</th>
                <th>Additional Information</th>
             </tr>
          </thead>
@@ -181,7 +181,7 @@
                <td>{{medication.quantity}}</td>
                <td class="date-column">{{medication.lastIssuedDate}}</td>
                <td>{{medication.numberIssued}}</td>
-	           <td>{{medication.discontinuedDetails}}</td>
+               <td>{{medication.discontinuedDetails}}</td>
                <td>{{medication.additionalInformation}}</td>
             </tr>
          </tbody>
