@@ -154,8 +154,9 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">8</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
 		<ul>
+			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li><code>CANCELLED: </code> label with cancellation date and reason</li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
@@ -289,8 +290,9 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">10</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
-			<ul>
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+		<ul>
+			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
@@ -415,8 +417,9 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">8</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
-			<ul>
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+		<ul>
+			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
@@ -560,8 +563,9 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">9</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
 		<ul>
+			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
@@ -680,8 +684,9 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">7</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included:
-			<ul>
+    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+		<ul>
+			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
@@ -713,7 +718,7 @@ If a system provider cannot differentiate between naturally ended, discontinued 
 
 ### Prescribed elsewhere ###
 
-All subsections (except All Medication Issues) **MUST** include items which are recorded on the system as a prescription but prescribed elsewhere (for example, hospitals or special clinics) or ‘Over The Counter’ drugs taken by the patient and recorded on the system as a prescription. This Type column will identify a medication item as prescribed elsewhere by including the Agency Type after the medication type (Acute / Repeat) or ‘Unknown Prescriber’ where an agency type cannot be determined.
+All subsections (except All Medication Issues) **MUST** include items which are recorded on the system as a prescription but prescribed elsewhere (for example, hospitals or special clinics) or 'Over The Counter' drugs taken by the patient and recorded on the system as a prescription. This Type column will identify a medication item as prescribed elsewhere by including the Agency Type after the medication type (Acute / Repeat) or 'Unknown Prescriber' where an agency type cannot be determined.
 
 ### GP2GP transfer ###
 
