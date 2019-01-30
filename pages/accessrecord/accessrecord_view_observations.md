@@ -44,8 +44,9 @@ Providers must return all the columns as described in the table below, sorted by
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the observation | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry` | A short human readable free-text title for the observation | `free-text` |
-| <center>3</center> | `Value` | Value and range (where available) of the observation | `free-text` |
-| <center>4</center> | `Details` | Longer human readable details for the observation | `free-text` |
+| <center>3</center> | `Value` | Value of the observation | `free-text` |
+| <center>4</center> | `Range` | Range (where available) of the observation | `free-text` |
+| <center>5</center> | `Details` | Longer human readable details for the observation | `free-text` |
 
 {% include custominfocallout.html content="**Note:** All number formatting **MUST** follow the formatting applied in GP clinical supplier system providing the patient record." type="info" %}
 
@@ -57,7 +58,7 @@ Providers must return all the columns as described in the table below, sorted by
 
 ## Example view ##
 
-<p data-height="425" data-theme-id="light" data-slug-hash="aENJMQ" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Observations" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/aENJMQ/">Observations</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="475" data-theme-id="light" data-slug-hash="aENJMQ" data-default-tab="result" data-user="tford70" data-embed-version="2" data-pen-title="Observations" class="codepen">See the Pen <a href="https://codepen.io/tford70/pen/aENJMQ/">Observations</a> by gp_connect (<a href="https://codepen.io/tford70">@tford70</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 {% include tip.html content="Please see [CodePen](https://codepen.io/gpconnect/pen/aENJMQ) for example of using AngularJS to generate table content." %}
