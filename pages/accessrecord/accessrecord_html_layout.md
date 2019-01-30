@@ -170,7 +170,7 @@ Any exclusion descriptions for a subsection **MUST** be applicable to that subse
 
 ### Date banner ###
 
-The provider **MUST** supply all matching dates/times - for example, the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
+The provider **MUST** supply all matching dates/times, for example, the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
 
 If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
 
@@ -182,7 +182,7 @@ Consumer systems **MUST** display the date range applied to a section's data, as
 
 ```html
 <div class="date-banner">
-	<p>For the period 'dd-mmm-yyyy' to 'dd-mmm-yyyy'</p>
+	<p>For the period 'dd-Mmm-yyyy' to 'dd-Mmm-yyyy'</p>
 </div>
 ```
 
@@ -216,21 +216,45 @@ Where the consumer system has not supplied a date range, then where applicable a
 
 Section default time frames **MUST** be configurable, by the provider, to be easily amendable if required in response to First of Type (FoT) feedback.
 
-{% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback." type="warning" %}
+{% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback. A default time frame is only to be applied upon instruction by NHS Digital." type="warning" %}
 
-|Section                          | Section code   | Time frame   |
-|---------------------------------|----------------|--------------|
-| Administrative items            | ADM            | Consumer supplied |              
-| Allergies and adverse reactions | ALL            | All          |
-| Clinical items                  | CLI            | Consumer supplied |
-| Encounters                      | ENC            | Consumer supplied |
-| Immunisations                   | IMM            | All          |
-| Medications                     | MED            | Consumer supplied (for past medications only) |
-| Observations                    | OBS            | Consumer supplied |
-| Problems and issues             | PRB            | Consumer supplied (for inactive problems and issues only) |
-| Referrals                       | REF            | Consumer supplied |
-| Summary                         | SUM            | All          |
+|Section                              | Section code     | Subsections                                 | Time frame        |
+|-------------------------------------|:----------------:|-------------------------------------------- |-------------------|
+| **Administrative items**            | `ADM`            | N/A                                         | Consumer supplied |
+| **Allergies and adverse reactions** | `ALL`            | Current allergies and adverse reactions     | All               |
+|                                     |                  | Historical allergies and adverse reactions  | All               |
+| **Clinical items**                  | `CLI`            | N/A                                         | Consumer supplied |
+| **Encounters**                      | `ENC`            | N/A                                         | Consumer supplied |
+| **Immunisations**                   | `IMM`            | N/A                                         | All               |
+| **Medications**                     | `MED`            | Recent Acute Medication                     | All               |
+|                                     |                  | Current Repeat Medication                   | All               |
+|                                     |                  | Discontinued Repeat Medication              | All               |
+|                                     |                  | All Medication                              | Consumer supplied |
+|                                     |                  | All Medication Issues                       | Consumer supplied |
+| **Observations**                    | `OBS`            | N/A                                         | Consumer supplied |
+| **Problems and issues**             | `PRB`            | Active problems and issues                  | All               |
+|                                     |                  | Inactive problems and issues                | Consumer supplied |
+| **Referrals**                       | `REF`            | N/A                                         | Consumer supplied |
+| **Summary**                         | `SUM`            | N/A                                         | All               |
 
+
+The default time frame **MUST** be configurable in unit of month(s).
+
+When a default time frame is applied at system level the following requirements **MUST** be adhered to:
+
+- any section/subsection listed in the table above with a time frame of 'All' **MUST** return all data regardless of the default time frame applied
+- any section/subsection listed with 'Consumer supplied' **MUST** only apply the default time frame when the consumer does not provide any date filter values
+  - a default date filter **MUST NOT** override a consumer supplied date filter value i.e. the provider **MUST** return the full period as selected by the user
+- any section listed with a mix of 'All' and 'Consumer supplied' **MUST** apply the above requirements at the relevant subsection levels
+
+When applying a default time frame the following message **MUST** be supplied by the provider and displayed by the consumer system:
+
+```html
+<div class="date-banner">
+            <p> All data items from [SysDate – DefaultDatePeriod]</p>
+</div>
+
+``` 
 
 Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
 
