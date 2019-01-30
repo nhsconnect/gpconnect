@@ -99,7 +99,7 @@ The following messages are returned by the provider systems when data has been e
 	  <tr>
 		<td><b>EMIS</b></td>
 		<td>Data items removed due to patient preference, confidentiality and / or RCGP exclusions.</td>
-		<td><i>N/A, EMIS do not support line item exclusion</i></td>
+		<td>EMIS return either 'Confidential Item' or 'Sensitive Item' according to the reason for the exclusion</td>
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
