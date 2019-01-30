@@ -24,10 +24,10 @@ The purpose of this section is to provide a history of medication prescribing as
 
 Contains one main section, and five subsections:
 
- - [Recent Acute Medication](accessrecord_view_medications.html#recent-acute-medication)
+ - [Acute Medication (Last 12 Months)](accessrecord_view_medications.html#acute-medication-last-12-months)
  - [Current Repeat Medication](accessrecord_view_medications.html#current-repeat-medication)
  - [Discontinued Repeat Medication](accessrecord_view_medications.html#discontinued-repeat-medication)
- - [All Medication (Summary)](accessrecord_view_medications.html#all-medication-summary)
+ - [All Medication](accessrecord_view_medications.html#all-medication)
  - [All Medication Issues](accessrecord_view_medications.html#all-medication-issues)
 
  
@@ -46,7 +46,7 @@ Provider message describing at a summary level how they have populated this sect
 
 
 
-## Recent Acute Medication ##
+## Acute Medication (Last 12 Months) ##
 
 ### Clinical narrative ###
 
@@ -60,7 +60,7 @@ The purpose of this section is to provide a view of acute medications that the p
 
 ### Subsection title ###
 
-The subsection title **MUST** be 'Recent Acute Medication'.
+The subsection title **MUST** be 'Acute Medication (Last 12 Months)'.
 
 ### Date filter ###
 
@@ -435,7 +435,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 
 
 
-## All Medication (Summary) ##
+## All Medication ##
 
 ### Clinical narrative ###
 
@@ -449,7 +449,7 @@ Items included in the Recent Acute Medication and Current Repeat Medication **MU
 
 ### Subsection title ###
 
-The subsection title **MUST** be 'All Medication (Summary)'.
+The subsection title **MUST** be 'All Medication'.
 
 ### Date filter ###
 
