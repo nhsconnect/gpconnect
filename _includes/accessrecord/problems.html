@@ -50,7 +50,7 @@
       </table>
    </div>
    <div>
-      <h2>Inactive Problems and Issues</h2>
+      <h2>Major Inactive Problems and Issues</h2>
       <div class="content-banner">
          <p>
             <!-- Content banner -->
@@ -66,7 +66,7 @@
             <!-- Exclusion banner -->
          </p>
       </div>
-      <table id="prb-tab-inact">
+      <table id="prb-tab-majinact">
          <thead>
             <tr>
                <th>Start Date</th>
@@ -78,7 +78,46 @@
          </thead>
          <tbody>
             <tr>
-               <!-- the <tr>...</tr> element will repeat for each inactive problem and issue-->
+               <!-- the <tr>...</tr> element will repeat for each major inactive problem and issue-->
+               <td class="date-column">{{problemissue.startdate}}</td>
+               <td class="date-column">{{problemissue.enddate}}</td>
+               <td>{{problemissue.entry}}</td>
+               <td>{{problemissue.significance}}</td>
+               <td>{{problemissue.details}}</td>
+            </tr>
+         </tbody>
+      </table>
+   </div>
+   <div>
+      <h2>Other Inactive Problems and Issues</h2>
+      <div class="content-banner">
+         <p>
+            <!-- Content banner -->
+         </p>
+      </div>
+      <div class="date-banner">
+         <p>
+            <!-- Date banner -->
+         </p>
+      </div>
+      <div class="exclusion-banner">
+         <p>
+            <!-- Exclusion banner -->
+         </p>
+      </div>
+      <table id="prb-tab-othinact">
+         <thead>
+            <tr>
+               <th>Start Date</th>
+               <th>End Date</th>
+               <th>Entry</th>
+               <th>Significance</th>
+               <th>Details</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <!-- the <tr>...</tr> element will repeat for each other inactive problem and issue-->
                <td class="date-column">{{problemissue.startdate}}</td>
                <td class="date-column">{{problemissue.enddate}}</td>
                <td>{{problemissue.entry}}</td>
@@ -91,10 +130,3 @@
 </div>
 ```
 {% endraw %}
-
-
-
-
-
-
-
