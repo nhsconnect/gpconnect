@@ -215,7 +215,7 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `med-tab-all-iss`  | Applied within the `<table>` tag of the All Medication Issues table                      | Medications
 | `obs-tab`          | Applied within the `<table>` tag of the Observations table                               | Observations
 | `prb-tab-act`      | Applied within the `<table>` tag of the Active Problems and Issues table                 | Problems and Issues & Summary
-| `prb-tab-majinact` | Applied within the `<table>` tag of the Major Inactive Problems and Issues table         | Problems and Issues
+| `prb-tab-majinact` | Applied within the `<table>` tag of the Major Inactive Problems and Issues table         | Problems and Issues  & Summary
 | `prb-tab-othinact` | Applied within the `<table>` tag of the Other Inactive Problems and Issues table         | Problems and Issues
 | `ref-tab`          | Applied within the `<table>` tag of the Referrals table                                  | Referrals
 
