@@ -185,7 +185,7 @@ Provider systems **MUST** use XHTML constructs as defined in the [FHIR narrative
 
 As outlined in the Narrative section of the FHIR&reg; standard:
 
-{% include callout.html content="The XHTML content **MUST NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (e.g. onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;```. Unicode characters **MUST** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
+{% include callout.html content="The XHTML content **MUST NOT** contain a head, a body element, external stylesheet references, deprecated elements, scripts, forms, base/link/xlink, frames, iframes, objects or event related attributes (for example, onClick). This is to ensure that the content of the narrative is contained within the resource and that there is no active content. Such content would introduce security issues and potentially safety issues with regard to extracting text from the XHTML.<br/><br/> Note that the XHTML is contained in general XML so there is no support for HTML entities like ```&nbsp;``` or ```&copy;```. Unicode characters **MUST** be used instead. Unicode ```&#160;``` substitutes for ```&nbsp;```." type="default" %}
 
 {% include custominfocallout.html content="**Information:** The content **MUST NOT** contain any platform-specific escape or formatting characters such as ```\r\n```, as these may cause inconsistent rendering within consumer applications, with potential impacts on clinical safety." type="warning" %}
 
@@ -215,7 +215,8 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `med-tab-all-iss`  | Applied within the `<table>` tag of the All Medication Issues table                      | Medications
 | `obs-tab`          | Applied within the `<table>` tag of the Observations table                               | Observations
 | `prb-tab-act`      | Applied within the `<table>` tag of the Active Problems and Issues table                 | Problems and Issues & Summary
-| `prb-tab-inact`   | Applied within the `<table>` tag of the Inactive Problems and Issues table               | Problems and Issues
+| `prb-tab-majinact` | Applied within the `<table>` tag of the Major Inactive Problems and Issues table         | Problems and Issues
+| `prb-tab-othinact` | Applied within the `<table>` tag of the Other Inactive Problems and Issues table         | Problems and Issues
 | `ref-tab`          | Applied within the `<table>` tag of the Referrals table                                  | Referrals
 
 <br/>
