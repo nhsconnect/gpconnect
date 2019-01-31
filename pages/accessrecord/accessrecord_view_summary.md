@@ -56,7 +56,7 @@ This section is an exact replica of the Encounters section with a filter applied
 
 ### Active Problems and Issues ###
 
-This section is an exact replica of the Active Problems and Issues subsection, which is the first subsection within the Problems and issues section. Further details about this subsection can be found there, including any date range filtering and business rules.
+This section is an exact replica of the Active Problems and Issues subsection, which is the first subsection within the Problems and issues section. Further details about this subsection can be found there, including any business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Active problems and issues](accessrecord_view_problems.html#active-problems-and-issues) section." type="primary" %} 
 
