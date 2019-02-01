@@ -28,7 +28,7 @@ Provider systems **MUST** ensure failed or rejected API transactions are recorde
 Audit trail records **MUST** include the following minimum information:
 
 - a record of the user identity. This is the User ID, Name, Role profile (including Role and Organisation, URP id when Smartcard authenticated) attribute values, obtained from the user’s Session structure
-- a record of the identify of the authority – the person authorising the entry of, or access to data (if different from the user)
+- a record of the identity of the authority – the person authorising the entry of, or access to data (if different from the user)
 - the date and time on which the event occurred
 - details of the nature of the audited event and the identity of the associated data (e.g. patient ID, message ID) of the audited event;
 - a sequence number to protect against malicious attempts to subvert the audit trail by, for example, altering the system date
@@ -70,13 +70,13 @@ An example such an HTTP header is given below:
      Authorization: Bearer jwt_token_string
 ```
 
-Provider systems **MUST** respond to oAuth Bearer Token errors inline with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
+Provider systems **MUST** respond to oAuth Bearer Token errors in line with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
 
 ### JSON Web Tokens (JWT) ###
 
 - Consumer system **MUST** generate a new JWT for each API request containing the claims outlined in the table below
 - Where the claim contains a FHIR resource the FHIR resource should conform to the GP Connect FHIR resource profiles outlined on the [FHIR Resources](datalibraryaccessRecord.html) page
-  - An exeption to this requirement is that in the `requesting_practitioner` claim the `Practitioner` resource should contain an identifier with the system `"http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was a error during testing and assurance which resulted in the providers validate that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included.
+  - An exception to this requirement is that in the `requesting_practitioner` claim the `Practitioner` resource should contain an identifier with the system `"http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was an error during testing and assurance which resulted in the providers validate that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included.
 
 | Claim | Priority | Description | Fixed Value | Dynamic Value |
 |-------|----------|-------------|-------------|------------------|
@@ -96,7 +96,7 @@ Provider systems **MUST** respond to oAuth Bearer Token errors inline with [RFC 
 
 <sup>2</sup> Patient scope for patient centric APIs (i.e. Get Care Record and Patient's Appointments, Patient Task) or scope for organisation centric APIs (i.e. Get Organization Schedule)
 
-<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter **MUST** be provided. Default usernames (e.g. referring to systems or groups) **MUST NOT** be used in this field.
+<sup>3</sup> To contain the practitioners local system identifier(s) (i.e. login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter **MUST** be provided. Default usernames (for example, referring to systems or groups) **MUST NOT** be used in this field.
 
 <sup>4</sup> The requesting organisation resource **MUST** refer to the care organisation from where the request originates rather than any other organisation which may host hardware or software, route requests to Spine, and/or hold the endpoint registration. 
 
