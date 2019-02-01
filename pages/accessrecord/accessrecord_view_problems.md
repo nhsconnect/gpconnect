@@ -114,19 +114,20 @@ Providers must return all the columns as described in the table below, sorted by
 | <center>4</center> | `Significance`| The significance of the problem | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
 
+
 Provider systems having 3 levels of significance **MUST** include inactive problems with the highest and mid-level significance in this subsection. If more than 3 levels of significance, then those equal to or greater than the mid-level significance **MUST** be included in this subsection. Provider systems **MUST NOT** include problems without a significance level in this subsection (for example, if significance is not mandatory).
 
 Provider systems supporting inactive problems but not supporting clearly defined significance levels **MUST** return all inactive problems in the 'Other Problems and Issues' subsection, and **MUST**:
 
  - return a subsection content banner to indicate that major problems included in the 'Other Problems and Issues' subsection
- - return an error message in place of the subsection table as detailed in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported) section 
+ - return an error message in place of the subsection table as detailed in the [HTML implementation guide - Not supported](accessrecord_development_html_implementation_guide.html#not-supported) section 
 
 Systems not supporting inactive problems **MUST**:
 
- - return an error message in place of the subsection table as detailed in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported) section
+ - return an error message in place of the subsection table as detailed in the [HTML implementation guide - Not supported](accessrecord_development_html_implementation_guide.html#not-supported) section
  - display a message in the section banner to indicate that any problems and issues recorded for the patient are included in the 'Active Problems and Issues' section
 
-Provider systems that do support major inactive problems, but when no records exist for the requested patient, **MUST** display the standard [HTML implementation guide - supported but hasn’t been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
+Provider systems that do support major inactive problems, but when no records exist for the requested patient, **MUST** display the standard [HTML implementation guide - Supported but hasn’t been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
 
 
 
@@ -171,10 +172,10 @@ Provider systems having 3 levels of significance **MUST** include inactive probl
 
 Provider systems not supporting inactive problems **MUST** display a message in the section banner to indicate:
 
- - inactive problems are not supported as in the [HTML Implementation Guide - Not Supported](accessrecord_development_html_implementation_guide.html#not-supported) section
+ - inactive problems are not supported as in the [HTML implementation guide - Not supported](accessrecord_development_html_implementation_guide.html#not-supported) section
  - that any problems and issues recorded for the patient are included in the 'Active Problems and Issues' subsection
 
-Provider systems that do support inactive problems, but when no records exist for the requested patient, **MUST** display the standard [HTML implementation guide - supported but hasn’t been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
+Provider systems that do support inactive problems, but when no records exist for the requested patient, **MUST** display the standard [HTML implementation guide - Supported but hasn’t been recorded](accessrecord_development_html_implementation_guide.html#supported-but-hasnt-been-recorded) message.
 
 
 ## HTML view ##
