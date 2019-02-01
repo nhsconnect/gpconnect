@@ -14,7 +14,7 @@ The headings below detail the elements of the `List` resource and describe how t
 
 {% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)." %}
 
 ## Using the List resource ##
 
@@ -35,20 +35,20 @@ The following table provides details of the warning codes that are to be used in
     <td>Associated text</td>
   </tr>
   <tr>
-    <td>Confidential items</td>
+    <td>Confidential Items</td>
     <td>confidential-items</td>
     <td>Items excluded due to confidentiality and/or patient preferences.</td>
-  </tr> 
+  </tr>
   <tr>
-    <td>Data in transit</td>
+    <td>Data in Transit</td>
     <td>data-in-transit</td>
     <td>Patient record transfer from previous GP practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded.</td>
-  </tr> 
+  </tr>
   <tr>
-    <td>Data awaiting filing</td>
+    <td>Data Awaiting Filing</td>
     <td>data-awaiting-filing</td>
     <td>Patient data may be incomplete as there is data supplied by a third party awaiting review before becoming available.</td>
-  </tr> 
+  </tr>
 </table>
 
 ### Confidential items
@@ -162,9 +162,9 @@ The purpose of the list.
 There are currently 3 possible purposes of a list in GP Connect that will be represented by the following SNOMED codes.
 1. Medications and medical devices - 933361000000108
 2. Allergies and adverse reactions - 886921000000105
-3. Ended allergies (record artifact) - 1103671000000101 
+3. Ended allergies - 1103671000000101
 
-The above code for 'Ended Allergies' should be used for resolved allergies this code is new at the time of publishing this version of the specification and will be included in the October 2018 SNOMED release.
+The above code for 'Ended allergies' should be used for resolved allergies this code is new at the time of publishing this version of the specification and will be included in the October 2018 SNOMED release.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
@@ -284,7 +284,7 @@ Reference to the item that is part of the list.
 
 Why the list is empty.
 
-A FHIR code of `No Content recorded` **SHALL** be used if a query returns no results to enter into a list. In this case the 'note' field **SHALL** be populated with the text 'Information not available'.
+A FHIR code of `No Content Recorded` **SHALL** be used if a query returns no results to enter into a list. In this case the 'note' field **SHALL** be populated with the text 'Information not available'.
 
 <h2 style="color:#ED1951;">List elements <b>not in use</b></h2>
 
@@ -313,4 +313,3 @@ The following elements **SHALL NOT** be populated:
     <td><b>Data type:</b> <code>Instant</code></td>
   </tr>
 </table>
-
