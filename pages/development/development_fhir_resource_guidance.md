@@ -7,13 +7,15 @@ permalink: development_fhir_resource_guidance.html
 summary: "Where to find details of what resources and operations a FHIR server should expose to be a fully compliant GP Connect solution"
 ---
 
-GP Connect has specified profiled versions of the international [FHIR Resources](https://www.hl7.org/fhir/STU3/){:target="_blank"}, tailoring them to meet the requirements of the GP Connect use cases and to aid in interoperability between systems.
+## Introduction
 
-When creating the profiled FHIR resources GP Connect have aimed to improve interoperability by:
+GP Connect versions 1.x use the [FHIR STU3](http://hl7.org/fhir/STU3/) standard to specify the API and profiles.
 
-* aligning, where possible, to the base FHIR profiles. GP Connect has also aligned, where possible, to the FHIR resource profiles produced by CareConnect and InterOpen
-* not making FHIR profile elements mandatory unless absolute certainty that this cardinality will apply for all existing and future use cases
-* applying must support flags to elements which hold key information within the resources
+## Profiling principles
+
+> Please see the [Data model principles](designprinciples_data_model_principles.html) page for further information.
+
+## Profiles for each capability pack
 
 The profiled FHIR resources required for each of the GP Connect capability packs are specified within the specific specification sections for each of the capabilities:
 

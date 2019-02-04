@@ -230,9 +230,9 @@
         "emptyReason": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/special-values",
-              "code": "nocontentrecorded",
-              "display": "No content recorded"
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-ListEmptyReasonCode-1",
+              "code": "no-content-recorded",
+              "display": "No Content Recorded"
             }
           ]
         },
