@@ -216,7 +216,7 @@ The purpose of this message is to make clear that a consumer specified date filt
 
 #### Default date ranges ####
 
-Where the consumer system has not supplied a date range, then where applicable and while the default is for ALL items to be provided, the following message **MUST** be supplied by the provider beneath the section/subsection header.
+Where the consumer system has not supplied a date range for a section which supports date filters, and while the default is for ALL items to be provided, the following message **MUST** be supplied by the provider beneath the section/subsection header.
 
 ```html
 <div class="date-banner">
