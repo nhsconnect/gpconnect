@@ -69,7 +69,7 @@ Where appropriate the following [Common User Interface (CUI)](http://webarchive.
 
 ### Medication representation ###
 
-[Medications Management - Medication Line](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig)
+[Medications Management - Medication Line](https://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/medline.pdf)
 
 {% include custominfocallout.html content="**Note:** All number formatting **MUST** follow the formatting applied in GP clinical supplier system providing the patient record." type="info" %}
 
