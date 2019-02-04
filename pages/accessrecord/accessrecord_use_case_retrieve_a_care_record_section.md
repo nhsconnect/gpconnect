@@ -91,7 +91,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 ```xml
 <OperationDefinition xmlns="http://hl7.org/fhir">
 	<id value="getcarerecord" />
-	<version value="0.7.0" />
+	<version value="0.7.1" />
 	<name value="Get Care Record" />
 	<status value="draft" />
 	<kind value="operation" />
@@ -150,7 +150,7 @@ On the wire a JSON serialised `$gpc.getcarerecord` request would look something 
 		"name": "patientNHSNumber",
 		"valueIdentifier": {
 			"system": "http://fhir.nhs.net/Id/nhs-number",
-			"value": "P003"
+			"value": "9480489457"
 		}
 	},
 	{
@@ -211,58 +211,194 @@ Provider systems:
 
 ```json
 {
-	"resourceType": "Bundle",
-	"meta": {
-		"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"]
-	},
-	"type": "searchset",
-	"entry": [{
-		"resource": {
-			"resourceType": "Patient",
-			"id": "3",
-			"meta": {
-				"versionId": "636038251035486239",
-				"lastUpdated": "2016-08-07T21:01:07.317+09:30",
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"]
-			},
-			"identifier": [{
-				"system": "http://fhir.nhs.net/Id/nhs-number",
-				"value": "P003"
-			}],
-			"name": [{
-				"use": "official",
-				"family": ["Downs"],
-				"given": ["Clare"],
-				"prefix": ["Mrs"]
-			}],
-			"gender": "female",
-			"birthDate": "19/01/1978"
-		}
-	},
-	{
-		"resource": {
-			"resourceType": "Composition",
-			"meta": {
-				"profile": ["http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"]
-			},
-			"text": {
-				"status": "generated"
-			},
-			"section": [{
-				"code": {
-					"coding": [{
-						"system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
-						"code": "ALL"
-					}]
-				},
-				"text": {
-					"status": "generated",
-					"div": "<div xmlns=\"http://www.w3.org/1999/xhtml\">\r\n    <h2>Current Allergies and Sensitivities</h2>\r\n    <table>\r\n        <thead>\r\n            <tr>\r\n                <td>\r\n                    <b>Start</b>\r\n                </td>\r\n                <td>\r\n                    <b>Details</b>\r\n                </td>\r\n            </tr>\r\n        </thead>\r\n        <tbody>\r\n            <tr>\r\n                <td>10 Mar 2014</td>\r\n                <td>Allergy to penicillin (disorder)</td>\r\n            </tr>\r\n        </tbody>\r\n    </table>\r\n</div>"
-				}
-			}]
-		}
-	}]
+   "resourceType": "Bundle",
+   "id": "48b4dc58-9c04-470d-a819-16fbb433daf9",
+   "type": "searchset",
+   "entry": [
+      {
+         "resource": {
+            "resourceType": "Composition",
+            "id": "77bf75df-3853-4b47-ab53-5edce53f8ee6",
+            "meta": {
+               "profile": [
+                  "http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"
+               ]
+            },
+            "date": "2017-02-24T13:51:00+00:00",
+            "title": "Patient Care Record",
+            "status": "final",
+            "subject": {
+               "reference": "Patient/7302348e-e090-4c5d-99e9-14147c266ebe"
+            },
+            "author": [
+               {
+                  "reference": "Device/f4d020c6-eaff-4528-83ba-e81a1cfd30dc"
+               }
+            ],
+            "custodian": {
+               "reference": "Hl7.Fhir.Model.Organization",
+               "display": "BRIDGE STREET SURGERY"
+            },
+            "section": [
+               {
+                  "title": "Allergies and Sensitivities",
+                  "code": {
+                     "coding": [
+                        {
+                           "system": "http://fhir.nhs.net/ValueSet/gpconnect-record-section-1",
+                           "code": "ALL"
+                        }
+                     ],
+                     "text": "Allergies and Sensitivities"
+                  },
+                  "text": {
+                     "status": "generated",
+                     "div": "<div><h1>Allergies and Adverse Reactions<\/h1><div><p><table><tr><td><p>All Data Items<\/p><\/td><\/tr><\/table><\/p><\/div><table><tr><td>Sensitive data has been excluded<\/td><\/tr><\/table><h2>Current Allergies and Adverse Reactions<\/h2><table><th>Start date<\/th><th>Details<\/th><tr><td>31 Oct 2016<\/td><td>Latex allergy<\/td><\/tr><\/table><h2>Historical Allergies and Adverse Reactions<\/h2><table><tr><td><p> This system does not support retrieval of Historical Allergies and Adverse Reactions data. <\/p><p>This data may still exist in the source system.<\/p><\/td><\/tr><\/table><\/div>"
+                  }
+               }
+            ]
+         }
+      },
+      {
+         "resource": {
+            "resourceType": "Patient",
+            "id": "7302348e-e090-4c5d-99e9-14147c266ebe",
+            "meta": {
+               "versionId": "1202600162206596780",
+               "profile": [
+                  "http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"
+               ]
+            },
+            "identifier": [
+               {
+                  "system": "http://fhir.nhs.net/Id/nhs-number",
+                  "value": "9480489457"
+               }
+            ],
+            "name": [
+               {
+                  "family": [
+                     "Dolby"
+                  ],
+                  "given": [
+                     "Ivan"
+                  ],
+                  "prefix": [
+                     "Mr"
+                  ]
+               }
+            ],
+            "gender": "male",
+            "birthDate": "1923-03-02",
+            "address": [
+               {
+                  "line": [
+                     "",
+                     "53 Burrett Road",
+                     ""
+                  ],
+                  "city": "Wisbech",
+                  "district": "0",
+                  "postalCode": "PE13 3RT"
+               }
+            ],
+            "careProvider": [
+               {
+                  "reference": "Practitioner/e26035eb-f0e6-4211-9997-6b5365a2eb76"
+               }
+            ]
+         }
+      },
+      {
+         "resource": {
+            "resourceType": "Organization",
+            "id": "cafe1615-9232-47ae-80ea-e554f943fd9b",
+            "meta": {
+               "versionId": "9045189372685666075",
+               "profile": [
+                  "http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"
+               ]
+            },
+            "identifier": [
+               {
+                  "system": "http://fhir.nhs.net/Id/ods-organization-code",
+                  "value": "D82015"
+               }
+            ],
+            "name": "BRIDGE STREET SURGERY",
+            "address": [
+               {
+                  "use": "work",
+                  "line": [
+                     "Fulford Grange, Micklefield Lane",
+                     "Rawdon",
+                     "Rawdon"
+                  ],
+                  "city": "Leeds",
+                  "district": "Yorkshire",
+                  "postalCode": "LS19 6BA"
+               }
+            ]
+         }
+      },
+      {
+         "resource": {
+            "resourceType": "Device",
+            "id": "5A084F08-29D0-4F5B-8809-D1F96578AFB1",
+            "meta": {
+               "versionId": "9008072080809363811",
+               "profile": [
+                  "http://fhir.nhs.net/StructureDefinition/gpconnect-device-1"
+               ]
+            },
+            "identifier": [
+               {
+                  "system": "EMIS",
+                  "value": "EMIS"
+               }
+            ]
+         }
+      },
+      {
+         "resource": {
+            "resourceType": "Practitioner",
+            "id": "e26035eb-f0e6-4211-9997-6b5365a2eb76",
+            "meta": {
+               "versionId": "5944618252807509908",
+               "profile": [
+                  "http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"
+               ]
+            },
+            "name": {
+               "family": [
+                  "Fidler"
+               ],
+               "given": [
+                  "Josh"
+               ],
+               "prefix": [
+                  "Mr"
+               ]
+            },
+            "address": [
+               {
+                  "use": "work",
+                  "line": [
+                     "Fulford Grange, Micklefield Lane",
+                     "Rawdon",
+                     "Rawdon"
+                  ],
+                  "city": "Leeds",
+                  "district": "Yorkshire",
+                  "postalCode": "LS19 6BA"
+               }
+            ],
+            "gender": "male"
+         }
+      }
+   ]
 }
+
 ```
 
 ## Examples ##
