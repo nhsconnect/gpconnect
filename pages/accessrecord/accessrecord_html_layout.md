@@ -12,7 +12,7 @@ tags:
 
 ## Purpose ##
 
-This document is intended for use by software developers looking to build a conformant GP Connect HTML care record viewer application.
+This document is intended for use by software developers, both provider supplier and consumer supplier, looking to build a conformant GP Connect HTML care record viewer application.
 
 ## Section layout ##
 
@@ -35,7 +35,7 @@ These views **MUST** have the following structure:
 ### HTML views with multiple tables ###
 HTML views with multiple tables and hence multiple subsections are:
  
-**Problems**, **Allergies**, **Medications**.
+**Summary**, **Problems and issues**, **Allergies and adverse reactions**, and **Medications**.
 
 These views **MUST** have the following structure:
 
@@ -165,16 +165,10 @@ Any content description for a section **MUST** be applicable to the whole sectio
 
 #### Subsection content banner ####
 
-Any exclusion descriptions for a subsection **MUST** be applicable to that subsection only. Where the exclusion description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **MUST NOT** be replicated as section content.
+Any content descriptions for a subsection **MUST** be applicable to that subsection only. Where the content description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **MUST NOT** be replicated as section content.
 
 
 ### Date banner ###
-
-The provider **MUST** supply all matching dates/times, for example, the period 2011-05-23 to 2011-05-27 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
-
-If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
-
-If no start date is supplied, the provider **MUST** supply all data until the end date.
 
 #### Applied date ranges ####
 
@@ -214,7 +208,7 @@ Where the consumer system has not supplied a date range, then where applicable a
 
 #### Per section default time frames ####
 
-Section default time frames **MUST** be configurable, by the provider, to be easily amendable if required in response to First of Type (FoT) feedback.
+Section default time frames **MUST** be configurable, by the provider, to be easily amendable if required.
 
 {% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback. A default time frame is only to be applied upon instruction by NHS Digital." type="warning" %}
 
@@ -226,14 +220,15 @@ Section default time frames **MUST** be configurable, by the provider, to be eas
 | **Clinical items**                  | `CLI`            | N/A                                         | Consumer supplied |
 | **Encounters**                      | `ENC`            | N/A                                         | Consumer supplied |
 | **Immunisations**                   | `IMM`            | N/A                                         | All               |
-| **Medications**                     | `MED`            | Recent Acute Medication                     | All               |
+| **Medications**                     | `MED`            | Acute Medication (Last 12 Months)           | All               |
 |                                     |                  | Current Repeat Medication                   | All               |
 |                                     |                  | Discontinued Repeat Medication              | All               |
 |                                     |                  | All Medication                              | Consumer supplied |
 |                                     |                  | All Medication Issues                       | Consumer supplied |
 | **Observations**                    | `OBS`            | N/A                                         | Consumer supplied |
 | **Problems and issues**             | `PRB`            | Active problems and issues                  | All               |
-|                                     |                  | Inactive problems and issues                | Consumer supplied |
+|                                     |                  | Major inactive problems and issues          | Consumer supplied |
+|                                     |                  | Other inactive problems and issues          | Consumer supplied |
 | **Referrals**                       | `REF`            | N/A                                         | Consumer supplied |
 | **Summary**                         | `SUM`            | N/A                                         | All               |
 
@@ -270,6 +265,15 @@ The following message **MUST** be supplied by the provider if any items were exc
 	<p>Items excluded due to confidentiality and/or patient preferences</p>
 </div>
 ```
+
+## Date filters ##
+
+The provider **MUST** supply all matching dates/times, for example, the period 23-May-2018 to 27-May-2018 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
+
+If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
+
+If no start date is supplied, the provider **MUST** supply all data until the end date.
+
 
 ## Generic table construction requirements ##
 

@@ -18,7 +18,7 @@ A clinical observation is a repeatable data element recorded by health professio
 
 ## Purpose ##
 
-The purpose of this section is to enable the clinician to view and compare chronological data pertaining to a patient’s physical condition.
+The purpose of this section is to enable the clinician to view and compare chronological data pertaining to a patient's physical condition.
 
 ## Sections and subsections ##
 

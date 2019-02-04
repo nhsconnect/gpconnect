@@ -37,7 +37,7 @@ The section title **MUST** be 'Medications'.
 
 ## Date filter ##
 
-A date filter is applicable to this section. The date filter **MUST** be applied to the All Medication (Summary) and All Medication Issues subsections only. All other subsections **MUST** return all records as defined in the subsection descriptions below, subject to exclusions.
+A date filter is applicable to this section. The date filter **MUST** be applied to the All Medication and All Medication Issues subsections only. All other subsections **MUST** return all records as defined in the subsection descriptions below, subject to exclusions.
  
 ## Section content banner ##
 
@@ -169,7 +169,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 </table>
 </div>
 
-<sup><b>1</b></sup> Where the medication was Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the Type, for example, ‘Acute – Dentist’. If the medication item is identifiable as prescribed elsewhere but the type of organisation who prescribed it is not recorded, then the Type **MUST** be returned as ‘Acute – Unknown Prescriber’.
+<sup><b>1</b></sup> Where the medication was Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the Type, for example, 'Acute – Dentist'. If the medication item is identifiable as prescribed elsewhere but the type of organisation who prescribed it is not recorded, then the Type **MUST** be returned as 'Acute – Unknown Prescriber'.
 
 
 
@@ -305,8 +305,10 @@ Providers **MUST** return all the columns as described in the table below, sorte
 </table>
 </div>
 
-{% include custominfocallout.html content="**Note:** The medication below is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. See the All Medication Issues subsection for all repeat prescriptions issued." type="info" %}
 
+
+
+<div class="bs-callout bs-callout-info"><i class="fa fa-info-circle"></i> <strong>Note:</strong> If the provider system allows the repeat medication (course/template) details to be amend so it differs from the latest prescription issued, then <ul><li>the latest details for the medication (course/template) <strong>MUST</strong> be returned by the provider</li><li>a subsection banner message <strong>MUST</strong> be added such as: the medication below is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. See the All Medication Issues subsection for all repeat prescriptions issued.</li></ul></div>
 
 
 ## Discontinued Repeat Medication##
@@ -603,7 +605,7 @@ The subsection title **MUST** be 'All Medication Issues'.
 
 If a consumer submits a date filter for this section the dates will be applied as follows:
 
-The provider **MUST** return all medication issues which relate to the medication items returned for that subsection. This may result in records which have an issue date outside of the consumer date filter range.
+The provider **MUST** return all medication issues which relate to the medication items returned for the All Medication subsection. This may result in records which have an issue date outside of the consumer date filter range.
 
 ### Subsection content banner ###
 
@@ -711,7 +713,7 @@ Details of change to follow as a comment:
 - **Cancelled**: Actively stopped acute medication by user
 - **Discontinued**: Actively stopped repeat medication by user
 
-Naturally Ended medications **MUST NOT** be included in the Discontinued Repeat Medication subsection and end date and reason **MUST NOT** be included in Additional Information in Recent Acute Medications or the Discontinuation Details in All Medication (Summary).
+Naturally Ended medications **MUST NOT** be included in the Discontinued Repeat Medication subsection and end date and reason **MUST NOT** be included in Additional Information in Recent Acute Medications or the Discontinuation Details in All Medication.
 
 If a system provider cannot differentiate between naturally ended, discontinued and cancelled section/subsection, banner message(s) **MUST** be included as appropriate to describe the extent or limitation of compliance.
 
@@ -722,7 +724,7 @@ All subsections (except All Medication Issues) **MUST** include items which are 
 
 ### GP2GP transfer ###
 
-Repeat medications transferred as part of GP2GP **MUST** only be included in the Current Repeat Medications subsection if authorised by a clinician at the new practice, otherwise they are treated as not current. Therefore, they appear in All Medication (Summary) and All Medication Issues, but not in Current Repeat Medication.
+Repeat medications transferred as part of GP2GP **MUST** only be included in the Current Repeat Medications subsection if authorised by a clinician at the new practice, otherwise they are treated as not current. Therefore, they appear in All Medication and All Medication Issues, but not in Current Repeat Medication.
  
 
 

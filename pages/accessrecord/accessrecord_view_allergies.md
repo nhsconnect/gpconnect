@@ -12,9 +12,9 @@ summary: "Allergies HTML view"
 | ------------ | ------------ |-----|------|------|-----------|
 | ALL | Allergies and Adverse Reactions| Yes | Yes<sup>1</sup> | Yes<sup>2</sup> | Yes |
 
-<sup>1</sup> EMIS have indicated that they are including all allergies & sensitivities in the ‘Current Allergies …..’ section
+<sup>1</sup> EMIS have indicated that they are including all allergies & sensitivities in the 'Current Allergies …..' section
 
-<sup>2</sup> Vision have indicated they don’t record end dates for allergies & sensitivities. Hence, no History view is possible
+<sup>2</sup> Vision have indicated they don't record end dates for allergies & sensitivities. Hence, no History view is possible
 
 ## Clinical narrative ##
 
@@ -33,7 +33,7 @@ Contains two subsections:
 
 ## Section title ##
 
-The section title **MUST** be ‘Allergies and Adverse Reactions’.
+The section title **MUST** be 'Allergies and Adverse Reactions'.
  
 ## Date filter ##
 
@@ -57,7 +57,7 @@ The purpose of this section is to provide the clinician with a list of current a
 
 ### Subsection title ###
 
-The subsection title **MUST** be "Current Allergies and Adverse Reactions".
+The subsection title **MUST** be 'Current Allergies and Adverse Reactions'.
 
 ### Subsection content banner ###
 
@@ -85,7 +85,7 @@ The purpose of this section is to provide the clinician with a list of historica
 
 ### Subsection title ###
 
-The subsection title **MUST** be "Historical Allergies and Adverse Reactions".
+The subsection title **MUST** be 'Historical Allergies and Adverse Reactions'.
 
 ### Subsection content banner ###
 

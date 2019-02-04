@@ -28,7 +28,7 @@ There is a single main section for clinical items with no subsections.
 
 ## Section title ##
 
-The section title **MUST** be "Clinical Items".
+The section title **MUST** be 'Clinical Items'.
 
 ## Date filter ##
 

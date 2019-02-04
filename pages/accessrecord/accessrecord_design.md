@@ -45,7 +45,7 @@ If the patient's record is indicated in the provider system as not fully-integra
 - <span class="label label-success">SELECTED</span> provider to supply a warning that the record could be incomplete
 - other
 
-<span class="label label-info">DECISION</span> The provider **MUST** display a banner message when a record in in-transit.
+<span class="label label-info">DECISION</span> The provider **MUST** display a banner message when a record is in-transit.
 
 
 ### Record locking ###

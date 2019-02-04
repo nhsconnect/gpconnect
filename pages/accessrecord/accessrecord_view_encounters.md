@@ -25,7 +25,7 @@ An encounter is an interaction between a patient and a health care professional 
 
 ## Purpose ##
 
-The purpose of supplying encounters within GP Connect is to allow a clinician to view a history of a patient’s interactions with a clinician or an HCP.
+The purpose of supplying encounters within GP Connect is to allow a clinician to view a history of a patient's interactions with a clinician or an HCP.
 
 ## Sections and subsections ##
 
@@ -33,7 +33,7 @@ There is a single main section for encounters with no subsections.
 
 ## Section title ##
 
-The section title **MUST** be "Encounters".
+The section title **MUST** be 'Encounters'.
 
 ## Date filter ##
 

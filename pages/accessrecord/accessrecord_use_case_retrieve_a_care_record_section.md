@@ -77,7 +77,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarere
 
 The following data-elements are mandatory (meaning, data **MUST** be present):
 
-- the `patientNHSNumber` is the NHS Number of the patient whose GP care record you want to access
+- the `patientNHSNumber` is the NHS Number of the patient who's GP care record you want to access
 - the `recordSection` is the GP care record section you wish to retrieve
 
 The following data-elements are optional (meaning, **MAY** be supplied for certain care record sections):
@@ -139,7 +139,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 </OperationDefinition>
 ```
 
-{% include custominfocallout.html content="**Important:** Provider systems **MUST** only expose `Patient` resources for patients who have a valid PDS trace status." type="warning" %}
+{% include custominfocallout.html content="**Important:** Provider systems **MUST** only expose `Patient` resources for patient's who have a valid PDS trace status." type="warning" %}
 
 On the wire a JSON serialised `$gpc.getcarerecord` request would look something like the following:
 

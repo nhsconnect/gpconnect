@@ -80,6 +80,7 @@ Consumer systems **MUST** present a patient banner above the HTML content return
 [Patient Banner](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)<br/>
 [Patient Banner - Quick Implementation Guide](http://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/patben.pdf)
 
+
 ## Minimum display resolution ##
 
 This guidance is applicable to user interfaces displayed on desktop or laptop computers. It is assumed that, at a minimum, these computers are capable of operating at a minimum display resolution of **1024 x 768** and have a keyboard and pointing device.
@@ -215,7 +216,7 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `med-tab-all-iss`  | Applied within the `<table>` tag of the All Medication Issues table                      | Medications
 | `obs-tab`          | Applied within the `<table>` tag of the Observations table                               | Observations
 | `prb-tab-act`      | Applied within the `<table>` tag of the Active Problems and Issues table                 | Problems and Issues & Summary
-| `prb-tab-majinact` | Applied within the `<table>` tag of the Major Inactive Problems and Issues table         | Problems and Issues  & Summary
+| `prb-tab-majinact` | Applied within the `<table>` tag of the Major Inactive Problems and Issues table         | Problems and Issues & Summary
 | `prb-tab-othinact` | Applied within the `<table>` tag of the Other Inactive Problems and Issues table         | Problems and Issues
 | `ref-tab`          | Applied within the `<table>` tag of the Referrals table                                  | Referrals
 

@@ -10,6 +10,6 @@ toc: false
 
 ## Retrieve a care record section ##
 
-For example, when viewing the patient's care record summary:
+For example when viewing the patient's care record summary:
 
 ![Retrieve a care record section](images/accessrecord/Retrieve a care record section.png)

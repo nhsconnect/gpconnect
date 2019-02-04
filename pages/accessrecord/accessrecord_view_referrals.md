@@ -18,7 +18,7 @@ This is a request for transfer of care or request to provide assessment, treatme
 
 ## Purpose ##
 
-The purpose of this section is to provide details of any referrals to other care providers.
+The purpose of this section is to provide details of any referrals to or from other care providers.
 
 ## Sections and subsections ##
 
@@ -26,7 +26,7 @@ There is only a single main section for Referrals with no subsections.
 
 ## Section title ##
 
-The section title **MUST** be "Referrals".
+The section title **MUST** be 'Referrals'.
 
 ## Date filter ##
 
@@ -43,8 +43,8 @@ Providers must return all the columns as described in the table below, sorted by
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the referral | `dd-Mmm-yyyy` |
-| <center>2</center> | `From` | Practitioner or Organization referred from | `free-text` |
-| <center>3</center> | `To` | Practitioner or Organization referred to | `free-text` |
+| <center>2</center> | `From` | Practitioner or Organisation referred from | `free-text` |
+| <center>3</center> | `To` | Practitioner or Organisation referred to | `free-text` |
 | <center>4</center> | `Priority` | The priority of the referral | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the referral | `free-text` |
 

@@ -26,7 +26,7 @@ There is only a single main section for the Immunisations section with no subsec
 
 ## Section title ##
 
-The section title **MUST** be "Immunisations".
+The section title **MUST** be 'Immunisations'.
 
 ## Date filter ##
 

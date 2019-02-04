@@ -21,17 +21,17 @@ Timely sharing of clinical information is key to the delivery and improvement of
 
 ## Purpose ##
 
-The purpose of this section is to provide a summarised view of the pertinent clinical information regarding a patient within a single screen. This allows a clinician to efficiently peruse key information from the patient’s clinical record and supports clinical decision making.
+The purpose of this section is to provide a summarised view of the pertinent clinical information regarding a patient within a single view. This allows a clinician to efficiently peruse key information from the patient's clinical record and supports clinical decision making.
 
 ## Sections ##
 
-There is only a single main section for the summary section with five subsections:
+There is only a single main section for the summary section with six subsections:
 
  - [Last 3 Encounters](accessrecord_view_summary.html#last-3-encounters)
  - [Active Problems and Issues](accessrecord_view_summary.html#active-problems-and-issues)
  - [Major Inactive Problems and Issues](accessrecord_view_summary.html#major-inactive-problems-and-issues)
  - [Current Allergies and Adverse Reactions](accessrecord_view_summary.html#current-allergies-and-adverse-reactions)
- - [Recent Acute Medication](accessrecord_view_summary.html#current-medication-issues)
+ - [Acute Medication (Last 12 Months)](accessrecord_view_summary.html#acute-medication-issues-last-12-months)
  - [Current Repeat Medications](accessrecord_view_summary.html#current-repeat-medications)
 
  
@@ -47,7 +47,7 @@ Provider message describing at a summary level how they have populated this sect
 
 ### Last 3 Encounters ###
 
-This section is an exact replica of the Encounters section with a filter applied to show the three most recent encounters. Further details about this section can be found there including any date range filtering and business rules.
+This section is an exact replica of the Encounters section with a filter applied to show the three most recent encounters. Further details about this section can be found there, including any business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Encounters](accessrecord_view_encounters.html) section. " type="primary" %} 
 
@@ -56,14 +56,14 @@ This section is an exact replica of the Encounters section with a filter applied
 
 ### Active Problems and Issues ###
 
-This section is an exact replica of the Active Problems and Issues subsection, which is the first subsection within the Problems and issues section. Further details about this subsection can be found there, including any business rules.
+This section is an exact replica of the Active Problems and Issues subsection, which is the first subsection within the Problems and Issues section. Further details about this subsection can be found there, including any business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Active problems and issues](accessrecord_view_problems.html#active-problems-and-issues) section." type="primary" %} 
 
 
 ### Major Inactive Problems and Issues ###
 
-This section is an exact replica of the Major Inactive Problems and Issues subsection, which is the second subsection within the Problems and issues section. Further details about this subsection can be found there, including any date range filtering and business rules.
+This section is an exact replica of the Major Inactive Problems and Issues subsection, which is the second subsection within the Problems and Issues section. Further details about this subsection can be found there, including any business rules.
 
 {% include callout.html content="Please see HTML guidance in the [Major inactive problems and issues](accessrecord_view_problems.html#major-inactive-problems-and-issues) section." type="primary" %} 
 
