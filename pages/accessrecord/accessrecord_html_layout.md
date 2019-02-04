@@ -165,7 +165,7 @@ Any content description for a section **MUST** be applicable to the whole sectio
 
 #### Subsection content banner ####
 
-Any content descriptions for a subsection **MUST** be applicable to that subsection only. Where the content description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection exclusion description **MUST NOT** be replicated as section content.
+Any content descriptions for a subsection **MUST** be applicable to that subsection only. Where the content description applies to more than one subsection (but not all), it **MUST** be repeated in the applicable subsections. A subsection content description **MUST NOT** be replicated as section content.
 
 
 ### Date banner ###
