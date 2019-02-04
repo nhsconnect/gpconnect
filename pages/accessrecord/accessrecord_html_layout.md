@@ -170,12 +170,12 @@ Any content descriptions for a subsection **MUST** be applicable to that subsect
 
 ### Date banner ###
 
-A date banner **MUST NOT** be returned for sections which do not support time frames. For sections which support time frames, the following date banners **MUST** be returned as applicable.
+A date banner **MUST NOT** be returned for sections which do not support a date filter. See individual HTML views for section date filters supported. For sections which support date filters, the following date banners **MUST** be returned as applicable. 
 
 
 #### Applied date ranges ####
 
-Provider systems **MUST** return the date range applied to a section's data, where applicable, beneath the section/subsection header.
+Provider systems **MUST** return the consumer date range applied to a section's data, where applicable, beneath the section/subsection header.
 
 If consumer start date and end date applied:
 
@@ -203,7 +203,7 @@ If no consumer start date applied:
 
 #### Not applied date ranges ####
 
-In the event of a date filter being applied, subsections not supporting a date filter **MUST** display the following:
+In the event of a consumer date range being applied to a section, subsections not supporting a date filter **MUST** display the following:
 
 ```html
 <div class="date-banner">
