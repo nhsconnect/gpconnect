@@ -170,13 +170,14 @@ Any content descriptions for a subsection **MUST** be applicable to that subsect
 
 ### Date banner ###
 
-A date banner **MUST NOT** be returned for sections which do not support time frames. For sections and subsections which support time frames, the following date banners **MUST** be returned as applicable.
+A date banner **MUST NOT** be returned for sections which do not support time frames. For sections which support time frames, the following date banners **MUST** be returned as applicable.
 
-Consumer systems **MUST** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section/subsection header.
 
 #### Applied date ranges ####
 
-Consumer systems **MUST** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section header.
+Provider systems **MUST** return the date range applied to a section's data, where applicable, beneath the section/subsection header.
+
+If consumer start date and end date applied:
 
 ```html
 <div class="date-banner">
@@ -184,7 +185,7 @@ Consumer systems **MUST** display the date range applied to a section's data, as
 </div>
 ```
 
-If no consumer end date: 
+If no consumer end date applied: 
 
 ```html
 <div class="date-banner">
@@ -192,7 +193,7 @@ If no consumer end date:
 </div>
 ``` 
 
-If no consumer start date:
+If no consumer start date applied:
 
 ```html
 <div class="date-banner">
@@ -200,9 +201,22 @@ If no consumer start date:
 </div>
 ``` 
 
+#### Not applied date ranges ####
+
+In the event of a date filter being applied, subsections not supporting a date filter **MUST** display the following:
+
+```html
+<div class="date-banner">
+	<p>Date filter not applied</p> 
+</div>
+``` 
+
+The purpose of this message is to make clear that a consumer specified date filter has not been applied to the subsection(s), which does not support date filters.
+
+
 #### Default date ranges ####
 
-Where the consumer system has not supplied a date range, then where applicable and while the default is for ALL items to be provided, the following message **MUST** be supplied by the provider and displayed by the consumer system beneath the section header.
+Where the consumer system has not supplied a date range, then where applicable and while the default is for ALL items to be provided, the following message **MUST** be supplied by the provider beneath the section/subsection header.
 
 ```html
 <div class="date-banner">
@@ -242,11 +256,11 @@ Date filtering is not applicable to all views and for those supporting date filt
 |Section                              | Section code     | Subsections                                 | Time frame        |
 |-------------------------------------|:----------------:|-------------------------------------------- |-------------------|
 | **Administrative items**            | `ADM`            | N/A                                         | Consumer supplied |
-| **Allergies and adverse reactions** | `ALL`            | Current allergies and adverse reactions     | All               |
-|                                     |                  | Historical allergies and adverse reactions  | All               |
+| **Allergies and adverse reactions** | `ALL`            | Current allergies and adverse reactions     | N/A               |
+|                                     |                  | Historical allergies and adverse reactions  | N/A               |
 | **Clinical items**                  | `CLI`            | N/A                                         | Consumer supplied |
 | **Encounters**                      | `ENC`            | N/A                                         | Consumer supplied |
-| **Immunisations**                   | `IMM`            | N/A                                         | All               |
+| **Immunisations**                   | `IMM`            | N/A                                         | N/A               |
 | **Medications**                     | `MED`            | Acute Medication (Last 12 Months)           | All               |
 |                                     |                  | Current Repeat Medication                   | All               |
 |                                     |                  | Discontinued Repeat Medication              | All               |
@@ -257,26 +271,36 @@ Date filtering is not applicable to all views and for those supporting date filt
 |                                     |                  | Major inactive problems and issues          | Consumer supplied |
 |                                     |                  | Other inactive problems and issues          | Consumer supplied |
 | **Referrals**                       | `REF`            | N/A                                         | Consumer supplied |
-| **Summary**                         | `SUM`            | N/A                                         | All               |
+| **Summary**                         | `SUM`            | N/A                                         | N/A               |
 
 
-The default time frame **MUST** be configurable in unit of month(s).
+The default time frame **MUST** be configurable in unit of month(s). It **MUST** be configurable by section (meaning, different sections can be configured with different defaults).
 
-When a default time frame is applied at system level the following requirements **MUST** be adhered to:
+When a default time frame is applied at section level the following requirements **MUST** be adhered to:
 
 - any section/subsection listed in the table above with a time frame of 'All' **MUST** return all data regardless of the default time frame applied
 - any section/subsection listed with 'Consumer supplied' **MUST** only apply the default time frame when the consumer does not provide any date filter values
-  - a default date filter **MUST NOT** override a consumer supplied date filter value i.e. the provider **MUST** return the full period as selected by the user
+  - a default date filter **MUST NOT** override a consumer supplied date filter value, meaning, the provider **MUST** return the full period as selected by the user
 - any section listed with a mix of 'All' and 'Consumer supplied' **MUST** apply the above requirements at the relevant subsection levels
 
-When applying a default time frame the following message **MUST** be supplied by the provider and displayed by the consumer system:
+When applying a default time frame the following messages **MUST** be supplied by the provider:
+
+Subsection's time frame 'Consumer supplied'
 
 ```html
 <div class="date-banner">
-            <p> All data items from [SysDate – DefaultDatePeriod]</p>
+    <p> All data items from [SysDate – DefaultDatePeriod]</p>
 </div>
+```
 
+Subsection's time frame 'All'
+
+```html
+<div class="date-banner">
+	<p>Date filter not applied</p>
+</div>
 ``` 
+
 
 Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
 
