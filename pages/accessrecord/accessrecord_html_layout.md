@@ -170,6 +170,10 @@ Any content descriptions for a subsection **MUST** be applicable to that subsect
 
 ### Date banner ###
 
+A date banner **MUST NOT** be returned for sections which do not support time frames. For sections and subsections which support time frames, the following date banners **MUST** be returned as applicable.
+
+Consumer systems **MUST** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section/subsection header.
+
 #### Applied date ranges ####
 
 Consumer systems **MUST** display the date range applied to a section's data, as supplied by the provider where applicable, beneath the section header.
@@ -206,9 +210,32 @@ Where the consumer system has not supplied a date range, then where applicable a
 </div>
 ``` 
 
-#### Per section default time frames ####
 
-Section default time frames **MUST** be configurable, by the provider, to be easily amendable if required.
+### Section exclusion banner ###
+
+Exclusions may be applied to the section/subsections in various circumstances. Where any exclusions have been applied a message banner **MUST** be included. As shown in the layout, the exclusion banner will only be included against the specific table where exclusions have been applied. Therefore, it will only be at section level where it is a single table section.
+
+The following message **MUST** be supplied by the provider if any items were excluded for these reasons:
+
+
+```html
+<div class="exclusion-banner">
+	<p>Items excluded due to confidentiality and/or patient preferences</p>
+</div>
+```
+
+## Date filters ##
+
+The provider **MUST** supply all matching dates/times, for example, the period 23-May-2018 to 27-May-2018 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
+
+If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
+
+If no start date is supplied, the provider **MUST** supply all data until the end date.
+
+
+## Per section default time frames ##
+
+Date filtering is not applicable to all views and for those supporting date filtering it may not be applicable to all subsections.
 
 {% include custominfocallout.html content="**Information:** Section default time frames to be reviewed following FoT feedback. A default time frame is only to be applied upon instruction by NHS Digital." type="warning" %}
 
@@ -252,28 +279,6 @@ When applying a default time frame the following message **MUST** be supplied by
 ``` 
 
 Provider systems **MUST** return a HTTP *Bad Request* `400` error response if a date range is specified for a section that does not support filtering by a consumer supplied date range.
-
-### Section exclusion banner ###
-
-Exclusions may be applied to the section/subsections in various circumstances. Where any exclusions have been applied a message banner **MUST** be included. As shown in the layout, the exclusion banner will only be included against the specific table where exclusions have been applied. Therefore, it will only be at section level where it is a single table section.
-
-The following message **MUST** be supplied by the provider if any items were excluded for these reasons:
-
-
-```html
-<div class="exclusion-banner">
-	<p>Items excluded due to confidentiality and/or patient preferences</p>
-</div>
-```
-
-## Date filters ##
-
-The provider **MUST** supply all matching dates/times, for example, the period 23-May-2018 to 27-May-2018 includes all items with times from the start of the 23rd May through to the end of the 27th of May.
-
-If no end date is supplied, the provider **MUST** supply all data from start date onwards (including future where applicable).
-
-If no start date is supplied, the provider **MUST** supply all data until the end date.
-
 
 ## Generic table construction requirements ##
 
