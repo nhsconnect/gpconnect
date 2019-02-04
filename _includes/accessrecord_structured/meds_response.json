@@ -396,9 +396,7 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
+            "code": "d",
             "value": "28",
             "unit": "day",
             "system": "http://unitsofmeasure.org"
