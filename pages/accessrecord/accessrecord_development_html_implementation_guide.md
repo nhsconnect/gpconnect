@@ -212,7 +212,7 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `med-tab-rec-acu`  | Applied within the `<table>` tag of the Recent Acute Medication table                    | Medications & Summary
 | `med-tab-curr-rep` | Applied within the `<table>` tag of the Current Repeat Medication table                  | Medications & Summary
 | `med-tab-dis-rep`  | Applied within the `<table>` tag of the Discontinued Repeat Medication table             | Medications
-| `med-tab-all-sum`  | Applied within the `<table>` tag of the All Medication (Summary) table                   | Medications
+| `med-tab-all-sum`  | Applied within the `<table>` tag of the All Medication table                             | Medications
 | `med-tab-all-iss`  | Applied within the `<table>` tag of the All Medication Issues table                      | Medications
 | `obs-tab`          | Applied within the `<table>` tag of the Observations table                               | Observations
 | `prb-tab-act`      | Applied within the `<table>` tag of the Active Problems and Issues table                 | Problems and Issues & Summary
