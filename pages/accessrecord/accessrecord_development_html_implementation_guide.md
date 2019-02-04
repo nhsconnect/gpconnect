@@ -209,7 +209,7 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `cli-tab`          | Applied within the `<table>` tag of the Clinical Item table                              | Clinical Items
 | `enc-tab`          | Applied within the `<table>` tag of the Encounters table                                 | Encounters & Summary
 | `imm-tab`          | Applied within the `<table>` tag of the Immunisations table                              | Immunisations
-| `med-tab-rec-acu`  | Applied within the `<table>` tag of the Recent Acute Medication table                    | Medications & Summary
+| `med-tab-rec-acu`  | Applied within the `<table>` tag of the Acute Medication (Last 12 Months)                | Medications & Summary
 | `med-tab-curr-rep` | Applied within the `<table>` tag of the Current Repeat Medication table                  | Medications & Summary
 | `med-tab-dis-rep`  | Applied within the `<table>` tag of the Discontinued Repeat Medication table             | Medications
 | `med-tab-all-sum`  | Applied within the `<table>` tag of the All Medication table                             | Medications
