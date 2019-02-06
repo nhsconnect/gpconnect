@@ -1,7 +1,7 @@
 ---
 title: Postman API examples
 keywords: system, reference, postman, api
-tags: [system,reference]
+tags: [explore,system,reference]
 sidebar: overview_sidebar
 permalink: system_reference_postman.html
 summary: "API documentation for the GP Connect FHIR API"
