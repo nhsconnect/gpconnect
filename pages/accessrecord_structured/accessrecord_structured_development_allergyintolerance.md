@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below list the elements of the AllergyIntolerance resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)." %} 
 
@@ -180,11 +180,11 @@ Some systems allow explicit identification of adverse reactions and intolerances
   </tr>
 </table>
 
-Use `medication` for all drug allergy types, `environmental` for all non-drug allergies. The other values in the ValueSet (food and biologic) **MUST NOT** be used.
+Use `medication` for all drug allergy types, `environment` for all non-drug allergies. The other values in the ValueSet (food and biologic) **MUST NOT** be used.
 
 It is expected that it will always be possible to assign a category of ‘medication’ for drug allergies or ‘environmental’ for all other types of allergy/intolerance. Generally, the choice in a given system is explicit. The GP suppliers MUST follow the categorisation already in use in populating the GP2GP message.
 
-In some cases, the type of allergy/intolerance may be more general - for example, a system designated type of `Other` or equivalent. In such cases, if the allergy/intolerance entry interacts with prescribing decision support it **MUST** be assigned a category of `medication`. Otherwise, the category of `environmental` **MUST** be used.
+In some cases, the type of allergy/intolerance may be more general - for example, a system designated type of `Other` or equivalent. In such cases, if the allergy/intolerance entry interacts with prescribing decision support it **MUST** be assigned a category of `medication`. Otherwise, the category of `environment` **MUST** be used.
 
 ### criticality ###
 

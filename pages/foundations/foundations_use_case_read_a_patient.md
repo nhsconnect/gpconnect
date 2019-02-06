@@ -139,7 +139,7 @@ Provider systems:
               {
                 "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
                 "code": "bn",
-                "display": "Main spoken language Bengali"
+                "display": "Bengali"
               }
             ]
           }

@@ -89,7 +89,7 @@ Within the `Patient` resource:
 
 - The following fields SHOULD be populated, to create the patient's record in the provider system:
   - `gender`
-  - `address` with the patient's address(es). No more than one instance of each `use` SHALL be populated.
+  - `address` with the patient's home address, with the `use` of `home`. No more than one instance of this `use` SHALL be populated.
   - `telecom` with the patient's telephone number(s), with `use` of `home`, `work` or `mobile`, and `system` of `phone`. No more than one instance of each `use` SHALL be populated.
   - `telecom` with the patient's email address if available, with `system` of `email`. No more than one instance of this SHALL be populated.
   - a single instance of `nhsCommunication` if available, specifically the `language` and `interpreterRequired` sub-elements
@@ -97,8 +97,8 @@ Within the `Patient` resource:
     {% include important.html content="If the above *\"SHOULD\"* fields are not provided, the provider system will use demographics retrieved from PDS in order to create the patient's record." %}
 
 - The following fields MAY be populated in order to record temporary details known to the consuming system:
+  - `address` with temporary address details, with the `use` of `temp`.  No more than one instance of this `use` SHALL be populated.
   - `telecom` with temporary telephone details, with the `use` of `temp` and `system` of `phone`.  No more than one instance of this SHALL be populated.
-  - `address` with temporary address details, with the `use` of `temp`.  No more than one instance of this SHALL be populated.
 
 - **All other fields MUST NOT be populated.**
 
