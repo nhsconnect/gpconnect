@@ -4,6 +4,7 @@ keywords: clinical, provider
 tags: [provider,clinical]
 sidebar: overview_sidebar
 permalink: overview_clinical_system_supplier.html
+pathways: [provider]
 ---
 
 **Under construction**
