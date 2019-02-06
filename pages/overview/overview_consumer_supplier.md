@@ -5,6 +5,7 @@ tags: [consumer]
 sidebar: overview_sidebar
 permalink: overview_consumer_supplier.html
 toc: false
+pathways: [consumer]
 summary: Step-by-step guide to developing consumer applications
 ---
 
