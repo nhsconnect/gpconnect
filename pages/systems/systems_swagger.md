@@ -1,7 +1,7 @@
 ---
 title: Interactive API documentation
 keywords: system, reference, postman, api
-tags: [system,reference]
+tags: [explore,system,reference]
 sidebar: overview_sidebar
 permalink: system_swagger.html
 summary: "Interactive API documentation for the GP Connect FHIR API"
