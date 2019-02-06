@@ -373,8 +373,8 @@ a.accordion-toggle, a.accordion-collapsed {
 }
 
 .nav a:hover, .nav li.active > a {
-    background-color: #8D8D8D;
-    color: #f5f5f5;
+    background-color: #0068cc;
+    color: #fff;
 }
 
 .nav > li.active > a  {
@@ -488,7 +488,6 @@ figcaption {
     padding-bottom:12px;
     padding-top:6px;
     max-width: 90%;
-	text-align: center;
     margin-bottom:20px;
     font-style: italic;
     color: gray;
@@ -639,8 +638,8 @@ div#toc ul li ul li {
 }
 
 .tab-content {
-    padding: 0px;
-    background-color: #ffffff;
+    padding: 15px;
+    background-color: #FAFAFA;
 }
 
 span.tagTitle {font-weight: 500;}
@@ -1073,9 +1072,10 @@ table thead th code.highlighter-rouge {
 }
 
 #userMap .active {
-    background-color: #d6f5d6;
+    background-color: #005EB8;
     border:1px solid #555;
     font-weight: bold;
+	color: white;
 }
 
 h2.userMapTitle {
@@ -1124,8 +1124,8 @@ div.box.box1 {
 }
 
 #userMap .btn-lg {
-    width: 100px;
-    height: 80px;
+    width: 120px;
+    height: 60px;
 
 }
 
@@ -1292,21 +1292,6 @@ body ol {
 /* end fix */
 
 
-a.back-to-top {
-	display: none;
-	width: 60px;
-	height: 60px;
-	text-indent: -9999px;
-	position: fixed;
-	z-index: 999;
-	right: 20px;
-	bottom: 20px;
-	background: #27AE61 url("up-arrow.png") no-repeat center 43%;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
-	border-radius: 30px;
-}
-
 /* changes in btn for pathways */
 
 .consumer-btn {
@@ -1430,4 +1415,16 @@ a.back-to-top {
   white-space: nowrap;
   margin-top: 8px;
   margin-bottom: 8px;
+}
+
+.btn-provider {
+  color: #FDFEFE;
+  background-color: #AF7AC5;
+  border-color: #cccccc;
+}
+
+.btn-consumer {
+  color: #FDFEFE;
+  background-color: #005EB8;
+  border-color: #cccccc;
 }
