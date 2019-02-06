@@ -1,7 +1,7 @@
 ---
 title: Shuffle layout
 tags: [getting_started]
-keywords: shuffle, card layout, dynamic grid, doc portal, support portal
+keywords: shuffle
 summary: "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
 permalink: overview_shuffle.html
 sidebar: overview_sidebar
@@ -19,25 +19,29 @@ toc: false
 <script src="js/jquery.ba-throttle-debounce.min.js"></script>
 {% endunless %}
 
-      <div class="filter-options">
-      <button class="btn btn-primary" data-group="all">All</button>
-      <button class="btn btn-primary" data-group="getting_started">Getting Started</button>
-      <button class="btn btn-primary" data-group="view">HTML Views</button>
-      <button class="btn btn-primary" data-group="publishing">Publishing</button>
-      <button class="btn btn-primary" data-group="content-types">Content types</button>
-          <button class="btn btn-primary" data-group="single_sourcing">Single Sourcing</button>
-      <button class="btn btn-primary" data-group="special_layouts">Special Layouts</button>
-    </div>      
+<div class="filter-options">
+	<button class="btn btn-primary" data-group="all">All</button>
+	<button class="btn btn-primary" data-group="getting_started">Getting Started</button>
+	<button class="btn btn-primary" data-group="explore">Explore</button>
+	<button class="btn btn-primary" data-group="develop">Develop</button>
+	<button class="btn btn-primary" data-group="test-assure">Test and assure</button>
+	<button class="btn btn-primary" data-group="deploy">Deploy</button>
+	<button class="btn btn-primary" data-group="help-support">Help and support</button>
+	<button class="btn btn-primary" data-group="capabilities">Capabilities</button>
+</div>
+<div class="filter-options">
+	<button class="btn btn-provider" data-group="provider">Provider</button>
+	<button class="btn btn-consumer" data-group="consumer">Consumer</button>
+</div>      
 
 <div id="grid" class="row">
-
 
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["getting_started"]'>
 
                <div class="panel panel-default">
                <div class="panel-heading">Getting started</div>
                <div class="panel-body">
-                  If you're getting started with Jekyll, see the links in this section. It will take you from the beginning level to comfortable. 
+                  If you're getting started with GP Connect APIs, see the links in this section.
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
@@ -52,11 +56,10 @@ toc: false
     
     </div>
    
-
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["content-types"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["explore"]'>
 
         <div class="panel panel-default">
-            <div class="panel-heading">Content types</div>
+            <div class="panel-heading">Explore</div>
             <div class="panel-body">
                 This section lists different content types and how to work with them.
                 <ul>
@@ -75,16 +78,16 @@ toc: false
 
 
 
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["view"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["develop"]'>
 
                 <div class="panel panel-default">
-               <div class="panel-heading">HTML Views</div>
+               <div class="panel-heading">Develop</div>
                <div class="panel-body">
                   These topics get into formatting syntax, such as images and tables, that you'll use on each of your pages: 
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "view" %}
+                {% if tag == "development" %}
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -95,15 +98,15 @@ toc: false
 
     </div>
 
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["single_sourcing"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["test-assure"]'>
          
       <div class="panel panel-default">
-               <div class="panel-heading">Single Sourcing</div>
+               <div class="panel-heading">Test and assure</div>
                <div class="panel-body">These topics cover strategies for single_sourcing. Single sourcing refers to strategies for re-using the same source in different outputs for different audiences or purposes.
                <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "single_sourcing" %}
+                {% if tag == "testing" %}
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -114,15 +117,15 @@ toc: false
 
     </div>
 
-       <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["publishing"]'>
+       <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["deploy"]'>
 
            <div class="panel panel-default">
-               <div class="panel-heading">Publishing</div>
+               <div class="panel-heading">Deploy</div>
                <div class="panel-body">When you're building, publishing, and deploying your Jekyll site, you might find these topics helpful.
                    <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "publishing" %}
+                {% if tag == "deployment" %}
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -133,16 +136,16 @@ toc: false
 
     </div>
 
-        <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["special_layouts"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["help-support"]'>
 
              <div class="panel panel-default">
-               <div class="panel-heading">Special Layouts</div>
+               <div class="panel-heading">Help and support</div>
                <div class="panel-body">
                   These pages highlight special layouts outside of the conventional page and TOC hierarchy.
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "special_layouts" %}
+                {% if tag == "support" %}
                      <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -152,12 +155,77 @@ toc: false
             </div>
 
     </div>
+
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["capabilities"]'>
+
+             <div class="panel panel-default">
+               <div class="panel-heading">Capabilities</div>
+               <div class="panel-body">
+                  These pages highlight special layouts outside of the conventional page and TOC hierarchy.
+                  <ul>
+                {% for page in site.pages %}
+                {% for tag in page.tags %}
+                {% if tag == "capabilities" %}
+                     <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %} 
+                  </ul>
+               </div>
+            </div>
+
+    </div>
+	
+	<div class="col-xs-6 col-sm-4 col-md-4" data-groups='["provider"]'>
+
+               <div class="panel panel-default">
+               <div class="panel-heading">Provider</div>
+               <div class="panel-body">
+                  If you're getting started with GP Connect APIs, see the links in this section.
+                  <ul>
+                {% for page in site.pages %}
+                {% for pathway in page.pathways %}
+                {% if pathway == "provider" %}
+                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %} 
+                  </ul>
+               </div>
+            </div>
+    
+    </div>
+   
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["consumer"]'>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">Consumer</div>
+            <div class="panel-body">
+                This section lists different content types and how to work with them.
+                <ul>
+                {% for page in site.pages %}
+                {% for pathway in page.pathways %}
+                {% if pathway == "consumer" %}
+                <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+	
+	
+	
           <!-- sizer -->
       <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
 
 
     </div><!-- /#grid -->
+	
 
 {% unless site.output == "pdf" %}
 {% include initialize_shuffle.html %}
 {% endunless %}
+
