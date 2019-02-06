@@ -22,7 +22,7 @@ toc: false
       <div class="filter-options">
       <button class="btn btn-primary" data-group="all">All</button>
       <button class="btn btn-primary" data-group="getting_started">Getting Started</button>
-      <button class="btn btn-primary" data-group="formatting">Formatting</button>
+      <button class="btn btn-primary" data-group="view">HTML Views</button>
       <button class="btn btn-primary" data-group="publishing">Publishing</button>
       <button class="btn btn-primary" data-group="content-types">Content types</button>
           <button class="btn btn-primary" data-group="single_sourcing">Single Sourcing</button>
@@ -75,16 +75,16 @@ toc: false
 
 
 
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["formatting"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["view"]'>
 
                 <div class="panel panel-default">
-               <div class="panel-heading">Formatting</div>
+               <div class="panel-heading">HTML Views</div>
                <div class="panel-body">
                   These topics get into formatting syntax, such as images and tables, that you'll use on each of your pages: 
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "formatting" %}
+                {% if tag == "view" %}
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -161,6 +161,3 @@ toc: false
 {% unless site.output == "pdf" %}
 {% include initialize_shuffle.html %}
 {% endunless %}
-
-{{site.data.alerts.note}} This was mostly an experiment to see if I could break away from the hierarchical TOC and provide a different way of arranging the content. However, this layout is somewhat problematic because it doesn't allow you to browse other navigation options on the side while viewing a topic.{{site.data.alerts.end}}
-
