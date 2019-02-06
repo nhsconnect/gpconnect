@@ -1,7 +1,7 @@
 ---
 title: System demonstrator
 keywords: system, demonstrator
-tags: [system,demonstrator]
+tags: [explore,system,demonstrator]
 sidebar: overview_sidebar
 permalink: system_demonstrator.html
 summary: "Demonstrator implementation of the GP Connect FHIR API"
