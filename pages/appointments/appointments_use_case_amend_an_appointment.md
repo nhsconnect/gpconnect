@@ -15,7 +15,7 @@ The typical flow to amend an appointment is:
 
  1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
- 3. Choose an `Appointment` resource and update its `description` and/or `comment`.
+ 3. Choose an `Appointment` resource and update `description` and/or `comment` fields.
 
 Amending a cancelled appointment is NOT supported.
 
