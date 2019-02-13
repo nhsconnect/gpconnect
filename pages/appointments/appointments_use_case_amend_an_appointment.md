@@ -40,9 +40,9 @@ The consumer system:
 
 The consumer system SHALL only use the amend appointment capability to amend:
 
-  - future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
-  - appointments that have not been cancelled.  Providers SHALL return an error where an amendment to a cancelled appointment is received.
   - `description` or `comment` fields.  Providers SHALL return an error when any other field is amended.
+  - future appointments where appointment start date/time is after the current date/time. If the appointment start date/time is in the past the provider SHALL return an error.
+  - appointments that have not been cancelled.  Providers SHALL return an error where an amendment to a cancelled appointment is received.
 
 ### Request operation ###
 
@@ -77,6 +77,7 @@ The request payload is a profiled version of the standard FHIR [Appointment](htt
 Consumer systems:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
+- SHALL NOT amend an appointment with a status of `cancelled`
 
   {% include important.html content="It is recommended that Consumers read the Appointment they wish to amend (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
 
@@ -84,7 +85,6 @@ Only the following data-elements can be modified when performing an appointment 
 - `description`
 - `comment`
 
-- SHALL NOT amend an appointment with a status of `cancelled`
 
   {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
 
