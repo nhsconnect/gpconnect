@@ -73,12 +73,14 @@ As per the suggested FHIR workflow in the [FHIR Appointment](https://www.hl7.org
 What provision will be made for making changes to existing future appointments?
 
 - Only cancellation will be allowed (must cancel and re-book).
-- <span class="label label-success">SELECTED</span> Cancellation and amendments to the future Appointment Description and Comment, or Cancellation Reason are accommodated.
+- <span class="label label-success">SELECTED</span> Cancellation and amendments to the future Appointment Description and Comment are accommodated.
 - Cancel and comprehensive amendments will be provisioned for (allowing appointments to move between slots/rescheduled).
+
+Please note: Amending a cancelled appointment is not supported.
 
 Are appointment amendments and/or cancellations only able to be made by organisations which booked them originally?
 
-<span class="label label-success">SELECTED</span> Cancellation and amendments to future Appointment Description and Comment, or Cancellation Reason, can be made by any organisation participating in a GP Connect Appointment Management data-sharing agreement with the appointment hosting organisation.
+<span class="label label-success">SELECTED</span> Cancellation and amendments to future Appointment Description and Comment, can be made by any organisation participating in a GP Connect Appointment Management data-sharing agreement with the appointment hosting organisation.
 
 
 ## Tentative appointment booking ##
