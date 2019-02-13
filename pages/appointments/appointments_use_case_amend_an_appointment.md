@@ -9,13 +9,15 @@ summary: "Use case for amending an appointment for a patient with a given organi
 
 ## Use case ##
 
-This API is used to amend the Description or Comment, or Cancellation Reason where applicable, of a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.  Any appointment, ie irrespective of booking organisation, can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+This API is used to amend the `description` or `comment` fields of a patient's future appointment, obtained via either the [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html), or [Read an appointment](appointments_use_case_read_an_appointment.html) APIs.  Any appointment irrespective of booking organisation can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
 
 The typical flow to amend an appointment is:
 
  1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
- 3. Choose an `Appointment` resource and update its `description` and/or `comment`. If the appointment has been cancelled then the `cancellation reason` may also be updated.
+ 3. Choose an `Appointment` resource and update its `description` and/or `comment`.
+
+Amending a cancelled appointment is NOT supported.
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -36,7 +38,11 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the amend appointment capability to amend future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer system SHALL only use the amend appointment capability to amend:
+
+  - future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+  - appointments that have not been cancelled.  Providers SHALL return an error where an amendment to a cancelled appointment is received.
+  - `description` or `comment` fields.  Providers SHALL return an error when any other field is amended.
 
 ### Request operation ###
 
@@ -77,7 +83,8 @@ Consumer systems:
 Only the following data-elements can be modified when performing an appointment amendment:
 - `description`
 - `comment`
-- `Appointment cancellation reason` extension, which SHALL only be amended when the appointment status is `cancelled`.
+
+- SHALL NOT amend an appointment with a status of `cancelled`
 
   {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
 
@@ -165,12 +172,13 @@ On the wire a JSON serialised request would look something like the following:
 The provider system:
 
 - SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-- SHALL return an error if any appointment details other than the appointment `comment`, `description` or `cancellation reason` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
-- SHALL return an error if the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
-- SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
+- SHALL return an error where:
+  - any appointment details other than the appointment `comment` or `description` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
+  - the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
+  - the appointment has been cancelled.  Provider systems should return a `422` error with error code `INVALID_RESOURCE`.
+  - the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
-
 
 ### Request response ###
 
