@@ -9,10 +9,10 @@ summary: Start building applications that use GP Connect to consume or expose da
 
 **Introductory text to be provided by Jonny....**
 
-Develop a capability
-Integrate with Spine
-Implement the JWT
-Configure the TLS
+- Develop a capability
+- Integrate with Spine
+- Implement the JWT
+- Configure the TLS
 
 ## Consumer suppliers ##
 
