@@ -19,6 +19,19 @@ Text:
 - Talk thru flow of messages - link to further pages
 - Anatomy of a GPC request - link to further pages
 
+Accessing the APIs
+
+Diagram
+
+1. Make a request to PDS to retrieve patient's registered practice.
+2. Make a call to SDS to retrieve provider endpoint information.
+3. Using the endpoint information retrieved in step 2, make a request via SSP to the provider.
+4. SSP passes request to provider system.
+5. Provider returns data to SSP.
+6. SSP passes data to consumer.
+
+For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
+
 Things to consider:
 - XML vs JSON
 - toolkits
