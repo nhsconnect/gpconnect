@@ -21,7 +21,7 @@ Text:
 
 Accessing the APIs
 
-Diagram
+![Img](images/overview/gp_connect_apis.png)
 
 1. Make a request to PDS to retrieve patient's registered practice.
 2. Make a call to SDS to retrieve provider endpoint information.
