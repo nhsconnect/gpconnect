@@ -9,22 +9,13 @@ pathways: [consumer]
 summary: Step-by-step guide to developing consumer applications
 ---
 
-**Under construction**
-
-Include an architecture diagram:
-- systems to be integrated with
-- flow of messages
-
-Text:
-- Talk thru flow of messages - link to further pages
-- Anatomy of a GPC request - link to further pages
-
-Accessing the APIs
+Authorised consumer suppliers can use GP Connect to consume GP data via the Spine Secure Proxy (SSP). The SSP allows systems to retrieve HTTPS resources from selected provider systems in a secure and auditable way. Data is returned by means of the following steps:
 
 ![Img](images/overview/gp_connect_apis.png)
 
-1. Make a request to PDS to retrieve patient's registered practice.
-2. Make a call to SDS to retrieve provider endpoint information.
+#Key:#
+1. Make a request to the Personal Demographics Service (PDS) to retrieve patient's registered practice.
+2. Make a call to Spine Directory Service (SDS) to retrieve provider endpoint information.
 3. Using the endpoint information retrieved in step 2, make a request via SSP to the provider.
 4. SSP passes request to provider system.
 5. Provider returns data to SSP.
@@ -35,8 +26,6 @@ For more details on consumer request interactions, see the [SSP implementation g
 Things to consider:
 - XML vs JSON
 - toolkits
-
-As a consumer supplier, you want to use GP Connect to develop an API to consume GP data. 
 
 To get started:
 
