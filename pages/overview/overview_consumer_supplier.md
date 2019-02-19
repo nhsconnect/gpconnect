@@ -9,11 +9,13 @@ pathways: [consumer]
 summary: Step-by-step guide to developing consumer applications
 ---
 
-Authorised consumer suppliers can use GP Connect to consume GP data via the Spine Secure Proxy (SSP). The SSP allows systems to retrieve HTTPS resources from selected provider systems in a secure and auditable way. Data is returned by means of the following steps:
+Authorised consumer suppliers can use GP Connect to consume GP data.  via the Spine Secure Proxy (SSP). The SSP allows systems to retrieve HTTPS resources from selected provider systems in a secure and auditable way. Data is returned by means of the following steps:
+
+To consume GP data about a patient connects to the Spine to retrieve information about patient
 
 ![Img](images/overview/gp_connect_apis.png)
 
-#Key:#
+**Key:**
 1. Make a request to the Personal Demographics Service (PDS) to retrieve patient's registered practice.
 2. Make a call to Spine Directory Service (SDS) to retrieve provider endpoint information.
 3. Using the endpoint information retrieved in step 2, make a request via SSP to the provider.
@@ -32,7 +34,6 @@ To get started:
 - developer tools: demonstrator, postman
 - code samples
 - understanding FHIR
-- anatomy of a GP Connect call
 - read about the GP Connect [priority capabilities](overview_priority_capabilities.html).
 - look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
