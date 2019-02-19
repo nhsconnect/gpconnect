@@ -9,19 +9,17 @@ pathways: [consumer]
 summary: Step-by-step guide to developing consumer applications
 ---
 
-Authorised consumer suppliers can use GP Connect to consume GP data.  via the Spine Secure Proxy (SSP). The SSP allows systems to retrieve HTTPS resources from selected provider systems in a secure and auditable way. Data is returned by means of the following steps:
+As a consumer supplier, you want to use GP Connect to develop an API to consume GP data. To retrieve data from an end-user organisation, your system will need to integrate with the Spine as follows: 
 
-To consume GP data about a patient connects to the Spine to retrieve information about patient
-
-![Img](images/overview/gp_connect_apis.png)
-
-**Key:**
+**To request GP data through GP Connect**
 1. Make a request to the Personal Demographics Service (PDS) to retrieve patient's registered practice.
 2. Make a call to Spine Directory Service (SDS) to retrieve provider endpoint information.
-3. Using the endpoint information retrieved in step 2, make a request via SSP to the provider.
+3. Using the endpoint information retrieved in step 2, make a request via Spine Secure Proxy (SSP) to the provider.
 4. SSP passes request to provider system.
 5. Provider returns data to SSP.
 6. SSP passes data to consumer.
+
+![Img](images/overview/gp_connect_apis.png)
 
 For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
 
