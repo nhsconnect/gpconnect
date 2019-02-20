@@ -9,7 +9,7 @@ pathways: [consumer]
 summary: Step-by-step guide to developing consumer applications
 ---
 
-<p>As a consumer supplier, you want to use GP Connect to develop an {% include tooltip.html type="API" %} to consume GP data. To retrieve data from an end-user organisation, your system will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
+<p>As an authorised consumer supplier, you can develop an application that uses GP Connect FHIR® {% include tooltip.html type="API" %}  to consume GP data. To retrieve data from an end-user organisation, your application will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
 
 ![Img](images/overview/gp_connect_apis.png)
 
