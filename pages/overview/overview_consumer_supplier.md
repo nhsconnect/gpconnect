@@ -13,7 +13,7 @@ summary: Step-by-step guide to developing consumer applications
 
 ![Img](images/overview/gp_connect_apis.png)
 <p>
-##Step by step:##
+**Step by step:**
 <p>1. Make a request to the {% include tooltip.html type="PDS" %} to retrieve patient's registered practice.</p>
 <p>2. Make a call to {% include tooltip.html type="SDS" %} to retrieve provider endpoint information.</p>
 <p>3. Using the endpoint information retrieved in step 2, make a request via {% include tooltip.html type="SSP" %} to the provider.</p>
@@ -23,7 +23,7 @@ summary: Step-by-step guide to developing consumer applications
 
 <p>For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).</p>
 
-## Things to consider ##
+## Things to consider
 - XML vs JSON
 - toolkits
 - developer tools: demonstrator, postman
