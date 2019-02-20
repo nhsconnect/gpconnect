@@ -1,7 +1,7 @@
 ---
 title: Getting started for consumer suppliers
 keywords: consumer
-tags: [consumer]
+tags: [consumer_supplier]
 sidebar: overview_sidebar
 permalink: overview_consumer_supplier.html
 toc: false
