@@ -9,7 +9,7 @@ pathways: [consumer]
 summary: Step-by-step guide to developing consumer applications
 ---
 
-<p>As a consumer supplier, you want to use GP Connect to develop an API to consume GP data. To retrieve data from an end-user organisation, your system will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
+<p>As a consumer supplier, you want to use GP Connect to develop an {% include tooltip.html type="API" %} to consume GP data. To retrieve data from an end-user organisation, your system will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
 
 <br>
 
@@ -19,9 +19,9 @@ summary: Step-by-step guide to developing consumer applications
 <p>1. Make a request to the {% include tooltip.html type="PDS" %} to retrieve patient's registered practice.</p>
 <p>2. Make a call to {% include tooltip.html type="SDS" %} to retrieve provider endpoint information.</p>
 <p>3. Using the endpoint information retrieved in step 2, make a request via {% include tooltip.html type="SSP" %} to the provider.</p>
-<p>4. SSP passes request to provider system.</p>
-<p>5. Provider returns data to SSP.</p>
-<p>6. SSP passes data to consumer.</p>
+<p>4. {% include tooltip.html type="SSP" %} passes request to provider system.</p>
+<p>5. Provider returns data to {% include tooltip.html type="SSP" %}.</p>
+<p>6. {% include tooltip.html type="SSP" %} passes data to consumer.</p>
 
 For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
 
