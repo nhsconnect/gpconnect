@@ -12,8 +12,9 @@ summary: Step-by-step guide to developing consumer applications
 <p>As a consumer supplier, you want to use GP Connect to develop an API to consume GP data. To retrieve data from an end-user organisation, your system will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
 
 ![Img](images/overview/gp_connect_apis.png)
-
-1. Make a request to the Personal Demographics Service (PDS) to retrieve patient's registered practice.
+<p>
+##Step by step:##
+1. Make a request to the {% include tooltip.html type="Personal Demographics Service" %} (PDS) to retrieve patient's registered practice.
 2. Make a call to Spine Directory Service (SDS) to retrieve provider endpoint information.
 3. Using the endpoint information retrieved in step 2, make a request via Spine Secure Proxy (SSP) to the provider.
 4. SSP passes request to provider system.
@@ -22,7 +23,7 @@ summary: Step-by-step guide to developing consumer applications
 
 For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
 
-Things to consider:
+## Things to consider
 - XML vs JSON
 - toolkits
 - developer tools: demonstrator, postman
@@ -33,6 +34,7 @@ Things to consider:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
+## Developer ecosystem
 Our developer ecosystem takes you through each stage of a typical GP Connect API project:
   
 {% include developer_journey.html %}
