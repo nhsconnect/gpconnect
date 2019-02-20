@@ -4,6 +4,7 @@ keywords: usecases
 tags: [use_case,htmlgetcarerecord,getcarerecord,appointments]
 sidebar: overview_sidebar
 toc: false
+pathways: [consumer,provider]
 permalink: overview_priority_capabilities.html
 summary: A brief introduction to the priority GP Connect capabilities
 ---
