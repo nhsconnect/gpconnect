@@ -75,7 +75,7 @@ glossary:
   value: "Open Systems Interconnection: a conceptual model that characterises and standardises the communication functions of a computing system without regard to its underlying internal structure and technology."
 - title: PDS
   value: "Personal Demographics Service: the national electronic database of patient demographic information. Each person’s electronic NHS care record comprises demographic information - address, date of birth and NHS number; and medical information. GP Connect systems use the PDS to obtain a patient’s NHS number, date of birth and current GP organisation."
-  tooltip: "The provider of a clinical system that is the source of GP data."
+  tooltip: "Personal Demographics Service: the provider of a clinical system that is the source of GP data."
   id: pds
 - title: PEM
   value: "Privacy Enhanced Mail: a file format for storing and sending cryptographic keys, certificates, and other data."
@@ -95,7 +95,7 @@ glossary:
   value: "In the context of a development of the GP Connect specification, denotes that the specification is close to completion and is being reviewed by external parties (including providers and consumers) and is subject to corrections and minor change."
 - title: SDS
   value: "Spine Directory Service: central directory of organisations, users and services for consumption by Spine-related applications. GP Connect systems use SDS data about NHS-registered users and accredited systems and services."
-  tooltip: "Central directory of organisations, users and services for consumption by Spine-related applications."
+  tooltip: "Spine Directory Service: central directory of organisations, users and services for consumption by Spine-related applications."
   id: sds
 - title: Spine
   value: "A collection of national applications, services and directories operated by NHS Digital that supports the health and social care sector in the exchange of information in national and local IT systems."
@@ -103,7 +103,7 @@ glossary:
   id: spine
 - title: SSP
   value: "Spine Secure Proxy: a forward proxy used as a front end to control and protect access to GP principal clinical systems exposing FHIR®-based RESTful APIs. SSP also validates the existence of a data-sharing relationship between requesting and providing organisations. Also known as ‘Spine Security Proxy’."
-  tooltip: "Forward proxy used as a front end to control and protect access to GP principal clinical systems exposing FHIR®-based RESTful APIs."
+  tooltip: "Spine Secure Proxy: a forward proxy used as a front end to control and protect access to GP principal clinical systems exposing FHIR®-based RESTful APIs."
   id: ssp
 - title: TLS
   value: "Transport Layer Security: a cryptographic protocol that provides communications security over a computer network."
