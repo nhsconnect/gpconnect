@@ -3,6 +3,7 @@ title: Explore GP Connect
 keywords: explore
 tags: [explore]
 toc: false
+pathways: [consumer,provider]
 sidebar: overview_sidebar
 permalink: overview_explore.html
 summary: Interactive online console with full API reference and FHIR&reg; resource definitions
