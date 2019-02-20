@@ -12,7 +12,7 @@ summary: Step-by-step guide to developing consumer applications
 <p>As a consumer supplier, you want to use GP Connect to develop an API to consume GP data. To retrieve data from an end-user organisation, your system will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
 
 ![Img](images/overview/gp_connect_apis.png)
-<p>
+<br>
 **Step by step:**
 <p>1. Make a request to the {% include tooltip.html type="PDS" %} to retrieve patient's registered practice.</p>
 <p>2. Make a call to {% include tooltip.html type="SDS" %} to retrieve provider endpoint information.</p>
