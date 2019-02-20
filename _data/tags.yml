@@ -22,5 +22,8 @@ allowed-tags:
   - code_snippet
   - requirements
   - usecase
+  - consumer_supplier
+  - clinical_supplier
+  - introduction
 
   
