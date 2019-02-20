@@ -1,7 +1,7 @@
 ---
 title: Getting started for clinical system suppliers
 keywords: clinical, provider
-tags: [provider,clinical]
+tags: [clinical_supplier]
 sidebar: overview_sidebar
 permalink: overview_clinical_system_supplier.html
 pathways: [provider]
