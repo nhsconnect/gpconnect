@@ -3,8 +3,9 @@ title: Deployment
 keywords: deploy
 tags: [deployment]
 sidebar: overview_sidebar
+toc: false
 permalink: overview_deployment.html
-pathways: [provider,consumer]
+pathways: [consumer,provider]
 summary: "Technical accreditation, licensing and deployment certificates"
 ---
 
