@@ -37,7 +37,7 @@ For more details on consumer request interactions, see the [SSP implementation g
 
 ## Developer ecosystem
 
-Our developer ecosystem takes you through each stage of a typical GP Connect API project:
+Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
   
 {% include developer_journey.html %}
 
