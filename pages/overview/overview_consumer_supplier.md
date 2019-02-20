@@ -14,7 +14,7 @@ summary: Step-by-step guide to developing consumer applications
 ![Img](images/overview/gp_connect_apis.png)
 <p>
 ##Step by step:##
-1. Make a request to the {% include tooltip.html type="Personal Demographics Service" %} (PDS) to retrieve patient's registered practice.
+<p>1. Make a request to the {% include tooltip.html type="Personal Demographics Service" %} (PDS) to retrieve patient's registered practice.
 2. Make a call to Spine Directory Service (SDS) to retrieve provider endpoint information.
 3. Using the endpoint information retrieved in step 2, make a request via Spine Secure Proxy (SSP) to the provider.
 4. SSP passes request to provider system.
