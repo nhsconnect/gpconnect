@@ -21,9 +21,9 @@ summary: Step-by-step guide to developing consumer applications
 <p>5. Provider returns data to SSP.</p>
 <p>6. SSP passes data to consumer.</p>
 
-For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
+<p>For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).</p>
 
-## Things to consider
+## Things to consider ##
 - XML vs JSON
 - toolkits
 - developer tools: demonstrator, postman
