@@ -8,7 +8,7 @@ permalink: overview_clinical_system_supplier.html
 pathways: [provider]
 ---
 
-<p>As a GP {% include tooltip.html type="Clinical system supplier" %} (or provider), you want to use GP Connect to develop a way of allowing other systems to access GP data on your system for direct patient care.</p>
+<p>As a GP clinical system supplier (or *provider*), such as EMIS Health, INPS Vision, Microtest Health or TPP, you can use GP Connect to develop a way of allowing other systems to access GP data on your system for direct patient care.</p>
 
 - read about the GP Connect [priority capabilities](overview_priority_capabilities.html).
 - look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html) and get involved:
@@ -17,7 +17,7 @@ pathways: [provider]
 
 ## Developer ecosystem
 
-Our developer ecosystem takes you through each stage of a typical GP Connect API project:
+Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
   
 {% include developer_journey.html %}
 
