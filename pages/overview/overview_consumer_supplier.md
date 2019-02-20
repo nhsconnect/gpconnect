@@ -21,9 +21,10 @@ summary: Step-by-step guide to developing consumer applications
 <p>5. Provider returns data to SSP.</p>
 <p>6. SSP passes data to consumer.</p>
 
-<p>For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).</p>
+For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
 
 ## Things to consider
+
 - XML vs JSON
 - toolkits
 - developer tools: demonstrator, postman
@@ -35,6 +36,7 @@ summary: Step-by-step guide to developing consumer applications
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
 ## Developer ecosystem
+
 Our developer ecosystem takes you through each stage of a typical GP Connect API project:
   
 {% include developer_journey.html %}
