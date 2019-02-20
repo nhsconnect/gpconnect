@@ -14,8 +14,8 @@ glossary:
 - title: Clinical safety
   value: "The process of evaluating clinical safety risk. See <a href='https://digital.nhs.uk/services/solution-assurance/the-clinical-safety-team/clinical-risk-management-standards' target='_blank'>clinical risk management standards</a>."
 - title: Clinical system supplier
-  value: "The supplier of a clinical system that is the source of GP data. Also known as a provider."
-  tooltip: "The supplier of a clinical system that is the source of GP data. Also known as a provider."
+  value: "The supplier of a clinical system that is the source of GP data, such as EMIS Health, INPS Vision,  Microtest Health, and TPP. Also known as a provider."
+  tooltip: "The supplier of a clinical system that is the source of GP data, such as EMIS Health, INPS Vision,  Microtest Health, and TPP. Also known as a provider."
   id: clinical
 - title: CMA endpoint
   value: "Combined Message Handling Server and Accredited System endpoint: an endpoint registered with Spine for a single system."
