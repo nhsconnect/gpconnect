@@ -3,7 +3,7 @@ title: Observation
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: test.html
+permalink: accessrecord_structured_development_observation.html
 summary: "Guidance for populating and consuming patholgy data in GP Connect"
 ---
 
