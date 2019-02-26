@@ -15,7 +15,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
 
-## Observation resource elements ##
+## Test group header - observation resource elements ##
 
 ### id ###
 
@@ -63,19 +63,6 @@ _Providing_  systems  **MUST**  ensure this GUID is globally unique and a persis
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
-
-### basedOn ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-All problems **MUST** have a clinicalStatus of <code>active</code> or <code>inactive</code>.### status ###
-
 ### status ###
 
 <table class='resource-attributes'>
@@ -87,18 +74,6 @@ All problems **MUST** have a clinicalStatus of <code>active</code> or <code>inac
 </table>
 
 The status of the test result. 
-
-### category ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
- 
-The general type of test result. A default value of <code>Laboratory</code> should be used if a more specific value is not available e.g. pathology, microbiology etc.
 
 ### code ###
 
@@ -124,34 +99,6 @@ The clinical code that represents the name of the test/analyte or test set.
 
 A reference to the Patient who the observation is about.
 
-### context ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The  `Encounter`  within which the observation was made.
-
-As per base profile guidance.
-
-### effective[x] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>dateTime/Period</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The dateTime when the the problem was first encountered.
-
-The dateTime when the the problem was no longer considered active.
-
 ### issued ###
 
 <table class='resource-attributes'>
@@ -163,7 +110,6 @@ The dateTime when the the problem was no longer considered active.
 </table>
 
 The date time that the observation was reported on by the laboratory or other report provider.
-
 
 ### performer ###
 
@@ -177,42 +123,6 @@ The date time that the observation was reported on by the laboratory or other re
 
 Reference to the resource for the Practitioner that performed the observation.
 
-### value[x] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Many</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The value of the test. this may be in the form of but is not limited to one of the following datatypes a quantity, string or attachment.
-
-### dataAbsentReason ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The reason why a result/value has been omitted.
-
-### interpretation ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Simple coded interpretation of the results. It is provided by the performing HCP. For example - out of range, high, low.
-
 ### comment ###
 
 <table class='resource-attributes'>
@@ -224,30 +134,6 @@ Simple coded interpretation of the results. It is provided by the performing HCP
 </table>
 
 Lab notes in addition to the interpretation. For example, the sample has haemolysed or has leaked.
-
-### bodysite ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The body part that was tested/observed.
-
-### method ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The method of testing/observation that was used.
 
 ### specimen ###
 
@@ -261,28 +147,6 @@ The method of testing/observation that was used.
 
 Reference to the specimen on which these results were based.
 
-### device ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-### referenceRange ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The reference range provides a guide for interpretation of the results.
-
 ### related ###
 
 <table class='resource-attributes'>
@@ -294,19 +158,6 @@ The reference range provides a guide for interpretation of the results.
 </table>
 
 Reference to the test group header observation if the result is part of a test group.
-
-### component ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Indicates the source of a secondary reported record.
-
 
 <br>
 ## Elements **not in use** ##
@@ -363,7 +214,28 @@ Only Immunizations where notGiven is set to false are to be sent using the Immun
 
 Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
 
+### value ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
+
 ### dataAbsentReason ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
+
+
+### interpretation ###
 
 <table class='resource-attributes'>
   <tr>
