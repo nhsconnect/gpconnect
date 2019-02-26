@@ -61,7 +61,7 @@ Consumer systems **SHALL** always perform a patient demographic check as part of
 
 ### Bearer token ###
 
-Consumer systems **SHALL** provide audit and provenance details in the HTTP authorisation header as an oAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"})_ in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+Consumer systems **SHALL** provide audit and provenance details in the HTTP `Authorization` header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).
 
 An example such an HTTP header is given below:
 
@@ -69,14 +69,13 @@ An example such an HTTP header is given below:
      Authorization: Bearer jwt_token_string
 ```
 
-Provider systems **SHALL** respond to oAuth Bearer Token errors in line with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
+Provider systems **SHALL** respond to OAuth Bearer Token errors in line with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
 
 It is highly recommended that standard libraries are used for creating the JWT as constructing and encoding the token manually may lead to issues with parsing the token. A good source of information about JWT and libraries to use can be found on the [JWT.io site](https://jwt.io/).
 
-
 ### JWT generation ###
 
-Consumer system **SHALL** generate a new JWT for each API request. The consumer generated JWT **SHALL** consist of three parts separated by dots `.`, which are:
+Consumer system **SHALL** generate a new JWT for each API request. The consumer generated JWT **SHALL** consist of three [base64url encoded](https://tools.ietf.org/html/rfc4648#section-5) parts separated by dots `.`, which are:
 
 - header
 - payload
@@ -102,33 +101,31 @@ Consumer systems **SHALL** generate an empty signature.
 
 #### Complete JWT ####
 
-The final output is three Base64url encoded strings separated by dots (note - there is some canonicalisation done to the JSON before it is Base64url encoded, which the JWT code libraries will do for you).
+The final output is three [base64url](https://tools.ietf.org/html/rfc4648#section-5) encoded strings separated by dots (note: there is some canonicalisation done to the JSON before it is base64url encoded, which the JWT code libraries will do for you).
 
 ```shell
 eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0LmV1LXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20vIy9zZWFyY2giLCJzdWIiOiIxIiwiYXVkIjoiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMubmV0L3Rva2VuIiwiZXhwIjoxNDgxMjUyMjc1LCJpYXQiOjE0ODA5NTIyNzUsInJlYXNvbl9mb3JfcmVxdWVzdCI6ImRpcmVjdGNhcmUiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6IlBhdGllbnQiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL25ocy1udW1iZXIiLCJ2YWx1ZSI6IjkwMDAwMDAwMzMifV19LCJyZXF1ZXN0ZWRfc2NvcGUiOiJwYXRpZW50LyoucmVhZCIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IldlYiBJbnRlcmZhY2UiLCJ2YWx1ZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn1dLCJtb2RlbCI6IkRlbW9uc3RyYXRvciIsInZlcnNpb24iOiIxLjAifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IltPRFNDb2RlXSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn0sInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjp7InJlc291cmNlVHlwZSI6IlByYWN0aXRpb25lciIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IkcxMzU3OTEzNSJ9LHsic3lzdGVtIjoibG9jYWxTeXN0ZW0iLCJ2YWx1ZSI6IjEifV0sIm5hbWUiOnsiZmFtaWx5IjpbIkRlbW9uc3RyYXRvciJdLCJnaXZlbiI6WyJHUENvbm5lY3QiXSwicHJlZml4IjpbIk1yIl19fX0.
 ```
 
-**Note:**
-
-- the final section (the signature) is empty, so the JWT will end with a trailing `.` (this must not be omitted, otherwise it would be an invalid token)
+**Note**: the final section (the signature) is empty, so the JWT will end with a trailing `.` (this must not be omitted, otherwise it would be an invalid token)
 
 
 ### JWT payload ###
 
 The payload section of the JWT **SHALL** be populated as follows:
 
-| Claim | Priority | Description | Fixed Value | Dynamic Value |
+| Claim | Description | Fixed Value | Dynamic Value |
 |-------|----------|-------------|-------------|------------------|
-| iss | R | Requesting systems issuer URI | No | Yes |
-| sub | R | ID for the user on whose behalf this request is being made. Matches `requesting_practitioner.id` | No | Yes |
-| aud | R | Requested resource URI<sup>1</sup> | No | Yes |
-| exp | R | Expiration time integer after which this authorisation MUST be considered invalid. | No | (now + 5 minutes) UTC time in seconds |
-| iat | R | The UTC time the JWT was created by the requesting system | No | now UTC time in seconds |
-| reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
-| requested_scope | R | Data being requested | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
-| requesting_device | R | Device details and/or system url making the request | No | FHIR Device<sup>2</sup> |
-| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>2+3</sup> | 
-| requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>2+4</sup> |
+| `iss` | Requesting systems issuer URI | No | Yes |
+| `sub` | ID for the user on whose behalf this request is being made. Matches `requesting_practitioner.id` | No | Yes |
+| `aud` | Requested resource URI<sup>1</sup> | No | Yes |
+| `exp` | Expiration time integer after which this authorisation MUST be considered invalid. | No | (now + 5 minutes) UTC time in seconds |
+| `iat` | The UTC time the JWT was created by the requesting system | No | now UTC time in seconds |
+| `reason_for_request` | Purpose for which access is being requested | `directcare` | No |
+| `requested_scope` | Data being requested | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
+| `requesting_device` | Device details and/or system url making the request | No | FHIR Device<sup>2</sup> |
+| `requesting_organization` | FHIR organisation resource making the request | No | FHIR Organization<sup>2+3</sup> | 
+| `requesting_practitioner` | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>2+4</sup> |
 
 <sup>1</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the consumer by the [SDS endpoint lookup service](integration_spine_directory_service.html){:target="_blank"}_ as the value of `nhsMhsEndPoint`.
 
@@ -159,7 +156,7 @@ Where the request originates from a device (for example, a mobile device in a pa
 
 Where the request originates from a system, the Spine endpoint URL of the originating system **SHALL** be specified using the URL element.
 
-#### Population of ISS claim ####
+#### Population of iss claim ####
 
 As the consuming system is presently responsible for generating the access token, this **SHALL** contain the URL of the Spine endpoint of the consuming system.
 
@@ -231,88 +228,7 @@ In future OAuth2 implementation, the ISS claim will contain the URL of the OAuth
 }
 ```
 
-{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't committed to using the SMART on FHIR specification." %}
-
 Where the practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role **SHALL** be supplied.
-
-## Example code ##
-
-### C# ###
-
-{% include tip.html content="The following code snippet utilises the [Microsoft Identity Model JWT Token NuGet Package](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt/) for creating, serializing and validating JWT tokens." %}
-
-```C#
-var requesting_device = new Device {
-	Id = "[DeviceID]",
-	Model = "[SoftwareName]",
-	Version = "[SoftwareVersion]",
-	Identifier =
-	{
-		new Identifier("[DeviceSystem]", "[DeviceID]")
-	}
-};
-
-var requesting_organization = new Organization {
-	Id = "[OrganizationID]",
-	Name = "Requesting Organisation Name",
-	Identifier =
-	{
-		new Identifier("https://fhir.nhs.uk/Id/ods-organization-code", "[ODSCode]")
-	}
-};
-
-var requesting_identity = new Practitioner {
-	resourceType = "Practitioner",
-	Id = "[PractitionerID]",
-	PractitionerRole =
-	{
-		new role()
-		{
-			new coding("http://fhir.nhs.net/ValueSet/sds-job-role-name-1", "[SDSJobRoleName]")
-		}
-	},
-	Name = new HumanName()
-	{
-			Prefix = new[] {"[Prefix]"},
-			Given = new[] {"[Given]"},
-			Family = new[] {"[Family]"}
-	},
-	Identifier =
-	{
-		new Identifier("https://fhir.nhs.uk/Id/sds-user-id", "[SDSUserID]"),
-		new Identifier("[UserSystem]", "[UserID]")
-	}
-};
-
-var audit_event_id = "[AuditEventID]";
-var requesting_system_url = "https://[ConsumerSystemURL]";
-var requesting_system_token_url = "https://authorize.fhir.nhs.net/token";
-
-// --this example getting local patient ID 1 at gp practice GP001
-var target_request_url = "https://http://gpconnect.aprovider.nhs.net/GP0001/DSTU2/1/Patient/1";
-var now = DateTime.UtcNow;
-var expires = now.AddMinutes(5);
-
-var claims = new List<System.Security.Claims.Claim>
-{
-    new System.Security.Claims.Claim("iss", requesting_system_url, ClaimValueTypes.String),
-    new System.Security.Claims.Claim("sub", requesting_practitioner.Id, ClaimValueTypes.String),
-    new System.Security.Claims.Claim("aud", target_request_url, ClaimValueTypes.String),
-    new System.Security.Claims.Claim("exp", EpochTime.GetIntDate(expires).ToString(), ClaimValueTypes.Integer64),
-    new System.Security.Claims.Claim("iat", EpochTime.GetIntDate(now).ToString(), ClaimValueTypes.Integer64),
-    new System.Security.Claims.Claim("reason_for_request", "directcare", ClaimValueTypes.String),
-    new System.Security.Claims.Claim("requested_scope", "patient/*.read", ClaimValueTypes.String),	
-    new System.Security.Claims.Claim("requesting_device", FhirSerializer.SerializeToJson(requesting_device), JsonClaimValueTypes.Json),
-    new System.Security.Claims.Claim("requesting_organization", FhirSerializer.SerializeToJson(requesting_organization), JsonClaimValueTypes.Json),
-    new System.Security.Claims.Claim("requesting_identity", FhirSerializer.SerializeToJson(requesting_identity), JsonClaimValueTypes.Json)
-};
-
-// Serialize To Json
-JwtPayload payload = new JwtPayload(claims);
-var jsonPayload = payload.SerializeToJson();
-jsonPayload.Dump();
-
-```
 
 ## External documents / policy documents ##
 
