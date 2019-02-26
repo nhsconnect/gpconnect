@@ -4,7 +4,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
 
 ## Test result - observation resource elements ##
 
@@ -297,8 +297,6 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource
-
 ### device ###
 
 <table class='resource-attributes'>
@@ -307,7 +305,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
 
 ### component ###
 
@@ -317,4 +314,3 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
