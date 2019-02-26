@@ -162,6 +162,7 @@ Reference to the test group header observation if the result is part of a test g
 This **MUST** be qualified using the related.type 'has-member'
 
 <br>
+
 ## Elements **not in use** ##
 
 The following elements **MUST NOT** be populated:
