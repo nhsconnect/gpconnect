@@ -13,7 +13,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
 
 ## Test group header - observation resource elements ##
 
@@ -159,6 +159,8 @@ Reference to the specimen on which these results were based.
 
 Reference to the test group header observation if the result is part of a test group.
 
+This **MUST** be qualified using the related.type 'has-member'
+
 <br>
 ## Elements **not in use** ##
 
@@ -182,8 +184,6 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource
-
 ### context ###
 
 <table class='resource-attributes'>
@@ -191,8 +191,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource
 
 ### effective[x] ###
 
@@ -202,8 +200,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Only Immunizations where notGiven is set to false are to be sent using the Immunization profile. This means that there will never be cause to use reasonNotGiven. 
-
 ### issued ###
 
 <table class='resource-attributes'>
@@ -211,8 +207,6 @@ Only Immunizations where notGiven is set to false are to be sent using the Immun
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
 
 ### value ###
 
@@ -222,8 +216,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
-
 ### dataAbsentReason ###
 
 <table class='resource-attributes'>
@@ -231,9 +223,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
-
 
 ### interpretation ###
 
@@ -243,8 +232,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
-
 ### bodysite ###
 
 <table class='resource-attributes'>
@@ -252,8 +239,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
 
 ### method ###
 
@@ -263,8 +248,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
-
 ### device ###
 
 <table class='resource-attributes'>
@@ -272,8 +255,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
 
 ### ReferenceRange ###
 
@@ -283,7 +264,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
 
 ### component ###
 
@@ -292,5 +272,3 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
