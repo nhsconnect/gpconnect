@@ -237,16 +237,6 @@ The method of testing/observation that was used.
 
 Reference to the specimen on which these results were based.
 
-### device ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
 ### referenceRange ###
 
 <table class='resource-attributes'>
@@ -271,7 +261,7 @@ The reference range provides a guide for interpretation of the results.
 
 Reference to the test group header observation if the result is part of a test group.
 
-This **MUST** be qualified using the related.type 'derived-from'
+This **MUST** be qualified using the related.type 'derived-from'.
 
 <br>
 
