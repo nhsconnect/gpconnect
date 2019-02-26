@@ -124,36 +124,6 @@ A reference to the Patient who the observation is about.
 </table>
 
 The time when specimen was received for processing
-
-### parent ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The  `Encounter`  within which the observation was made.
-
-As per base profile guidance.
-
-### request ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The  `Encounter`  within which the observation was made.
-
-As per base profile guidance.
-
-
 ### collection ###
 
 <table class='resource-attributes'>
@@ -166,7 +136,7 @@ As per base profile guidance.
 
 The reference range provides a guide for interpretation of the results.
 
-### collector ###
+### collection.collector ###
 
 <table class='resource-attributes'>
   <tr>
@@ -178,7 +148,7 @@ The reference range provides a guide for interpretation of the results.
 
 Reference to the resource for the Practitioner/Organisation that collected the specimen.
 
-### collected ###
+### collection.collectedcollected ###
 
 <table class='resource-attributes'>
   <tr>
@@ -192,18 +162,164 @@ The dateTime when the the problem was first encountered.
 
 The dateTime when the the problem was no longer considered active.
 
-
-
-
-### performer ###
+### collection.quantity ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Data type:</b> <code>SimpleQuantity</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-Reference to the resource for the Practitioner that performed the observation.
+The reference range provides a guide for interpretation of the results.
 
+### collection.bodysite ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The reference range provides a guide for interpretation of the results.
+
+### note ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Annotation</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The reference range provides a guide for interpretation of the results.
+
+## Elements **not in use** ##
+
+The following elements **MUST NOT** be populated:
+
+### parent ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Boolean</code></td>
+  </tr>
+</table>
+
+### request ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### collection.method ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### processing ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+### processing.description ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### processing.procedure ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### processing.additive ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### processing.time[x] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### container ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### container.identifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### container.description ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### container.type ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+
+### container.capacity ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+### container.specimenQuantity ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+
+### container.additive[x] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
