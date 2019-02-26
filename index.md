@@ -1,5 +1,5 @@
 ---
-title: Introduction to GP Connect
+title: Introduction to GP Connect API
 keywords: homepage
 tags: [getting_started]
 sidebar: home_sidebar
