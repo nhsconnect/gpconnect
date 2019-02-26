@@ -59,7 +59,7 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
 
 ```xml
 <Conformance xmlns="http://hl7.org/fhir">
-	<version value="0.7.1" />
+	<version value="0.7.2" />
 	<name value="GP Connect" />
 	<publisher value="[Provider Software Vendor Name]" />
 	<contact>
