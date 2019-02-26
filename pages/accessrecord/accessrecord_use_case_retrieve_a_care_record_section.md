@@ -91,7 +91,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 ```xml
 <OperationDefinition xmlns="http://hl7.org/fhir">
 	<id value="getcarerecord" />
-	<version value="0.7.1" />
+	<version value="0.7.2" />
 	<name value="Get Care Record" />
 	<status value="draft" />
 	<kind value="operation" />
