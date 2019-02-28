@@ -172,7 +172,13 @@ The value must be an integer representing seconds past 01 Jan 1970 00:00:00 UTC,
 
 **Example**: `"exp": 1469436987`
 
-{% include important.html content="To minimise the liklihood of tokens being rejected due to clock skew, consumer systems servers **SHALL** time synchronise their clocks with NHS Network Time Protocol (NTP) servers." %}
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> 
+To minimise the liklihood of tokens being rejected due to <a href="https://tools.ietf.org/html/rfc7519#section-4.1.4">clock skew</a>:
+  <ul>
+    <li>Providers and consumers <strong>SHALL</strong> synchronise their server clocks with NHS Network Time Protocol (NTP) servers.</li>
+    <li>Providers <strong>SHALL</strong> account for clock skew when determining the validity of the <code>exp</code> and <code>iat</code> claims with a leeway of 2 minutes, i.e. <code>iat - 120s ≤ now</code> and <code>exp + 120s ≥ now</code>.  The leeway value <strong>SHALL</strong> be amendable via configuration.</li>
+  </ul>
+</div>
 
 ---
 
