@@ -20,7 +20,7 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 
 ## Search parameters ##
 
-Provider systems SHALL support the following search parameters:
+Provider systems **SHALL** support the following search parameters:
 
 | Name | Type | Description | Paths |
 |---|---|---|---|
@@ -29,12 +29,12 @@ Provider systems SHALL support the following search parameters:
 | `end` | `date` | Slot end date/time. | `Slot.end` |
 | `searchFilter` | `token` | A generic token to allow consumers to pass additional search criteria to the provider. | N/A |
 
-{% include note.html content="The supported search parameters should be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
+{% include note.html content="The supported search parameters **SHOULD** be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
 
 
 ## _include parameters ##
 
-Provider systems SHALL support the following include parameters:
+Provider systems **SHALL** support the following include parameters:
 
 | Name | Description | Paths |
 |---|---|---|
@@ -42,21 +42,21 @@ Provider systems SHALL support the following include parameters:
 | `_include:recurse= Schedule:actor:Practitioner` | Include `Practitioner` resources referenced within the returned `Schedule` resources | `Schedule.actor:Practitioner` |
 | `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
 
-The following parameters SHALL be included in the request:
+The following parameters **SHALL** be included in the request:
 
-- The `start` parameter SHALL only be included once in the request.
-- The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
-- The `end` parameter SHALL only be included once in the request.
-- The `end` parameter SHALL be supplied with the `le` search prefix. For example, `end=le2017-09-26`, which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
+- The `start` parameter **SHALL** only be included once in the request.
+- The `start` parameter **SHALL** be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
+- The `end` parameter **SHALL** only be included once in the request.
+- The `end` parameter **SHALL** be supplied with the `le` search prefix. For example, `end=le2017-09-26`, which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
   
   ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
 
-- `status=free` specifies that only free slots will be returned. Note: the slot status value of `free` SHALL be specified, other slot status values are not permitted.
+- `status=free` specifies that only free slots will be returned. Note: the slot status value of `free` **SHALL** be specified, other slot status values are not permitted.
 
 - `_include=Slot:schedule` specifies that associated `Schedule` resources are returned.
 
 
-The following parameters MAY be included to minimise the number of API calls required to prepare an appointment booking:
+The following parameters **MAY** be included to minimise the number of API calls required to prepare an appointment booking:
 
 - `_include:recurse=Schedule:actor:Practitioner`
 - `_include:recurse=Schedule:actor:Location`
@@ -67,14 +67,14 @@ The following parameters MAY be included to minimise the number of API calls req
 
 {% include important.html content="It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. GP Connect has specified additional provider requirements to enable this. These additional requirements are outlined on the [Slot availability management](appointments_slotavailabilitymanagement.html) page" %}
 
-In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter with both `system` and `code` elements of the search [token](https://www.hl7.org/fhir/STU3/search.html#token):
+In order for providers to return the appropriate slots for the consumer, the consumer **SHOULD** send in the following parameters using the `searchFilter` parameter with both `system` and `code` elements of the search [token](https://www.hl7.org/fhir/STU3/search.html#token):
 
 | Parameter system | Parameter code |
 | --- | --- |
 | `https://fhir.nhs.uk/Id/ods-organization-code` | The booking (consumer) organisation ODS code, e.g. `A11111`|
 | `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | The booking (consumer) organisation type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1), e.g. `urgent-care` |
 
-Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
+Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters **SHALL** ignore them and **SHALL NOT** return an error.
 
 ## Search for free slots on the wire ##
 
@@ -90,7 +90,7 @@ GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_inc
 
 ## Booking multiple adjacent slots ##
 
-Please see the conditions in which a consumer may book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
+Please see the conditions in which a consumer **MAY** book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
 
 ## Prerequisites ##
 
@@ -98,10 +98,10 @@ Please see the conditions in which a consumer may book multiple adjacent slots o
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL request a maximum date range covering a two-week period
+- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** request a maximum date range covering a two-week period
 
-{% include tip.html content="Multiple separate API calls can be made if a larger date range is required. However, consideration should be given to the load this placed on the provider system." %}
+{% include tip.html content="Multiple separate API calls can be made if a larger date range is required. However, consideration **SHOULD** be given to the load this placed on the provider system." %}
 
 ## API usage ##
 
@@ -136,7 +136,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -152,13 +152,13 @@ N/A
 
 #### Error handling ####
 
-The provider system SHALL return an error if:
+The provider system **SHALL** return an error if:
 
 - the time period defined by `start` and `end` parameters is greater than a two week period
 - the `status` parameter is absent or is present with a value other than `free`
 - the `_include=Slot:schedule` is absent
 
-SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
+**SHALL** return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -172,15 +172,15 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrieval of free slot details.
+- **SHALL** return a `200` **OK** HTTP status code on successful retrieval of free slot details.
 
-- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
+- **SHALL** return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
 
-- SHALL return a `Bundle` of type `searchset` containing:
+- **SHALL** return a `Bundle` of type `searchset` containing:
 
   - `Slot` resources for the organisation which:
     - have a `status` of `free`
-    - **and** fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
+    - **and** fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter **SHALL NOT** be returned.
     - **and** are bookable according to related defined 'Embargo/Booking Window' rules 
     - **and** which match the search filter parameters of Booking Organisation (ODS Code) and/or organisation type, or are not restricted for booking by ODS code and/or organisation type
 
@@ -188,32 +188,32 @@ Provider systems:
 
   - `Practitioner` resources associated to the returned `Schedule` resources, where available, and where requested by the consumer using the `_include:recurse=Schedule:actor:Practitioner` parameter
 
-    - SHALL populate the `Practitioner` resource according to population requirements for [Read a practitioner](foundations_use_case_read_a_practitioner.html#payload-response-body)
+    - **SHALL** populate the `Practitioner` resource according to population requirements for [Read a practitioner](foundations_use_case_read_a_practitioner.html#payload-response-body)
 
   - `Location` resources associated with the returned `Schedule` resources, where requested by the consumer using the `_include:recurse=Schedule:actor:Location` parameter
 
-    - The `Location` referenced from the `Schedule` resource SHALL represent the location of the surgery where the appointment will take place.  `Location.managingOrganization` SHALL be populated.  See [Branch surgeries](development_branch_surgeries.html) for more details.
+    - The `Location` referenced from the `Schedule` resource **SHALL** represent the location of the surgery where the appointment will take place.  `Location.managingOrganization` **SHALL** be populated.  See [Branch surgeries](development_branch_surgeries.html) for more details.
 
-    - SHALL populate the `Location` resource according to population requirements for [Read a location](foundations_use_case_read_a_location.html#payload-response-body)
+    - **SHALL** populate the `Location` resource according to population requirements for [Read a location](foundations_use_case_read_a_location.html#payload-response-body)
 
   - an `Organization` resource associated with the `Location` resources (via `Location.managingOrganization`) associated with the `Schedule`
 
-    - This resource SHALL always be present, regardless of parameters, except where no slots are returned.  Please see [Known issues](appointments_known_issues.html) for more details.
+    - This resource **SHALL** always be present, regardless of parameters, except where no slots are returned.  Please see [Known issues](appointments_known_issues.html) for more details.
 
-      - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
+      - Provider systems **SHALL** accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however **SHALL** continue to return the `Organization` resource regardless of whether this is present.
 
-      - Consumer systems SHALL NOT send the `_include:recurse=Location:managingOrganization` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details.
+      - Consumer systems **SHALL NOT** send the `_include:recurse=Location:managingOrganization` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details.
 
-    - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
+    - **SHALL** populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
 
 
-- If no free slots are returned for the requested time period then an empty response `Bundle` SHALL be returned.
+- If no free slots are returned for the requested time period then an empty response `Bundle` **SHALL** be returned.
 
-- Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are are associated with the `Slot` resources matching the query
+- Only `Schedule`, `Practitioner`, `Location` and `Organization` resources **SHALL** be returned where they are are associated with the `Slot` resources matching the query
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
+- **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
-- SHALL NOT populate the `specialty` field on `Schedule` or `Slot`  
+- **SHALL NOT** populate the `specialty` field on `Schedule` or `Slot`  
 
 ```json
 {
@@ -397,33 +397,4 @@ Provider systems:
     }
   ]
 }
-```
-
-## Examples ##
-
-### C# ###
-
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-client.PreferredFormat = ResourceFormat.Json;
-
-[ to add ]
-
-FhirSerializer.SerializeResourceToJson(resource).Dump();
-```
-
-### Java ###
-
-{% include tip.html content="Java code snippets utilise James Agnew's [hapi-fhir](https://github.com/jamesagnew/hapi-fhir/
-) library." %}
-
-```java
-FhirContext ctx = FhirContext.forStu3();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
-
-[ to add ]
-
-System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
 ```
