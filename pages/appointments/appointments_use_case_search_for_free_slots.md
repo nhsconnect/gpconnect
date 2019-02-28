@@ -221,7 +221,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "Slot/1584",
       "resource": {
         "resourceType": "Slot",
         "id": "1584",
@@ -246,7 +245,6 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "Slot/1644",
       "resource": {
         "resourceType": "Slot",
         "id": "1644",
@@ -271,7 +269,6 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "Schedule/14",
       "resource": {
         "resourceType": "Schedule",
         "id": "14",
@@ -307,7 +304,7 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "Practitioner/2",
+      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/2",
       "resource": {
         "resourceType": "Practitioner",
         "id": "2",
@@ -332,7 +329,7 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "Location/17",
+      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Location/17",
       "resource": {
         "resourceType": "Location",
         "id": "17",
@@ -362,7 +359,7 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "Organization/14",
+      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
       "resource": {
         "resourceType": "Organization",
         "id": "23",
