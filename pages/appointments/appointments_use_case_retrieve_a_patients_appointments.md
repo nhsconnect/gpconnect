@@ -4,7 +4,7 @@ keywords: appointments, use case, retrieve
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_retrieve_a_patients_appointments.html
-summary: "Use case for retrieval of a patient's appointments from an organisation"
+summary: "Retrieve a patient's future appointments at an organisation"
 ---
 
 ## Use case ##
@@ -65,22 +65,21 @@ The provider systems:
 
 
 ```http
-GET /Patient/[id]/Appointment?start=ge{lower_date_range_boundary}&start=le{upper_date_range_boundary}
-
+GET /Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper_date_range_boundary]
 ```
 
 #### FHIR absolute request ####
 
 ```http
-GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=ge{lower_date_range_boundary}&start=le{upper_date_range_boundary}
+GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper_date_range_boundary]
 ```
 
-#### Examples ####
+#### Example request ####
 
-```text
-Retrieve all appointments for a patient which start on or between 2017-07-11 and 2017-09-14:
+Retrieve all appointments for patient with logical id 1001 which start on or between 2017-07-11 and 2017-09-14:
 
-GET /Patient/[id]/Appointment?start=ge2017-07-11&start=le2017-09-14
+```json
+GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14
 ```
 
 

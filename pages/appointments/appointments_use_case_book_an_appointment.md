@@ -1,10 +1,10 @@
 ---
-title: Book an appointment for a patient at an organisation
+title: Book an appointment
 keywords: appointments, use case, book, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_book_an_appointment.html
-summary: "Use case for booking an appointment for a patient with a given organisation"
+summary: "Book an appointment for a patient at an organisation"
 ---
 
 ## Use case ##
@@ -32,8 +32,8 @@ The consumer system:
 
 - SHALL have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
-- SHALL have previously obtained the details for one or more free slots that are to be booked.
-- SHALL have previously performed a GP Connect `Find a Patient` request to obtain the logical identifier for the patient on the organisation's FHIR server.
+- SHALL have previously obtained the details for one or more free slots that are to be booked, using [Search for free slots](appointments_use_case_search_for_free_slots.html)
+- SHALL have previously performed a [Find a patient](foundations_use_case_find_a_patient.html) request to obtain the logical identifier for the patient on the organisation's FHIR server.
 
 ## API usage ##
 
@@ -51,7 +51,7 @@ To book more than one slot in the same Book Appointment message, a consumer need
 
 ### Request operation ###
 
-#### FHIR&reg; relative request ####
+#### FHIR relative request ####
 
 ```http
 POST /Appointment

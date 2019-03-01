@@ -4,11 +4,11 @@ keywords: appointments, use case, read
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_read_an_appointment.html
-summary: "Use case for reading an appointment resource"
+summary: "Read a patient's appointment at an organisation"
 ---
 
 
-## API use case ##
+## Use case ##
 
 This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system, irrespective of the booking organisation. 
 
@@ -20,7 +20,9 @@ This specification describes a single use case enabling the consumer to obtain t
 - GP Connect utilises TLS Mutual Authentication for system level authorization
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
-## Consumer ##
+## Prerequisites ##
+
+### Consumer ###
 
 The consumer system:
 
@@ -33,7 +35,7 @@ The consumer system SHALL only use the read appointment capability to retrieve f
 
 ### Request operation ###
 
-#### FHIR&reg; relative request ####
+#### FHIR relative request ####
 
 ```http
 GET /Appointment/[id]

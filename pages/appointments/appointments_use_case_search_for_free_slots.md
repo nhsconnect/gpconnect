@@ -4,7 +4,7 @@ keywords: appointments, use case, search, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_search_for_free_slots.html
-summary: "Use case for searching for free slots within a date range"
+summary: "Search for free slots within a date range at an organisation"
 ---
 
 ## Use case ##
@@ -18,7 +18,19 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 - GP Connect utilises TLS Mutual Authentication for system level authorization
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
-## Search parameters ##
+
+## Prerequisites ##
+
+### Consumer ###
+
+The consumer system:
+
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL request a maximum date range covering a two-week period
+
+## API usage ##
+
+### Search parameters ###
 
 Provider systems SHALL support the following search parameters:
 
@@ -31,8 +43,9 @@ Provider systems SHALL support the following search parameters:
 
 {% include note.html content="The supported search parameters should be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
 
+{% include tip.html content="Multiple separate API calls can be made if a larger date range is required. However, consideration should be given to the load this placed on the provider system." %}
 
-## _include parameters ##
+### _include parameters ###
 
 Provider systems SHALL support the following include parameters:
 
@@ -76,34 +89,10 @@ In order for providers to return the appropriate slots for the consumer, the con
 
 Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
-## Search for free slots on the wire ##
 
-On the wire, a Search for free slots request would look something like one of the following:
-
-```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
-```
-
-```http
-GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}&searchFilter={OrgODSCodeSystem}|{OrgODSCode}
-```
-
-## Booking multiple adjacent slots ##
+### Booking multiple adjacent slots ###
 
 Please see the conditions in which a consumer may book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
-
-## Prerequisites ##
-
-### Consumer ###
-
-The consumer system:
-
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL request a maximum date range covering a two-week period
-
-{% include tip.html content="Multiple separate API calls can be made if a larger date range is required. However, consideration should be given to the load this placed on the provider system." %}
-
-## API usage ##
 
 ### Request operation ###
 
@@ -120,7 +109,7 @@ GET /Slot?[start={search_prefix}start_date]
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
 
-#### FHIR&reg; absolute request ####
+#### FHIR absolute request ####
 
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]
@@ -132,6 +121,26 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           {&_include:recurse=Schedule:actor:Location}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
+```
+
+#### Example request 1 ###
+
+Example 1 shows a search for free slots between 2017-10-20 and 2017-10-31 (inclusive), providing the consumer's organisation type and ODS code in the `searchFilter` parameter in order to return any slots specifically restricted to this consumer organisation or organisation type.
+
+The query returns a `Bundle` containing `Slot` resources and via the use of `_include` and `_revinclude` parameters also returns associated `Schedule`, `Practitioner`, `Location` and `Organization` resources.
+
+```http
+GET /Slot?start=ge2017-10-20&end=le2017-10-31&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
+```
+
+#### Example request 2 ###
+
+Example 2 shows a search for free slots, between 2017-10-20 and 2017-10-31 (inclusive), providing the consumer's organisation type and ODS code in the `searchFilter` parameter in order to return any slots specifically restricted to this consumer organisation or organisation type.
+
+The query returns a `Bundle` containing `Slot` resources and via the use of an `_include` parameter also returns associated `Schedule` resources.
+
+```http
+GET /Slot?start=ge2017-10-20&end=le2017-10-31&status=free&_include=Slot:schedule&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
 ```
 
 #### Request headers ####
@@ -396,31 +405,3 @@ Provider systems:
 }
 ```
 
-## Examples ##
-
-### C# ###
-
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-client.PreferredFormat = ResourceFormat.Json;
-
-[ to add ]
-
-FhirSerializer.SerializeResourceToJson(resource).Dump();
-```
-
-### Java ###
-
-{% include tip.html content="Java code snippets utilise James Agnew's [hapi-fhir](https://github.com/jamesagnew/hapi-fhir/
-) library." %}
-
-```java
-FhirContext ctx = FhirContext.forStu3();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
-
-[ to add ]
-
-System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
-```
