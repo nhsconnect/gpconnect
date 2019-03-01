@@ -31,7 +31,7 @@ The consumer system:
 
 The fields below allow a patient to choose and attend an appointment appropriate to their needs.
 
-Consumer systems **SHALL** display all fields below within their user interface: 
+In order to prevent incorrect or inappropriate bookings, and to allow a patient to attend the appointment at the correct time, at the correct location/via the correct delivery channel, consumer systems **SHALL** display the following fields below within their user interface: 
 
 - Start date/time
 - End date/time (or duration, calculated from start and end)
