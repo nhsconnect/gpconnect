@@ -27,6 +27,22 @@ The consumer system:
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 - SHALL request a maximum date range covering a two-week period
 
+## Consumer display requirements ##
+
+The fields below allow a patient to choose and attend an appointment appropriate to their needs.
+
+Consumer systems **SHALL** display all fields below within their user interface: 
+
+- Start date/time
+- End date/time (or duration, calculated from start and end)
+- Delivery channel (in person, telephone, video)
+- Location name
+- Location address
+- Comment (usually containing a textual appointment type description)
+- Practitioner role (e.g. General Medical Practitioner, Nurse)
+- Practitioner name
+- Practitioner gender
+
 ## API usage ##
 
 ### Search parameters ###
