@@ -213,7 +213,8 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
           "searchInclude": [
             "Schedule:actor:Location",
             "Schedule:actor:Practitioner",
-            "Slot:schedule"
+            "Slot:schedule",
+            "Location:managingOrganization"
           ],
           "searchParam": [
             {
