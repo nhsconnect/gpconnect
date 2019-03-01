@@ -18,7 +18,6 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 - GP Connect utilises TLS Mutual Authentication for system level authorization
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
-
 ## Prerequisites ##
 
 ### Consumer ###
@@ -49,11 +48,12 @@ Provider systems SHALL support the following search parameters:
 
 Provider systems SHALL support the following include parameters:
 
-| Name | Description | Paths |
+| Name | Description | Consumer to send? |
 |---|---|---|
 | `_include=Slot:schedule` | Include `Schedule` resources referenced within the returned `Slot` Resources | `Slot.schedule` |
 | `_include:recurse= Schedule:actor:Practitioner` | Include `Practitioner` resources referenced within the returned `Schedule` resources | `Schedule.actor:Practitioner` |
 | `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
+| `_include:recurse= Location:managingOrganization` | Include `Organization` resources referenced from the matching `Location` resources | `Location.managingOrganization` |
 
 The following parameters SHALL be included in the request:
 
@@ -73,6 +73,7 @@ The following parameters MAY be included to minimise the number of API calls req
 
 - `_include:recurse=Schedule:actor:Practitioner`
 - `_include:recurse=Schedule:actor:Location`
+- `_include:recurse=Location:managingOrganization`
 
 {% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore, slots found in the past cannot be used to book an appointment." %}
 
@@ -105,6 +106,7 @@ GET /Slot?[start={search_prefix}start_date]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+          {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
@@ -119,6 +121,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           [&_include=Slot:schedule]
           {&_include:recurse=Schedule:actor:Practitioner}
           {&_include:recurse=Schedule:actor:Location}
+          {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
 ```
@@ -130,7 +133,7 @@ Example 1 shows a search for free slots between 2017-10-20 and 2017-10-31 (inclu
 The query returns a `Bundle` containing `Slot` resources and via the use of `_include` and `_revinclude` parameters also returns associated `Schedule`, `Practitioner`, `Location` and `Organization` resources.
 
 ```http
-GET /Slot?start=ge2017-10-20&end=le2017-10-31&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
+GET /Slot?start=ge2017-10-20&end=le2017-10-31&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
 ```
 
 #### Example request 2 ###
@@ -209,12 +212,9 @@ Provider systems:
 
     - This resource SHALL always be present, regardless of parameters, except where no slots are returned.  Please see [Known issues](appointments_known_issues.html) for more details.
 
-      - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
-
-      - Consumer systems SHALL NOT send the `_include:recurse=Location:managingOrganization` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details.
+    - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
 
     - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
-
 
 - If no free slots are returned for the requested time period then an empty response `Bundle` SHALL be returned.
 
