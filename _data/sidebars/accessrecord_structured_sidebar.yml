@@ -72,7 +72,7 @@ entries:
         - title: <b class='resource'>DiagnosticReport</b>
           url: /accessrecord_structured_development_diagnosticReport.html
           output: web
-        - title: <b class='resource'>Speciment</b>
+        - title: <b class='resource'>Specimen</b>
           url: /accessrecord_structured_development_specimen.html
           output: web
         - title: <b class='resource'>Observation - Test Group Header</b>
