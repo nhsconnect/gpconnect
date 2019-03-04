@@ -1,3 +1,13 @@
+---
+title: Observation
+keywords: getcarerecord
+tags: [design,structured]
+sidebar: accessrecord_structured_sidebar
+permalink: accessrecord_structured_development_observation_testResult.html
+summary: "Guidance for populating and consuming patholgy data in GP Connect"
+---
+
+
 ## Introduction ##
 
 The headings below list the elements of the Observation resource and describe how to populate and consume them.
