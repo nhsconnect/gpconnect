@@ -14,7 +14,7 @@ The headings below list the elements of the Bundle resource and describe how to 
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with: the underlying [Bundle population illustration diagram](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) and the [Bundle profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with: the underlying [Bundle population illustration diagram](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) and the [Bundle profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1)." %}
 
 ## Bundle elements ##
 
@@ -62,6 +62,18 @@ Items that make up the Bundle.
 
 See below for subelements of this BackboneElement.
 
+### entry.fullUrl ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The absolute URL for the resource. This **MUST** be populated for resources that can be retrieved via a 'read' RESTful endpoint. This **SHALL NOT** be provided for resources that are accessed via an operation.
+
 ### entry.resource ###
 
 <table class='resource-attributes'>
@@ -101,4 +113,3 @@ The following elements **SHALL NOT** be populated:
     <td><b>Data type:</b> <code>Instant</code></td>
   </tr>
 </table>
-
