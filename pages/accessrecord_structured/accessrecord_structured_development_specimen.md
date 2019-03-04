@@ -3,7 +3,7 @@ title: Pathology guidance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_observation.html
+permalink: accessrecord_structured_development_specimen.html
 summary: "Guidance for populating and consuming patholgy data in GP Connect"
 ---
 ## Introduction ##
