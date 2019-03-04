@@ -42,6 +42,11 @@ entries:
     - title: Medication guidance
       url: /accessrecord_structured_development_medication_guidance.html
       output: web
+    
+    - title: Pathology guidance
+      url: /accessrecord_structured_development_pathology_guidance.html
+      output: web
+     
 
       subfolders:
 
@@ -63,6 +68,18 @@ entries:
           output: web
         - title: <b class='resource'>MedicationRequest</b>
           url: /accessrecord_structured_development_medicationrequest.html
+          output: web
+        - title: <b class='resource'>DiagnosticReport</b>
+          url: /accessrecord_structured_development_diagnosticReport.html
+          output: web
+        - title: <b class='resource'>Speciment</b>
+          url: /accessrecord_structured_development_specimen.html
+          output: web
+        - title: <b class='resource'>Observation - Test Group Header</b>
+          url: /accessrecord_structured_development_observation_testGroup.html
+          output: web
+        - title: <b class='resource'>Observation - Test Result</b>
+          url: /accessrecord_structured_development_observation_testResult.html
           output: web
         - title: <b class='resource'>List</b>
           url: /accessrecord_structured_development_list.html
