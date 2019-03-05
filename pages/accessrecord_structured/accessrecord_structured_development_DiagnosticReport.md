@@ -200,7 +200,7 @@ In GP systems this will also contain a reference to an `observation` that contai
   </tr>
 </table>
 
-Code(s) that detail the conclusion/clinical interpretation of the test report.
+A coded finding of the test report. Produced by the organisation that performed the tests.
 
 ### conclusion ###
 
@@ -212,7 +212,7 @@ Code(s) that detail the conclusion/clinical interpretation of the test report.
   </tr>
 </table>
 
-Clinical Interpretation of test results in a text format.
+Clinical Interpretation of test results in a text format and notes written by performing organisation in addition to the interpretation. For example, the sample has haemolysed or has leaked.
 
 ### presentedForm ###
 
