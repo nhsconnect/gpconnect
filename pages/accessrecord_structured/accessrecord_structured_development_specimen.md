@@ -117,7 +117,7 @@ Examples from substance in SNOMED:
 
 A reference to the Patient who the observation is about.
 
-### receivedTime###
+### receivedTime ###
 
 <table class='resource-attributes'>
   <tr>
@@ -140,6 +140,18 @@ The time when specimen was received for processing
 </table>
 
 Details of when/how the specimen was collected.
+
+### collection.extension[fastingStatus] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept/Duration</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Whether or how long patient abstained from food and/or drink.
 
 ### collection.collector ###
 
@@ -199,7 +211,7 @@ The anatomical site of the specimen collection.
   </tr>
 </table>
 
-The reference range provides a guide for interpretation of the results.
+Notes/comments relating to the specimen.
 
 ## Elements **not in use** ##
 
