@@ -76,6 +76,8 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 The status of the test result. 
 
+In GP systems these are most likely to be 'final' however 'preliminary' reports are possible as for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header then it should default to the 'unknown' value.
+
 ### category ###
 
 <table class='resource-attributes'>
@@ -98,7 +100,7 @@ The general type of test result. A default value of <code>Laboratory</code> shou
   </tr>
 </table>
 
-The clinical code that represents the name of the test/analyte or test set.
+The clinical code that represents the name of the test result or test analyte.
 
 ### subject ###
 
