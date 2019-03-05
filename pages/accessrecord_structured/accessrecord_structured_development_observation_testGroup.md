@@ -73,7 +73,9 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-The status of the test result. 
+The status of the test group header. 
+
+In GP systems these are most likely to be 'final' however 'preliminary' reports are possible as for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header then it should default to the 'unknown' value.
 
 ### code ###
 
@@ -85,7 +87,7 @@ The status of the test result.
   </tr>
 </table>
 
-The clinical code that represents the name of the test/analyte or test set.
+The clinical code that represents the name of the test group e.g. Full blood count.
 
 ### subject ###
 
@@ -109,7 +111,7 @@ A reference to the Patient who the observation is about.
   </tr>
 </table>
 
-The date time that the observation was reported on by the laboratory or other report provider.
+The date time that the observations were reported on by the laboratory or other report provider.
 
 ### performer ###
 
@@ -121,7 +123,8 @@ The date time that the observation was reported on by the laboratory or other re
   </tr>
 </table>
 
-Reference to the resource for the Practitioner that performed the observation.
+Reference to the resource for the Organization that carried out the tests. A `practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
+
 
 ### comment ###
 
@@ -133,7 +136,7 @@ Reference to the resource for the Practitioner that performed the observation.
   </tr>
 </table>
 
-Lab notes in addition to the interpretation. For example, the sample has haemolysed or has leaked.
+Notes that relate to the test group header that were written by the performing `organization`.
 
 ### specimen ###
 
