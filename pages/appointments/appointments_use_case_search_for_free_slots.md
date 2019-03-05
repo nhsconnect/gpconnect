@@ -31,17 +31,14 @@ The consumer system:
 
 The fields below allow a patient to choose and attend an appointment appropriate to their needs.
 
-In order to prevent incorrect or inappropriate bookings, and to allow a patient to attend the appointment at the correct time, at the correct location/via the correct delivery channel, consumer systems **SHALL** display the following fields below within their user interface: 
+In order to prevent incorrect or unsuitable bookings, and to allow a patient to attend the appointment at the correct time, place or via the correct delivery channel, consumer systems **SHALL** support the following fields below: 
 
-- Start date/time
-- End date/time (or duration, calculated from start and end)
+- Start date and time
+- End date and time, or duration
 - Delivery channel (in person, telephone, video)
-- Location name
-- Location address
-- Comment (usually containing a textual appointment type description)
+- Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
-- Practitioner name
-- Practitioner gender
+- Practitioner name and gender
 
 ## API usage ##
 
