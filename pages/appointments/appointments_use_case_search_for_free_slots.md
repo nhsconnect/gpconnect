@@ -144,22 +144,22 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
 
 #### Example request 1 ###
 
-Example 1 shows a search for free slots between 2017-10-20 and 2017-10-31 (inclusive), providing the consumer's organisation type and ODS code in the `searchFilter` parameter in order to return any slots specifically restricted to this consumer organisation or organisation type.
+Example 1 shows a search for free slots between 2017-10-20 00:00:00 and 2017-10-31 23:59:59, providing the consumer's organisation type and ODS code in the `searchFilter` parameter in order to return any slots specifically restricted to this consumer organisation or organisation type.
 
 The query returns a `Bundle` containing `Slot` resources and via the use of `_include` and `_revinclude` parameters also returns associated `Schedule`, `Practitioner`, `Location` and `Organization` resources.
 
 ```http
-GET /Slot?start=ge2017-10-20&end=le2017-10-31&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
 ```
 
 #### Example request 2 ###
 
-Example 2 shows a search for free slots, between 2017-10-20 and 2017-10-31 (inclusive), providing the consumer's organisation type and ODS code in the `searchFilter` parameter in order to return any slots specifically restricted to this consumer organisation or organisation type.
+Example 2 shows a search for free slots, between 2017-10-20 00:00:00 and 2017-10-31 23:59:59, providing the consumer's organisation type and ODS code in the `searchFilter` parameter in order to return any slots specifically restricted to this consumer organisation or organisation type.
 
 The query returns a `Bundle` containing `Slot` resources and via the use of an `_include` parameter also returns associated `Schedule` resources.
 
 ```http
-GET /Slot?start=ge2017-10-20&end=le2017-10-31&status=free&_include=Slot:schedule&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
+GET /Slot?start=ge2017-10-20T00:00:00&end=le2017-10-31T23:59:59&status=free&_include=Slot:schedule&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
 ```
 
 #### Request headers ####
