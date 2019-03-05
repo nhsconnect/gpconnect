@@ -18,7 +18,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 ## DiagnosticReport resource elements ##
 
-### id ###
+## id 
 
 <table class='resource-attributes'>
   <tr>
@@ -30,7 +30,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 The logical identifier of the DiagnosticReport resource.
 
-### meta.profile ###
+## meta.profile
 
 <table class='resource-attributes'>
   <tr>
@@ -44,7 +44,7 @@ The DiagnosticReport profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnostocReport-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)
 
-### identifier ###
+## identifier
 
 <table class='resource-attributes'>
   <tr>
@@ -75,7 +75,9 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-a link to the ProcedureRequest that the DiagnosticReport is based on
+A link to the ProcedureRequest that contains details of request that was made. Where present this may include details of who requested the tests and why the test was requested.
+
+As currently test requests are not submitted in a FHIR format this is not the oigianl request but is currently used as a container to hold details that were present in the original request.
 
 ### status ###
 
@@ -87,7 +89,7 @@ a link to the ProcedureRequest that the DiagnosticReport is based on
   </tr>
 </table>
 
-The status of the DiagnosticReport. 
+The status of the DiagnosticReport. In GP systems these are most likely to be 'final' however 'preliminary' reports are possible as for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a report then it should default to the 'unknown' value.
 
 ### category ###
 
@@ -111,7 +113,7 @@ The general type of test report. A default value of <code>Laboratory</code> shou
   </tr>
 </table>
 
-The clinical code that represents the name of the test/analyte or test set.
+Due to the model that we have used the clinical code that represents the name of the test/analyte or test set will sit in an observation resource at either the 'Test group header' or 'Test result' level.
 
 ### subject ###
 
@@ -123,7 +125,7 @@ The clinical code that represents the name of the test/analyte or test set.
   </tr>
 </table>
 
-A reference to the Patient who the DiagnosticReport is about.
+A reference to the `Patient` who the DiagnosticReport is about.
 
 ### context ###
 
@@ -135,23 +137,7 @@ A reference to the Patient who the DiagnosticReport is about.
   </tr>
 </table>
 
-The  `Encounter`  within which the DiagnosticReport was related to.
-
-As per base profile guidance.
-
-### effective[x] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>dateTime/Period</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The dateTime when the the problem was first encountered.
-
-The dateTime when the the problem was no longer considered active.
+The `Encounter` within which the DiagnosticReport was related to.
 
 ### issued ###
 
@@ -202,27 +188,7 @@ Reference to the specimen(s) on which these results were based.
 
 Reference to the result(s) which are contained in the DiagnosticReport.
 
-### imagingStudy ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-### image ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The reference range provides a guide for interpretation of the results.
+In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the patient record. This will be identified as the `observation.code` element will be populated with the SNOMED code ??????
 
 ### codedDiagnosis ###
 
@@ -234,7 +200,7 @@ The reference range provides a guide for interpretation of the results.
   </tr>
 </table>
 
-Codes for the conclusion.
+Code(s) that detail the conclusion/clinical interpretation of the test report.
 
 ### conclusion ###
 
@@ -246,7 +212,7 @@ Codes for the conclusion.
   </tr>
 </table>
 
-Clinical Interpretation of test results.
+Clinical Interpretation of test results in a text format.
 
 ### presentedForm ###
 
@@ -265,52 +231,33 @@ Entire report as issued e.g. the original EDIFact message sent from the lab.
 
 The following elements **MUST NOT** be populated:
 
-### basedOn ###
+### effective ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Boolean</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-### category ###
+The time that the report is considered effective or clinically relevant from can be determined from other dates within the report. It may be considered that the date the sample was collected `specimen.collection.collected` or for transfers between GP systems it may be the date it was filed into the GP record. This will be the `observation.effective` from the Observation referenced from `DiagnosticReport.result` where `observation.code` is set to ????????????
+
+### imagingStudy ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>Reference</code></td>
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource
+Out of scope for the current iteration.
 
-### context ###
+### image ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource
+Out of scope for the current iteration.
 
-### effective[x] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-Only Immunizations where notGiven is set to false are to be sent using the Immunization profile. This means that there will never be cause to use reasonNotGiven. 
-
-### issued ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
-  </tr>
-</table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
