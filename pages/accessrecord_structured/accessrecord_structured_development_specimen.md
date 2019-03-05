@@ -74,7 +74,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-Identifier assigned by the lab
+A business level identifier for the specimen supplied by the performing organisation. eg. lab performing the test.
 
 ### status ###
 
@@ -98,7 +98,11 @@ The availability of the specimen.
   </tr>
 </table>
  
-The general type of test result. A default value of <code>Laboratory</code> should be used if a more specific value is not available e.g. pathology, microbiology etc.
+The kind of material that forms the specimen.
+
+Examples from substance in SNOMED:
+87612001 | Blood (substance) |
+53130003 | Venous blood (substance) |
 
 
 ### subject ###
@@ -124,6 +128,7 @@ A reference to the Patient who the observation is about.
 </table>
 
 The time when specimen was received for processing
+
 ### collection ###
 
 <table class='resource-attributes'>
@@ -134,7 +139,7 @@ The time when specimen was received for processing
   </tr>
 </table>
 
-The reference range provides a guide for interpretation of the results.
+Details of when/how the specimen was collected.
 
 ### collection.collector ###
 
@@ -148,7 +153,7 @@ The reference range provides a guide for interpretation of the results.
 
 Reference to the resource for the Practitioner/Organisation that collected the specimen.
 
-### collection.collectedcollected ###
+### collection.collected ###
 
 <table class='resource-attributes'>
   <tr>
@@ -158,9 +163,7 @@ Reference to the resource for the Practitioner/Organisation that collected the s
   </tr>
 </table>
 
-The dateTime when the the problem was first encountered.
-
-The dateTime when the the problem was no longer considered active.
+The dateTime when the specimen was collected
 
 ### collection.quantity ###
 
@@ -172,7 +175,7 @@ The dateTime when the the problem was no longer considered active.
   </tr>
 </table>
 
-The reference range provides a guide for interpretation of the results.
+The quantity of the specimen that was collected.
 
 ### collection.bodysite ###
 
@@ -184,7 +187,7 @@ The reference range provides a guide for interpretation of the results.
   </tr>
 </table>
 
-The reference range provides a guide for interpretation of the results.
+The anatomical site of the specimen collection.
 
 ### note ###
 
