@@ -43,17 +43,17 @@ Provider systems SHALL implement the following search parameters:
 | `start` | `date` | Appointment start date | `Appointment.start` |
 
 
-The consumer:
+Consumer systems:
 - SHALL include two `start` search parameter with every request
-  - One of the 'start' search parameter SHALL be supplied with the `ge` search prefix. For example, 'start=ge2017-09-22', which indicates that the consumer would like appointments where the appointment start date is on or after "2017-09-22".
-  - One of the 'start' search parameter SHALL be supplied with the `le` search prefix. For example, 'start=le2017-09-25', which indicates that the consumer would like appointments where the appointment start date is on or before "2017-09-25"
+  - One of the `start` search parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like appointments where the appointment start date is on or after "2017-09-22".
+  - One of the `start` search parameter SHALL be supplied with the `le` search prefix. For example, `start=le2017-09-25`, which indicates that the consumer would like appointments where the appointment start date is on or before "2017-09-25"
 - SHALL only include the date component of the search parameter and not a time component. The date SHALL include day, month and year elements.
-- SHALL not request a date range where any part of the date range is in the past
+- SHALL NOT request a date range where any part of the date range is in the past
 - SHALL indicate to the end user that only appointments in the future will be returned from GP Connect and that the earliest that the user can request appointments is today's date
 
   ![Diagram - Date range parameters](images/appointments/RetrievePatientsApp.png)
 
-The provider systems:
+Provider systems:
 - SHALL support the search prefixes `ge` and `le`
 - SHALL return an error if any part of the consumer requested search range is in the past.
   - If the consumer sends today's date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is today's date, then the appointment SHALL still be returned in the response bundle.
