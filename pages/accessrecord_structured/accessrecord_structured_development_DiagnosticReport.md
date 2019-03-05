@@ -156,13 +156,13 @@ The date time that the DiagnosticReport was issued by the laboratory or other re
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
+    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
-Reference to the resource for the Practitioner that produced the DiagnosticReport.
+Reference to the resource for the Organization that produced the DiagnosticReport. A `practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
 
 ### specimen ###
 
@@ -186,7 +186,7 @@ Reference to the specimen(s) on which these results were based.
   </tr>
 </table>
 
-Reference to the result(s) which are contained in the DiagnosticReport.
+Reference to the result(s) which are contained in the DiagnosticReport. This may contain references to stan standalone test results, test group headers (which then reference further results) or a mixture of both.
 
 In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the patient record. This will be identified as the `observation.code` element will be populated with the SNOMED code ??????
 
@@ -213,6 +213,8 @@ A coded finding of the test report. Produced by the organisation that performed 
 </table>
 
 Clinical Interpretation of test results in a text format and notes written by performing organisation in addition to the interpretation. For example, the sample has haemolysed or has leaked.
+
+For clarity notes may be captured at a number of levels wihtin a DiagnosticReport. There may also be notes related to the specimen, test group header or individual test result. It is the consuming systems responsibility to make sure all relevant notes are displayed to the user.
 
 ### presentedForm ###
 
