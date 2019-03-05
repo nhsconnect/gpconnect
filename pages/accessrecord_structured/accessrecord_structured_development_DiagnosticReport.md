@@ -18,7 +18,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 ## DiagnosticReport resource elements ##
 
-## id 
+### id ###
 
 <table class='resource-attributes'>
   <tr>
@@ -30,7 +30,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 The logical identifier of the DiagnosticReport resource.
 
-## meta.profile
+### meta.profile ###
 
 <table class='resource-attributes'>
   <tr>
@@ -44,7 +44,7 @@ The DiagnosticReport profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnostocReport-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)
 
-## identifier
+### identifier ###
 
 <table class='resource-attributes'>
   <tr>
