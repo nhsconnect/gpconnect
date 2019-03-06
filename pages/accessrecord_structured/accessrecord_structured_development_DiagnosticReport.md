@@ -115,6 +115,8 @@ The general type of test report. A default value of <code>Laboratory</code> shou
 
 Due to the model that we have used the clinical code that represents the name of the test/analyte or test set will sit in an observation resource at either the 'Test group header' or 'Test result' level.
 
+As this item is mandatory in FHIR then suppliers should populate it with the SNOMED ConceptID `721981007` for `Diagnostic studies report`.
+
 ### subject ###
 
 <table class='resource-attributes'>
