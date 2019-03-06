@@ -35,7 +35,7 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 
 - Start date and time
 - End date and time, or duration
-- Delivery channel (in person, telephone, video)
+- Delivery channel (in-person, telephone, video)
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
