@@ -7,8 +7,6 @@ permalink: accessrecord_structured_development_pathology_guidance.html
 summary: "Guidance on the representation of allergies and intolerances in GP Connect"
 ---
 
-# Investigations Modeling
-
 ## Pathology scope in GP Connect
 
 For this version of the specification the scope of pathology is considered to be making available any pathology results contained in GP systems that have been received from the lab by an EDIFact message.
