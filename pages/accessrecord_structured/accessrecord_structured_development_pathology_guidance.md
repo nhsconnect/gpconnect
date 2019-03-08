@@ -68,12 +68,12 @@ We have modelled the pathology report in such a way that it will be able to supp
 
 There are a number of resources available in FHIR to represent the different entities that exist in pathology reporting. The resources that we are concerned with in order to represent our model are in the following table.
 
-| Resource name       | Description | Used in GP Connect |
+| Resource name       | Description |
 |---------------------|-------------------| ----------|
-| [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) | For requesting investigations to be performed by a laboratory | Yes |
-| [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) | A reporting structure that contains results and any relevant data such as specimen details or attribution | Yes |
-| [`Specimen`](accessrecord_structured_development_Specimen.html) | For carrying details about the specimen that was collected and the investigations were performed on | Yes |
-| [`Observation`] |Represents details related to the test group header, test result and details of when a report or group of results was filed into the patient record| No |
+| [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) | For requesting investigations to be performed by a laboratory |
+| [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) | A reporting structure that contains results and any relevant data such as specimen details or attribution |
+| [`Specimen`](accessrecord_structured_development_Specimen.html) | For carrying details about the specimen that was collected and the investigations were performed on |
+| [`Observation`] |Represents details related to the test group header, test result and details of when a report or group of results was filed into the patient record|
 
 There are other resources that may be relevant in the future, such as imagingStudy, imagingManifest and sequence, but currently we are only utilising the resources listed in the table.
 
