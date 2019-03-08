@@ -34,7 +34,7 @@ Currently GP practices receive the majority of the results of investigations tha
 
 The EDIFact message was defined by the Pathology Messaging Enabling Project and the specification can be found here listed as [EDIFact Pathology Messaging](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections).
 
-It is a detailed specification and although it does contain some coding the majority of the fields contain text. Some of the text is also heavily formatted,
+It is a detailed specification and although it does contain some coding the majority of the fields contain text. Some of the text is also heavily formatted. See below example taken from a GP2GP HL7v3 message,
 
 {: .center-image }
 ![Structured text example](images/access_structured/Pathology_structured_text_example_2.png)
