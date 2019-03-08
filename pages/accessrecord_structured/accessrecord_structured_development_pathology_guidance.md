@@ -36,7 +36,8 @@ The EDIFact message was defined by the Pathology Messaging Enabling Project and 
 
 It is a detailed specification and although it does contain some coding the majority of the fields contain text. Some of the text is also heavily formatted,
 
-**Include structured text table example**
+{: .center-image }
+![Structured text example](images/access_structured/Pathology structured text example 2.png)
 
 Gp systems are required to maintian the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFact report imported into the GP system **MUST** be maintained.
 
