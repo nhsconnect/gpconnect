@@ -18,7 +18,7 @@ As such there are a number of items that are not currently in scope for the path
 * making available any test requests
 * providing the original test report document as it was provided the practice
 
-### Use of lagnguage to describe pathology reports
+## Use of lagnguage to describe pathology reports
 
 When describing pathology reports different regions and professions sometimes use different words to decribe the same entities. Therefore for avoidance of confusion there are a couple of terms that we need to define.
 
