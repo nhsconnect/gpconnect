@@ -161,3 +161,72 @@ Example:
   "gender": "female"
 }
 ```
+
+### Bundle.entry.fullUrl
+
+When populating a `Bundle` resource, providers SHALL populate the `Bundle.entry.fullUrl` element where there is a [read](https://www.hl7.org/fhir/STU3/http.html#read) endpoint for the resource.
+
+So for example, the `Appointment` resource has a read endpoint `/Appointment/[id]` provided by [Read an appointment](appointments_use_case_read_an_appointment.html) and therefore `Bundle.entry.fullUrl` is populated for resources of this type, whereas `Slot` and `Schedule` resources do not have a read endpoint and therefore `Bundle.entry.fullUrl` is not be populated for resources of these types. `Slot` has a [search](https://www.hl7.org/fhir/STU3/http.html#search) endpoint, though this does not allow a single resource to be read directly and, therefore cannot be used when populating `fullUrl`.
+
+Providers SHALL populate `Bundle.entry.fullUrl` with an absolute version independent URL to the resource. The URL SHALL end with the logical id of the resource, and SHALL NOT contradict the resource's `id` element.
+
+The example below shows a `Bundle` containing a Practitioner with `fullUrl` populated and a `Slot` without `fullUrl` populated.
+
+```json
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/2",
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "2",
+        "meta": {
+          "versionId": "636064088099800115",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/sds-user-id",
+            "value": "S001"
+          }
+        ],
+        "name": {
+          "family": [ "Black" ],
+          "given": [ "Sarah" ],
+          "prefix": [ "Mrs" ]
+        },
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Slot",
+        "id": "1584",
+        "meta": {
+          "versionId": "1471219260000",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          }
+        ],
+        "schedule": {
+          "reference": "Schedule/14"
+        },
+        "status": "free",
+        "start": "2016-08-15T11:30:00.000+01:00",
+        "end": "2016-08-15T11:59:59.000+01:00"
+      }
+    },
+    ...
+  ]
+}
+```
