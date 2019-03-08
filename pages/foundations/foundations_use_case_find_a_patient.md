@@ -117,7 +117,7 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
       "resource": {
         "resourceType": "Patient",
         "id": "2",

@@ -326,7 +326,7 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/2",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/2",
       "resource": {
         "resourceType": "Practitioner",
         "id": "2",
@@ -351,7 +351,7 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Location/17",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Location/17",
       "resource": {
         "resourceType": "Location",
         "id": "17",
@@ -381,7 +381,7 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
       "resource": {
         "resourceType": "Organization",
         "id": "23",

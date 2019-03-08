@@ -97,7 +97,7 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/15",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/15",
       "resource": {
         "resourceType": "Practitioner",
         "id": "15",

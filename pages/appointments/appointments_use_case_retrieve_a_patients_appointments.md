@@ -137,7 +137,7 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Appointment/148",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Appointment/148",
       "resource": {
         "resourceType": "Appointment",
         "id": "148",
@@ -235,7 +235,7 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Appointment/149",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Appointment/149",
       "resource": {
         "resourceType": "Appointment",
         "id": "149",

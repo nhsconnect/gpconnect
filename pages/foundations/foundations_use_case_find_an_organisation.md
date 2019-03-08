@@ -102,7 +102,7 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
+      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
       "resource": {
         "resourceType": "Organization",
         "id": "23",

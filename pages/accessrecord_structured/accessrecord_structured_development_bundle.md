@@ -72,7 +72,7 @@ See below for subelements of this BackboneElement.
   </tr>
 </table>
 
-The absolute URL for the resource. This **MUST** be populated for resources that can be retrieved via a 'read' RESTful endpoint. This **SHALL NOT** be provided for resources that are accessed via an operation.
+The absolute URL for the resource. This **MUST** be populated for resources that can be retrieved via a 'read' RESTful endpoint. This **SHALL NOT** be provided for resources that are only accessed via an operation.
 
 ### entry.resource ###
 
