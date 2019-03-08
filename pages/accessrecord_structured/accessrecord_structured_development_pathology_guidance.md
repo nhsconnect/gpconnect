@@ -9,7 +9,7 @@ summary: "Guidance on the representation of allergies and intolerances in GP Con
 
 # Investigations Modeling
 
-### Pathology scope in GP Connect
+## Pathology scope in GP Connect
 
 For this version of the specification the scope of pathology is considered to be making available any pathology results contained in GP systems that have been received from the lab by an EDIFact message.
 
@@ -63,7 +63,7 @@ As mentioned previously the 'Test Report Document' and 'Test Result Document' ar
 
 We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFact message but also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the may different patterns and types of result that can be sent in one model so as to ensure consistency of structure.
 
-## Available FHIR resources
+### Available FHIR resources
 
 There are a number of resources available in FHIR to represent the different entities that exist in pathology reporting. The resources that we are concerned with in order to represent our model are in the following table.
 
