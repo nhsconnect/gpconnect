@@ -11,7 +11,7 @@ summary: "Guidance on the representation of allergies and intolerances in GP Con
 
 ### Pathology scope in GP Connect
 
-For this version of the specification the scope of pathology is considered to be making available any pathology results that have been received from the lab by an EDIFact message.
+For this version of the specification the scope of pathology is considered to be making available any pathology results contained in GP systems that have been received from the lab by an EDIFact message.
 
 As such there are a number of items that are not currently in scope for the pathology area of this version of GP Connect. These are as follows,
 
