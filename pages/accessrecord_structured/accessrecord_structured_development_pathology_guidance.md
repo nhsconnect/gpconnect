@@ -55,7 +55,7 @@ At the point at which the record is filed there is opportunity for the user to p
 The following entity diagram describes the logical model for pathology in GP Connect, 
 
 {: .center-image }
-![Pathology logical model](images/access_structured/Pathology Logical Model.png)
+![Pathology logical model](images/access_structured/Pathology_Logical_Model.png)
 
 In the image we have made the key entities more prominent so entities representing organizations and practitioners sit in the background but are still present.
 
@@ -81,7 +81,7 @@ There are other resources that may be relevant in the future, such as imagingStu
 We have mapped these resources on to the logical model in the diagram below,
 
 {: .center-image }
-![Pathology logical model with FHIR resource names](images/access_structured/Pathology Logical Model with FHIR resource names.png)
+![Pathology logical model with FHIR resource names](images/access_structured/Pathology_Logical_Model_with_FHIR_resource_names.png)
 
 From the diagram you can see that the DiagnosticReport is at the centre of the model and that all the other entities are linked to from there. 
 
