@@ -69,7 +69,7 @@ We have modelled the pathology report in such a way that it will be able to supp
 There are a number of resources available in FHIR to represent the different entities that exist in pathology reporting. The resources that we are concerned with in order to represent our model are in the following table.
 
 | Resource name       | Description |
-|---------------------|-------------------| ----------|
+|---------------------|-------------------|
 | [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) | For requesting investigations to be performed by a laboratory |
 | [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) | A reporting structure that contains results and any relevant data such as specimen details or attribution |
 | [`Specimen`](accessrecord_structured_development_Specimen.html) | For carrying details about the specimen that was collected and the investigations were performed on |
