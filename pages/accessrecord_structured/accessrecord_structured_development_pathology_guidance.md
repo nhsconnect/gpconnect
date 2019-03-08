@@ -30,7 +30,7 @@ When describing pathology reports different regions and professions sometimes us
 
 ## Patholgy reporting in GP practices
 
-Currently GP practices receive the majority of the results of investigations that they have requested in the form of the EDIFact message. These are recieved into a workflow by the GP system and remain there until they are filed into the patient record by a user. 
+Currently GP practices receive the majority of the results of investigations which they have requested in the form of the EDIFact message. These are recieved into a workflow by the GP system and remain there until they are filed into the patient record by a user. 
 
 ### EDIFact
 
