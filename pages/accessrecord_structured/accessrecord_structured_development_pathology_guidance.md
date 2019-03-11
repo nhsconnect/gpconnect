@@ -20,7 +20,7 @@ As such there are a number of items that are not currently in scope. These are a
 
 These may be addressed in future versions or within different areas of GP Connect e.g. manually entered results will be dealt with when we curate the uncategorised data in GP systems contained in the journal or care history areas.
 
-## Use of lagnguage to describe pathology reports
+## Use of language to describe pathology reports
 
 When describing pathology reports different regions and professions sometimes use different words to decribe the same entities. Therefore for avoidance of confusion there are a couple of terms that we need to define.
 
