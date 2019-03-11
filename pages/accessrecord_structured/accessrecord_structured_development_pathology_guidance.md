@@ -11,7 +11,7 @@ summary: "Guidance on the representation of allergies and intolerances in GP Con
 
 For this version of the specification the scope of pathology is considered to be making available any pathology results contained in GP systems that have been received from the lab by an EDIFact message.
 
-As such there are a number of items that are not currently in scope. These are as follows,
+As such there are a number of items that are **NOT** currently in scope. These are as follows,
 
 * pathology results that have been entered in a GP system using a code as an individual item. These may have a value and other qualifiers associated with them. 
 * test results that are received as documents or images
