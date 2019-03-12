@@ -42,10 +42,6 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
 
-## Booking multiple adjacent slots ##
-
-Please see the conditions in which a consumer may book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
-
 ## API usage ##
 
 ### Parameters ###
