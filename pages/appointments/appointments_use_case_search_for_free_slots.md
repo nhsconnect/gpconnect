@@ -48,7 +48,7 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 
 #### Search parameters ####
 
-Provider systems SHALL support the following search parameters:
+Provider systems SHALL support the following *search* parameters:
 
 | Name | Type | Description | Paths | Consumer to send? | 
 |---|---|---|---|
@@ -57,21 +57,28 @@ Provider systems SHALL support the following search parameters:
 | `end` | `date` | Slot end date, or date and time | `Slot.end` | mandatory | 
 | `searchFilter` | `token` &nbsp; &nbsp; &nbsp; | A generic token to pass additional search criteria &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | *(n/a)* | required - see [enhanced slot filtering](#searchfilter-parameter-enhanced-slot-filtering) | 
 
-Consumers SHALL send the following search parameters in the request:
+Consumers SHALL send the following *search* parameters in the request:
 
-- `status=free` specifies that only free slots will be returned. Note: the slot status value of `free` SHALL be specified, other slot status values are not permitted.
-- The `start` parameter SHALL only be included once in the request.
-- The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
-- The `end` parameter SHALL only be included once in the request.
-- The `end` parameter SHALL be supplied with the `le` search prefix. For example, `end=le2017-09-26`, which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
-  
+- `status`
+  - The slot status value of `free` SHALL be specified, other slot status values are not permitted.
+- `start`
+  - The `start` parameter SHALL only be included once in the request.
+  - The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after 2017-09-22.
+- `end`
+  - The `end` parameter SHALL only be included once in the request.
+  - The `end` parameter SHALL be supplied with the `le` search prefix. For example, `end=le2017-09-26`, which indicates that the consumer would like slots where the slot end date is on or before 2017-09-26.
+
   ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
+
+Consumers SHOULD send the following *search* parameters in the request:
+
+- `searchFilter` - Please see [enhanced slot filtering](#searchfilter-parameter-enhanced-slot-filtering) below.
 
 {% include note.html content="Search for free slots does allow for searching for slots in the past, but all other appointment management capabilities do not allow for appointment management where the appointments start date element is in the past. Therefore, slots found in the past cannot be used to book an appointment." %}
 
 #### _include parameters ####
 
-Provider systems SHALL support the following _include parameters:
+Provider systems SHALL support the following *_include* parameters:
 
 | Name and value | Description | Consumer to send? | 
 |---|---|---|
@@ -80,11 +87,11 @@ Provider systems SHALL support the following _include parameters:
 | `_include:recurse=Schedule:actor:Location` | Include referenced `Location` resources in the response | optional | 
 | `_include:recurse=Location:managingOrganization` | Include referenced `Organization` resources in the response | optional |
 
-Consumers SHALL send the following _include parameters in the request:
+Consumers SHALL send the following *_include* parameters in the request:
 
 - `_include=Slot:schedule` specifies that associated `Schedule` resources are returned.
 
-Consumers MAY send the following _include parameters in the request to minimise the number of API calls required to prepare an appointment booking:
+Consumers MAY send the following *_include* parameters in the request to minimise the number of API calls required to prepare an appointment booking:
 
 - `_include:recurse=Schedule:actor:Practitioner`
 - `_include:recurse=Schedule:actor:Location`
