@@ -90,6 +90,8 @@ Provider systems:
 - SHALL include the `versionId` of the current version of the appointment resource.
 - SHALL include all relevant business `identifier` details (if any) for the appointment resource.
 
+- SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in UK local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
@@ -156,8 +158,8 @@ Provider systems:
   ],
   "status": "booked",
   "description": "GP Connect Appointment description 148",
-  "start": "2017-08-21T10:20:00.000+00:00",
-  "end": "2017-08-21T10:50:00.000+00:00",
+  "start": "2017-08-21T10:20:00+01:00",
+  "end": "2017-08-21T10:50:00+01:00",
   "slot": [
     {
       "reference": "Slot/544"

@@ -124,6 +124,8 @@ Provider systems:
 - SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
 
+- SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in UK local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
@@ -197,8 +199,8 @@ Provider systems:
         ],
         "status": "booked",
         "description": "GP Connect Appointment description 148",
-        "start": "2017-08-21T10:20:00.000+00:00",
-        "end": "2017-08-21T10:50:00.000+00:00",
+        "start": "2017-08-21T10:20:00+01:00",
+        "end": "2017-08-21T10:50:00+01:00",
         "slot": [
           {
             "reference": "Slot/544"
@@ -295,8 +297,8 @@ Provider systems:
         ],
         "status": "booked",
         "description": "GP Connect Appointment description 148",
-        "start": "2016-08-16T11:20:00.000+00:00",
-        "end": "2016-08-16T11:30:00.000+00:00",
+        "start": "2016-08-16T11:20:00+01:00",
+        "end": "2016-08-16T11:30:00+01:00",
         "slot": [
           {
             "reference": "Slot/303"
@@ -346,11 +348,11 @@ FhirContext ctx = FhirContext.forStu3();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 
 Bundle responseBundle = client.search()
-	.forResource(Patient.class)
-	.withIdAndCompartment("2", "Appointment")
-	.returnBundle(ca.uhn.fhir.model.dstu2.resource.Bundle.class)
-	.execute();
-	
+  .forResource(Patient.class)
+  .withIdAndCompartment("2", "Appointment")
+  .returnBundle(ca.uhn.fhir.model.dstu2.resource.Bundle.class)
+  .execute();
+    
 System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
 ```
 

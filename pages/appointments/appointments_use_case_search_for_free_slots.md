@@ -233,6 +233,8 @@ Provider systems:
 
 - Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are are associated with the `Slot` resources matching the query
 
+- SHALL populate `Slot.start`, `Slot.end`, `Schedule.planningHorizon.start` and `Schedule.planningHorizon.end` elements in UK local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
 - SHALL NOT populate the `specialty` field on `Schedule` or `Slot`  
@@ -262,8 +264,8 @@ Provider systems:
           "reference": "Schedule/14"
         },
         "status": "free",
-        "start": "2016-08-15T11:30:00.000+01:00",
-        "end": "2016-08-15T11:59:59.000+01:00"
+        "start": "2016-08-15T11:30:00+01:00",
+        "end": "2016-08-15T11:40:00+01:00"
       }
     },
     {
@@ -286,8 +288,8 @@ Provider systems:
           "reference": "Schedule/14"
         },
         "status": "free",
-        "start": "2016-08-15T12:00:00.000+01:00",
-        "end": "2016-08-15T12:29:59.000+01:00"
+        "start": "2016-08-15T11:40:00+01:00",
+        "end": "2016-08-15T11:50:00+01:00"
       }
     },
     {
@@ -322,6 +324,10 @@ Provider systems:
             "reference": "Practitioner/2"
           }
         ],
+        "planningHorizon": {
+          "start": "2016-08-15T09:00:00+01:00",
+          "end": "2016-08-15T12:00:00+01:00"
+        },
         "comment": "Schedule 1 for general appointments"
       }
     },
@@ -343,9 +349,15 @@ Provider systems:
           }
         ],
         "name": {
-          "family": [ "Black" ],
-          "given": [ "Sarah" ],
-          "prefix": [ "Mrs" ]
+          "family": [
+            "Black"
+          ],
+          "given": [
+            "Sarah"
+          ],
+          "prefix": [
+            "Mrs"
+          ]
         },
         "gender": "female"
       }
