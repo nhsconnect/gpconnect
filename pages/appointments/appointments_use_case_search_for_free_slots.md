@@ -59,7 +59,7 @@ Provider systems SHALL support the following search parameters:
 | `status` | `token` | The free/busy status of the appointment | `Slot.status` | mandatory | 
 | `start` | `date` | Slot start date, or date and time | `Slot.start` | mandatory | 
 | `end` | `date` | Slot end date, or date and time | `Slot.end` | mandatory | 
-| `searchFilter` | `token` &nbsp; &nbsp; &nbsp; | A generic token to pass additional search criteria &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | *(n/a)* | required - see [enhanced slot filtering](#enhanced-slot-filtering) | 
+| `searchFilter` | `token` &nbsp; &nbsp; &nbsp; | A generic token to pass additional search criteria &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; | *(n/a)* | required - see [enhanced slot filtering](#searchfilter-parameter-enhanced-slot-filtering) | 
 
 Consumers SHALL send the following search parameters in the request:
 
@@ -98,17 +98,19 @@ Consumers MAY send the following _include parameters in the request to minimise 
 
 It is recognized that provider systems must offer GP practices more functionality to enable them to better manage their available appointment slots in the light of increasing access requirements from other organisations. In order to support this, GP Connect has specified additional [Slot availability management](appointments_slotavailabilitymanagement.html) providers requirements.
 
-Provider systems SHALL support the following `searchFilter` parameters, populating both `system` and `code` elements of the search [token](https://www.hl7.org/fhir/STU3/search.html#token) with the values in the table below:
+Provider systems SHALL support the following `searchFilter` parameters:
 
-| Parameter name | Parameter value (system) | Parameter value (code) | Example value (code) |
+| Parameter name | Parameter value (system) | Parameter value (code) | Example value (code) | Consumer to send? | 
 | --- | --- |
-| `searchFilter` | `https://fhir.nhs.uk/Id/ods-organization-code` | Consumer ODS organisation code | `A11111`|
-| `searchFilter` | `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | Consumer ODS organisation type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1) | `urgent-care` |
+| `searchFilter` | `https://fhir.nhs.uk/Id/ods-organization-code` | Consumer ODS organisation code | `A11111`| required |
+| `searchFilter` | `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | Consumer ODS [organisation type](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1) code | `urgent-care` | required |
 
-Consumer systems SHOULD send the following `searchFilter` parameters in the request to enable providers to return slots restricted to their organisation type or code.  Not doing so may result in fewer slots available to the consumer system.
+Consumer systems SHOULD send the following `searchFilter` parameters in the request, populating both `system` and `code` elements of the search [token](https://www.hl7.org/fhir/STU3/search.html#token) using the format `parameterName=system|code`:
 
 - `searchFilter` with a system of `https://fhir.nhs.uk/Id/ods-organization-code` and a value containing the consumer system's ODS organization code
 - `searchFilter` with a system of `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` and a value containing the consumer system's organization type code
+
+{% include important.html content="The `searchFilter` parameters enable providers to return slots to consumers that are restricted to the consumer's organisation type or code.  Consumers not sending `searchFilter` parameters will not receive these restricted slots." %}
 
 Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
