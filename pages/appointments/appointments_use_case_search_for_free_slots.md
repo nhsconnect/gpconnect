@@ -53,7 +53,7 @@ Consumer systems SHALL send following parameters in the request:
 
 - The `start` and `end` parameters SHALL contain a search prefix as specified above, and:
   - either, a `date` in the format `yyyy-mm-dd`. Partial dates are not allowed.
-  - or, a `dateTime` in the format `yyyy-mm-ddThh:mm:ss+hh:mm` in UK local time, with the timezone offset `+00:00` for UTC and `+01:00` for BST.
+  - or, a `dateTime` in the format `yyyy-mm-ddThh:mm:ss+hh:mm` in (UK) local time, with the timezone offset `+00:00` for UTC and `+01:00` for BST.
 
 - `status=free` specifies that only free slots will be returned. Note: the slot status value of `free` SHALL be specified, other slot status values are not permitted.
 
@@ -233,7 +233,7 @@ Provider systems:
 
 - Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are are associated with the `Slot` resources matching the query
 
-- SHALL populate `Slot.start`, `Slot.end`, `Schedule.planningHorizon.start` and `Schedule.planningHorizon.end` elements in UK local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+- SHALL populate `Slot.start`, `Slot.end`, `Schedule.planningHorizon.start` and `Schedule.planningHorizon.end` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
