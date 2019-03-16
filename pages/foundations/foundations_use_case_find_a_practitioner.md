@@ -115,9 +115,7 @@ Provider systems:
         ],
         "name": [
           {
-            "family": [
-                "Black"
-            ],
+            "family": "Black",
             "given": [
                 "Sarah"
             ],
