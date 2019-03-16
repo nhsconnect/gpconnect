@@ -146,7 +146,7 @@ In future OAuth2 implementation, the `iss` claim will contain the URL of the OAu
 
 #### `sub` (subject) claim
 
-ID for the user on whose behalf this request is being made. Matches [`requesting_practitioner.id`]().
+ID for the user on whose behalf this request is being made. Matches [`requesting_practitioner.id`](#requesting_practitioner-claim).
 
 **Example**: `"sub": "10019"`
 
@@ -223,24 +223,30 @@ Providers should also read the associated [Security guidance](development_api_se
 
 #### `requesting_device` claim
 
-The device or system making the request, populated as a minimal [Device](https://www.hl7.org/fhir/STU3/device.html) resource.
-
-Where the request originates from a device (for example, a mobile device in a patient facing scenario), details of the device can be provided in manufacture, model and version elements.
-
-Where the request originates from a system, the Spine endpoint URL of the originating system **SHALL** be specified using the URL element.
+The system or device making the request, populated as a minimal [Device](https://www.hl7.org/fhir/STU3/device.html) resource.
 
 The consumer **SHALL** populate the following [Device](https://www.hl7.org/fhir/STU3/device.html) fields:
 
-> TODO
+- an `identifier` element, with:
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/device-identifier`
+  - `value` containing the device or system identifier
+- `model` with the consumer product or system name
+- `version` with the version number of the consumer product or system
 
 The [Device](https://www.hl7.org/fhir/STU3/device.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base STU3 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
 
 **Example**:
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_device": {
-  "resourceType": "Device"
-
-  // TODO
+  "resourceType": "Device",
+  "identifier": [
+    {
+      "system": "https://consumersupplier.com/Id/device-identifier",
+      "value": "CONS-APP-4"
+    }
+  ],
+  "model": "Consumer product name",
+  "version": "5.3.0"
 }
 </code></pre>
 
@@ -282,25 +288,61 @@ The [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource pop
 
 The user making the request, populated as a minimal [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource.
 
-To contain the practitioner's local system identifier(s) (for example, login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter **SHALL** be provided.
+To contain the practitioner's local system identifier(s) (for example, login details / username). Where the user has both a local system user role as well as a nationally-recognised user role, then both **SHALL** be provided.
+
+{% include important.html content="This field **SHALL NOT** be populated with fixed values or a generic \"system\" user. The values **SHALL** represent the logged on user making the request." %}
 
 The consumer **SHALL** populate the following [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) fields:
 
-> TODO
-
-{% include important.html content="This field **SHALL NOT** be populated with fixed values or a generic \"system\" user; the values must represent the logged on user making the request." %}
+- `id` with a unique [logical](https://www.hl7.org/fhir/STU3/resource.html#id) identifier (e.g. user ID or GUID) for the logged on user. This **SHALL** match the value of the [`sub` (subject) claim](integration_cross_organisation_audit_and_provenance.html#sub-subject-claim).
+- `name` with:
+  - `family` containing the user's family name
+  - `given` containing the user's given name
+  - `prefix` containing the user's title, where available
+- an `identifier` element with:
+  - `system` containing `https://fhir.nhs.uk/Id/sds-user-id`
+  - `value` containing the SDS user ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
+- an `identifier` element with:
+  - `system` containing `https://fhir.nhs.uk/Id/sds-role-profile-id`
+  - `value` containing the SDS user role profile ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
+- an `identifier` element containing a unique local user or user-role identifier for the logged on user (e.g. user ID, user role ID, logon name) from the consumer system:
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/user-guid`
+  - `value` containing the unique local identifier for the logged on user
 
 The [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base STU3 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
 
 **Example**:
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_practitioner": {
-  "resourceType": "Practitioner"
-
-  // TODO
+  "resourceType": "Practitioner",
+  "id": "10019",
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/sds-user-id",
+      "value": "111222333444"
+    },
+    {
+      "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+      "value": "444555666777"
+    },
+    {
+      "system": "https://consumersupplier.com/Id/user-guid",
+      "value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
+    }
+  ],
+  "name": [
+    {
+      "family": "Jones",
+      "given": [
+        "Claire"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ]
 }</code></pre>
 
----
 
 ### JWT payload full example ###
 
@@ -317,13 +359,12 @@ The [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource pop
     "resourceType": "Device",
     "identifier": [
       {
-        "system": "[DeviceSystem]",
-        "value": "[DeviceID]"
+        "system": "https://consumersupplier.com/Id/device-identifier",
+        "value": "CONS-APP-4"
       }
     ],
-    "model": "[SoftwareName]",
-    "version": "[SoftwareVersion]",
-    "url": "https://[ConsumerSystemURL]"
+    "model": "Consumer product name",
+    "version": "5.3.0"
   },
   "requesting_organization": {
     "resourceType": "Organization",
@@ -337,29 +378,29 @@ The [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource pop
   },
   "requesting_practitioner": {
     "resourceType": "Practitioner",
-    "id": "[PractitionerID]",
+    "id": "10019",
     "identifier": [
       {
         "system": "https://fhir.nhs.uk/Id/sds-user-id",
-        "value": "[SDSUserID]"
+        "value": "111222333444"
       },
       {
         "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-        "value": "[SDSRoleID]"
+        "value": "444555666777"
       },
       {
-        "system": "[LocalUserSystem]",
-        "value": "[LocalUserID]"
+        "system": "https://consumersupplier.com/Id/user-guid",
+        "value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
       }
     ],
     "name": [
       {
-        "family": "[Family]",
+        "family": "Jones",
         "given": [
-          "[Given]"
+          "Claire"
         ],
         "prefix": [
-          "[Prefix]"
+          "Dr"
         ]
       }
     ]
