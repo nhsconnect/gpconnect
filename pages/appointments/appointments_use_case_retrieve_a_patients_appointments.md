@@ -164,6 +164,16 @@ Provider systems:
                 "value": "A00001"
               }
             ],
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+                    "code": "gp-practice"
+                  }
+                ]
+              }
+            ],
             "name": "Test Organization Name",
             "telecom": [
               {
@@ -260,6 +270,16 @@ Provider systems:
               {
                 "system": "https://fhir.nhs.uk/Id/ods-organization-code",
                 "value": "A00001"
+              }
+            ],
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+                    "code": "gp-practice"
+                  }
+                ]
               }
             ],
             "name": "Test Organization Name 2",

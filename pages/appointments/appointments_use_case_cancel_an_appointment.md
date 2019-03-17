@@ -109,6 +109,16 @@ On the wire, a JSON serialised request would look something like the following:
           "value": "A00001"
         }
       ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
+        }
+      ],
       "name": "Test Organization Name",
       "telecom": [
         {

@@ -96,7 +96,7 @@ The following data elements are mandatory (that is, data MUST be present):
   - the contained organization resource SHALL represent the organization booking the appointment.
   - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile.
   - the contained organization resource SHALL contain an `identifier` with the organisation's ODS code.
-  - the contained organization resource SHALL contain at least `Name` and `Telecom` details.
+  - the contained organization resource SHALL contain at least `name` and `telecom` details.
   - the contained organization resource SHALL include the `type` element with a value matching the organization type sent as a `searchFilter` with the [Search for free slots](appointments_use_case_search_for_free_slots.html) request. If organization type was not passed to the `searchFilter` then `type` SHALL not be populated.
 - the `created` element SHALL be populated with the date and time the appointment was created.
 
@@ -157,6 +157,16 @@ On the wire, a JSON serialised request would look something like the following:
         {
           "system": "https://fhir.nhs.uk/Id/ods-organization-code",
           "value": "A00001"
+        }
+      ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
         }
       ],
       "name": "Test Organization Name",

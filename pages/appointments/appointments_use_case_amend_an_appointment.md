@@ -13,7 +13,7 @@ This API is used to amend the `description` or `comment` fields of a patient's f
 
 The typical flow to amend an appointment is:
 
- 1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
+ 1. Search by NHS number for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
  3. Choose an `Appointment` resource and update `description` and/or `comment` fields.
 
@@ -117,6 +117,16 @@ On the wire a JSON serialised request would look something like the following:
         {
           "system": "https://fhir.nhs.uk/Id/ods-organization-code",
           "value": "A00001"
+        }
+      ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
         }
       ],
       "name": "Test Organization Name",
