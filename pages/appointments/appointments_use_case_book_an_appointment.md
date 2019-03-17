@@ -118,8 +118,6 @@ The following guidance around the Appointment resource element SHALL be followed
 | ---                     | --- |
 | Appointment.***description*** | This field SHALL be populated with a "Summary Label", a brief description of the appointment as would be shown on a subject line in a meeting request, or appointment list. Consumers SHALL impose a character limit of 100 characters for this element. |
 | Appointment.***comment***     | This field SHALL be used for "Patient specific notes" and any additional comments relating to the appointment. Consumers SHALL impose a character limit of 500 characters for this element. |
-| Appointment.***reason***     | Consumers and providers SHALL NOT use the appointment `reason` element as the GP Connect appointment management capability is for administration of appointment booking and should not be used to transfer clinical data between systems. As the reason element is for recording 'clinical' codes it goes against the purpose of the GP Connect Appointment Management capability, so it should not be used by consumers or providers. |
-| Appointment.***specialty*** | This field SHALL NOT be populated |
 
 #### Resource guidance ####
 
