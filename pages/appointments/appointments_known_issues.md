@@ -21,14 +21,14 @@ In order to ensure the known issue does not cause problems for providers or cons
 
 - Consumer systems **SHALL** send the `_include:recurse=Location:managingOrganization` parameter, **IF** they require corresponding `Organization` resources to be returned in the `Bundle`.
 
-{% include important.html content="In a future version of GP Connect API, `Organization` resources will only be returned where the `_include:recurse=Location:managingOrganization` parameter is passed by consumers, therefore consumers should pass this parameter if they require the `Organisation` resource as part of their Search for free slots response." %}
+{% include important.html content="In a future version of GP Connect API, `Organization` resources will only be returned where the `_include:recurse=Location:managingOrganization` parameter is passed by consumers, therefore consumers shall pass this parameter if they require the `Organisation` resource to continue to be returned as part of their Search for free slots response." %}
 
 ### Consumer sent patient temporary contact details when booking an appointment
 
 It is recognised that a consumer may wish to send temporary contact details for a patient at the point an appointment is booked.
 
-At the present time, temporary contact details can only be sent in the [Register patient](foundations_use_case_register_a_patient.html) request message which is sent by the consumer in order to create a patient record at the provider organisation, where a record for the patient doesn't already exist.  Furthermore is no corresponding update patient message.
+At the present time, temporary contact details can only be sent in the [Register patient](foundations_use_case_register_a_patient.html) message which is sent by the consumer in order to create a patient record at the provider organisation where the record for the patient doesn't already exist.  Furthermore there is no corresponding "update patient demographics" message.
 
-Therefore there is a known discrepancy between when a consumer may send temporary contact details for a patient - when a patient record is created, but not when one already exists.
+Therefore there is a known discrepancy in when a consumer may send temporary contact details for a patient - they may be sent when a patient record is created on the provider system, but not when one already exists.
 
-A solution to this is being considered, however as a temporary workaround, consumer organisations MAY send temporary contact details in the text `description` field of the `Appointment` resource in [Book appointment]() or [Amend appointment]() however if doing so consumers must be aware this field is written to the a text field stored against the booked appointment in the provider systems appointment book, and will not be saved in the usual place in the demographic record that contact details are normally stored.
+A solution to this is being considered, however as a temporary workaround, consumer organisations MAY send temporary contact details in the text `description` field of the `Appointment` resource in [Book appointment](appointments_use_case_book_an_appointment.html) or [Amend appointment](appointments_use_case_amend_an_appointment.html) however if doing so consumers must be aware this field is written to the a text field stored against the booked appointment in the provider systems appointment book, and will not be saved in the usual place in the demographic record that contact details are normally stored.
