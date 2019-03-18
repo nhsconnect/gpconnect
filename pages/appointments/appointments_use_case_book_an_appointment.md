@@ -124,8 +124,9 @@ The following data elements MUST NOT be included:
 When receiving `description` and `comment` fields in the provider system:
 
 - Providers systems SHALL store information received in `description` and `comment` fields, supporting the character limit lengths shown above 
-- Where a consumer sends information longer than the maximum character limits, an error SHALL be returned to the consumer
 - Providers systems SHALL NOT truncate information received in `description` or `comment` fields
+- Providers SHALL return `description` and `comment` fields to the consumer in the response payload, as stored
+- Where a consumer sends information longer than the maximum character limits, an error SHALL be returned to the consumer
 - Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
 
 #### Example request body ####
