@@ -79,20 +79,28 @@ Consumer systems:
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 - SHALL NOT amend an appointment with a status of `cancelled`
 
-  {% include important.html content="It is recommended that Consumers read the Appointment they wish to amend (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
+Only the following data elements can be modified when performing an appointment amendment:
+- `description` containing a brief description of the appointment.
+  - Consumers SHALL impose a character limit of 100 characters for this element.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+- `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
+  - Consumers SHALL impose a character limit of 500 characters for this element.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
 
-Only the following data-elements can be modified when performing an appointment amendment:
-- `description`
-- `comment`
+{% include important.html content="It is recommended that Consumers read the Appointment they wish to amend (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
 
+#### Provider handling of description and comment ####
 
-  {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
+When receiving `description` and `comment` fields in the provider system:
 
-To reduce the risk of information being truncated when stored on the providers side, consumers SHALL impose:
-- a 100 character limit on the appointment `description` element when editing a GP Connect appointment.
-- a 500 character limit on the appointment `comment` element when editing a GP Connect appointment.
+- Providers systems SHALL store information received in `description` and `comment` fields, supporting the character limit lengths shown above 
+- Where a consumer sends information longer than the maximum character limits, an error SHALL be returned to the consumer
+- Providers systems SHALL NOT truncate information received in `description` or `comment` fields
+- Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
 
-On the wire a JSON serialised request would look something like the following:
+#### Example request body ####
+
+On the wire, a JSON serialised request would look something like the following:
 
 ```json
 {
@@ -187,6 +195,7 @@ The provider system:
   - the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
   - the appointment has been cancelled.  Provider systems should return a `422` error with error code `INVALID_RESOURCE`.
   - the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
+  - the `description` or `comment` fields contain more characters than can be stored in the provider system
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
