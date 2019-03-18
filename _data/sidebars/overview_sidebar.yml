@@ -147,9 +147,12 @@ entries:
     folderitems:
     - title: Overview
       url: /integration_overview.html
-      output: web       
+      output: web
     - title: Spine integration illustrated
       url: /integration_illustrated.html
+      output: web
+    - title: System toplogies
+      url: /integration_system_topologies.html
       output: web
     - title: Cross organisation audit and provenance
       url: /integration_cross_organisation_audit_and_provenance.html
