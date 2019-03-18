@@ -148,6 +148,9 @@ entries:
     - title: Overview
       url: /integration_overview.html
       output: web       
+    - title: Spine integration illustrated
+      url: /integration_illustrated.html
+      output: web
     - title: Cross organisation audit and provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
