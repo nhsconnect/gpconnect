@@ -79,7 +79,6 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Organization` resources in a `Bundle` of `type` searchset.
-  - SHALL populate `entry.fullUrl` for each resource in the `Bundle`
 - SHALL return `Organization` resources that conform to the [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile.
 
 - SHALL populate the following `Organization` fields:
@@ -102,7 +101,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
       "resource": {
         "resourceType": "Organization",
         "id": "23",

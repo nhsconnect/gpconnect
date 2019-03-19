@@ -71,7 +71,6 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Practitioner` resources in a `Bundle` of `type` searchset.
-    - SHALL populate `entry.fullUrl` for each resource in the `Bundle`
 - SHALL return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) profile.
 
 - SHALL populate the following `Practitioner` fields:
@@ -97,7 +96,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/15",
       "resource": {
         "resourceType": "Practitioner",
         "id": "15",

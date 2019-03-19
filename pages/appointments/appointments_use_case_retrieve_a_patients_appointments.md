@@ -121,7 +121,7 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resources in a `Bundle` of `type` searchset.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
-- SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned.
+- SHALL include the versionId of the current version of each `Appointment` resource returned.
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
 
 - SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
@@ -139,7 +139,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Appointment/148",
       "resource": {
         "resourceType": "Appointment",
         "id": "148",
@@ -247,7 +246,6 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Appointment/149",
       "resource": {
         "resourceType": "Appointment",
         "id": "149",

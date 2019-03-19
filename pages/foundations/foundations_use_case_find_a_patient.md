@@ -80,7 +80,6 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-  - SHALL populate `entry.fullUrl` for each resource in the `Bundle`
 - SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient).
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 
@@ -117,7 +116,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
       "resource": {
         "resourceType": "Patient",
         "id": "2",
