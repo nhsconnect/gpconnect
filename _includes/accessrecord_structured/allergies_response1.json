@@ -9,7 +9,6 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/04603d77-1a4e-4d63-b246-d7504f8bd833",
       "resource": {
         "resourceType": "Patient",
         "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
@@ -97,7 +96,6 @@
       }
     },
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/db67f447-b30d-442a-8e31-6918d1367eeb",
       "resource": {
         "resourceType": "Organization",
         "id": "db67f447-b30d-442a-8e31-6918d1367eeb",
@@ -135,7 +133,6 @@
       }
     },
     {
-      "fullUrl": "https://gpconnect.aprovider.nhs.net/GP001/STU3/1/Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7",
       "resource": {
         "resourceType": "Practitioner",
         "id": "6c41ebfd-57c3-4162-9d7b-208c171a2fd7",
