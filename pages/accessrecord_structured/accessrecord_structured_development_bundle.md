@@ -62,18 +62,6 @@ Items that make up the Bundle.
 
 See below for subelements of this BackboneElement.
 
-### entry.fullUrl ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The absolute URL for the resource. This **MUST** be populated for resources that can be retrieved via a 'read' RESTful endpoint. This **SHALL NOT** be provided for resources that are only accessed via an operation.
-
 ### entry.resource ###
 
 <table class='resource-attributes'>
@@ -111,5 +99,13 @@ The following elements **SHALL NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Instant</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">entry.fullUrl</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
   </tr>
 </table>
