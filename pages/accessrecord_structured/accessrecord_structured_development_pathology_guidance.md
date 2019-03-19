@@ -45,7 +45,7 @@ Gp systems are required to maintian the text formatting in order to preserve the
 
 ### Filing results into the patient record
 
-When results are filed by the user it is possible to file the entire report, a 'test group' or an individual test.
+When results are filed by the user it is possible to file the entire report or a 'test group'.
 
 Results may not always be filed on the day they were received. However in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such this date is an important date when moving records between GP systems. 
 
@@ -86,10 +86,9 @@ We have mapped these resources on to the logical model in the diagram below,
 
 From the diagram you can see that the DiagnosticReport is at the centre of the model and that all the other entities are linked to from there. 
 
-It is also possible to see how we have used the Observation resource for three different entities within the model. the test group header, test results and to contain any filing comments. Although we have used this resource in different settings there will be only one FHIR profile that can then be populated appropriately for each individual use.
+It is also possible to see how we have used the Observation resource for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings there will be only one FHIR profile that can then be populated appropriately for each individual use.
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.
-
 
 
 
