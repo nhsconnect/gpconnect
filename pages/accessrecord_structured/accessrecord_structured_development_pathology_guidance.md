@@ -41,7 +41,7 @@ It is a detailed specification and although it does contain some coding the majo
 {: .center-image }
 ![Structured text example](images/access_structured/Pathology_structured_text_example_2.png)
 
-Gp systems are required to maintian the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFact report imported into the GP system **MUST** be maintained.
+Gp systems are required to maintian the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFact report imported into the GP system **MUST** be maintained as they are in the GP2GP HL7 message.
 
 ### Filing results into the patient record
 
@@ -58,11 +58,22 @@ The following entity diagram describes the logical model for pathology in GP Con
 {: .center-image }
 ![Pathology logical model](images/access_structured/Pathology_Logical_Model.png)
 
-In the image we have made the key entities more prominent so entities representing organizations and practitioners sit in the background but are still present.
+In the image we have made the key entities more prominent. Entities representing organizations and practitioners sit in the background but are still part of the exported data.
 
-As mentioned previously the 'Test Report Document' and 'Test Result Document' are out of scope for the current iteration but are represented in the diagram. 
+|Entity Name |Description |
+|------------|--------------|
+|Test Report |	The summary data from the test report including the clinical interpretation|
+|Test Group	|Output from a group of tests including the clinical interpretation|
+|Test Result|Output from a single test including the clinical interpretation|
+|Specimen	|Information on the specimen tested|
+|Test Report Filing	|Information recorded by the general practice clinician when they file the test report|
+|Test Request Summary	|A summary of the original test request that is returned with the test report|
+|Test Report Document	|The test report in the format it was received by the GP Practice|
+|Test Result Document	|Documents that form part of the test results (for example - images and charts)|
 
-We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFact message but also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the may different patterns and types of result that can be sent in one model so as to ensure consistency of structure.
+The 'Test Report Document' and 'Test Result Document' are out of scope for the current iteration but are represented in the diagram. 
+
+We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFact message and also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the may different patterns and types of result that can be sent so it can be easily adapted to support other test results stored in the GP system. 
 
 ### Available FHIR resources
 
@@ -84,9 +95,9 @@ We have mapped these resources on to the logical model in the diagram below,
 {: .center-image }
 ![Pathology logical model with FHIR resource names](images/access_structured/Pathology_Logical_Model_with_FHIR_resource_names.png)
 
-From the diagram you can see that the DiagnosticReport is at the centre of the model and that all the other entities are linked to from there. 
+DiagnosticReport is at the centre of the model and that all the other entities are linked to from there. 
 
-It is also possible to see how we have used the Observation resource for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings there will be only one FHIR profile that can then be populated appropriately for each individual use.
+The Observation resource for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings there will be only one FHIR profile that can then be populated appropriately for each individual use.
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.
 
