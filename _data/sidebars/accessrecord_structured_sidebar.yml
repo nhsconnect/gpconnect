@@ -81,7 +81,7 @@ entries:
         - title: <b class='resource'>Observation - Test Result</b>
           url: /accessrecord_structured_development_observation_testResult.html
           output: web
-         - title: <b class='resource'>Observation - Filing Comments</b>
+        - title: <b class='resource'>Observation - Filing Comments</b>
           url: /accessrecord_structured_development_observation_filingComments.html
           output: web
         - title: <b class='resource'>ProcedureRequest</b>
