@@ -225,13 +225,13 @@ Provider systems:
 
     - This resource SHALL always be present, regardless of parameters, except where no slots are returned.  Please see [Known issues](appointments_known_issues.html) for more details.
 
-    - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
+    - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present
 
     - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
 
-- If no free slots are returned for the requested time period then an empty response `Bundle` SHALL be returned.
+- If no free slots are returned for the requested time period then an empty response `Bundle` SHALL be returned
 
-- Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are are associated with the `Slot` resources matching the query
+- Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are associated with the `Slot` resources matching the query
 
 - SHALL populate `Slot.start`, `Slot.end`, `Schedule.planningHorizon.start` and `Schedule.planningHorizon.end` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
 
