@@ -197,9 +197,9 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrieval of free slot details.
+- SHALL return a `200` **OK** HTTP status code on successful retrieval of free slot details
 
-- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
+- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page
 
 - SHALL return a `Bundle` of type `searchset` containing:
 
