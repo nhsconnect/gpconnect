@@ -145,9 +145,6 @@ entries:
   - title: Integrate with Spine
     output: web
     folderitems:
-    - title: Overview
-      url: /integration_overview.html
-      output: web
     - title: Spine integration illustrated
       url: /integration_illustrated.html
       output: web
