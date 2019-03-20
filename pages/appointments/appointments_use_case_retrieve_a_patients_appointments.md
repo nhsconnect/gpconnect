@@ -55,11 +55,11 @@ Consumer systems:
 
 Provider systems:
 - SHALL support the search prefixes `ge` and `le`
-- SHALL return an error if any part of the consumer requested search range is in the past.
-  - If the consumer sends today's date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is today's date, then the appointment SHALL still be returned in the response bundle.
-  - The error returned SHALL include a meaningful error message to indicate that the search parameters cannot request appointments in the past.
-- SHALL return an error if either either of the date parameters contain a time element.
-- SHALL return an error if either of the two start date parameters are not sent with the consumers request.
+- SHALL return an error if any part of the consumer requested search range is in the past
+  - If the consumer sends today's date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is today's date, then the appointment SHALL still be returned in the response bundle
+  - The error returned SHALL include a meaningful error message to indicate that the search parameters cannot request appointments in the past
+- SHALL return an error if either of the date parameters contain a time element
+- SHALL return an error if either of the two start date parameters are not sent with the consumers request
 
 #### FHIR relative request ####
 
@@ -117,11 +117,11 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL only return appointments where the `start` element is in the future (greater than or equal to the current date).
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resources in a `Bundle` of `type` searchset.
-- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources.
-- SHALL include the versionId of the current version of each `Appointment` resource returned.
+- SHALL only return appointments where the `start` element is in the future (greater than or equal to the current date)
+- SHALL return a `200` **OK** HTTP status code on successful execution of the operation
+- SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resources in a `Bundle` of `type` searchset
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources
+- SHALL include the versionId of the current version of each `Appointment` resource returned
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
 
 - SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
