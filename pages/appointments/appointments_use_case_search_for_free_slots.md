@@ -172,9 +172,9 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful retrieval of free slot details.
+- SHALL return a `200` **OK** HTTP status code on successful retrieval of free slot details
 
-- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page.
+- SHALL return resources conforming to the GP Connect profiled versions of the base FHIR resources listed on the [Appointment Management resources](datalibraryappointment.html) page
 
 - SHALL return a `Bundle` of type `searchset` containing:
 
@@ -200,16 +200,16 @@ Provider systems:
 
     - This resource SHALL always be present, regardless of parameters, except where no slots are returned.  Please see [Known issues](appointments_known_issues.html) for more details.
 
-      - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present.
+      - Provider systems SHALL accept the `_include:recurse=Location:managingOrganization` parameter in the [Search for free slots](appointments_use_case_search_for_free_slots.html) request without returning an error, however SHALL continue to return the `Organization` resource regardless of whether this is present
 
-      - Consumer systems SHALL NOT send the `_include:recurse=Location:managingOrganization` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details.
+      - Consumer systems SHALL NOT send the `_include:recurse=Location:managingOrganization` parameter at the current time.  Please see [Known issues](appointments_known_issues.html) for more details
 
     - SHALL populate the `Organization` resource according to population requirements for [Read an organization](foundations_use_case_read_an_organisation.html#payload-response-body)
 
 
 - If no free slots are returned for the requested time period then an empty response `Bundle` SHALL be returned.
 
-- Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are are associated with the `Slot` resources matching the query
+- Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are associated with the `Slot` resources matching the query
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
