@@ -145,7 +145,7 @@ entries:
     - title: Spine integration illustrated
       url: /integration_illustrated.html
       output: web
-    - title: System toplogies
+    - title: System topologies
       url: /integration_system_topologies.html
       output: web
     - title: Cross organisation audit and provenance
