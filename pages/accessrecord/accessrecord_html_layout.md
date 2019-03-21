@@ -171,7 +171,7 @@ In the scenario where the patient's GP record is not 'fully integrated' into the
 
 ```html
 <div class="gptransfer-banner">
-	<p>Patient record transfer from previous GP Practice not yet complete; any information recorded before dd-Mmm-yyyy has been excluded</p>
+	<p>Patient record transfer from previous GP practice not yet complete; information recorded before dd-mmm-yyyy may be missing</p>
 </div>
 ```
 
