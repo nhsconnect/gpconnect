@@ -57,7 +57,7 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
@@ -81,7 +81,7 @@ Provider systems:
 - SHALL populate the following `Organization` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Organization` resource.
-  - `identifier` with relevent business identifiers (i.e. ODS code) for each `Organization` resource.
+  - `identifier` with relevant business identifiers (for example, ODS code) for each `Organization` resource.
   - `name`
   - `address` where available
   - `telecom` where available
