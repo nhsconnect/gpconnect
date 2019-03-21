@@ -20,7 +20,7 @@ The consumer system:
 
 Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS number).
 
-### Request Operation ###
+### Request operation ###
 
 The `[system]` field SHALL be populated with a valid patient identifier system URL (that is, `https://fhir.nhs.uk/Id/nhs-number`).
 
@@ -59,7 +59,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
 
 For example, the:
 
