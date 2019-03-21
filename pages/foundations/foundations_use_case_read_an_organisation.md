@@ -81,7 +81,7 @@ Provider systems:
 - SHALL populate the following `Organization` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Organization` resource.
-  - `identifier` with relevent business identifiers (i.e. ODS code) for each `Organization` resource.
+  - `identifier` with relevant business identifiers (for example, ODS code) for each `Organization` resource.
   - `name`
   - `address` where available
   - `telecom` where available
