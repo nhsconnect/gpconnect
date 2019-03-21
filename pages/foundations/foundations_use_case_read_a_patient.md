@@ -83,7 +83,7 @@ Provider systems:
 - SHALL populate the following fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Patient` resource.
-  - `identifier` with relevent business identifiers, including a minimum of the patient's NHS number
+  - `identifier` with relevant business identifiers, including a minimum of the patient's NHS number
   - `name`
     - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
   - `birthDate`
