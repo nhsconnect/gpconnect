@@ -73,7 +73,7 @@ Provider systems:
 - SHALL populate the following `Practitioner` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Practitioner` resource.
-  - `identifier` with relevent business identifiers (i.e. SDS User Id) for each `Practitioner` resource.
+  - `identifier` with relevant business identifiers (for example, SDS User Id) for each `Practitioner` resource.
   - `name`
   - `gender` where available
   - `nhsCommunication` with the practitioner's language information, where available
