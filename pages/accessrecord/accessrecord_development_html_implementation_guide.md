@@ -71,7 +71,7 @@ Where appropriate the following [Common User Interface (CUI)](http://webarchive.
 
 [Medications Management - Medication Line](https://webarchive.nationalarchives.gov.uk/20160921150545/http://systems.digital.nhs.uk/data/cui/uig/medline.pdf)
 
-{% include custominfocallout.html content="**Note:** All number formatting **MUST** follow the formatting applied in GP clinical supplier system providing the patient record." type="info" %}
+{% include custominfocallout.html content="**Note:** All number formatting **MUST** follow the formatting applied in GP clinical supplier system providing the patient record. All units **MUST** be displayed, where available. " type="info" %}
 
 ## Patient banner ##
 
