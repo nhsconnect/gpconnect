@@ -238,7 +238,7 @@ The following business rules apply for [clinical items](accessrecord_view_clinic
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>Includes coded items from Read Chapter 1 with Read Chapters A-Z.</td>
+		<td>Contains clinical items including, but not limited to, Procedures, Diagnoses, Symptoms, Conditions; may include items included in other sections such as Linked Problems.</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
@@ -298,7 +298,7 @@ The following business rules apply for [problems and issues](accessrecord_view_p
 	  </tr>
 	  <tr>
 		<td><b>Vision</b></td>
-		<td>Inactive Problems not supported; problems included in 'Active Problems' table. Includes active problem headers and priority 1 medical history. Significance not supported.</td>
+		<td>All problems included in Active Section. Problem related details are included in other sections.</td>
 	  </tr>
 	  <tr>
 		<td><b>Microtest</b></td>
