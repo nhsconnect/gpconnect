@@ -12,7 +12,7 @@ The GP Connect requirements documentation for the Appointment Management Capabil
 The requirements and resulting API design have been developed in collaboration with NHS England, the GP Principal System Suppliers, clinical and GP Practice administrative stakeholders, FoT CCGs, and NHS Digital Urgent Care teams.
 
 ## User stories, API requirements & use cases ##
-The business requirements are described as a set of high-level user stories with corrresponding functional specification requirements. System use case descriptions and activity diagrams detail how the Capability APIs are used in the end-to-end processes of booking an appointment, or amending/cancelling an appointment.
+The business requirements are described as a set of high-level user stories with corresponding functional specification requirements. System use case descriptions and activity diagrams detail how the Capability APIs are used in the end-to-end processes of booking an appointment, or amending/cancelling an appointment.
 
 
 ## Requirements Documentation ##
