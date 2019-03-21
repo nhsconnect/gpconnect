@@ -128,7 +128,7 @@ Consumers **SHALL** populate the payload section of the JWT with the following c
 
 Please see details below on how to populate each claim.
 
-{% include important.html content="The JWT payload used in **GP Connect API 0.x (DSTU2)** is different to that displayed on this page.  Please ensure you consult the relevent specification from the [GP Connect specifications page](https://developer.nhs.uk/gp-connect-specification-versions/) when constructing the JWT for different GP Connect API major versions." %}
+{% include important.html content="The JWT payload used in **GP Connect API 0.x (DSTU2)** is different to that displayed on this page.  Please ensure you consult the relevant specification from the [GP Connect specifications page](https://developer.nhs.uk/gp-connect-specification-versions/) when constructing the JWT for different GP Connect API major versions." %}
 
 ---
 
