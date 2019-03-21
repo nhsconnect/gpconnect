@@ -183,7 +183,7 @@ The provider system SHALL return an error if:
 - the `status` parameter is absent or is present with a value other than `free`
 - the `_include=Slot:schedule` is absent
 
-SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
+SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
 
