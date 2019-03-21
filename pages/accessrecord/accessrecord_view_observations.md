@@ -40,13 +40,59 @@ Provider message describing at a summary level how they have populated this sect
 
 Providers must return all the columns as described in the table below, sorted by `Date` descending:
 
-| Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
-| ------------ | ------------ | ------------ |
-| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the observation | `dd-Mmm-yyyy` |
-| <center>2</center> | `Entry` | A short human readable free-text title for the observation | `free-text` |
-| <center>3</center> | `Value` | Value of the observation | `free-text` |
-| <center>4</center> | `Range` | Range (where available) of the observation | `free-text` |
-| <center>5</center> | `Details` | Longer human readable details for the observation | `free-text` |
+<div>
+<table>
+<thead>
+  <tr class="header">
+	<th width="5%">Order</th>
+	<th width="23%">Name</th>
+	<th width="58%">Description</th>
+	<th width="14%">Value details</th>
+  </tr>
+ </thead>
+  <tr>
+    <td align="center">1</td>
+    <td><code>Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i> </td>
+    <td>The date of the observation</td>
+    <td><code>dd-Mmm-yyyy</code></td>
+  </tr> 
+  <tr>
+    <td align="center">2</td>
+    <td><code>Entry</code></td>
+    <td>A short human readable free-text title for the observation</td>
+    <td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">3</td>
+    <td><code>Value</code></td>
+	  <td>Value of the observation. As a minimum, the <b>MUST</b> include:
+		<ul>
+			<li>Value</li>
+			<li>Value unit</li>
+		</ul>
+	  </td>
+    <td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">4</td>
+    <td><code>Range</code></td>
+    <td>Range of the observation, where available. As a minimum, this <b>MUST</b> include:
+		<ul>
+			<li>Range</li>
+			<li>Range unit (Unit of measure <b>MUST</b> be included if it differs from the unit included in <code>Value</code>)</li>
+		</ul>
+	</td>
+	<td><code>free-text</code></td>
+  </tr>
+  <tr>
+    <td align="center">5</td>
+    <td><code>Details</code></td>
+    <td>Longer human readable details for the observation</td>
+    <td><code>free-text</code></td>
+  </tr>
+</table>
+</div>
+
 
 {% include custominfocallout.html content="**Note:** All number formatting **MUST** follow the formatting applied in GP clinical supplier system providing the patient record." type="info" %}
 
