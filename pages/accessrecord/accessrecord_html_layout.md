@@ -114,7 +114,7 @@ These views **MUST** have the following structure:
   </div>
   
   <div>
-    <h2>Inactive Problems and Issues</h2>
+    <h2>Major Inactive Problems and Issues</h2>
 
 	<div class="content-banner">
 	  <p><!-- Content banner --></p>
@@ -128,7 +128,27 @@ These views **MUST** have the following structure:
 	  <p><!-- Exclusion banner --></p>
 	</div>
     
-	<table id="prb-tab-inact">
+	<table id="prb-tab-majinact">
+	  <!-- table data -->
+	</table>
+  </div>
+	
+  <div>
+    <h2>Other Inactive Problems and Issues</h2>
+
+	<div class="content-banner">
+	  <p><!-- Content banner --></p>
+	</div>
+    
+	<div class="date-banner">
+	  <p><!-- Date banner --></p>
+	</div>
+    
+	<div class="exclusion-banner">
+	  <p><!-- Exclusion banner --></p>
+	</div>
+    
+	<table id="prb-tab-othinact">
 	  <!-- table data -->
 	</table>
   </div>
