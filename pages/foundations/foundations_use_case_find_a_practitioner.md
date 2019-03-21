@@ -9,15 +9,15 @@ summary: "Use case for finding a practitioner resource by business identity"
 
 ## API usage ##
 
-Resolve (zero or more) `Practitioner` resources using a business identifier (i.e. SDS User Id).
+Resolve (zero or more) `Practitioner` resources using a business identifier (for example, SDS User Id).
 
 ### Request operation ###
 
-The `[system]` field SHALL be populated with a valid practitioner identifier system URL (i.e. `https://fhir.nhs.uk/Id/sds-user-id`).
+The `[system]` field SHALL be populated with a valid practitioner identifier system URL (for example, `https://fhir.nhs.uk/Id/sds-user-id`).
 
-The consumer system SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). The will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+The consumer system SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/sds-user-id', other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/sds-user-id'. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR relative request ####
 
@@ -42,30 +42,30 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1`|
 
-#### Payload Request Body ####
+#### Payload request body ####
 
 N/A
 
-#### Error Handling ####
+#### Error handling ####
 
 Provider systems:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
 
 For example, the:
 
-- Business identifier `[system]` is not recognised/supported by the Provider system.
-- Business identifier fails any structural validation checks (i.e. length and check digits).
+- Business identifier `[system]` is not recognised/supported by the provider system
+- Business identifier fails any structural validation checks (for example, length and check digits)
 
 {% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
 
-### Request Response ###
+### Request response ###
 
-#### Response Headers ####
+#### Response headers ####
 
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Payload Response Body ####
+#### Payload response body ####
 
 Provider systems:
 
@@ -75,8 +75,8 @@ Provider systems:
 
 - SHALL populate the following `Practitioner` fields:
   - `meta.profile` with the profile URI
-  - `versionId` with the current version of each `Practitioner` resource.
-  - `identifier` with relevent business identifiers (i.e. SDS User Id) for each `Practitioner` resource.
+  - `versionId` with the current version of each `Practitioner` resource
+  - `identifier` with relevant business identifiers (for example, SDS User Id) for each `Practitioner` resource
   - `name`
   - `gender` where available
   - `nhsCommunication` with the practitioner's language information, where available
@@ -129,7 +129,7 @@ Provider systems:
 }
 ```
 
-## Example Code ##
+## Example code ##
 
 ### C# ###
 
