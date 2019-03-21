@@ -79,7 +79,7 @@ Providers must return all the columns as described in the table below, sorted by
     <td>Range of the observation, where available. As a minimum, this <b>MUST</b> include:
 		<ul>
 			<li>Range</li>
-			<li>Range unit, where availalbe (unit <b>MUST</b> be included if it differs from the unit included in <code>Value</code>)</li>
+			<li>Range unit, where available (unit <b>MUST</b> be included if it differs from the unit included in <code>Value</code>)</li>
 		</ul>
 	</td>
 	<td><code>free-text</code></td>
