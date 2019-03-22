@@ -83,7 +83,7 @@ Consumer systems:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
-The following data elements are mandatory (that is, data MUST be present):
+The following data elements are mandatory (that is, data **MUST** be present):
 
 - a patient `participant` of the appointment.
 - a location `participant` of the appointment, representing the physical location where the appointment is to take place (see [Design decisions](foundations_design.html#location-in-the-appointment-resource) page).
@@ -100,20 +100,20 @@ The following data elements are mandatory (that is, data MUST be present):
   - the contained organization resource SHALL contain at least `name` and `telecom` details.
   - the contained organization resource SHALL include the `type` element with a value matching the organization type sent as a `searchFilter` with the [Search for free slots](appointments_use_case_search_for_free_slots.html) request. If organization type was not passed to the `searchFilter` then `type` SHALL not be populated.
 - the `created` element SHALL be populated with the date and time the appointment was created.
-
-The following data elements SHOULD be included when available:
-- a practitioner `participant` of the appointment.
-
-The following data elements MAY be included:
-
 - `description` containing a brief description of the appointment.
   - Consumers SHALL impose a character limit of 100 characters for this element.
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+
+The following data elements **SHOULD** be included when available:
+- a practitioner `participant` of the appointment.
+
+The following data elements **MAY** be included:
+
 - `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
   - Consumers SHALL impose a character limit of 500 characters for this element.
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
 
-The following data elements MUST NOT be included:
+The following data elements **MUST NOT** be included:
   - `reason`
   - `specialty`
 
