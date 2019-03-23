@@ -185,15 +185,15 @@ On the wire, a JSON serialised request would look something like the following:
   ],
   "status": "booked",
   "description": "Free text description.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {
@@ -316,15 +316,15 @@ Provider systems:
   ],
   "status": "booked",
   "description": "Free text description.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {

@@ -42,7 +42,7 @@ Provider systems SHALL support the following include parameters:
 | `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
 | `_include:recurse= Location:managingOrganization` | Include `Organization` resources references from matching `Location` resources | `Location.managingOrganization` |
 
-Consumer systems SHALL send following parameters in the request:
+Consumer systems SHALL send the following parameters in the request:
 
 - The `start` parameter SHALL only be included once in the request.
 - The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
@@ -206,7 +206,7 @@ Provider systems:
   - `Slot` resources for the organisation which:
     - have a `status` of `free`
     - **and** fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
-    - **and** are bookable according to related defined 'Embargo/Booking Window' rules 
+    - **and** are bookable according to related defined [embargo/booking window](appointments_slotavailabilitymanagement.html#booking-windowembargo) rules 
     - **and** which match the search filter parameters of Booking Organisation (ODS Code) and/or organisation type, or are not restricted for booking by ODS code and/or organisation type
 
   - `Schedule` resources associated with the returned `Slot` resources
