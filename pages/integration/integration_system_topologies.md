@@ -7,47 +7,66 @@ permalink: integration_system_topologies.html
 summary: "Overview of the different types of deployment topologies for GP Connect providers and consumers"
 ---
 
-{% include important.html content="The topologies depicted are illustrative rather than prescriptive."%}
-
 {% include important.html content="The Spine Secure Proxy includes a mechanism to filter out all requests between organisations that are not registered on the proxy as having a mutual Data Sharing Agreement. Without this then all GP Connect consumers would be able to send requests to all GP Connect providers. 
-In order for the filtering solution to work each consumer/provider organisation needs their [Spine ASID](#spine-endpoint-terms) configured on the SSP."%}
+In order for the filtering solution to work each consumer/provider organisation MUST have their own unique [Spine ASID](#spine-endpoint-terms) configured on the SSP."%}
 
 # Consumer Topologies #
 
-## Simple Model ##
-![Simple Topology](images/integration/consumer-topology1-simple.png)<br>
+## Consumer system - shared MHS ##
 
-A grouping of different GP Connect consumer systems, all connecting directly to GP Connect via the SSP.  Each consumer in this example is registered as a CMA endpoint.  The key point is that each consumer system has its own ASID.
+![Consumer topology 2](images/integration/consumer-topology-2.png)<br>
 
-## Aggregator Model ##
+Several consumer systems connecting to GP Connect via a shared message handling server.
 
-![Simple Model](images/integration/consumer-topology2-aggregator.png)
+This is a typical deployment for a Trust or Regional Portal, where a central system/TIE acting as the message handling server connects to Spine for multiple organisations.
 
-Several different consumer systems connecting to GP Connect via middleware (Message Handling Server / MHS)
+Please note:
+- each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
+- consumer systems in the shared MHS toplogy have one [Party Key](#spine-endpoint-terms) shared amongst connecting organisations
+
+## Consumer system - seperate MHS ##
+
+![Consumer topology 1](images/integration/consumer-topology-1.png)<br>
+
+Several consumer systems connecting to GP Connect via their own message handling servers.
+
+This could be different types of consumer systems, or the same type of consumer system deployed as seperate instances.
+
+Please note:
+- each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) **for each organisation that is using it**, in order that messages flowing through Spine can be correctly identified back to the originating organisation
+- consumer systems using the seperate MHS model each have their own [Party Key](#spine-endpoint-terms)
 
 # Provider Topologies #
 
-## Single Practice System ##
+## Provider system - shared MHS ##
 
-![Single Practice System](images/integration/provider-topology1-single.png) 
+![Provider topology 2](images/integration/provider-topology-2.png) 
 
-A discrete instance of a Primary Care System serving a single GP Practice.
+Multiple GP practice systems using a shared message handling server.
 
-## Data Centre Hosted Practice System ##
+This is a typical deployment for a multi tenanted data centre hosted GP system serving multiple organisations.
 
-![Hosted Practice System](images/integration/provider-topology2-datacentre.png) 
+Please note:
 
-A GP Practice system instance hosted in a Primary Care System (PCS) supplier's data centre.  Note each individual practice has a logical CMA endpoint with its own ASID but sharing the Party Key.
+- each provider system using GP Connect **MUST** have an [ASID](#spine-endpoint-terms) **AND** [Party Key](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be routed to the correct destination organisation
+- each Party Key/ASID combination **MUST** be registered in SDS as a [CMA endpoint](#spine-endpoint-terms)
 
-![Legend](images/integration/topologies-legend.png)
+## Provider system - seperate MHS ##
+
+![Provider topology 1](images/integration/provider-topology-1.png) 
+
+Discrete instances of GP practice systems serving a single GP Practice each with their own message handling server.
+
+Please note:
+
+- each provider system using GP Connect **MUST** have an [ASID](#spine-endpoint-terms) **AND** [Party Key](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be routed to the correct destination organisation
+- each Party Key/ASID combination **MUST** be registered in SDS as a [CMA endpoint](#spine-endpoint-terms)
 
 ## Spine endpoint terms ##
 
-| ASID | Accredited system identifier. A unique number allocated to a system on accreditation for connection to Spine. |
-| CMA endpoint | Combined MHS and accredited system endpoint. An endpoint registered with Spine for a single system. |
-| MHS | Message handling server.  A middleware that handles messaging to/from Spine. |
-| MHS endpoint | An endpoint registered with Spine for use with multiple systems via an MHS. Each system has its own ASID. |
-| Party Key | The identity of a MHS handling messages for an Accredited System |
-
-
-
+| **SDS** | [Spine directory service](integration_spine_directory_service.html). A directory of Spine endpoints, system identifiers and other reference information |
+| **ASID** | Accredited system identifier. A unique identifier allocated to a system used by an organisation, on accreditation for connection to Spine. Registered in SDS |
+| **Party Key** | Identifier for an MHS processing Spine messages for an accredited system. Registered in SDS |
+| **MHS** | Message handling server.  Middleware that handles messaging to/from Spine. |
+| **CMA endpoint** | Combined MHS and accredited system endpoint. An endpoint registered with Spine for a single system. |
+| **MHS endpoint** | An endpoint registered with Spine for use with multiple systems via an MHS. Each system has its own ASID. |
