@@ -55,7 +55,7 @@ Please note:
 
 ![Provider topology 1](images/integration/provider-topology-1.png) 
 
-Discrete instances of GP practice systems serving a single GP Practice each with their own message handling server.
+Discrete instances of GP practice systems each serving a single GP Practice, and each with their own message handling server.
 
 Please note:
 
