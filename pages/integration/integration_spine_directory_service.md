@@ -126,7 +126,7 @@ The consuming system interacts with GP Connect
 The following steps **MUST** be followed:
 
 
-### Step 0. PDS trace (pre-requisite step)
+### Step 0: PDS trace (pre-requisite step)
 
 The consuming system is responsible for [performing a PDS trace](integration_personal_demographic_service.html) to both verify the identity of the patient and retrieve the ODS code of the patient's registered primary care practice. 
 
@@ -155,7 +155,7 @@ This query should again return a single endpoint. In this case, the ldapquery re
 	result: 0 Success
 
 
-### Step 2. Accredited system lookup on SDS
+### Step 2: Accredited system lookup on SDS
 
 The ASID and party key is now looked up on SDS. The example below uses ldapsearch:
 
