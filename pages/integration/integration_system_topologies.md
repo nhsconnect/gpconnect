@@ -33,8 +33,8 @@ Several consumer systems connecting to GP Connect via their own message handling
 This could be different types of consumer systems, or the same type of consumer system deployed as seperate instances.
 
 Please note:
-- each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) **for each organisation that is using it**, in order that messages flowing through Spine can be correctly identified back to the originating organisation
-- consumer systems using the seperate MHS model each have their own [Party Key](#spine-endpoint-terms)
+- each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
+- consumer systems using the seperate MHS topology each have their own [Party Key](#spine-endpoint-terms)
 
 # Provider Topologies #
 
@@ -67,6 +67,6 @@ Please note:
 | **SDS** | [Spine directory service](integration_spine_directory_service.html). A directory of Spine endpoints, system identifiers and other reference information |
 | **ASID** | Accredited system identifier. A unique identifier allocated to a system used by an organisation, on accreditation for connection to Spine. Registered in SDS |
 | **Party Key** | Identifier for an MHS processing Spine messages for an accredited system. Registered in SDS |
-| **MHS** | Message handling server.  Middleware that handles messaging to/from Spine. |
-| **CMA endpoint** | Combined MHS and accredited system endpoint. An endpoint registered with Spine for a single system. |
-| **MHS endpoint** | An endpoint registered with Spine for use with multiple systems via an MHS. Each system has its own ASID. |
+| **MHS** | Message handling server.  Middleware that handles messaging to/from Spine |
+| **CMA endpoint** | Combined MHS and accredited system endpoint. An endpoint registered with Spine for a single system |
+| **MHS endpoint** | An endpoint registered with Spine for use with multiple systems via an MHS. Each system has its own ASID |
