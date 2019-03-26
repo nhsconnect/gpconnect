@@ -31,8 +31,8 @@ MHS records of GP Connect provider systems contain the endpoint of the target pr
 
 Please see [System topologies](integration_system_topologies.html) for more details on the allocation of ASIDs and Party Keys.
 
-{% include important.html content="**Distinguishing provider and consumer SDS records**<br/>
-Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on their MHS record; consumers do not.  This distinction enables the SDS queries to look up a GP Connect provider endpoint below to return the correct record, where a provider organisation has seperate consumer systems in addition to their main provider system." %}
+{% include important.html content="**Distinguishing GP Connect provider and consumer SDS records**<br/>
+Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on their MHS records; consumers do not.  This distinction enables the SDS queries below to return the correct record, where a provider organisation has seperate consumer systems in addition to their main provider system." %}
 
 ## Querying SDS ##
 
@@ -153,7 +153,7 @@ This query should again return a single endpoint. In this case, the ldapquery re
 	result: 0 Success
 
 
-### Step 2: AS record lookup on SDS
+### Step 2: AS record lookup on SDS to determine the provider's ASID
 
 The ASID and party key is now looked up on SDS. The example below uses ldapsearch:
 
