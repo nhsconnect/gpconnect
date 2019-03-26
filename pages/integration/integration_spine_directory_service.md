@@ -33,7 +33,7 @@ Information is provided below to clarify how this endpoint lookup functions.
 	Guidance on how a provider system should set up endpoints in Spine Directory Services.
 
 	
-### Consuming Spine Services ###
+## Consuming Spine Services ##
 
 A consuming system will interact with SDS in order to resolve the FHIR Endpoint Server Root URL to be used when constructing the request to be made to the Spine service it wishes to call (or another external endpoint when sending a brokered call through the [Spine Secure Proxy]()).
 
@@ -49,7 +49,7 @@ Systems **SHOULD** cache SDS query results giving details of consuming system, e
 Consuming systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
 
 
-#### Step 1: Message Handling System (MHS) Lookup for an external service (brokered via SSP)  ####
+### Step 1: Message Handling System (MHS) Lookup for an external service (brokered via SSP)  ###
 
 Consumers **MUST** lookup the endpoint URL, FQDN and Party Key from the MHS record, as follows:
 
@@ -85,7 +85,7 @@ Please refer to the specification of the specific FHIR API you are using for det
 
 
 
-#### Step 2: Accredited System ID (ASID) Lookup for an external service (brokered via SSP) ###
+### Step 2: Accredited System ID (ASID) Lookup for an external service (brokered via SSP) ###
 
 When the client wants to query an external service brokered through the Spine Security Proxy (e.g. a GP Connect API), the client **MUST** use an organisation ODS code for the target organisation and the nhsMHSPartyKey (identified in step 1) to lookup the Accredited System ID (ASID) as follows:
 
@@ -116,7 +116,7 @@ The ASID will be returned in the uniqueIdentifier attribute which is returned fr
 
 
 
-### Worked example of the endpoint lookup process ###
+## Worked example of the endpoint lookup process ##
 
 **Given**
 A consuming system which needs to get the HTML view of a patient record at the patient's registered practice. The consuming system has the following information about the patient:
@@ -130,7 +130,7 @@ The consuming system interacts with GP Connect
 The following steps **MUST** be followed:
 
 
-#### Step 0. PDS trace (pre-requisite step)
+### Step 0. PDS trace (pre-requisite step)
 
 The consuming system is responsible for [performing a PDS trace](integration_personal_demographic_service.html) to both verify the identity of the patient and retrieve the ODS code of the patient's registered primary care practice. 
 
@@ -138,15 +138,15 @@ For this example, NHS number 9000000084 with demographic details Mr Anthony Test
 
 
 
-#### Step 1: MHS lookup on SDS to determine FHIR endpoint server root URL
+### Step 1: MHS lookup on SDS to determine FHIR endpoint server root URL
 
 Using the party key retrieved from Step 1, and the same interaction ID, the following ldapsearch query is executed:
 
 	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
-	"(&(nhsMhsPartyKey=T99999-9999999) (objectClass=nhsMhs) (nhsMhsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1))" 
+	"(&(nhsIDCode=T99999) (objectClass=nhsMhs) (nhsMhsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1))" 
 	nhsMhsEndPoint nhsMHSFQDN nhsMhsPartyKey
 	
-
+	
 This query should again return a single endpoint. In this case, the ldapquery returns the following results:
 
 	# 472b35d4641b76454b13, Services, nhs
@@ -160,7 +160,7 @@ This query should again return a single endpoint. In this case, the ldapquery re
 	result: 0 Success
 
 
-#### Step 2. Accredited system lookup on SDS
+### Step 2. Accredited system lookup on SDS
 
 The ASID and party key is now looked up on SDS. The example below uses ldapsearch:
 
@@ -168,6 +168,7 @@ The ASID and party key is now looked up on SDS. The example below uses ldapsearc
 	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs" 
 	"(&(nhsIDCode=T99999) (objectClass=nhsAS) (nhsMHSPartyKey=T99999-9999999))" 
 	uniqueIdentifier 
+
 	
 This query should return a single matching accredited system object from SDS, the ASID being found in the uniqueIdentifier attribute. In the case, ldapsearch returns the following results:
 
@@ -182,32 +183,17 @@ This query should return a single matching accredited system object from SDS, th
 
 	
 
-	
-
-
-#### Step 3: Consumer constructs full GP Connect request URL to be sent to the Spine Security Proxy
+### Step 3: Consumer constructs full GP Connect request URL to be sent to the Spine Security Proxy
 
 The format of the full URL which the consuming system is responsible for constructing is as follows:
 
 `https://[URL of Spine Security Proxy]/[Provider Server Root URL]/[FHIR request]`
 
-The value returned in the nhsMhsEndPoint attribute in Step 2 should be treated as the FHIR Server Root URL at the provider system.
+The value returned in the nhsMhsEndPoint attribute in Step 1 should be treated as the FHIR Server Root URL at the provider system.
 
 In this example, to issue a GetCareRecord request, the following request would be made:
 
 `POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/DSTU2/1/Patient/$gpc.getcarerecord`
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -236,9 +222,3 @@ See [Environments](test_environments.html) for details of where to find URLs for
 
 
 
-### Terminology ###
-
-| **MHS** | Message Handling Server. A middleware that handles messaging to/from Spine. |
-| **ASID** | Accredited System Identifier. A unique number allocated to a system on accreditation for connection to Spine. |
-| **MHS Endpoint** | An endpoint registered with Spine for use with multiple systems via a MHS. Each system has its own ASID. |
-| **CMA Endpoint** | Combined MHS and Accredited System Endpoint. An endpoint registered with Spine for a single system. |
