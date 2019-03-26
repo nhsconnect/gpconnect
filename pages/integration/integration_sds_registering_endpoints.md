@@ -38,7 +38,7 @@ Examples:
 - A GP practice using a GP system with GP Connect enabled as provider and consumer, and a seperate regional portal system with access to Access Record HTML as a consumer
 
 {% include important.html content="**Distinguishing provider and consumer SDS records**<br/>
-Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on their SDS MHS record; consumers do not.  This distinction enables the [SDS queries](#) to look up a GP Connect provider endpoint to work." %}
+Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on their SDS MHS record; consumers do not.  This distinction enables the [SDS queries](integration_spine_directory_service.html) to look up a GP Connect provider endpoint to function correctly." %}
 
 ---
 
@@ -70,7 +70,7 @@ Consumers MUST NOT register entries in SDS as CMA (combined MHS and AS) style en
 
 {% include important.html content="These requirements apply to provider systems, including those that offer provider and consumer functionality within the same system" %}
 
-### 3.1 Provider - GP Connect Party Key and ASID per practice ###
+### 3.1 Provider - GP Connect Party Key per practice ###
 
 In order to allow for practice specific routing using endpoint, all provider practices SHALL have a unique GP Connect Party Key and ASID, registered in SDS as a "CMA type" endpoint.
 
