@@ -21,7 +21,7 @@ To illustrate this, an example is given below of all the steps required consume 
 
 The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order to book an appointment at a GP practice.
 
-![Sequence diagram for booking an appointment end to end interactions](images/integration/integration_sequence_diagram.png)
+<img src="images/integration/integration_sequence_diagram.png" alt="Sequence diagram for booking an appointment end to end interactions" style="max-width:100%;max-height:100%;">
 
 The steps shown in the diagram are detailed below.
 
