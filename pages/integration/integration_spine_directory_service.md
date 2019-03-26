@@ -31,6 +31,9 @@ MHS records of GP Connect provider systems contain the endpoint of the target pr
 
 Please see [System topologies](integration_system_topologies.html) for more details on the allocation of ASIDs and Party Keys.
 
+{% include important.html content="**Distinguishing provider and consumer SDS records**<br/>
+Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on their MHS record; consumers do not.  This distinction enables the SDS queries to look up a GP Connect provider endpoint below to return the correct record, where a provider organisation has seperate consumer systems in addition to their main provider system." %}
+
 ## Querying SDS ##
 
 GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) and ASID for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
@@ -53,6 +56,9 @@ Systems **SHOULD** cache SDS query results giving details of consuming system, e
 
 Systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
 
+{% include important.html content="**Why have SDS queries changed since the GP Connect API 1.2.3?**<br/>
+The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more seperate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
+The SDS queries in GP Connect API 1.2.2 and prior versions do not support this configuration." %}
 
 ### Step 1: Message Handling System (MHS) record lookup  ###
 
