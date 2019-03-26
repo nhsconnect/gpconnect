@@ -18,7 +18,7 @@ In order for the filtering solution to work each consumer/provider organisation 
 
 Several consumer systems connecting to GP Connect via a shared message handling server.
 
-This is a typical deployment for a Trust or Regional Portal, where a central system/TIE (Trust integration engine) acting as the message handling server connects to Spine for multiple organisations.
+This is a typical deployment for an area based or regional Portal, where a central system/TIE (Trust integration engine) acting as the message handling server connects to Spine for multiple organisations.
 
 Please note:
 - each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
