@@ -285,7 +285,7 @@ The consumer **MUST** populate the following [Organization](https://www.hl7.org/
 
 - `name` with the name of the organisation
 - an `identifier` element, with:
-  - `system` containing `https://fhir.nhs.uk/Id/ods-organization-code`, and
+  - `system` containing `https://fhir.nhs.net/Id/ods-organization-code`, and
   - `value` containing the ODS code of the organisation
 
 {% include important.html content="In consumer system topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital for audit purposes that the organisation populated in the JWT reflects **the true originating organisation of the request** rather than the hosting organisation.<br/>
@@ -299,7 +299,7 @@ The [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) resource po
   "resourceType": "Organization",
   "identifier": [
     {
-      "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+      "system": "https://fhir.nhs.net/Id/ods-organization-code",
       "value": "A1001"
     }
   ],
@@ -325,10 +325,10 @@ The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/
   - `given` containing the user's given name
   - `prefix` containing the user's title, where available
 - an `identifier` element with:
-  - `system` containing `https://fhir.nhs.uk/Id/sds-user-id`
+  - `system` containing `https://fhir.nhs.net/Id/sds-user-id`
   - `value` containing the SDS user ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
 - an `identifier` element with:
-  - `system` containing `https://fhir.nhs.uk/Id/sds-role-profile-id`
+  - `system` containing `https://fhir.nhs.net/Id/sds-role-profile-id`
   - `value` containing the SDS user role profile ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
 - an `identifier` element containing a unique local user or user-role identifier for the logged on user (e.g. user ID, user role ID, logon name) from the consumer system:
   - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/user-guid`
@@ -343,11 +343,11 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
   "id": "10019",
   "identifier": [
     {
-      "system": "https://fhir.nhs.uk/Id/sds-user-id",
+      "system": "https://fhir.nhs.net/Id/sds-user-id",
       "value": "111222333444"
     },
     {
-      "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+      "system": "https://fhir.nhs.net/Id/sds-role-profile-id",
       "value": "444555666777"
     },
     {
@@ -402,7 +402,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
 		"resourceType": "Organization",
 		"identifier": [
 		  {
-			"system": "https://fhir.nhs.uk/Id/ods-organization-code",
+			"system": "https://fhir.nhs.net/Id/ods-organization-code",
 			"value": "A1001"
 		  }
     ],
@@ -413,11 +413,11 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
 		"id": "10019",
 		"identifier": [
 		  {
-			"system": "https://fhir.nhs.uk/Id/sds-user-id",
+			"system": "https://fhir.nhs.net/Id/sds-user-id",
 			"value": "111222333444"
 		  },
 		  {
-			"system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+			"system": "https://fhir.nhs.net/Id/sds-role-profile-id",
 			"value": "444555666777"
 		  },
 		  {
