@@ -84,7 +84,7 @@ Provider systems:
   - `name`
   - `address` where available
   - `telecom` where available
-  - `managingOrganization` with a reference to to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
+  - `managingOrganization` with a reference to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 

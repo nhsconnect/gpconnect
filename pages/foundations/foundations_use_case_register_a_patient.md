@@ -185,7 +185,7 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 
 ### Provider system registration requirements ###
 
-{% include important.html content="The following registration requirements MUST be implemented by providers, however due to provider system variances the implemented flow MAY deviate where required to accomodate these and shall be agreed and documented accordingly." %}
+{% include important.html content="The following registration requirements MUST be implemented by providers, however due to provider system variances the implemented flow MAY deviate where required to accommodate these and shall be agreed and documented accordingly." %}
 
 #### PDS requirements ####
 
