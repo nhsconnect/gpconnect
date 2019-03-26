@@ -70,9 +70,9 @@ Consumers MUST NOT register entries in SDS as CMA (combined MHS and AS) style en
 
 {% include important.html content="These requirements apply to provider systems, including those that offer provider and consumer functionality within the same system" %}
 
-### 3.1 Provider - GP Connect Party Key per practice ###
+### 3.1 Provider - CMA type endpoint to be used ###
 
-In order to allow for practice specific routing using endpoint, all provider practices SHALL have a unique GP Connect Party Key and ASID, registered in SDS as a "CMA type" endpoint.
+In order to allow for practice specific routing using endpoint, all systems SHALL have a unique GP Connect Party Key and ASID per practice, registered in SDS as a "CMA type" endpoint.
 
 A CMA type endpoint refers to an endpoint which is a combined MHS system and accredited system endpoint. There will be a 1-1 mapping between an Accredited System (uniquely identified by an ASID) record and a Message Handling System (MHS) record. A single MHS record SHALL be associated with a given ASID and interaction ID.
 
