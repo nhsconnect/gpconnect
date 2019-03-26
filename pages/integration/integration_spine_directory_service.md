@@ -7,40 +7,40 @@ permalink: integration_spine_directory_service.html
 summary: "Overview of the role of the Spine Directory Services (SDS) within GP Connect"
 ---
 
-## Spine Accredited Systems and Endpoints ##
+## Overview ##
 
-Every system that connects to the Spine has one or more "Accredited System" entry in the Spine Directory, identified by an Accredited System Identifier (ASID).
+Spine Directory Service (SDS) is an endpoint and identifier directory for Spine and Spine connected systems, containing information on accredited systems, services and NHS registered users.  It is accessed via the Lightweight Directory Access Protocol (LDAP).
+
+GP Connect provider and consumer systems are registered in SDS in order to enable:
+
+- Consumer systems to lookup provider system's ASID and endpoint information
+- The Spine Secure Proxy to allow or deny requests based on known identifier and endpoint information
+<br/>
+
+**AS records**
+
+Every system that connects to the Spine has one or more "Accredited System" (AS) records in SDS, identified by an Accredited System Identifier (ASID).
 
 This ASID is unique to a system deployed in a specific organisation, so the same application deployed into three NHS organisations would typically be represented as three unique ASIDs.
 
-In addition, each endpoint that is registered with the Spine has one or more "interaction IDs" associated with the endpoint. These identify the types of Spine interaction that the endpoint has been assured to perform. These are used to control what functionality can be called by connecting systems - calls to interactions for which the accredited system has not been assured will be blocked.
+**MHS records and endpoints**
 
+Every GP Connect system also has one or more "MHS" records (or message handling server record), identified by Party Key and [Interaction ID](integration_interaction_ids.html).
 
-## Spine Directory Service (SDS) ##
+MHS records of GP Connect provider systems contain the endpoint of the target practice, as defined by the [FHIR service root URL](development_general_api_guidance.html#service-root-url).
 
-GP Connect consumer systems are expected to resolve the FHIR endpoint for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine){:target="_blank"} Lightweight Directory Access Protocol (LDAP) directory lookups. SDS is the main information source about NHS-registered users and accredited systems and services.
+Please see the [System topologies](integration_system_topologies.html) page for more details on the allocation of ASIDs and Party Keys.
 
-Information is provided below to clarify how this endpoint lookup functions.
+## Querying SDS ##
 
-1. Consuming system viewpoint
-
-	From the perspective of a consuming system, an overview of the endpoint lookup process is given followed by a worked end-to-end example of a GP Connect request to retrieve the HTML view of a patient record.
-
-2. Provider system viewpoint
-
-	Guidance on how a provider system should set up endpoints in Spine Directory Services.
-
-	
-## Consuming Spine Services ##
-
-A consuming system will interact with SDS in order to resolve the FHIR Endpoint Server Root URL to be used when constructing the request to be made to the Spine service it wishes to call (or another external endpoint when sending a brokered call through the [Spine Secure Proxy]()).
+GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
 
 This is a two step process, as follows:
 
-1. Lookup the Message Handling System (MHS)
-2. Lookup the Accredited System ID (ASID)
+> 1. Lookup the Message Handling System (MHS) record
+> 2. Lookup the Accredited System (AS) record
 
-Once the MHS record has been retrieved the fully qualified domain name (FQDN) and full endpoint of the FHIR server can be retrieved from returned attributes of the MHS record.
+Please see below for more detail on the process.
 
 Systems **SHOULD** cache SDS query results giving details of consuming system, endpoints and endpoint capability on a per session basis.
 
