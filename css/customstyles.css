@@ -1329,3 +1329,9 @@ a.back-to-top {
 	-moz-border-radius: 30px;
 	border-radius: 30px;
 }
+
+.newheaders h3 {
+    color: black;
+    font-size: 17px;
+    font-weight: bold;
+}
