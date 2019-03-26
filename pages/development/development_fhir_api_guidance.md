@@ -179,21 +179,19 @@ Clients and servers **MUST** be conformant to the following Internet Engineering
 
 {% include roadmap.html content="The NHS Digital is currently evaluating how [Cross-Origin Resource Sharing](http://www.w3.org/TR/cors/) (CORS) will be handled for web and mobile based applications." %}
 
-### Endpoint resolution ###
+## Endpoint resolution ##
 
-Clients **MUST** perform a sequence of query operations against existing Spine services to enable FHIR endpoint resolution.
+Consumer systems SHALL perform a sequence of query operations against existing Spine services to resolve the FHIR endpoint of the system of a target GP practice:
 
-1. Clients **MUST** perform (or have previously performed) a PDS lookup for a patient.
-	1. Using the PDS results the client **MUST** determine the patient's primary GP organisation. 
-2. Clients **MUST** perform (or have previously performed) a SDS lookup using the ODS code of the patient's primary GP organisation.
-	1. Using the SDS results the client **MUST** determine the Principal GP system responsible for hosting the most up to date GP care record.
-		1. [EMIS Health](http://www.emishealth.com/)
-		2. [INPS](http://www.inps.co.uk/)
-		3. [Micotest](http://www.microtest.co.uk/)
-		4. [TPP](http://www.tpp-uk.com/)
-2. Clients **MUST** construct a [FHIR Service Root URL](#ServiceRootURL) suitable for access to a GP vendor's FHIR server. For GP Connect access to the Principal GP systems will be via the [Spine Security Proxy](#SpineSecurityProxy) and as such the URL will need to be pre-pended with a Proxy Service Root URL.
+1. Consumers SHALL perform (or have previously performed) a Personal Demographics Service (PDS) lookup for a patient.
+	1. Using the PDS results, the client SHALL determine the ODS code of the patient's registered GP practice. 
+2. Clients SHALL perform (or have previously performed) a Spine Directory Service (SDS) lookup using the ODS code of the patient's registered GP practice, in order to determine:
+	1. The provider system's GP Connect ASID
+	2. The provider system's GP Connect [FHIR service root URL](development_general_api_guidance.html#service-root-url).
 
-{% include tip.html content="Where a practitioner (with a valid SDS User ID) or organisation (with a valid ODS Code) record already exists with-in the local system the details associated with these existing records **MAY** be used for display purposes." %}
+3. Clients SHALL then append the local path and query parameters to the FHIR service root URL for the API call they wish to make.  For example for [Find a patient](foundations_use_case_find_a_patient.html) `/Patient?identifier=[system]|[value]` would be appended to the FHIR service root URL returned from SDS.
+
+{% include important.html content="Please see [Overview and querying SDS](integration_spine_directory_service.html) for more details on step 2 above." %}
 
 ### [Security](https://www.hl7.org/fhir/DSTU2/security.html) ###
 
