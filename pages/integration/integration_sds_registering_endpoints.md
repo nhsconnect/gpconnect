@@ -10,7 +10,7 @@ div: newheaders
 
 ## 1. Common SDS requirements ##
 
-### 1.1 Unique ASID per system used by an organisation ###
+### 1.1 Unique ASID for a system used at an organisation ###
 
 Every system using GP Connect SHALL have a unique ASID for each organisation using it, so the same system deployed into three organisations would be represented by three unique ASIDs.
 
@@ -46,13 +46,17 @@ Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on
 
 {% include important.html content="If a system is both a consumer and provider (e.g. a GP principal system), please refer to [Provider requirements below](#3-provider-specific-sds-requirements) instead" %}
 
-### 2.1 Consumer - GP Connect Interactions IDs on AS records only ###
+### 2.1 Use seperate MHS and AS endpoint records; not CMA style endpoints ###
+
+Consumers MUST NOT register entries in SDS as CMA (combined MHS and AS) style endpoints.  This is because the MHS record for a consumer system MUST NOT have GP Connect interactions on the endpoint, whereas the AS record MUST - creating a CMA style endpoint will not allow this distinction to be made.
+
+### 2.2 GP Connect Interactions IDs on AS records only ###
 
 GP Connect [interaction IDs](integration_interaction_ids.html) on AS records indicate the system is permitted to send GP Connect messages as a consumer.
 
 GP Connect [interaction IDs](integration_interaction_ids.html) on an MHS record indicate the Messaging Handling Server is a GP Connect provider, therefore this SHALL NOT be done for consumer (only) systems.
 
-### 2.2 Consumer - Shared Party Key may be used depending on topology ##
+### 2.3 Shared Party Key may be used depending on topology ##
 
 Consumer systems MAY use a single GP Connect Party Key for multiple organisations, if they connect to Spine via a single shared message handling server.
 
@@ -60,37 +64,33 @@ However, as per [1.1 Unique ASID per system used by an organisation](#11-unique-
 
 Please see [System topologies](integration_system_topologies.html) for more information.
 
-### 2.3 Consumer - Use seperate MHS and AS endpoint records; not CMA style endpoints ###
-
-Consumers MUST NOT register entries in SDS as CMA (combined MHS and AS) style endpoints.  This is because the MHS record for a consumer system MUST NOT have GP Connect interactions on the endpoint, whereas the AS record MUST - creating a CMA style endpoint will not allow this distinction to be made.
-
 ---
 
 ## 3. Provider specific SDS requirements ##
 
 {% include important.html content="These requirements apply to provider systems, including those that offer provider and consumer functionality within the same system" %}
 
-### 3.1 Provider - CMA type endpoint to be used ###
+### 3.1 Use CMA type endpoints ###
 
 In order to allow for practice specific routing using endpoint, all systems SHALL have a unique GP Connect Party Key and ASID per practice, registered in SDS as a "CMA type" endpoint.
 
 A CMA type endpoint refers to an endpoint which is a combined MHS system and accredited system endpoint. There will be a 1-1 mapping between an Accredited System (uniquely identified by an ASID) record and a Message Handling System (MHS) record. A single MHS record SHALL be associated with a given ASID and interaction ID.
 
-### 3.2 Provider - GP Connect Interaction IDs on MHS and AS records  ###
+### 3.2 GP Connect Interaction IDs on MHS and AS records  ###
 
 GP Connect Interaction IDs SHALL be registered on both MHS and AS records (using a CMA type endpoint).
 
 GP Connect [interaction IDs](integration_interaction_ids.html) on an MHS record indicate the Messaging Handling Server is a GP Connect provider.
 
-### 3.3 Provider - Provider systems who are also consumers use the same ASID and Party Key for both roles ###
+### 3.3 Provider systems who are also consumers use the same ASID and Party Key for both roles ###
 
 Provider systems which also offer consumer functionality SHALL use the same GP Connect Party Key and ASID for both provider and consumer roles.
 
-### 3.4 Provider - Format of Service Root URL ###
+### 3.4 Format of Service Root URL ###
 
 The *Service Root URL* for a given ASID SHALL be defined in the `nhsMhsEndPoint` attribute of the MHS record (i.e. the LDAP object of type nhsMhs). This URL SHALL be in the format described in [Service Root URL versioning](development_general_api_guidance.html#service-root-url) guidance.
 
-As described in the [API versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, the practice's ODS code  SHALL be placed in the FHIR server root URL, and this SHALL match the value in the `nhsidcode` elements on the MHS and associated AS records.  ODS codes which refer to clinical systems as a single entity SHALL NOT be used to provide routing. Practice specific ODS codes SHALL be used for routing purposes in the FHIR Server Root URL found in the NhsMhsEndPoint attribute of the MHS record.
+As described in the [API versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, the practice's ODS code  SHALL be placed in the FHIR server root URL, and this SHALL match the value in the `nhsidcode` elements on the MHS and associated AS records.  ODS codes which refer to clinical systems as a single entity SHALL NOT be used to provide routing. Practice specific ODS codes SHALL be used for routing purposes in the FHIR Server Root URL found in the `nhsMhsEndPoint` attribute of the MHS record.
 
 ### 3.5 nhsMhsEndPoint attribute SHALL contain the FHIR service root URL only ###
 
@@ -104,7 +104,7 @@ Note that the `/Patient/$gpc.getstructuredrecord` is NOT added.
 
 In line with this, provider systems SHOULD perform checks that the FHIR request received is a reasonable means to request the resource in view given the specified interaction. 
 
-### 3.6 Provider - FHIR service root URLs associated with a given product set SHALL use same FHIR version ###
+### 3.6 FHIR service root URLs associated with a given product set SHALL use same FHIR version ###
 
 Where a provider moves in future to a later version of FHIR, it will be necessary to define a new product set to accommodate the set of interactions provided by this. FHIR server root URLs defined for a specific product set SHALL all reference the same FHIR version. This ensures that FHIR resources references returned in FHIR responses are locally resolvable. 
 
