@@ -56,9 +56,9 @@ Systems **SHOULD** cache SDS query results giving details of consuming system, e
 
 Systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
 
-{% include important.html content="**Why have SDS queries changed since the GP Connect API 1.2.3?**<br/>
+{% include important.html content="**Why have SDS queries changed in GP Connect API 1.2.3?**<br/>
 The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more seperate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
-The SDS queries in GP Connect API 1.2.2 and prior versions do not support this configuration." %}
+The SDS queries in GP Connect API 1.2.2 and prior versions do not support this configuration, hence existing consumer systems **MUST** update their queries to to this version of the specification." %}
 
 ### Step 1: Message Handling System (MHS) record lookup  ###
 
