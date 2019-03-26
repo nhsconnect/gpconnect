@@ -42,7 +42,7 @@ Please note:
 
 ![Provider topology 2](images/integration/provider-topology-2.png) 
 
-{% include important.html content="Please note in the diagram above, the Shared message handling server holds three Party Keys, one for each practice. Party Key 1 is for the practice with ASID 1, Party Key 2 is for the practice with ASID 2, and so on."%}
+{% include important.html content="Please note in the diagram above, the Shared message handling server holds three Party Keys, one associated with each practice. Party Key 1 is for the practice with ASID 1, Party Key 2 is for the practice with ASID 2, and so on."%}
 
 Multiple GP practice systems using a shared message handling server.
 
