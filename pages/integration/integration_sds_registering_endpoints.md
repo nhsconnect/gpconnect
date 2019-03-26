@@ -8,15 +8,17 @@ summary: "Overview of the role of the Spine Directory Services (SDS) within GP C
 div: newheaders
 ---
 
+{% include important.html content="SDS registration for consumer systems is normally handled by NHS Digital. Please contact the GP Connect programme if you are unsure." %}
+
 ## 1. Common SDS requirements ##
 
-### 1.1 Unique ASID for a system used at an organisation ###
+### 1.1 Unique ASID per organisation using a system ###
 
 Every system using GP Connect SHALL have a unique ASID for each organisation using it, so the same system deployed into three organisations would be represented by three unique ASIDs.
 
 Conversely, if two different consumer systems are deployed in a single organisation, two unique ASIDs would be required.
 
-Shared systems such as a *Trust portal* which are provisioned by a single organisation, but used by other organisations, SHALL have a unique ASID per organisation using the system.
+Shared systems such as a *Regional portal* which are provisioned by a single organisation, but used by other organisations, SHALL have a unique ASID per organisation using the system.
 
 {% include note.html content="When sending GP Connect requests, the ASID of the organisation **making the GP Connect request** SHALL be sent in the `Ssp-From` header to ensure the true 'originator' of the request is properly declared. Shared systems SHALL NOT send the provisioning organisation's ASID." %}
 
