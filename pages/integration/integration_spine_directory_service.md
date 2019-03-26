@@ -87,7 +87,7 @@ Please refer to the specification of the specific FHIR API you are using for det
 
 ### Step 2: Accredited System ID (ASID) Lookup for an external service (brokered via SSP) ###
 
-When the client wants to query an external service brokered through the Spine Security Proxy (e.g. a GP Connect API), the client **MUST** use an organisation ODS code for the target organisation and the nhsMHSPartyKey (identified in step 1) to lookup the Accredited System ID (ASID) as follows:
+When the client wants to query an external service brokered through the Spine Security Proxy (for example, a GP Connect API), the client **MUST** use an organisation ODS code for the target organisation and the nhsMHSPartyKey (identified in step 1) to lookup the Accredited System ID (ASID) as follows:
 
 **Search criteria:**
 - Organisational code
@@ -95,7 +95,7 @@ When the client wants to query an external service brokered through the Spine Se
 - Accredited System type
 	- `objectClass` = `nhsAs`
 - MHS Party Key
-	- `nhsMHSPartyKey` = *[partyKey]* as retrieved from the `nhsMhsPartyKey` attribute in step 1a
+	- `nhsMHSPartyKey` = *[partyKey]* as retrieved from the `nhsMhsPartyKey` attribute in step 1
 	
 **Result attributes:**
 - ASID
@@ -194,6 +194,8 @@ The value returned in the nhsMhsEndPoint attribute in Step 1 should be treated a
 In this example, to issue a GetCareRecord request, the following request would be made:
 
 `POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/DSTU2/1/Patient/$gpc.getcarerecord`
+
+
 
 
 
