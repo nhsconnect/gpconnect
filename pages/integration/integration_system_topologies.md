@@ -62,11 +62,6 @@ Please note:
 - each provider system using GP Connect **MUST** have an [ASID](#spine-endpoint-terms) **AND** [Party Key](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be routed to the correct destination organisation
 - each Party Key/ASID combination **MUST** be registered in SDS as a [CMA endpoint](#spine-endpoint-terms)
 
-## Spine endpoint terms ##
+## Spine/SDS terminology ##
 
-| **SDS** | [Spine directory service](integration_spine_directory_service.html). A directory of Spine endpoints, system identifiers and other reference information |
-| **ASID** | Accredited system identifier. A unique identifier allocated to a system used by an organisation, on accreditation for connection to Spine. Registered in SDS |
-| **Party Key** | Identifier for an MHS processing Spine messages for an accredited system. Registered in SDS |
-| **MHS** | Message handling server.  Middleware that handles messaging to/from Spine |
-| **CMA endpoint** | Combined MHS and accredited system endpoint. An endpoint registered with Spine for a single system |
-| **MHS endpoint** | An endpoint registered with Spine for use with multiple systems via an MHS. Each system has its own ASID |
+{% include sds_terminology.html %}
