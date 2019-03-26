@@ -80,8 +80,9 @@ Consumer systems are required to construct a [Service Root URL containing the SS
 
 The consumer system would therefore issue a request to the new version of the provider FHIR API to the following URL:
 
-`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect/[FHIR request]`
 
+{% include important.html content="Please see [a worked example of the lookup and endpoint construction process](integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process) for consumer systems for more information." %}
 
 ### Resource URL ###
 
