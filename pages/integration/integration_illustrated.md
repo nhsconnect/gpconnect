@@ -32,10 +32,10 @@ The steps shown in the diagram are detailed below.
 | 1b   | **PDS** returns NHS Number verification status, and the ODS code of the GP Practice system. |
 |      |      |
 |      | *Step 2 is optional in the sense that cached or configured endpoint details for the Practice may be available from a previous SDS interaction.* |    
-| 2a   | **Consumer** calls [Spine Directory Service (SDS)](integration_spine_directory_service.html) to discover the Accredited System ID (ASID) of the system which provides a FHIR endpoint at the practice identified by the specified ODS code. |
-| 2b   | **SDS** returns the ASID. | 
-| 2c   | **Consumer** calls Spine Directory Service again to discover the URL of the FHIR server endpoint at the practice | 
-| 2d   | **SDS** returns details of the FHIR endpoint. | 
+| 2a   | **Consumer** calls Spine Directory Service again to discover the URL of the FHIR server endpoint at the practice | 
+| 2b   | **SDS** returns details of the FHIR endpoint. | 
+| 2c   | **Consumer** calls [Spine Directory Service (SDS)](integration_spine_directory_service.html) to discover the Accredited System ID (ASID) of the system which provides a FHIR endpoint at the practice identified by the specified ODS code. |
+| 2d   | **SDS** returns the ASID. |
 |      |      |
 |      | *Step 3 is optional in the sense that the Capability Statement may be used to verify the FHIR capabilities which the endpoint provides should this be required at run time. The results of this call may be cached for future interactions.* |    
 | 3a   | **Consumer** calls the [metadata endpoint](foundations_use_case_get_the_fhir_capability_statement.html) at the practice FHIR server to request full details of which FHIR operations are implemented at that server - the Capability Statement. |
