@@ -62,8 +62,6 @@ Consumers **MUST** lookup the endpoint URL, FQDN and Party Key from the MHS reco
 **Result attributes:**
 - Endpoint URL
 	- `nhsMhsEndPoint` 
-- Fully qualified domain name
-	- `nhsMHSFQDN` * 
 - Party Key
 	- `nhsMhsPartyKey`
 
@@ -72,10 +70,10 @@ Consumers **MUST** lookup the endpoint URL, FQDN and Party Key from the MHS reco
 ```bash
 ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
 	"(&(nhsidcode=[odsCode]) (objectClass=nhsMhs) (nhsMhsSvcIA=[interactionId]))"
-	nhsMhsEndPoint, nhsMHSFQDN, nhsMhsPartyKey	
+	nhsMhsEndPoint nhsMhsPartyKey	
 ```
 
-{% include note.html content="The FHIR endpoint URL of the message handling system can then be extracted from the `nhsMhsEndPoint` attribute of the MHS record. <br/><br/><b>*</b> The attribute `nhsMhsFQDN` can be used to retrieve the FQDN of the endpoint, though this can be extracted from the nhsMhsEndPoint." %}
+{% include note.html content="The FHIR endpoint URL of the message handling system can then be extracted from the `nhsMhsEndPoint` attribute of the MHS record." %}
 
 Please refer to the specification of the specific FHIR API you are using for details of the interaction ID to use:
 
@@ -142,7 +140,7 @@ Using the party key retrieved from Step 1, and the same interaction ID, the foll
 
 	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
 	"(&(nhsIDCode=T99999) (objectClass=nhsMhs) (nhsMhsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord-1))" 
-	nhsMhsEndPoint nhsMHSFQDN nhsMhsPartyKey
+	nhsMhsEndPoint nhsMhsPartyKey
 	
 	
 This query should again return a single endpoint. In this case, the ldapquery returns the following results:
@@ -150,7 +148,6 @@ This query should again return a single endpoint. In this case, the ldapquery re
 	# 472b35d4641b76454b13, Services, nhs
 	dn: uniqueIdentifier=472b35d4641b76454b13,ou=Services,o=nhs
 	nhsMhsEndPoint: https://pcs.thirdparty.nhs.uk/T99999/DSTU2/1
-	nhsMHSFQDN: pcs.thirdparty.nhs.uk
 	nhsMhsPartyKey: T99999-9999999
 
 	# search result
