@@ -31,20 +31,6 @@ Clients and servers SHALL be conformant to the following Internet Engineering Ta
 
 {% include roadmap.html content="NHS Digital is currently evaluating how [cross-origin resource sharing](http://www.w3.org/TR/cors/) (CORS) will be handled for web and mobile based applications." %}
 
-## Endpoint resolution ##
-
-Consumer systems SHALL perform a sequence of query operations against existing Spine services to resolve the FHIR endpoint of the system of a target GP practice:
-
-1. Consumers SHALL perform (or have previously performed) a Personal Demographics Service (PDS) lookup for a patient.
-	1. Using the PDS results, the client SHALL determine the ODS code of the patient's registered GP practice. 
-2. Clients SHALL perform (or have previously performed) a Spine Directory Service (SDS) lookup using the ODS code of the patient's registered GP practice, in order to determine:
-	1. The provider system's GP Connect ASID
-	2. The provider system's GP Connect [FHIR service root URL](development_general_api_guidance.html#service-root-url).
-
-3. Clients SHALL then append the local path and query parameters to the FHIR service root URL for the API call they wish to make.  For example for [Find a patient](foundations_use_case_find_a_patient.html) `/Patient?identifier=[system]|[value]` would be appended to the FHIR service root URL returned from SDS.
-
-{% include important.html content="Please see [Overview and querying SDS](integration_spine_directory_service.html) for more details on step 2 above." %}
-
 ## RESTful API ##
 
 The [RESTful API](https://www.hl7.org/fhir/STU3/http.html) described in the FHIR&reg; standard is built on top of the Hypertext Transfer Protocol (HTTP) with the same HTTP verbs (`GET`, `POST`, `PUT`, `DELETE`, etc.) commonly used by web browsers. Furthermore, FHIR exposes resources (and operations) as Uniform Resource Identifiers (URIs). For example, a `Patient` resource `/fhir/Patient/1`, can be operated upon using standard HTTP verbs such as `DELETE /fhir/Patient/1` to remove the patient record.
@@ -84,9 +70,11 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
 
 #### Example Service Root URL
 
-The provider SHALL publish the Service Rot URL to Spine Directory Services, for example:
+The provider SHALL publish the Service Root URL to Spine Directory Services, for example:
 
 `https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
+
+Please see [Registering GP Connect systems in SDS for more details].
 
 Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
