@@ -20,8 +20,6 @@ In addition, each endpoint that is registered with the Spine has one or more "in
 
 GP Connect consumer systems are expected to resolve the FHIR endpoint for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine){:target="_blank"} Lightweight Directory Access Protocol (LDAP) directory lookups. SDS is the main information source about NHS-registered users and accredited systems and services.
 
-{% include roadmap.html content="NHS Digital is considering the delivery of a simplified FHIR facade over the Spine Directory Service (SDS) to allow FHIR endpoint resolution to be achieved in a more streamlined (and FHIR compatible) way." %}
-
 Information is provided below to clarify how this endpoint lookup functions.
 
 1. Consuming system viewpoint
