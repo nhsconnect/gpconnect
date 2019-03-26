@@ -21,7 +21,7 @@ To illustrate this, an example is given below of all the steps required consume 
 
 The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order retrieve a care record in HTML format
 
-![Sequence diagram for booking an appointment end to end interactions](images/integration/Spine_Integration_Illustrated_AccessRecordHTML.png)
+<img src="images/integration/Spine_Integration_Illustrated_AccessRecordHTML.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
 
 The steps shown in the diagram are detailed below.
 
@@ -44,3 +44,6 @@ The steps shown in the diagram are detailed below.
 | 4b   | **SSP** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 4c   | **Provider** responds with the requested details of the care record. |
 | 4d   | **SSP** forwards the requested details of the care record to the Consumer. | 
+|      | *Step 5 is an example of an error being returned * |    
+| 5a   | **Provider** returns an error to the SSP. |
+| 5b   | **SSP** forwards the error to the Consumer. |
