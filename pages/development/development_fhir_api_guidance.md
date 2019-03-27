@@ -179,20 +179,6 @@ Clients and servers **MUST** be conformant to the following Internet Engineering
 
 {% include roadmap.html content="The NHS Digital is currently evaluating how [Cross-Origin Resource Sharing](http://www.w3.org/TR/cors/) (CORS) will be handled for web and mobile based applications." %}
 
-## Endpoint resolution ##
-
-Consumer systems SHALL perform a sequence of query operations against existing Spine services to resolve the FHIR endpoint of the system of a target GP practice:
-
-1. Consumers SHALL perform (or have previously performed) a Personal Demographics Service (PDS) lookup for a patient.
-	1. Using the PDS results, the client SHALL determine the ODS code of the patient's registered GP practice. 
-2. Clients SHALL perform (or have previously performed) a Spine Directory Service (SDS) lookup using the ODS code of the patient's registered GP practice, in order to determine:
-	1. The provider system's GP Connect ASID
-	2. The provider system's GP Connect [FHIR service root URL](development_general_api_guidance.html#service-root-url).
-
-3. Clients SHALL then append the local path and query parameters to the FHIR service root URL for the API call they wish to make.  For example for [Find a patient](foundations_use_case_find_a_patient.html) `/Patient?identifier=[system]|[value]` would be appended to the FHIR service root URL returned from SDS.
-
-{% include important.html content="Please see [Overview and querying SDS](integration_spine_directory_service.html) for more details on step 2 above." %}
-
 ### [Security](https://www.hl7.org/fhir/DSTU2/security.html) ###
 
 TLS **MUST** be used for all data exchange. The TLS communications are established prior to any HTTP command/response, so the whole FHIR interaction is protected by the TLS communications.
