@@ -36,6 +36,8 @@ Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on
 
 ## Querying SDS ##
 
+## Looking up a provider's endpoint and ASID ##
+
 GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) and ASID for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
 
 This is a two step process, as follows:
@@ -110,7 +112,7 @@ ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs
 	uniqueIdentifier	
 ```
 
-## Worked example of the endpoint lookup process ##
+## Worked example - looking up a provider's endpoint and ASID ##
 
 **Given**
 A consuming system which needs to get the structured record of a patient record at the patient's registered practice. The consuming system has the following information about the patient:
@@ -190,9 +192,25 @@ In this example, to issue a Get Structured Record request, the following request
 
 `POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/STU3/1/Patient/$gpc.getstructuredrecord`
 
+## SDS TLS configuration ##
 
-## Consumer site Accredited System record lookup ##
- 
+SDS requires TLS Mutual Authentication. It is therefore necessary to configure ldapsearch in the examples above with the certificates necessary to verify the authenticity of the SDS LDAP server, and also to enable SDS to verify the spine endpoint making the LDAP request:
+
+1. Root and SubCA Spine development certificates available from Assurance Support
+2. Obtain a client certificate by submitting a certificate signing request for your development endpoint to Assurance Support
+
+## Looking up a consumer's own ASID ##
+
+{% include important.html content="This LDAP query is for a consumer system to lookup their *own* ASID. To determine the provider's ASID and endpoint, please see the queries above." %}
+
+A consumer is required to populate their ASID in the `Ssp-From` HTTP header when sending a GP Connect request.
+
+Consumer systems deployed at many sites may prefer to dynamically query their own ASID instead of holding as local configuration.
+
+Consumer system suppliers should be aware that there may be more than one GP Connect consumer system deployed at an organisation, and hence multiple AS records for a given ODS code.
+
+In order to ensure the right AS record and ASID is retrieved, an additional search field should be used - `nhsMhsManufacturerOrg` is recommended - which will filter out AS records from other suppliers.
+
 AS record lookup on SDS to determine the consumer's ASID.
 
 **Search criteria:**
@@ -203,8 +221,7 @@ AS record lookup on SDS to determine the consumer's ASID.
 - AS Interaction ID
 	- `nhsAsSvcIA` = *Interaction ID*, please see GP Connect [Interaction IDs](integration_interaction_ids.html)
 - Manufacturer of the consumer system (the *ODS code* of the manufacturer of the consumer system)
-	- `nhsMhsManufacturerOrg`
-
+	- `nhsMhsManufacturerOrg` = *ODS code* of the consumer system supplier
 	
 **Result attributes:**
 - Consumer's ASID
@@ -218,9 +235,3 @@ ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs
 	uniqueIdentifier 
 ```
 
-## SDS TLS configuration ##
-
-SDS requires TLS Mutual Authentication. It is therefore necessary to configure ldapsearch in the examples above with the certificates necessary to verify the authenticity of the SDS LDAP server, and also to enable SDS to verify the spine endpoint making the LDAP request:
-
-1. Root and SubCA Spine development certificates available from Assurance Support
-2. Obtain a client certificate by submitting a certificate signing request for your development endpoint to Assurance Support
