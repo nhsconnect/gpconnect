@@ -13,4 +13,4 @@ GP Connect systems **MUST** be capable of performing [Personal Demographic Servi
 
 [Spine Core FHIR API Framework - Personal Demographics Service](https://developer.nhs.uk/apis/spine-core-1-0/pds_overview.html) provides a summary of the role of PDS in the NHS Spine architecture, and describes three options for accessing it. Systems **MUST** perform this tracing using one of the three options.
 
-{% include important.html content="The term "consuming system" on the PDS page of the Spine Core FHIR API Framework site applies in the GP Connect context to both consumer and provider systems. " %}
+{% include important.html content="The term “consuming system” on the PDS page of the Spine Core FHIR API Framework site applies in the GP Connect context to both consumer and provider systems. " %}
