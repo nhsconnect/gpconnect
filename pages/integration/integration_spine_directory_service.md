@@ -207,7 +207,7 @@ A consumer is required to populate their ASID in the `Ssp-From` HTTP header when
 
 Consumer systems deployed at many sites may prefer to dynamically query their own ASID instead of holding as local configuration.
 
-Consumer system suppliers should be aware that there may be more than one GP Connect consumer system deployed at an organisation, and hence multiple AS records for a given ODS code.
+Consumer system suppliers wishing to do this should be aware that there may be more than one GP Connect consumer system deployed at an organisation, and hence multiple AS records for a given ODS code.
 
 In order to ensure the right AS record and ASID is retrieved, an additional search field should be used - `nhsMhsManufacturerOrg` is recommended - which will filter out AS records from other suppliers.
 
