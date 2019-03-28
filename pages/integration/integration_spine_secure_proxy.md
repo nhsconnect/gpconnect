@@ -24,7 +24,7 @@ A consumer system queries [Spine Directory Service](integration_spine_directory_
 - the provider's [service root URL](development_general_api_guidance.html#service-root-url) (their "base endpoint")
 - the provider's ASID, used in headers below
 
-Once these are retrieved, an HTTP request is constructed to send to the SSP in the following format:
+Once these are retrieved, a GP Connect HTTP request is constructed to send to the SSP in the following format:
 
 ```http
 GET https://[ssp_fqdn]/[provider_service_root_url]/[fhir_request]
@@ -33,7 +33,7 @@ GET https://[ssp_fqdn]/[provider_service_root_url]/[fhir_request]
 Where:
 
   - `[ssp_fqdn]` is the fully qualified domain name of the SSP
-  - `[provider_service_root_url]` is the provider's service root URL as returned from SDS in the `nhsMhsEndPoint` element
+  - `[provider_service_root_url]` is the provider's service root URL as returned from SDS in the `nhsMhsEndPoint` attribute. This element is normally in the format `https://[provider_fqdn]/[path_to_fhir_base]`
   - `[fhir_request]` is the local portion of the request relating to the FHIR API call being made, including query parameters
 
 Please note `GET` is used as an example; the actual HTTP method will vary based on API call.
@@ -59,7 +59,7 @@ The SSP requires a number of Spine specific HTTP headers to be populated when se
 | `Ssp-To`             | Provider ASID | See [SDS queries](integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process) to lookup the provider's ASID |
 | `Ssp-InteractionID` &nbsp; &nbsp; &nbsp; | Spine Interaction ID  &nbsp; &nbsp; &nbsp; &nbsp; | See GP Connect [Interaction IDs](integration_interaction_ids.html#list-of-interaction-ids) |
 
-{% include sds_aggregator_warning.html %}
+{% include important.html content="Where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital that the ASID sent in the `Ssp-From` header reflects the organisation from where the request originates, rather than the hosting organisation." %}
 
 ## Further details ##
 
