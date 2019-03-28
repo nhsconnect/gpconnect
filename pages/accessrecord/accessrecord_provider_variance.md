@@ -498,7 +498,6 @@ The following business rules apply for [medications](accessrecord_view_medicatio
 			<ul>
 				<li>An acute medication is current for 28 days from issue or the issue date plus the days duration plus 14 days, whichever is the greater</li>
 				<li>Repeat medication courses are subject to a local configuration setting. When enabled, repeat courses will automatically expire after a configurable period from the last issue date plus the course duration. The period can be set from days to years. </li>
-				<li>Repeat medication issues are included as current whilst the repeat course is current (meaning, has not been stopped/expired)</li>
 			</ul>
 		</td>
 	  </tr>
@@ -587,7 +586,6 @@ The following content section messages are returned by the provider systems for 
 	  <tr>
 		<td><b>EMIS</b></td>
 		<td>Non - BNF designated items e.g. local mixtures, have been excluded. <br/>
-			Medication Max Issues are not shared currently <br/>
 			Past Medications may include prescriptions which have been cancelled or discontinued before the original prescribed end date</td>
 	  </tr>
 	  <tr>
