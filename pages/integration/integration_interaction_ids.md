@@ -39,3 +39,6 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 | [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` |
 
 
+### Access Record Structured and Appointment Management interactions ###
+
+Access Record Structured and Appointment Management interactions are not available at this specification version. Please refer to the [GP Connect specifications page](https://developer.nhs.uk/gp-connect-specification-versions/) for more information.
