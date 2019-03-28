@@ -170,11 +170,11 @@ ID for the user on whose behalf this request is being made. Matches [`requesting
 
 #### `aud` (audience) claim
 
-The [service root URL](development_general_api_guidance.html#service-root-url) of the provider system.
+The Authorization server’s token_URL.
 
-This is the value returned from the [SDS endpoint lookup service](integration_spine_directory_service.html) in the `nhsMhsEndPoint` field.
+The value **MUST** be fixed to `https://authorize.fhir.nhs.net/token`
 
-**Example**: `"aud": "https://providersupplier.thirdparty.nhs.uk/GP0001/DSTU2/1"`
+**Example**: `"aud": "https://authorize.fhir.nhs.net/token"`
 
 ---
 
@@ -264,6 +264,7 @@ The [Device](https://www.hl7.org/fhir/DSTU2/device.html) resource populated in t
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_device": {
   "resourceType": "Device",
+  "id": "000001",
   "identifier": [
     {
       "system": "https://consumersupplier.com/Id/device-identifier",
@@ -297,6 +298,7 @@ The [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) resource po
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_organization": {
   "resourceType": "Organization",
+  "id": "000001",
   "identifier": [
     {
       "system": "https://fhir.nhs.net/Id/ods-organization-code",
@@ -339,54 +341,61 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
 **Example**:
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_practitioner": {
-  "resourceType": "Practitioner",
-  "id": "10019",
-  "identifier": [
-    {
-      "system": "https://fhir.nhs.net/Id/sds-user-id",
-      "value": "111222333444"
-    },
-    {
-      "system": "https://fhir.nhs.net/Id/sds-role-profile-id",
-      "value": "444555666777"
-    },
-    {
-      "system": "https://consumersupplier.com/Id/user-guid",
-      "value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
-    }
-  ],
-  "name": {
-      "family": "Jones",
-      "given": [
-        "Claire"
-      ],
-      "prefix": [
-        "Dr"
-      ]
-    }
-}</code></pre>
+		"resourceType": "Practitioner",
+		"id": "10019",
+		"identifier": [{
+			"system": "http://fhir.nhs.net/sds-user-id",
+			"value": "111222333444"
+		},
+		{
+			"system": "https://fhir.nhs.net/Id/sds-role-profile-id",
+			"value": "444555666777"
+		}],
+		"name": {
+			"family": "Jones",
+			"given": [
+				"Claire"
+			],
+			"prefix": [
+				"Dr"
+			]
+		},
+		"practitionerRole": [{
+			"role": {
+				"coding": [{
+					"system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
+					"code": "R8000"
+				}]
+			}
+		}]
+	}</code></pre>
+
+
 
 
 ## JWT payload example ##
 
 ```json
 {
-	"iss": "https://consumersupplier.thirdparty.nhs.uk/",
-	"sub": "10019",
-	"aud": "https://providersupplier.thirdparty.nhs.uk/GP0001/DSTU2/1",
-	"exp": 1469436987,
-	"iat": 1469436687,
-	"reason_for_request": "directcare",
-	"requested_scope": "patient/*.read",
-	"requested_record": {
-		"resourceType": "Patient",
-		"identifier": [{
-			"system": "http://fhir.nhs.net/Id/nhs-number",
-			"value": "9658218873"
-		}]
-	},
-	"requesting_device": {
+  "iss": "https://consumersupplier.thirdparty.nhs.uk/",
+  "sub": "10019",
+  "aud": "https://authorize.fhir.nhs.net/token",
+  "exp": 1469436987,
+  "iat": 1469436687,
+  "reason_for_request": "directcare",
+  "requested_scope": "patient/*.read",
+  "requested_record": {
+    "resourceType": "Patient",
+    "identifier": [
+      {
+        "system": "http://fhir.nhs.net/Id/nhs-number",
+        "value": "9658218873"
+      }
+    ]
+  },
+  "requesting_device": {
     "resourceType": "Device",
+    "id": "000001",
     "identifier": [
       {
         "system": "https://consumersupplier.com/Id/device-identifier",
@@ -395,44 +404,52 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
     ],
     "model": "Consumer product name",
     "version": "5.3.0"
-	},
-	"requesting_organization": {
-		"resourceType": "Organization",
-		"identifier": [
-		  {
-			"system": "https://fhir.nhs.net/Id/ods-organization-code",
-			"value": "A1001"
-		  }
+  },
+  "requesting_organization": {
+    "resourceType": "Organization",
+    "id": "000001",
+    "identifier": [
+      {
+        "system": "https://fhir.nhs.net/Id/ods-organization-code",
+        "value": "A1001"
+      }
     ],
     "name": "Test Hospital"
-	},
-	"requesting_practitioner": {
-		"resourceType": "Practitioner",
-		"id": "10019",
-		"identifier": [
-		  {
-			"system": "https://fhir.nhs.net/Id/sds-user-id",
-			"value": "111222333444"
-		  },
-		  {
-			"system": "https://fhir.nhs.net/Id/sds-role-profile-id",
-			"value": "444555666777"
-		  },
-		  {
-			"system": "https://consumersupplier.com/Id/user-guid",
-			"value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
-		  }
+  },
+  "resourceType": "Practitioner",
+  "id": "10019",
+  "identifier": [
+    {
+      "system": "http://fhir.nhs.net/sds-user-id",
+      "value": "111222333444"
+    },
+    {
+      "system": "https://fhir.nhs.net/Id/sds-role-profile-id",
+      "value": "444555666777"
+    }
+  ],
+  "name": {
+    "family": "Jones",
+    "given": [
+      "Claire"
     ],
-    "name": {
-        "family": "Jones",
-        "given": [
-          "Claire"
-        ],
-        "prefix": [
-          "Dr"
+    "prefix": [
+      "Dr"
+    ]
+  },
+  "practitionerRole": [
+    {
+      "role": {
+        "coding": [
+          {
+            "system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
+            "code": "R8000"
+          }
         ]
       }
-  }
+    }
+  ]
+}
 ```
 
 ## External documents / policy documents ##
