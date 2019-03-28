@@ -284,7 +284,7 @@ The [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource pop
 
 The user making the request, populated as a minimal [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource.
 
-To contain the practitioner's local system identifier(s) (for example, login details / username). Where the user has both a local system user role as well as a nationally-recognised user role, then both **SHALL** be provided.
+To contain the logged on user's identifier(s) (for example, login details / username). Where the user has both a local system user role as well as a nationally-recognised user role, then both **SHALL** be provided.
 
 {% include important.html content="This field **SHALL NOT** be populated with fixed values or a generic \"system\" user. The values **SHALL** represent the logged on user making the request." %}
 
@@ -305,7 +305,7 @@ The consumer **SHALL** populate the following [Practitioner](https://www.hl7.org
   - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/user-guid`
   - `value` containing the unique local identifier for the logged on user
 
-{% include important.html content="Providers should be aware of variance in the population of the `identifier` field amongst existing consumer systems when reading this claim, specifically the latter two `system` elements (SDS role profile ID, and local user identifier) may not always be present." %}
+{% include important.html content="Providers should be aware of variance in the population of the `identifier` field amongst existing consumer systems when reading this claim, specifically the latter two elements (SDS role profile ID, and local user identifier) are not always present." %}
 
 The [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base STU3 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
 
