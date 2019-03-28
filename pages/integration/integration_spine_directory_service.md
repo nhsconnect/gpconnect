@@ -154,7 +154,7 @@ This query should again return a single endpoint. In this case, the ldapquery re
 	result: 0 Success
 
 
-### Step 2: AS record lookup on SDS
+### Step 2: AS record lookup on SDS to determine the provider’s ASID
 
 The ASID and party key is now looked up on SDS. The example below uses ldapsearch:
 
