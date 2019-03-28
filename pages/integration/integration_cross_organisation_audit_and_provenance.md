@@ -355,8 +355,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
       "value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
     }
   ],
-  "name": [
-    {
+  "name": {
       "family": "Jones",
       "given": [
         "Claire"
@@ -365,7 +364,6 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
         "Dr"
       ]
     }
-  ]
 }</code></pre>
 
 
@@ -425,8 +423,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
 			"value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
 		  }
     ],
-    "name": [
-      {
+    "name": {
         "family": "Jones",
         "given": [
           "Claire"
@@ -435,7 +432,6 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
           "Dr"
         ]
       }
-    ]
   }
 ```
 
