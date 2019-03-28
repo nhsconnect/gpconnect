@@ -52,7 +52,7 @@ The Service Root URL is the `[base]` portion of all FHIR APIs.
 
 Service Root URLs SHALL be aligned with the GP Connect specification they were built against, specifically the [major version number](design_product_versioning.html#version-number-standard) SHALL be present in the server's Service Root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
 
-Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
+Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs in the [Spine Directory Service](integration_spine_directory_service.html) in the following format:
 
 {% include callout.html content="`https://[FQDN of FHIR Server]/[ODS_CODE]/[FHIR_VERSION_NAME]/[GPC_MAJOR_VERSION]/[PROVIDER_ROUTING_SEGMENT]`" %}
 
@@ -70,11 +70,11 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
 
 #### Example Service Root URL
 
-The provider SHALL publish the Service Root URL to Spine Directory Services, for example:
+The provider SHALL publish the Service Root URL to [Spine Directory Services](integration_spine_directory_service.html), for example:
 
 `https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
 
-Please see [Registering GP Connect systems in SDS for more details].
+Please see [Registering GP Connect systems in SDS for more details](integration_sds_registering_endpoints.html).
 
 Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 

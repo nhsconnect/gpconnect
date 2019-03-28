@@ -7,38 +7,61 @@ permalink: integration_spine_secure_proxy.html
 summary: "Overview of the role of the Spine Secure Proxy (SSP) within GP Connect"
 ---
 
-## Spine Secure Proxy (SSP) - overview ##
+## Overview ##
 
-The Spine Secure Proxy (SSP) is a forward HTTP proxy which will be used as a front-end to control and protect access to GP principal IT systems that will be exposing FHIR based RESTful APIs as defined by the GP Connect programme.  It provides a single security point for both authentication and authorisation for consuming systems. Additional responsibilities include auditing of all requests, throttling of requests and transaction logging for performance and commercial remuneration purposes. 
+The Spine Secure Proxy (SSP) is a forward HTTP proxy which is used as a broker to control and protect access to GP principal IT systems that expose FHIR based GP Connect APIs.  
 
-![Spine Security Proxy](images/integration/Spine Security Proxy Block Diagram.png)
+It provides a single security point for both authentication and authorisation for consuming systems. Additional responsibilities include auditing of requests, checking data sharing agreements and transaction logging. 
 
-### Proxied FHIR Requests ###
+All HTTP communications are secured using TLS MA. This includes both legs of the request, from consumer system to the proxy and then from the proxy to provider system.
 
-For First of Type (FoT) implementations FHIR endpoint location will be performed internally by the consumer system utilising the patient’s GP organisational identifier (i.e. ODSCode as returned from a separate PDS lookup process) with the provider's server endpoint being resolved via LDAP queries to the [Spine Directory Service (SDS)](integration_spine_directory_service.html).
+![Spine Security Proxy](images/integration/ssp-diagram.png)
 
-{% include important.html content="All HTTP communications are expected to be secured using TLS MA. This includes both legs of the request, from consumer system to the proxy and then from the proxy to provider system." %}
+## Constructing a request ##
 
-{% include important.html content="All N3 connected systems are expected to synchronise their local system clocks to the N3 Network Time Protocol (NTP) reference source." %}
+A consumer system queries [Spine Directory Service](integration_spine_directory_service.html#querying-sds) using the provider's ODS code to determine:
 
-Once the provider server's endpoint is determined using the SDS a HTTP request to the proxy server will be constructed as follows:
+- the provider's [service root URL](development_general_api_guidance.html#service-root-url) (their "base endpoint")
+- the provider's ASID, used in headers below
+
+Once these are retrieved, an HTTP request is constructed to send to the SSP in the following format:
 
 ```http
-GET https://[proxy_server]/https://[provider_server]/[fhir_base]/[fhir_request]
+GET https://[ssp_fqdn]/[provider_service_root_url]/[fhir_request]
 ```
 
-A number of Spine specific HTTP headers also need to be populated with the intended spine interactionID and system ASIDs.
+Where:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | Spine's InteractionID |
+  - `[ssp_fqdn]` is the fully qualified domain name of the SSP
+  - `[provider_service_root_url]` is the provider's service root URL as returned from SDS in the `nhsMhsEndPoint` element
+  - `[fhir_request]` is the local portion of the request relating to the FHIR API call being made, including query parameters
 
-Furthermore, the consumer's client certificate is validated to ensure it includes valid certificate `CN` and `DN` details and that the certificate has not been added to the certificate revocation list (CRL).
+Please note `GET` is used as an example; the actual HTTP method will vary based on API call.
 
-## Spine Secure Proxy (SSP) - implementation guide ##
+{% include sds_ssp_warning.html %}
+
+As an example, to request a patient's structured record, the following URL would be constructured (HTTP headers and payload are not included):
+
+```http
+POST https://testspineproxy.nhs.uk/https://pcs.thirdparty.nhs.uk/T99999/STU3/1/Patient/$gpc.getstructuredrecord
+```
+
+Please see a [worked example of the endpoint lookup process](integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process) for more information.
+
+## HTTP headers ##
+
+The SSP requires a number of Spine specific HTTP headers to be populated when sending a request:
+
+| Header               | Value | Notes |
+|----------------------|-------|-------|
+| `Ssp-TraceID`        | Consumer Trace ID | GUID/UUID generated per request |
+| `Ssp-From`           | Consumer ASID | Consumer system ASID; see note below |
+| `Ssp-To`             | Provider ASID | See [SDS queries](integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process) to lookup the provider's ASID |
+| `Ssp-InteractionID` &nbsp; &nbsp; &nbsp; | Spine Interaction ID  &nbsp; &nbsp; &nbsp; &nbsp; | See GP Connect [Interaction IDs](integration_interaction_ids.html#list-of-interaction-ids) |
+
+{% include sds_aggregator_warning.html %}
+
+## Further details ##
 
 The [Spine Core FHIR API Framework - SSP Implementation Guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html) describes the SSP in more depth and provides the following:
 

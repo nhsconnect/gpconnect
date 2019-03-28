@@ -180,11 +180,11 @@ This query should return a single matching accredited system object from SDS, th
 
 The format of the full URL which the consuming system is responsible for constructing is as follows:
 
-`https://[Spine Secure Proxy FQDN]/[Provider Service Root URL]/[FHIR request]`
+`https://[ssp_fqdn]/[provider_service_root_url]/[fhir_request]`
 
-The value returned in the `nhsMhsEndPoint` attribute in Step 1 should be treated as the `[Provider Server Root URL]` at the provider system.
+The value returned in the `nhsMhsEndPoint` attribute in Step 1 should be treated as the `[provider_service_root_url]` at the provider system.
 
-{% include important.html content="Consumer systems **MUST NOT** amend the provider service root URL value as returned from SDS, except for prefixing it the `[Spine Secure Proxy FQDN]` and suffixing it with the `[FHIR request]`. If the Provider Service Root URL does not exactly match that held in SDS, for example the domain name is replaced with its equivalent IP address, or has an added explicit port declaration such as `:443`, the request will be blocked by the SSP." %}
+{% include sds_ssp_warning.html %}
 
 In this example, to issue a Get Structured Record request, the following request would be made:
 

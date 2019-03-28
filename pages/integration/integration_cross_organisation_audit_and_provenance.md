@@ -259,7 +259,7 @@ The consumer **SHALL** populate the following [Organization](https://www.hl7.org
   - `system` containing `https://fhir.nhs.uk/Id/ods-organization-code`, and
   - `value` containing the ODS code of the organisation
 
-{% include important.html content="In consumer system topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital for audit purposes that the organisation populated in the JWT reflects **the true originating organisation of the request** rather than the hosting organisation.<br/>
+{% include important.html content="In consumer system topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital for audit purposes that the organisation populated in the JWT reflects the organisation from where the request originates, rather than the hosting organisation.<br/>
 This is normally determined as the organisation of the logged on user making the request." %}
 
 The [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base STU3 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
