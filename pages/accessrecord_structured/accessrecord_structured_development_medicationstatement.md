@@ -14,7 +14,7 @@ The headings below list the elements of the MedicationStatement resource and des
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)" %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.2)" %}
 
 {% include note.html content="It is not expected that suppliers will provide resources for data types that reference resources that have not been curated and published by GP Connect. In the case where these fields are required it is not expected they will be populated until the resources have been developed by the suppliers and completed the relevant NHS Digital assurance." %}
 
@@ -77,20 +77,20 @@ For repeat and repeat dispensed medications the value identifies the care settin
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Optionality:</b> Mandatroy</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which SHOULD be populated if available in a provider system. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
-If populated, this **MUST** be a GUID.
+This **MUST** be a GUID.
 
-If provided, *Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn't change between requests and therefore stored with the source data).
+*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn't change between requests and therefore stored with the source data).
 
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time if it's included in a response.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
 ### basedOn ###
 
