@@ -327,14 +327,12 @@ The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/
   - `given` containing the user's given name
   - `prefix` containing the user's title, where available
 - an `identifier` element with:
-  - `system` containing `https://fhir.nhs.net/Id/sds-user-id`
+  - `system` containing `http://fhir.nhs.net/sds-user-id`
   - `value` containing the SDS user ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
 - an `identifier` element with:
   - `system` containing `https://fhir.nhs.net/Id/sds-role-profile-id`
   - `value` containing the SDS user role profile ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
-- an `identifier` element containing a unique local user or user-role identifier for the logged on user (e.g. user ID, user role ID, logon name) from the consumer system:
-  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/user-guid`
-  - `value` containing the unique local identifier for the logged on user
+
 
 The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base DSTU2 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
 
