@@ -143,7 +143,7 @@ entries:
         - title: Overview and querying
           url: /integration_spine_directory_service.html
           output: web
-        - title: Registering endpoints
+        - title: Registering systems
           url: /integration_sds_registering_endpoints.html
           output: web
 
