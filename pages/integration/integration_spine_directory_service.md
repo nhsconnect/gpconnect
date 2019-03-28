@@ -191,6 +191,32 @@ In this example, to issue a Get Care Record request, the following request would
 
 `POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/STU3/1/Patient/$gpc.getcarerecord`
 
+## Consumer site Accredited System record lookup ##
+ 
+AS record lookup on SDS to determine the consumer's ASID.
+
+**Search criteria:**
+- Organisational code
+	- `nhsIDCode` = *ODS code* of the consumer organisation
+- Accredited System type
+	- `objectClass` = `nhsAs`
+- AS Interaction ID
+	- `nhsAsSvcIA` = *Interaction ID*, please see GP Connect [Interaction IDs](integration_interaction_ids.html)
+- Manufacturer of the consumer system (the *ODS code* of the manufacturer of the consumer system)
+	- `nhsMhsManufacturerOrg`
+
+	
+**Result attributes:**
+- Consumer's ASID
+	- `uniqueIdentifier`
+
+**ldapsearch query:**
+
+```bash
+ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs"
+	"(&(nhsIDCode=[odsCode]) (objectClass=nhsAS) (nhsaASvcIA=[interactionId]) (nhsMhsManufacturerOrg=[odsCode]))"
+	uniqueIdentifier 
+```
 
 ## SDS TLS configuration ##
 
