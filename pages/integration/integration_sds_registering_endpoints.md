@@ -20,11 +20,11 @@ Conversely, if two different consumer systems are deployed in a single organisat
 
 Shared systems such as a *Regional portal* which are provisioned by a single organisation, but used by other organisations, **MUST** have a unique ASID per organisation using the system.
 
-{% include note.html content="When sending GP Connect requests, the ASID of the organisation **making the GP Connect request** **MUST** be sent in the `Ssp-From` header to ensure the true 'originator' of the request is properly declared. Shared systems ****MUST NOT**** send the provisioning organisation's ASID." %}
+{% include note.html content="When sending GP Connect requests, the ASID of the organisation **making the GP Connect request** **MUST** be sent in the `Ssp-From` header to ensure the true 'originator' of the request is properly declared. Shared systems **MUST NOT** send the provisioning organisation's ASID." %}
 
 ### 1.2 Do not reuse GP Connect ASIDs and Party Keys for central Spine services ###
 
-New GP Connect ASIDs and Party Keys must be registered for use with GP Connect; existing ASIDs and Party Keys for central Spine services ****MUST NOT**** be reused.
+New GP Connect ASIDs and Party Keys must be registered for use with GP Connect; existing ASIDs and Party Keys for central Spine services **MUST NOT** be reused.
 
 ### 1.3 Maximum of one GP Connect provider system per organisation ###
 
@@ -56,7 +56,7 @@ Consumers **MUST NOT** register entries in SDS as CMA (combined MHS and AS) styl
 
 GP Connect [interaction IDs](integration_interaction_ids.html) on AS records indicate the system is permitted to send GP Connect messages as a consumer.
 
-GP Connect [interaction IDs](integration_interaction_ids.html) on an MHS record indicate the Messaging Handling Server is a GP Connect provider, therefore this ****MUST NOT**** be done for consumer (only) systems.
+GP Connect [interaction IDs](integration_interaction_ids.html) on an MHS record indicate the Messaging Handling Server is a GP Connect provider, therefore this **MUST NOT** be done for consumer (only) systems.
 
 ### 2.3 Shared Party Key may be used depending on topology ##
 
@@ -92,29 +92,29 @@ Provider systems which also offer consumer functionality **MUST** use the same G
 
 The *Service Root URL* for a given ASID **MUST** be defined in the `nhsMhsEndPoint` attribute of the MHS record (i.e. the LDAP object of type nhsMhs). This URL **MUST** be in the format described in [Service Root URL versioning](development_general_api_guidance.html#service-root-url) guidance.
 
-As described in the [API versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, the practice's ODS code  **MUST** be placed in the FHIR server root URL, and this **MUST** match the value in the `nhsidcode` elements on the MHS and associated AS records.  ODS codes which refer to clinical systems as a single entity ****MUST NOT**** be used to provide routing. Practice specific ODS codes **MUST** be used for routing purposes in the FHIR Server Root URL found in the `nhsMhsEndPoint` attribute of the MHS record.
+As described in the [API versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, the practice's ODS code  **MUST** be placed in the FHIR server root URL, and this **MUST** match the value in the `nhsidcode` elements on the MHS and associated AS records.  ODS codes which refer to clinical systems as a single entity **MUST NOT** be used to provide routing. Practice specific ODS codes **MUST** be used for routing purposes in the FHIR Server Root URL found in the `nhsMhsEndPoint` attribute of the MHS record.
 
 ### 3.5 nhsMhsEndPoint attribute **MUST** contain the FHIR service root URL only ###
 
 The `nhsMhsEndPoint` attribute in the MHS record **MUST** contain the [FHIR Service Root URL](development_general_api_guidance.html#service-root-url). It is the responsibility of the consuming system to construct the FHIR operation or RESTful resource request which will be postfixed to this base URL.
 
-An example of a FHIR server root URL for a [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html) interaction at practice GP0001 is:
+An example of a FHIR server root URL for a [Retrieve a care record section](accessrecord_use_case_retrieve_a_care_record_section.html) interaction at practice GP0001 is:
 
 `https://provider.thirdparty.nhs.uk/GP0001/STU3/1`
 
-Note that the `/Patient/$gpc.getstructuredrecord` is NOT added.
+Note that the `/Patient/$gpc.getscarerecord` is NOT added.
 
-In line with this, provider systems SHOULD perform checks that the FHIR request received is a reasonable means to request the resource in view given the specified interaction. 
+In line with this, provider systems **SHOULD** perform checks that the FHIR request received is a reasonable means to request the resource in view given the specified interaction. 
 
 ### 3.6 FHIR service root URLs associated with a given product set **MUST** use same FHIR version ###
 
 Where a provider moves in future to a later version of FHIR, it will be necessary to define a new product set to accommodate the set of interactions provided by this. FHIR server root URLs defined for a specific product set **MUST** all reference the same FHIR version. This ensures that FHIR resources references returned in FHIR responses are locally resolvable. 
 
-For example, all interactions associated with the Appointment Management capability pack in a given product set must refer to the same FHIR server, so that the resource references for ‘Read Appointment’ and ‘Amend’ appointment would be locally resolvable to the same resource on the same FHIR Server. 
+For example, all interactions associated with the Appointment Management capability pack in a given product set must refer to the same FHIR server, so that the resource references for 'Read Appointment' and 'Amend' appointment would be locally resolvable to the same resource on the same FHIR Server. 
 
 ### 3.7 Acceptable use of ASID information in HTTP Headers ###
 
-Source and destination ASID information is passed to the provider system from the Spine Security Proxy. Providers **MUST** use this information for audit and debugging purposes only, and ****MUST NOT**** use these headers to perform routing or lookups. 
+Source and destination ASID information is passed to the provider system from the Spine Security Proxy. Providers **MUST** use this information for audit and debugging purposes only, and **MUST NOT** use these headers to perform routing or lookups. 
 
 It is the responsibility of the SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice-specific ODS codes present in the FHIR server root URL. 
 
