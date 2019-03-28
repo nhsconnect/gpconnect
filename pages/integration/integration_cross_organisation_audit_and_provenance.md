@@ -29,7 +29,7 @@ Audit trail records **MUST** include the following minimum information:
 - a record of the user identity - this is the User ID, Name, Role profile (including Role and Organisation, URP id when Smartcard authenticated) attribute values, obtained from the user’s Session structure
 - a record of the identify of the authority – the person authorising the entry of or access to data (if different from the user)
 - the date and time on which the event occurred
-- details of the nature of the audited event and the identity of the associated data (for example, patient ID, message ID) of the audited event
+- details of the nature of the audited event and the identity of the associated data (for example patient ID, message ID) of the audited event
 - a sequence number to protect against malicious attempts to subvert the audit trail by, for example, altering the system date
 - audit trail records **SHOULD** include details of the end-user device (or system) involved in the recorded activity
 
@@ -62,7 +62,7 @@ Consumer systems **MUST** always perform a patient demographic check as part of 
 
 ### Patient dissent ###
 
-Provider systems **MUST** ensure that Patient Consent is respected (for example, where express dissent is recorded then data is not shared).
+Provider systems **MUST** ensure that Patient Consent is respected (for example where express dissent is recorded then data is not shared).
 
 ## Cross organisation audit and provenance transport ##
 
@@ -216,7 +216,7 @@ As GP Connect only supports usage for direct care, this value **MUST** be set to
 
 #### `requested_record` claim
 
-The FHIR patient resource being requested (for example, NHS Number identifier details)
+The FHIR patient resource being requested (for example NHS Number identifier details)
 
 **Example**:
 
@@ -254,7 +254,7 @@ The consumer **MUST** populate the following [Device](https://www.hl7.org/fhir/D
 
 - an `id` with a unique [logical](https://www.hl7.org/fhir/DSTU2/resource.html#id) identifier
 - an `identifier` element, with:
-  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/device-identifier`
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, for example `https://consumersupplier.com/Id/device-identifier`
   - `value` containing the device or system identifier
 - `model` with the consumer product or system name
 - `version` with the version number of the consumer product or system
@@ -317,13 +317,13 @@ The [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) resource po
 
 The user making the request, populated as a minimal [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource.
 
-To contain the practitioner's local system identifier(s) (for example, login details / username). Where the user has both a local system user role as well as a nationally-recognised user role, then both **MUST** be provided.
+To contain the practitioner's local system identifier(s) (for example login details / username). Where the user has both a local system user role as well as a nationally-recognised user role, then both **MUST** be provided.
 
 {% include important.html content="This field **MUST NOT** be populated with fixed values or a generic \"system\" user. The values **MUST** represent the logged on user making the request." %}
 
 The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) fields:
 
-- `id` with a unique [logical](https://www.hl7.org/fhir/DSTU2/resource.html#id) identifier (e.g. user ID or GUID) for the logged on user. This **MUST** match the value of the [`sub` (subject) claim](integration_cross_organisation_audit_and_provenance.html#sub-subject-claim).
+- `id` with a unique [logical](https://www.hl7.org/fhir/DSTU2/resource.html#id) identifier (for example user ID or GUID) for the logged on user. This **MUST** match the value of the [`sub` (subject) claim](integration_cross_organisation_audit_and_provenance.html#sub-subject-claim).
 - `name` with:
   - `family` containing the user's family name
   - `given` containing the user's given name
