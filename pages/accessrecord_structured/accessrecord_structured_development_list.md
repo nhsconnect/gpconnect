@@ -42,7 +42,7 @@ The following table provides details of the warning codes that are to be used in
   <tr>
     <td>Data in Transit</td>
     <td>data-in-transit</td>
-    <td>Patient record transfer from previous GP practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded.</td>
+    <td>Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.</td>
   </tr>
   <tr>
     <td>Data Awaiting Filing</td>
