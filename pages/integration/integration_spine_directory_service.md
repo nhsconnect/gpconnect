@@ -31,6 +31,9 @@ MHS records of GP Connect provider systems contain the endpoint of the target pr
 
 Please see [System topologies](integration_system_topologies.html) for more details on the allocation of ASIDs and Party Keys.
 
+{% include important.html content="**Distinguishing GP Connect provider and consumer SDS records**<br/>
+Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on their MHS records; consumers do not. This distinction enables the SDS queries below to return the correct record, where a provider organisation has separate consumer systems in addition to their main provider system." %}
+
 ## Querying SDS ##
 
 GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) and ASID for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
@@ -52,6 +55,10 @@ Please see below for more detail on the process.
 Systems **SHOULD** cache SDS query results giving details of consuming system, endpoints and endpoint capability on a per session basis.
 
 Systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
+
+{% include important.html content="**Why have SDS queries changed in GP Connect API 0.7.2?**<br/>
+The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more seperate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
+The SDS queries in GP Connect API 0.7.1 and prior versions do not support this configuration, hence existing consumer systems **MUST** update their queries to to this version of the specification." %}
 
 
 ### Step 1: Message Handling System (MHS) record lookup  ###
@@ -178,7 +185,7 @@ The format of the full URL which the consuming system is responsible for constru
 
 The value returned in the `nhsMhsEndPoint` attribute in Step 1 should be treated as the `[Provider Server Root URL]` at the provider system.
 
-{% include important.html content="Consumer systems **MUST NOT** amend the provider service root URL value as returned from SDS, except for prefixing it the `[Spine Secure Proxy URL]` and suffixing it with the `[FHIR request]`. If the Provider Service Root URL does not exactly match that held in SDS, for example the domain name is replaced with its equivalent IP address, or has an added explicit port declaration such as `:443`, the request will be blocked by the SSP." %}
+{% include sds_ssp_warning.html %}
 
 In this example, to issue a Get Care Record request, the following request would be made:
 
