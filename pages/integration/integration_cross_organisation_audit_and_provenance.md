@@ -252,6 +252,7 @@ The system or device making the request, populated as a minimal [Device](https:/
 
 The consumer **MUST** populate the following [Device](https://www.hl7.org/fhir/DSTU2/device.html) fields:
 
+- an `id` with a unique [logical](https://www.hl7.org/fhir/DSTU2/resource.html#id) identifier
 - an `identifier` element, with:
   - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/device-identifier`
   - `value` containing the device or system identifier
@@ -264,7 +265,7 @@ The [Device](https://www.hl7.org/fhir/DSTU2/device.html) resource populated in t
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_device": {
   "resourceType": "Device",
-  "id": "000001",
+  "id": "c4c8d038-913a-490c-9682-47047f4155fb",
   "identifier": [
     {
       "system": "https://consumersupplier.com/Id/device-identifier",
@@ -285,6 +286,7 @@ The consumer organisation making the request, populated as a minimal [Organizati
 The consumer **MUST** populate the following [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) fields:
 
 - `name` with the name of the organisation
+- an `id` with a unique [logical](https://www.hl7.org/fhir/DSTU2/resource.html#id) identifier
 - an `identifier` element, with:
   - `system` containing `https://fhir.nhs.net/Id/ods-organization-code`, and
   - `value` containing the ODS code of the organisation
@@ -298,7 +300,7 @@ The [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) resource po
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_organization": {
   "resourceType": "Organization",
-  "id": "000001",
+  "id": "79600119-ebaf-4362-bb89-d473a33b1675",
   "identifier": [
     {
       "system": "https://fhir.nhs.net/Id/ods-organization-code",
@@ -340,7 +342,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_practitioner": {
 		"resourceType": "Practitioner",
-		"id": "10019",
+		"id": "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
 		"identifier": [{
 			"system": "http://fhir.nhs.net/sds-user-id",
 			"value": "111222333444"
@@ -393,7 +395,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
   },
   "requesting_device": {
     "resourceType": "Device",
-    "id": "000001",
+    "id": "c4c8d038-913a-490c-9682-47047f4155fb",
     "identifier": [
       {
         "system": "https://consumersupplier.com/Id/device-identifier",
@@ -405,7 +407,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
   },
   "requesting_organization": {
     "resourceType": "Organization",
-    "id": "000001",
+    "id": "79600119-ebaf-4362-bb89-d473a33b1675",
     "identifier": [
       {
         "system": "https://fhir.nhs.net/Id/ods-organization-code",
@@ -415,7 +417,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
     "name": "Test Hospital"
   },
   "resourceType": "Practitioner",
-  "id": "10019",
+  "id": "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
   "identifier": [
     {
       "system": "http://fhir.nhs.net/sds-user-id",
