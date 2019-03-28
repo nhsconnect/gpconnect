@@ -24,6 +24,8 @@ Please note:
 - each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
 - consumer systems in the shared MHS toplogy have one [Party Key](#spine-endpoint-terms) shared amongst connecting organisations
 
+{% include sds_aggregator_warning.html %}
+
 ## Consumer system - seperate MHS ##
 
 ![Consumer topology 1](images/integration/consumer-topology-1.png)<br>
