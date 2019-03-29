@@ -222,9 +222,12 @@ The FHIR patient resource being requested (for example NHS Number identifier det
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_record": {
   "resourceType": "Patient",
-		"identifier": [{
-			"system": "http://fhir.nhs.net/Id/nhs-number",
-			"value": "9658218873"}]
+  "identifier": [
+    {
+      "system": "http://fhir.nhs.net/Id/nhs-number",
+      "value": "9658218873"
+    }
+  ]
 }
 </code></pre>
 
