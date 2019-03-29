@@ -341,34 +341,40 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
 **Example**:
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_practitioner": {
-		"resourceType": "Practitioner",
-		"id": "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
-		"identifier": [{
-			"system": "http://fhir.nhs.net/sds-user-id",
-			"value": "111222333444"
-		},
-		{
-			"system": "https://fhir.nhs.net/Id/sds-role-profile-id",
-			"value": "444555666777"
-		}],
-		"name": {
-			"family": "Jones",
-			"given": [
-				"Claire"
-			],
-			"prefix": [
-				"Dr"
-			]
-		},
-		"practitionerRole": [{
-			"role": {
-				"coding": [{
-					"system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
-					"code": "R8000"
-				}]
-			}
-		}]
-	}</code></pre>
+  "resourceType": "Practitioner",
+  "id": "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
+  "identifier": [
+    {
+      "system": "http://fhir.nhs.net/sds-user-id",
+      "value": "111222333444"
+    },
+    {
+      "system": "https://fhir.nhs.net/Id/sds-role-profile-id",
+      "value": "444555666777"
+    }
+  ],
+  "name": {
+    "family": "Jones",
+    "given": [
+      "Claire"
+    ],
+    "prefix": [
+      "Dr"
+    ]
+  },
+  "practitionerRole": [
+    {
+      "role": {
+        "coding": [
+          {
+            "system": "http://fhir.nhs.net/ValueSet/sds-job-role-name-1",
+            "code": "R8000"
+          }
+        ]
+      }
+    }
+  ]
+}</code></pre>
 
 
 

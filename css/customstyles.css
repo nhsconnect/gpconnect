@@ -1329,3 +1329,26 @@ a.back-to-top {
 	-moz-border-radius: 30px;
 	border-radius: 30px;
 }
+
+.jwt-page hr {
+    border-bottom: 1px dotted grey;
+    border-top: 0;
+    margin-bottom: 10px;
+    background: transparent;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.jwt-page pre.remove-highlight {
+    margin-top: 0px;
+    background-color: #f0f0f0;
+    border: 0;
+    padding: 2px 4px;
+}
+
+.jwt-page pre.remove-highlight code {
+    color: #444;
+}
