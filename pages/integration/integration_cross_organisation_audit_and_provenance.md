@@ -81,14 +81,8 @@ It is highly recommended that standard libraries are used for creating the JWT a
 
 
 
-### JSON Web Tokens (JWT) ###
-
-- Consumer system **MUST** generate a new JWT for each API request containing the claims outlined in the table below
-- Where the claim contains a FHIR resource the FHIR resource should conform to the GP Connect FHIR resource profiles outlined on the [FHIR Resources](datalibraryaccessRecord.html) page
-  - An exception to this requirement is that in the `requesting_practitioner` claim the `Practitioner` resource should contain an identifier with the system `"http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was a error during testing and assurance which resulted in the providers validate that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included.
-
   
-#### JWT generation ####
+### JWT generation ###
 Consumer systems **MUST** generate the JSON Web Token (JWT) consisting of three parts separated by dots (.), which are:
 
 - header
@@ -170,7 +164,7 @@ ID for the user on whose behalf this request is being made. Matches [`requesting
 
 #### `aud` (audience) claim
 
-The Authorization server’s token_URL.
+The Authorization server’s token URL.
 
 The value **MUST** be fixed to `https://authorize.fhir.nhs.net/token`
 
@@ -216,7 +210,9 @@ As GP Connect only supports usage for direct care, this value **MUST** be set to
 
 #### `requested_record` claim
 
-The FHIR patient resource being requested (for example NHS Number identifier details)
+The identifier of the patient record being requested. 
+
+The request can be made using the FHIR Patient or FHIR Organization resource.
 
 **Example**:
 
@@ -334,11 +330,15 @@ The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/
 - an `identifier` element with:
   - `system` containing `http://fhir.nhs.net/sds-user-id`
   - `value` containing the SDS user ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
-- an `identifier` element with:
-  - `system` containing `https://fhir.nhs.net/Id/sds-role-profile-id`
-  - `value` containing the SDS user role profile ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
+- an `identifier` element containing a unique local user or user-role identifier for the logged on user (for example, user ID, user role ID, logon name) from the consumer system:
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, for example `https://consumersupplier.com/Id/user-guid`
+  - `value` containing the unique local identifier for the logged on user
 
 
+{% include important.html content= "the `requesting_practitioner` claim the `Practitioner` resource should contain an identifier with the system `http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was a error during testing and assurance which resulted in the providers validate that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included." %}
+
+{% include important.html content="Providers should be aware of variance in the population of the `identifier` field amongst existing consumer systems when reading this claim, specifically the local user identifier is not always present." %}
+ 
 The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base DSTU2 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
 
 **Example**:
@@ -352,12 +352,14 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
       "value": "111222333444"
     },
     {
-      "system": "https://fhir.nhs.net/Id/sds-role-profile-id",
-      "value": "444555666777"
+      "system": "http://fhir.nhs.net/Id/local-identifier",
+      "value": "54b9d987-c2f1-4fdd-a449-e67cdf41dd2b"
     }
   ],
   "name": {
-    "family": "Jones",
+    "family": [
+      "Jones"
+    ],
     "given": [
       "Claire"
     ],
@@ -377,7 +379,8 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
       }
     }
   ]
-}</code></pre>
+}
+</code></pre>
 
 
 
@@ -433,12 +436,14 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
       "value": "111222333444"
     },
     {
-      "system": "https://fhir.nhs.net/Id/sds-role-profile-id",
-      "value": "444555666777"
+      "system": "http://fhir.nhs.net/Id/local-identifier",
+      "value": "54b9d987-c2f1-4fdd-a449-e67cdf41dd2b"
     }
   ],
   "name": {
-    "family": "Jones",
+    "family": [
+	  "Jones"
+	],
     "given": [
       "Claire"
     ],
