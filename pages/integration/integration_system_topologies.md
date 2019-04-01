@@ -24,7 +24,7 @@ Please note:
 - each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
 - consumer systems in the shared MHS toplogy have one [Party Key](#spine-endpoint-terms) shared amongst connecting organisations
 
-{% include sds_aggregator_warning.html %}
+{% include important.html content="In consumer system topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital that the ASID sent in the `Ssp-From` header reflects the organisation from where the request originates, rather than the hosting organisation." %}
 
 ## Consumer system - seperate MHS ##
 
