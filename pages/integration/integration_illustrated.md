@@ -44,6 +44,6 @@ The steps shown in the diagram are detailed below.
 | 4b   | **SSP** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 4c   | **Provider** responds with the requested details of the care record. |
 | 4d   | **SSP** forwards the requested details of the care record to the Consumer. | 
-|      | * Step 5 is an example of an error being returned * |    
+|      | *Step 5 is an example of an error being returned* |    
 | 5a   | **Provider** returns an error to the SSP. |
 | 5b   | **SSP** forwards the error to the Consumer. |
