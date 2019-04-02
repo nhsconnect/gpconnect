@@ -165,8 +165,7 @@ The ASID is now looked up on SDS. The example below uses ldapsearch:
 	uniqueIdentifier 
 
 	
-This query should return a single matching accredited system object from SDS, the ASID being found in the uniqueIdentifier attribute. In the case, ldapsearch returns the following results:
-
+This query should return a single matching accredited system object from SDS, the ASID being found in the uniqueIdentifier attribute. In this case, the ldapquery returns the following results:
 
 	999999999999, Services, nhs
 	dn: uniqueIdentifier=9999999999,ou=Services,o=nhs
