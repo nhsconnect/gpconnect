@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_pathology_guidance.html
-summary: "Guidance on the representation of allergies and intolerances in GP Connect"
+summary: "Guidance on the representation of pathology messaging in GP Connect"
 ---
 
 ## Pathology scope in GP Connect
@@ -22,32 +22,32 @@ These may be addressed in future versions or within different areas of GP Connec
 
 ## Use of language to describe pathology reports
 
-When describing pathology reports different regions and professions sometimes use different words to decribe the same entities. Therefore for avoidance of confusion there are a couple of terms that we need to define.
+When describing pathology reports different regions and professions sometimes use different words to describe the same entities. Therefore, for avoidance of confusion there are a couple of terms that we need to define.
 
 * Test group - is the phrase we are using to describe any group of tests that has been created by the laboratory or other providing organisation. These are often referred to as batteries, panels and profiles.
 
 * Test result - this is the result that has been provided by the laboratory or other provider. These may be standalone results or may be a part of a 'Test group'. They are also sometimes referred to as test analytes.
 
-## Patholgy reporting in GP practices
+## Pathology reporting in GP practices
 
-Currently GP practices receive the majority of the results of investigations which they have requested in the form of the EDIFact message. These are recieved into a workflow by the GP system and remain there until they are filed into the patient record by a user. 
+Currently GP practices receive the majority of the results of investigations which they have requested in the form of the EDIFACT message. These are received into a workflow by the GP system and remain there until they are filed into the patient record by a user. 
 
-### EDIFact
+### EDIFACT
 
-The EDIFact message was defined by the Pathology Messaging Enabling Project and the specification can be found here listed as [EDIFact Pathology Messaging](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections).
+The EDIFACT message was defined by the Pathology Messaging Enabling Project and the specification can be found here listed as [EDIFact Pathology Messaging](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections).
 
 It is a detailed specification and although it does contain some coding the majority of the fields contain text. Some of the text is also heavily formatted. See below example taken from a GP2GP HL7v3 message,
 
 {: .center-image }
 ![Structured text example](images/access_structured/Pathology_structured_text_example_2.png)
 
-Gp systems are required to maintian the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFact report imported into the GP system **MUST** be maintained as they are in the GP2GP HL7 message.
+GP systems are required to maintain the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFact report imported into the GP system **MUST** be maintained as they are in the GP2GP HL7 message.
 
 ### Filing results into the patient record
 
 When results are filed by the user it is possible to file the entire report or a 'test group'.
 
-Results may not always be filed on the day they were received. However in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such this date is an important date when moving records between GP systems. 
+Results may not always be filed on the day they were received. However, in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such this date is an important date when moving records between GP systems. 
 
 At the point at which the record is filed there is opportunity for the user to provide comments against the report or part of the report that they are filing.
 
@@ -73,7 +73,7 @@ In the image we have made the key entities more prominent. Entities representing
 
 The 'Test Report Document' and 'Test Result Document' are out of scope for the current iteration but are represented in the diagram. 
 
-We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFact message and also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the may different patterns and types of result that can be sent so it can be easily adapted to support other test results stored in the GP system. 
+We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFact message and also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the many different patterns and types of result that can be sent so it can be easily adapted to support other test results stored in the GP system. 
 
 ### Available FHIR resources
 
@@ -95,9 +95,9 @@ We have mapped these resources on to the logical model in the diagram below,
 {: .center-image }
 ![Pathology logical model with FHIR resource names](images/access_structured/Pathology_Logical_Model_with_FHIR_resource_names.png)
 
-DiagnosticReport is at the centre of the model and that all the other entities are linked to from there. 
+DiagnosticReport is at the centre of the model and all the other entities are linked to from there. 
 
-The Observation resource for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings there will be only one FHIR profile that can then be populated appropriately for each individual use.
+The Observation resource is used for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings there will be only one FHIR profile that can then be populated appropriately for each individual use.
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.
 
