@@ -10,11 +10,11 @@ summary: "Guidance for populating and consuming patholgy data in GP Connect"
 
 ## Introduction ##
 
-The headings below list the elements of the Observation resource and describe how to populate and consume them.
+The headings below list the elements of the DiagnosticReport resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_dagnosticReport.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [DiagnosticReport profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)." %} 
 
 ## DiagnosticReport resource elements ##
 
@@ -71,11 +71,11 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   <tr>
     <td><b>Data type:</b> <code>reference</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-A link to the ProcedureRequest that contains details of request that was made. Where present this may include details of who requested the tests and why the test was requested.
+A link to the ProcedureRequest that contains details of a request that was made. Where present this may include details of who requested the tests and why the test was requested.
 
 As currently test requests are not submitted in a FHIR format this is not the oigianl request but is currently used as a container to hold details that were present in the original request.
 
@@ -139,7 +139,7 @@ A reference to the `Patient` who the DiagnosticReport is about.
   </tr>
 </table>
 
-The `Encounter` within which the DiagnosticReport was related to.
+The `Encounter` which the DiagnosticReport was related to.
 
 ### issued ###
 
@@ -151,7 +151,7 @@ The `Encounter` within which the DiagnosticReport was related to.
   </tr>
 </table>
 
-The date time that the DiagnosticReport was issued by the laboratory or other report provider.
+The date and time that the DiagnosticReport was issued by the laboratory or other report provider.
 
 
 ### performer ###
@@ -159,8 +159,8 @@ The date time that the DiagnosticReport was issued by the laboratory or other re
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
@@ -214,9 +214,9 @@ A coded finding of the test report. Produced by the organisation that performed 
   </tr>
 </table>
 
-Clinical Interpretation of test results in a text format and notes written by performing organisation in addition to the interpretation. For example, the sample has haemolysed or has leaked.
+Clinical Interpretation of test results in a text format and notes written by performing organisation in addition to the interpretation. For example, the specimen has haemolysed or has leaked.
 
-For clarity notes may be captured at a number of levels wihtin a DiagnosticReport. There may also be notes related to the specimen, test group header or individual test result. It is the consuming systems responsibility to make sure all relevant notes are displayed to the user.
+For clarity notes may be captured at a number of levels within a DiagnosticReport. There may also be notes related to the specimen, test group header or individual test result. It is the consuming systems responsibility to make sure all relevant notes are displayed to the user.
 
 ### presentedForm ###
 
@@ -224,11 +224,11 @@ For clarity notes may be captured at a number of levels wihtin a DiagnosticRepor
   <tr>
     <td><b>Data type:</b> <code>string</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Entire report as issued e.g. the original EDIFact message sent from the lab.
+Entire report as issued e.g. the original EDIFACT message sent from the lab.
 
 <br>
 ## Elements **not in use** ##
@@ -239,11 +239,11 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean</code></td>
+    <td><b>Data type:</b> <code>Period</code></td>
   </tr>
 </table>
 
-The time that the report is considered effective or clinically relevant from can be determined from other dates within the report. It may be considered that the date the sample was collected `specimen.collection.collected` or for transfers between GP systems it may be the date it was filed into the GP record. This will be the `observation.effective` from the Observation referenced from `DiagnosticReport.result` where `observation.code` is set to ????????????
+Out of scope for the current iteration.
 
 ### imagingStudy ###
 
