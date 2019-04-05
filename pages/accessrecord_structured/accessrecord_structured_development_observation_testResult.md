@@ -1,10 +1,10 @@
 ---
-title: Observation
+title: Observation - test result
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_testResult.html
-summary: "Guidance for populating and consuming patholgy data in GP Connect"
+summary: "Guidance for populating and consuming the observation to represent test result data in GP Connect"
 ---
 
 
@@ -84,7 +84,7 @@ In GP systems these are most likely to be 'final' however 'preliminary' reports 
   <tr>
     <td><b>Data type:</b> <code>CodableConcept</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
  
@@ -114,20 +114,6 @@ The clinical code that represents the name of the test result or test analyte.
 
 A reference to the Patient who the observation is about.
 
-### context ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The  `Encounter`  within which the observation was made.
-
-As per base profile guidance.
-
 ### effective[x] ###
 
 <table class='resource-attributes'>
@@ -138,19 +124,19 @@ As per base profile guidance.
   </tr>
 </table>
 
-The dateTime when the the test was performed
+The date and time when the test was performed
 
 ### issued ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>instant</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-The date time that the result was issued by the laboratory or other report provider.
+The date and time that the result was issued by the laboratory or other report provider.
 
 
 ### performer ###
@@ -158,8 +144,8 @@ The date time that the result was issued by the laboratory or other report provi
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
@@ -199,7 +185,7 @@ The reason why a result/value has been omitted.
   </tr>
 </table>
 
-Simple coded interpretation of the results. As provided by the performing HCP. For example - out of range, high, low.
+A human readable clinical summary relating to a test result and/or additional notes provided by the laboratory e.g. the specimen has haemolysed or has leaked
 
 ### comment ###
 
@@ -207,7 +193,7 @@ Simple coded interpretation of the results. As provided by the performing HCP. F
   <tr>
     <td><b>Data type:</b> <code>string</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -255,7 +241,7 @@ Reference to the specimen on which these results were based.
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
@@ -285,9 +271,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Data type:</b> <code>reference</code></td>
   </tr>
 </table>
 
