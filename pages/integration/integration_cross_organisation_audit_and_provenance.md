@@ -333,11 +333,13 @@ The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/
 - an `identifier` element containing a unique local user or user-role identifier for the logged on user (for example, user ID, user role ID, logon name) from the consumer system:
   - `system` containing a consumer-defined system URL representing the type of identifier in the value field, for example `https://consumersupplier.com/Id/user-guid`
   - `value` containing the unique local identifier for the logged on user
+- `practitionerRole` with:
+  - `system` containing `http://fhir.nhs.net/ValueSet/sds-job-role-name-1`
+  - `value` containing the SDS Job Role ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
 
+{% include important.html content= "the `Practitioner` resource **MUST** contain an identifier with the system `http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was a error during testing and assurance which resulted in the providers validating that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included." %}
 
-{% include important.html content= "the `requesting_practitioner` claim the `Practitioner` resource should contain an identifier with the system `http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was a error during testing and assurance which resulted in the providers validate that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included." %}
-
-{% include important.html content="Providers should be aware of variance in the population of the `identifier` field amongst existing consumer systems when reading this claim, specifically the local user identifier is not always present." %}
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Providers should be aware of variance in the population of certain fields amongst existing consumer systems when reading this claim, specifically, the following are not always present: <ul><li> local user <code class="highlighter-rouge">identifier</code> </li><li> the <code class="highlighter-rouge">practitionerRole</code> </li></ul></div>
  
 The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base DSTU2 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
 
