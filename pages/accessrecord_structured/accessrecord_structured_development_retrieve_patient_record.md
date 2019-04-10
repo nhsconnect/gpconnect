@@ -143,11 +143,6 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 ```json
 {
-  "meta": {
-    "profile": [
-      "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
-    ]
-  },
   "resourceType": "Parameters",
   "parameter": [
     {
