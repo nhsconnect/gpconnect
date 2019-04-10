@@ -13,11 +13,13 @@ Resolve (zero or more) `Practitioner` resources using a business identifier (for
 
 ### Request operation ###
 
-The `[system]` field SHALL be populated with a valid practitioner identifier system URL (for example, `https://fhir.nhs.uk/Id/sds-user-id`).
+The consumer system:
 
-The consumer system SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+- SHALL populate the `[system]` field with a valid practitioner identifier system URL (for example, `https://fhir.nhs.uk/Id/sds-user-id`).
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/sds-user-id'. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+- SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type `https://fhir.nhs.uk/Id/sds-user-id`. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR relative request ####
 
