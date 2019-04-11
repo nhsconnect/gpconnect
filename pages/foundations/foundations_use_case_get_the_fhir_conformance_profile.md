@@ -66,7 +66,7 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
 		<name value="[Provider Software Vendor Contact Name]" />
 	</contact>
 	<date value="2018-02-23" />
-	<description value="This server implements the GP Connect API version 0.7.0" />
+	<description value="This server implements the GP Connect API version 0.7.2" />
 	<copyright value="Copyright NHS Digital 2016" />
 	<kind value="capability" />
 	<software>
