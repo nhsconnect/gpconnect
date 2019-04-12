@@ -1,5 +1,5 @@
 ---
-title: Getting involved with GP Connect
+title: Getting involved with GP Connect API
 keywords: engage, about
 tags: [getting_started]
 sidebar: overview_sidebar
@@ -8,9 +8,7 @@ permalink: overview_engage.html
 summary: "Getting involved with GP Connect"
 ---
 
-## The Open API ecosystem
-
-GP Connect is part of a wider initiative to expose standards based [Open APIs](designprinciples_open_api_principles.html#open-api){:target="_blank"} to promote innovation and improve care across the NHS.
+## Background
 
 ### Capabilities
 
@@ -41,7 +39,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 
 ## 3. Develop ##
 
-- Familiarise yourself with HL7&reg; FHIR&reg; ([developer introduction](http://www.hl7.org/implement/standards/fhir/overview-dev.html){:target="_blank"}, [executive summary](http://www.hl7.org/implement/standards/fhir/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/overview-clinical.html){:target="_blank"}).
+- Familiarise yourself with HL7&reg; FHIR&reg; ([developer introduction](http://www.hl7.org/implement/standards/fhir/STU3/overview-dev.html){:target="_blank"}, [executive summary](http://www.hl7.org/implement/standards/fhir/STU3/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/STU3/overview-clinical.html){:target="_blank"}).
 - Grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language.
 - If you are a consumer, decide which wire format to use (JSON or XML)
 {% include important.html content="Consumers planning their development should read [the following information](support_faq.html#which-serialisation-format-should-i-choose-as-an-gp-connect-api-consumer---json-or-xml) before choosing whether to use JSON or XML in their implementation." %}
@@ -75,7 +73,15 @@ Some early feedback on the May 2016 release of the GP Connect draft specificatio
 
 ## Community engagement
 
-GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
+### The Open API ecosystem
+
+GP Connect is part of a wider initiative to expose standards based [Open APIs](designprinciples_open_api_principles.html#open-api){:target="_blank"} to promote innovation and improve care across the NHS.
+
+### INTEROPen
+
+GP Connect FHIR profiles specified within this site have been developed by NHS Digital and where available use CareConnect profiles created in collaboration with the INTEROPen community.
+
+The INTEROPen vision is to create a library of nationally defined HL7® FHIR® resources and interaction patterns that implementers can adopt to simplify integration and interoperability within England’s health and social care systems. Find out more on the [INTEROPen website](https://www.interopen.org/)
 
 ## Timescales, benefits and more
 

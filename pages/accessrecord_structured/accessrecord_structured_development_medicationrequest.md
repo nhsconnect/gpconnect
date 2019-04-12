@@ -12,9 +12,9 @@ div: resource-page
 
 The headings below list the elements of the MedicationRequest resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_medicationrequest.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)" %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.2)" %}
 
 ## Overarching principles ##
 
@@ -78,7 +78,7 @@ Extension elements to hold details of repeat authorisation.
 
 The number of repeat issues authorised if specified.
 
-**MUST** be present where a repeat is authorised for a defined number of issues. 
+**MUST** be present where a repeat is authorised for a defined number of issues.
 
 **MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
 
@@ -179,12 +179,12 @@ In exceptional cases where for legacy data there is no prescriptionType recorded
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Optionality:</b> Mandatroy</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
-This is for business identifiers. 
+This is for business identifiers.
 
 This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
@@ -193,8 +193,6 @@ This **MUST** be a GUID.
 *Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn't change between requests and therefore stored with the source data).
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
-
-If the EPS identifier is present then the identifier.value is where the EPS Id **SHOULD** also be added.
 
 ### basedOn ###
 
@@ -342,7 +340,7 @@ Unless there is a distinct user-modifiable availabilityTime for the authorisatio
 
 Person and their organization requesting authorisation for prescription.
 
-To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation. 
+To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
 
 If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
 
@@ -600,7 +598,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 
@@ -612,7 +610,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">detectedIssue</h3>
@@ -635,5 +633,3 @@ This is not in scope for this version of Care Connect and therefore not availabl
 </table>
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
-
-

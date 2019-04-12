@@ -14,7 +14,7 @@ The headings below list the elements of the Bundle resource and describe how to 
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with: the underlying [Bundle population illustration diagram](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) and the [Bundle profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with: the underlying [Bundle population illustration diagram](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) and the [Bundle profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1)." %}
 
 ## Bundle elements ##
 
@@ -78,6 +78,14 @@ A Resource carried within the Bundle.  This can any type of resource, for exampl
 
 The following elements **SHALL NOT** be populated:
 
+<h3 style="color:#ED1951;">id</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+  </tr>
+</table>
+
 <h3 style="color:#ED1951;">meta.versionId</h3>
 
 <table class='resource-attributes'>
@@ -94,3 +102,10 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
+<h3 style="color:#ED1951;">entry.fullUrl</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
+  </tr>
+</table>

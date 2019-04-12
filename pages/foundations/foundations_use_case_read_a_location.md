@@ -57,7 +57,7 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
@@ -84,7 +84,7 @@ Provider systems:
   - `name`
   - `address` where available
   - `telecom` where available
-  - `managingOrganization` with a reference to to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
+  - `managingOrganization` with a reference to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 

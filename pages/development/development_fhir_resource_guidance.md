@@ -7,13 +7,15 @@ permalink: development_fhir_resource_guidance.html
 summary: "Where to find details of what resources and operations a FHIR server should expose to be a fully compliant GP Connect solution"
 ---
 
-GP Connect has specified profiled versions of the international [FHIR Resources](https://www.hl7.org/fhir/STU3/){:target="_blank"}, tailoring them to meet the requirements of the GP Connect use cases and to aid in interoperability between systems.
+## Introduction
 
-When creating the profiled FHIR resources GP Connect have aimed to improve interoperability by:
+GP Connect versions 1.x use the [FHIR STU3](http://hl7.org/fhir/STU3/) standard to specify the API and profiles.
 
-* aligning, where possible, to the base FHIR profiles. GP Connect has also aligned, where possible, to the FHIR resource profiles produced by CareConnect and InterOpen
-* not making FHIR profile elements mandatory unless absolute certainty that this cardinality will apply for all existing and future use cases
-* applying must support flags to elements which hold key information within the resources
+## Profiling principles
+
+> Please see the [Data model principles](designprinciples_data_model_principles.html) page for further information.
+
+## Profiles for each capability pack
 
 The profiled FHIR resources required for each of the GP Connect capability packs are specified within the specific specification sections for each of the capabilities:
 
@@ -40,7 +42,7 @@ Where a Must-Support flag is present on a resource element, a `consumer` system 
 
 Similarly, `provider` systems SHALL populate an element in responses where data is available to do so, irrespective of optional cardinality. When a `provider` system receives data from a consumer for a field marked with the Must-Support flag, the provider system SHALL store this data field in such a way that the data element is preserved and the element can be populated in future responses to consumer requests for the resource in question.
 
-If an element within a fhir profile is marked as must support then all sub elements of that element SHALL also be considered must support. For example, within the GP Connect Appointment profile the booking organization extension is flagged with must support on the extension, this means that the extension and all sub elements within the extension are must support and SHALL be stored in a way that the data is preserved and the booking organization can be populated in future responses to consumers requesting that resource.
+If an element within a FHIR profile is marked as must support then all sub elements of that element SHALL also be considered must support. For example, within the GP Connect Appointment profile the booking organization extension is flagged with must support on the extension. This means that the extension and all sub elements within the extension are must support and SHALL be stored in a way that the data is preserved and the booking organization can be populated in future responses to consumers requesting that resource.
 
 For example, see the [Register a patient request body](foundations_use_case_register_a_patient.html#payload-request-body).
 
@@ -159,3 +161,7 @@ Example:
   "gender": "female"
 }
 ```
+
+### Bundle.entry.fullUrl
+
+Providers SHALL NOT populate `Bundle.entry.fullUrl`.

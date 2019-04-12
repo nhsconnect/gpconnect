@@ -59,7 +59,7 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
@@ -83,7 +83,7 @@ Provider systems:
 - SHALL populate the following fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Patient` resource.
-  - `identifier` with relevent business identifiers, including a minimum of the patient's NHS number
+  - `identifier` with relevant business identifiers, including a minimum of the patient's NHS number
   - `name`
     - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
   - `birthDate`
@@ -126,6 +126,27 @@ Provider systems:
           "valueReference": {
             "reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
           }
+        }
+      ]
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1",
+      "extension": [
+        {
+          "url": "language",
+          "valueCodeableConcept": {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
+                "code": "bn",
+                "display": "Bengali"
+              }
+            ]
+          }
+        },
+        {
+          "url": "interpreterRequired",
+          "valueBoolean": false
         }
       ]
     }

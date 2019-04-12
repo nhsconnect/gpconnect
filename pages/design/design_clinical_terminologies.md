@@ -32,7 +32,7 @@ GP Connect systems are expected to handle coded data as follows:
 
 
 ### Case sensitivity of terminologies ###
-[FHIR terminologies](https://www.hl7.org/fhir/terminologies.html#required){:target="_blank"}
+[FHIR terminologies](https://www.hl7.org/fhir/STU3/terminologies.html#required){:target="_blank"}
 
 Throughout this specification, coded values are always treated as a pair composed of 'system' and 'code', where the system is a URL that identifies the code system that defines the codes. 
 

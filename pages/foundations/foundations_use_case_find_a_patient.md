@@ -20,7 +20,7 @@ The consumer system:
 
 Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS number).
 
-### Request Operation ###
+### Request operation ###
 
 The `[system]` field SHALL be populated with a valid patient identifier system URL (that is, `https://fhir.nhs.uk/Id/nhs-number`).
 
@@ -59,7 +59,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
 
 For example, the:
 
@@ -80,14 +80,13 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-  - SHALL populate `entry.fullUrl` for each resource in the `Bundle`
 - SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient).
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 
 - SHALL populate the following `Patient` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of each `Patient` resource.
-  - `identifier` with relevent business identifiers, including a minimum of the patient's NHS number
+  - `identifier` with relevant business identifiers, including a minimum of the patient's NHS number
   - `name`
     - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
   - `birthDate`
@@ -117,7 +116,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
       "resource": {
         "resourceType": "Patient",
         "id": "2",
@@ -136,6 +134,27 @@ Provider systems:
                 "valueReference": {
                   "reference": "Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"
                 }
+              }
+            ]
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1",
+            "extension": [
+              {
+                "url": "language",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
+                      "code": "bn",
+                      "display": "Bengali"
+                    }
+                  ]
+                }
+              },
+              {
+                "url": "interpreterRequired",
+                "valueBoolean": false
               }
             ]
           }
@@ -188,8 +207,8 @@ Provider systems:
             "use": "home",
             "type": "physical",
             "line": [
-                "Trevelyan Square",
-                "Boar Ln"
+              "Trevelyan Square",
+              "Boar Ln"
             ],
             "city": "Leeds",
             "district": "West Yorkshire",

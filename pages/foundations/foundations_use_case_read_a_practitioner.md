@@ -13,8 +13,8 @@ This specification describes a single use cases. For complete details and backgr
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## API usage ##
 
@@ -49,7 +49,7 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
@@ -73,7 +73,7 @@ Provider systems:
 - SHALL populate the following `Practitioner` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Practitioner` resource.
-  - `identifier` with relevent business identifiers (i.e. SDS User Id) for each `Practitioner` resource.
+  - `identifier` with relevant business identifiers (for example, SDS User Id) for each `Practitioner` resource.
   - `name`
   - `gender` where available
   - `nhsCommunication` with the practitioner's language information, where available
@@ -105,9 +105,7 @@ Provider systems:
   ],
   "name": [
     {
-      "family": [
-        "Black"
-      ],
+      "family": "Black",
       "given": [
         "Sarah"
       ],

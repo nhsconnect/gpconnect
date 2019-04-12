@@ -1,15 +1,15 @@
 ---
-title: Cancel an appointment for a patient at an organisation
+title: Cancel an appointment
 keywords: appointments, use case, cancel, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_cancel_an_appointment.html
-summary: "Use case for cancelling an appointment for a patient with a given organisation"
+summary: "Cancel an appointment for a patient at an organisation"
 ---
 
 ## Use case ##
 
-This API is used to cancel a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.  Any appointment, ie irrespective of booking organisation, can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+This API is used to cancel a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.  Any appointment - that is, irrespective of booking organisation - can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
 
 The typical flow to cancel an appointment is:
 
@@ -40,7 +40,7 @@ The consumer system SHALL only use the cancel appointment capability to cancel f
 
 ### Request operation ###
 
-#### FHIR&reg; relative request ####
+#### FHIR relative request ####
 
 ```http
 PUT /Appointment/[id]
@@ -109,6 +109,16 @@ On the wire, a JSON serialised request would look something like the following:
           "value": "A00001"
         }
       ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
+        }
+      ],
       "name": "Test Organization Name",
       "telecom": [
         {
@@ -132,15 +142,15 @@ On the wire, a JSON serialised request would look something like the following:
   ],
   "status": "cancelled",
   "description": "Free text description updated.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {
@@ -165,7 +175,7 @@ On the wire, a JSON serialised request would look something like the following:
 
 The provider system:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional details when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional details when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
 - SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
 - SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
@@ -220,6 +230,16 @@ Provider systems:
           "value": "A00001"
         }
       ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
+        }
+      ],
       "name": "Test Organization Name",
       "telecom": [
         {
@@ -259,15 +279,15 @@ Provider systems:
   ],
   "status": "cancelled",
   "description": "Free text description updated.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {
