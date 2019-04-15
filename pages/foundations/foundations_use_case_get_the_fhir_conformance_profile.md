@@ -59,44 +59,96 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
 
 
 ```xml
-<Conformance xmlns="http://hl7.org/fhir">
-	<version value="0.5.2" />
-	<name value="GP Connect" />
-	<publisher value="[Provider Software Vendor Name]" />
-	<contact>
-		<name value="[Provider Software Vendor Contact Name]" />
-	</contact>
-	<date value="2018-02-23" />
-	<description value="This server implements the GP Connect API version 0.5.2" />
-	<copyright value="Copyright NHS Digital 2016" />
-	<kind value="capability" />
-	<software>
-		<name value="[Provider Software Name]" />
-		<version value="[Provider Software Verson]" />
-		<releaseDate value="[Provider Software Release Date]" />
-	</software>
-	<fhirVersion value="1.0.2" />
-	<acceptUnknown value="both" />
-	<format value="application/xml+fhir" />
-	<format value="application/json+fhir" />
- 	<profile>
- 		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"/>
-		<reference value="http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"/>
-	</profile>
-	<rest>
-		<mode value="server" />
-		<operation>
-			<name value="gpc.getcarerecord" />
-			<definition>
-				<reference value="OperationDefinition/gpc.getcarerecord" />
-			</definition>
-		</operation>
-	</rest>
-</Conformance>
+{
+   "version": {
+      "value": "0.5.2"
+   },
+   "name": {
+      "value": "GP Connect"
+   },
+   "publisher": {
+      "value": "[Provider Software Vendor Name]"
+   },
+   "contact": {
+      "name": {
+         "value": "[Provider Software Vendor Contact Name]"
+      }
+   },
+   "date": {
+      "value": "2018-02-23"
+   },
+   "description": {
+      "value": "This server implements the GP Connect API version 0.5.2"
+   },
+   "copyright": {
+      "value": "Copyright NHS Digital 2016"
+   },
+   "kind": {
+      "value": "capability"
+   },
+   "software": {
+      "name": {
+         "value": "[Provider Software Name]"
+      },
+      "version": {
+         "value": "[Provider Software Verson]"
+      },
+      "releaseDate": {
+         "value": "[Provider Software Release Date]"
+      }
+   },
+   "fhirVersion": {
+      "value": "1.0.2"
+   },
+   "acceptUnknown": {
+      "value": "both"
+   },
+   "format": [
+      {
+         "value": "application/xml+fhir"
+      },
+      {
+         "value": "application/json+fhir"
+      }
+   ],
+   "profile": {
+      "reference": [
+         {
+            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"
+         },
+         {
+            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"
+         },
+         {
+            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"
+         },
+         {
+            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"
+         },
+         {
+            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"
+         },
+         {
+            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"
+         }
+      ]
+   },
+   "rest": {
+      "mode": {
+         "value": "server"
+      },
+      "operation": {
+         "name": {
+            "value": "gpc.getcarerecord"
+         },
+         "definition": {
+            "reference": {
+               "value": "OperationDefinition/gpc.getcarerecord"
+            }
+         }
+      }
+   }
+}
 ```
 
 Consumer systems:
