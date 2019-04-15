@@ -129,17 +129,6 @@ As this item is mandatory in FHIR then suppliers should populate it with the SNO
 
 A reference to the `Patient` who the DiagnosticReport is about.
 
-### context ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The `Encounter` which the DiagnosticReport was related to.
 
 ### issued ###
 
@@ -218,18 +207,6 @@ Clinical Interpretation of test results in a text format and notes written by pe
 
 For clarity notes may be captured at a number of levels within a DiagnosticReport. There may also be notes related to the specimen, test group header or individual test result. It is the consuming systems responsibility to make sure all relevant notes are displayed to the user.
 
-### presentedForm ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-Entire report as issued e.g. the original EDIFACT message sent from the lab.
-
 <br>
 ## Elements **not in use** ##
 
@@ -244,6 +221,17 @@ The following elements **MUST NOT** be populated:
 </table>
 
 Out of scope for the current iteration.
+
+### context ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Code</code></td>
+  </tr>
+</table>
+
+Out of scope for the current iteration.
+
 
 ### imagingStudy ###
 
@@ -264,4 +252,15 @@ Out of scope for the current iteration.
 </table>
 
 Out of scope for the current iteration.
+
+### presentedForm ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>string</code></td>
+  </tr>
+</table>
+
+Out of scope for the current iteration.
+
 
