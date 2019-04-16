@@ -1,10 +1,10 @@
 ---
-title: Observation
+title: Observation - test group header
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_testGroup.html
-summary: "Guidance for populating and consuming patholgy data in GP Connect"
+summary: "Guidance for populating and consuming obseravtion resource where used in a test group header GP Connect"
 ---
 
 ## Introduction ##
@@ -94,32 +94,20 @@ The clinical code that represents the name of the test group e.g. Full blood cou
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
 A reference to the Patient who the observation is about.
-
-### issued ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>instant</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-The date time that the observations were reported on by the laboratory or other report provider.
 
 ### performer ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
@@ -132,7 +120,7 @@ Reference to the resource for the Organization that carried out the tests. A `pr
   <tr>
     <td><b>Data type:</b> <code>string</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -156,11 +144,11 @@ Reference to the specimen on which these results were based.
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Reference to the test group header observation if the result is part of a test group.
+Reference(s) to the test result(s) observation(s) that make up the test group.
 
 This **MUST** be qualified using the related.type 'has-member'
 
@@ -174,9 +162,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Data type:</b> <code>reference</code></td>
   </tr>
 </table>
 

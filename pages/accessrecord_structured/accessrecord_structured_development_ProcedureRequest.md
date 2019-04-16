@@ -96,8 +96,8 @@ This is mandatory in the base FHIR resource.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -113,31 +113,31 @@ The tests requested by the requesting HCP.
   </tr>
 </table>
 
-A reference to the `Patient` who the DiagnosticReport is about.
+A reference to the `Patient` that the ProcedureRequest is about.
 
 ### performer ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-Reference to the resource for the Organization that produced the DiagnosticReport. A `practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
+Reference to the resource for the practitioner or organization that is requested to perform this request the ProcedureRequest.
 
 ### requester ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-Reference to the resource for the Organization that requested the DiagnosticReport. A `practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
+Reference to the resource for the practitioner or organization that created the ProcedureRequest. 
 
 ### reasonCode ###
 
@@ -149,19 +149,31 @@ Reference to the resource for the Organization that requested the DiagnosticRepo
   </tr>
 </table>
 
-A coded finding of the test report or a textual representation where no code is available. Produced by the organisation that performed the tests.
+An explanation or justification for why this diagnostic investigation is being requested in coded or textual form.
 
 ### reasonReference ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
+    <td><b>Data type:</b> <code> reference</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-A reference to a resource containing a coded finding of the test report. Produced by the organisation that performed the tests.
+A reference to any conditions the patient has that are supplied by the requesting HCP due to their relevance to the test request.
+
+### note ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>string</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+A human readable explanation from the requesting HCP containing an explanation on why the test has been requested and any contextual information they considered relevant.
 
 <br>
 

@@ -1,10 +1,10 @@
 ---
-title: Pathology guidance
+title: Specimen
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_specimen.html
-summary: "Guidance for populating and consuming patholgy data in GP Connect"
+summary: "Guidance for populating and consuming specimen resource data in GP Connect"
 ---
 ## Introduction ##
 
@@ -81,8 +81,8 @@ A business level identifier for the specimen supplied by the performing organisa
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -157,13 +157,13 @@ Whether or how long patient abstained from food and/or drink.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
+    <td><b>Data type:</b> <code>Reference (Practitioner)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-Reference to the resource for the Practitioner/Organisation that collected the specimen.
+Reference to the resource for the Practitioner that collected the specimen.
 
 ### collection.collected ###
 
@@ -175,7 +175,7 @@ Reference to the resource for the Practitioner/Organisation that collected the s
   </tr>
 </table>
 
-The dateTime when the specimen was collected
+The date and time when the specimen was collected.
 
 ### collection.quantity ###
 
