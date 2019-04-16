@@ -17,6 +17,10 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 * [Medication](accessrecord_structured_development_medication.html)
 * [MedicationStatement](accessrecord_structured_development_medicationstatement.html)
 * [MedicationRequest](accessrecord_structured_development_medicationrequest.html)
+* [DiagnosticReport](accessrecord_structured_development_diagnosticReport.html)
+* [Specimen](accessrecord_structured_development_specimen.html)
+* [Observation]
+* [ProcedureRequest](accessrecord_structured_development_ProcedureRequest.html)
 
 ### Administrative ###
 
