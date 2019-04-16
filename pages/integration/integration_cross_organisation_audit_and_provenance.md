@@ -210,11 +210,11 @@ As GP Connect only supports usage for direct care, this value **MUST** be set to
 
 #### `requested_record` claim
 
-The identifier of the patient record being requested. 
+The identifier of the record being requested. 
 
 The request can be made using the FHIR Patient or FHIR Organization resource.
 
-**Example**:
+**Patient example**:
 
 <pre class="remove-highlight"><code class="no-highlight">"requesting_record": {
   "resourceType": "Patient",
@@ -222,6 +222,19 @@ The request can be made using the FHIR Patient or FHIR Organization resource.
     {
       "system": "http://fhir.nhs.net/Id/nhs-number",
       "value": "9658218873"
+    }
+  ]
+}
+</code></pre>
+
+**Organization example**:
+
+<pre class="remove-highlight"><code class="no-highlight">"requesting_record": {
+  "resourceType": "Organization",
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.net/Id/ods-organization-code",
+      "value": "A1001"
     }
   ]
 }
