@@ -11,32 +11,36 @@ summary: "Overview of the design decisions made in relation to the Access Record
 
 What is the scope of the Access Record Structured capability?
 
-<span class="label label-info">DECISION</span> Initially the Access Record Structured capability will return a patient’s medications and allergies using the following FHIR&reg; profiles:
+<span class="label label-info">DECISION</span> Initially the Access Record Structured capability will return a patient’s medications,  allergies and test results using the following FHIR&reg; profiles:
 
  - AllergyIntolerance
  - Medication
  - Medication Statement
- - Medication Request 
+ - Medication Request
+ - Observation
+ - Specimen
+ - DiagnosticReport
+ - ProcedureRequest  
  - Administrative profiles to support the above, as defined by the Foundations capability pack
- 
+
 {% include roadmap.html content="The scope of the capability is under review and clinical items such as Immunisations are likely to be included at a later stage." %}
 
-## FHIR profiles version ## 
+## FHIR profiles version ##
 <span class="label label-info">DECISION</span> Standard for Trial Use 3 (STU3) is the version of FHIR which will be adopted for the Access Record Structured clinical profiles. A decision was taken to uplift the profiles from the previous DSTU2 version for the following reasons:
 
  - STU3 is widely being adopted in the UK interoperability community
  - there are many breaking changes between DSTU2 and STU3
- - no supplier development had started on the previous DSTU2 versions 
+ - no supplier development had started on the previous DSTU2 versions
  - the STU3 profiles offer additional clinical value
 
 ## Access Record Structured API definition ##
 <span class="label label-info">DECISION</span> A review of the historic Access Record Structured maturity model has been completed. The following changes relating to the API have been agreed and the relevant implementation guidance applied throughout the Access Record Structured specification:
 
  - the Access Record Structured clinical resources will be carried in a separate API message to the Access Record HTML resources
- - API filtering will be introduced 
+ - API filtering will be introduced
  - further filtering at the consumer end will be advocated (appropriate to the consumer need)
  - consumers will be guided to return data for the patient in one (or few) round trips
- 
+
 {% include roadmap.html content="A RESTful model is still being considered. However, this has been removed from the short-term roadmap to allow time to evaluate the business need during the pilots." %}
 
 ## API search/filter parameters ##
@@ -48,19 +52,23 @@ The benefits of this approach are:
  - it is clear which search/filter parameters are applied to which clinical area
  - adding or updating a search/filter parameter will only impact its own clinical area
  - the search/filter parameters for a clinical area can be defined in parallel with their clinical area development
- 
+
 ### API search/filter parameters for medications ###
 
  - Date range based on
-  - Last Issue Date 
+  - Last Issue Date
   - Effective Date where the last issue date is not available
   -  Record Date where the last issue date and effect date are not available
  - Flag to include/exclude individual issues of a prescription
 
-### API search/filter parameters allergies ###
+### API search/filter parameters for test results ###
+ - Date range based on
+  - Test result dates
+ - A list of codes that specify which specific test results will be returned
+
+### API search/filter parameters for allergies ###
  - None - there will be no date range applied for allergies due to clinical safety
 
 {% include roadmap.html content="The definition of the API filter parameters for other clinical areas is in progress." %}
 
 {% include note.html content="Search/filter parameters which were considered but not chosen for medications and allergies are: Fixed Date Range, SNOMED Code Cluster." %}
-
