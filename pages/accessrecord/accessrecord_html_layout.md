@@ -167,7 +167,7 @@ The provider **MUST** return banner messages as described in this section. The c
 
 ### GP transfer banner ###
 
-In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **MUST** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **MUST** be provided and displayed. The message **MUST** include the date that the data has been excluded from. Where the date is not known, the date the patient registered at the practice **MUST** be used.
+In the scenario where the patient's GP record is not 'fully integrated' into the 'new' GP, following a GP transfer, then only data entered to the new GP's record **MUST** be provided. A warning message stating that the record is either not available (no data entered to the new GP record), or incomplete due to the transfer, **MUST** be provided and displayed. The message **MUST** include the date that the data has been excluded from. Set dd-Mmm-yyyy to the date the patient registered at their new GP practice.
 
 ```html
 <div class="gptransfer-banner">
