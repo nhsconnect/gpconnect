@@ -9,7 +9,7 @@ entries:
 
     - title: Introduction
       url: /accessrecord_structured.html
-      output: web, pdf         
+      output: web, pdf
     - title: Business requirements
       url: /accessrecord_structured_requirements.html
       output: web, pdf
@@ -42,11 +42,11 @@ entries:
     - title: Medication guidance
       url: /accessrecord_structured_development_medication_guidance.html
       output: web
-    
+
     - title: Pathology guidance
       url: /accessrecord_structured_development_pathology_guidance.html
       output: web
-     
+
 
       subfolders:
 
@@ -104,6 +104,10 @@ entries:
 
         - title: Medication
           url: /accessrecord_structured_development_fhir_examples_medication.html
+          output: web
+
+        - title: Pathology
+          url: /accessrecord_structured_development_fhir_examples_pathology.html
           output: web
           
       - title: API definition
