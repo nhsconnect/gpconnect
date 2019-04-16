@@ -13,6 +13,7 @@ The Access Record Structured capability provides the ability to retrieve a patie
 
 - Allergies
 - Medications
+- Pathology
 
 The capability consists of a single API operation for retrieving a patient's structured record which is listed below in [API definition](accessrecord_structured_development.html#api-definition).
 
@@ -24,6 +25,11 @@ The following pages describe how allergies and medications recorded in general p
 - [Medication resource relationships](accessrecord_structured_development_medication_resource_relationships.html)
 - [Medication guidance](accessrecord_structured_development_medication_guidance.html)
 
+## Pathology guidance ##
+
+The following page describes how pathology information recorded in general practice is represented in GP Connect:
+- [Pathology guidance](accessrecord_structured_development_pathology_guidance.html)
+
 ## FHIR&reg; resources ##
 
 The [FHIR resources](accessrecord_structured_development_resources_overview.html) pages provide a detailed reference on population and consumption of the FHIR profiled resources used in this capability.
@@ -34,6 +40,7 @@ The following pages provide example request and response messages:
 
 - [Allergies](accessrecord_structured_development_fhir_examples_allergies.html)
 - [Medication](accessrecord_structured_development_fhir_examples_medication.html)
+- [Pathology](accessrecord_structured_development_fhir_examples_pathology.html)
 
 ## API definition
 
@@ -45,7 +52,6 @@ The following API definitions are included in this capability:
 
 The Access Record Structured capability message set includes the following set of Spine interactions:
 
-| Operation                 | Interaction ID            | 
-|---------------------------|---------------------------| 
+| Operation                 | Interaction ID            |
+|---------------------------|---------------------------|
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
-
