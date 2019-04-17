@@ -1,10 +1,10 @@
 ---
-title: GP Connect API 1.2.3 release notes
+title: GP Connect API 1.x.x release notes
 keywords: GP Connect, release notes
 tags: [release]
 sidebar: overview_sidebar
 permalink: overview_release_notes_1_x_x.html
-summary: "GP Connect API 1.2.3 released on 29 Mar 2019"
+summary: "GP Connect API 1.x.x released on DD Mmm YYYY"
 toc: true
 ---
 
