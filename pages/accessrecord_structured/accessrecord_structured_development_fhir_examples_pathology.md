@@ -13,8 +13,8 @@ The following is a set of request/response examples for pathology:
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Example 1</a></li>
-<!--    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Example 2</a></li>
-    <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li> -->
+   <li><a class="noCrossRef" href="#example2" data-toggle="tab">Example 2</a></li>
+<!--     <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li> -->
 </ul>
   <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="example1" markdown="1">
@@ -31,11 +31,11 @@ The following is a set of request/response examples for pathology:
 <br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
-<p>Note: The <code class="highlighter-rouge">includePrescriptionIssues</code> parameter has explicitly been set to <code class="highlighter-rouge">true</code>.</p>
+<p>Note: The <code class="highlighter-rouge">includeTestResults</code> parameter has explicitly been set to <code class="highlighter-rouge">721981007</code>.</p>
 
 
 
-{% include accessrecord_structured/pathology_request.json %}
+{% include accessrecord_structured/pathology_request1.json %}
 
 
 
@@ -43,7 +43,7 @@ The following is a set of request/response examples for pathology:
 
 
 
-{% include accessrecord_structured/pathology_response.json %}
+{% include accessrecord_structured/pathology_response1.json %}
 
 
 
@@ -55,8 +55,22 @@ The following is a set of request/response examples for pathology:
 <ul>
   <li>Pathology</li>
 </ul>
+<br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
+
+<p>Note: The <code class="highlighter-rouge">includeTestResults</code> parameter has explicitly been set to <code class="highlighter-rouge">721981007</code>.</p>
+
+
+
+{% include accessrecord_structured/pathology_request2.json %}
+
+
+
 <p style="line-height: 1; font-size: 18px">Response payload</p>
+
+
+
+{% include accessrecord_structured/pathology_response2.json %}
 
 
 
