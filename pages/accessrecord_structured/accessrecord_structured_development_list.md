@@ -44,11 +44,6 @@ The following table provides details of the warning codes that are to be used in
     <td>data-in-transit</td>
     <td>Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.</td>
   </tr>
-  <tr>
-    <td>Data Awaiting Filing</td>
-    <td>data-awaiting-filing</td>
-    <td>Patient data may be incomplete as there is data supplied by a third party awaiting review before becoming available.</td>
-  </tr>
 </table>
 
 ### Confidential items
@@ -59,9 +54,12 @@ Where items have been excluded from the returned resources due to patient consen
 
 This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice has not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
 
-### Data awaiting filing
+### Supplying more than one code 
+When both codes need to be supplied, the warningCode field **MUST** be populated using the data in transit warning code from the above table. The following associated test **MUST** be added into the note field:
 
-Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent.
+```
+Patient record transfer from previous GP practice not yet complete; any information recorded before dd-mmm-yyyy has been excluded AND Items excluded due to confidentiality and/or patient preferences.
+```
 
 ## List elements ##
 
