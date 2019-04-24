@@ -164,4 +164,6 @@ Example:
 
 ### Bundle.entry.fullUrl
 
-Providers SHALL NOT populate `Bundle.entry.fullUrl`.
+Providers SHOULD NOT populate `Bundle.entry.fullUrl`.
+
+Consumers MUST NOT use `Bundle.entry.fullUrl`.

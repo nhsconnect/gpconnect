@@ -136,14 +136,14 @@ For this example, NHS number 9000000084 with demographic details Mr Anthony Test
 
 ### Step 1: MHS record lookup on SDS to determine FHIR endpoint server root URL
 
-Using the party key retrieved from Step 1, and the same interaction ID, the following ldapsearch query is executed:
+Using the ODS code retrieved from Step 0, and the interaction ID of the required service, the following ldapsearch query is executed:
 
 	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
 	"(&(nhsIDCode=T99999) (objectClass=nhsMhs) (nhsMhsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1))" 
 	nhsMhsEndPoint nhsMhsPartyKey
 	
 	
-This query should again return a single endpoint. In this case, the ldapquery returns the following results:
+This query should return a single endpoint. In this case, the ldapquery returns the following results:
 
 	# 472b35d4641b76454b13, Services, nhs
 	dn: uniqueIdentifier=472b35d4641b76454b13,ou=Services,o=nhs
@@ -151,13 +151,13 @@ This query should again return a single endpoint. In this case, the ldapquery re
 	nhsMhsPartyKey: T99999-9999999
 
 	# search result
-	search: 2
+	search: 1
 	result: 0 Success
 
 
 ### Step 2: AS record lookup on SDS to determine the provider's ASID
 
-The ASID and party key is now looked up on SDS. The example below uses ldapsearch:
+The ASID is now looked up on SDS. The example below uses ldapsearch:
 
 	
 	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs" 
@@ -165,8 +165,7 @@ The ASID and party key is now looked up on SDS. The example below uses ldapsearc
 	uniqueIdentifier 
 
 	
-This query should return a single matching accredited system object from SDS, the ASID being found in the uniqueIdentifier attribute. In the case, ldapsearch returns the following results:
-
+This query should return a single matching accredited system object from SDS, the ASID being found in the uniqueIdentifier attribute. In this case, the ldapquery returns the following results:
 
 	999999999999, Services, nhs
 	dn: uniqueIdentifier=9999999999,ou=Services,o=nhs
