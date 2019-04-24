@@ -14,7 +14,7 @@ The headings below list the elements of the AllergyIntolerance resource and desc
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.2)." %}
 
 ## AllergyIntolerance elements ##
 
@@ -154,7 +154,7 @@ GP systems which support the concept of resolved/ended allergies **MUST** set th
 
 Fixed value of `unconfirmed`.
 
-{% include important.html content="This value is mandatory in the base FHIR resource so cannot be removed. It is not a concept in GP systems and as such meaning **MUST NOT** be attributed to this field in consuming systems." %} 
+{% include important.html content="This value is mandatory in the base FHIR resource so cannot be removed. It is not a concept in GP systems and as such meaning **MUST NOT** be attributed to this field in consuming systems." %}
 
 ### type ###
 
@@ -212,9 +212,9 @@ It **MAY** be used in conjunction with reaction/severity by systems which suppor
 
 The causative agent such as food, drug or substances that has caused or may cause an allergy, intolerance or adverse reaction in this patient.
 
-Systems will evolve to use the specified vocabulary of SNOMED CT concepts from the specified subset. The subset includes products and concepts from the substance and product hierarchies and allows medication concepts from the dm+d SNOMED CT extension. 
+Systems will evolve to use the specified vocabulary of SNOMED CT concepts from the specified subset. The subset includes products and concepts from the substance and product hierarchies and allows medication concepts from the dm+d SNOMED CT extension.
 
-In the interim this coded element will hold the primary code for the AllergyIntolerance which may in the case of drug allergies be a medication code or a pre-coordinated code which triggers decision support on the system. 
+In the interim this coded element will hold the primary code for the AllergyIntolerance which may in the case of drug allergies be a medication code or a pre-coordinated code which triggers decision support on the system.
 
 Where the AllergyIntolerance has no coded representation in the source system, but is identified as such in the source record then the appropriate degrade code may be used and the text of the AllergyIntolerance placed in the text of the code.
 
@@ -321,13 +321,13 @@ Must be used to contain any textual data relevant to the allergy.
   </tr>
 </table>
 
-Conveys the reaction resulting from the allergy/intolerance as a code. 
+Conveys the reaction resulting from the allergy/intolerance as a code.
 
 This element is mandatory in the FHIR base profile and so if no data is present please use the nullFlavour as outlined here.
 
-Where no code is available, but a textual description of the reaction is available, then the nullFlavor UNC **MAY** be used and the textual description conveyed via reaction/description. 
+Where no code is available, but a textual description of the reaction is available, then the nullFlavor UNC **MAY** be used and the textual description conveyed via reaction/description.
 
-If no reaction has explicitly been recorded, but the reaction element is present to convey severity, then reaction/manifestation **SHOULD** be coded as the nullFlavor NI. 
+If no reaction has explicitly been recorded, but the reaction element is present to convey severity, then reaction/manifestation **SHOULD** be coded as the nullFlavor NI.
 
 If the patient has been asked, but is unable to specify a reaction the nullFlavor, ‘ASKU’ **SHOULD** be used.
 

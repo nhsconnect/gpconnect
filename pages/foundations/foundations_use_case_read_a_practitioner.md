@@ -13,8 +13,8 @@ This specification describes a single use cases. For complete details and backgr
 
 ## Security ##
 
-- GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises TLS Mutual Authentication for system level authorization
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## API usage ##
 
@@ -105,9 +105,7 @@ Provider systems:
   ],
   "name": [
     {
-      "family": [
-        "Black"
-      ],
+      "family": "Black",
       "given": [
         "Sarah"
       ],

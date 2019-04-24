@@ -68,7 +68,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "name": "GP Connect",
   "status": "active",
   "date": "2018-02-23",
@@ -78,8 +78,8 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
       "name": "[Provider Software Vendor Contact Name]"
     }
   ],
-  "description": "This server implements the GP Connect API version 1.2.2",
-  "copyright": "Copyright NHS Digital 2016",
+  "description": "This server implements the GP Connect API version 1.2.3",
+  "copyright": "Copyright NHS Digital 2016-9",
   "kind": "capability",
   "software": {
     "name": "[Provider Software Name]",
@@ -213,7 +213,8 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
           "searchInclude": [
             "Schedule:actor:Location",
             "Schedule:actor:Practitioner",
-            "Slot:schedule"
+            "Slot:schedule",
+            "Location:managingOrganization"
           ],
           "searchParam": [
             {
@@ -258,7 +259,9 @@ Consumer systems:
 - SHOULD request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
 - Consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organization's FHIR server.
 
-### C# client request to get the capability statement ###
+## Examples ##
+
+### C# ###
 
 {% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
 

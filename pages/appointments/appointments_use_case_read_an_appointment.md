@@ -4,11 +4,11 @@ keywords: appointments, use case, read
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_read_an_appointment.html
-summary: "Use case for reading an appointment resource"
+summary: "Read a patient's appointment at an organisation"
 ---
 
 
-## API use case ##
+## Use case ##
 
 This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system, irrespective of the booking organisation. 
 
@@ -20,7 +20,9 @@ This specification describes a single use case enabling the consumer to obtain t
 - GP Connect utilises TLS Mutual Authentication for system level authorization
 - GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
-## Consumer ##
+## Prerequisites ##
+
+### Consumer ###
 
 The consumer system:
 
@@ -33,7 +35,7 @@ The consumer system SHALL only use the read appointment capability to retrieve f
 
 ### Request operation ###
 
-#### FHIR&reg; relative request ####
+#### FHIR relative request ####
 
 ```http
 GET /Appointment/[id]
@@ -88,6 +90,8 @@ Provider systems:
 - SHALL include the `versionId` of the current version of the appointment resource.
 - SHALL include all relevant business `identifier` details (if any) for the appointment resource.
 
+- SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
@@ -117,6 +121,16 @@ Provider systems:
         {
           "system": "https://fhir.nhs.uk/Id/ods-organization-code",
           "value": "A00001"
+        }
+      ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
         }
       ],
       "name": "Test Organization Name",
@@ -154,8 +168,8 @@ Provider systems:
   ],
   "status": "booked",
   "description": "GP Connect Appointment description 148",
-  "start": "2017-08-21T10:20:00.000+00:00",
-  "end": "2017-08-21T10:50:00.000+00:00",
+  "start": "2017-08-21T10:20:00+01:00",
+  "end": "2017-08-21T10:50:00+01:00",
   "slot": [
     {
       "reference": "Slot/544"
@@ -167,7 +181,7 @@ Provider systems:
       "reference": "Slot/546"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-07-09T13:48:41+01:00",
   "comment": "Test Appointment Comment 148",
   "participant": [
     {

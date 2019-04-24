@@ -21,11 +21,13 @@ Resolve (zero or more) `Organization` resources using a business identifier (for
 
 ### Request operation ###
 
-The `[system]` field SHALL be populated with a valid organization identifier system URL (for example, `https://fhir.nhs.uk/Id/ods-organization-code`).
+The consumer system:
 
-The consumer system SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+- SHALL populate the `[system]` field with a valid organization identifier system URL (for example, `https://fhir.nhs.uk/Id/ods-organization-code`).
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/ods-organization-code'. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+- apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
+
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type `https://fhir.nhs.uk/Id/ods-organization-code`. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR relative request ####
 
@@ -77,15 +79,14 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return zero or more matching `Organization` resources in a `Bundle` of `type` searchset.
-  - SHALL populate `entry.fullUrl` for each resource in the `Bundle`
-- SHALL return `Organization` resources that conform to the [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile.
+- SHALL return a `200` **OK** HTTP status code on successful execution of the operation
+- SHALL return zero or more matching `Organization` resources in a `Bundle` of `type` searchset
+- SHALL return `Organization` resources that conform to the [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile
 
 - SHALL populate the following `Organization` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of each `Organization` resource.
-  - `identifier` with relevant business identifiers (for example,v ODS code) for each `Organization` resource.
+  - `identifier` with relevant business identifiers (for example, ODS code) for each `Organization` resource.
   - `name`
   - `address` where available
   - `telecom` where available
@@ -102,7 +103,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Organization/23",
       "resource": {
         "resourceType": "Organization",
         "id": "23",

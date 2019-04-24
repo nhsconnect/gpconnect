@@ -1,10 +1,10 @@
 ---
-title: Cancel an appointment for a patient at an organisation
+title: Cancel an appointment
 keywords: appointments, use case, cancel, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_cancel_an_appointment.html
-summary: "Use case for cancelling an appointment for a patient with a given organisation"
+summary: "Cancel an appointment for a patient at an organisation"
 ---
 
 ## Use case ##
@@ -40,7 +40,7 @@ The consumer system SHALL only use the cancel appointment capability to cancel f
 
 ### Request operation ###
 
-#### FHIR&reg; relative request ####
+#### FHIR relative request ####
 
 ```http
 PUT /Appointment/[id]
@@ -109,6 +109,16 @@ On the wire, a JSON serialised request would look something like the following:
           "value": "A00001"
         }
       ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
+        }
+      ],
       "name": "Test Organization Name",
       "telecom": [
         {
@@ -132,15 +142,15 @@ On the wire, a JSON serialised request would look something like the following:
   ],
   "status": "cancelled",
   "description": "Free text description updated.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {
@@ -220,6 +230,16 @@ Provider systems:
           "value": "A00001"
         }
       ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
+        }
+      ],
       "name": "Test Organization Name",
       "telecom": [
         {
@@ -259,15 +279,15 @@ Provider systems:
   ],
   "status": "cancelled",
   "description": "Free text description updated.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {

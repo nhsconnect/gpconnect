@@ -4,7 +4,7 @@ keywords: appointments, use case, retrieve
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_retrieve_a_patients_appointments.html
-summary: "Use case for retrieval of a patient's appointments from an organisation"
+summary: "Retrieve a patient's future appointments at an organisation"
 ---
 
 ## Use case ##
@@ -43,17 +43,17 @@ Provider systems SHALL implement the following search parameters:
 | `start` | `date` | Appointment start date | `Appointment.start` |
 
 
-The consumer:
+Consumer systems:
 - SHALL include two `start` search parameter with every request
-  - One of the 'start' search parameter SHALL be supplied with the `ge` search prefix. For example, 'start=ge2017-09-22', which indicates that the consumer would like appointments where the appointment start date is on or after "2017-09-22".
-  - One of the 'start' search parameter SHALL be supplied with the `le` search prefix. For example, 'start=le2017-09-25', which indicates that the consumer would like appointments where the appointment start date is on or before "2017-09-25"
-- SHALL only include the date component of the search parameter and not a time component. The date SHALL include day, month and year elements
-- SHALL not request a date range where any part of the date range is in the past
+  - One of the `start` search parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like appointments where the appointment start date is on or after "2017-09-22".
+  - One of the `start` search parameter SHALL be supplied with the `le` search prefix. For example, `start=le2017-09-25`, which indicates that the consumer would like appointments where the appointment start date is on or before "2017-09-25"
+- SHALL only include the date component of the search parameter and not a time component. The date SHALL include day, month and year elements.
+- SHALL NOT request a date range where any part of the date range is in the past
 - SHALL indicate to the end user that only appointments in the future will be returned from GP Connect and that the earliest that the user can request appointments is today's date
 
   ![Diagram - Date range parameters](images/appointments/RetrievePatientsApp.png)
 
-The provider systems:
+Provider systems:
 - SHALL support the search prefixes `ge` and `le`
 - SHALL return an error if any part of the consumer requested search range is in the past
   - If the consumer sends today's date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is today's date, then the appointment SHALL still be returned in the response bundle
@@ -65,22 +65,21 @@ The provider systems:
 
 
 ```http
-GET /Patient/[id]/Appointment?start=ge{lower_date_range_boundary}&start=le{upper_date_range_boundary}
-
+GET /Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper_date_range_boundary]
 ```
 
 #### FHIR absolute request ####
 
 ```http
-GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=ge{lower_date_range_boundary}&start=le{upper_date_range_boundary}
+GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper_date_range_boundary]
 ```
 
-#### Examples ####
+#### Example request ####
 
-```text
-Retrieve all appointments for a patient which start on or between 2017-07-11 and 2017-09-14:
+Retrieve all appointments for patient with logical id 1001 which start on or between 2017-07-11 and 2017-09-14:
 
-GET /Patient/[id]/Appointment?start=ge2017-07-11&start=le2017-09-14
+```json
+GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14
 ```
 
 
@@ -122,8 +121,10 @@ Provider systems:
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation
 - SHALL return zero or more matching [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) resources in a `Bundle` of `type` searchset
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned `Appointment` resources
-- SHALL include the versionId and fullUrl of the current version of each `Appointment` resource returned
+- SHALL include the versionId of the current version of each `Appointment` resource returned
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
+
+- SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
@@ -138,7 +139,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "Appointment/148",
       "resource": {
         "resourceType": "Appointment",
         "id": "148",
@@ -161,6 +161,16 @@ Provider systems:
               {
                 "system": "https://fhir.nhs.uk/Id/ods-organization-code",
                 "value": "A00001"
+              }
+            ],
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+                    "code": "gp-practice"
+                  }
+                ]
               }
             ],
             "name": "Test Organization Name",
@@ -198,8 +208,8 @@ Provider systems:
         ],
         "status": "booked",
         "description": "GP Connect Appointment description 148",
-        "start": "2017-08-21T10:20:00.000+00:00",
-        "end": "2017-08-21T10:50:00.000+00:00",
+        "start": "2017-08-21T10:20:00+01:00",
+        "end": "2017-08-21T10:50:00+01:00",
         "slot": [
           {
             "reference": "Slot/544"
@@ -211,7 +221,7 @@ Provider systems:
             "reference": "Slot/546"
           }
         ],
-        "created": "2017-10-09T13:48:41+01:00",
+        "created": "2017-07-09T13:48:41+01:00",
         "comment": "Test Appointment Comment 148",
         "participant": [
           {
@@ -236,7 +246,6 @@ Provider systems:
       }
     },
     {
-      "fullUrl": "Appointment/149",
       "resource": {
         "resourceType": "Appointment",
         "id": "149",
@@ -259,6 +268,16 @@ Provider systems:
               {
                 "system": "https://fhir.nhs.uk/Id/ods-organization-code",
                 "value": "A00001"
+              }
+            ],
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+                    "code": "gp-practice"
+                  }
+                ]
               }
             ],
             "name": "Test Organization Name 2",
@@ -296,8 +315,8 @@ Provider systems:
         ],
         "status": "booked",
         "description": "GP Connect Appointment description 148",
-        "start": "2016-08-16T11:20:00.000+00:00",
-        "end": "2016-08-16T11:30:00.000+00:00",
+        "start": "2016-08-16T11:20:00+01:00",
+        "end": "2016-08-16T11:30:00+01:00",
         "slot": [
           {
             "reference": "Slot/303"
@@ -347,11 +366,11 @@ FhirContext ctx = FhirContext.forStu3();
 IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
 
 Bundle responseBundle = client.search()
-	.forResource(Patient.class)
-	.withIdAndCompartment("2", "Appointment")
-	.returnBundle(ca.uhn.fhir.model.dstu2.resource.Bundle.class)
-	.execute();
-	
+  .forResource(Patient.class)
+  .withIdAndCompartment("2", "Appointment")
+  .returnBundle(ca.uhn.fhir.model.dstu2.resource.Bundle.class)
+  .execute();
+    
 System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
 ```
 

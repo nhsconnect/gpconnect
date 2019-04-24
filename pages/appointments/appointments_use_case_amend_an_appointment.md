@@ -1,21 +1,23 @@
 ---
-title: Amend an appointment for a patient at an organisation
+title: Amend an appointment
 keywords: appointments, use case, amend, free, slots, schedule
 tags: [appointments,use_case]
 sidebar: appointments_sidebar
 permalink: appointments_use_case_amend_an_appointment.html
-summary: "Use case for amending an appointment for a patient with a given organisation"
+summary: "Amend an appointment for a patient at an organisation"
 ---
 
 ## Use case ##
 
-This API is used to amend the Description or Comment, or Cancellation Reason where applicable, of a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.  Any appointment, ie irrespective of booking organisation, can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+This API is used to amend the `description` or `comment` fields of a patient's future appointment, obtained via either the [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html), or [Read an appointment](appointments_use_case_read_an_appointment.html) APIs.  Any appointment irrespective of booking organisation can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
 
 The typical flow to amend an appointment is:
 
- 1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
+ 1. Search by NHS number for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
- 3. Choose an `Appointment` resource and update its `description` and/or `comment`. If the appointment has been cancelled then the `cancellation reason` may also be updated.
+ 3. Choose an `Appointment` resource and update `description` and/or `comment` fields.
+
+Amending a cancelled appointment is NOT supported.
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -36,7 +38,11 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the amend appointment capability to amend future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer system SHALL only use the amend appointment capability to amend:
+
+  - `description` or `comment` fields.  Providers SHALL return an error when any other field is amended.
+  - future appointments where appointment start date/time is after the current date/time. If the appointment start date/time is in the past the provider SHALL return an error.
+  - appointments that have not been cancelled.  Providers SHALL return an error where an amendment to a cancelled appointment is received.
 
 ### Request operation ###
 
@@ -71,21 +77,31 @@ The request payload is a profiled version of the standard FHIR [Appointment](htt
 Consumer systems:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
+- SHALL NOT amend an appointment with a status of `cancelled`
 
-  {% include important.html content="It is recommended that Consumers read the Appointment they wish to amend (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
+Only the following data elements can be modified when performing an appointment amendment:
+- `description` containing a brief description of the appointment.
+  - Consumers SHALL impose a character limit of 100 characters for this element.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+- `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
+  - Consumers SHALL impose a character limit of 500 characters for this element.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
 
-Only the following data-elements can be modified when performing an appointment amendment:
-- `description`
-- `comment`
-- `Appointment cancellation reason` extension, which SHALL only be amended when the appointment status is `cancelled`.
+{% include important.html content="It is recommended that Consumers read the Appointment they wish to amend (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
 
-  {% include note.html content="For providers who only support the mandatory `description` element and not the `comment` element. If a `comment` is received as part of the amendment the provider SHOULD append the content of the comment to the description within the appointment so that the additional information is not lost." %}
+#### Provider handling of description and comment ####
 
-To reduce the risk of information being truncated when stored on the providers side, consumers SHALL impose:
-- a 100 character limit on the appointment `description` element when editing a GP Connect appointment.
-- a 500 character limit on the appointment `comment` element when editing a GP Connect appointment.
+When receiving `description` and `comment` fields in the provider system:
 
-On the wire a JSON serialised request would look something like the following:
+- Providers systems SHALL store information received in `description` and `comment` fields, supporting the character limit lengths shown above 
+- Providers systems SHALL NOT truncate information received in `description` or `comment` fields
+- Providers SHALL return `description` and `comment` fields to the consumer in the response payload, as stored
+- Where a consumer sends information longer than character limits supported, an error SHALL be returned to the consumer
+- Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
+
+#### Example request body ####
+
+On the wire, a JSON serialised request would look something like the following:
 
 ```json
 {
@@ -112,6 +128,16 @@ On the wire a JSON serialised request would look something like the following:
           "value": "A00001"
         }
       ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
+        }
+      ],
       "name": "Test Organization Name",
       "telecom": [
         {
@@ -131,15 +157,15 @@ On the wire a JSON serialised request would look something like the following:
   ],
   "status": "booked",
   "description": "Free text description updated.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {
@@ -165,12 +191,14 @@ On the wire a JSON serialised request would look something like the following:
 The provider system:
 
 - SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-- SHALL return an error if any appointment details other than the appointment `comment`, `description` or `cancellation reason` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
-- SHALL return an error if the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
-- SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
+- SHALL return an error where:
+  - any appointment details other than the appointment `comment` or `description` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
+  - the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
+  - the appointment has been cancelled.  Provider systems should return a `422` error with error code `INVALID_RESOURCE`.
+  - the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
+  - the `description` or `comment` fields contain more characters than can be stored in the provider system
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
-
 
 ### Request response ###
 
@@ -218,6 +246,16 @@ Provider systems:
           "value": "A00001"
         }
       ],
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "gp-practice"
+            }
+          ]
+        }
+      ],
       "name": "Test Organization Name",
       "telecom": [
         {
@@ -253,15 +291,15 @@ Provider systems:
   ],
   "status": "booked",
   "description": "Free text description updated.",
-  "start": "2016-05-30T10:00:00+01:00",
-  "end": "2016-05-30T10:25:00+01:00",
+  "start": "2017-05-30T10:00:00+01:00",
+  "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
       "reference": "Slot/1",
       "display": "Slot 1"
     }
   ],
-  "created": "2017-10-09T13:48:41+01:00",
+  "created": "2017-05-25T13:48:41+01:00",
   "comment": "Free text comment.",
   "participant": [
     {

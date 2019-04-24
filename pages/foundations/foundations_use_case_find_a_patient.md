@@ -22,11 +22,13 @@ Resolve (zero or more) `Patient` resources using a business identifier (that is,
 
 ### Request operation ###
 
-The `[system]` field SHALL be populated with a valid patient identifier system URL (that is, `https://fhir.nhs.uk/Id/nhs-number`).
+The consumer system:
 
-The consumer system SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character, which must be used in the `identifier` parameter value below.
+- SHALL populate the `[system]` field with a valid patient identifier system URL (that is, `https://fhir.nhs.uk/Id/nhs-number`).
 
-{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type 'https://fhir.nhs.uk/Id/nhs-number'. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
+- SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character, which must be used in the `identifier` parameter value below.
+
+{% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type `https://fhir.nhs.uk/Id/nhs-number`. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
 #### FHIR relative request ####
 
@@ -80,7 +82,6 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-  - SHALL populate `entry.fullUrl` for each resource in the `Bundle`
 - SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient).
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 
@@ -117,7 +118,6 @@ Provider systems:
   "type": "searchset",
   "entry": [
     {
-      "fullUrl": "http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient/2",
       "resource": {
         "resourceType": "Patient",
         "id": "2",
@@ -248,7 +248,3 @@ Bundle bundle = client.search().forResource(Patient.class)
 .encodedXml()
 .execute();
 ```
-
-### cURL ###
-
-{% include embedcurl.html title="Find a patient" command="curl -X GET -H 'Ssp-From: 0001' -H 'Ssp-To: 0002' -H 'Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1' -H 'Cache-Control: no-cache' -H 'Ssp-TraceID: e623b4de-f6bb-be0c-956d-c4ded0d58fc0' 'http://gpconnect.aprovider.nhs.net/GP001/STU3/1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7CP002'" %}

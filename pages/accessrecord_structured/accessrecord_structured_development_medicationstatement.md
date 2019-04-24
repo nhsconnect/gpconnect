@@ -14,7 +14,7 @@ The headings below list the elements of the MedicationStatement resource and des
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)" %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.2)" %}
 
 {% include note.html content="It is not expected that suppliers will provide resources for data types that reference resources that have not been curated and published by GP Connect. In the case where these fields are required it is not expected they will be populated until the resources have been developed by the suppliers and completed the relevant NHS Digital assurance." %}
 
@@ -77,12 +77,12 @@ For repeat and repeat dispensed medications the value identifies the care settin
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Optionality:</b> Mandatroy</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
-This is for business identifiers. 
+This is for business identifiers.
 
 This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
@@ -168,7 +168,7 @@ The `Medication` resource provides the coded representation of the medication.
 
 `Period.start` is **MANDATORY**. Where there is no defined start date this is populated with the recorded date.
 
-`Period.end` is **REQUIRED**. Where there is a defined expiry or end date or where the end date can be derived (for example - from the duration) the end date **MUST** be supplied. 
+`Period.end` is **REQUIRED**. Where there is a defined expiry or end date or where the end date can be derived (for example - from the duration) the end date **MUST** be supplied.
 
 For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
 
@@ -214,11 +214,11 @@ Reference to patient.
 
 Whether a medication was taken.
 
-Providers **MUST** use a default value of `unk` – unknown. 
+Providers **MUST** use a default value of `unk` – unknown.
 
-This item is mandatory in the base FHIR profile but GP systems do not record this detail therefore we have been forced to pick a default value and this information should not be used. 
+This item is mandatory in the base FHIR profile but GP systems do not record this detail therefore we have been forced to pick a default value and this information should not be used.
 
-This element has been included in this section as providers **MUST** populate it. However, as the data should not be used it has also been included in the ‘Do not use’ section below. 
+This element has been included in this section as providers **MUST** populate it. However, as the data should not be used it has also been included in the ‘Do not use’ section below.
 
 ### reasonCode ###
 
@@ -318,7 +318,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">category</h3>
@@ -329,7 +329,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">informationSource</h3>
@@ -351,7 +351,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
   </tr>
 </table>
 
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect. 
+This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 
 <h3 style="color:#ED1951;">taken</h3>
@@ -384,4 +384,4 @@ This is not in scope for this version of Care Connect and therefore not availabl
   </tr>
 </table>
 
-This is not in scope for this version of GP Connect. 
+This is not in scope for this version of GP Connect.

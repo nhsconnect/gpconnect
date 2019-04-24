@@ -5,6 +5,7 @@ tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_cross_organisation_audit_and_provenance.html
 summary: "Overview of how audit and provenance data transported over GP Connect FHIR interfaces"
+div: jwt-page
 ---
 
 ## Governance ##
@@ -61,7 +62,7 @@ Consumer systems **SHALL** always perform a patient demographic check as part of
 
 ### Bearer token ###
 
-Consumer systems **SHALL** provide audit and provenance details in the HTTP authorisation header as an oAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749){:target="_blank"})_ in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}.
+Consumer systems **SHALL** provide audit and provenance details in the HTTP `Authorization` header as an OAuth Bearer Token (as outlined in [RFC 6749](https://tools.ietf.org/html/rfc6749) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](https://tools.ietf.org/html/rfc7519).
 
 An example such an HTTP header is given below:
 
@@ -69,14 +70,13 @@ An example such an HTTP header is given below:
      Authorization: Bearer jwt_token_string
 ```
 
-Provider systems **SHALL** respond to oAuth Bearer Token errors in line with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
+Provider systems **SHALL** respond to OAuth Bearer Token errors in line with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
 
 It is highly recommended that standard libraries are used for creating the JWT as constructing and encoding the token manually may lead to issues with parsing the token. A good source of information about JWT and libraries to use can be found on the [JWT.io site](https://jwt.io/).
 
-
 ### JWT generation ###
 
-Consumer system **SHALL** generate a new JWT for each API request. The consumer generated JWT **SHALL** consist of three parts separated by dots `.`, which are:
+Consumer system **SHALL** generate a new JWT for each API request. The consumer generated JWT **SHALL** consist of three [base64url encoded](https://tools.ietf.org/html/rfc4648#section-5) parts separated by dots `.`, which are:
 
 - header
 - payload
@@ -102,77 +102,253 @@ Consumer systems **SHALL** generate an empty signature.
 
 #### Complete JWT ####
 
-The final output is three Base64url encoded strings separated by dots (note - there is some canonicalisation done to the JSON before it is Base64url encoded, which the JWT code libraries will do for you).
+The final output is three [base64url](https://tools.ietf.org/html/rfc4648#section-5) encoded strings separated by dots (note: there is some canonicalisation done to the JSON before it is base64url encoded, which the JWT code libraries will do for you).
 
 ```shell
 eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0LmV1LXdlc3QtMS5jb21wdXRlLmFtYXpvbmF3cy5jb20vIy9zZWFyY2giLCJzdWIiOiIxIiwiYXVkIjoiaHR0cHM6Ly9hdXRob3JpemUuZmhpci5uaHMubmV0L3Rva2VuIiwiZXhwIjoxNDgxMjUyMjc1LCJpYXQiOjE0ODA5NTIyNzUsInJlYXNvbl9mb3JfcmVxdWVzdCI6ImRpcmVjdGNhcmUiLCJyZXF1ZXN0ZWRfcmVjb3JkIjp7InJlc291cmNlVHlwZSI6IlBhdGllbnQiLCJpZGVudGlmaWVyIjpbeyJzeXN0ZW0iOiJodHRwOi8vZmhpci5uaHMubmV0L0lkL25ocy1udW1iZXIiLCJ2YWx1ZSI6IjkwMDAwMDAwMzMifV19LCJyZXF1ZXN0ZWRfc2NvcGUiOiJwYXRpZW50LyoucmVhZCIsInJlcXVlc3RpbmdfZGV2aWNlIjp7InJlc291cmNlVHlwZSI6IkRldmljZSIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6IldlYiBJbnRlcmZhY2UiLCJ2YWx1ZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn1dLCJtb2RlbCI6IkRlbW9uc3RyYXRvciIsInZlcnNpb24iOiIxLjAifSwicmVxdWVzdGluZ19vcmdhbml6YXRpb24iOnsicmVzb3VyY2VUeXBlIjoiT3JnYW5pemF0aW9uIiwiaWQiOiIxIiwiaWRlbnRpZmllciI6W3sic3lzdGVtIjoiaHR0cDovL2ZoaXIubmhzLm5ldC9JZC9vZHMtb3JnYW5pemF0aW9uLWNvZGUiLCJ2YWx1ZSI6IltPRFNDb2RlXSJ9XSwibmFtZSI6IkdQIENvbm5lY3QgRGVtb25zdHJhdG9yIn0sInJlcXVlc3RpbmdfcHJhY3RpdGlvbmVyIjp7InJlc291cmNlVHlwZSI6IlByYWN0aXRpb25lciIsImlkIjoiMSIsImlkZW50aWZpZXIiOlt7InN5c3RlbSI6Imh0dHA6Ly9maGlyLm5ocy5uZXQvc2RzLXVzZXItaWQiLCJ2YWx1ZSI6IkcxMzU3OTEzNSJ9LHsic3lzdGVtIjoibG9jYWxTeXN0ZW0iLCJ2YWx1ZSI6IjEifV0sIm5hbWUiOnsiZmFtaWx5IjpbIkRlbW9uc3RyYXRvciJdLCJnaXZlbiI6WyJHUENvbm5lY3QiXSwicHJlZml4IjpbIk1yIl19fX0.
 ```
 
-**Note:**
-
-- the final section (the signature) is empty, so the JWT will end with a trailing `.` (this must not be omitted, otherwise it would be an invalid token)
+**Note**: the final section (the signature) is empty, so the JWT will end with a trailing `.` (this must not be omitted, otherwise it would be an invalid token)
 
 
 ### JWT payload ###
 
-The payload section of the JWT **SHALL** be populated as follows:
+Consumers **SHALL** populate the payload section of the JWT with the following claims:
 
-| Claim | Priority | Description | Fixed Value | Dynamic Value |
-|-------|----------|-------------|-------------|------------------|
-| iss | R | Requesting systems issuer URI | No | Yes |
-| sub | R | ID for the user on whose behalf this request is being made. Matches `requesting_practitioner.id` | No | Yes |
-| aud | R | Requested resource URI<sup>1</sup> | No | Yes |
-| exp | R | Expiration time integer after which this authorisation MUST be considered invalid. | No | (now + 5 minutes) UTC time in seconds |
-| iat | R | The UTC time the JWT was created by the requesting system | No | now UTC time in seconds |
-| reason_for_request | R | Purpose for which access is being requested | `directcare` | No |
-| requested_scope | R | Data being requested | `patient/*.[read|write]` <br/>OR <br/>`organization/*.[read|write]` | No |
-| requesting_device | R | Device details and/or system url making the request | No | FHIR Device<sup>2</sup> |
-| requesting_organization | R | FHIR organisation resource making the request | No | FHIR Organization<sup>2+3</sup> | 
-| requesting_practitioner | R | FHIR practitioner resource making the request | No | FHIR Practitioner<sup>2+4</sup> |
+- [`iss`](#iss-issuer-claim) (issuer)
+- [`sub`](#sub-subject-claim) (subject)
+- [`aud`](#aud-audience-claim) (audience)
+- [`exp`](#exp-expiry-claim) (expiry)
+- [`iat`](#iat-issued-at-claim) (issued at)
+- [`reason_for_request`](#reason_for_request-claim)
+- [`requested_scope`](#requested_scope-claim)
+- [`requesting_device`](#requesting_device-claim)
+- [`requesting_organization`](#requesting_organization-claim)
+- [`requesting_practitioner`](#requesting_practitioner-claim)
 
-<sup>1</sup> The URI for the requested resource, including the fully qualified endpoint address returned to the consumer by the [SDS endpoint lookup service](integration_spine_directory_service.html){:target="_blank"}_ as the value of `nhsMhsEndPoint`.
+Please see details below on how to populate each claim.
 
-<sup>2</sup> Minimal FHIR resource to include any relevant business identifier(s), conforming to the base STU3 FHIR resources definition (the resource does not need to conform to the GP Connect FHIR resource profile).
+{% include important.html content="The JWT payload used in **GP Connect API 0.x (DSTU2)** is different to that displayed on this page.  Please ensure you consult the relevant specification from the [GP Connect specifications page](https://developer.nhs.uk/gp-connect-specification-versions/) when constructing the JWT for different GP Connect API major versions." %}
 
-<sup>3</sup> The `requesting_organization` **SHALL** refer to the care organisation from where the request originates.
+---
 
-<sup>4</sup> To contain the practitioner's local system identifier(s) (for example, login details / username). Where the user has both a local system 'role' as well as a nationally-recognised role, then the latter **SHALL** be provided. Default usernames (for example, referring to systems or groups) **SHALL** NOT be used in this field.
+#### `iss` (issuer) claim
 
-{% include important.html content="In topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation (see [Topologies](https://developer.nhs.uk/apis/spine-core-1-0/ssp_system_topologies.html)), it is important for audit purposes that the practitioner and organisation populated in the JWT reflect the originating organisation rather than the hosting organisation." %}
+Consumer systems token issuer URI.
 
-#### Population of requesting_organization ####
+As the consuming system is presently responsible for generating the access token, this **SHALL** contain the URL of the Spine endpoint of the consumer system.
 
-The `consumer` **SHALL** populate the `requesting_organization` claim with:
+In future OAuth2 implementation, the `iss` claim will contain the URL of the OAuth2 authorisation server token endpoint.
 
-* A FHIR [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource representing the organisation making the request and **SHALL** include the elements:
+**Example**: `"iss": "https://consumersupplier.thirdparty.nhs.uk/"`
 
-  | Element | Description |
-  | --- | --- |
-  | name | A textual representation of the name of the organisation. |
-  | identifier | An identifier **SHOULD** be included containing a fixed `system` of `"https://fhir.nhs.uk/Id/ods-organization-code"` and an identifier `value` containing the ODS code of requesting organization. |
+---
 
-#### Population of requesting_device ####
+#### `sub` (subject) claim
 
-This claim is used to provide details of the originator of the request for auditing purposes, in the form of a FHIR device resource. 
+ID for the user on whose behalf this request is being made. Matches [`requesting_practitioner.id`](#requesting_practitioner-claim).
 
-Where the request originates from a device (for example, a mobile device in a patient facing scenario), details of the device can be provided in manufacture, model and version elements.
+**Example**: `"sub": "10019"`
 
-Where the request originates from a system, the Spine endpoint URL of the originating system **SHALL** be specified using the URL element.
+---
 
-#### Population of ISS claim ####
+#### `aud` (audience) claim
 
-As the consuming system is presently responsible for generating the access token, this **SHALL** contain the URL of the Spine endpoint of the consuming system.
+The [service root URL](development_general_api_guidance.html#service-root-url) of the provider system.
 
-In future OAuth2 implementation, the ISS claim will contain the URL of the OAuth2 authorisation server token endpoint.
+This is the value returned from the [SDS endpoint lookup service](integration_spine_directory_service.html) in the `nhsMhsEndPoint` field.
+
+**Example**: `"aud": "https://providersupplier.thirdparty.nhs.uk/GP0001/STU3/1"`
+
+---
+
+#### `exp` (expiry) claim
+
+Identifies the expiration time in UTC on and after which the JWT **SHALL NOT** be accepted for processing.
+
+The expiration time **SHALL** be set to 5 minutes after the token creation time (populated in the [`iat` claim](#iat-issued-at-claim)).
+
+The value must be an integer representing seconds past 01 Jan 1970 00:00:00 UTC, i.e. [UNIX time](https://en.wikipedia.org/wiki/Unix_time).
+
+Providers **SHALL** reject requests with expired tokens.
+
+**Example**: `"exp": 1469436987`
+
+{% include important.html content="To ensure accuracy of timestamps, and minimise the likelihood of tokens being rejected due to clock skew providers and consumers **SHALL** synchronise their server clocks with NHS Network Time Protocol (NTP) servers." %}
+
+---
+
+#### `iat` (issued at) claim
+
+The time the request and token were generated in UTC.
+
+The value **SHALL** be an integer representing seconds past 01 Jan 1970 00:00:00 UTC, i.e. [UNIX time](https://en.wikipedia.org/wiki/Unix_time).
+
+**Example**: `"iat": 1469436687`
+
+---
+
+#### `reason_for_request` claim
+
+The purpose for which access is being requested.
+
+As GP Connect only supports usage for direct care, this value **SHALL** be set to `directcare`.
+
+**Example**: `"reason_for_request": "directcare"`
+
+---
+
+#### `requested_scope` claim
+
+The scope of the request.
+
+Please the table below for which values to populate.
+
+| Claim value | Description | When to use |
+|-------|-------------|------|
+| `patient/*.read` | Patient record read request | - [Find a patient](foundations_use_case_find_a_patient.html)<br/> - [Read a patient](foundations_use_case_read_a_patient.html)<br/> - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)<br/> - [Read an appointment](appointments_use_case_read_an_appointment.html)<br/> - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> 
+| `patient/*.write` | Patient record write request | - [Register a patient](foundations_use_case_register_a_patient.html)<br/>- [Book an appointment](appointments_use_case_book_an_appointment.html)<br/>- [Amend an appointment](appointments_use_case_amend_an_appointment.html)<br/>- [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)<br/> |
+| `organization/*.read` | Other read request | - [Get the capability statement](foundations_use_case_get_the_fhir_capability_statement.html)<br/>- [Find a practitioner](foundations_use_case_find_a_practitioner.html)<br/>- [Read practitioner](foundations_use_case_read_a_practitioner.html)<br/>- [Find an organisation](foundations_use_case_find_an_organisation.html)<br/>- [Read organisation](foundations_use_case_read_an_organisation.html)<br/>- [Read location](foundations_use_case_read_a_location.html)<br/>- [Search for free slots](appointments_use_case_search_for_free_slots.html)<br/> |
+| `organization/*.write` | Other write request | *(none currently)* |
+
+Providers should also read the associated [Security guidance](development_api_security_guidance.html#authorisation-of-access-to-endpoints) in relation to this claim.
+
+**Example**: `"requested_scope": "patient/*.read"`
+
+---
+
+#### `requesting_device` claim
+
+The system or device making the request, populated as a minimal [Device](https://www.hl7.org/fhir/STU3/device.html) resource.
+
+The consumer **SHALL** populate the following [Device](https://www.hl7.org/fhir/STU3/device.html) fields:
+
+- an `identifier` element, with:
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/device-identifier`
+  - `value` containing the device or system identifier
+- `model` with the consumer product or system name
+- `version` with the version number of the consumer product or system
+
+The [Device](https://www.hl7.org/fhir/STU3/device.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base STU3 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
+
+**Example**:
+
+<pre class="remove-highlight"><code class="no-highlight">"requesting_device": {
+  "resourceType": "Device",
+  "identifier": [
+    {
+      "system": "https://consumersupplier.com/Id/device-identifier",
+      "value": "CONS-APP-4"
+    }
+  ],
+  "model": "Consumer product name",
+  "version": "5.3.0"
+}
+</code></pre>
+
+---
+
+#### `requesting_organization` claim
+
+The consumer organisation making the request, populated as a minimal [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource.
+
+The consumer **SHALL** populate the following [Organization](https://www.hl7.org/fhir/STU3/organization.html) fields:
+
+- `name` with the name of the organisation
+- an `identifier` element, with:
+  - `system` containing `https://fhir.nhs.uk/Id/ods-organization-code`, and
+  - `value` containing the ODS code of the organisation
+
+{% include important.html content="In consumer system topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital for audit purposes that the organisation populated in the JWT reflects the organisation from where the request originates, rather than the hosting organisation.<br/>
+This is normally determined as the organisation of the logged on user making the request." %}
+
+The [Organization](https://www.hl7.org/fhir/STU3/organization.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base STU3 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
+
+**Example**:
+
+<pre class="remove-highlight"><code class="no-highlight">"requesting_organization": {
+  "resourceType": "Organization",
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+      "value": "A1001"
+    }
+  ],
+  "name": "Test Hospital"
+}
+</code></pre>
+
+---
+
+#### `requesting_practitioner` claim
+
+The user making the request, populated as a minimal [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource.
+
+To contain the logged on user's identifier(s) (for example, login details / username). Where the user has both a local system user role as well as a nationally-recognised user role, then both **SHALL** be provided.
+
+{% include important.html content="This field **SHALL NOT** be populated with fixed values or a generic \"system\" user. The values **SHALL** represent the logged on user making the request." %}
+
+The consumer **SHALL** populate the following [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) fields:
+
+- `id` with a unique [logical](https://www.hl7.org/fhir/STU3/resource.html#id) identifier (e.g. user ID or GUID) for the logged on user. This **SHALL** match the value of the [`sub` (subject) claim](integration_cross_organisation_audit_and_provenance.html#sub-subject-claim).
+- `name` with:
+  - `family` containing the user's family name
+  - `given` containing the user's given name
+  - `prefix` containing the user's title, where available
+- an `identifier` element with:
+  - `system` containing `https://fhir.nhs.uk/Id/sds-user-id`
+  - `value` containing the SDS user ID from the user's NHS smartcard, or the value `UNK` if the user is not logged on with an NHS smartcard
+- an `identifier` element with:
+  - `system` containing `https://fhir.nhs.uk/Id/sds-role-profile-id`
+  - `value` containing the SDS user role profile ID from the user's NHS smartcard, or the value `UNK` if the user is not logged on with an NHS smartcard
+- an `identifier` element containing a unique local user or user-role identifier for the logged on user (e.g. user ID, user role ID, logon name) from the consumer system:
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, e.g. `https://consumersupplier.com/Id/user-guid`
+  - `value` containing the unique local identifier for the logged on user
+
+{% include important.html content="Providers should be aware of variance in the population of the `identifier` field amongst existing consumer systems when reading this claim, specifically the latter two elements (SDS role profile ID, and local user identifier) are not always present." %}
+
+The [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base STU3 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
+
+**Example**:
+
+<pre class="remove-highlight"><code class="no-highlight">"requesting_practitioner": {
+  "resourceType": "Practitioner",
+  "id": "10019",
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/sds-user-id",
+      "value": "111222333444"
+    },
+    {
+      "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
+      "value": "444555666777"
+    },
+    {
+      "system": "https://consumersupplier.com/Id/user-guid",
+      "value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
+    }
+  ],
+  "name": [
+    {
+      "family": "Jones",
+      "given": [
+        "Claire"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    }
+  ]
+}</code></pre>
 
 
-### JWT payload example ###
+### JWT payload full example ###
 
 ```json
 {
-  "iss": "https://[ConsumerSystemURL]",
-  "sub": "[PractitionerID]",
-  "aud": "https://provider.thirdparty.nhs.uk/GP0001/STU3/1",
+  "iss": "https://consumersupplier.thirdparty.nhs.uk/",
+  "sub": "10019",
+  "aud": "https://providersupplier.thirdparty.nhs.uk/GP0001/STU3/1",
   "exp": 1469436987,
   "iat": 1469436687,
   "reason_for_request": "directcare",
@@ -181,137 +357,53 @@ In future OAuth2 implementation, the ISS claim will contain the URL of the OAuth
     "resourceType": "Device",
     "identifier": [
       {
-        "system": "[DeviceSystem]",
-        "value": "[DeviceID]"
+        "system": "https://consumersupplier.com/Id/device-identifier",
+        "value": "CONS-APP-4"
       }
     ],
-    "model": "[SoftwareName]",
-    "version": "[SoftwareVersion]",
-    "url": "https://[ConsumerSystemURL]"
+    "model": "Consumer product name",
+    "version": "5.3.0"
   },
   "requesting_organization": {
     "resourceType": "Organization",
     "identifier": [
       {
         "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-        "value": "[ODSCode]"
+        "value": "A1001"
       }
     ],
-    "name": "Requesting Organisation Name"
+    "name": "Test Hospital"
   },
   "requesting_practitioner": {
     "resourceType": "Practitioner",
-    "id": "[PractitionerID]",
+    "id": "10019",
     "identifier": [
       {
         "system": "https://fhir.nhs.uk/Id/sds-user-id",
-        "value": "[SDSUserID]"
+        "value": "111222333444"
       },
       {
         "system": "https://fhir.nhs.uk/Id/sds-role-profile-id",
-        "value": "[SDSRoleID]"
+        "value": "444555666777"
       },
       {
-        "system": "[LocalUserSystem]",
-        "value": "[LocalUserID]"
+        "system": "https://consumersupplier.com/Id/user-guid",
+        "value": "98ed4f78-814d-4266-8d5b-cde742f3093c"
       }
     ],
     "name": [
       {
-        "family": "[Family]",
+        "family": "Jones",
         "given": [
-          "[Given]"
+          "Claire"
         ],
         "prefix": [
-          "[Prefix]"
+          "Dr"
         ]
       }
     ]
   }
 }
-```
-
-{% include important.html content="Whilst the use of a JWT and the claims naming is inspired by the [SMART on FHIR](https://github.com/smart-on-fhir/smart-on-fhir.github.io/wiki/cross-organizational-auth) the GP Connect programme hasn't committed to using the SMART on FHIR specification." %}
-
-Where the practitioner has both a local system role as well as a Spine RBAC role, then the Spine RBAC role **SHALL** be supplied.
-
-## Example code ##
-
-### C# ###
-
-{% include tip.html content="The following code snippet utilises the [Microsoft Identity Model JWT Token NuGet Package](https://www.nuget.org/packages/System.IdentityModel.Tokens.Jwt/) for creating, serializing and validating JWT tokens." %}
-
-```C#
-var requesting_device = new Device {
-	Id = "[DeviceID]",
-	Model = "[SoftwareName]",
-	Version = "[SoftwareVersion]",
-	Identifier =
-	{
-		new Identifier("[DeviceSystem]", "[DeviceID]")
-	}
-};
-
-var requesting_organization = new Organization {
-	Id = "[OrganizationID]",
-	Name = "Requesting Organisation Name",
-	Identifier =
-	{
-		new Identifier("https://fhir.nhs.uk/Id/ods-organization-code", "[ODSCode]")
-	}
-};
-
-var requesting_identity = new Practitioner {
-	resourceType = "Practitioner",
-	Id = "[PractitionerID]",
-	PractitionerRole =
-	{
-		new role()
-		{
-			new coding("http://fhir.nhs.net/ValueSet/sds-job-role-name-1", "[SDSJobRoleName]")
-		}
-	},
-	Name = new HumanName()
-	{
-			Prefix = new[] {"[Prefix]"},
-			Given = new[] {"[Given]"},
-			Family = new[] {"[Family]"}
-	},
-	Identifier =
-	{
-		new Identifier("https://fhir.nhs.uk/Id/sds-user-id", "[SDSUserID]"),
-		new Identifier("[UserSystem]", "[UserID]")
-	}
-};
-
-var audit_event_id = "[AuditEventID]";
-var requesting_system_url = "https://[ConsumerSystemURL]";
-var requesting_system_token_url = "https://authorize.fhir.nhs.net/token";
-
-// --this example getting local patient ID 1 at gp practice GP001
-var target_request_url = "https://http://gpconnect.aprovider.nhs.net/GP0001/DSTU2/1/Patient/1";
-var now = DateTime.UtcNow;
-var expires = now.AddMinutes(5);
-
-var claims = new List<System.Security.Claims.Claim>
-{
-    new System.Security.Claims.Claim("iss", requesting_system_url, ClaimValueTypes.String),
-    new System.Security.Claims.Claim("sub", requesting_practitioner.Id, ClaimValueTypes.String),
-    new System.Security.Claims.Claim("aud", target_request_url, ClaimValueTypes.String),
-    new System.Security.Claims.Claim("exp", EpochTime.GetIntDate(expires).ToString(), ClaimValueTypes.Integer64),
-    new System.Security.Claims.Claim("iat", EpochTime.GetIntDate(now).ToString(), ClaimValueTypes.Integer64),
-    new System.Security.Claims.Claim("reason_for_request", "directcare", ClaimValueTypes.String),
-    new System.Security.Claims.Claim("requested_scope", "patient/*.read", ClaimValueTypes.String),	
-    new System.Security.Claims.Claim("requesting_device", FhirSerializer.SerializeToJson(requesting_device), JsonClaimValueTypes.Json),
-    new System.Security.Claims.Claim("requesting_organization", FhirSerializer.SerializeToJson(requesting_organization), JsonClaimValueTypes.Json),
-    new System.Security.Claims.Claim("requesting_identity", FhirSerializer.SerializeToJson(requesting_identity), JsonClaimValueTypes.Json)
-};
-
-// Serialize To Json
-JwtPayload payload = new JwtPayload(claims);
-var jsonPayload = payload.SerializeToJson();
-jsonPayload.Dump();
-
 ```
 
 ## External documents / policy documents ##

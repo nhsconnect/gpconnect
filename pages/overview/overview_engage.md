@@ -1,5 +1,5 @@
 ---
-title: Getting involved with GP Connect
+title: Getting involved with GP Connect API
 keywords: engage, about
 tags: [getting_started]
 sidebar: overview_sidebar
