@@ -10,6 +10,9 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
+    - title: Sitemap
+      url: /sitemap.html
+      output: web, pdf
           
       subfolders:      
       - title: Release notes
