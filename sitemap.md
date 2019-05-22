@@ -12,6 +12,7 @@ summary: Sitemap for GP Connect FHIR® APIs
 [Introduction](index.html)
 
 **Release notes**
+
 [1.2.3](overview/release_notes/overview_release_notes_1_2_3.html)
 
 [1.2.2](overview_release_notes_1_2_3.html)
