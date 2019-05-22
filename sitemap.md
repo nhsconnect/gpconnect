@@ -13,24 +13,26 @@ summary: Sitemap for GP Connect FHIR® APIs
 
 **Release notes**
 
-[1.2.3](overview/release_notes/overview_release_notes_1_2_3.html)
+[1.2.3](release_notes/overview_release_notes_1_2_3.html)
 
-[1.2.2](overview_release_notes_1_2_3.html)
+[1.2.2](overview_release_notes_1_2_2.html)
 
-[1.2.1](overview_release_notes_1_2_3.html)
+[1.2.1](overview_release_notes_1_2_1.html)
 
-[1.2.0](overview_release_notes_1_2_3.html)
+[1.2.0](overview_release_notes_1_2_0.html)
 
-[1.1.1](overview_release_notes_1_2_3.html)
+[1.1.1](overview_release_notes_1_1_1.html)
 
-[1.1.0](overview_release_notes_1_2_3.html)
+[1.1.0](overview_release_notes_1_1_0.html)
 
-[1.0.0](overview_release_notes_1_2_3.html)
+[1.0.0](overview_release_notes_1_0_0.html)
 
-[0.5.0](overview_release_notes_1_2_3.html)
-
+[0.5.0](overview_release_notes_0_5_0.html)
 
 ## Getting started ##
+
+[Consumer suppliers](overview_consumer_supplier.html)
+[Clinical system suppliers](overview_clinical_system_supplier.html)
 
 ## Explore ##
 
