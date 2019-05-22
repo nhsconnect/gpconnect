@@ -1,0 +1,37 @@
+---
+title: Sitemap
+keywords: sitemap
+tags: [sitemap]
+sidebar: home_sidebar
+permalink: sitemap.html
+toc: false
+summary: Sitemap for GP Connect FHIR® APIs
+---
+
+# Sitemap #
+
+## Overview ##
+
+## Getting started ##
+
+## Explore ##
+
+## Develop ##
+
+## Test and assure ##
+
+## Deploy ##
+
+## Help and support ##
+
+{% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect provider APIs or consuming applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. See our GitHub [releases page](https://github.com/nhsconnect/gpconnect/releases) for more information." %}
+
+{% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities. Other parties are advised not to develop against these specifications until a formal announcement has been made." %}
+
+## Provide feedback ##
+To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
+
+{% include twitterfollow.html %}
+
+{% include gitterbadge.html %}
+
