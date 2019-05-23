@@ -6,7 +6,7 @@ toc: false
 pathways: [consumer,provider]
 sidebar: overview_sidebar
 permalink: overview_explore.html
-summary: Interactive online console with full API reference and FHIR&reg; resource definitions
+summary: Get hands-on experience of the GP Connect APIs 
 ---
 
 - try out the [GP Connect Demonstrator](system_demonstrator.html) system
