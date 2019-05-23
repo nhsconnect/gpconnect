@@ -58,6 +58,7 @@ Release notes per version: [1.2.3](release_notes/overview_release_notes_1_2_3.ht
 [First of type](overview_first_of_type.html)
 
 ##### Implement a capability #####
+
 [Foundations](foundations.html)
 
 [Appointment Management](appointments.html)
