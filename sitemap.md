@@ -59,7 +59,9 @@ Release notes per version: [1.2.3](release_notes/overview_release_notes_1_2_3.ht
 
 ##### Implement a capability #####
 [Foundations](foundations.html)
+
 [Appointment Management](appointments.html)
+
 [Access Record Structured](accessrecord_structured.html)
 
 ##### Design approach #####
