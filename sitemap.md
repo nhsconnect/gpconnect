@@ -57,29 +57,7 @@ Release notes per version: [1.2.3](release_notes/overview_release_notes_1_2_3.ht
 
 [First of type](overview_first_of_type.html)
 
-##### FHIR® API guidance #####
-
-[FHIR library](development_fhir_open_source_guidance.html)
-
-[FHIR implementation](development_fhir_api_guidance.html)
-
-[General API guidance](development_general_api_guidance.html)
-
-[Operations](development_fhir_operation_guidance.html)
-
-[Resources](development_fhir_resource_guidance.html)
-
-[Security guidance](development_api_security_guidance.html)
-
-[Error handling](development_fhir_error_handling_guidance.html)
-
-[Volume and performance](development_api_volume_and_performance.html)
-
-[Non-functional requirements](development_api_non_functional_requirements.html)
-
-[First of type](overview_first_of_type.html)
-
-#### Design approach ####
+##### Design approach #####
 
 [Development principles](designprinciples_development_principles.html)
 
