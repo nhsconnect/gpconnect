@@ -87,6 +87,4 @@ The underlying abstract information model is provided below.
 |||Management|
 |||Administration|
 
-1. All mandatory fields **MUST** be populated.
 
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
