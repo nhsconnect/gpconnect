@@ -3,7 +3,7 @@ title: Development overview
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_immunization.html
+permalink: accessrecord_structured_development_immunization.html
 summary: "FHIR resource Immunization"
 ---
 ## Introduction ##
