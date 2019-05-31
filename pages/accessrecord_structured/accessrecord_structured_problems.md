@@ -4,7 +4,7 @@ title: Condition ProblemHeader resource
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_problems.html
+permalink: accessrecord_structured_problems.html
 summary: "Guidance for populating and consuming the ProblemHeader resource"
 div: resource-page
 ---
