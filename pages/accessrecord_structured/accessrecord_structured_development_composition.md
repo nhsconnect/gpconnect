@@ -1,5 +1,5 @@
 ---
-title: Consultation
+title: Composition
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
@@ -7,7 +7,9 @@ permalink: accessrecord_structured_development_composition.html
 summary: "Guidance for populating the commposition resource"
 ---
 
-## Composition elements ##
+## Conposition elements ##
+
+
 
 ### id ###
 
@@ -362,3 +364,4 @@ Not used in GP Connect. There is no further section structure under the SOAP hea
 
 
 [1] https://en.wikipedia.org/wiki/SOAP_note
+
