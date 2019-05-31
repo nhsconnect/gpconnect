@@ -6,6 +6,7 @@ sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_encounter.html
 summary: "Guidance for the representation and consumption of Consultations"
 ---
+
 ## Encounter elements ##
 
 ### id ###
