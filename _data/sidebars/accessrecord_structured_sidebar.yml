@@ -39,10 +39,6 @@ entries:
       output: web
       url: /accessrecord_structured_development_consultation_guidance.html
       
-    - title: Linkages guidance
-      output: web
-      url: /accessrecord_structured_development_linkages_guidance.html      
-
     - title: Medication resource relationships
       url: /accessrecord_structured_development_medication_resource_relationships.html
       output: web
@@ -62,7 +58,6 @@ entries:
     - title: Uncategorised data guidance
       url: /accessrecord_structured_development_uncategorisedData_guidance.html
       output: web      
-
 
       subfolders:
 
