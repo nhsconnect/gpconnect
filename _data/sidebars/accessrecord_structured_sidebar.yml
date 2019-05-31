@@ -84,6 +84,9 @@ entries:
         - title: <b class='resource'>MedicationRequest</b>
           url: /accessrecord_structured_development_medicationrequest.html
           output: web
+        - title: <b class='resource'>Immunization</b>
+          url: /accessrecord_structured_development_immunization.html
+          output: web
         - title: <b class='resource'>Condition - ProblemHeader</b>
           url: /accessrecord_structured_problems.html
           output: web
