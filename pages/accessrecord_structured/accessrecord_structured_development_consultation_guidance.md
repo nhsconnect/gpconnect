@@ -3,7 +3,7 @@ title: Consultation
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_guidance_consultation.html
+permalink: accessrecord_structured_development_consultation_guidance.html
 summary: "Guidance for the representation and consumption of Consultations"
 ---
 
