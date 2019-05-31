@@ -104,7 +104,7 @@ The procedure code describing the vaccine that was administered.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code> codableConcept</td>
+    <td><b>Data type:</b><code> codableConcept</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
