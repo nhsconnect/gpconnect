@@ -7,8 +7,6 @@ permalink: accessrecord_structured_development_guidance_consultation.html
 summary: "Guidance for the representation and consumption of Consultations"
 ---
 
-{% include structuredwarning.html %}
-
 ## Introduction ##
 Consultations are one of the most important forms in which structured patient information is recorded in the patient records within GP systems.
 
