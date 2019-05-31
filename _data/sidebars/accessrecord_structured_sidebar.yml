@@ -84,10 +84,10 @@ entries:
           url: /accessrecord_structured_problems.html
           output: web
         - title: <b class='resource'>Encounter</b>
-          url: /accessrecord_structured_development_medicationrequest.html
+          url: /accessrecord_structured_development_encounter.html
           output: web
         - title: <b class='resource'>Composition</b>
-          url: /accessrecord_structured_development_medicationrequest.html
+          url: /accessrecord_structured_development_composition.html
           output: web
         - title: <b class='resource'>Observation - uncategorised data</b>
           url: /accessrecord_structured_development_observation_uncategorisedData.html
