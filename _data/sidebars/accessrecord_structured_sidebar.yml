@@ -38,7 +38,11 @@ entries:
     - title: Consultation guidance
       output: web
       url: /accessrecord_structured_development_consultation_guidance.html
-      
+ 
+    - title: Immunizations guidance
+      output: web
+      url: /accessrecord_structured_development_immunization_guidance.html
+       
     - title: Linkages between data
       url: /accessrecord_structured_development_linkages_guidance.html
       output: web
