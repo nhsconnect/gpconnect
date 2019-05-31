@@ -3,7 +3,7 @@ title: Observation - uncategorised data
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_observation_uncategorised.html
+permalink: accessrecord_structured_development_observation_uncategorisedData.html
 summary: "Guidance for populating and consuming the observation to repesent test result data in GP Connect"
 ---
 
