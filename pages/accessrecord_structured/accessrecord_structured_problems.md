@@ -92,13 +92,14 @@ A complex extension that details the relationship of this problem header resourc
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code> codableConcept</td>
+    <td><b>Data type:</b><code> codableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
 The procedure code describing the vaccine that was administered.
+
 ### extension[relatedClinicalContent] ###
 
 <table class='resource-attributes'>
