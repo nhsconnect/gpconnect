@@ -94,10 +94,10 @@ entries:
         - title: <b class='resource'>Composition</b>
           url: /accessrecord_structured_development_medicationrequest.html
           output: web
-        - title: <b class='resource'>DiagnosticReport</b>
+        - title: <b class='resource'>Observation - uncategorised data</b>
           url: /accessrecord_structured_development_observation_uncategorisedData.html
           output: web
-         - title: <b class='resource'>DiagnosticReport</b>
+        - title: <b class='resource'>DiagnosticReport</b>
           url: /accessrecord_structured_development_diagnosticReport.html
           output: web
         - title: <b class='resource'>Specimen</b>
