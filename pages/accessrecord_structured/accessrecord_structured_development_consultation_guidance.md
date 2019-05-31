@@ -33,10 +33,10 @@ A Consultation is the structure within which source systems group one or more cl
 ## Approach ##
 
 {: .center-image }
-![Consultation FHIR Resource Model ](images/access_structured/Consultation_FHIR_Resource_Model.png)
+![Consultation FHIR Resource Model ](images/access_structured/Consultatiion_FHIR_Resource_Model.png)
 
 {: .center-image }
-![Consultation Structure ](images/access_structured/Consultation_Structure.png)
+![Consultation Structure ](images/access_structured/Consultation_Stucture.png)
 
 * The Encounter resource and related resources like Location are adopted to provide the consultation context (Date/Doctor/Place)
 * The Composition resource is adopted to provide consultation structure. The top level Composition.section is utilised to represent the topic/problem level of the source consultation. Within each Composition.section child sections are used to represent headers (SOAP headings) and references to resources within each heading section reference resources representing each record entry within a section.
