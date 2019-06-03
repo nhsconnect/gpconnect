@@ -26,9 +26,7 @@ entries:
   - title: Clinical areas
     output: web, pdf
     folderitems:
-
-    subfolders:     
-    
+      
     - title: Overview
       output: web
       subfolderitems:
