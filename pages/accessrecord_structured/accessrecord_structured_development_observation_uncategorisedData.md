@@ -8,8 +8,6 @@ permalink: accessrecord_structured_development_guidance_observation_narrative.ht
 summary: "Guidance for the representation and consumption of Observation resource representing uncoded freetext narrative"
 ---
 
-{% include structuredwarning.html %}
-
 ## Introduction ##
 
 There are many instances of uncoded freetext narrative notes within patient records.
