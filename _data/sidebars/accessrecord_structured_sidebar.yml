@@ -158,7 +158,11 @@ entries:
   - title: API definition
     output: web, pdf
     folderitems:
-   
+ 
+    - title: Introduction
+      url: /accessrecord_structured_development.html
+      output: web
+  
       subfolders:
  
         - title: FHIR&reg; examples
