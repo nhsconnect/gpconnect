@@ -13,7 +13,7 @@ The headings below list the elements of the Immunization resource and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProblemHeader profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1)." %} 
 
 ## Condition - problem header elements ##
 
@@ -262,7 +262,7 @@ Notes about the problem.
 
 The following elements **MUST NOT** be populated:
 
-### verificationStatus###
+### verificationStatus ###
 
 <table class='resource-attributes'>
   <tr>
@@ -311,25 +311,3 @@ Only Immunizations where notGiven is set to false are to be sent using the Immun
 </table>
 
 Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
-
-
-## Problem Guidance
-
-### Problem structure and relationships
-
-#### Problem severity
-
-#### Use of terminology and the actualProblem extension
-
-#### Relationships to other problems
-
-#### Other related data in the GP record
-
-#### Placeholders for uncurated/implemented content/docs
-
-
-
-### Active and Inactive problems
-
-
-
