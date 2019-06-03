@@ -155,6 +155,12 @@ entries:
           output: web
  
 
+   - title: API Definition
+    output: web, pdf
+    folderitems:
+   
+      subfolders:
+ 
         - title: FHIR&reg; examples
           output: web
           subfolderitems:
