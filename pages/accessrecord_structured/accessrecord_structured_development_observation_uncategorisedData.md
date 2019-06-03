@@ -1,4 +1,3 @@
-
 ---
 title: Observation Narrative
 keywords: getcarerecord
