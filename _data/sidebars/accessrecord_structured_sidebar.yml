@@ -155,7 +155,7 @@ entries:
           output: web
  
 
-  - title: API Definition
+  - title: API definition
     output: web, pdf
     folderitems:
    
@@ -175,7 +175,7 @@ entries:
             url: /accessrecord_structured_development_fhir_examples_pathology.html
             output: web
           
-        - title: API definition
+        - title: Record retrieval
           output: web
           subfolderitems:
 
