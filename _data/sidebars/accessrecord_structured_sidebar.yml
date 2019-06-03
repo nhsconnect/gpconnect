@@ -52,8 +52,8 @@ entries:
         subfolderitems:
         
         - title: Allergies guidance
-          output: web
           url: /accessrecord_structured_development_allergies_guidance.html
+          output: web
         - title: <b class='resource'>AllergyIntolerance</b>
           url: /accessrecord_structured_development_allergyintolerance.html
           output: web
@@ -64,9 +64,6 @@ entries:
         
         - title: Medication resource relationships
           url: /accessrecord_structured_development_medication_resource_relationships.html
-          output: web
-        - title: Medication guidance
-          url: /accessrecord_structured_development_medication_guidance.html
           output: web
         - title: Medication guidance
           url: /accessrecord_structured_development_medication_guidance.html
@@ -108,13 +105,13 @@ entries:
         subfolderitems:
         
         - title: Consultation guidance
-          output: web
           url: /accessrecord_structured_development_consultation_guidance.html
+          output: web
         - title: <b class='resource'>Encounter</b>
-          url: /accessrecord_structured_development_medicationrequest.html
+          url: /accessrecord_structured_development_encounter.html
           output: web
         - title: <b class='resource'>Composition</b>
-          url: /accessrecord_structured_development_medicationrequest.html
+          url: /accessrecord_structured_development_composition.html
           output: web
      
       - title: Problems
