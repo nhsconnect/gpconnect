@@ -3,28 +3,11 @@ title: Observation - uncategorised
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_guidance_observation_uncategorisedData.html
+permalink: accessrecord_structured_development_observation_uncategorisedData.html
 summary: "Guidance for the representation and consumption of observation resource representing uncategorised data items from the GP record"
 ---
 
-## Introduction ##
-
-There are many instances of uncoded freetext narrative notes within patient records.
-* Paragraphs of freetext consultation notes perhaps associated with codes via the wider consultation context but not otherwise explicitly coded.
-* Text which may or may not be associated with codes but where the association is inexact and it is considered better to express the notes text as a standalone item rather than bind the text (possibly incorrectly) to an associated coded resource. See Consultation guidance for further information.
-* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded Observation resource as the 'uncategorised' representation is inappropriate e.g. no appropriate codes are available to represent the source record entry as an Observation.
-
-Because FHIR does not provide an underlying resource suitable for representing this information a profile of Observation is utilised to represent narrative text as a Observation Narrative.
-
-## Approach ##
-
-The approach for all of these cases is to use an appropriate coded Observation resource to represent the freetext.
-
-Instances of Observation narrative are identified by Observation.code of **900000000000540000 |Plain text (foundation metadata concept)|**
-
-** TO DO - confirm code **
-
-## Observation Narrative ##
+## Observation - uncategorised data ##
 
 1. All mandatory fields **MUST** be populated.
 
