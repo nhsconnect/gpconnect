@@ -26,14 +26,17 @@ entries:
   - title: Clinical areas
     output: web, pdf
     folderitems:
-      
+    
+    - title: Overview
+      url: /accessrecord_structured_development.html
+      output: web
+    
+    subfolders:
+    
     - title: Overview
       output: web
       subfolderitems:
 
-      - title: Overview
-        url: /accessrecord_structured_development.html
-        output: web
       - title: Overview
         url: /accessrecord_structured_development_resources_overview.html
         output: web
