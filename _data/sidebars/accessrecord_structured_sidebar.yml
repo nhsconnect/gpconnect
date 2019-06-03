@@ -31,21 +31,21 @@ entries:
       url: /accessrecord_structured_development.html
       output: web
     
-    subfolders:
+      subfolders:
     
-    - title: Overview
-      output: web
-      subfolderitems:
-
       - title: Overview
-        url: /accessrecord_structured_development_resources_overview.html
         output: web
-      - title: <b class='resource'>List</b>
-        url: /accessrecord_structured_development_list.html
-        output: web
-      - title: <b class='resource'>Bundle</b>
-        url: /accessrecord_structured_development_bundle.html
-        output: web 
+        subfolderitems:
+
+        - title: Overview
+          url: /accessrecord_structured_development_resources_overview.html
+          output: web
+        - title: <b class='resource'>List</b>
+          url: /accessrecord_structured_development_list.html
+          output: web
+        - title: <b class='resource'>Bundle</b>
+          url: /accessrecord_structured_development_bundle.html
+          output: web 
       
     - title: Allergies
       output: web
