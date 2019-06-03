@@ -155,7 +155,7 @@ entries:
           output: web
  
 
-   - title: API Definition
+  - title: API Definition
     output: web, pdf
     folderitems:
    
