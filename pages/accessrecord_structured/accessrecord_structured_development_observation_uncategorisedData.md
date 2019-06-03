@@ -1,22 +1,40 @@
+
 ---
-title: Observation - uncategorised data
+title: Observation Narrative
 keywords: getcarerecord
-tags: [design,structured]
+tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_observation_uncategorisedData.html
-summary: "Guidance for populating and consuming the observation to repesent test result data in GP Connect"
+permalink: accessrecord_structured_development_guidance_observation_narrative.html
+summary: "Guidance for the representation and consumption of Observation resource representing uncoded freetext narrative"
 ---
 
+{% include structuredwarning.html %}
 
 ## Introduction ##
 
-The headings below list the elements of the Observation resource and describe how to populate and consume them when dealing with uncategorised data from GP systems.
+There are many instances of uncoded freetext narrative notes within patient records.
+* Paragraphs of freetext consultation notes perhaps associated with codes via the wider consultation context but not otherwise explicitly coded.
+* Text which may or may not be associated with codes but where the association is inexact and it is considered better to express the notes text as a standalone item rather than bind the text (possibly incorrectly) to an associated coded resource. See Consultation guidance for further information.
+* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded Observation resource as the 'uncategorised' representation is inappropriate e.g. no appropriate codes are available to represent the source record entry as an Observation.
 
-{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
+Because FHIR does not provide an underlying resource suitable for representing this information a profile of Observation is utilised to represent narrative text as a Observation Narrative.
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
+## Approach ##
 
-## Uncategorised data - observation resource elements ##
+The approach for all of these cases is to use an appropriate coded Observation resource to represent the freetext.
+
+Instances of Observation narrative are identified by Observation.code of **900000000000540000 |Plain text (foundation metadata concept)|**
+
+** TO DO - confirm code **
+
+## Observation Narrative ##
+
+1. All mandatory fields **MUST** be populated.
+
+2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
+
+3. Any attributes of the underlying Observeation profile that are not listed below are not used.
+
 
 ### id ###
 
@@ -28,7 +46,7 @@ The headings below list the elements of the Observation resource and describe ho
   </tr>
 </table>
 
-The logical identifier of the observation resource.
+The logical identifier of the Observation narrative resource.
 
 ### meta.profile ###
 
@@ -40,9 +58,7 @@ The logical identifier of the observation resource.
   </tr>
 </table>
 
-The observation profile URL.
-
-Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)
+The Observation narrative profile URL.
 
 ### identifier ###
 
@@ -56,51 +72,34 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
-This  **MUST**  be a GUID.
-
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
-
-Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
 ### status ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><b>Data type:</b> <code>status</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-The status of the test result. 
+Fixed value of **finished**. 
 
-In GP systems these are most likely to be 'final' however 'preliminary' reports are possible as for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header then it should default to the 'unknown' value.
 
-### category ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
- 
-The general type of observation. 
 
 ### code ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-The clinical code that represents the name of the test result or test analyte.
+Fixed value of **900000000000540000 |Plain text (foundation metadata concept)|**
 
 ### subject ###
 
@@ -112,191 +111,81 @@ The clinical code that represents the name of the test result or test analyte.
   </tr>
 </table>
 
-A reference to the Patient who the observation is about.
+Reference to Patient resource representing the Patient against whom the narrative text was recorded.
 
-### effective[x] ###
+### context ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime/Period</code></td>
-    <td><b>Optionality:</b> Required</td>
+    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
+    <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-The date and time when the test was performed
+Optional reference to the Encounter resource representing the consultation context in which the narrataive freetext was recorded. Will not be populated where the freetext was recorded ouside of a consultation context.
+
+### effectiveDateTime ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>DateTime</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The clinically relevent effective data or datetime for the narrative record entry.
+
+Where the effective date is unknown or not recorded will be absent, otherwise it should be populated.
 
 ### issued ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>instant</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Data type:</b> <code>Instance</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-The date and time that the result was issued by the laboratory or other report provider.
-
+The audit trail timestamp representing when the narrative was last modified.
 
 ### performer ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-Reference to the resource for the organisation and/or practitioner that performed the test.
-
-### value[x] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Many</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The value of the test. this may be in the form of but is not limited to one of the following datatypes a quantity, string or an attachment.
-
-### dataAbsentReason ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The reason why a result/value has been omitted.
-
-### interpretation ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-A human readable clinical summary relating to a test result and/or additional notes provided by the laboratory e.g. the specimen has haemolysed or has leaked
+The Practitioner resource representing the person responsible for recording the narrative
 
 ### comment ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Data type:</b> <code>String</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-Lab notes in addition to the interpretation. For example, the sample has haemolysed or has leaked.
-
-### bodysite ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The body part that was tested/observed.
-
-### method ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The method of testing/observation that was used.
-
-### specimen ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Reference to the specimen on which these results were based.
-
-### referenceRange ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-The reference range provides a guide for interpretation of the results.
+The freetext narrative as plain text.
 
 ### related ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Reference to the test group header observation if the result is part of a test group.
+This attribute is used to specify the sequence of the narrative in relation to other resources e.g. when an ordered set of resource is being used to express the structure of a consultation displayed at source. See Consultation guidance for further information.
 
-This **MUST** be qualified using the related.type 'derived-from'.
-
-<br>
-
-## Elements **not in use** ##
-
-The following elements **MUST NOT** be populated:
-
-### basedOn ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
-  </tr>
-</table>
-
-### context ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
-  </tr>
-</table>
-
-### device ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
-  </tr>
-</table>
-
-
-### component ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
-  </tr>
-</table>
+The **related.type** and **related.target** are used to represent the sequence. Only the **related.type** value of **'sequel-to'** is utilised.
 
