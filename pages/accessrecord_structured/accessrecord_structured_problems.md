@@ -39,9 +39,9 @@ The logical identifier of the Medication resource.
   </tr>
 </table>
 
-The AllergyIntolerance profile URL.
+The ProblemHeader profile URL.
 
-Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1)
 
 ### extension[actualProblem] ###
 
@@ -75,7 +75,7 @@ A complex extension that details the relationship of this problem header resourc
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
-A complex extension that details the relationship of this problem header resources to another or a number of other problem header resources.
+A complex extension that details the type of relationship this problem header resources to another or a number of other problem header resources.
 
 ### extension[relatedProblemHeader.target] ###
 
@@ -86,7 +86,7 @@ A complex extension that details the relationship of this problem header resourc
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
-A complex extension that details the relationship of this problem header resources to another or a number of other problem header resources.
+A complex extension that contains a reference to a related problem header resource.
 
 ### extension[problemSignificance] ###
 
@@ -98,7 +98,7 @@ A complex extension that details the relationship of this problem header resourc
   </tr>
 </table>
 
-The procedure code describing the vaccine that was administered.
+The significance of the problem contained in the resource.
 
 ### extension[relatedClinicalContent] ###
 
@@ -110,7 +110,7 @@ The procedure code describing the vaccine that was administered.
   </tr>
 </table>
 
-The procedure code describing the vaccine that was administered.
+References to other resources that a user in the sending clinical system has chosen to link to this problem header resource.
 
 ### identifier ###
 
@@ -144,9 +144,6 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 All problems **MUST** have a clinicalStatus of <code>active</code> or <code>inactive</code>.
 
-
-
-
 ### category ###
 
 <table class='resource-attributes'>
@@ -168,6 +165,8 @@ Fixed value of <code>problem-list-item</code>.
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
+
+The clinical code or text that represents the problem header.
 
 ### subject ###
 
@@ -191,9 +190,7 @@ A reference to the Patient who has, or had, the allergy or intolerance specified
   </tr>
 </table>
 
-The  `Encounter`  within which the medication was authorised.
-
-As per base profile guidance.
+The  `Encounter`  within which the problem header was created.
 
 ### onset ###
 
@@ -231,7 +228,6 @@ The dateTime when the the problem was no longer considered active.
 
 The date time that the problem was recorded on the clinical system.
 
-
 ### asserter ###
 
 <table class='resource-attributes'>
@@ -267,8 +263,6 @@ The following elements **MUST NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Boolean</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -279,8 +273,6 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource
 
 ### bodysite ###
 
@@ -300,8 +292,6 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
   </tr>
 </table>
 
-Only Immunizations where notGiven is set to false are to be sent using the Immunization profile. This means that there will never be cause to use reasonNotGiven. 
-
 ### evidence ###
 
 <table class='resource-attributes'>
@@ -309,5 +299,3 @@ Only Immunizations where notGiven is set to false are to be sent using the Immun
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
