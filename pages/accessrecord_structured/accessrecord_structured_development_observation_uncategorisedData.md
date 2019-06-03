@@ -1,10 +1,10 @@
 ---
-title: Observation Narrative
+title: Observation - uncategorised
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_guidance_observation_narrative.html
-summary: "Guidance for the representation and consumption of Observation resource representing uncoded freetext narrative"
+permalink: accessrecord_structured_development_guidance_observation_uncategorisedData.html
+summary: "Guidance for the representation and consumption of observation resource representing uncategorised data items from the GP record"
 ---
 
 ## Introduction ##
