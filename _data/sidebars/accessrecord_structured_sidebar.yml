@@ -57,6 +57,9 @@ entries:
         - title: <b class='resource'>AllergyIntolerance</b>
           url: /accessrecord_structured_development_allergyintolerance.html
           output: web
+        - title: Allergies FHIR&reg; example
+          url: /accessrecord_structured_development_fhir_examples_allergies.html
+          output: web
 
       - title: Medications
         output: web
@@ -76,6 +79,9 @@ entries:
           output: web
         - title: <b class='resource'>MedicationRequest</b>
           url: /accessrecord_structured_development_medicationrequest.html
+          output: web
+        - title: Medication FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
  
       - title: Immunizations
@@ -112,6 +118,9 @@ entries:
           output: web
         - title: <b class='resource'>Composition</b>
           url: /accessrecord_structured_development_composition.html
+          output: web
+        - title: Observation - narrative
+          url: accessrecord_structured_development_guidance_observation_narrative.html
           output: web
      
       - title: Problems
@@ -150,6 +159,10 @@ entries:
         - title: <b class='resource'>ProcedureRequest</b>
           url: /accessrecord_structured_development_ProcedureRequest.html
           output: web
+        - title: Pathology FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_pathology.html
+          output: web
+  
  
   - title: API definition
     output: web, pdf
@@ -159,26 +172,6 @@ entries:
       url: /accessrecord_structured_development.html
       output: web
   
-      subfolders:
- 
-        - title: FHIR&reg; examples
-          output: web
-          subfolderitems:
-
-          - title: Allergies
-            url: /accessrecord_structured_development_fhir_examples_allergies.html
-            output: web
-          - title: Medication
-            url: /accessrecord_structured_development_fhir_examples_medication.html
-            output: web
-          - title: Pathology
-            url: /accessrecord_structured_development_fhir_examples_pathology.html
-            output: web
-          
-        - title: Record retrieval
-          output: web
-          subfolderitems:
-
-          - title: Retrieve a patient's structured record
-            url: /accessrecord_structured_development_retrieve_patient_record.html
-            output: web
+    - title: Retrieve a patient's structured record
+      url: /accessrecord_structured_development_retrieve_patient_record.html
+      output: web
