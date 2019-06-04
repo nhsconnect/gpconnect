@@ -32,12 +32,8 @@ A Consultation is the structure within which source systems group one or more cl
 
 ## Approach ##
 
-{: .center-image }
-![Consultation FHIR Resource Model ](images/access_structured/Consultatiion_FHIR_Resource_Model.png)
-
-{: .center-image }
-![Consultation Structure ](images/access_structured/Consultation_Stucture.png)
-
+[Reference out to diagram Consultation FHIR Resource Model ]
+[Reference out to diagram Consultation Structure]
 * The Encounter resource and related resources like Location are adopted to provide the consultation context (Date/Doctor/Place)
 * The Composition resource is adopted to provide consultation structure. The top level Composition.section is utilised to represent the topic/problem level of the source consultation. Within each Composition.section child sections are used to represent headers (SOAP headings) and references to resources within each heading section reference resources representing each record entry within a section.
 * Some systems allow the recording of Consultation content outside of the Topic/Problem and Heading hierarchy i.e. a flat structure of record entries organised with the same 'Date/Dr/Place' context. These structures are handled by the creation of an untitled Composition.section to contain the record entries and entries are referenced directly from that section with no additional Heading subsections.
@@ -67,28 +63,7 @@ The underlying abstract information model is provided below.
 
 * Systems which allow direct recording of data outside of Consultation contexts should not fabricate Consultations to return such data when Consultation queries are received as to do so would be generating information and structure which does not exist on the source system and which would obscure the genuine Consultation content that does exist. Systems in this category have clear distinctions between Consultations and other types of record content e.g. last X Consultations displayed in patient summaries and to synthesise consultations would distort this native behaviour.
 
-## Category Mapping ##
+1. All mandatory fields **MUST** be populated.
 
-|EmisWeb|SystmOne|Vision|
-|----|-----|-----|
-|Problem|
-|History|History|
-|Examination|Examination|Examination|
-|Family History|
-|Social|
-|Comment|
-|Medication|
-|Follow up|
-|Procedure|
-|Test Request|
-|Referral|
-|Document|
-|Allergy|
-||Diagnosis|Diagnosis|
-||Intervention|Intervention|
-||Plan|
-|||Symptom|
-|||Management|
-|||Administration|
-
+2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
 
