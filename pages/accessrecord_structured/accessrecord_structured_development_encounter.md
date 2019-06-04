@@ -1,10 +1,10 @@
 ---
-title: Consultation
+title: Encounter
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_encounter.html
-summary: "Guidance for the representation and consumption of Consultations"
+summary: "Guidance for populating the Encounter resource for consultations"
 ---
 
 ## Encounter elements ##
@@ -113,12 +113,26 @@ TO DO: interesting because SystemOne supports this linkage for inbound referrals
 
 ### participant ###
 
-Yes - need to look at whether there are appropriate codes vocabularies to define author, primary performer erc ....
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..*</td>
+  </tr>
+</table>
+
+SMust always be populated with at least one **.indidividual** Reference(Practitioner) with **.type** value of **'PPRF'**  from the http://hl7.org/fhir/STU3/valueset-encounter-participant-type.html#4.3.1.245 vocabulary. This should reference a Practitioner resource with primary attribution for the consultation/encounter (usually the single attribute user shown in system journals or other views).
+
+Other participants e.g. Registrars, trainees may be referenced but with a participation type of **'PART'**.
+
+No other values of participation type should be used.
+
+The authorship of the consultation/encounter i.e. the actual user who entered the information on the system should be expressed via **Composition.author**.
+
 
 ### appointment ###
 
 Do we want it ????? Would seem a shame not to hasve it?
-
 
 ### period ###
 
