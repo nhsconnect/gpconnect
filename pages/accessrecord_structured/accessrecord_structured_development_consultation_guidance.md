@@ -56,9 +56,6 @@ Producer systems which allow empty consultations should not return empty Consult
 ## Consumer Guidance ##
 * Although the expression of full Consultation structure is provided by the specified protocols, it is recognised that many consumers simply want access to the resource referenced by the consultations rather than the Topic or SOAP heading structures. Consumers in the category may simply flatten the consultation structure or otherwise extract the resources referenced within the Composition carrying the consultation structure.
 
-## Information Model ##
-The underlying abstract information model is provided below.
-
 ## Consumer Cautions ##
 
 * A consumer making Consultation oriented queries only **must not** expect to obtain all items in the patient record
@@ -67,8 +64,3 @@ The underlying abstract information model is provided below.
 ## Design Decisions ##
 
 * Systems which allow direct recording of data outside of Consultation contexts should not fabricate Consultations to return such data when Consultation queries are received as to do so would be generating information and structure which does not exist on the source system and which would obscure the genuine Consultation content that does exist. Systems in this category have clear distinctions between Consultations and other types of record content e.g. last X Consultations displayed in patient summaries and to synthesise consultations would distort this native behaviour.
-
-1. All mandatory fields **MUST** be populated.
-
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
-
