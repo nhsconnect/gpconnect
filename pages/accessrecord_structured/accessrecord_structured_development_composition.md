@@ -342,15 +342,3 @@ Where a system allows 'empty' sub-heading sections to be recorded these should b
 ### Composition.section.section.section ###
 
 Not used in GP Connect. There is no further section structure under the SOAP heading structure.
-
-## TO DO ##
-* Empty SOAP sections etc ...
-* Encounter guidance, multiple attribution, primary etc ...
-* Ordering - system order
-* Coding
-* Vision - SDA titles as prefix - does it matter
-* Query MT Evolution encounters as exception to Evo does not have consultations ?
-* MedicationRequest or statement and convention around appearance of MedicationStatement in Bundle
-* Technical feasibility of generating references to pre and post when items are queried individually - how does that fit with supplier dataabases which would really need to be FHIR ready for text as well as codes to support this easily.
-* Encounter retrieval should also retrieve corresponding Compositions in bundle even though there is no direct linkage from Encounter to Composition
-* Allowed set of entries and retrieval - what is brought back and co-retrieval e.g. MedicationStatement in bundle even though enries link to MedicationRequest. Similarly address Problem linkage.
