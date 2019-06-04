@@ -59,9 +59,7 @@ This is sliced to include a cross care setting identifier which MUST be populate
   </tr>
 </table>
 
-Fixed values of **preliminary** or **final**
-
-The **preliminary** value may be used where the sourc system has the concept of draft or provisional consultations, otherwise the status will be **final**.
+Fixed values of **final**
 
 ### type ###
 
@@ -171,11 +169,11 @@ Not used in GP Connect
 
 Represents the top level topic/problem structure of a consultation or in the case of flat 'unstructured' consultations is used to group the resources representing record entries within the source consultation.
 
-### extension.valueId or valueReference - reference may be better ###
+### extension.valueReference ###
 
 TO DO add extension to allow resolution of problem link to composition section - will be back reference to problem id ... nb this is in the 1st instance intended to be used to resolve the problem reference e.g. problem references composition and consumer must then look for the section with the id that corresponds to the problem to make the linkage c
 
-But also is this libnk needed - if standardisation means expanding linkages to child resources?
+But also is this link needed - if standardisation means expanding linkages to child resources?
 
 ### Composition.section.title ###
 
@@ -187,7 +185,7 @@ But also is this libnk needed - if standardisation means expanding linkages to c
   </tr>
 </table>
 
-Where a consultation section is titled in the source system, carries the title of the consultation as displayed to users. This may be a user entered value or where consultation sections are driven by problems obstained from the term/rubric of the problem linked to the consultation section.
+Where a consultation section is titled in the source system, carries the title of the consultation as displayed to users. This may be a user entered value or where consultation sections are driven by problems obtained from the term/rubric of the problem linked to the consultation section.
 
 Will not be present where a consultation section is untitled on the source system or where the Consultation.section is conveying unstructured (flat) consultation structure.
 
@@ -245,7 +243,7 @@ By convention the order enries should appear is the default order subsections or
 
 A top level section will have entries if it is used to express unstructured (flat) consultation content. Otherwise no entry references will be present.
 
-TBD .... handling of TPP problem to ... section to linkages possible etxension of section for id
+TBD .... handling of TPP problem to ... section to linkages possible extension of section for id
 
 ### Composition.section.emptyReason ###
 
@@ -333,7 +331,7 @@ By convention the order used is the default order subsections or entries are dis
   </tr>
 </table>
 
-Eaxch entry is a reference to the Resoirce representing the source record entry within the heading section.
+Each entry is a reference to the Resoirce representing the source record entry within the heading section.
 
 ### Composition.section.emptyReason ###
 
@@ -356,5 +354,3 @@ Not used in GP Connect. There is no further section structure under the SOAP hea
 * Technical feasibility of generating references to pre and post when items are queried individually - how does that fit with supplier dataabases which would really need to be FHIR ready for text as well as codes to support this easily.
 * Encounter retrieval should also retrieve corresponding Compositions in bundle even though there is no direct linkage from Encounter to Composition
 * Allowed set of entries and retrieval - what is brought back and co-retrieval e.g. MedicationStatement in bundle even though enries link to MedicationRequest. Similarly address Problem linkage.
-
-
