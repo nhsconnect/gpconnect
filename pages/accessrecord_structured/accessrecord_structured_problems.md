@@ -27,7 +27,7 @@ The headings below list the elements of the Immunization resource and describe h
   </tr>
 </table>
 
-The logical identifier of the Medication resource.
+The logical identifier of the ProblemHeader resource.
 
 ### meta.profile ###
 
