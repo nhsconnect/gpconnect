@@ -60,7 +60,7 @@ Any type of clinical item may form part of the consultation (medications, allerg
 
 A topic can be created without headings. In these cases, the clinical items are recorded directly under the topic the same way they are recording under a heading.
 
-![Consultation Example ](images/access_structured/Consultation_Example.png | width=100)
+![Consultation Example ](images/access_structured/Consultation_Example.png | width=200)
 
 ## Approach ##
 
