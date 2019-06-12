@@ -36,32 +36,32 @@ Consultations follow a common logical structure.
 
 * Context
 
-Each consultation has a set of context information that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor).
+  Each consultation has a set of context information that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor).
 
 * Topics
 
-A consultation will be split into one of more topics. Each topic describes an area of discussion (or activity) that took place in the consultation.
+  A consultation will be split into one of more topics. Each topic describes an area of discussion (or activity) that took place in the consultation.
 
-A topic may (but not always) be related to a specific problem in the patient’s record. In these cases, all the discussions and activities recorded under that topic are in regards to that problem.
+  A topic may (but not always) be related to a specific problem in the patient’s record. In these cases, all the discussions and activities recorded under that topic are in regards to that problem.
 
 * Headings
 
-A topic may be split into one of more headings (sometimes referred to as SOAP headings). Each heading covers a specific part of the consultation process about that topic.
+  A topic may be split into one of more headings (sometimes referred to as SOAP headings). Each heading covers a specific part of the consultation process about that topic.
 
-There is no national standard for headings so they will reflect the headings available in the provider clinical system.
+  There is no national standard for headings so they will reflect the headings available in the provider clinical system.
 
 * Clinical Items
 
-Within each heading there may be one or more clinical items. Grouped together these clinical items describe in full the details of the consultation recorded under the heading.
+  Within each heading there may be one or more clinical items. Grouped together these clinical items describe in full the details of the consultation recorded under the heading.
 
-Any type of clinical item may form part of the consultation (medications, allergies, immunisations, uncategorised data, etc). 
+  Any type of clinical item may form part of the consultation (medications, allergies, immunisations, uncategorised data, etc). 
 
 * Topics without Headings
 
-A topic can be created without headings. In these cases, the clinical items are recorded directly under the topic the same way they are recording under a heading.
+  A topic can be created without headings. In these cases, the clinical items are recorded directly under the topic the same way they are recording under a heading.
 
 
-![Consultation Example ](images/access_structured/Consultation_Example.png)  <!-- .element height="50%" width="50%" -->
+![Consultation Example ](images/access_structured/Consultation_Example.png)
 
 ## Approach ##
 
