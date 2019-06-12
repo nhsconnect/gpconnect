@@ -60,6 +60,7 @@ Consultations follow a common logical structure.
 
   A topic can be created without headings. In these cases, the clinical items are recorded directly under the topic the same way they are recording under a heading.
 
+## Example ##
 
 ![Consultation Example ](images/access_structured/Consultation_Example.png)
 
