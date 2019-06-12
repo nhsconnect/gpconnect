@@ -62,7 +62,7 @@ Consultations follow a common logical structure.
 
 ## Example ##
 
-![Consultation Example ](images/access_structured/Consultation_Example.jpg)
+![Consultation Example ](images/access_structured/Consultation_Example_v2.png)
 
 ## Approach ##
 
