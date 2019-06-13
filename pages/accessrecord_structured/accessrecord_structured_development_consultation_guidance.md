@@ -52,7 +52,7 @@ Consultations follow a common logical structure.
 
 * Clinical Items
 
-  Within each heading there may be one or more clinical items. Grouped together these clinical items describe in full the details of the consultation recorded under the heading.
+  Within each heading there may be one or more clinical items. Grouped together and in order these clinical items describe in full all the details recorded under that heading of the consultation.
 
   Any type of clinical item may form part of the consultation (medications, allergies, immunisations, uncategorised data, etc). 
 
