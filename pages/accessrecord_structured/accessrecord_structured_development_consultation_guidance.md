@@ -62,7 +62,7 @@ Consultations follow a common logical structure.
 
 ## Example ##
 
-![Consultation Example ](images/access_structured/Consultation_Example_v2.png)
+<img src="images/access_structured/Consultation_Example_v2.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
 
 ## Approach ##
 
