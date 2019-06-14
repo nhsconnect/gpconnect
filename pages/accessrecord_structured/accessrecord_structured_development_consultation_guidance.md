@@ -106,6 +106,13 @@ While there are difference between the two outputs, the consultation notes can b
 
 <img src="images/access_structured/Consultation_text_3.png" alt="Reconstituted Consultation Text" style="max-width:100%;max-height:100%;">
 
+## Consultations containing unsupported clinical areas ##
+Depending on the GP Connect version supported by the provider system it can be possible for the consultation to link to a clinical area that the provider system is not yet able to export with GP Connect. For example, if the consultation contains a link to a referral record but the provider system does not yet support exporting referrals.
+
+Where a provider system is not able to export a linked clinical area it will create a section.section.entry (or section.entry) entry with the:
+*	Reference.Identifier set to null; and
+*	Reference.Display set to “Clinical item not supported by the provider system.”
+
 ## Suppression of Empty Consultations ##
 On some systems all or almost all record entry is captured in the context of a Consultation, this coupled with default behaviours such as starting a consultation on opening a p[atient record, leads to the phenomenon of 'empty consultations' where the Data/Dr/Place/Type has been created as a default but there is no subsequent entry of any clinical information within the consultation.
 
