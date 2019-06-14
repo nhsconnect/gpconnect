@@ -90,7 +90,7 @@ There are two primary ways that consultation notes are recorded on native GP sys
 * Consultation notes for a heading are recorded as a collection of clinical codes followed by text that when read together and in order produce the consultation notes.
   Note – this may be entering free text format dynamically identifying codes or through forms where there are specific fields for codes and free text.
 
-<img src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text" style="max-width:60%;max-height:60%;" class="center">
+<img src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text" style="max-width:30%;max-height:30%;" align="middle">
 
 When reflecting these in FHIR it is important they these two methods are represented in a way that retains the structural information they contain, does not create any unintended clinical meaning and can be viewed / imported. This is done by taking any free text in model one and representing it as unstructured data and positioning it as the first clinical item under the heading. 
 
