@@ -94,11 +94,13 @@ There are two primary ways that consultation notes are recorded on native GP sys
 <img src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text" style="max-width:40%;max-height:40%;">
 </center>
 
+&nbsp;
 
 When reflecting these in FHIR it is important they these two methods are represented in a way that retains the structural information they contain, does not create any unintended clinical meaning and can be viewed / imported. This is done by taking any free text in model one and representing it as unstructured data and positioning it as the first clinical item under the heading. 
 
 <img src="images/access_structured/Consultation_text_2.png" alt="Consultation text in FHIR" style="max-width:100%;max-height:100%;">
 
+&nbsp;
 
 While there are difference between the two outputs, the consultation notes can be derived from both by reading through each clinical item in order and merging the Term Text, Clinical Code, Values and Comment into a single narrative.
 
