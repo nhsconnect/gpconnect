@@ -62,7 +62,7 @@ Consultations follow a common logical structure.
 
 ## Example ##
 
-<img src="images/access_structured/Consultation_Example_v3.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
+<img src="images/access_structured/Consultation_Example_v4.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
 
 ## Approach ##
 
@@ -76,6 +76,29 @@ Consultations follow a common logical structure.
 * The Encounter resource and related resources like Location are adopted to provide the consultation context (Date/Doctor/Place)
 * The Composition resource is adopted to provide consultation structure. The top level Composition.section is utilised to represent the topic/problem level of the source consultation. Within each Composition.section child sections are used to represent headers (SOAP headings) and references to resources within each heading section reference resources representing each record entry within a section.
 * Some systems allow the recording of Consultation content outside of the Topic/Problem and Heading hierarchy i.e. a flat structure of record entries organised with the same 'Date/Dr/Place' context. These structures are handled by the creation of an untitled Composition.section to contain the record entries and entries are referenced directly from that section with no additional Heading subsections.
+
+## Consultation Notes ##
+
+Consultation notes are the human readable version of the clinical information recorded under each heading. They may or may not be accompanied by a clinically coded version of the information.
+
+There are two primary ways that consultation notes are recorded on native GP systems:
+
+  1.	Consultation notes for a heading are recorded as a single piece of free text. Any clinical coded information under the same heading is associated to that text as a whole.
+
+<img src="images/access_structured/Consultation_text_1a.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
+
+  2.	Consultation notes for a heading are recorded as a collection of clinical codes followed by text that when read together and in order produce the consultation notes.
+Note – this may be entering free text format dynamically identifying codes or through forms where there are specific fields for codes and free text.
+
+<img src="images/access_structured/Consultation_text_1b.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
+
+When reflecting these in FHIR it is important they these two methods are represented in a way that retains the structural information they contain, does not create any unintended clinical meaning and can be viewed / imported. This is done by taking any free text in model one and representing it as unstructured data and positioning it as the first clinical item under the heading. 
+
+<img src="images/access_structured/Consultation_text_2.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
+
+While there are difference between the two outputs, the consultation notes can be derived from both by reading through each clinical item in order and merging the Term Text, Clinical Code, Values and Comment into a single narrative.
+
+<img src="images/access_structured/Consultation_text_3.png" alt="Sequence diagram for retrieving a patient record" style="max-width:100%;max-height:100%;">
 
 ## Suppression of Empty Consultations ##
 On some systems all or almost all record entry is captured in the context of a Consultation, this coupled with default behaviours such as starting a consultation on opening a p[atient record, leads to the phenomenon of 'empty consultations' where the Data/Dr/Place/Type has been created as a default but there is no subsequent entry of any clinical information within the consultation.
