@@ -73,6 +73,24 @@ The level of detail varies from use case to use case.
 
 - [3.23 Midwife views patient record before visiting patient](accessrecord_usecase_3.23.html)
 
+- [3.24 Practice nurse administering a vaccination](accessrecord_usecase_3.24.html)
+- [3.25 Parental consent differs for immunisation](accessrecord_usecase_3.25.html)
+- [3.26 Mental health new referral daily triage](accessrecord_usecase_3.26.html)
+- [3.27 Review a patient's GP Practice information - list of Diagnoses](accessrecord_usecase_3.27.html)
+- [3.28 Review a patient's GP Practice information - relating to Events](accessrecord_usecase_3.28.html)
+- [3.29 Review a patient's GP Practice information - current and past examination and investigation results](accessrecord_usecase_3.29.html)
+- [3.30 Palliative care](accessrecord_usecase_3.30.html)
+- [3.31 Community cardiac nurse](accessrecord_usecase_3.31.html)
+- [3.32 OOH assessment of potential measles case](accessrecord_usecase_3.32.html)
+- [3.33 A professional user of the Local Care Record needs to review a patient's GP Practice information - current and past problems](accessrecord_usecase_3.33.html)
+- [3.34 Review a patient's GP Practice information - clinical summary of the Patient](accessrecord_usecase_3.34.html)
+- [3.35 Review a patient's GP Practice information - current and past procedures](accessrecord_usecase_3.35.html)
+- [3.36 Referral to social prescribing](accessrecord_usecase_3.36.html)
+- [3.37 Community pharmacist providing diabetes services](accessrecord_usecase_3.37.html)
+- [3.38 Community pharmacist providing spirometry services](accessrecord_usecase_3.38.html)
+- [3.39 111/999 call handler](accessrecord_usecase_3.39.html)
+- [3.40 Paramedic](accessrecord_usecase_3.40.html)
+
 ## Clinical engagement ##
 
 To help ensure that the functionality being developed will be able to support a wide range of clinical uses, GP Connect has engaged with a range of clinicians and other stakeholders to get an understanding of how that data may be used and what is required to support its use.
