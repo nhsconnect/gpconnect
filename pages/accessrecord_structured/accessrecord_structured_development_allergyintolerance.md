@@ -113,7 +113,7 @@ Reference to confirmatory diagnostic report - for example, pathology RAST test r
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatroy</td>
+    <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
