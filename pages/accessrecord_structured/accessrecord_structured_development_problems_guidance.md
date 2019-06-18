@@ -22,13 +22,17 @@ Examples of possible problems:
 *	Upper respiratory tract infection		
 *	Lives alone		
 
-Problems are linked to any consultation where the problem has been discussed or information about the problem has been recorded. 
+As well as highlighting an item of particular relevant to the patient’s care, the problem records also links that item to all the other information in the patient record that describes what has happened in regards to that item.
 
-Problems can be linked to other clinical items in the patient record that a clinician has identified as relevant to the problem (for example test results, medication).
 
-Problems can be linked to other problems in the patient record that a clinician has identified as relevant to the problem.
+For example, the problems record highlights that the patient has hypertension. It also shows how the hypertension was identified, what discussion have taken place with the patient about their hypertension and what treatments and medication the patient is on the help manage their hypertension.
 
-In effect the Problem record both highlights to a viewing clinician the clinical items in a patient’s record that are of most clinical relevance and gives a full clinical history of those items.
+
+To support this, problems are linked to:
+
+* every consultation where the problem has been discussed or information about the problem has been recorded. 
+* every clinical item in the patient record that a clinician has identified as relevant to the problem (for example test results, medication).
+* every other problem in the patient record that a clinician has identified as relevant to the problem.
 
 ## Problem relationships
 Problem records are linked to consultations, clinical items and other problems. Different provider systems manage links to problems in different ways. To reduce the impact of this to consumers, the provider system will transform their problem linkages into a common model for export.
