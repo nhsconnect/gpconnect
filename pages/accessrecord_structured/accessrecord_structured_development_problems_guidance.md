@@ -49,6 +49,16 @@ Each Problem record is linked to:
 
 <img src="images/access_structured/Problem_Linkages.png" alt="Problem Linkages" style="max-width:100%;max-height:100%;">
 
+## Problems linking to unsupported clinical items
+
+Depending on the GP Connect version supported by the provider system it can be possible for the problem to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the problem contains a link to a referral record but the provider system does not yet support exporting referrals.
+
+
+Where a provider system is not able to export a linked clinical item it will create a actualproblem or relatedclinicalcontent entry with the:
+
+* Reference.Identifier set to null; and
+* Reference.Display set to “Clinical item not supported by the provider system.”
+
 ## Problem Guidance
 
 ### Problem structure and relationships in GP systems
