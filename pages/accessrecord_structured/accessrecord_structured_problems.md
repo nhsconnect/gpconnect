@@ -92,19 +92,6 @@ For each relatedProblemHeader.target the provider MUST supply a value of <code>P
 </table>
 A complex extension that contains a reference to a related problem header resource.
 
-### extension[problemSignificance] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b><code> codableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-The significance of the problem contained in the resource.
-All problems **MUST** have a problemSignificance of <code>major</code> or <code>minor</code>. Where a provider system recordes more than two levels of significant any level of significance above minor is mapped to major.
-
 ### extension[relatedClinicalContent] ###
 
 <table class='resource-attributes'>
@@ -166,6 +153,19 @@ All problems **MUST** have a clinicalStatus of <code>active</code> or <code>inac
 </table>
  
 Fixed value of <code>problem-list-item</code>.
+
+### severity ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b><code> codableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The significance of the problem contained in the resource.
+All problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system recordes more than two levels of severity any level of severity above minor is mapped to major.
 
 ### code ###
 
@@ -280,14 +280,6 @@ The following elements **MUST NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Boolean</code></td>
-  </tr>
-</table>
-
-### severity ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
 
