@@ -53,7 +53,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condit
   </tr>
 </table>
 
-A reference to the resource containing the clinical item that has been escalated to a problem.
+A reference to the resource containing the clinical item that has been escalated to create the problem.
+
+References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised.
 
 ### extension[relatedProblemHeader] ###
 
@@ -76,7 +78,8 @@ A complex extension that details the relationship of this problem header resourc
   </tr>
 </table>
 A complex extension that details the type of relationship this problem header resources to another problem header resources.
-For each relatedProblemHeader.target the provider MUST supply a value of Parent, Child or Sibling.
+
+For each relatedProblemHeader.target the provider MUST supply a value of <code>Parent</code>, <code>Child</code>or <code>Sibling</code>.
 
 ### extension[relatedProblemHeader.target] ###
 
@@ -113,6 +116,12 @@ All problems **MUST** have a problemSignificance of <code>major</code> or <code>
 </table>
 
 References to other resources that a user in the sending clinical system has chosen to link to this problem header resource.
+
+When populating this field the provider system must include every item in the patient record that provides information about the problem and includes:
+* Clinical items that are directly linked to the problem in the provider system; and
+* Clinical items that are within a consultation topic that is linked to the problem
+
+References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised.
 
 ### identifier ###
 
@@ -170,6 +179,8 @@ Fixed value of <code>problem-list-item</code>.
 
 The clinical code or text that represents the problem header.
 
+The will be the same values that are held in the FHIR resource referenced by extension[actualProblem].
+
 ### subject ###
 
 <table class='resource-attributes'>
@@ -192,7 +203,11 @@ A reference to the Patient who has, or had, the allergy or intolerance specified
   </tr>
 </table>
 
-The  `Encounter`  within which the problem header was created.
+References to encounters that a user in the sending clinical system has chosen to link to this problem header resource.
+
+When populating this field the provider system must include every consultation where the problem was discussed or information about the problem was recorded. This includes:
+* Consultations that are directly linked to the problem in the provider system; and
+* Consultations that created/updated a clinical item that has been linked to the problem
 
 ### onset ###
 
