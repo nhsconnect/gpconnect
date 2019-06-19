@@ -53,7 +53,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condit
   </tr>
 </table>
 
-A reference to the resource containing the clinical item that is the cause of the problem.
+A reference to the resource containing the clinical item that has been escalated to a problem.
 
 ### extension[relatedProblemHeader] ###
 
@@ -75,7 +75,8 @@ A complex extension that details the relationship of this problem header resourc
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
-A complex extension that details the type of relationship this problem header resources to another or a number of other problem header resources.
+A complex extension that details the type of relationship this problem header resources to another problem header resources.
+For each relatedProblemHeader.target the provider MUST supply a value of Parent, Child or Sibling.
 
 ### extension[relatedProblemHeader.target] ###
 
@@ -99,6 +100,7 @@ A complex extension that contains a reference to a related problem header resour
 </table>
 
 The significance of the problem contained in the resource.
+All problems **MUST** have a problemSignificance of <code>major</code> or <code>minor</code>. Where a provider system recordes more than two levels of significant any level of significance above minor is mapped to major.
 
 ### extension[relatedClinicalContent] ###
 
