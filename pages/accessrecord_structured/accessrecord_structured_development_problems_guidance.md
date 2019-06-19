@@ -49,6 +49,18 @@ Each Problem record is linked to:
 
 <img src="images/access_structured/Problem_Linkages.png" alt="Problem Linkages" style="max-width:100%;max-height:100%;">
 
+## Clinical Item References
+
+When a clinical item is linked to the Problem a reference to its FHIR resource is held in either extension[actualProblem] or extension[relatedClinicalContent].
+
+
+When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below. 
+* For a Medication or Medical Device prescription plan - reference the MedicationRequest (intent = plan) resource
+* For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) resource
+* For an Allergy – reference the Immunization resource 
+* For Uncategorised Data – reference the Observation – Uncategorised resource
+
+
 ## Problems linking to unsupported clinical items
 
 Depending on the GP Connect version supported by the provider system it can be possible for the problem to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the problem contains a link to a referral record but the provider system does not yet support exporting referrals.
