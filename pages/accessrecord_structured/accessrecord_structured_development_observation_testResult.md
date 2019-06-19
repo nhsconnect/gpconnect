@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_testResult.html
 summary: "Guidance for populating and consuming the observation to represent test result data in GP Connect"
+published: false
 ---
 
 
@@ -14,7 +15,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
 ## Test result - observation resource elements ##
 
@@ -74,7 +75,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-The status of the test result. 
+The status of the test result.
 
 In GP systems these are most likely to be 'final' however 'preliminary' reports are possible as for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header then it should default to the 'unknown' value.
 
@@ -87,7 +88,7 @@ In GP systems these are most likely to be 'final' however 'preliminary' reports 
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
- 
+
 The general type of test result. A default value of <code>Laboratory</code> should be used if a more specific value is not available e.g. pathology, microbiology etc.
 
 ### code ###
@@ -299,4 +300,3 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-

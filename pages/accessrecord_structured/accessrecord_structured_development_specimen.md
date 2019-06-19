@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_specimen.html
 summary: "Guidance for populating and consuming specimen resource data in GP Connect"
+published: false
 ---
 ## Introduction ##
 
@@ -12,7 +13,7 @@ The headings below list the elements of the Specimen resource and describe how t
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_specimen.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [specimen profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [specimen profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1)." %}
 
 ## Specimen resource elements ##
 
@@ -97,7 +98,7 @@ The availability of the specimen.
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
- 
+
 The kind of material that forms the specimen.
 
 Examples from substance in SNOMED:

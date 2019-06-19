@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_pathology_guidance.html
 summary: "Guidance on the representation of pathology messaging in GP Connect"
+published: false
 ---
 
 ## Pathology scope in GP Connect
@@ -13,7 +14,7 @@ For this version of the specification the scope of pathology is considered to be
 
 As such there are a number of items that are **NOT** currently in scope. These are as follows,
 
-* pathology results that have been entered in a GP system using a code as an individual item. These may have a value and other qualifiers associated with them. 
+* pathology results that have been entered in a GP system using a code as an individual item. These may have a value and other qualifiers associated with them.
 * test results that are received as documents or images
 * making available any test requests
 * providing the original test report document as it was provided the practice
@@ -30,7 +31,7 @@ When describing pathology reports different regions and professions sometimes us
 
 ## Pathology reporting in GP practices
 
-Currently GP practices receive the majority of the results of investigations which they have requested in the form of the EDIFACT message. These are received into a workflow by the GP system and remain there until they are filed into the patient record by a user. 
+Currently GP practices receive the majority of the results of investigations which they have requested in the form of the EDIFACT message. These are received into a workflow by the GP system and remain there until they are filed into the patient record by a user.
 
 ### EDIFACT
 
@@ -47,13 +48,13 @@ GP systems are required to maintain the text formatting in order to preserve the
 
 When results are filed by the user it is possible to file the entire report or a 'test group'.
 
-Results may not always be filed on the day they were received. However, in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such this date is an important date when moving records between GP systems. 
+Results may not always be filed on the day they were received. However, in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such this date is an important date when moving records between GP systems.
 
 At the point at which the record is filed there is opportunity for the user to provide comments against the report or part of the report that they are filing.
 
 ## Report structure
 
-The following entity diagram describes the logical model for pathology in GP Connect, 
+The following entity diagram describes the logical model for pathology in GP Connect,
 
 {: .center-image }
 ![Pathology logical model](images/access_structured/Pathology_Logical_Model.png)
@@ -71,9 +72,9 @@ In the image we have made the key entities more prominent. Entities representing
 |Test Report Document	|The test report in the format it was received by the GP Practice|
 |Test Result Document	|Documents that form part of the test results (for example - images and charts)|
 
-The 'Test Report Document' and 'Test Result Document' are out of scope for the current iteration but are represented in the diagram. 
+The 'Test Report Document' and 'Test Result Document' are out of scope for the current iteration but are represented in the diagram.
 
-We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFact message and also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the many different patterns and types of result that can be sent so it can be easily adapted to support other test results stored in the GP system. 
+We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFact message and also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the many different patterns and types of result that can be sent so it can be easily adapted to support other test results stored in the GP system.
 
 ### Available FHIR resources
 
@@ -88,18 +89,15 @@ There are a number of resources available in FHIR to represent the different ent
 
 There are other resources that may be relevant in the future, such as imagingStudy, imagingManifest and sequence, but currently we are only utilising the resources listed in the table.
 
-### Using the FHIR profiles to represent the logical model 
+### Using the FHIR profiles to represent the logical model
 
 We have mapped these resources on to the logical model in the diagram below,
 
 {: .center-image }
 ![Pathology logical model with FHIR resource names](images/access_structured/Pathology_Logical_Model_with_FHIR_resource_names.png)
 
-DiagnosticReport is at the centre of the model and all the other entities are linked to from there. 
+DiagnosticReport is at the centre of the model and all the other entities are linked to from there.
 
 The Observation resource is used for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings there will be only one FHIR profile that can then be populated appropriately for each individual use.
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.
-
-
-

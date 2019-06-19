@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_filingComments.html
 summary: "Guidance for populating and consuming patholgy data in GP Connect"
+published: false
 ---
 
 
@@ -14,7 +15,7 @@ The headings below list the elements of the Observation resource and describe ho
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
 ## Filing Comments - observation resource elements ##
 
@@ -74,7 +75,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-For filing comments this is a set value of 'unknown'. 
+For filing comments this is a set value of 'unknown'.
 
 ## code ###
 
@@ -196,7 +197,7 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> <code>CodableConcept</code></td>
   </tr>
 </table>
- 
+
 ### context ###
 
 <table class='resource-attributes'>
@@ -269,4 +270,3 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-

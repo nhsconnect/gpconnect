@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_DiagnosticReport.html
 summary: "Guidance for populating and consuming patholgy data in GP Connect"
+published: false
 ---
 
 
@@ -14,7 +15,7 @@ The headings below list the elements of the DiagnosticReport resource and descri
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_dagnosticReport.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [DiagnosticReport profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [DiagnosticReport profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)." %}
 
 ## DiagnosticReport resource elements ##
 
@@ -100,7 +101,7 @@ The status of the DiagnosticReport. In GP systems these are most likely to be 'f
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
- 
+
 The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available e.g. pathology, microbiology etc.
 
 ### code ###
@@ -262,5 +263,3 @@ Out of scope for the current iteration.
 </table>
 
 Out of scope for the current iteration.
-
-

@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_ProcedureRequest.html
 summary: "Guidance on the representation of pathology reporting in GP Connect"
+published: false
 ---
 ## Introduction ##
 
@@ -12,7 +13,7 @@ The headings below list the elements of the ProcedureRequest resource and descri
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
 ## ProcedureRequest resource elements ##
 
@@ -73,9 +74,9 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-The status of the ProcedureRequest. Set value of `active`. 
+The status of the ProcedureRequest. Set value of `active`.
 
-This is mandatory in the base FHIR resource. However as this resource in our model is not being used as a request but to hold data that would have been in a request submitted in a different format we have chosen to use the default value stated. 
+This is mandatory in the base FHIR resource. However as this resource in our model is not being used as a request but to hold data that would have been in a request submitted in a different format we have chosen to use the default value stated.
 
 ### intent ###
 
@@ -87,9 +88,9 @@ This is mandatory in the base FHIR resource. However as this resource in our mod
   </tr>
 </table>
 
-The status of the ProcedureRequest. Set value of `order`. 
+The status of the ProcedureRequest. Set value of `order`.
 
-This is mandatory in the base FHIR resource. 
+This is mandatory in the base FHIR resource.
 
 ### code ###
 
@@ -137,7 +138,7 @@ Reference to the resource for the practitioner or organization that is requested
   </tr>
 </table>
 
-Reference to the resource for the practitioner or organization that created the ProcedureRequest. 
+Reference to the resource for the practitioner or organization that created the ProcedureRequest.
 
 ### reasonCode ###
 
@@ -316,4 +317,3 @@ Out of scope for the current itera
     <td><b>Data type:</b> <code>Reference</code></td>
   </tr>
 </table>
-
