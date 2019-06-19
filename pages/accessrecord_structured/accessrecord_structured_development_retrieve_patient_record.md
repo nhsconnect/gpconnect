@@ -141,33 +141,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
     </tr>
-    <tr>
-      <td><code class="highlighter-rouge">includeTestResults</code></td>
-      <td><code class="highlighter-rouge"></code></td>
-      <td>Optional</td>
-      <td>0..1</td>
-      <td>Include test results in the response.</td>
-    </tr>
-    <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterTestResults</code></span></td>
-      <td><code class="highlighter-rouge">Coding</code></td>
-      <td>Optional</td>
-      <td>0..*</td>
-      <td>
-        Filter the test results to match the specified code(s)
-        <p><i>Part parameter: may only be provided if <code>includeTestResults</code> is set.</i></p>        
-      </td>
-    </tr>
-    <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">testResultSearchPeriod</code></span></td>
-      <td><code class="highlighter-rouge">Period</code></td>
-      <td>Optional</td>
-      <td>0..1</td>
-      <td>
-        Filter the test results to match the specified code(s)
-        <p><i>Part parameter: may only be provided if <code>includeTestResults</code> is set.</i></p>        
-      </td>
-    </tr>
   </tbody>
 </table>
 
@@ -208,26 +181,6 @@ The example below shows a fully populated `Parameters` resource as a request to 
         }
       ]
     }
-    {
-      "name": "includeTestResults",
-      "part": [
-        {
-          "name": "filterTestResults",
-          "valueCoding": {
-            "system": "http://snomed.info/sct",
-            "code": "",
-            "display": ""
-          }
-        },
-        {
-          "name": "testResultSearchPeriod",
-          "valuePeriod": {
-            "start": "2017-01-02",
-            "end": "2017-07-02"
-          }
-        }
-      ]
-    }
   ]
 }
 ```
@@ -251,8 +204,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `medicationSearchFromDate` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-|The `filterTestResults` parameter is passed with a code from a code system other than SNOMED CT | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-|The `testResultSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -285,7 +236,7 @@ Provider systems **MUST**:
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - resources holding allergies, intolerance, medication and test result information according to the rules below:
+  - resources holding allergies, intolerance and medication information according to the rules below:
 
 Provider systems **SHOULD**:
 
@@ -408,29 +359,6 @@ The scenarios below represent how a selection of acute and repeat medications ar
 </div>
 </div>
 
-##### Test results #####
-
-Provider systems **MUST** include the following in the response `Bundle`:
-
-- when the `includeTestResults` parameter is not set:
-
-  - no test result information shall be returned
-
-- when the `includeTestResults` parameter is set:
-
-  - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) and &nbsp; [`Specimen`](accessrecord_structured_development_specimen.html) resources representing the patient's test results
-
-  - when the `filterTestResults` parameter is set:
-    - all test results matching the supplied SNOMED CT code(s) **MUST** be returned
-
-  - and when the `testResultSearchPeriod` parameter is set:
-    - when a `start` value is set, all test results after the date **MUST** be returned
-    - and when an `end` value is set, all test results before the date **MUST** be returned
-    - and when both a `start` and `end` are specified, test results after the `start` and before the `end` **MUST** be returned
-
-
-- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the resources above
-
 <br/>
 
 #### Bundle population illustrated ####
@@ -445,4 +373,3 @@ Examples of the payload requests and responses can be found here:
 
 - [Allergies - FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
 - [Medication - FHIR examples](accessrecord_structured_development_fhir_examples_medication.html)
-- [Pathology - FHIR examples](accessrecord_structured_development_fhir_examples_pathology.html)

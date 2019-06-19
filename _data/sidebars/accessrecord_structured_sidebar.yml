@@ -26,13 +26,13 @@ entries:
   - title: Clinical areas
     output: web, pdf
     folderitems:
-    
+
     - title: Introduction
       url: /accessrecord_structured_development.html
       output: web
-    
+
       subfolders:
-    
+
       - title: Overview
         output: web
         subfolderitems:
@@ -45,12 +45,12 @@ entries:
           output: web
         - title: <b class='resource'>Bundle</b>
           url: /accessrecord_structured_development_bundle.html
-          output: web 
-      
+          output: web
+
       - title: Allergies
         output: web
         subfolderitems:
-        
+
         - title: Allergies guidance
           url: /accessrecord_structured_development_allergies_guidance.html
           output: web
@@ -64,7 +64,7 @@ entries:
       - title: Medications
         output: web
         subfolderitems:
-        
+
         - title: Medication resource relationships
           url: /accessrecord_structured_development_medication_resource_relationships.html
           output: web
@@ -83,33 +83,33 @@ entries:
         - title: Medication FHIR&reg; examples
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
- 
+
       - title: Immunizations
         output: web
         subfolderitems:
- 
+
         - title: Immunizations guidance
           output: web
-          url: /accessrecord_structured_development_immunization_guidance.html  
+          url: /accessrecord_structured_development_immunization_guidance.html
         - title: <b class='resource'>Immunization</b>
           url: /accessrecord_structured_development_immunization.html
           output: web
-  
+
       - title: Uncategorised data
         output: web
         subfolderitems:
-       
+
         - title: Uncategorised data guidance
           url: /accessrecord_structured_development_uncategorisedData_guidance.html
-          output: web      
+          output: web
         - title: <b class='resource'>Observation - uncategorised data</b>
           url: /accessrecord_structured_development_observation_uncategorisedData.html
           output: web
- 
+
       - title: Consultations
         output: web
         subfolderitems:
-        
+
         - title: Consultation guidance
           url: /accessrecord_structured_development_consultation_guidance.html
           output: web
@@ -122,11 +122,11 @@ entries:
         - title: Observation - narrative
           url: accessrecord_structured_development_guidance_observation_narrative.html
           output: web
-     
+
       - title: Problems
         output: web
         subfolderitems:
- 
+
         - title: Problems guidance
           url: /accessrecord_structured_development_problems_guidance.html
           output: web
@@ -134,44 +134,15 @@ entries:
           url: /accessrecord_structured_problems.html
           output: web
 
-      - title: Pathology
-        output: web
-        subfolderitems:
-        
-        - title: Pathology guidance
-          url: /accessrecord_structured_development_pathology_guidance.html
-          output: web   
-        - title: <b class='resource'>DiagnosticReport</b>
-          url: /accessrecord_structured_development_diagnosticReport.html
-          output: web
-        - title: <b class='resource'>Specimen</b>
-          url: /accessrecord_structured_development_specimen.html
-          output: web
-        - title: <b class='resource'>Observation - Test Group Header</b>
-          url: /accessrecord_structured_development_observation_testGroup.html
-          output: web
-        - title: <b class='resource'>Observation - Test Result</b>
-          url: /accessrecord_structured_development_observation_testResult.html
-          output: web
-        - title: <b class='resource'>Observation - Filing Comments</b>
-          url: /accessrecord_structured_development_observation_filingComments.html
-          output: web
-        - title: <b class='resource'>ProcedureRequest</b>
-          url: /accessrecord_structured_development_ProcedureRequest.html
-          output: web
-        - title: Pathology FHIR&reg; examples
-          url: /accessrecord_structured_development_fhir_examples_pathology.html
-          output: web
-  
- 
+
   - title: API definition
     output: web, pdf
     folderitems:
- 
+
     - title: Introduction
       url: /accessrecord_structured_development.html
       output: web
-  
+
     - title: Retrieve a patient's structured record
       url: /accessrecord_structured_development_retrieve_patient_record.html
       output: web
