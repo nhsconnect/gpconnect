@@ -59,6 +59,26 @@ Each provider system supports a different set of qualifiers. However, there are 
 
 The provider system will translate all of the qualifiers included with the clinical code into human readable text and concatenated them with the text entered by the recorder (placing the qualifiers first) and placing in observation.comment.
 
+## Values ##
+
+Values are any reading or result that is recorded with the uncategorised data.
+
+For example: The uncategorised data 50373000 (Body Height) may have a value of 156cm.
+
+
+### Single values ###
+The majority of uncategorised data that contains values will only have a single value.
+In these cases, the value will be exported in observation.value.
+
+### Multiple Values ###
+There are some cases where an item of uncategorised data may contain multiple values. 
+This happens when:
+* There is a single clinical code that describes the uncategorised data as a whole; and
+* Each recorded value in the uncategorised data is described by its own clinical code
+
+In these cases, each value will be exported in an instance of observation.component.
+
+Note – Do we need to add something specific for blood pressure.
 
 
 
