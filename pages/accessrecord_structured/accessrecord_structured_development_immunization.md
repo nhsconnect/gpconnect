@@ -26,7 +26,7 @@ The headings below list the elements of the Immunization resource and describe h
   </tr>
 </table>
 
-The logical identifier of the Medication resource.
+The logical identifier of the Immunization resource.
 
 ### meta.profile ###
 
@@ -38,9 +38,9 @@ The logical identifier of the Medication resource.
   </tr>
 </table>
 
-The AllergyIntolerance profile URL.
+The Immunization profile URL.
 
-Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)
 
 ### extension[parentPresent] ###
 
@@ -70,7 +70,7 @@ When the record of the immunization was created on the clinical system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code> codableConcept</td>
+    <td><b>Data type:</b> <code>codableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -146,7 +146,7 @@ Where the vaccine product that was administered is not known then one of the nul
   </tr>
 </table>
 
-A reference to the Patient who has, or had, the allergy or intolerance specified.
+A reference to the Patient who had the immunisation specified.
 
 ### encounter ###
 
@@ -158,7 +158,8 @@ A reference to the Patient who has, or had, the allergy or intolerance specified
   </tr>
 </table>
 
-The  `Encounter`  within which the medication was authorised.
+The  `Consultation`  within which the immunisation was recorded.
+This may be when the vaccination was administered or when an immunisation administered elsewhere was recorded.
 
 As per base profile guidance.
 
@@ -172,7 +173,8 @@ As per base profile guidance.
   </tr>
 </table>
 
-The dateTime when the immunization was administered.
+The dateTime when the immunization was administered. 
+If the immunisation was administered elsewhere, this may be an estimated date. 
 
 ### primarySource ###
 
@@ -210,7 +212,7 @@ Indicates the source of a secondary reported record.
   </tr>
 </table>
 
-Where the vaccination occurred. 
+The GP Practice, branch surgery or other location Where the vaccination occurred. 
 
 ### manufacturer ###
 
@@ -221,6 +223,7 @@ Where the vaccination occurred.
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
+
 The manufacturer of the vaccine.
 
 ### lotNumber ###
@@ -244,7 +247,9 @@ The batch number of the vaccine.
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
+
 The expiry date of the batch the vaccine is from.
+If the expiry date is captured as a string then include it in <code>note</code> prefixed with "Batch expiry date: "
 
 ### site ###
 
@@ -255,6 +260,7 @@ The expiry date of the batch the vaccine is from.
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
+
 The site on the body where the vaccine was administered.
 
 ### route ###
@@ -266,6 +272,7 @@ The site on the body where the vaccine was administered.
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
+
 The route through which the vaccine entered the body.
 
 ### doseQuantity ###
@@ -279,6 +286,7 @@ The route through which the vaccine entered the body.
 </table>
 
 The amount of the vaccine administered.
+If the dose quantity is captured as a string then include it in <code>note</code> prefixed with "Dose quantity: "
 
 ### practitioner ###
 
@@ -308,7 +316,7 @@ The job role of the person that administered the vaccine.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> Reference</td>
+    <td><b>Data type:</b> <code>Reference (Practitioner)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -377,7 +385,6 @@ The route by which exposure to the substance causing the reaction occurred. Util
 The route by which exposure to the substance causing the reaction occurred. Utilise the dm+d route codes.
 
 
-<br>
 ## Elements **not in use** ##
 
 The following elements **MUST NOT** be populated:
