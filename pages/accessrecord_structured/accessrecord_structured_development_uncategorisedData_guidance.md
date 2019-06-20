@@ -27,7 +27,7 @@ The volume of this categorisation varies between provider systems. For the major
 * Test Request
 * Test Result
 
-## What is Categorised Data ##
+## What is Uncategorised Data ##
 There is data that a clinician / user will enter without identifying what type of information they are recorded. This information is usually entered as either free text or a combination of clinical code(s), values, qualifiers and text.
 
 For example:
@@ -44,7 +44,8 @@ For the majority of provider systems, the following types of information are not
 Consideration was given to attempting to categorise data using the recorded clinical codes. It was decided not to progress this based on a clinical review of its risks and benefits.
 
 ## Uncategorised Data Definition ## 
-Different provider systems have different levels of classification. This could result in one system seeing data as uncategorised while another can assign it a category. To different intepretations, GP Connect defined uncategorised data as:
 
-* Any item of data in the patient record that does not fit into one of the clinical areas defined by GP Connect
+* Uncategorised data is any item of data in the patient record that does not fit into one of the existing or planned clinical areas defined by GP Connect
+
+
 
