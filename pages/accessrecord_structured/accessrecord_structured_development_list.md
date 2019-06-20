@@ -57,7 +57,7 @@ Where items have been excluded from the returned resources due to patient consen
 
 ### Data in transit
 
-This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice has not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
+This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice have not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
 
 ### Data awaiting filing
 
@@ -92,7 +92,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1
 
 A code warning of an issue related to this list.
 
-This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It must be populated using the appropriate code from the table in the warning codes section above.
+This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It **MUST** be populated using the appropriate code from the table in the warning codes section above.
 
 
 ### extension[clinicalSetting] ###
@@ -164,7 +164,7 @@ There are currently 3 possible purposes of a list in GP Connect that will be rep
 2. Allergies and adverse reactions - 886921000000105
 3. Ended allergies - 1103671000000101
 
-The above code for 'Ended allergies' should be used for resolved allergies this code is new at the time of publishing this version of the specification and will be included in the October 2018 SNOMED release.
+The above code for 'Ended allergies' should be used for resolved allergies. This code is new at the time of publishing this version of the specification and will be included in the October 2018 SNOMED release.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
@@ -256,7 +256,7 @@ See below for sub elements.
 
 When the item was added to the list.
 
-As GP Connect represents a snapshot at the time the request was made by the consuming system this is not required to be populated.
+As GP Connect represents a snapshot at the time the request was made by the consuming system, this is not required to be populated.
 
 ### entry.item ###
 
@@ -284,7 +284,7 @@ Reference to the item that is part of the list.
 
 Why the list is empty.
 
-A FHIR code of `No Content Recorded` **SHALL** be used if a query returns no results to enter into a list. In this case the 'note' field **SHALL** be populated with the text 'Information not available'.
+A FHIR code of `No Content Recorded` **SHALL** be used if a query returns no results to enter into a list. In this case, the 'note' field **SHALL** be populated with the text 'Information not available'.
 
 <h2 style="color:#ED1951;">List elements <b>not in use</b></h2>
 
