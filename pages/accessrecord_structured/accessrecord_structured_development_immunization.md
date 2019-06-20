@@ -66,7 +66,7 @@ Indicates whether a parent was present at the immunization.
 
 When the record of the immunization was created on the clinical system.
 
-### extension[vacinationProcedure] ###
+### extension[vaccinationProcedure] ###
 
 <table class='resource-attributes'>
   <tr>
@@ -84,7 +84,7 @@ The procedure code describing the vaccine that was administered.
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
@@ -108,7 +108,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-Fixed to the value 'completed' for all CareConnect profiles. Any refusal of consent for an Immunization should be sent in a separate <code>consent</code> resource.
+Fixed to the value <code>completed</code> for all CareConnect profiles. 
 
 ### notGiven ###
 
@@ -120,7 +120,7 @@ Fixed to the value 'completed' for all CareConnect profiles. Any refusal of cons
   </tr>
 </table>
 
-Fixed value of `false`. Any refusal of consent for an Immunization should be sent in a separate <code>consent</code> resource.
+Fixed value of <code>false</code>. 
 
 ### vaccineCode ###
 
@@ -206,7 +206,7 @@ Indicates the source of a secondary reported record.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><b>Data type:</b> <code>Reference(Location)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -218,7 +218,7 @@ The GP Practice, branch surgery or other location Where the vaccination occurred
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>TBD</code></td>
+    <td><b>Data type:</b> <code>Reference(Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -286,7 +286,6 @@ The route through which the vaccine entered the body.
 </table>
 
 The amount of the vaccine administered.
-If the dose quantity is captured as a string then include it in <code>note</code> prefixed with "Dose quantity: "
 
 ### practitioner ###
 
@@ -294,11 +293,11 @@ If the dose quantity is captured as a string then include it in <code>note</code
   <tr>
     <td><b>Data type:</b> BackboneElement</td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Contains the details of the person who administered the vaccine.
+The details of the person who administered the vaccine are required.
 
 ### practitioner.role ###
 
@@ -310,7 +309,7 @@ Contains the details of the person who administered the vaccine.
   </tr>
 </table>
 
-The job role of the person that administered the vaccine.
+The role of the referenced practitioner.
 
 ### practitioner.actor ###
 
@@ -322,7 +321,8 @@ The job role of the person that administered the vaccine.
   </tr>
 </table>
 
-A reference to the practitioner resource that administered the vaccine. This is mandatory where the practitioner role is populated.
+A reference to the practitioner resource that administered the vaccine. 
+This is mandatory where the practitioner role is populated.
 
 ### note ###
 
@@ -463,15 +463,7 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
 
 ### Coding
 
-#### Using the a procedure code
-
 #### Using the 
-
-### Immunizations that were not given
-
-#### DNAs
-
-#### Refused consent
 
 ### Reactions to immunizations
 
