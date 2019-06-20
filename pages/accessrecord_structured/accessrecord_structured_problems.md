@@ -110,6 +110,19 @@ When populating this field the provider system must include every item in the pa
 
 References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised.
 
+### extension[problemSignificance] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b><code> codableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The significance of the problem contained in the resource.
+All problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system recordes more than two levels of severity any level of severity above minor is mapped to major.
+
 ### identifier ###
 
 <table class='resource-attributes'>
@@ -153,19 +166,6 @@ All problems **MUST** have a clinicalStatus of <code>active</code> or <code>inac
 </table>
  
 Fixed value of <code>problem-list-item</code>.
-
-### severity ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b><code> codableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-The significance of the problem contained in the resource.
-All problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system recordes more than two levels of severity any level of severity above minor is mapped to major.
 
 ### code ###
 
@@ -275,6 +275,14 @@ Notes about the problem.
 
 The following elements **MUST NOT** be populated:
 
+### severity ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
 ### verificationStatus ###
 
 <table class='resource-attributes'>
@@ -290,8 +298,6 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource
 
 ### stage ###
 
