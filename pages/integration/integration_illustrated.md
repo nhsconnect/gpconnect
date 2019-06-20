@@ -26,6 +26,8 @@ A GP Connect consumer queries PDS for the patient in order to:
   - Verify the patient's NHS number
   - Retrieve the ODS organisation code of the patient's registered GP practice
 
+{% include important.html content="Appointments consumers may wish to build workflows that support appointment booking into other GP practices (than the patient's registered practice) such as into Extended Access Hubs. For these consumers, an alternate mechanism for discovering the target practice's ODS organisation code is required. Please see the [Appointment Management Service Discovery page](appointments_service_discovery.html) for more details." %}
+
 For further details on this step please see the [Personal Demographic Service](integration_personal_demographic_service.html) page.
 
 **Step 2. Spine Directory Service**
@@ -59,7 +61,8 @@ The steps shown in the diagram are detailed below.
 |------|-------------|
 |      | *Step 1 is optional in the sense that a cached version of a these trace results may be available to the consumer.* |    
 | 1a   | **Consumer** is responsible for performing a  [Personal Demographics Service(PDS)](integration_personal_demographic_service.html) Trace to both verify the NHS Number and obtain the ODS code of the GP Practice system. |
-| 1b   | **PDS** returns NHS Number verification status, and the ODS code of the GP Practice system. |
+| 1b   | **PDS** returns NHS Number verification status, and the ODS code of the patient's registered GP practice. |
+| Note: | *Appointment Management consumers that wish to book into other GP practices require [an alternate mechanism](appointments_service_discovery.html) for determining a GP practice ODS code. Regardless of the mechanism used to determine a GP practices ODS code, the PDS step is required in order to verify the patient's NHS number.* |
 |      |      |
 |      | *Step 2 is optional in the sense that cached or configured endpoint details for the Practice may be available from a previous SDS interaction.* |    
 | 2a   | **Consumer** calls Spine Directory Service again to discover the URL of the FHIR server endpoint at the practice | 
