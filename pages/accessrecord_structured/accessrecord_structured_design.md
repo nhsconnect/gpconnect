@@ -21,7 +21,7 @@ What is the scope of the Access Record Structured capability?
  - Specimen
  - DiagnosticReport
  - ProcedureRequest  
- - Administrative profiles to support the above, as defined by the Foundations capability pack
+ - Administrative profiles to support the above, as defined by the [Foundations capability pack](https://gpc-structured-futures.netlify.com/foundations.html)
 
 {% include roadmap.html content="The scope of the capability is under review and clinical items such as Immunisations are likely to be included at a later stage." %}
 
