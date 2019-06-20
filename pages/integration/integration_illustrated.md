@@ -15,9 +15,39 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 - [Spine Directory Service (SDS)](integration_spine_directory_service.html)
 - [Spine Secure Proxy (SSP)](integration_spine_secure_proxy.html)
 
-To illustrate this, an example is given below of all the steps required consume the GP Connect Appointments capability. For full details, please refer to the relevant spine pages.
+## Overview ##
 
-## Example: Integrate with Spine to book an appointment at a GP practice ##
+<img src="images/integration/gpconnect-flow.png" alt="Diagram showing the high level three step flow for making GP Connect calls" style="width: 60%;">
+
+**Step 1. Personal Demographics Service**
+
+A GP Connect consumer queries PDS for the patient in order to:
+
+  - Verify the patient's NHS number
+  - Retrieve the ODS organisation code of the patient's registered GP practice
+
+For further details on this step please see the [Personal Demographic Service](integration_personal_demographic_service.html) page.
+
+**Step 2. Spine Directory Service**
+
+A GP Connect consumer queries SDS using the ODS organisation code retrieved in the previous step in order to retrieve:
+
+  - The GP practice's GP Connect service root URL (their FHIR endpoint)
+  - The GP practice's GP Connect ASID
+
+For further details on this step please see the [Spine Directory Services - overview and querying](integration_spine_directory_service.html) page.
+
+**Step 3 onwards. Spine Secure Proxy**
+
+A GP Connect consumer constructs a GP Connect FHIR request (incorporating the two items retrieved in the previous step), and sends it to the SSP.
+
+The SSP then forwards the request on to the GP Connect provider system which returns its response back through to the SSP to the consumer system.  A number of GP Connect FHIR requests may be made in order to satisfy the full workflow of the capability.
+
+For further details on this step please see the [Spine Secure Proxy](integration_spine_secure_proxy.html) page.
+
+Please see the full worked example below for the steps required consume the GP Connect Appointments capability.
+
+## Worked example: Integrate with Spine to book an appointment at a GP practice ##
 
 The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order to book an appointment at a GP practice.
 
