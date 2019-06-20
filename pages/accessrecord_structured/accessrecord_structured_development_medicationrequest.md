@@ -14,7 +14,7 @@ The headings below list the elements of the MedicationRequest resource and descr
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.2)" %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.2)." %}
 
 ## Overarching principles ##
 
@@ -479,7 +479,7 @@ For `MedicationRequest` instances where `intent` is set to `order`:
 
 The quantity to dispense.
 
-If the value is text then the extension dispenseRequest.quantityText **MUST** be used.
+If the value is text, then the extension dispenseRequest.quantityText **MUST** be used.
 
 
 ### dispenseRequest.quantityText ###
