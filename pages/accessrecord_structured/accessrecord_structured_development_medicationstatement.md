@@ -14,7 +14,7 @@ The headings below list the elements of the MedicationStatement resource and des
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.2)" %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.2)." %}
 
 {% include note.html content="It is not expected that suppliers will provide resources for data types that reference resources that have not been curated and published by GP Connect. In the case where these fields are required it is not expected they will be populated until the resources have been developed by the suppliers and completed the relevant NHS Digital assurance." %}
 
@@ -70,7 +70,7 @@ When the medication was last issued.
 
 This details the care setting in which the medication was prescribed. Currently this will only detail if the medication was prescribed by the GP practice or by another organisation, however in the future this valueset could be built on to be more specific about where a medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
 
-For repeat and repeat dispensed medications the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
+For repeat and repeat dispensed medications, the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
 ### identifier ###
 
@@ -140,7 +140,7 @@ Use one of `active`, `completed` or `stopped`:
 
 For repeat and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
 
-For acute the status refers to the status of the prescription issue.
+For acute, the status refers to the status of the prescription issue.
 
 ### medicationReference ###
 
@@ -172,7 +172,7 @@ The `Medication` resource provides the coded representation of the medication.
 
 For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
 
-For acutes this refers to the period of the prescription issue.
+For acutes, this refers to the period of the prescription issue.
 
 ### dateAsserted ###
 
@@ -216,7 +216,7 @@ Whether a medication was taken.
 
 Providers **MUST** use a default value of `unk` – unknown.
 
-This item is mandatory in the base FHIR profile but GP systems do not record this detail therefore we have been forced to pick a default value and this information should not be used.
+This item is mandatory in the base FHIR profile, but GP systems do not record this detail. Therefore, we have been forced to pick a default value and this information should not be used.
 
 This element has been included in this section as providers **MUST** populate it. However, as the data should not be used it has also been included in the ‘Do not use’ section below.
 
