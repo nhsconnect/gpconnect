@@ -13,7 +13,7 @@ summary: "Guidance for the representation and consumption of observation resourc
 
 2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
 
-3. Any attributes of the underlying Observeation profile that are not listed below are not used.
+3. Any attributes of the underlying Observation profile that are not listed below are not used.
 
 
 ### id ###
@@ -103,7 +103,7 @@ Reference to Patient resource representing the Patient against whom the narrativ
   </tr>
 </table>
 
-Optional reference to the Encounter resource representing the consultation context in which the narrataive freetext was recorded. Will not be populated where the freetext was recorded ouside of a consultation context.
+Optional reference to the Encounter resource representing the consultation context in which the narrative free text was recorded. Will not be populated where the free text was recorded outside of a consultation context.
 
 ### effectiveDateTime ###
 
@@ -115,9 +115,9 @@ Optional reference to the Encounter resource representing the consultation conte
   </tr>
 </table>
 
-The clinically relevent effective data or datetime for the narrative record entry.
+The clinically relevant effective data or datetime for the narrative record entry.
 
-Where the effective date is unknown or not recorded will be absent, otherwise it should be populated.
+Where the effective date is unknown or not recorded this will be absent. Otherwise, it should be populated.
 
 ### issued ###
 
@@ -141,7 +141,7 @@ The audit trail timestamp representing when the narrative was last modified.
   </tr>
 </table>
 
-The Practitioner resource representing the person responsible for recording the narrative
+The Practitioner resource representing the person responsible for recording the narrative.
 
 ### comment ###
 
@@ -153,7 +153,7 @@ The Practitioner resource representing the person responsible for recording the 
   </tr>
 </table>
 
-The freetext narrative as plain text.
+The free text narrative as plain text.
 
 ### related ###
 
@@ -165,7 +165,7 @@ The freetext narrative as plain text.
   </tr>
 </table>
 
-This attribute is used to specify the sequence of the narrative in relation to other resources e.g. when an ordered set of resource is being used to express the structure of a consultation displayed at source. See Consultation guidance for further information.
+This attribute is used to specify the sequence of the narrative in relation to other resources - for example, when an ordered set of resources is being used to express the structure of a consultation displayed at source. See [Consultation guidance] (accessrecord_structured_development_consultation_guidance.html) for further information.
 
 The **related.type** and **related.target** are used to represent the sequence. Only the **related.type** value of **'sequel-to'** is utilised.
 
