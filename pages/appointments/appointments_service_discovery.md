@@ -1,5 +1,5 @@
 ---
-title: Service discovery
+title: Appointment Management service discovery
 keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar
