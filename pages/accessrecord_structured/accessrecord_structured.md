@@ -17,6 +17,10 @@ The Access Record Structured capability will expose data for a number of clinica
 
 1. Medications
 2. Allergies
+3. Immunizatons
+4. Uncategorised items
+5. Consultations
+6. Problems
 
 {% include roadmap.html content="Subsequent releases are to be scoped" %}
 
