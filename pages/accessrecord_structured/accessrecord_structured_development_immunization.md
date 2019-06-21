@@ -10,9 +10,9 @@ summary: "FHIR resource for population guidance for immunization"
 
 The headings below list the elements of the Immunization resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_immunization.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Immunization profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)." %} 
 
 ## Immunization elements ##
 
@@ -212,7 +212,7 @@ Indicates the source of a secondary reported record.
   </tr>
 </table>
 
-The GP Practice, branch surgery or other location Where the vaccination occurred. 
+The GP Practice, branch surgery or other location where the vaccination occurred. 
 
 ### manufacturer ###
 
@@ -249,7 +249,6 @@ The batch number of the vaccine.
 </table>
 
 The expiry date of the batch the vaccine is from.
-If the expiry date is captured as a string then include it in <code>note</code> prefixed with "Batch expiry date: "
 
 ### site ###
 
@@ -346,7 +345,7 @@ Notes about the immunization.
   </tr>
 </table>
 
-The reason why the immunization was given. 
+The reason why the immunization was given, for example travel, occupation, etc. 
 
 ### vaccinationProtocol ###
 
@@ -358,7 +357,7 @@ The reason why the immunization was given.
   </tr>
 </table>
 
-The route by which exposure to the substance causing the reaction occurred. Utilise the dm+d route codes.
+The protocol for the vaccination.
 
 ### vaccinationProtocol.doseSequence ###
 
@@ -370,7 +369,7 @@ The route by which exposure to the substance causing the reaction occurred. Util
   </tr>
 </table>
 
-The route by which exposure to the substance causing the reaction occurred. Utilise the dm+d route codes.
+If the immunisation is achieved via a series of vaccinations, this is the position of the vaccine procedure in the series.
 
 ### vaccinationProtocol.description ###
 
@@ -382,8 +381,7 @@ The route by which exposure to the substance causing the reaction occurred. Util
   </tr>
 </table>
 
-The route by which exposure to the substance causing the reaction occurred. Utilise the dm+d route codes.
-
+A description for the vaccination protocol this vaccination is administered under. 
 
 ## Elements **not in use** ##
 
@@ -397,7 +395,8 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-Only Immunizations where notGiven is set to false are to be sent using the Immunization profile. This means that there will never be cause to use reasonNotGiven. 
+Only Immunizations where <code>notGiven</code> is set to <code>false</code> are to be sent using the Immunization profile. 
+This means that there will never be cause to use <code>reasonNotGiven</code>. 
 
 ### reaction ###
 
@@ -407,7 +406,7 @@ Only Immunizations where notGiven is set to false are to be sent using the Immun
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an AllergyIntolerance resource.
+Any reaction to an immunization **MUST** be sent separately in an <code>AllergyIntolerance</code> resource.
 
 ### vaccinationProtocol.authority ###
 
@@ -458,12 +457,4 @@ Any reaction to an immunization **MUST** be sent separately in an AllergyIntoler
 </table>
 
 <br>
-
-## Imunization Guidance
-
-### Coding
-
-#### Using the 
-
-### Reactions to immunizations
 
