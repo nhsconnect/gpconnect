@@ -11,7 +11,7 @@ summary: "Determining which GP practices to book into"
 
 ### Patient's registered practice ###
 
-The "default" GP connect flow (as used in other capabilities) is shown in the diagram below, and includes the retrieval of the **ODS organisation code of the patient's registered practice** from PDS in step 1 (<span style="color: yellow; background-color: silver;">in yellow</span>).  For more details on this flow please see [Spine integration illustrated](integration_overview.html).
+The "default" GP connect flow (as used in other capabilities) is shown in the diagram below, and includes the retrieval of the **ODS organisation code of the patient's registered practice** from PDS in step 1 (<span style="color: yellow; background-color: silver;">in yellow</span>).  For more details on this flow please see [Spine integration illustrated](integration_illustrated.html).
 
 <img src="images/integration/gpconnect-appts-flow.png" alt="Diagram showing the high level three step flow for making GP Connect calls" style="width: 60%;">
 
