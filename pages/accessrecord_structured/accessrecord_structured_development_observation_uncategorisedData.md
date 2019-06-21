@@ -165,7 +165,7 @@ The free text narrative as plain text.
   </tr>
 </table>
 
-This attribute is used to specify the sequence of the narrative in relation to other resources - for example, when an ordered set of resources is being used to express the structure of a consultation displayed at source. See [Consultation guidance] (accessrecord_structured_development_consultation_guidance.html) for further information.
+This attribute is used to specify the sequence of the narrative in relation to other resources - for example, when an ordered set of resources is being used to express the structure of a consultation displayed at source. See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
 
 The **related.type** and **related.target** are used to represent the sequence. Only the **related.type** value of **'sequel-to'** is utilised.
 
