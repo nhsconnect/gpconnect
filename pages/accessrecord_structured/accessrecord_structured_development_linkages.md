@@ -24,7 +24,7 @@ To support this, GP Connect has developed a FHIR model that identifies all the G
 
 The model currently covers consultations, problems, medications, allergies, immunisations and uncategorised data. Other clinical areas will be added as they are developed.
 
-DIAGRAM
+<img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;">
 
 The relationships between two FHIR resources are defined in only one of the linked FHIR resources (similar to in a RDBMS). This is shown by the direction of the arrow in the FHIR model. 
 
