@@ -78,7 +78,14 @@ This happens when:
 
 In these cases, each value will be exported in an instance of observation.component.
 
-Note – Do we need to add something specific for blood pressure.
+## Blood Pressure ##
+Where the clinician / user has explicitely chosen the clinical codes to record a blood pressure reading in the provider system, the provider system MUST export the blood pressure reading using as uncategorised data using the clinical codes (or SNOMED CT translations) chosen by the clinician / user.
+
+
+Where the clinician / user has NOT explicitely selected the clinical codes to record a blood pressure reading in the provider system, the provider system MUST export the blood pressure using the CareConnect Blood Pressure observation:
+
+    https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-BloodPressure-Observation-1
+
 
 
 
