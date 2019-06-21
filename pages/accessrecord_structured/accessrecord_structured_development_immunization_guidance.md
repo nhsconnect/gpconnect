@@ -42,3 +42,13 @@ Options are to be evaluated for the use cases where information is available for
 Allergic or adverse reactions to an immunisation may be captured in the GP Clinical System but these are not generally directly associated to the immunisation event.
 It has not been considered reliable to link any allergic or adverse reaction to the immunisation record therefore information and reactions will not be included.
 For details of allergies or adverse reaction, the Allergies resource must be requested.
+
+## Immunisation schedules and recalls ##
+
+The resources required to describe planned immunisation schedules or diarised recalls to complete an immunisation series are out of scope for this guidance.
+
+## Data type incompatibility ##
+
+It is possible that some participating systems will support recording of elements of the immunisation but in a way which is incompatible with the data type of the FHIR element.
+An example might be the vaccine manufacturer recorded as a text qualifier to the immunisation procedure where the FHIR profile requires an organisation reference.
+Where the data recorded is incompatible with the data type of the related FHIR profile element, the detail in the source system MUST be rendered as text (suitably formatted name/value pair) and placed in the <code>immunisation.note</code> element.
