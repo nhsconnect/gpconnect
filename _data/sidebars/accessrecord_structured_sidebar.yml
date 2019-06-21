@@ -108,7 +108,10 @@ entries:
         - title: <b class='resource'>Observation - uncategorised data</b>
           url: /accessrecord_structured_development_observation_uncategorisedData.html
           output: web
-
+        - title: Uncategorised data FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_uncategorised.html
+          output: web
+          
       - title: Consultations
         output: web
         subfolderitems:
@@ -134,7 +137,10 @@ entries:
         - title: Observation - narrative
           url: accessrecord_structured_development_guidance_observation_narrative.html
           output: web
-
+        - title: Consultation FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_consultations.html
+          output: web
+          
       - title: Problems
         output: web
         subfolderitems:
@@ -145,7 +151,9 @@ entries:
         - title: <b class='resource'>Condition - ProblemHeader</b>
           url: /accessrecord_structured_problems.html
           output: web
-
+        - title: Problems FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_problems.html
+          output: web
 
   - title: API definition
     output: web, pdf
