@@ -26,7 +26,7 @@ A GP Connect consumer queries PDS for the patient in order to:
   - Verify the patient's NHS number
   - Retrieve the ODS organisation code of the patient's registered GP practice
 
-{% include important.html content="Appointments consumers may wish to build workflows that support appointment booking into other GP practices (than the patient's registered practice) such as into Extended Access Hubs. For these consumers, an alternate mechanism for discovering the target practice's ODS organisation code is required. Please see the [Appointment Management Service Discovery page](appointments_service_discovery.html) for more details." %}
+{% include important.html content="Appointment Management consumer suppliers may wish to build workflows that support appointment booking into other GP practices (other than the patient's registered practice) such as into Extended Access Hubs. For these consumers, an alternate mechanism for discovering the target practice's ODS organisation code is required. Please see the [Appointment Management Service Discovery page](appointments_service_discovery.html) for more details." %}
 
 For further details on this step please see the [Personal Demographic Service](integration_personal_demographic_service.html) page.
 
@@ -47,11 +47,11 @@ The SSP then forwards the request on to the GP Connect provider system which ret
 
 For further details on this step please see the [Spine Secure Proxy](integration_spine_secure_proxy.html) page.
 
-Please see the full worked example below for the steps required consume the GP Connect Appointments capability.
+Please see the full worked example below for the steps required to consume the GP Connect Appointment Management capability.
 
-## Worked example: Integrate with Spine to book an appointment at a GP practice ##
+## Worked example: Integrate with Spine to book an appointment at the patient's registered GP practice ##
 
-The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order to book an appointment at a GP practice.
+The following sequence diagram illustrates the steps which a GP Connect consumer would be required to undertake in order to book an appointment at the patient's registered GP practice.
 
 <img src="images/integration/integration_sequence_diagram.png" alt="Sequence diagram for booking an appointment end to end interactions" style="max-width:100%;max-height:100%;">
 

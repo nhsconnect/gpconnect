@@ -11,7 +11,7 @@ summary: "Determining which GP practices to book into"
 
 ### Patient's registered practice ###
 
-The "default" GP connect flow (as used in other capabilities) is shown in the diagram below, and includes the retrieval of the **ODS organisation code of the patient's registered practice** from PDS in step 1 (<span style="color: yellow; background-color: silver;">in yellow</span>).  For more details on this flow please [Spine integration illustrated](integration_overview.html).
+The "default" GP connect flow (as used in other capabilities) is shown in the diagram below, and includes the retrieval of the **ODS organisation code of the patient's registered practice** from PDS in step 1 (<span style="color: yellow; background-color: silver;">in yellow</span>).  For more details on this flow please see [Spine integration illustrated](integration_overview.html).
 
 <img src="images/integration/gpconnect-appts-flow.png" alt="Diagram showing the high level three step flow for making GP Connect calls" style="width: 60%;">
 
@@ -27,7 +27,7 @@ Where a GP Connect Appointment Management consumer wishes to book into a GP prac
 
 Appointment consumer systems that are predominantly used to book into GP practices within the local area (such as within a local federation) may use local system configuration to determine the ODS organisation code of the practice to book into.
 
-For example a pre-configured pick list of organisations on the booking screen of the consumer screen allowing a user to choose which practice to book into.  The pick list may be configured by the consumer organisation or in by consumer system supplier in conjunction with the consumer organisation.
+For example a pre-configured pick list of organisations on the booking screen of the consumer screen allowing a user to choose which practice to book into.  The pick list may be configured by the consumer organisation or by the consumer system supplier in conjunction with the consumer organisation.
 
 #### Directory of Services (DOS) - currently for UEC consumers only ####
 
@@ -44,7 +44,7 @@ When booking into other practices, DOS replaces the function of PDS in determini
 
 <img src="images/integration/gpconnect-appts-dos-flow.png" alt="Diagram showing the high level four step flow for making GP Connect calls when using Directory of Services" style="width: 60%;">
 
-Please see the following pages from the Urgent and Emergency Care Appointment Booking specification for further information on integrating GP Connect Appointment Consumer systems with Directory of Services: 
+Please see the following pages from the Urgent and Emergency Care Appointment Booking specification for further information on integrating GP Connect Appointment UEC consumer systems with Directory of Services: 
 
 - [DOS overview](https://developer.nhs.uk/apis/uec-appointments/dos_overview.html)
 - [GP Connect workflow overview](https://developer.nhs.uk/apis/uec-appointments/gpc_wfoverview.html)
