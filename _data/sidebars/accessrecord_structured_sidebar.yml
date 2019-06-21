@@ -94,6 +94,9 @@ entries:
         - title: <b class='resource'>Immunization</b>
           url: /accessrecord_structured_development_immunization.html
           output: web
+        - title: Immunizations FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_immunizations.html
+          output: web
 
       - title: Uncategorised data
         output: web
