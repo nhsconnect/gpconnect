@@ -71,21 +71,4 @@ Where a provider system is not able to export a linked clinical item it will cre
 * Reference.Identifier set to null; and
 * Reference.Display set to “Clinical item not supported by the provider system.”
 
-## Problem Guidance
-
-### Problem structure and relationships in GP systems
-
-### Modelling problems using FHIR resources
-
-### Active and Inactive problems
-
-### Problem severity
-
-### Use of terminology and the actualProblem extension
-
-### Relationships to other problems
-
-### Other related data in the GP record
-
-### Placeholders for uncurated/implemented content/docs
 
