@@ -30,9 +30,11 @@ entries:
     - title: Introduction
       url: /accessrecord_structured_development.html
       output: web
-
     - title: <b class='resource'>Linkages</b>
       url: /accessrecord_structured_development_linkages.htm
+      output: web
+    - title: <b class='resource'>Resource population</b>
+      url: /accessrecord_structured_development_resources_overview.md
       output: web
 
       subfolders:
@@ -61,7 +63,7 @@ entries:
         - title: Allergies FHIR&reg; example
           url: /accessrecord_structured_development_fhir_examples_allergies.html
           output: web
-
+          
       - title: Medications
         output: web
         subfolderitems:
