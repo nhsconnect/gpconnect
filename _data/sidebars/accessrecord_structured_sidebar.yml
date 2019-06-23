@@ -119,18 +119,9 @@ entries:
         - title: <b class='resource'>Encounter</b>
           url: /accessrecord_structured_development_encounter.html
           output: web
-        - title: <b class='resource'>Composition</b>
-          url: /accessrecord_structured_development_composition.html
-          output: web
         - title: <b class='resource'>List Consultation</b>
           url: /accessrecord_structured_development_list_consultation.html
           output: web
-        - title: <b class='resource'>List Topic</b>
-          url: /accessrecord_structured_development_list_topic.html
-          output: web
-        - title: <b class='resource'>List Category</b>
-          url: /accessrecord_structured_development_list_category.html
-          output: web  
         - title: Observation - narrative
           url: accessrecord_structured_development_guidance_observation_narrative.html
           output: web
