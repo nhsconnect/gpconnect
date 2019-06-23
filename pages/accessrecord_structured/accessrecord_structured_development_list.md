@@ -16,52 +16,6 @@ The headings below detail the elements of the `List` resource and describe how t
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)." %}
 
-## Using the List resource ##
-
-The `List` resource in FHIR is used to help manage a collection of resources. In GP Connect it is used to identify the data returns for each query. For each clinical area query, GP Connect will return one or more predefined list that identifies the data returned for that query.
-
-- When multiple queries in the same API call return data in the same profile, the list will identify which data in the profile has been returned for which query.
-- Where there are no items returned, the list will be empty.
-- Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
-
-### Warning codes
-
-The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
-
-<table class='resource-attributes' border='1'>
-  <tr>
-    <td>Display</td>
-    <td>Code</td>
-    <td>Associated text</td>
-  </tr>
-  <tr>
-    <td>Confidential Items</td>
-    <td>confidential-items</td>
-    <td>Items excluded due to confidentiality and/or patient preferences.</td>
-  </tr>
-  <tr>
-    <td>Data in Transit</td>
-    <td>data-in-transit</td>
-    <td>Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.</td>
-  </tr>
-  <tr>
-    <td>Data Awaiting Filing</td>
-    <td>data-awaiting-filing</td>
-    <td>Patient data may be incomplete as there is data supplied by a third party awaiting review before becoming available.</td>
-  </tr>
-</table>
-
-### Confidential items
-
-Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
-
-### Data in transit
-
-This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice have not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
-
-### Data awaiting filing
-
-Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent.
 
 ## List elements ##
 
@@ -92,7 +46,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1
 
 A code warning of an issue related to this list.
 
-This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It **MUST** be populated using the appropriate code from the table in the warning codes section above.
+This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It **MUST** be populated using the appropriate code from the table in the warning codes section on the [resource population fundamentals page](accessrecord_structured_development_resources_overview.html).
 
 
 ### extension[clinicalSetting] ###
