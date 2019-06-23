@@ -27,114 +27,119 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Introduction
-      url: /accessrecord_structured_development.html
-      output: web
-    - title: <b class='resource'>List</b>
-      url: /accessrecord_structured_development_list.html
-      output: web
-    - title: <b class='resource'>Bundle</b>
-      url: /accessrecord_structured_development_bundle.html
-      output: web
-    - title: <b class='resource'>Linkages</b>
-      url: /accessrecord_structured_development_linkages.html
-      output: web
+	  - title: Overview
+		output: web
+		subfolderitems:
 
-  - title: Allergies
-    output: web
-    subfolderitems:
+    	- title: Introduction
+		  url: /accessrecord_structured_development.html
+		  output: web
+		- title: <b class='resource'>List</b>
+		  url: /accessrecord_structured_development_list.html
+		  output: web
+		- title: <b class='resource'>Bundle</b>
+		  url: /accessrecord_structured_development_bundle.html
+		  output: web
+		- title: <b class='resource'>Linkages</b>
+		  url: /accessrecord_structured_development_linkages.html
+		  output: web
 
-    - title: Allergies guidance
-      url: /accessrecord_structured_development_allergies_guidance.html
-      output: web
-    - title: <b class='resource'>AllergyIntolerance</b>
-      url: /accessrecord_structured_development_allergyintolerance.html
-      output: web
-    - title: Allergies FHIR&reg; example
-      url: /accessrecord_structured_development_fhir_examples_allergies.html 
-      output: web
+	  - title: Allergies
+		output: web
+		subfolderitems:
 
-  - title: Medications
-    output: web
-    subfolderitems:
+		- title: Allergies guidance
+		  url: /accessrecord_structured_development_allergies_guidance.html
+		  output: web
+		- title: <b class='resource'>AllergyIntolerance</b>
+		  url: /accessrecord_structured_development_allergyintolerance.html
+		  output: web
+		- title: Allergies FHIR&reg; example
+		  url: /accessrecord_structured_development_fhir_examples_allergies.html
+		  output: web
 
-    - title: Medication resource relationships
-      url: /accessrecord_structured_development_medication_resource_relationships.html
-      output: web
-    - title: Medication guidance
-      url: /accessrecord_structured_development_medication_guidance.html
-      output: web
-    - title: <b class='resource'>Medication</b>
-      url: /accessrecord_structured_development_medication.html
-      output: web
-    - title: <b class='resource'>MedicationStatement</b>
-      url: /accessrecord_structured_development_medicationstatement.html
-      output: web
-    - title: <b class='resource'>MedicationRequest</b>
-      url: /accessrecord_structured_development_medicationrequest.html
-      output: web
-    - title: Medication FHIR&reg; examples
-      url: /accessrecord_structured_development_fhir_examples_medication.html
-      output: web
+	  - title: Medications
+		output: web
+		subfolderitems:
 
-  - title: Immunizations
-    output: web
-    subfolderitems:
+		- title: Medication resource relationships
+		  url: /accessrecord_structured_development_medication_resource_relationships.html
+		  output: web
+		- title: Medication guidance
+		  url: /accessrecord_structured_development_medication_guidance.html
+		  output: web
+		- title: <b class='resource'>Medication</b>
+		  url: /accessrecord_structured_development_medication.html
+		  output: web
+		- title: <b class='resource'>MedicationStatement</b>
+		  url: /accessrecord_structured_development_medicationstatement.html
+		  output: web
+		- title: <b class='resource'>MedicationRequest</b>
+		  url: /accessrecord_structured_development_medicationrequest.html
+		  output: web
+		- title: Medication FHIR&reg; examples
+		  url: /accessrecord_structured_development_fhir_examples_medication.html
+		  output: web
 
-    - title: Immunizations guidance
-      output: web
-      url: /accessrecord_structured_development_immunization_guidance.html
-    - title: <b class='resource'>Immunization</b>
-      url: /accessrecord_structured_development_immunization.html
-      output: web
+	  - title: Immunizations
+		output: web
+		subfolderitems:
 
-  - title: Uncategorised data
-    output: web
-    subfolderitems:
+		- title: Immunizations guidance
+		  output: web
+		  url: /accessrecord_structured_development_immunization_guidance.html
+		- title: <b class='resource'>Immunization</b>
+		  url: /accessrecord_structured_development_immunization.html
+		  output: web
 
-    - title: Uncategorised data guidance
-      url: /accessrecord_structured_development_uncategorisedData_guidance.html
-      output: web
-    - title: <b class='resource'>Observation - uncategorised data</b>
-      url: /accessrecord_structured_development_observation_uncategorisedData.html
-      output: web
+	  - title: Uncategorised data
+		output: web
+		subfolderitems:
 
-  - title: Consultations
-    output: web
-    subfolderitems:
-    
-    - title: Consultation guidance
-      url: /accessrecord_structured_development_consultation_guidance.html
-      output: web
-    - title: <b class='resource'>Encounter</b>
-      url: /accessrecord_structured_development_encounter.html
-      output: web
-    - title: <b class='resource'>Composition</b>
-      url: /accessrecord_structured_development_composition.html
-      output: web
-    - title: <b class='resource'>List Consultation</b>
-      url: /accessrecord_structured_development_list_consultation.html
-      output: web
-    - title: <b class='resource'>List Topic</b>
-      url: /accessrecord_structured_development_list_topic.html
-      output: web
-    - title: <b class='resource'>List Category</b>
-      url: /accessrecord_structured_development_list_category.html
-      output: web  
-    - title: Observation - narrative
-      url: accessrecord_structured_development_guidance_observation_narrative.html
-      output: web
-   
-  - title: Problems
-    output: web
-    subfolderitems:
+		- title: Uncategorised data guidance
+		  url: /accessrecord_structured_development_uncategorisedData_guidance.html
+		  output: web
+		- title: <b class='resource'>Observation - uncategorised data</b>
+		  url: /accessrecord_structured_development_observation_uncategorisedData.html
+		  output: web
 
-    - title: Problems guidance
-      url: /accessrecord_structured_development_problems_guidance.html
-      output: web
-    - title: <b class='resource'>Condition - ProblemHeader</b>
-      url: /accessrecord_structured_problems.html
-      output: web
+	  - title: Consultations
+		output: web
+		subfolderitems:
+
+		- title: Consultation guidance
+		  url: /accessrecord_structured_development_consultation_guidance.html
+		  output: web
+		- title: <b class='resource'>Encounter</b>
+		  url: /accessrecord_structured_development_encounter.html
+		  output: web
+		- title: <b class='resource'>Composition</b>
+		  url: /accessrecord_structured_development_composition.html
+		  output: web
+		- title: <b class='resource'>List Consultation</b>
+		  url: /accessrecord_structured_development_list_consultation.html
+		  output: web
+		- title: <b class='resource'>List Topic</b>
+		  url: /accessrecord_structured_development_list_topic.html
+		  output: web
+		- title: <b class='resource'>List Category</b>
+		  url: /accessrecord_structured_development_list_category.html
+		  output: web  
+		- title: Observation - narrative
+		  url: accessrecord_structured_development_guidance_observation_narrative.html
+		  output: web
+
+	  - title: Problems
+		output: web
+		subfolderitems:
+
+		- title: Problems guidance
+		  url: /accessrecord_structured_development_problems_guidance.html
+		  output: web
+		- title: <b class='resource'>Condition - ProblemHeader</b>
+		  url: /accessrecord_structured_problems.html
+		  output: web
+
 
   - title: API definition
     output: web, pdf
