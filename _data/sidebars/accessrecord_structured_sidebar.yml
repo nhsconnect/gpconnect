@@ -31,15 +31,15 @@ entries:
       url: /accessrecord_structured_development.html
       output: web
     - title: <b class='resource'>Linkages</b>
-      url: /accessrecord_structured_development_linkages.htm
+      url: /accessrecord_structured_development_linkages.html
       output: web
-    - title: <b class='resource'>Resource population</b>
-      url: /accessrecord_structured_development_resources_overview.md
+    - title: <b class='resource'>Resource population fundamentals</b>
+      url: /accessrecord_structured_development_resources_overview.html
       output: web
 
       subfolders:
 
-      - title: Common resources
+      - title: Structural resources
         output: web
         subfolderitems:
 
