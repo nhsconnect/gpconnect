@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Linkages between data items
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar
