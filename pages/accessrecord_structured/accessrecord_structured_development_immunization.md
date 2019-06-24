@@ -90,13 +90,13 @@ The procedure code describing the vaccine that was administered.
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
-This  **MUST**  be a GUID.
+This **MUST** be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_  systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and, therefore, is stored with the source data).
 
-Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
+Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
 ### status ###
 
@@ -146,7 +146,7 @@ Where the vaccine product that was administered is not known then one of the nul
   </tr>
 </table>
 
-A reference to the Patient who had the immunisation specified.
+A reference to the patient who had the immunisation specified.
 
 ### encounter ###
 
@@ -158,7 +158,7 @@ A reference to the Patient who had the immunisation specified.
   </tr>
 </table>
 
-The  `Consultation`  within which the immunisation was recorded.
+The `Consultation` within which the immunisation was recorded.
 This may be when the vaccination was administered or when an immunisation administered elsewhere was recorded.
 
 As per base profile guidance.
@@ -186,7 +186,7 @@ If the immunisation was administered elsewhere, this may be an estimated date.
   </tr>
 </table>
 
-Fixed value of <code>true</code>for all profiles created from the Care Connect Immunization profiles. 
+Fixed value of <code>true</code> for all profiles created from the Care Connect Immunization profiles. 
 
 Indicates the context that the data was recorded in. 
 
@@ -212,7 +212,7 @@ Indicates the source of a secondary reported record.
   </tr>
 </table>
 
-The GP Practice, branch surgery or other location where the vaccination occurred. 
+The GP practice, branch surgery or other location where the vaccination occurred. 
 
 ### manufacturer ###
 
@@ -345,7 +345,7 @@ Notes about the immunization.
   </tr>
 </table>
 
-The reason why the immunization was given, for example travel, occupation, etc. 
+The reason why the immunization was given, for example, travel, occupation, and so on. 
 
 ### vaccinationProtocol ###
 
