@@ -87,4 +87,31 @@ When returning an Uncategorised Data record include the follow:
 *	The Observation profile of the Uncategorised Data
 *	The ProblemHeader profiles of any directly linked Problems
 
+## Following a Linkage ##
+For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies what clinical areas of the patient record they require and what search criteria should be applied then call the GP Connect API. The provider system then returns all the requested information in a single bundle.
+
+
+There are however scenarios where the information to the first query identifies additional information that is required.
+
+
+For example:
+* A retrieved medication is linked to a problem
+* A retrieved problem is linked to ten consultations
+* A retrieved immunisation is linked to a consultation
+
+
+Where this happens the provider system will include FHIR identifiers for all the linked items.
+
+
+There may be a decision by the consuming system (or by a user of the consuming system) that they need additional information about the linked clinical item. To get these the consumer system can call the GP Connect API a second time using the FHIR identifiers as search criteria. 
+
+If required, this can be repeated a third, fourth or any number of times to trace through a chain of linked data in a patient record.
+
+For example:
+* Retrieve all active medications of a patient.
+   * Spot one of the medications as being of potential relevance to the patient’s current issue. See that the medication is linked to a problem record.
+* Retrieve the problem linked to the medication
+   * See that the problem is linked to multiple consultations and was last discussed with the patient in a consultation two months ago.
+* Retrieve the latest consultation linked to the problem.
+   * Review the consultation notes to understand the latest information about the problem.
 
