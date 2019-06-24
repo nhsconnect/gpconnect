@@ -383,6 +383,42 @@ If the immunisation is achieved via a series of vaccinations, this is the positi
 
 A description for the vaccination protocol this vaccination is administered under. 
 
+### vaccinationProtocol.seriesDoses ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>positiveInt</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The number of doses in the series which are required for immunity.
+
+### vaccinationProtocol.targetDisease ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..*</td>
+  </tr>
+</table>
+
+The disease or diseases the patient is being immunised against.
+
+### vaccinationProtocol.doseStatus ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality</b> Mandatory</td>
+    <td><b>Cardinality</b> 1..1</td>
+  </tr>
+</table>
+
+
+
 ## Elements **not in use** ##
 
 The following elements **MUST NOT** be populated:
@@ -421,30 +457,6 @@ Any reaction to an immunization **MUST** be sent separately in an <code>AllergyI
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>string</code></td>
-  </tr>
-</table>
-
-### vaccinationProtocol.seriesDoses ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>positiveInt</code></td>
-  </tr>
-</table>
-
-### vaccinationProtocol.targetDisease ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-### vaccinationProtocol.doseStatus ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
