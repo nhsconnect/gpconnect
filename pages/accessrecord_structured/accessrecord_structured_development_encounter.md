@@ -11,22 +11,37 @@ summary: "Guidance for populating the Encounter resource for consultations"
 
 ### id
 
-Data type: Id	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
 
 The logical identifier of the Encounter resource.
 
 ### meta.profile
 
-Data type: uri	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
 
 The Encounter profile URL.
 
 ### identifier
 
-Data type: Identifier	Optionality: Mandatory	Cardinality: 1..*
-
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Identifier</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..*</td>
+  </tr>
+</table>
 
 This is for business identifiers.
 
@@ -34,63 +49,60 @@ This is sliced to include a cross care setting identifier which MUST be populate
 
 ### status
 
-Data type: status	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>code</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
 
 Fixed value of **finished**. 
 
-Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of Consultation context. Hence use most appropriate value from limited set available. 
+Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of Consultation context. 
+Hence use most appropriate value from limited set available. 
 
 Some systems allow Consultations to be assigned a draft or incomplete status but this status is not conveyed in GP Connect as the information recorded in such Consultation is still treated as authoratative by the source systems.
 
-### statusHistory
-
-Not used.
-
-### class
-
-Not used.
-
-### classHistory
-
-Not used.
-
 ### type
 
-Data type: CodeableConcept	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
 
 Carries the Consultation type as displayed by system via the CodeableConcept **.text** attribute.
 
 TO DO - rule a mapping to a Snomed CT vocabulary in or out
 
-### priority
-
-Not used.
-
 ### subject
 
-Data type: Reference(Patient)	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
 
 Reference to Patient resource representing the Patient against whom the source Consultation/encounter was recorded.
 
-### episodeOfCare
-
-Not used
-
-### incomingReferral
-
-Not used.
-
-The current scope of GP Connect excludes inbound referrals.
 
 ### participant
 
-Data type: BackboneElement	Optionality: Required	Cardinality: 0..*
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
 
-
-Where available will always be populated with at least one **.individual** Reference(Practitioner) with **.type** value of **'PPRF'**  from the  vocabulary. This should reference a Practitioner resource representing the individual with primary attribution for the Consultation/Encounter (usually the single primary attributed user shown in system journals or other views).
+Where available will always be populated with at least one **.individual** Reference(Practitioner) with **.type** value of **'PPRF'**  from the  vocabulary. 
+This should reference a Practitioner resource representing the individual with primary attribution for the Consultation/Encounter (usually the single primary attributed user shown in system journals or other views).
 
 Other participants e.g. Registrars, trainees or other parties present may be referenced but with a participation type of **'PART'**.
 
@@ -158,3 +170,31 @@ Reference to the responsible organisation for the Consultatiion/Encounter.
 ### partOf
 
 Not used.
+
+##Elements not used by GP Connect##
+
+### statusHistory
+
+Not used.
+
+### class
+
+Not used.
+
+### classHistory
+
+Not used.
+
+### priority
+
+Not used.
+
+### episodeOfCare
+
+Not used
+
+### incomingReferral
+
+Not used.
+
+The current scope of GP Connect excludes inbound referrals.
