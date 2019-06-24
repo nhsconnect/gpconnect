@@ -108,7 +108,7 @@ Reconstituted Consultation Text
 
 ## Example
 
-Sequence diagram for retrieving a patient record
+![Sequence diagram for retrieving a patient record](images/access_structured/Consultation Example_V5.png)
 
 *THe display of Snomed CT codes in the examples is for clarity only, it does not apply that Snomed CT codes would be directly expressed as text or displayed as text by receiving systems*
 
