@@ -90,9 +90,9 @@ There are two primary ways that Consultation notes are recorded on native GP sys
 -   Consultation notes for a heading are recorded as a collection of observations, each with a clinical code and or text. When read together in order they produce the Consultation notes.
     Note – this may be entering free text format dynamically identifying codes or through forms where there are specific fields for codes and free text.
 
-<centre>
-<IMG src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text"  style="max-width:40%;max-height:40%;">
-</centre>
+<center>
+<IMG src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text"  style="max-width:35%;max-height:35%;">
+</center>
 
  
 
