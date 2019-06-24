@@ -69,7 +69,7 @@ Consultations follow a common logical structure.
 
 ## Approach
 
-![Consultation FHIR Resource Model ](images/access_structured/Consultatiion_FHIR_Resource_Model.png)
+![Consultation FHIR Resource Model ](images/access_structured/Consultation_FHIR_Resource_Model.png)
 
 ![Consultation Structure ](images/access_structured/Consultation_Stucture.png)
 
