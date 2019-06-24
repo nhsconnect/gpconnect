@@ -158,3 +158,53 @@ The List level representing the Topic level of the Consultation structure.
 Data type: string	Optionality: Required	Cardinality: 0..1
 
 
+The name of the corresponding Topic section in the source Consultation if it is named. 
+
+### code
+
+Data type: CodeableConcept	Optionality: Mandatory	Cardinality: 1..1
+
+
+Fixed value of **25851000000105 |Topic (EHR) (record artifact)|**
+
+### entry
+
+Data type: BackboneElement	Optionality: Mandatory	Cardinality: 1..*
+
+
+Where information within the Topic is organisaed as sub-headings, the entry list will reference instances of the Category List level.
+
+For Consultations which have a flat structure i.e. clinical record entries made outside of the Topic and heading structure, an artificial Topic List is 
+generated and entries will reference resources represnting those record entries e.g. Allergies, Medications, Tests etc ...
+
+The two approaches are never mixed within the same Topic i.e. all entries will either reference List(Category) or resources representing the source record entries but not both.
+
+**flag**, **deleted** and **date** are not used.
+
+## List (Category)
+
+The level of the Consultation that represents the heading sections (SOAP headings) that contain clinical record entries.
+
+### title
+
+Data type: string	Optionality: Required	Cardinality: 0..1
+
+
+The name of the heading section on the source system represented by this List instance.
+
+### code
+
+Data type: CodeableConcept	Optionality: Mandatory	Cardinality: 1..1
+
+
+Fixed value of **24781000000107 |Category (EHR) (record artifact)|**
+
+### entry
+
+Data type: BackboneElement	Optionality: Mandatory	Cardinality: 1..*
+
+
+Each entry is a a reference to a resource representing a clinical receord entry in the source system e.g. medications, allergies, problems, diagnoses etc ...
+
+**flag**, **deleted** and **date** are not used.
+        
