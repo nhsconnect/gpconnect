@@ -53,6 +53,8 @@ When returning a consultation record include the follow:
 *	The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
 
+<img src="images/access_structured/Consultation bundle.png" alt="Consultation FHIR profiles" style="max-width:100%;max-height:100%;">
+
 ### Problems ###
 When returning a Problem record include the follow:
 *	The ProblemHeader profile of the Problem
