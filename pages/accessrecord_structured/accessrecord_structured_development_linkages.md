@@ -34,7 +34,7 @@ For example, the MedicationStatement resource contains a field that can be used 
 ## FHIR Profiles Returned on Query ##
 There are three main considerations when determining which data is returned by a query on each clinical area.
 * Include all the FHIR profiles required to fully describe the requested clinical area
-* Include the FHIR profiles required to describe linkages from the requested clinical area
+* Include the FHIR profiles required to define all the linkages from the requested clinical area
 * Include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area. 
 
 ### Consultations ###
@@ -45,6 +45,7 @@ When returning a consultation record include the follow:
 *	The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices.
     * Always include the MedicationStatement, MedicationRequest (intent = plan) and Medication profiles.
     * Only include MedicationRequest (intent = order) for directly linked issues.
+    *	Include the ProblemHeader profile of any Problems linked to the returned MedicationRequests
 *	The AllergyIntolerance profile of any linked Allergies
     *	Include the ProblemHeader profile of any Problems linked to the returned Allergies
 *	The Immunization profile of any linked Immunisations
