@@ -73,7 +73,7 @@ The benefits of this approach are:
 
 {% include note.html content="Search/filter parameters which were considered but not chosen for medications and allergies are: Fixed Date Range, SNOMED Code Cluster." %}
 
-## Fabricate Consultations ##
+## Fabricated Consultations ##
 
 Systems which allow direct recording of data outside of Consultation contexts should not fabricate Consultations to return such data. To do so would be generating information and structure which does not exist on the source system and would obscure the genuine Consultation content (for example last X Consultations displayed in patient summaries). Systems in this category have clear distinctions between Consultations and other types of record content and to fabricate Consultations would distort this native behaviour.
 
