@@ -27,3 +27,7 @@ An example of where this happens would be if a list of Medications contained 2 M
 2 PractitionerRole resources would be created that both relate to the same Practitioner. However, as the MedicationRequest resource only references the Practitioner and not PractitionerRole it will be impossible to ascertain which PractitionerRole relates to which medication.
 
 As a workaround for this issue in GP Connect when providing responses to queries systems **MUST** only supply 1 PractitionerRole per Practitioner. If more than 1 should exist then the system **MUST NOT** supply any.
+
+## Consultation Retrieval ##
+
+Depending on the provider system not every item in a patient's clinical record will be recorded as part of a consultation. Therefore a consumer system making Consultation oriented queries only must not expect to obtain all items in the patient record.
