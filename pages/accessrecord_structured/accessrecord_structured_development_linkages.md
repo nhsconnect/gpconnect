@@ -56,7 +56,7 @@ Include the following FHIR profiles:
 *	The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
 
-<img src="images/access_structured/Consultation bundle.png" alt="Consultation FHIR profiles" style="max-width:100%;max-height:100%;">
+<img src="images/access_structured/Consultation_return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Problems ###
 When GP Connect returns a Problem it will supply the metadata and description of the problem. If asked for by the consumer, GP Connect will also return all the clinical data that has been linked to the Problem.
@@ -74,6 +74,8 @@ Include the following FHIR profiles:
     *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
 *	Where requested, The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
+    
+<img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Medications and Medical Devices ###
 When GP Connect returns a Medication or Medical Device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
