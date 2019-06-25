@@ -242,16 +242,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 
 Each clinical area has its own set of search/filter parameters. These parameters will only apply to their own area and **MUST** have no impact on other parameters.
 
-#### Use of parameters ####
-
-There are two general use cases for retrieving data:
-  - Retrieve whole record
-    - All of the parameters listed above should be included in a request
-  - Retrieve part of record
-    - Include parameters for data that is required
-    - Further calls can be made for more data
-    - Logical FHIR&reg; identifiers can be used to resolve references where data was retrieved across multiple API calls
-
 {% include important.html content="Consumer guidance: The parameters can be used together in a single call or in multiple calls so that information can be retrieved if is required. It is advised that the number of requests that are made to retrieve a patient's record are kept to a minimum." %}
 
 The example below shows a fully populated `Parameters` resource as a request to the `$gpc.getstructuredrecord` operation:
@@ -293,19 +283,45 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeConsultations",
       "part": [
         {
+          "name": "consultationSearchPeriod",
+          "valuePeriod": {
+            "start": "2017-12-25",
+            "end": "2018-12-25"
+          }
+        },
+        {
           "name": "numberOfMostRecent",
           "valueBoolean": "3"
         }
       ]
     },
     {
-      "name": "includeProblems"
+      "name": "includeProblems",
+      "part": [
+        {
+          "name": "includeStatus",
+          "valueCode": "active"
+        },
+        {
+          "name": "includeSignificance",
+          "valueCode": "major"
+        }
+      ]
     },
     {
       "name": "includeImmunisations"
     },
     {
-      "name": "includeUncategorisedData"
+      "name": "includeUncategorisedData",
+      "part": [
+        {
+          "name": "uncategorisedDataSearchPeriod",
+          "valuePeriod": {
+            "start": "2016-12-25",
+            "end": "2018-12-25"
+          }
+        }
+      ]
     }
   ]
 }
@@ -330,11 +346,11 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `medicationSearchFromDate` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-
 | The `consultationSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-
+| The `includeStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `includeSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -342,12 +358,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 |-------------------------|-------------------|
-
-consultation - most recent and date
-consultation date values greater than current date
-includeStatus - value from outside valueset
-includeSignificance - value from outside valueset
-uncategorised data date values greater than current data
 
 ### Forwards and backwards compatibility ###
 
