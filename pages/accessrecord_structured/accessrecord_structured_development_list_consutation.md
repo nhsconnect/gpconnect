@@ -7,29 +7,28 @@ permalink: accessrecord_structured_development_list_consultation.html
 summary: "Guidance for populating the list resource at the topic level resource"
 ---
 
-## Overview
+## Overview ##
 
 A two or three level List structure is used to represent structured consultations.
 
 1.  **List (Consultation)**
 
-Coded as **325851000000107 |Consultation encounter type (record artifact)|** this top level resource represents the structured Consultation as a whole.
+...Coded as **325851000000107 |Consultation encounter type (record artifact)|** this top level resource represents the structured Consultation as a whole.
 
 2.  **List (Topic)**
 
-Coded as **25851000000105 |Topic (EHR) (record artifact)|** this level represents the Topic/Problem groupings within Consultations.
+...Coded as **25851000000105 |Topic (EHR) (record artifact)|** this level represents the Topic/Problem groupings within Consultations.
 
 3.  **List (Category)**
 
-Coded as **24781000000107 |Category (EHR) (record artifact)|** this level represnts the headings (SOAP heading) levels of the Consultation structure
-that contain record entries.
+...Coded as **24781000000107 |Category (EHR) (record artifact)|** this level represnts the headings (SOAP heading) levels of the Consultation structure that contain record entries.
 
 In the case of Consultation which has a 'flat' structure i.e. contains record entries without a surrounding Topic/Category structure
 Producer systems gneerate a List(Topic) level which links directly to record entries without the List(Category) level.
 
 Empty Consultations and empty subsections (Topics and headings) are suppressed at source and this is reflected in the cardinalities specified.
 
-### Common List Attributes
+## Common List Attributes ##
 
 The population of List attributes that are common to all of the Consultation List types is described here.
 
