@@ -9,22 +9,23 @@ summary: "Guidance for populating the list resource at the topic level resource"
 
 ## Overview ##
 
-A two or three level List structure is used to represent structured consultations.
+A two or three level <code>List</code> structure is used to represent structured consultations.
 
 1.  **List (Consultation)**
-
-...Coded as **325851000000107 |Consultation encounter type (record artifact)|** this top level resource represents the structured Consultation as a whole.
-
 2.  **List (Topic)**
-
-...Coded as **25851000000105 |Topic (EHR) (record artifact)|** this level represents the Topic/Problem groupings within Consultations.
-
 3.  **List (Category)**
 
-...Coded as **24781000000107 |Category (EHR) (record artifact)|** this level represnts the headings (SOAP heading) levels of the Consultation structure that contain record entries.
+List (Consultation) **SHALL** be coded as **325851000000107 |Consultation encounter type (record artifact)|**.
+This top level resource represents the structured Consultation as a whole.
 
-In the case of Consultation which has a 'flat' structure i.e. contains record entries without a surrounding Topic/Category structure
-Producer systems gneerate a List(Topic) level which links directly to record entries without the List(Category) level.
+List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR) (record artifact)|**. 
+This level represents the Topic/Problem groupings within Consultations.
+
+List (Category) **SHALL** be coded as **24781000000107 |Category (EHR) (record artifact)|**. 
+This level represents the headings (SOAP heading) levels of the Consultation structure that contain record entries.
+
+In the case of Consultation which has a 'flat' structure, i.e. contains record entries without a surrounding Topic/Category structure,
+Producer systems generate a List(Topic) level which links directly to record entries without the List(Category) level.
 
 Empty Consultations and empty subsections (Topics and headings) are suppressed at source and this is reflected in the cardinalities specified.
 
@@ -34,8 +35,13 @@ The population of List attributes that are common to all of the Consultation Lis
 
 ### id
 
-Data type: Id	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Id</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 The logical identifier of the List resource
 
