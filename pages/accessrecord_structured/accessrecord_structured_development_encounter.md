@@ -51,7 +51,7 @@ This is sliced to include a cross care setting identifier which MUST be populate
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
+    <td><b>Data type:</b> <code>Code</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -180,7 +180,7 @@ Reference to the responsible organisation for the Consultatiion/Encounter.
 
 ## Elements not used by GP Connect ##
 
-The following element **SHALL NOT** be populated
+The following elements **SHALL NOT** be populated
 
 ### statusHistory ###
 
@@ -194,42 +194,100 @@ Not used.
 
 ### class ###
 
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+  </tr>
+</table>
+      
 Not used.
 
 ### classHistory ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+  </tr>
+</table>
 
 Not used.
 
 ### priority ###
 
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
 Not used.
 
 ### episodeOfCare ###
 
-Not used
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(EpisodeOfCare)</code></td>
+  </tr>
+</table>
+
+The current scope of GP Connect excludes the episode of care resource.
 
 ### incomingReferral ###
 
-Not used.
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(ReferralRequest)</code></td>
+  </tr>
+</table>
 
 The current scope of GP Connect excludes inbound referrals.
 
 ### reason ###
 
-Not used
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+The reason for the consultation will be associated to the <code>appointment</code>.
 
 ### diagnosis ###
 
-Not used
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+  </tr>
+</table>
+
+The diagnosis will be associated to the consultation via the <code>list</code> resource.
 
 ### account ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Account)</code></td>
+  </tr>
+</table>
 
 Not used
 
 ### hospitalization ###
 
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+  </tr>
+</table>
+
 Not used
 
 ### partOf ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
+  </tr>
+</table>
 
 Not used.
