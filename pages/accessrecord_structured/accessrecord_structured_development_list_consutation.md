@@ -114,7 +114,7 @@ The Patient reference is provided by all Lists in the structure rather than the 
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code> Reference(Encounter)</code></td>
+                <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
                 <td><b>Optionality:</b> Mandatory</td>
                 <td><b>Cardinality:</b> 1..1</td>
         </tr>
@@ -126,19 +126,29 @@ The Encounter reference is provided by all Lists in the structure rather than th
 
 ### date
 
-Data type: dateTime	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>dateTime</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 The system rather than clinical date time for when the consultation was last edited i.e. the date time the consultation was last modified on the source system.
 
 If no separate date time is recorded for Consultation sub sections, the overall audit date of the Consultation is replicated at all levels.
 
-The clinically significant or effective Consultation date is provided by the associated Encounter resource.
+The clinically significant or effective Consultation date is provided by the associated <code>Encounter</code> resource.
 
 ### source
 
-Data type: Reference(Practitioner)	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 The system (audit trail) user attributed to the authoring or modification the consultation.
 
@@ -146,44 +156,58 @@ The source Practitioner reference should be replaicate at all levels of the Cons
 
 ### orderedBy
 
-Data type: CodeableConcept	Optionality: Mandatory	Cardinality: 1..1
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>CodeableConcept</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
-
-Fixed value of **system** from  vocabulary.
+Fixed value of <code>system</code> from  vocabulary.
 
 By convention the order entries should appear is the default order subsections or entries are displayed by the native system at source.
 
-### note
-
-Not used withn the Lists representing the Consultation structure
-
 ## List (Consultation)
 
-The List level representing the Consultation as a whole.
+The following attributes are specific to the List level representing the Consultation as a whole.
 
 ### title
 
-Data type: string	Optionality: Required	Cardinality: 0..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>string</code></td>
+                <td><b>Optionality:</b> Required</td>
+                <td><b>Cardinality:</b> 0..1</td>
+        </tr>
+</table>
 
 The type or name of the consultation as it appears to users of the source system. 
-This duplicates the Consultation type/name provided at **Encounter.type**
+This duplicates the Consultation type/name provided at <code>Encounter.type</code>
 
 ### code
 
-Data type: CodeableConcept	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>CodeableConcept</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 Fixed value of **325851000000107 |Consultation encounter type (record artifact)|**
 
 ### entry
 
-Data type: BackboneElement	Optionality: Mandatory	Cardinality: 1..*
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>BackboneElement</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..*</td>
+        </tr>
+</table>
 
 Will contain at least one reference to a List resource providing the Topic level of the Consultation structure.
-
-**flag**, **deleted** and **date** are not used.
 
 ## List (Topic)
 
@@ -191,31 +215,43 @@ The List level representing the Topic level of the Consultation structure.
 
 ### title
 
-Data type: string	Optionality: Required	Cardinality: 0..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>string</code></td>
+                <td><b>Optionality:</b> Required</td>
+                <td><b>Cardinality:</b> 0..1</td>
+        </tr>
+</table>
 
 The name of the corresponding Topic section in the source Consultation if it is named. 
 
 ### code
 
-Data type: CodeableConcept	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>CodeableConcept</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 Fixed value of **25851000000105 |Topic (EHR) (record artifact)|**
 
 ### entry
 
-Data type: BackboneElement	Optionality: Mandatory	Cardinality: 1..*
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>BackboneElement</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..*</td>
+        </tr>
+</table>
 
+Where information within the Topic is organisaed as sub-headings, <code>entry.list</code> will reference instances of the Category List level.
 
-Where information within the Topic is organisaed as sub-headings, the entry list will reference instances of the Category List level.
-
-For Consultations which have a flat structure i.e. clinical record entries made outside of the Topic and heading structure, an artificial Topic List is 
-generated and entries will reference resources represnting those record entries e.g. Allergies, Medications, Tests etc ...
+For Consultations which have a flat structure i.e. clinical record entries made outside of the Topic and heading structure, an artificial Topic List is generated and entries will reference resources representing those record entries e.g. Allergies, Medications, Tests etc ...
 
 The two approaches are never mixed within the same Topic i.e. all entries will either reference List(Category) or resources representing the source record entries but not both.
-
-**flag**, **deleted** and **date** are not used.
 
 ## List (Category)
 
@@ -223,24 +259,72 @@ The level of the Consultation that represents the heading sections (SOAP heading
 
 ### title
 
-Data type: string	Optionality: Required	Cardinality: 0..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>string</code></td>
+                <td><b>Optionality:</b> Required</td>
+                <td><b>Cardinality:</b> 0..1</td>
+        </tr>
+</table>
 
 The name of the heading section on the source system represented by this List instance.
 
 ### code
 
-Data type: CodeableConcept	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>CodeableConcept</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 Fixed value of **24781000000107 |Category (EHR) (record artifact)|**
 
 ### entry
 
-Data type: BackboneElement	Optionality: Mandatory	Cardinality: 1..*
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>BackboneElement</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..*</td>
+        </tr>
+</table>
 
-
-Each entry is a a reference to a resource representing a clinical receord entry in the source system e.g. medications, allergies, problems, diagnoses etc ...
-
-**flag**, **deleted** and **date** are not used.
+Each <code>entry.item</code> is a reference to a resource representing a clinical record entry in the source system e.g. medications, allergies, problems, diagnoses, etc ...
         
+## List elements **not in use**
+
+The following elements **SHALL NOT** be populated
+
+### note
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Annotation</code></td>
+        </tr>
+</table>
+
+### entry.flag
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>CodeableConcept</code></td>
+        </tr>
+</table>
+
+### entry.deleted
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Boolean</code></td>
+        </tr>
+</table>
+
+### entry.date
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>dateTime</code></td>
+        </tr>
+</table>
