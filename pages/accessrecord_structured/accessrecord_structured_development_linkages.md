@@ -38,7 +38,10 @@ There are three main considerations when determining which data is returned by a
 * Include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area. 
 
 ### Consultations ###
-When returning a consultation record include the follow:
+When GP Connect returns a Consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the Consultation.
+
+
+Include the following FHIR profiles:
 * The Encounter profile of the Consultation
 *	The List profiles of the Consultation
 *	The ProblemHeader profile of any directly linked Problems
@@ -56,37 +59,53 @@ When returning a consultation record include the follow:
 <img src="images/access_structured/Consultation bundle.png" alt="Consultation FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Problems ###
-When returning a Problem record include the follow:
+When GP Connect returns a Problem it will supply the metadata and description of the problem. If asked for by the consumer, GP Connect will also return all the clinical data that has been linked to the Problem.
+
+
+Include the following FHIR profiles:
 *	The ProblemHeader profile of the Problem
 *	The ProblemHeader profiles of any directly linked Problems
-*	The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices.
+*	Where requested, The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices.
     *	Always include the MedicationStatement, MedicationRequest (intent = plan) and Medication profiles.
     *	Only include MedicationRequest (intent = order) for directly linked issues.
-*	The AllergyIntolerance profile of any linked Allergies
+*	Where requested, The AllergyIntolerance profile of any linked Allergies
     *	Include the ProblemHeader profile of any Problems linked to the returned Allergies
-*	The Immunization profile of any linked Immunisations
+*	Where requested, The Immunization profile of any linked Immunisations
     *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
-*	The Observation profile of any linked Uncategorised Data
+*	Where requested, The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
 
 ### Medications and Medical Devices ###
-When returning a Medication and Medical Device record include the follow:
+When GP Connect returns a Medication or Medical Device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
+
+
+Include the following FHIR profiles:
 *	The MedicationRequest (intent = plan), MedicationStatement and Medication profiles of the Medication and Medical Device
-*	Where requested by the consumer system, the MedicationRequest (intent = order) profile for every issue.
 *	The ProblemHeader profiles of any directly linked Problems
+*	Where requested, the MedicationRequest (intent = order) profile for every issue.
+
 
 ### Allergies ###
-When returning an Allergy record include the follow:
+When GP Connect returns an Allergy it will supply all the Allergy data.
+
+
+Include the following FHIR profiles:
 *	The AllergyIntolerance profile of the Allergy
 *	The ProblemHeader profiles of any directly linked Problems
 
 ### Immunisation ###
-When returning an Immunisation record include the follow:
+When GP Connect returns an Immunisation it will supply all the Immunisation data.
+
+
+Include the following FHIR profiles:
 *	The Immunization profile of the Immunisation
 *	The ProblemHeader profiles of any directly linked Problems
 
 ### Uncategorised Data ###
-When returning an Uncategorised Data record include the follow:
+When GP Connect returns Uncategorised Data it will supply all the data about the Uncategorised Data.
+
+
+Include the following FHIR profiles:
 *	The Observation profile of the Uncategorised Data
 *	The ProblemHeader profiles of any directly linked Problems
 
