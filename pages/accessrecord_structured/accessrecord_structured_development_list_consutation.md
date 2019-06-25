@@ -7,7 +7,7 @@ permalink: accessrecord_structured_development_list_consultation.html
 summary: "Guidance for populating the list resource at the topic level resource"
 ---
 
-## Overview ##
+## Overview
 
 A two or three level <code>List</code> structure is used to represent structured consultations.
 
@@ -29,7 +29,7 @@ Producer systems generate a List(Topic) level which links directly to record ent
 
 Empty Consultations and empty subsections (Topics and headings) are suppressed at source and this is reflected in the cardinalities specified.
 
-## Common List Attributes ##
+## Common List Attributes
 
 The population of List attributes that are common to all of the Consultation List types is described here.
 
@@ -47,38 +47,64 @@ The logical identifier of the List resource
 
 ### meta.profile
 
-Data type: uri	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>uri</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 The List profile URL.
 
 ### identifier
 
-Data type: Identifier	Optionality: Mandatroy	Cardinality: 1..*
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Identifier</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..*</td>
+        </tr>
+</table>
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross care setting identifier which MUST be populated. 
+The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 ### status
 
-Data type: code	Optionality: Mandatroy	Cardinality: 1..1
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Code</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
-
-Fixed value of **current**
+Fixed value of <code>current</code>
 
 ### mode
 
-Data type: code	Optionality: Mandatory	Cardinality: 1..1
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Code</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
-
-Fixed value of **snapshot**
+Fixed value of <code>snapshot</code>
 
 ### subject
 
-Data type: Reference(Patient)	Optionality: Mandatory	Cardinality: 1..1
-
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code> Reference(Patient)</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
 Reference to the Patient resource for the patient whose patient record contains a consultation represented by this List resource.
 
@@ -86,10 +112,15 @@ The Patient reference is provided by all Lists in the structure rather than the 
 
 ### encounter
 
-Data type: Reference(Encounter)	Optionality: Mandatory	Cardinality: 1..1
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code> Reference(Encounter)</code></td>
+                <td><b>Optionality:</b> Mandatory</td>
+                <td><b>Cardinality:</b> 1..1</td>
+        </tr>
+</table>
 
-
-Mandatory reference to the Encounter resource providing the context for the Consultation (Date/Doctor/Place ....)
+Mandatory reference to the <code>Encounter</code> resource providing the context for the Consultation (Date/Doctor/Place ....)
 
 The Encounter reference is provided by all Lists in the structure rather than the top level List(Consultation) only.
 
