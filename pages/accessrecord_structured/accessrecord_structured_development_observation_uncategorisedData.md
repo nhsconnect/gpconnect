@@ -26,7 +26,7 @@ summary: "Guidance for the representation and consumption of observation resourc
   </tr>
 </table>
 
-The logical identifier of the Observation narrative resource.
+The logical identifier of the uncategorised data Observation resource.
 
 ### meta.profile ###
 
@@ -38,7 +38,7 @@ The logical identifier of the Observation narrative resource.
   </tr>
 </table>
 
-The Observation narrative profile URL.
+The Observation profile URL.
 
 ### identifier ###
 
@@ -54,6 +54,11 @@ This is for business identifiers.
 
 This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
+This **MUST** be a GUID.
+
+Providing systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+
+Where consuming systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
 ### status ###
 
@@ -65,9 +70,19 @@ This is sliced to include a cross care setting identifier which MUST be populate
   </tr>
 </table>
 
-Fixed value of **finished**. 
+Fixed value of **final**. 
 
+### category ###
 
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The general type of observation. 
 
 ### code ###
 
@@ -79,7 +94,7 @@ Fixed value of **finished**.
   </tr>
 </table>
 
-Fixed value of **900000000000540000 |Plain text (foundation metadata concept)|**
+The clinical code that represents the data within the observation.
 
 ### subject ###
 
@@ -91,7 +106,7 @@ Fixed value of **900000000000540000 |Plain text (foundation metadata concept)|**
   </tr>
 </table>
 
-Reference to Patient resource representing the Patient against whom the narrative text was recorded.
+Reference to Patient resource representing the Patient against whom the data was recorded.
 
 ### context ###
 
@@ -103,7 +118,7 @@ Reference to Patient resource representing the Patient against whom the narrativ
   </tr>
 </table>
 
-Optional reference to the Encounter resource representing the consultation context in which the narrative free text was recorded. Will not be populated where the free text was recorded outside of a consultation context.
+Optional reference to the Encounter resource representing the consultation context in which the uncategorised data was recorded. 
 
 ### effectiveDateTime ###
 
@@ -115,7 +130,7 @@ Optional reference to the Encounter resource representing the consultation conte
   </tr>
 </table>
 
-The clinically relevant effective data or datetime for the narrative record entry.
+The clinically relevant effective data or datetime of the record entry.
 
 Where the effective date is unknown or not recorded this will be absent. Otherwise, it should be populated.
 
@@ -129,7 +144,7 @@ Where the effective date is unknown or not recorded this will be absent. Otherwi
   </tr>
 </table>
 
-The audit trail timestamp representing when the narrative was last modified.
+The audit trail timestamp representing when the data was recorded.
 
 ### performer ###
 
@@ -141,7 +156,43 @@ The audit trail timestamp representing when the narrative was last modified.
   </tr>
 </table>
 
-The Practitioner resource representing the person responsible for recording the narrative.
+The Practitioner resource representing the person responsible for recording the data item.
+
+### value[x] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Many</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The value of the test. this may be in the form of but is not limited to one of the following datatypes a quantity, string or an attachment.
+
+### dataAbsentReason ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The reason why a result/value has been omitted.
+
+### interpretation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The assessment made based on the result of the observation. Intended as a simple compact code often placed adjacent to the result value in reports and flow sheets to signal the meaning/normalcy status of the result. Otherwise known as abnormal flag.
 
 ### comment ###
 
@@ -153,19 +204,104 @@ The Practitioner resource representing the person responsible for recording the 
   </tr>
 </table>
 
-The free text narrative as plain text.
+This **MUST** include any qualifiers to the code element that were present in the sending system. These should be reported as a code and value pair as specified in the [uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance.html).
+
+It **MUST** also include any text relating to the observation.
+
+### bodysite ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The body part that was tested/observed.
+
+### method ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The method of testing/observation that was used.
+
+### specimen ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Reference to the specimen on which these results were based.
+
+### referenceRange ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The reference range provides a guide for interpretation of the results.
 
 ### related ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Reference to the test group header observation if the result is part of a test group.
+
+This **MUST** be qualified using the related.type 'derived-from'.
+
+### component ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-This attribute is used to specify the sequence of the narrative in relation to other resources - for example, when an ordered set of resources is being used to express the structure of a consultation displayed at source. See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
+The only type of dat that **MAY** use the componenet element is when a blood pressure is recorded as a pair of results. 
 
-The **related.type** and **related.target** are used to represent the sequence. Only the **related.type** value of **'sequel-to'** is utilised.
+
+<br>
+
+## Elements **not in use** ##
+
+The following elements **MUST NOT** be populated:
+
+### basedOn ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>reference</code></td>
+  </tr>
+</table>
+
+### device ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
 
