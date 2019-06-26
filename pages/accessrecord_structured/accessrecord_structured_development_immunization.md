@@ -6,7 +6,7 @@ sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_immunization.html
 summary: "FHIR resource for population guidance for immunization"
 ---
-## Introduction ##
+## Introduction
 
 The headings below list the elements of the Immunization resource and describe how to populate and consume them.
 
@@ -14,9 +14,9 @@ The headings below list the elements of the Immunization resource and describe h
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Immunization profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)." %} 
 
-## Immunization elements ##
+## Immunization elements
 
-### id ###
+### id
 
 <table class='resource-attributes'>
   <tr>
@@ -28,7 +28,7 @@ The headings below list the elements of the Immunization resource and describe h
 
 The logical identifier of the Immunization resource.
 
-### meta.profile ###
+### meta.profile
 
 <table class='resource-attributes'>
   <tr>
@@ -42,7 +42,7 @@ The Immunization profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)
 
-### extension[parentPresent] ###
+### extension[parentPresent]
 
 <table class='resource-attributes'>
   <tr>
@@ -54,7 +54,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immuni
 
 Indicates whether a parent was present at the immunization.
 
-### extension[recordedDate] ###
+### extension[recordedDate]
 
 <table class='resource-attributes'>
   <tr>
@@ -66,7 +66,7 @@ Indicates whether a parent was present at the immunization.
 
 When the record of the immunization was created on the clinical system.
 
-### extension[vaccinationProcedure] ###
+### extension[vaccinationProcedure]
 
 <table class='resource-attributes'>
   <tr>
@@ -78,7 +78,7 @@ When the record of the immunization was created on the clinical system.
 
 The procedure code describing the vaccine that was administered.
 
-### identifier ###
+### identifier
 
 <table class='resource-attributes'>
   <tr>
@@ -98,7 +98,7 @@ _Providing_  systems **MUST** ensure this GUID is globally unique and a persiste
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
-### status ###
+### status
 
 <table class='resource-attributes'>
   <tr>
@@ -110,7 +110,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 Fixed to the value <code>completed</code> for all CareConnect profiles. 
 
-### notGiven ###
+### notGiven
 
 <table class='resource-attributes'>
   <tr>
@@ -122,7 +122,7 @@ Fixed to the value <code>completed</code> for all CareConnect profiles.
 
 Fixed value of <code>false</code>. 
 
-### vaccineCode ###
+### vaccineCode
 
 <table class='resource-attributes'>
   <tr>
@@ -136,7 +136,7 @@ Vaccine product administered.
 
 Where the vaccine product that was administered is not known then one of the null values defined in the profile **MUST** be populated. 
 
-### patient ###
+### patient
 
 <table class='resource-attributes'>
   <tr>
@@ -148,7 +148,7 @@ Where the vaccine product that was administered is not known then one of the nul
 
 A reference to the patient who had the immunisation specified.
 
-### encounter ###
+### encounter
 
 <table class='resource-attributes'>
   <tr>
@@ -163,7 +163,7 @@ This may be when the vaccination was administered or when an immunisation admini
 
 As per base profile guidance.
 
-### date ###
+### date
 
 <table class='resource-attributes'>
   <tr>
@@ -176,7 +176,7 @@ As per base profile guidance.
 The dateTime when the immunization was administered. 
 If the immunisation was administered elsewhere, this may be an estimated date. 
 
-### primarySource ###
+### primarySource
 
 <table class='resource-attributes'>
   <tr>
@@ -190,7 +190,7 @@ Fixed value of <code>true</code> for all profiles created from the Care Connect 
 
 Indicates the context that the data was recorded in. 
 
-### reportOrigin ###
+### reportOrigin
 
 <table class='resource-attributes'>
   <tr>
@@ -202,7 +202,7 @@ Indicates the context that the data was recorded in.
 
 Indicates the source of a secondary reported record.
 
-### location ###
+### location
 
 <table class='resource-attributes'>
   <tr>
@@ -214,7 +214,7 @@ Indicates the source of a secondary reported record.
 
 The GP practice, branch surgery or other location where the vaccination occurred. 
 
-### manufacturer ###
+### manufacturer
 
 <table class='resource-attributes'>
   <tr>
@@ -226,7 +226,7 @@ The GP practice, branch surgery or other location where the vaccination occurred
 
 The manufacturer of the vaccine.
 
-### lotNumber ###
+### lotNumber
 
 <table class='resource-attributes'>
   <tr>
@@ -238,7 +238,7 @@ The manufacturer of the vaccine.
 
 The batch number of the vaccine.
 
-### expirationDate ###
+### expirationDate
 
 <table class='resource-attributes'>
   <tr>
@@ -250,7 +250,7 @@ The batch number of the vaccine.
 
 The expiry date of the batch the vaccine is from.
 
-### site ###
+### site
 
 <table class='resource-attributes'>
   <tr>
@@ -262,7 +262,7 @@ The expiry date of the batch the vaccine is from.
 
 The site on the body where the vaccine was administered.
 
-### route ###
+### route
 
 <table class='resource-attributes'>
   <tr>
@@ -274,7 +274,7 @@ The site on the body where the vaccine was administered.
 
 The route through which the vaccine entered the body.
 
-### doseQuantity ###
+### doseQuantity
 
 <table class='resource-attributes'>
   <tr>
@@ -286,7 +286,7 @@ The route through which the vaccine entered the body.
 
 The amount of the vaccine administered.
 
-### practitioner ###
+### practitioner
 
 <table class='resource-attributes'>
   <tr>
@@ -298,7 +298,7 @@ The amount of the vaccine administered.
 
 The details of the person who administered the vaccine are required.
 
-### practitioner.role ###
+### practitioner.role
 
 <table class='resource-attributes'>
   <tr>
@@ -310,7 +310,7 @@ The details of the person who administered the vaccine are required.
 
 The role of the referenced practitioner.
 
-### practitioner.actor ###
+### practitioner.actor
 
 <table class='resource-attributes'>
   <tr>
@@ -323,7 +323,7 @@ The role of the referenced practitioner.
 A reference to the practitioner resource that administered the vaccine. 
 This is mandatory where the practitioner role is populated.
 
-### note ###
+### note
 
 <table class='resource-attributes'>
   <tr>
@@ -335,7 +335,7 @@ This is mandatory where the practitioner role is populated.
 
 Notes about the immunization.
 
-### explanation.reason ###
+### explanation.reason
 
 <table class='resource-attributes'>
   <tr>
@@ -347,7 +347,7 @@ Notes about the immunization.
 
 The reason why the immunization was given, for example, travel, occupation, and so on. 
 
-### vaccinationProtocol ###
+### vaccinationProtocol
 
 <table class='resource-attributes'>
   <tr>
@@ -359,7 +359,7 @@ The reason why the immunization was given, for example, travel, occupation, and 
 
 The protocol for the vaccination.
 
-### vaccinationProtocol.doseSequence ###
+### vaccinationProtocol.doseSequence
 
 <table class='resource-attributes'>
   <tr>
@@ -371,7 +371,7 @@ The protocol for the vaccination.
 
 If the immunisation is achieved via a series of vaccinations, this is the position of the vaccine procedure in the series.
 
-### vaccinationProtocol.description ###
+### vaccinationProtocol.description
 
 <table class='resource-attributes'>
   <tr>
@@ -383,7 +383,7 @@ If the immunisation is achieved via a series of vaccinations, this is the positi
 
 A description for the vaccination protocol this vaccination is administered under. 
 
-### vaccinationProtocol.seriesDoses ###
+### vaccinationProtocol.seriesDoses
 
 <table class='resource-attributes'>
   <tr>
@@ -395,7 +395,7 @@ A description for the vaccination protocol this vaccination is administered unde
 
 The number of doses in the series which are required for immunity.
 
-### vaccinationProtocol.targetDisease ###
+### vaccinationProtocol.targetDisease
 
 <table class='resource-attributes'>
   <tr>
@@ -407,7 +407,7 @@ The number of doses in the series which are required for immunity.
 
 The disease or diseases the patient is being immunised against.
 
-### vaccinationProtocol.doseStatus ###
+### vaccinationProtocol.doseStatus
 
 <table class='resource-attributes'>
   <tr>
@@ -417,13 +417,13 @@ The disease or diseases the patient is being immunised against.
   </tr>
 </table>
 
+Fixed value <code>count</code>
 
-
-## Elements **not in use** ##
+## Elements **not in use**
 
 The following elements **MUST NOT** be populated:
 
-### explanation.reasonNotGiven ###
+### explanation.reasonNotGiven
 
 <table class='resource-attributes'>
   <tr>
@@ -434,7 +434,7 @@ The following elements **MUST NOT** be populated:
 Only Immunizations where <code>notGiven</code> is set to <code>false</code> are to be sent using the Immunization profile. 
 This means that there will never be cause to use <code>reasonNotGiven</code>. 
 
-### reaction ###
+### reaction
 
 <table class='resource-attributes'>
   <tr>
@@ -444,7 +444,7 @@ This means that there will never be cause to use <code>reasonNotGiven</code>.
 
 Any reaction to an immunization **MUST** be sent separately in an <code>AllergyIntolerance</code> resource.
 
-### vaccinationProtocol.authority ###
+### vaccinationProtocol.authority
 
 <table class='resource-attributes'>
   <tr>
@@ -452,7 +452,7 @@ Any reaction to an immunization **MUST** be sent separately in an <code>AllergyI
   </tr>
 </table>
 
-### vaccinationProtocol.series ###
+### vaccinationProtocol.series
 
 <table class='resource-attributes'>
   <tr>
@@ -460,7 +460,7 @@ Any reaction to an immunization **MUST** be sent separately in an <code>AllergyI
   </tr>
 </table>
 
-### vaccinationProtocol.doseStatusReason ###
+### vaccinationProtocol.doseStatusReason
 
 <table class='resource-attributes'>
   <tr>
@@ -469,4 +469,3 @@ Any reaction to an immunization **MUST** be sent separately in an <code>AllergyI
 </table>
 
 <br>
-
