@@ -54,18 +54,15 @@ The following is a set of request/response examples for Allergies:
 </ul>
 
 <br>
-<br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
 {% include accessrecord_structured/allergies_request2.json %}
-
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 <p>Assumption - ‘No Known Allergies’ has not been positively asserted on record, but is not contradicted by presence of active allergies on record.</p>
 
 {% include accessrecord_structured/allergies_response2.json %}
-
 
 </div>
 
@@ -90,7 +87,6 @@ The following is a set of request/response examples for Allergies:
 <p>Assumes - ‘No Known Allergies’ has been positively asserted on record and is not contradicted by presence of active allergies on record.</p>
 
 {% include accessrecord_structured/allergies_response3.json %}
-
 
 </div>
 </div>
