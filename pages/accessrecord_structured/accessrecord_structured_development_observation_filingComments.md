@@ -57,13 +57,13 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier, which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
-This  **MUST**  be a GUID.
+This **MUST** be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_ systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore is stored with the source data).
 
-Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
+Where _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
 ### status ###
 
@@ -99,7 +99,7 @@ Fixed value of 'Filing comments'. Awaiting confirmation of an appropriate SNOMED
   </tr>
 </table>
 
-A reference to the Patient who the observation is about.
+A reference to the patient who the observation is about.
 
 ### effective[x] ###
 
