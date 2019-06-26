@@ -45,7 +45,7 @@ The Encounter profile URL.
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 ### status ###
 
@@ -59,10 +59,10 @@ This is sliced to include a cross care setting identifier which MUST be populate
 
 Fixed value of **finished**. 
 
-Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of Consultation context. 
-Hence use most appropriate value from limited set available. 
+Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of consultation context. 
+Hence, use most appropriate value from limited set available. 
 
-Some systems allow Consultations to be assigned a draft or incomplete status but this status is not conveyed in GP Connect as the information recorded in such Consultation is still treated as authoratative by the source systems.
+Some systems allow consultations to be assigned a draft or incomplete status, but this status is not conveyed in GP Connect as the information recorded in such consultation is still treated as authoritative by the source systems.
 
 ### type ###
 
@@ -74,9 +74,9 @@ Some systems allow Consultations to be assigned a draft or incomplete status but
   </tr>
 </table>
 
-Carries the Consultation type as displayed by system via the CodeableConcept <code>type.text</code> attribute.
+Carries the consultation type as displayed by system via the CodeableConcept <code>type.text</code> attribute.
 
-TO DO - rule a mapping to a Snomed CT vocabulary in or out
+TO DO - rule a mapping to a SNOMED CT vocabulary in or out
 
 ### subject ###
 
@@ -88,7 +88,7 @@ TO DO - rule a mapping to a Snomed CT vocabulary in or out
   </tr>
 </table>
 
-Reference to <code>Patient</code> resource representing the Patient against whom the source Consultation/encounter was recorded.
+Reference to <code>Patient</code> resource representing the patient against whom the source consultation/encounter was recorded.
 
 
 ### participant ###
@@ -101,14 +101,14 @@ Reference to <code>Patient</code> resource representing the Patient against whom
   </tr>
 </table>
 
-Where available will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code>  from the  vocabulary. 
-This should reference a <code>Practitioner</code> resource representing the individual with primary attribution for the Consultation/Encounter (usually the single primary attributed user shown in system journals or other views).
+Where available, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary. 
+This should reference a <code>Practitioner</code> resource representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
 
-Other participants e.g. Registrars, trainees or other parties present may be referenced but with a participation type of <code>PART</code>.
+Other participants, such as registrars, trainees or other parties present, may be referenced but with a participation type of <code>PART</code>.
 
 No other values of participation type should be used.
 
-The authorship of the Consultation/Encounter i.e. the actual user who entered the information on the system should be expressed via <code>List.source</code>.
+The authorship of the consultation/encounter - that is, the actual user who entered the information on the system should be expressed via <code>List.source</code>.
 
 ### appointment ###
 
@@ -131,13 +131,13 @@ The authorship of the Consultation/Encounter i.e. the actual user who entered th
   </tr>
 </table>
 
-If recorded, <code>period.start</code> is mandatory and should be populated with the displayed Consultation date and time 
+If recorded, <code>period.start</code> is mandatory and should be populated with the displayed consultation date and time. 
 
 <code>period.end</code> should be populated where the encounter end date and time is known or calculated and populated where the duration is known.
 
-The audit trail date time of the Consultation is carried by the associated Consultation List via <code>List.date</code>
+The audit trail date time of the consultation is carried by the associated consultation list via <code>List.date</code>.
 
-The <code>period</code> attribute may be omitted where the effective/clinical date for the Consultation on the source system is not recorded e.g. an unknown date and time.
+The <code>period</code> attribute may be omitted where the effective/clinical date for the consultation on the source system is not recorded (for example, an unknown date and time).
 
 ### length ###
 
@@ -149,8 +149,8 @@ The <code>period</code> attribute may be omitted where the effective/clinical da
   </tr>
 </table>
 
-Specifies the length of the Consultation. 
-Should be calculated and populated where an end time for the Consultation is known.
+Specifies the length of the consultation. 
+Should be calculated and populated where an end time for the consultation is known.
 
 ### location ###
 
@@ -162,9 +162,9 @@ Should be calculated and populated where an end time for the Consultation is kno
   </tr>
 </table>
 
-References an instance of the Location resource that provides more detail on where the Consultation/encounter took place e.g. Branch surgery.
+References an instance of the Location resource that provides more detail on where the consultation/encounter took place - for example, branch surgery.
 
-<code>location.status</code> and <code>location.period</code> are not used
+<code>location.status</code> and <code>location.period</code> are not used.
 
 ### serviceProvider ###
 
@@ -176,11 +176,11 @@ References an instance of the Location resource that provides more detail on whe
   </tr>
 </table>
 
-Reference to the responsible organisation for the Consultatiion/Encounter.
+Reference to the responsible organisation for the consultation/encounter.
 
 ## Elements not used by GP Connect ##
 
-The following elements **SHALL NOT** be populated
+The following elements **SHALL NOT** be populated.
 
 ### statusHistory ###
 
@@ -270,7 +270,7 @@ The diagnosis will be associated to the consultation via the <code>list</code> r
   </tr>
 </table>
 
-Not used
+Not used.
 
 ### hospitalization ###
 
@@ -280,7 +280,7 @@ Not used
   </tr>
 </table>
 
-Not used
+Not used.
 
 ### partOf ###
 
