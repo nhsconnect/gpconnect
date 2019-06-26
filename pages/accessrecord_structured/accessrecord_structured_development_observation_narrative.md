@@ -3,7 +3,7 @@ title: Observation Narrative
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
-permalink: accessrecord_structured_development_guidance_observation_narrative.html
+permalink: accessrecord_structured_development_observation_narrative.html
 summary: "Guidance for the representation and consumption of Observation resource representing uncoded freetext narrative"
 ---
 
