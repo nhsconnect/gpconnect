@@ -141,10 +141,6 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Introduction
-      url: /accessrecord_structured_development.html
-      output: web
-
     - title: Retrieve a patient's structured record
       url: /accessrecord_structured_development_retrieve_patient_record.html
       output: web
