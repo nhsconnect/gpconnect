@@ -9,28 +9,28 @@ summary: "Guidance for the representation and consumption of Observation resourc
 
 ## Introduction ##
 
-There are many instances of uncoded freetext narrative notes within patient records.
-* Paragraphs of freetext consultation notes perhaps associated with codes via the wider consultation context but not otherwise explicitly coded.
-* Text which may or may not be associated with codes but where the association is inexact and it is considered better to express the notes text as a standalone item rather than bind the text (possibly incorrectly) to an associated coded resource. See Consultation guidance for further information.
-* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded Observation resource as the 'uncategorised' representation is inappropriate e.g. no appropriate codes are available to represent the source record entry as an Observation.
+There are many instances of uncoded free text narrative notes within patient records.
+* Paragraphs of free text consultation notes perhaps associated with codes via the wider consultation context but not otherwise explicitly coded.
+* Text which may or may not be associated with codes but where the association is inexact and it is considered better to express the notes text as a standalone item rather than bind the text (possibly incorrectly) to an associated coded resource. See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
+* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded Observation resource as the 'uncategorised' representation is inappropriate (for example, no appropriate codes are available to represent the source record entry as an observation).
 
-Because FHIR does not provide an underlying resource suitable for representing this information a profile of Observation is utilised to represent narrative text as a Observation Narrative.
+Because FHIR&reg; does not provide an underlying resource suitable for representing this information, a profile of Observation is utilised to represent narrative text as an Observation Narrative.
 
 ## Approach ##
 
-The approach for all of these cases is to use an appropriate coded Observation resource to represent the freetext.
+The approach for all of these cases is to use an appropriate coded Observation resource to represent the free text.
 
 Instances of Observation narrative are identified by Observation.code of **900000000000540000 |Plain text (foundation metadata concept)|**
 
 ** TO DO - confirm code **
 
-## Observation Narrative ##
+## Observation narrative ##
 
 1. All mandatory fields **MUST** be populated.
 
 2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
 
-3. Any attributes of the underlying Observeation profile that are not listed below are not used.
+3. Any attributes of the underlying Observation profile that are not listed below are not used.
 
 
 ### id ###
@@ -69,7 +69,7 @@ The Observation narrative profile URL.
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 
 ### status ###
@@ -108,7 +108,7 @@ Fixed value of **900000000000540000 |Plain text (foundation metadata concept)|**
   </tr>
 </table>
 
-Reference to Patient resource representing the Patient against whom the narrative text was recorded.
+Reference to Patient resource representing the patient against whom the narrative text was recorded.
 
 ### context ###
 
@@ -120,7 +120,7 @@ Reference to Patient resource representing the Patient against whom the narrativ
   </tr>
 </table>
 
-Optional reference to the Encounter resource representing the consultation context in which the narrataive freetext was recorded. Will not be populated where the freetext was recorded ouside of a consultation context.
+Optional reference to the Encounter resource representing the consultation context in which the narrative free text was recorded. Will not be populated where the free text was recorded outside of a consultation context.
 
 ### effectiveDateTime ###
 
@@ -132,7 +132,7 @@ Optional reference to the Encounter resource representing the consultation conte
   </tr>
 </table>
 
-The clinically relevent effective data or datetime for the narrative record entry.
+The clinically relevant effective data or datetime for the narrative record entry.
 
 Where the effective date is unknown or not recorded will be absent, otherwise it should be populated.
 
@@ -158,7 +158,7 @@ The audit trail timestamp representing when the narrative was last modified.
   </tr>
 </table>
 
-The Practitioner resource representing the person responsible for recording the narrative
+The Practitioner resource representing the person responsible for recording the narrative.
 
 ### comment ###
 
@@ -170,7 +170,7 @@ The Practitioner resource representing the person responsible for recording the 
   </tr>
 </table>
 
-The freetext narrative as plain text.
+The free text narrative as plain text.
 
 ### related ###
 
@@ -182,7 +182,7 @@ The freetext narrative as plain text.
   </tr>
 </table>
 
-This attribute is used to specify the sequence of the narrative in relation to other resources e.g. when an ordered set of resource is being used to express the structure of a consultation displayed at source. See Consultation guidance for further information.
+This attribute is used to specify the sequence of the narrative in relation to other resources (for example, when an ordered set of resource is being used to express the structure of a consultation displayed at source). See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
 
 The **related.type** and **related.target** are used to represent the sequence. Only the **related.type** value of **'sequel-to'** is utilised.
 
