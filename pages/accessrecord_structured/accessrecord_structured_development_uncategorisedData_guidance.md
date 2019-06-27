@@ -82,7 +82,7 @@ Where the clinician/user has NOT explicitly selected the clinical codes to recor
     https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-BloodPressure-Observation-1
 
 
-### Using the `List` resource for uncategorised data queries
+## Using the `List` resource for uncategorised data queries
 
 The results of a query for medication details **MUST** return a `List` containing references to all `Observation` resources that are returned.
 
