@@ -54,7 +54,8 @@ When a clinical item is linked to the problem a reference to its FHIR&reg; resou
 When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below. 
 * For a Medication or Medical Device prescription plan - reference the MedicationRequest (intent = plan) resource
 * For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) resource
-* For an Allergy – reference the Immunization resource 
+* For an Allergy – reference the Allergy resource 
+* For an Immunisation – reference the Immunization resource 
 * For Uncategorised Data – reference the Observation – Uncategorised resource
 
 ## Problems linking to unsupported clinical items
