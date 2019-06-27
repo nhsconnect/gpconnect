@@ -71,9 +71,9 @@ Where a provider system is not able to export a linked clinical item, it will cr
    
    For example "Referral item is not supported by the provider system.”
 
-### Using the `List` resource for problem queries
+## Using the `List` resource for problem queries
 
-The results of a query for medication details **MUST** return a `List` containing references to all `Condition-ProblemHeader` resources that are returned.
+The results of a query for problem details **MUST** return a `List` containing references to all `Condition-ProblemHeader` resources that are returned.
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
