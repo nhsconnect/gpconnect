@@ -139,20 +139,6 @@ If no separate date time is recorded for consultation sub sections, the overall 
 
 The clinically significant or effective consultation date is provided by the associated <code>Encounter</code> resource.
 
-### source
-
-<table class='resource-attributes'>
-        <tr>
-                <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
-        </tr>
-</table>
-
-The system (audit trail) user attributed to the authoring or modification the consultation.
-
-The source Practitioner reference should be replicated at all levels of the consultation list structure.
-
 ### orderedBy
 
 <table class='resource-attributes'>
@@ -295,6 +281,14 @@ Each <code>entry.item</code> is a reference to a resource representing a clinica
 ## List elements **not in use**
 
 The following elements **SHALL NOT** be populated:
+
+### source
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
+        </tr>
+</table>
 
 ### note
 
