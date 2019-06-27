@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_testGroup.html
-summary: "Guidance for populating and consuming obseravtion resource where used in a test group header GP Connect"
+summary: "Guidance for populating and consuming observation resource where used in a test group header GP Connect"
 published: false
 ---
 
@@ -56,11 +56,11 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which  **MUST**  be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This  **MUST**  be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and is therefore stored with the source data).
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
@@ -76,7 +76,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 The status of the test group header.
 
-In GP systems these are most likely to be 'final' however 'preliminary' reports are possible as for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header then it should default to the 'unknown' value.
+In GP systems, these are most likely to be 'final'. However, 'preliminary' reports are possible as, for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header then it should default to the 'unknown' value.
 
 ### code ###
 
@@ -88,7 +88,7 @@ In GP systems these are most likely to be 'final' however 'preliminary' reports 
   </tr>
 </table>
 
-The clinical code that represents the name of the test group e.g. Full blood count.
+The clinical code that represents the name of the test group - for example, Full blood count.
 
 ### subject ###
 
@@ -100,7 +100,7 @@ The clinical code that represents the name of the test group e.g. Full blood cou
   </tr>
 </table>
 
-A reference to the Patient who the observation is about.
+A reference to the patient who the observation is about.
 
 ### performer ###
 
@@ -151,7 +151,7 @@ Reference to the specimen on which these results were based.
 
 Reference(s) to the test result(s) observation(s) that make up the test group.
 
-This **MUST** be qualified using the related.type 'has-member'
+This **MUST** be qualified using the related.type 'has-member'.
 
 <br>
 
