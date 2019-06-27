@@ -1,5 +1,5 @@
 ---
-title: List consultation
+title: Using lists to build consultation structure
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
