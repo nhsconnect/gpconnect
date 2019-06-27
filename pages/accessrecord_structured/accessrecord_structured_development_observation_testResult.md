@@ -29,7 +29,7 @@ The headings below list the elements of the Observation resource and describe ho
   </tr>
 </table>
 
-The logical identifier of the observation resource.
+The logical identifier of the Observation resource.
 
 ### meta.profile ###
 
@@ -41,7 +41,7 @@ The logical identifier of the observation resource.
   </tr>
 </table>
 
-The observation profile URL.
+The Observation profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)
 
@@ -57,11 +57,11 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This  **MUST**  be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and is therefore stored with the source data).
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
@@ -77,7 +77,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 The status of the test result.
 
-In GP systems these are most likely to be 'final' however 'preliminary' reports are possible as for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header then it should default to the 'unknown' value.
+In GP systems, these are most likely to be 'final'. However, 'preliminary' reports are possible as, for example, some work can be sub-contracted to other labs. If the system is not able to determine the status of a test group header, then it should default to the 'unknown' value.
 
 ### category ###
 
@@ -89,7 +89,7 @@ In GP systems these are most likely to be 'final' however 'preliminary' reports 
   </tr>
 </table>
 
-The general type of test result. A default value of <code>Laboratory</code> should be used if a more specific value is not available e.g. pathology, microbiology etc.
+The general type of test result. A default value of <code>Laboratory</code> should be used if a more specific value is not available - for example, pathology, microbiology, and so on.
 
 ### code ###
 
@@ -101,7 +101,7 @@ The general type of test result. A default value of <code>Laboratory</code> shou
   </tr>
 </table>
 
-The clinical code that represents the name of the test result or test analyte.
+The clinical code that represents the name of the test result or test analyst.
 
 ### subject ###
 
@@ -113,7 +113,7 @@ The clinical code that represents the name of the test result or test analyte.
   </tr>
 </table>
 
-A reference to the Patient who the observation is about.
+A reference to the patient who the observation is about.
 
 ### effective[x] ###
 
@@ -125,7 +125,7 @@ A reference to the Patient who the observation is about.
   </tr>
 </table>
 
-The date and time when the test was performed
+The date and time when the test was performed.
 
 ### issued ###
 
@@ -162,7 +162,7 @@ Reference to the resource for the organisation and/or practitioner that performe
   </tr>
 </table>
 
-The value of the test. this may be in the form of but is not limited to one of the following datatypes a quantity, string or an attachment.
+The value of the test. This may be in the form of, but is not limited t, one of the following datatypes: a quantity, string or an attachment.
 
 ### dataAbsentReason ###
 
@@ -186,7 +186,7 @@ The reason why a result/value has been omitted.
   </tr>
 </table>
 
-A human readable clinical summary relating to a test result and/or additional notes provided by the laboratory e.g. the specimen has haemolysed or has leaked
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
 
 ### comment ###
 
