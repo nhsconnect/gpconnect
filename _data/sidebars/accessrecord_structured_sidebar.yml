@@ -49,7 +49,7 @@ entries:
         - title: <b class='resource'>Bundle</b>
           url: /accessrecord_structured_development_bundle.html
           output: web
-          
+
       - title: Allergies
         output: web
         subfolderitems:
@@ -63,7 +63,7 @@ entries:
         - title: Allergies FHIR&reg; example
           url: /accessrecord_structured_development_fhir_examples_allergies.html
           output: web
-          
+
       - title: Medications
         output: web
         subfolderitems:
@@ -107,6 +107,9 @@ entries:
           output: web
         - title: <b class='resource'>Observation - uncategorised data</b>
           url: /accessrecord_structured_development_observation_uncategorisedData.html
+          output: web
+        - title: Uncategorised data FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_uncategorised.html
           output: web
 
       - title: Consultations
