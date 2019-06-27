@@ -376,9 +376,6 @@ In this scenario, providers **MUST** respond in the following way:
 
 Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as described above to check for incomplete data as a result of unsupported parameters.
 
-#### Backwards compatibility ####
-Backwards compatibility is the scenario where a consumer requests a lower version of the API than the provider supports. This requires that a consumer **MUST** be able to safely handle the presence of unrecognised data.
-
 ### Request response ###
 
 #### Response headers ####
@@ -477,7 +474,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - no consultation information shall be returned
 
 - when the 'includeConsultations' parameter is set:
-  - [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
+  - [`List`](accessrecord_structured_development_list.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
   - and when the `numberOfMostRecent` parameter is set:
     - limit the number of returned consultations to match the included value
 
@@ -497,15 +494,15 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeProblems' parameter is set:
 
-  - [`ProblemHeader`](accessrecord_structured_problems.html) resources representing the patient's problems
+  - [`List`](accessrecord_structured_development_list.html) and [`ProblemHeader`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
 - and when the 'includeStatus' parameter is set:
 
-  - [`ProblemHeader`](accessrecord_structured_problems.html) resources with a `clinicalStatus` matching the parameter value
+  - [`List`](accessrecord_structured_development_list.html) and [`ProblemHeader`](accessrecord_structured_problems.html) resources with a `clinicalStatus` matching the parameter value and all linked clinical information.
 
 - and when the 'includeSignificance' parameter is set:
 
-  - [`ProblemHeader`](accessrecord_structured_problems.html) resources with a `problemSignificance` matching the parameter value
+  - [`List`](accessrecord_structured_development_list.html) and [`ProblemHeader`](accessrecord_structured_problems.html) resources with a `problemSignificance` matching the parameter value and all linked clinical information
 
 
 ##### Immunisations #####
@@ -518,7 +515,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeImmunisations' parameter is set:
 
-  - [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
+  - [`List`](accessrecord_structured_development_list.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
 
 ##### Uncategorised data #####
 
@@ -530,7 +527,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeUncategorisedData' parameter is set:
 
-  - [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
+  - [`List`](accessrecord_structured_development_list.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
 
 - when the 'uncategorisedDataSearchPeriod' is set:
   - when a `start` value is set, all uncategorised data after the date **MUST** be returned
@@ -609,3 +606,10 @@ Examples of the payload requests and responses can be found here:
 
 - [Allergies - FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
 - [Medication - FHIR examples](accessrecord_structured_development_fhir_examples_medication.html)
+- [Consultations - FHIR examples](accessrecord_structured_development_fhir_examples_consultations.html)
+- [Problems - FHIR examples](accessrecord_structured_development_fhir_examples_problems.html)
+- [Immunizations - FHIR examples](accessrecord_structured_development_fhir_examples_immunizations.html)
+- [Uncategorised data - FHIR examples](accessrecord_structured_development_fhir_examples_uncategorised.html)
+
+To illustrate how forwards compatibility works, the following example has been included:
+- [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.3 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
