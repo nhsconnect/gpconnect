@@ -108,9 +108,7 @@ While there are differences between the two outputs, the consultation notes can 
 
 ## Example
 
-<IMG src="images/access_structured/Consultation Example_V5.png" alt="Sequence diagram for retrieving a patient record"  style="max-width:100%;max-height:100%;">
-
-*The display of SNOMED CT codes in the examples is for clarity only. It does not apply that SNOMED CT codes would be directly expressed as text or displayed as text by receiving systems.*
+<IMG src="images/access_structured/Consultation Example_v6.png" alt="Sequence diagram for retrieving a patient record"  style="max-width:100%;max-height:100%;">
 
 ## Consultations containing unsupported clinical items
 
