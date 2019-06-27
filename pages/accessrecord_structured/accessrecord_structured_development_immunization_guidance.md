@@ -35,7 +35,7 @@ Planned immunisations may not be given for a variety of reasons, such as:
 * the patient is unwell or does not meet criteria for the vaccination
 
 All circumstances of an immunisation not given are out of scope of this version.
-Options are to be evaluated for the use cases for not given immunisations and whether to include details in another resource or a future version of this profile.
+Options are to be evaluated for each not given use case and whether to include details in another resource or a future version of this profile.
 
 ## Ineffective vaccination
 
