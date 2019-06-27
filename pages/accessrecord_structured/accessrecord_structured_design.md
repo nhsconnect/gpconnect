@@ -17,10 +17,10 @@ What is the scope of the Access Record Structured capability?
  - Medication
  - Medication Statement
  - Medication Request
+ - Encounter
+ - Immunization
+ - ProblemHeader
  - Observation
- - Specimen
- - DiagnosticReport
- - ProcedureRequest  
  - Administrative profiles to support the above, as defined by the [Foundations capability pack](foundations.html)
 
 {% include roadmap.html content="The scope of the capability is under review and clinical items such as Immunisations are likely to be included at a later stage." %}
@@ -61,11 +61,6 @@ The benefits of this approach are:
   -  Record Date where the last issue date and effect date are not available
  - Flag to include/exclude individual issues of a prescription
 
-### API search/filter parameters for test results ###
- - Date range based on
-  - Test result dates
- - A list of codes that specify which specific test results will be returned
-
 ### API search/filter parameters for allergies ###
  - None - there will be no date range applied for allergies due to clinical safety
 
@@ -73,7 +68,25 @@ The benefits of this approach are:
 
 {% include note.html content="Search/filter parameters which were considered but not chosen for medications and allergies are: Fixed Date Range, SNOMED Code Cluster." %}
 
+### API search/filter parameters for consultations ###
+
+ - date range for consultations
+ - number of most recent consultations to return
+
+### API search/filter parameters for immunizations ###
+
+ - None - there will be no filtering applied to immunizations
+
+### API search/filter parameters for problems ###
+ - clinical status of problem
+ - clinical significance of problem
+
+### API search/filter parameters for uncategorised data ###
+
+ - date range for uncategorised data
+
+ {% include note.html content="Search/filter parameters which were considered but not chosen for consultations, problems, immunisations and uncategorised data were retrieval by FHIR logical identifier. " %}
+
 ## Fabricated Consultations ##
 
 Systems which allow direct recording of data outside of Consultation contexts should not fabricate Consultations to return such data. To do so would be generating information and structure which does not exist on the source system and would obscure the genuine Consultation content (for example last X Consultations displayed in patient summaries). Systems in this category have clear distinctions between Consultations and other types of record content and to fabricate Consultations would distort this native behaviour.
-
