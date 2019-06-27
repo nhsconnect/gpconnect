@@ -23,19 +23,19 @@ The vaccine product can be included if it is available.
 
 ## Vaccinations that were not given
 
-This version of the specification only includes supports immunisation which have been given to the patient.
+This version of the specification only supports immunisation which have been given to the patient.
 GP Clinical Systems may capture details of circumstances where an immunisation has not been given but there was an intention to.
 Planned immunisations may not be given for a variety of reasons, such as:
 
 * an explicit refusal for a specific vaccine or for any form of immunisation
 * lack of consent for a vaccine to be administered
-* the vaccine is temporarily decline
+* the vaccine is temporarily declined
 * a contraindication with another medication
 * the patient does not attend an appointment or does not attend an open clinic (for example, seasonal flu vaccination clinic)
 * the patient is unwell or does not meet criteria for the vaccination
 
 All circumstances of an immunisation not given are out of scope of this version.
-Options are to be evaluated for the use cases where information is available for not given immunisations and for those valid use cases whether such information is most appropriately included in another resource or included in a future version of this profile.
+Options are to be evaluated for the use cases for not given immunisations and whether to include details in another resource or a future version of this profile.
 
 ## Ineffective vaccination
 
