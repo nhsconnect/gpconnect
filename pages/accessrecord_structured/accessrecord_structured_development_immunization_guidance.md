@@ -58,7 +58,7 @@ It is possible that some participating systems will support recording of element
 An example might be the vaccine manufacturer recorded as a text qualifier to the immunisation procedure where the FHIR profile requires an organisation reference.
 Where the data recorded is incompatible with the data type of the related FHIR profile element, the detail in the source system **MUST** be rendered as text (suitably formatted name/value pair) and placed in the <code>immunisation.note</code> element.
 
-## Using the `List` resource for immunisaation queries
+## Using the `List` resource for immunisation queries
 
 The results of a query for immunisation details **MUST** return a `List` containing references to all `Immunisation` resources that are returned.
 
