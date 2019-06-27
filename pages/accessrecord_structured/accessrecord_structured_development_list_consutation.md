@@ -28,6 +28,10 @@ In the case of consultation which has a 'flat' structure, that is, contains reco
 
 Empty consultations and empty subsections (topics and headings) are suppressed at source and this is reflected in the cardinalities specified.
 
+{% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
+
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)." %}
+
 ## Common list attributes
 
 The population of List attributes that are common to all of the consultation list types is described here.
