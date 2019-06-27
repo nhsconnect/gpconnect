@@ -96,7 +96,7 @@ Fixed value of **finished**.
   </tr>
 </table>
 
-Fixed value of **900000000000540000 |Plain text (foundation metadata concept)|**
+Fixed value of **37331000000100 | Comment note (record artifact) |**
 
 ### subject ###
 
