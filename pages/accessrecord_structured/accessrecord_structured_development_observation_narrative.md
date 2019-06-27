@@ -20,9 +20,7 @@ Because FHIR&reg; does not provide an underlying resource suitable for represent
 
 The approach for all of these cases is to use an appropriate coded Observation resource to represent the free text.
 
-Instances of Observation narrative are identified by Observation.code of **900000000000540000 |Plain text (foundation metadata concept)|**
-
-** TO DO - confirm code **
+Instances of Observation narrative are identified by Observation.code of **37331000000100  Comment note (record artifact)**
 
 ## Observation narrative ##
 
@@ -96,7 +94,7 @@ Fixed value of **finished**.
   </tr>
 </table>
 
-Fixed value of **37331000000100  Comment note (record artifact) **
+Fixed value of **37331000000100  Comment note (record artifact)**
 
 ### subject ###
 
