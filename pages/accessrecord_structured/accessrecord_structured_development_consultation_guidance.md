@@ -165,3 +165,10 @@ The same approach is followed for empty topic and heading levels recorded at sou
 
 -   Systems which allow direct recording of data outside of consultation contexts should not fabricate consultations to return such data when consultation queries are received, as to do so would be generating information and structure which does not exist on the source system, and which would obscure the genuine consultation content that does exist. Systems in this category have clear distinctions between consultations and other types of record content (for example, last X Consultations displayed in patient summaries and to synthesise consultations would distort this native behaviour).
           
+## Using the `List` resource for consultation queries
+
+The results of a query for consultation details **MUST** return a `List` containing references to all the `List` resources at the top consultation level which are identified by the SNOMED code **325851000000107 Consultation encounter type** and represent each consultation that is returned.
+
+The `List` **MUST** be populated in line with the guidance on `List` resources.
+
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
