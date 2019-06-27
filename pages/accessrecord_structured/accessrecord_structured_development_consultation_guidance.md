@@ -113,6 +113,18 @@ While there are differences between the two outputs, the consultation notes can 
 
 <IMG src="images/access_structured/Consultation_Example_v6.png" alt="Sequence diagram for retrieving a patient record"  style="max-width:100%;max-height:100%;">
 
+## Clinical item references ##
+
+When a clinical item is linked to the consultation a reference to its FHIR® resource is held in entry.item field of the appropriate list resource.
+
+When linking to a clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below.
+
+-   For a Medication or Medical Device prescription plan - reference the MedicationRequest (intent = plan) resource
+-   For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) resource
+-   For an Allergy – reference the Allergy resource
+-   For an Immunisation – reference the Immunization resource
+-   For Uncategorised Data – reference the Observation – Uncategorised resource
+    
 ## Consultations containing unsupported clinical items
 
 Depending on the GP Connect version supported by the provider system it can be possible for the consultation to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the consultation contains a link to a referral record, but the provider system does not yet support exporting referrals.
