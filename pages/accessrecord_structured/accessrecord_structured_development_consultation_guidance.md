@@ -15,21 +15,22 @@ However, there is no standard structure or format for recording consultations th
 
 This presents a challenge in developing a common set of FHIR profiles that are capable of representing the consultation structures that exist within participating systems.
 
-It is also a challenge for producer systems in expressing native consultations in a standardised form as well as being a challenge for consumers in understanding those structures.
+It is also a challenge for provider systems in expressing native consultations in a standardised form as well as being a challenge for consumers in understanding those structures.
 
-It is important to define what we mean by consultation. Not all clinical information is recorded consistently across systems within structures that can be classed as consultations. Therefore, it is important to note that a consultation-oriented query alone may not return all of the clinical information held within a patient record.
+It is important to define what we mean by consultation. Not all clinical information is recorded consistently across systems within structures that can be classed as consultations. Therefore, it is important to note that a consultation-oriented query alone will not return all of the clinical information held within a patient record.
 
-This document is designed to address these challenges.
+This document is designed to address these challenges:
 
--   it provides a clear definition of what is meant by consultation in the context of the current set of participating producer systems
+-   it provides a clear definition of what is meant by consultation in the context of the current set of participating provider systems
 -   it identifies the limitations of consultation-based queries in isolation as a method for retrieving all elements of patient records
--   it describes the set of consultation structures available in producer systems and guidance for populating the FHIR resources required to represent these structures in a consistent manner that is processable bny consumers
+-   it describes the set of consultation structures available in provider systems and guidance for populating the FHIR resources required to represent these structures in a consistent manner that is processable bny consumers
 -   it provides guidance for consumer systems processing the FHIR resources representing consultation structures on source systems as to the variances between representations and the correct handling of these structures
 
 ## What is a consultation ?
 
-A consultation is the structure within which source systems group one or more clinical record entries which occurred at the same time and for the same or similar purpose attributed to or asserted by the same actor.
+For GP Connect, a consultation is the structure within which source systems group one or more clinical record entries which occurred at the same time and for the same or similar purpose attributed to or asserted by the same actor.
 
+- the provider system determines under what circumstances to create a consultation. This may vary between provider systems
 - consultations do not exclusively represent clinician-patient encounters, although they are commonly used for that purpose
 - consultations may record purely administrative or communications triggered events on source systems (for example, repeat medication administration, a pathology report filed into the patient record via messaging workflow) 
 - consultations are generally assigned and attributed to what can loosely be termed a 'Date/Doctor/Place/Type' (Encounter), although these attributes may be overridden or refined in the context of individual record entries within the consultation
@@ -41,15 +42,17 @@ A consultation is the structure within which source systems group one or more cl
 
 Consultations follow a common logical structure.
 
--   Context
+-   Context / Metadata
 
-    Each consultation has a set of context information that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor).
+    Each consultation has a set of metadata that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor). This is most generated automatically by the provider system but it may have been manually updated.
 
 -   Topics
 
     A Consultation will be split into one of more topics. Each topic describes an area of discussion (or activity) that took place in the Consultation.
 
-    A topic may (but not always) be related to a specific problem in the patient’s record. In these cases, all the discussions and activities recorded under that topic are in regard to that problem.
+    A topic may (or may not) have a title.
+
+    A topic may (or may not) be related to a specific problem in the patient’s record. In these cases, all the discussions and activities recorded under that topic are in regard to that problem.
 
 -   Headings
 
