@@ -108,7 +108,7 @@ While there are differences between the two outputs, the consultation notes can 
 
 ## Example
 
-<IMG src="images/access_structured/Consultation Example_v6.png" alt="Sequence diagram for retrieving a patient record"  style="max-width:100%;max-height:100%;">
+<IMG src="images/access_structured/Consultation_Example_v6.png" alt="Sequence diagram for retrieving a patient record"  style="max-width:100%;max-height:100%;">
 
 ## Consultations containing unsupported clinical items
 
