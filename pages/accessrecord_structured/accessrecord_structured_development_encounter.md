@@ -96,12 +96,14 @@ Reference to <code>Patient</code> resource representing the patient against whom
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
+    <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Where available, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary. 
+This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system.
+
+Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary. 
 This should reference a <code>Practitioner</code> resource representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
 
 Other participants, such as registrars, trainees or other parties present, may be referenced but with a participation type of <code>PART</code>.
