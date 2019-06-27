@@ -96,7 +96,7 @@ Fixed value of **finished**.
   </tr>
 </table>
 
-Fixed value of **37331000000100 | Comment note (record artifact) |**
+Fixed value of **37331000000100  Comment note (record artifact) **
 
 ### subject ###
 
@@ -177,7 +177,7 @@ The free text narrative as plain text.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
