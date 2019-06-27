@@ -10,7 +10,7 @@ summary: "Guidance for populating and consuming the ProblemHeader resource"
 ## What is a problem? ##
 'Problem' is a concept supported by all the GP clinical systems that allows a clinician to identify/highlight specific clinical items in the clinical record as of particular importance to the care and treatment of the patient. 
 
-Any clinical item can be identified as a problem, though the method of doing this can vary greatly between GP clinical systems.
+Any clinical item can be identified as a problem, though the method of doing this can vary between GP clinical systems.
 
 Examples of possible problems:
 *	Anxiety with depression		
@@ -39,10 +39,10 @@ Each problem record is linked to:
 *	All consultations where the problem was discussed or information about the problem was recorded
     *	Consultations that are directly linked to the problem in the provider system; and
     *	Consultations that created/updated a clinical item that has been linked to the problem 
-*	All clinical items in the patient record that give further information about the problem
+*	All clinical items in the patient record that the recording clinician identified as giving further information about the problem
     *	Clinical items that are directly linked to the problem in the provider system; and
     *	Clinical items that are within a consultation topic that is linked to the problem
-*	Other problems that give further information about the problem
+*	Other problems that that the recording clinician identified as giving further information about the problem
     *	Problems that are directly linked to the problem in the provider system
 
 <img src="images/access_structured/Problem_Linkages.png" alt="Problem Linkages" style="max-width:100%;max-height:100%;">
@@ -64,6 +64,10 @@ Depending on the GP Connect version supported by the provider system, it can be 
 Where a provider system is not able to export a linked clinical item, it will create an actualproblem or relatedclinicalcontent entry with the:
 
 * Reference.Identifier set to null; and
-* Reference.Display set to “Clinical item not supported by the provider system.”
+* Reference.Display set to “[Clinical area] item is not supported by the provider system.”
+   
+   Where [Clinical area] identifies the type of the clinical item that is not supported.
+   
+   For example "Referral item is not supported by the provider system.”
 
 
