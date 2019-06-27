@@ -18,7 +18,7 @@ For a consuming system to be able to interpret this linkage information correctl
 ### GP Connect FHIR&reg; model ###
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-The model currently covers consultations, problems, medications, allergies, immunisations and uncategorised data. Other clinical areas will be added as they are developed.
+The model currently covers consultations, problems, medications and medical devices, allergies, immunisations and uncategorised data. Other clinical areas will be added as they are developed.
 
 <img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;">
 
@@ -53,19 +53,19 @@ Include the following FHIR profiles:
 <img src="images/access_structured/Consultation_return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Problems ###
-When GP Connect returns a problem it will supply the metadata and description of the problem. If asked for by the consumer, GP Connect will also return all the clinical data that has been linked to the problem.
+When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
 
 Include the following FHIR profiles:
 *	The ProblemHeader profile of the Problem
 *	The ProblemHeader profiles of any directly linked Problems
-*	Where requested, The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices.
+*	The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices.
     *	Always include the MedicationStatement, MedicationRequest (intent = plan) and Medication profiles.
     *	Only include MedicationRequest (intent = order) for directly linked issues.
-*	Where requested, The AllergyIntolerance profile of any linked Allergies
+*	The AllergyIntolerance profile of any linked Allergies
     *	Include the ProblemHeader profile of any Problems linked to the returned Allergies
-*	Where requested, The Immunization profile of any linked Immunisations
+*	The Immunization profile of any linked Immunisations
     *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
-*	Where requested, The Observation profile of any linked Uncategorised Data
+*	The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
     
 <img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;">
@@ -105,21 +105,16 @@ For the majority of scenarios, the information required by the consumer can be r
 There are however scenarios where the information to the first query identifies additional information that is required.
 
 For example:
-* a retrieved medication is linked to a problem
-* a retrieved problem is linked to ten consultations
-* a retrieved immunisation is linked to a consultation
+* a retrieved medication is linked to a problem that the clincian want to review
+* a retrieved problem is linked to several consultations that the clincian wants to review
+* a retrieved immunisation is linked to a consultation that the clincian wants to review
 
-Where this happens the provider system will include FHIR identifiers for all the linked items.
+There may be a decision by the consuming system (or by a user of the consuming system) that they need additional information about the linked clinical item. To get these, the consumer system may wish to call the GP Connect API a second time.
 
-There may be a decision by the consuming system (or by a user of the consuming system) that they need additional information about the linked clinical item. To get these, the consumer system can call the GP Connect API a second time using the FHIR identifiers as search criteria. 
-
-If required, this can be repeated a third, fourth or any number of times to trace through a chain of linked data in a patient record.
+This version of GP Connect does not allow a consumer to search for a specific item in the patient record by its identifier. Instead the consumer should use the supported filters to reteive a larger dataset and then search for the item within the returned dataset.
 
 For example:
-* Retrieve all active medications of a patient.
-   * Spot one of the medications as being of potential relevance to the patient’s current issue. See that the medication is linked to a problem record.
-* Retrieve the problem linked to the medication
-   * See that the problem is linked to multiple consultations and was last discussed with the patient in a consultation two months ago.
-* Retrieve the latest consultation linked to the problem.
-   * Review the consultation notes to understand the latest information about the problem.
+* To display a consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data. 
+
+
 
