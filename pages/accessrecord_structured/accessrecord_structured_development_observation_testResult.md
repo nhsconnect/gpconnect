@@ -101,7 +101,7 @@ The general type of test result. A default value of <code>Laboratory</code> shou
   </tr>
 </table>
 
-The clinical code that represents the name of the test result or test analyst.
+The clinical code that represents the name of the test result or test analyte.
 
 ### subject ###
 

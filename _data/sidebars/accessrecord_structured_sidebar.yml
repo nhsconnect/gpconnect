@@ -30,7 +30,7 @@ entries:
     - title: Introduction
       url: /accessrecord_structured_development.html
       output: web
-    - title: <b class='resource'>Linkages</b>
+    - title: <b class='resource'>Linkages and search criteria</b>
       url: /accessrecord_structured_development_linkages.html
       output: web
     - title: <b class='resource'>Resource population fundamentals</b>
