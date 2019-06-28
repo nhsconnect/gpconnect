@@ -1,5 +1,5 @@
 ---
-title: Linkages between data items
+title: Linkages and Search
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar
@@ -99,7 +99,41 @@ Include the following FHIR profiles:
 *	The Observation profile of the Uncategorised Data
 *	The ProblemHeader profiles of any directly linked Problems
 
-## Following a linkage ##
+## Search ##
+
+The GP Connect API allows the consumer system to specify what data it requires from the provider system about a specified patient.
+
+### Search Criteria ###
+
+The consumer system can specify which clinical areas it wishes to retreive and within each clinical area what search criteria it wants to apply.
+
+#### Medication and Medical Devices ####
+
+* Search by date
+     * The consumer system request all items after a start date
+     * The provider system returns all plans whose effective period end date is null or after the start date
+     * Where no date is supplied by the consumer, the date filter is not applied
+* Include issues
+     * The consumer system requests medication issues
+     * The provider system returns the all issues information for each of the returned plans
+
+#### Allergies ####
+
+* All active allergies will always be returned as it was considered clinically unsafe to only return a partial record of a patient's active allergies.
+* Include resolved allergies
+     * The consumer system requests resolved allergies
+     * The provider system returns all the resolved allergies along with the active allergies
+
+#### Problems ####
+
+* Search by Significance / Status
+     * The consumer system requests combinations of significance and status
+     * The consumer system can request Major Active, Minor Active, Major Inactive and/or Minor Inactive
+     * The consumer system can request multiple combiniations in a single query
+     * The provider system returns all problems that match the requested Significance / Status
+     * Where no significance / status is supplied by the consumer, the significance / status filter is not applied
+
+### Following a linkage ###
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
 
 There are however scenarios where the information to the first query identifies additional information that is required.
@@ -109,12 +143,18 @@ For example:
 * a retrieved problem is linked to several consultations that the clincian wants to review
 * a retrieved immunisation is linked to a consultation that the clincian wants to review
 
-There may be a decision by the consuming system (or by a user of the consuming system) that they need additional information about the linked clinical item. To get these, the consumer system may wish to call the GP Connect API a second time.
+There may be a decision by the consuming system (or by a user of the consuming system) that they require additional information about the linked clinical item. To get these, the consumer system may wish to call the GP Connect API a second time.
 
-This version of GP Connect does not allow a consumer to search for a specific item in the patient record by its identifier. Instead the consumer should use the supported filters to reteive a larger dataset and then search for the item within the returned dataset.
+This version of GP Connect does not allow a consumer to search for a specific item in the patient record by its identifier. Instead the consumer should use the supported filters to retreive a larger dataset and then search for the required item(s) within that dataset.
 
 For example:
-* To display a consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data. 
+* To display a specific consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data. 
 
+### Scale of Search ###
 
+It is the responsibility of the consumng system to decide what data to request from the provider systems. When determining how wide to make the search criteria, the consumer system must consider the following guidelines:
 
+* The first API query on a patient should aim to retrieve the amount of data required to support the majority of queries that their clinician / user will make whilst avoiding the retrieval of large quantities of unecessary data.
+* Where a follow-up query is required it should aim to retrieve sufficient data to support any other queries that their clinician / user will make.
+* The consumer system should aim to avoid scenarios where more that two queries are required on the same patient as part of the same local interaction with a clinician / user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
+* While the consumer system should aim to avoid the retrieval of large quantities of unecessary data, it is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the uncessary data before presenting it to their clinicians / users where the consumer organisation has determined it is necessary to support patient care. 
