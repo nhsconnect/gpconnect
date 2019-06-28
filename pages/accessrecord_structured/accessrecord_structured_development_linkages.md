@@ -105,7 +105,7 @@ The GP Connect API allows the consumer system to specify what data it requires f
 
 ### Search Criteria ###
 
-The consumer system can specify which clinical areas it wishes to retreive and within each clinical area what search criteria it wants to apply.
+The consumer system can specify which clinical areas it wishes to retrieve and within each clinical area what search criteria it wants to apply.
 
 #### Medication and Medical Devices ####
 
@@ -129,7 +129,7 @@ The consumer system can specify which clinical areas it wishes to retreive and w
 * Search by Significance / Status
      * The consumer system requests combinations of significance and status
      * The consumer system can request Major Active, Minor Active, Major Inactive and/or Minor Inactive
-     * The consumer system can request multiple combiniations in a single query
+     * The consumer system can request multiple combinations in a single query
      * The provider system returns all problems that match the requested Significance / Status
      * Where no significance / status is supplied by the consumer, the significance / status filter is not applied
 
@@ -165,22 +165,22 @@ For the majority of scenarios, the information required by the consumer can be r
 There are however scenarios where the information to the first query identifies additional information that is required.
 
 For example:
-* a retrieved medication is linked to a problem that the clincian want to review
-* a retrieved problem is linked to several consultations that the clincian wants to review
-* a retrieved immunisation is linked to a consultation that the clincian wants to review
+* a retrieved medication is linked to a problem that the clinician want to review
+* a retrieved problem is linked to several consultations that the clinician wants to review
+* a retrieved immunisation is linked to a consultation that the clinician wants to review
 
 There may be a decision by the consuming system (or by a user of the consuming system) that they require additional information about the linked clinical item. To get these, the consumer system may wish to call the GP Connect API a second time.
 
-This version of GP Connect does not allow a consumer to search for a specific item in the patient record by its identifier. Instead the consumer should use the supported filters to retreive a larger dataset and then search for the required item(s) within that dataset.
+This version of GP Connect does not allow a consumer to search for a specific item in the patient record by its identifier. Instead the consumer should use the supported filters to retrieve a larger dataset and then search for the required item(s) within that dataset.
 
 For example:
 * To display a specific consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data. 
 
 ### Scale of Search ###
 
-It is the responsibility of the consumng system to decide what data to request from the provider systems. When determining how wide to make the search criteria, the consumer system must consider the following guidelines:
+It is the responsibility of the consuming system to decide what data to request from the provider systems. When determining how wide to make the search criteria, the consumer system must consider the following guidelines:
 
-* The first API query on a patient should aim to retrieve the amount of data required to support the majority of queries that their clinician / user will make whilst avoiding the retrieval of large quantities of unecessary data.
+* The first API query on a patient should aim to retrieve the amount of data required to support the majority of queries that their clinician / user will make whilst avoiding the retrieval of large quantities of unnecessary data.
 * Where a follow-up query is required it should aim to retrieve sufficient data to support any other queries that their clinician / user will make.
-* The consumer system should aim to avoid scenarios where more that two queries are required on the same patient as part of the same local interaction with a clinician / user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
-* While the consumer system should aim to avoid the retrieval of large quantities of unecessary data, it is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the uncessary data before presenting it to their clinicians / users where the consumer organisation has determined it is necessary to support patient care. 
+* The consumer system should aim to avoid scenarios where more than two queries are required on the same patient as part of the same local interaction with a clinician / user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
+* While the consumer system should aim to avoid the retrieval of large quantities of unnecessary data, it is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the unnecessary data before presenting it to their clinicians / users where the consumer organisation has determined it is necessary to support patient care. 
