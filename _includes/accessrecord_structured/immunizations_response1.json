@@ -298,8 +298,8 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "code": "822851000000102",
-                "display": "Seasonal influenza vaccination"
+                "code": "170378007",
+                "display": "First hepatitis A vaccination"
               }
             ]
           }
@@ -386,8 +386,9 @@
           {
             "coding": [
               {
-                "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ImmunizationExplanationReason-2",
-                "code": "171279008"
+                "system": "http://snomed.info/sct",
+                "code": "171279008",
+                "display": "Immunisation due"
               }
             ]
           }
@@ -396,13 +397,14 @@
       "vaccinationProtocol": [
         {
           "doseSequence": 1,
-          "seriesDoses": 1,
+          "seriesDoses": 3,
           "targetDisease": [
             {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "6142004"
+                  "code": "40468003",
+    			  "display": "Viral hepatitis, type A"
                 }
               ]
             }
