@@ -196,7 +196,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     </tr>
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeSignificance</code></span></td>
-      <td><code class="highlighter-rouge">CodeableConcept</code></td>
+      <td><code class="highlighter-rouge">Code</code></td>
       <td>Optional</td>
       <td>0..1</td>
       <td>
