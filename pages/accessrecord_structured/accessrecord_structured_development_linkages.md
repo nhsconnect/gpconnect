@@ -133,6 +133,32 @@ The consumer system can specify which clinical areas it wishes to retreive and w
      * The provider system returns all problems that match the requested Significance / Status
      * Where no significance / status is supplied by the consumer, the significance / status filter is not applied
 
+#### Uncategorised Data ####
+
+* Search by date
+     * The consumer system request all items within a start and end date
+     * The provider system returns all items whose asserted date is within the start and end date (inclusive)
+     * Where no start date is supplied the search goes from the start of patient record
+     * Where no end date is supplied the search goes to the end of patient record
+     * Where no dates are supplied by the consumer, the date filter is not applied
+
+#### Consultations ####
+
+* Search by date
+     * The consumer system request all items within a start and end date
+     * The provider system returns all items whose asserted date is within the start and end date (inclusive)
+     * Where no start date is supplied the search goes from the start of patient record
+     * Where no end date is supplied the search goes to the end of patient record
+     * Where no dates are supplied by the consumer, the date filter is not applied
+* Search by most recent
+     * The consumer system request the last x consultations
+     * The provider system returns the last x consultations
+* Where both the date and most recent filters are supplied the results returned are all the consultations that match either the date or the most recent filters.
+
+#### Allergies ####
+
+* All allergies will always be returned.
+
 ### Following a linkage ###
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
 
