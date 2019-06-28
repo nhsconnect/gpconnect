@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_resources_overview.html
-summary: "List of FHIR resource profiles used in the Access Record Structured capability pack"
+summary: "List of FHIR&reg; resource profiles used in the Access Record Structured capability pack"
 ---
 
 ## Population of CodeableConcept ##
@@ -15,7 +15,7 @@ The `CodeableConcept` data type is used throughout this capability and the follo
 
 ## Definitions of optionality, required and 'MUST SUPPORT'
 
-Throughout are profile pages within the specification we have a label for each data item named "Optionality" which details whether or not each data item has to be included in the resource. This item has 3 possible values:
+Throughout are profile pages within the specification we have a label for each data item named "Optionality", which details whether or not each data item has to be included in the resource. This item has 3 possible values:
 
 1. Mandatory - if the data item **MUST** be recorded in the resource every time it is produced.
 2. Required - if the system that is providing the data item contains this piece of data then it **MUST** include it in the resource.
@@ -25,7 +25,7 @@ An example of a 'required' data item is the extension to the MedicationRequest p
 
 StatusReason is used in GP Connect to carry information about why the status of a medication has been changed to stopped. In GP systems when a medication is stopped the clinician has to enter a date when it was stopped and the reason why it was stopped. 
 
-clearly not every medication will have a status of stopped but when it does this information is of a high clinical importance and **MUST** be included in the message.
+Clearly not every medication will have a status of stopped but when it does this information is of a high clinical importance and **MUST** be included in the message.
 
 In the GP Connect FHIR profiles we have used the 'MUST SUPPORT' flag to represent the required data items as described above.
 
