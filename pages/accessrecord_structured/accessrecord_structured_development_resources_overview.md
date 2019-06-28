@@ -13,6 +13,22 @@ The `CodeableConcept` data type is used throughout this capability and the follo
 
 {% include note.html content="Please see [Guidance on the population of CodeableConcept](pages/accessrecord_structured/guidance-on-the-population-of-codeableconcept.pdf)." %}
 
+## Definitions of optionality, required and 'MUST SUPPORT'
+
+Throughout are profile pages within the specification we have a label for each data item named "Optionality" which details whether or not each data item has to be included in the resource. This item has 3 possible values:
+
+1. Mandatory - if the data item **MUST** be recorded in the resource every time it is produced.
+2. Required - if the system that is providing the data item contains this piece of data then it **MUST** include it in the resource.
+3. Optional - the system has the option to include this data if it is available.
+
+An example of a 'required' data item is the extension to the MedicationRequest profile for StatusReason.
+
+StatusReason is used in GP Connect to carry information about why the status of a medication has been changed to stopped. In GP systems when a medication is stopped the clinician has to enter a date when it was stopped and the reason why it was stopped. 
+
+clearly not every medication will have a status of stopped but when it does this information is of a high clinical importance and **MUST** be included in the message.
+
+In the GP Connect FHIR profiles we have used the 'MUST SUPPORT' flag to represent the required data items as described above.
+
 ## Using the List resource ##
 
 The `List` resource in FHIR is used to help manage a collection of resources. In GP Connect it is used to identify the data returns for each query. For each clinical area query, GP Connect will return one or more predefined list that identifies the data returned for that query.
