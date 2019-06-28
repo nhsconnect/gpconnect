@@ -18,6 +18,15 @@
           "valueInteger": "3"
         }
       ]
+    },
+    {
+      "name": "includeProblems",
+      "part": [
+        {
+          "name": "includeStatus",
+          "valueCode": "active"
+        }
+      ]
     }
   ]
 }

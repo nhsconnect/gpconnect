@@ -1,5 +1,5 @@
 ---
-title: FHIR&reg; Consultations examples
+title: FHIR&reg; Consultations and Problems examples
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -9,7 +9,7 @@ summary: "Access Record Structured FHIR examples"
 
 
 
-The following is a set of request/response examples for Consultations:
+The following is a set of request/response examples for Consultations and problems:
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Example 1</a></li>
@@ -27,6 +27,7 @@ The following is a set of request/response examples for Consultations:
 
 <ul>
   <li>Consultations</li>
+  <li>Problems</li>
 </ul>
 
 <br>
@@ -37,8 +38,7 @@ The following is a set of request/response examples for Consultations:
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 
-
-{% include accessrecord_structured/consultations_response1.json %}
+<a href="pages/accessrecord_structured/consultations_response1.json">Response payload</a>
 
 </div>
 <!--

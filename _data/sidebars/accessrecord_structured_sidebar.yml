@@ -146,7 +146,7 @@ entries:
           url: /accessrecord_structured_problems.html
           output: web
         - title: Problems FHIR&reg; examples
-          url: /accessrecord_structured_development_fhir_examples_problems.html
+          url: /accessrecord_structured_development_fhir_examples_consultations.html
           output: web
 
   - title: API definition
