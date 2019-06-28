@@ -158,8 +158,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 
         <ul>
 			     <li>If the <code>consultationSearchPeriod</code> is not specified, all consultations will be returned.</li>
-			     <li>If the <code>consultationSearchPeriod.start</code> is populated, all consultations which are active on or after the <code>consultationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
-           <li>If the <code>consultationSearchPeriod.end</code> is populated, all consultations which are active on or before the <code>consultationSearchPeriod.end</code> <b>MUST</b> be returned.</li>
+			     <li>If the <code>consultationSearchPeriod.start</code> is populated, all consultations on or after the <code>consultationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
+           <li>If the <code>consultationSearchPeriod.end</code> is populated, all consultations on or before the <code>consultationSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with with a date less than or equal to the current date.</li>
           <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
@@ -228,8 +228,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 
         <ul>
 			     <li>If the <code>uncategorisedDataSearchPeriod</code> is not specified, all uncategorised data will be returned.</li>
-			     <li>If the <code>uncategorisedDataSearchPeriod.start</code> is populated, all uncategorised data which are active on or after the <code>uncategorisedDataSearchPeriod.start</code> <b>MUST</b> be returned.</li>
-           <li>If the <code>uncategorisedDataSearchPeriod.end</code> is populated, all uncategorised data which are active on or before the <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be returned.</li>
+			     <li>If the <code>uncategorisedDataSearchPeriod.start</code> is populated, all uncategorised data on or after the <code>uncategorisedDataSearchPeriod.start</code> <b>MUST</b> be returned.</li>
+           <li>If the <code>uncategorisedDataSearchPeriod.end</code> is populated, all uncategorised data on or before the <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with with a date less than or equal to the current date.</li>
           <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
@@ -347,8 +347,10 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `consultationSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The end date of the `consultationSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
@@ -372,7 +374,6 @@ In this scenario, providers **MUST** respond in the following way:
   - `severity` = `warn`
   - `details.coding` = `NOT_IMPLEMENTED`
   - `details.text` = `<parameter-name> is an unrecognised parameter`
-- references to data that hasn't yet been implemented **MUST** be represented as a `Reference` with no `reference` field and a `display` of `NOT YET SUPPORTED`
 
 Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as described above to check for incomplete data as a result of unsupported parameters.
 
