@@ -202,6 +202,20 @@ Will contain at least one reference to a List resource providing the Topic level
 
 The List level representing the Topic level of the consultation structure.
 
+### extension(problemReference)
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>reference</code></td>
+                <td><b>Optionality:</b> Required</td>
+                <td><b>Cardinality:</b> 0..*</td>
+        </tr>
+</table>
+
+References to any problems that have been linked to this section of the consultaion in the sending clinical system. 
+
+These links will have been added by a clinician at the sending practice.
+
 ### title
 
 <table class='resource-attributes'>
