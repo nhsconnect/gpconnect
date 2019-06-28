@@ -184,3 +184,5 @@ It is the responsibility of the consuming system to decide what data to request 
 * Where a follow-up query is required it should aim to retrieve sufficient data to support any other queries that their clinician / user will make.
 * The consumer system should aim to avoid scenarios where more than two queries are required on the same patient as part of the same local interaction with a clinician / user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
 * While the consumer system should aim to avoid the retrieval of large quantities of unnecessary data, it is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the unnecessary data before presenting it to their clinicians / users where the consumer organisation has determined it is necessary to support patient care. 
+
+The details on how this is implemented in a API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html)
