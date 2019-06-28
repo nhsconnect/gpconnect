@@ -79,7 +79,7 @@ A complex extension that details the relationship of this problem header resourc
 </table>
 A complex extension that details the type of relationship this problem header resources to another problem header resources.
 
-For each relatedProblemHeader.target the provider MUST supply a value of <code>Parent</code>, <code>Child</code>or <code>Sibling</code>.
+For each relatedProblemHeader.target the provider **MUST** supply a value of <code>Parent</code>, <code>Child</code>or <code>Sibling</code>.
 
 ### extension[relatedProblemHeader.target] ###
 
@@ -121,7 +121,7 @@ References may be created to MedicationRequest, AllergyIntolerance, Immunization
 </table>
 
 The significance of the problem contained in the resource.
-All problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system recordes more than two levels of severity any level of severity above minor is mapped to major.
+All problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system records more than two levels of severity any level of severity above minor is mapped to major.
 
 ### identifier ###
 
@@ -135,11 +135,11 @@ All problems **MUST** have a severity of <code>major</code> or <code>minor</code
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This  **MUST**  be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore stored with the source data).
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
@@ -179,7 +179,7 @@ Fixed value of <code>problem-list-item</code>.
 
 The clinical code or text that represents the problem header.
 
-The will be the same values that are held in the FHIR resource referenced by extension[actualProblem].
+These will be the same values that are held in the FHIR&reg; resource referenced by extension[actualProblem].
 
 ### subject ###
 
@@ -191,7 +191,7 @@ The will be the same values that are held in the FHIR resource referenced by ext
   </tr>
 </table>
 
-A reference to the Patient who has, or had, the allergy or intolerance specified.
+A reference to the patient who has, or had, the allergy or intolerance specified.
 
 ### context ###
 
@@ -206,8 +206,8 @@ A reference to the Patient who has, or had, the allergy or intolerance specified
 References to encounters that a user in the sending clinical system has chosen to link to this problem header resource.
 
 When populating this field the provider system must include every consultation where the problem was discussed or information about the problem was recorded. This includes:
-* Consultations that are directly linked to the problem in the provider system; and
-* Consultations that created/updated a clinical item that has been linked to the problem
+* consultations that are directly linked to the problem in the provider system; and
+* consultations that created/updated a clinical item that has been linked to the problem
 
 ### onset ###
 
@@ -219,7 +219,7 @@ When populating this field the provider system must include every consultation w
   </tr>
 </table>
 
-The dateTime when the the problem was first encountered.
+The datetime when the problem was first encountered.
 
 ### abatement ###
 
@@ -231,7 +231,7 @@ The dateTime when the the problem was first encountered.
   </tr>
 </table>
 
-The dateTime when the the problem was no longer considered active.
+The datetime when the problem was no longer considered active.
 
 ### assertedDate ###
 
@@ -243,7 +243,7 @@ The dateTime when the the problem was no longer considered active.
   </tr>
 </table>
 
-The date time that the problem was recorded on the clinical system.
+The datetime that the problem was recorded on the clinical system.
 
 ### asserter ###
 
@@ -255,7 +255,7 @@ The date time that the problem was recorded on the clinical system.
   </tr>
 </table>
 
-Reference to the resource for the Practitioner that recorded the problem.
+Reference to the resource for the practitioner who recorded the problem.
 
 ### note ###
 
