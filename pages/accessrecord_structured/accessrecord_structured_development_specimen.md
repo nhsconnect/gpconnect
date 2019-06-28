@@ -56,11 +56,11 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specim
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cros-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This  **MUST**  be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore stored with the source data).
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
@@ -75,7 +75,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-A business level identifier for the specimen supplied by the performing organisation. eg. lab performing the test.
+A business level identifier for the specimen supplied by the performing organisation - for example, the lab performing the test.
 
 ### status ###
 
@@ -116,7 +116,7 @@ Examples from substance in SNOMED:
   </tr>
 </table>
 
-A reference to the Patient who the observation is about.
+A reference to the patient who the observation is about.
 
 ### receivedTime ###
 
@@ -128,7 +128,7 @@ A reference to the Patient who the observation is about.
   </tr>
 </table>
 
-The time when specimen was received for processing
+The time when specimen was received for processing.
 
 ### collection ###
 
@@ -164,7 +164,7 @@ Whether or how long patient abstained from food and/or drink.
   </tr>
 </table>
 
-Reference to the resource for the Practitioner that collected the specimen.
+Reference to the resource for the practitioner who collected the specimen.
 
 ### collection.collected ###
 
