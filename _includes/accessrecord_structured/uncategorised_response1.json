@@ -192,9 +192,195 @@
         ]
       }
     },
- 
- 
-Add example here.....
 
+    {
+      "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "mode": "snapshot",
+        "title": "Uncategorised data List",
+        "code": {
+          "coding": [
+            {
+              "code": "933361000000108",
+              "display": "Medications and medical devices",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "date": "2019-03-01T10:57:34+00:00",
+        "orderedBy": {
+          "coding": [
+            {
+              "code": "event-date",
+              "system": "http://hl7.org/fhir/list-order"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "Observation/Consultation1_topic2_category_Examination_Observation_1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1_topic2_category_Examination_Observation_3"
+            }
+          }
+        ]
+      }
+    },
 
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation1_topic2_category_Examination_Observation_1",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "703421000",
+              "display": "Temperature (observable entity)",
+              "extension": {
+                "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                "extension": [
+                  {
+                    "url": "DescriptionID",
+                    "valueId": "3008650016"
+                  },
+                  {
+                    "url": "descriptionDisplay",
+                    "valueString": "Temperature"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "value": 36.7,
+        "unit": "C",
+        "system": "http://unitsofmeasure.org",
+        "code": "Cel"
+      },
+      "subject": {
+        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+      },
+      "encounter": {
+        "reference": "Encounter/Encounter1"
+      },
+      "effectiveDateTime": "2019-03-28T10:30:00"
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation1_topic2_category_Examination_Observation_2",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "1097811000000106",
+              "display": "Arterial oxygen saturation breathing room air at rest (observable entity)",
+              "extension": {
+                "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                "extension": [
+                  {
+                    "url": "DescriptionID",
+                    "valueId": "2748921000000116"
+                  },
+                  {
+                    "url": "descriptionDisplay",
+                    "valueString": "Arterial oxygen saturation on room air at rest"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "value": 96,
+        "unit": "%",
+        "system": "http://unitsofmeasure.org",
+        "code": "%"
+      },
+      "subject": {
+        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+      },
+      "encounter": {
+        "reference": "Encounter/Encounter1"
+      },
+      "effectiveDateTime": "2019-03-28T10:30:00"
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation1_topic2_category_Examination_Observation_3",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": " 86290005",
+              "display": "Respiratory rate (observable entity)",
+              "extension": {
+                "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                "extension": [
+                  {
+                    "url": "DescriptionID",
+                    "valueId": "143107019"
+                  },
+                  {
+                    "url": "descriptionDisplay",
+                    "valueString": "Respiratory rate"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      "valueQuantity": {
+        "value": 16,
+        "unit": "breaths per minute",
+        "system": "http://unitsofmeasure.org",
+        "code": "{resps}/min"
+      },
+      "subject": {
+        "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+      },
+      "encounter": {
+        "reference": "Encounter/Encounter1"
+      },
+      "effectiveDateTime": "2019-03-28T10:30:00"
+    }
+  ]
+}
 {% endhighlight %}

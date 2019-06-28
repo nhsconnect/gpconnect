@@ -13,8 +13,8 @@ The following is a set of request/response examples for Uncategorised data:
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Example 1</a></li>
-    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Example 2</a></li>
-    <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li>
+<!--    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Example 2</a></li>
+    <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li> -->
 </ul>
 
 <div class="tab-content">
@@ -40,7 +40,7 @@ The following is a set of request/response examples for Uncategorised data:
 
 
 </div>
-
+<!--
 <div role="tabpanel" class="tab-pane" id="example2">
 
 <p style="line-height: 2; font-size: 20px">Example 2</p>
@@ -85,5 +85,5 @@ The following is a set of request/response examples for Uncategorised data:
 {% include accessrecord_structured/uncategorised_response3.json %}
 
 
-</div>
+</div> -->
 </div>
