@@ -495,15 +495,15 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeProblems' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`ProblemHeader`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
+  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
 - and when the 'includeStatus' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`ProblemHeader`](accessrecord_structured_problems.html) resources with a `clinicalStatus` matching the parameter value and all linked clinical information.
+  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources with a `clinicalStatus` matching the parameter value and all linked clinical information.
 
 - and when the 'includeSignificance' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`ProblemHeader`](accessrecord_structured_problems.html) resources with a `problemSignificance` matching the parameter value and all linked clinical information
+  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources with a `problemSignificance` matching the parameter value and all linked clinical information
 
 
 ##### Immunisations #####
@@ -607,8 +607,7 @@ Examples of the payload requests and responses can be found here:
 
 - [Allergies - FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
 - [Medication - FHIR examples](accessrecord_structured_development_fhir_examples_medication.html)
-- [Consultations - FHIR examples](accessrecord_structured_development_fhir_examples_consultations.html)
-- [Problems - FHIR examples](accessrecord_structured_development_fhir_examples_problems.html)
+- [Consultations and problems - FHIR examples](accessrecord_structured_development_fhir_examples_consultations.html)
 - [Immunizations - FHIR examples](accessrecord_structured_development_fhir_examples_immunizations.html)
 - [Uncategorised data - FHIR examples](accessrecord_structured_development_fhir_examples_uncategorised.html)
 
