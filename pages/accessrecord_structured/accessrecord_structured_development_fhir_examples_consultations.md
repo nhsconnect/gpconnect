@@ -30,19 +30,6 @@ The following is a set of request/response examples for Consultations and proble
   <li>Problems</li>
 </ul>
 
-<p>The following caveats apply:</p>
-
-<ul>
-  <li>Example is illustrative to show problem linkages and consultation structure only</li>
-  <li>The main linkages are logical rather than Guid based to add understanding</li>
-  <li>Dates are not realistic</li>
-  <li>Medication courses are all acute for simplicity</li>
-  <li>Medication course notes are missing</li>
-  <li>The problem are headers only i.e. do not link to each other or link to disagnoses in the record</li>
-  <li>Organisation, Practitioner and Medications are drawn previous examples and are illustrative only</li>
-  <li>References to Patients, Practitioners, Organisations and Medications may not be correct</li>
-</ul>
-
 <br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
