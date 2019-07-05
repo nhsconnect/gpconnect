@@ -22,7 +22,7 @@ The model currently covers consultations, problems, medications and medical devi
 
 <img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;">
 
-The relationships between two FHIR resources are defined in only one of the linked FHIR resources (similar to in a relational database management system (RDBMS). This is shown by the direction of the arrow in the FHIR model. 
+The relationships between two FHIR resources are defined in only one of the linked FHIR resources (similar to in a relational database management system). This is shown by the direction of the arrow in the FHIR model. 
 
 For example, the MedicationStatement resource contains a field that can be used to look up the linked medication. There is no field in the Medication resource that can be used to look up the linked MedicationStatement.
 
@@ -112,10 +112,10 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 * Search by date
      * The consumer system request all items after a start date
      * The provider system returns all plans whose effective period end date is null or after the start date
-     * Where no date is supplied by the consumer, the date filter is not applied
+     * Where no date is supplied by the consumer, all medications and medical devices are returned
 * Include issues
-     * The consumer system requests medication issues
-     * The provider system returns the all issues information for each of the returned plans
+     * The consumer system requests prescription issues
+     * For each of the returned plans, the provider system includes data for all of its issue
 
 #### Allergies ####
 
@@ -131,7 +131,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * The consumer system can request Major Active, Minor Active, Major Inactive and/or Minor Inactive
      * The consumer system can request multiple combinations in a single query
      * The provider system returns all problems that match the requested Significance / Status
-     * Where no significance / status is supplied by the consumer, the significance / status filter is not applied
+     * Where no significance / status is supplied by the consumer, all problems are returned
 
 #### Uncategorised Data ####
 
@@ -140,20 +140,21 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * The provider system returns all items whose asserted date is within the start and end date (inclusive)
      * Where no start date is supplied the search goes from the start of patient record
      * Where no end date is supplied the search goes to the end of patient record
-     * Where no dates are supplied by the consumer, the date filter is not applied
+     * Where no dates are supplied by the consumer, all uncategorised data are returned.
 
 #### Consultations ####
 
 * Search by date
      * The consumer system request all items within a start and end date
      * The provider system returns all items whose asserted date is within the start and end date (inclusive)
-     * Where no start date is supplied the search goes from the start of patient record
-     * Where no end date is supplied the search goes to the end of patient record
-     * Where no dates are supplied by the consumer, the date filter is not applied
+     * Where there is a start date but no end date, the search goes to the end of the patient record
+     * Where there is an end date but no start date the search goes from the start of the patient record
 * Search by most recent
      * The consumer system request the last x consultations
      * The provider system returns the last x consultations
-* Where both the date and most recent filters are supplied the results returned are all the consultations that match either the date or the most recent filters.
+* Where a single filter is supplied by the consumer, it is applied as defined above.
+* Where both filters are supplied by the consumer, all the consultations that match either of the filters are returned.
+* If no filters are supplied by the consumer, all constulations are returned.
 
 #### Allergies ####
 
