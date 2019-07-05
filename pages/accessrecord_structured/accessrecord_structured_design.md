@@ -24,7 +24,7 @@ What is the scope of the Access Record Structured capability?
  - Observation
  - Administrative profiles to support the above, as defined by the [Foundations capability pack](foundations.html)
 
-{% include roadmap.html content="The scope of the capability is under review and clinical items such as Referrals are likely to be included at a later stage." %}
+{% include roadmap.html content="It is planned to include the remaining clinical areas of the patient record in future releases." %}
 
 ## FHIR profiles version ##
 <span class="label label-info">DECISION</span> Standard for Trial Use 3 (STU3) is the version of FHIR which will be adopted for the Access Record Structured clinical profiles. A decision was taken to uplift the profiles from the previous DSTU2 version for the following reasons:
