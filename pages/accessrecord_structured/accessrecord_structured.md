@@ -24,6 +24,3 @@ The Access Record Structured capability will expose data for a number of clinica
 
 {% include roadmap.html content="Subsequent releases are to be scoped" %}
 
-## Development ##
-
-Please see the [development introduction](accessrecord_structured_development.html) for information on the API use cases supported in this capability.
