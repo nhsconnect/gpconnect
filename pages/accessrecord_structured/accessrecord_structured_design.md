@@ -11,19 +11,20 @@ summary: "Overview of the design decisions made in relation to the Access Record
 
 What is the scope of the Access Record Structured capability?
 
-<span class="label label-info">DECISION</span> Initially the Access Record Structured capability will return a patient’s medications,  allergies and test results using the following FHIR&reg; profiles:
+<span class="label label-info">DECISION</span> Currently the Access Record Structured capability will return a patient’s allergies, medications,  consultations, immunisations , problems and uncategorised data using the following FHIR&reg; profiles:
 
  - AllergyIntolerance
  - Medication
  - Medication Statement
  - Medication Request
  - Encounter
+ - List
  - Immunization
  - ProblemHeader
  - Observation
  - Administrative profiles to support the above, as defined by the [Foundations capability pack](foundations.html)
 
-{% include roadmap.html content="The scope of the capability is under review and clinical items such as Immunisations are likely to be included at a later stage." %}
+{% include roadmap.html content="The scope of the capability is under review and clinical items such as Referrals are likely to be included at a later stage." %}
 
 ## FHIR profiles version ##
 <span class="label label-info">DECISION</span> Standard for Trial Use 3 (STU3) is the version of FHIR which will be adopted for the Access Record Structured clinical profiles. A decision was taken to uplift the profiles from the previous DSTU2 version for the following reasons:
