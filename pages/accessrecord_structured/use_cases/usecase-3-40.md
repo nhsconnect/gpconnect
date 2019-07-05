@@ -162,6 +162,3 @@ Although a paramedic may make an independent clinical decision about whether to 
 </tbody>
 </table>
 
-**Use Case Diagram:**
-
-*{Insert a Use Case Diagram that indicates the use case and all direct relationships with other use cases and associations with actors.}*
