@@ -1,5 +1,5 @@
 ---
-title: Immunization guidance
+title: Immunisation guidance
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
