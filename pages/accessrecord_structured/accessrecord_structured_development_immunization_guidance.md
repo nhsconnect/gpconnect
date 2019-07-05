@@ -19,7 +19,7 @@ GP Clinical Systems have not recorded the full vaccine product (dm+d code) as th
 GP Clinical Systems often record the type of vaccine administered as opposed to the vaccine product.
 This may be as a procedure code or a local code which maps to a procedure code. 
 The immunisation procedure code will be used as the main vaccine identifier. 
-The vaccine product can be included if it is available.
+The vaccine product MUST be included if it is available.
 
 ## Vaccinations that were not given
 
@@ -39,8 +39,8 @@ Options are to be evaluated for each not given use case and whether to include d
 
 ## Ineffective vaccination
 
-In the event a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break, a record may be included without an identifier indicating it does not count towards immunity.
-GP clinical systems do not have a standard means to identify an ineffective vaccination, hence records can only indicate that a vaccine was administered.
+In the event a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break, the Immunization FHIR profile contains a field indicating that it does not count towards immunity.
+GP clinical systems do not have a standard means to identify an ineffective vaccination, hence immunisaton records will always be returned as having counted towards immunity.
 
 ## Reactions to a vaccine
 
