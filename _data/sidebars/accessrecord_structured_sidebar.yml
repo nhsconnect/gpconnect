@@ -64,7 +64,7 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_allergies.html
           output: web
 
-      - title: Medications
+      - title: Medications and medical devices
         output: web
         subfolderitems:
 
