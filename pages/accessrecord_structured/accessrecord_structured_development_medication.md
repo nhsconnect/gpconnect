@@ -60,11 +60,11 @@ A SNOMED dm+d code **MUST** be supplied, if available.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
-<h2 style="color:#ED1951;">Medication elements <b>not in use</b></h2>
+## Medication elements not in use ##
 
 The following elements **SHALL NOT** be populated:
 
-<h3 style="color:#ED1951;">meta.versionId</h3>
+### meta.versionId ###
 
 <table class='resource-attributes'>
   <tr>
@@ -72,7 +72,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+### meta.lastUpdated ###
 
 <table class='resource-attributes'>
   <tr>
@@ -80,7 +80,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;">package</h3>
+### package ###
 
 <table class='resource-attributes'>
   <tr>
@@ -88,4 +88,4 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-Also do not populate any subelements of package.
+Also do not populate any sub-elements of package.
