@@ -68,10 +68,10 @@ entries:
         output: web
         subfolderitems:
 
-        - title: Medication resource relationships
+        - title: Medication and medical device resource relationships
           url: /accessrecord_structured_development_medication_resource_relationships.html
           output: web
-        - title: Medication guidance
+        - title: Medication and medical device guidance
           url: /accessrecord_structured_development_medication_guidance.html
           output: web
         - title: <b class='resource'>Medication</b>
@@ -87,11 +87,11 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
 
-      - title: Immunizations
+      - title: Immunisations
         output: web
         subfolderitems:
 
-        - title: Immunizations guidance
+        - title: Immunisations guidance
           output: web
           url: /accessrecord_structured_development_immunization_guidance.html
         - title: <b class='resource'>Immunization</b>
