@@ -129,7 +129,7 @@ entries:
           url: /accessrecord_structured_development_list_consultation.html
           output: web
         - title: Observation - narrative
-          url: accessrecord_structured_development_guidance_observation_narrative.html
+          url: /accessrecord_structured_development_guidance_observation_narrative.html
           output: web
         - title: Consultation FHIR&reg; examples
           url: /accessrecord_structured_development_fhir_examples_consultations.html

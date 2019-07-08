@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_immunization.html
 summary: "FHIR resource for population guidance for immunization"
+div: resource-page
 ---
 ## Introduction
 
@@ -12,7 +13,7 @@ The headings below list the elements of the Immunization resource and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_immunization.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Immunization profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Immunization profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)." %}
 
 ## Immunization elements
 
@@ -108,7 +109,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-Fixed to the value <code>completed</code> for all CareConnect profiles. 
+Fixed to the value <code>completed</code> for all CareConnect profiles.
 
 ### notGiven
 
@@ -120,7 +121,7 @@ Fixed to the value <code>completed</code> for all CareConnect profiles.
   </tr>
 </table>
 
-Fixed value of <code>false</code>. 
+Fixed value of <code>false</code>.
 
 ### vaccineCode
 
@@ -131,10 +132,10 @@ Fixed value of <code>false</code>.
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
- 
-Vaccine product administered. 
 
-Where the vaccine product that was administered is not known then one of the null values defined in the profile **MUST** be populated. 
+Vaccine product administered.
+
+Where the vaccine product that was administered is not known then one of the null values defined in the profile **MUST** be populated.
 
 ### patient
 
@@ -173,8 +174,8 @@ As per base profile guidance.
   </tr>
 </table>
 
-The dateTime when the immunization was administered. 
-If the immunisation was administered elsewhere, this may be an estimated date. 
+The dateTime when the immunization was administered.
+If the immunisation was administered elsewhere, this may be an estimated date.
 
 ### primarySource
 
@@ -186,9 +187,9 @@ If the immunisation was administered elsewhere, this may be an estimated date.
   </tr>
 </table>
 
-Fixed value of <code>true</code> for all profiles created from the Care Connect Immunization profiles. 
+Fixed value of <code>true</code> for all profiles created from the Care Connect Immunization profiles.
 
-Indicates the context that the data was recorded in. 
+Indicates the context that the data was recorded in.
 
 ### reportOrigin
 
@@ -212,7 +213,7 @@ Indicates the source of a secondary reported record.
   </tr>
 </table>
 
-The GP practice, branch surgery or other location where the vaccination occurred. 
+The GP practice, branch surgery or other location where the vaccination occurred.
 
 ### manufacturer
 
@@ -320,7 +321,7 @@ The role of the referenced practitioner.
   </tr>
 </table>
 
-A reference to the practitioner resource that administered the vaccine. 
+A reference to the practitioner resource that administered the vaccine.
 This is mandatory where the practitioner role is populated.
 
 ### note
@@ -345,7 +346,7 @@ Notes about the immunization.
   </tr>
 </table>
 
-The reason why the immunization was given, for example, travel, occupation, and so on. 
+The reason why the immunization was given, for example, travel, occupation, and so on.
 
 ### vaccinationProtocol
 
@@ -381,7 +382,7 @@ If the immunisation is achieved via a series of vaccinations, this is the positi
   </tr>
 </table>
 
-A description for the vaccination protocol this vaccination is administered under. 
+A description for the vaccination protocol this vaccination is administered under.
 
 ### vaccinationProtocol.seriesDoses
 
@@ -431,8 +432,8 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-Only Immunizations where <code>notGiven</code> is set to <code>false</code> are to be sent using the Immunization profile. 
-This means that there will never be cause to use <code>reasonNotGiven</code>. 
+Only Immunizations where <code>notGiven</code> is set to <code>false</code> are to be sent using the Immunization profile.
+This means that there will never be cause to use <code>reasonNotGiven</code>.
 
 ### reaction
 

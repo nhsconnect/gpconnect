@@ -5,6 +5,7 @@ tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_encounter.html
 summary: "Guidance for populating the Encounter resource for consultations"
+div: resource-page
 ---
 
 ## Encounter elements ##
@@ -57,10 +58,10 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed value of **finished**. 
+Fixed value of **finished**.
 
-Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of consultation context. 
-Hence, use most appropriate value from limited set available. 
+Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of consultation context.
+Hence, use most appropriate value from limited set available.
 
 Some systems allow consultations to be assigned a draft or incomplete status, but this status is not conveyed in GP Connect as the information recorded in such consultation is still treated as authoritative by the source systems.
 
@@ -103,7 +104,7 @@ Reference to <code>Patient</code> resource representing the patient against whom
 
 This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system.
 
-Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary. 
+Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary.
 This should reference a <code>Practitioner</code> resource representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
 
 Other participants, such as registrars, trainees or other parties present, may be referenced but with a participation type of <code>PART</code>.
@@ -133,7 +134,7 @@ The authorship of the consultation/encounter - that is, the actual user who ente
   </tr>
 </table>
 
-If recorded, <code>period.start</code> is mandatory and should be populated with the displayed consultation date and time. 
+If recorded, <code>period.start</code> is mandatory and should be populated with the displayed consultation date and time.
 
 <code>period.end</code> should be populated where the encounter end date and time is known or calculated and populated where the duration is known.
 
@@ -151,7 +152,7 @@ The <code>period</code> attribute may be omitted where the effective/clinical da
   </tr>
 </table>
 
-Specifies the length of the consultation. 
+Specifies the length of the consultation.
 Should be calculated and populated where an end time for the consultation is known.
 
 ### location ###
@@ -201,7 +202,7 @@ Not used.
     <td><b>Data type:</b> <code>Coding</code></td>
   </tr>
 </table>
-      
+
 Not used.
 
 ### classHistory ###

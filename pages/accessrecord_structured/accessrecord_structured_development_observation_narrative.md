@@ -5,6 +5,7 @@ tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_guidance_observation_narrative.html
 summary: "Guidance for the representation and consumption of Observation resource representing uncoded freetext narrative"
+div: resource-page
 ---
 
 ## Introduction ##
@@ -26,7 +27,7 @@ Instances of Observation narrative are identified by Observation.code of **37331
 
 1. All mandatory fields **MUST** be populated.
 
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
+2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles.
 
 3. Any attributes of the underlying Observation profile that are not listed below are not used.
 
@@ -80,7 +81,7 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed value of **finished**. 
+Fixed value of **finished**.
 
 
 
@@ -183,4 +184,3 @@ The free text narrative as plain text.
 This attribute is used to specify the sequence of the narrative in relation to other resources (for example, when an ordered set of resource is being used to express the structure of a consultation displayed at source). See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
 
 The **related.type** and **related.target** are used to represent the sequence. Only the **related.type** value of **'sequel-to'** is utilised.
-

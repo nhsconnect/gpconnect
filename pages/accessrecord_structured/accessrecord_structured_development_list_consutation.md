@@ -5,6 +5,7 @@ tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_list_consultation.html
 summary: "Guidance for populating the list resource at the topic level resource"
+div: resource-page
 ---
 
 ## Overview
@@ -18,10 +19,10 @@ A two or three level <code>List</code> structure is used to represent structured
 List (Consultation) **SHALL** be coded as **325851000000107 |Consultation encounter type (record artifact)|**.
 This top-level resource represents the structured consultation as a whole.
 
-List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR) (record artifact)|**. 
+List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR) (record artifact)|**.
 This level represents the Topic/Problem groupings within consultations.
 
-List (Category) **SHALL** be coded as **24781000000107 |Category (EHR) (record artifact)|**. 
+List (Category) **SHALL** be coded as **24781000000107 |Category (EHR) (record artifact)|**.
 This level represents the headings (SOAP heading) levels of the consultation structure that contain record entries.
 
 In the case of consultation which has a 'flat' structure, that is, contains record entries without a surrounding Topic/Category structure, producer systems generate a List(Topic) level which links directly to record entries without the List(Category) level.
@@ -72,7 +73,7 @@ The List profile URL.
 
 This is for business identifiers.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. 
+This is sliced to include a cross-care setting identifier which **MUST** be populated.
 The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 ### status
@@ -171,7 +172,7 @@ The following attributes are specific to the List level representing the consult
         </tr>
 </table>
 
-The type or name of the consultation as it appears to users of the source system. 
+The type or name of the consultation as it appears to users of the source system.
 This duplicates the consultation type/name provided at <code>Encounter.type</code>.
 
 ### code
@@ -212,7 +213,7 @@ The List level representing the Topic level of the consultation structure.
         </tr>
 </table>
 
-References to any problems that have been linked to this section of the consultaion in the sending clinical system. 
+References to any problems that have been linked to this section of the consultaion in the sending clinical system.
 
 These links will have been added by a clinician at the sending practice.
 
@@ -226,7 +227,7 @@ These links will have been added by a clinician at the sending practice.
         </tr>
 </table>
 
-The name of the corresponding Topic section in the source consultation if it is named. 
+The name of the corresponding Topic section in the source consultation if it is named.
 
 ### code
 
@@ -295,7 +296,7 @@ Fixed value of **24781000000107 |Category (EHR) (record artifact)|**
 </table>
 
 Each <code>entry.item</code> is a reference to a resource representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on.
-        
+
 ## List elements **not in use**
 
 The following elements **SHALL NOT** be populated:
