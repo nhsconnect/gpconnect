@@ -24,7 +24,7 @@ In some systems it is possible to prescribe custom formulations compounded from 
 
 ## dm+d name versus displayed name
 
-It is possible for historic/legacy medications to be displayed with a name corresponding to the name in the original system’s drug dictionary rather than the dm+d name. This name **SHOULD** be preserved via `CodeableConcept.text` when representing the medication via resources. `CodeableConcept.text` is redundant when the displayed medication name on the original system and the dm+d name is identical, and, in these cases, `CodeableConcept.text` **SHOULD** be omitted.
+It is possible for historic/legacy medications to be displayed with a name corresponding to the name in the original system’s drug dictionary rather than the dm+d name. This name **MUST** be preserved via `CodeableConcept.text` when representing the medication via resources. `CodeableConcept.text` is redundant when the displayed medication name on the original system and the dm+d name is identical, and, in these cases, `CodeableConcept.text` **MUST** be omitted.
 
 ## Medication reviews
 
@@ -40,9 +40,9 @@ Where an authorisation is amended – for example, Proprietary/Generic switch, a
 
 ## Medication discontinuation/stopping ###
 
-Where a medication is stopped or discontinued then the status of the authorisation **SHOULD** be changed to 'stopped' and a textual stop reason provided via `statusReason.reason`.
+Where a medication is stopped or discontinued then the status of the authorisation **MUST** be changed to 'stopped' and a textual stop reason provided via `statusReason.reason`.
 
-A `statusReason` **SHOULD NOT** be generated when an authorisation has simply expired (exceeded review date or number of issues).
+A `statusReason` **MUST NOT** be generated when an authorisation has simply expired (exceeded review date or number of issues).
 
 ## Authorisation 
 
@@ -50,5 +50,5 @@ In conjunction with `MedicationStatement`, a `MedicationRequest` with an `intent
 
 ## Re-authorisation 
 
-Where a medication is re-authorised a new authorisation **SHOULD** be generated in the form of a `MedicationStatement` and `MedicationRequest` with `intent` of `plan`. Subsequent issues of the medication **SHOULD** reference the new authorisation.
+Where a medication is re-authorised a new authorisation **MUST** be generated in the form of a `MedicationStatement` and `MedicationRequest` with `intent` of `plan`. Subsequent issues of the medication **MUST** reference the new authorisation.
 
