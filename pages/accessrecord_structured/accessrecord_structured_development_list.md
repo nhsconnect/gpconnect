@@ -146,32 +146,6 @@ Reference to the patient.
 
 When the list was created.
 
-### source ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(Practitioner, Patient, Device)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Who and/or what defined the list contents (that is, the author).
-
-### orderedBy  ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-What order the list has.
-
-As the data where lists are being used in GP Connect is structured, it is simple for the consumer to put in order.
-
 ### note ###
 
 <table class='resource-attributes'>
@@ -182,7 +156,7 @@ As the data where lists are being used in GP Connect is structured, it is simple
   </tr>
 </table>
 
-Comments about this list.
+The text versions of any warning messages included with the list. Where there are multiple warning messages their text is concatenated.
 
 ### entry ###
 
@@ -194,7 +168,7 @@ Comments about this list.
   </tr>
 </table>
 
-Entries in the list.
+Entries in the list. Entries are populated in no specific order.
 
 See below for sub elements.
 
@@ -267,3 +241,20 @@ The following elements **SHALL NOT** be populated:
     <td><b>Data type:</b> <code>Instant</code></td>
   </tr>
 </table>
+
+<h3 style="color:#ED1951;">Source</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Practitioner, Patient, Device)</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;">orderedBy</h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
