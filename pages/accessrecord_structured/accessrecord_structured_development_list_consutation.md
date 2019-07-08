@@ -196,7 +196,7 @@ Fixed value of **325851000000107 |Consultation encounter type (record artifact)|
         </tr>
 </table>
 
-Will contain at least one reference to a List resource providing the Topic level of the consultation structure.
+Will contain at least one reference to a List resource providing the Topic level of the consultation structure. They will be recorded in the same order that the topics appear when viewed in a consultation in the GP system.
 
 ## List (Topic)
 
@@ -250,9 +250,9 @@ Fixed value of **25851000000105 |Topic (EHR) (record artifact)|**
         </tr>
 </table>
 
-Where information within the Topic is organised as sub-headings, <code>entry.list</code> will reference instances of the Category List level.
+Where information within the Topic is organised as sub-headings, <code>entry.list</code> will reference instances of the Category List level.  They will be recorded in the same order that the headings appear when viewed in a consultation in the GP system.
 
-For consultations which have a flat structure (for example, clinical record entries made outside of the Topic and heading structure), an artificial Topic List is generated, and entries will reference resources representing those record entries (such as, Allergies, Medications, Tests, and so on.
+For consultations which have a flat structure (for example, clinical record entries made outside of the Topic and heading structure), an artificial Topic List is generated, and entries will reference resources representing those record entries (such as, Allergies, Medications, Tests, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
 
 The two approaches are never mixed within the same Topic - that is, all entries will either reference List(Category) or resources representing the source record entries, but not both.
 
@@ -294,7 +294,7 @@ Fixed value of **24781000000107 |Category (EHR) (record artifact)|**
         </tr>
 </table>
 
-Each <code>entry.item</code> is a reference to a resource representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on.
+Each <code>entry.item</code> is a reference to a resource representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
         
 ## List elements **not in use**
 

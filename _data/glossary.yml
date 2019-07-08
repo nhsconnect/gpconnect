@@ -8,6 +8,10 @@
   value: "The GP Connect FHIR® APIs are managed within ‘capabilities’ that focus on a particular business area of general practice and wider cross-organisational interoperability. Capabilities are organised within ‘capability packs’, which include:<ul><li>Appointment Management</li><li>Access Record HTML</li><li>Access Record Structured</li></ul>"
 - title: CATR
   value: "Clinical Authority To Release: granted by NHS Digital Clinical Safety Group. It confirms that all clinical safety documents have been completed to the required standard."
+- title: Clinical Area
+  value: "The structured patient record is split into a number of Clinical Areas each of which describes a different type of clinical data."
+- title: Clinical Item
+  value: "A single item of data in the structured patient record."
 - title: Clinical safety
   value: "The process of evaluating clinical safety risk. See <a href='https://digital.nhs.uk/services/solution-assurance/the-clinical-safety-team/clinical-risk-management-standards' target='_blank'>clinical risk management standards</a>."
 - title: CMA endpoint

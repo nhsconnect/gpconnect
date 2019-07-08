@@ -49,7 +49,7 @@ Consideration was given to attempting to categorise data using the recorded clin
 
 ## Qualifiers ##
 
-In GP systems, structured records can have additional coded or structured attributes that refine or expand the meaning of the coded element of the record. These additional attributes are commonly known as qualifiers. Structured records may have one or more qualifiers. The qualifiers are used refine the meaning of the coded element of the record. 
+In GP systems, uncateogirsed data may have additional coded or structured attributes that refine or expand the meaning of the coded element of the record. These additional attributes are commonly known as qualifiers.
 
 Each provider system supports a different set of qualifiers. However, there are three key qualifiers that are common across all provider systems:
 
