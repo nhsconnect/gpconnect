@@ -54,7 +54,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Allerg
   </tr>
 </table>
 
-Contains a link to the encounter resource.
+Contains a link to the consultation where the allergy was first recorded.
 
 ### extension[allergyEnd] ###
 
@@ -95,18 +95,6 @@ Must be populated if the `clinicalStatus` is set to `resolved`.
 </table>
 
 The reason why the allergy or intolerance has been resolved. In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
-
-### extension[evidence] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(DiagnosticReport)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Reference to confirmatory diagnostic report - for example, pathology RAST test result.
 
 ### identifier ###
 
@@ -377,6 +365,14 @@ The route by which exposure to the substance causing the reaction occurred. Util
 <h2 style="color:#ED1951;">AllergyIntolerance elements <b>not in use</b></h2>
 
 The following elements **SHALL NOT** be populated:
+
+### extension[evidence] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(DiagnosticReport)</code></td>
+  </tr>
+</table>
 
 <h3 style="color:#ED1951;">meta.versionId</h3>
 
