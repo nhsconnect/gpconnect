@@ -286,7 +286,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-## extension[ChangeSummary] ##
+### extension[ChangeSummary] ###
 
 <table class='resource-attributes'>
   <tr>
@@ -326,7 +326,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-## derivedFrom ##
+### derivedFrom ###
 
 <table class='resource-attributes'>
   <tr>
@@ -336,7 +336,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-## taken ##
+### taken ###
 
 <table class='resource-attributes'>
   <tr>
@@ -346,7 +346,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-## reasonNotTaken ##
+### reasonNotTaken ###
 
 <table class='resource-attributes'>
   <tr>
