@@ -81,7 +81,7 @@ The number of repeat issues authorised if specified.
 
 **MUST** be present where a repeat is authorised for a defined number of issues.
 
-**MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
+**MUST NOT** be specified for acute prescriptions or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
 
 ### extension[repeatInformation].numberOfRepeatPrescriptionsIssued ###
 
@@ -122,7 +122,7 @@ For a medicationRequest with an intent = order this is not populated.
   </tr>
 </table>
 
-Where a medication has been stopped (status == ‘stopped’), the reason is provided in the statusReason extension.
+Where a medication/medical device has been stopped (status == ‘stopped’), the reason is provided in the statusReason extension.
 
 Mandatory for authorisations with stopped status.
 
@@ -136,9 +136,9 @@ Mandatory for authorisations with stopped status.
   </tr>
 </table>
 
-The dateTime the medication was stopped/discontinued.
+The dateTime the medication/medical device was stopped/discontinued.
 
-Mandatory for stopped/discontinued medications as the date will always be known. In exceptional cases where for legacy data there is no statusReason recorder in the system then this MUST be populated with the text 'No information available'.
+Mandatory for stopped/discontinued medications/medical devices as the date will always be known. In exceptional cases where for legacy data there is no statusReason recorder in the system then this MUST be populated with the text 'No information available'.
 
 ### extension[statusReason].reason ###
 
@@ -150,7 +150,7 @@ Mandatory for stopped/discontinued medications as the date will always be known.
   </tr>
 </table>
 
-The textual reason either free text or the term of a code for stopping/discontinuing the medication.
+The textual reason either free text or the term of a code for stopping/discontinuing the medication/medical device.
 
 **MUST** be populated when StatusReason.date is populated.
 
@@ -166,7 +166,7 @@ The textual reason either free text or the term of a code for stopping/discontin
   </tr>
 </table>
 
-If a medication is an acute, acute-handwritten, delayed acute, repeat or repeat dispense.
+If a medication/medical device is an acute, acute-handwritten, delayed acute, repeat or repeat dispense.
 
 This field provides an explicit repeat/acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
@@ -234,7 +234,7 @@ The status of the authorisation.
 
 Use one of `active`, `completed` or `stopped`:
 
-- `active` represents an active authorisation - used for active medications.
+- `active` represents an active authorisation - used for active medications/medical devices.
 - `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
 - `complete` represents an authorisation which has run its course.
 
@@ -257,7 +257,7 @@ For `MedicationRequest` instances where `intent` is set to `order`:
   </tr>
 </table>
 
-Used to distinguish between authorisations and medication issues.
+Used to distinguish between authorisations and issues.
 
 Use one of `plan` or `order`:
 
@@ -274,9 +274,9 @@ Use one of `plan` or `order`:
   </tr>
 </table>
 
-The medication the authorisation is for.
+The medication/medical device the authorisation is for.
 
-The Medication resource provides the coded representation of the medication.
+The Medication resource provides the coded representation of the medication/medical device.
 
 ### subject ###
 
@@ -288,7 +288,7 @@ The Medication resource provides the coded representation of the medication.
   </tr>
 </table>
 
-Who the medication is for - that is, to whom it will be administered.
+Who the medication/medical device is for - that is, to whom it will be administered.
 
 Reference to patient.
 
@@ -317,7 +317,7 @@ For a medicationRequest with an intent = order this is the constulation where th
   </tr>
 </table>
 
-Authorisation date, when the medication was authorised.
+Authorisation date, when the medication/medical device was authorised.
 
 Unless there is a distinct user-modifiable availabilityTime for the authorisation, this is the audit trail dateTime for when the authorisation was entered.
 
@@ -333,9 +333,9 @@ Unless there is a distinct user-modifiable availabilityTime for the authorisatio
 
 Person and their organization requesting authorisation for prescription.
 
-To be used if the medication was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
+To be used if the medication/medical device was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
 
-If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
+If the medication/medical device has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
 
 ### recorder ###
 
@@ -347,7 +347,7 @@ If the medication has been prescribed elsewhere and, for example, is detailed in
   </tr>
 </table>
 
-The responsible `Practitioner` who authorised the medication.
+The responsible `Practitioner` who authorised the medication/medical device.
 
 May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
 
@@ -361,7 +361,7 @@ May not always be the user who entered the record on the system but, where a sys
   </tr>
 </table>
 
-All notes that are associated with this medication record.
+All notes that are associated with this medication/medical device record.
 
 Sometimes labelled Pharmacy text or instructions for pharmacy.
 
