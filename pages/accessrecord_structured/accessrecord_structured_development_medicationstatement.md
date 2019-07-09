@@ -68,11 +68,11 @@ The date when the latest prescription under this plan was issued. This will not 
   </tr>
 </table>
 
-This details the care setting in which the medication was prescribed.
+This details the care setting in which the medication or medical device was prescribed.
 
-Currently this field will only support two coded entries. If the medication was prescribed by the GP practice or by another organisation. If the providing organisation has more details about the type of prescribing organisation (for example that is was a dental practice or hospital) this **MUST** be included in the CodeableConcept.Text field.
+Currently this field will only support two coded entries. If the medication/medical device was prescribed by the GP practice or by another organisation. If the providing organisation has more details about the type of prescribing organisation (for example that is was a dental practice or hospital) this **MUST** be included in the CodeableConcept.Text field.
 
-In the future the coded valueset will be built on to be more specific about where a medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be coded as well as in the text.
+In the future the coded valueset will be built on to be more specific about where a medication/medical device was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be coded as well as in the text.
 
 For repeat and repeat dispensed medications/medical devices, the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
@@ -120,7 +120,7 @@ Every MedicationStatement **MUST** be based on a `MedicationRequest` with `inten
   </tr>
 </table>
 
-The `Encounter` within which the medication was authorised.
+The `Encounter` within which the medication/medical device was authorised.
 
 As per base profile guidance.
 
@@ -138,7 +138,7 @@ The status of the authorisation.
 
 Use one of `active`, `completed` or `stopped`:
 
-- `active` represents an active authorisation - used for active repeat medications
+- `active` represents an active authorisation - used for active repeat medications/medical devices
 - `stopped` represents an authorisation which has been discontinued, cancelled or stopped
 - `complete` represents an authorisation which has run its course
 
@@ -156,9 +156,9 @@ For acute, the status refers to the status of the prescription issue.
   </tr>
 </table>
 
-The medication the authorisation is for.
+The medication/medical device the authorisation is for.
 
-The `Medication` resource provides the coded representation of the medication.
+The `Medication` resource provides the coded representation of the medication/medical device.
 
 ### effective ###
 
@@ -202,7 +202,7 @@ Unless there is a distinct user-modifiable availability date/time for the author
   </tr>
 </table>
 
-Who the medication is for- that is, to whom it will be administered.
+Who the medication/medical device is for- that is, to whom it will be administered.
 
 Reference to patient.
 
@@ -216,7 +216,7 @@ Reference to patient.
   </tr>
 </table>
 
-Whether a medication was taken.
+Whether a medication/medical device was taken.
 
 Providers **MUST** use a default value of `unk` – unknown.
 
@@ -234,7 +234,7 @@ This element has been included in this section as providers **MUST** populate it
   </tr>
 </table>
 
-All notes that are associated with this medication record.
+All notes that are associated with this medication/medical device record.
 
 All patient notes and prescriber notes at authorisation(plan) and issue(order) level **MUST** be included in this field. They **MUST** be concatenated and indicate the level the notes come from (for example, 1st Issue) and be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
 
