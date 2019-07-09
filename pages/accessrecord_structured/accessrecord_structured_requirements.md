@@ -90,6 +90,7 @@ The level of detail varies from use case to use case.
 - [3.38 Community pharmacist providing spirometry services](accessrecord_usecase_3.38.html)
 - [3.39 111/999 call handler](accessrecord_usecase_3.39.html)
 - [3.40 Paramedic](accessrecord_usecase_3.40.html)
+- [3.41 Health Visitors appointment during pregnancy - antenatal](accessrecord_usecase_3.41.html)
 
 ## Clinical engagement ##
 
