@@ -68,9 +68,13 @@ The date when the latest prescription under this plan was issued. This will not 
   </tr>
 </table>
 
-This details the care setting in which the medication was prescribed. Currently this will only detail if the medication was prescribed by the GP practice or by another organisation, however in the future this valueset could be built on to be more specific about where a medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be indicated here.
+This details the care setting in which the medication was prescribed.
 
-For repeat and repeat dispensed medications, the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
+Currently this field will only support two coded entries. If the medication was prescribed by the GP practice or by another organisation. If the providing organisation has more details about the type of prescribing organisation (for example that is was a dental practice or hospital) this **MUST** be included in the CodeableConcept.Text field.
+
+In the future the coded valueset will be built on to be more specific about where a medication was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be coded as well as in the text.
+
+For repeat and repeat dispensed medications/medical devices, the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
 ### identifier ###
 
@@ -220,34 +224,6 @@ This item is mandatory in the base FHIR profile, but GP systems do not record th
 
 This element has been included in this section as providers **MUST** populate it. However, as the data should not be used it has also been included in the ‘Do not use’ section below.
 
-### reasonCode ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-The coded reason for authorising the medication.
-
-{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
-
-### reasonReference ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-References the condition or observation that was the reason for this authorisation.
-
-Unless there is a specific linkage in the context of medication, indirect linkages to be handled via Problem list.
-
 ### note ###
 
 <table class='resource-attributes'>
@@ -290,11 +266,11 @@ Additional instructions for patient - that is, RHS of prescription label.
 
 <br><br>
 
-<h2 style="color:#ED1951;">MedicationStatement elements <b>not in use</b></h2>
+## MedicationStatement elements not in use ##
 
 The following elements **SHALL NOT** be populated:
 
-<h3 style="color:#ED1951;">meta.versionId</h3>
+### meta.versionId ###
 
 <table class='resource-attributes'>
   <tr>
@@ -302,7 +278,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+### meta.lastUpdated ###
 
 <table class='resource-attributes'>
   <tr>
@@ -310,7 +286,17 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;">partOf</h3>
+## extension[ChangeSummary] ##
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Complex Extension</code></td>
+  </tr>
+</table>
+
+This is not in scope for this version of GP Connect.
+
+### partOf ###
 
 <table class='resource-attributes'>
   <tr>
@@ -320,8 +306,7 @@ The following elements **SHALL NOT** be populated:
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">category</h3>
+### category ###
 
 <table class='resource-attributes'>
   <tr>
@@ -331,8 +316,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">informationSource</h3>
+### informationSource ###
 
 <table class='resource-attributes'>
   <tr>
@@ -342,8 +326,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">derivedFrom</h3>
+## derivedFrom ##
 
 <table class='resource-attributes'>
   <tr>
@@ -353,8 +336,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">taken</h3>
+## taken ##
 
 <table class='resource-attributes'>
   <tr>
@@ -364,8 +346,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">reasonNotTaken</h3>
+## reasonNotTaken ##
 
 <table class='resource-attributes'>
   <tr>
@@ -375,13 +356,22 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">extension[ChangeSummary]</h3>
+### reasonCode ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Complex Extension</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
-This is not in scope for this version of GP Connect.
+This information is available via linking to a Problem record.
+
+### reasonReference ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
+  </tr>
+</table>
+
+This information is available via linking to a Problem record.
