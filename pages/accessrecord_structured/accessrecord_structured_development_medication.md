@@ -54,7 +54,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
   </tr>
 </table>
 
-The code that identifies the medication.
+The code that identifies the medication or medical device.
 
 A SNOMED dm+d code **MUST** be supplied, if available.
 
