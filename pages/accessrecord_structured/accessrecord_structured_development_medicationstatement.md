@@ -56,7 +56,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
   </tr>
 </table>
 
-When the medication was last issued.
+The date when the latest prescription under this plan was issued. This will not be populated where the Medication/Medical Device is Repeat Dispensed or Prescribed Elsewhere as these do not have issue information recorded in the GP system.
 
 ### extension[prescribingAgency] ###
 
