@@ -52,7 +52,6 @@ The MedicationRequest profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)
 
-
 ### extension[repeatInformation] ###
 
 <table class='resource-attributes'>
@@ -65,6 +64,8 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
 
 Extension elements to hold details of repeat authorisation.
 
+Only populate for a medicationRequest with an intent = plan.
+For a medicationRequest with an intent = order none of the repeatInformation fields are populated.
 
 ### extension[repeatInformation].numberOfRepeatPrescriptionsAllowed ###
 
@@ -82,7 +83,6 @@ The number of repeat issues authorised if specified.
 
 **MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
 
-
 ### extension[repeatInformation].numberOfRepeatPrescriptionsIssued ###
 
 <table class='resource-attributes'>
@@ -97,7 +97,6 @@ Running total of number of issues made against a repeat authorisation.
 
 **MUST** be zero, if not yet issued.
 
-
 ### extension[repeatInformation].authorisationExpiryDate ###
 
 <table class='resource-attributes'>
@@ -110,6 +109,8 @@ Running total of number of issues made against a repeat authorisation.
 
 The date a repeat prescription authorisation will expire.
 
+Only populate for a medicationRequest with an intent = plan.
+For a medicationRequest with an intent = order this is not populated.
 
 ### extension[statusReason] ###
 
@@ -124,7 +125,6 @@ The date a repeat prescription authorisation will expire.
 Where a medication has been stopped (status == ‘stopped’), the reason is provided in the statusReason extension.
 
 Mandatory for authorisations with stopped status.
-
 
 ### extension[statusReason].date ###
 
@@ -156,12 +156,11 @@ The textual reason either free text or the term of a code for stopping/discontin
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
-
 ### extension[prescriptionType] ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>extension (prescriptionType)</code></td>
+    <td><b>Data type:</b> <code>extension (CodeableConcept)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -172,7 +171,6 @@ If a medication is an acute, acute-handwritten, delayed acute, repeat or repeat 
 This field provides an explicit repeat/acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
 In exceptional cases where for legacy data there is no prescriptionType recorded in the system then this **MUST** be populated with the text ‘No information available’.
-
 
 ### identifier ###
 
@@ -222,7 +220,6 @@ Composite request this is part of. The element in the Identifier data type that 
 
 All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
 
-
 ### status ###
 
 <table class='resource-attributes'>
@@ -267,7 +264,6 @@ Use one of `plan` or `order`:
 - `plan` represents an authorisation of a medication or medical device.
 - `order` represents a prescription or issue of a medication or medical device.
 
-
 ### medication ###
 
 <table class='resource-attributes'>
@@ -281,7 +277,6 @@ Use one of `plan` or `order`:
 The medication the authorisation is for.
 
 The Medication resource provides the coded representation of the medication.
-
 
 ### subject ###
 
@@ -297,7 +292,6 @@ Who the medication is for - that is, to whom it will be administered.
 
 Reference to patient.
 
-
 ### context ###
 
 <table class='resource-attributes'>
@@ -308,10 +302,10 @@ Reference to patient.
   </tr>
 </table>
 
-The `Encounter` within which the medication was authorised.
+The consultation when the medication/medical device was authorised.
 
-As per base profile guidance.
-
+For a medicationRequest with an intent = plan this is the constulation where the plan was authorised.
+For a medicationRequest with an intent = order this is the constulation where the specific issue was authorised.
 
 ### authoredOn ###
 
@@ -326,7 +320,6 @@ As per base profile guidance.
 Authorisation date, when the medication was authorised.
 
 Unless there is a distinct user-modifiable availabilityTime for the authorisation, this is the audit trail dateTime for when the authorisation was entered.
-
 
 ### requester ###
 
@@ -344,7 +337,6 @@ To be used if the medication was prescribed at another practice and has been imp
 
 If the medication has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
 
-
 ### recorder ###
 
 <table class='resource-attributes'>
@@ -358,36 +350,6 @@ If the medication has been prescribed elsewhere and, for example, is detailed in
 The responsible `Practitioner` who authorised the medication.
 
 May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
-
-
-### reasonCode ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-The coded reason for authorising the medication.
-
-{% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
-
-### reasonReference ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-References the condition or observation that was the reason for this authorisation.
-
-Unless there is a specific linkage in the context of medication, indirect linkages to be handled via Problem list.
-
 
 ### note ###
 
@@ -415,7 +377,6 @@ Sometimes labelled Pharmacy text or instructions for pharmacy.
 
 The elements of the dosage datatype detailed below should be populated as described. All other elements that are part of the dosage datatype are optional.
 
-
 ### dosageInstruction.text ###
 
 <table class='resource-attributes'>
@@ -430,7 +391,6 @@ Complete dosage instructions as text.
 
 In exceptional cases where for legacy data there is no dosage information recorded in the system then this MUST be populated with the text 'No information available'.
 
-
 ### dosageInstruction.patientInstruction ###
 
 <table class='resource-attributes'>
@@ -442,7 +402,6 @@ In exceptional cases where for legacy data there is no dosage information record
 </table>
 
 Additional instructions for patient - that is, RHS of prescription label.
-
 
 ### dispenseRequest.validityPeriod ###
 
@@ -481,7 +440,6 @@ The quantity to dispense.
 
 If the value is text, then the extension dispenseRequest.quantityText **MUST** be used.
 
-
 ### dispenseRequest.quantityText ###
 
 <table class='resource-attributes'>
@@ -496,7 +454,6 @@ Textual representation of quantity.
 
 Only to be used if there is no numerical value.
 
-
 ### dispenseRequest.expectedSupplyDuration ###
 
 <table class='resource-attributes'>
@@ -509,7 +466,6 @@ Only to be used if there is no numerical value.
 
 Number of days' supply per dispense.
 
-
 ### dispenseRequest.performer ###
 
 <table class='resource-attributes'>
@@ -520,8 +476,10 @@ Number of days' supply per dispense.
   </tr>
 </table>
 
-Nominated pharmacy for dispense.
+The organisation that dispensed the issue. Can only be completed where the provider organisation knows explicitely which organisation dispensed the issue. It cannot be assumed to be the nominated pharmacy or appliance supplier.
 
+Only populate for a medicationRequest with an intent = order.
+For a medicationRequest with an intent = plan this field is not populated.
 
 ### priorPrescription ###
 
@@ -537,11 +495,11 @@ References prior prescription authorisation.
 
 May be used, for example, to reference prior authorisation where prescription is re-authorised or where amendments have been made. May reference the previous authorisation before the amendment.
 
-<h2 style="color:#ED1951;">MedicationRequest elements <b>not in use</b></h2>
+## MedicationRequest elements not in use ##
 
 The following elements **MUST NOT** be populated:
 
-<h3 style="color:#ED1951;">meta.versionId</h3>
+### meta.versionId ###
 
 <table class='resource-attributes'>
   <tr>
@@ -549,7 +507,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;">meta.lastUpdated</h3>
+### meta.lastUpdated ###
 
 <table class='resource-attributes'>
   <tr>
@@ -557,7 +515,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;">definition</h3>
+### definition ###
 
 <table class='resource-attributes'>
   <tr>
@@ -567,8 +525,7 @@ The following elements **MUST NOT** be populated:
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">category</h3>
+### category ###
 
 <table class='resource-attributes'>
   <tr>
@@ -578,8 +535,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">priority</h3>
+### priority ###
 
 <table class='resource-attributes'>
   <tr>
@@ -589,8 +545,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">supportingInformation</h3>
+### supportingInformation ###
 
 <table class='resource-attributes'>
   <tr>
@@ -600,9 +555,27 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
+### reasonCode ###
 
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
 
-<h3 style="color:#ED1951;">substitution</h3>
+This information is available via linking to a Problem record.
+
+### reasonReference ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
+  </tr>
+</table>
+
+This information is available via linking to a Problem record.
+
+### substitution ###
 
 <table class='resource-attributes'>
   <tr>
@@ -612,8 +585,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">detectedIssue</h3>
+### detectedIssue ###
 
 <table class='resource-attributes'>
   <tr>
@@ -623,8 +595,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-
-<h3 style="color:#ED1951;">eventHistory</h3>
+### eventHistory ###
 
 <table class='resource-attributes'>
   <tr>
