@@ -1,5 +1,5 @@
 ---
-title: Linkages and Search
+title: Linkages and Search Criteria
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar
@@ -35,27 +35,29 @@ There are three main considerations when determining which data is returned by a
 ### Consultations ###
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
-Include the following FHIR profiles:
-* the Encounter profile of the consultation
-*	the List profiles of the consultation
-*	the ProblemHeader profile of any directly linked Problems
-*	the MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices
+For each Consultation item returned, include the following FHIR profiles:
+*  The Encounter profile of the consultation
+*	The List profiles of the consultation
+*	The ProblemHeader profile of any directly linked Problems
+*	The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices
     * Always include the MedicationStatement, MedicationRequest (intent = plan) and Medication profiles
     * Only include MedicationRequest (intent = order) for directly linked issues
     *	Include the ProblemHeader profile of any Problems linked to the returned MedicationRequests
-*	the AllergyIntolerance profile of any linked Allergies
+*	The AllergyIntolerance profile of any linked Allergies
     *	Include the ProblemHeader profile of any Problems linked to the returned Allergies
-*	the Immunization profile of any linked Immunisations
+*	The Immunization profile of any linked Immunisations
     *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
-*	the Observation profile of any linked Uncategorised Data
+*	The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
+
+Clinical items within the consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a consultation that contains a medication but not explicitly request mediations in the query, the provider will still include the medication contained in the consultation as part of its response.
 
 <img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Problems ###
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
 
-Include the following FHIR profiles:
+From each Problem item returned, include the following FHIR profiles:
 *	The ProblemHeader profile of the Problem
 *	The ProblemHeader profiles of any directly linked Problems
 *	The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices.
@@ -67,13 +69,15 @@ Include the following FHIR profiles:
     *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
 *	The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
-    
+
+Clinical items linked to the problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a problem that links to a medication but not explicitly request mediations in the query, the provider will still include the Medication linked to the problem as part of its response.
+
 <img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Medications and medical devices ###
 When GP Connect returns a medication or medical device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
 
-Include the following FHIR profiles:
+For each Medication item returned, include the following FHIR profiles:
 *	The MedicationRequest (intent = plan), MedicationStatement and Medication profiles of the Medication and Medical Device
 *	The ProblemHeader profiles of any directly linked Problems
 *	Where requested, the MedicationRequest (intent = order) profile for every issue.
@@ -81,21 +85,21 @@ Include the following FHIR profiles:
 ### Allergies ###
 When GP Connect returns an allergy it will supply all the allergy data.
 
-Include the following FHIR profiles:
+For each Allergy item returned, include the following FHIR profiles:
 *	The AllergyIntolerance profile of the Allergy
 *	The ProblemHeader profiles of any directly linked Problems
 
 ### Immunisation ###
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
-Include the following FHIR profiles:
+For each Immunisation item returned, include the following FHIR profiles:
 *	The Immunization profile of the Immunisation
 *	The ProblemHeader profiles of any directly linked Problems
 
 ### Uncategorised data ###
 When GP Connect returns uncategorised data it will supply all the data about the uncategorised data.
 
-Include the following FHIR profiles:
+For each Uncategorised data item returned, include the following FHIR profiles:
 *	The Observation profile of the Uncategorised Data
 *	The ProblemHeader profiles of any directly linked Problems
 
