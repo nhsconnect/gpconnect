@@ -1,15 +1,11 @@
 ---
-title: Shuffle layout
-tags: [special_layouts]
-last_updated: November 30, 2015
-keywords: shuffle, card layout, dynamic grid, doc portal, support portal
-summary: "This layout shows an example of a knowledge-base style navigation system, where there is no hierarchy, just groups of pages that have certain tags."
-permalink: mydoc_shuffle.html
-sidebar: mydoc_sidebar
-folder: mydoc
+title: Sitemap2
+tags: [sitemap]
+keywords: sitemap
+permalink: sitemap2.html
+sidebar: home_sidebar
+toc: false
 ---
-
-
 
 {% if site.output == "pdf" %}
 {{site.data.alerts.note}} The content on this page doesn't display well on PDF, but I included it anyway so you could see the problems this layout poses if you're including it in PDF.  {{site.data.alerts.end}}
