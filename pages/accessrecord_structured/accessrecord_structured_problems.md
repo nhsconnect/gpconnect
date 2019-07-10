@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_problems.html
 summary: "Guidance for populating and consuming the ProblemHeader resource"
+div: resource-page
 ---
 
 ## Introduction ##
@@ -13,7 +14,7 @@ The headings below list the elements of the Immunization resource and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_allergyintolerance.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProblemHeader profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProblemHeader profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1)." %}
 
 ## Condition - problem header elements ##
 
@@ -164,7 +165,7 @@ All problems **MUST** have a clinicalStatus of <code>active</code> or <code>inac
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
- 
+
 Fixed value of <code>problem-list-item</code>.
 
 ### code ###

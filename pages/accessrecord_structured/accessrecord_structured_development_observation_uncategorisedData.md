@@ -5,13 +5,14 @@ tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_uncategorisedData.html
 summary: "Guidance for the representation and consumption of observation resource representing uncategorised data items from the GP record"
+div: resource-page
 ---
 
 ## Observation - uncategorised data ##
 
 1. All mandatory fields **MUST** be populated.
 
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. 
+2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles.
 
 3. Any attributes of the underlying Observation profile that are not listed below are not used.
 
@@ -70,7 +71,7 @@ Where consuming systems are integrating data from this resource to their local s
   </tr>
 </table>
 
-Fixed value of **final**. 
+Fixed value of **final**.
 
 ### category ###
 
@@ -82,7 +83,7 @@ Fixed value of **final**.
   </tr>
 </table>
 
-The general type of observation. 
+The general type of observation.
 
 ### code ###
 
@@ -118,7 +119,7 @@ Reference to Patient resource representing the Patient against whom the data was
   </tr>
 </table>
 
-Optional reference to the Encounter resource representing the consultation context in which the uncategorised data was recorded. 
+Optional reference to the Encounter resource representing the consultation context in which the uncategorised data was recorded.
 
 ### effectiveDateTime ###
 
@@ -234,7 +235,7 @@ This **MUST** be qualified using the related.type 'derived-from'.
   </tr>
 </table>
 
-The only type of dat that **MAY** use the componenet element is when a blood pressure is recorded as a pair of results. 
+The only type of dat that **MAY** use the componenet element is when a blood pressure is recorded as a pair of results.
 
 
 <br>
@@ -290,4 +291,3 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-

@@ -50,7 +50,7 @@ Include the following FHIR profiles:
 *	the Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
 
-<img src="images/access_structured/Consultation_return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
+<img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Problems ###
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
