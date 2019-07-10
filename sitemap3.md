@@ -18,16 +18,6 @@ toc: false
 <script src="js/jquery.ba-throttle-debounce.min.js"></script>
 {% endunless %}
 
-      <div class="filter-options">
-      <button class="btn btn-primary" data-group="all">All</button>
-      <button class="btn btn-primary" data-group="getting_started">Getting Started</button>
-      <button class="btn btn-primary" data-group="formatting">Formatting</button>
-      <button class="btn btn-primary" data-group="publishing">Publishing</button>
-      <button class="btn btn-primary" data-group="content-types">Content types</button>
-          <button class="btn btn-primary" data-group="single_sourcing">Single Sourcing</button>
-      <button class="btn btn-primary" data-group="special_layouts">Special Layouts</button>
-    </div>      
-
 <div id="grid" class="row">
 
 
