@@ -135,7 +135,7 @@ toc: false
       <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
 
 
-    </div><!-- /#grid -->
+    
 
 {% unless site.output == "pdf" %}
 {% include initialize_shuffle.html %}
