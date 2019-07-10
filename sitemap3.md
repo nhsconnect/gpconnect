@@ -141,5 +141,4 @@ toc: false
 {% include initialize_shuffle.html %}
 {% endunless %}
 
-{{site.data.alerts.note}} This was mostly an experiment to see if I could break away from the hierarchical TOC and provide a different way of arranging the content. However, this layout is somewhat problematic because it doesn't allow you to browse other navigation options on the side while viewing a topic.{{site.data.alerts.end}}
 
