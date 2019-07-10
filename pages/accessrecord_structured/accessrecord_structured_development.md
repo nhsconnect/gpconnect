@@ -23,7 +23,7 @@ Defining all the clinical data areas within a patient record has enabled GP Conn
 
 We have defined a data model for the whole GP record that we are working through a clinical area at a time. This is illustrated in the diagram below:
 
-![Logical model ](images/access_structured/GP Record - clinical areas overview.png)
+<img src="images/access_structured/GP Record - clinical areas overview.png" alt="Logical Model" style="max-width:100%;max-height:100%;">
 
 In the diagram each of the boxes with a blue outline represents a clinical area. These each contain 1 or more boxes representing FHIR&reg; resources. The FHIR resource boxes are colour coded:
 
