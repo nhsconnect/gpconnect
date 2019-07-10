@@ -42,7 +42,7 @@ The logical identifier of the ProblemHeader resource.
 
 The ProblemHeader profile URL.
 
-Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1)
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1)
 
 ### extension[actualProblem] ###
 
