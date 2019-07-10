@@ -8,16 +8,6 @@ toc: false
 ---
 
 
-
-{% if site.output == "pdf" %}
-{{site.data.alerts.note}} The content on this page doesn't display well on PDF, but I included it anyway so you could see the problems this layout poses if you're including it in PDF.  {{site.data.alerts.end}}
-{% endif %}
-
-{% unless site.output == "pdf" %}
-<script src="js/jquery.shuffle.min.js"></script>
-<script src="js/jquery.ba-throttle-debounce.min.js"></script>
-{% endunless %}
-
 <div id="grid" class="row">
 
 
