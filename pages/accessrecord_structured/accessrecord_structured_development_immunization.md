@@ -1,5 +1,5 @@
 ---
-title: Immunization
+title: Immunization resource
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
