@@ -15,7 +15,7 @@ Immunisation may be given as part of a scheduled programme of immunisations such
 
 ## Using the procedure code
 
-GP Clinical Systems have not recorded the full vaccine product (dm+d code) as their main identifier for immunisation.
+GP Clinical Systems do not record the full vaccine product (dm+d code) as their main identifier for immunisation.
 GP Clinical Systems often record the type of vaccine administered as opposed to the vaccine product.
 This may be as a procedure code or a local code which maps to a procedure code. 
 The immunisation procedure code will be used as the main vaccine identifier. 
