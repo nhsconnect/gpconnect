@@ -9,7 +9,9 @@ summary: "Amend an appointment for a patient at an organisation"
 
 ## Use case ##
 
-This API is used to amend the `description` or `comment` fields of a patient's future appointment, obtained via either the [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html), or [Read an appointment](appointments_use_case_read_an_appointment.html) APIs.  Any appointment irrespective of booking organisation can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+This API is used to amend the `description` or `comment` fields of a patient's future appointment, obtained via either the [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html), or [Read an appointment](appointments_use_case_read_an_appointment.html) APIs.
+
+Any future appointment irrespective of booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
 
 The typical flow to amend an appointment is:
 

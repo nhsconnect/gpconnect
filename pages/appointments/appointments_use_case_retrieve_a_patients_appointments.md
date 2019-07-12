@@ -11,7 +11,7 @@ summary: "Retrieve a patient's future appointments at an organisation"
 
 This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted provider system. 
 
-All future appointments for the requested patient, irrespective of the booking organisation, will be returned from the provider system.
+All future appointments for the requested patient, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, will be returned from the provider system.
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the retrieval of a patient's appointments has been restricted to future appointments only. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
