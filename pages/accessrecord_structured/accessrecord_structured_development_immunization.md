@@ -71,7 +71,7 @@ When the record of the immunization was created on the clinical system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codableConcept</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -127,7 +127,7 @@ Fixed value of <code>false</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -153,7 +153,7 @@ A reference to the patient who had the immunisation specified.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -187,7 +187,7 @@ If the immunisation was administered elsewhere, this may be an estimated date.
   </tr>
 </table>
 
-Fixed value of <code>true</code> for all profiles created from the Care Connect Immunization profiles.
+Default value of <code>true</code> for all profiles created from the Care Connect Immunization profiles.
 
 Indicates the context that the data was recorded in.
 
@@ -255,7 +255,7 @@ The expiry date of the batch the vaccine is from.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -291,7 +291,7 @@ The amount of the vaccine administered.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -315,7 +315,7 @@ The role of the referenced practitioner.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -354,7 +354,7 @@ The reason why the immunization was given, for example, travel, occupation, and 
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
@@ -394,7 +394,7 @@ A description for the vaccination protocol this vaccination is administered unde
   </tr>
 </table>
 
-The number of doses in the series which are required for immunity.
+The number of doses in the series which are required for vaccination given (at the time it was given).
 
 ### vaccinationProtocol.targetDisease
 
@@ -439,7 +439,7 @@ This means that there will never be cause to use <code>reasonNotGiven</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -449,7 +449,7 @@ Any reaction to an immunization **MUST** be sent separately in an <code>AllergyI
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><b>Data type:</b> <code>Reference(Organization)</code></td>
   </tr>
 </table>
 
