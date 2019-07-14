@@ -11,7 +11,7 @@ summary: "Cancel an appointment for a patient at an organisation"
 
 This API is used to cancel a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.
 
-Any future appointment - that is, irrespective of booking organisation, and irrespective of whether the appointment was booked via the GP Connect API - can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+Any future appointment, irrespective of booking organisation and irrespective of whether the appointment was booked via the GP Connect API, can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
 
 The typical flow to cancel an appointment is:
 
