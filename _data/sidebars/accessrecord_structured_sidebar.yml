@@ -149,6 +149,20 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_consultations.html#
           output: web
 
+      - title: Referrals
+        output: web
+        subfolderitems:
+
+        - title: Referrals guidance
+          output: web
+          url: /accessrecord_structured_development_referralrequest_guidance.html
+        - title: <b class='resource'>ReferralRequest</b>
+          url: /accessrecord_structured_development_referralrequest.html
+          output: web
+        - title: Referrals FHIR&reg; examples
+          url: /accessrecord_structured_development_fhir_examples_referralrequest.html
+          output: web
+
   - title: API definition
     output: web, pdf
     folderitems:
