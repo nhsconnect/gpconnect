@@ -65,13 +65,13 @@ toc: false
                 <div class="panel panel-default">
                <div class="panel-heading">Explore</div>
                <div class="panel-body">
-                  [Exploring GP Connect](overview_explore.html)
+                  <p><a href="https://gpc-spec-restructure.netlify.com/overview_explore.html">Exploring GP Connect</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[System demonstrator](system_demonstrator.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/system_demonstrator.html">System demonstrator</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Interactive API documentation](system_swagger.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/system_swagger.html">Interactive API documentation</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Postman examples](system_reference_postman.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/system_reference_postman.html">Postman examples</a></p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
@@ -90,29 +90,31 @@ toc: false
          
       <div class="panel panel-default">
                <div class="panel-heading">Develop</div>
-               <div class="panel-body">[Developing with GP Connect](overview_development.html)
+               <div class="panel-body">
+               
+<p><a href="https://gpc-spec-restructure.netlify.com/overview_development.html">Developing with GP Connect</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Development assets](development_deliverables.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_deliverables.html">Development assets</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[FHIR library](development_fhir_open_source_guidance.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_open_source_guidance.html">FHIR library</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[FHIR implementation](development_fhir_api_guidance.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_api_guidance.html">FHIR implementation</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[General API guidance](development_general_api_guidance.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_general_api_guidance.html">General API guidance</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Operations](development_fhir_operation_guidance.htm)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_operation_guidance.html">Operations</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Resources](development_fhir_resource_guidance.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_resource_guidance.html">Resources</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Security guidance](development_api_security_guidance.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_api_security_guidance.html">Security guidance</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Error handling](development_fhir_error_handling_guidance.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_error_handling_guidance.html">Error handling</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Volume and performance](development_api_volume_and_performance.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/development_api_volume_and_performance.html">Volume and performance</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Non-functional requirements](development_api_non_functional_requirements.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/evelopment_api_non_functional_requirements.html">Non-functional requirements</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[First of type](overview_first_of_type.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/overview_first_of_type.html">First of type</a></p>
                <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
