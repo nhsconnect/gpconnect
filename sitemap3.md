@@ -16,8 +16,8 @@ toc: false
                <div class="panel panel-default">
                <div class="panel-heading">Overview</div>
                <div class="panel-body">
-                  [Introduction](index.html)
-                  <ul>
+               <a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a> 
+                                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
                 {% if tag == "overview" %}
