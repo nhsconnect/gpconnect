@@ -63,7 +63,7 @@ This may differ from the priority given to the referral by the recipient.
 
 The <code>priority</code> is a restrited valueset and has been mapped to the eRS priority codes. 
 The source GP Clinical System may support priority values other than the eRS priority codes.
-If the priority in the source system is not one of the eRS priority codes and cannot be mapped to an eRS priority code, then the <code>priority</code> will not be included and the source system priority **MUST** be included as a key value pair in the <code>note</code> element.
+If the priority in the source system is not one of the eRS priority codes and cannot be mapped to an eRS priority code, then a <code>priority</code> **MUST NOT** be included and the source system priority **MUST** be included as a key value pair in the <code>note</code> element.
 
 ## Date of referral
 
