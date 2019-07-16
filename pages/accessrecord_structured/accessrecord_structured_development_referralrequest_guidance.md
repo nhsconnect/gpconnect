@@ -10,7 +10,7 @@ summary: "FHIR&reg; resource ReferralRequest"
 ## What is an Outbound Referral?
 
 An outbound referral is a request for transfer of care or request to provide assessment, treatment or clinical advice on the care of a patient from the registered GP Practice to a third party as recorded in the GP system against the referral feature / categorised area. 
-The referral may be a self referral if the referral is recorded in an equivalent manner to a referral by the GP practice. 
+Self referrals may also be included where they otherwise meet the above definition and are recorded in an equivalent manner to an outbound referral by the GP Practice. 
 
 The referral is a record of the event of a referral being made or the intention to refer the patient, but it does not reflect the acceptance of the referral by the recipient or any onward progress of the referral unless detailed in the referral notes.
 
@@ -53,6 +53,8 @@ It is also understood that the GP Practice may only be aware of a status change 
 Providers **MUST** set the <code>status</code> of the referral as <code>unknown</code> for all referrals.
 
 Consumers **MUST NOT** portray the referrals as indicating acceptance of the referral, current involvement by recipients or any other interpretation of the status of the referral.
+
+Where details of the progress or outcome of the referral are captured in the GP Clinical System in a structured form they **SHOULD** be populated in the <code>note</code> element as appropriate key value pairs.
 
 ## Referral priority
 
