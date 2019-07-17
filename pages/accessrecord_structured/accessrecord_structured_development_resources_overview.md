@@ -13,7 +13,7 @@ The `CodeableConcept` data type is used throughout this capability and the follo
 
 {% include note.html content="Please see [Guidance on the population of CodeableConcept](pages/accessrecord_structured/guidance-on-the-population-of-codeableconcept.pdf)." %}
 
-## Definitions of optionality, required and 'MUST SUPPORT'
+## Definitions of mandatory, required and optional
 
 Throughout are profile pages within the specification we have a label for each data item named "Optionality", which details whether or not each data item has to be included in the resource. This item has 3 possible values:
 
@@ -99,7 +99,7 @@ The following common identifier systems are used when populating `Identifier.sys
 | General Medical Council (GMC) number | `https://fhir.hl7.org.uk/Id/gmc-number` |
 | General Practitioner (GMP) number | `https://fhir.hl7.org.uk/Id/gmp-number` |
 | Cross care setting identifier | `https://fhir.nhs.uk/Id/cross-care-setting-identifier` |
-| EPS Line item identifier | 'https://fhir.nhs.uk/Id/eps-line-item-identifier' |
+| EPS Line item identifier | `https://fhir.nhs.uk/Id/eps-line-item-identifier` |
 
 
 The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are used in this capability pack:
@@ -111,10 +111,10 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 * [MedicationStatement](accessrecord_structured_development_medicationstatement.html)
 * [MedicationRequest](accessrecord_structured_development_medicationrequest.html)
 * [Immunization](accessrecord_structured_development_immunization.html)
-* [Observation for uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
+* [Observation](accessrecord_structured_development_observation_uncategoriseddata) for uncategorised data
 * [Encounter](accessrecord_structured_development_encounter.html)
-* [List for consultation structure](accessrecord_structured_development_list_consultation.html)
-* [Observation for narrative data](accessrecord_structured_development_guidance_observation_narrative.html)
+* [List](accessrecord_structured_development_list_consultation.html) for consultation structure
+* [Observation](accessrecord_structured_development_guidance_observation_narrative.html) for narrative data
 * [Condition - ProblemHeader](accessrecord_structured_problems.html)
 
 ### Administrative ###
