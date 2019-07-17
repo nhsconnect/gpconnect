@@ -72,9 +72,9 @@ Consultations follow a common logical structure.
 
 ## Approach
 
-![Consultation FHIR Resource Model ](images/access_structured/Consultation_FHIR_Resource_Model.png)
+<IMG src="images/access_structured/Consultation_FHIR_Resource_Model.png" alt="Consultation FHIR Resource Model" style="max-width:100%;max-height:100%;">
 
-![Consultation Structure ](images/access_structured/Consultation_Stucture.png)
+<IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
 
 -   The Encounter resource and related resources like Location are adopted to provide the consultation context (Date/Doctor/Type/Place)
 -   List resources are adopted to provide consultation structure. A top-level List is utilised to represent the consultation structure as a whole. The Consultation List references further List resources representing the topic levels and in turn these reference List resource representing the SOAP heading levels. 
