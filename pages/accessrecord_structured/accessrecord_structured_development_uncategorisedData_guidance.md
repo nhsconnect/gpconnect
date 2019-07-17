@@ -1,5 +1,5 @@
 ---
-title: Observation - uncategorised data
+title: Uncategorised data guidance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
