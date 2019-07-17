@@ -233,7 +233,7 @@ The request can be made using the FHIR Patient or FHIR Organization resource.
   "resourceType": "Organization",
   "identifier": [
     {
-      "system": "https://fhir.nhs.net/Id/ods-organization-code",
+      "system": "http://fhir.nhs.net/Id/ods-organization-code",
       "value": "A1001"
     }
   ]
@@ -266,7 +266,7 @@ The consumer **MUST** populate the following [Device](https://www.hl7.org/fhir/D
 
 - an `id` with a unique [logical](https://www.hl7.org/fhir/DSTU2/resource.html#id) identifier
 - an `identifier` element, with:
-  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, for example `https://consumersupplier.com/Id/device-identifier`
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, for example `http://consumersupplier.com/Id/device-identifier`
   - `value` containing the device or system identifier
 - `model` with the consumer product or system name
 - `version` with the version number of the consumer product or system
@@ -280,7 +280,7 @@ The [Device](https://www.hl7.org/fhir/DSTU2/device.html) resource populated in t
   "id": "c4c8d038-913a-490c-9682-47047f4155fb",
   "identifier": [
     {
-      "system": "https://consumersupplier.com/Id/device-identifier",
+      "system": "http://consumersupplier.com/Id/device-identifier",
       "value": "CONS-APP-4"
     }
   ],
@@ -300,7 +300,7 @@ The consumer **MUST** populate the following [Organization](https://www.hl7.org/
 - `name` with the name of the organisation
 - an `id` with a unique [logical](https://www.hl7.org/fhir/DSTU2/resource.html#id) identifier
 - an `identifier` element, with:
-  - `system` containing `https://fhir.nhs.net/Id/ods-organization-code`, and
+  - `system` containing `http://fhir.nhs.net/Id/ods-organization-code`, and
   - `value` containing the ODS code of the organisation
 
 {% include important.html content="In consumer system topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital for audit purposes that the organisation populated in the JWT reflects **the true originating organisation of the request** rather than the hosting organisation.<br/>
@@ -315,7 +315,7 @@ The [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) resource po
   "id": "79600119-ebaf-4362-bb89-d473a33b1675",
   "identifier": [
     {
-      "system": "https://fhir.nhs.net/Id/ods-organization-code",
+      "system": "http://fhir.nhs.net/Id/ods-organization-code",
       "value": "A1001"
     }
   ],
@@ -344,7 +344,7 @@ The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/
   - `system` containing `http://fhir.nhs.net/sds-user-id`
   - `value` containing the SDS user ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
 - an `identifier` element containing a unique local user or user-role identifier for the logged on user (for example, user ID, user role ID, logon name) from the consumer system:
-  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, for example `https://consumersupplier.com/Id/user-guid`
+  - `system` containing a consumer-defined system URL representing the type of identifier in the value field, for example `http://consumersupplier.com/Id/user-guid`
   - `value` containing the unique local identifier for the logged on user
 - `practitionerRole` with:
   - `system` containing `http://fhir.nhs.net/ValueSet/sds-job-role-name-1`
@@ -367,7 +367,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
       "value": "111222333444"
     },
     {
-      "system": "https://consumersupplier.com/Id/user-guid",
+      "system": "http://consumersupplier.com/Id/user-guid",
       "value": "54b9d987-c2f1-4fdd-a449-e67cdf41dd2b"
     }
   ],
@@ -404,7 +404,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
 
 ```json
 {
-  "iss": "https://consumersupplier.thirdparty.nhs.uk/",
+  "iss": "http://consumersupplier.thirdparty.nhs.uk/",
   "sub": "10019",
   "aud": "https://authorize.fhir.nhs.net/token",
   "exp": 1469436987,
@@ -425,7 +425,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
     "id": "c4c8d038-913a-490c-9682-47047f4155fb",
     "identifier": [
       {
-        "system": "https://consumersupplier.com/Id/device-identifier",
+        "system": "http://consumersupplier.com/Id/device-identifier",
         "value": "CONS-APP-4"
       }
     ],
@@ -437,7 +437,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
     "id": "79600119-ebaf-4362-bb89-d473a33b1675",
     "identifier": [
       {
-        "system": "https://fhir.nhs.net/Id/ods-organization-code",
+        "system": "http://fhir.nhs.net/Id/ods-organization-code",
         "value": "A1001"
       }
     ],
@@ -451,7 +451,7 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
       "value": "111222333444"
     },
     {
-      "system": "https://consumersupplier.com/Id/user-guid",
+      "system": "http://consumersupplier.com/Id/user-guid",
       "value": "54b9d987-c2f1-4fdd-a449-e67cdf41dd2b"
     }
   ],
