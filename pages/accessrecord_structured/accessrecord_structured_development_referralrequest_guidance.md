@@ -44,6 +44,14 @@ Examples of limited details;
 * <code>recipient</code> is not specified
 * <code>reasonCode</code> is non-specific for example, 'Referral for futher care'
 
+## Referrer Details
+
+The provider **MUST** populate the <code>requester</code> with the practitioner who recorded the referral, if available.
+This may be a clinician or a member of the administrative staff.
+The role, organisation and contact details for the referrer **MUST** be included with the bundled resource as available.
+
+If the organisation provided with the referrer details is not the GP Practice responsible for the referral, then the <code>onBehalfOf</code> element **SHOULD** provide a reference to the GP Practice responsible for the referral.
+
 ## Referral status
 
 GP Clinical Systems support recording of a status for a referral or derive a status according the actions which have been undertaken for the referral.
@@ -52,7 +60,7 @@ It is also understood that the GP Practice may only be aware of a status change 
 
 Providers **MUST** set the <code>status</code> of the referral as <code>unknown</code> for all referrals.
 
-Consumers **MUST NOT** portray the referrals as indicating acceptance of the referral, current involvement by recipients or any other interpretation of the status of the referral.
+Consumers **MUST NOT** portray the referrals as indicating current involvement by recipients or any other interpretation of the status of the referral.
 
 Where details of the progress or outcome of the referral are captured in the GP Clinical System in a structured form they **SHOULD** be populated in the <code>note</code> element as appropriate key value pairs.
 
