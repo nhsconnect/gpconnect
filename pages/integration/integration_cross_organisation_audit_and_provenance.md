@@ -443,29 +443,30 @@ The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource po
     ],
     "name": "Test Hospital"
   },
-  "resourceType": "Practitioner",
-  "id": "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
-  "identifier": [
-    {
-      "system": "http://fhir.nhs.net/sds-user-id",
-      "value": "111222333444"
-    },
-    {
-      "system": "http://consumersupplier.com/Id/user-guid",
-      "value": "54b9d987-c2f1-4fdd-a449-e67cdf41dd2b"
-    }
-  ],
-  "name": {
-    "family": [
-	    "Jones"
-	  ],
-    "given": [
-      "Claire"
+  "requesting_practitioner": {
+    "resourceType": "Practitioner",
+    "id": "f7737bf5-cfe7-491c-af3a-6f7177d5aee1",
+    "identifier": [
+      {
+        "system": "http://fhir.nhs.net/sds-user-id",
+        "value": "111222333444"
+      },
+      {
+        "system": "http://consumersupplier.com/Id/user-guid",
+        "value": "54b9d987-c2f1-4fdd-a449-e67cdf41dd2b"
+      }
     ],
-    "prefix": [
-      "Dr"
-    ]
-  },
+    "name": {
+      "family": [
+	      "Jones"
+	    ],
+      "given": [
+        "Claire"
+      ],
+      "prefix": [
+        "Dr"
+      ]
+    },
   "practitionerRole": [
     {
       "role": {
