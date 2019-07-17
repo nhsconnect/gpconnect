@@ -160,7 +160,7 @@ entries:
           url: /accessrecord_structured_development_referralrequest.html
           output: web
         - title: Referrals FHIR&reg; examples
-          url: /accessrecord_structured_development_fhir_examples_referralrequest.html
+          url: /accessrecord_structured_development_fhir_examples_referrals.html
           output: web
 
       - title: Documents
