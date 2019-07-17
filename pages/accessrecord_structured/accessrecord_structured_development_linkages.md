@@ -27,7 +27,9 @@ The relationships between two FHIR resources are defined in only one of the link
 For example, the MedicationStatement resource contains a field that can be used to look up the linked medication. There is no field in the Medication resource that can be used to look up the linked MedicationStatement.
 
 ## FHIR profiles returned on query ##
-There are three main considerations when determining which data is returned by a query on each clinical area:
+When a consumer system requests data on a clinical area the information is returned across a number of FHIR profiles. Choosing which FHIR profiles to return is a balancing act between including enough linked profiles to give the consumer system a comprehensive response to their query but not including so many linked profiles as to swamp the consumer system with data.
+
+The three main considerations used to decide which data to return for each clinical area were:
 * include all the FHIR profiles required to fully describe the requested clinical area
 * include the FHIR profiles required to define all the linkages from the requested clinical area
 * include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area 
@@ -50,6 +52,9 @@ For each Consultation item returned, include the following FHIR profiles:
 *	The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
 
+Where a consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html)
+
+
 Clinical items within the consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a consultation that contains a medication but not explicitly request mediations in the query, the provider will still include the medication contained in the consultation as part of its response.
 
 <img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
@@ -69,6 +74,9 @@ From each Problem item returned, include the following FHIR profiles:
     *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
 *	The Observation profile of any linked Uncategorised Data
     *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
+
+Where a consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html)
+
 
 Clinical items linked to the problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a problem that links to a medication but not explicitly request mediations in the query, the provider will still include the Medication linked to the problem as part of its response.
 
