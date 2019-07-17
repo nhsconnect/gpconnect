@@ -289,7 +289,8 @@ The free text description for the referral.
   </tr>
 </table>
 
-The referral letter(s) and any other supporting documents or linked detail with relates to another resource which is not specifically defined to another <code>referralRequest</code> element.
+Reference to the referral letter(s) and any other supporting documents. 
+This can also include reference to any other resources which are relevant to the referral but are not specified to use any other <code>referralRequest</code> element, for instance, this could include reference to linked observations or test results.
 
 ### note
 
@@ -302,7 +303,7 @@ The referral letter(s) and any other supporting documents or linked detail with 
 </table>
 
 Any additional information recorded against the referral.
-This could include additional categorisation of the referral or notes recorded post referral such as details of progress or outcomes.
+This could include additional categorisation of the referral or notes recorded against the referral after it has been made such as details of progress or outcomes.
 
 
 ## Elements **not in use**
