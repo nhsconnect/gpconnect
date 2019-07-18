@@ -5,7 +5,6 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_fhir_examples_pathology.html
 summary: "Access Record Structured FHIR examples"
-published: false
 ---
 
 

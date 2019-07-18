@@ -5,7 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_testGroup.html
 summary: "Guidance for populating and consuming Observation resource where used in a test group header GP Connect"
-published: false
+div: resource-page
 ---
 
 ## Introduction ##

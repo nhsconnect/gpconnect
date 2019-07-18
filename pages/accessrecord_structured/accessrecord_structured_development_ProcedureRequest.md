@@ -5,7 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_ProcedureRequest.html
 summary: "Guidance on the representation of pathology reporting in GP Connect"
-published: false
+div: resource-page
 ---
 ## Introduction ##
 

@@ -5,7 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_filingComments.html
 summary: "Guidance for populating and consuming patholgy data in GP Connect"
-published: false
+div: resource-page
 ---
 
 

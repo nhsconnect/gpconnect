@@ -5,7 +5,6 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_pathology_guidance.html
 summary: "Guidance on the representation of pathology messaging in GP Connect"
-published: false
 ---
 
 ## Pathology scope in GP Connect
