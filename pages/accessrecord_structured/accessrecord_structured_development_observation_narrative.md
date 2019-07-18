@@ -1,5 +1,5 @@
 ---
-title: Observation Narrative
+title: Observation - narrative
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
