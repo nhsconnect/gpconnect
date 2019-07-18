@@ -157,7 +157,7 @@ entries:
           url: /accessrecord_structured_development_pathology_guidance.html
           output: web
         - title: <b class='resource'>DiagnosticReport</b>
-          url: /accessrecord_structured_development_diagnosticReport.html
+          url: /accessrecord_structured_development_DiagnosticReport.html
           output: web
         - title: <b class='resource'>Specimen</b>
           url: /accessrecord_structured_development_specimen.html
