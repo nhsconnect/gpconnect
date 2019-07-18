@@ -1,5 +1,5 @@
 ---
-title: Problems guidance
+title: Problem guidance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
