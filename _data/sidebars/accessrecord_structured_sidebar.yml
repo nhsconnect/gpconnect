@@ -125,7 +125,7 @@ entries:
         - title: <b class='resource'>Encounter</b>
           url: /accessrecord_structured_development_encounter.html
           output: web
-        - title: <b class='resource'>Consultation Structure - Lists</b>
+        - title: <b class='resource'>List - consultation structure</b>
           url: /accessrecord_structured_development_list_consultation.html
           output: web
         - title: Observation - narrative
