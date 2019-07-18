@@ -40,10 +40,6 @@ toc: false
                 
 <p><a href="https://gpc-spec-restructure.netlify.com/overview_consumer_supplier.html">Consumer suppliers</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/overview_consumer_supplier.html">Consumer suppliers</a>
-
-<p><a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a> </p>
-
 <p><a href="https://gpc-spec-restructure.netlify.com/overview_clinical_system_supplier.html">Clinical system suppliers</a></p>
 
 <p><a href="https://digital.nhs.uk/services/gp-connect">End-user organisations</a> (external site)</p>
@@ -137,15 +133,17 @@ toc: false
 
            <div class="panel panel-default">
                <div class="panel-heading">Test and assure</div>
-               <div class="panel-body">[Test and assurance](overview_test_and_assurance.html)
+               <div class="panel-body">
+               
+<p><a href="https://gpc-spec-restructure.netlify.com/overview_test_and_assurance.html">Test and assurance</a></p>
+             
+<p><a href="https://gpc-spec-restructure.netlify.com/testing_deliverables.html.html">Testing assets</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Testing assets](testing_deliverables.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/testing_environments.html">Test environments</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Test environments](testing_environments.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/testing_api_provider_testing.html">Provider testing</a></p>
 
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Provider testing](testing_api_provider_testing.html)
-
-<a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>[Consumer testing](testing_api_consumer_testing.html)
+<p><a href="https://gpc-spec-restructure.netlify.com/testing_api_consumer_testing.html">Consumer testing</a></p>
 
                    <ul>
                 {% for page in site.pages %}
@@ -166,7 +164,7 @@ toc: false
              <div class="panel panel-default">
                <div class="panel-heading">Deploy</div>
                <div class="panel-body">
-                  <a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a>Deploying your system](overview_deployment.html)
+                  <p><a href="https://gpc-spec-restructure.netlify.com/overview_deployment.html">Deploying your system</a></p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
