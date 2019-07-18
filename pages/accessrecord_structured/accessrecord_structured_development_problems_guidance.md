@@ -62,7 +62,7 @@ When linking to the clinical item that is held in a single FHIR resource the ref
 
 Depending on the GP Connect version supported by the provider system, it can be possible for the problem to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the problem contains a link to a referral record but the provider system does not yet support exporting referrals.
 
-Where a provider system is not able to export a linked clinical item, it will create an actualproblem or relatedclinicalcontent entry with the:
+Where a provider system is not able to export a linked clinical item, it will create a reference entry with the:
 
 * Reference.Identifier set to null; and
 * Reference.Display set to “[Clinical area] item is not supported by the provider system.”
