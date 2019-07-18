@@ -40,6 +40,10 @@ toc: false
                 
 <p><a href="https://gpc-spec-restructure.netlify.com/overview_consumer_supplier.html">Consumer suppliers</a></p>
 
+<a href="https://gpc-spec-restructure.netlify.com/overview_consumer_supplier.html">Consumer suppliers</a>
+
+<p><a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a> </p>
+
 <p><a href="https://gpc-spec-restructure.netlify.com/overview_clinical_system_supplier.html">Clinical system suppliers</a></p>
 
 <p><a href="https://digital.nhs.uk/services/gp-connect">End-user organisations</a> (external site)</p>
