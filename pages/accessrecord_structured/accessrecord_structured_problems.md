@@ -1,5 +1,5 @@
 ---
-title: Condition ProblemHeader resource
+title: Condition - ProblemHeader
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
