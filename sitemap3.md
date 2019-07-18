@@ -28,8 +28,7 @@ toc: false
                   </ul>
                </div>
             </div>
-    
-    </div>
+        </div>
    
 
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["getting-started"]'>
@@ -156,7 +155,6 @@ toc: false
                    </ul>
                </div>
             </div>
-
     </div>
 
         <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["deploy"]'>
@@ -176,8 +174,29 @@ toc: false
                   </ul>
                </div>
             </div>
-
     </div>
+    
+    
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["overview"]'>
+
+               <div class="panel panel-default">
+               <div class="panel-heading">Help and support</div>
+               <div class="panel-body">
+               <a href="https://gpc-spec-restructure.netlify.com/index.html">Link</a> 
+                                   <ul>
+                {% for page in site.pages %}
+                {% for tag in page.tags %}
+                {% if tag == "overview" %}
+                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
+                {% endif %}
+                {% endfor %}
+                {% endfor %} 
+                  </ul>
+               </div>
+            </div>
+    
+    </div>
+   
           <!-- sizer -->
       <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
 
