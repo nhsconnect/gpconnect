@@ -1,5 +1,5 @@
 ---
-title: Using lists to build consultation structure
+title: List - consultation structure
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
@@ -257,7 +257,7 @@ For consultations which have a flat structure (for example, clinical record entr
 
 The two approaches are never mixed within the same Topic - that is, all entries will either reference List(Category) or resources representing the source record entries, but not both.
 
-## List (Category)
+## List (Heading)
 
 The level of the consultation that represents the heading sections (SOAP headings) that contain clinical record entries.
 
