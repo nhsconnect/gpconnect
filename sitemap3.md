@@ -16,7 +16,11 @@ toc: false
                <div class="panel panel-default">
                <div class="panel-heading">Overview</div>
                <div class="panel-body">
-               <a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a> 
+               <p><a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a></p> 
+               <p><a href="https://gpc-spec-restructure.netlify.com/support_faq.html">Frequently asked questions</a> </p>
+               <p><a href="https://gpc-spec-restructure.netlify.com/overview_glossary.html">Glossary</a> </p>
+               <p><a href="https://gpc-spec-restructure.netlify.com/support_communications.html">Communications channels</a> </p>
+               
                                    <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
@@ -175,30 +179,7 @@ toc: false
                </div>
             </div>
     </div>
-    
-    
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["overview"]'>
-
-               <div class="panel panel-default">
-               <div class="panel-heading">Help and support</div>
-               <div class="panel-body">
-               <p><a href="https://gpc-spec-restructure.netlify.com/support_faq.html">Frequently asked questions</a> </p>
-               <p><a href="https://gpc-spec-restructure.netlify.com/overview_glossary.html">Glossary</a> </p>
-               <p><a href="https://gpc-spec-restructure.netlify.com/support_communications.html">Communications channels</a> </p>
-                                   <ul>
-                {% for page in site.pages %}
-                {% for tag in page.tags %}
-                {% if tag == "overview" %}
-                  <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
-                {% endif %}
-                {% endfor %}
-                {% endfor %} 
-                  </ul>
-               </div>
-            </div>
-    
-    </div>
-   
+      
           <!-- sizer -->
       <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
 
