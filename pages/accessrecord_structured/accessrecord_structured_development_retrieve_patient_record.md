@@ -190,7 +190,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Restrict the problems that are returned by their clinical status
+        <p>Restrict the problems that are returned by their clinical status. </p>
+        <p>Valueset: <a href="http://hl7.org/fhir/stu3/valueset-condition-clinical.html">http://hl7.org/fhir/stu3/valueset-condition-clinical.html</a> Values <b>MUST</b> be <code>`active`</code> or <code>`inactive`</code></p>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
       </td>
     </tr>
@@ -200,7 +201,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Restrict the problems that are returned by their clinical significance
+        <p>Restrict the problems that are returned by their clinical significance</p>
+        <p>Valueset: <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ProblemSignificance-1">ValueSet-CareConnect-ProblemSignificance-1</a></p>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
       </td>
     </tr>
@@ -290,8 +292,8 @@ The example below shows a fully populated `Parameters` resource as a request to 
           }
         },
         {
-          "name": "numberOfMostRecent",
-          "valueBoolean": "3"
+          "name": "includeNumberOfMostRecent",
+          "valueInteger": "3"
         }
       ]
     },
@@ -364,18 +366,61 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 ### Forwards and backwards compatibility ###
 
 #### Forwards compatibility ####
-Forwards compatibility is the scenario where a consumer requests a higher version of the API than the provider supports. This requires that a provider **MUST** be able to warn a consumer when they don't support a requested parameter.
+Forwards compatibility is the scenario where a consumer requests a higher version of the API than the provider supports. This requires that a provider **MUST** be able to warn a consumer when they don't support a requested parameter or part parameter.
 
 In this scenario, providers **MUST** respond in the following way:
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
-- Include information for supported parameters
-- as part of the returned bundle, include an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) with an `issue` for each unsupported parameter where:
-  - `code` = `not-supported`
-  - `severity` = `warn`
-  - `details.coding` = `NOT_IMPLEMENTED`
-  - `details.text` = `<parameter-name> is an unrecognised parameter`
+- Include FHIR&reg; resources for supported parameters
+- as part of the returned bundle, include a single [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) with an `issue` for each unsupported parameter or part parameter where:
+  - `issue.code` = `not-supported`
+  - `issue.severity` = `warning`
+  - `issue.details.coding.system` = `https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1`
+  - `issue.details.coding.code` = `NOT_IMPLEMENTED`
+  - `issue.details.coding.display` = `Not implemented`
+- Where it's an unsupported parameter the following **MUST** be supplied:
+  - `issue.details.text` = `<parameter-name>` is an unrecognised parameter`
+  - `issue.diagnostics` = `<parameter-name>`
+- Where it's an unsupported part parameter the following **MUST** be supplied:
+  - `issue.details.text` = `<parameter-name>.<part-parameter-name> is an unrecognised parameter`
+  - `issue.diagnostics` = `<parameter-name>.<part-parameter-name>`
 
-Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as described above to check for incomplete data as a result of unsupported parameters.
+Providers **MUST** report unsupported parameters at the least granular level, that is, only report part parameters when their top level parameter is supported.
+
+Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as specified above to check for incomplete data as a result of unsupported parameters.
+
+The following table gives an overview of which parameters are supported in each version of the GP Connect API:
+
+|-------------------------|-------------------|
+| Specification version | Parameters     |
+| :------------------------- | :------------------- |
+| 1.2.x       | includeMedication       |
+|             | &nbsp;&nbsp;&#8627; includePrescriptionIssues|
+|             | &nbsp;&nbsp;&#8627; medicationSearchFromDate|
+|        | includeAllergies       |
+|             | &nbsp;&nbsp;&#8627; includeResolvedAllergies|
+|||
+| 1.3.x       | includeMedication       |
+|             | &nbsp;&nbsp;&#8627; includePrescriptionIssues|
+|             | &nbsp;&nbsp;&#8627; medicationSearchFromDate|
+|        | includeAllergies       |
+|             | &nbsp;&nbsp;&#8627; includeResolvedAllergies|
+|        | includeConsultations       |
+|             | &nbsp;&nbsp;&#8627; consultationSearchPeriod|
+|             | &nbsp;&nbsp;&#8627; includeNumberOfMostRecent|
+|        | includeProblems       |
+|             | &nbsp;&nbsp;&#8627; includeStatus|
+|             | &nbsp;&nbsp;&#8627; includeSignificance|
+|        | includeImmunisations       |
+|        | includeUncategorisedData       |
+|             | &nbsp;&nbsp;&#8627; uncategorisedDataSearchPeriod|
+|-------------------------|-------------------|
+
+#### Backwards compatibility ####
+Backwards compatibility is the scenario where a consumer requests a lower version of the API than the provider supports. The GP Connect APIs have been developed to be backwards compatible by following the [rules for backwards compatibility](https://www.hl7.org/fhir/STU3/versions.html#b-compat) that are defined in the FHIR&reg; specification.
+
+Consumers are required to ignore unexpected elements and process data that they understand.
+
+TODO: add guidance for how consumers should warn users that not all requested data was returned or rendered for user????????
 
 ### Request response ###
 
@@ -424,11 +469,11 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - and when the `includeResolvedAllergies` parameter is set to `false`:
 
-    - [`List`](accessrecord_structured_development_list.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
 
   - and when the `includeResolvedAllergies` parameter is set to `true`:
 
-    - [`List`](accessrecord_structured_development_list.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
 
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
 
@@ -444,7 +489,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeMedication` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
+  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
   - when the `medicationSearchFromDate` parameter is set:
 	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
@@ -475,15 +520,19 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - no consultation information shall be returned
 
 - when the 'includeConsultations' parameter is set:
-  - [`List`](accessrecord_structured_development_list.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
+  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
+  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources for linked clinical information
   - and when the `numberOfMostRecent` parameter is set:
     - limit the number of returned consultations to match the included value
 
 - when the 'consultationSearchPeriod' is set:
-  - when a `start` value is set, all consultations after the date **MUST** be returned
-  - and when an `end` value is set, all consultations before the date **MUST** be returned
-  - and when both a `start` and `end` are specified, consultations after the `start` and before the `end` **MUST** be returned
+  - when a `start` value is set, all consultations with an `Encounter.period.start` after the date **MUST** be returned
+  - and when an `end` value is set, all consultations with an `Encounter.period.end` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, consultations with an `Encounter.period.start` after the `start` and an `Encounter.period.end` before the `end` **MUST** be returned
 
+- when the 'includeNumberOfMostRecent' is set:
+  - consultations **MUST** be ordered by `Encounter.period.start` descending
+  - and the number of most recent consultations matching the parameter value **MUST** be returned
 
 ##### Problems #####
 
@@ -495,15 +544,15 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeProblems' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
+  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`Immunization`](accessrecord_structured_development_immunization.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
 - and when the 'includeStatus' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources with a `clinicalStatus` matching the parameter value and all linked clinical information.
+  - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
 
 - and when the 'includeSignificance' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources with a `problemSignificance` matching the parameter value and all linked clinical information
+  - problems with a `problemSignificance` matching the parameter value and all linked clinical information
 
 
 ##### Immunisations #####
@@ -516,7 +565,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeImmunisations' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
+  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
 
 ##### Uncategorised data #####
 
@@ -528,12 +577,12 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeUncategorisedData' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
+  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
 
 - when the 'uncategorisedDataSearchPeriod' is set:
-  - when a `start` value is set, all uncategorised data after the date **MUST** be returned
-  - and when an `end` value is set, all uncategorised data before the date **MUST** be returned
-  - and when both a `start` and `end` are specified, uncategorised data after the `start` and before the `end` **MUST** be returned
+  - when a `start` value is set, all uncategorised data with an `Observation.effectiveTime` after the date **MUST** be returned
+  - and when an `end` value is set, all uncategorised data with an `Observation.effectiveTime` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, uncategorised data with an `Observation.effectiveTime` after the `start` and with an `Observation.effectiveTime` before the `end` **MUST** be returned
 
 #### Medication search date ####
 
