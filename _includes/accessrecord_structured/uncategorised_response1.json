@@ -207,8 +207,8 @@
         "code": {
           "coding": [
             {
-              "code": "933361000000108",
-              "display": "Medications and medical devices",
+              "code": "826501000000100",
+              "display": "Miscellaneous record",
               "system": "http://snomed.info/sct"
             }
           ]
