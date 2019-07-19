@@ -40,7 +40,7 @@ Options are to be evaluated for each not given use case and whether to include d
 ## Ineffective vaccination
 
 In the event a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break, the Immunization FHIR profile contains a field indicating that it does not count towards immunity.
-GP clinical systems do not have a standard means to identify an ineffective vaccination, hence immunisation records will always be returned as having counted towards immunity.
+GP clinical systems do not have a standard means to identify an ineffective vaccination, hence immunisaton records will always be returned as having counted towards immunity.
 
 ## Reactions to a vaccine
 
@@ -52,11 +52,12 @@ For details of allergies or adverse reaction, the Allergies resource **MUST** be
 
 The resources required to describe planned immunisation schedules or diarised recalls to complete an immunisation series are out of scope for this guidance.
 
-## Data type incompatibility
+## Immunisation notes
 
-It is possible that some participating systems will support recording of elements of the immunisation but in a way which is incompatible with the data type of the FHIR element.
-An example might be the vaccine manufacturer recorded as a text qualifier to the immunisation procedure where the FHIR profile requires an organisation reference.
-Where the data recorded is incompatible with the data type of the related FHIR profile element, the detail in the source system **MUST** be rendered as text (suitably formatted name/value pair) and placed in the <code>immunisation.note</code> element.
+GP Systems that support a note entry against the immunisation **MUST** populate the text to the <code>note</code> element.
+Additionally, any other information relevant to the immunisation which does not have a suitable element within the <code>immunization</code> profile **MUST** be populated to the <code>note</code> as a key value pair.
+This includes where there is an element in the profile for the type of information, but the data type is not compatible with the way  the data is recorded in the GP System.
+For example, the vaccine manufacturer is recorded in a free text field so is not suited as a reference to an <code>oragnization</code> resource for the <code>manufacturer</code> element and is therefore populated to the <code>note</code> element as 'Manaufacturer: Acme Pharmaceuticals'.
 
 ## Using the `List` resource for immunisation queries
 
