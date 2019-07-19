@@ -162,7 +162,7 @@ Reference to the resource for the organisation and/or practitioner that performe
   </tr>
 </table>
 
-The value of the test. This may be in the form of, but is not limited t, one of the following datatypes: a quantity, string or an attachment.
+The value of the test. This may be in the form of, but is not limited to, one of the following datatypes: a quantity, string or an attachment.
 
 ### dataAbsentReason ###
 
