@@ -331,7 +331,7 @@ By convention the order used is the default order subsections or entries are dis
   </tr>
 </table>
 
-Each entry is a reference to the Resoirce representing the source record entry within the heading section.
+Each entry is a reference to the resource representing the source record entry within the heading section.
 
 ### Composition.section.emptyReason ###
 
