@@ -235,7 +235,7 @@ This **MUST** be qualified using the related.type 'derived-from'.
   </tr>
 </table>
 
-The only type of dat that **MAY** use the componenet element is when a blood pressure is recorded as a pair of results.
+The only type of data that **MAY** use the component element is when a blood pressure is recorded as a pair of results.
 
 
 <br>
