@@ -32,3 +32,72 @@ Standardise the search and retrieval of clinical documents from the GP Practices
 ## As Is ##
 
 <IMG src="images/access_structured/As-Is.jpg" alt="As-Is process for search and retrieval of documents from a GP Practice"  style="max-width:80%;max-height:80%;">
+ ### Process Steps ###
+ 
+ <table width="60%" height="60%">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Send document</td>
+            <td>Hospital sends document to the GP Practice</td>
+        </tr>
+      <tr>
+            <td>2</td>
+            <td>Document upload to clinical system</td>
+            <td>The document is manually or automatically uploaded to the Clinical System of the GP Practice.</td>
+        </tr>
+      <tr>
+            <td>3</td>
+            <td>Document matched to patient record</td>
+            <td>The clinical System matches the document to the patient record.</td>
+        </tr>
+      <tr>
+            <td>4</td>
+            <td>File document</td>
+            <td>Clinician views the document in their clinical system</td>
+        </tr>
+      <tr>
+            <td>5</td>
+            <td>File document</td>
+            <td>Clinician reads or meta data information to the document</td>
+        </tr>
+      <tr>
+            <td>6</td>
+            <td>File document</td>
+            <td>Clinician extracts read codes, add read code or annotates the document.</td>
+        </tr>
+      <tr>
+            <td>7</td>
+            <td>File document</td>
+            <td>Clinician add the document to a workflow</td>
+        </tr>
+      <tr>
+            <td>8</td>
+            <td>Request document</td>
+            <td>Hospital request for a document of a Patient from it’s registered GP Practice</td>
+        </tr>
+      <tr>
+            <td>9</td>
+            <td>Search document</td>
+            <td>Clinician in a GP Practice searches for the document</td>
+        </tr>
+     <tr>
+            <td>10</td>
+            <td>Send document</td>
+            <td>Clinician emails/faxes the document to the Hospital </td>
+        </tr>
+     <tr>
+            <td>11</td>
+            <td>View document</td>
+            <td>Hospital receives and views the requested document</td>
+        </tr>
+    </tbody>
+</table>
+ 
