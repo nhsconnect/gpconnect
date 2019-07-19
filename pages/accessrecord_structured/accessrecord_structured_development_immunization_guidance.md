@@ -58,6 +58,7 @@ GP Systems that support a note entry against the immunisation **MUST** populate 
 Additionally, any other information relevant to the immunisation which does not have a suitable element within the <code>immunization</code> profile **MUST** be populated to the <code>note</code> as a key value pair.
 This includes where there is an element in the profile for the type of information, but the data type is not compatible with the way  the data is recorded in the GP System.
 For example, the vaccine manufacturer is recorded in a free text field so is not suited as a reference to an <code>oragnization</code> resource for the <code>manufacturer</code> element and is therefore populated to the <code>note</code> element as 'Manaufacturer: Acme Pharmaceuticals'.
+This might also apply to the <code>doseQuantity</code> element if the GP System holds the doseage information but in a format which does not comply with the <code>Quantity</code> datatype structure.
 
 ## Using the `List` resource for immunisation queries
 
