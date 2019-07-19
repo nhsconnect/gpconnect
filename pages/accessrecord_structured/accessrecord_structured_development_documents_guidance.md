@@ -29,6 +29,6 @@ This is usually a manual process whereby other GP Practices and Health care sett
 Enable health and care organisations to electronically search for and retrieve Patient's clinical documents from their GP Practice.
 Standardise the search and retrieval of clinical documents from the GP Practices using GPConnect API Standards.
 
-## As Is Process for Search and Retrieval of Documents from a GP Practice ##
+## As Is ##
 
 
