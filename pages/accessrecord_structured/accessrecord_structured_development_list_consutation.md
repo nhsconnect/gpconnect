@@ -213,7 +213,7 @@ The List level representing the Topic level of the consultation structure.
         </tr>
 </table>
 
-References to any problems that have been linked to this section of the consultaion in the sending clinical system.
+References to any problems that have been linked to this section of the consultation in the sending clinical system.
 
 These links will have been added by a clinician at the sending practice.
 
