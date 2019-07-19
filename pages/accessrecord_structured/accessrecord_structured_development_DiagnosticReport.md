@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_DiagnosticReport.html
-summary: "Guidance for populating and consuming patholgy data in GP Connect"
+summary: "Guidance for populating and consuming pathology data in GP Connect"
 published: false
 ---
 
@@ -61,7 +61,7 @@ This is sliced to include a cross care setting identifier which **MUST** be popu
 
 This  **MUST**  be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore stored with the source data).
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
@@ -78,7 +78,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 A link to the ProcedureRequest that contains details of a request that was made. Where present this may include details of who requested the tests and why the test was requested.
 
-As currently test requests are not submitted in a FHIR format this is not the oigianl request but is currently used as a container to hold details that were present in the original request.
+As currently test requests are not submitted in a FHIR format this is not the original request but is currently used as a container to hold details that were present in the original request.
 
 ### status ###
 
