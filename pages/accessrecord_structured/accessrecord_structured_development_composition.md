@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_composition.html
-summary: "Guidance for populating the commposition resource"
+summary: "Guidance for populating the composition resource"
 ---
 
 ## Composition elements ##
@@ -38,23 +38,23 @@ The Composition profile URL.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatroy</td>
+    <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
-**Is there any cross domain identifier for Composition ? Or should there be other than by convention ?**
+**Is there any cross-domain identifier for Composition? Or should there be other than by convention?**
 
 ### status ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>code</code></td>
-    <td><b>Optionality:</b> Mandatroy</td>
+    <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
@@ -107,7 +107,7 @@ Mandatory reference to the Encounter resource providing the context for the Cons
   </tr>
 </table>
 
-The system rather than clinical date time for when the consultation was last edited i.e. the date time the consultation was last modified on the source system.
+The system rather than clinical date time for when the consultation was last edited - that is, the date time the consultation was last modified on the source system.
 
 ### author ###
 
@@ -230,7 +230,7 @@ Explicitly identified that each composition is a snapshot of the current consult
 
 Fixed value of **system** from http://hl7.org/fhir/list-order vocabulary.
 
-By convention the order enries should appear is the default order subsections or entries are displayed by the native system at source.
+By convention, the order entries should appear is the default order subsections or entries are displayed by the native system at source.
 
 ### Composition.section.entry ###
 <table class='resource-attributes'>
@@ -241,7 +241,7 @@ By convention the order enries should appear is the default order subsections or
   </tr>
 </table>
 
-A top level section will have entries if it is used to express unstructured (flat) consultation content. Otherwise no entry references will be present.
+A top-level section will have entries if it is used to express unstructured (flat) consultation content. Otherwise, no entry references will be present.
 
 TBD .... handling of TPP problem to ... section to linkages possible extension of section for id
 
@@ -261,11 +261,11 @@ Where a system allows 'empty' sections to be recorded these should be suppressed
   </tr>
 </table>
 
-Each child **.section** of Composition.section is used to represent a sub-heading within a topic level of the source consultation. These are often referred to as SOAP headings but the set of headings/groupings supported by source system consultations is more diverse than the original SOAP classification.
+Each child **.section** of Composition.section is used to represent a sub-heading within a topic level of the source consultation. These are often referred to as SOAP headings, but the set of headings/groupings supported by source system consultations is more diverse than the original SOAP classification.
 
-The subssection level is optional because a top level **Composition.section** may be used to contain unstructured (flat) record entries.
+The subsection level is optional because a top level **Composition.section** may be used to contain unstructured (flat) record entries.
 
-A top level **Composition.section** must not be used to represent both unstructured (flat) record contentent and a structured consultation (SOAP Heading structured consultation), therefore **Composition.section.entry** and **Composition.section.section** attributes are mutually exclusive.
+A top level **Composition.section** must not be used to represent both unstructured (flat) record contentent and a structured consultation (SOAP Heading structured consultation). Therefore, **Composition.section.entry** and **Composition.section.section** attributes are mutually exclusive.
 
 ## Structured Consultation Content - SOAP Headings ##
 
