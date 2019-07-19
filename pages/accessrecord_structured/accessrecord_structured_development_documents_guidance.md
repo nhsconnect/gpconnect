@@ -31,4 +31,4 @@ Standardise the search and retrieval of clinical documents from the GP Practices
 
 ## As Is ##
 
-
+<IMG src="images/access_structured/As-Is.jpg" alt="As-Is process for search and retrieval of documents from a GP Practice"  style="max-width:80%;max-height:80%;">
