@@ -23,10 +23,10 @@ This document is designed to address these challenges:
 
 -   it provides a clear definition of what is meant by consultation in the context of the current set of participating provider systems
 -   it identifies the limitations of consultation-based queries in isolation as a method for retrieving all elements of patient records
--   it describes the set of consultation structures available in provider systems and guidance for populating the FHIR resources required to represent these structures in a consistent manner that is processable bny consumers
+-   it describes the set of consultation structures available in provider systems and guidance for populating the FHIR resources required to represent these structures in a consistent manner that is processable by consumers
 -   it provides guidance for consumer systems processing the FHIR resources representing consultation structures on source systems as to the variances between representations and the correct handling of these structures
 
-## What is a consultation ?
+## What is a consultation?
 
 For GP Connect, a consultation is the structure within which source systems group one or more clinical record entries which occurred at the same time and for the same or similar purpose attributed to or asserted by the same actor.
 
