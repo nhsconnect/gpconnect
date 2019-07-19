@@ -40,7 +40,7 @@ Options are to be evaluated for each not given use case and whether to include d
 ## Ineffective vaccination
 
 In the event a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break, the Immunization FHIR profile contains a field indicating that it does not count towards immunity.
-GP clinical systems do not have a standard means to identify an ineffective vaccination, hence immunisaton records will always be returned as having counted towards immunity.
+GP clinical systems do not have a standard means to identify an ineffective vaccination, hence immunisation records will always be returned as having counted towards immunity.
 
 ## Reactions to a vaccine
 
