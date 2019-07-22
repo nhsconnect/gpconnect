@@ -109,7 +109,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
 <table width="60%" height="30%">
     <thead>
         <tr>
-            <th>Document Id</th>
+            <th>Doc Id</th>
             <th>System </th>
             <th>Version</th>
         </tr>
@@ -133,7 +133,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
 <table width="60%" height="30%">
     <thead>
         <tr>
-            <th>Document Id</th>
+            <th>Doc Id</th>
             <th>System </th>
             <th>Version</th>
         </tr>
@@ -157,7 +157,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
  <table width="60%" height="30%">
     <thead>
         <tr>
-            <th>Document Id</th>
+            <th>Doc Id</th>
             <th>System </th>
             <th>Version</th>
         </tr>
@@ -181,13 +181,13 @@ Standardise the search and retrieval of clinical documents from the GP Practices
     </tbody>
     </table>
     
-   ### Known Issues
+   ### Known Issues ###
    * Lack of versioning of documents in the GP Practices. DateTime stamp is used to identify the latest version of the document.
    * No nationally agreed list of Document Types - GP Practices have their own list of document types which may also include free text. 
    * Poor metadata of documents - GP systems have poor metadata information about documents. 
    * Documents in disparate systems in a GP Practice - Documents metadata information and it’s versions may exist in disparate systems in a GP Practice. There is no master system for managing documents.
   
-  ## Scope
+  ## Scope ##
   
   <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:40%;max-height:40%;">
   
