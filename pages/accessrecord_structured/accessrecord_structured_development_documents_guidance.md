@@ -106,7 +106,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
 
  1.	A GP Practice receives multiple versions of the same document
 
-<table width="40%" height="40%">
+<table width="60%" height="30%">
     <thead>
         <tr>
             <th>Document Id</th>
@@ -130,7 +130,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
     
  2. A document is received in a Clinical System, it is then annotated and saved in the Document Management System.
 
-<table width="40%" height="40%">
+<table width="60%" height="30%">
     <thead>
         <tr>
             <th>Document Id</th>
@@ -154,7 +154,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
     
   3. A document is received in a Clinical System, it is then annotated and saved in the Document Management System. When the workflow is complete, it is then sent to the clinical system.
  
- <table width="40%" height="40%">
+ <table width="60%" height="30%">
     <thead>
         <tr>
             <th>Document Id</th>
