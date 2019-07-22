@@ -187,9 +187,9 @@ Standardise the search and retrieval of clinical documents from the GP Practices
    * Poor metadata of documents - GP systems have poor metadata information about documents. 
    * Documents in disparate systems in a GP Practice - Documents metadata information and it’s versions may exist in disparate systems in a GP Practice. There is no master system for managing documents.
   
-  ## Scope ##
+## Scope ##
   
-  <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:40%;max-height:40%;">
+  <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:80%;max-height:80%;">
   
    
     
