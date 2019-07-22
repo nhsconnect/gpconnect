@@ -32,9 +32,10 @@ Standardise the search and retrieval of clinical documents from the GP Practices
 ## As Is ##
 
 <IMG src="images/access_structured/As-Is.jpg" alt="As-Is process for search and retrieval of documents from a GP Practice"  style="max-width:80%;max-height:80%;">
- ### Process Steps ###
  
- <table width="60%" height="60%">
+### Process Steps
+ 
+ <table width="80%" height="60%">
     <thead>
         <tr>
             <th>Id</th>
@@ -100,4 +101,95 @@ Standardise the search and retrieval of clinical documents from the GP Practices
         </tr>
     </tbody>
 </table>
+
+### Multiple versions of the document Scenarios
+
+ 1.	A GP Practice receives multiple versions of the same document
+
+<table width="40%" height="40%">
+    <thead>
+        <tr>
+            <th>Document Id</th>
+            <th>System </th>
+            <th>Version</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>D1</td>
+            <td>Clinical System</td>
+            <td>v1</td>
+        </tr>
+      <tr>
+            <td>D1</td>
+            <td>Clinical System</td>
+            <td>v2</td>
+        </tr>
+    </tbody>
+    </table>
+    
+ 2. A document is received in a Clinical System, it is then annotated and saved in the Document Management System.
+
+<table width="40%" height="40%">
+    <thead>
+        <tr>
+            <th>Document Id</th>
+            <th>System </th>
+            <th>Version</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>D1</td>
+            <td>Clinical System</td>
+            <td>v1</td>
+        </tr>
+      <tr>
+            <td>D1</td>
+            <td>Doc Management System</td>
+            <td>v2</td>
+        </tr>
+    </tbody>
+    </table>
+    
+  3. A document is received in a Clinical System, it is then annotated and saved in the Document Management System. When the workflow is complete, it is then sent to the clinical system.
+ 
+ <table width="40%" height="40%">
+    <thead>
+        <tr>
+            <th>Document Id</th>
+            <th>System </th>
+            <th>Version</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>D1</td>
+            <td>Clinical System</td>
+            <td>v1</td>
+        </tr>
+      <tr>
+            <td>D1</td>
+            <td>Doc Management System</td>
+            <td>v2</td>
+        </tr>
+      <tr>
+            <td>D1</td>
+            <td>Clinical System</td>
+            <td>v2</td>
+        </tr>
+    </tbody>
+    </table>
+    
+   ### Known Issues
+   * Lack of versioning of documents in the GP Practices. DateTime stamp is used to identify the latest version of the document.
+   * No nationally agreed list of Document Types - GP Practices have their own list of document types which may also include free text. 
+   * Poor metadata of documents - GP systems have poor metadata information about documents. 
+   * Documents in disparate systems in a GP Practice - Documents metadata information and it’s versions may exist in disparate systems in a GP Practice. There is no master system for managing documents.
+  
+  ## Scope
+  
+  
+   
+    
  
