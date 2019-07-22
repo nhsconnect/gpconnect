@@ -181,7 +181,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
     </tbody>
     </table>
     
-   ### Known Issues ###
+   ### Known Issues
    * Lack of versioning of documents in the GP Practices. DateTime stamp is used to identify the latest version of the document.
    * No nationally agreed list of Document Types - GP Practices have their own list of document types which may also include free text. 
    * Poor metadata of documents - GP systems have poor metadata information about documents. 
@@ -189,7 +189,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
   
 ## Scope ##
   
-  <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:80%;max-height:80%;">
+  <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:60%;max-height:60%;">
   
    
     
