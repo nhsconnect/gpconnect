@@ -8,14 +8,15 @@ summary: "Guidance for the representation and consumption of observation resourc
 div: resource-page
 ---
 
-## Observation - uncategorised data ##
+## Introduction ##
 
-1. All mandatory fields **MUST** be populated.
+The headings below list the elements of the Observation resource and describe how to populate and consume them for uncategorised data.
 
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles.
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-3. Any attributes of the underlying Observation profile that are not listed below are not used.
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
+## Observation Elements #
 
 ### id ###
 
@@ -196,8 +197,6 @@ The reason why a result/value has been omitted.
 This **MUST** include any qualifiers to the code element that were present in the sending system. These should be reported as a code and value pair as specified in the [uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance.html).
 
 It **MUST** also include any text relating to the observation.
-
-
 
 ### referenceRange ###
 
