@@ -53,6 +53,8 @@ The logical identifier of the Observation narrative resource.
 
 The Observation narrative profile URL.
 
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)
+
 ### identifier ###
 
 <table class='resource-attributes'>
