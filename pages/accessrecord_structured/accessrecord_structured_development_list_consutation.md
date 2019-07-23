@@ -61,6 +61,8 @@ The logical identifier of the List resource.
 
 The List profile URL.
 
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)
+
 ### identifier
 
 <table class='resource-attributes'>
