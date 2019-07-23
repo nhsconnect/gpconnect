@@ -14,7 +14,7 @@ The headings below detail the elements of the `List` resource and describe how t
 
 {% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)." %}
 
 ## Using the List resource ##
 
@@ -86,13 +86,13 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1
   <tr>
     <td><b>Data type:</b> <code>Extension</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-A code warning of an issue related to this list.
+A code or codes warning of an issue related to this list.
 
-This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It must be populated using the appropriate code from the table in the warning codes section above.
+This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It **MUST** be populated using the appropriate code from the table in the warning codes section above.
 
 
 ### extension[clinicalSetting] ###
