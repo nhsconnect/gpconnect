@@ -134,9 +134,11 @@ Optional reference to the Encounter resource representing the consultation conte
   </tr>
 </table>
 
-The clinically relevant effective data or datetime of the record entry.
+The datetime the observation was believed to be true.
 
-Where the effective date is unknown or not recorded this will be absent. Otherwise, it should be populated.
+The effective datetime is when the observation related to the patient was asserted. In many cases, this will be when the observation is recorded onto the system however there are situations where they can differ. For example, if an observation is asserted during a home visit that is then recorded on the clinical system the following day, the effective datetime is the when the consultation took place, not the date it was recorded.
+
+Where no asserted date is available, the recorded date is used.
 
 ### issued ###
 
@@ -160,7 +162,7 @@ The audit trail timestamp representing when the data was recorded.
   </tr>
 </table>
 
-The Practitioner resource representing the person responsible for recording the data item.
+The Practitioner resource representing the person responsible for recording the data item. Where this is not available, the person who recorded the data item is used.
 
 ### value[x] ###
 
@@ -191,8 +193,8 @@ The reason why a result/value has been omitted.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
