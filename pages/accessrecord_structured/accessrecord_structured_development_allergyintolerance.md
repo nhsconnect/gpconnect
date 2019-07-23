@@ -244,9 +244,11 @@ This field **MUST** be populated where the GP system records an explicit onset d
   </tr>
 </table>
 
-The datetime the record was recorded or believed to be true.
+The datetime the record was believed to be true.
 
-The asserted date is when the allergy related to the patient was asserted. In many cases, this will be when the allergy is entered onto the system, although some systems may allow this date to be modified.
+The asserted date is when the allergy related to the patient was asserted. In many cases, this will be when the allergy is recorded onto the system however there are situations where they can differ. For example, if an alergy is asserted during a home visit that is recorded on the clinical system the following day, the asserted date is the date the consultation took place, not the date it was recorded.
+
+Where no asserted date is available, the recorded date is used.
 
 ### recorder ###
 
