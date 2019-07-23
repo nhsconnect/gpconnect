@@ -237,6 +237,35 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
         <p><i>Part parameter: may only be provided if <code>includeUncategorisedData</code> is set.</i></p>        
       </td>
     </tr>
+
+    <tr>
+      <td><code class="highlighter-rouge">includePathology</code></td>
+      <td><code class="highlighter-rouge"></code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>Include pathology test results in the response.</td>
+    </tr>
+    <tr>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterResults</code></span></td>
+      <td><code class="highlighter-rouge">Coding</code></td>
+      <td>Optional</td>
+      <td>0..*</td>
+      <td>
+        Filter the pathology test results to match the specified code(s)
+        <p><i>Part parameter: may only be provided if <code>includePathology</code> is set.</i></p>        
+      </td>
+    </tr>
+    <tr>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">resultSearchPeriod</code></span></td>
+      <td><code class="highlighter-rouge">Period</code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>
+        Filter the test results to match the specified code(s)
+        <p><i>Part parameter: may only be provided if <code>includePathology</code> is set.</i></p>        
+      </td>
+    </tr>
+
   </tbody>
 </table>
 
@@ -322,6 +351,26 @@ The example below shows a fully populated `Parameters` resource as a request to 
           }
         }
       ]
+    },
+    {
+      "name": "includePathology",
+      "part": [
+        {
+          "name": "filterResults",
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "",
+            "display": ""
+          }
+        },
+        {
+          "name": "resultSearchPeriod",
+          "valuePeriod": {
+            "start": "2017-01-02",
+            "end": "2017-07-02"
+          }
+        }
+      ]
     }
   ]
 }
@@ -353,6 +402,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+|The `filterResults` parameter is passed with a code from a code system other than SNOMED CT | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+|The `resultSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -535,6 +586,29 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - and when an `end` value is set, all uncategorised data before the date **MUST** be returned
   - and when both a `start` and `end` are specified, uncategorised data after the `start` and before the `end` **MUST** be returned
 
+##### Test results #####
+
+Provider systems **MUST** include the following in the response `Bundle`:
+
+- when the `includePathology` parameter is not set:
+
+  - no test result information shall be returned
+
+- when the `includePathology` parameter is set:
+
+  - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) and &nbsp; [`Specimen`](accessrecord_structured_development_specimen.html) resources representing the patient's test results
+
+  - when the `filterResults` parameter is set:
+    - all test results matching the supplied SNOMED CT code(s) **MUST** be returned
+
+  - and when the `resultSearchPeriod` parameter is set:
+    - when a `start` value is set, all test results after the date **MUST** be returned
+    - and when an `end` value is set, all test results before the date **MUST** be returned
+    - and when both a `start` and `end` are specified, test results after the `start` and before the `end` **MUST** be returned
+
+
+- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the resources above
+
 #### Medication search date ####
 
 The `medicationSearchFromDate` identifies the start date of the requested medications search period. An end date cannot be requested by a consumer, so that all searches go to the end of the patient's record.
@@ -605,11 +679,12 @@ The following diagram illustrates the population of the response `Bundle` accord
 
 Examples of the payload requests and responses can be found here:
 
-- [Allergies - FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
-- [Medication - FHIR examples](accessrecord_structured_development_fhir_examples_medication.html)
-- [Consultations and problems - FHIR examples](accessrecord_structured_development_fhir_examples_consultations.html)
-- [Immunizations - FHIR examples](accessrecord_structured_development_fhir_examples_immunizations.html)
-- [Uncategorised data - FHIR examples](accessrecord_structured_development_fhir_examples_uncategorised.html)
+- [Allergies - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_allergies.html)
+- [Medication - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_medication.html)
+- [Consultations and problems - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_consultations.html)
+- [Immunizations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_immunizations.html)
+- [Uncategorised data - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_uncategorised.html)
+- [Pathology - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_pathology.html)
 
 To illustrate how forwards compatibility works, the following example has been included:
 - [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.3 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
