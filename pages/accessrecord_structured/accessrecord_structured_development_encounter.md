@@ -8,6 +8,14 @@ summary: "Guidance for populating the Encounter resource for consultations"
 div: resource-page
 ---
 
+## Introduction ##
+
+The headings below list the elements of the Encounter resource and describe how to populate and consume them.
+
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
+
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Encounter profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1)." %}
+
 ## Encounter elements ##
 
 ### id ###
