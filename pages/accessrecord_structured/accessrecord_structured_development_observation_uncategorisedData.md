@@ -42,6 +42,8 @@ The logical identifier of the uncategorised data Observation resource.
 
 The Observation profile URL.
 
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)
+
 ### identifier ###
 
 <table class='resource-attributes'>
