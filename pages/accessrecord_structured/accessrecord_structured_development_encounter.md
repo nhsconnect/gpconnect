@@ -42,6 +42,8 @@ The logical identifier of the Encounter resource.
 
 The Encounter profile URL.
 
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1)
+
 ### identifier ###
 
 <table class='resource-attributes'>
