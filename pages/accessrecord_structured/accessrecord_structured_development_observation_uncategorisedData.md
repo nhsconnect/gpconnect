@@ -174,7 +174,7 @@ The Practitioner resource representing the person responsible for recording the 
   </tr>
 </table>
 
-The value of the test. this may be in the form of but is not limited to one of the following datatypes a quantity, string or an attachment.
+The value of the observation. This may be in the form of but is not limited to one of the following datatypes a quantity, string or an attachment.
 
 ### dataAbsentReason ###
 
