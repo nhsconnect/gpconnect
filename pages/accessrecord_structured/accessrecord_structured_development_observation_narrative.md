@@ -17,20 +17,17 @@ There are many instances of uncoded free text narrative notes within patient rec
 
 Because FHIR&reg; does not provide an underlying resource suitable for representing this information, a profile of Observation is utilised to represent narrative text as an Observation Narrative.
 
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
+
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
+
 ## Approach ##
 
 The approach for all of these cases is to use an appropriate coded Observation resource to represent the free text.
 
 Instances of Observation narrative are identified by Observation.code of **37331000000100  Comment note (record artifact)**
 
-## Observation narrative ##
-
-1. All mandatory fields **MUST** be populated.
-
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles.
-
-3. Any attributes of the underlying Observation profile that are not listed below are not used.
-
+## Observation Elements ##
 
 ### id ###
 
