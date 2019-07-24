@@ -97,7 +97,7 @@ A complex extension that contains a reference to a related problem header resour
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code> codableConcept</code></td>
+    <td><b>Data type:</b><code>reference</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
