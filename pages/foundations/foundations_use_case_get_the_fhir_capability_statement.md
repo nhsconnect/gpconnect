@@ -65,12 +65,10 @@ Provider systems:
 
 An example GP Connect CapabilityStatement is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
 
-{% include important.html content="This release **DOES NOT** contain changes for GP system providers and therefore the `version` element in the CapabilityStatement will remain at 1.2.3." %}
-
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "name": "GP Connect",
   "status": "active",
   "date": "2018-02-23",
