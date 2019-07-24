@@ -110,6 +110,7 @@ When populating this field the provider system must include every item in the pa
 * Clinical items that are within a consultation topic that is linked to the problem
 
 References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised.
+References to consultations are not held in this field. They are held in the context field defined below.
 
 ### extension[problemSignificance] ###
 
@@ -198,7 +199,7 @@ A reference to the patient who has, or had, the allergy or intolerance specified
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -221,6 +222,8 @@ When populating this field the provider system must include every consultation w
 </table>
 
 The datetime when the problem was first encountered.
+
+For example if the patient reported a persistent cough started on the 1st May during a consultation on the 20th May, the onset date would be the 1st May.
 
 ### abatement ###
 
@@ -269,7 +272,6 @@ Reference to the resource for the practitioner who recorded the problem.
 </table>
 
 Notes about the problem.
-
 
 <br>
 ## Elements **not in use** ##
