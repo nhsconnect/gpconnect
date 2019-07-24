@@ -18,7 +18,18 @@ The headings below list the elements of the DocumentReference resource and descr
 
 ## DocumentReference elements ##
 
+### id ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
 The logical identifier of the DocumentReference resource.
+
 
 ### meta.profile ###
 
@@ -33,6 +44,151 @@ The logical identifier of the DocumentReference resource.
 The DocumentReference profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1)
+
+### masterIdentifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Master Version Specific Identifier
+
+### subject ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+A reference to the patient who is the subject of the document.
+
+### creationDateTime ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization | Device | Patient | RelatedPerson)</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+Creation/Edit datetime of the document.
+
+### author ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+Who and/or what authored the document.
+
+### documentType ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+Kind of document.
+
+### custodian ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Organisation)</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Organisation which maintains this document.
+
+### clinicalSetting ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Additional details about where the content was created (e.g. clinical specialty).
+
+### format ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>coding</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+Format/content rules for the document.
+
+### url ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>url</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+URL to retrieve the document.
+
+### description ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>string</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Human-readable description (title).
+
+### fileSize ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>unsignedInt</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+Size of the file.
+
+### binaryAttachment ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>base64Binary</code></td>
+    <td><b>Optionality:</b> Required/Optional</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The binary file (base64 binary).
+This field will get populated only when the document is being retrieved. It will NOT be populated during the search document function.
 
 ## DocumentReference elements not in use ##
 
