@@ -58,6 +58,14 @@ When linking to the clinical item that is held in a single FHIR resource the ref
 * For an Immunisation – reference the Immunization resource 
 * For Uncategorised Data – reference the Observation – Uncategorised resource
 
+## Problems linking to problems
+
+It is possible within GP Clinical Systems to link problems together. This is done by a clinician when they consider the problems to have a clinical impact or give context to each other.
+
+The methods and termonology used to link problems varies a great deal between clinical systems and are not compatible with each other. For example, in one GP clinical system grouping two problems merges them into a single problem while in another it keeps them as two separate problems that are linked together.
+
+To resolve this, GP Connect will only show the logical linkage between problems (i.e. is the linked problem a parent, child or sibling) without reflecting the termonology of the provider system.
+
 ## Problems linking to unsupported clinical items
 
 Depending on the GP Connect version supported by the provider system, it can be possible for the problem to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the problem contains a link to a referral record but the provider system does not yet support exporting referrals.
