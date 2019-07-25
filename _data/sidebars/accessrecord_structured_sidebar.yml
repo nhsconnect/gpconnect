@@ -156,3 +156,7 @@ entries:
     - title: Retrieve a patient's structured record
       url: /accessrecord_structured_development_retrieve_patient_record.html
       output: web
+
+    - title: API Version Compatibility
+      url: /accessrecord_structured_development_version_compatibility.html
+      output: web
