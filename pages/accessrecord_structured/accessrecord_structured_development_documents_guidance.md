@@ -195,24 +195,49 @@ Standardise the search and retrieval of clinical documents from the GP Practices
  
  ## Use Case ##
  
- ### Community Pharmacist provides Diabetes Services ###
+ ### a. Community Pharmacist provides Diabetes Services ###
  
-  
-   <table width="80%" height="30%">
-    <thead>
-        <tr>
-            <th></th>
-            <th> </th>
-            
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-            <td></td>
-            
-        </tr>
-     </body>
-     </table>
-    
+ **Scenario**
+
+The Community Pharmacist provides a diabetes service. Providing this service to Patients can reduce the workload on the local GP Practice(s) so the Practice(s) can focus on higher priority or more critical services or provide greater convenience to the Patient and thus the local GP Practice(s) refer Patients to the Community Pharmacist.
+ 
+**Actors**
+
+Patient, Community Pharmacist, GP Connect APIs, Community Pharmacy IT System, GP Practice IT system.
+
+**Main Flow**
+
+1.	The Patient is referred to the Community Pharmacist for diabetes service by the GP
+2.	The Community Pharmacist wants to view certain clinical documents of the Patient
+3.	The Community Pharmacist accesses GP Connect to search for information about matching clinical documents from the Patient’s registered GP practice system
+4.	GP Connect requests metadata information about clinical documents from the GP clinical system and presents it to the community pharmacy system.
+5.	The Community Pharmacist s view this information and requests to view a clinical document from the GP practice system via GPConnect.
+6.	Community pharmacy system receives binary of the requested document and presents it in a readable format
+7.	The Community Pharmacist views the clinical document and uses this information to assist their treatment of the Patient.
+
+
+### b. Paramedic accesses Do Not Attempt Resuscitation document ###
+
+**Scenario**
+
+A Paramedic is visiting a Patient who has collapsed at home and needs to ascertain whether the Patient has a Do Not Resuscitation order recorded on the GP system, and the date it was recorded.  Ideally, the Paramedic would be able to see DNR history and associated information such as whether the Patient and family are aware of the decision.  
+They should also be able to access an uploaded DNR document, if it exists.
+
+**Actors**
+
+Paramedic, Paramedic s IT system, Patient, GPConnect APIs, GP Practice ITsystem
+
+**Main Flow**
+
+1.	Paramedic accesses Patient information on their mobile EPR
+2.	The Paramedic wants to view DNR document of the Patient to understand Patient’s consent to resuscitate or not.
+3.	Paramedic s system accesses GP Connect to search for information about any DNR document of the Patient from their registered GP Practice’s clinical system
+4.	GP Connect requests metadata information about matching documents of the Patient from the GP Practice system and presents it to the Paramedic ’s system.
+5.	The Paramedic views the metadata information of matching documents on their system and requests to view the DNR document from the GP Practice system via GPConnect.
+6.	The Paramedics system receives the binary of the document and presents it in a readable format.
+7.	The Paramedic views the DNR document and use this information to assist their treatment of the Patient
+
+
+
+
  
