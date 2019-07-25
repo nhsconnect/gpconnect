@@ -194,10 +194,9 @@ Standardise the search and retrieval of clinical documents from the GP Practices
   <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:60%;max-height:60%;">
  
  
- ## Use Case ##
- 
- 
- ### a. Community Pharmacist provides Diabetes Services ###
+## Use Case ##
+
+### a. Community Pharmacist provides Diabetes Services ###
  
  **Scenario**
 
