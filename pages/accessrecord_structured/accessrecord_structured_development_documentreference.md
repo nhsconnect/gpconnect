@@ -187,18 +187,43 @@ Size of the file.
   </tr>
 </table>
 
-The binary file (base64 binary).
+The binary file (base64 binary). </br>
 This field will get populated only when the document is being retrieved. It will NOT be populated during the search document function.
 
-## DocumentReference elements not in use ##
-
-The following elements **SHALL NOT** be populated:
-
-
-### entry.fullUrl ###
+### consultationReference ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
+    <td><b>Optionality:</b> Required/Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
+
+Reference to the consultation the document was created/attached in.
+
+## Elements not in use ##
+
+The following elements **MUST NOT** be populated:
+
+
+### indexed ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>instant</code></td>
+  </tr>
+</table>
+
+When this document reference was created
+
+### status ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>code</code></td>
+  </tr>
+</table>
+
+current | superseded | entered-in-error
+
