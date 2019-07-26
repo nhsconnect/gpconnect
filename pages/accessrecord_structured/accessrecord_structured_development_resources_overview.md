@@ -15,7 +15,7 @@ The `CodeableConcept` data type is used throughout this capability and the follo
 
 ## Definitions of mandatory, required and optional
 
-Throughout are profile pages within the specification we have a label for each data item named "Optionality", which details whether or not each data item has to be included in the resource. This item has 3 possible values:
+Throughout the profile pages within the specification we have a label for each data item named "Optionality", which details whether or not it has to be included in the resource. This item has 3 possible values:
 
 1. Mandatory - if the data item **MUST** be recorded in the resource every time it is produced.
 2. Required - if the system that is providing the data item contains this piece of data then it **MUST** include it in the resource.
@@ -27,17 +27,27 @@ StatusReason is used in GP Connect to carry information about why the status of 
 
 Clearly not every medication will have a status of stopped but when it does this information is of a high clinical importance and **MUST** be included in the message.
 
-In the GP Connect FHIR profiles we have used the 'MUST SUPPORT' flag to represent the required data items as described above.
+## Definition of 'Must support' for use in the FHIR profiles
+
+In FHIR it alows the use of a flag titled 'Must support' to be attached to any give data item. The FHIR specification states 'The meaning of "support" is not defined by the base FHIR specification, but can be set to true in a profile. When a profile does this, it SHALL also make clear exactly what kind of "support" is required'
+
+In the GP Connect FHIR profiles we have used the 'Must support' flag to represent the required data items as described above.
+
+This leads to our definition for use in GP Connect,
+
+**Must support** = if a system is providing resources and one of the items is flagged as 'Must support' the sytem **MUST** include the data item if it is available to be sent.
 
 ## Using the List resource ##
 
-The `List` resource in FHIR is used to help manage a collection of resources. In GP Connect it is used to identify the data returns for each query. For each clinical area query, GP Connect will return one or more predefined list that identifies the data returned for that query.
+The `List` resource in FHIR is used to manage collections of resources. 
 
-- When multiple queries in the same API call return data in the same profile, the list will identify which data in the profile has been returned for which query.
+In GP Connect it is used to organise data returned by a query into groups of resources that can then be processed more easily. For each clinical area query, GP Connect will return a list that identifies the data returned for that query.
+
+- When an API call returns data for more than one clinical area, the list will identify which data has been returned for which clinical area.
 - Where there are no items returned, the list will be empty.
 - Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
 
-### Warning codes
+## Warning codes
 
 The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
 
@@ -67,7 +77,7 @@ Where items have been excluded from the returned resources due to patient consen
 
 This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice have not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
 
-## Data awaiting filing ##
+### Data awaiting filing 
 
 Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent.
 
@@ -111,10 +121,10 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 * [MedicationStatement](accessrecord_structured_development_medicationstatement.html)
 * [MedicationRequest](accessrecord_structured_development_medicationrequest.html)
 * [Immunization](accessrecord_structured_development_immunization.html)
-* [Observation](accessrecord_structured_development_observation_uncategoriseddata) for uncategorised data
+* [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata) 
 * [Encounter](accessrecord_structured_development_encounter.html)
-* [List](accessrecord_structured_development_list_consultation.html) for consultation structure
-* [Observation](accessrecord_structured_development_guidance_observation_narrative.html) for narrative data
+* [List - consultation structure](accessrecord_structured_development_list_consultation.html) 
+* [Observation - narrative data](accessrecord_structured_development_guidance_observation_narrative.html)
 * [Condition - ProblemHeader](accessrecord_structured_problems.html)
 
 ### Administrative ###
