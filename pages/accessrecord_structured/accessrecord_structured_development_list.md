@@ -113,12 +113,15 @@ Descriptive name for the list. This will be taken from the 'display' element fro
 
 The purpose of the list.
 
-There are currently 3 possible purposes of a list in GP Connect that will be represented by the following SNOMED codes.
+There are currently 6 possible purposes of a list in response to a query for a clinical area in GP Connect that will be represented by the following SNOMED codes.
 1. Medications and medical devices - 933361000000108
 2. Allergies and adverse reactions - 886921000000105
 3. Ended allergies - 1103671000000101
+4. Immunisations - 1102181000000102
+5. Consultation - 325851000000107
+6. Problems - 	717711000000103
 
-The above code for 'Ended allergies' should be used for resolved allergies. This code is new at the time of publishing this version of the specification and will be included in the October 2018 SNOMED release.
+The above code for 'Ended allergies' should be used for resolved allergies. 
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
