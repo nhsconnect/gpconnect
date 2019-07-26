@@ -193,7 +193,7 @@ These will be the same values that are held in the FHIR&reg; resource referenced
   </tr>
 </table>
 
-A reference to the patient who has, or had, the allergy or intolerance specified.
+A reference to the patient who has, or had, the problem.
 
 ### context ###
 
