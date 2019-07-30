@@ -25,7 +25,7 @@ A patient falls off his bike and hurts his arm and leg.  He attends local MIU, i
 A patient has painful bites and her situation worsens at the weekend.  She is seen by OOH GP who concludes a number of bites are infected.  GP asks if she is on any regular medication and has any known allergies.  She is taking regular medication and has an allergy to a type of antibiotic but cannot remember the exact details. The GP is able to view details of the medication she is taking and the known allergies. The GP prescribes appropriate antibiotics.
  
 
-### Patient visits number of care settings within 24 hour period ###
+### Patient visits number of care settings within 24-hour period ###
  
 Patient visits GP during a morning appointment and then is presented to A&E later that evening.  Clinician needs to understand all encounters over past 24 hours to build a complete picture.
 

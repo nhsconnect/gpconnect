@@ -40,7 +40,7 @@ Potential grounds for not returning an HTML view?
 	
 ### Record 'In-transit' as a result of GP transfer ###
 
-If the patient's record is indicated in the provider system as not fully-integrated following a GP to GP transfer, then only data which has been entered to the current GP record should be returned, and NOT the contents of the previous GP record. Where data is excluded according to this, a warning should be included in the section banner indicating that some data has been excluded as a result of the transfer.    
+If the patient's record is indicated in the provider system as not fully integrated following a GP to GP transfer, then only data which has been entered to the current GP record should be returned, and NOT the contents of the previous GP record. Where data is excluded according to this, a warning should be included in the section banner indicating that some data has been excluded as a result of the transfer.    
 
 - <span class="label label-success">SELECTED</span> provider to supply a warning that the record could be incomplete
 - other
@@ -213,7 +213,7 @@ How are exclusion warnings identified within Access Record HTML?
 
 - no indication that data has been excluded
 - <span class="label label-success">SELECTED</span> warning indication per section that data has been excluded (within the time frame)
-- <span class="label label-success">SELECTED</span> inline with some information related to the data item
+- <span class="label label-success">SELECTED</span> in line with some information related to the data item
 	- that is, encounter date/time but not the place or encounter details
 
 <span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld due to patient preferences, GP practice designation of 'Confidential' or as a result of the application of the sensitive exclusion set - to be displayed both within the section banner as well as at line item level.
@@ -231,7 +231,7 @@ Date range handling in the summary per section:
 	 - Current medications issues
 	 - Last 3 encounters
 	 - etc.
- - date range to match SCR time-frames for all subsections
+ - date range to match SCR time frames for all subsections
 
 <span class="label label-info">DECISION</span> No date ranges are applied to the summary section.
  

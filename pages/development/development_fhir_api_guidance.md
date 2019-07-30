@@ -4,7 +4,7 @@ keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_api_guidance.html
-summary: "Details of the common request handling pattern(s) across all GP Connect FHIR APIs."
+summary: "Details of the common request handling pattern(s) across all GP Connect FHIR APIs"
 ---
 
 ## Purpose ##
@@ -40,7 +40,7 @@ When a new release of the FHIR standard has been published for use NHS Digital w
 
 ### [FHIR implementations](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations) ###
 
-The Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on their [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations). Currently five FHIR server implementations and a number of client libraries are available as open source software. These are written in a variety of popular programming languages (e.g. Java, C#.NET, JavaScript and Python).
+The Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on their [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations). Currently five FHIR server implementations and a number of client libraries are available as open source software. These are written in a variety of popular programming languages (for example, Java, C#.NET, JavaScript and Python).
 
 {% include tip.html content="NHS Digital recommends software vendors consider utilising (and contributing back to) an existing open source FHIR library to both help accelerate development and to grow/mature the open source FHIR ecosystem." %}
 
@@ -183,7 +183,7 @@ Clients and servers **MUST** be conformant to the following Internet Engineering
 
 TLS **MUST** be used for all data exchange. The TLS communications are established prior to any HTTP command/response, so the whole FHIR interaction is protected by the TLS communications.
 
-The security of the endpoints of the TLS communications must be risk-managed, so as to prevent inappropriate risks (e.g. audit logging of the GET parameters into an unprotected audit log).
+The security of the endpoints of the TLS communications must be risk-managed, so as to prevent inappropriate risks (for example, audit logging of the GET parameters into an unprotected audit log).
 
 #### [Authentication](https://www.hl7.org/fhir/DSTU2/security.html#authentication) ####
 
@@ -195,7 +195,7 @@ For the purpose of GP Connect FoT clients and servers **MUST** authenticate usin
 
 Servers **MUST** provide a read-only FHIR Conformance resource that identifies all of the profiles and operations that the server supports for each resource type.
 
-A servers conformance statement **MUST** be available using the following [conformance interactions](http://hl7.org/fhir/http.html#conformance):
+A server's conformance statement **MUST** be available using the following [conformance interactions](http://hl7.org/fhir/http.html#conformance):
 
 ```
 GET [base]/metadata {?_format=[mime-type]}
@@ -213,7 +213,7 @@ To help a consumer find the correct set of reports for a use-case, a provider of
 
 GP Connect comprises a number of RESTful API bundles. Each API bundle is intended to support sets of related use cases, for example the Appointment API bundle supports viewing, booking and cancelling GP appointments in a number of scenarios.
 
-Individual API bundles **MAY** be provided independently of each other. GP Connect conformance **MAY** be claimed in relation to one or more API bundles. A provider claiming to provide an API bundle must be fully conformant (i.e. implement all of the resource profiles and interactions for the API bundle as specified in this document and all of the general requirements described herein).
+Individual API bundles **MAY** be provided independently of each other. GP Connect conformance **MAY** be claimed in relation to one or more API bundles. A provider claiming to provide an API bundle must be fully conformant (that is, implement all of the resource profiles and interactions for the API bundle as specified in this document and all of the general requirements described herein).
 
 ## RESTful API ##
 
@@ -234,7 +234,7 @@ The Service root URL is the `[base]` portion of all FHIR APIs.
 
 ### Service root URL versioning ###
 
-Service root URLs **MUST** be aligned with the GP Connect specification they were built against, specifically the [major version number](design_product_versioning.html#version-number-standard) **MUST** be present in the server's Service root URL to provide a clear distinction between API versions that are incompatible (i.e. contain breaking changes) vs. backwards-compatible (i.e. contain no breaking changes).
+Service root URLs **MUST** be aligned with the GP Connect specification they were built against, specifically the [major version number](design_product_versioning.html#version-number-standard) **MUST** be present in the server's Service root URL to provide a clear distinction between API versions that are incompatible (that is, contain breaking changes) vs. backwards-compatible (that is, contain no breaking changes).
 
 Provider systems **MUST** publish Service root URLs for major versions of FHIR APIs in the Spine Directory Service in the following format:
 
@@ -248,7 +248,7 @@ Provider systems **MUST** publish Service root URLs for major versions of FHIR A
 
 - `[GPC_MAJOR_VERSION]` identifies the major version number of the GP Connect specification that the API is built to.
 
-- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment **MUST** be static across all the provider's GP Connect API endpoints.
+- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non-GP Connect requests (for example, via a load balancer). If included, this optional provider routing segment **MUST** be static across all the provider's GP Connect API endpoints.
   
 - The Service root URL **MUST NOT** contain a trailing `/`
 
@@ -295,13 +295,13 @@ This is the `logical Id` of the resource which is assigned by the server respons
 
 Once assigned, the identity **MUST** never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %} 
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource, they are usually implementation specific. For example: NoSQL document stores typically prefer a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst relational database stores typically prefer an integer key (such as 2345)." %} 
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/dstu2/resource.html#id)  
 
 #### External resource resolution ####
 
-Inline with work being undertaken in other jurisdictions (see the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide) for details) GP Connect provider systems are not expected to resolve full URLs that are external to their environment.
+In line with work being undertaken in other jurisdictions (see the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide) for details) GP Connect provider systems are not expected to resolve full URLs that are external to their environment.
 
 ### [Content types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
@@ -327,11 +327,11 @@ Servers **MUST** support two wire formats as ways to represent resources when th
 
 Consumers **MUST** ignore unknown extensions and elements in order to foster [forwards compatibility](https://www.hl7.org/fhir/DSTU2/compatibility.html#1.10.3) and declare this by setting [Conformance.acceptUnknown](https://www.hl7.org/fhir/DSTU2/conformance-definitions.html#Conformance.acceptUnknown) to 'both' in their conformance profile.
 
-Systems **MUST** declare which format(s) they support in their Conformance Statement. If a server receives a request for a format that it does not support it **MUST** return a http status code of `415` indicating an `Unsupported Media Type`.
+Systems **MUST** declare which format(s) they support in their Conformance Statement. If a server receives a request for a format that it does not support it **MUST** return an HTTP status code of `415` indicating an `Unsupported Media Type`.
 
 ### [Transfer encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
-Clients and servers **MUST** support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
+Clients and servers **MUST** support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of an HTTP response will be returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
 
 ### [Character encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
@@ -355,13 +355,13 @@ Unrecognized search criteria **MUST** always be ignored. As search criteria supp
 
 #### Proxying headers ####
 
-Additional HTTP headers **MUST** be added into the HTTP request/response for the purpose of allowing the proxy system to disclose information lost in the proxying process (e.g. the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](http://tools.ietf.org/html/rfc7239).
+Additional HTTP headers **MUST** be added into the HTTP request/response for the purpose of allowing the proxy system to disclose information lost in the proxying process (for example, the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](http://tools.ietf.org/html/rfc7239).
 
 #### Cross organisation provenance & audit headers ####
 
 In order to meet auditing and provenance requirements (which are expected to be closely aligned with the IM1 requirements), clients **MUST** provide an oAuth 2.0 Bearer token in the HTTP Authorization header (as outlined in [RFC 6749](http://tools.ietf.org/html/rfc6749)) in the form of a JSON Web Token (JWT) as defined in [RFC 7519](http://tools.ietf.org/html/rfc7519).
 
-{% include tip.html content="We are using an open standard (i.e. JWT) to provide a container for the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will **not** be centrally issued and are not signed or encrypted (i.e. are constructed of plain-text). There are JWT libraries available for most programming languages simplify generation of this data in JWT format." %}
+{% include tip.html content="We are using an open standard (that is, JWT) to provide a container for the provenance and audit data for ease of transport between the consumer and provider systems. It is important to note that these tokens (for GP Connect FoT) will **not** be centrally issued and are not signed or encrypted (that is, they are constructed of plain text). There are JWT libraries available for most programming languages simplify generation of this data in JWT format." %}
 
 Refer to [Integration - Cross Organisation Audit & Provenance](integration_cross_organisation_audit_and_provenance) for full details of the JWT claims that **MUST** be used for passing audit and provenance details between systems.
 
@@ -369,7 +369,7 @@ Refer to [Integration - Cross Organisation Audit & Provenance](integration_cross
 
 Clients **MUST** add the following Spine proxy headers for audit and security purposes:
 
-- `Ssp-TraceID` - TraceID (generated per request) which identifiers the sender's message/interaction (i.e. a GUID/UUID)
+- `Ssp-TraceID` - TraceID (generated per request) which identifiers the sender's message/interaction (that is, a GUID/UUID)
 - `Ssp-From` - ASID which identifies the sender's FHIR endpoint
 - `Ssp-To` - ASID which identifies the recipient's FHIR endpoint
 - `Ssp-InteractionID` - identifies the FHIR interaction that is being performed <sup>1</sup>
@@ -389,7 +389,7 @@ Providers **MUST** use the following HTTP Header to ensure that no intermediarie
 
 ### [Managing return content](https://www.hl7.org/fhir/DSTU2/http.html#return) ###
 
-Provider **MUST** maintain resource state inline with the underlying system, including the state of any associated resources.
+Provider **MUST** maintain resource state in line with the underlying system, including the state of any associated resources.
 
 For example: 
 
@@ -399,7 +399,7 @@ _When the appointment is booked, the appointment resource is associated with a s
 
 ![Diagram of reflection of state](images/development/Reseource Reflection of state.png)
 
-Severs **MUST** default to the `return=representation` behaviour (i.e. returning the entire resource) for interactions that create or update resources.
+Severs **MUST** default to the `return=representation` behaviour (that is, returning the entire resource) for interactions that create or update resources.
 
 Servers **SHOULD** honour a `return=minimal` or `return=representation` preference indicated in the `Prefer` request header, if present.
 
@@ -430,7 +430,7 @@ If-Match: W/"23"
 
 If the `version Id` given in the `If-Match` header does not match, the server returns a `409` **Conflict** status code instead of updating the resource.
 
-For server's that don't persist historical versions of a resource (i.e. any resource other than the currently available/latest version) then they **MUST** operate in-line with the guidance provided in the following [Hay on FHIR - FHIR versioning with a non-version capable back-end](https://fhirblog.com/2013/11/21/fhir-versioning-with-a-non-version-capable-back-end/) blog post. This is to ensure that GP Connect servers will be compatible with version-aware clients, even though the server itself doesn't support the retrieval of historical versions.
+For servers that don't persist historical versions of a resource (that is, any resource other than the currently available/latest version), then they **MUST** operate in-line with the guidance provided in the following [Hay on FHIR - FHIR versioning with a non-version capable back-end](https://fhirblog.com/2013/11/21/fhir-versioning-with-a-non-version-capable-back-end/) blog post. This is to ensure that GP Connect servers will be compatible with version-aware clients, even though the server itself doesn't support the retrieval of historical versions.
 
 ### [Managing return errors](http://hl7.org/fhir/http.html#2.1.0.4) ###
 
@@ -442,9 +442,9 @@ FHIR defines an [OperationOutcome](http://hl7.org/fhir/operationoutcome.html) re
 
 The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/DSTU2/datatypes.html) that are used for the resource elements.
 
-The user locale (i.e. user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems **MUST NOT** effect the FHIR on the wire representation of any data types (especially date-time and number formats).
+The user locale (that is, user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems **MUST NOT** effect the FHIR on the wire representation of any data types (especially date-time and number formats).
 
-Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) respresentation warrant further consideration and **MUST** be taken into consideration when designing and constructing FHIR resources.
+Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) representation warrant further consideration and **MUST** be taken into consideration when designing and constructing FHIR resources.
 
 For example:
 
@@ -453,7 +453,7 @@ For example:
 - URIs are case sensitive
 - UUID values (urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7) use all lowercase
 - dates have no time zone
-- dates can be partial dates (e.g. just year or year + month)
+- dates can be partial dates (for example, just year or year + month)
 - precision of the decimal value has significance
 - primitive types other than string **MUST NOT** have leading or trailing white-space
 - [use of null](https://www.hl7.org/fhir/DSTU2/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/DSTU2/datatypes.html#1.19.0.1.1)
@@ -471,11 +471,11 @@ A reference can be either:
 - a relative or absolute URL to a resource managed by the same resource server (a local reference), or 
 - an absolute URL to a resource managed by another resource server (a remote reference)
 
-A provider’s ability to process a request relating to a resource may depend on its ability to use one or more resource references that the resource contains (i.e. its ability to ‘follow the links’ to other resources).
+A provider’s ability to process a request relating to a resource may depend on its ability to use one or more resource references that the resource contains (that is, its ability to ‘follow the links’ to other resources).
 
 {% include important.html content="GP Connect clients and servers **MUST** utilise local relative references only and as such the resources will be expected to reside on the same server." %}
 
-Resource references **MUST** include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field **MUST** be formatted inline with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
+Resource references **MUST** include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field **MUST** be formatted in line with Common User Interface (CUI) guidance where such guidance exists (for example, patient name).
 
 | Resource | Display Format |
 | -------- | -------------- |
@@ -501,11 +501,11 @@ When performing an update or create interaction, servers:
 -	**MAY** apply business rules that alter the content
 -	**MAY** merge updated content with existing content
 
-Servers **MUST** validate the existence of any referenced resources when creating or updating a resource. For example, a `Slot` reference (e.g. `Slot/D497DB00-99AA-11E5-A837-0800200C9A66`) used when creating a new `Appointment` would be checked for existence on the server and an error returned (and the create interaction aborted) if the slot does not exist.
+Servers **MUST** validate the existence of any referenced resources when creating or updating a resource. For example, a `Slot` reference (for example, `Slot/D497DB00-99AA-11E5-A837-0800200C9A66`) used when creating a new `Appointment` would be checked for existence on the server and an error returned (and the create interaction aborted) if the slot does not exist.
 
 Refer to the GitHub hosted [GP Connect FHIR Repository](https://github.com/nhsconnect/gpconnect-fhir) for the published FHIR profiles.
 
-Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/DSTU2/validation.html#jar) page for the most upto date details on how FHIR resources can be validated. 
+Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/DSTU2/validation.html#jar) page for the most up to date details on how FHIR resources can be validated. 
 
 Servers **MUST** provide a read interaction for every resource it accepts update interactions on.
 
@@ -733,7 +733,7 @@ To update an existing resource, a RESTful **PUT** operation with a request body 
 PUT [base]/[resourcetype]/[id]
 ```
 
-The PUT operation will only be used to update existing resources, if the specified resource within the url does not exist on the provider system an error **MUST** be returned.
+The PUT operation will only be used to update existing resources, if the specified resource within the URL does not exist on the provider system an error **MUST** be returned.
 
 | Capability       | Resource(s) | Field(s) |
 | ------------ | ----------- | -------- |
@@ -783,7 +783,7 @@ DELETE [base]/[resourcetype]/[id]
 
 Operations are used (a) where the server needs to play an active role in formulating the content of the response, not merely return existing information, or (b) where the intended purpose is to cause side effects such as the modification of existing resources, or creation of new resources.
 
-As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/DSTU2/profiling.html#api) section of the FHIR&reg; standard, the NHS Digital has decided to prefix it's operation names with a short prefix (e.g. `gpc`) followed by a "." to reduce the likelihood of name conflicts.
+As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/DSTU2/profiling.html#api) section of the FHIR&reg; standard, the NHS Digital has decided to prefix its operation names with a short prefix (for example, `gpc`) followed by a "." to reduce the likelihood of name conflicts.
 
 ## [Search Resources](https://www.hl7.org/fhir/DSTU2/http.html#search) ##
 
@@ -795,7 +795,7 @@ GET [base]/[resourcetype]?name=value&...
 
 In order to enable searching by date/time range, servers **MUST** support the following prefixes as defined in the base FHIR specification for date parameters: eq, gt, lt, ge, le.
 
-To search for all the appointments for a patient that occurred over a 2 year period:
+To search for all the appointments for a patient that occurred over a 2-year period:
 
 ```http
 GET [base]/Patient/1A6E1B1C-6340-4663-926C-9CD1306EAAF8/Appointment?start=ge2014-01-01&start=le2015-12-31
@@ -809,7 +809,7 @@ Servers **MUST** support searching by a chained `Patient` identifier parameter f
 GET [base]/AllergyIntolerance?patient.identifier=http://fhir.nhs.net/Id/nhs-number|1234569876
 ```
 
-{% include important.html content="GP Connect clients and servers are not expected to support arbitrary adhoc searching." %}
+{% include important.html content="GP Connect clients and servers are not expected to support arbitrary ad hoc searching." %}
 
 ### Search example: search for a patient resource by business Id ###
 

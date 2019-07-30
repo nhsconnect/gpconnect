@@ -9,7 +9,7 @@ summary: "Details of what test resources have been made available to support the
 
 ## Provider testing (SIT) ##
 
-An automated provider test harness has been made publicly available to allow standardised testing of the FHIR APIs prior to any formal assurance activities being undertaken. This approach aims to streamline the end-to-end assurance process by ensuring that a common baseline level of technical conformance has been achieved, an thus fewer issues are surfaced during formal assurance.
+An automated provider test harness has been made publicly available to allow standardised testing of the FHIR APIs prior to any formal assurance activities being undertaken. This approach aims to streamline the end-to-end assurance process by ensuring that a common baseline level of technical conformance has been achieved, and thus fewer issues are surfaced during formal assurance.
 
 {% include download.html content="Download the [GP Connect Provider Test Suite](https://github.com/nhsconnect/gpconnect-provider-testing) to help validate the technical conformance of your provider API implementation." %}
 

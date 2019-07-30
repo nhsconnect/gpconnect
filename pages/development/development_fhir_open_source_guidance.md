@@ -8,7 +8,7 @@ summary: "There are benefits to using an existing FHIR&reg; library"
 toc: false
 ---
 
-## Using an existing a FHIR&reg; library ##
+## Using an existing FHIR&reg; library ##
 
 GP Connect strongly advises suppliers to use an existing FHIR library as it will reduce development time and result in more robust implementations of the GP Connect API. Benefits of using an existing FHIR library for the implementation of both the consumer and provider side of a GP Connect API are:
 
@@ -19,7 +19,7 @@ GP Connect strongly advises suppliers to use an existing FHIR library as it will
 
 ## What libraries to use? ##
 
-There is an ever increasing list of open source FHIR libraries appearing on the web, written for a wide variety of languages, such as Java, C#.NET, JavaScript and PHP. As a starting point, the Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on its [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations) page.
+There is an ever-increasing list of open source FHIR libraries appearing on the web, written for a wide variety of languages, such as Java, C#.NET, JavaScript and PHP. As a starting point, the Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on its [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations) page.
 
 {% include tip.html content="It's a good idea to give feedback into open source FHIR library projects to improve the implementations and  increase the maturity of the technologies for everyone's benefit." %}
 

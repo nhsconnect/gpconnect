@@ -16,7 +16,7 @@ This specification describes a single use case. For complete details and backgro
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## Prerequisites ##
 
@@ -77,7 +77,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarere
 
 The following data-elements are mandatory (meaning, data **MUST** be present):
 
-- the `patientNHSNumber` is the NHS Number of the patient who's GP care record you want to access
+- the `patientNHSNumber` is the NHS Number of the patient whose GP care record you want to access
 - the `recordSection` is the GP care record section you wish to retrieve
 
 The following data-elements are optional (meaning, **MAY** be supplied for certain care record sections):
@@ -141,7 +141,7 @@ The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/param
 </OperationDefinition>
 ```
 
-{% include custominfocallout.html content="**Important:** Provider systems **MUST** only expose `Patient` resources for patient's who have a valid PDS trace status." type="warning" %}
+{% include custominfocallout.html content="**Important:** Provider systems **MUST** only expose `Patient` resources for patients who have a valid PDS trace status." type="warning" %}
 
 On the wire a JSON serialised `$gpc.getcarerecord` request would look something like the following:
 
@@ -207,7 +207,7 @@ Content-Length: 1464
 Provider systems:
 
 - **MUST** return a `200` **OK** HTTP status code on successful retrieval of a care record section
-- **MUST** return the care record section as valid XHTML inline with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance
+- **MUST** return the care record section as valid XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance
 - **MUST** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response
 - **MUST** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`
 

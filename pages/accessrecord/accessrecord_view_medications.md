@@ -52,7 +52,7 @@ The purpose of this subsection is to provide a view of medications that the pati
 
 ### Date filter ###
 
-A default or consumer provided date range **MUST NOT** be applied by the provider for this section. The current issue of repeat or acute medication will be returned
+A default or consumer provided date range **MUST NOT** be applied by the provider for this section. The current issue of repeat or acute medication will be returned.
 
 ### Subsection content banner ###
 
@@ -73,7 +73,7 @@ Providers **MUST** return all the columns as described in the table below, order
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date`  <i class="fa fa-sort-desc" aria-hidden="true">  | Start date of medication item issued | `dd-Mmm-yyyy` |
-| <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp;| Descriptive name of medication item (inculding dosage) | `free-text` |
+| <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp;| Descriptive name of medication item (including dosage) | `free-text` |
 | <center>3</center> | `Type` | Type of medication issued (values `Repeat` or `Acute`) | `free-text` |
 | <center>4</center> | `Scheduled End` | Scheduled end date of medication issued | `dd-Mmm-yyyy` |
 | <center>5</center> | `Days Duration` | Duration of medication issued | `integer` |
@@ -86,7 +86,7 @@ Providers **MUST** return all the columns as described in the table below, order
 
 ### Clinical narrative ###
 
-A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication e.g. EpiPen, antihistamines, monitoring or continence products etc.
+A list of repeat drugs or other forms of medicines that are currently being used to treat or prevent disease for the patient. This may also include PRN occasional use medication - for example, EpiPen, antihistamines, monitoring and continence products.
 
 ### Purpose ###
 
@@ -115,7 +115,7 @@ Providers **MUST** return all the columns as described in the table below, order
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Last Issued`  <i class="fa fa-sort-desc" aria-hidden="true">  |  Date of medication item last issued | `dd-Mmm-yyyy` |
-| <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp; | Descriptive name of medication item (inculding dosage) | `free-text` |
+| <center>2</center> | `Medication Item` &nbsp;&nbsp;&nbsp; | Descriptive name of medication item (including dosage) | `free-text` |
 | <center>3</center> | `Start Date` | Start date of medication item issued | `dd-Mmm-yyyy` |
 | <center>4</center> | `Review Date` | Review date of medication issued | `dd-Mmm-yyyy` |
 | <center>5</center> | `Number Issued` | Number of times medication item issued | `integer` |

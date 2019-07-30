@@ -40,7 +40,7 @@ Please note `GET` is used as an example; the actual HTTP method will vary based 
 
 {% include sds_ssp_warning.html %}
 
-As an example, to request a patient's structured record, the following URL would be constructured (HTTP headers and payload are not included):
+As an example, to request a patient's structured record, the following URL would be constructed (HTTP headers and payload are not included):
 
 ```http
 POST https://testspineproxy.nhs.uk/https://pcs.thirdparty.nhs.uk/T99999/STU3/1/Patient/$gpc.getstructuredrecord

@@ -4,16 +4,16 @@ keywords: development
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_api_volume_and_performance.html
-summary: "Details of the API volume and performance characteristics."
+summary: "Details of the API volume and performance characteristics"
 ---
 
 ## Volumetrics ##
 
 {% include important.html content="The fundamental principle of the approach is to flex the parameters and model as we develop, deploy and understand how the NHS are using the service, therefore learnings from the First of Type and Fast Followers are key. We have based usage on population covered by each deployment and some real-world figures around percentage of population in contact with the NHS on a daily basis and then some parameters around how many record reads per encounter. This is all parameter driven so we can adjust the model as we deploy and start to gather actual usage information." %}
 
-{% include download.html content="Draft GP Connect API [Volumetric Model](downloads/testing/HSCIC.GPSOC.GPCONNECT.API.CallUsageModelTotals.xlsx) sent to principle suppliers on the 2nd September 2016." %}
+{% include download.html content="Draft GP Connect API [Volumetric Model](downloads/testing/HSCIC.GPSOC.GPCONNECT.API.CallUsageModelTotals.xlsx) sent to principal suppliers on the 2nd September 2016." %}
 
-Provider systems **MUST NOT** use this volumetric model as a 'gold standard' but **MAY** use it as the basis of developing their own volumetric models.
+Provider systems **MUST NOT** use this volumetric model as a 'gold standard', but **MAY** use it as the basis of developing their own volumetric models.
 
 ### Scalability ###
 
@@ -23,7 +23,7 @@ Provider systems **MUST** through V&P profiling and solution assurance activitie
 
 ### Command APIs ###
 
-A command API is any API which performs a user initiated operation with a side-effect (i.e. booking an appointment, registering a patient etc.). 
+A command API is any API which performs a user-initiated operation with a side-effect (for example, booking an appointment or registering a patient). 
 
 Provider systems **MUST** process command API calls in &lt;250ms.
 
@@ -31,7 +31,7 @@ Provider systems **SHOULD** process command API calls in &lt;100ms, as this is t
 
 ### Query APIs ###
 
-A query API is any API which performs a user initiated retrieval of data without any side-effects (i.e. searching for a patient's medication history).
+A query API is any API which performs a user-initiated retrieval of data without any side-effects (for example, searching for a patient's medication history).
 
 Provider systems **MUST** process query API calls in &lt;3000ms.
 
@@ -42,13 +42,13 @@ Provider systems **SHOULD** process query API calls in &lt;1000ms, as this is th
 Suppliers of Provider solutions are expected to undertake provider led V&P testing of their solutions.  
  
 ### V&P testing model ### 
-Suppliers **MUST** submit for review a high level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
+Suppliers **MUST** submit for review a high-level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
  
-Suppliers' test approaches **SHOULD** include a LOAD and a RAMP test and ideally a SOAK test.  Suppliers **MUST** supply comprehensive results of the test including timings for round trip API call/response against the message sizes used and the tps at the time the request was made.
+Suppliers' test approaches **SHOULD** include a LOAD and a RAMP test and ideally a SOAK test.  Suppliers **MUST** supply comprehensive results of the test including timings for round trip API call/response against the message sizes used and the TPS at the time the request was made.
 
 ### V&P testing infrastructure scaling ###
 
-Predictive models of load have are provided to give an indication of the likely volume and profile of full production roll out.
+Predictive models of load are provided to give an indication of the likely volume and profile of full production roll out.
 
 If suppliers are scaling their infrastructure solution over time (such as during First of Type) then the V&P testing must be performed and submitted for review.
 
@@ -58,11 +58,11 @@ A plan outlining the points at which infrastructure will be scaled up should be 
 
 ### V&P test environment ###
 
-Test environments **MUST** simulate consumer applications making API calls against simulated test data (patient records, diaries, tasks etc) 
+Test environments **MUST** simulate consumer applications making API calls against simulated test data (patient records, diaries, tasks, and so on.) 
  
-Test data **MUST** be populated with realistic complexity, depth and volume, i.e. in the case of patients the data should be representative of clinical records of a mix of healthy patients and patients with multiple long term conditions.  
+Test data **MUST** be populated with realistic complexity, depth and volume. That is, in the case of patients, the data should be representative of clinical records of a mix of healthy patients and patients with multiple long-term conditions.  
 
-If a small set of test data is repeatedly used as part of the V&P tests then test setup **SHOULD** seek to minimise the effects of caching e.g. within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).  
+If a small set of test data is repeatedly used as part of the V&P tests then test setup **SHOULD** seek to minimise the effects of caching - for example, within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).  
  
 ### Volumetric model ###
 

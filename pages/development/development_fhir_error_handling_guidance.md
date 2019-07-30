@@ -36,7 +36,7 @@ Provider systems **MUST** respond by returning one of the following `OperationOu
 
 #### Example 1. Invalid NHS Number supplied #####
 
-For example if an invalid NHS Number value is supplied to the `$gpc.getcarerecord` Operation the following error details would be returned:
+For example, if an invalid NHS Number value is supplied to the `$gpc.getcarerecord` Operation the following error details would be returned:
 
 ```json
 {
@@ -60,7 +60,7 @@ For example if an invalid NHS Number value is supplied to the `$gpc.getcarerecor
 
 #### Example 2. Patient not found #####
 
-For example a valid NHS Number value is supplied to the `$gpc.getcarerecord` Operation but no GP record exists for that patient then the following error details would be returned:
+For example, a valid NHS Number value is supplied to the `$gpc.getcarerecord` Operation but no GP record exists for that patient then the following error details would be returned:
 
 ```json
 {
@@ -93,7 +93,7 @@ Provider systems **MUST** returning one of the following `OperationOutcome` erro
 
 #### Example 3. No patient consent to share #####
 
-For example the patient has requested that their record not be shared via the `$gpc.getcarerecord` Operation then the following error details would be returned:
+For example, the patient has requested that their record not be shared via the `$gpc.getcarerecord` Operation then the following error details would be returned:
 
 ```json
 {
@@ -125,7 +125,7 @@ For example the patient has requested that their record not be shared via the `$
 
 #### Example 4. Invalid reference #####
 
-For example if the RESTful API fails when an invalid organisational reference is supplied, then the following error details would be returned:
+For example, if the RESTful API fails when an invalid organisational reference is supplied, then the following error details would be returned:
 
 ```json
 {
@@ -155,7 +155,7 @@ When the error is **unexpected** and the server can't be more specific on the ex
 | --------- | ---------- | ----------- |
 | `500`     | INTERNAL_SERVER_ERROR | Unexpected internal server error. |
 
-When the FHIR server has received an request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED **SHOULD** be used.
+When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED **SHOULD** be used.
 
 | HTTP Code | Error Code | Description |
 | --------- | ---------- | ----------- |
@@ -165,7 +165,7 @@ When the FHIR server has received an request for an operation or FHIR resource w
 
 #### Example 5. Unexpected exception #####
 
-For example an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
+For example, an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
 
 ```json
  {
@@ -199,7 +199,7 @@ When the server cannot or will not process a request due to an apparent client e
 
 #### Example 6. Malformed request syntax #####
 
-For example if the request could not be understood by the server due to malformed syntax, then the following error details would be returned:
+For example, if the request could not be understood by the server due to malformed syntax, then the following error details would be returned:
 
 ```json
  {
@@ -223,7 +223,7 @@ For example if the request could not be understood by the server due to malforme
 
 ### Spine Security Proxy errors ###
 
-When the spine security proxy cannot or will not process a request then the follwoing errors **MUST** be used to return debug details.
+When the spine security proxy cannot or will not process a request then the following errors **MUST** be used to return debug details.
 
 #### Example 7. Bad Request #####
 

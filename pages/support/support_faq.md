@@ -77,7 +77,7 @@ Extra HTTP headers are needed for sending provenance/audit details. Sending this
 
 As outlined in the FHIR standard there is a clear demarcation between business identifiers (such as NHS number, CHI number etc.) and logical identifiers which are opaque and only guaranteed to be valid on the FHIR server they are served from.
  
-FHIR’s logical ids are strings which meet the following regex [A-Za-z0-9\-\.]{1,64} (in the reference implementations) logical id’s are often the physical record identity (i.e. a database primary key or a document store guid). So whilst technically a vendor could use the NHS number as their logical ids (as it would match the regex above) this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical id from the business id.
+FHIR’s logical ids are strings which meet the following regex [A-Za-z0-9\-\.]{1,64} (in the reference implementations) logical id’s are often the physical record identity (i.e. a database primary key or a document store GUID). So whilst technically a vendor could use the NHS number as their logical ids (as it would match the regex above) this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical id from the business id.
  
 This approach is consistent with the FHIR reference implementations and commercial offerings and is in line with what the wider code4health community is asking for.
 

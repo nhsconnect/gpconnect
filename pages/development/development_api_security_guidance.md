@@ -13,13 +13,13 @@ Provider Systems:
 
 - **MUST** only accept connections from the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP)
 
-- **MUST** authenticate the SSP prior to responding to any requests using it's [client certificate](development_api_security_guidance.html#client-certificates-tlsma)
+- **MUST** authenticate the SSP prior to responding to any requests using its [client certificate](development_api_security_guidance.html#client-certificates-tlsma)
 
 - **MUST** only permit approved [supported ciphers](development_api_security_guidance.html#supported-ciphers) to be utilised
 
 - **MUST** only accept encrypted connections and drop connection attempts presented over insecure protocols
 
-- **MUST** only accept requests for it's allocated ASID, as specified by the `Ssp-To` header,  on it's matching endpoint URL
+- **MUST** only accept requests for its allocated ASID, as specified by the `Ssp-To` header,  on its matching endpoint URL
 
 - **MUST** check that the `Ssp-InteractionID` value is consistent with the endpoint being requested
 

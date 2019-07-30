@@ -18,6 +18,6 @@ summary: "High-level design principles related to the Open API design."
   - for example, to pull bundles of resources without using the full generic querying syntax
 - Uniform Resource Identification (URI) as the resource's [Logical Identity](https://www.hl7.org/fhir/DSTU2/resource.html#id){:target="_blank"}
 - business identifiers (such as NHS Number) used to resolve a resource's [Logical Identity](https://www.hl7.org/fhir/DSTU2/resource.html#id){:target="_blank"}
-- resources represented as either [XML or JSON](https://www.hl7.org/fhir/DSTU2/formats.html#wire){:target="_blank"} as requested by the API consumer.  To ensure maximum accessibility, GP Connect is expecting producers to support both formats.  However since XML is on average 30% larger on the wire there is a preference towards use of JSON. 
+- resources represented as either [XML or JSON](https://www.hl7.org/fhir/DSTU2/formats.html#wire){:target="_blank"} as requested by the API consumer.  To ensure maximum accessibility, GP Connect is expecting producers to support both formats.  However, since XML is on average 30% larger on the wire there is a preference towards use of JSON. 
 - HTML content to utilise XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/DSTU2/narrative.html){:target="_blank"} guidance
 - eTags for [managing version aware updates](https://www.hl7.org/fhir/DSTU2/http.html#concurrency){:target="_blank"}

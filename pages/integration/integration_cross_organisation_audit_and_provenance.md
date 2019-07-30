@@ -10,13 +10,13 @@ div: jwt-page
 
 ## Governance ##
 
-Provider systems **MUST** ensure that access to confidential data, including patient or clinical data, through the API must meet, as a minimum, the same requirements for information governance (IG), authentication and authorisation, and auditing as that of the host system the API exposes.
+Provider systems **MUST** ensure that access to confidential data, including patient or clinical data, through the API meet, as a minimum, the same requirements for information governance (IG), authentication and authorisation, and auditing as that of the host system the API exposes.
 
 ## Audit trail ##
 
-{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework, Provider and Consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' and 'GP Systems Interface Mechanism' requirements." %}
+{% include important.html content="As the GP Connect APIs are commissioned under the GPSoC framework, provider and consumer systems are expected to follow the standard 'IG Requirements for GP Systems V4' and 'GP Systems Interface Mechanism' requirements." %}
 
-For implementers that don't have access to the GPSoC Framework / 'IG Requirements for GP Systems V4' requirements then the following extract of requirements covers the main audit trail requirements:
+For implementers that don't have access to the GPSoC Framework / 'IG Requirements for GP Systems V4' requirements, then the following extract of requirements covers the main audit trail requirements:
 
 - provider systems **MUST** record in an audit trail all access and data changes within the system as a result of API activity in the same way that internal access and changes are required to be recorded
 
@@ -27,7 +27,7 @@ For implementers that don't have access to the GPSoC Framework / 'IG Requirement
 Audit trail records **MUST** include the following minimum information:
 
 - a record of the user identity - this is the User ID, Name, Role profile (including Role and Organisation, URP id when Smartcard authenticated) attribute values, obtained from the user’s Session structure
-- a record of the identify of the authority – the person authorising the entry of or access to data (if different from the user)
+- a record of the identity of the authority – the person authorising the entry of or access to data (if different from the user)
 - the date and time on which the event occurred
 - details of the nature of the audited event and the identity of the associated data (for example patient ID, message ID) of the audited event
 - a sequence number to protect against malicious attempts to subvert the audit trail by, for example, altering the system date
@@ -76,7 +76,7 @@ An example such an HTTP header is given below:
      Authorization: Bearer jwt_token_string
 ```
 
-Provider systems **MUST** respond to oAuth Bearer Token errors inline with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
+Provider systems **MUST** respond to oAuth Bearer Token errors in line with [RFC 6750 - section 3.1](https://tools.ietf.org/html/rfc6750#section-3.1).
 It is highly recommended that standard libraries are used for creating the JWT as constructing and encoding the token manually may lead to issues with parsing the token. A good source of information about JWT and libraries to use can be found on the [JWT.io site](https://jwt.io/).
 
 
@@ -350,7 +350,7 @@ The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/
   - `system` containing `http://fhir.nhs.net/ValueSet/sds-job-role-name-1`
   - `value` containing the SDS Job Role ID from the user's NHS smartcard, or the value `UNK` if the user is not logged with an NHS smartcard
 
-{% include important.html content= "the `Practitioner` resource **MUST** contain an identifier with the system `http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was a error during testing and assurance which resulted in the providers validating that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included." %}
+{% include important.html content= "the `Practitioner` resource **MUST** contain an identifier with the system `http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was an error during testing and assurance which resulted in the providers validating that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included." %}
 
 <div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Providers should be aware of variance in the population of certain fields amongst existing consumer systems when reading this claim, specifically, the following are not always present: <ul><li> local user <code class="highlighter-rouge">identifier</code> </li><li> the <code class="highlighter-rouge">practitionerRole</code> </li></ul></div>
  

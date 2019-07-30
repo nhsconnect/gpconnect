@@ -36,8 +36,8 @@ Only one consumer system per organisation is supported currently (as of March 20
 
 Examples:
 
-- An urgent care centre with an Access Record HTML consumer system, and a separate Appointments consumer system
-- A GP practice using a GP system with GP Connect enabled as provider and consumer, and a separate regional portal system with access to Access Record HTML as a consumer
+- an urgent care centre with an Access Record HTML consumer system, and a separate Appointments consumer system
+- a GP practice using a GP system with GP Connect enabled as provider and consumer, and a separate regional portal system with access to Access Record HTML as a consumer
 
 {% include important.html content="**Distinguishing provider and consumer SDS records**<br/>
 Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on their SDS MHS record; consumers do not.  This distinction enables the [SDS queries](integration_spine_directory_service.html) to look up a GP Connect provider endpoint to function correctly." %}
@@ -46,7 +46,7 @@ Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on
 
 ## 2. Consumer specific SDS requirements ##
 
-{% include important.html content="If a system is both a consumer and provider (e.g. a GP principal system), please refer to [Provider requirements below](#3-provider-specific-sds-requirements) instead" %}
+{% include important.html content="If a system is both a consumer and provider (for example, a GP principal system), please refer to [Provider requirements below](#3-provider-specific-sds-requirements) instead" %}
 
 ### 2.1 Use separate MHS and AS endpoint records; not CMA style endpoints ###
 
@@ -62,7 +62,7 @@ GP Connect [interaction IDs](integration_interaction_ids.html) on an MHS record 
 
 Consumer systems MAY use a single GP Connect Party Key for multiple organisations, if they connect to Spine via a single shared message handling server.
 
-However, as per [1.1 Unique ASID per system used by an organisation](#11-unique-asid-per-system-used-by-an-organisation) each consumer organisation **MUST** have it's own unique ASID.
+However, as per [1.1 Unique ASID per system used by an organisation](#11-unique-asid-per-system-used-by-an-organisation) each consumer organisation **MUST** have its own unique ASID.
 
 Please see [System topologies](integration_system_topologies.html) for more information.
 

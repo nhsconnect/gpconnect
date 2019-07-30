@@ -105,7 +105,7 @@ Details of these profiles can be found here in the [DMS bundle](https://data.dev
 
 Consumer systems **MUST** compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
 
-If differences exist then the consumer system **MUST** show an alert/warning and provide details of which fields/values are different between the two systems.
+If differences exist, then the consumer system **MUST** show an alert/warning and provide details of which fields/values are different between the two systems.
 
 The following data **MUST** be cross checked between consumer and returned provider data. Any differences between these fields **MUST** be brought to the attention of the user.   
 

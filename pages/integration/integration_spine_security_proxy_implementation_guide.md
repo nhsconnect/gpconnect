@@ -4,7 +4,7 @@ keywords: spine, proxy, ssp, security
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_spine_security_proxy_implementation_guide.html
-summary: "Technical specification for the Spine Security Proxy (SSP)."
+summary: "Technical specification for the Spine Security Proxy (SSP)"
 ---
 
 ## Spine Security Proxy (SSP) implementation guide ##
@@ -48,7 +48,7 @@ At a high-level the proxy operates as a content agnostic mediator allowing autho
 
 In the First of Type (FoT) instantiation of this system architecture provider systems will be GP principal IT systems from vendors such as (EMIS, TPP, INPS and Microtest), consumer are expected to be a mix of GP principal IT systems and other IT systems. 
 
-As a guiding design principle the Spine Security Proxy (SSP) **MUST** NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it **MAY** block consumer communications on security grounds (i.e. a consumer attempting to access a provider for which it doesn’t have permission).
+As a guiding design principle the Spine Security Proxy (SSP) **MUST** NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant backend API services. However, it **MAY** block consumer communications on security grounds (for example, a consumer attempting to access a provider for which it doesn’t have permission).
 
 <sup>1</sup> consumer applications for FoT are currently expected to be able to populate a small number of additional Spine HTTP headers.
 
@@ -60,7 +60,7 @@ Introducing the Spine Security Proxy (SSP) has the following advantages:
 - removes the need for distributed PKI infrastructure; by allowing endpoints to simply trust the spine PKI certificates
 - will provide essential diagnostic information about the movement of data with-in the NHS
 - will enable tracking of performance across the system
-- will provide a level of protection to provider systems from numerous potential issues (i.e. Distributed Denial of Service attacks)
+- will provide a level of protection to provider systems from numerous potential issues (for example, Distributed Denial of Service attacks)
 - will provide a central point to enable transaction based payments to data providers to be calculated
 
 ### Operating principle ###
@@ -73,7 +73,7 @@ Servicing a consumer system’s request for a FHIR endpoint located on a provide
 |------|-------------|--------|----------------------|
 | 1.   | Retrieve patient demographics and NHS number. | PDS or FHIR SMSP | The consumer system **MUST** have performed a PDS or SMSP trace prior to interaction with the proxy.<sup>1</sup><br/><br/>OR (when available^) The consumer system **MUST** perform a FHIR SMSP RESTful trace query prior to interaction with the proxy. |
 | 2.   | Locate the organisation that holds the patient’s GP care record. | PDS or FHIR RLS | The consumer system **MUST** use GP organisation details previously retrieved from PDS. <br/><br/>OR (when available^) The consumer system **MUST** use GP organisation details retrieved from the FHIR RLS. |
-| 3.   | Lookup what capabilities exist at that organisation to support access to the record. | | SDS or FHIR ELS | 3a) The consumer system **MUST** resolve the endpoint of the provider system using an organisational identifier (i.e. ODS code) against SDS. <br/><br/>OR (when available^) 3b) The proxy system **MUST** resolve the endpoint of the provider system using a consumer system supplied identifier (i.e. patient NHS number). <br/><br/>OR (when available^) The consumer system **MUST** resolve the endpoint of the provider system using a FHIR ELS RESTful query. |
+| 3.   | Lookup what capabilities exist at that organisation to support access to the record. | | SDS or FHIR ELS | 3a) The consumer system **MUST** resolve the endpoint of the provider system using an organisational identifier (for example, ODS code) against SDS. <br/><br/>OR (when available^) 3b) The proxy system **MUST** resolve the endpoint of the provider system using a consumer system supplied identifier (for example, patient NHS Number). <br/><br/>OR (when available^) The consumer system **MUST** resolve the endpoint of the provider system using a FHIR ELS RESTful query. |
 | 4.   | Consumer requests the record. | SSP | The consumer system **MUST** build a request URL using the proxy endpoint and either the endpoint of the provider <br/><br/>OR (when available^) the NHS number of the patient<sup>2</sup>. <br/><br/>The consumer system **MUST** issue the request to the proxy system over a secure channel. |
 | 5.   | Lookup the patient’s sharing preferences. | PPR | Out of scope for GP Connect FoT. |
 | 6.   | Lookup organisational data sharing. | DSAR | Interim solution as part of SSP.  Strategic solution out of scope for GP Connect FoT. |
@@ -83,7 +83,7 @@ Servicing a consumer system’s request for a FHIR endpoint located on a provide
 <sup>1</sup> this look-up is to ensure the NHS Number is of good quality in the consumer system and is not required prior to each API operation
 <sup>2</sup> will be limited to the $gpc.getcarerecord interaction
 
-> Note: whilst composite routing services inside the proxy (i.e. Step 3b) is under consideration this is not in-scope for Connect FoT.
+> Note: whilst composite routing services inside the proxy (that is, Step 3b) is under consideration this is not in-scope for Connect FoT.
 
 It is expected that for phase 1 delivery a number of supporting systems won’t be available, namely:
 
@@ -135,7 +135,7 @@ As such it is planned that the following mitigations will be implemented as part
 - addition of a HTTP authorization header of the type Bearer including the JWT
 - issuing FHIR conformant API requests using HTTPS to the proxy system
 - validation and consumption of FHIR resources returned from the provider system
-- graceful handling of failed/rejected requests (i.e. `4xx` and `5xx` HTTP error codes)
+- graceful handling of failed/rejected requests (for example, `4xx` and `5xx` HTTP error codes)
 - graceful handling of transient error conditions
 	- for example, incorporation of a back-off strategy and maximum number of 3 automated retries
 
@@ -207,7 +207,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 - End-to-End encryption of all traffic between systems.
 - Transparent retrieval of HTTPS resources from provider systems.
 - Performant retrieval of HTTPS resources.
-- Audit & transaction logging to existing Spine centralised audit logging infrastructure (i.e. Splunk). 
+- Audit & transaction logging to existing Spine centralised audit logging infrastructure (for example, Splunk). 
 - Reporting of volumetric and performance statistics to allow activity based remuneration back to the supplying vendor of the provider system(s).
 
 ### Out of scope for FoT ###
@@ -246,7 +246,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `PUT`
 	- `DELETE`^
 	- `PATCH`^ (which is expected in a future FHIR release)
-	- `OPTION`^ (which is used in FHIR to retrieve the servers conformance statement)
+	- `OPTION`^ (which is used in FHIR to retrieve the server's conformance statement)
  **^** HTTP verbs will be made available after the initial GP Connect FoT go-live.
 - Request and response HTTP payloads **MUST** NOT be modified, as this would require the proxy to have detained knowledge of payload structure and transport encoding. Furthermore, payload modification may introduce problems with asserting digital signatures/payload provenance in the future.
 - Request and response HTTP headers **MUST** NOT be modified.
