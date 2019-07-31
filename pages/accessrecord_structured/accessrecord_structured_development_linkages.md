@@ -55,7 +55,7 @@ For each Consultation item returned, include the following FHIR profiles:
 Where a consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html)
 
 
-Clinical items within the consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a consultation that contains a medication but not explicitly request mediations in the query, the provider will still include the medication contained in the consultation as part of its response.
+Clinical items within the consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a consultation that contains a medication but not explicitly request medications in the query, the provider will still include the medication contained in the consultation as part of its response.
 
 <img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
@@ -78,7 +78,7 @@ From each Problem item returned, include the following FHIR profiles:
 Where a consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html)
 
 
-Clinical items linked to the problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a problem that links to a medication but not explicitly request mediations in the query, the provider will still include the Medication linked to the problem as part of its response.
+Clinical items linked to the problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a problem that links to a medication but not explicitly request medications in the query, the provider will still include the Medication linked to the problem as part of its response.
 
 <img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
@@ -152,7 +152,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * The provider system returns all items whose asserted date is within the start and end date (inclusive)
      * Where no start date is supplied the search goes from the start of patient record
      * Where no end date is supplied the search goes to the end of patient record
-     * Where no dates are supplied by the consumer, all uncategorised data are returned.
+     * Where no dates are supplied by the consumer, all uncategorised data items are returned.
 
 #### Consultations ####
 
@@ -168,9 +168,9 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 * Where both filters are supplied by the consumer, all the consultations that match either of the filters are returned.
 * If no filters are supplied by the consumer, all consultations are returned.
 
-#### Allergies ####
+#### Immunisations ####
 
-* All allergies will always be returned.
+* All immunisations will always be returned.
 
 ### Following a linkage ###
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
