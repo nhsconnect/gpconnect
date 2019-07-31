@@ -117,7 +117,7 @@ Reference to Patient resource representing the Patient against whom the data was
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
-    <td><b>Optionality:</b> Optional</td>
+    <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
@@ -129,7 +129,7 @@ Optional reference to the Encounter resource representing the consultation conte
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>DateTime</code></td>
-    <td><b>Optionality:</b> Optional</td>
+    <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
@@ -220,13 +220,13 @@ The reference range provides a guide for interpretation of the results.
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Reference to the test group header observation if the result is part of a test group.
+Reference to any related observations.
 
-This **MUST** be qualified using the related.type 'derived-from'.
+This **MUST** be qualified using the related.type 'sequel-to'.
 
 ### component ###
 
