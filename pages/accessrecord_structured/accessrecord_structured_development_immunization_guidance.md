@@ -7,11 +7,21 @@ permalink: accessrecord_structured_development_immunization_guidance.html
 summary: "FHIR&reg; resource Immunization"
 ---
 
-## What is an immunisation?
+## What is immunisation?
 
-An immunisation is the event of a patient being administered a vaccination. This may be a contemporaneous record by the clinician administering the vaccination (or by another member of the practice staff recording the event directly on behalf of the clinician) or it may be a record of an immunisation administered elsewhere as reported to the registered GP practice by the patient, a carer, guardian or other representative of the patient or another healthcare provider.
+Immunisation, is the process by which an individual's immune system becomes fortified against an agent (known as the immunogen).
 
-Immunisation may be given as part of a scheduled programme of immunisations such as childhood immunisations, seasonal influenza vaccination or in response to specific circumstances (for example, prior to travel, disease outbreak or occupational risk).
+When this system is exposed to molecules that are foreign to the body, called non-self, it will orchestrate an immune response, and it will also develop the ability to quickly respond to a subsequent encounter because of immunological memory. This is a function of the adaptive immune system. Therefore, by exposing an animal to an immunogen in a controlled way, its body can learn to protect itself: this is called active immunisation.
+
+## What is a vaccination?
+
+Vaccination is the administration of a vaccine to help the immune system develop protection from a disease. Vaccines contain a microorganism or virus in a weakened or killed state, or proteins or toxins from the organism. In stimulating the body's adaptive immunity, they help prevent sickness from an infectious disease. When a sufficiently large percentage of a population has been vaccinated, herd immunity results. The effectiveness of vaccination has been widely studied and verified.[1][2][3] Vaccination is the most effective method of preventing infectious diseases;[4] widespread immunity due to vaccination is largely responsible for the worldwide eradication of smallpox and the elimination of diseases such as polio and tetanus from much of the world.
+
+## What immunisation data is GP Connect sending
+
+In GP Connect what is sent in the immunization resource is the event of a patient being administered a vaccination. This may be a contemporaneous record by the clinician administering the vaccination (or by another member of the practice staff recording the event directly on behalf of the clinician) or it may be a record of an immunisation administered elsewhere as reported to the registered GP practice by the patient, a carer, guardian or other representative of the patient or another healthcare provider.
+
+A record of an immunisation may be created as part of a scheduled programme of immunisations such as childhood immunisations, seasonal influenza vaccination or in response to specific circumstances (for example, prior to travel, disease outbreak or occupational risk).
 
 ## Using the procedure code
 
