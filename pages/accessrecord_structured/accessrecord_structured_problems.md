@@ -274,11 +274,11 @@ Reference to the resource for the practitioner who recorded the problem.
 Notes about the problem.
 
 <br>
-## Elements **not in use** ##
+<h2 style="color:#ED1951;"> Condition elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
 
-### severity ###
+<h3 style="color:#ED1951;"> severity </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -286,7 +286,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### verificationStatus ###
+<h3 style="color:#ED1951;"> verificationStatus </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -294,7 +294,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### bodysite ###
+<h3 style="color:#ED1951;"> bodysite </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -302,7 +302,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### stage ###
+<h3 style="color:#ED1951;"> stage </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -310,7 +310,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### evidence ###
+<h3 style="color:#ED1951;"> evidence </h3>
 
 <table class='resource-attributes'>
   <tr>

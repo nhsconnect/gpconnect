@@ -243,11 +243,11 @@ The only type of data that **MAY** use the component element is when a blood pre
 
 <br>
 
-## Elements **not in use** ##
+<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
 
-### basedOn ###
+<h3 style="color:#ED1951;"> basedOn </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -255,7 +255,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### interpretation ###
+<h3 style="color:#ED1951;"> interpretation </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -263,7 +263,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### bodysite ###
+<h3 style="color:#ED1951;"> bodysite </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -271,7 +271,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### method ###
+<h3 style="color:#ED1951;"> method </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -279,7 +279,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### specimen ###
+<h3 style="color:#ED1951;"> specimen </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -287,7 +287,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### device ###
+<h3 style="color:#ED1951;"> device </h3>
 
 <table class='resource-attributes'>
   <tr>

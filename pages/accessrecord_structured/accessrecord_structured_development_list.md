@@ -121,7 +121,7 @@ There are currently 6 possible purposes of a list in response to a query for a c
 5. Consultation - 325851000000107
 6. Problems - 	717711000000103
 
-The above code for 'Ended allergies' should be used for resolved allergies. 
+The above code for 'Ended allergies' should be used for resolved allergies.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
@@ -217,11 +217,11 @@ Why the list is empty.
 
 A FHIR code of `No Content Recorded` **SHALL** be used if a query returns no results to enter into a list. In this case, the 'note' field **SHALL** be populated with the text 'Information not available'.
 
-## List elements not in use ##
+<h2 style="color:#ED1951;"> List elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
 
-### id ###
+<h3 style="color:#ED1951;"> id </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -229,7 +229,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.versionId ###
+<h3 style="color:#ED1951;"> meta.versionId </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -237,7 +237,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.lastUpdated ###
+<h3 style="color:#ED1951;"> meta.lastUpdated </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -245,7 +245,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### Source ###
+<h3 style="color:#ED1951;"> Source </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -253,11 +253,10 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### orderedBy ###
+<h3 style="color:#ED1951;"> orderedBy </h3>
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
-
