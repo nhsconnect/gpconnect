@@ -495,11 +495,11 @@ References prior prescription authorisation.
 
 May be used, for example, to reference prior authorisation where prescription is re-authorised or where amendments have been made. May reference the previous authorisation before the amendment.
 
-## MedicationRequest elements not in use ##
+<h2 style="color:#ED1951;"> MedicationRequest elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
 
-### meta.versionId ###
+<h3 style="color:#ED1951;"> meta.versionId </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -507,7 +507,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### meta.lastUpdated ###
+<h3 style="color:#ED1951;"> meta.lastUpdated </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -515,7 +515,7 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-### definition ###
+<h3 style="color:#ED1951;"> definition </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -525,7 +525,7 @@ The following elements **MUST NOT** be populated:
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### category ###
+<h3 style="color:#ED1951;"> category </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -535,7 +535,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### priority ###
+<h3 style="color:#ED1951;"> priority </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -545,7 +545,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### supportingInformation ###
+<h3 style="color:#ED1951;"> supportingInformation </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -555,7 +555,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### reasonCode ###
+<h3 style="color:#ED1951;"> reasonCode </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -565,7 +565,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This information is available via linking to a Problem record.
 
-### reasonReference ###
+<h3 style="color:#ED1951;"> reasonReference </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -575,7 +575,7 @@ This information is available via linking to a Problem record.
 
 This information is available via linking to a Problem record.
 
-### substitution ###
+<h3 style="color:#ED1951;"> substitution </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -585,7 +585,7 @@ This information is available via linking to a Problem record.
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### detectedIssue ###
+<h3 style="color:#ED1951;"> detectedIssue </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -595,7 +595,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### eventHistory ###
+<h3 style="color:#ED1951;"> eventHistory </h3>
 
 <table class='resource-attributes'>
   <tr>

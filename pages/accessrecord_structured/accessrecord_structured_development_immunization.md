@@ -420,11 +420,11 @@ The disease or diseases the patient is being immunised against.
 
 Fixed value <code>count</code>
 
-## Elements **not in use**
+<h2 style="color:#ED1951;"> Immunization elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
 
-### explanation.reasonNotGiven
+<h3 style="color:#ED1951;"> explanation.reasonNotGiven </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -435,7 +435,7 @@ The following elements **MUST NOT** be populated:
 Only Immunizations where <code>notGiven</code> is set to <code>false</code> are to be sent using the Immunization profile.
 This means that there will never be cause to use <code>reasonNotGiven</code>.
 
-### reaction
+<h3 style="color:#ED1951;"> reaction </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -445,7 +445,7 @@ This means that there will never be cause to use <code>reasonNotGiven</code>.
 
 Any reaction to an immunization **MUST** be sent separately in an <code>AllergyIntolerance</code> resource.
 
-### vaccinationProtocol.authority
+<h3 style="color:#ED1951;"> vaccinationProtocol.authority </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -453,7 +453,7 @@ Any reaction to an immunization **MUST** be sent separately in an <code>AllergyI
   </tr>
 </table>
 
-### vaccinationProtocol.series
+<h3 style="color:#ED1951;"> vaccinationProtocol.series </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -461,7 +461,7 @@ Any reaction to an immunization **MUST** be sent separately in an <code>AllergyI
   </tr>
 </table>
 
-### vaccinationProtocol.doseStatusReason
+<h3 style="color:#ED1951;"> vaccinationProtocol.doseStatusReason </h3>
 
 <table class='resource-attributes'>
   <tr>
