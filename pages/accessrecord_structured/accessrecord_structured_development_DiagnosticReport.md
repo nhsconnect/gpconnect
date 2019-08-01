@@ -209,11 +209,11 @@ Clinical Interpretation of test results in a text format and notes written by pe
 For clarity notes may be captured at a number of levels within a DiagnosticReport. There may also be notes related to the specimen, test group header or individual test result. It is the consuming systems responsibility to make sure all relevant notes are displayed to the user.
 
 <br>
-## Elements **not in use** ##
+<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
 
-### effective ###
+<h3 style="color:#ED1951;"> effective </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -223,7 +223,7 @@ The following elements **MUST NOT** be populated:
 
 Out of scope for the current iteration.
 
-### context ###
+<h3 style="color:#ED1951;"> context </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -234,7 +234,7 @@ Out of scope for the current iteration.
 Out of scope for the current iteration.
 
 
-### imagingStudy ###
+<h3 style="color:#ED1951;"> imagingStudy </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -244,7 +244,7 @@ Out of scope for the current iteration.
 
 Out of scope for the current iteration.
 
-### image ###
+<h3 style="color:#ED1951;"> image </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -254,7 +254,7 @@ Out of scope for the current iteration.
 
 Out of scope for the current iteration.
 
-### presentedForm ###
+<h3 style="color:#ED1951;"> presentedForm </h3>
 
 <table class='resource-attributes'>
   <tr>

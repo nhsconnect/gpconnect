@@ -299,11 +299,11 @@ Fixed value of **24781000000107 |Category (EHR) (record artifact)|**
 
 Each <code>entry.item</code> is a reference to a resource representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
 
-## List elements **not in use**
+<h2 style="color:#ED1951;"> List elements <b>not in use</b></h2>
 
 The following elements **SHALL NOT** be populated:
 
-### source
+<h3 style="color:#ED1951;"> source </h3>
 
 <table class='resource-attributes'>
         <tr>
@@ -311,7 +311,7 @@ The following elements **SHALL NOT** be populated:
         </tr>
 </table>
 
-### note
+<h3 style="color:#ED1951;"> note </h3>
 
 <table class='resource-attributes'>
         <tr>
@@ -319,7 +319,7 @@ The following elements **SHALL NOT** be populated:
         </tr>
 </table>
 
-### entry.flag
+<h3 style="color:#ED1951;"> entry.flag </h3>
 
 <table class='resource-attributes'>
         <tr>
@@ -327,7 +327,7 @@ The following elements **SHALL NOT** be populated:
         </tr>
 </table>
 
-### entry.deleted
+<h3 style="color:#ED1951;"> entry.deleted </h3>
 
 <table class='resource-attributes'>
         <tr>
@@ -335,7 +335,7 @@ The following elements **SHALL NOT** be populated:
         </tr>
 </table>
 
-### entry.date
+<h3 style="color:#ED1951;"> entry.date </h3>
 
 <table class='resource-attributes'>
         <tr>

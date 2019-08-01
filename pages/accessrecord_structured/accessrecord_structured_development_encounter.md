@@ -191,11 +191,11 @@ References an instance of the Location resource that provides more detail on whe
 
 Reference to the responsible organisation for the consultation/encounter.
 
-## Elements not used by GP Connect ##
+<h2 style="color:#ED1951;"> Encounter elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated.
 
-### statusHistory ###
+<h3 style="color:#ED1951;"> statusHistory </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -205,7 +205,7 @@ The following elements **SHALL NOT** be populated.
 
 Not used.
 
-### class ###
+<h3 style="color:#ED1951;"> class </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -215,7 +215,7 @@ Not used.
 
 Not used.
 
-### classHistory ###
+<h3 style="color:#ED1951;"> classHistory </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -225,7 +225,7 @@ Not used.
 
 Not used.
 
-### priority ###
+<h3 style="color:#ED1951;"> priority </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -235,7 +235,7 @@ Not used.
 
 Not used.
 
-### episodeOfCare ###
+<h3 style="color:#ED1951;"> episodeOfCare </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -245,7 +245,7 @@ Not used.
 
 The current scope of GP Connect excludes the episode of care resource.
 
-### incomingReferral ###
+<h3 style="color:#ED1951;"> incomingReferral </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -255,7 +255,7 @@ The current scope of GP Connect excludes the episode of care resource.
 
 The current scope of GP Connect excludes inbound referrals.
 
-### reason ###
+<h3 style="color:#ED1951;"> reason </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -265,7 +265,7 @@ The current scope of GP Connect excludes inbound referrals.
 
 The reason for the consultation will be associated to the <code>appointment</code>.
 
-### diagnosis ###
+<h3 style="color:#ED1951;"> diagnosis </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -275,7 +275,7 @@ The reason for the consultation will be associated to the <code>appointment</cod
 
 The diagnosis will be associated to the consultation via the <code>list</code> resource.
 
-### account ###
+<h3 style="color:#ED1951;"> account </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -285,7 +285,7 @@ The diagnosis will be associated to the consultation via the <code>list</code> r
 
 Not used.
 
-### hospitalization ###
+<h3 style="color:#ED1951;"> hospitalization </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -295,7 +295,7 @@ Not used.
 
 Not used.
 
-### partOf ###
+<h3 style="color:#ED1951;"> partOf </h3>
 
 <table class='resource-attributes'>
   <tr>

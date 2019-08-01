@@ -74,11 +74,11 @@ See below for subelements of this BackboneElement.
 
 A Resource carried within the Bundle.  This can any type of resource, for example Patient, Organization, AllergyIntolerance.
 
-## Bundle elements not in use ##
+<h2 style="color:#ED1951;"> Bundle elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
 
-### id ###
+<h3 style="color:#ED1951;"> id </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -86,7 +86,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.versionId ###
+<h3 style="color:#ED1951;"> meta.versionId </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -94,7 +94,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.lastUpdated ###
+<h3 style="color:#ED1951;"> meta.lastUpdated </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -102,7 +102,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### entry.fullUrl ###
+<h3 style="color:#ED1951;"> entry.fullUrl </h3>
 
 <table class='resource-attributes'>
   <tr>
