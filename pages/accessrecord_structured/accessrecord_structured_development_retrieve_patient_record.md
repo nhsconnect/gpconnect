@@ -190,8 +190,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        <p>Restrict the problems that are returned by their clinical status. </p>
-        <p>Valueset: <a href="http://hl7.org/fhir/stu3/valueset-condition-clinical.html">http://hl7.org/fhir/stu3/valueset-condition-clinical.html</a> Values <b>MUST</b> be <code>`active`</code> or <code>`inactive`</code></p>
+        Restrict the problems that are returned by their clinical status. <br/>
+        Valueset: <a href="http://hl7.org/fhir/stu3/valueset-condition-clinical.html">http://hl7.org/fhir/stu3/valueset-condition-clinical.html</a> Values <b>MUST</b> be <code>`active`</code> or <code>`inactive`</code><br/>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
       </td>
     </tr>
@@ -201,8 +201,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        <p>Restrict the problems that are returned by their clinical significance</p>
-        <p>Valueset: <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ProblemSignificance-1">ValueSet-CareConnect-ProblemSignificance-1</a></p>
+        Restrict the problems that are returned by their clinical significance<br/>
+        Valueset: <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ProblemSignificance-1">ValueSet-CareConnect-ProblemSignificance-1</a><br/>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
       </td>
     </tr>
