@@ -42,9 +42,9 @@ For GP Connect, a consultation is the structure within which source systems grou
 
 Consultations follow a common logical structure.
 
--   Context / Metadata
+-   Context 
 
-    Each consultation has a set of metadata that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor). This is most generated automatically by the provider system but it may have been manually updated.
+    Each consultation has context data that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor). This information is usually generated automatically by the provider system but it may include some manually recorded values.
 
 -   Topics
 
@@ -115,7 +115,7 @@ While there are differences between the two outputs, the consultation notes can 
 
 ## Clinical item references ##
 
-When a clinical item is linked to the consultation a reference to its FHIR® resource is held in entry.item field of the appropriate list resource.
+When a clinical item is linked to the consultation a reference to its FHIR® resource is held in the entry.item field of the appropriate list resource.
 
 When linking to a clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below.
 
