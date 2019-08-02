@@ -7,7 +7,7 @@ permalink: accessrecord_structured_development_linkages.html
 summary: "Introduction to linkages between data items in GP Connect"
 ---
 ## Linkages ##
-The purpose in developing the FHIR&reg; profiles is to ensure that clinical data is, as much as possible, presented the same way regardless of the provider system. This ensures the consuming system (and clinician) will always know where to look for each type of information.
+One of the purposes in developing the FHIR&reg; profiles is to ensure that clinical data is, as much as possible, presented the same way regardless of the provider system. This ensures the consuming system (and clinician) will always know where to look for each type of information.
 
 However, information about the patient is not just held within the profiles but in how those profiles are linked together. 
 
