@@ -25,7 +25,7 @@ The volume of this categorisation varies between provider systems. For the major
 * Problem
 * Referral
 * Test Request
-* Test Result
+* Investigation
 
 ## What is uncategorised data? ##
 There is data that a clinician/user will enter without identifying what type of information they are recorded. This information is usually entered as either free text or a combination of clinical code(s), values, qualifiers and text.
@@ -34,12 +34,6 @@ For example:
 * the clinician records the patient’s resting pulse by recording the resting pulse clinical code followed by a value of the patient’s pulse.
 * the clinician records that a patient has a sore throat by recording the sore throat clinical code
 * the clinician records that a patient reports being irritable with their family as a piece of free text
-
-For the majority of provider systems, the following types of information are not explicitly categorised when they are recorded:
-* Condition
-* Family History
-* Observation
-* Procedure
 
 Consideration was given to attempting to categorise data using the recorded clinical codes. It was decided not to progress this based on a clinical review of its risks and benefits.
 
