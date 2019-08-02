@@ -135,7 +135,7 @@ Fixed value of <code>false</code>.
 
 Vaccine product administered.
 
-Where the vaccine product that was administered is not known then one of the null values defined in the profile **MUST** be populated.
+Where the vaccine product that was administered is not known then one of the null flavour values defined in the profile **MUST** be populated.
 
 ### patient
 
@@ -174,7 +174,7 @@ As per base profile guidance.
   </tr>
 </table>
 
-The dateTime when the immunization was administered.
+The date (and time if applicable) when the immunization was administered.
 If the immunisation was administered elsewhere, this may be an estimated date.
 
 ### primarySource
@@ -187,9 +187,12 @@ If the immunisation was administered elsewhere, this may be an estimated date.
   </tr>
 </table>
 
-Default value of <code>true</code> for all profiles created from the Care Connect Immunization profiles.
+This indicates whether the record is based on information from the person who administered the vaccine.
 
-Indicates the context that the data was recorded in.
+This **MUST** be <code>true</code> where the immunisation record was recorded by the person who administered the vaccine or directly on behalf of the administrator of the vaccine (this includes recording the immunisation based on a complete, original, verifiable document from the administration of the vaccine).
+This **MUST** be <code>false</code> where it a secondary report of a vaccination for example the recollection of the patient, the patient's parent, carer or guardian or a secondary document. 
+As this relates to the context of the original source of the immunisation record, a record from a GP2GP transfer is still a primary record if it was originally recorded as primary.
+If it is not known whether the record of the vaccination was made from a primary or secondary source, then return the default value of <code>true</code>.
 
 ### reportOrigin
 
@@ -201,7 +204,12 @@ Indicates the context that the data was recorded in.
   </tr>
 </table>
 
-Indicates the source of a secondary reported record.
+This indicates the source of a secondary reported record.
+
+This provides additional context to the source of the immunisation record where it is not based on information from the person who administered the vaccine.
+This can be absent if the record is known not to be the primary source, but the origin of the record is otherwise not recorded / unknown.
+
+This **MUST NOT** be included where <code>primarySource</code> is <code>true</code>.
 
 ### location
 
