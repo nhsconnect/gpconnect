@@ -94,7 +94,7 @@ Must be populated if the `clinicalStatus` is set to `resolved`.
   </tr>
 </table>
 
-The reason why the allergy or intolerance has been resolved. In exceptional cases where for legacy data there is no endReason recorder in the system then this MUST be populated with the text 'No information available'.
+The reason why the allergy or intolerance has been resolved. In exceptional cases where for legacy data there is no endReason recorder in the system then this **MUST** be populated with the text 'No information available'.
 
 ### extension[evidence] ###
 
@@ -113,18 +113,18 @@ Reference to confirmatory diagnostic report - for example, pathology RAST test r
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatroy</td>
+    <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which MUST be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This **MUST** be a GUID.
 
-*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn't change between requests and therefore stored with the source data).
+*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
