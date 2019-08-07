@@ -116,7 +116,7 @@ References to consultations are not held in this field. They are held in the con
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code> codableConcept</code></td>
+    <td><b>Data type:</b><code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -161,7 +161,7 @@ All problems **MUST** have a clinicalStatus of <code>active</code> or <code>inac
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -173,7 +173,7 @@ Fixed value of <code>problem-list-item</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
