@@ -14,7 +14,7 @@ JSON is supported by all four GP Principal Clinical System (PCS) suppliers which
  
 XML is currently supported by three of the four GP PCS suppliers (Vision, Microtest and EMIS). If you have a strong preference to work with XML and will be using GP Connect to interoperate with specific GP PCS suppliers that support XML, then this may be a suitable choice.
  
-NHS Digital are investigating ways to bring XML support across all four GP PCS suppliers, however at the current time our recommendation is to use JSON.
+NHS Digital is investigating ways to bring XML support across all four GP PCS suppliers. However, at the current time our recommendation is to use JSON.
 
 For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/STU3/downloads.html) simplify the process of producing FHIR in JSON.
 
@@ -25,18 +25,18 @@ We're keen to deliver something that we can work with in an open and collaborati
 This has meant that for 'first of type' we've made use of capabilities and governance from other central services such as:
 
 - [PDS](https://digital.nhs.uk/Demographics) using either a PDS compliant system or [Spine Mini Service](https://digital.nhs.uk/spine/sms)
-- [SDS](integration_spine_directory_service.html) for end point lookup
+- [SDS](integration_spine_directory_service.html) for endpoint lookup
 
 This can be understandable frustrating as a consumer that does not already have access to these pre-requisites so we're currently working to wrap these capabilities within a FHIR and RESTful interfaces.
 
-## It is not clear which parts of the FHIR standard are not in scope for the GP Connect programme. ##
+## It is not clear which parts of the FHIR&reg; standard are not in scope for the GP Connect programme. ##
 
 Please refer to the [FHIR Out Of Scope](development_fhir_api_guidance.html#fhir-out-of-scope) section for details on what parts of the FHIR standard are currently considered out of scope.
 
 ## Why does the specification include CRUD interactions especially DELETE when not needed? ##
 
-The [Delete Resource](development_fhir_api_guidance.html#delete-resourcehttpswwwhl7orgfhirdstu2httphtmldelete) section is included for completeness to illustrate how a RESTful API (such as FHIR) is designed to support the basic Create, Update and Delete (CRUD) operations. It is made clear in this section that GP Connect FoT clients and servers are not expected to implement this operation at this stage but shouldn’t make implementation decisions that preclude the use of the DELETE HTTP verb in the future.
-It may be the case that the DELETE verb is used in future incarnations of GP Connect.  However the effect of these on the target systems may be a “soft” delete.
+The [Delete Resource](development_fhir_api_guidance.html#delete-resourcehttpswwwhl7orgfhirdstu2httphtmldelete) section is included for completeness to illustrate how a RESTful API (such as FHIR) is designed to support the basic Create, Update and Delete (CRUD) operations. It is made clear in this section that GP Connect FoT clients and servers are not expected to implement this operation at this stage, but shouldn’t make implementation decisions that preclude the use of the DELETE HTTP verb in the future.
+It may be the case that the DELETE verb is used in future incarnations of GP Connect.  However, the effect of these on the target systems may be a “soft” delete.
 
 ## Why does the specification mandate support for FHIR functionality that may not be necessary for GP Connect? ##
 
@@ -44,7 +44,7 @@ In writing the FHIR implementation guidance for GP Connect we have worked hard t
 
 ## Why is support built in for accessing specific resources when the requirement is for the record for a specified patient? ##
 
-As outlined in the [Compartment Based Access](development_fhir_api_guidance.html#compartment-based-accesshttphl7orgfhircompartmentshtml) section the scope of the Patient Compartment in the GP Connect FoT is limited to Appointment access only. Conceptually, any and all resources where the subject of the resource is a patient could be made available, however this isn’t mandated.
+As outlined in the [Compartment Based Access](development_fhir_api_guidance.html#compartment-based-accesshttphl7orgfhircompartmentshtml) section the scope of the Patient Compartment in the GP Connect FoT is limited to Appointment access only. Conceptually, any and all resources where the subject of the resource is a patient could be made available. However, this isn’t mandated.
 
 ## Why does the guidance include support for amendment to appointments? ##
 
@@ -58,15 +58,15 @@ It is a key principle of the FHIR RESTful APIs that all resources are versioned;
 
 ## Will it be necessary in all cases to use an NHS service to look up staff/organisation/location information when a supplier may have their own index of this information? ##
 
-You are welcome to use your own ODS index (i.e. to find an organisation by name/address etc.). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of exposing the Access Record and Appointment APIs.
+You are welcome to use your own ODS index (that is, to find an organisation by name/address, and so on). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of exposing the Access Record and Appointment Management APIs.
 
-## It will be necessary in some use cases to support a search on GMC or NMC number rather than SDS User Id to find a staff member. ##
+## It will be necessary in some use cases to support a search on GMC or NMC number rather than SDS User ID to find a staff member. ##
 
-This has been added to our known issue list so we can provide more guidance on how this could work. However, it is important to note that the [Find A Practitioner](foundations_use_case_find_a_practitioner.html) section gives an example of using a SDS User Id but the same API call could in fact also be used to search by other identifiers by changing the ‘system’ component of the search parameter.
+This has been added to our known issue list so we can provide more guidance on how this could work. However, it is important to note that the [Find A Practitioner](foundations_use_case_find_a_practitioner.html) section gives an example of using a SDS User ID but the same API call could in fact also be used to search by other identifiers by changing the ‘system’ component of the search parameter.
 
 ## Why does the guide suggest that all resources should include text in the display property when this information is also in the HTML view? ##
 
-The display property is relevant to the Appointment and Foundations APIs, not the HTML view. More guidance on the use of the display property has been requested by a vendor to facilitate streamlined display of the structured data.
+The display property is relevant to the Appointment Management and Foundations APIs, not the HTML view. More guidance on the use of the display property has been requested by a vendor to facilitate streamlined display of the structured data.
 
 ## Why is oAuth2 not used? ##
 
@@ -76,11 +76,11 @@ Authentication will be via mutual TLS/SSL authentication. The JWT web token has 
 
 Extra HTTP headers are needed for sending provenance/audit details. Sending this data in a JWT Bearer token (which is simply a fragment of JSON) is an easy way of achieving the communication of this data and various libraries exist to make authoring this content trivial.
 
-## Why is NHS Number not being used as the actual Id for the Patient resource? ##
+## Why is NHS Number not being used as the actual ID for the Patient resource? ##
 
-As outlined in the FHIR standard there is a clear demarcation between business identifiers (such as NHS number, CHI number etc.) and logical identifiers which are opaque and only guaranteed to be valid on the FHIR server they are served from.
+As outlined in the FHIR standard there is a clear demarcation between business identifiers (such as NHS Number and  CHI number) and logical identifiers which are opaque and only guaranteed to be valid on the FHIR server they are served from.
  
-FHIR’s logical ids are strings which meet the following regex [A-Za-z0-9\-\.]{1,64} (in the reference implementations) logical id’s are often the physical record identity (i.e. a database primary key or a document store guid). So whilst technically a vendor could use the NHS number as their logical ids (as it would match the regex above) this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical id from the business id.
+FHIR’s logical IDs are strings which meet the following regex [A-Za-z0-9\-\.]{1,64} (in the reference implementations) logical IDs are often the physical record identity (for example, a database primary key or a document store guid). So whilst technically a vendor could use the NHS Number as their logical IDs (as it would match the regex above), this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical ID from the business ID.
  
 This approach is consistent with the FHIR reference implementations and commercial offerings and is in line with what the wider code4health community is asking for.
 
@@ -88,5 +88,5 @@ This approach is consistent with the FHIR reference implementations and commerci
 
 The list of error codes is intended to allow consumer applications to make sense of errors that the human operator could potentially do something about. We recognise there is a cost-benefit trade-off in this space and will look to only introduce error codes (above that of the base FHIR specification) when they add sufficient value. For example a 400 - Bad Request error code in isolation doesn’t help you determine which input parameter(s) are malformed and similarly a 422 -  Unprocessable Entity doesn’t in isolation help you determine which business rule (or integrity constraint) has caused an operation to fail. 
 
-Defining a small number of supplementary error codes to be included in the Operation Outcome entity allows sense to be made of these failing interactions (i.e. you’ve requested an Appointment to be booked into a slot that is already Busy).
+Defining a small number of supplementary error codes to be included in the Operation Outcome entity allows sense to be made of these failing interactions (for example, you’ve requested an Appointment to be booked into a slot that is already Busy).
 
