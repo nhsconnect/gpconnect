@@ -4,7 +4,7 @@ keywords: development repositories
 tags: [engagement,development]
 sidebar: overview_sidebar
 permalink: development_github_repositories.html
-summary: "Details of what GtiHub repositories are available for NHS Connect."
+summary: "Details of what GtiHub repositories are available for NHS Connect"
 ---
 
 {% for repository in site.github.public_repositories %}
