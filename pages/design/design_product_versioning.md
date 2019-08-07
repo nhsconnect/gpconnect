@@ -26,7 +26,7 @@ The specification version number is based on the [Semantic Versioning 2.0.0](htt
 When a specification is released, the version number is incremented as follows:
 
 - **Major** version when *breaking changes* are made
-- **Minor** version when larger *non-breaking changes* or *unsubstantive breaking changes* are made, for example a new capability; or a signficant number of smaller *non-breaking changes* or *unsubstantive breaking changes* are made
+- **Minor** version when larger *non-breaking changes* or *unsubstantive breaking changes* are made, for example a new capability; or a significant number of smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 - **Patch** version when smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 
 ### Types of change ###
