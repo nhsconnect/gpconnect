@@ -40,7 +40,7 @@ When a new release of the FHIR standard has been published for use NHS Digital w
 
 ### [FHIR implementations](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations) ###
 
-The Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on their [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations). Currently five FHIR server implementations and a number of client libraries are available as open source software. These are written in a variety of popular programming languages (e.g. Java, C#.NET, JavaScript and Python).
+The Health Level Seven (HL7&reg;) International standards body maintains a list of open source FHIR implementations on their [Wiki](http://wiki.hl7.org/index.php?title=Open_Source_FHIR_implementations). Currently five FHIR server implementations and a number of client libraries are available as open source software. These are written in a variety of popular programming languages (for example, Java, C#.NET, JavaScript and Python).
 
 {% include tip.html content="NHS Digital recommends software vendors consider utilising (and contributing back to) an existing open source FHIR library to both help accelerate development and to grow/mature the open source FHIR ecosystem." %}
 
@@ -183,7 +183,7 @@ Clients and servers **MUST** be conformant to the following Internet Engineering
 
 TLS **MUST** be used for all data exchange. The TLS communications are established prior to any HTTP command/response, so the whole FHIR interaction is protected by the TLS communications.
 
-The security of the endpoints of the TLS communications must be risk-managed, so as to prevent inappropriate risks (e.g. audit logging of the GET parameters into an unprotected audit log).
+The security of the endpoints of the TLS communications must be risk-managed, so as to prevent inappropriate risks (for example, audit logging of the GET parameters into an unprotected audit log).
 
 #### [Authentication](https://www.hl7.org/fhir/DSTU2/security.html#authentication) ####
 
@@ -248,7 +248,7 @@ Provider systems **MUST** publish Service root URLs for major versions of FHIR A
 
 - `[GPC_MAJOR_VERSION]` identifies the major version number of the GP Connect specification that the API is built to.
 
-- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non GP Connect requests (e.g. via a load balancer). If included, this optional provider routing segment **MUST** be static across all the provider's GP Connect API endpoints.
+- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non GP Connect requests (for example, via a load balancer). If included, this optional provider routing segment **MUST** be static across all the provider's GP Connect API endpoints.
   
 - The Service root URL **MUST NOT** contain a trailing `/`
 
@@ -453,7 +453,7 @@ For example:
 - URIs are case sensitive
 - UUID values (urn:uuid:53fefa32-fcbb-4ff8-8a92-55ee120877b7) use all lowercase
 - dates have no time zone
-- dates can be partial dates (e.g. just year or year + month)
+- dates can be partial dates (for example, just year or year + month)
 - precision of the decimal value has significance
 - primitive types other than string **MUST NOT** have leading or trailing white-space
 - [use of null](https://www.hl7.org/fhir/DSTU2/json.html#null) and empty / zero length values in [XML and JSON representations](https://www.hl7.org/fhir/DSTU2/datatypes.html#1.19.0.1.1)
@@ -475,7 +475,7 @@ A provider’s ability to process a request relating to a resource may depend on
 
 {% include important.html content="GP Connect clients and servers **MUST** utilise local relative references only and as such the resources will be expected to reside on the same server." %}
 
-Resource references **MUST** include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field **MUST** be formatted in line with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
+Resource references **MUST** include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field **MUST** be formatted in line with Common User Interface (CUI) guidance where such guidance exists (for example, patient name).
 
 | Resource | Display Format |
 | -------- | -------------- |
@@ -505,7 +505,7 @@ Servers **MUST** validate the existence of any referenced resources when creatin
 
 Refer to the GitHub hosted [GP Connect FHIR Repository](https://github.com/nhsconnect/gpconnect-fhir) for the published FHIR profiles.
 
-Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/DSTU2/validation.html#jar) page for the most upto date details on how FHIR resources can be validated. 
+Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/DSTU2/validation.html#jar) page for the most up to date details on how FHIR resources can be validated. 
 
 Servers **MUST** provide a read interaction for every resource it accepts update interactions on.
 
@@ -783,7 +783,7 @@ DELETE [base]/[resourcetype]/[id]
 
 Operations are used (a) where the server needs to play an active role in formulating the content of the response, not merely return existing information, or (b) where the intended purpose is to cause side effects such as the modification of existing resources, or creation of new resources.
 
-As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/DSTU2/profiling.html#api) section of the FHIR&reg; standard, the NHS Digital has decided to prefix it's operation names with a short prefix (e.g. `gpc`) followed by a "." to reduce the likelihood of name conflicts.
+As outlined in the [Extend and Restricting the API](https://www.hl7.org/fhir/DSTU2/profiling.html#api) section of the FHIR&reg; standard, the NHS Digital has decided to prefix its operation names with a short prefix (for example, `gpc`) followed by a "." to reduce the likelihood of name conflicts.
 
 ## [Search Resources](https://www.hl7.org/fhir/DSTU2/http.html#search) ##
 
