@@ -159,7 +159,7 @@ If a GP principal system can't meaningfully supply content for a requested HTML 
 #### Supported but is masked/access denied ####
 
 - system can store the data
-- BUT no data is available for the patient via the GP Connect APIs due to a IG/DS rule
+- BUT no data is available for the patient via the GP Connect APIs due to an IG/DS rule
 
 ```html
 <div>
