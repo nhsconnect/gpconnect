@@ -9,7 +9,7 @@ summary: "Retrieve a patient's record in structured format"
 
 ## Use case ##
 
-Retrieve a patient's record in FHIR&reg; structured format from a GP practice.
+Retrieve a patient's record in FHIR&reg; structured format from a GP practice. Full details of the use cases are available on the [Business Requirements page](accessrecord_structured_requirements.html#use-cases-and-business-processes).
 
 ## Security ##
 
@@ -136,7 +136,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 			<li>If the <code>medicationSearchFromDate</code> is not specified, all medication will be returned.</li>
 			<li>If the <code>medicationSearchFromDate</code> is populated, all medications which are active on or after the <code>medicationSearchFromDate</code> <b>MUST</b> be returned.</li>
 			<li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
+	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
     	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
@@ -161,7 +161,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 			     <li>If the <code>consultationSearchPeriod.start</code> is populated, all consultations on or after the <code>consultationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
            <li>If the <code>consultationSearchPeriod.end</code> is populated, all consultations on or before the <code>consultationSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-          <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
+          <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
 
         <p><i>Part parameter: may only be provided if <code>includeConsultations</code> is set.</i></p>        
@@ -233,7 +233,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 			     <li>If the <code>uncategorisedDataSearchPeriod.start</code> is populated, all uncategorised data on or after the <code>uncategorisedDataSearchPeriod.start</code> <b>MUST</b> be returned.</li>
            <li>If the <code>uncategorisedDataSearchPeriod.end</code> is populated, all uncategorised data on or before the <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-          <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
+          <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
 
         <p><i>Part parameter: may only be provided if <code>includeUncategorisedData</code> is set.</i></p>        
@@ -244,7 +244,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 
 Each clinical area has its own set of search/filter parameters. These parameters will only apply to their own area and **MUST** have no impact on other parameters.
 
-{% include important.html content="Consumer guidance: The parameters can be used together in a single call or in multiple calls so that information can be retrieved if is required. It is advised that the number of requests that are made to retrieve a patient's record are kept to a minimum." %}
+{% include important.html content="Consumer guidance: The parameters can be used together in a single call or in multiple calls so that information can be retrieved if required. It is advised that the number of requests that are made to retrieve a patient's record are kept to a minimum." %}
 
 The example below shows a fully populated `Parameters` resource as a request to the `$gpc.getstructuredrecord` operation:
 
@@ -333,7 +333,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-The table below shown common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
+The table below shows common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
 
 Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
@@ -370,7 +370,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 ```http
 HTTP/1.1 200 OK
 Cache-Control: no-store
-Content-Type: application/json+fhir; charset=utf-8
+Content-Type: application/fhir+json; charset=utf-8
 Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
