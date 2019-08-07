@@ -71,7 +71,7 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
 Fixed value of **finished**.
 
 Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of consultation context.
-Hence, use most appropriate value from limited set available.
+Hence, use the most appropriate value from limited set available.
 
 Some systems allow consultations to be assigned a draft or incomplete status, but this status is not conveyed in GP Connect as the information recorded in such consultation is still treated as authoritative by the source systems.
 
@@ -85,7 +85,7 @@ Some systems allow consultations to be assigned a draft or incomplete status, bu
   </tr>
 </table>
 
-Carries the consultation type as displayed by system via the CodeableConcept <code>type.text</code> attribute.
+Carries the consultation type as displayed by the system via the CodeableConcept <code>type.text</code> attribute.
 
 TO DO - rule a mapping to a SNOMED CT vocabulary in or out
 
