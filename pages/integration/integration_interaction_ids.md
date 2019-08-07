@@ -7,7 +7,7 @@ permalink: integration_interaction_ids.html
 summary: "A list of GP Connect API interaction IDs"
 ---
 
-## GP Connect Interaction ID naming policy ##
+## GP Connect interaction ID naming policy ##
 
 All interaction IDs are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`
 
@@ -21,9 +21,9 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 	- Extended operation = [ `gpc.getcarerecord`]
 - Subject = [ `resourceType`, `operationName` ]
 	- Resource Type is the name of a FHIR resource, such as `Patient`, `Appointment`, `Organization`
-	- Operation Name is the name of a extended operation, such as `gpc.getcarerecord`
+	- Operation Name is the name of an extended operation, such as `gpc.getcarerecord`
 
-## List of Interaction IDs ##
+## List of interaction IDs ##
 
 ### Foundations interactions ###
 
