@@ -25,7 +25,7 @@ For more details on consumer request interactions, see the [SSP implementation g
 
 ## Things to consider
 
-- XML vs JSON
+- [JSON or XML?](serialisation_format.html)
 - toolkits
 - developer tools: demonstrator, postman
 - code samples
