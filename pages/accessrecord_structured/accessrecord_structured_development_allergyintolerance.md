@@ -156,8 +156,6 @@ Fixed value of `unconfirmed`.
 
 Set to `allergy` for reactions which are allergenic in nature (immunological), a value of `intolerance` **MAY** be used to indicate adverse reactions (not immunologic in nature). Where the type is unknown the type element may be omitted.
 
-Some systems allow explicit identification of adverse reactions and intolerances and the type **MUST** be used to make this distinction where it exists.
-
 ### category ###
 
 <table class='resource-attributes'>
