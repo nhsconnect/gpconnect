@@ -213,7 +213,7 @@ How are exclusion warnings identified within Access Record HTML?
 
 - no indication that data has been excluded
 - <span class="label label-success">SELECTED</span> warning indication per section that data has been excluded (within the time frame)
-- <span class="label label-success">SELECTED</span> inline with some information related to the data item
+- <span class="label label-success">SELECTED</span> in line with some information related to the data item
 	- that is, encounter date/time but not the place or encounter details
 
 <span class="label label-info">DECISION</span> Warning needed that data supplied for a patient may be incomplete/withheld due to patient preferences, GP practice designation of 'Confidential' or as a result of the application of the sensitive exclusion set - to be displayed both within the section banner as well as at line item level.
