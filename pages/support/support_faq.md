@@ -10,11 +10,11 @@ summary: "Frequently Asked Questions related to the GP Connect technical specifi
 
 ## Which serialisation format should I choose as an GP Connect API consumer - JSON or XML? ##
 
-JSON is supported by all four GP Principal Clinical System (PCS) suppliers which makes it a natural choice for API consumers. In addition it is approximately 30% smaller than XML when sent over the wire.
+JSON is supported by all four GP principal clinical system (PCS) suppliers which makes it a natural choice for API consumers. In addition, it is approximately 30% smaller than XML when sent over the wire.
  
 XML is currently supported by three of the four GP PCS suppliers (Vision, Microtest and EMIS). If you have a strong preference to work with XML and will be using GP Connect to interoperate with specific GP PCS suppliers that support XML, then this may be a suitable choice.
  
-NHS Digital are investigating ways to bring XML support across all four GP PCS suppliers, however at the current time our recommendation is to use JSON.
+NHS Digital is investigating ways to bring XML support across all four GP PCS suppliers. However, at the current time our recommendation is to use JSON.
 
 For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/downloads.html) simplify the process of producing FHIR in JSON.
 
@@ -44,7 +44,7 @@ In writing the FHIR implementation guidance for GP Connect we have worked hard t
 
 ## Why is support built in for accessing specific resources when the requirement is for the record for a specified patient? ##
 
-As outlined in the [Compartment Based Access](development_fhir_api_guidance.html#compartment-based-accesshttphl7orgfhircompartmentshtml) section the scope of the Patient Compartment in the GP Connect FoT is limited to Appointment access only. Conceptually, any and all resources where the subject of the resource is a patient could be made available, however this isn’t mandated.
+As outlined in the [Compartment Based Access](development_fhir_api_guidance.html#compartment-based-accesshttphl7orgfhircompartmentshtml) section the scope of the Patient Compartment in the GP Connect FoT is limited to Appointment access only. Conceptually, any and all resources where the subject of the resource is a patient could be made available. However, this isn’t mandated.
 
 ## Why does the guidance include support for amendment to appointments? ##
 
@@ -58,7 +58,7 @@ It is a key principle of the FHIR RESTful APIs that all resources are versioned;
 
 ## Will it be necessary in all cases to use an NHS service to look up staff/organisation/location information when a supplier may have their own index of this information? ##
 
-You are welcome to use your own ODS index (i.e. to find an organisation by name/address etc.). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of exposing the Access Record and Appointment APIs.
+You are welcome to use your own ODS index (for example, to find an organisation by name/address). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of exposing the Access Record and Appointment APIs.
 
 
 ## Why does the guide suggest that all resources should include text in the display property when this information is also in the HTML view? ##
@@ -73,17 +73,17 @@ Authentication will be via mutual TLS/SSL authentication. The JWT web token has 
 
 Extra HTTP headers are needed for sending provenance/audit details. Sending this data in a JWT Bearer token (which is simply a fragment of JSON) is an easy way of achieving the communication of this data and various libraries exist to make authoring this content trivial.
 
-## Why is NHS Number not being used as the actual Id for the Patient resource? ##
+## Why is NHS Number not being used as the actual ID for the Patient resource? ##
 
-As outlined in the FHIR standard there is a clear demarcation between business identifiers (such as NHS number, CHI number etc.) and logical identifiers which are opaque and only guaranteed to be valid on the FHIR server they are served from.
+As outlined in the FHIR standard there is a clear demarcation between business identifiers (such as NHS Number, CHI number) and logical identifiers which are opaque and only guaranteed to be valid on the FHIR server they are served from.
  
-FHIR’s logical ids are strings which meet the following regex [A-Za-z0-9\-\.]{1,64} (in the reference implementations) logical id’s are often the physical record identity (i.e. a database primary key or a document store guid). So whilst technically a vendor could use the NHS number as their logical ids (as it would match the regex above) this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical id from the business id.
+FHIR’s logical ids are strings which meet the following regex [A-Za-z0-9\-\.]{1,64} (in the reference implementations) logical IDs are often the physical record identity (i.e. a database primary key or a document store guid). So, whilst technically a vendor could use the NHS number as their logical IDs (as it would match the regex above) this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical ID from the business ID.
  
 This approach is consistent with the FHIR reference implementations and commercial offerings and is in line with what the wider code4health community is asking for.
 
 ## Why is there to be a centrally-held list of error codes in addition to the standard HTTP response codes? ##
 
-The list of error codes is intended to allow consumer applications to make sense of errors that the human operator could potentially do something about. We recognise there is a cost-benefit trade-off in this space and will look to only introduce error codes (above that of the base FHIR specification) when they add sufficient value. For example a 400 - Bad Request error code in isolation doesn’t help you determine which input parameter(s) are malformed and similarly a 422 -  Unprocessable Entity doesn’t in isolation help you determine which business rule (or integrity constraint) has caused an operation to fail. 
+The list of error codes is intended to allow consumer applications to make sense of errors that the human operator could potentially do something about. We recognise there is a cost-benefit trade-off in this space and will look to only introduce error codes (above that of the base FHIR specification) when they add sufficient value. For example, a 400 - Bad Request error code in isolation doesn’t help you determine which input parameter(s) are malformed and similarly a 422 -  Unprocessable Entity doesn’t in isolation help you determine which business rule (or integrity constraint) has caused an operation to fail. 
 
-Defining a small number of supplementary error codes to be included in the Operation Outcome entity allows sense to be made of these failing interactions (i.e. you’ve requested an Appointment to be booked into a slot that is already Busy).
+Defining a small number of supplementary error codes to be included in the Operation Outcome entity allows sense to be made of these failing interactions (for example, you’ve requested an Appointment to be booked into a slot that is already Busy).
 
