@@ -4,7 +4,7 @@ keywords: spine, proxy, ssp, security
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_spine_security_proxy_implementation_guide.html
-summary: "Technical specification for the Spine Security Proxy (SSP)."
+summary: "Technical specification for the Spine Security Proxy (SSP)"
 ---
 
 ## Spine Security Proxy (SSP) implementation guide ##
@@ -48,7 +48,7 @@ At a high-level the proxy operates as a content agnostic mediator allowing autho
 
 In the First of Type (FoT) instantiation of this system architecture provider systems will be GP principal IT systems from vendors such as (EMIS, TPP, INPS and Microtest), consumer are expected to be a mix of GP principal IT systems and other IT systems. 
 
-As a guiding design principle the Spine Security Proxy (SSP) **MUST** NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it **MAY** block consumer communications on security grounds (i.e. a consumer attempting to access a provider for which it doesn’t have permission).
+As a guiding design principle, the Spine Security Proxy (SSP) **MUST** NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it **MAY** block consumer communications on security grounds (i.e. a consumer attempting to access a provider for which it doesn’t have permission).
 
 <sup>1</sup> consumer applications for FoT are currently expected to be able to populate a small number of additional Spine HTTP headers.
 
@@ -139,7 +139,7 @@ As such it is planned that the following mitigations will be implemented as part
 - graceful handling of transient error conditions
 	- for example, incorporation of a back-off strategy and maximum number of 3 automated retries
 
-The inclusion of the consumer systems UserID, user name and date/time of the event is critical to ensuring a full audit trail can be stored by the provider system. Failure to provide sufficient audit trail information will result in the request being blocked by the spine security proxy^.
+The inclusion of the consumer system's UserID, user name and date/time of the event is critical to ensuring a full audit trail can be stored by the provider system. Failure to provide sufficient audit trail information will result in the request being blocked by the spine security proxy^.
 
 <sup>1</sup> this look-up is to ensure the NHS Number is of good quality in the consumer system and is not required prior to each API operation.
 
@@ -179,7 +179,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 
 {% include important.html content="Service Level Agreements (SLA) will be negotiated with principal system vendors prior to go-live to ensure non-functional aspects of system operation are finalised and guaranteed." %}
 
-{% include tip.html content="Non functional testing by the Spine team has indicated a fairly constant 15ms average latency traversing the Spine Security Proxy (SSP) regardless of payload size." %}
+{% include tip.html content="Non-functional testing by the Spine team has indicated a fairly constant 15ms average latency traversing the Spine Security Proxy (SSP) regardless of payload size." %}
 
 ### Provider ###
  
@@ -246,7 +246,7 @@ The inclusion of the consumer systems UserID, user name and date/time of the eve
 	- `PUT`
 	- `DELETE`^
 	- `PATCH`^ (which is expected in a future FHIR release)
-	- `OPTION`^ (which is used in FHIR to retrieve the servers conformance statement)
+	- `OPTION`^ (which is used in FHIR to retrieve the server's conformance statement)
  **^** HTTP verbs will be made available after the initial GP Connect FoT go-live.
 - Request and response HTTP payloads **MUST** NOT be modified, as this would require the proxy to have detained knowledge of payload structure and transport encoding. Furthermore, payload modification may introduce problems with asserting digital signatures/payload provenance in the future.
 - Request and response HTTP headers **MUST** NOT be modified.
