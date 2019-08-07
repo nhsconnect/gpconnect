@@ -37,7 +37,7 @@ In order to be considered as part of the FoT, NHS organisations who will commiss
 -	commissioning Body has existing data sharing agreements in place and understand that these may need uplifting depending on local circumstances
 -	that all local work for implementing the capabilities is the responsibility of the local organisations and that no extra funding to support this is available from NHS Digital
 
-Following initial validation, candidates will be reviewed by both NHS Digital and NHS England to determine which candidates will be provisionally allocated in to a tranche. It is anticipated 2 – 4 Commissioning Organisations will be selected per tranche. Any selections made by the Selection Group will be validated by the GP Connect Project Board. 
+Following initial validation, candidates will be reviewed by both NHS Digital and NHS England to determine which candidates will be provisionally allocated into a tranche. It is anticipated 2 – 4 Commissioning Organisations will be selected per tranche. Any selections made by the Selection Group will be validated by the GP Connect Project Board. 
 Those applicants that are not successful will be contacted as soon as possible following any decisions being made.
 
 ## FoT Tranche 1 Candidates ##
