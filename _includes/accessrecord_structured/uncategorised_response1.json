@@ -1,4 +1,4 @@
-{% highlight json %}
+ {% highlight json %}
 {
   "resourceType": "Bundle",
   "meta": {
@@ -239,7 +239,6 @@
         ]
       }
     },
-
     {
       "resource": {
         "resourceType": "Observation",
@@ -271,8 +270,7 @@
               }
             }
           ]
-        }
-      },
+        },
       "valueQuantity": {
         "value": 36.7,
         "unit": "C",
@@ -286,7 +284,7 @@
         "reference": "Encounter/Encounter1"
       },
       "effectiveDateTime": "2019-03-28T10:30:00"
-    },
+    }},
     {
       "resource": {
         "resourceType": "Observation",
@@ -318,21 +316,21 @@
               }
             }
           ]
-        }
-      },
-      "valueQuantity": {
-        "value": 96,
-        "unit": "%",
-        "system": "http://unitsofmeasure.org",
-        "code": "%"
-      },
-      "subject": {
-        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
-      },
-      "encounter": {
-        "reference": "Encounter/Encounter1"
-      },
-      "effectiveDateTime": "2019-03-28T10:30:00"
+        },
+        "valueQuantity": {
+          "value": 96,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+        "effectiveDateTime": "2019-03-28T10:30:00"
+      }
     },
     {
       "resource": {
@@ -365,21 +363,21 @@
               }
             }
           ]
-        }
-      },
-      "valueQuantity": {
-        "value": 16,
-        "unit": "breaths per minute",
-        "system": "http://unitsofmeasure.org",
-        "code": "{resps}/min"
-      },
-      "subject": {
-        "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
-      },
-      "encounter": {
-        "reference": "Encounter/Encounter1"
-      },
-      "effectiveDateTime": "2019-03-28T10:30:00"
+        },
+        "valueQuantity": {
+          "value": 16,
+          "unit": "breaths per minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "{resps}/min"
+        },
+        "subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+        "effectiveDateTime": "2019-03-28T10:30:00"
+      }
     }
   ]
 }
