@@ -13,8 +13,8 @@ Spine Directory Service (SDS) is an endpoint and identifier directory for Spine 
 
 GP Connect provider and consumer systems are registered in SDS in order to enable:
 
-- Consumer systems to lookup provider system's ASID and endpoint information
-- The Spine Secure Proxy to allow or deny requests based on known identifier and endpoint information
+- consumer systems to look up provider system's ASID and endpoint information
+- the Spine Secure Proxy to allow or deny requests based on known identifier and endpoint information
 <br/>
 
 **AS records**
@@ -38,7 +38,7 @@ Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on
 
 GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) and ASID for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
 
-This is a two step process, as follows:
+This is a two-step process, as follows:
 
 > 1. Lookup the Message Handling System (MHS) record
 > 2. Lookup the Accredited System (AS) record
@@ -46,7 +46,7 @@ This is a two step process, as follows:
 The process allows a consumer system to retrieve the following details for a target GP provider organisation:
 
 - FHIR service root URL, retrieved from the `nhsMhsEndpoint` element in step 1
-- And the ASID, retrieved from `uniqueIdentifier` element in step 2
+- and the ASID, retrieved from `uniqueIdentifier` element in step 2
 
 The FHIR service root URL is used to [construct the full target URL for a GP Connect request](#step-3-consumer-constructs-full-gp-connect-request-url-to-be-sent-to-the-spine-security-proxy). The provider's ASID is sent in the  `Ssp-To` HTTP header.
 
@@ -57,7 +57,7 @@ Systems **SHOULD** cache SDS query results giving details of consuming system, e
 Systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
 
 {% include important.html content="**Why have SDS queries changed in GP Connect API 0.7.2?**<br/>
-The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more seperate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
+The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more separate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
 The SDS queries in GP Connect API 0.7.1 and prior versions do not support this configuration, hence existing consumer systems **MUST** update their queries to to this version of the specification." %}
 
 
