@@ -331,7 +331,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 #### Error handling ####
 
-The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields is corrupt or a specific business rule/constraint is breached.
 
 The table below shows common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
 
@@ -387,8 +387,7 @@ Provider systems **MUST**:
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - `OperationOutcome` containing warnings about any unsupported parameters
-  - resources holding consultations, problems, immunisations, allergies, intolerance, medication and uncategorised data according to the rules below:
+  - resources holding consultations, problems, immunisations, allergies, intolerance, medications, uncategorised data and warnings about unsupported parameters according to the rules below:
 
 Provider systems **SHOULD**:
 
@@ -506,7 +505,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeImmunisations' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
 
 ##### Uncategorised data #####
 
@@ -518,7 +517,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the 'includeUncategorisedData' parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
 
 - when the 'uncategorisedDataSearchPeriod' is set:
   - when a `start` value is set, all uncategorised data with an `Observation.effectiveTime` after the date **MUST** be returned
