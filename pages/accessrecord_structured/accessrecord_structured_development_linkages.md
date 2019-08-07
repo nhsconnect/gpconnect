@@ -127,7 +127,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * Where no date is supplied by the consumer, all medications and medical devices are returned
 * Include issues
      * The consumer system requests prescription issues
-     * For each of the returned plans, the provider system includes data for all of its issue
+     * For each of the returned plans, the provider system includes data for all of its issues
 
 #### Allergies ####
 
@@ -178,7 +178,7 @@ For the majority of scenarios, the information required by the consumer can be r
 There are however scenarios where the information to the first query identifies additional information that is required.
 
 For example:
-* a retrieved medication is linked to a problem that the clinician want to review
+* a retrieved medication is linked to a problem that the clinician wants to review
 * a retrieved problem is linked to several consultations that the clinician wants to review
 * a retrieved immunisation is linked to a consultation that the clinician wants to review
 
