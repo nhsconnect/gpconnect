@@ -16,4 +16,4 @@ summary: "High-level principles related to the development of the system"
 	4. following successful review, assets are marked as active and published to `master` branch.
 8. software assets will follow [Semantic Versioning](http://semver.org/){:target="_blank"}
 	1. major versions will be maintained in parallel for a period of time before deprecation
-9. Github [Webhooks](https://developer.github.com/webhooks/){:target="_blank"} will be used to automatically build & publish software assets to a public test instance
+9. GitHub [Webhooks](https://developer.github.com/webhooks/){:target="_blank"} will be used to automatically build & publish software assets to a public test instance
