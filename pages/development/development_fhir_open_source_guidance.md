@@ -8,7 +8,7 @@ summary: "There are benefits to using an existing FHIR&reg; library"
 toc: false
 ---
 
-## Using an existing a FHIR&reg; library ##
+## Using an existing FHIR&reg; library ##
 
 GP Connect strongly advises suppliers to use an existing FHIR library as it will reduce development time and result in more robust implementations of the GP Connect API. Benefits of using an existing FHIR library for the implementation of both the consumer and provider side of a GP Connect API are:
 
