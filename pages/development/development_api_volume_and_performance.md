@@ -48,7 +48,7 @@ Suppliers' test approaches **SHOULD** include a LOAD and a RAMP test and ideally
 
 ### V&P testing infrastructure scaling ###
 
-Predictive models of load have are provided to give an indication of the likely volume and profile of full production roll out.
+Predictive models of load are provided to give an indication of the likely volume and profile of full production roll out.
 
 If suppliers are scaling their infrastructure solution over time (such as during First of Type) then the V&P testing must be performed and submitted for review.
 
