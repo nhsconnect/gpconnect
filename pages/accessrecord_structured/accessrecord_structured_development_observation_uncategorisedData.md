@@ -76,18 +76,6 @@ Where consuming systems are integrating data from this resource to their local s
 
 Fixed value of **final**.
 
-### category ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-The general type of observation.
-
 ### code ###
 
 <table class='resource-attributes'>
@@ -174,19 +162,7 @@ The Practitioner resource representing the person responsible for recording the 
   </tr>
 </table>
 
-The value of the observation. This may be in the form of but is not limited to one of the following datatypes a quantity, string or an attachment.
-
-### dataAbsentReason ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The reason why a result/value has been omitted.
+The value of the observation. This may be in any of the forms defined in the profile.
 
 ### comment ###
 
@@ -237,7 +213,23 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;"> category </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;"> dataAbsentReason </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
