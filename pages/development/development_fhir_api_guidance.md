@@ -195,7 +195,7 @@ For the purpose of GP Connect FoT clients and servers **MUST** authenticate usin
 
 Servers **MUST** provide a read-only FHIR Conformance resource that identifies all of the profiles and operations that the server supports for each resource type.
 
-A servers conformance statement **MUST** be available using the following [conformance interactions](http://hl7.org/fhir/http.html#conformance):
+A server's conformance statement **MUST** be available using the following [conformance interactions](http://hl7.org/fhir/http.html#conformance):
 
 ```
 GET [base]/metadata {?_format=[mime-type]}
@@ -295,13 +295,13 @@ This is the `logical Id` of the resource which is assigned by the server respons
 
 Once assigned, the identity **MUST** never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (e.g. 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring a integer key (e.g. 2345)." %} 
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For, example: NoSQL document stores typically preferring a GUID key (for example,  0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) whilst Relational Database stores typically preferring an integer key (for example, 2345)." %} 
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/dstu2/resource.html#id)  
 
 #### External resource resolution ####
 
-Inline with work being undertaken in other jurisdictions (see the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide) for details) GP Connect provider systems are not expected to resolve full URLs that are external to their environment.
+In line with work being undertaken in other jurisdictions (see the [Argonaut Implementation Guide](http://argonautwiki.hl7.org/index.php?title=Implementation_Guide) for details) GP Connect provider systems are not expected to resolve full URLs that are external to their environment.
 
 ### [Content types](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
@@ -331,7 +331,7 @@ Systems **MUST** declare which format(s) they support in their Conformance State
 
 ### [Transfer encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
-Clients and servers **MUST** support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of a HTTP response will returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
+Clients and servers **MUST** support the HTTP `Transfer-Encoding` header with a value of `chunked`. This indicates that the body of a HTTP response will be returned as an unspecified number of data chunks (without an explicit `Content-Length` header).
 
 ### [Character encoding](https://www.hl7.org/fhir/DSTU2/http.html#mime-type) ###
 
@@ -355,7 +355,7 @@ Unrecognized search criteria **MUST** always be ignored. As search criteria supp
 
 #### Proxying headers ####
 
-Additional HTTP headers **MUST** be added into the HTTP request/response for the purpose of allowing the proxy system to disclose information lost in the proxying process (e.g. the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](http://tools.ietf.org/html/rfc7239).
+Additional HTTP headers **MUST** be added into the HTTP request/response for the purpose of allowing the proxy system to disclose information lost in the proxying process (for example, the originating IP address of a request). Typically, this information is added to proxy forwarding headers as defined in [RFC 7239](http://tools.ietf.org/html/rfc7239).
 
 #### Cross organisation provenance & audit headers ####
 
@@ -389,7 +389,7 @@ Providers **MUST** use the following HTTP Header to ensure that no intermediarie
 
 ### [Managing return content](https://www.hl7.org/fhir/DSTU2/http.html#return) ###
 
-Provider **MUST** maintain resource state inline with the underlying system, including the state of any associated resources.
+Provider **MUST** maintain resource state in line with the underlying system, including the state of any associated resources.
 
 For example: 
 
@@ -444,7 +444,7 @@ The FHIR specification defines a set of [data types](https://www.hl7.org/fhir/DS
 
 The user locale (i.e. user's language, region and any special variant preferences that the user may want to see in their user interface) of a systems **MUST NOT** effect the FHIR on the wire representation of any data types (especially date-time and number formats).
 
-Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) respresentation warrant further consideration and **MUST** be taken into consideration when designing and constructing FHIR resources.
+Certain aspects of [Primitive Data Type](https://www.hl7.org/fhir/DSTU2/datatypes.html#primitive) representation warrant further consideration and **MUST** be taken into consideration when designing and constructing FHIR resources.
 
 For example:
 
@@ -475,7 +475,7 @@ A provider’s ability to process a request relating to a resource may depend on
 
 {% include important.html content="GP Connect clients and servers **MUST** utilise local relative references only and as such the resources will be expected to reside on the same server." %}
 
-Resource references **MUST** include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field **MUST** be formatted inline with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
+Resource references **MUST** include a short human-readable `display` field for identification of the resource that is being referenced which can be used for display purposes without needing to pull the entire referenced resource. The short human-readable `display` field **MUST** be formatted in line with Common User Interface (CUI) guidance where such guidance exists (e.g. patient name).
 
 | Resource | Display Format |
 | -------- | -------------- |
@@ -501,7 +501,7 @@ When performing an update or create interaction, servers:
 -	**MAY** apply business rules that alter the content
 -	**MAY** merge updated content with existing content
 
-Servers **MUST** validate the existence of any referenced resources when creating or updating a resource. For example, a `Slot` reference (e.g. `Slot/D497DB00-99AA-11E5-A837-0800200C9A66`) used when creating a new `Appointment` would be checked for existence on the server and an error returned (and the create interaction aborted) if the slot does not exist.
+Servers **MUST** validate the existence of any referenced resources when creating or updating a resource. For example, a `Slot` reference (for example, `Slot/D497DB00-99AA-11E5-A837-0800200C9A66`) used when creating a new `Appointment` would be checked for existence on the server and an error returned (and the create interaction aborted) if the slot does not exist.
 
 Refer to the GitHub hosted [GP Connect FHIR Repository](https://github.com/nhsconnect/gpconnect-fhir) for the published FHIR profiles.
 
