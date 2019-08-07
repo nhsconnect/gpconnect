@@ -214,20 +214,6 @@ It **MUST** also include any text relating to the observation.
 
 The reference range provides a guide for interpretation of the results.
 
-### related ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-Reference to any related observations.
-
-This **MUST** be qualified using the related.type 'sequel-to'.
-
 ### component ###
 
 <table class='resource-attributes'>
@@ -288,6 +274,14 @@ The following elements **MUST NOT** be populated:
 </table>
 
 <h3 style="color:#ED1951;"> device </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> BackboneElement</td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;"> related </h3>
 
 <table class='resource-attributes'>
   <tr>
