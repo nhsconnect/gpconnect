@@ -126,6 +126,8 @@ Where a medication/medical device has been stopped (status == ‘stopped’), th
 
 Mandatory for authorisations with stopped status.
 
+Only populate for a medicationRequest with an intent = plan. Do not populate for a medicationRequest with an intent = order.
+
 ### extension[statusReason].date ###
 
 <table class='resource-attributes'>
