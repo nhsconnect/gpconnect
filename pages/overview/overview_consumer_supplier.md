@@ -25,7 +25,7 @@ For more details on consumer request interactions, see the [SSP implementation g
 
 ## Things to consider
 
-- [JSON or XML?](serialisation_format.html)
+- Which serialisation format should I choose as an GP Connect API consumer - [JSON or XML?](serialisation_format.html)
 - toolkits
 - developer tools: demonstrator, postman
 - code samples
