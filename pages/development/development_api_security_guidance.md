@@ -19,7 +19,7 @@ Provider Systems:
 
 - **MUST** only accept encrypted connections and drop connection attempts presented over insecure protocols
 
-- **MUST** only accept requests for it's allocated ASID, as specified by the `Ssp-To` header,  on it's matching endpoint URL
+- **MUST** only accept requests for its allocated ASID, as specified by the `Ssp-To` header,  on its matching endpoint URL
 
 - **MUST** check that the `Ssp-InteractionID` value is consistent with the endpoint being requested
 
