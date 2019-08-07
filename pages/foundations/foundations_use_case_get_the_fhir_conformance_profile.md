@@ -4,14 +4,14 @@ keywords: foundations, fhir
 tags: [foundations,use_case,fhir]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_get_the_fhir_conformance_profile.html
-summary: "Use case for getting the GP Connect FHIR server's conformance statement."
+summary: "Use case for getting the GP Connect FHIR server's conformance statement"
 ---
 
 ## API usage ##
 
 ### Request operation ###
 
-#### FHIR Relative Request ####
+#### FHIR relative request ####
 
 ```http
 GET /metadata
@@ -90,7 +90,7 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
          "value": "[Provider Software Name]"
       },
       "version": {
-         "value": "[Provider Software Verson]"
+         "value": "[Provider Software Version]"
       },
       "releaseDate": {
          "value": "[Provider Software Release Date]"
@@ -152,7 +152,7 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
 
 Consumer systems:
 
-- **SHOULD**, at run-time, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GPConnect capabilities delivered by the FHIR server
+- **SHOULD**, at run-time, request the conformance statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
 - **SHOULD** cache conformance statement information retrieved from an endpoint at run-time on a per-session basis
 
 ### C# client request to get the conformance statement ###
