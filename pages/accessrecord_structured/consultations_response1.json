@@ -43,13 +43,10 @@
         "subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
         "extension": [
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "Encounter/Encounter1"
-            }
-          },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
@@ -241,13 +238,10 @@
         "subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
         "extension": [
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "Encounter/Encounter1"
-            }
-          },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
@@ -396,13 +390,10 @@
         "subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
         "extension": [
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "Encounter/Encounter1"
-            }
-          },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
@@ -480,6 +471,65 @@
         "onsetDateTime": "2019-03-28T10:30:00"
       }
     },
+
+
+
+    {
+      "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "title": "Consultation",
+        "code": {
+          "coding": [
+            {
+              "display": "Consultation",
+              "system": "http://snomed.info/sct",
+              "code": "325851000000107"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "Encounter/Encounter1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Encounter/Encounter2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Encounter/Encounter3"
+            }
+          }
+        ],
+        "date": "2019-03-28T10:57:34+00:00",
+        "mode": "snapshot",
+        "orderedBy": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/list-order",
+              "code": "event-date"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        }
+      }
+    }
+
+
+
+
+
     {
       "resource": {
         "resourceType": "Encounter",
