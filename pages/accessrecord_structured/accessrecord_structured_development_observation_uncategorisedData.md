@@ -88,6 +88,8 @@ Fixed value of **final**.
 
 The clinical code that represents the data within the observation.
 
+Were the uncategorised data is free text without any clinical code set to 37331000000100 Comment note (record artifact).
+
 ### subject ###
 
 <table class='resource-attributes'>
