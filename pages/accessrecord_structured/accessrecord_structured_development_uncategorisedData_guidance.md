@@ -43,7 +43,7 @@ Consideration was given to attempting to categorise data using the recorded clin
 
 ## Qualifiers ##
 
-In GP systems, uncateogirsed data may have additional coded or structured attributes that refine or expand the meaning of the coded element of the record. These additional attributes are commonly known as qualifiers.
+Qualifiers are used to refine the meaning of the coded element of the record.
 
 Each provider system supports a different set of qualifiers. However, there are three key qualifiers that are common across all provider systems:
 
