@@ -10,7 +10,7 @@
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "Problem_A_Anxiety_With_Depression",
+        "id": "Problem-A-Anxiety-With-Depression",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
@@ -50,55 +50,55 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "List/Consultation1_Topic1"
+              "reference": "List/Consultation1-Topic1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic1_Category_History_Observation_1"
+              "reference": "Observation/Consultation1-Topic1-Category-History-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic1_Category_Examination_Observation_1"
+              "reference": "Observation/Consultation1-Topic1-Category-Examination-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic1_Category_Social_Observation_1"
+              "reference": "Observation/Consultation1-Topic1-Category-Social-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic1_Category_Social_Observation_2"
+              "reference": "Observation/Consultation1-Topic1-Category-Social-Observation-2"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/Consultation1_Topic1_Category_Plan_Medication_Plan"
+              "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/Consultation1_Topic1_Category_Plan_Medication_Order"
+              "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Order"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic1_Category_Plan_Observation_1"
+              "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic1_Category_Plan_Observation_2"
+              "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-2"
             }
           },
           {
@@ -110,43 +110,43 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "List/Consultation2_Topic1"
+              "reference": "List/Consultation2-Topic1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation2_Topic1_Category_History_Observation_1"
+              "reference": "Observation/Consultation2-Topic1-Category-History-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation2_Topic1_Category_Examination_Observation_1"
+              "reference": "Observation/Consultation2-Topic1-Category-Examination-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation2_Topic1_Category_Social_Observation_1"
+              "reference": "Observation/Consultation2-Topic1-Category-Social-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/Consultation2_Topic1_Category_Plan_Medication_Plan"
+              "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/Consultation2_Topic1_Category_Plan_Medication_Order"
+              "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Order"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation2_Topic1_Category_Plan_Observation_1"
+              "reference": "Observation/Consultation2-Topic1-Category-Plan-Observation-1"
             }
           },
           {
@@ -158,54 +158,54 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "List/Consultation3_Topic1"
+              "reference": "List/Consultation3-Topic1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic1_Category_History_Observation_1"
+              "reference": "Observation/Consultation3-Topic1-Category-History-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic1_Category_Examination_Observation_1"
+              "reference": "Observation/Consultation3-Topic1-Category-Examination-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic1_Category_Social_Observation_1"
+              "reference": "Observation/Consultation3-Topic1-Category-Social-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/Consultation3_Topic1_Category_Plan_Medication_Plan"
+              "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/Consultation3_Topic1_Category_Plan_Medication_Order"
+              "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Order"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic1_Category_Plan_Observation_1"
+              "reference": "Observation/Consultation3-Topic1-Category-Plan-Observation-1"
             }
           }
         ],
-        "assertedDate": "2019-03-28T10:30:00",
-        "onsetDateTime": "2019-03-28T10:30:00"
+        "assertedDate": "2019-03-28T10:30:00+00:00",
+        "onsetDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "Problem_B_Swollen_Legs",
+        "id": "Problem-B-Swollen-Legs",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
@@ -245,55 +245,55 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "List/Consultation1_Topic2"
+              "reference": "List/Consultation1-Topic2"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_History_Observation_1"
+              "reference": "Observation/Consultation1-Topic2-Category-History-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_1"
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_2"
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-2"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_3"
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-3"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_4"
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-4"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_5"
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-5"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_Plan_Observation_1"
+              "reference": "Observation/Consultation1-Topic2-Category-Plan-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic2_Category_Plan_Observation_2"
+              "reference": "Observation/Consultation1-Topic2-Category-Plan-Observation-2"
             }
           },
           {
@@ -305,60 +305,60 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "List/Consultation3_Topic2"
+              "reference": "List/Consultation3-Topic2"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic2_Category_History_Observation_1"
+              "reference": "Observation/Consultation3-Topic2-Category-History-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_1"
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_2"
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-2"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_3"
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-3"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_4"
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-4"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_5"
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-5"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation3_Topic2_Category_Plan_Observation_1"
+              "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-1"
             }
           }
         ],
-        "assertedDate": "2019-03-28T10:30:00",
-        "onsetDateTime": "2019-03-28T10:30:00"
+        "assertedDate": "2019-03-28T10:30:00+00:00",
+        "onsetDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Condition",
-        "id": "Problem_D_URTI",
+        "id": "Problem-D-URTI",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
@@ -397,49 +397,49 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "List/Consultation1_Topic4"
+              "reference": "List/Consultation1-Topic4"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic4_Category_History_Observation_1"
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic4_Category_History_Observation_2"
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-2"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic4_Category_History_Observation_3"
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-3"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic4_Category_History_Observation_4"
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-4"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1_Topic4_Category_Plan_Observation_1"
+              "reference": "Observation/Consultation1-Topic4-Category-Plan-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/MedicationRequest/Consultation1_Topic4_Category_Plan_Medication_Plan_1"
+              "reference": "MedicationRequest/MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/MedicationRequest/Consultation1_Topic4_Category_Plan_Medication_Order_1"
+              "reference": "MedicationRequest/MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Order-1"
             }
           },
           {
@@ -451,24 +451,24 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "List/Consultation2_Topic2"
+              "reference": "List/Consultation2-Topic2"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation2_Topic2_Category_History_Observation_1"
+              "reference": "Observation/Consultation2-Topic2-Category-History-Observation-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation2_Topic2_Category_Plan_Observation_1"
+              "reference": "Observation/Consultation2-Topic2-Category-Plan-Observation-1"
             }
           }
         ],
-        "assertedDate": "2019-03-28T10:30:00",
-        "onsetDateTime": "2019-03-28T10:30:00"
+        "assertedDate": "2019-03-28T10:30:00+00:00",
+        "onsetDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
 
@@ -483,6 +483,7 @@
           ]
         },
         "status": "current",
+        "mode": "snapshot",
         "title": "Consultation",
         "code": {
           "coding": [
@@ -511,7 +512,6 @@
           }
         ],
         "date": "2019-03-28T10:57:34+00:00",
-        "mode": "snapshot",
         "orderedBy": {
           "coding": [
             {
@@ -524,7 +524,7 @@
           "reference": "Patient/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         }
       }
-    }
+    },
 
 
 
@@ -540,7 +540,6 @@
           ]
         },
         "status": "finished",
-        "mode": "snapshot",
         "type": {
           "text": "Surgery Consultation"
         },
@@ -572,11 +571,10 @@
               }
             }
           }
-        ]
-      },
+        ],
       "period": {
-        "start": "2019-03-28T10:30:00",
-        "end": "2019-03-28T10:38:00"
+        "start": "2019-03-28T10:30:00+00:00",
+        "end": "2019-03-28T10:38:00+00:00"
       },
       "length": {
         "value": 8,
@@ -584,7 +582,7 @@
         "system": "http://unitsofmeasure.org",
         "code": "min"
       }
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
@@ -612,7 +610,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -625,27 +623,27 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation1_Topic1"
+              "reference": "List/Consultation1-Topic1"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic2"
+              "reference": "List/Consultation1-Topic2"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic3"
+              "reference": "List/Consultation1-Topic3"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic4"
+              "reference": "List/Consultation1-Topic4"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic5"
+              "reference": "List/Consultation1-Topic5"
             }
           }
         ]
@@ -654,7 +652,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic1",
+        "id": "Consultation1-Topic1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -678,7 +676,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -691,29 +689,29 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation1_Topic1_Category_History"
+              "reference": "List/Consultation1-Topic1-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic1_Category_Examination"
+              "reference": "List/Consultation1-Topic1-Category-Examination"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic1_Category_Social"
+              "reference": "List/Consultation1-Topic1-Category-Social"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic1_Category_Plan"
+              "reference": "List/Consultation1-Topic1-Category-Plan"
             }
           }
         ],
         "extension": {
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
-            "reference": "Condition/Problem_A_Anxiety_With_Depression"
+            "reference": "Condition/Problem-A-Anxiety-With-Depression"
           }
         }
       }
@@ -721,7 +719,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic1_Category_History",
+        "id": "Consultation1-Topic1-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -745,7 +743,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -754,20 +752,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic1_Category_History_Observation_1"
+            "reference": "Observation/Consultation1-Topic1-Category-History-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic1_Category_Examination",
+        "id": "Consultation1-Topic1-Category-Examination",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -791,7 +788,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -800,20 +797,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic1_Category_Examination_Observation_1"
+            "reference": "Observation/Consultation1-Topic1-Category-Examination-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic1_Category_Social",
+        "id": "Consultation1-Topic1-Category-Social",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -837,7 +833,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -846,25 +842,24 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic1_Category_Social_Observation_1"
+            "reference": "Observation/Consultation1-Topic1-Category-Social-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic1_Category_Social_Observation_2"
+            "reference": "Observation/Consultation1-Topic1-Category-Social-Observation-2"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic1_Category_Plan",
+        "id": "Consultation1-Topic1-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -888,7 +883,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -897,35 +892,34 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "MedicationRequest/Consultation1_Topic1_Category_Plan_Medication_Plan"
+            "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
           }
         },
         {
           "item": {
-            "reference": "MedicationRequest/Consultation1_Topic1_Category_Plan_Medication_Order"
+            "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Order"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic1_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic1_Category_Plan_Observation_2"
+            "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-2"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic2",
+        "id": "Consultation1-Topic2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -949,7 +943,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -962,24 +956,24 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation1_Topic2_Category_History"
+              "reference": "List/Consultation1-Topic2-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic2_Category_Examination"
+              "reference": "List/Consultation1-Topic2-Category-Examination"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic2_Category_Plan"
+              "reference": "List/Consultation1-Topic2-Category-Plan"
             }
           }
         ],
         "extension": {
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
-            "reference": "Condition/Problem_B_Swollen_Legs"
+            "reference": "Condition/Problem-B-Swollen-Legs"
           }
         }
       }
@@ -987,7 +981,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic2_Category_History",
+        "id": "Consultation1-Topic2-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1011,7 +1005,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1020,20 +1014,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_History_Observation_1"
+            "reference": "Observation/Consultation1-Topic2-Category-History-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic2_Category_Examination",
+        "id": "Consultation1-Topic2-Category-Examination",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1057,7 +1050,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1066,40 +1059,39 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_1"
+            "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_2"
+            "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-2"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_3"
+            "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-3"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_4"
+            "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-4"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_Examination_Observation_5"
+            "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-5"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic2_Category_Plan",
+        "id": "Consultation1-Topic2-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1123,7 +1115,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1132,12 +1124,11 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation1-Topic2-Category-Plan-Observation-1"
           }
         },
         {
@@ -1148,15 +1139,15 @@
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic2_Category_Plan_Observation_2"
+            "reference": "Observation/Consultation1-Topic2-Category-Plan-Observation-2"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic3",
+        "id": "Consultation1-Topic3",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1179,7 +1170,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1192,22 +1183,22 @@
         "entry": [
           {
             "item": {
-              "reference": "Observation/Consultation1_Topic3_flat_Observation_1"
+              "reference": "Observation/Consultation1-Topic3-flat-Observation-1"
             }
           },
           {
             "item": {
-              "reference": "Observation/Consultation1_Topic3_flat_Observation_2"
+              "reference": "Observation/Consultation1-Topic3-flat-Observation-2"
             }
           },
           {
             "item": {
-              "reference": "MedicationRequest/Consultation1_Topic3_flat_Medication_Plan_1"
+              "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"
             }
           },
           {
             "item": {
-              "reference": "MedicationRequest/Consultation1_Topic3_flat_Medication_Order_1"
+              "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Order-1"
             }
           }
         ]
@@ -1216,7 +1207,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic4",
+        "id": "Consultation1-Topic4",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1240,7 +1231,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1253,12 +1244,12 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation1_Topic4_Category_History"
+              "reference": "List/Consultation1-Topic4-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic4_Category_Plan"
+              "reference": "List/Consultation1-Topic4-Category-Plan"
             }
           }
         ]
@@ -1267,7 +1258,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic4_Category_History",
+        "id": "Consultation1-Topic4-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1291,7 +1282,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1300,41 +1291,40 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic4_Category_History_Observation_1"
+            "reference": "Observation/Consultation1-Topic4-Category-History-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic4_Category_History_Observation_2"
+            "reference": "Observation/Consultation1-Topic4-Category-History-Observation-2"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic4_Category_History_Observation_3"
+            "reference": "Observation/Consultation1-Topic4-Category-History-Observation-3"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic4_Category_History_Observation_4"
+            "reference": "Observation/Consultation1-Topic4-Category-History-Observation-4"
           }
         }
       ],
       "extension": {
         "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
         "valueReference": {
-          "reference": "Condition/Problem_D_URTI"
+          "reference": "Condition/Problem-D-URTI"
         }
       }
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic4_Category_Plan",
+        "id": "Consultation1-Topic4-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1358,7 +1348,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1367,30 +1357,29 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic4_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation1-Topic4-Category-Plan-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "MedicationRequest/Consultation1_Topic4_Category_Plan_Medication_Order_1"
+            "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Order-1"
           }
         },
         {
           "item": {
-            "reference": "MedicationRequest/Consultation1_Topic4_Category_Plan_Medication_Plan_1"
+            "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic5",
+        "id": "Consultation1-Topic5",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1414,7 +1403,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1427,17 +1416,17 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation1_Topic5_Category_History"
+              "reference": "List/Consultation1-Topic5-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic5_Category_Examination"
+              "reference": "List/Consultation1-Topic5-Category-Examination"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation1_Topic5_Category_Plan"
+              "reference": "List/Consultation1-Topic5-Category-Plan"
             }
           }
         ]
@@ -1446,7 +1435,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic5_Category_History",
+        "id": "Consultation1-Topic5-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1470,7 +1459,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1479,30 +1468,29 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic5_Category_History_Observation_1"
+            "reference": "Observation/Consultation1-Topic5-Category-History-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic5_Category_History_Observation_2"
+            "reference": "Observation/Consultation1-Topic5-Category-History-Observation-2"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic5_Category_History_Observation_3"
+            "reference": "Observation/Consultation1-Topic5-Category-History-Observation-3"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic5_Category_Examination",
+        "id": "Consultation1-Topic5-Category-Examination",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1526,7 +1514,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1535,25 +1523,24 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic5_Category_Examination_Observation_1"
+            "reference": "Observation/Consultation1-Topic5-Category-Examination-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic5_Category_Examination_Observation_2"
+            "reference": "Observation/Consultation1-Topic5-Category-Examination-Observation-2"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation1_Topic5_Category_Plan",
+        "id": "Consultation1-Topic5-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -1577,7 +1564,7 @@
         "encounter": {
           "reference": "Encounter/Encounter1"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -1586,25 +1573,24 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic5_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation1-Topic5-Category-Plan-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation1_Topic5_Category_Plan_Observation_2"
+            "reference": "Observation/Consultation1-Topic5-Category-Plan-Observation-2"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic1_Category_History_Observation_1",
+        "id": "Consultation1-Topic1-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -1626,14 +1612,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Come for review. Overall doing better. Mood still low but improvig. More good days than bad. Energy levels ok. Motivation improving. Support from neighbour visits daily"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic1_Category_Examination_Observation_1",
+        "id": "Consultation1-Topic1-Category-Examination-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -1655,14 +1641,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "MSE euthymic. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic1_Category_Social_Observation_1",
+        "id": "Consultation1-Topic1-Category-Social-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -1697,13 +1683,13 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic1_Category_Social_Observation_2",
+        "id": "Consultation1-Topic1-Category-Social-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -1742,13 +1728,13 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic1_Category_Plan_Observation_1",
+        "id": "Consultation1-Topic1-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -1782,7 +1768,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic1_Category_Plan_Observation_2",
+        "id": "Consultation1-Topic1-Category-Plan-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -1817,7 +1803,7 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation1_Topic1_Category_Plan_Medication_Plan",
+        "id": "Consultation1-Topic1-Category-Plan-Medication-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
@@ -1941,7 +1927,7 @@
           }
         ],
         "basedOn": {
-          "reference": "MedicationRequest/Consultation1_Topic1_Category_Plan_Medication_Plan"
+          "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
         },
         "status": "completed",
         "medicationReference": {
@@ -1969,14 +1955,14 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation1_Topic1_Category_Plan_Medication_Order",
+        "id": "Consultation1-Topic1-Category-Plan-Medication-Order",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
         "basedOn": {
-          "reference": "MedicationRequest/MedicationRequest/Consultation1_Topic1_Category_Plan_Medication_Plan"
+          "reference": "MedicationRequest/MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
         },
         "status": "completed",
         "intent": "order",
@@ -2042,7 +2028,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_History_Observation_1",
+        "id": "Consultation1-Topic2-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2064,14 +2050,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "2 months - bilateral swollen lower legs"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_Examination_Observation_1",
+        "id": "Consultation1-Topic2-Category-Examination-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2112,14 +2098,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Patient looks flushed"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_Examination_Observation_2",
+        "id": "Consultation1-Topic2-Category-Examination-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2160,13 +2146,13 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_Examination_Observation_3",
+        "id": "Consultation1-Topic2-Category-Examination-Observation-3",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2207,14 +2193,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Chest clear"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_Examination_Observation_4",
+        "id": "Consultation1-Topic2-Category-Examination-Observation-4",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2255,13 +2241,13 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_Examination_Observation_5",
+        "id": "Consultation1-Topic2-Category-Examination-Observation-5",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2283,14 +2269,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Swelling lower legs bilaterally. Mild pitting oedema. Heart sounds normal. No distress. Abdomen normal. No cervical lymphadenopathy. Throat normal. Ears normal"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_Plan_Observation_1",
+        "id": "Consultation1-Topic2-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2312,21 +2298,21 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Advice to mobilise more. Review with results."
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic2_Category_Plan_Observation_2",
+        "id": "Consultation1-Topic2-Category-Plan-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
         "status": "final",
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "code": {
           "coding": [
             {
@@ -2354,14 +2340,14 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic3_flat_Observation_1",
+        "id": "Consultation1-Topic3-flat-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
         "status": "final",
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "code": {
           "coding": [
             {
@@ -2390,14 +2376,14 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic3_flat_Observation_2",
+        "id": "Consultation1-Topic3-flat-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
         "status": "final",
-        "practitioner": {
+        "performer": {
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
         },
         "subject": {
@@ -2465,7 +2451,7 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation1_Topic3_flat_Medication_Plan_1",
+        "id": "Consultation1-Topic3-flat-Medication-Plan-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
@@ -2589,7 +2575,7 @@
           }
         ],
         "basedOn": {
-          "reference": "MedicationRequest/Consultation1_Topic3_flat_Medication_Plan_1"
+          "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"
         },
         "status": "completed",
         "medicationReference": {
@@ -2617,14 +2603,14 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "MedicationRequest/Consultation1_Topic3_flat_Medication_Order_1",
+        "id": "MedicationRequest/Consultation1-Topic3-flat-Medication-Order-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
         "basedOn": {
-          "reference": "MedicationRequest/Consultation1_Topic3_flat_Medication_Plan_1"
+          "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"
         },
         "status": "completed",
         "intent": "order",
@@ -2690,7 +2676,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic4_Category_History_Observation_1",
+        "id": "Consultation1-Topic4-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2712,14 +2698,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "2 weeks cough - white sputum - no blood, 1 week nose running, 5 days sore throat, No shortness of breath"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic4_Category_History_Observation_2",
+        "id": "Consultation1-Topic4-Category-History-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2753,7 +2739,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic4_Category_History_Observation_3",
+        "id": "Consultation1-Topic4-Category-History-Observation-3",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2787,7 +2773,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic4_Category_History_Observation_4",
+        "id": "Consultation1-Topic4-Category-History-Observation-4",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2821,7 +2807,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic4_Category_Plan_Observation_1",
+        "id": "Consultation1-Topic4-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -2843,14 +2829,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Patient to take Amlodipine 10mg tablets and monitor blood"
       }
     },
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation1_Topic4_Category_Plan_Medication_Plan_1",
+        "id": "Consultation1-Topic4-Category-Plan-Medication-Plan-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
@@ -2974,7 +2960,7 @@
           }
         ],
         "basedOn": {
-          "reference": "MedicationRequest/Consultation1_Topic4_Category_Plan_Medication_Plan_1"
+          "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
         },
         "status": "completed",
         "medicationReference": {
@@ -3002,14 +2988,14 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation1_Topic4_Category_Plan_Medication_Order_1",
+        "id": "Consultation1-Topic4-Category-Plan-Medication-Order-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
         "basedOn": {
-          "reference": "Consultation1_Topic4_Category_Plan_Medication_Plan_1"
+          "reference": "Consultation1-Topic4-Category-Plan-Medication-Plan-1"
         },
         "status": "completed",
         "intent": "order",
@@ -3075,7 +3061,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic5_Category_History_Observation_1",
+        "id": "Consultation1-Topic5-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3109,7 +3095,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic5_Category_History_Observation_2",
+        "id": "Consultation1-Topic5-Category-History-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3131,14 +3117,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Similar problem 3 months ago - settled after 2 weeks"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic5_Category_History_Observation_3",
+        "id": "Consultation1-Topic5-Category-History-Observation-3",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3160,14 +3146,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "No locking.No effusion. No giving way"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic5_Category_Examination_Observation_1",
+        "id": "Consultation1-Topic5-Category-Examination-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3189,14 +3175,14 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "No effusion. Full range of movement. Ligaments normal"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic5_Category_Examination_Observation_2",
+        "id": "Consultation1-Topic5-Category-Examination-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3230,7 +3216,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic5_Category_Plan_Observation_1",
+        "id": "Consultation1-Topic5-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3264,7 +3250,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_Topic5_Category_Plan_Observation_2",
+        "id": "Consultation1-Topic5-Category-Plan-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3286,7 +3272,7 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Analgesia advice, try knee support daytime"
       }
     },
@@ -3300,7 +3286,6 @@
           ]
         },
         "status": "finished",
-        "mode": "snapshot",
         "type": {
           "text": "Surgery Consultation"
         },
@@ -3332,10 +3317,9 @@
               }
             }
           }
-        ]
-      },
+        ],
       "period": {
-        "start": "2019-03-28T10:30:00",
+        "start": "2019-03-28T10:30:00+00:00",
         "end": "2019-03-28T10:38:00"
       },
       "length": {
@@ -3344,7 +3328,7 @@
         "system": "http://unitsofmeasure.org",
         "code": "min"
       }
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
@@ -3372,7 +3356,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3385,12 +3369,12 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation2_Topic1"
+              "reference": "List/Consultation2-Topic1"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation2_Topic2"
+              "reference": "List/Consultation2-Topic2"
             }
           }
         ]
@@ -3399,7 +3383,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic1",
+        "id": "Consultation2-Topic1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3423,7 +3407,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3436,29 +3420,29 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation2_Topic1_Category_History"
+              "reference": "List/Consultation2-Topic1-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation2_Topic1_Category_Examination"
+              "reference": "List/Consultation2-Topic1-Category-Examination"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation2_Topic1_Category_Social"
+              "reference": "List/Consultation2-Topic1-Category-Social"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation2_Topic1_Category_Plan"
+              "reference": "List/Consultation2-Topic1-Category-Plan"
             }
           }
         ],
         "extension": {
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
-            "reference": "Condition/Problem_A_Anxiety_With_Depression"
+            "reference": "Condition/Problem-A-Anxiety-With-Depression"
           }
         }
       }
@@ -3466,7 +3450,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic2",
+        "id": "Consultation2-Topic2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3490,7 +3474,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3503,19 +3487,19 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation2_Topic2_Category_History"
+              "reference": "List/Consultation2-Topic2-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation2_Topic2_Category_Plan"
+              "reference": "List/Consultation2-Topic2-Category-Plan"
             }
           }
         ],
         "extension": {
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
-            "reference": "Condition/Problem_D_URTI"
+            "reference": "Condition/Problem-D-URTI"
           }
         }
       }
@@ -3523,7 +3507,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic1_Category_History",
+        "id": "Consultation2-Topic1-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3547,7 +3531,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3556,20 +3540,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation2_Topic1_Category_History_Observation_1"
+            "reference": "Observation/Consultation2-Topic1-Category-History-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic1_Category_Examination",
+        "id": "Consultation2-Topic1-Category-Examination",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3593,7 +3576,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3602,20 +3585,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation2_Topic1_Category_Examination_Observation_1"
+            "reference": "Observation/Consultation2-Topic1-Category-Examination-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic1_Category_Social",
+        "id": "Consultation2-Topic1-Category-Social",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3639,7 +3621,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3648,20 +3630,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation2_Topic1_Category_Social_Observation_1"
+            "reference": "Observation/Consultation2-Topic1-Category-Social-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic1_Category_Plan",
+        "id": "Consultation2-Topic1-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3685,7 +3666,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3694,30 +3675,29 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "MedicationRequest/Consultation2_Topic1_Category_Plan_Medication_Plan"
+            "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
           }
         },
         {
           "item": {
-            "reference": "MedicationRequest/Consultation2_Topic1_Category_Plan_Medication_Order"
+            "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Order"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation2_Topic1_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation2-Topic1-Category-Plan-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic2_Category_History",
+        "id": "Consultation2-Topic2-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3741,7 +3721,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3750,20 +3730,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation2_Topic2_Category_History_Observation_1"
+            "reference": "Observation/Consultation2-Topic2-Category-History-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation2_Topic2_Category_Plan",
+        "id": "Consultation2-Topic2-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -3787,7 +3766,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3796,20 +3775,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation2_Topic2_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation2-Topic2-Category-Plan-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation2_Topic1_Category_History_Observation_1",
+        "id": "Consultation2-Topic1-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3831,14 +3809,14 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Come for review. Overall doing better. Mood improving. Still get bad days. Energy levels ok. Motivation improving. Started to go walking twice a week. First counselor appointment in two weeks. Patient has been lightly drinking."
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation2_Topic1_Category_Examination_Observation_1",
+        "id": "Consultation2-Topic1-Category-Examination-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3860,14 +3838,14 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "MSE euthymic. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation2_Topic1_Category_Social_Observation_1",
+        "id": "Consultation2-Topic1-Category-Social-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -3906,13 +3884,13 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation2_Topic1_Category_Plan_Medication_Plan",
+        "id": "Consultation2-Topic1-Category-Plan-Medication-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
@@ -4036,7 +4014,7 @@
           }
         ],
         "basedOn": {
-          "reference": "MedicationRequest/Consultation2_Topic1_Category_Plan_Medication_Plan"
+          "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
         },
         "status": "completed",
         "medicationReference": {
@@ -4064,14 +4042,14 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation2_Topic1_Category_Plan_Medication_Order",
+        "id": "Consultation2-Topic1-Category-Plan-Medication-Order",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
         "basedOn": {
-          "reference": "MedicationRequest/Consultation2_Topic1_Category_Plan_Medication_Plan"
+          "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
         },
         "status": "completed",
         "intent": "order",
@@ -4137,7 +4115,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation2_Topic1_Category_Plan_Observation_1",
+        "id": "Consultation2-Topic1-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -4159,14 +4137,14 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Continue with current actions and monitor progress"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation2_Topic2_Category_History_Observation_1",
+        "id": "Consultation2-Topic2-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -4188,14 +4166,14 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Patient reports the condition has cleared but develops cough when lies down to sleep."
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation2_Topic2_Category_Plan_Observation_1",
+        "id": "Consultation2-Topic2-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -4217,7 +4195,7 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Recommend that before sleep, patient has a hot drink. Sleep with head in elevated position."
       }
     },
@@ -4231,7 +4209,6 @@
           ]
         },
         "status": "finished",
-        "mode": "snapshot",
         "type": {
           "text": "Surgery Consultation"
         },
@@ -4263,11 +4240,10 @@
               }
             }
           }
-        ]
-      },
+        ],
       "period": {
-        "start": "2019-03-28T10:30:00",
-        "end": "2019-03-28T10:38:00"
+        "start": "2019-03-28T10:30:00+00:00",
+        "end": "2019-03-28T10:38:00+00:00"
       },
       "length": {
         "value": 8,
@@ -4275,7 +4251,7 @@
         "system": "http://unitsofmeasure.org",
         "code": "min"
       }
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
@@ -4303,7 +4279,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4316,12 +4292,12 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation3_Topic1"
+              "reference": "List/Consultation3-Topic1"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation3_Topic2"
+              "reference": "List/Consultation3-Topic2"
             }
           }
         ]
@@ -4330,7 +4306,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic1",
+        "id": "Consultation3-Topic1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4354,7 +4330,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4367,29 +4343,29 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation3_Topic1_Category_History"
+              "reference": "List/Consultation3-Topic1-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation3_Topic1_Category_Examination"
+              "reference": "List/Consultation3-Topic1-Category-Examination"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation3_Topic1_Category_Social"
+              "reference": "List/Consultation3-Topic1-Category-Social"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation3_Topic1_Category_Plan"
+              "reference": "List/Consultation3-Topic1-Category-Plan"
             }
           }
         ],
         "extension": {
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
-            "reference": "Condition/Problem_A_Anxiety_With_Depression"
+            "reference": "Condition/Problem-A-Anxiety-With-Depression"
           }
         }
       }
@@ -4397,7 +4373,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic2",
+        "id": "Consultation3-Topic2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4421,7 +4397,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4434,24 +4410,24 @@
         "entry": [
           {
             "item": {
-              "reference": "List/Consultation3_Topic2_Category_History"
+              "reference": "List/Consultation3-Topic2-Category-History"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation3_Topic2_Category_Examination"
+              "reference": "List/Consultation3-Topic2-Category-Examination"
             }
           },
           {
             "item": {
-              "reference": "List/Consultation3_Topic2_Category_Plan"
+              "reference": "List/Consultation3-Topic2-Category-Plan"
             }
           }
         ],
         "extension": {
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
-            "reference": "Condition/Problem_B_Swollen_Legs"
+            "reference": "Condition/Problem-B-Swollen-Legs"
           }
         }
       }
@@ -4459,7 +4435,7 @@
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic1_Category_History",
+        "id": "Consultation3-Topic1-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4483,7 +4459,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4492,20 +4468,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic1_Category_History_Observation_1"
+            "reference": "Observation/Consultation3-Topic1-Category-History-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic1_Category_Examination",
+        "id": "Consultation3-Topic1-Category-Examination",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4529,7 +4504,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4538,20 +4513,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic1_Category_Examination_Observation_1"
+            "reference": "Observation/Consultation3-Topic1-Category-Examination-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic1_Category_Social",
+        "id": "Consultation3-Topic1-Category-Social",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4575,7 +4549,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4584,20 +4558,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic1_Category_Social_Observation_1"
+            "reference": "Observation/Consultation3-Topic1-Category-Social-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic1_Category_Plan",
+        "id": "Consultation3-Topic1-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4621,7 +4594,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4630,30 +4603,29 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "MedicationRequest/Consultation3_Topic1_Category_Plan_Medication_Plan"
+            "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
           }
         },
         {
           "item": {
-            "reference": "MedicationRequest/Consultation3_Topic1_Category_Plan_Medication_Order"
+            "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Order"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic1_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation3-Topic1-Category-Plan-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic2_Category_History",
+        "id": "Consultation3-Topic2-Category-History",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4677,7 +4649,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4686,20 +4658,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic2_Category_History_Observation_1"
+            "reference": "Observation/Consultation3-Topic2-Category-History-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic2_Category_Examination",
+        "id": "Consultation3-Topic2-Category-Examination",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4723,7 +4694,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4732,32 +4703,31 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_1"
+            "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-1"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_2"
+            "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-2"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_3"
+            "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-3"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_4"
+            "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-4"
           }
         },
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic2_Category_Examination_Observation_5"
+            "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-5"
           }
         },
         {
@@ -4773,11 +4743,11 @@
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "List",
-        "id": "Consultation3_Topic2_Category_Plan",
+        "id": "Consultation3-Topic2-Category-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
@@ -4801,7 +4771,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00",
+        "date": "2019-03-28T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4810,20 +4780,19 @@
               "display": "Sorted by System"
             }
           ]
-        }
-      },
+        },
       "entry": [
         {
           "item": {
-            "reference": "Observation/Consultation3_Topic2_Category_Plan_Observation_1"
+            "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-1"
           }
         }
       ]
-    },
+    }},
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic1_Category_History_Observation_1",
+        "id": "Consultation3-Topic1-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -4845,14 +4814,14 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Come for review. Overall doing better. Mood improving. Still get bad days. Energy levels ok. Motivation improving. Continued to go walking twice a week. Attended first counselor appointment but not sure if it helped. Patient has been lightly drinking."
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic1_Category_Examination_Observation_1",
+        "id": "Consultation3-Topic1-Category-Examination-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -4874,14 +4843,14 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "MSE euthymic. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic1_Category_Social_Observation_1",
+        "id": "Consultation3-Topic1-Category-Social-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -4920,13 +4889,13 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation3_Topic1_Category_Plan_Medication_Plan",
+        "id": "Consultation3-Topic1-Category-Plan-Medication-Plan",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
@@ -5050,7 +5019,7 @@
           }
         ],
         "basedOn": {
-          "reference": "MedicationRequest/Consultation3_Topic1_Category_Plan_Medication_Plan"
+          "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
         },
         "status": "completed",
         "medicationReference": {
@@ -5078,14 +5047,14 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "Consultation3_Topic1_Category_Plan_Medication_Order",
+        "id": "Consultation3-Topic1-Category-Plan-Medication-Order",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
         "basedOn": {
-          "reference": "MedicationRequest/Consultation3_Topic1_Category_Plan_Medication_Plan"
+          "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
         },
         "status": "completed",
         "intent": "order",
@@ -5151,7 +5120,7 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic1_Category_Plan_Observation_1",
+        "id": "Consultation3-Topic1-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5173,14 +5142,14 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Continue with current actions and monitor progress."
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic2_Category_History_Observation_1",
+        "id": "Consultation3-Topic2-Category-History-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5202,14 +5171,14 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "4 months - bilateral swollen lower legs"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic2_Category_Examination_Observation_1",
+        "id": "Consultation3-Topic2-Category-Examination-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5250,13 +5219,13 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic2_Category_Examination_Observation_2",
+        "id": "Consultation3-Topic2-Category-Examination-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5297,13 +5266,13 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic2_Category_Examination_Observation_3",
+        "id": "Consultation3-Topic2-Category-Examination-Observation-3",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5344,14 +5313,14 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Heart sounds normal"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic2_Category_Examination_Observation_4",
+        "id": "Consultation3-Topic2-Category-Examination-Observation-4",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5392,13 +5361,13 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic2_Category_History_Observation_5",
+        "id": "Consultation3-Topic2-Category-History-Observation-5",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5420,14 +5389,14 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Swelling lower legs bilaterally. Mild pitting oedema. Chest clear. No distress. Abdomen normal. No cervical lymphadenopathy. Throat normal. Ears normal.Swelling has noticeably reduced from examiniation two months ago. Blood count and ECG have not identified any cause."
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3_Topic2_Category_Plan_Observation_1",
+        "id": "Consultation3-Topic2-Category-Plan-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
@@ -5449,7 +5418,7 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00",
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "comment": "Continue with current actions and monitor progress."
       }
     },
@@ -5611,13 +5580,13 @@
     },
     {
       "resource": {
+        "resourceType": "PractitionerRole",
+        "id": "e0244de8-07ef-4274-9f7a-d7067bcc8d21",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"
           ]
         },
-        "resourceType": "PractitionerRole",
-        "id": "e0244de8-07ef-4274-9f7a-d7067bcc8d21",
         "practitioner": {
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         },
