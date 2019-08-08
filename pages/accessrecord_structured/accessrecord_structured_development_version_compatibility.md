@@ -9,7 +9,7 @@ summary: "Retrieve a patient's record in structured format"
 
 ## Introduction ##
 
-The GP Connect API requires that a solution for forwards and backwards compatibility is developed as there is the potential for multiple versions to be implemented by consumers and providers.
+The GP Connect API requires that a solution for forwards and backwards compatibility is developed as there is the potential for multiple versions of the GP Connect API to be implemented by consumers and providers.
 
 ### Forwards and backwards compatibility ###
 
