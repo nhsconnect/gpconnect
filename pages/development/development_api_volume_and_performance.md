@@ -4,7 +4,7 @@ keywords: development
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_api_volume_and_performance.html
-summary: "Details of the API volume and performance characteristics."
+summary: "Details of the API volume and performance characteristics"
 ---
 
 ## Volumetrics ##
