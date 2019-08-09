@@ -159,6 +159,10 @@ For each `Observation` referenced in the `List` profile:
 <img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"> 
 </center>
 
+### Duplicate Returned Profiles ###
+
+Where the same instance of a profile is returned from multiple query responses (for example a medication is returned as part of the medication search and the consultation search), it will only be included once in the response message.
+
 ## Search ##
 
 The GP Connect API allows the consumer system to specify what data it requires from the provider system about a specified patient.
