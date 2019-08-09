@@ -79,6 +79,18 @@ Where a provider system is not able to export a linked clinical item, it will cr
    
    For example "Referral items are not supported by the provider system.”
 
+## Problems containing confidential items
+
+Where a Problem is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
+
+Where a Problem is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
+* The Problem will be included in the response as normal
+* The confidential item(s) will NOT be included in the response
+* There will be NO reference to the confidential item(s) in the `ProblemHeader` profile.
+* The Confidential Items warning message will be included in the `List` containing the query response.
+
+In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed from.
+
 ## Using the `List` resource for problem queries
 
 The results of a query for problem details **MUST** return a `List` containing references to all `Condition-ProblemHeader` resources that are returned.
