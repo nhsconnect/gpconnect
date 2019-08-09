@@ -5,7 +5,7 @@ tags: [support]
 toc: false
 sidebar: overview_sidebar
 permalink: support_faq.html
-summary: "Frequently Asked Questions related to the GP Connect technical specification"
+summary: "Frequently asked questions related to the GP Connect technical specification"
 ---
 
 ## Which serialisation format should I choose as an GP Connect API consumer - JSON or XML? ##
