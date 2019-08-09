@@ -38,11 +38,11 @@ The three main considerations used to decide which data to return for each clini
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
 The response to the query includes:
-* A `List` profile containing references to `Encounter` for every consultation that met the search criteria
+* A `List` profile containing references to `Encounter` for every Consultation that met the search criteria
 
 For each `Encounter` reference in the `List` profile:
-*  The `Encounter` profile of the consultation
-*	The `List` profiles that describe the structure of the consultation
+*  The `Encounter` profile of the Consultation
+*	The `List` profiles that describe the structure of the Consultation
 *	The `ProblemHeader` profile of any directly linked Problems
 *	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
     * Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
@@ -55,33 +55,36 @@ For each `Encounter` reference in the `List` profile:
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Uncategorised Data
 
-Where a consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html)
+Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html)
 
 
-Clinical items within the consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a consultation that contains a medication but not explicitly request medications in the query, the provider will still include the medication contained in the consultation as part of its response.
+Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Consultation that contains a Medication but not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
 
 <img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Problems ###
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
 
-From each Problem item returned, include the following FHIR profiles:
-*	The ProblemHeader profile of the Problem
-*	The ProblemHeader profiles of any directly linked Problems
-*	The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices.
-    *	Always include the MedicationStatement, MedicationRequest (intent = plan) and Medication profiles.
-    *	Only include MedicationRequest (intent = order) for directly linked issues.
-*	The AllergyIntolerance profile of any linked Allergies
-    *	Include the ProblemHeader profile of any Problems linked to the returned Allergies
-*	The Immunization profile of any linked Immunisations
-    *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
-*	The Observation profile of any linked Uncategorised Data
-    *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
+The response to the query includes:
+* A `List` profile containing references to `ProblemHeader` for every Problem that met the search criteria
 
-Where a consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html)
+For each `ProblemHeader` reference in the `List` profile:
+*	The `ProblemHeader` profile of the Problem
+*	The `ProblemHeader` profiles of any directly linked Problems
+*	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices.
+    *	Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles.
+    *	Only include `MedicationRequest` (intent = order) for directly linked issues.
+*	The `AllergyIntolerance` profile of any linked Allergies
+    *	Include the `ProblemHeader` profile of any Problems linked to the returned Allergies
+*	The `Immunization` profile of any linked Immunisations
+    *	Include the `ProblemHeader` profile of any Problems linked to the returned Immunisations
+*	The `Observation` profile of any linked Uncategorised Data
+    *	Include the `ProblemHeader` profile of any Problems linked to the returned Uncategorised Data
+
+Where a Problem links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html)
 
 
-Clinical items linked to the problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a problem that links to a medication but not explicitly request medications in the query, the provider will still include the Medication linked to the problem as part of its response.
+Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Problem that links to a Medication but not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
 
 <img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
