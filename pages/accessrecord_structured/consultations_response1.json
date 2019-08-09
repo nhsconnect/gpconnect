@@ -23,7 +23,7 @@
               "system": "http://snomed.info/sct",
               "code": "231504006",
               "display": "Mixed anxiety and depressive disorder (disorder)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -35,7 +35,7 @@
                     "valueString": "Mixed anxiety and depressive disorder"
                   }
                 ]
-              }
+              }]
             }
           ],
           "text": "Anxiety with depression"
@@ -218,7 +218,7 @@
               "system": "http://snomed.info/sct",
               "code": "449614009",
               "display": "Swelling of lower limb (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -230,7 +230,7 @@
                     "valueString": "Swollen leg"
                   }
                 ]
-              }
+              }]
             }
           ],
           "text": "Swollen legs"
@@ -371,7 +371,7 @@
               "system": "http://snomed.info/sct",
               "code": "54150009",
               "display": "Upper respiratory infection (disorder)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -383,7 +383,7 @@
                     "valueString": "Upper respiratory tract infection"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -540,36 +540,36 @@
           ]
         },
         "status": "finished",
-        "type": {
+        "type": [{
           "text": "Surgery Consultation"
-        },
+        }],
         "subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
         "participant": [
           {
             "type": {
-              "coding": {
+              "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
                 "code": "PPRF",
                 "display": "Primary Performer"
-              },
+              }]},
               "individual": {
                 "reference": "Practioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
               }
-            }
+
           },
           {
             "type": {
-              "coding": {
+              "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
                 "code": "AUT",
                 "display": "Author"
-              },
+              }]},
               "individual": {
                 "reference": "Practioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
               }
-            }
+
           }
         ],
       "period": {
@@ -708,12 +708,12 @@
             }
           }
         ],
-        "extension": {
+        "extension": [{
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
             "reference": "Condition/Problem-A-Anxiety-With-Depression"
           }
-        }
+        }]
       }
     },
     {
@@ -970,12 +970,12 @@
             }
           }
         ],
-        "extension": {
+        "extension": [{
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
             "reference": "Condition/Problem-B-Swollen-Legs"
           }
-        }
+        }]
       }
     },
     {
@@ -1133,7 +1133,6 @@
         },
         {
           "item": {
-            "reference": null,
             "display": "Clinical item not supported by the provider system"
           }
         },
@@ -1314,12 +1313,12 @@
           }
         }
       ],
-      "extension": {
+      "extension": [{
         "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
         "valueReference": {
           "reference": "Condition/Problem-D-URTI"
         }
-      }
+      }]
     }},
     {
       "resource": {
@@ -1661,7 +1660,7 @@
               "system": "http://snomed.info/sct",
               "code": "266919005",
               "display": "Never smoked tobacco (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -1673,7 +1672,7 @@
                     "valueString": "Never smoked tobacco"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -1702,7 +1701,7 @@
               "system": "http://snomed.info/sct",
               "code": "1082641000000106",
               "display": "Alcohol units consumed per week (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -1714,7 +1713,7 @@
                     "valueString": "Alcohol units consumed per week"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -1747,7 +1746,7 @@
               "system": "http://snomed.info/sct",
               "code": "308448008",
               "display": "Referral to counselor (procedure)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -1759,7 +1758,7 @@
                     "valueString": "Referral to counsellor"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -1781,7 +1780,7 @@
               "system": "http://snomed.info/sct",
               "code": "308931006",
               "display": "Walking practice (regime/therapy)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -1793,7 +1792,7 @@
                     "valueString": "Walking practice"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -1835,7 +1834,7 @@
         "dispenseRequest": {
           "expectedSupplyDuration": {
             "code": "d",
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -1846,7 +1845,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -1926,14 +1925,14 @@
             }
           }
         ],
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
-        },
+        }],
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/c260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectiveDateTime": "2019-03-28+00:00",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -1961,9 +1960,9 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
-        },
+        }],
         "status": "completed",
         "intent": "order",
         "medicationReference": {
@@ -1992,7 +1991,7 @@
             "code": [
               "d"
             ],
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -2003,7 +2002,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -2070,7 +2069,7 @@
               "system": "http://snomed.info/sct",
               "code": "703421000",
               "display": "Temperature (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2082,7 +2081,7 @@
                     "valueString": "Temperature"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -2118,7 +2117,7 @@
               "system": "http://snomed.info/sct",
               "code": "1097811000000106",
               "display": "Arterial oxygen saturation breathing room air at rest (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2130,7 +2129,7 @@
                     "valueString": "Arterial oxygen saturation on room air at rest"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -2165,7 +2164,7 @@
               "system": "http://snomed.info/sct",
               "code": " 86290005",
               "display": "Respiratory rate (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2177,7 +2176,7 @@
                     "valueString": "Respiratory rate"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -2213,7 +2212,7 @@
               "system": "http://snomed.info/sct",
               "code": "271637005",
               "display": "Pulse irregularly irregular (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2225,7 +2224,7 @@
                     "valueString": "Pulse irregularly irregular"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -2319,7 +2318,7 @@
               "system": "http://snomed.info/sct",
               "code": "46825001",
               "display": "Electrocardiographic monitoring (procedure)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2331,7 +2330,7 @@
                     "valueString": "Electrocardiographic monitoring"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -2354,7 +2353,7 @@
               "system": "http://snomed.info/sct",
               "code": "413153004",
               "display": "Blood pressure recorded by patient at home (procedure)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2366,7 +2365,7 @@
                     "valueString": "Blood pressure recorded by patient at home"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -2398,7 +2397,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "163020007",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdecsid",
                 "extension": [
                   {
@@ -2410,7 +2409,7 @@
                     "valueId": "O/E - blood pressure reading"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -2483,7 +2482,7 @@
         "dispenseRequest": {
           "expectedSupplyDuration": {
             "code": "d",
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -2494,7 +2493,7 @@
                 "valueString": "tablet(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -2574,14 +2573,14 @@
             }
           }
         ],
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"
-        },
+        }],
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/d260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectiveDateTime": "2019-03-28+00:00",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -2609,9 +2608,9 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"
-        },
+        }],
         "status": "completed",
         "intent": "order",
         "medicationReference": {
@@ -2640,7 +2639,7 @@
             "code": [
               "d"
             ],
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -2651,7 +2650,7 @@
                 "valueString": "tablet(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -2718,7 +2717,7 @@
               "system": "http://snomed.info/sct",
               "code": "49727002",
               "display": "Cough (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2730,7 +2729,7 @@
                     "valueString": "Cough"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -2752,7 +2751,7 @@
               "system": "http://snomed.info/sct",
               "code": "267101005",
               "display": "Nasal discharge present (situation)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2764,7 +2763,7 @@
                     "valueString": "Nose running"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -2786,7 +2785,7 @@
               "system": "http://snomed.info/sct",
               "code": "162397003",
               "display": "Pain in throat (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -2798,7 +2797,7 @@
                     "valueString": "Sore throat"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -2868,7 +2867,7 @@
         "dispenseRequest": {
           "expectedSupplyDuration": {
             "code": "d",
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -2879,7 +2878,7 @@
                 "valueString": "tablet(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -2959,14 +2958,14 @@
             }
           }
         ],
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
-        },
+        }],
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/a260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectiveDateTime": "2019-03-28+00:00",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -2994,9 +2993,9 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
-        "basedOn": {
+        "basedOn": [{
           "reference": "Consultation1-Topic4-Category-Plan-Medication-Plan-1"
-        },
+        }],
         "status": "completed",
         "intent": "order",
         "medicationReference": {
@@ -3025,7 +3024,7 @@
             "code": [
               "d"
             ],
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -3036,7 +3035,7 @@
                 "valueString": "tablet(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -3074,7 +3073,7 @@
               "system": "http://snomed.info/sct",
               "code": "30989003",
               "display": "Knee pain (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -3086,7 +3085,7 @@
                     "valueString": "Knee pain"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -3195,7 +3194,7 @@
               "system": "http://snomed.info/sct",
               "code": "299373004",
               "display": "Tenderness on medial joint lne of knee (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -3207,7 +3206,7 @@
                     "valueString": "Tenderness on medial joint lne of knee"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -3229,7 +3228,7 @@
               "system": "http://snomed.info/sct",
               "code": "308447003",
               "display": "Referral to physiopherapist (procedure)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -3241,7 +3240,7 @@
                     "valueString": "Referral to physiopherapist"
                   }
                 ]
-              }
+              }]
             }
           ]
         }
@@ -3295,27 +3294,27 @@
         "participant": [
           {
             "type": {
-              "coding": {
+              "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
                 "code": "PPRF",
                 "display": "Primary Performer"
-              },
+              }]},
               "individual": {
                 "reference": "Practioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
               }
-            }
+
           },
           {
             "type": {
-              "coding": {
+              "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
                 "code": "AUT",
                 "display": "Author"
-              },
+              }]},
               "individual": {
                 "reference": "Practioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
               }
-            }
+
           }
         ],
       "period": {
@@ -3439,12 +3438,12 @@
             }
           }
         ],
-        "extension": {
+        "extension": [{
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
             "reference": "Condition/Problem-A-Anxiety-With-Depression"
           }
-        }
+        }]
       }
     },
     {
@@ -3496,12 +3495,12 @@
             }
           }
         ],
-        "extension": {
+        "extension": [{
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
             "reference": "Condition/Problem-D-URTI"
           }
-        }
+        }]
       }
     },
     {
@@ -3858,7 +3857,7 @@
               "system": "http://snomed.info/sct",
               "code": "1082641000000106",
               "display": "Alcohol units consumed per week (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -3870,7 +3869,7 @@
                     "valueString": "Alcohol units consumed per week"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -3922,7 +3921,7 @@
         "dispenseRequest": {
           "expectedSupplyDuration": {
             "code": "d",
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -3933,7 +3932,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -4013,14 +4012,14 @@
             }
           }
         ],
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
-        },
+        }],
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/b260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectiveDateTime": "2019-03-28+00:00",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -4048,9 +4047,9 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
-        },
+        }],
         "status": "completed",
         "intent": "order",
         "medicationReference": {
@@ -4079,7 +4078,7 @@
             "code": [
               "d"
             ],
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -4090,7 +4089,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -4209,36 +4208,36 @@
           ]
         },
         "status": "finished",
-        "type": {
+        "type": [{
           "text": "Surgery Consultation"
-        },
+        }],
         "subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
         "participant": [
           {
-            "type": {
-              "coding": {
+            "type": [{
+              "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
                 "code": "PPRF",
                 "display": "Primary Performer"
-              },
+              }]}],
               "individual": {
                 "reference": "Practioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
               }
-            }
+
           },
           {
-            "type": {
-              "coding": {
+            "type": [{
+              "coding": [{
                 "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
                 "code": "AUT",
                 "display": "Author"
-              },
+              }]}],
               "individual": {
                 "reference": "Practioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
               }
-            }
+
           }
         ],
       "period": {
@@ -4362,12 +4361,12 @@
             }
           }
         ],
-        "extension": {
+        "extension": [{
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
             "reference": "Condition/Problem-A-Anxiety-With-Depression"
           }
-        }
+        }]
       }
     },
     {
@@ -4424,12 +4423,12 @@
             }
           }
         ],
-        "extension": {
+        "extension": [{
           "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
           "valueReference": {
             "reference": "Condition/Problem-B-Swollen-Legs"
           }
-        }
+        }]
       }
     },
     {
@@ -4732,13 +4731,11 @@
         },
         {
           "item": {
-            "reference": null,
             "display": "Clinical item not supported by the provider system"
           }
         },
         {
           "item": {
-            "reference": null,
             "display": "Clinical item not supported by the provider system"
           }
         }
@@ -4863,7 +4860,7 @@
               "system": "http://snomed.info/sct",
               "code": "1082641000000106",
               "display": "Alcohol units consumed per week (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -4875,7 +4872,7 @@
                     "valueString": "Alcohol units consumed per week"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -4927,7 +4924,7 @@
         "dispenseRequest": {
           "expectedSupplyDuration": {
             "code": "d",
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -4938,7 +4935,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -5018,14 +5015,14 @@
             }
           }
         ],
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
-        },
+        }],
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/f260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectiveDateTime": "2019-03-28+00:00",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -5053,9 +5050,9 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
-        "basedOn": {
+        "basedOn": [{
           "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
-        },
+        }],
         "status": "completed",
         "intent": "order",
         "medicationReference": {
@@ -5084,7 +5081,7 @@
             "code": [
               "d"
             ],
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -5095,7 +5092,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2019-03-28"
@@ -5191,7 +5188,7 @@
               "system": "http://snomed.info/sct",
               "code": "703421000",
               "display": "Temperature (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -5203,7 +5200,7 @@
                     "valueString": "Temperature"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -5238,7 +5235,7 @@
               "system": "http://snomed.info/sct",
               "code": "1097811000000106",
               "display": "Arterial oxygen saturation breathing room air at rest (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -5250,7 +5247,7 @@
                     "valueString": "Arterial oxygen saturation on room air at rest"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -5285,7 +5282,7 @@
               "system": "http://snomed.info/sct",
               "code": " 86290005",
               "display": "Respiratory rate (observable entity)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -5297,7 +5294,7 @@
                     "valueString": "Respiratory rate"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
@@ -5333,7 +5330,7 @@
               "system": "http://snomed.info/sct",
               "code": "271637005",
               "display": "Pulse irregularly irregular (finding)",
-              "extension": {
+              "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
                   {
@@ -5345,7 +5342,7 @@
                     "valueString": "Pulse irregularly irregular"
                   }
                 ]
-              }
+              }]
             }
           ]
         },
