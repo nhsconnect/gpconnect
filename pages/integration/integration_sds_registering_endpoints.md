@@ -32,7 +32,7 @@ Only one GP Connect provider system can be registered in SDS for an organisation
 
 ### 1.4 Multiple GP Connect consumer systems per organisation to be supported ###
 
-Only one consumer system per organisation is supported currently (as of March 2019), however once all providers and consumers have migrated to version 0.7.2 of the GP Connect API specification - specifically uplifting their [SDS queries](integration_spine_directory_service.html) - more than one will be supported.
+Only one consumer system per organisation is supported currently (as of March 2019). However, once all providers and consumers have migrated to version 0.7.2 of the GP Connect API specification - specifically uplifting their [SDS queries](integration_spine_directory_service.html) - more than one will be supported.
 
 Examples:
 
