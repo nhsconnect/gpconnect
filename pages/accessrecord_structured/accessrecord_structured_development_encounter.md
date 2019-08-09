@@ -144,7 +144,7 @@ The authorship of the consultation/encounter - that is, the actual user who ente
   </tr>
 </table>
 
-If recorded, <code>period.start</code> is mandatory and should be populated with the displayed consultation date and time.
+If recorded, <code>period.start</code> is mandatory and should be populated with the date and time the consultation started.
 
 <code>period.end</code> should be populated where the encounter end date and time is known or calculated and populated where the duration is known.
 
