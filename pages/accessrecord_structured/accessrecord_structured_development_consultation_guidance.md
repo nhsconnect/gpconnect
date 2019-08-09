@@ -138,6 +138,18 @@ Where a provider system is not able to export a linked clinical item, it will cr
    
        For example "Referral items are not supported by the provider system.”
 
+## Consultations containing confidential items
+
+Where a consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
+
+Where a consultation is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
+* The consultation will be included in the response as normal
+* The confidential item(s) will NOT be included in the response
+* There will be NO reference to the confidential item(s) in the `List` profiles defining the consultaton structure.
+* The Confidential Items warning message will be included in the `List` containing the query response. The warning will NOT be included in the `List` profiles defining the consultaton structure.
+
+In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which consultation(s) they were removed from.
+
 ## Suppression of empty consultations, topics and headings
 
 On some systems all or almost all record entry is captured in the context of a consultation. This, coupled with default behaviours such as starting a consultation on opening a patient record, leads to the phenomenon of 'empty' consultations where the Data/Dr/Place/Type has been created as a default but there is no subsequent entry of any clinical information within the consultation.
