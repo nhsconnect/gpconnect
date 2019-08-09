@@ -93,9 +93,9 @@ The GP Connect profile of the `MedicationRequest` will be used to represent the 
 
 An acute medication is represented by a `MedicationStatement` and two `MedicationRequest` resources - one with an `intent` of `plan` and the second an `intent` of `order`.
 
-{: .center-image }
-![Acute medications diagram](images/access_structured/Acute medication representation.png)
-
+<center>
+<img src="images/access_structured/Acute_Medication.png" alt="Acute Medication Diagram" style="max-width:60%;max-height:60%;">
+</center>
 
 ### Repeat prescription and repeat dispense
 
