@@ -11,7 +11,7 @@ summary: "Details of the API volume and performance characteristics."
 
 {% include important.html content="The fundamental principle of the approach is to flex the parameters and model as we develop, deploy and understand how the NHS is using the service. Therefore, learnings from the First of Type and Fast Followers are key. We have based usage on population covered by each deployment and some real-world figures around percentage of population in contact with the NHS on a daily basis and then some parameters around how many record reads per encounter. This is all parameter driven so we can adjust the model as we deploy and start to gather actual usage information." %}
 
-{% include download.html content="Draft GP Connect API [Volumetric Model](downloads/testing/HSCIC.GPSOC.GPCONNECT.API.CallUsageModelTotals.xlsx) sent to principle suppliers on the 2nd September 2016." %}
+{% include download.html content="Draft GP Connect API [Volumetric Model](downloads/testing/HSCIC.GPSOC.GPCONNECT.API.CallUsageModelTotals.xlsx) sent to principal suppliers on the 2nd September 2016." %}
 
 Provider systems **MUST NOT** use this volumetric model as a 'gold standard', but **MAY** use it as the basis of developing their own volumetric models.
 
