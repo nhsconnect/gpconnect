@@ -114,7 +114,7 @@ For repeat dispensed medication or medical device, some of the resources relatin
 Unissued medications/medical devices and medications/medical devices that have been prescribed elsewhere are different concepts but modelled in a similar manner. They will both have been added to the system by a clinician at the practice and will be represented by a `MedicationStatement` and a `MedicationRequest` with an `intent` of `plan`, but with no further resources. This reflects that no orders have been placed for these medications/medical devices by the GP practice. Medications/medical devices that were prescribed elsewhere will be flagged as such by populating the PrescribingAgency extension in the Medication Statement.
 
 <center>
-<img src="images/access_structured/Unissued_Medication.png" alt="Unissued Medication Diagram" style="max-width:60%;max-height:60%;">
+<img src="images/access_structured/Unissused_Medication.png" alt="Unissued Medication Diagram" style="max-width:60%;max-height:60%;">
 </center>
 
 ### Using the `List` resource for medication/medical devices queries
