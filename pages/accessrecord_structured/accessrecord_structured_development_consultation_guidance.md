@@ -140,15 +140,15 @@ Where a provider system is not able to export a linked clinical item, it will cr
 
 ## Consultations containing confidential items
 
-Where a consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
+Where a Consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
 
-Where a consultation is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
-* The consultation will be included in the response as normal
+Where a Consultation is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
+* The Consultation will be included in the response as normal
 * The confidential item(s) will NOT be included in the response
-* There will be NO reference to the confidential item(s) in the `List` profiles defining the consultaton structure.
-* The Confidential Items warning message will be included in the `List` containing the query response. The warning will NOT be included in the `List` profiles defining the consultaton structure.
+* There will be NO reference to the confidential item(s) in the `List` profiles defining the Consultaton structure.
+* The Confidential Items warning message will be included in the `List` containing the query response. The warning will NOT be included in the `List` profiles defining the Consultaton structure.
 
-In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which consultation(s) they were removed from.
+In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Consultation(s) they were removed from.
 
 ## Suppression of empty consultations, topics and headings
 
