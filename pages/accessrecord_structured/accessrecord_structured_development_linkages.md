@@ -173,13 +173,13 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 #### Medication and Medical Devices ####
 
-* Search by date
+* Search for all Medications and Medical Devices that were active after the specified date
      * The consumer system request all items after a start date
      * The provider system returns all plans whose effective period end date is null or after the start date
      * Where no date is supplied by the consumer, all medications and medical devices are returned
-* Include issues
+* Include all the prescriptions issued under the returned medication/medical device plans
      * The consumer system requests prescription issues
-     * For each of the returned plans, the provider system includes data for all of its issues
+     * For each of the returned medication/medical device plans, the provider system includes data for all of its issues
 
 #### Allergies ####
 
@@ -190,16 +190,16 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 #### Problems ####
 
-* Search by Significance / Status
+* Search for Problems with the specified combiniations of significance and status
      * The consumer system requests combinations of significance and status
      * The consumer system can request Major Active, Minor Active, Major Inactive and/or Minor Inactive
      * The consumer system can request multiple combinations in a single query
-     * The provider system returns all problems that match the requested Significance / Status
-     * Where no significance / status is supplied by the consumer, all problems are returned
+     * The provider system returns all Problems that match the requested significance / status
+     * Where no significance / status is supplied by the consumer, all Problems are returned
 
 #### Uncategorised Data ####
 
-* Search by date
+* Search for all Uncategorised Data within the specified date range
      * The consumer system request all items within a start and end date
      * The provider system returns all items whose asserted date is within the start and end date (inclusive)
      * Where no start date is supplied the search goes from the start of patient record
@@ -208,21 +208,21 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 #### Consultations ####
 
-* Search by date
+* Search for all Consultations within the specified date range
      * The consumer system request all items within a start and end date
      * The provider system returns all items whose asserted date is within the start and end date (inclusive)
      * Where there is a start date but no end date, the search goes to the end of the patient record
      * Where there is an end date but no start date the search goes from the start of the patient record
-* Search by most recent
+* Search for the most recent x Consultations within the patient's record
      * The consumer system request the last x consultations
      * The provider system returns the last x consultations
 * Where a single filter is supplied by the consumer, it is applied as defined above.
-* Where both filters are supplied by the consumer, all the consultations that match either of the filters are returned.
-* If no filters are supplied by the consumer, all consultations are returned.
+* Where both filters are supplied by the consumer, all the Consultations that match either of the filters are returned.
+* If no filters are supplied by the consumer, all Consultations are returned.
 
 #### Immunisations ####
 
-* All immunisations will always be returned.
+* All Immunisations will always be returned.
 
 ### Following a linkage ###
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
