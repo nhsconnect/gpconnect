@@ -53,7 +53,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immuni
   </tr>
 </table>
 
-Indicates whether a parent was present at the immunization.
+Indicates whether a parent was present at the immunisation.
 
 ### extension[recordedDate]
 
@@ -159,8 +159,8 @@ A reference to the patient who had the immunisation specified.
   </tr>
 </table>
 
-The `Consultation` within which the immunisation was recorded.
-This may be when the vaccination was administered or when an immunisation administered elsewhere was recorded.
+The consultation within which the immunisation was recorded.
+This may be when the vaccination was administered or when the registered practice was informed of an immunisation administered elsewhere.
 
 As per base profile guidance.
 
@@ -175,7 +175,7 @@ As per base profile guidance.
 </table>
 
 The date (and time if applicable) when the immunization was administered.
-If the immunisation was administered elsewhere, this may be an estimated date.
+If the immunisation was administered elsewhere, this may be an estimated or partial date.
 
 ### primarySource
 
@@ -191,6 +191,7 @@ This indicates whether the record is based on information from the person who ad
 
 This **MUST** be <code>true</code> where the immunisation record was recorded by the person who administered the vaccine or directly on behalf of the administrator of the vaccine (this includes recording the immunisation based on a complete, original, verifiable document from the administration of the vaccine).
 This **MUST** be <code>false</code> where it a secondary report of a vaccination for example the recollection of the patient, the patient's parent, carer or guardian or a secondary document. 
+
 As this relates to the context of the original source of the immunisation record, a record from a GP2GP transfer is still a primary record if it was originally recorded as primary.
 If it is not known whether the record of the vaccination was made from a primary or secondary source, then return the default value of <code>true</code>.
 
@@ -221,7 +222,10 @@ This **MUST NOT** be included where <code>primarySource</code> is <code>true</co
   </tr>
 </table>
 
-The GP practice, branch surgery or other location where the vaccination occurred.
+The GP practice, branch surgery or other location where the vaccination occurred, if known.
+
+If the immunisation record in the GP Clinical System does not record a location for the vaccination, but is linked to a consultation during which the vaccine was administered, then the <code>location</code> **MUST** be populated with the location of the consultation.
+If the immunisation was not administered during the linked consultation (the vaccine was administered elsewhere but reported and recorded in that consultation), then a <code>location</code> **MUST NOT** be returned.
 
 ### manufacturer
 
@@ -305,7 +309,8 @@ The amount of the vaccine administered.
   </tr>
 </table>
 
-The details of the person who administered the vaccine are required.
+The person who recorded the vaccine as having been administered **MUST** be included.
+This **SHOULD** also include the practitioner who adminisitered the vaccine if that is known.
 
 ### practitioner.role
 
@@ -319,6 +324,10 @@ The details of the person who administered the vaccine are required.
 
 The role of the referenced practitioner.
 
+The code <code>EP</code> (Entering Provider) **MUST** be used to designate the practitioner as having recorded the vaccination.
+
+The code <code>AP</code> (Administering Provider) **MUST** be used to designate the practitioner as having administered the vaccination.
+
 ### practitioner.actor
 
 <table class='resource-attributes'>
@@ -329,8 +338,11 @@ The role of the referenced practitioner.
   </tr>
 </table>
 
-A reference to the practitioner resource that administered the vaccine.
-This is mandatory where the practitioner role is populated.
+A reference to the <code>practitioner</code> resource for who administered and / or recorded the vaccine. 
+
+If the GP Clinical System only captures who recorded the vaccination, and it cannot determine whether this was the practitioner who administered the vaccine, then return a single <code>actor</code> reference with a <code>role</code> of <code>EP</code>.
+
+This is mandatory where the <code>practitioner.role</code> is populated.
 
 ### note
 
