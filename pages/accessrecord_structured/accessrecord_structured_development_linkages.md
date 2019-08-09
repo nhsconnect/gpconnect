@@ -54,6 +54,9 @@ For each `Encounter` reference in the `List` profile:
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Uncategorised Data
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+
 
 Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html)
 
@@ -80,6 +83,8 @@ For each `ProblemHeader` reference in the `List` profile:
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Uncategorised Data
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
 Where a Problem links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html)
 
@@ -91,10 +96,19 @@ Clinical items linked to the Problem are always included in the response regardl
 ### Medications and medical devices ###
 When GP Connect returns a medication or medical device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
 
-For each Medication item returned, include the following FHIR profiles:
-*	The MedicationRequest (intent = plan), MedicationStatement and Medication profiles of the Medication and Medical Device
-*	The ProblemHeader profiles of any directly linked Problems
-*	Where requested, the MedicationRequest (intent = order) profile for every issue.
+The response to the query includes:
+* A `List` profile containing references to `MedicationStatement` for every Medication and Medical Device that met the search criteria
+
+For each `MedicatonStatement` reference in the `List` profile:
+*  The `MedicationStatement` profile of the Medication or Medical Device
+*  The `MedicationRequest` (intent = plan) profile of the Medication or Medical Device
+*	The `Medication` profile of the Medication and Medical Device
+*	Where requested, the `MedicationRequest` (intent = order) profile for every issue.
+*	The `ProblemHeader` profiles of any directly linked Problems
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+
+<img src="images/access_structured/Medication_Return.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
 ### Allergies ###
 When GP Connect returns an allergy it will supply all the allergy data.
