@@ -4,7 +4,7 @@ keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
 permalink: development_fhir_api_guidance.html
-summary: "Details of the common request handling pattern(s) across all GP Connect FHIR APIs."
+summary: "Details of the common request handling pattern(s) across all GP Connect FHIR APIs"
 ---
 
 ## Purpose ##
