@@ -81,9 +81,9 @@ The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU
 
 ```
 
-Providers **MUST** report unsupported parameters at the least granular level, that is, only report part parameters when their top level parameter is supported.
+Providers **MUST** report unsupported parameters at the least granular level, that is, unsupported part parameters **MUST** only be reported when their top level parameter is supported.
 
-Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as specified above to check for incomplete data as a result of unsupported parameters.
+Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as specified above to check for incomplete data as a result of unsupported parameters. These warnings **MUST** be displayed to users to warn them that information is missing.
 
 The following table gives an overview of which parameters are supported in each version of the GP Connect API:
 
@@ -121,7 +121,7 @@ Consumers **MAY** determine programmatically which parameters have been implemen
 #### Backwards compatibility ####
 Backwards compatibility is the scenario where a consumer requests a lower version of the API than the provider supports. The GP Connect APIs have been developed to be backwards compatible by following the [rules for backwards compatibility](https://www.hl7.org/fhir/STU3/versions.html#b-compat) that are defined in the FHIR&reg; specification.
 
-Consumers are required to ignore unexpected elements and process data that they understand.
+Consumers are required to ignore unexpected elements and process data that they understand. They **MUST** alert users to the fact that some information couldn't be displayed as it isn't supported.
 
 TODO: add guidance for how consumers should warn users that not all requested data was returned or rendered for user????????
 
