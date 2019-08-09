@@ -4,7 +4,7 @@ keywords: development deliverables
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_deliverables.html
-summary: "Developer cheat sheet shortcuts for the <br/>technical build of GP Connect APIs."
+summary: "Developer cheat sheet shortcuts for the <br/>technical build of GP Connect APIs"
 ---
 
 ![Development Flow](images/development/development_flow.png)
