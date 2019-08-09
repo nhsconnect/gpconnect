@@ -13,7 +13,7 @@ Provider Systems:
 
 - **MUST** only accept connections from the [Spine Security Proxy](integration_spine_security_proxy_implementation_guide.html) (SSP)
 
-- **MUST** authenticate the SSP prior to responding to any requests using it's [client certificate](development_api_security_guidance.html#client-certificates-tlsma)
+- **MUST** authenticate the SSP prior to responding to any requests using its [client certificate](development_api_security_guidance.html#client-certificates-tlsma)
 
 - **MUST** only permit approved [supported ciphers](development_api_security_guidance.html#supported-ciphers) to be utilised
 
