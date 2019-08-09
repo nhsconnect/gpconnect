@@ -123,7 +123,9 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
     
-<img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:80%;max-height:80%;"> 
+<center>
+<img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:60%;max-height:60%;">
+</center>
 
 ### Immunisation ###
 When GP Connect returns an immunisation it will supply all the immunisation data.
@@ -136,8 +138,10 @@ For each `Immunization` referenced in the `List` profile:
 *	The `ProblemHeader` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
-    
-<img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:80%;max-height:80%;"> 
+
+<center>
+<img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:60%;max-height:60%;">
+</center>
 
 ### Uncategorised data ###
 When GP Connect returns uncategorised data it will supply all the data about the uncategorised data.
@@ -150,8 +154,10 @@ For each `Observation` referenced in the `List` profile:
 *	The `ProblemHeader` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
-    
-<img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:80%;max-height:80%;"> 
+
+<center>
+<img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:60%;max-height:60%;"> 
+</center>
 
 ## Search ##
 
