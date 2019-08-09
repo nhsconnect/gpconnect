@@ -113,23 +113,45 @@ For each `MedicatonStatement` reference in the `List` profile:
 ### Allergies ###
 When GP Connect returns an allergy it will supply all the allergy data.
 
-For each Allergy item returned, include the following FHIR profiles:
-*	The AllergyIntolerance profile of the Allergy
-*	The ProblemHeader profiles of any directly linked Problems
+The response to the query includes:
+* A `List` profile containing references to `AllergyIntolerance` for every active Allergy
+* Where requested, a `List` profile containing references to `AllergyIntolerance` for every ended Allergy
+
+For each `AllergyIntolerance` reference in either of the `List` profiles:
+*	The `AllergyIntolerance` profile of the Allergy
+*	The `ProblemHeader` profiles of any directly linked Problems
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+    
+<img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:100%;max-height:100%;"> 
 
 ### Immunisation ###
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
-For each Immunisation item returned, include the following FHIR profiles:
-*	The Immunization profile of the Immunisation
-*	The ProblemHeader profiles of any directly linked Problems
+The response to the query includes:
+* A `List` profile containing references to `Immunization` for every Immunisation
+
+For each `Immunization` reference in either of the `List` profiles:
+*	The `Immunization` profile of the Immunisation
+*	The `ProblemHeader` profiles of any directly linked Problems
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+    
+<img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:100%;max-height:100%;"> 
 
 ### Uncategorised data ###
 When GP Connect returns uncategorised data it will supply all the data about the uncategorised data.
 
-For each Uncategorised data item returned, include the following FHIR profiles:
-*	The Observation profile of the Uncategorised Data
-*	The ProblemHeader profiles of any directly linked Problems
+The response to the query includes:
+* A `List` profile containing references to `Observation` for every Uncategorised Data that met the search criteria
+
+For each `Observation` reference in either of the `List` profiles:
+*	The `Observation` profile of the Uncategorised Data
+*	The `ProblemHeader` profiles of any directly linked Problems
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+    
+<img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:100%;max-height:100%;"> 
 
 ## Search ##
 
