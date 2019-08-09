@@ -124,7 +124,7 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
     
 <center>
-<img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:60%;max-height:60%;">
+<img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;">
 </center>
 
 ### Immunisation ###
@@ -140,7 +140,7 @@ For each `Immunization` referenced in the `List` profile:
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
 <center>
-<img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:60%;max-height:60%;">
+<img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;">
 </center>
 
 ### Uncategorised data ###
@@ -156,7 +156,7 @@ For each `Observation` referenced in the `List` profile:
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
 <center>
-<img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:60%;max-height:60%;"> 
+<img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"> 
 </center>
 
 ## Search ##
