@@ -24,7 +24,7 @@ The model currently covers consultations, problems, medications and medical devi
 
 The relationships between two FHIR resources are defined in only one of the linked FHIR resources (similar to in a relational database management system). This is shown by the direction of the arrow in the FHIR model. 
 
-For example, the MedicationStatement resource contains a field that can be used to look up the linked medication. There is no field in the Medication resource that can be used to look up the linked MedicationStatement.
+For example, the `MedicationStatement` resource contains a field that can be used to look up the linked `Medication`. There is no field in the `Medication` resource that can be used to look up the linked `MedicationStatement`.
 
 ## FHIR profiles returned on query ##
 When a consumer system requests data on a clinical area the information is returned across a number of FHIR profiles. Choosing which FHIR profiles to return is a balancing act between including enough linked profiles to give the consumer system a comprehensive response to their query but not including so many linked profiles as to swamp the consumer system with data.
@@ -37,20 +37,23 @@ The three main considerations used to decide which data to return for each clini
 ### Consultations ###
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
-For each Consultation item returned, include the following FHIR profiles:
-*  The Encounter profile of the consultation
-*	The List profiles of the consultation
-*	The ProblemHeader profile of any directly linked Problems
-*	The MedicationRequest, MedicationStatement and Medication profiles of any linked Medications or Medical Devices
-    * Always include the MedicationStatement, MedicationRequest (intent = plan) and Medication profiles
-    * Only include MedicationRequest (intent = order) for directly linked issues
-    *	Include the ProblemHeader profile of any Problems linked to the returned MedicationRequests
-*	The AllergyIntolerance profile of any linked Allergies
-    *	Include the ProblemHeader profile of any Problems linked to the returned Allergies
-*	The Immunization profile of any linked Immunisations
-    *	Include the ProblemHeader profile of any Problems linked to the returned Immunisations
-*	The Observation profile of any linked Uncategorised Data
-    *	Include the ProblemHeader profile of any Problems linked to the returned Uncategorised Data
+The response to the query includes:
+* A `List` profile containing references to `Encounter` for every consultation that met the search criteria
+
+For each `Encounter` reference in the `List` profile:
+*  The `Encounter` profile of the consultation
+*	The `List` profiles that describe the structure of the consultation
+*	The `ProblemHeader` profile of any directly linked Problems
+*	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
+    * Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
+    * Only include `MedicationRequest` (intent = order) for directly linked issues
+    *	Include the `ProblemHeader` profile of any Problems linked to the returned Medications and Medical Devices
+*	The `AllergyIntolerance` profile of any linked Allergies
+    *	Include the `ProblemHeader` profile of any Problems linked to the returned Allergies
+*	The `Immunization` profile of any linked Immunisations
+    *	Include the `ProblemHeader` profile of any Problems linked to the returned Immunisations
+*	The `Observation` profile of any linked Uncategorised Data
+    *	Include the `ProblemHeader` profile of any Problems linked to the returned Uncategorised Data
 
 Where a consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html)
 
