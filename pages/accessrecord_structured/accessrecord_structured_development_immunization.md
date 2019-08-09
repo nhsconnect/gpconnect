@@ -65,7 +65,9 @@ Indicates whether a parent was present at the immunisation.
   </tr>
 </table>
 
-When the record of the immunization was created on the clinical system.
+This is the date the immunisation was entered on the clinical system.
+This may be an audit trail date or equivalent for the record.
+If the immunisation has been transfered by GP2GP this **SHOULD** be the recorded date from the original record entry from the originating system.
 
 ### extension[vaccinationProcedure]
 
@@ -292,7 +294,7 @@ The route through which the vaccine entered the body.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>SimpleQuantity</code></td>
-    <td><b>Optionality:</b> Optional</td>
+    <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
