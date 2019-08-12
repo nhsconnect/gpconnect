@@ -8,9 +8,9 @@ summary: "Guidance for populating and consuming the ProblemHeader resource"
 ---
 
 ## What is a problem? ##
-'Problem' is a concept supported by all the GP clinical systems that allows a clinician to identify/highlight specific clinical items in the medical record as of particular importance to the care and treatment of the patient. 
+'Problem' is a concept supported by all the GP clinical systems that allows a clinician to identify/highlight specific clinical items in the medical record to describe the status of the patient's health. 
 
-Any clinical item can be identified as a problem, though the method of doing this can vary between GP clinical systems.
+Any clinical item can be identified as a problem, though the method of doing this varies between GP clinical systems.
 
 Examples of possible problems:
 *	Anxiety with depression		
@@ -22,7 +22,7 @@ Examples of possible problems:
 *	Upper respiratory tract infection		
 *	Lives alone		
 
-As well as highlighting an item of particular relevance to the patient’s care, the problem record also links that item to all the other information in the patient record that describes what has happened in regard to that item.
+As well as highlighting an item, the problem record also links that item to all the other information in the patient record that describes what has happened in regard to that item.
 
 For example, the problems record highlights that the patient has hypertension. It also shows how the hypertension was identified, what discussions have taken place with the patient about their hypertension and what treatments and medication the patient is on to help manage their hypertension.
 
