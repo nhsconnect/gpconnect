@@ -5,7 +5,7 @@ tags: [development,fhir]
 sidebar: overview_sidebar
 toc: false
 permalink: designprinciples_data_model_principles.html
-summary: "High-level design principles related to the FHIR profiles"
+summary: "High-level design principles related to the FHIR&reg; profiles"
 ---
 
 ## Introduction
