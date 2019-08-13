@@ -80,7 +80,7 @@ A complex extension that details the relationship of this problem header resourc
 </table>
 A complex extension that details the type of relationship this problem header resources to another problem header resources.
 
-For each relatedProblemHeader.target the provider **MUST** supply a value of <code>Parent</code>, <code>Child</code> or <code>Sibling</code>.
+For each relatedProblemHeader.target the provider **MUST** supply a value of <code>parent</code>, <code>child</code> or <code>sibling</code>.
 
 ### extension[relatedProblemHeader.target] ###
 
