@@ -4,7 +4,7 @@ keywords: spine, pds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_personal_demographic_service.html
-summary: "Overview of the role of the Personal Demographic Service within GP Connect."
+summary: "Overview of the role of the Personal Demographic Service within GP Connect"
 ---
 
 ## PDS tracing ##
