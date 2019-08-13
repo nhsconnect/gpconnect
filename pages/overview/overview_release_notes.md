@@ -4,7 +4,7 @@ keywords: GP Connect Overview, release notes
 tags: [release]
 sidebar: overview_sidebar
 permalink: overview_release_notes.html
-summary: "Release notes for the various versions of the GP Connect overview."
+summary: "Release notes for the various versions of the GP Connect overview"
 ---
 
 #### GP Connect 1.0.0-alpha.5 (Released: 20 July 2017)
