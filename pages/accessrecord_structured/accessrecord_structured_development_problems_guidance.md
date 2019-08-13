@@ -72,8 +72,8 @@ Depending on the GP Connect version supported by the provider system, it can be 
 
 Where a provider system is not able to export a linked clinical item, it will create a reference entry with the:
 
-* `extension[relatedClinicalContent.Reference.Identifier` set to null; and
-* `extension[relatedClinicalContent.Reference.Display` set to “[Clinical area] items are not supported by the provider system.”
+* `Condition.extension[relatedClinicalContent.Reference.Identifier` set to null; and
+* `Condition.extension[relatedClinicalContent.Reference.Display` set to “[Clinical area] items are not supported by the provider system.”
    
    Where [Clinical area] identifies the type of the clinical item that is not supported.
    
