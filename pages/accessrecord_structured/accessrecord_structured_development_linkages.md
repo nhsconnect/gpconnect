@@ -253,4 +253,4 @@ It is the responsibility of the consuming system to decide what data to request 
      * has determiend it is necessary to support patient care
      * has met all of the GP Connect IG requirements including data sharing agreements, confidentiality and auditing
 
-The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html)
+The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html).
