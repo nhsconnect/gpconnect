@@ -109,7 +109,7 @@ When populating this field the provider system must include every item in the pa
 * Clinical items that are directly linked to the problem in the provider system; and
 * Clinical items that are within a consultation topic that is linked to the problem
 
-References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised.
+References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised resources.
 References to consultations are not held in this field. They are held in the context field defined below.
 
 ### extension[problemSignificance] ###
