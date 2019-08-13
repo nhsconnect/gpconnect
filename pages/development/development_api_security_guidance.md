@@ -4,7 +4,7 @@ keywords: development
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_api_security_guidance.html
-summary: "Details of the API security model and supported protocols."
+summary: "Details of the API security model and supported protocols"
 ---
 
 ## Secure connection negotiation ##
