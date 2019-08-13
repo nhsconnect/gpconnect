@@ -4,7 +4,7 @@ keywords: spine, pds, ssp, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar
 permalink: integration_illustrated.html
-summary: "Illustration of the use of the GP Connect API showing all interactions required - both with Spine services and GP Connect endpoint API calls."
+summary: "Illustration of the use of the GP Connect API showing all interactions required - both with Spine services and GP Connect endpoint API calls"
 ---
 
 ## Spine integration required to consume GP Connect capabilities ##
