@@ -55,14 +55,14 @@ Each provider system supports a different set of qualifiers. However, there are 
 * Severity - for example, a patient record may have a severe asthmatic attack.
 * Episodicity - for example, this is the patient's first episode of an asthmatic attack.
 
-The provider system will translate all of the qualifiers included with the clinical code into human-readable text and concatenate them with the text entered by the recorder (placing the qualifiers first) and placing in observation.comment.
+The provider system will translate all of the qualifiers included with the clinical code into human-readable text and concatenate them with the text entered by the recorder (placing the qualifiers first) and placing in `observation.comment`.
 
 ## Values ##
 
 Values are any reading or result that is recorded with the uncategorised data. For example, the uncategorised data 50373000 (Body Height) may have a value of 156cm.
 
 ### Single values ###
-The majority of uncategorised data that contains values will only have a single value. In these cases, the value will be exported in observation.value.
+The majority of uncategorised data that contains values will only have a single value. In these cases, the value will be exported in `observation.value`.
 
 ### Multiple values ###
 There are some cases where an item of uncategorised data may contain multiple values. This happens when:
@@ -70,7 +70,7 @@ There are some cases where an item of uncategorised data may contain multiple va
 and
 * each recorded value in the uncategorised data is described by its own clinical code
 
-In these cases, each value will be exported in an instance of observation.component.
+In these cases, each value will be exported in an instance of `observation.component`.
 
 ## Blood pressure ##
 Where the clinician/user has explicitly chosen the clinical codes to record a blood pressure reading in the provider system, the provider system **MUST** export the blood pressure reading as uncategorised data using the clinical codes (or SNOMED CT translations) chosen by the clinician/user.
