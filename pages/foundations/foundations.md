@@ -83,7 +83,7 @@ The Register Patient API use case, which is included in the Foundations capabili
 
 Below is the suggested order in which the foundation capabilities should be implemented. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different foundation endpoints.
 
-It is advisable to develop against the Automated Test Suite as this will assist with creating a GP Connect compliant product. By implementing the endpoints in the order below, this means that the automated test suite set of tests for that endpoint can be run during development without the developer seeing errors due to pre-test API calls or post test validation API calls relevant to the test being run and failing as they have not been developed yet.
+It is advisable to develop against the Automated Test Suite as this will assist with creating a GP Connect compliant product. By implementing the endpoints in the order below, this means that the automated test suite set of tests for that endpoint can be run during development without the developer seeing errors due to pre-test API calls or post-test validation API calls relevant to the test being run and failing as they have not been developed yet.
 
 ### 1. Foundation endpoints ###
 

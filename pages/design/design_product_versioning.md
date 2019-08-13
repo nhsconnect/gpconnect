@@ -26,7 +26,7 @@ The specification version number is based on the [Semantic Versioning 2.0.0](htt
 When a specification is released, the version number is incremented as follows:
 
 - **Major** version when *breaking changes* are made
-- **Minor** version when larger *non-breaking changes* or *unsubstantive breaking changes* are made, for example a new capability; or a signficant number of smaller *non-breaking changes* or *unsubstantive breaking changes* are made
+- **Minor** version when larger *non-breaking changes* or *unsubstantive breaking changes* are made, for example a new capability; or a significant number of smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 - **Patch** version when smaller *non-breaking changes* or *unsubstantive breaking changes* are made
 
 ### Types of change ###
@@ -61,7 +61,7 @@ The version number may not be incremented when *stylistic changes* are made for 
 
 ### Pre-release (draft) labels ###
 
-When a **pre-release label** is appended to the version number with a hyphen it indicates the specificaction is still in draft, or has been discontinued.
+When a **pre-release label** is appended to the version number with a hyphen it indicates the specification is still in draft, or has been discontinued.
 
 {% include important.html content="The pre-release label is used to indicate that a specification is in draft (or has been discontinued), it **does not** indicate that a providing system has made a pre-release of their GP Connect software." %}
 
