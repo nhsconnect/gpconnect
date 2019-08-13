@@ -93,7 +93,7 @@ The following data elements are mandatory (that is, data **MUST** be present):
 - the `status` identifying the appointment as "booked".
 - the `slot` details of one or more free slots to be booked.
   - where multiple slots are being booked, they SHALL meet the conditions required to be booked together - see [Booking multiple adjacent slots](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots)
-- the `bookingOrganisation` extension referencing a [contained](https://www.hl7.org/fhir/STU3/references.html#contained) `Organization` resource within the appointment resource.
+- the `bookingOrganisation` extension referencing an [contained](https://www.hl7.org/fhir/STU3/references.html#contained) `Organization` resource within the appointment resource.
   - the contained organization resource SHALL represent the organization booking the appointment.
   - the contained organization resource SHALL conform to [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile.
   - the contained organization resource SHALL contain an `identifier` with the organisation's ODS code.
@@ -218,7 +218,7 @@ On the wire, a JSON serialised request would look something like the following:
 
 Provider systems:
 
-- SHALL return an HTTP status "409" with an error message "DUPLICATE_REJECTED" when an appointment can not be booked because the referenced slots within the appointment resource no longer have the status `free`, such as when the slot has been used to book a different appointment between the "search for free slots" request and the "book appointment" request.
+- SHALL return an HTTP status "409" with an error message "DUPLICATE_REJECTED" when an appointment cannot be booked because the referenced slots within the appointment resource no longer have the status `free`, such as when the slot has been used to book a different appointment between the "search for free slots" request and the "book appointment" request.
 - SHALL return an error if `reason` or `specialty` is included in the appointment resource sent by the consumer.
 - SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 
