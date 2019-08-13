@@ -48,7 +48,7 @@ At a high-level the proxy operates as a content agnostic mediator allowing autho
 
 In the First of Type (FoT) instantiation of this system architecture provider systems will be GP principal IT systems from vendors such as (EMIS, TPP, INPS and Microtest), consumer are expected to be a mix of GP principal IT systems and other IT systems. 
 
-As a guiding design principle, the Spine Security Proxy (SSP) **MUST** NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it **MAY** block consumer communications on security grounds (i.e. a consumer attempting to access a provider for which it doesn’t have permission).
+As a guiding design principle, the Spine Security Proxy (SSP) **MUST** NOT impose any interoperability barriers<sup>1</sup> which would impede FHIR compliant client libraries/applications from communicating with FHIR compliant back-end API services. However, it **MAY** block consumer communications on security grounds (for example, a consumer attempting to access a provider for which it doesn’t have permission).
 
 <sup>1</sup> consumer applications for FoT are currently expected to be able to populate a small number of additional Spine HTTP headers.
 
@@ -60,7 +60,7 @@ Introducing the Spine Security Proxy (SSP) has the following advantages:
 - removes the need for distributed PKI infrastructure; by allowing endpoints to simply trust the spine PKI certificates
 - will provide essential diagnostic information about the movement of data with-in the NHS
 - will enable tracking of performance across the system
-- will provide a level of protection to provider systems from numerous potential issues (i.e. Distributed Denial of Service attacks)
+- will provide a level of protection to provider systems from numerous potential issues (for example, Distributed Denial of Service attacks)
 - will provide a central point to enable transaction based payments to data providers to be calculated
 
 ### Operating principle ###
