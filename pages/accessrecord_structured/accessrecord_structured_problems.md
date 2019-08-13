@@ -298,7 +298,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -314,6 +314,6 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
