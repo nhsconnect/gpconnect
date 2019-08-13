@@ -41,9 +41,9 @@ Consideration was given to attempting to categorise data using the recorded clin
 
 * Uncategorised data is any item of data in the patient record that does not fit into one of the existing or planned clinical areas defined by GP Connect.
 
-## Observation Profile ##
+## Observation profile ##
 
-Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore uncategorised data will always be contained in a `Observation` profile.
+Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore uncategorised data will always be contained in an `Observation` profile.
 
 ## Qualifiers ##
 
@@ -64,7 +64,7 @@ Values are any reading or result that is recorded with the uncategorised data. F
 ### Single values ###
 The majority of uncategorised data that contains values will only have a single value. In these cases, the value will be exported in observation.value.
 
-### Multiple Values ###
+### Multiple values ###
 There are some cases where an item of uncategorised data may contain multiple values. This happens when:
 * there is a single clinical code that describes the uncategorised data as a whole
 and
