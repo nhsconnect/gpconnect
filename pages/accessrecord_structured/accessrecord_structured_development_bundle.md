@@ -72,7 +72,7 @@ See below for subelements of this BackboneElement.
   </tr>
 </table>
 
-A Resource carried within the Bundle.  This can any type of resource, for example Patient, Organization, AllergyIntolerance.
+A resource carried within the Bundle.  This can any type of resource, for example Patient, Organization, AllergyIntolerance.
 
 <h2 style="color:#ED1951;"> Bundle elements <b>not in use</b> </h2>
 
