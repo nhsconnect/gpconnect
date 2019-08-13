@@ -1,5 +1,5 @@
 ---
-title: "Appointment Managment"
+title: "Appointment Management"
 tagName: appointments
 search: exclude
 permalink: tag_appointments.html
