@@ -54,14 +54,14 @@ For each `Encounter` referenced in the `List` profile:
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Uncategorised Data
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above.
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
 
-Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html)
+Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
 
 
-Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Consultation that contains a Medication but not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
+Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Consultation that contains a Medication but does not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
 
 <img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
@@ -74,22 +74,21 @@ The response to the query includes:
 For each `ProblemHeader` referenced in the `List` profile:
 *	The `ProblemHeader` profile of the Problem
 *	The `ProblemHeader` profiles of any directly linked Problems
-*	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices.
-    *	Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles.
-    *	Only include `MedicationRequest` (intent = order) for directly linked issues.
+*	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
+    *	Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
+    *	Only include `MedicationRequest` (intent = order) for directly linked issues
 *	The `AllergyIntolerance` profile of any linked Allergies
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Allergies
 *	The `Immunization` profile of any linked Immunisations
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader` profile of any Problems linked to the returned Uncategorised Data
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-Where a Problem links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html)
+Where a Problem links to a profile that is not yet supported by the provider system, then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html).
 
-
-Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Problem that links to a Medication but not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
+Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Problem that links to a Medication but does not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
 
 <img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
@@ -99,14 +98,14 @@ When GP Connect returns a medication or medical device it will supply the prescr
 The response to the query includes:
 * A `List` profile containing references to `MedicationStatement` for every Medication and Medical Device that met the search criteria
 
-For each `MedicatonStatement` referenced in the `List` profile:
+For each `MedicationStatement` referenced in the `List` profile:
 *  The `MedicationStatement` profile of the Medication or Medical Device
 *  The `MedicationRequest` (intent = plan) profile of the Medication or Medical Device
 *	The `Medication` profile of the Medication and Medical Device
-*	Where requested, the `MedicationRequest` (intent = order) profile for every issue.
+*	Where requested, the `MedicationRequest` (intent = order) profile for every issue
 *	The `ProblemHeader` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <img src="images/access_structured/Medication_Return.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;">
 
@@ -120,8 +119,8 @@ The response to the query includes:
 For each `AllergyIntolerance` referenced in either of the `List` profiles:
 *	The `AllergyIntolerance` profile of the Allergy
 *	The `ProblemHeader` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
     
 <center>
 <img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;">
@@ -136,8 +135,8 @@ The response to the query includes:
 For each `Immunization` referenced in the `List` profile:
 *	The `Immunization` profile of the Immunisation
 *	The `ProblemHeader` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
 <img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;">
@@ -152,14 +151,14 @@ The response to the query includes:
 For each `Observation` referenced in the `List` profile:
 *	The `Observation` profile of the Uncategorised Data
 *	The `ProblemHeader` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above.
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
 <img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"> 
 </center>
 
-### Duplicate Returned Profiles ###
+### Duplicate returned profiles ###
 
 Where the same instance of a profile is returned from multiple query responses (for example a medication is returned as part of the medication search and the consultation search), it will only be included once in the response message.
 
@@ -167,11 +166,11 @@ Where the same instance of a profile is returned from multiple query responses (
 
 The GP Connect API allows the consumer system to specify what data it requires from the provider system about a specified patient.
 
-### Search Criteria ###
+### Search criteria ###
 
 The consumer system can specify which clinical areas it wishes to retrieve and within each clinical area what search criteria it wants to apply.
 
-#### Medication and Medical Devices ####
+#### Medication and medical devices ####
 
 * Search for all Medications and Medical Devices that were active after the specified date
      * The consumer system requests all items after a start date
@@ -183,28 +182,28 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 #### Allergies ####
 
-* All active allergies will always be returned as it was considered clinically unsafe to only return a partial record of a patient's active allergies.
+* All active allergies will always be returned as it was considered clinically unsafe to only return a partial record of a patient's active allergies
 * Include resolved allergies
      * The consumer system requests resolved allergies
      * The provider system returns all the resolved allergies along with the active allergies
 
 #### Problems ####
 
-* Search for Problems with the specified combiniations of significance and status
+* Search for Problems with the specified combinations of significance and status
      * The consumer system requests combinations of significance and status
      * The consumer system can request Major Active, Minor Active, Major Inactive and/or Minor Inactive
      * The consumer system can request multiple combinations in a single query
      * The provider system returns all Problems that match the requested significance / status
      * Where no significance / status is supplied by the consumer, all Problems are returned
 
-#### Uncategorised Data ####
+#### Uncategorised data ####
 
 * Search for all Uncategorised Data within the specified date range
      * The consumer system request all items within a start and end date
      * The provider system returns all items whose asserted date is within the start and end date (inclusive)
      * Where no start date is supplied the search goes from the start of patient record
      * Where no end date is supplied the search goes to the end of patient record
-     * Where no dates are supplied by the consumer, all uncategorised data items are returned.
+     * Where no dates are supplied by the consumer, all uncategorised data items are returned
 
 #### Consultations ####
 
@@ -216,9 +215,9 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 * Search for the most recent x Consultations within the patient's record
      * The consumer system request the last x consultations
      * The provider system returns the last x consultations
-* Where a single filter is supplied by the consumer, it is applied as defined above.
-* Where both filters are supplied by the consumer, all the Consultations that match either of the filters are returned.
-* If no filters are supplied by the consumer, all Consultations are returned.
+* Where a single filter is supplied by the consumer, it is applied as defined above
+* Where both filters are supplied by the consumer, all the Consultations that match either of the filters are returned
+* If no filters are supplied by the consumer, all Consultations are returned
 
 #### Immunisations ####
 
@@ -227,7 +226,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 ### Following a linkage ###
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
 
-There are however scenarios where the information to the first query identifies additional information that is required.
+There are, however, scenarios where the information to the first query identifies additional information that is required.
 
 For example:
 * a retrieved medication is linked to a problem that the clinician wants to review
@@ -241,16 +240,16 @@ This version of GP Connect does not allow a consumer to search for a specific it
 For example:
 * To display a specific consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data. 
 
-### Scale of Search ###
+### Scale of search ###
 
 It is the responsibility of the consuming system to decide what data to request from the provider systems. When determining how wide to make the search criteria, the consumer system must consider the following guidelines:
 
 * Always apply the [Caldicott Principles](https://www.igt.hscic.gov.uk/Caldicott2Principles.aspx) 
-* The first API query on a patient should aim to retrieve the amount of data required to support the majority of queries that their clinician / user will make whilst avoiding the retrieval of large quantities of unnecessary data.
-* Where a follow-up query is required it should aim to retrieve sufficient data to support any other queries that their clinician / user will make.
-* The consumer system should aim to avoid scenarios where more than two queries are required on the same patient as part of the same local interaction with a clinician / user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
+* The first API query on a patient should aim to retrieve the amount of data required to support the majority of queries that their clinician/user will make whilst avoiding the retrieval of large quantities of unnecessary data
+* Where a follow-up query is required it should aim to retrieve sufficient data to support any other queries that their clinician/user will make
+* The consumer system should aim to avoid scenarios where more than two queries are required on the same patient as part of the same local interaction with a clinician/user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
 * It is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the unnecessary data before presenting it to their clinicians / users where the consumer organisation: 
-     * has determiend it is necessary to support patient care
-     * has met all of the GP Connect IG requirements including data sharing agreements, confidentiality and auditing
+     * has determined it is necessary to support patient care
+     * has met all of the GP Connect information governance (IG) requirements including data sharing agreements, confidentiality and auditing
 
 The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html).
