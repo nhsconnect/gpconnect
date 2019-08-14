@@ -31,7 +31,7 @@ GP clinical systems often record the type of vaccine administered as opposed to 
 This may be as a procedure code or a local code which can be mapped to a procedure code. 
 GP Connect, therefore, uses the vaccination procedure code to denote the vaccine being administered.
 The vaccination procedure code is a mandatory element.
-The vaccine product code will often be a null flavor code, but the actual vaccine product **MUST** be included if it is available.
+The vaccine product code will often be a `nullFlavor` code, but the actual vaccine product **MUST** be included if it is available.
 
 ## Vaccinations that were not given
 
