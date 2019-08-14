@@ -433,13 +433,13 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
+              "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "MedicationRequest/MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Order-1"
+              "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Order-1"
             }
           },
           {
@@ -732,7 +732,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -777,7 +777,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -822,7 +822,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -872,7 +872,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -994,7 +994,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1039,7 +1039,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1104,7 +1104,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1133,7 +1133,7 @@
         },
         {
           "item": {
-            "display": "Clinical item not supported by the provider system"
+            "display": "Referral items are not supported by the provider system"
           }
         },
         {
@@ -1270,7 +1270,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1336,7 +1336,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1447,7 +1447,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1502,7 +1502,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1552,7 +1552,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -1932,7 +1932,7 @@
         "medicationReference": {
           "reference": "Medication/c260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28+00:00",
+        "effectiveDateTime": "2019-03-28",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -1988,9 +1988,7 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
+            "code": "d",
             "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
@@ -2162,7 +2160,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": " 86290005",
+              "code": "86290005",
               "display": "Respiratory rate (observable entity)",
               "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
@@ -2406,7 +2404,7 @@
                   },
                   {
                     "url": "descriptionDisplay",
-                    "valueId": "O/E - blood pressure reading"
+                    "valueString": "O/E - blood pressure reading"
                   }
                 ]
               }]
@@ -2425,7 +2423,7 @@
               "text": "O/E - Systolic BP reading"
             },
             "valueQuantity": {
-              "value": "130",
+              "value": 130,
               "unit": "mmHg"
             }
           },
@@ -2440,7 +2438,7 @@
               "text": "O/E - Diastolic BP reading"
             },
             "valueQuantity": {
-              "value": "72",
+              "value": 72,
               "unit": "mmHg"
             }
           }
@@ -2580,7 +2578,7 @@
         "medicationReference": {
           "reference": "Medication/d260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28+00:00",
+        "effectiveDateTime": "2019-03-28",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -2636,9 +2634,7 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
+            "code": "d",
             "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
@@ -2965,7 +2961,7 @@
         "medicationReference": {
           "reference": "Medication/a260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28+00:00",
+        "effectiveDateTime": "2019-03-28",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -3021,9 +3017,7 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
+            "code": "d",
             "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
@@ -3519,7 +3513,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -3564,7 +3558,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -3609,7 +3603,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -3654,7 +3648,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -3709,7 +3703,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -3754,7 +3748,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -4019,7 +4013,7 @@
         "medicationReference": {
           "reference": "Medication/b260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28+00:00",
+        "effectiveDateTime": "2019-03-28",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -4075,9 +4069,7 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
+            "code": "d",
             "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
@@ -4447,7 +4439,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -4492,7 +4484,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -4537,7 +4529,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -4582,7 +4574,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -4637,7 +4629,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -4682,7 +4674,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -4731,12 +4723,12 @@
         },
         {
           "item": {
-            "display": "Clinical item not supported by the provider system"
+            "display": "Referral items are not supported by the provider system"
           }
         },
         {
           "item": {
-            "display": "Clinical item not supported by the provider system"
+            "display": "Referral items are not supported by the provider system"
           }
         }
       ]
@@ -4757,7 +4749,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "24781000000107 ",
+              "code": "24781000000107",
               "display": "Category (EHR) (record artifact)|"
             }
           ]
@@ -5022,7 +5014,7 @@
         "medicationReference": {
           "reference": "Medication/f260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28+00:00",
+        "effectiveDateTime": "2019-03-28",
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -5078,9 +5070,7 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
+            "code": "d",
             "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
@@ -5280,7 +5270,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": " 86290005",
+              "code": "86290005",
               "display": "Respiratory rate (observable entity)",
               "extension": [{
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
