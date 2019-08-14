@@ -11,7 +11,7 @@ summary: "Guidance for the representation and consumption of consultations"
 
 Consultations are one of the most important forms in which structured clinical information is recorded in the patient records within GP systems.
 
-However, there is no standard structure or format for recording consultations that is common across all systems. 
+However, there is no standard structure or format for recording consultations that is common across all systems.
 
 This presents a challenge in developing a common set of FHIR profiles that are capable of representing the consultation structures that exist within participating systems.
 
@@ -32,17 +32,17 @@ For GP Connect, a consultation is the structure within which source systems grou
 
 - the provider system determines under what circumstances to create a consultation. This may vary between provider systems
 - consultations do not exclusively represent clinician-patient encounters, although they are commonly used for that purpose
-- consultations may record purely administrative or communications triggered events on source systems (for example, repeat medication administration, a pathology report filed into the patient record via messaging workflow) 
+- consultations may record purely administrative or communications triggered events on source systems (for example, repeat medication administration, a pathology report filed into the patient record via messaging workflow)
 - consultations are generally assigned and attributed to what can loosely be termed a 'Date/Doctor/Place/Type' (Encounter), although these attributes may be overridden or refined in the context of individual record entries within the consultation
 - consultations may or may not have associated structure (for example, the ability to decompose a consultation into multiple topics/subjects/problems and within each 'topic' further group clinical content under headings (SOAP headings) in line with long standing clinical note taking practice)
 - consultations may also be recorded in non-structured form - that is, a grouping of clinical record entries under the same 'Date/Dr/Place/Type' but without additional structure (topics or SOAP headings)
-- consultations may incorporate a range of different record entries (for example, measurements, test results, textual narrative, structured narrative, coded observations, medications) 
+- consultations may incorporate a range of different record entries (for example, measurements, test results, textual narrative, structured narrative, coded observations, medications)
 
 ## Logical structure
 
 Consultations follow a common logical structure.
 
--   Context 
+-   Context
 
     Each consultation has context data that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor). This information is usually generated automatically by the provider system but it may include some manually recorded values.
 
@@ -64,7 +64,7 @@ Consultations follow a common logical structure.
 
     Within each heading there may be one or more clinical items. Grouped together and in order, these clinical items describe in full all the details recorded under that heading of the consultation.
 
-    Any type of clinical item may form part of the consultation (medications, allergies, immunisations, uncategorised data, and so on). 
+    Any type of clinical item may form part of the consultation (medications, allergies, immunisations, uncategorised data, and so on).
 
 -   Topics without headings
 
@@ -77,7 +77,7 @@ Consultations follow a common logical structure.
 <IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
 
 -   The Encounter resource and related resources like Location are adopted to provide the consultation context (Date/Doctor/Type/Place)
--   List resources are adopted to provide consultation structure. A top-level List is utilised to represent the consultation structure as a whole. The Consultation List references further List resources representing the topic levels and in turn these reference List resource representing the SOAP heading levels. 
+-   List resources are adopted to provide consultation structure. A top-level List is utilised to represent the consultation structure as a whole. The Consultation List references further List resources representing the topic levels and in turn these reference List resource representing the SOAP heading levels.
 -   Some systems allow the recording of consultation content outside of the topic/problem and heading hierarchy, that is, a flat structure of record entries organised with the same 'Date/Dr/Place' context. These structures are handled by the generation of a Topic List to contain the record entries and entries are referenced directly from that section with no additional heading subsections.
 
 ## Consultation notes
@@ -97,13 +97,13 @@ There are two primary ways that consultation notes are recorded on native GP sys
 <IMG src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text"  style="max-width:40%;max-height:40%;">
 </center>
 &nbsp;
- 
 
-When reflecting these in FHIR it is important they these two methods are represented in a way that retains the structural information they contain, does not create any unintended clinical meaning and can be viewed / imported. This is done by taking any free text in model one and representing it as uncategorised data and positioning it as the first clinical item under the heading. 
+
+When reflecting these in FHIR it is important they these two methods are represented in a way that retains the structural information they contain, does not create any unintended clinical meaning and can be viewed / imported. This is done by taking any free text in model one and representing it as uncategorised data and positioning it as the first clinical item under the heading.
 
 <IMG src="images/access_structured/Consultation_text_2.png" alt="Consultation text in FHIR"  style="max-width:100%;max-height:100%;">
 
- 
+
 
 While there are differences between the two outputs, the consultation notes can be derived from both by reading through each clinical item in order and merging the Term Text, Clinical Code, Values and Comment into a single narrative.
 
@@ -124,19 +124,31 @@ When linking to a clinical item that is held in a single FHIR resource the refer
 -   For an Allergy – reference the Allergy resource
 -   For an Immunisation – reference the Immunization resource
 -   For Uncategorised Data – reference the Observation – Uncategorised resource
-    
+
 ## Consultations containing unsupported clinical items
 
 Depending on the GP Connect version supported by the provider system it can be possible for the consultation to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the consultation contains a link to a referral record, but the provider system does not yet support exporting referrals.
 
 Where a provider system is not able to export a linked clinical item, it will create a section.section.entry (or section.entry) entry with the:
 
--   `List.entry.item.Reference.Identifier` set to null; and
--   `List.entry.item.Reference.Display set to` “[Clinical area] items are not supported by the provider system.”
-   
+-   `List.entry.item.Reference.Display` set to “[Clinical area] items are not supported by the provider system.”
+
        Where [Clinical area] identifies the type of the clinical item that is not supported.
-   
-       For example "Referral items are not supported by the provider system.”
+
+The example below shows references to two items, one for an observation and another for referrals that aren't supported by the provider system:
+
+```json
+{
+  "item": {
+    "reference": "Observation/6734572634"
+  }
+},
+{
+  "item": {
+    "display": "Referral items are not supported by the provider system"
+  }
+}
+```
 
 ## Consultations containing confidential items
 
@@ -160,7 +172,7 @@ The same approach is followed for empty topic and heading levels recorded at sou
 
 ## What information may be recorded outside of consultations
 
--   Some systems do not restrict entry of clinical data to a consultation context - that is, it is possible to record clinical information about a patient without starting or initiating a consultation. 
+-   Some systems do not restrict entry of clinical data to a consultation context - that is, it is possible to record clinical information about a patient without starting or initiating a consultation.
 -   Such 'Non-Consultation' behaviour does not imply any loss of information or structure by the source system - that is, the record items are still fully recorded and attributed.
 -   But because they are recorded outside of a consultation context, they will not be returned by an API query directed at returning consultation resources (see 'Design decisions' section below).
 
@@ -176,7 +188,7 @@ The same approach is followed for empty topic and heading levels recorded at sou
 ## Design decisions
 
 -   Systems which allow direct recording of data outside of consultation contexts should not fabricate consultations to return such data when consultation queries are received, as to do so would be generating information and structure which does not exist on the source system, and which would obscure the genuine consultation content that does exist. Systems in this category have clear distinctions between consultations and other types of record content (for example, last X Consultations displayed in patient summaries and to synthesise consultations would distort this native behaviour).
-          
+
 ## Using the `List` resource for consultation queries
 
 The results of a query for consultation details **MUST** return a `List` containing references to all the `List` resources at the top consultation level which are identified by the SNOMED code **325851000000107 Consultation encounter type** and represent each consultation that is returned.
