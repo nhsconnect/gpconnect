@@ -1242,7 +1242,7 @@
                   "display": "Not implemented"
                 }
               ],
-              "text": "includeProblems is an unrecognised parameter",
+              "text": "includeProblems is an unrecognised parameter"
             },
             "diagnostics": "includeProblems"
           }
