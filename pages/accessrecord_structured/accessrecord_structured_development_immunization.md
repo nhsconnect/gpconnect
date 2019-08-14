@@ -67,7 +67,7 @@ Indicates whether a parent was present at the immunisation.
 
 This is the date the immunisation was entered on the clinical system.
 This may be an audit trail date or equivalent for the record.
-If the immunisation has been transfered by GP2GP this **SHOULD** be the recorded date from the original record entry from the originating system.
+If the immunisation has been transferred by GP2GP this **SHOULD** be the recorded date from the original record entry from the originating system.
 
 ### extension[vaccinationProcedure]
 
@@ -312,7 +312,7 @@ The amount of the vaccine administered.
 </table>
 
 The person who recorded the vaccine as having been administered **MUST** be included.
-This **SHOULD** also include the practitioner who adminisitered the vaccine if that is known.
+This **SHOULD** also include the practitioner who administered the vaccine if that is known.
 
 ### practitioner.role
 
