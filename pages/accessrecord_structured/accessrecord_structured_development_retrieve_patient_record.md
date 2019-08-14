@@ -181,8 +181,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge">includeProblems</code></td>
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
-      <td>0..1</td>
-      <td>Include problems in the response.</td>
+      <td>0..*</td>
+      <td>Include problems in the response. Each instance of the includeProblems parameter will represent a combination of problem status and significance.</td>
     </tr>
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeStatus</code></span></td>
