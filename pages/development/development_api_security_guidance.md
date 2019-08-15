@@ -1,5 +1,5 @@
 ---
-title: Security guidance
+title: Security
 keywords: development
 tags: [development]
 sidebar: overview_sidebar
