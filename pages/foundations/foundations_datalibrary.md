@@ -1,5 +1,5 @@
 ---
-title: Foundations resources
+title: FHIR&reg; resources
 keywords: development
 sidebar: foundations_sidebar
 toc: false
