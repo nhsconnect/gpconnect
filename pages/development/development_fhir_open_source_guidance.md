@@ -1,5 +1,5 @@
 ---
-title: FHIR&reg; library guidance
+title: FHIR&reg; library
 keywords: fhir, development, open source
 tags: [fhir,development]
 sidebar: overview_sidebar
