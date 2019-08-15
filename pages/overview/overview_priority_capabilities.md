@@ -1,5 +1,5 @@
 ---
-title: Priority capabilities for GP Connect API
+title: Capabilities
 keywords: usecases
 tags: [use_case,htmlgetcarerecord,getcarerecord,appointments]
 sidebar: overview_sidebar
