@@ -1,5 +1,5 @@
 ---
-title: Foundations Design
+title: Design decisions
 keywords: foundations design
 tags: [design,foundations]
 sidebar: foundations_sidebar
