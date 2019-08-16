@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_list_consultation.html
-summary: "Guidance for populating the list resource at the topic level resource"
+summary: "Guidance for populating the `List` resource at the topic level resource"
 div: resource-page
 ---
 
@@ -47,7 +47,7 @@ The population of List attributes that are common to all of the consultation lis
         </tr>
 </table>
 
-The logical identifier of the List resource.
+The logical identifier of the `List` resource.
 
 ### meta.profile
 
@@ -112,7 +112,7 @@ Fixed value of `snapshot`.
         </tr>
 </table>
 
-Reference to the Patient resource for the patient whose patient record contains a consultation represented by this List resource.
+Reference to the `Patient` resource for the patient whose patient record contains a consultation represented by this `List` resource.
 
 The patient reference is provided by all Lists in the structure rather than the top-level List(Consultation) only.
 
@@ -126,7 +126,7 @@ The patient reference is provided by all Lists in the structure rather than the 
         </tr>
 </table>
 
-Mandatory reference to the <code>Encounter</code> resource providing the context for the consultation (Date/Doctor/Place ....)
+Mandatory reference to the `Encounter` resource providing the context for the consultation (Date/Doctor/Place ....)
 
 The Encounter reference is provided by all Lists in the structure rather than the top-level List(Consultation) only.
 
@@ -144,7 +144,7 @@ The system rather than clinical date time for when the consultation was last edi
 
 If no separate date time is recorded for consultation sub sections, the overall audit date of the consultation is replicated at all levels.
 
-The clinically significant or effective consultation date is provided by the associated <code>Encounter</code> resource.
+The clinically significant or effective consultation date is provided by the associated `Encounter` resource.
 
 ### orderedBy
 
