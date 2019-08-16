@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_composition.html
-summary: "Guidance for populating the composition resource"
+summary: "Guidance for populating the Composition resource"
 ---
 
 ## Composition elements ##
@@ -19,7 +19,7 @@ summary: "Guidance for populating the composition resource"
   </tr>
 </table>
 
-The logical identifier of the Composition resource
+The logical identifier of the `Composition` resource
 
 ### meta.profile ###
 
@@ -31,7 +31,7 @@ The logical identifier of the Composition resource
   </tr>
 </table>
 
-The Composition profile URL.
+The `Composition` profile URL.
 
 ### identifier ###
 
@@ -83,7 +83,7 @@ Use fixed value code of `325851000000107 |Consultation encounter type (record ar
   </tr>
 </table>
 
-Reference to the Patient resource for the patient whose patient record contains a consultation represented by this Composition resource.
+Reference to the `Patient` resource for the patient whose patient record contains a consultation represented by this `Composition` resource.
 
 ### encounter ###
 
@@ -95,7 +95,7 @@ Reference to the Patient resource for the patient whose patient record contains 
   </tr>
 </table>
 
-Mandatory reference to the Encounter resource providing the context for the Consultation (Date/Doctor/Place ....)
+Mandatory reference to the `Encounter` resource providing the context for the Consultation (Date/Doctor/Place ....)
 
 ### date ###
 
