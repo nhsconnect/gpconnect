@@ -59,7 +59,7 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed values of **final**
+Fixed values of `final`.
 
 ### type ###
 
@@ -71,7 +71,7 @@ Fixed values of **final**
   </tr>
 </table>
 
-Use fixed value code of **325851000000107 |Consultation encounter type (record artifact)|** to identify the Composition type as a GP Connect structured consultation rather than any other document type.
+Use fixed value code of `325851000000107 |Consultation encounter type (record artifact)|` to identify the Composition type as a GP Connect structured consultation rather than any other document type.
 
 ### subject ###
 
@@ -199,7 +199,7 @@ Will not be present where a consultation section is untitled on the source syste
   </tr>
 </table>
 
-Use fixed value of **25851000000105 |Topic (EHR) (record artifact)|**
+Use fixed value of `25851000000105 |Topic (EHR) (record artifact)|`
 
 ### Composition.section.text ###
 
@@ -215,7 +215,7 @@ TBD - Either not used in GP Connect. Any textual rendering of the Composition co
   </tr>
 </table>
 
-Fixed value of **snapshot**.
+Fixed value of `snapshot`.
 Explicitly identified that each composition is a snapshot of the current consultation on the source system rather than an incremental update.
 
 ### Composition.section.orderedBy ###
@@ -228,7 +228,7 @@ Explicitly identified that each composition is a snapshot of the current consult
   </tr>
 </table>
 
-Fixed value of **system** from http://hl7.org/fhir/list-order vocabulary.
+Fixed value of `system` from http://hl7.org/fhir/list-order vocabulary.
 
 By convention, the order entries should appear is the default order subsections or entries are displayed by the native system at source.
 
@@ -305,7 +305,7 @@ TBD - demand on outcpome of narrative discussion
   </tr>
 </table>
 
-Fixed value of **snapshot**.
+Fixed value of `snapshot`.
 Explicitly identifies that each composition section and subsection is a snapshot of the current consultation on the source system rather than an incremental update.
 
 ### Composition.section.section.orderedBy ###
@@ -318,7 +318,7 @@ Explicitly identifies that each composition section and subsection is a snapshot
   </tr>
 </table>
 
-Fixed value of **system** from http://hl7.org/fhir/list-order vocabulary.
+Fixed value of `system` from http://hl7.org/fhir/list-order vocabulary.
 
 By convention the order used is the default order subsections or entries are displayed by the native system at source.
 
