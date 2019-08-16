@@ -278,7 +278,7 @@ Use one of `plan` or `order`:
 
 The medication/medical device the authorisation is for.
 
-The Medication resource provides the coded representation of the medication/medical device.
+The `Medication` resource provides the coded representation of the medication/medical device.
 
 ### subject ###
 
