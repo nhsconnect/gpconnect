@@ -4,7 +4,7 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_immunization_guidance.html
-summary: "Guidance for populating and consuming the Immunization FHIR&reg; resource"
+summary: "Guidance for populating and consuming the `Immunization` FHIR&reg; resource"
 ---
 
 ## What is immunisation?
@@ -19,7 +19,7 @@ Vaccination is the administration of a vaccine to help the immune system develop
 
 ## What immunisation data is GP Connect sending?
 
-In GP Connect, what is sent in the <code>Immunization</code> resource is the event of a patient being administered a vaccination. 
+In GP Connect, what is sent in the `Immunization` resource is the event of a patient being administered a vaccination. 
 This may be a contemporaneous record by the clinician administering the vaccination (or by another member of the practice staff recording the event directly on behalf of the clinician) or it may be a record of an immunisation administered elsewhere as reported to the registered GP practice by the patient, a carer, guardian or other representative of the patient or another healthcare provider.
 
 A record of an immunisation may be created as part of a scheduled programme of immunisations such as childhood immunisations, seasonal influenza vaccination or in response to specific circumstances (for example, prior to travel, disease outbreak or occupational risk).
@@ -59,7 +59,7 @@ GP clinical systems do not have a standard means to identify an ineffective vacc
 
 Allergic or adverse reactions to an immunisation may be captured in the GP clinical system, but these are not generally directly associated to the immunisation event.
 It has not been considered reliable to link any allergic or adverse reaction to the immunisation record. Therefore, information about reactions will not be included.
-For details of allergies or adverse reaction, the <code>AllergyIntolerance</code> resource **MUST** be requested.
+For details of allergies or adverse reaction, the `AllergyIntolerance` resource **MUST** be requested.
 
 ## Immunisation schedules and recalls
 
@@ -68,9 +68,9 @@ The resources required to describe planned immunisation schedules or diarised re
 ## Immunisation notes
 
 GP systems that support a note entry against the immunisation **MUST** populate the text to the <code>note</code> element.
-Additionally, any other information relevant to the immunisation which does not have a suitable, supported element within the <code>Immunization</code> resource **MUST** be populated to the <code>note</code> as a key value pair.
+Additionally, any other information relevant to the immunisation which does not have a suitable, supported element within the `Immunization` resource **MUST** be populated to the <code>note</code> as a key value pair.
 This includes where there is an element in the profile for the type of information, but the data type is not compatible with the way the data is recorded in the GP system.
-For example, the vaccine manufacturer is recorded in a free text field so it is not suited as a reference to an <code>Organization</code> resource for the <code>manufacturer</code> element and is therefore populated to the <code>note</code> element as 'Manufacturer: Acme Pharmaceuticals'.
+For example, the vaccine manufacturer is recorded in a free text field so it is not suited as a reference to an `Organization` resource for the <code>manufacturer</code> element and is therefore populated to the <code>note</code> element as 'Manufacturer: Acme Pharmaceuticals'.
 This might also apply to the <code>doseQuantity</code> element if the GP system holds the dosage information in a format which does not comply with the <code>Quantity</code> datatype structure.
 
 ## Using the `List` resource for immunisation queries
