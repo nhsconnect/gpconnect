@@ -10,7 +10,7 @@ div: resource-page
 
 ## Introduction ##
 
-The headings below list the elements of the AllergyIntolerance resource and describe how to populate and consume them.
+The headings below list the elements of the `AllergyIntolerance` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
@@ -28,7 +28,7 @@ The headings below list the elements of the AllergyIntolerance resource and desc
   </tr>
 </table>
 
-The logical identifier of the Medication resource.
+The logical identifier of the `Medication` resource.
 
 ### meta.profile ###
 
@@ -40,7 +40,7 @@ The logical identifier of the Medication resource.
   </tr>
 </table>
 
-The AllergyIntolerance profile URL.
+The `AllergyIntolerance` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
 
