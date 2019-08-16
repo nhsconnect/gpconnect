@@ -11,13 +11,13 @@ published: false
 
 ## Introduction ##
 
-The headings below list the elements of the DiagnosticReport resource and describe how to populate and consume them.
+The headings below list the elements of the `DiagnosticReport` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_dagnosticReport.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [DiagnosticReport profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)." %}
 
-## DiagnosticReport resource elements ##
+## `DiagnosticReport` resource elements ##
 
 ### id ###
 
@@ -29,7 +29,7 @@ The headings below list the elements of the DiagnosticReport resource and descri
   </tr>
 </table>
 
-The logical identifier of the DiagnosticReport resource.
+The logical identifier of the `DiagnosticReport` resource.
 
 ### meta.profile ###
 
@@ -41,7 +41,7 @@ The logical identifier of the DiagnosticReport resource.
   </tr>
 </table>
 
-The DiagnosticReport profile URL.
+The `DiagnosticReport` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnostocReport-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)
 
@@ -57,9 +57,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
-This  **MUST**  be a GUID.
+This **MUST** be a GUID.
 
 _Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore stored with the source data).
 
@@ -102,7 +102,7 @@ The status of the DiagnosticReport. In GP systems these are most likely to be 'f
   </tr>
 </table>
 
-The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available e.g. pathology, microbiology etc.
+The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available - for example, pathology, microbiology.
 
 ### code ###
 
