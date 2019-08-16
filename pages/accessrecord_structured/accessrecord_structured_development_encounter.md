@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_encounter.html
-summary: "Guidance for populating the `Encounter` resource for consultations"
+summary: "Guidance for populating the Encounter resource for consultations"
 div: resource-page
 ---
 
