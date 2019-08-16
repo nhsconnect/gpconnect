@@ -53,7 +53,7 @@ entries:
     output: web
     folderitems:
 
-    - title: API principles
+    - title: API design principles
       url: /designprinciples_open_api_principles.html
       output: web
     - title: Development principles
@@ -88,38 +88,38 @@ entries:
     - title: Interactive API documentation
       url: /system_swagger.html
       output: web
-    - title: Postman examples
+    - title: Postman API examples
       url: /system_reference_postman.html
       output: web
 
-  - title: Development guidance
+  - title: Development
     output: web
     folderitems:
-    - title: Development assets
+    - title: Development deliverables
       url: /development_deliverables.html
       output: web
-    - title: FHIR&reg; library guidance
+    - title: FHIR&reg; library
       url: /development_fhir_open_source_guidance.html
       output: web
-    - title: FHIR&reg; implementation guidance
+    - title: FHIR&reg; implementation
       url: /development_fhir_api_guidance.html
       output: web
     - title: General API guidance
       url: /development_general_api_guidance.html
       output: web          
-    - title: Branch surgeries data model
+    - title: Branch surgeries
       url: /development_branch_surgeries.html
       output: web          
-    - title: FHIR&reg; resource guidance
+    - title: FHIR&reg; resources
       url: /development_fhir_resource_guidance.html
       output: web
-    - title: Security guidance
+    - title: Security
       url: /development_api_security_guidance.html
       output: web
     - title: Error handling
       url: /development_fhir_error_handling_guidance.html
       output: web
-    - title: Volume and performance guidance
+    - title: Volumetric and performance
       url: /development_api_volume_and_performance.html
       output: web          
     - title: Non-functional requirements
@@ -151,7 +151,7 @@ entries:
     - title: System topologies
       url: /integration_system_topologies.html
       output: web
-    - title: Cross organisation audit and provenance
+    - title: Cross-organisation audit and provenance
       url: /integration_cross_organisation_audit_and_provenance.html
       output: web
     - title: Personal Demographic Service
@@ -234,7 +234,7 @@ entries:
         - title: Getting started
           url: /tag_getting_started.html
           output: web
-        - title: First of type
+        - title: First of Type
           url: /tag_first_of_type.html
           output: web
         - title: FHIR&reg;

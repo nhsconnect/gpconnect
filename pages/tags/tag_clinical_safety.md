@@ -1,5 +1,5 @@
 ---
-title: "Clinical Safety"
+title: "Clinical safety"
 tagName: clinical_safety
 search: exclude
 permalink: tag_clinical_safety.html

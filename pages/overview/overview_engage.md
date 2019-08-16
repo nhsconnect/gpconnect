@@ -1,11 +1,11 @@
 ---
-title: Getting involved with GP Connect API
+title: Getting started
 keywords: engage, about
 tags: [getting_started]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_engage.html
-summary: "Getting involved with GP Connect"
+summary: "Getting started with GP Connect API"
 ---
 
 ## Background

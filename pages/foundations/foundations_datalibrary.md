@@ -1,13 +1,13 @@
 ---
-title: Foundation Resources
+title: FHIR&reg; resources
 keywords: development
 sidebar: foundations_sidebar
 toc: false
 permalink: datalibraryfoundation.html
-summary: "The FHIR profiles and interactions required for the Foundation capability pack"
+summary: "The FHIR profiles and interactions required for the Foundations capability pack"
 ---
 
-The following profiled FHIR resources are used in the current version of the Foundation capabilities, see "API Use Cases" in the menu on the left. Full details of profiled FHIR resources and worked examples are available on the [FHIR Reference Server](https://fhir.nhs.uk/).
+The following profiled FHIR resources are used in the current version of the Foundations capabilities (see "API Use Cases" in the menu on the left). Full details of profiled FHIR resources and worked examples are available on the [FHIR Reference Server](https://fhir.nhs.uk/).
 
 ---
 ## ***[Find a patient](foundations_use_case_find_a_patient.html) / [Read a patient](foundations_use_case_read_a_patient.html)*** ##
