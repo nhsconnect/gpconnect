@@ -76,8 +76,8 @@ Consultations follow a common logical structure.
 
 <IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
 
--   The Encounter resource and related resources like Location are adopted to provide the consultation context (Date/Doctor/Type/Place)
--   List resources are adopted to provide consultation structure. A top-level List is utilised to represent the consultation structure as a whole. The Consultation List references further List resources representing the topic levels and in turn these reference List resource representing the SOAP heading levels.
+-   The `Encounter` resource and related resources like `Location` are adopted to provide the consultation context (Date/Doctor/Type/Place)
+-   List resources are adopted to provide consultation structure. A top-level List is utilised to represent the consultation structure as a whole. The `Consultation List` references further `List` resources representing the topic levels and in turn these reference `List` resource representing the SOAP heading levels.
 -   Some systems allow the recording of consultation content outside of the topic/problem and heading hierarchy, that is, a flat structure of record entries organised with the same 'Date/Dr/Place' context. These structures are handled by the generation of a Topic List to contain the record entries and entries are referenced directly from that section with no additional heading subsections.
 
 ## Consultation notes
@@ -123,7 +123,7 @@ When linking to a clinical item that is held in a single FHIR resource the refer
 -   For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) resource
 -   For an Allergy – reference the Allergy resource
 -   For an Immunisation – reference the Immunization resource
--   For Uncategorised Data – reference the Observation – Uncategorised resource
+-   For Uncategorised Data – reference the `Observation – Uncategorised` resource
 
 ## Consultations containing unsupported clinical items
 
