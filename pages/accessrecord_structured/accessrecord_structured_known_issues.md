@@ -1,5 +1,5 @@
 ---
-title: Access Record Structured Known Issues
+title: Known issues
 keywords: structured, design, known issues, bugs
 tags: [structured,design]
 sidebar: accessrecord_structured_sidebar

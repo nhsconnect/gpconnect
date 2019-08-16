@@ -1,5 +1,5 @@
 ---
-title: FHIR resource guidance
+title: FHIR&reg; resources
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar

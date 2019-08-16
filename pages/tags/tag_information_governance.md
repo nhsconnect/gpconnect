@@ -1,5 +1,5 @@
 ---
-title: "Information Governance"
+title: "Information governance"
 tagName: information_governance
 search: exclude
 permalink: tag_information_governance.html
