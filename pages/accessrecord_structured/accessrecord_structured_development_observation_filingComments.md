@@ -87,7 +87,7 @@ For filing comments this is a set value of 'unknown'.
   </tr>
 </table>
 
-Fixed value of 'Filing comments'. Awaiting confirmation of an appropriate SNOMED code being requested from SNOMED UK.
+Fixed value of `Filing comments`. Awaiting confirmation of an appropriate SNOMED code being requested from SNOMED UK.
 
 ### subject ###
 
