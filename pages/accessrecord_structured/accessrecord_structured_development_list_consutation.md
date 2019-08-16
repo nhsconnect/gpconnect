@@ -88,7 +88,7 @@ The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting
         </tr>
 </table>
 
-Fixed value of <code>current</code>.
+Fixed value of `current`.
 
 ### mode
 
@@ -100,7 +100,7 @@ Fixed value of <code>current</code>.
         </tr>
 </table>
 
-Fixed value of <code>snapshot</code>.
+Fixed value of `snapshot`.
 
 ### subject
 
@@ -156,7 +156,7 @@ The clinically significant or effective consultation date is provided by the ass
         </tr>
 </table>
 
-Fixed value of <code>system</code> from vocabulary.
+Fixed value of `system` from vocabulary.
 
 By convention, the order entries should appear is the default order subsections or entries are displayed by the native system at source.
 
@@ -187,7 +187,7 @@ This duplicates the consultation type/name provided at <code>Encounter.type</cod
         </tr>
 </table>
 
-Fixed value of **325851000000107 |Consultation encounter type (record artifact)|**
+Fixed value of `325851000000107 |Consultation encounter type (record artifact)|`
 
 ### entry
 
@@ -241,7 +241,7 @@ The name of the corresponding Topic section in the source consultation if it is 
         </tr>
 </table>
 
-Fixed value of **25851000000105 |Topic (EHR) (record artifact)|**
+Fixed value of `25851000000105 |Topic (EHR) (record artifact)|`
 
 ### entry
 
@@ -285,7 +285,7 @@ The name of the heading section on the source system represented by this List in
         </tr>
 </table>
 
-Fixed value of **24781000000107 |Category (EHR) (record artifact)|**
+Fixed value of `24781000000107 |Category (EHR) (record artifact)|`
 
 ### entry
 
