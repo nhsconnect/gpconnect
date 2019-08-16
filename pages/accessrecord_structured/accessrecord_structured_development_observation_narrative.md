@@ -106,7 +106,7 @@ Fixed value of `37331000000100  Comment note (record artifact)`
   </tr>
 </table>
 
-Reference to Patient resource representing the patient against whom the narrative text was recorded.
+Reference to `Patient` resource representing the patient against whom the narrative text was recorded.
 
 ### context ###
 
