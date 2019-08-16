@@ -4,13 +4,13 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medicationrequest.html
-summary: "Guidance for populating and consuming the MedicationRequest resource"
+summary: "Guidance for populating and consuming the `MedicationRequest` resource"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the MedicationRequest resource and describe how to populate and consume them.
+The headings below list the elements of the `MedicationRequest` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
@@ -18,7 +18,7 @@ The headings below list the elements of the MedicationRequest resource and descr
 
 ## Overarching principles ##
 
-When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **MUST** be applied when populating the MedicationRequest profiles:
+When populating the `MedicationRequest` profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **MUST** be applied when populating the `MedicationRequest` profiles:
 
 1. All mandatory fields **MUST** be populated.
 
