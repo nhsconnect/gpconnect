@@ -9,7 +9,7 @@ div: resource-page
 ---
 ## Introduction
 
-The headings below list the elements of the Immunization resource and describe how to populate and consume them.
+The headings below list the elements of the `Immunization` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_immunization.html#elements-not-in-use)." %}
 
@@ -27,7 +27,7 @@ The headings below list the elements of the Immunization resource and describe h
   </tr>
 </table>
 
-The logical identifier of the Immunization resource.
+The logical identifier of the `Immunization` resource.
 
 ### meta.profile
 
@@ -465,7 +465,7 @@ This means that there will never be cause to use <code>reasonNotGiven</code>.
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an <code>AllergyIntolerance</code> resource.
+Any reaction to an immunization **MUST** be sent separately in an `AllergyIntolerance` resource.
 
 <h3 style="color:#ED1951;"> vaccinationProtocol.authority </h3>
 
