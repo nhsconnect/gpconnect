@@ -4,13 +4,13 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_encounter.html
-summary: "Guidance for populating the Encounter resource for consultations"
+summary: "Guidance for populating the `Encounter` resource for consultations"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the Encounter resource and describe how to populate and consume them.
+The headings below list the elements of the `Encounter` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
@@ -115,7 +115,7 @@ Reference to <code>Patient</code> resource representing the patient against whom
 This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system.
 
 Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary.
-This should reference a <code>Practitioner</code> resource representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
+This should reference a `Practitioner` resource representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
 
 Other participants, such as registrars, trainees or other parties present, may be referenced but with a participation type of <code>PART</code>.
 
