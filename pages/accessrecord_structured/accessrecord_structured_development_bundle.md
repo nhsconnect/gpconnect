@@ -10,7 +10,7 @@ div: resource-page
 
 ## Introduction ##
 
-The headings below list the elements of the Bundle resource and describe how to populate and consume them.
+The headings below list the elements of the `Bundle` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
@@ -18,7 +18,7 @@ The headings below list the elements of the Bundle resource and describe how to 
 
 ## Bundle elements ##
 
-The logical identifier of the Bundle resource.
+The logical identifier of the `Bundle` resource.
 
 ### meta.profile ###
 
