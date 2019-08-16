@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_guidance_observation_narrative.html
-summary: "Guidance for the representation and consumption of `Observation`resource representing uncoded freetext narrative"
+summary: "Guidance for the representation and consumption of Observation resource representing uncoded freetext narrative"
 div: resource-page
 ---
 
