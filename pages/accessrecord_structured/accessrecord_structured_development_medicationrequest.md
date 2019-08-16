@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medicationrequest.html
-summary: "Guidance for populating and consuming the `MedicationRequest` resource"
+summary: "Guidance for populating and consuming the MedicationRequest resource"
 div: resource-page
 ---
 
