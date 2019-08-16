@@ -156,7 +156,7 @@ The audit trail timestamp representing when the narrative was last modified.
   </tr>
 </table>
 
-The Practitioner resource representing the person responsible for recording the narrative.
+The `Practitioner` resource representing the person responsible for recording the narrative.
 
 ### comment ###
 
