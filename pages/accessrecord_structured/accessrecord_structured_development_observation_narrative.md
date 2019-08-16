@@ -80,7 +80,7 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed value of **finished**.
+Fixed value of `finished`.
 
 
 
@@ -94,7 +94,7 @@ Fixed value of **finished**.
   </tr>
 </table>
 
-Fixed value of **37331000000100  Comment note (record artifact)**
+Fixed value of `37331000000100  Comment note (record artifact)`
 
 ### subject ###
 
