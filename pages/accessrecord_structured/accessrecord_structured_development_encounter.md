@@ -164,7 +164,7 @@ Should be calculated and populated where an end time for the consultation is kno
   </tr>
 </table>
 
-References an instance of the Location resource that provides more detail on where the consultation/encounter took place - for example, branch surgery.
+References an instance of the `Location` resource that provides more detail on where the consultation/encounter took place - for example, branch surgery.
 
 <code>location.status</code> and <code>location.period</code> are not used.
 
