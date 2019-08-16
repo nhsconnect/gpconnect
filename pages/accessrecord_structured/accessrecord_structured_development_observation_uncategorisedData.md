@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_uncategorisedData.html
-summary: "Guidance for the representation and consumption of observation resource representing uncategorised data items from the GP record"
+summary: "Guidance for the representation and consumption of `Observation` resource representing uncategorised data items from the GP record"
 div: resource-page
 ---
 
