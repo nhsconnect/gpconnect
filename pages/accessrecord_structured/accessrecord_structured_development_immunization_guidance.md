@@ -4,7 +4,7 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_immunization_guidance.html
-summary: "Guidance for populating and consuming the `Immunization` FHIR&reg; resource"
+summary: "Guidance for populating and consuming the Immunization FHIR&reg; resource"
 ---
 
 ## What is immunisation?
