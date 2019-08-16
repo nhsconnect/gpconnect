@@ -74,7 +74,7 @@ Where consuming systems are integrating data from this resource to their local s
   </tr>
 </table>
 
-Fixed value of **final**.
+Fixed value of `final`.
 
 ### code ###
 
