@@ -4,7 +4,7 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_list.html
-summary: "Guidance for populating and consuming the `List` resource"
+summary: "Guidance for populating and consuming the List resource"
 div: resource-page
 ---
 
