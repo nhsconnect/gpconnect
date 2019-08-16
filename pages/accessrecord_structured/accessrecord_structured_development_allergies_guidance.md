@@ -111,7 +111,7 @@ In some of the participating systems, an additional coded concept may be entered
 *The reasoning being that as systems converge on interoperable coding of allergies and intolerances via AllergyIntolerance/code the need for another code to represent the allergy/intolerance concept diminishes.*
 
 ## Negation - handling 'no known allergies'
-Where there is an explicit assertion of the 'No Known Allergies' concept in the record, equivalent to SNOMED CT concept `716186003` and children, and there are otherwise no allergy or intolerance entries in the patient record, then systems may respond to queries for all allergy or intolerance resources using and AllergyIntolerance resource containing the appropriate code. 
+Where there is an explicit assertion of the 'No Known Allergies' concept in the record, equivalent to SNOMED CT concept `716186003` and children, and there are otherwise no allergy or intolerance entries in the patient record, then systems may respond to queries for all allergy or intolerance resources using and `AllergyIntolerance` resource containing the appropriate code. 
 
 Where there are no allergy or intolerance entries in the patient record, but no explicit recording of the ‘No Known Allergies’ concept and equivalents, then systems **MUST** return an empty `List` with an emptyReason FHIR code: "No content recorded" and a `List.note` with the text: 
 
