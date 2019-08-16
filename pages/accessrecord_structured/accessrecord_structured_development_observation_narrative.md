@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_guidance_observation_narrative.html
-summary: "Guidance for the representation and consumption of Observation resource representing uncoded freetext narrative"
+summary: "Guidance for the representation and consumption of `Observation`resource representing uncoded freetext narrative"
 div: resource-page
 ---
 
@@ -13,7 +13,7 @@ div: resource-page
 There are many instances of uncoded free text narrative notes within patient records.
 * Paragraphs of free text consultation notes perhaps associated with codes via the wider consultation context but not otherwise explicitly coded.
 * Text which may or may not be associated with codes but where the association is inexact and it is considered better to express the notes text as a standalone item rather than bind the text (possibly incorrectly) to an associated coded resource. See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
-* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded Observation resource as the 'uncategorised' representation is inappropriate (for example, no appropriate codes are available to represent the source record entry as an observation).
+* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded `Observation` resource as the 'uncategorised' representation is inappropriate (for example, no appropriate codes are available to represent the source record entry as an observation).
 
 Because FHIR&reg; does not provide an underlying resource suitable for representing this information, a profile of Observation is utilised to represent narrative text as an Observation Narrative.
 
@@ -23,7 +23,7 @@ Because FHIR&reg; does not provide an underlying resource suitable for represent
 
 ## Approach ##
 
-The approach for all of these cases is to use an appropriate coded Observation resource to represent the free text.
+The approach for all of these cases is to use an appropriate coded `Observation` resource to represent the free text.
 
 Instances of Observation narrative are identified by Observation.code of **37331000000100  Comment note (record artifact)**
 
@@ -118,7 +118,7 @@ Reference to Patient resource representing the patient against whom the narrativ
   </tr>
 </table>
 
-Optional reference to the Encounter resource representing the consultation context in which the narrative free text was recorded. Will not be populated where the free text was recorded outside of a consultation context.
+Optional reference to the `Encounter` resource representing the consultation context in which the narrative free text was recorded. Will not be populated where the free text was recorded outside of a consultation context.
 
 ### effectiveDateTime ###
 
