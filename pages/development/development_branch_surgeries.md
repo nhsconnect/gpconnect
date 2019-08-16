@@ -4,18 +4,18 @@ keywords: development
 tags: [development]
 sidebar: overview_sidebar
 permalink: development_branch_surgeries.html
-summary: ""
+summary: "Describes how GP Connect manages branch surgery data"
 ---
 
 ## GP practices with multiple surgeries
 
-A GP practice may operate from a single surgery (location), or from multiple surgeries (multiple locations).
+A GP practice may operate from a single surgery (location) or from multiple surgeries (multiple locations).
 
 In GP Connect, a GP practice is represented by an `Organization` resource, and the surgeries are represented by `Location` resources.  The surgery `Location` is linked to the GP practice `Organization` via the `Location.managingOrganisation` element.
 
 ![image-title-here](images/appointments/branch-surgeries.png){:class="img-responsive"}
 
-A GP practice operating multiple surgeries usually designates one of the surgeries as a *main* surgery and the rest as *branch* surgeries.  The designation of surgeries as *main* and *branch* doesn't have significant impact on GP Connect, other than the main surgery normally having the same name and address as the GP practice, and the branch surgeries having different names and addresses.
+A GP practice operating multiple surgeries usually designates one of the surgeries as a *main* surgery and the rest as *branch* surgeries. The designation of surgeries as *main* and *branch* doesn't have significant impact on GP Connect other than the main surgery normally having the same name and address as the GP practice, and the branch surgeries having different names and addresses.
 
 When a patient registers at a GP practice with multiple surgeries, they are assigned a 'preferred' surgery, even though the patient is formally registered to the GP practice (organisation) as a whole, and can usually attend appointments at any of the surgeries (locations).
 
@@ -41,9 +41,9 @@ The following query to read a `Patient` resource is being sent to the patient's 
 
 <code class="highlighter-rouge">https://provider.nhs.uk/<b>D82809</b>/STU3/1/gpconnect/Patient/1</code>
 
-### Implications for Access Record HTML & Access Record Structured
+### Implications for Access Record HTML and Access Record Structured
 
-There are no implications for Access Record HTML & Access Record Structured because the patient's record is requested from the GP practice as a whole and not from an individual surgery.
+There are no implications for Access Record HTML and Access Record Structured because the patient's record is requested from the GP practice as a whole and not from an individual surgery.
 
 ### Implications for Appointment Management
 

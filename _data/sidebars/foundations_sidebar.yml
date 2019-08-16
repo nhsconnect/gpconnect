@@ -24,7 +24,7 @@ entries:
       url: /foundations.html
       output: web, pdf
       type: homepage
-    - title: Information Governance
+    - title: Information governance
       url: /foundations_ig.html
       output: web, pdf
     - title: Design decisions
@@ -35,7 +35,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: FHIR resources
+    - title: FHIR&reg; resources
       url: /datalibraryfoundation.html
       output: web, pdf
 

@@ -1,5 +1,5 @@
 ---
-title: Appointment Management known issues
+title: Known issues
 keywords: appointments, design, known issues, bugs
 tags: [appointments,design]
 sidebar: appointments_sidebar

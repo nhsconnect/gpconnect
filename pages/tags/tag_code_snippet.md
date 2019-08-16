@@ -1,5 +1,5 @@
 ---
-title: "Code Snippet"
+title: "Code snippet"
 tagName: code_snippet
 search: exclude
 permalink: tag_code_snippet.html
