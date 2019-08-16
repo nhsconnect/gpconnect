@@ -111,7 +111,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
   </tr>
 </table>
 
-Fixed to the value <code>completed</code> for all CareConnect profiles.
+Fixed to the value `completed` for all CareConnect profiles.
 
 ### notGiven
 
@@ -123,7 +123,7 @@ Fixed to the value <code>completed</code> for all CareConnect profiles.
   </tr>
 </table>
 
-Fixed value of <code>false</code>.
+Fixed value of `false`.
 
 ### vaccineCode
 
@@ -440,7 +440,7 @@ The disease or diseases the patient is being immunised against.
   </tr>
 </table>
 
-Fixed value <code>count</code>
+Fixed value `count`
 
 <h2 style="color:#ED1951;"> Immunization elements <b>not in use</b> </h2>
 
