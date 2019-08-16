@@ -1,5 +1,5 @@
 ---
-title: Overview and querying SDS for GP Connect
+title: Overview and querying
 keywords: spine, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar

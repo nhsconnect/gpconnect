@@ -1,5 +1,5 @@
 ---
-title: Volumetric & performance
+title: Volumetric and performance
 keywords: development
 tags: [development]
 sidebar: overview_sidebar

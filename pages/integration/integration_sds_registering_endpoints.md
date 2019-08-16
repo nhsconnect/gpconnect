@@ -1,5 +1,5 @@
 ---
-title: Registering GP Connect systems in SDS
+title: Registering systems
 keywords: spine, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar
