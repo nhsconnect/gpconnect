@@ -1,5 +1,5 @@
 ---
-title: Clinical safety
+title: Clinical safety principles
 keywords: safety, commissioning
 tags: [clinical_safety, commissioning, first_of_type]
 sidebar: overview_sidebar

@@ -1,5 +1,5 @@
 ---
-title: Cross organisation audit and provenance
+title: Cross-organisation audit and provenance
 keywords: spine, ssp, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
@@ -58,7 +58,7 @@ Provider systems **SHALL** ensure that data provided to consumer systems only in
 
 Consumer systems **SHALL** always perform a patient demographic check as part of the use of a GP Connect capability to ensure that the patient for whom the information has been provided is the same patient for whom the request was made, and make clear to the end user any discrepancies. 
 
-## Cross organisation audit and provenance transport ##
+## Cross-organisation audit and provenance transport ##
 
 ### Bearer token ###
 
@@ -406,7 +406,7 @@ The [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource pop
 }
 ```
 
-## External documents / policy documents ##
+## External documents/policy documents ##
 
 | Name | Author | Version | Updated |
 | GPSoC IG Requirements for GP Systems | NHS Digital | v4.0 | 19/09/2014 |

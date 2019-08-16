@@ -1,5 +1,5 @@
 ---
-title: Appointment Management FHIR&reg; resources
+title: FHIR&reg; resources
 keywords: development
 sidebar: appointments_sidebar
 toc: false

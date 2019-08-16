@@ -1,5 +1,5 @@
 ---
-title: Error handling guidance
+title: Error handling
 keywords: fhir, development, operation outcome, error
 tags: [fhir,development,error]
 sidebar: overview_sidebar
