@@ -68,7 +68,7 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed value of **finished**.
+Fixed value of `finished`.
 
 Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of consultation context.
 Hence, use the most appropriate value from limited set available.
