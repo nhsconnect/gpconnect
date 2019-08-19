@@ -16,12 +16,10 @@ toc: false
                <div class="panel panel-default">
                <div class="panel-heading">Overview</div>
                <div class="panel-body">
-               <p><a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a></p> 
                <p><a href="/index.html">Introduction</a></p>
-               <p><a href="https://gpc-spec-restructure.netlify.com/support_faq.html">Frequently asked questions</a> </p>
-               <p><a href="pages/support_faq.html">Frequently asked questions</a></p>
-               <p><a href="pages/overview/overview_glossary.html">Glossary</a> </p>
-               <p><a href="pages/support/support_communications.html">Communications channels</a> </p>
+               <p><a href="/pages/support_faq.html">Frequently asked questions</a></p>
+               <p><a href="/pages/overview/overview_glossary.html">Glossary</a> </p>
+               <p><a href="/pages/support/support_communications.html">Communications channels</a> </p>
                
                                    <ul>
                 {% for page in site.pages %}
@@ -43,9 +41,9 @@ toc: false
             <div class="panel-heading">Getting started</div>
             <div class="panel-body">
                 
-<p><a href="https://gpc-spec-restructure.netlify.com/overview_consumer_supplier.html">Consumer suppliers</a></p>
+<p><a href="/pages/support_faq.html">Consumer suppliers</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/overview_clinical_system_supplier.html">Clinical system suppliers</a></p>
+<p><a href="/pages/support_faq.html">Clinical system suppliers</a></p>
 
 <p><a href="https://digital.nhs.uk/services/gp-connect">End-user organisations</a> (external site)</p>
 
@@ -72,11 +70,11 @@ toc: false
                <div class="panel-body">
                   <p><a href="https://gpc-spec-restructure.netlify.com/overview_explore.html">Exploring GP Connect</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/system_demonstrator.html">System demonstrator</a></p>
+<p><a href="/pages/support_faq.html">System demonstrator</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/system_swagger.html">Interactive API documentation</a></p>
+<p><a href="/pages/support_faq.html">Interactive API documentation</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/system_reference_postman.html">Postman examples</a></p>
+<p><a href="/pages/support_faq.html">Postman examples</a></p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
@@ -97,29 +95,29 @@ toc: false
                <div class="panel-heading">Develop</div>
                <div class="panel-body">
                
-<p><a href="https://gpc-spec-restructure.netlify.com/overview_development.html">Developing with GP Connect</a></p>
+<p><a href="/pages/support_faq.html">Developing with GP Connect</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_deliverables.html">Development assets</a></p>
+<p><a href="/pages/support_faq.html">Development assets</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_open_source_guidance.html">FHIR library</a></p>
+<p><a href="/pages/support_faq.html">FHIR library</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_api_guidance.html">FHIR implementation</a></p>
+<p><a href="/pages/support_faq.html">FHIR implementation</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_general_api_guidance.html">General API guidance</a></p>
+<p><a href="/pages/support_faq.html">General API guidance</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_operation_guidance.html">Operations</a></p>
+<p><a href="/pages/support_faq.html">Operations</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_resource_guidance.html">Resources</a></p>
+<p><a href="/pages/support_faq.html">Resources</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_api_security_guidance.html">Security guidance</a></p>
+<p><a href="/pages/support_faq.html">Security guidance</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_fhir_error_handling_guidance.html">Error handling</a></p>
+<p><a href="/pages/support_faq.html">Error handling</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/development_api_volume_and_performance.html">Volume and performance</a></p>
+<p><a href="/pages/support_faq.html">Volume and performance</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/evelopment_api_non_functional_requirements.html">Non-functional requirements</a></p>
+<p><a href="/pages/support_faq.html">Non-functional requirements</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/overview_first_of_type.html">First of type</a></p>
+<p><<a href="/pages/support_faq.html">First of type</a></p>
                <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
@@ -140,15 +138,15 @@ toc: false
                <div class="panel-heading">Test and assure</div>
                <div class="panel-body">
                
-<p><a href="https://gpc-spec-restructure.netlify.com/overview_test_and_assurance.html">Test and assurance</a></p>
+<p><a href="/pages/support_faq.html">Test and assurance</a></p>
              
-<p><a href="https://gpc-spec-restructure.netlify.com/testing_deliverables.html.html">Testing assets</a></p>
+<p><a href="/pages/support_faq.html">Testing assets</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/testing_environments.html">Test environments</a></p>
+<p><a href="/pages/support_faq.html">Test environments</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/testing_api_provider_testing.html">Provider testing</a></p>
+<p><a href="/pages/support_faq.html">Provider testing</a></p>
 
-<p><a href="https://gpc-spec-restructure.netlify.com/testing_api_consumer_testing.html">Consumer testing</a></p>
+<p><a href="/pages/support_faq.html">Consumer testing</a></p>
 
                    <ul>
                 {% for page in site.pages %}
@@ -168,7 +166,7 @@ toc: false
              <div class="panel panel-default">
                <div class="panel-heading">Deploy</div>
                <div class="panel-body">
-                  <p><a href="https://gpc-spec-restructure.netlify.com/overview_deployment.html">Deploying your system</a></p>
+                  <p><a href="/pages/support_faq.html">Deploying your system</a></p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
