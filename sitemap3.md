@@ -17,9 +17,11 @@ toc: false
                <div class="panel-heading">Overview</div>
                <div class="panel-body">
                <p><a href="https://gpc-spec-restructure.netlify.com/index.html">Introduction</a></p> 
+               <p><a href="/index.html">Introduction</a></p>
                <p><a href="https://gpc-spec-restructure.netlify.com/support_faq.html">Frequently asked questions</a> </p>
-               <p><a href="https://gpc-spec-restructure.netlify.com/overview_glossary.html">Glossary</a> </p>
-               <p><a href="https://gpc-spec-restructure.netlify.com/support_communications.html">Communications channels</a> </p>
+               <p><a href="pages/support_faq.html">Frequently asked questions</a></p>
+               <p><a href="pages/overview/overview_glossary.html">Glossary</a> </p>
+               <p><a href="pages/support/support_communications.html">Communications channels</a> </p>
                
                                    <ul>
                 {% for page in site.pages %}
