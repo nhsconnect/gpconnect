@@ -17,7 +17,7 @@ toc: false
                <div class="panel-heading">Overview</div>
                <div class="panel-body">
                <p><a href="/index.html">Introduction</a></p>
-               <p><a href="/pages/support/support_faq.html">Frequently asked questions</a></p>
+               <p><a href="../pages/support/support_faq.html">Frequently asked questions</a></p>
                <p><a href="/pages/overview/overview_glossary.html">Glossary</a> </p>
                <p><a href="/pages/support/support_communications.html">Communications channels</a> </p>
                
@@ -45,7 +45,7 @@ toc: false
 
 <p><a href="/pages/overview/overview_clinical_system_supplier.html">Clinical system suppliers</a></p>
 
-<p><a href="https://digital.nhs.uk/services/gp-connect">End-user organisations</a> (external site)</p>
+<p><a href="https://digital.nhs.uk/services/gp-connect">End-user organisations</a></p>
 
                 <ul>
                     {% for page in site.pages %}
@@ -70,7 +70,7 @@ toc: false
                <div class="panel-body">
                   <p><a href="/pages/overview_explore.html">Exploring GP Connect</a></p>
 
-<p><a href="/pages/systems/systems_demonstrator.html">System demonstrator</a></p>
+<p><a href="systems_demonstrator.html">System demonstrator</a></p>
 
 <p><a href="/pages/systems/systems_swagger.html">Interactive API documentation</a></p>
 
