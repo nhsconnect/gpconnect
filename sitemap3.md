@@ -125,7 +125,7 @@ toc: false
 
 <p><a href="/appointments.html">Appointment Management</a></p>
 
-<p><a href="/sitemap_structured.html">Access Record Strcutured</a></p>
+<p><a href="/sitemap_structured.html">Access Record Structured</a></p>
 
 <p><a href="/accessrecord.html">Access Record HTML</a></p>
 
