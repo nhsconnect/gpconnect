@@ -70,11 +70,11 @@ toc: false
                <div class="panel-body">
                   <p><a href="/overview_explore.html">Exploring GP Connect</a></p>
 
-<p><a href="/systems_demonstrator.html">System demonstrator</a></p>
+<p><a href="/overview_consumer_supplier.html">System demonstrator</a></p>
 
-<p><a href="/systems_swagger.html">Interactive API documentation</a></p>
+<p><a href="/overview_consumer_supplier.html">Interactive API documentation</a></p>
 
-<p><a href="/systems_reference_postman.html">Postman examples</a></p>
+<p><a href="/overview_consumer_supplier.html">Postman examples</a></p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
@@ -165,7 +165,7 @@ toc: false
              <div class="panel panel-default">
                <div class="panel-heading">Deploy</div>
                <div class="panel-body">
-                  <p><a href="/pages/support_faq.html">Deploying your system</a></p>
+                  <p><a href="/overview_deployment.html">Deploying your system</a></p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
