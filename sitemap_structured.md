@@ -38,7 +38,7 @@ toc: false
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["getting-started"]'>
 
         <div class="panel panel-default">
-            <div class="panel-heading">Getting started</div>
+            <div class="panel-heading">Development</div>
             <div class="panel-body">
                 
 <p><a href="https://gpc-spec-restructure.netlify.com/overview_consumer_supplier.html">Consumer suppliers</a></p>
@@ -66,7 +66,7 @@ toc: false
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["explore"]'>
 
                 <div class="panel panel-default">
-               <div class="panel-heading">Explore</div>
+               <div class="panel-heading">FHIR&reg; resources</div>
                <div class="panel-body">
                   <p><a href="https://gpc-spec-restructure.netlify.com/overview_explore.html">Exploring GP Connect</a></p>
 
@@ -92,7 +92,7 @@ toc: false
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["Develop"]'>
          
       <div class="panel panel-default">
-               <div class="panel-heading">Develop</div>
+               <div class="panel-heading">FHIR&reg; examples</div>
                <div class="panel-body">
                
 <p><a href="https://gpc-spec-restructure.netlify.com/overview_development.html">Developing with GP Connect</a></p>
@@ -135,7 +135,7 @@ toc: false
        <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["test-assure"]'>
 
            <div class="panel panel-default">
-               <div class="panel-heading">Test and assure</div>
+               <div class="panel-heading">API definition</div>
                <div class="panel-body">
                
 <p><a href="https://gpc-spec-restructure.netlify.com/overview_test_and_assurance.html">Test and assurance</a></p>
@@ -164,7 +164,7 @@ toc: false
         <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["deploy"]'>
 
              <div class="panel panel-default">
-               <div class="panel-heading">Deploy</div>
+               <div class="panel-heading">Spare</div>
                <div class="panel-body">
                   <p><a href="https://gpc-spec-restructure.netlify.com/overview_deployment.html">Deploying your system</a></p>
                   <ul>
