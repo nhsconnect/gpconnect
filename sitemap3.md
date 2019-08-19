@@ -68,7 +68,7 @@ toc: false
                 <div class="panel panel-default">
                <div class="panel-heading">Explore</div>
                <div class="panel-body">
-                  <p><a href="/pages/overview_explore.html">Exploring GP Connect</a></p>
+                  <p><a href="/overview_explore.html">Exploring GP Connect</a></p>
 
 <p><a href="/systems_demonstrator.html">System demonstrator</a></p>
 
