@@ -39,7 +39,7 @@ The logical identifier of the ReferralRequest resource.
   </tr>
 </table>
 
-The Immunization profile URL.
+The ReferralRequest profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1)
 
@@ -101,7 +101,7 @@ Indicates any plans or prior referrals that this referral is intended to fulfill
 </table>
 
 Fixed value of <code>unknown</code>.
-Referrals entered in error must not be included.
+Referrals 'entered in error' must not be included.
 
 ### intent
 
