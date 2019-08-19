@@ -117,13 +117,15 @@ toc: false
 
 <p><a href="/development_api_non_functional_requirements.html">Non-functional requirements</a></p>
 
+<br>
+
 <p><strong>Implement a capability</strong></p>
 
 <p><a href="/foundations.html">Foundations</a></p>
 
 <p><a href="/appointments.html">Appointment Management</a></p>
 
-<p><a href="/accessrecord_structured.html">Access Record Strcutured</a></p>
+<p><a href="/sitemap_structured.html">Access Record Strcutured</a></p>
 
 <p><a href="/accessrecord.html">Access Record HTML</a></p>
 
