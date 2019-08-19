@@ -57,6 +57,37 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Docume
 
 Master Version Specific Identifier
 
+### identifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Identifier</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..*</td>
+  </tr>
+</table>
+
+This is for business identifiers.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This **MUST** be a GUID.
+
+_Providing_  systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and, therefore, is stored with the source data).
+
+Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+
+### indexed ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Instant</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+When the document reference was created.
+
+
 ### subject ###
 
 <table class='resource-attributes'>
@@ -69,13 +100,13 @@ Master Version Specific Identifier
 
 A reference to the patient who is the subject of the document.
 
-### creationDateTime ###
+### created ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Practitioner | Organization | Device | Patient | RelatedPerson)</code></td>
+    <td><b>Data type:</b> DateTime</td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -87,7 +118,7 @@ Creation/Edit datetime of the document.
   <tr>
     <td><b>Data type:</b> <code>dateTime</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
@@ -205,17 +236,6 @@ Reference to the consultation the document was created/attached in.
 ## Elements not in use ##
 
 The following elements **MUST NOT** be populated:
-
-
-### indexed ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>instant</code></td>
-  </tr>
-</table>
-
-When this document reference was created
 
 ### status ###
 
