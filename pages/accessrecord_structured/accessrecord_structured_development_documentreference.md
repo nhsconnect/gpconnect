@@ -124,7 +124,7 @@ Creation/Edit datetime of the document.
 
 Who and/or what authored the document.
 
-### documentType ###
+### type ###
 
 <table class='resource-attributes'>
   <tr>
