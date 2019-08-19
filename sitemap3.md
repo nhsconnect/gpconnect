@@ -70,11 +70,11 @@ toc: false
                <div class="panel-body">
                   <p><a href="/overview_explore.html">Exploring GP Connect</a></p>
 
-<p><a href="/systems_demonstrator.html">System demonstrator</a></p>
+<p><a href="/system_demonstrator.html">System demonstrator</a></p>
 
-<p><a href="/systems_swagger.html">Interactive API documentation</a></p>
+<p><a href="/system_swagger.html">Interactive API documentation</a></p>
 
-<p><a href="/systems_reference_postman.html">Postman examples</a></p>
+<p><a href="/system_reference_postman.html">Postman examples</a></p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
