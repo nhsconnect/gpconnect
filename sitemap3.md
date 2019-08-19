@@ -117,7 +117,7 @@ toc: false
 
 <p><a href="/development_api_non_functional_requirements.html">Non-functional requirements</a></p>
 
-<p><h4>Implement a capability</h4></p>
+<p><strong>Implement a capability</strong></p>
 
 <p><a href="/foundations.html">Foundations</a></p>
 
