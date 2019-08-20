@@ -2,6 +2,7 @@
 title: Sitemap for Access Record Structured
 tags: [sitemap]
 keywords: sitemap
+summary: A collection of useful links
 permalink: sitemap_structured.html
 sidebar: home_sidebar
 toc: false
@@ -74,9 +75,9 @@ toc: false
                <div class="panel-heading">FHIR&reg; resources</div>
                <div class="panel-body">
 
-<p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
+<p><a href="/accessrecord_structured_development_resources_overview.html">Overview</a></p>
 
-<p><a href="/accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
+<p><a href="/accessrecord_structured_development_allergyintolerance.html">AllergyIntolerance</a></p>
 
 <p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
 
