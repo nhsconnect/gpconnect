@@ -109,18 +109,6 @@ toc: false
 
 <p><a href="/accessrecord_structured_development_fhir_examples_medication.html">Medication</a></p>
 
-<br>
-
-<p><strong>Implement a capability</strong></p>
-
-<p><a href="/foundations.html">Foundations</a></p>
-
-<p><a href="/appointments.html">Appointment Management</a></p>
-
-<p><a href="/sitemap_structured.html">Access Record Structured</a></p>
-
-<p><a href="/accessrecord.html">Access Record HTML</a></p>
-
 
                <ul>
                 {% for page in site.pages %}
@@ -139,19 +127,11 @@ toc: false
        <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["test-assure"]'>
 
            <div class="panel panel-default">
-               <div class="panel-heading">Test and assure</div>
+               <div class="panel-heading">API definition</div>
                <div class="panel-body">
                
-<p><a href="/overview_test_and_assurance.html">Test and assurance</a></p>
+<p><a href="/accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
              
-<p><a href="/testing_deliverables.html">Testing assets</a></p>
-
-<p><a href="/testing_environments.html">Test environments</a></p>
-
-<p><a href="/testing_api_provider_testing.html">Provider testing</a></p>
-
-<p><a href="/testing_api_consumer_testing.html">Consumer testing</a></p>
-
                    <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
@@ -168,9 +148,9 @@ toc: false
         <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["deploy"]'>
 
              <div class="panel panel-default">
-               <div class="panel-heading">Deploy</div>
+               <div class="panel-heading">Spare</div>
                <div class="panel-body">
-                  <p><a href="/overview_deployment.html">Deploying your system</a></p>
+                  
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
