@@ -2,6 +2,7 @@
 title: Sitemap for Access Record Structured
 tags: [sitemap]
 keywords: sitemap
+summary: "Summary."
 permalink: sitemap_structured.html
 sidebar:home_sidebar
 toc: false
@@ -38,14 +39,16 @@ toc: false
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["getting-started"]'>
 
         <div class="panel panel-default">
-            <div class="panel-heading">Getting started</div>
+            <div class="panel-heading">Development</div>
             <div class="panel-body">
                 
-<p><a href="/overview_consumer_supplier.html">Consumer suppliers</a></p>
+<p><a href="/accessrecord_structured_development.html">Overview</a></p>
 
-<p><a href="/overview_clinical_system_supplier.html">Clinical system suppliers</a></p>
+<p><a href="/accessrecord_structured_development_allergies_guidance.html">Allergies guidance</a></p>
 
-<p><a href="https://digital.nhs.uk/services/gp-connect">End-user organisations</a></p>
+<p><a href="/accessrecord_structured_development_medication_resource_relationships.html">Medication resource relationships</a></p>
+
+<p><a href="/accessrecord_structured_development_medication_guidance.html">Medication guidance</a></p>
 
                 <ul>
                     {% for page in site.pages %}
