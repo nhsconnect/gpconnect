@@ -2,7 +2,7 @@
 title: Introduction
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured] 
-sidebar: accessrecord_structured_sidebar_Copy_Copy
+sidebar: accessrecord_structured_sidebar_copy_copy
 permalink: accessrecord_structured_copy.html
 summary: "Introduction to the Access Record Structured capability"
 ---
