@@ -3,7 +3,7 @@ title: Sitemap for Access Record Structured
 tags: [sitemap]
 keywords: sitemap
 permalink: sitemap_structured.html
-sidebar:home_sidebar
+sidebar: home_sidebar
 toc: false
 ---
 
@@ -73,6 +73,10 @@ toc: false
                 <div class="panel panel-default">
                <div class="panel-heading">FHIR&reg; resources</div>
                <div class="panel-body">
+
+<p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
+
+<p><a href="/accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
 
 <p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
 
