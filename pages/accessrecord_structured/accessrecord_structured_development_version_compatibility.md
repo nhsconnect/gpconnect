@@ -119,7 +119,7 @@ Consumers **MAY** determine programmatically which parameters have been implemen
 - The parameters that are supported by the provider will be listed in OperationDefinition.parameters
 
 To illustrate how forwards compatibility works, the following example has been included:
-- [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.3 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
+- [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.4 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
 
 #### Backwards compatibility ####
 Backwards compatibility is the scenario where a consumer requests a lower version of the API than the provider supports. The GP Connect APIs have been developed to be backwards compatible by following the [rules for backwards compatibility](https://www.hl7.org/fhir/STU3/versions.html#b-compat) that are defined in the FHIR&reg; specification.
