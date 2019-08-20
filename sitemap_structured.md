@@ -2,11 +2,13 @@
 title: Sitemap for Access Record Structured
 tags: [sitemap]
 keywords: sitemap
-summary: "Summary."
 permalink: sitemap_structured.html
 sidebar:home_sidebar
 toc: false
 ---
+
+
+
 
 
 <div id="grid" class="row">
@@ -69,15 +71,23 @@ toc: false
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["explore"]'>
 
                 <div class="panel panel-default">
-               <div class="panel-heading">Explore</div>
+               <div class="panel-heading">FHIR&reg; resources</div>
                <div class="panel-body">
-                  <p><a href="/overview_explore.html">Exploring GP Connect</a></p>
+                  <p><a href="/accessrecord_structured_development_resources_overview.html</a></p>
 
-<p><a href="/system_demonstrator.html">System demonstrator</a></p>
+<p><a href="/accessrecord_structured_development_allergyintolerance.html</a></p>
 
-<p><a href="/system_swagger.html">Interactive API documentation</a></p>
+<p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
 
-<p><a href="/system_reference_postman.html">Postman examples</a></p>
+<p><a href="/accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
+
+<p><a href="/accessrecord_structured_development_medicationrequest.html">MedicationRequest</a></p>
+
+<p><a href="/accessrecord_structured_development_list.html">List</a></p>
+
+<p><a href="/accessrecord_structured_development_bundle.html">Bundle</a></p>
+
+
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
