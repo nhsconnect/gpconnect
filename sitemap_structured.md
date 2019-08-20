@@ -73,9 +73,9 @@ toc: false
                 <div class="panel panel-default">
                <div class="panel-heading">FHIR&reg; resources</div>
                <div class="panel-body">
-                  <p><a href="/accessrecord_structured_development_resources_overview.html</a></p>
+                  <p><a href="/accessrecord_structured_development_resources_overview.html"</a>Overview</p>
 
-<p><a href="/accessrecord_structured_development_allergyintolerance.html</a></p>
+<p><a href="/accessrecord_structured_development_allergyintolerance.html"</a>AllergyIntolerance</p>
 
 <p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
 
