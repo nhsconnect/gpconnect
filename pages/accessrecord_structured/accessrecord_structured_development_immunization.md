@@ -137,7 +137,7 @@ Fixed value of `false`.
 
 Vaccine product administered.
 
-Where the vaccine product that was administered is not known then one of the null flavour values defined in the profile **MUST** be populated.
+Where the vaccine product that was administered is not known then the null flavour value code <code>UNK</code> **MUST** be populated.
 
 ### patient
 
@@ -195,6 +195,7 @@ This **MUST** be <code>true</code> where the immunisation record was recorded by
 This **MUST** be <code>false</code> where it a secondary report of a vaccination for example the recollection of the patient, the patient's parent, carer or guardian or a secondary document. 
 
 As this relates to the context of the original source of the immunisation record, a record from a GP2GP transfer is still a primary record if it was originally recorded as primary.
+
 If it is not known whether the record of the vaccination was made from a primary or secondary source, then return the default value of <code>true</code>.
 
 ### reportOrigin
@@ -210,7 +211,7 @@ If it is not known whether the record of the vaccination was made from a primary
 This indicates the source of a secondary reported record.
 
 This provides additional context to the source of the immunisation record where it is not based on information from the person who administered the vaccine.
-This can be absent if the record is known not to be the primary source, but the origin of the record is otherwise not recorded / unknown.
+This can be absent if the record is NOT from a primary source, but the origin of the record is otherwise not recorded / known.
 
 This **MUST NOT** be included where <code>primarySource</code> is <code>true</code>.
 
@@ -226,8 +227,9 @@ This **MUST NOT** be included where <code>primarySource</code> is <code>true</co
 
 The GP practice, branch surgery or other location where the vaccination occurred, if known.
 
-If the immunisation record in the GP Clinical System does not record a location for the vaccination, but is linked to a consultation during which the vaccine was administered, then the <code>location</code> **MUST** be populated with the location of the consultation.
-If the immunisation was not administered during the linked consultation (the vaccine was administered elsewhere but reported and recorded in that consultation), then a <code>location</code> **MUST NOT** be returned.
+If the immunisation record in the GP Clinical System does not record a location for the vaccination, but is linked to a consultation then
+- if the vaccine was administered during the consultation the <code>location</code> **MUST** be populated with the location of the consultation
+- if the vaccine was NOT administered during the consultation and the location of the vaccination is therefore unknown, then a <code>location</code> **MUST NOT** be returned
 
 ### manufacturer
 
@@ -312,7 +314,7 @@ The amount of the vaccine administered.
 </table>
 
 The person who recorded the vaccine as having been administered **MUST** be included.
-This **SHOULD** also include the practitioner who administered the vaccine if that is known.
+This **MUST** also include the practitioner who administered the vaccine if different to who recorded the vaccination.
 
 ### practitioner.role
 
@@ -324,7 +326,7 @@ This **SHOULD** also include the practitioner who administered the vaccine if th
   </tr>
 </table>
 
-The role of the referenced practitioner.
+The role of the referenced practitioner, if known. Where the role is unknown this **MUST** be absent.
 
 The code <code>EP</code> (Entering Provider) **MUST** be used to designate the practitioner as having recorded the vaccination.
 
@@ -342,7 +344,9 @@ The code <code>AP</code> (Administering Provider) **MUST** be used to designate 
 
 A reference to the <code>practitioner</code> resource for who administered and / or recorded the vaccine. 
 
-If the GP Clinical System only captures who recorded the vaccination, and it cannot determine whether this was the practitioner who administered the vaccine, then return a single <code>actor</code> reference with a <code>role</code> of <code>EP</code>.
+Where there is only a single practitioner recorded against the immunisation record
+- If the practitioner recording the vaccination also administered it, then associate a <code>practitioner.role</code> code <code>AP</code> (Administering Provider) with practitioner resource.
+- If the GP Clinical System cannot determine whether the practitioner administered the vaccine or recorded the vaccination event or both, then do not return a <code>practitioner.role</code>.
 
 This is mandatory where the <code>practitioner.role</code> is populated.
 
