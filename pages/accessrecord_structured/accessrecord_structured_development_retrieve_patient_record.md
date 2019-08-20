@@ -409,11 +409,11 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - and when the `includeResolvedAllergies` parameter is set to `false`:
 
-    - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
 
   - and when the `includeResolvedAllergies` parameter is set to `true`:
 
-    - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
 
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
 
@@ -429,7 +429,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeMedication` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
   - when the `medicationSearchFromDate` parameter is set:
 	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
@@ -455,22 +455,22 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeConsultations' parameter is not set:
+- when the `includeConsultations` parameter is not set:
 
   - no consultation information shall be returned
 
-- when the 'includeConsultations' parameter is set:
-  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
-  - [`List`](accessrecord_structured_development_list.html), ['Condition'](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources for linked clinical information
+- when the `includeConsultations` parameter is set:
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources for linked clinical information
   - and when the `numberOfMostRecent` parameter is set:
     - limit the number of returned consultations to match the included value
 
-- when the 'consultationSearchPeriod' is set:
+- when the `consultationSearchPeriod` is set:
   - when a `start` value is set, all consultations with an `Encounter.period.start` after the date **MUST** be returned
   - and when an `end` value is set, all consultations with an `Encounter.period.end` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, consultations with an `Encounter.period.start` after the `start` and an `Encounter.period.end` before the `end` **MUST** be returned
 
-- when the 'includeNumberOfMostRecent' is set:
+- when the `includeNumberOfMostRecent` is set:
   - consultations **MUST** be ordered by `Encounter.period.start` descending
   - and the number of most recent consultations matching the parameter value **MUST** be returned
 
@@ -478,19 +478,19 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeProblems' parameter is not set:
+- when the `includeProblems` parameter is not set:
 
   - no problem information shall be returned
 
-- when the 'includeProblems' parameter is set:
+- when the `includeProblems` parameter is set:
 
   - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`Immunization`](accessrecord_structured_development_immunization.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
-- and when the 'includeStatus' parameter is set:
+- and when the `includeStatus` parameter is set:
 
   - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
 
-- and when the 'includeSignificance' parameter is set:
+- and when the `includeSignificance` parameter is set:
 
   - problems with a `problemSignificance` matching the parameter value and all linked clinical information
 
@@ -499,11 +499,11 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeImmunisations' parameter is not set:
+- when the `includeImmunisations` parameter is not set:
 
   - no immunisation information shall be returned
 
-- when the 'includeImmunisations' parameter is set:
+- when the `includeImmunisations` parameter is set:
 
   - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
 
@@ -511,15 +511,15 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeUncategorisedData' parameter is not set:
+- when the `includeUncategorisedData` parameter is not set:
 
   - no uncategorised data shall be returned
 
-- when the 'includeUncategorisedData' parameter is set:
+- when the `includeUncategorisedData` parameter is set:
 
   - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
 
-- when the 'uncategorisedDataSearchPeriod' is set:
+- when the `uncategorisedDataSearchPeriod` is set:
   - when a `start` value is set, all uncategorised data with an `Observation.effectiveTime` after the date **MUST** be returned
   - and when an `end` value is set, all uncategorised data with an `Observation.effectiveTime` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, uncategorised data with an `Observation.effectiveTime` after the `start` and with an `Observation.effectiveTime` before the `end` **MUST** be returned
