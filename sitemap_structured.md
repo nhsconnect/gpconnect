@@ -16,11 +16,11 @@ toc: false
                <div class="panel panel-default">
                <div class="panel-heading">Overview</div>
                <div class="panel-body">
-               <p><a href="/index.html">Introduction</a></p>
-               <p><a href="/support_faq.html">Frequently asked questions</a></p>
-               <p><a href="/overview_glossary.html">Glossary</a> </p>
-               <p><a href="/support_communications.html">Communications channels</a> </p>
-               
+               <p><a href="/accessrecord_structured.html">Introduction</a></p>
+               <p><a href="/accessrecord_structured_requirements.html">Business requirements</a></p>
+               <p><a href="https://gpc-spec-restructure.netlify.com/pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.4.xlsx">Requirements catalogue</a> </p>
+               <p><a href="/accessrecord_structured_design.html">Design decisions</a> </p>
+             <p><a href="/accessrecord_structured_known_issues.html">Known issues</a> </p>  
                                    <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
