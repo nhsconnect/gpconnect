@@ -35,7 +35,7 @@ toc: false
         </div>
    
 
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["getting-started"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["development"]'>
 
         <div class="panel panel-default">
             <div class="panel-heading">Development</div>
@@ -52,7 +52,7 @@ toc: false
                 <ul>
                     {% for page in site.pages %}
                     {% for tag in page.tags %}
-                    {% if tag == "content-types" %}
+                    {% if tag == "development" %}
                     <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                     {% endif %}
                     {% endfor %}
@@ -65,7 +65,7 @@ toc: false
 
 
 
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["explore"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["resources"]'>
 
                 <div class="panel panel-default">
                <div class="panel-heading">FHIR&reg; resources</div>
@@ -87,7 +87,7 @@ toc: false
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "formatting" %}
+                {% if tag == "resources" %}
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -98,7 +98,7 @@ toc: false
 
     </div>
 
-    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["Develop"]'>
+    <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["examples"]'>
          
       <div class="panel panel-default">
                <div class="panel-heading">FHIR&reg; examples</div>
@@ -112,7 +112,7 @@ toc: false
                <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "single_sourcing" %}
+                {% if tag == "examples" %}
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -123,7 +123,7 @@ toc: false
 
     </div>
 
-       <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["test-assure"]'>
+       <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["definition"]'>
 
            <div class="panel panel-default">
                <div class="panel-heading">API definition</div>
@@ -135,7 +135,7 @@ toc: false
                    <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "publishing" %}
+                {% if tag == "definition" %}
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
@@ -145,7 +145,7 @@ toc: false
             </div>
     </div>
 
-        <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["deploy"]'>
+        <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["spare"]'>
 
              <div class="panel panel-default">
                <div class="panel-heading">Spare</div>
@@ -154,7 +154,7 @@ toc: false
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
-                {% if tag == "special_layouts" %}
+                {% if tag == "spare" %}
                      <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
