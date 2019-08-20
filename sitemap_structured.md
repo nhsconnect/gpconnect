@@ -73,9 +73,6 @@ toc: false
                 <div class="panel panel-default">
                <div class="panel-heading">FHIR&reg; resources</div>
                <div class="panel-body">
-                  <p><a href="/accessrecord_structured_development_resources_overview.html"</a>Overview</p>
-
-<p><a href="/accessrecord_structured_development_allergyintolerance.html"</a>AllergyIntolerance</p>
 
 <p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
 
@@ -105,30 +102,12 @@ toc: false
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["Develop"]'>
          
       <div class="panel panel-default">
-               <div class="panel-heading">Develop</div>
+               <div class="panel-heading">FHIR&reg; examples</div>
                <div class="panel-body">
                
-<p><a href="/overview_development.html">Developing with GP Connect</a></p>
+<p><a href="/accessrecord_structured_development_fhir_examples_allergies.html">Allergies</a></p>
 
-<p><a href="/development_deliverables.html">Development assets</a></p>
-
-<p><a href="/development_fhir_open_source_guidance.html">FHIR library</a></p>
-
-<p><a href="/development_fhir_api_guidance.html">FHIR implementation</a></p>
-
-<p><a href="/development_general_api_guidance.html">General API guidance</a></p>
-
-<p><a href="/development_fhir_operation_guidance.html">Operations</a></p>
-
-<p><a href="/development_fhir_resource_guidance.html">Resources</a></p>
-
-<p><a href="/development_api_security_guidance.html">Security guidance</a></p>
-
-<p><a href="/development_fhir_error_handling_guidance.html">Error handling</a></p>
-
-<p><a href="/development_api_volume_and_performance.html">Volume and performance</a></p>
-
-<p><a href="/development_api_non_functional_requirements.html">Non-functional requirements</a></p>
+<p><a href="/accessrecord_structured_development_fhir_examples_medication.html">Medication</a></p>
 
 <br>
 
