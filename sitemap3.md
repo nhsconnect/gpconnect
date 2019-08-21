@@ -2,7 +2,7 @@
 title: Sitemap
 tags: [sitemap]
 keywords: sitemap
-summary: A list of pages organised by development stage
+summary: A collection of links to GP Connect API information
 permalink: sitemap3.html
 sidebar: home_sidebar
 toc: false
