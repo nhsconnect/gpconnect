@@ -155,7 +155,9 @@ toc: false
              <div class="panel panel-default">
                <div class="panel-heading">Spare</div>
                <div class="panel-body">
-                  
+                  <p>
+                  <p>
+                  <p>
                   <ul>
                 {% for page in site.pages %}
                 {% for tag in page.tags %}
