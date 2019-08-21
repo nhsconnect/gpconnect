@@ -3,7 +3,7 @@ title: Sitemap
 tags: [sitemap]
 keywords: sitemap
 summary: A collection of links to GP Connect API information
-permalink: sitemap3.html
+permalink: sitemap.html
 sidebar: home_sidebar
 toc: false
 ---
