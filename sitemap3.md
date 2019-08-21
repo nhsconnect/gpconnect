@@ -2,8 +2,9 @@
 title: Sitemap
 tags: [sitemap]
 keywords: sitemap
+summary: A list of pages organised by development stage
 permalink: sitemap3.html
-sidebar:home_sidebar
+sidebar: home_sidebar
 toc: false
 ---
 
