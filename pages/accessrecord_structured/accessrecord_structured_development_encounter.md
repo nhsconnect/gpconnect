@@ -85,9 +85,7 @@ Some systems allow consultations to be assigned a draft or incomplete status, bu
   </tr>
 </table>
 
-Carries the consultation type as displayed by the system via the CodeableConcept <code>type.text</code> attribute.
-
-TO DO - rule a mapping to a SNOMED CT vocabulary in or out
+Carries the consultation type as displayed by the system. This may be a SNOMED CT code or free text.
 
 ### subject ###
 
