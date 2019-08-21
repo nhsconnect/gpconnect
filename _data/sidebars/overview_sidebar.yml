@@ -201,15 +201,6 @@ entries:
     - title: Communication channels
       url: /support_communications.html
       output: web
-    - title: Sitemap
-      url: /sitemap.html
-      output: web
-    - title: Sitemap2
-      url: /sitemap2.html
-      output: web
-    - title: Sitemap3
-      url: /sitemap3.html
-      output: web, pdf
 
       subfolders:
       - title: External links
