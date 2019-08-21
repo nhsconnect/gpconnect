@@ -172,9 +172,9 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 #### Medication and medical devices ####
 
-* Search for all Medications and Medical Devices that were active after the specified date
-     * The consumer system requests all items after a start date
-     * The provider system returns all plans whose effective period end date is null or after the start date
+* Search for all Medications and Medical Devices that were active on or after the specified date
+     * The consumer system requests all items from a start date
+     * The provider system returns all plans whose effective period end date is null or is on or after the start date
      * Where no date is supplied by the consumer, all medications and medical devices are returned
 * Include all the prescriptions issued under the returned medication/medical device plans
      * The consumer system requests prescription issues
