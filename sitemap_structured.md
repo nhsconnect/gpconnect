@@ -2,7 +2,7 @@
 title: Sitemap for Access Record Structured
 tags: [sitemap]
 keywords: sitemap
-summary: A collection of useful links
+summary: A collection of links to Access Record Structured information
 permalink: sitemap_structured.html
 sidebar: home_sidebar
 toc: false
