@@ -8,7 +8,7 @@ summary: "Guidance for populating and consuming the ProblemHeader resource"
 ---
 
 ## What is a problem? ##
-'Problem' is a concept supported by all the GP clinical systems that allows a clinician to identify/highlight specific clinical items in the medical record to describe the status of the patient's health. 
+'Problem' is a concept supported by all the GP clinical systems that allows a clinician to identify/highlight specific clinical items in the medical record to describe the status of the patient's health.
 
 Any clinical item can be identified as a problem, though the method of doing this varies between GP clinical systems.
 
@@ -28,7 +28,7 @@ For example, the problems record highlights that the patient has hypertension. I
 
 To support this, problems are linked to:
 
-* every consultation where the problem has been discussed or information about the problem has been recorded 
+* every consultation where the problem has been discussed or information about the problem has been recorded
 * every clinical item in the patient record that a clinician has identified as relevant to the problem (for example test results, medication)
 * every other problem in the patient record that a clinician has identified as relevant to the problem
 
@@ -38,7 +38,7 @@ Problem records are linked to consultations, clinical items and other problems. 
 Each problem record is linked to:
 *	All consultations where the problem was discussed or information about the problem was recorded
     *	Consultations that are directly linked to the problem in the provider system; and
-    *	Consultations that created/updated a clinical item that has been linked to the problem 
+    *	Consultations that created/updated a clinical item that has been linked to the problem
 *	All clinical items in the patient record that the recording clinician identified as giving further information about the problem
     *	Clinical items that are directly linked to the problem in the provider system; and
     *	Clinical items that are within a consultation topic that is linked to the problem
@@ -51,11 +51,11 @@ Each problem record is linked to:
 
 When a clinical item is linked to the problem a reference to its FHIR&reg; resource is held in either extension[actualProblem] or extension[relatedClinicalContent].
 
-When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below. 
+When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below.
 * For a Medication or Medical Device prescription plan - reference the MedicationRequest (intent = plan) resource
 * For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) resource
-* For an Allergy – reference the Allergy resource 
-* For an Immunisation – reference the Immunization resource 
+* For an Allergy – reference the Allergy resource
+* For an Immunisation – reference the Immunization resource
 * For Uncategorised Data – reference the Observation – Uncategorised resource
 
 ## Problems linking to problems
@@ -72,12 +72,29 @@ Depending on the GP Connect version supported by the provider system, it can be 
 
 Where a provider system is not able to export a linked clinical item, it will create a reference entry with the:
 
-* `Condition.extension[relatedClinicalContent.Reference.Identifier` set to null; and
-* `Condition.extension[relatedClinicalContent.Reference.Display` set to “[Clinical area] items are not supported by the provider system.”
-   
+* `Condition.extension[relatedClinicalContent.valueReference.reference.Display` set to “[Clinical area] items are not supported by the provider system.”
+
    Where [Clinical area] identifies the type of the clinical item that is not supported.
-   
-   For example "Referral items are not supported by the provider system.”
+
+The example below shows references to two items, one for an observation and another for referrals that aren’t supported by the provider system:
+```json
+
+"extension": [
+   {
+     "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+     "valueReference": {
+       "reference": "Observation/6734572634"
+     }
+   },
+   {
+     "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+     "valueReference": {
+       "display": "Referral items are not supported by the provider system"
+     }
+   }
+]
+```
+
 
 ## Problems containing confidential items
 
@@ -98,4 +115,3 @@ The results of a query for problem details **MUST** return a `List` containing r
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
 If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
-
