@@ -77,9 +77,11 @@ Where items have been excluded from the returned resources due to patient consen
 
 This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice have not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
 
-### Data awaiting filing 
+## Data awaiting filing 
 
-Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent.
+When a GP Clinical system receives electronic data about a patient it will go through filing process during which the information is reviewed by a user and if suitable integrated into the patient's medical record. The details on how this process is managed vary between different GP Clinical Systems and GP Practices.
+
+GP Connect will not return electronic data that has been received by the GP Clinical System but has not yet been through the filing process. The data will only become available through GP Connect once it has integrated into the patient's medical record.
 
 ## Common code systems ##
 
