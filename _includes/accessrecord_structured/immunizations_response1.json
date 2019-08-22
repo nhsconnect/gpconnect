@@ -244,7 +244,7 @@
         },
         "status": "current",
         "mode": "snapshot",
-        "title": "Immunisations List",
+        "title": "Immunisations",
         "code": {
           "coding": [
             {
