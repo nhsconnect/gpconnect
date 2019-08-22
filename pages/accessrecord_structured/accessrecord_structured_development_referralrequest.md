@@ -43,18 +43,6 @@ The ReferralRequest profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1)
 
-### extension[referralRequestMethod]
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The method used to communicate the referral such as fax, NHS e-Referral Service, secure email, etc.
-
 ### identifier
 
 <table class='resource-attributes'>
@@ -227,7 +215,7 @@ This **MUST** be populated if the <code>requester.agent</code> is a practitioner
 </table>
 
 This **MUST NOT** be populated with the main SNOMED CT coded value for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
-This **MAY** be populated if the GP Clinical System holds a distinct entry for the practitioner which is being requested by the referral. 
+This **MAY** be populated if the GP Clinical System holds a distinct entry for clinical / practitioner specialty being requested by the referral. 
 
 ### recipient
 
@@ -309,16 +297,6 @@ This could include additional categorisation of the referral or notes recorded a
 ## Elements **not in use**
 
 The following elements **MUST NOT** be populated:
-
-### extension[sourceOfReferral]
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-This represents the source of referral.
 
 ### definition
 
