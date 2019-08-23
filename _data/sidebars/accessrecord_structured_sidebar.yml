@@ -3,9 +3,13 @@ entries:
   product: Access Record Structured
   folders:
 
-  - title: Overview
-    url: /accessrecord_structured.html
+  -title: Overview
     output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /accessrecord_structured.html
+      output: web, pdf         
   
   - title: Business requirements
     output: web, pdf
