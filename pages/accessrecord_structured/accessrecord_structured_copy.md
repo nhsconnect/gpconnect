@@ -1,8 +1,8 @@
 ---
 title: Introduction
 keywords: getcarerecord, structured
-tags: [getcarerecord, structured] 
-sidebar: accessrecord_structured_sidebar_copy_copy
+tags: [getcarerecord, structured]
+sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_copy.html
 summary: "Introduction to the Access Record Structured capability"
 ---
@@ -23,7 +23,7 @@ The Access Record Structured capability will expose data for a number of clinica
 ## Example scenarios ##
 
  - A healthcare professional views a patient’s GP record during a clinical appointment. By sending the clinical data in a structured format the local system can reformat and present the data in a way that best supports the local clinician.
- - A patient is admitted into an acute hospital trust. As part of admission a full set of the patient’s current medication and allergy information is retrieved from the patient’s GP record and imported into the hospital system. By sending the clinical data in a structured format the local system can import the data, reducing the level of data entry required by the local clinician. 
+ - A patient is admitted into an acute hospital trust. As part of admission a full set of the patient’s current medication and allergy information is retrieved from the patient’s GP record and imported into the hospital system. By sending the clinical data in a structured format the local system can import the data, reducing the level of data entry required by the local clinician.
  - During the triage of a patient using a decision support tool the local system imports the patient’s clinical information from their GP record. The data is received in a structured format that allows the system to import the data and use it to support the triage process.  
 
 ## Development ##

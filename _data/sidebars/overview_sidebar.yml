@@ -13,8 +13,8 @@ entries:
     - title: Sitemap
       url: /sitemap.html
       output: web, pdf
-          
-      subfolders:      
+
+      subfolders:
       - title: Release notes
         output: web
         subfolderitems:
@@ -53,7 +53,7 @@ entries:
     - title: ...for end-user organisations
       external_url: https://digital.nhs.uk/services/gp-connect
       output: web
-      
+
   - title: Explore
     output: web
     folderitems:
@@ -78,7 +78,7 @@ entries:
       url: /overview_development.html
       output: web, pdf
       type: web
-      type: homepage 
+      type: homepage
     - title: Development assets
       url: /development_deliverables.html
       output: web
@@ -90,7 +90,7 @@ entries:
       output: web
     - title: General API guidance
       url: /development_general_api_guidance.html
-      output: web          
+      output: web
     - title: Operations
       url: /development_fhir_operation_guidance.htm
       output: web
@@ -105,19 +105,19 @@ entries:
       output: web
     - title: Volume and performance
       url: /development_api_volume_and_performance.html
-      output: web          
+      output: web
     - title: Non-functional requirements
       url: /development_api_non_functional_requirements.html
       output: web
     - title: First of type
       url: /overview_first_of_type.html
-      output: web  
-      
+      output: web
+
       subfolders:
       - title: Implement a capability
         output: web
         subfolderitems:
-        
+
         - title: Foundations
           url: /foundations.html
           output: web
@@ -125,7 +125,7 @@ entries:
           url: /appointments.html
           output: web
         - title: Access Record Structured
-          url: /accessrecord_structured.html
+          url: /accessrecord_structured_copy.html
           output: web
         - title: <b class="capability-not-available">Access Record HTML</b>
           url: /accessrecord.html
@@ -159,7 +159,7 @@ entries:
           output: web
         - title: Specification versioning
           url: /design_product_versioning.html
-          output: web 
+          output: web
 
   - title: Test and assure
     output: web
@@ -188,7 +188,7 @@ entries:
       url: /overview_deployment.html
       output: web, pdf
       type: web
-      
+
   - title: Help and support
     output: web
     folderitems:
@@ -205,7 +205,7 @@ entries:
       subfolders:
       - title: External links
         output: web
-        subfolderitems:        
+        subfolderitems:
         - title: GPC Documentation repository
           external_url: https://github.com/nhsconnect/gpconnect
           output: web
@@ -257,7 +257,7 @@ entries:
           output: web
         - title: Design
           url: /tag_design.html
-          output: web   
+          output: web
         - title: Development
           url: /tag_development.html
           output: web
@@ -275,7 +275,7 @@ entries:
           output: web
         - title: Support
           url: /tag_support.html
-          output: web   
+          output: web
         - title: Clinical safety
           url: /tag_clinical_safety.html
           output: web
@@ -295,5 +295,3 @@ entries:
     - title: Run website locally
       url: /support_run_website_locally.html
       output: web
-
-
