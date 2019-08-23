@@ -254,7 +254,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "703421000",
-              "display": "Temperature (observable entity)",
+              "display": "Temperature",
               "extension": {
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
@@ -300,7 +300,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "1097811000000106",
-              "display": "Arterial oxygen saturation breathing room air at rest (observable entity)",
+              "display": "Arterial oxygen saturation breathing room air at rest",
               "extension": {
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
@@ -347,7 +347,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": " 86290005",
-              "display": "Respiratory rate (observable entity)",
+              "display": "Respiratory rate",
               "extension": {
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [

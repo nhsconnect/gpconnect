@@ -185,7 +185,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Include problems in the response. Each instance of the includeProblems parameter will represent a combination of problem status and significance.</td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeStatus</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterStatus</code></span></td>
       <td><code class="highlighter-rouge">Code</code></td>
       <td>Optional</td>
       <td>0..1</td>
@@ -196,7 +196,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       </td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeSignificance</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterSignificance</code></span></td>
       <td><code class="highlighter-rouge">Code</code></td>
       <td>Optional</td>
       <td>0..1</td>
@@ -301,11 +301,11 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeProblems",
       "part": [
         {
-          "name": "includeStatus",
+          "name": "filterStatus",
           "valueCode": "active"
         },
         {
-          "name": "includeSignificance",
+          "name": "filterSignificance",
           "valueCode": "major"
         }
       ]
@@ -353,8 +353,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `filterStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `filterSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -486,11 +486,11 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`Immunization`](accessrecord_structured_development_immunization.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
-- and when the `includeStatus` parameter is set:
+- and when the `filterStatus` parameter is set:
 
   - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
 
-- and when the `includeSignificance` parameter is set:
+- and when the `filterSignificance` parameter is set:
 
   - problems with a `problemSignificance` matching the parameter value and all linked clinical information
 
