@@ -4,7 +4,7 @@ keywords: clinical engagement
 tags: 
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_clinical_engagement.html
-summary: "Clinical engagement to inform requirements that must be supported by the solution"
+summary: "Clinical engagement done to inform requirements that must be supported by the solution"
 ---
 ## Clinical engagement ##
 
