@@ -12,16 +12,15 @@ entries:
     folderitems:
 
     - title: User Stories
-      url: /accessrecord_structured.html
+      url: /accessrecord_structured_requirements.html
       output: web, pdf   
     - title: Use Cases
-      url: /accessrecord_structured_requirements.html
+      url: /accessrecord_structured_usecases.html
       output: web, pdf
     - title: Clinical Engagement
-      url: /accessrecord_structured_design.html
+      url: /accessrecord_structured_clinical_engagement.html
       output: web, pdf
     - title: Information and Governance
-      url: /accessrecord_structured_known_issues.html
       output: web, pdf
 
   - title: Design
@@ -29,11 +28,11 @@ entries:
     folderitems:
 
     - title: Design Decisions
-      url: /accessrecord_structured_development.html
+      url: /accessrecord_structured_design.html
       output: web
     - title: Known Issues
       output: web
-      url: /accessrecord_structured_development_allergies_guidance.html
+      url: /accessrecord_structured_known_issues.html
 
   - title: Data Model
     output: web, pdf
