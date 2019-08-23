@@ -4,46 +4,40 @@ entries:
   folders:
 
   - title: Overview
+    url: /accessrecord_structured.html
+    output: web, pdf
+  
+  - title: Business requirements
     output: web, pdf
     folderitems:
 
-    - title: Introduction
+    - title: User Stories
       url: /accessrecord_structured.html
-      output: web, pdf         
-    - title: Business requirements
+      output: web, pdf   
+    - title: Use Cases
       url: /accessrecord_structured_requirements.html
       output: web, pdf
-    - title: Requirements catalogue <img src="images/nhsddownload.png" height="17" width="17" align="right">
-      url: /pages&#47;accessrecord_structured&#47;GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.4.xlsx"rel="nofollow" target="_blank"
-      output: web, pdf
-    - title: Design decisions
+    - title: Clinical Engagement
       url: /accessrecord_structured_design.html
       output: web, pdf
-    - title: Known issues
+    - title: Information and Governance
       url: /accessrecord_structured_known_issues.html
       output: web, pdf
 
-  - title: Development
+  - title: Design
     output: web, pdf
     folderitems:
 
-    - title: Overview
+    - title: Design Decisions
       url: /accessrecord_structured_development.html
       output: web
-
-    - title: Allergies guidance
+    - title: Known Issues
       output: web
       url: /accessrecord_structured_development_allergies_guidance.html
 
-    - title: Medication resource relationships
-      url: /accessrecord_structured_development_medication_resource_relationships.html
-      output: web
-
-    - title: Medication guidance
-      url: /accessrecord_structured_development_medication_guidance.html
-      output: web
-
-      subfolders:
+  - title: Data Model
+    output: web, pdf
+    folderitems:
 
       - title: FHIR&reg; resources
         output: web
@@ -78,15 +72,38 @@ entries:
         - title: Allergies
           url: /accessrecord_structured_development_fhir_examples_allergies.html
           output: web
-
         - title: Medication
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
-          
-      - title: API definition
+   
+  - title: Development
+    output: web, pdf
+    folderitems:
+
+      - title: API Use Cases
         output: web
         subfolderitems:
 
         - title: Retrieve a patient's structured record
           url: /accessrecord_structured_development_retrieve_patient_record.html
           output: web
+
+      - title: Implementation Guidance
+        output: web
+        subfolderitems:
+
+        - title: Allergies guidance
+          output: web
+          url: /accessrecord_structured_development_allergies_guidance.html
+
+        - title: Medication resource relationships
+          url: /accessrecord_structured_development_medication_resource_relationships.html
+          output: web
+
+        - title: Medication guidance
+          url: /accessrecord_structured_development_medication_guidance.html
+          output: web
+
+  - title: Testing
+    output: web, pdf
+    folderitems:
