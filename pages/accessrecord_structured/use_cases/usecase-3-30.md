@@ -149,7 +149,7 @@ Patient-focused:
 <td>The community healthcare nurse reviews the end of life information from the GP clinical system to inform the care to be provided.</td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>Alternative Path - Existing Patient with change to End of Life Plan</strong></td>
+<td colspan="2"><strong>Alternative path - existing patient with change to End of Life plan</strong></td>
 </tr>
 <tr class="even">
 <td>Step 1</td>
