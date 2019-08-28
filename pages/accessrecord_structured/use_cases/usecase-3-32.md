@@ -119,7 +119,7 @@ Patient-focused:
 <td>The GP responds to the out of hours contact knowing Measles is not the most likely diagnosis.</td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>Alternative Path - Measles vaccination refused.</strong></td>
+<td colspan="2"><strong>Alternative path - measles vaccination refused.</strong></td>
 </tr>
 <tr class="even">
 <td>Steps 1 - 7</td>
