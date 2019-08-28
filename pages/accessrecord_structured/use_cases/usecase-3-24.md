@@ -139,14 +139,14 @@ Patient-focused:
 </ul></td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>Alternative path - travel vaccination</strong></td>
+<td colspan="2"><strong>Alternative Path - Travel Vaccination</strong></td>
 </tr>
 <tr class="even">
 <td>Step 4a</td>
 <td>The practice nurse needs to determine the vaccine to be administered for a travel vaccination to determine what checks to perform. The practice nurse will establish the travel destination along with additional factors related to the trip which may impact the vaccinations required - for example, length of stay, type of accommodation, regions travelling to, purpose of travel. The practice nurse will check an online resource to get the latest recommendations (which may change over time) for the destination and circumstances.</td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>Alternative path - vaccination criteria</strong></td>
+<td colspan="2"><strong>Alternative Path - Vaccination Criteria</strong></td>
 </tr>
 <tr class="even">
 <td>Step 5a</td>
@@ -159,7 +159,7 @@ Patient-focused:
 </ul></td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>Alternative path - vaccine not administered</strong></td>
+<td colspan="2"><strong>Alternative Path - Vaccine Not Administered</strong></td>
 </tr>
 <tr class="even">
 <td>Step 8a</td>
