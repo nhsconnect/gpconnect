@@ -76,7 +76,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1
 This is for business identifiers.
 
 This is sliced to include a cross-care setting identifier which **MUST** be populated.
-The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 ### status
 
