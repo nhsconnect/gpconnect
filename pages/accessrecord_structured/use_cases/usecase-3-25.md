@@ -128,7 +128,7 @@ Patient-focused:
 <td>Joel records the consent and, having also checked that there is no allergy or other adverse information, administers the vaccination</td>
 </tr>
 <tr class="even">
-<td colspan="2"><strong>Alternative path - refusal upheld</strong></td>
+<td colspan="2"><strong>Alternative Path - Refusal Upheld</strong></td>
 </tr>
 <tr class="odd">
 <td>Steps 1 - 9</td>
@@ -143,7 +143,7 @@ Patient-focused:
 <td>Joel informs Bill that he cannot administer the vaccine and records the details of the discussions</td>
 </tr>
 <tr class="even">
-<td colspan="2"><strong>Alternative path - refusal information is not shared</strong></td>
+<td colspan="2"><strong>Alternative Path - Refusal Information is not shared</strong></td>
 </tr>
 <tr class="odd">
 <td>Steps 1 - 4</td>
