@@ -99,7 +99,7 @@ The following table gives an overview of which parameters are supported in each 
 
 <div markdown="span" class="alert alert-warning" role="alert">
 	<i class="fa fa-warning"></i>
-	<b>Note:</b> where no valid parameters are provided, an OperationOutcome with a severity of error needs to be returned as specified in the <a href="accessrecord_structured_development_retrieve_patient_record.html#error-handling">error handling section</a>
+	<b>Note:</b> where no valid parameters are provided in a request, an OperationOutcome with a severity of error needs to be returned as specified in the <a href="accessrecord_structured_development_retrieve_patient_record.html#error-handling">error handling section</a>
 </div>
 
 Consumers **MAY** determine programmatically which parameters have been implemented by the provider using the following process:
