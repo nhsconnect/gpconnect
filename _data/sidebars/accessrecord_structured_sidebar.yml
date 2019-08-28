@@ -11,7 +11,7 @@ entries:
       url: /accessrecord_structured.html
       output: web, pdf         
   
-  - title: Business requirements
+  - title: Business Requirements
     output: web, pdf
     folderitems:
 
@@ -42,7 +42,7 @@ entries:
     output: web, pdf
     folderitems:
 
-      - title: FHIR&reg; resources
+      - title: FHIR&reg; Resources
         output: web
         subfolderitems:
 
@@ -68,7 +68,7 @@ entries:
           url: /accessrecord_structured_development_bundle.html
           output: web
 
-      - title: FHIR&reg; examples
+      - title: FHIR&reg; Examples
         output: web
         subfolderitems:
 
