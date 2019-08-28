@@ -336,7 +336,7 @@ Patient-focused:
 </tr>
 <tr class="even">
 <td>Steps 1 - 4</td>
-<td>As alternative path 4a</td>
+<td>As Alternative Path 4a</td>
 </tr>
 <tr class="odd">
 <td>Step 5</td>
