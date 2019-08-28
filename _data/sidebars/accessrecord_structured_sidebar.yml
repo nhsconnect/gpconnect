@@ -6,7 +6,7 @@ entries:
   -title: Overview
     output: web, pdf
     folderitems:
-
+    
     - title: Introduction
       url: /accessrecord_structured.html
       output: web, pdf         
