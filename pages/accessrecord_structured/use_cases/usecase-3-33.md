@@ -7,7 +7,7 @@ permalink: accessrecord_usecase_3.33.html
 summary: "Use case for problems"
 ---
 
-**Brief description 
+## Brief description 
 
 A professional user of the Local Care Record ('care professional') needs to review a patient's GP practice information:
 
