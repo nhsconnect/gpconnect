@@ -294,11 +294,11 @@ Any additional information recorded against the referral.
 This could include additional categorisation of the referral or notes recorded against the referral after it has been made such as details of progress or outcomes.
 
 
-## Elements **not in use**
+<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
 
-### definition
+<h3 style="color:#ED1951;"> definition </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -308,7 +308,7 @@ The following elements **MUST NOT** be populated:
 
 This is not required by GP Connect.
 
-### replaces
+<h3 style="color:#ED1951;"> replaces </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -319,7 +319,7 @@ This is not required by GP Connect.
 Terminated referrals are not in scope so cannot be referenced.
 Any association to a prior, completed referral can be made via the basedOn element.
 
-### groupIdentifier
+<h3 style="color:#ED1951;"> groupIdentifier </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -329,7 +329,7 @@ Any association to a prior, completed referral can be made via the basedOn eleme
 
 This is not required by GP Connect.
 
-### type
+<h3 style="color:#ED1951;"> type </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -340,7 +340,7 @@ This is not required by GP Connect.
 This element has not been defined for GP Connect use.
 The <code>reasonCode</code> element **MUST** be used for the SNOMED CT coded referral code.
 
-### occurrence
+<h3 style="color:#ED1951;"> occurrence </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -348,7 +348,7 @@ The <code>reasonCode</code> element **MUST** be used for the SNOMED CT coded ref
   </tr>
 </table>
 
-### relevantHistory
+<h3 style="color:#ED1951;"> relevantHistory </h3>
 
 <table class='resource-attributes'>
   <tr>
