@@ -146,7 +146,7 @@ Currently, without this information, they have to go through the pathways module
 </tr>
 <tr class="odd">
 <td>Step 7a</td>
-<td>There is no DNR problem/condition recorded.</td>
+<td>There is no Do Not Resuscitate (DNR) problem/condition recorded.</td>
 </tr>
 <tr class="even">
 <td>Step 7b</td>
