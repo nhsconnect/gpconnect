@@ -53,11 +53,11 @@ Patient-focused:
 
 ## Postconditions 
 
-  - **On success**
+  - **On success:**
     
       - the information provided by GP Connect is used to inform the community pharmacist of all the patient's relevant medical history such that the community pharmacist can provide the best possible advice regarding the patient's condition
 
-  - **Guaranteed 
+  - **Guaranteed:** 
     
       - the patient is appropriately assessed according to the test results and any information the patient provides
 
