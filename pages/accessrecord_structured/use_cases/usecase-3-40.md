@@ -139,7 +139,7 @@ Although a paramedic may make an independent clinical decision about whether to 
 </tr>
 <tr class="even">
 <td>Step 5.1b</td>
-<td>The EPR advises the paramedic that it cannot access the patients GP practice record as the patient is not registered at the GP practice.</td>
+<td>The EPR advises the paramedic that it cannot access the patient's GP practice record as the patient is not registered at the GP practice.</td>
 </tr>
 <tr class="odd">
 <td>Step 5.2a</td>
