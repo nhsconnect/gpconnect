@@ -26,7 +26,6 @@ For more details on consumer request interactions, see the [SSP implementation g
 ## Things to consider
 
 - which serialisation format should I choose as an GP Connect API consumer - [JSON or XML?](serialisation_format.html)
-- toolkits
 - try out the [GP Connect Demonstrator](system_demonstrator.html) system
 - download our [PostMan Collection](system_reference_postman.html) and explore the GP Connect interactions
 - familiarise yourself with HL7&reg; FHIR&reg; ([developer introduction](http://www.hl7.org/implement/standards/fhir/STU3/overview-dev.html){:target="_blank"}, [executive summary](http://www.hl7.org/implement/standards/fhir/STU3/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/STU3/overview-clinical.html){:target="_blank"})
