@@ -1,5 +1,5 @@
 ---
-title: Retrieve a patient's structured record
+title: API Version Compatibility
 keywords: getstructuredrecord, view
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -95,22 +95,12 @@ The following table gives an overview of which parameters are supported in each 
 |             | &nbsp;&nbsp;&#8627; medicationSearchFromDate|
 |        | includeAllergies       |
 |             | &nbsp;&nbsp;&#8627; includeResolvedAllergies|
-|||
-| 1.3.x       | includeMedication       |
-|             | &nbsp;&nbsp;&#8627; includePrescriptionIssues|
-|             | &nbsp;&nbsp;&#8627; medicationSearchFromDate|
-|        | includeAllergies       |
-|             | &nbsp;&nbsp;&#8627; includeResolvedAllergies|
-|        | includeConsultations       |
-|             | &nbsp;&nbsp;&#8627; consultationSearchPeriod|
-|             | &nbsp;&nbsp;&#8627; includeNumberOfMostRecent|
-|        | includeProblems       |
-|             | &nbsp;&nbsp;&#8627; includeStatus|
-|             | &nbsp;&nbsp;&#8627; includeSignificance|
-|        | includeImmunisations       |
-|        | includeUncategorisedData       |
-|             | &nbsp;&nbsp;&#8627; uncategorisedDataSearchPeriod|
 |-------------------------|-------------------|
+
+<div markdown="span" class="alert alert-warning" role="alert">
+	<i class="fa fa-warning"></i>
+	<b>Note:</b> where no valid parameters are provided in a request, an OperationOutcome with a severity of error needs to be returned as specified in the <a href="accessrecord_structured_development_retrieve_patient_record.html#error-handling">error handling section</a>
+</div>
 
 Consumers **MAY** determine programmatically which parameters have been implemented by the provider using the following process:
 - [retrieve the CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) from the provider
@@ -120,6 +110,8 @@ Consumers **MAY** determine programmatically which parameters have been implemen
 
 To illustrate how forwards compatibility works, the following example has been included:
 - [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.4 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
+
+
 
 #### Backwards compatibility ####
 Backwards compatibility is the scenario where a consumer requests a lower version of the API than the provider supports. The GP Connect APIs have been developed to be backwards compatible by following the [rules for backwards compatibility](https://www.hl7.org/fhir/STU3/versions.html#b-compat) that are defined in the FHIR&reg; specification.
