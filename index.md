@@ -53,16 +53,6 @@ GP Connect has identified three main customer types:
 *	<p> {% include tooltip.html type="Clinical system supplier" %} 
 *	<p> {% include tooltip.html type="End-user organisation" %} 
 
-## Developer ecosystem
-
-Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
-  
-{% include developer_journey.html %}
-
-{% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect provider APIs or consuming applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. See our GitHub [releases page](https://github.com/nhsconnect/gpconnect/releases) for more information." %}
-
-{% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities. Other parties are advised not to develop against these specifications until a formal announcement has been made." %}
-
 ## Provide feedback ##
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
