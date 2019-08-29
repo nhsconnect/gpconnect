@@ -50,7 +50,7 @@ Currently, without this information, they have to go through the pathways module
 
 ## Postconditions 
 
-  - **On Success:**
+  - **On success:**
     
       - the patient receives advice/treatment which is timely and the most appropriate for their needs
 
