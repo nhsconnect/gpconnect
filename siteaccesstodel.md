@@ -3,7 +3,7 @@ title: Sitemap for Access Record Structured
 tags: [sitemap]
 keywords: sitemap
 permalink: sitemap_structureddel.html
-sidebar:home_sidebar
+sidebar: home_sidebar
 toc: false
 ---
 
@@ -16,7 +16,7 @@ toc: false
                <div class="panel panel-default">
                <div class="panel-heading">Overview</div>
                <div class="panel-body">
-               <p><a href="/accessrecord_structured.html">Introduction</a></p> 
+               <p><a href="/accessrecord_structured.html">Introduction</a></p>
                <p><a href="/accessrecord_structured_requirements.html">Business requirements</a> </p>
                <p><a href="https://gpc-spec-restructure.netlify.com/pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.4.xlsx">Requirements catalogue</a> </p>
                <p><a href="/accessrecord_structured_design.html">Design decisions</a> </p>
@@ -28,19 +28,19 @@ toc: false
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
-                {% endfor %} 
+                {% endfor %}
                   </ul>
                </div>
             </div>
         </div>
-   
+
 
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["development"]'>
 
         <div class="panel panel-default">
             <div class="panel-heading">Development</div>
             <div class="panel-body">
-                
+
 <p><a href="/accessrecord_structured_development.html">Overview</a></p>
 
 <p><a href="/accessrecord_structured_development_allergies_guidance.html">Allergies guidance</a></p>
@@ -60,7 +60,7 @@ toc: false
                 </ul>
             </div>
         </div>
-        
+
     </div>
 
 
@@ -99,11 +99,11 @@ toc: false
     </div>
 
     <div class="col-xs-6 col-sm-4 col-md-4" data-groups='["examples"]'>
-         
+
       <div class="panel panel-default">
                <div class="panel-heading">FHIR&reg; examples</div>
                <div class="panel-body">
-               
+
 <p><a href="/accessrecord_structured_development_fhir_examples_allergies.html">Allergies</a></p>
 
 <p><a href="/accessrecord_structured_development_fhir_examples_medication.html">Medication</a></p>
@@ -116,7 +116,7 @@ toc: false
                   <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
-                {% endfor %} 
+                {% endfor %}
                </ul>
             </div>
          </div>
@@ -128,9 +128,9 @@ toc: false
            <div class="panel panel-default">
                <div class="panel-heading">API definition</div>
                <div class="panel-body">
-               
+
 <p><a href="/accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
-             
+
 
                    <ul>
                 {% for page in site.pages %}
@@ -158,20 +158,18 @@ toc: false
                      <li><a href="{{page.url | remove: '/'}}">{{page.title}}</a></li>
                 {% endif %}
                 {% endfor %}
-                {% endfor %} 
+                {% endfor %}
                   </ul>
                </div>
             </div>
     </div>
-      
+
           <!-- sizer -->
       <div class="col-xs-6 col-sm-4 col-md-1 shuffle_sizer"></div>          
 
 
-    
+
 
 {% unless site.output == "pdf" %}
 {% include initialize_shuffle.html %}
 {% endunless %}
-
-
