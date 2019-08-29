@@ -48,7 +48,7 @@ Although a paramedic may make an independent clinical decision about whether to 
 
 ## Postconditions 
 
-  - **On Success:**
+  - **On success:**
     
       - the patient receives the most appropriate and timely treatment
 
