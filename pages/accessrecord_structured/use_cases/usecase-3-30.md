@@ -54,11 +54,11 @@ Patient-focused:
 
 ## Postconditions 
 
-  - **On success**
+  - **On success:**
     
       - the community healthcare team provide care in keeping with the wishes of the patient in their end of life plan
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the community healthcare team will assess the patient needs based on the information available
 
