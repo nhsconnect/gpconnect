@@ -274,7 +274,7 @@ Patient-focused:
 </tr>
 <tr class="even">
 <td>Step 7</td>
-<td>The community health system displays the information received from GP Connect is an appropriate format to enable easy identification of trends (for example, graph(s) of dosage for a medication over time) and to establish whether the dosage increase is happening according to plan or any supporting evidence as to why the increase has no happened.</td>
+<td>The community health system displays the information received from GP Connect is an appropriate format to enable easy identification of trends (for example, graph(s) of dosage for a medication over time) and to establish whether the dosage increase is happening according to plan or any supporting evidence as to why the increase has not happened.</td>
 </tr>
 <tr class="odd">
 <td>Step 8</td>
