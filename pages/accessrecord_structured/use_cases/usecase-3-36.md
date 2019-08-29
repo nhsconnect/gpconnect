@@ -56,11 +56,11 @@ Patient-focused:
 
 ## Postconditions
 
-  - **On success**
+  - **On success:**
     
       - the information provided by GP Connect is used to inform the link worker of all the background to the referral of the known social needs and the relevant medical conditions being managed such that the link worker can identify the optimum voluntary care sector (VCS) services to provide maximum benefit to the patient's health and well-being
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the patient is appropriately assessed according to the information available from the referral letter, the patient (and carer if applicable) and further consultation and investigation as required
 
