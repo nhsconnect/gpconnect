@@ -51,11 +51,11 @@ Currently, when a patient's record is viewed in the LCR, their current and past 
 
 ## Postconditions 
 
-  - **On Success 
+  - **On success:** 
     
       - the patient's list of current and past problems is taken from the GP practice clinical system and presented in the LCR
 
-  - **Guaranteed 
+  - **Guaranteed:** 
     
       - access and data returned is recorded for auditing purposes
 
