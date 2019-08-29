@@ -54,11 +54,11 @@ Patient-focused:
 
 ## Postconditions
 
-  - **On success**
+  - **On success:**
     
       - the patient's referral details are made available to the triage team in a concise manner
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the triage team will assess the patient needs based on the information available
 
