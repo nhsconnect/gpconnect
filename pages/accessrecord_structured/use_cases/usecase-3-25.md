@@ -54,11 +54,11 @@ Patient-focused:
 
 ## Postconditions
 
-  - **On success**
+  - **On success:**
     
       - the parent's wishes are fully adhered to and the vaccination is given or withheld appropriately
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the child is appropriately assessed for the vaccination and the vaccination is given or withheld appropriately based on available medical history
 
