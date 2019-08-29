@@ -17,4 +17,4 @@ Consumer APIs need to go through a set of testing and assurance processes to ens
 ## Clinical system suppliers ## 
 *Add text about test and assurance requirements for providers...*
 
-- read about the [provider testing](testing_api_provider_testing.html) process 
+- read about the [provider testing](testing_api_provider_testing.html) process a
