@@ -35,12 +35,6 @@ For more details on consumer request interactions, see the [SSP implementation g
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
-## Developer ecosystem
-
-Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
-  
-{% include developer_journey.html %}
-
 ## Provide feedback
 
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
