@@ -92,7 +92,7 @@ Patient-focused:
 </tr>
 <tr class="even">
 <td>Step 5</td>
-<td>The community system will request the patient’s relevant sections of the patient’s record that are held in the patients registered GP practice system via the GP Connect service.</td>
+<td>The community system will request the patient’s relevant sections of the patient’s record that are held in the patient's registered GP practice system via the GP Connect service.</td>
 </tr>
 <tr class="odd">
 <td>Step 6</td>
