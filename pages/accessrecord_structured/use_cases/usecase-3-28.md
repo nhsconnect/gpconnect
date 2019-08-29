@@ -53,7 +53,7 @@ Currently, when a patient's record is viewed in the LCR, their encounters, refer
 
 ## Postconditions 
 
-  - **On Success:**
+  - **On success:**
     
       - the patient's recorded encounters, referrals and admissions are taken from the GP practice clinical system and presented in the LCR
 
