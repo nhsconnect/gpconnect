@@ -55,7 +55,7 @@ The system will be able to harness multiple FHIR objects in order to form a more
 
 ## Postconditions
 
-  - **On Success:**
+  - **On success:**
     
       - the patient's Clinical Summary is taken from the GP practice clinical system and presented in the LCR
 
