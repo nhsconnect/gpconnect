@@ -81,6 +81,11 @@ The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU
 
 ```
 
+<div markdown="span" class="alert alert-warning" role="alert">
+	<i class="fa fa-warning"></i>
+	<b>Note:</b> where no valid parameters are provided in a request, an OperationOutcome with a severity of error <b>MUST</b> to be returned as specified in the <a href="accessrecord_structured_development_retrieve_patient_record.html#error-handling">error handling section</a>
+</div>
+
 Providers **MUST** report unsupported parameters at the least granular level, that is, unsupported part parameters **MUST** only be reported when their top level parameter is supported.
 
 Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as specified above to check for incomplete data as a result of unsupported parameters. These warnings **MUST** be displayed to users to warn them that information is missing.
@@ -96,11 +101,6 @@ The following table gives an overview of which parameters are supported in each 
 |        | includeAllergies       |
 |             | &nbsp;&nbsp;&#8627; includeResolvedAllergies|
 |-------------------------|-------------------|
-
-<div markdown="span" class="alert alert-warning" role="alert">
-	<i class="fa fa-warning"></i>
-	<b>Note:</b> where no valid parameters are provided in a request, an OperationOutcome with a severity of error needs to be returned as specified in the <a href="accessrecord_structured_development_retrieve_patient_record.html#error-handling">error handling section</a>
-</div>
 
 Consumers **MAY** determine programmatically which parameters have been implemented by the provider using the following process:
 - [retrieve the CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) from the provider
