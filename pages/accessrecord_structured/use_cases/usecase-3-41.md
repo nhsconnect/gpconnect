@@ -1,5 +1,5 @@
 ---
-title: Health Visitors appointment during pregnancy (Antenatal)
+title: Health visitor's appointment during pregnancy (antenatal)
 keywords: usecase, structured
 tags: [usecase, structured] 
 sidebar: accessrecord_structured_sidebar
@@ -58,7 +58,7 @@ Patient-focused:
 
 ## Postconditions 
 
-  - **On Success:**
+  - **On success:**
 
   - **Guaranteed:**
     
