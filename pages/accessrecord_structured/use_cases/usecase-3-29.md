@@ -51,7 +51,7 @@ Currently, when a patient's record is viewed in the LCR, their current and past 
 
 ## Postconditions 
 
-  - **On Success:**
+  - **On success:**
     
       - the patient's list of current and past examination and investigation results are taken from the GP practice clinical system and presented in the LCR
 
