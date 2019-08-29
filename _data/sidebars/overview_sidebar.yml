@@ -40,19 +40,13 @@ entries:
           url: /overview_release_notes_0_5_0.html
           output: web
 
-  - title: Getting started...
+  - title: Getting started
     output: web
     folderitems:
-    - title: ...for consumer suppliers
-      url: /overview_consumer_supplier.html
+    - title: Getting started
+      url: /overview_engage.html
       output: web, pdf
       type: web
-    - title: ...for clinical system suppliers
-      url: /overview_clinical_system_supplier.html
-      output: web
-    - title: ...for end-user organisations
-      external_url: https://digital.nhs.uk/services/gp-connect
-      output: web
 
   - title: Explore
     output: web
