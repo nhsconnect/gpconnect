@@ -108,7 +108,7 @@ Patient-focused:
 </tr>
 <tr class="even">
 <td>Step 8</td>
-<td>The GP scans the immunisations list for a MMR or single Measles vaccination.</td>
+<td>The GP scans the immunisations list for an MMR or single Measles vaccination.</td>
 </tr>
 <tr class="odd">
 <td>Step 9</td>
