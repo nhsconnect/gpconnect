@@ -33,7 +33,7 @@ Patient-focused:
 
 ## Primary actors 
 
-  - Community Healthcare Team
+  - Community healthcare team
   - GP Connect
   - GP clinical systems
   - Community healthcare system
@@ -56,11 +56,11 @@ Patient-focused:
 
 ## Postconditions 
 
-  - **On success**
+  - **On success:**
     
       - the community cardiac nurse plans and enacts the most appropriate care and support through the information on the patient's medical history and personal circumstances
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the community cardiac nurse will assess the patient's needs based on the information available
 
