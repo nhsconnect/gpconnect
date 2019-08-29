@@ -50,11 +50,11 @@ Patient-focused:
 
 ## Postconditions
 
-  - **On success**
+  - **On success:**
     
       - the information provided by GP Connect is used to inform the GP of the likelihood of the child having measles and how best to seek further information from the parents/advice on an appointment in person
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the child is appropriately assessed according to the information available from the parent/guardian and further consultation if required
 
