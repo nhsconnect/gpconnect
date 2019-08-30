@@ -38,13 +38,9 @@ entries:
       output: web
       url: /accessrecord_structured_known_issues.html
 
-  - title: Data Model3
+  - title: Data Model4
     output: web, pdf
     folderitems:
-    
-    - title: User Stories3
-      url: /accessrecord_structured_requirements.html
-      output: web, pdf
       
       subfolders:
 
