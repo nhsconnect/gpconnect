@@ -68,13 +68,3 @@ To get started:
          </div>
          </div> 
 </div>
-
-## Provide feedback
-
-To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
-
-GP Connect is working closely with a number of interoperability communities:
-
-- [Code4Health interoperability community](https://code4health.org/communities/interoperability){:target="_blank"}
-- [INTEROPen supplier-led healthcare IT interoperability community](http://www.interopen.org/){:target="_blank"}
-
