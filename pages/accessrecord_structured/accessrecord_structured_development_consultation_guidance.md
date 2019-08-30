@@ -88,22 +88,22 @@ Consultations follow a common logical structure.
   <tr>
     <td>-</td>
     <td>List</td>
-    <td>The clinical information is grouped and organised within multiple List profiles. The top level list contains references to each of the Topics</td>
+    <td>The clinical information is grouped and organised within multiple List profiles. The top level list contains references to each of the Topics within the Consultation</td>
   </tr>
   <tr>
     <td>Topic</td>
     <td>List</td>
-    <td>Each Topic is held as a List containing references to each of the Headings in the Topic.<br>Where a Topic does not contain Headings the the List directly references Clinical Items.</td>
+    <td>Each Topic is held as a List containing references to each of the Headings under the Topic.<br>Where a Topic does not contain Headings the the List directly references Clinical Items.</td>
   </tr>
   <tr>
     <td>Heading</td>
     <td>List</td>
-    <td>Each Heading is held as a List containing references to each of the Clinical Items in the Heading.</td>
+    <td>Each Heading is held as a List containing references to each of the Clinical Items under the Heading.</td>
   </tr>
   <tr>
     <td>Clinical Items</td>
     <td>Appropriate FHIR profile</td>
-    <td>Each Clinical Item will be head in the appropriate FHIR profile as defined in this specification</td>
+    <td>Each Clinical Item will be head in the appropriate FHIR profile as defined elsewhere in this specification</td>
   </tr></table>
 
 <IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
