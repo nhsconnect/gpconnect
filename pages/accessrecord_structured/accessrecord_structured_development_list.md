@@ -61,7 +61,7 @@ This only refers to data transmitted from GP to GP when a patient moves GP pract
 
 ### Data awaiting filing
 
-Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent.
+Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent. The associated text **MUST** also be added into the note field when the code is used.
 
 ## List elements ##
 
