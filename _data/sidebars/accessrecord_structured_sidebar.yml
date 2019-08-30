@@ -38,14 +38,9 @@ entries:
       output: web
       url: /accessrecord_structured_known_issues.html
 
-  - title: Data Model
+  - title: Data Model1
     output: web, pdf
     folderitems:
-     
-     - title: User Stories
-      url: /accessrecord_structured_requirements.html
-      output: web, pdf  
-    
       subfolders:
 
       - title: FHIR&reg; Resources
@@ -85,10 +80,9 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
    
-  - title: Development
+  - title: Development1
     output: web, pdf
     folderitems:
-    
       subfolders:
 
       - title: API Use Cases
