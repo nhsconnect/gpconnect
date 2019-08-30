@@ -38,77 +38,14 @@ entries:
       output: web
       url: /accessrecord_structured_known_issues.html
 
-  - title: Data Model1
+  - title: Data Model2
     output: web, pdf
     folderitems:
-      subfolders:
-
-      - title: FHIR&reg; Resources
-        output: web
-        subfolderitems:
-
-        - title: Overview
-          url: /accessrecord_structured_development_resources_overview.html
-          output: web
-        - title: <b class='resource'>AllergyIntolerance</b>
-          url: /accessrecord_structured_development_allergyintolerance.html
-          output: web
-        - title: <b class='resource'>Medication</b>
-          url: /accessrecord_structured_development_medication.html
-          output: web
-        - title: <b class='resource'>MedicationStatement</b>
-          url: /accessrecord_structured_development_medicationstatement.html
-          output: web
-        - title: <b class='resource'>MedicationRequest</b>
-          url: /accessrecord_structured_development_medicationrequest.html
-          output: web
-        - title: <b class='resource'>List</b>
-          url: /accessrecord_structured_development_list.html
-          output: web
-        - title: <b class='resource'>Bundle</b>
-          url: /accessrecord_structured_development_bundle.html
-          output: web
-
-      - title: FHIR&reg; Examples
-        output: web
-        subfolderitems:
-
-        - title: Allergies
-          url: /accessrecord_structured_development_fhir_examples_allergies.html
-          output: web
-        - title: Medication
-          url: /accessrecord_structured_development_fhir_examples_medication.html
-          output: web
-   
-  - title: Development1
-    output: web, pdf
-    folderitems:
-      subfolders:
-
-      - title: API Use Cases
-        output: web
-        subfolderitems:
-
-        - title: Retrieve a patient's structured record
-          url: /accessrecord_structured_development_retrieve_patient_record.html
-          output: web
-
-      - title: Implementation Guidance
-        output: web
-        subfolderitems:
-
-        - title: Allergies guidance
-          output: web
-          url: /accessrecord_structured_development_allergies_guidance.html
-
-        - title: Medication resource relationships
-          url: /accessrecord_structured_development_medication_resource_relationships.html
-          output: web
-
-        - title: Medication guidance
-          url: /accessrecord_structured_development_medication_guidance.html
-          output: web
-
+    
+    - title: User Stories2
+      url: /accessrecord_structured_requirements.html
+      output: web, pdf
+      
   - title: Testing
     output: web, pdf
     folderitems:
