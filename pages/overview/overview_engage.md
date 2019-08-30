@@ -16,10 +16,14 @@ GP Connect has identified three main customer types:
 <p>
  
 **Clinical system supplier**
-<p>The supplier of a clinical system that is the source of GP data, such as EMIS Health, INPS Vision, Microtest Health, and TPP. Also known as a provider.</p>
+<br>The supplier of a clinical system that is the source of GP data, such as EMIS Health, INPS Vision, Microtest Health, and TPP. Also known as a provider.
+
+<p>
 
 **End-user organisation**
-<p>An organisation that uses a GP Connect service (or commissions the development of a new GP Connect service) to access GP data from more than one clinical system provider.</p>
+<br>An organisation that uses a GP Connect service (or commissions the development of a new GP Connect service) to access GP data from more than one clinical system provider.
+
+<p>
 
 <p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. To find out more, follow the relevant link below:</p>
 <div class="row">
