@@ -43,9 +43,6 @@ We’ve developed a process called ‘First of Type’ to support this developme
 
 [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect)
 
-## Community engagement ##
-GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
-
 ## Developer ecosystem
 
 Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
@@ -55,6 +52,9 @@ Our developer ecosystem takes you through each stage of a typical GP Connect API
 {% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect provider APIs or consuming applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. See our GitHub [releases page](https://github.com/nhsconnect/gpconnect/releases) for more information." %}
 
 {% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities. Other parties are advised not to develop against these specifications until a formal announcement has been made." %}
+
+## Community engagement ##
+GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
 
 ## Provide feedback ##
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
