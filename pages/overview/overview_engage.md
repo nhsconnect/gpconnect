@@ -19,8 +19,6 @@ GP Connect has identified three main customer types:
 **End-user organisation**
 <br>An organisation that uses a GP Connect service (or commissions the development of a new GP Connect service) to access GP data from more than one clinical system provider.
 
-<br>
-
 <p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. To find out more, follow the relevant link below:</p>
 <div class="row">
          <div class="col-lg-12">
