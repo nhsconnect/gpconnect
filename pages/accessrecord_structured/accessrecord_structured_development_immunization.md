@@ -211,7 +211,7 @@ If it is not known whether the record of the vaccination was made from a primary
 This indicates the source of a secondary reported record.
 
 This provides additional context to the source of the immunisation record where it is not based on information from the person who administered the vaccine.
-This can be absent if the record is NOT from a primary source, but the origin of the record is otherwise not recorded / known.
+The <code>reportOrigin</code> element can be absent if the record is NOT from a primary source, but the origin of the record is otherwise not recorded / known.
 
 This **MUST NOT** be included where <code>primarySource</code> is <code>true</code>.
 
