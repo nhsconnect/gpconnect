@@ -74,6 +74,38 @@ Consultations follow a common logical structure.
 
 <IMG src="images/access_structured/Consultation_FHIR_Resource_Model.png" alt="Consultation FHIR Resource Model" style="max-width:100%;max-height:100%;">
 
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Logical Structure</b></td>
+    <td><b>FHIR Profile</b></td>
+    <td><b>Description</b></td>
+  </tr>
+  <tr>
+    <td>Context</td>
+    <td>Encounter</td>
+    <td>A consultation has context - 'Data, Dr, Place, Type' represented by the FHIR Encounter profile.</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>List</td>
+    <td>A consultation has a grouped and organised collection of clinical record entries which is represented by a top level list profile.</td>
+  </tr>
+  <tr>
+    <td>Topic</td>
+    <td>List</td>
+    <td>A consultation may be organised into sub-groups sometimes described as topics which may be related to problems.</td>
+  </tr>
+  <tr>
+    <td>Heading</td>
+    <td>List</td>
+    <td>A topic is further decomposed into subheading equivalent or along the lines of the SOAP structure of medical notes.</td>
+  </tr>
+  <tr>
+    <td>Clinical Items</td>
+    <td>Appropriate FHIR profile</td>
+    <td>Each heading may contain multiple record entries of different types represented by an appropriate FHIR profile. <br>Record entries may appear directly within a consultation without being embedded in the Topic/Heading structure. By convention an artificial topic level will be generated to accomodate record entries within this 'flat' structure. A consultation may exhibit both stypes but within different topics</td>
+  </tr></table>
+
 <IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
 
 -   The `Encounter` resource and related resources like `Location` are adopted to provide the consultation context (Date/Doctor/Type/Place)
