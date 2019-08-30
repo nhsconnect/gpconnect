@@ -41,6 +41,10 @@ entries:
   - title: Data Model4
     output: web, pdf
     folderitems:
+    
+    - title: Overview
+          url: /accessrecord_structured_development_resources_overview.html
+          output: web
       
       subfolders:
 
