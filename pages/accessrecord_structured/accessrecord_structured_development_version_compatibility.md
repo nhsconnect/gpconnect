@@ -4,7 +4,7 @@ keywords: getstructuredrecord, view
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_version_compatibility.html
-summary: "Retrieve a patient's record in structured format"
+summary: "API Version Compatibility"
 ---
 
 ## Introduction ##
