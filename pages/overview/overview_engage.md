@@ -10,10 +10,17 @@ summary: "Getting involved with GP Connect"
 
 GP Connect aims to support better clinical care by opening up information and data held within GP practice IT systems for use across health and social care.
 
-To get started:
+## Customer types ##
+GP Connect has identified three main customer types:
+ 
+- **Consumer supplier**
+- The developer of an application that uses GP Connect FHIR® API – for example, a system supplier in an acute or mental health care setting.
 
-- read about the GP Connect [capabilities](overview_priority_capabilities.html)
-- join our [First of Type pilot](overview_first_of_type.html)
+- **Clinical system supplier**
+- The supplier of a clinical system that is the source of GP data, such as EMIS Health, INPS Vision, Microtest Health, and TPP. Also known as a provider.
+
+- **End-user organisation**
+- Organisation that uses a GP Connect service (or commissions the development of a new GP Connect service) to access GP data from more than one clinical system provider.
 
 <p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. To find out more, follow the relevant link below:</p>
 <div class="row">
