@@ -9,8 +9,11 @@ summary: "Getting involved with GP Connect"
 ---
 
 GP Connect has identified three main customer types:
+
 **Consumer supplier**
-<p>The developer of an application that uses GP Connect FHIR® API – for example, a system supplier in an acute or mental health care setting.</p>
+<br>The developer of an application that uses GP Connect FHIR® API – for example, a system supplier in an acute or mental health care setting.
+
+<p>
  
 **Clinical system supplier**
 <p>The supplier of a clinical system that is the source of GP data, such as EMIS Health, INPS Vision, Microtest Health, and TPP. Also known as a provider.</p>
