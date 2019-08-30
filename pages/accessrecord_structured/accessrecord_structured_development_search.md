@@ -7,15 +7,11 @@ permalink: accessrecord_structured_development_search.html
 summary: "Introduction to search criteria in GP Connect"
 ---
 
-## Search ##
-
-The GP Connect API allows the consumer system to specify what data it requires from the provider system about a specified patient.
-
-### Search criteria ###
+## Search criteria ##
 
 The consumer system can specify which clinical areas it wishes to retrieve and within each clinical area what search criteria it wants to apply.
 
-#### Medication and medical devices ####
+### Medication and medical devices ###
 
 * Search for all Medications and Medical Devices that were active on or after the specified date
      * The consumer system requests all items from a start date
@@ -25,14 +21,14 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * The consumer system requests prescription issues
      * For each of the returned medication/medical device plans, the provider system includes data for all of its issues
 
-#### Allergies ####
+### Allergies ###
 
 * All active allergies will always be returned as it was considered clinically unsafe to only return a partial record of a patient's active allergies
 * Include resolved allergies
      * The consumer system requests resolved allergies
      * The provider system returns all the resolved allergies along with the active allergies
 
-#### Problems ####
+### Problems ###
 
 * Search for Problems with the specified combinations of significance and status
      * The consumer system requests combinations of significance and status
@@ -41,7 +37,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * The provider system returns all Problems that match the requested significance / status
      * Where no significance / status is supplied by the consumer, all Problems are returned
 
-#### Uncategorised data ####
+### Uncategorised data ###
 
 * Search for all Uncategorised Data within the specified date range
      * The consumer system request all items within a start and end date
@@ -50,7 +46,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * Where no end date is supplied the search goes to the end of patient record
      * Where no dates are supplied by the consumer, all uncategorised data items are returned
 
-#### Consultations ####
+### Consultations ###
 
 * Search for all Consultations within the specified date range
      * The consumer system request all items within a start and end date
@@ -64,11 +60,11 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 * Where both filters are supplied by the consumer, all the Consultations that match either of the filters are returned
 * If no filters are supplied by the consumer, all Consultations are returned
 
-#### Immunisations ####
+### Immunisations ###
 
 * All Immunisations will always be returned.
 
-### Following a linkage ###
+## Following a linkage ##
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
 
 There are, however, scenarios where the information to the first query identifies additional information that is required.
@@ -85,7 +81,7 @@ This version of GP Connect does not allow a consumer to search for a specific it
 For example:
 * To display a specific consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data. 
 
-### Scale of search ###
+## Scale of search ##
 
 It is the responsibility of the consuming system to decide what data to request from the provider systems. When determining how wide to make the search criteria, the consumer system must consider the following guidelines:
 
