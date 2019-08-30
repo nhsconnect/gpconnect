@@ -46,13 +46,6 @@ We’ve developed a process called ‘First of Type’ to support this developme
 ## Community engagement ##
 GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
 
-## Customer types ##
-GP Connect has identified three main customer types:
- 
-* <p> {% include tooltip.html type="Consumer supplier" %} 
-*	<p> {% include tooltip.html type="Clinical system supplier" %} 
-*	<p> {% include tooltip.html type="End-user organisation" %} 
-
 ## Developer ecosystem
 
 Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
@@ -71,4 +64,4 @@ To provide feedback on the GP Connect specification please send an email to the 
 {% include gitterbadge.html %}
 
 ## Next step ##
-[Getting started](/overview_engage.html)
+[Get started](/overview_engage.html)
