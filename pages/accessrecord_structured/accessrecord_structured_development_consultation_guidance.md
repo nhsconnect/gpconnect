@@ -93,7 +93,7 @@ Consultations follow a common logical structure.
   <tr>
     <td>Topic</td>
     <td>List</td>
-    <td>Each Topic is held as a List containing references to each of the Headings in the Topic.<br>Where a Topic does not contain Headings the the List contains references to Clinical Items.</td>
+    <td>Each Topic is held as a List containing references to each of the Headings in the Topic.<br>Where a Topic does not contain Headings the the List directly references Clinical Items.</td>
   </tr>
   <tr>
     <td>Heading</td>
