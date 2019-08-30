@@ -1,11 +1,11 @@
 ---
-title: Get started
+title: Getting started
 keywords: engage, about
 tags: [getting_started]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_engage.html
-summary: "Getting involved with GP Connect"
+summary: "Getting started with GP Connect"
 ---
 
 GP Connect has identified three main customer types:
@@ -35,7 +35,7 @@ GP Connect has identified three main customer types:
                       <h4>Consumer supplier</h4>
                          <p align="left">You're a software development company already working with the NHS or would like to work with the NHS.</p>
                          <p align="left">You want to use GP Connect to develop an API to consume GP data.  You intend to work with a suitable end-user organisation, which you may or may not have already identified.</p>
-                     <a href="overview_consumer_supplier.html" class="btn btn-primary">Learn more</a>
+                     <a href="overview_consumer_supplier.html" class="btn btn-primary">Get started</a>
                  </div>
              </div>
          </div>
@@ -51,7 +51,7 @@ GP Connect has identified three main customer types:
                      <h4>Clinical system supplier</h4>
                          <p align="left">You're a GP clinical data supplier/provider.</p>
                      <p align="left">You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.</p>
-                     <a href="overview_clinical_system_supplier.html" class="btn btn-primary">Learn more</a>
+                     <a href="overview_clinical_system_supplier.html" class="btn btn-primary">Get started</a>
                  </div>
              </div>
          </div>
@@ -67,7 +67,7 @@ GP Connect has identified three main customer types:
                      <h4>End-user organisation</h4>
                      <p align="left">You're a CCG with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting.</p>
                               <p align="left">You want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care.</p>
-                      <a href="https://digital.nhs.uk/services/gp-connect" class="btn btn-primary">Learn more</a>
+                      <a href="https://digital.nhs.uk/services/gp-connect" class="btn btn-primary">Get started</a>
                                      </div>
          </div>
          </div> 
