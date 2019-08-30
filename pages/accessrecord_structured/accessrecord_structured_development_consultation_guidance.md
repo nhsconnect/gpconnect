@@ -76,9 +76,9 @@ Consultations follow a common logical structure.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Logical Structure</b></td>
-    <td><b>FHIR Profile</b></td>
-    <td><b>Description</b></td>
+    <td width="15%"><b>Logical Structure</b></td>
+    <td width="15%"><b>FHIR Profile</b></td>
+    <td width="70%"><b>Description</b></td>
   </tr>
   <tr>
     <td>Context</td>
