@@ -76,34 +76,34 @@ Consultations follow a common logical structure.
 
 <table class='resource-attributes'>
   <tr>
-    <td style="width:15%"><b>Logical Structure</b></td>
-    <td style="width:15%"><b>FHIR Profile</b></td>
-    <td style="width:70%"><b>Description</b></td>
+    <td width="15%"><b>Logical Structure</b></td>
+    <td width="15%"><b>FHIR Profile</b></td>
+    <td width="70%"><b>Description</b></td>
   </tr>
   <tr>
     <td>Context</td>
     <td>Encounter</td>
-    <td>A consultation has context - 'Data, Dr, Place, Type' represented by the FHIR Encounter profile.</td>
+    <td>The Context information is held in the Encounter profile.</td>
   </tr>
   <tr>
     <td>-</td>
     <td>List</td>
-    <td>A consultation has a grouped and organised collection of clinical record entries which is represented by a top level list profile.</td>
+    <td>The clinical information is grouped and organised within multiple List profiles. The top level list contains references to each of the Topics</td>
   </tr>
   <tr>
     <td>Topic</td>
     <td>List</td>
-    <td>A consultation may be organised into sub-groups sometimes described as topics which may be related to problems.</td>
+    <td>Each Topic is held as a List containing references to each of the Headings in the Topic.<br>Where a Topic does not contain Headings the the List contains references to Clinical Items.</td>
   </tr>
   <tr>
     <td>Heading</td>
     <td>List</td>
-    <td>A topic is further decomposed into subheading equivalent or along the lines of the SOAP structure of medical notes.</td>
+    <td>Each Heading is held as a List containing references to each of the Clinical Items in the Heading.</td>
   </tr>
   <tr>
     <td>Clinical Items</td>
     <td>Appropriate FHIR profile</td>
-    <td>Each heading may contain multiple record entries of different types represented by an appropriate FHIR profile. <br>Record entries may appear directly within a consultation without being embedded in the Topic/Heading structure. By convention an artificial topic level will be generated to accomodate record entries within this 'flat' structure. A consultation may exhibit both stypes but within different topics</td>
+    <td>Each Clinical Item will be head in the appropriate FHIR profile as defined in this specification</td>
   </tr></table>
 
 <IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
