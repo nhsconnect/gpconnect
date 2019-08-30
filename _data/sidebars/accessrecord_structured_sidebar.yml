@@ -41,6 +41,10 @@ entries:
   - title: Data Model
     output: web, pdf
     folderitems:
+     
+     - title: User Stories
+      url: /accessrecord_structured_requirements.html
+      output: web, pdf  
     
       subfolders:
 
