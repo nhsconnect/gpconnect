@@ -40,7 +40,7 @@ entries:
 
   - title: Data Model
     output: web, pdf
-    folderitems:
+    subfolders:
 
       - title: FHIR&reg; Resources
         output: web
@@ -81,7 +81,7 @@ entries:
    
   - title: Development
     output: web, pdf
-    folderitems:
+    subfolders:
 
       - title: API Use Cases
         output: web
