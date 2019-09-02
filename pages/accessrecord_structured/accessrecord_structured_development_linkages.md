@@ -22,6 +22,8 @@ The model currently covers consultations, problems, medications and medical devi
 
 <img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;">
 
+<img src="images/access_structured/FHIR_model_key.png" alt="GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
+
 The relationships between two FHIR resources are defined in only one of the linked FHIR resources (similar to in a relational database management system). This is shown by the direction of the arrow in the FHIR model. 
 
 For example, the `MedicationStatement` resource contains a field that can be used to look up the linked `Medication`. There is no field in the `Medication` resource that can be used to look up the linked `MedicationStatement`.
