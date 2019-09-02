@@ -194,6 +194,12 @@ Where a Consultation is not marked as confidential but includes items that are m
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Consultation(s) they were removed from.
 
+## Draft Consultations
+
+In some GP practice clinical systems it is possible for the clinician to save a consultation record in a draft (or equivalent) status.
+
+Consultations in this draft status MUST be included in the response. `Encounter.Status` is used to identify them as draft.
+
 ## Suppression of empty consultations, topics and headings
 
 On some systems all or almost all record entry is captured in the context of a consultation. This, coupled with default behaviours such as starting a consultation on opening a patient record, leads to the phenomenon of 'empty' consultations where the Data/Dr/Place/Type has been created as a default but there is no subsequent entry of any clinical information within the consultation.
