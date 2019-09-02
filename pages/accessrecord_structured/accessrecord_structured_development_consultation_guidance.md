@@ -110,7 +110,7 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
 <a href="images/access_structured/Consultation_FHIR_Resource_Model.png"><IMG src="images/access_structured/Consultation_FHIR_Resource_Model.png" alt="Consultation FHIR Resource Model" style="max-width:100%;max-height:100%;"></a>
 
 
-<a href="images/access_structured/Consultation_Structure.png"><IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
+<a href="images/access_structured/Consultation_Stucture.png"><IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
 
 ## Consultation notes
 
