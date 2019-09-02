@@ -68,12 +68,12 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed value of `finished`.
+Where the consultation record has been finalised on the provider system set to `finished`.
+
+Where the consultation record has been saved onto the provider system in a draft (or equivalent) status, set to `unknown`.
 
 Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of consultation context.
 Hence, use the most appropriate value from limited set available.
-
-Some systems allow consultations to be assigned a draft or incomplete status, but this status is not conveyed in GP Connect as the information recorded in such consultation is still treated as authoritative by the source systems.
 
 ### type ###
 
