@@ -65,7 +65,7 @@ Where a Consultation links to a profile that is not yet supported by the provide
 
 Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Consultation that contains a Medication but does not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
 
-<img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;">
+<a href="images/access_structured/Consultation_Return.png"><img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
 ### Problems ###
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
@@ -92,7 +92,7 @@ Where a Problem links to a profile that is not yet supported by the provider sys
 
 Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Problem that links to a Medication but does not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
 
-<img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;">
+<a href="images/access_structured/Problem_Return.png"><img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
 ### Medications and medical devices ###
 When GP Connect returns a medication or medical device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
@@ -109,7 +109,7 @@ For each `MedicationStatement` referenced in the `List` profile:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<img src="images/access_structured/Medication_Return.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;">
+<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Medication_Return.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
 ### Allergies ###
 When GP Connect returns an allergy it will supply all the allergy data.
@@ -125,7 +125,7 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
     
 <center>
-<img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;">
+<a href="images/access_structured/Allergy_Return.png"><img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Immunisation ###
@@ -141,7 +141,7 @@ For each `Immunization` referenced in the `List` profile:
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
-<img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;">
+<a href="images/access_structured/Immunisation_Return.png"><img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Uncategorised data ###
@@ -157,7 +157,7 @@ For each `Observation` referenced in the `List` profile:
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
-<img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"> 
+<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Duplicate returned profiles ###
