@@ -54,9 +54,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Proble
   </tr>
 </table>
 
-A reference to the resource containing the clinical item that has been escalated to create the problem.
+A reference to the resource containing the clinical item that has been escalated to create the Problem.
 
-References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised.
+References may be created to `MedicationRequest`, `AllergyIntolerance`, `Immunization`, `Observation - Uncategorised`.
 
 ### extension[relatedProblemHeader] ###
 
@@ -107,6 +107,7 @@ Contains references to:
 * other resources that a user in the sending clinical system has chosen to link to this Problem.
 * encounters that a user in the sending clinical system has chosen to link to this Problem.
 
+
 When populating this field the provider system must include every item in the patient record that provides information about the problem and includes:
 * Clinical items that are directly linked to the problem in the provider system; and
 * Clinical items that are within a consultation topic that is linked to the problem
@@ -115,7 +116,7 @@ When populating this field the provider system must include every consultation w
 * consultations that are directly linked to the problem in the provider system; and
 * consultations that created/updated a clinical item that has been linked to the problem
 
-References may be created to `Encounter`, `MedicationRequest`, `AllergyIntolerance`, `Immunization`, `Observation - Uncategorised` profiles.
+References may be created to `Encounter`, `MedicationRequest`, `AllergyIntolerance`, `Immunization`, `Observation - Uncategorised`.
 
 ### extension[problemSignificance] ###
 
