@@ -139,7 +139,7 @@ entries:
         - title: Problem guidance
           url: /accessrecord_structured_development_problems_guidance.html
           output: web
-        - title: <b class='resource'>Condition - ProblemHeader</b>
+        - title: <b class='resource'>ProblemHeader (Condition)</b>
           url: /accessrecord_structured_problems.html
           output: web
         - title: Problems FHIR&reg; examples
