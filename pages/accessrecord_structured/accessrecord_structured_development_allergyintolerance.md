@@ -4,13 +4,13 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_allergyintolerance.html
-summary: "Guidance for populating and consuming the AllergyIntolerance resource"
+summary: "Guidance for populating and consuming the AllergyIntolerance profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the `AllergyIntolerance` resource and describe how to populate and consume them.
+The headings below list the elements of the `AllergyIntolerance` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
