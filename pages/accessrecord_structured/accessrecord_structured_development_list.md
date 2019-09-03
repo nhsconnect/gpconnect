@@ -4,13 +4,13 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_list.html
-summary: "Guidance for populating and consuming the List resource"
+summary: "Guidance for populating and consuming the List profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below detail the elements of the `List` resource and describe how to populate and consume them.
+The headings below detail the elements of the `List` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
 
