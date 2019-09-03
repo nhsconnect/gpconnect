@@ -4,13 +4,13 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_uncategorisedData.html
-summary: "Guidance for the representation and consumption of Observation resource representing uncategorised data items from the GP record"
+summary: "Guidance for populating and consuming the Observation profile for uncategorised data"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the `Observation` resource and describe how to populate and consume them for uncategorised data.
+The headings below list the elements of the `Observation` profile and describe how to populate and consume them for uncategorised data.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
