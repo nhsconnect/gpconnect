@@ -1,22 +1,22 @@
 ---
-title: Condition - ProblemHeader
+title: ProblemHeader (Condition)
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_problems.html
-summary: "Guidance for populating and consuming the ProblemHeader profile"
+summary: "Guidance for populating and consuming the ProblemHeader (Condition) profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the ProblemHeader profile and describe how to populate and consume them.
+The headings below list the elements of the ProblemHeader (Condition) profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProblemHeader profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1)." %}
 
-## Condition - problem header elements ##
+## ProblemHeader (Condition) elements ##
 
 ### id ###
 
@@ -28,7 +28,7 @@ The headings below list the elements of the ProblemHeader profile and describe h
   </tr>
 </table>
 
-The logical identifier of the ProblemHeader resource.
+The logical identifier of the ProblemHeader (Condition) profile.
 
 ### meta.profile ###
 
@@ -40,7 +40,7 @@ The logical identifier of the ProblemHeader resource.
   </tr>
 </table>
 
-The ProblemHeader profile URL.
+The ProblemHeader (Condition) profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1)
 
@@ -67,7 +67,7 @@ References may be created to MedicationRequest, AllergyIntolerance, Immunization
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
-A complex extension that details the relationship of this problem header resources to another or a number of other problem header resources.
+A complex extension that details the relationship of this ProblemHeader (Condition) profile to another or a number of other ProblemHeader (Condition) profile.
 
 ### extension[relatedProblemHeader.type] ###
 
@@ -78,9 +78,9 @@ A complex extension that details the relationship of this problem header resourc
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
-A complex extension that details the type of relationship this problem header resources to another problem header resources.
+A complex extension that details the type of relationship this ProblemHeader (Condition) profile to another ProblemHeader (Condition) profile.
 
-For each relatedProblemHeader.target the provider **MUST** supply a value of <code>parent</code>, <code>child</code> or <code>sibling</code>.
+For each `relatedProblemHeader.target` the provider **MUST** supply a value of <code>parent</code>, <code>child</code> or <code>sibling</code>.
 
 ### extension[relatedProblemHeader.target] ###
 
@@ -91,7 +91,7 @@ For each relatedProblemHeader.target the provider **MUST** supply a value of <co
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
-A complex extension that contains a reference to a related problem header resource.
+A complex extension that contains a reference to a related ProblemHeader (Condition) profile.
 
 ### extension[relatedClinicalContent] ###
 
@@ -103,14 +103,19 @@ A complex extension that contains a reference to a related problem header resour
   </tr>
 </table>
 
-References to other resources that a user in the sending clinical system has chosen to link to this problem header resource.
+Contains references to:
+* other resources that a user in the sending clinical system has chosen to link to this Problem.
+* encounters that a user in the sending clinical system has chosen to link to this Problem.
 
 When populating this field the provider system must include every item in the patient record that provides information about the problem and includes:
 * Clinical items that are directly linked to the problem in the provider system; and
 * Clinical items that are within a consultation topic that is linked to the problem
 
-References may be created to MedicationRequest, AllergyIntolerance, Immunization, Observation - Uncategorised resources.
-References to consultations are not held in this field. They are held in the context field defined below.
+When populating this field the provider system must include every consultation where the problem was discussed or information about the problem was recorded. This includes:
+* consultations that are directly linked to the problem in the provider system; and
+* consultations that created/updated a clinical item that has been linked to the problem
+
+References may be created to `Encounter`, `MedicationRequest`, `AllergyIntolerance`, `Immunization`, `Observation - Uncategorised` profiles.
 
 ### extension[problemSignificance] ###
 
@@ -122,8 +127,8 @@ References to consultations are not held in this field. They are held in the con
   </tr>
 </table>
 
-The significance of the problem contained in the resource.
-All problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system records more than two levels of severity any level of severity above minor is mapped to major.
+The significance of the Problem contained in the resource.
+All Problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system records more than two levels of severity any level of severity above minor is mapped to major.
 
 ### identifier ###
 
@@ -179,7 +184,7 @@ Fixed value of <code>problem-list-item</code>.
   </tr>
 </table>
 
-The clinical code or text that represents the problem header.
+The clinical code or text that represents the Problem.
 
 These will be the same values that are held in the FHIR&reg; resource referenced by extension[actualProblem].
 
@@ -193,7 +198,7 @@ These will be the same values that are held in the FHIR&reg; resource referenced
   </tr>
 </table>
 
-A reference to the patient who has, or had, the problem.
+A reference to the patient who has, or had, the Problem.
 
 ### context ###
 
@@ -205,11 +210,7 @@ A reference to the patient who has, or had, the problem.
   </tr>
 </table>
 
-References to encounters that a user in the sending clinical system has chosen to link to this problem header resource.
-
-When populating this field the provider system must include every consultation where the problem was discussed or information about the problem was recorded. This includes:
-* consultations that are directly linked to the problem in the provider system; and
-* consultations that created/updated a clinical item that has been linked to the problem
+Reference to the encounter where the Problem was initially created.
 
 ### onset ###
 
@@ -221,7 +222,7 @@ When populating this field the provider system must include every consultation w
   </tr>
 </table>
 
-The datetime when the problem was first encountered.
+The datetime when the Problem was first encountered.
 
 For example if the patient reported a persistent cough started on the 1st May during a consultation on the 20th May, the onset date would be the 1st May.
 
@@ -235,7 +236,7 @@ For example if the patient reported a persistent cough started on the 1st May du
   </tr>
 </table>
 
-The datetime when the problem was no longer considered active.
+The datetime when the Problem was no longer considered active.
 
 ### assertedDate ###
 
@@ -247,7 +248,7 @@ The datetime when the problem was no longer considered active.
   </tr>
 </table>
 
-The datetime that the problem was recorded on the clinical system.
+The datetime that the Problem was recorded on the clinical system.
 
 ### asserter ###
 
@@ -259,7 +260,7 @@ The datetime that the problem was recorded on the clinical system.
   </tr>
 </table>
 
-Reference to the resource for the practitioner who recorded the problem.
+Reference to the profile for the practitioner who recorded the Problem.
 
 ### note ###
 
@@ -271,7 +272,7 @@ Reference to the resource for the practitioner who recorded the problem.
   </tr>
 </table>
 
-Notes about the problem.
+Notes about the Problem.
 
 <br>
 <h2 style="color:#ED1951;"> Condition elements <b>not in use</b> </h2>
