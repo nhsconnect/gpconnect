@@ -4,12 +4,12 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_immunization.html
-summary: "FHIR resource for population guidance for immunization"
+summary: "Guidance for populating and consuming the Immunization profile"
 div: resource-page
 ---
 ## Introduction
 
-The headings below list the elements of the `Immunization` resource and describe how to populate and consume them.
+The headings below list the elements of the `Immunization` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_immunization.html#elements-not-in-use)." %}
 
