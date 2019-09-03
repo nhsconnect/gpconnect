@@ -4,13 +4,13 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medicationstatement.html
-summary: "Guidance for populating and consuming the MedicationStatement resource"
+summary: "Guidance for populating and consuming the MedicationStatement profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the `MedicationStatement` resource and describe how to populate and consume them.
+The headings below list the elements of the `MedicationStatement` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
