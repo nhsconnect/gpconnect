@@ -4,13 +4,13 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_encounter.html
-summary: "Guidance for populating the Encounter resource for consultations"
+summary: "Guidance for populating and consuming the Encounter profile for Consultations"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the `Encounter` resource and describe how to populate and consume them.
+The headings below list the elements of the `Encounter` profile and describes how to populate and consume them for Consultations.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
