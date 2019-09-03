@@ -21,8 +21,8 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
-        - title: 1.3.1
-          url: /overview_release_notes_1_3_1.html
+        - title: 1.3.0-beta.1
+          url: /overview_release_notes_1_3_0_beta_1.html
           output: web
         - title: 1.3.0
           url: /overview_release_notes_1_3_0.html
@@ -109,10 +109,10 @@ entries:
       output: web
     - title: General API guidance
       url: /development_general_api_guidance.html
-      output: web          
+      output: web
     - title: Branch surgeries
       url: /development_branch_surgeries.html
-      output: web          
+      output: web
     - title: FHIR&reg; resources
       url: /development_fhir_resource_guidance.html
       output: web
