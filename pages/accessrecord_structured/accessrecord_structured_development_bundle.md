@@ -4,13 +4,13 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_bundle.html
-summary: "Guidance for populating and consuming the Bundle resource"
+summary: "Guidance for populating and consuming the Bundle profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the `Bundle` resource and describe how to populate and consume them.
+The headings below list the elements of the `Bundle` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
