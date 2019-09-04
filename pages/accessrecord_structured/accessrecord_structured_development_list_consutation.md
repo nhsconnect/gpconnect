@@ -14,7 +14,7 @@ A two or three level <code>List</code> structure is used to represent structured
 
 1.  **List (Consultation)**
 2.  **List (Topic)**
-3.  **List (Category)**
+3.  **List (Heading)**
 
 List (Consultation) **SHALL** be coded as **325851000000107 |Consultation encounter type (record artifact)|**.
 This top-level profile represents the structured consultation as a whole.
@@ -22,10 +22,10 @@ This top-level profile represents the structured consultation as a whole.
 List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR) (record artifact)|**.
 This level represents the Topic/Problem groupings within consultations.
 
-List (Category) **SHALL** be coded as **24781000000107 |Category (EHR) (record artifact)|**.
+List (Heading) **SHALL** be coded as **24781000000107 |Category (EHR) (record artifact)|**.
 This level represents the headings (SOAP heading) levels of the consultation structure that contain record entries.
 
-In the case of consultation which has a 'flat' structure, that is, contains record entries without a surrounding Topic/Category structure, producer systems generate a List(Topic) level which links directly to record entries without the List(Category) level.
+In the case of consultation which has a 'flat' structure, that is, contains record entries without a surrounding Topic/Heading structure, producer systems generate a List(Topic) level which links directly to record entries without the List(Heading) level.
 
 Empty consultations and empty subsections (topics and headings) are suppressed at source and this is reflected in the cardinalities specified.
 
