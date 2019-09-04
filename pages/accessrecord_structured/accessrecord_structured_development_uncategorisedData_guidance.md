@@ -21,11 +21,11 @@ The volume of this categorisation varies between provider systems. For the major
 * Document
 * Flag/Alert
 * Immunisation
+* Investigation
 * Medication and Medical Device
 * Problem
 * Referral
 * Test Request
-* Investigation
 
 ## What is uncategorised data? ##
 There is data that a clinician/user will enter without identifying what type of information they are recording. This information is usually entered as either free text or a combination of clinical code(s), values, qualifiers and text.
@@ -71,14 +71,6 @@ and
 * each recorded value in the uncategorised data is described by its own clinical code
 
 In these cases, each value will be exported in an instance of `observation.component`.
-
-## Blood pressure ##
-Where the clinician/user has explicitly chosen the clinical codes to record a blood pressure reading in the provider system, the provider system **MUST** export the blood pressure reading as uncategorised data using the clinical codes (or SNOMED CT translations) chosen by the clinician/user.
-
-Where the clinician/user has NOT explicitly selected the clinical codes to record a blood pressure reading in the provider system, the provider system **MUST** export the blood pressure using the CareConnect Blood Pressure observation:
-
-    https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-BloodPressure-Observation-1
-
 
 ## Using the `List` resource for uncategorised data queries
 
