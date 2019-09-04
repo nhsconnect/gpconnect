@@ -28,7 +28,7 @@ The headings below list the elements of the `AllergyIntolerance` profile and des
   </tr>
 </table>
 
-The logical identifier of the `Medication` profile.
+The logical identifier of the `AllergyIntolerance` profile.
 
 ### meta.profile ###
 
