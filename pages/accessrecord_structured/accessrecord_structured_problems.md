@@ -54,7 +54,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Proble
   </tr>
 </table>
 
-A reference to the resource containing the clinical item that has been escalated to create the Problem.
+A reference to the profile containing the clinical item that has been escalated to create the Problem.
 
 References may be created to `MedicationRequest`, `AllergyIntolerance`, `Immunization`, `Observation - Uncategorised`.
 
@@ -103,12 +103,9 @@ A complex extension that contains a reference to a related ProblemHeader (Condit
   </tr>
 </table>
 
-Contains references to:
-* other resources that a user in the sending clinical system has chosen to link to this Problem.
-* encounters that a user in the sending clinical system has chosen to link to this Problem.
+Contains references to clinical items and consultations that a user in the sending clinical system has chosen to link to this Problem.
 
-
-When populating this field the provider system must include every item in the patient record that provides information about the problem and includes:
+When populating this field the provider system must include every clinical item in the patient record that provides information about the problem and includes:
 * Clinical items that are directly linked to the problem in the provider system; and
 * Clinical items that are within a consultation topic that is linked to the problem
 
@@ -128,7 +125,7 @@ References may be created to `Encounter`, `MedicationRequest`, `AllergyIntoleran
   </tr>
 </table>
 
-The significance of the Problem contained in the resource.
+The significance of the Problem.
 All Problems **MUST** have a severity of <code>major</code> or <code>minor</code>. Where a provider system records more than two levels of severity any level of severity above minor is mapped to major.
 
 ### identifier ###
@@ -149,7 +146,7 @@ This  **MUST**  be a GUID.
 
 _Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore stored with the source data).
 
-Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
+Where  _consuming_  systems are integrating data from this profile to their local system, they  **MUST**  also persist this GUID at the same time.
 
 ### clinicalStatus ###
 
@@ -187,7 +184,7 @@ Fixed value of <code>problem-list-item</code>.
 
 The clinical code or text that represents the Problem.
 
-These will be the same values that are held in the FHIR&reg; resource referenced by extension[actualProblem].
+These will be the same values that are held in the FHIR&reg; profile referenced by extension[actualProblem].
 
 ### subject ###
 
