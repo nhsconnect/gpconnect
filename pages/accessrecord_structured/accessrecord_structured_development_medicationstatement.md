@@ -1,5 +1,5 @@
 ---
-title: MedicationStatement resource
+title: MedicationStatement
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -16,8 +16,6 @@ The headings below list the elements of the `MedicationStatement` profile and de
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.2)." %}
 
-{% include note.html content="It is not expected that suppliers will provide resources for data types that reference resources that have not been curated and published by GP Connect. In the case where these fields are required it is not expected they will be populated until the resources have been developed by the suppliers and completed the relevant NHS Digital assurance." %}
-
 ## MedicationStatement elements ##
 
 ### id ###
@@ -30,7 +28,7 @@ The headings below list the elements of the `MedicationStatement` profile and de
   </tr>
 </table>
 
-The logical identifier of the `MedicationStatement` resource.
+The logical identifier of the `MedicationStatement` profile.
 
 ### meta.profile ###
 
@@ -94,7 +92,7 @@ This **MUST** be a GUID.
 
 *Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
 
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
 ### basedOn ###
 
@@ -158,7 +156,7 @@ For acute, the status refers to the status of the prescription issue.
 
 The medication/medical device the authorisation is for.
 
-The `Medication` resource provides the coded representation of the medication/medical device.
+The `Medication` profile provides the coded representation of the medication/medical device.
 
 ### effective ###
 
