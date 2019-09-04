@@ -1,5 +1,5 @@
 ---
-title: AllergyIntolerance resource
+title: AllergyIntolerance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -28,7 +28,7 @@ The headings below list the elements of the `AllergyIntolerance` profile and des
   </tr>
 </table>
 
-The logical identifier of the `Medication` resource.
+The logical identifier of the `Medication` profile.
 
 ### meta.profile ###
 
@@ -114,7 +114,7 @@ This **MUST** be a GUID.
 
 *Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
 
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
 ### clinicalStatus ###
 
