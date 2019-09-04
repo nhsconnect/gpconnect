@@ -28,7 +28,7 @@ The headings below list the elements of the `Encounter` profile and describes ho
   </tr>
 </table>
 
-The logical identifier of the Encounter resource.
+The logical identifier of the `Encounter` profile.
 
 ### meta.profile ###
 
@@ -40,7 +40,7 @@ The logical identifier of the Encounter resource.
   </tr>
 </table>
 
-The Encounter profile URL.
+The `Encounter` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1)
 
@@ -97,7 +97,7 @@ Carries the consultation type as displayed by the system. This may be a SNOMED C
   </tr>
 </table>
 
-Reference to <code>Patient</code> resource representing the patient against whom the source consultation/encounter was recorded.
+Reference to <code>Patient</code> profile representing the patient against whom the source consultation/encounter was recorded.
 
 
 ### participant ###
@@ -113,7 +113,7 @@ Reference to <code>Patient</code> resource representing the patient against whom
 This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system.
 
 Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary.
-This should reference a `Practitioner` resource representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
+This should reference a `Practitioner` profile representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
 
 Other participants, such as registrars, trainees or other parties present, may be referenced but with a participation type of <code>PART</code>.
 
@@ -162,7 +162,7 @@ Should be calculated and populated where an end time for the consultation is kno
   </tr>
 </table>
 
-References an instance of the `Location` resource that provides more detail on where the consultation/encounter took place - for example, branch surgery.
+References an instance of the `Location` profile that provides more detail on where the consultation/encounter took place - for example, branch surgery.
 
 <code>location.status</code> and <code>location.period</code> are not used.
 
@@ -224,7 +224,7 @@ The following elements **SHALL NOT** be populated.
   </tr>
 </table>
 
-The current scope of GP Connect excludes the episode of care resource.
+The current scope of GP Connect excludes episode of care.
 
 <h3 style="color:#ED1951;"> incomingReferral </h3>
 
@@ -262,7 +262,7 @@ The reason for the consultation will be associated to the <code>appointment</cod
   </tr>
 </table>
 
-The diagnosis will be associated to the consultation via the <code>list</code> resource.
+The diagnosis will be associated to the consultation via the <code>list</code> profile.
 
 <h3 style="color:#ED1951;"> account </h3>
 
