@@ -17,7 +17,7 @@ A two or three level <code>List</code> structure is used to represent structured
 3.  **List (Category)**
 
 List (Consultation) **SHALL** be coded as **325851000000107 |Consultation encounter type (record artifact)|**.
-This top-level resource represents the structured consultation as a whole.
+This top-level profile represents the structured consultation as a whole.
 
 List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR) (record artifact)|**.
 This level represents the Topic/Problem groupings within consultations.
@@ -47,7 +47,7 @@ The population of List attributes that are common to all of the consultation lis
         </tr>
 </table>
 
-The logical identifier of the `List` resource.
+The logical identifier of the `List` profile.
 
 ### meta.profile
 
@@ -59,7 +59,7 @@ The logical identifier of the `List` resource.
         </tr>
 </table>
 
-The List profile URL.
+The `List` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)
 
@@ -112,7 +112,7 @@ Fixed value of `snapshot`.
         </tr>
 </table>
 
-Reference to the `Patient` resource for the patient whose patient record contains a consultation represented by this `List` resource.
+Reference to the `Patient` profile for the patient whose patient record contains a consultation represented by this `List` profile.
 
 The patient reference is provided by all Lists in the structure rather than the top-level List(Consultation) only.
 
@@ -126,7 +126,7 @@ The patient reference is provided by all Lists in the structure rather than the 
         </tr>
 </table>
 
-Mandatory reference to the `Encounter` resource providing the context for the consultation (Date/Doctor/Place ....)
+Mandatory reference to the `Encounter` profile providing the context for the consultation (Date/Doctor/Place ....)
 
 The Encounter reference is provided by all Lists in the structure rather than the top-level List(Consultation) only.
 
@@ -144,7 +144,7 @@ The system rather than clinical date time for when the consultation was last edi
 
 If no separate date time is recorded for consultation sub sections, the overall audit date of the consultation is replicated at all levels.
 
-The clinically significant or effective consultation date is provided by the associated `Encounter` resource.
+The clinically significant or effective consultation date is provided by the associated `Encounter` profile.
 
 ### orderedBy
 
@@ -199,7 +199,7 @@ Fixed value of `325851000000107 |Consultation encounter type (record artifact)|`
         </tr>
 </table>
 
-Will contain at least one reference to a List resource providing the Topic level of the consultation structure. They will be recorded in the same order that the topics appear when viewed in a consultation in the GP system.
+Will contain at least one reference to a `List` profile providing the Topic level of the consultation structure. They will be recorded in the same order that the topics appear when viewed in a consultation in the GP system.
 
 ## List (Topic)
 
@@ -255,9 +255,9 @@ Fixed value of `25851000000105 |Topic (EHR) (record artifact)|`
 
 Where information within the Topic is organised as sub-headings, <code>entry.list</code> will reference instances of the Category List level.  They will be recorded in the same order that the headings appear when viewed in a consultation in the GP system.
 
-For consultations which have a flat structure (for example, clinical record entries made outside of the Topic and heading structure), an artificial Topic List is generated, and entries will reference resources representing those record entries (such as, Allergies, Medications, Tests, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
+For consultations which have a flat structure (for example, clinical record entries made outside of the Topic and heading structure), an artificial Topic List is generated, and entries will reference profiles representing those record entries (such as, Allergies, Medications, Tests, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
 
-The two approaches are never mixed within the same Topic - that is, all entries will either reference List(Category) or resources representing the source record entries, but not both.
+The two approaches are never mixed within the same Topic - that is, all entries will either reference `List(Category)` or profiles representing the source record entries, but not both.
 
 ## List (Heading)
 
@@ -297,7 +297,7 @@ Fixed value of `24781000000107 |Category (EHR) (record artifact)|`
         </tr>
 </table>
 
-Each <code>entry.item</code> is a reference to a resource representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
+Each <code>entry.item</code> is a reference to a profile representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
 
 <h2 style="color:#ED1951;"> List elements <b>not in use</b></h2>
 
