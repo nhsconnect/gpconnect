@@ -1,5 +1,5 @@
 ---
-title: MedicationRequest resource
+title: MedicationRequest
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -16,14 +16,6 @@ The headings below list the elements of the `MedicationRequest` profile and desc
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.2)." %}
 
-## Overarching principles ##
-
-When populating the `MedicationRequest` profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **MUST** be applied when populating the `MedicationRequest` profiles:
-
-1. All mandatory fields **MUST** be populated.
-
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a MedicationRequest with `intent` of `plan` the associated MedicationStatement would be the parent profile. For a MedicationRequest with `intent` of `order`, the associated MedicationStatement and MedicationRequest with `intent` of `plan` are both considered parent profiles.
-
 ## MedicationRequest elements ##
 
 ### id ###
@@ -36,7 +28,7 @@ When populating the `MedicationRequest` profile it may appear that fields are du
   </tr>
 </table>
 
-The logical identifier of the MedicationRequest resource.
+The logical identifier of the `MedicationRequest` profile.
 
 ### meta.profile ###
 
@@ -48,7 +40,7 @@ The logical identifier of the MedicationRequest resource.
   </tr>
 </table>
 
-The MedicationRequest profile URL.
+The `MedicationRequest` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1)
 
@@ -64,8 +56,8 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
 
 Extension elements to hold details of repeat authorisation.
 
-Only populate for a medicationRequest with an intent = plan.
-For a medicationRequest with an intent = order none of the repeatInformation fields are populated.
+Only populate for a `MedicationRequest` with an `intent` = `plan`.
+For a `MedicationRequest` with an `intent` = `order` none of the `repeatInformation` fields are populated.
 
 ### extension[repeatInformation].numberOfRepeatPrescriptionsAllowed ###
 
@@ -109,8 +101,8 @@ Running total of number of issues made against a repeat authorisation.
 
 The date a repeat prescription authorisation will expire.
 
-Only populate for a medicationRequest with an intent = plan.
-For a medicationRequest with an intent = order this is not populated.
+Only populate for a `MedicationRequest` with an `intent` = `plan`.
+For a `MedicationRequest` with an `intent` = `order` this is not populated.
 
 ### extension[statusReason] ###
 
@@ -126,7 +118,7 @@ Where a medication/medical device has been stopped (status == ‘stopped’), th
 
 Mandatory for authorisations with stopped status.
 
-Only populate for a medicationRequest with an intent = plan. Do not populate for a medicationRequest with an intent = order.
+Only populate for a `MedicationRequest` with an `intent` = `plan`. Do not populate for a `MedicationRequest` with an `intent` = `order`.
 
 ### extension[statusReason].date ###
 
@@ -154,7 +146,7 @@ Mandatory for stopped/discontinued medications/medical devices as the date will 
 
 The textual reason either free text or the term of a code for stopping/discontinuing the medication/medical device.
 
-**MUST** be populated when StatusReason.date is populated.
+**MUST** be populated when `StatusReason.date` is populated.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
@@ -192,7 +184,7 @@ This **MUST** be a GUID.
 
 *Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
 
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
 ### basedOn ###
 
@@ -204,9 +196,9 @@ Where *consuming* systems are integrating data from this resource to their local
   </tr>
 </table>
 
-This field is used to create the links between `MedicationRequest` resources to represent the medication ordering process as described [here](accessrecord_structured_development_medication_resource_relationships.html). This **MUST** be used when a resource has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` resource that has an `intent` set to `plan`.
+This field is used to create the links between `MedicationRequest` profiles to represent the medication ordering process as described [here](accessrecord_structured_development_medication_resource_relationships.html). This **MUST** be used when a profile has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` profile that has an `intent` set to `plan`.
 
-**DO NOT USE** for authorisations - that is, for a MedicationRequest with `intent` of `plan`.
+**DO NOT USE** for authorisations - that is, for a `MedicationRequest` with `intent` of `plan`.
 
 ### groupIdentifier ###
 
@@ -218,7 +210,7 @@ This field is used to create the links between `MedicationRequest` resources to 
   </tr>
 </table>
 
-Composite request this is part of. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is identifier.value.
+Composite request this is part of. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is `identifier.value`.
 
 All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
 
@@ -278,7 +270,7 @@ Use one of `plan` or `order`:
 
 The medication/medical device the authorisation is for.
 
-The `Medication` resource provides the coded representation of the medication/medical device.
+The `Medication` profile provides the coded representation of the medication/medical device.
 
 ### subject ###
 
@@ -306,8 +298,8 @@ Reference to patient.
 
 The consultation when the medication/medical device was authorised.
 
-For a medicationRequest with an intent = plan this is the consultation where the plan was authorised.
-For a medicationRequest with an intent = order this is the consultation where the specific issue was authorised.
+For a `MedicationRequest` with an `intent` = `plan` this is the consultation where the plan was authorised.
+For a `MedicationRequest` with an `intent` = `order` this is the consultation where the specific issue was authorised.
 
 ### authoredOn ###
 
