@@ -68,7 +68,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.3.0",
+  "version": "1.3.0-beta.1",
   "name": "GP Connect",
   "status": "active",
   "date": "2018-02-23",
@@ -117,7 +117,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
     {
       "mode": "server",
       "security": {
-        "cors": "true"
+        "cors": true
       },
       "resource": [
         {
@@ -198,7 +198,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
               "code": "search-type"
             }
           ],
-          "updateCreate": "false",
+          "updateCreate": false,
           "searchParam": [
             {
               "name": "identifier",
