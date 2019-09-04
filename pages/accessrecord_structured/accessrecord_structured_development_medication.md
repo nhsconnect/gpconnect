@@ -1,5 +1,5 @@
 ---
-title: Medication resource
+title: Medication
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -28,7 +28,7 @@ The headings below list the elements of the `Medication` profile and describe ho
   </tr>
 </table>
 
-The logical identifier of the `Medication` resource.
+The logical identifier of the `Medication` profile.
 
 ### meta.profile ###
 
