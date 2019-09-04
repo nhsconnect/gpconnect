@@ -28,7 +28,7 @@ The headings below list the elements of the `Observation` profile and describe h
   </tr>
 </table>
 
-The logical identifier of the uncategorised data `Observation` resource.
+The logical identifier of the uncategorised data `Observation` profile.
 
 ### meta.profile ###
 
@@ -62,7 +62,7 @@ This **MUST** be a GUID.
 
 Providing systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
 
-Where consuming systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where consuming systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
 ### status ###
 
@@ -100,7 +100,7 @@ Were the uncategorised data is free text without any clinical code set to 373310
   </tr>
 </table>
 
-Reference to `Patient` resource representing the Patient against whom the data was recorded.
+Reference to `Patient` profile representing the Patient against whom the data was recorded.
 
 ### context ###
 
@@ -112,7 +112,7 @@ Reference to `Patient` resource representing the Patient against whom the data w
   </tr>
 </table>
 
-Optional reference to the `Encounter` resource representing the consultation context in which the uncategorised data was recorded.
+Optional reference to the `Encounter` profile representing the consultation context in which the uncategorised data was recorded.
 
 ### effectiveDateTime ###
 
@@ -152,7 +152,7 @@ The audit trail timestamp representing when the data was recorded.
   </tr>
 </table>
 
-The `Practitioner` resource representing the person responsible for recording the data item. Where this is not available, the person who recorded the data item is used.
+The `Practitioner` profile representing the person responsible for recording the data item. Where this is not available, the person who recorded the data item is used.
 
 ### value[x] ###
 
