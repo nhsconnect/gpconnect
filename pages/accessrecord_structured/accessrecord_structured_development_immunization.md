@@ -1,5 +1,5 @@
 ---
-title: Immunization resource
+title: Immunization
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -27,7 +27,7 @@ The headings below list the elements of the `Immunization` profile and describe 
   </tr>
 </table>
 
-The logical identifier of the `Immunization` resource.
+The logical identifier of the `Immunization` profile.
 
 ### meta.profile
 
@@ -99,7 +99,7 @@ This **MUST** be a GUID.
 
 _Providing_  systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and, therefore, is stored with the source data).
 
-Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where  _consuming_  systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
 ### status
 
@@ -342,10 +342,10 @@ The code <code>AP</code> (Administering Provider) **MUST** be used to designate 
   </tr>
 </table>
 
-A reference to the <code>practitioner</code> resource for who administered and / or recorded the vaccine. 
+A reference to the <code>practitioner</code> profile for who administered and / or recorded the vaccine. 
 
 Where there is only a single practitioner recorded against the immunisation record
-- If the practitioner recording the vaccination also administered it, then associate a <code>practitioner.role</code> code <code>AP</code> (Administering Provider) with practitioner resource.
+- If the practitioner recording the vaccination also administered it, then associate a <code>practitioner.role</code> code <code>AP</code> (Administering Provider) with practitioner profile.
 - If the GP Clinical System cannot determine whether the practitioner administered the vaccine or recorded the vaccination event or both, then do not return a <code>practitioner.role</code>.
 
 This is mandatory where the <code>practitioner.role</code> is populated.
@@ -469,7 +469,7 @@ This means that there will never be cause to use <code>reasonNotGiven</code>.
   </tr>
 </table>
 
-Any reaction to an immunization **MUST** be sent separately in an `AllergyIntolerance` resource.
+Any reaction to an immunization **MUST** be sent separately in an `AllergyIntolerance` profile.
 
 <h3 style="color:#ED1951;"> vaccinationProtocol.authority </h3>
 
