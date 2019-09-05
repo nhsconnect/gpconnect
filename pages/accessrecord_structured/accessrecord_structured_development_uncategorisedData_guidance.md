@@ -90,6 +90,8 @@ Being in a hierarchy has no impact on the linkage between an item of uncategoris
 
 For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile.
 
+<a href="images/access_structured/Uncategorised_Structure.png"><IMG src="images/access_structured/Uncategorised_Structure.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
+
 ## Using the `List` resource for uncategorised data queries
 
 The results of a query for uncategorised data **MUST** return a `List` containing references to all `Observation` resources that are returned.
