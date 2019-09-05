@@ -83,29 +83,32 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
           
-  - title: Development3
+  - title: Development4
     output: web, pdf
     folderitems:
 
-    - title: Overview3
+    - title: Overview4
       url: /accessrecord_structured_development.html
       output: web
       
       
       subfolders:
 
-      - title: FHIR&reg; resources
+      - title: Implementation Guidance
         output: web
         subfolderitems:
 
-        - title: Overview
-          url: /accessrecord_structured_development_resources_overview.html
-          output: web
-        - title: <b class='resource'>AllergyIntolerance</b>
+        - title: <b class='resource'>Allergies guidance</b>
           url: /accessrecord_structured_development_allergyintolerance.html
           output: web
-     
-      
+        - title: <b class='resource'>Medication resource relationships</b>
+          url: /accessrecord_structured_development_medication.html
+          output: web
+        - title: <b class='resource'>Medication guidance</b>
+          url: /accessrecord_structured_development_medicationstatement.html
+          output: web
+        
+    
   - title: Testing
     output: web, pdf
     folderitems:
