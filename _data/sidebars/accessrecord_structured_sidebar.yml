@@ -38,7 +38,7 @@ entries:
       output: web
       url: /accessrecord_structured_known_issues.html
 
-  - title: Data Model5
+  - title: Data Model
     output: web, pdf
     folderitems:
 
@@ -83,11 +83,11 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
           
-  - title: Development4
+  - title: Development
     output: web, pdf
     folderitems:
 
-    - title: Overview4
+    - title: Overview
       url: /accessrecord_structured_development.html
       output: web
       
