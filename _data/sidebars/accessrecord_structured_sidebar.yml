@@ -8,7 +8,7 @@ entries:
     folderitems:
 
     - title: Introduction
-      url: /accessrecord_structured.html
+      url: /accessrecord_structured_copy.html
       output: web, pdf         
 
   - title: Business Requirements
