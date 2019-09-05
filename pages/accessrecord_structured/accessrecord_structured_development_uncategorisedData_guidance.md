@@ -80,7 +80,7 @@ There are cases where a number of pieces of uncategorised data are related to ea
 Each item of uncategorised data in the hierarchy is recorded is in its own `observation` profile. The structure is represented using the `observation.related` field.
 
 * The top level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member` 
-* The top childs items will contain `observation.related.target` pointing to the top level item with an `observation.related.type` of `derived-from`
+* The child items will contain `observation.related.target` pointing to the top level item with an `observation.related.type` of `derived-from`
 
 Note: This follows the same model that will be used to represent Investigations and Pathology.
 
