@@ -99,13 +99,13 @@ entries:
         subfolderitems:
 
         - title: <b class='resource'>Allergies guidance</b>
-          url: /accessrecord_structured_development_allergyintolerance.html
+          url: /accessrecord_structured_development_allergies_guidance.html
           output: web
         - title: <b class='resource'>Medication resource relationships</b>
-          url: /accessrecord_structured_development_medication.html
+          url: /accessrecord_structured_development_medication_resource_relationships.html
           output: web
         - title: <b class='resource'>Medication guidance</b>
-          url: /accessrecord_structured_development_medicationstatement.html
+          url: /accessrecord_structured_development_medication_guidance.html
           output: web
         
     
