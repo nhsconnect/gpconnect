@@ -1,16 +1,16 @@
 ---
-title: Medication resource
+title: Medication
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medication.html
-summary: "Guidance for populating and consuming the Medication resource"
+summary: "Guidance for populating and consuming the Medication profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the Medication resource and describe how to populate and consume them.
+The headings below list the elements of the `Medication` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
@@ -28,7 +28,7 @@ The headings below list the elements of the Medication resource and describe how
   </tr>
 </table>
 
-The logical identifier of the Medication resource.
+The logical identifier of the `Medication` profile.
 
 ### meta.profile ###
 

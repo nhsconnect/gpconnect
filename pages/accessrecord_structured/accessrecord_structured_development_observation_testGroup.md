@@ -10,13 +10,13 @@ div: resource-page
 
 ## Introduction ##
 
-The headings below list the elements of the Observation resource and describe how to populate and consume them.
+The headings below list the elements of the `Observation` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
-## Test group header - observation resource elements ##
+## Test group header - `Observation` resource elements ##
 
 ### id ###
 
@@ -112,7 +112,7 @@ A reference to the patient who the observation is about.
   </tr>
 </table>
 
-Reference to the resource for the Organization that carried out the tests. A `practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
+Reference to the resource for the Organization that carried out the tests. A `Practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
 
 
 ### comment ###

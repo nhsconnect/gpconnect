@@ -1,22 +1,20 @@
 ---
-title: MedicationStatement resource
+title: MedicationStatement
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medicationstatement.html
-summary: "Guidance for populating and consuming the MedicationStatement resource"
+summary: "Guidance for populating and consuming the MedicationStatement profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the MedicationStatement resource and describe how to populate and consume them.
+The headings below list the elements of the `MedicationStatement` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.2)." %}
-
-{% include note.html content="It is not expected that suppliers will provide resources for data types that reference resources that have not been curated and published by GP Connect. In the case where these fields are required it is not expected they will be populated until the resources have been developed by the suppliers and completed the relevant NHS Digital assurance." %}
 
 ## MedicationStatement elements ##
 
@@ -30,7 +28,7 @@ The headings below list the elements of the MedicationStatement resource and des
   </tr>
 </table>
 
-The logical identifier of the MedicationStatement resource.
+The logical identifier of the `MedicationStatement` profile.
 
 ### meta.profile ###
 
@@ -88,13 +86,13 @@ For repeat and repeat dispensed medications/medical devices, the value identifie
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This **MUST** be a GUID.
 
 *Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
 
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
 ### basedOn ###
 
@@ -158,25 +156,44 @@ For acute, the status refers to the status of the prescription issue.
 
 The medication/medical device the authorisation is for.
 
-The `Medication` resource provides the coded representation of the medication/medical device.
+The `Medication` profile provides the coded representation of the medication/medical device.
 
 ### effective ###
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Period</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-`Period.start` is **MANDATORY**. Where there is no defined start date this is populated with the recorded date.
+The period the medication or medical device is authorised under this medication/medical device plan. For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation. For acutes, this refers to the period of the prescription issue.
 
-`Period.end` is **REQUIRED**. Where there is a defined expiry or end date or where the end date can be derived (for example - from the duration) the end date **MUST** be supplied.
+`Period.start` is **MANDATORY**. 
 
-For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
+The date from which the medication or medical device is authorised under this plan. 
 
-For acutes, this refers to the period of the prescription issue.
+Use one of the following dates in order of descending preference:
+*	The authorised date as recorded in the patient record.
+    * For authorisation that were performed during a consultation this will be the date when the consultation took place.
+*	The date of the first issue under the medication/medical device plan
+*	The date the medication/medical device plan was recorded onto the system (the audit date).
+
+
+`Period.end` is **REQUIRED**. 
+
+The date when the authorisation under this plan ends.
+
+Where the medication/medical device plan is still active, set to null.
+
+Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
+*	The end date recorded in the patient record
+*	The end date of the final issue under the medication/medical device plan
+*	The date the plan was updated to ended
+*	The Period.start date
+    * This option should only occur where data has been lost (for example during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date.
+
 
 ### dateAsserted ###
 
@@ -266,11 +283,11 @@ Additional instructions for patient - that is, RHS of prescription label.
 
 <br><br>
 
-## MedicationStatement elements not in use ##
+<h2 style="color:#ED1951;"> MedicationStatement elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
 
-### meta.versionId ###
+<h3 style="color:#ED1951;"> meta.versionId </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -278,7 +295,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.lastUpdated ###
+<h3 style="color:#ED1951;"> meta.lastUpdated </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -286,7 +303,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### extension[ChangeSummary] ###
+<h3 style="color:#ED1951;"> extension[ChangeSummary] </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -296,7 +313,7 @@ The following elements **SHALL NOT** be populated:
 
 This is not in scope for this version of GP Connect.
 
-### partOf ###
+<h3 style="color:#ED1951;"> partOf </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -306,7 +323,7 @@ This is not in scope for this version of GP Connect.
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### category ###
+<h3 style="color:#ED1951;"> category </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -316,7 +333,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### informationSource ###
+<h3 style="color:#ED1951;"> informationSource </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -326,7 +343,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### derivedFrom ###
+<h3 style="color:#ED1951;"> derivedFrom </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -336,7 +353,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### taken ###
+<h3 style="color:#ED1951;"> taken </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -346,7 +363,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### reasonNotTaken ###
+<h3 style="color:#ED1951;"> reasonNotTaken </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -356,7 +373,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-### reasonCode ###
+<h3 style="color:#ED1951;"> reasonCode </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -366,7 +383,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This information is available via linking to a Problem record.
 
-### reasonReference ###
+<h3 style="color:#ED1951;"> reasonReference </h3>
 
 <table class='resource-attributes'>
   <tr>

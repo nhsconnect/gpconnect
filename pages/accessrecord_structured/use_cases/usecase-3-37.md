@@ -7,11 +7,11 @@ permalink: accessrecord_usecase_3.37.html
 summary: "Use case for community pharmacist providing diabetes services"
 ---
 
-**Brief description:**
+## Brief description 
 
 The community pharmacist provides a diabetes service. Providing this service to patients can reduce the workload on the local GP Practice(s) so the Practice(s) can focus on higher priority or more critical services or provide greater convenience to the patient and thus the local GP Practice(s) refer patients to the community pharmacist.
 
-**Use case justification:**
+## Use case justification 
 
 Clinical and administration:
 
@@ -26,7 +26,7 @@ Patient-focused:
   - optimise the sign-posting of patients to the most appropriate endpoint taking into consideration patient-specific healthcare history and current concerns
   - better patient experience as they are not being asked for information which should already be available to the GP
 
-**Primary actors:**
+## Primary actors 
 
   - GP
   - community pharmacist
@@ -34,34 +34,34 @@ Patient-focused:
   - community pharmacy IT system
   - GP clinical systems
 
-**Secondary actors:**
+## Secondary actors 
 
   - patient
 
-**Triggers:**
+## Triggers 
 
   - the patient attends a diabetes service at a community pharmacy
 
-**Pre-conditions:**
+## Preconditions 
 
-  - the patient has been referred to the diabetes service from their GP / primary care service
+  - the patient has been referred to the diabetes service from their GP/primary care service
   - the patient's details have been verified and entered on the community pharmacy IT system
-  - the community pharmacist has the correct / appropriate system access rights
-  - the patient's GP (practice / federation) has agreed to share patient information via GP Connect with the community pharmacy
-  - the patient consents to this shared information being viewed / used
+  - the community pharmacist has the correct/appropriate system access rights
+  - the patient's GP (practice/federation) has agreed to share patient information via GP Connect with the community pharmacy
+  - the patient consents to this shared information being viewed/used
   - electronic interactions between GP clinical system/GP Connect/community pharmacy IT system have been correctly configured
 
-**Post conditions:**
+## Postconditions 
 
-  - **On success**
+  - **On success:**
     
       - the information provided by GP Connect is used to inform the community pharmacist of all the patient's relevant medical history such that the community pharmacist can provide the best possible advice regarding the patient's condition
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the patient is appropriately assessed according to the test results and any information the patient provides
 
-**Basic flow with alternative and exception flows:**
+## Basic flow with alternative and exception flows 
 
 <table>
 <thead>
@@ -73,15 +73,15 @@ Patient-focused:
 <tbody>
 <tr class="odd">
 <td>Step 1</td>
-<td>The patient is referred to the community pharmacist for diabetes service by the GP and a patient record is created on the community pharmacy IT system</td>
+<td>The patient is referred to the community pharmacist for diabetes service by the GP and a patient record is created on the community pharmacy IT system.</td>
 </tr>
 <tr class="even">
 <td>Step 2</td>
-<td>The community pharmacist accesses the patient record in the community pharmacy system</td>
+<td>The community pharmacist accesses the patient record in the community pharmacy system.</td>
 </tr>
 <tr class="odd">
 <td>Step 3</td>
-<td>The community pharmacist accesses GP Connect to retrieve the medical history from the patient's registered GP system</td>
+<td>The community pharmacist accesses GP Connect to retrieve the medical history from the patient's registered GP system.</td>
 </tr>
 <tr class="even">
 <td>Step 4</td>
@@ -95,13 +95,13 @@ Patient-focused:
 <li><p>Consultations (encounters)</p>
 <ul>
 <li><p>Date</p></li>
-<li><p>Details from consultations which might include information of conditions / diagnoses which would affect diabetes test results and whether GP / patient have accepted that a condition has impacted a test result</p></li>
+<li><p>Details from consultations which might include information of conditions/diagnoses which would affect diabetes test results and whether GP/patient have accepted that a condition has impacted a test result.</p></li>
 </ul></li>
 <li><p>Medications</p></li>
 <li><p>Problems / long term conditions / diagnoses</p></li>
 <li><p>Test Results relating to diabetes</p>
 <ul>
-<li><p>Measure for example,  glucose levels, blood pressure, kidney function, liver function, etc.</p></li>
+<li><p>Measure - for example, glucose levels, blood pressure, kidney function, liver function, etc.</p></li>
 <li><p>Measured value</p></li>
 <li><p>Date of measurement</p></li>
 </ul></li>
@@ -110,29 +110,29 @@ Patient-focused:
 </tr>
 <tr class="even">
 <td>Step 6</td>
-<td>GP Connect presents the GP patient record to the community pharmacy system</td>
+<td>GP Connect presents the GP patient record to the community pharmacy system.</td>
 </tr>
 <tr class="odd">
 <td>Step 7</td>
 <td>The community pharmacy system presents the relevant parts of the GP record to the community pharmacist.
-<p>The test results are displayed in graph form by type of measure with indication of either normal max / min range values or highlighting out of range measurement values.</p></td>
+<p>The test results are displayed in graph form by type of measure with indication of either normal max/min range values or highlighting out of range measurement values.</p></td>
 </tr>
 <tr class="even">
 <td>Step 8</td>
-<td>The community pharmacist reviews the test results looking for trends and / or changes / anomalies and checks with the patient whether the medication is being taken as advised (or any circumstances why it is not).
+<td>The community pharmacist reviews the test results looking for trends and/or changes/anomalies and checks with the patient whether the medication is being taken as advised (or any circumstances why it is not).
 <p>The community pharmacist cross checks with the patient medical history where there are any changes or anomalies to see if there is an indication of the cause and whether any action had been taken.</p></td>
 </tr>
 <tr class="odd">
 <td>Step 9</td>
-<td>The community pharmacist assesses the information available and advises the patient to continue with current medication, advised adjustments or recommends a medication review with the GP</td>
+<td>The community pharmacist assesses the information available and advises the patient to continue with current medication, advised adjustments or recommends a medication review with the GP.</td>
 </tr>
 <tr class="even">
 <td>Step 10</td>
-<td>The community pharmacist records details of the advice given and any recommendations for changes to medication and justification for the proposed changes</td>
+<td>The community pharmacist records details of the advice given and any recommendations for changes to medication and justification for the proposed changes.</td>
 </tr>
 <tr class="odd">
 <td>Step 11</td>
-<td>The community pharmacy system passes the information to the GP system for action and/or as a record of the review</td>
+<td>The community pharmacy system passes the information to the GP system for action and/or as a record of the review.</td>
 </tr>
 </tbody>
 </table>

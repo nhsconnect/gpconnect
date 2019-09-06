@@ -17,18 +17,18 @@ There are several GP clinical systems in use in England and, although there are 
 
 For each of these clinical areas in GP systems, there is usually a separate screen or module for entering and viewing data. However, it is normal that there are a number of different ways for a user to view data that has been entered. It is common, for instance, to view an allergy in a separate allergy screen, in a view of a consultation, in a date-ordered screen containing all clinical items often called a journal or care history screen or in a screen that is a one-page summary of the patient record.
 
-Defining all the clinical data areas within a patient record has enabled GP Connect access structured record to more clearly define the scope of the project. It will also help providers and consumers to understand how we intend to make available the whole record and how far we are through that journey in any given release.
+Defining all the clinical data areas within a patient record has enabled GP Connect Access Record Structured to more clearly define the scope of the project. It will also help providers and consumers to understand how we intend to make available the whole record and how far we are through that journey in any given release.
 
 ## Representing the different clinical areas
 
 We have defined a data model for the whole GP record that we are working through a clinical area at a time. This is illustrated in the diagram below:
 
-<img src="images/access_structured/GP_Record_Clinical_Areas_Overview.png" alt="Logical Model" style="max-width:100%;max-height:100%;">
+<a href="images/access_structured/GP_Record_Clinical_Areas_Overview.png"><img src="images/access_structured/GP_Record_Clinical_Areas_Overview.png" alt="Logical Model" style="max-width:100%;max-height:100%;"></a>
 
 In the diagram each of the boxes with a blue outline represents a clinical area. These each contain 1 or more boxes representing FHIR&reg; resources. The FHIR resource boxes are colour coded:
 
 * Green - are resources that were defined for use in GP Connect in a previous version of the specification
-* Orange - are resources that are defined for the first time for use in GP Connect
+* Orange - are resources that are defined for the first time for use in GP Connect in version 1.3.0
 * Blue - are resources that have yet to have their GP Connect usage defined
 
 The clinical areas that are contained in the larger box on the right-hand side, labelled 'Clinical Item', are the clinical areas in which pieces of clinical information are held. The clinical areas on the left of the diagram will be used to model the way the clinical items are viewed, organised and managed in GP systems. The aim being that data can be reproduced in consumer interfaces in a way that maintains the context of the data and most accurately communicates the meaning that was intended by the clinician who created it.

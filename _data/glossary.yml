@@ -82,6 +82,8 @@
   value: "In the context of a development of the GP Connect specification, denotes that the specification is close to completion and is being reviewed by external parties (including providers and consumers) and is subject to corrections and minor change."
 - title: SDS
   value: "Spine Directory Service: central directory of organisations, users and services for consumption by Spine-related applications. GP Connect systems use SDS data about NHS-registered users and accredited systems and services."
+- title: SOAP heading
+  value: "An acronym for subjective, objective, assessment, and plan. A method employed by health care providers to write out and organise notes in a patient's consultation."
 - title: Spine
   value: "A collection of national applications, services and directories operated by NHS Digital that supports the health and social care sector in the exchange of information in national and local IT systems."
 - title: SSP

@@ -26,8 +26,16 @@ An example of where this happens would be if a list of medications contained two
 
 Two PractitionerRole resources would be created that both relate to the same practitioner. However, as the MedicationRequest resource only references the practitioner and not PractitionerRole it will be impossible to ascertain which PractitionerRole relates to which medication.
 
+This issue may occur for any profile where there is a reference to Practitioner rather than PractitionerRole
+
 As a workaround for this issue, in GP Connect when providing responses to queries systems **MUST** only supply 1 PractitionerRole per practitioner. If more than one should exist then the system **MUST NOT** supply any.
 
 ## Consultation retrieval ##
 
 Depending on the provider system not every item in a patient's clinical record will be recorded as part of a consultation. Therefore, a consumer system making consultation-oriented queries only must not expect to obtain all items in the patient record.
+
+## Data Quality ##
+
+The purpose of GP Connect is to make the data recorded in the patient's GP practice record available throughput the NHS to support the direct care of the patient. If there are any gaps, mistakes or other quality issues with the data in the GP practice record, these issues will show up in the data supplied by GP Connect. The quality of data will depend on the work done by local GP practices and will vary a great deal accross the estate.
+
+Further work to improve the quality of data recorded in the GP practice is outside the scope of GP Connect.

@@ -7,11 +7,11 @@ permalink: accessrecord_usecase_3.38.html
 summary: "Use case for community pharmacist providing spirometry services"
 ---
 
-**Brief description:**
+## Brief description 
 
-The community pharmacist is certified to provide Spirometry tests. Providing this service to patients can reduce the workload on the local GP Practice(s) so the Practice(s) can focus on higher priority or more critical services and thus the local GP Practice(s) refer patients to the community pharmacist for tests rather than conduct them themselves. This will most commonly be for patients with Asthma to check that the condition is being managed well.
+The community pharmacist is certified to provide spirometry tests. Providing this service to patients can reduce the workload on the local GP practice(s) so the practice(s) can focus on higher priority or more critical services and thus the local GP practice(s) refer patients to the community pharmacist for tests rather than conduct them themselves. This will most commonly be for patients with asthma to check that the condition is being managed well.
 
-**Use case justification:**
+## Use case justification 
 
 Clinical and administration:
 
@@ -26,7 +26,7 @@ Patient-focused:
   - optimise the sign-posting of patients to the most appropriate endpoint taking into consideration patient-specific healthcare history and current concerns
   - better patient experience as they are not being asked for information which should already be available to the GP
 
-**Primary actors:**
+## Primary actors 
 
   - GP
   - community pharmacist
@@ -34,34 +34,34 @@ Patient-focused:
   - community pharmacy IT system
   - GP clinical systems
 
-**Secondary actors:**
+## Secondary actors 
 
   - patient
 
-**Triggers:**
+## Triggers 
 
   - the patient attends a certified Spirometry service at a community pharmacy
 
-**Pre-conditions:**
+## Preconditions 
 
-  - the patient has been referred to the spirometry service from their GP / primary care service
+  - the patient has been referred to the spirometry service from their GP/primary care service
   - the patient's details have been verified and entered on the community pharmacy IT system
-  - the community pharmacist has the correct / appropriate system access rights
-  - the patient's GP (practice / federation) has agreed to share patient information via GP Connect with the community pharmacy
-  - the patient consents to this shared information being viewed / used
+  - the community pharmacist has the correct/appropriate system access rights
+  - the patient's GP (practice/federation) has agreed to share patient information via GP Connect with the community pharmacy
+  - the patient consents to this shared information being viewed/used
   - electronic interactions between GP clinical system/GP Connect/community pharmacy IT system have been correctly configured
 
-**Post conditions:**
+## Postconditions 
 
-  - **On success**
+  - **On success:**
     
       - the information provided by GP Connect is used to inform the community pharmacist of all the patient's relevant medical history such that the community pharmacist can provide the best possible advice regarding the patient's condition
 
-  - **Guaranteed**
+  - **Guaranteed:** 
     
       - the patient is appropriately assessed according to the test results and any information the patient provides
 
-**Basic flow with alternative and exception flows:**
+## Basic flow with alternative and exception flows 
 
 <table>
 <thead>
@@ -73,15 +73,15 @@ Patient-focused:
 <tbody>
 <tr class="odd">
 <td>Step 1</td>
-<td>The patient is referred to the community pharmacist for Spirometry service by the GP and a patient record is created on the community pharmacy IT system</td>
+<td>The patient is referred to the community pharmacist for spirometry service by the GP and a patient record is created on the community pharmacy IT system.</td>
 </tr>
 <tr class="even">
 <td>Step 2</td>
-<td>The community pharmacist accesses the patient record in the community pharmacy system</td>
+<td>The community pharmacist accesses the patient record in the community pharmacy system.</td>
 </tr>
 <tr class="odd">
 <td>Step 3</td>
-<td>The community pharmacist accesses GP Connect to retrieve the medical history from the patient's registered GP system</td>
+<td>The community pharmacist accesses GP Connect to retrieve the medical history from the patient's registered GP system.</td>
 </tr>
 <tr class="even">
 <td>Step 4</td>
@@ -99,27 +99,27 @@ Patient-focused:
 <li><p>Test Results relating to Spirometry</p></li>
 <li><p>Allergies</p></li>
 </ul>
-<p>Items marked * could be time limited for a repeat patient to only return information since the last Spirometry test</p></td>
+<p>Items marked * could be time limited for a repeat patient to only return information since the last spirometry test.</p></td>
 </tr>
 <tr class="even">
 <td>Step 6</td>
-<td>GP Connect presents the GP patient record to the community pharmacy system</td>
+<td>GP Connect presents the GP patient record to the community pharmacy system.</td>
 </tr>
 <tr class="odd">
 <td>Step 7</td>
-<td>The community pharmacy system presents the relevant parts of the GP record to the community pharmacist</td>
+<td>The community pharmacy system presents the relevant parts of the GP record to the community pharmacist.</td>
 </tr>
 <tr class="even">
 <td>Step 8</td>
-<td>The community pharmacist reviews the patient medical history, discusses with the patient about their condition and management thereof and performs the Spirometry test as well as taking any other measurements required.</td>
+<td>The community pharmacist reviews the patient medical history, discusses with the patient about their condition and management thereof and performs the spirometry test as well as taking any other measurements required.</td>
 </tr>
 <tr class="odd">
 <td>Step 9</td>
-<td>The community pharmacist reviews the test results to check they are in range and consistent with the patient's condition and circumstances</td>
+<td>The community pharmacist reviews the test results to check they are in range and consistent with the patient's condition and circumstances.</td>
 </tr>
 <tr class="even">
 <td>Step 10</td>
-<td>The community pharmacist records the test results and returns the results to the registered GP system</td>
+<td>The community pharmacist records the test results and returns the results to the registered GP system.</td>
 </tr>
 <tr class="odd">
 <td colspan="2"><strong>Alternative Path 1</strong></td>
@@ -130,11 +130,11 @@ Patient-focused:
 </tr>
 <tr class="odd">
 <td>Step 9</td>
-<td>The community pharmacist notes that the results are out of range and along with the information available determines a change of medication may be required</td>
+<td>The community pharmacist notes that the results are out of range and along with the information available determines a change of medication may be required.</td>
 </tr>
 <tr class="even">
 <td>Step 10</td>
-<td>As above, but additionally includes a recommendation for a change of medication</td>
+<td>As above, but additionally includes a recommendation for a change of medication.</td>
 </tr>
 <tr class="odd">
 <td colspan="2"><strong>Alternative Path 2</strong></td>
@@ -145,15 +145,15 @@ Patient-focused:
 </tr>
 <tr class="odd">
 <td>Step 9a</td>
-<td>The community pharmacist notes that there is information within the medical history which is not consistent with the patients test results and the patient's description of management of their condition. For example, the patient has had a number of hospital admissions for respiratory problems but appears to be managing their asthma well and the test results are good.</td>
+<td>The community pharmacist notes that there is information within the medical history which is not consistent with the patient's test results and the patient's description of management of their condition. For example, the patient has had a number of hospital admissions for respiratory problems, but appears to be managing their asthma well and the test results are good.</td>
 </tr>
 <tr class="even">
 <td>Step 9b</td>
-<td>The community pharmacist considers whether there could be alternative problems, for example are respiratory problems being caused by a different condition. The community pharmacist seeks other evidence in the medical history such as allergies which are not managed by medication and thus could indicate possible anaphylaxis as cause of some respiratory problems.</td>
+<td>The community pharmacist considers whether there could be alternative problems, for example are respiratory problems being caused by a different condition. The community pharmacist seeks other evidence in the medical history, such as allergies which are not managed by medication, and thus could indicate possible anaphylaxis as cause of some respiratory problems.</td>
 </tr>
 <tr class="odd">
 <td>Step 10</td>
-<td>As above, but additionally includes details of any further problems / diagnosis and / or recommends medication changes</td>
+<td>As above, but additionally includes details of any further problems/diagnosis and/or recommends medication changes.</td>
 </tr>
 </tbody>
 </table>

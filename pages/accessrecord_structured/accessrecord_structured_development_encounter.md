@@ -4,9 +4,17 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_encounter.html
-summary: "Guidance for populating the Encounter resource for consultations"
+summary: "Guidance for populating and consuming the Encounter profile for Consultations"
 div: resource-page
 ---
+
+## Introduction ##
+
+The headings below list the elements of the `Encounter` profile and describes how to populate and consume them for Consultations.
+
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
+
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Encounter profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1)." %}
 
 ## Encounter elements ##
 
@@ -20,7 +28,7 @@ div: resource-page
   </tr>
 </table>
 
-The logical identifier of the Encounter resource.
+The logical identifier of the `Encounter` profile.
 
 ### meta.profile ###
 
@@ -32,7 +40,9 @@ The logical identifier of the Encounter resource.
   </tr>
 </table>
 
-The Encounter profile URL.
+The `Encounter` profile URL.
+
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1)
 
 ### identifier ###
 
@@ -46,7 +56,7 @@ The Encounter profile URL.
 
 This is for business identifiers.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 ### status ###
 
@@ -58,12 +68,12 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed value of **finished**.
+Where the consultation record has been finalised on the provider system set to `finished`.
+
+Where the consultation record has been saved onto the provider system in a draft (or equivalent) status, set to `unknown`.
 
 Existing vocabulary is driven by use of Encounter for appointment style encounters rather than provision of consultation context.
-Hence, use most appropriate value from limited set available.
-
-Some systems allow consultations to be assigned a draft or incomplete status, but this status is not conveyed in GP Connect as the information recorded in such consultation is still treated as authoritative by the source systems.
+Hence, use the most appropriate value from limited set available.
 
 ### type ###
 
@@ -75,9 +85,7 @@ Some systems allow consultations to be assigned a draft or incomplete status, bu
   </tr>
 </table>
 
-Carries the consultation type as displayed by system via the CodeableConcept <code>type.text</code> attribute.
-
-TO DO - rule a mapping to a SNOMED CT vocabulary in or out
+Carries the consultation type as displayed by the system. This may be a SNOMED CT code or free text.
 
 ### subject ###
 
@@ -89,7 +97,7 @@ TO DO - rule a mapping to a SNOMED CT vocabulary in or out
   </tr>
 </table>
 
-Reference to <code>Patient</code> resource representing the patient against whom the source consultation/encounter was recorded.
+Reference to <code>Patient</code> profile representing the patient against whom the source consultation/encounter was recorded.
 
 
 ### participant ###
@@ -105,24 +113,13 @@ Reference to <code>Patient</code> resource representing the patient against whom
 This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system.
 
 Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary.
-This should reference a <code>Practitioner</code> resource representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
+This should reference a `Practitioner` profile representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
 
 Other participants, such as registrars, trainees or other parties present, may be referenced but with a participation type of <code>PART</code>.
 
 No other values of participation type should be used.
 
 The authorship of the consultation/encounter - that is, the actual user who entered the information on the system should be expressed via <code>List.source</code>.
-
-### appointment ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(Appointment)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
 
 ### period ###
 
@@ -134,7 +131,7 @@ The authorship of the consultation/encounter - that is, the actual user who ente
   </tr>
 </table>
 
-If recorded, <code>period.start</code> is mandatory and should be populated with the displayed consultation date and time.
+If recorded, <code>period.start</code> is mandatory and should be populated with the date and time the consultation started.
 
 <code>period.end</code> should be populated where the encounter end date and time is known or calculated and populated where the duration is known.
 
@@ -165,7 +162,7 @@ Should be calculated and populated where an end time for the consultation is kno
   </tr>
 </table>
 
-References an instance of the Location resource that provides more detail on where the consultation/encounter took place - for example, branch surgery.
+References an instance of the `Location` profile that provides more detail on where the consultation/encounter took place - for example, branch surgery.
 
 <code>location.status</code> and <code>location.period</code> are not used.
 
@@ -181,11 +178,13 @@ References an instance of the Location resource that provides more detail on whe
 
 Reference to the responsible organisation for the consultation/encounter.
 
-## Elements not used by GP Connect ##
+<br>
+
+<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated.
 
-### statusHistory ###
+<h3 style="color:#ED1951;"> statusHistory </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -193,9 +192,7 @@ The following elements **SHALL NOT** be populated.
   </tr>
 </table>
 
-Not used.
-
-### class ###
+<h3 style="color:#ED1951;"> class </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -203,9 +200,7 @@ Not used.
   </tr>
 </table>
 
-Not used.
-
-### classHistory ###
+<h3 style="color:#ED1951;"> classHistory </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -213,9 +208,7 @@ Not used.
   </tr>
 </table>
 
-Not used.
-
-### priority ###
+<h3 style="color:#ED1951;"> priority </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -223,9 +216,7 @@ Not used.
   </tr>
 </table>
 
-Not used.
-
-### episodeOfCare ###
+<h3 style="color:#ED1951;"> episodeOfCare </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -233,9 +224,9 @@ Not used.
   </tr>
 </table>
 
-The current scope of GP Connect excludes the episode of care resource.
+The current scope of GP Connect excludes episode of care.
 
-### incomingReferral ###
+<h3 style="color:#ED1951;"> incomingReferral </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -245,7 +236,15 @@ The current scope of GP Connect excludes the episode of care resource.
 
 The current scope of GP Connect excludes inbound referrals.
 
-### reason ###
+<h3 style="color:#ED1951;"> appointment </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Appointment)</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;"> reason </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -255,7 +254,7 @@ The current scope of GP Connect excludes inbound referrals.
 
 The reason for the consultation will be associated to the <code>appointment</code>.
 
-### diagnosis ###
+<h3 style="color:#ED1951;"> diagnosis </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -263,9 +262,9 @@ The reason for the consultation will be associated to the <code>appointment</cod
   </tr>
 </table>
 
-The diagnosis will be associated to the consultation via the <code>list</code> resource.
+The diagnosis will be associated to the consultation via the <code>list</code> profile.
 
-### account ###
+<h3 style="color:#ED1951;"> account </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -273,9 +272,7 @@ The diagnosis will be associated to the consultation via the <code>list</code> r
   </tr>
 </table>
 
-Not used.
-
-### hospitalization ###
+<h3 style="color:#ED1951;"> hospitalization </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -283,14 +280,10 @@ Not used.
   </tr>
 </table>
 
-Not used.
-
-### partOf ###
+<h3 style="color:#ED1951;"> partOf </h3>
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
   </tr>
 </table>
-
-Not used.

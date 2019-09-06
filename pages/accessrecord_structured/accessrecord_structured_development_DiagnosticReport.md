@@ -4,19 +4,20 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_DiagnosticReport.html
-summary: "Guidance for populating and consuming patholgy data in GP Connect"
+summary: "Guidance for populating and consuming pathology data in GP Connect"
+published: false
 ---
 
 
 ## Introduction ##
 
-The headings below list the elements of the DiagnosticReport resource and describe how to populate and consume them.
+The headings below list the elements of the `DiagnosticReport` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_dagnosticReport.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [DiagnosticReport profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)." %}
 
-## DiagnosticReport resource elements ##
+## `DiagnosticReport` resource elements ##
 
 ### id ###
 
@@ -28,7 +29,7 @@ The headings below list the elements of the DiagnosticReport resource and descri
   </tr>
 </table>
 
-The logical identifier of the DiagnosticReport resource.
+The logical identifier of the `DiagnosticReport` resource.
 
 ### meta.profile ###
 
@@ -40,7 +41,7 @@ The logical identifier of the DiagnosticReport resource.
   </tr>
 </table>
 
-The DiagnosticReport profile URL.
+The `DiagnosticReport` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnostocReport-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)
 
@@ -56,11 +57,11 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
 
 This is for business identifiers.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
-This  **MUST**  be a GUID.
+This **MUST** be a GUID.
 
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore stored with the source data).
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
 
@@ -77,7 +78,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 A link to the ProcedureRequest that contains details of a request that was made. Where present this may include details of who requested the tests and why the test was requested.
 
-As currently test requests are not submitted in a FHIR format this is not the oigianl request but is currently used as a container to hold details that were present in the original request.
+As currently test requests are not submitted in a FHIR format this is not the original request but is currently used as a container to hold details that were present in the original request.
 
 ### status ###
 
@@ -101,7 +102,7 @@ The status of the DiagnosticReport. In GP systems these are most likely to be 'f
   </tr>
 </table>
 
-The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available e.g. pathology, microbiology etc.
+The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available - for example, pathology, microbiology.
 
 ### code ###
 
@@ -208,11 +209,11 @@ Clinical Interpretation of test results in a text format and notes written by pe
 For clarity notes may be captured at a number of levels within a DiagnosticReport. There may also be notes related to the specimen, test group header or individual test result. It is the consuming systems responsibility to make sure all relevant notes are displayed to the user.
 
 <br>
-## Elements **not in use** ##
+<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
 
-### effective ###
+<h3 style="color:#ED1951;"> effective </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -222,7 +223,7 @@ The following elements **MUST NOT** be populated:
 
 Out of scope for the current iteration.
 
-### context ###
+<h3 style="color:#ED1951;"> context </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -233,7 +234,7 @@ Out of scope for the current iteration.
 Out of scope for the current iteration.
 
 
-### imagingStudy ###
+<h3 style="color:#ED1951;"> imagingStudy </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -243,7 +244,7 @@ Out of scope for the current iteration.
 
 Out of scope for the current iteration.
 
-### image ###
+<h3 style="color:#ED1951;"> image </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -253,7 +254,7 @@ Out of scope for the current iteration.
 
 Out of scope for the current iteration.
 
-### presentedForm ###
+<h3 style="color:#ED1951;"> presentedForm </h3>
 
 <table class='resource-attributes'>
   <tr>

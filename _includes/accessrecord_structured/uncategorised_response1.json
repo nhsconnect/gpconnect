@@ -1,4 +1,4 @@
-{% highlight json %}
+ {% highlight json %}
 {
   "resourceType": "Bundle",
   "meta": {
@@ -203,12 +203,12 @@
         },
         "status": "current",
         "mode": "snapshot",
-        "title": "Uncategorised data List",
+        "title": "Miscellaneous record",
         "code": {
           "coding": [
             {
-              "code": "933361000000108",
-              "display": "Medications and medical devices",
+              "code": "826501000000100",
+              "display": "Miscellaneous record",
               "system": "http://snomed.info/sct"
             }
           ]
@@ -239,7 +239,6 @@
         ]
       }
     },
-
     {
       "resource": {
         "resourceType": "Observation",
@@ -255,7 +254,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "703421000",
-              "display": "Temperature (observable entity)",
+              "display": "Temperature",
               "extension": {
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
@@ -271,8 +270,7 @@
               }
             }
           ]
-        }
-      },
+        },
       "valueQuantity": {
         "value": 36.7,
         "unit": "C",
@@ -286,7 +284,7 @@
         "reference": "Encounter/Encounter1"
       },
       "effectiveDateTime": "2019-03-28T10:30:00"
-    },
+    }},
     {
       "resource": {
         "resourceType": "Observation",
@@ -302,7 +300,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "1097811000000106",
-              "display": "Arterial oxygen saturation breathing room air at rest (observable entity)",
+              "display": "Arterial oxygen saturation breathing room air at rest",
               "extension": {
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
@@ -318,21 +316,21 @@
               }
             }
           ]
-        }
-      },
-      "valueQuantity": {
-        "value": 96,
-        "unit": "%",
-        "system": "http://unitsofmeasure.org",
-        "code": "%"
-      },
-      "subject": {
-        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
-      },
-      "encounter": {
-        "reference": "Encounter/Encounter1"
-      },
-      "effectiveDateTime": "2019-03-28T10:30:00"
+        },
+        "valueQuantity": {
+          "value": 96,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+        "effectiveDateTime": "2019-03-28T10:30:00"
+      }
     },
     {
       "resource": {
@@ -349,7 +347,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": " 86290005",
-              "display": "Respiratory rate (observable entity)",
+              "display": "Respiratory rate",
               "extension": {
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                 "extension": [
@@ -365,21 +363,21 @@
               }
             }
           ]
-        }
-      },
-      "valueQuantity": {
-        "value": 16,
-        "unit": "breaths per minute",
-        "system": "http://unitsofmeasure.org",
-        "code": "{resps}/min"
-      },
-      "subject": {
-        "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
-      },
-      "encounter": {
-        "reference": "Encounter/Encounter1"
-      },
-      "effectiveDateTime": "2019-03-28T10:30:00"
+        },
+        "valueQuantity": {
+          "value": 16,
+          "unit": "breaths per minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "{resps}/min"
+        },
+        "subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+        "effectiveDateTime": "2019-03-28T10:30:00"
+      }
     }
   ]
 }

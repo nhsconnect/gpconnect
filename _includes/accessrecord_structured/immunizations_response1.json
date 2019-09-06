@@ -244,7 +244,7 @@
         },
         "status": "current",
         "mode": "snapshot",
-        "title": "Immunisations List",
+        "title": "Immunisations",
         "code": {
           "coding": [
             {
@@ -276,150 +276,152 @@
       }
     },
     {
-      "resourceType": "Immunization",
-      "id": "eba25af1-5b74-4790-aa5a-2134fd27ad45",
-      "meta": {
-        "profile": [
-          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1"
-        ]
-      },
-      "extension": [
-        {
-          "url": " https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ParentPresent-1",
-          "valueBoolean": true
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "eba25af1-5b74-4790-aa5a-2134fd27ad45",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1"
+          ]
         },
-        {
-          "url": " https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-DateRecorded-1",
-          "valueDateTime": "2019-06-28T10:00:00+01:00"
-        },
-        {
-          "url": " https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-VaccinationProcedure-1",
-          "valueCodeableConcept": {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "170378007",
-                "display": "First hepatitis A vaccination"
-              }
-            ]
-          }
-        }
-      ],
-      "identifier": [
-        {
-          "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
-          "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
-        }
-      ],
-      "status": "completed",
-      "notGiven": false,
-      "vaccineCode": {
-        "coding": [
+        "extension": [
           {
-            "system": "http://hl7.org/fhir/v3/NullFlavor ",
-            "code": "UNK"
+            "url": " https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ParentPresent-1",
+            "valueBoolean": true
+          },
+          {
+            "url": " https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-DateRecorded-1",
+            "valueDateTime": "2019-06-28T10:00:00+01:00"
+          },
+          {
+            "url": " https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-VaccinationProcedure-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "170378007",
+                  "display": "First hepatitis A vaccination"
+                }
+              ]
+            }
           }
         ],
-        "text": "Unknown"
-      },
-      "patient": {
-        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
-      },
-      "encounter": {
-        "reference": "Encounter/Encounter1"
-      },
-      "date": "2019-06-28",
-      "primarySource": true,
-      "location": {
-        "reference": "Location/17"
-      },
-      "manufacturer": {
-        "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eec"
-      },
-      "lotNumber": "AAJN11K",
-      "expirationDate": "2019-12-15",
-      "site": {
-        "coding": [
+        "identifier": [
           {
-            "system": "http://snomed.info/sct",
-            "code": "368209003",
-            "display": "Right upper arm"
+            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
           }
-        ]
-      },
-      "route": {
-        "coding": [
+        ],
+        "status": "completed",
+        "notGiven": false,
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/v3/NullFlavor ",
+              "code": "UNK"
+            }
+          ],
+          "text": "Unknown"
+        },
+        "patient": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "encounter": {
+          "reference": "Encounter/Encounter1"
+        },
+        "date": "2019-06-28",
+        "primarySource": true,
+        "location": {
+          "reference": "Location/17"
+        },
+        "manufacturer": {
+          "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eec"
+        },
+        "lotNumber": "AAJN11K",
+        "expirationDate": "2019-12-15",
+        "site": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "368209003",
+              "display": "Right upper arm"
+            }
+          ]
+        },
+        "route": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "34206005",
+              "display": "Subcutaneous route"
+            }
+          ]
+        },
+        "doseQuantity": {
+          "value": 0.5,
+          "system": "http://unitsofmeasure.org",
+          "code": "ml"
+        },
+        "practitioner": [
           {
-            "system": "http://snomed.info/sct",
-            "code": "34206005",
-            "display": "Subcutaneous route"
+            "role": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/stu3/valueset-immunization-role.html",
+                  "code": "AP"
+                }
+              ]
+            },
+            "actor": {
+              "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+            }
           }
-        ]
-      },
-      "doseQuantity": {
-        "value": 0.5,
-        "system": "http://unitsofmeasure.org",
-        "code": "ml"
-      },
-      "practitioner": [
-        {
-          "role": {
-            "coding": [
-              {
-                "system": "http://hl7.org/fhir/stu3/valueset-immunization-role.html",
-                "code": "AP"
-              }
-            ]
-          },
-          "actor": {
-            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-          }
-        }
-      ],
-      "note": [
-        {
-          "text": "Notes on adminstration of vaccine"
-        }
-      ],
-      "explanation": {
-        "reason": [
+        ],
+        "note": [
           {
-            "coding": [
-              {
-                "system": "http://snomed.info/sct",
-                "code": "171279008",
-                "display": "Immunisation due"
-              }
-            ]
+            "text": "Notes on adminstration of vaccine"
           }
-        ]
-      },
-      "vaccinationProtocol": [
-        {
-          "doseSequence": 1,
-          "seriesDoses": 3,
-          "targetDisease": [
+        ],
+        "explanation": {
+          "reason": [
             {
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "40468003",
-    			  "display": "Viral hepatitis, type A"
+                  "code": "171279008",
+                  "display": "Immunisation due"
                 }
               ]
             }
-          ],
-          "doseStatus": {
-            "coding": [
+          ]
+        },
+        "vaccinationProtocol": [
+          {
+            "doseSequence": 1,
+            "seriesDoses": 3,
+            "targetDisease": [
               {
-                "system": "http://hl7.org/fhir/stu3/valueset-vaccination-protocol-dose-status.html",
-                "code": "count",
-                "display": "Counts"
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "40468003",
+      			  "display": "Viral hepatitis, type A"
+                  }
+                ]
               }
-            ]
+            ],
+            "doseStatus": {
+              "coding": [
+                {
+                  "system": "http://hl7.org/fhir/stu3/valueset-vaccination-protocol-dose-status.html",
+                  "code": "count",
+                  "display": "Counts"
+                }
+              ]
+            }
           }
-        }
-      ]
+        ]
+      }
     }
   ]
 }

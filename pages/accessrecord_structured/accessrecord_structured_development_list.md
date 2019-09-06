@@ -4,13 +4,13 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_list.html
-summary: "Guidance for populating and consuming the List resource"
+summary: "Guidance for populating and consuming the List profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below detail the elements of the `List` resource and describe how to populate and consume them.
+The headings below detail the elements of the `List` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
 
@@ -113,12 +113,19 @@ Descriptive name for the list. This will be taken from the 'display' element fro
 
 The purpose of the list.
 
-There are currently 3 possible purposes of a list in GP Connect that will be represented by the following SNOMED codes.
-1. Medications and medical devices - 933361000000108
-2. Allergies and adverse reactions - 886921000000105
-3. Ended allergies - 1103671000000101
+There are currently 6 possible purposes of a list in response to a query for a clinical area in GP Connect that will be represented by the following SNOMED codes.
 
-The above code for 'Ended allergies' should be used for resolved allergies. This code is new at the time of publishing this version of the specification and will be included in the October 2018 SNOMED release.
+| Purpose | SNOMED Code |SNOMED Preferred Term / List.title|
+| ------ | ------ |
+|Medications and medical devices | 933361000000108| Medications and medical devices |
+|Allergies and adverse reactions | 886921000000105| Allergies and adverse reaction  |
+|Ended allergies | 1103671000000101| Ended allergies |
+|Immunisations | 1102181000000102| Immunisations |
+|Consultation | 325851000000107| Consultation |
+|Problems | 717711000000103| Problems |
+|Uncategorised data | 826501000000100| Miscellaneous record |
+
+The above code for 'Ended allergies' should be used for resolved allergies.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
@@ -214,11 +221,11 @@ Why the list is empty.
 
 A FHIR code of `No Content Recorded` **SHALL** be used if a query returns no results to enter into a list. In this case, the 'note' field **SHALL** be populated with the text 'Information not available'.
 
-## List elements not in use ##
+<h2 style="color:#ED1951;"> List elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
 
-### id ###
+<h3 style="color:#ED1951;"> id </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -226,7 +233,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.versionId ###
+<h3 style="color:#ED1951;"> meta.versionId </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -234,7 +241,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.lastUpdated ###
+<h3 style="color:#ED1951;"> meta.lastUpdated </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -242,7 +249,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### Source ###
+<h3 style="color:#ED1951;"> Source </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -250,11 +257,10 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### orderedBy ###
+<h3 style="color:#ED1951;"> orderedBy </h3>
 
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
-

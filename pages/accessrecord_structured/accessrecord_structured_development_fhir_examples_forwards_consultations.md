@@ -37,7 +37,7 @@ The following is an example of a request/response where a consumer using version
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
-<a href="accessrecord_structured/consultations_forwards_response1.json">Download response as json</a>
+{% include accessrecord_structured/consultations_forwards_response1.json %}
 
 Note the inclusion of an OperationOutcome with two issues about the unsupported parameters, includeConsultations and includeProblems.
 

@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_design.html
 summary: "Overview of the design decisions made in relation to the Access Record Structured capability"
+published: false
 ---
 
 ## Access Record Structured capability scope ##

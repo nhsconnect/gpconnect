@@ -9,7 +9,7 @@ summary: "Retrieve a patient's record in structured format"
 
 ## Use case ##
 
-Retrieve a patient's record in FHIR&reg; structured format from a GP practice.
+Retrieve a patient's record in FHIR&reg; structured format from a GP practice. Full details of the use cases are available on the [Business Requirements page](accessrecord_structured_requirements.html#use-cases-and-business-processes).
 
 ## Security ##
 
@@ -136,7 +136,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 			<li>If the <code>medicationSearchFromDate</code> is not specified, all medication will be returned.</li>
 			<li>If the <code>medicationSearchFromDate</code> is populated, all medications which are active on or after the <code>medicationSearchFromDate</code> <b>MUST</b> be returned.</li>
 			<li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li> 
+	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
     	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
@@ -161,7 +161,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 			     <li>If the <code>consultationSearchPeriod.start</code> is populated, all consultations on or after the <code>consultationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
            <li>If the <code>consultationSearchPeriod.end</code> is populated, all consultations on or before the <code>consultationSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-          <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
+          <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
 
         <p><i>Part parameter: may only be provided if <code>includeConsultations</code> is set.</i></p>        
@@ -181,26 +181,28 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge">includeProblems</code></td>
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
-      <td>0..1</td>
-      <td>Include problems in the response.</td>
+      <td>0..*</td>
+      <td>Include problems in the response. This is a repeating parameter with each repetition representing a pair of problem significance and status values.</td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeStatus</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterStatus</code></span></td>
       <td><code class="highlighter-rouge">Code</code></td>
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Restrict the problems that are returned by their clinical status
+        Restrict the problems that are returned by their clinical status. <br/>
+        Valueset: <a href="http://hl7.org/fhir/stu3/valueset-condition-clinical.html">http://hl7.org/fhir/stu3/valueset-condition-clinical.html</a> Values <b>MUST</b> be <code>`active`</code> or <code>`inactive`</code><br/>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
       </td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeSignificance</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterSignificance</code></span></td>
       <td><code class="highlighter-rouge">Code</code></td>
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Restrict the problems that are returned by their clinical significance
+        Restrict the problems that are returned by their clinical significance<br/>
+        Valueset: <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ProblemSignificance-1">ValueSet-CareConnect-ProblemSignificance-1</a><br/>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
       </td>
     </tr>
@@ -231,7 +233,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 			     <li>If the <code>uncategorisedDataSearchPeriod.start</code> is populated, all uncategorised data on or after the <code>uncategorisedDataSearchPeriod.start</code> <b>MUST</b> be returned.</li>
            <li>If the <code>uncategorisedDataSearchPeriod.end</code> is populated, all uncategorised data on or before the <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-          <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
+          <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
 
         <p><i>Part parameter: may only be provided if <code>includeUncategorisedData</code> is set.</i></p>        
@@ -271,7 +273,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 
 Each clinical area has its own set of search/filter parameters. These parameters will only apply to their own area and **MUST** have no impact on other parameters.
 
-{% include important.html content="Consumer guidance: The parameters can be used together in a single call or in multiple calls so that information can be retrieved if is required. It is advised that the number of requests that are made to retrieve a patient's record are kept to a minimum." %}
+{% include important.html content="Consumer guidance: The parameters can be used together in a single call or in multiple calls so that information can be retrieved if required. It is advised that the number of requests that are made to retrieve a patient's record are kept to a minimum." %}
 
 The example below shows a fully populated `Parameters` resource as a request to the `$gpc.getstructuredrecord` operation:
 
@@ -319,8 +321,8 @@ The example below shows a fully populated `Parameters` resource as a request to 
           }
         },
         {
-          "name": "numberOfMostRecent",
-          "valueBoolean": "3"
+          "name": "includeNumberOfMostRecent",
+          "valueInteger": "3"
         }
       ]
     },
@@ -328,11 +330,11 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeProblems",
       "part": [
         {
-          "name": "includeStatus",
+          "name": "filterStatus",
           "valueCode": "active"
         },
         {
-          "name": "includeSignificance",
+          "name": "filterSignificance",
           "valueCode": "major"
         }
       ]
@@ -378,9 +380,9 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 #### Error handling ####
 
-The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields is corrupt or a specific business rule/constraint is breached.
 
-The table below shown common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
+The table below shows common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
 
 Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
@@ -389,6 +391,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 |-------------------------|-------------------|
 | The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The provider could not parse the `Parameters` resource.  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| No recognised parameters are provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `patientNHSNumber` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
@@ -400,10 +403,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-|The `filterResults` parameter is passed with a code from a code system other than SNOMED CT | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-|The `resultSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `filterStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `filterSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -412,22 +413,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 |-------------------------|-------------------|
 
-### Forwards and backwards compatibility ###
-
-#### Forwards compatibility ####
-Forwards compatibility is the scenario where a consumer requests a higher version of the API than the provider supports. This requires that a provider **MUST** be able to warn a consumer when they don't support a requested parameter.
-
-In this scenario, providers **MUST** respond in the following way:
-- return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
-- Include information for supported parameters
-- as part of the returned bundle, include an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) with an `issue` for each unsupported parameter where:
-  - `code` = `not-supported`
-  - `severity` = `warn`
-  - `details.coding` = `NOT_IMPLEMENTED`
-  - `details.text` = `<parameter-name> is an unrecognised parameter`
-
-Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as described above to check for incomplete data as a result of unsupported parameters.
-
 ### Request response ###
 
 #### Response headers ####
@@ -435,7 +420,7 @@ Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhi
 ```http
 HTTP/1.1 200 OK
 Cache-Control: no-store
-Content-Type: application/json+fhir; charset=utf-8
+Content-Type: application/fhir+json; charset=utf-8
 Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
@@ -452,8 +437,7 @@ Provider systems **MUST**:
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - `OperationOutcome` containing warnings about any unsupported parameters
-  - resources holding consultations, problems, immunisations, allergies, intolerance, medication and uncategorised data according to the rules below:
+  - resources holding consultations, problems, immunisations, allergies, intolerance, medications, uncategorised data and warnings about unsupported parameters according to the rules below:
 
 Provider systems **SHOULD**:
 
@@ -475,11 +459,11 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - and when the `includeResolvedAllergies` parameter is set to `false`:
 
-    - [`List`](accessrecord_structured_development_list.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
 
   - and when the `includeResolvedAllergies` parameter is set to `true`:
 
-    - [`List`](accessrecord_structured_development_list.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
+    - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
 
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
 
@@ -495,7 +479,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeMedication` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
   - when the `medicationSearchFromDate` parameter is set:
 	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
@@ -521,70 +505,74 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeConsultations' parameter is not set:
+- when the `includeConsultations` parameter is not set:
 
   - no consultation information shall be returned
 
-- when the 'includeConsultations' parameter is set:
-  - [`List`](accessrecord_structured_development_list.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
+- when the `includeConsultations` parameter is set:
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources for linked clinical information
   - and when the `numberOfMostRecent` parameter is set:
     - limit the number of returned consultations to match the included value
 
-- when the 'consultationSearchPeriod' is set:
-  - when a `start` value is set, all consultations after the date **MUST** be returned
-  - and when an `end` value is set, all consultations before the date **MUST** be returned
-  - and when both a `start` and `end` are specified, consultations after the `start` and before the `end` **MUST** be returned
+- when the `consultationSearchPeriod` is set:
+  - when a `start` value is set, all consultations with an `Encounter.period.start` after the date **MUST** be returned
+  - and when an `end` value is set, all consultations with an `Encounter.period.end` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, consultations with an `Encounter.period.start` after the `start` and an `Encounter.period.end` before the `end` **MUST** be returned
 
+- when the `includeNumberOfMostRecent` is set:
+  - consultations **MUST** be ordered by `Encounter.period.start` descending
+  - and the number of most recent consultations matching the parameter value **MUST** be returned
 
 ##### Problems #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeProblems' parameter is not set:
+- when the `includeProblems` parameter is not set:
 
   - no problem information shall be returned
 
-- when the 'includeProblems' parameter is set:
+- when the `includeProblems` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
+  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`Immunization`](accessrecord_structured_development_immunization.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
-- and when the 'includeStatus' parameter is set:
+- and when the `filterStatus` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources with a `clinicalStatus` matching the parameter value and all linked clinical information.
+  - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
 
-- and when the 'includeSignificance' parameter is set:
+- and when the `filterSignificance` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Condition`](accessrecord_structured_problems.html) resources with a `problemSignificance` matching the parameter value and all linked clinical information
+  - problems with a `problemSignificance` matching the parameter value and all linked clinical information
 
 
 ##### Immunisations #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeImmunisations' parameter is not set:
+- when the `includeImmunisations` parameter is not set:
 
   - no immunisation information shall be returned
 
-- when the 'includeImmunisations' parameter is set:
+- when the `includeImmunisations` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
 
 ##### Uncategorised data #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the 'includeUncategorisedData' parameter is not set:
+- when the `includeUncategorisedData` parameter is not set:
 
   - no uncategorised data shall be returned
 
-- when the 'includeUncategorisedData' parameter is set:
+- when the `includeUncategorisedData` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
 
-- when the 'uncategorisedDataSearchPeriod' is set:
-  - when a `start` value is set, all uncategorised data after the date **MUST** be returned
-  - and when an `end` value is set, all uncategorised data before the date **MUST** be returned
-  - and when both a `start` and `end` are specified, uncategorised data after the `start` and before the `end` **MUST** be returned
+- when the `uncategorisedDataSearchPeriod` is set:
+  - when a `start` value is set, all uncategorised data with an `Observation.effectiveTime` after the date **MUST** be returned
+  - and when an `end` value is set, all uncategorised data with an `Observation.effectiveTime` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, uncategorised data with an `Observation.effectiveTime` after the `start` and with an `Observation.effectiveTime` before the `end` **MUST** be returned
 
 ##### Test results #####
 

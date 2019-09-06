@@ -7,13 +7,13 @@ permalink: accessrecord_usecase_3.30.html
 summary: "Use case for palliative care"
 ---
 
-**Brief Description:**
+## Brief description 
 
-The community healthcare team need to be aware of and support the end of life plans made by a patient and their representatives. The items relating to the palliative care need to be identified at the start of providing care and monitored for changes throughout the period of care. The details within the end of life plan will influence the care to be provided and the funding of that care. The elements of the end of life plan may change over time, so it is important to be able to check them quickly for the latest information.
+The community healthcare team needs to be aware of and support the end of life plans made by a patient and their representatives. The items relating to the palliative care need to be identified at the start of providing care and monitored for changes throughout the period of care. The details within the end of life plan will influence the care to be provided and the funding of that care. The elements of the end of life plan may change over time, so it is important to be able to check them quickly for the latest information.
 
-Utilising structured record access enables a consumer system to draw together the necessary elements of the end of life plan, enable searching for specific elements and incorporate elements of the plan into local assessments or plan templates for example,  pull information into the Electronic Palliative Care Co-ordination System (EPaCCS) template.
+Utilising structured record access enables a consumer system to draw together the necessary elements of the end of life plan, enable searching for specific elements and incorporate elements of the plan into local assessments or plan templates - for example, pull information into the Electronic Palliative Care Co-ordination System (EPaCCS) template.
 
-**Use case justification:**
+## Use case justification 
 
 Clinical and administration:
 
@@ -28,23 +28,23 @@ Patient-focused:
   - increased patient safety due to the reduction in manual transcription errors
   - better patient experience as they are not being asked for information which should already be available to the community healthcare service
 
-**Primary actors:**
+## Primary actors 
 
   - Community Healthcare Team
   - GP Connect
   - GP Clinical Systems
-  - Community Healthcare System / EPaCCS
+  - Community Healthcare System/EPaCCS
 
-**Secondary actors:**
+## Secondary actors 
 
   - patient
-  - next of kin / carers / PoA
+  - next of kin/carers/PoA
 
-**Triggers:**
+## Triggers 
 
   - patient has been referred to a Community Healthcare Team and is subject to an End of Life plan
 
-**Pre-conditions:**
+## Preconditions 
 
   - the patient's details have been verified and entered on the community healthcare system (or created by an electronic referral)
   - the community healthcare nurse has the correct/appropriate system access rights
@@ -52,17 +52,17 @@ Patient-focused:
   - the patient consents to this shared information being viewed/used
   - electronic interactions between GP clinical system/GP Connect/community healthcare system have been correctly configured
 
-**Post conditions:**
+## Postconditions 
 
-  - **On success**
+  - **On success:**
     
       - the community healthcare team provide care in keeping with the wishes of the patient in their end of life plan
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the community healthcare team will assess the patient needs based on the information available
 
-**Basic flow with alternative and exception flows:**
+## Basic flow with alternative and exception flows 
 
 <table>
 <thead>
@@ -118,12 +118,12 @@ Patient-focused:
 <ul>
 <li><p>Name</p></li>
 <li><p>Contact Details</p></li>
-<li><p>Authority to make life-sustaining decisions (true / false)</p></li>
+<li><p>Authority to make life-sustaining decisions (true/false)</p></li>
 </ul></li>
 <li><p>Life expectancy prognosis</p></li>
 <li><p>Gold Standard Framework (true / false)</p></li>
 <li><p>Patient Understanding</p></li>
-<li><p>Carer / Next of Kin details and understanding</p>
+<li><p>Carer/Next of Kin details and understanding</p>
 <ul>
 <li><p>Name</p></li>
 <li><p>Contact Details</p></li>
@@ -136,7 +136,7 @@ Patient-focused:
 <li><p>Additional Professional Contacts</p>
 <ul>
 <li><p>Name</p></li>
-<li><p>Professional Group / Service provided</p></li>
+<li><p>Professional Group/Service provided</p></li>
 <li><p>Contact Details</p></li>
 </ul></li>
 <li><p>Medication</p></li>
@@ -146,14 +146,14 @@ Patient-focused:
 </tr>
 <tr class="even">
 <td>Step 8</td>
-<td>The community healthcare nurse reviews the end of life information from the GP clinical system to inform the care to be provided</td>
+<td>The community healthcare nurse reviews the end of life information from the GP clinical system to inform the care to be provided.</td>
 </tr>
 <tr class="odd">
-<td colspan="2"><strong>Alternative Path - Existing Patient with change to End of Life Plan</strong></td>
+<td colspan="2"><strong>Alternative path - existing patient with change to End of Life plan</strong></td>
 </tr>
 <tr class="even">
 <td>Step 1</td>
-<td>The community healthcare nurse is providing ongoing palliative care</td>
+<td>The community healthcare nurse is providing ongoing palliative care.</td>
 </tr>
 <tr class="odd">
 <td>Step 2 - 7</td>
@@ -161,7 +161,7 @@ Patient-focused:
 </tr>
 <tr class="even">
 <td>Step 8</td>
-<td>The community healthcare nurse can see whether the GP clinical system has any records of changes to the patients end of life care plans or supporting information and can provide the appropriate care and support</td>
+<td>The community healthcare nurse can see whether the GP clinical system has any records of changes to the patients end of life care plans or supporting information and can provide the appropriate care and support.</td>
 </tr>
 </tbody>
 </table>

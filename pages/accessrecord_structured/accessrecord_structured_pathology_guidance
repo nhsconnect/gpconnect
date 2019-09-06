@@ -3,19 +3,19 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation.html
-summary: "Guidance for populating and consuming patholgy data in GP Connect"
+summary: "Guidance for populating and consuming pathology data in GP Connect"
 div: resource-page
 ---
 
-# Investigations Modeling
+# Investigations modeling
 
-## Patholgy Reporting in GP Practices
+## Patholgy reporting in GP practices
 Currently in GP practices 
 ## Requesting
 
-## Receiving Reports
+## Receiving reports
 ### EDIFact
-## Filing Reports
+## Filing reports
 ## Report structure
 
 ## Scope
@@ -25,7 +25,7 @@ Currently in GP practices
 |---------------------|-------------------| ----------|
 | [`ProcedureRequest`](accessrecord_structured_development_medication.html) | For requesting investigations to be performed by a laboratory | Yes |
 | ['DiagnosticReport'](accessrecord_structured_development_medicationrequest.html) | A reporting structure that contains results and any relevant data such as specimen details or attribution | Yes |
-| [`Specimen`](accessrecord_structured_development_medicationstatement.html) | Used to make a statement about the medication a person has taken and can be 'basedOn' a record of an historic prescription that would be represented using one or more MedicationRequest resources. | Yes |
+| [`Specimen`](accessrecord_structured_development_medicationstatement.html) | Used to make a statement about the medication a person has taken and can be 'basedOn' a record of an historic prescription that would be represented using one or more `MedicationRequest` resources. | Yes |
 | `Observation` | Represent exactly what medication was dispensed. In some cases, this can differ slightly from what was ordered/prescribed. | No |
 
 ## Using the FHIR profiles to represent filed results

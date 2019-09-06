@@ -117,7 +117,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
     {
       "mode": "server",
       "security": {
-        "cors": "true"
+        "cors": true
       },
       "resource": [
         {
@@ -198,7 +198,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
               "code": "search-type"
             }
           ],
-          "updateCreate": "false",
+          "updateCreate": false,
           "searchParam": [
             {
               "name": "identifier",

@@ -4,13 +4,13 @@ keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_bundle.html
-summary: "Guidance for populating and consuming the Bundle resource"
+summary: "Guidance for populating and consuming the Bundle profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the Bundle resource and describe how to populate and consume them.
+The headings below list the elements of the `Bundle` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
@@ -18,7 +18,7 @@ The headings below list the elements of the Bundle resource and describe how to 
 
 ## Bundle elements ##
 
-The logical identifier of the Bundle resource.
+The logical identifier of the `Bundle` profile.
 
 ### meta.profile ###
 
@@ -72,13 +72,13 @@ See below for subelements of this BackboneElement.
   </tr>
 </table>
 
-A Resource carried within the Bundle.  This can any type of resource, for example Patient, Organization, AllergyIntolerance.
+A resource carried within the Bundle.  This can any type of resource, for example `Patient`, `Organization`, `AllergyIntolerance`.
 
-## Bundle elements not in use ##
+<h2 style="color:#ED1951;"> Bundle elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
 
-### id ###
+<h3 style="color:#ED1951;"> id </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -86,7 +86,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.versionId ###
+<h3 style="color:#ED1951;"> meta.versionId </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -94,7 +94,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.lastUpdated ###
+<h3 style="color:#ED1951;"> meta.lastUpdated </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -102,7 +102,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### entry.fullUrl ###
+<h3 style="color:#ED1951;"> entry.fullUrl </h3>
 
 <table class='resource-attributes'>
   <tr>

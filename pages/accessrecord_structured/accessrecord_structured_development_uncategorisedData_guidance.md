@@ -1,5 +1,5 @@
 ---
-title: Observation - uncategorised data
+title: Uncategorised data guidance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -21,25 +21,19 @@ The volume of this categorisation varies between provider systems. For the major
 * Document
 * Flag/Alert
 * Immunisation
+* Investigation
 * Medication and Medical Device
 * Problem
 * Referral
 * Test Request
-* Test Result
 
 ## What is uncategorised data? ##
-There is data that a clinician/user will enter without identifying what type of information they are recorded. This information is usually entered as either free text or a combination of clinical code(s), values, qualifiers and text.
+There is data that a clinician/user will enter without identifying what type of information they are recording. This information is usually entered as either free text or a combination of clinical code(s), values, qualifiers and text.
 
 For example:
 * the clinician records the patient’s resting pulse by recording the resting pulse clinical code followed by a value of the patient’s pulse.
 * the clinician records that a patient has a sore throat by recording the sore throat clinical code
 * the clinician records that a patient reports being irritable with their family as a piece of free text
-
-For the majority of provider systems, the following types of information are not explicitly categorised when they are recorded:
-* Condition
-* Family History
-* Observation
-* Procedure
 
 Consideration was given to attempting to categorise data using the recorded clinical codes. It was decided not to progress this based on a clinical review of its risks and benefits.
 
@@ -47,9 +41,13 @@ Consideration was given to attempting to categorise data using the recorded clin
 
 * Uncategorised data is any item of data in the patient record that does not fit into one of the existing or planned clinical areas defined by GP Connect.
 
+## Observation profile ##
+
+Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore uncategorised data will always be contained in an `Observation` profile.
+
 ## Qualifiers ##
 
-In GP systems, uncateogirsed data may have additional coded or structured attributes that refine or expand the meaning of the coded element of the record. These additional attributes are commonly known as qualifiers.
+Qualifiers are used to refine the meaning of the coded element of the record.
 
 Each provider system supports a different set of qualifiers. However, there are three key qualifiers that are common across all provider systems:
 
@@ -57,30 +55,42 @@ Each provider system supports a different set of qualifiers. However, there are 
 * Severity - for example, a patient record may have a severe asthmatic attack.
 * Episodicity - for example, this is the patient's first episode of an asthmatic attack.
 
-The provider system will translate all of the qualifiers included with the clinical code into human-readable text and concatenate them with the text entered by the recorder (placing the qualifiers first) and placing in observation.comment.
+The provider system will translate all of the qualifiers included with the clinical code into human-readable text and concatenate them with the text entered by the recorder (placing the qualifiers first) and placing in `observation.comment`.
 
 ## Values ##
 
 Values are any reading or result that is recorded with the uncategorised data. For example, the uncategorised data 50373000 (Body Height) may have a value of 156cm.
 
 ### Single values ###
-The majority of uncategorised data that contains values will only have a single value. In these cases, the value will be exported in observation.value.
+The majority of uncategorised data that contains values will only have a single value. In these cases, the value will be exported in `observation.value`.
 
-### Multiple Values ###
-There are some cases where an item of uncategorised data may contain multiple values. This happens when:
+### Multiple values ###
+There are cases where an item of uncategorised data may contain multiple values. This happens when:
 * there is a single clinical code that describes the uncategorised data as a whole
 and
 * each recorded value in the uncategorised data is described by its own clinical code
 
-In these cases, each value will be exported in an instance of observation.component.
+In these cases, each value will be exported in an instance of `observation.component`.
 
-## Blood pressure ##
-Where the clinician/user has explicitly chosen the clinical codes to record a blood pressure reading in the provider system, the provider system **MUST** export the blood pressure reading as uncategorised data using the clinical codes (or SNOMED CT translations) chosen by the clinician/user.
+## Hierarchical Uncategorised Data ##
+There are cases where a number of pieces of uncategorised data are related to each other in a hierarchical structure. For example: A user could manually enter a set of Full Blood Count blood test results outside of a pathology report.
 
-Where the clinician/user has NOT explicitly selected the clinical codes to record a blood pressure reading in the provider system, the provider system **MUST** export the blood pressure using the CareConnect Blood Pressure observation:
+### Modeling ###
 
-    https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-BloodPressure-Observation-1
+Each item of uncategorised data in the hierarchy is recorded is in its own `observation` profile. The structure is represented using the `observation.related` field.
 
+* The top level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member` 
+* The child items will contain `observation.related.target` pointing to the top level item with an `observation.related.type` of `derived-from`
+
+Note: This follows the same model that will be used to represent Investigations and Pathology.
+
+### Consultations and Problem ###
+
+Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a Consultation or Problem. If the item is recorded in a consultation it will be directly referenced by the consultation, if the item is linked to a problem it will be directly referenced by the problem.
+
+For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile.
+
+<a href="images/access_structured/Uncategorised_Structure.png"><IMG src="images/access_structured/Uncategorised_Structure.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
 
 ## Using the `List` resource for uncategorised data queries
 

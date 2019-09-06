@@ -4,20 +4,20 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_filingComments.html
-summary: "Guidance for populating and consuming patholgy data in GP Connect"
-div: resource-page
+summary: "Guidance for populating and consuming pathology data in GP Connect"
+published: false
 ---
 
 
 ## Introduction ##
 
-The headings below list the elements of the Observation resource and describe how to populate and consume them.
+The headings below list the elements of the `Observation` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
-## Filing Comments - observation resource elements ##
+## Filing comments - `Observation` resource elements ##
 
 ### id ###
 
@@ -57,7 +57,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
 
 This is for business identifiers.
 
-This is sliced to include a cross-care setting identifier, which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier, which **MUST** be populated. The system identifier for this is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This **MUST** be a GUID.
 
@@ -87,7 +87,7 @@ For filing comments this is a set value of 'unknown'.
   </tr>
 </table>
 
-Fixed value of 'Filing comments'. Awaiting confirmation of an appropriate SNOMED code being requested from SNOMED UK.
+Fixed value of `Filing comments`. Awaiting confirmation of an appropriate SNOMED code being requested from SNOMED UK.
 
 ### subject ###
 

@@ -16,9 +16,6 @@ entries:
     - title: Requirements catalogue <img src="images/nhsddownload.png" height="17" width="17" align="right">
       url: /pages&#47;accessrecord_structured&#47;GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.1.xlsx"rel="nofollow" target="_blank"
       output: web, pdf
-    - title: Design decisions
-      url: /accessrecord_structured_design.html
-      output: web, pdf
     - title: Known issues
       url: /accessrecord_structured_known_issues.html
       output: web, pdf
@@ -30,11 +27,14 @@ entries:
     - title: Introduction
       url: /accessrecord_structured_development.html
       output: web
-    - title: <b class='resource'>Linkages and search criteria</b>
-      url: /accessrecord_structured_development_linkages.html
-      output: web
     - title: <b class='resource'>Resource population fundamentals</b>
       url: /accessrecord_structured_development_resources_overview.html
+      output: web
+    - title: <b class='resource'>Linkages</b>
+      url: /accessrecord_structured_development_linkages.html
+      output: web
+    - title: <b class='resource'>Search criteria</b>
+      url: /accessrecord_structured_development_search.html
       output: web
 
       subfolders:
@@ -125,11 +125,8 @@ entries:
         - title: <b class='resource'>Encounter</b>
           url: /accessrecord_structured_development_encounter.html
           output: web
-        - title: <b class='resource'>Consultation Structure - Lists</b>
+        - title: <b class='resource'>List - consultation structure</b>
           url: /accessrecord_structured_development_list_consultation.html
-          output: web
-        - title: Observation - narrative
-          url: /accessrecord_structured_development_guidance_observation_narrative.html
           output: web
         - title: Consultation FHIR&reg; examples
           url: /accessrecord_structured_development_fhir_examples_consultations.html
@@ -139,10 +136,10 @@ entries:
         output: web
         subfolderitems:
 
-        - title: Problems guidance
+        - title: Problem guidance
           url: /accessrecord_structured_development_problems_guidance.html
           output: web
-        - title: <b class='resource'>Condition - ProblemHeader</b>
+        - title: <b class='resource'>ProblemHeader (Condition)</b>
           url: /accessrecord_structured_problems.html
           output: web
         - title: Problems FHIR&reg; examples
@@ -212,4 +209,8 @@ entries:
 
     - title: Retrieve a patient's structured record
       url: /accessrecord_structured_development_retrieve_patient_record.html
+      output: web
+
+    - title: API Version Compatibility
+      url: /accessrecord_structured_development_version_compatibility.html
       output: web

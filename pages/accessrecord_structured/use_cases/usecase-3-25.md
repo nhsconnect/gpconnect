@@ -7,17 +7,17 @@ permalink: accessrecord_usecase_3.25.html
 summary: "Use case for parental consent differs for immunisation"
 ---
 
-**Brief description:**
+## Brief description
 
 A child, Sue, is brought to a vaccination appointment by her father Bill. Bill is registered at the practice, but Sue is registered elsewhere. Sue is registered at the same practice as her mother Lucy (Bill and Lucy are separated). Bill explains that Sue is living with him for the time being and that he has agreed with Lucy to bring Sue to his practice. Bill explains that this is a temporary arrangement whilst Lucy recovers from recent surgery and so does not want to change Sue's registered practice.
 
 Joel (practice nurse) calls up the medical records for Sue. Joel needs to check the immunisation history to ensure that the vaccination has not previously been administered and that there are no other indicators that the vaccination is not applicable for Sue.
 
-Lucy / Sue's registered practice is local to Joel / Bill's practice and they have a data sharing agreement and can access each other's records via GP Connect.
+Lucy/Sue's registered practice is local to Joel/Bill's practice and they have a data sharing agreement and can access each other's records via GP Connect.
 
 Lucy has previously refused this vaccination for Sue, but Bill has not declared this \[1\].
 
-**Use case justification:**
+## Use case justification
 
 Clinical and administration:
 
@@ -29,22 +29,22 @@ Patient-focused:
   - increased patient safety due to the reduction in manual transcription errors
   - better patient experience as they are not being asked for information which should already be available to the practice nurse
 
-**Primary actors:**
+## Primary actors
 
   - practice nurse
   - GP Connect
   - GP clinical systems
 
-**Secondary actors:**
+## Secondary actors
 
   - patient
-  - patients' parents or guardians
+  - patient's parents or guardians
 
-**Triggers:**
+## Triggers
 
   - child and parent attend appointment for a vaccination or attend a vaccination clinic
 
-**Pre-conditions:**
+## Preconditions
 
   - the patient's details have been verified and entered on the GP clinical system
   - the practice nurse has the correct/appropriate system access rights
@@ -52,17 +52,17 @@ Patient-focused:
   - the patient's parent consents to this shared information being viewed/used
   - electronic interactions between GP clinical system/GP Connect/GP clinical system have been correctly configured
 
-**Post conditions:**
+## Postconditions
 
-  - **On success**
+  - **On success:**
     
       - the parent's wishes are fully adhered to and the vaccination is given or withheld appropriately
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the child is appropriately assessed for the vaccination and the vaccination is given or withheld appropriately based on available medical history
 
-**Basic flow with alternative and exception flows:**
+## Basic flow with alternative and exception flows
 
 <table>
 <thead>
@@ -103,7 +103,7 @@ Patient-focused:
 <td>Joel looks for additional narrative to understand the reason for the Refusal
 <p>Joel calls back information from GP Connect relating to</p>
 <ul>
-<li><p>Consultations / Encounters</p></li>
+<li><p>Consultations/Encounters</p></li>
 </ul>
 <p>and finds details which explain that Lucy has refused the vaccination and disagrees with Bill over this</p></td>
 </tr>
@@ -128,7 +128,7 @@ Patient-focused:
 <td>Joel records the consent and, having also checked that there is no allergy or other adverse information, administers the vaccination</td>
 </tr>
 <tr class="even">
-<td colspan="2"><strong>Alternative Path - refusal upheld</strong></td>
+<td colspan="2"><strong>Alternative Path - Refusal Upheld</strong></td>
 </tr>
 <tr class="odd">
 <td>Steps 1 - 9</td>
@@ -143,7 +143,7 @@ Patient-focused:
 <td>Joel informs Bill that he cannot administer the vaccine and records the details of the discussions</td>
 </tr>
 <tr class="even">
-<td colspan="2"><strong>Alternative Path - refusal information is not shared</strong></td>
+<td colspan="2"><strong>Alternative Path - Refusal Information is not shared</strong></td>
 </tr>
 <tr class="odd">
 <td>Steps 1 - 4</td>
@@ -160,7 +160,7 @@ Patient-focused:
 <tr class="even">
 <td><p>Some time</p>
 <p>later…</p></td>
-<td>Lucy calls the Practice and complains that the vaccination was given against her wishes (which were recorded on Sue's main record but were not shared via GP Connect).</td>
+<td>Lucy calls the practice and complains that the vaccination was given against her wishes (which were recorded on Sue's main record but were not shared via GP Connect).</td>
 </tr>
 </tbody>
 </table>

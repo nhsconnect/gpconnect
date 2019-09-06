@@ -97,6 +97,6 @@ We have mapped these resources on to the logical model in the diagram below:
 
 DiagnosticReport is at the centre of the model and all the other entities are linked to from there.
 
-The Observation resource is used for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings, there will be only one FHIR profile that can then be populated appropriately for each individual use.
+The `Observation` resource is used for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings, there will be only one FHIR profile that can then be populated appropriately for each individual use.
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.

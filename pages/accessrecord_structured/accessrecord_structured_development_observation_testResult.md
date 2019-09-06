@@ -11,13 +11,13 @@ div: resource-page
 
 ## Introduction ##
 
-The headings below list the elements of the Observation resource and describe how to populate and consume them.
+The headings below list the elements of the `Observation` resource and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
-## Test result - observation resource elements ##
+## Test result - `Observation` resource elements ##
 
 ### id ###
 
@@ -29,7 +29,7 @@ The headings below list the elements of the Observation resource and describe ho
   </tr>
 </table>
 
-The logical identifier of the Observation resource.
+The logical identifier of the `Observation` resource.
 
 ### meta.profile ###
 
@@ -57,7 +57,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
 
 This is for business identifiers.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This  **MUST**  be a GUID.
 
@@ -162,7 +162,7 @@ Reference to the resource for the organisation and/or practitioner that performe
   </tr>
 </table>
 
-The value of the test. This may be in the form of, but is not limited t, one of the following datatypes: a quantity, string or an attachment.
+The value of the test. This may be in the form of, but is not limited to, one of the following datatypes: a quantity, string or an attachment.
 
 ### dataAbsentReason ###
 

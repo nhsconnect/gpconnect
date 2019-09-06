@@ -1,16 +1,16 @@
 ---
-title: AllergyIntolerance resource
+title: AllergyIntolerance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_allergyintolerance.html
-summary: "Guidance for populating and consuming the AllergyIntolerance resource"
+summary: "Guidance for populating and consuming the AllergyIntolerance profile"
 div: resource-page
 ---
 
 ## Introduction ##
 
-The headings below list the elements of the AllergyIntolerance resource and describe how to populate and consume them.
+The headings below list the elements of the `AllergyIntolerance` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
@@ -28,7 +28,7 @@ The headings below list the elements of the AllergyIntolerance resource and desc
   </tr>
 </table>
 
-The logical identifier of the Medication resource.
+The logical identifier of the `AllergyIntolerance` profile.
 
 ### meta.profile ###
 
@@ -40,7 +40,7 @@ The logical identifier of the Medication resource.
   </tr>
 </table>
 
-The AllergyIntolerance profile URL.
+The `AllergyIntolerance` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1)
 
@@ -114,7 +114,7 @@ This **MUST** be a GUID.
 
 *Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
 
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
 ### clinicalStatus ###
 
@@ -155,8 +155,6 @@ Fixed value of `unconfirmed`.
 </table>
 
 Set to `allergy` for reactions which are allergenic in nature (immunological), a value of `intolerance` **MAY** be used to indicate adverse reactions (not immunologic in nature). Where the type is unknown the type element may be omitted.
-
-Some systems allow explicit identification of adverse reactions and intolerances and the type **MUST** be used to make this distinction where it exists.
 
 ### category ###
 
@@ -244,9 +242,11 @@ This field **MUST** be populated where the GP system records an explicit onset d
   </tr>
 </table>
 
-The datetime the record was recorded or believed to be true.
+The datetime the record was believed to be true.
 
-The asserted date is when the allergy related to the patient was asserted. In many cases, this will be when the allergy is entered onto the system, although some systems may allow this date to be modified.
+The asserted date is when the allergy related to the patient was asserted. In many cases, this will be when the allergy is recorded onto the system however there are situations where they can differ. For example, if an allergy is asserted during a home visit that is recorded on the clinical system the following day, the asserted date is the date the consultation took place, not the date it was recorded.
+
+Where no asserted date is available, the recorded date is used.
 
 ### recorder ###
 
@@ -362,11 +362,11 @@ The route by which exposure to the substance causing the reaction occurred. Util
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
 
-## AllergyIntolerance elements not in use ##
+<h2 style="color:#ED1951;"> AllergyIntolerance elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
 
-### extension[evidence] ###
+<h3 style="color:#ED1951;"> extension[evidence] </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -374,7 +374,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.versionId ###
+<h3 style="color:#ED1951;"> meta.versionId </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -382,7 +382,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### meta.lastUpdated ###
+<h3 style="color:#ED1951;"> meta.lastUpdated </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -390,7 +390,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-### reaction.note ###
+<h3 style="color:#ED1951;"> reaction.note </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -400,7 +400,7 @@ The following elements **SHALL NOT** be populated:
 
 `AllergyIntolerance.note` should contain all the consolidated text from the Allergy/Intolerance.
 
-### reaction.onset[x] ###
+<h3 style="color:#ED1951;"> reaction.onset[x] </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -410,7 +410,7 @@ The following elements **SHALL NOT** be populated:
 
 Onset explicitly supplied via `AllergyIntolerance.onset[dateTime]`.
 
-### reaction.substance ###
+<h3 style="color:#ED1951;"> reaction.substance </h3>
 
 <table class='resource-attributes'>
   <tr>

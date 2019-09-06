@@ -93,9 +93,9 @@ The GP Connect profile of the `MedicationRequest` will be used to represent the 
 
 An acute medication is represented by a `MedicationStatement` and two `MedicationRequest` resources - one with an `intent` of `plan` and the second an `intent` of `order`.
 
-{: .center-image }
-![Acute medications diagram](images/access_structured/Acute medication representation.png)
-
+<center>
+<a href="images/access_structured/Acute_Medication.png"><img src="images/access_structured/Acute_Medication.png" alt="Acute Medication Diagram" style="max-width:60%;max-height:60%;"></a>
+</center>
 
 ### Repeat prescription and repeat dispense
 
@@ -105,17 +105,17 @@ The difference is that there is now a one-to-many relationship where there can b
 
 For repeat dispensed medication or medical device, some of the resources relating to individual issues may be post-dated if the effective period of the medication or medical device has not elapsed. However, for all `MedicationRequest` resources with an intent of `order` the `authoredOn` date **SHOULD** be the same as the related `MedicationRequest` with `intent` of `plan`.
 
-{: .center-image }
-![Repeat prescription and repeat dispensing diagram](images/access_structured/Repeat prescription and repeat dispensing.png)
-
+<center>
+<a href="images/access_structured/Repeat_Medication.png"><img src="images/access_structured/Repeat_Medication.png" alt="Repeat Medication Diagram" style="max-width:60%;max-height:60%;"></a>
+</center>
 
 ### Unissued medications/medical devices and medication/medical devices prescribed elsewhere
 
 Unissued medications/medical devices and medications/medical devices that have been prescribed elsewhere are different concepts but modelled in a similar manner. They will both have been added to the system by a clinician at the practice and will be represented by a `MedicationStatement` and a `MedicationRequest` with an `intent` of `plan`, but with no further resources. This reflects that no orders have been placed for these medications/medical devices by the GP practice. Medications/medical devices that were prescribed elsewhere will be flagged as such by populating the PrescribingAgency extension in the Medication Statement.
 
-{: .center-image }
-![Unissued medications and medications prescribed elsewhere diagram](images/access_structured/Unissued medications and medications prescribed elsewhere.png)
-
+<center>
+<a href="images/access_structured/Unissused_Medication.png"><img src="images/access_structured/Unissused_Medication.png" alt="Unissued Medication Diagram" style="max-width:60%;max-height:60%;"></a>
+</center>
 
 ### Using the `List` resource for medication/medical devices queries
 The results of a query for medication/medical devices details **MUST** return a `List` containing references to all `MedicationStatement` resources that are returned.
@@ -124,5 +124,6 @@ The `List` **MUST** be populated in line with the guidance on `List` resources.
 
 If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
 
-{: .center-image }
-![MedicationList](images/access_structured/MedicationList.png)
+<center>
+<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Medication_Return.png" alt="Unissued Medication Diagram" style="max-width:100%;max-height:100%;"></a>
+</center>

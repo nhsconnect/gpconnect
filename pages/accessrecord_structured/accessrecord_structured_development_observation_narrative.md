@@ -1,5 +1,5 @@
 ---
-title: Observation Narrative
+title: Observation - narrative
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
@@ -13,24 +13,21 @@ div: resource-page
 There are many instances of uncoded free text narrative notes within patient records.
 * Paragraphs of free text consultation notes perhaps associated with codes via the wider consultation context but not otherwise explicitly coded.
 * Text which may or may not be associated with codes but where the association is inexact and it is considered better to express the notes text as a standalone item rather than bind the text (possibly incorrectly) to an associated coded resource. See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
-* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded Observation resource as the 'uncategorised' representation is inappropriate (for example, no appropriate codes are available to represent the source record entry as an observation).
+* Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded `Observation` resource as the 'uncategorised' representation is inappropriate (for example, no appropriate codes are available to represent the source record entry as an observation).
 
 Because FHIR&reg; does not provide an underlying resource suitable for representing this information, a profile of Observation is utilised to represent narrative text as an Observation Narrative.
 
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
+
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
+
 ## Approach ##
 
-The approach for all of these cases is to use an appropriate coded Observation resource to represent the free text.
+The approach for all of these cases is to use an appropriate coded `Observation` resource to represent the free text.
 
 Instances of Observation narrative are identified by Observation.code of **37331000000100  Comment note (record artifact)**
 
-## Observation narrative ##
-
-1. All mandatory fields **MUST** be populated.
-
-2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles.
-
-3. Any attributes of the underlying Observation profile that are not listed below are not used.
-
+## Observation Elements ##
 
 ### id ###
 
@@ -56,6 +53,8 @@ The logical identifier of the Observation narrative resource.
 
 The Observation narrative profile URL.
 
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)
+
 ### identifier ###
 
 <table class='resource-attributes'>
@@ -68,7 +67,7 @@ The Observation narrative profile URL.
 
 This is for business identifiers.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 
 ### status ###
@@ -81,7 +80,7 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
   </tr>
 </table>
 
-Fixed value of **finished**.
+Fixed value of `finished`.
 
 
 
@@ -95,7 +94,7 @@ Fixed value of **finished**.
   </tr>
 </table>
 
-Fixed value of **37331000000100  Comment note (record artifact)**
+Fixed value of `37331000000100  Comment note (record artifact)`
 
 ### subject ###
 
@@ -107,7 +106,7 @@ Fixed value of **37331000000100  Comment note (record artifact)**
   </tr>
 </table>
 
-Reference to Patient resource representing the patient against whom the narrative text was recorded.
+Reference to `Patient` resource representing the patient against whom the narrative text was recorded.
 
 ### context ###
 
@@ -119,7 +118,7 @@ Reference to Patient resource representing the patient against whom the narrativ
   </tr>
 </table>
 
-Optional reference to the Encounter resource representing the consultation context in which the narrative free text was recorded. Will not be populated where the free text was recorded outside of a consultation context.
+Optional reference to the `Encounter` resource representing the consultation context in which the narrative free text was recorded. Will not be populated where the free text was recorded outside of a consultation context.
 
 ### effectiveDateTime ###
 
@@ -157,7 +156,7 @@ The audit trail timestamp representing when the narrative was last modified.
   </tr>
 </table>
 
-The Practitioner resource representing the person responsible for recording the narrative.
+The `Practitioner` resource representing the person responsible for recording the narrative.
 
 ### comment ###
 

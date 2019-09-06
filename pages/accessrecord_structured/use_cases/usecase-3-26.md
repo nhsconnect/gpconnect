@@ -7,13 +7,13 @@ permalink: accessrecord_usecase_3.26.html
 summary: "Use case for mental health new referral daily triage"
 ---
 
-**Brief description:**
+## Brief description
 
 The mental health service holds a daily triage where the team comes together to review new referrals. The main (but not sole) source of referrals is from GPs. Currently the referrals are unstructured (paper based). The format of these referrals is inconsistent. The extent and quality of information varies significantly. Whilst some will be concise and informative, others will lack key information which it is likely the GP record holds, and others will contain extensive detail making the most salient points difficult to access quickly. The triage team are in the process of defining a “minimum dataset” they wish to request for the referral details.
 
 It is thought that the referral process could be improved if the referral information could be captured in the GP systems in accordance with the minimum dataset and transmitting to the mental health service system in a structured format.
 
-**Use case justification:**
+## Use case justification
 
 Clinical and administration:
 
@@ -29,22 +29,22 @@ Patient-focused:
   - increased patient safety due to the reduction in manual transcription errors
   - better patient experience as they are not being asked for information which should already be available to the mental health service
 
-**Primary actors:**
+## Primary actors
 
   - Mental Health Triage Team (Mental Health Practitioner, Clinical Psychologist, etc.)
   - GP Connect
   - GP clinical systems
   - Mental Health Service system (PARIS)
 
-**Secondary actors:**
+## Secondary actors
 
   - patient
 
-**Triggers:**
+**Triggers
 
   - GP has referred a patient to the community mental health service
 
-**Pre-conditions:**
+## Preconditions
 
   - the patient's details have been verified and entered on the community mental health system (or created by an electronic referral)
   - the mental health practitioner has the correct/appropriate system access rights
@@ -52,17 +52,17 @@ Patient-focused:
   - the patient consents to this shared information being viewed/used
   - electronic interactions between GP clinical system/GP Connect/community mental health system have been correctly configured
 
-**Post conditions:**
+## Postconditions
 
-  - **On success**
+  - **On success:**
     
       - the patient's referral details are made available to the triage team in a concise manner
 
-  - **Guaranteed**
+  - **Guaranteed:**
     
       - the triage team will assess the patient needs based on the information available
 
-**Basic flow with alternative and exception flows:**
+## Basic flow with alternative and exception flows
 
 <table>
 <thead>
@@ -93,21 +93,21 @@ Patient-focused:
 <td>GP clinical system provides the GP patient record to GP Connect.
 <p>The GP patient record will include:</p>
 <ul>
-<li><p>Referral Details (the current referral and any previous referrals to mental health services)</p>
+<li><p>Referral details (the current referral and any previous referrals to mental health services)</p>
 <ul>
 <li><p>Referral from</p></li>
 <li><p>Date of referral</p></li>
-<li><p>Type (for example,  Referral for mental health counselling)</p></li>
+<li><p>Type (for example, referral for mental health counselling)</p></li>
 <li><p>Referral to</p></li>
-<li><p>Summary of Reason for Referral</p></li>
+<li><p>Summary of reason for referral</p></li>
 <li><p>Outcome (for example,  Therapy offered and degree of success)</p></li>
 </ul></li>
 <li><p>Relevant medical history</p>
 <ul>
-<li><p>Relevant Diagnosis</p></li>
+<li><p>Relevant diagnosis</p></li>
 <li><p>Indicator as to formal diagnosis or otherwise</p></li>
 </ul></li>
-<li><p>Risk (Current and History)</p>
+<li><p>Risk (current and history)</p>
 <ul>
 <li><p>Harm to self or others</p></li>
 <li><p>Details</p></li>
@@ -126,14 +126,14 @@ Patient-focused:
 <li><p>Details of all current medications</p></li>
 <li><p>History of psychotropic medications or others related to mental health conditions</p></li>
 </ul></li>
-<li><p>Social History (current and history)</p>
+<li><p>Social history (current and history)</p>
 <ul>
-<li><p>Substance Abuse</p></li>
-<li><p>Alcohol Abuse</p></li>
+<li><p>Substance abuse</p></li>
+<li><p>Alcohol abuse</p></li>
 </ul></li>
-<li><p>Support systems in place (professional and family / non-professional)</p>
+<li><p>Support systems in place (professional and family/non-professional)</p>
 <ul>
-<li><p>Contact name / role</p></li>
+<li><p>Contact name/role</p></li>
 <li><p>Involvement</p></li>
 <li><p>Influence on patient</p></li>
 </ul></li>
@@ -145,7 +145,7 @@ Patient-focused:
 </tr>
 <tr class="odd">
 <td>Step 7</td>
-<td>The community mental health system imports the information and presents it to the user / triage team.</td>
+<td>The community mental health system imports the information and presents it to the user/triage team.</td>
 </tr>
 <tr class="even">
 <td>Step 8</td>
