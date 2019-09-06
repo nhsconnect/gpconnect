@@ -39,7 +39,7 @@ exclude:
   - pages/development/development_github_repositories.md
 # these are the files and directories that jekyll will exclude from the build
 
-feedback_email: 
+feedback_email:
 # used as a contact email for the Feedback link in the top navigation bar
 
 feedback_disable: true
@@ -105,6 +105,7 @@ sidebars:
 - accessrecord_sidebar
 - appointments_sidebar
 - accessrecord_structured_sidebar
+- accessrecord_documents_sidebar
 
 description: "GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model."
 # the description is used in the feed.xml file
