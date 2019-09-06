@@ -192,6 +192,22 @@ It **MUST** also include any text relating to the observation.
 
 The reference range provides a guide for interpretation of the results.
 
+### related ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+Contains any hierarchical information between uncategorised data items. 
+
+* Populate `related.target` with a reference to the related item of uncategorised data
+* Where the related item is a child of this item set `related.type` to `has-member`
+* Where the related item is a parent of this item set `related.type` to `derived-from`
+
 ### component ###
 
 <table class='resource-attributes'>
@@ -271,14 +287,8 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
 
-<h3 style="color:#ED1951;"> related </h3>
 
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
-  </tr>
-</table>
