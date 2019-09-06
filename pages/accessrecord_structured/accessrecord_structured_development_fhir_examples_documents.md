@@ -2,7 +2,7 @@
 title: FHIR&reg; DocumentReference examples
 keywords: structured design
 tags: [design,structured]
-sidebar: accessrecord_structured_sidebar
+sidebar: accessrecord_documents_sidebar
 permalink: accessrecord_structured_development_fhir_examples_documents.html
 summary: "Access Record Structured FHIR examples"
 ---

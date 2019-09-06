@@ -2,14 +2,14 @@
 title: Documents
 keywords: getcarerecord
 tags: [getcarerecord]
-sidebar: accessrecord_structured_sidebar
+sidebar: accessrecord_documents_sidebar
 permalink: accessrecord_structured_development_documents_guidance.html
 summary: "Guidance for the representation and consumption of documents"
 ---
 
 ## What is a Document ##
 
-A clinical document (CD) is a written, printed or electronic record that provides evidence of medical care. Clinical documents must be accurate, timely and reflect specific services provided to a patient. 
+A clinical document (CD) is a written, printed or electronic record that provides evidence of medical care. Clinical documents must be accurate, timely and reflect specific services provided to a patient.
 Clinical documentation is used to facilitate inter-provider communication, allow evidence-based healthcare systems to automate decisions, provide evidence for legal records and create patient registry functions so public health agencies can manage and research large patient populations more efficiently.
 HL7 characterizes a document by the following properties:
  - Persistence – Documents are persistent over time. The content of the document does not change from one moment to another. A document represents information stored at a single instance in time.  
@@ -32,9 +32,9 @@ Standardise the search and retrieval of clinical documents from the GP Practices
 ## As Is ##
 
 <IMG src="images/access_structured/As-Is.jpg" alt="As-Is process for search and retrieval of documents from a GP Practice"  style="max-width:80%;max-height:80%;">
- 
+
 ### Process Steps
- 
+
  <table width="80%" height="60%">
     <thead>
         <tr>
@@ -127,7 +127,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
         </tr>
     </tbody>
     </table>
-    
+
  2. A document is received in a Clinical System, it is then annotated and saved in the Document Management System.
 
 <table width="60%" height="30%">
@@ -151,9 +151,9 @@ Standardise the search and retrieval of clinical documents from the GP Practices
         </tr>
     </tbody>
     </table>
-    
+
   3. A document is received in a Clinical System, it is then annotated and saved in the Document Management System. When the workflow is complete, it is then sent to the clinical system.
- 
+
  <table width="60%" height="30%">
     <thead>
         <tr>
@@ -180,28 +180,28 @@ Standardise the search and retrieval of clinical documents from the GP Practices
         </tr>
     </tbody>
     </table>
-    
+
 
 ### Known Issues ###
-   
+
    * Lack of versioning of documents in the GP Practices. DateTime stamp is used to identify the latest version of the document.
-   * No nationally agreed list of Document Types - GP Practices have their own list of document types which may also include free text. 
-   * Poor metadata of documents - GP systems have poor metadata information about documents. 
+   * No nationally agreed list of Document Types - GP Practices have their own list of document types which may also include free text.
+   * Poor metadata of documents - GP systems have poor metadata information about documents.
    * Documents in disparate systems in a GP Practice - Documents metadata information and it’s versions may exist in disparate systems in a GP Practice. There is no master system for managing documents.
-  
+
 ## Scope ##
-  
+
   <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:60%;max-height:60%;">
- 
- 
+
+
 ## Use Case ##
 
 ### a. Community Pharmacist provides Diabetes Services ###
- 
+
  **Scenario**
 
 The Community Pharmacist provides a diabetes service. Providing this service to Patients can reduce the workload on the local GP Practice(s) so the Practice(s) can focus on higher priority or more critical services or provide greater convenience to the Patient and thus the local GP Practice(s) refer Patients to the Community Pharmacist.
- 
+
 **Actors**
 
 Patient, Community Pharmacist, GP Connect APIs, Community Pharmacy IT System, GP Practice IT system.
@@ -237,8 +237,3 @@ Paramedic, Paramedic s IT system, Patient, GPConnect APIs, GP Practice ITsystem
 5.	The Paramedic views the metadata information of matching documents on their system and requests to view the DNR document from the GP Practice system via GPConnect.
 6.	The Paramedics system receives the binary of the document and presents it in a readable format.
 7.	The Paramedic views the DNR document and use this information to assist their treatment of the Patient
-
-
-
-
- 

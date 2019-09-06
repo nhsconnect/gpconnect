@@ -2,7 +2,7 @@
 title: DocumentReference
 keywords: structured design
 tags: [design,structured]
-sidebar: accessrecord_structured_sidebar
+sidebar: accessrecord_documents_sidebar
 permalink: accessrecord_structured_development_documents.html
 summary: "Guidance for populating and consuming the DocumentReference resource"
 div: resource-page
@@ -246,4 +246,3 @@ The following elements **MUST NOT** be populated:
 </table>
 
 current | superseded | entered-in-error
-
