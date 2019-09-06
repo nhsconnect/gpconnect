@@ -82,7 +82,7 @@ For example:
     * Breath alcohol level 15mmol/L
     * O/E - spleen just palapable
 
-Where this occurs the data is supplied in a flattened format with the herachical information made available to the consumer system of they want to rebuild the hierarchical structure.
+Where this occurs the data is supplied in a flattened format with the herachical information made available to the consumer system if they want to rebuild the hierarchical structure.
 
 ### Modeling ###
 
