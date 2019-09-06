@@ -63,21 +63,6 @@ The `List` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)
 
-### identifier
-
-<table class='resource-attributes'>
-        <tr>
-                <td><b>Data type:</b> <code>Identifier</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..*</td>
-        </tr>
-</table>
-
-This is for business identifiers.
-
-This is sliced to include a cross-care setting identifier which **MUST** be populated.
-The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
 ### status
 
 <table class='resource-attributes'>
@@ -299,9 +284,17 @@ Fixed value of `24781000000107 |Category (EHR) (record artifact)|`
 
 Each <code>entry.item</code> is a reference to a profile representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
 
-<h2 style="color:#ED1951;"> List elements <b>not in use</b></h2>
+<h2 style="color:#ED1951;"> List elements <b>not in use</b> for consultations</h2>
 
 The following elements **SHALL NOT** be populated:
+
+<h3 style="color:#ED1951;"> identifier</h3>
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>identifier</code></td>
+        </tr>
+</table>
 
 <h3 style="color:#ED1951;"> source </h3>
 
