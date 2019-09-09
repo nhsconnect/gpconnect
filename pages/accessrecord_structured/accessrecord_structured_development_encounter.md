@@ -106,7 +106,7 @@ Reference to <code>Patient</code> profile representing the patient against whom 
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
