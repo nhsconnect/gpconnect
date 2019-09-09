@@ -8,18 +8,14 @@ permalink: overview_engage.html
 summary: "Getting started with GP Connect"
 ---
 
-GP Connect has identified three main customer types:
+<p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. We have identified three main customer types:</p>
 
-**Consumer supplier**
-<br>The developer of an application that uses GP Connect FHIR® API – for example, a system supplier in an acute or mental health care setting.
+ - Consumer supplier
+ - Clinical system supplier
+ - End-user organisation
+         
+To find out more, follow the relevant link below:</p>
 
-**Clinical system supplier**
-<br>The supplier of a clinical system that is the source of GP data, such as EMIS Health, INPS Vision, Microtest Health, and TPP. Also known as a provider.
-
-**End-user organisation**
-<br>An organisation that uses a GP Connect service (or commissions the development of a new GP Connect service) to access GP data from more than one clinical system provider.
-
-<p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. To find out more, follow the relevant link below:</p>
 <div class="row">
          <div class="col-lg-12">
                                                            </div>
@@ -49,7 +45,7 @@ GP Connect has identified three main customer types:
                  </div>
                  <div class="panel-body" align="left">
                      <h4>Clinical system supplier</h4>
-                         <p align="left">You're a GP clinical data supplier/provider.</p>
+                         <p align="left">You're a GP clinical data supplier/provider, such as EMIS Health, INPS Vision, Microtest Health and TPP.</p>
                      <p align="left">You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.</p>
                      <a href="overview_clinical_system_supplier.html" class="btn btn-primary">Get started</a>
                  </div>
