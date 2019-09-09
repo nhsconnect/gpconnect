@@ -79,7 +79,7 @@ entries:
   - title: Develop
     output: web
     folderitems:
-    - title: Developing with GP Connect
+    - title: Develop with GP Connect
       url: /overview_development.html
       output: web, pdf
       type: web
