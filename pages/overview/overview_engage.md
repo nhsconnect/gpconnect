@@ -8,7 +8,9 @@ permalink: overview_engage.html
 summary: "Getting started with GP Connect"
 ---
 
-<p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. We have identified three main customer types:</p>
+<p>This website contains all the technical resources you need to connect between clinical systems and GP data using our {% include tooltip.html type="FHIR&reg;" %} APIs. </p>
+ 
+ <p>We have identified three main customer types:</p>
 
  - Consumer supplier
  - Clinical system supplier
@@ -47,7 +49,7 @@ summary: "Getting started with GP Connect"
                      <h4>Clinical system supplier</h4>
                          <p align="left">You're a GP clinical data supplier/provider, such as EMIS Health, INPS Vision, Microtest Health and TPP.</p>
                      <p align="left">You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.</p>
-                     <a href="overview_clinical_system_supplier.html" class="btn btn-primary">More</a>
+                     <a href="overview_clinical_system_supplier.html" class="btn btn-primary">More...</a>
                  </div>
              </div>
          </div>
