@@ -40,7 +40,7 @@ entries:
           url: /overview_release_notes_0_5_0.html
           output: web
 
-  - title: Getting started
+  - title: Get started
     output: web
     folderitems:
     - title: Getting started
