@@ -47,15 +47,15 @@ entries:
       url: /overview_engage.html
       output: web, pdf
       type: web
-    - title: Consumer supplier
+    - title: Consumer suppliers
       url: /overview_consumer_supplier.html
       output: web, pdf
       type: web
-    - title: Clinical system supplier
+    - title: Clinical system suppliers
       url: /overview_clinical_system_supplier.html
       output: web, pdf
       type: web
-    - title: End-user organisation
+    - title: End-user organisations
       external_url: https://digital.nhs.uk/services/gp-connect
       output: web, pdf
 
