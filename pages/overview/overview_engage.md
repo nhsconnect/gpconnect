@@ -33,7 +33,7 @@ summary: "Getting started with GP Connect"
                       <h4>Consumer supplier</h4>
                          <p align="left">You're a software development company already working with the NHS or would like to work with the NHS.</p>
                          <p align="left">You want to use GP Connect to develop an API to consume GP data.  You intend to work with a suitable end-user organisation, which you may or may not have already identified.</p>
-                     <a href="overview_consumer_supplier.html" class="btn btn-primary">More</a>
+                     <a href="overview_consumer_supplier.html" class="btn btn-primary">More...</a>
                  </div>
              </div>
          </div>
@@ -65,7 +65,7 @@ summary: "Getting started with GP Connect"
                      <h4>End-user organisation</h4>
                      <p align="left">You're a CCG with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting.</p>
                               <p align="left">You want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care.</p>
-                      <a href="https://digital.nhs.uk/services/gp-connect" class="btn btn-primary">More</a>
+                      <a href="https://digital.nhs.uk/services/gp-connect" class="btn btn-primary">More...</a>
                                      </div>
          </div>
          </div> 
