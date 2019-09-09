@@ -18,3 +18,6 @@ Consumer APIs need to go through a set of testing and assurance processes to ens
 *Add text about test and assurance requirements for providers...*
 
 - read about the [provider testing](testing_api_provider_testing.html) process a
+
+## Next step ##
+[Deploy](/overview_deployment.html)
