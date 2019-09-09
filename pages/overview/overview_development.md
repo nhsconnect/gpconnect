@@ -38,3 +38,7 @@ summary: Start building applications that use GP Connect to consume or expose da
   
 ## Clinical system suppliers ##
 * Text to be added - development actions required by providers *
+
+## Next step ##
+[Test and assure](/overview_test_and_assurance.html)
+
