@@ -118,6 +118,13 @@ The following common identifier systems are used when populating `Identifier.sys
 
 The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are used in this capability pack:
 
+### Cross care setting identifier
+
+It is intended that this will be a unique ID that will be persisted to help consuming systems distinguish data they have integrated previously to data which is new to them. This identifier is still being developed and as such although this may be populated by some suppliers it cannot be relied upon alone to identify resources in the current release.
+
+The cross care setting identifier and how it will work and be used is currently under discussion by a sub group of BIDA. 
+
+
 ### Clinical ###
 
 * [AllergyIntolerance](accessrecord_structured_development_allergyintolerance.html)
