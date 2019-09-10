@@ -153,7 +153,7 @@ Reference to the patient.
 
 When the list was created.
 
-### OrderedBy ###
+### orderedBy ###
 
 <table class='resource-attributes'>
   <tr>
@@ -261,7 +261,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;"> Source </h3>
+<h3 style="color:#ED1951;"> source </h3>
 
 <table class='resource-attributes'>
   <tr>
