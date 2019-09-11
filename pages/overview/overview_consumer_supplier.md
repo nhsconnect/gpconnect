@@ -25,10 +25,6 @@ For more details on consumer request interactions, see the [SSP implementation g
 
 ## Things to consider
 
-- which serialisation format should I choose as an GP Connect API consumer - [JSON or XML?](serialisation_format.html)
-- try out the [GP Connect Demonstrator](system_demonstrator.html) system
-- download our [PostMan Collection](system_reference_postman.html) and explore the GP Connect interactions
-- familiarise yourself with HL7&reg; FHIR&reg; ([developer introduction](http://www.hl7.org/implement/standards/fhir/STU3/overview-dev.html){:target="_blank"}, [executive summary](http://www.hl7.org/implement/standards/fhir/STU3/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/STU3/overview-clinical.html){:target="_blank"})
 - read our GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
 - read about the GP Connect [priority capabilities](overview_priority_capabilities.html)
 - look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
