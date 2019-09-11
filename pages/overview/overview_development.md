@@ -23,7 +23,7 @@ summary: Start building applications that use GP Connect to consume or expose da
   - [Appointment Management](appointments.html) (for example, book an appointment for a patient)  
 - take a look at cross-cutting areas:
   - JSON Web Token - provides [cross-organisation audit and provenance](integration_cross_organisation_audit_and_provenance.html) details
-  - additional HTTP headers and proxy URL - this gives you access to the [Spine Security Proxy](integration_spine_security_proxy.html), the secure 'front door' of GP Connect APIs
+  - additional HTTP headers and proxy URL - this gives you access to the [Spine Security Proxy](integration_spine_secure_proxy.html), the secure 'front door' of GP Connect APIs
   - configure HTTPS and TLS/MA - [security guidance](development_api_security_guidance.html) allows you to secure and mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time) 
   
 ## Clinical system suppliers ##
