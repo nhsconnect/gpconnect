@@ -243,18 +243,6 @@ If there are recipient details of who the referral is to are captured as text en
 The primary SNOMED CT coded term for the type of referral.
 Additionally, SNOMED CT or locally coded entries **MAY** be included as reasons for the referral provided the term is distinctly a reason for referral, otherwise populate the information in <code>note</code> as key value pairs. 
 
-### reasonReference
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(ProblemHeader-Condition)</code></td>
-    <td><b>Optionality:</b>Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
-  </tr>
-</table>
-
-The problem(s) linked to the referral.
-
 ### description
 
 <table class='resource-attributes'>
@@ -347,6 +335,18 @@ The <code>reasonCode</code> element **MUST** be used for the SNOMED CT coded ref
     <td><b>Data type:</b> <code>dateTime, Period</code></td>
   </tr>
 </table>
+
+<h3 style="color:#ED1951;"> reasonReference </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(ProblemHeader-Condition)</code></td>
+  </tr>
+</table>
+
+A referral may have a linked problem which represents the reason for the referral.
+This is required information where it exists, but the problem **MUST** be included and reference to the <code>referralRequest</code>.
+The <code>referralRequest</code> **MUST NOT** reference to the problem.
 
 <h3 style="color:#ED1951;"> relevantHistory </h3>
 
