@@ -29,7 +29,9 @@ summary: Start building applications that use GP Connect to consume or expose da
 ## Clinical system suppliers ##
 * Text to be added - development actions required by providers *
 
- - read our GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs(development_fhir_api_guidance.html)
+ - read our GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
+ - read about [clinical safety requirements](designprinciples_clinical_safety_principles.html) for clinical system suppliers
+
 
 ## Next step ##
 [Test and assure](/overview_test_and_assurance.html)
