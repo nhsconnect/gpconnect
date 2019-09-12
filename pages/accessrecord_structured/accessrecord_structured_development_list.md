@@ -153,6 +153,18 @@ Reference to the patient.
 
 When the list was created.
 
+### orderedBy ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+What order the list is in.
+
 ### note ###
 
 <table class='resource-attributes'>
@@ -249,7 +261,7 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;"> Source </h3>
+<h3 style="color:#ED1951;"> source </h3>
 
 <table class='resource-attributes'>
   <tr>
@@ -257,10 +269,4 @@ The following elements **SHALL NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;"> orderedBy </h3>
 
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>

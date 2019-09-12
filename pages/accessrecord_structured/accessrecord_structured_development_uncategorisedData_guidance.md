@@ -72,8 +72,17 @@ and
 
 In these cases, each value will be exported in an instance of `observation.component`.
 
+This approach MUST be used for blood preasure readings where the systolic and diastolic values were taken together.
+
 ## Hierarchical Uncategorised Data ##
-There are cases where a number of pieces of uncategorised data are related to each other in a hierarchical structure. For example: A user could manually enter a set of Full Blood Count blood test results outside of a pathology report.
+There are cases where several pieces of uncategorised data are be related to each other in a hierarchical structure. 
+
+For example: 
+* Alcohol Consumption
+    * Breath alcohol level 15mmol/L
+    * O/E - spleen just palapable
+
+Where this occurs the data is supplied in a flattened format with the herachical information made available to the consumer system if they want to rebuild the hierarchical structure.
 
 ### Modeling ###
 
@@ -88,7 +97,7 @@ Note: This follows the same model that will be used to represent Investigations 
 
 Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a Consultation or Problem. If the item is recorded in a consultation it will be directly referenced by the consultation, if the item is linked to a problem it will be directly referenced by the problem.
 
-For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile.
+For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile. If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
 
 <a href="images/access_structured/Uncategorised_Structure.png"><IMG src="images/access_structured/Uncategorised_Structure.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
 

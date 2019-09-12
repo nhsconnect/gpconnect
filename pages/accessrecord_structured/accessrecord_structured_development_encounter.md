@@ -106,11 +106,11 @@ Reference to <code>Patient</code> profile representing the patient against whom 
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
-This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system.
+This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system with <code>participant.type</code> value of <code>AUTH</code> from the vocabulary.
 
 Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary.
 This should reference a `Practitioner` profile representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).

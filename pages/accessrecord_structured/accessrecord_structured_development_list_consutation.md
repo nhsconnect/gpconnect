@@ -16,13 +16,13 @@ A two or three level <code>List</code> structure is used to represent structured
 2.  **List (Topic)**
 3.  **List (Heading)**
 
-List (Consultation) **SHALL** be coded as **325851000000107 |Consultation encounter type (record artifact)|**.
+List (Consultation) **SHALL** be coded as **325851000000107 |Consultation|**.
 This top-level profile represents the structured consultation as a whole.
 
-List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR) (record artifact)|**.
+List (Topic) **SHALL** be coded as **25851000000105 |Topic (EHR)|**.
 This level represents the Topic/Problem groupings within consultations.
 
-List (Heading) **SHALL** be coded as **24781000000107 |Category (EHR) (record artifact)|**.
+List (Heading) **SHALL** be coded as **24781000000107 |Category (EHR)|**.
 This level represents the headings (SOAP heading) levels of the consultation structure that contain record entries.
 
 In the case of consultation which has a 'flat' structure, that is, contains record entries without a surrounding Topic/Heading structure, producer systems generate a List(Topic) level which links directly to record entries without the List(Heading) level.
@@ -62,21 +62,6 @@ The logical identifier of the `List` profile.
 The `List` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)
-
-### identifier
-
-<table class='resource-attributes'>
-        <tr>
-                <td><b>Data type:</b> <code>Identifier</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..*</td>
-        </tr>
-</table>
-
-This is for business identifiers.
-
-This is sliced to include a cross-care setting identifier which **MUST** be populated.
-The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 ### status
 
@@ -187,7 +172,7 @@ This duplicates the consultation type/name provided at <code>Encounter.type</cod
         </tr>
 </table>
 
-Fixed value of `325851000000107 |Consultation encounter type (record artifact)|`
+Fixed value of `325851000000107 |Consultation|`
 
 ### entry
 
@@ -241,7 +226,7 @@ The name of the corresponding Topic section in the source consultation if it is 
         </tr>
 </table>
 
-Fixed value of `25851000000105 |Topic (EHR) (record artifact)|`
+Fixed value of `25851000000105 |Topic (EHR)|`
 
 ### entry
 
@@ -285,7 +270,7 @@ The name of the heading section on the source system represented by this List in
         </tr>
 </table>
 
-Fixed value of `24781000000107 |Category (EHR) (record artifact)|`
+Fixed value of `24781000000107 |Category (EHR)|`
 
 ### entry
 
@@ -299,9 +284,17 @@ Fixed value of `24781000000107 |Category (EHR) (record artifact)|`
 
 Each <code>entry.item</code> is a reference to a profile representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
 
-<h2 style="color:#ED1951;"> List elements <b>not in use</b></h2>
+<h2 style="color:#ED1951;"> List elements <b>not in use</b> for consultations</h2>
 
 The following elements **SHALL NOT** be populated:
+
+<h3 style="color:#ED1951;"> identifier</h3>
+
+<table class='resource-attributes'>
+        <tr>
+                <td><b>Data type:</b> <code>identifier</code></td>
+        </tr>
+</table>
 
 <h3 style="color:#ED1951;"> source </h3>
 

@@ -37,8 +37,15 @@ The following is a set of request/response examples for Consultations and proble
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
+The response payload is available as a json file by clicking on the link below. The first consultation in the example is in line with the diagram on the consultation guidance page. It also contains a further two consultations which are described in the spreadsheet that can be downloaded using the link below.
+
+<br>
 
 <a href="pages/accessrecord_structured/consultations_response1.json">Response payload</a>
+
+<br>
+
+<a href="pages/accessrecord_structured/Consultations and problems example details.xlsx">Spreadsheet description of example</a>
 
 </div>
 <!--
