@@ -27,7 +27,6 @@ summary: Start building applications that use GP Connect to consume or expose da
   - configure HTTPS and TLS/MA - [security guidance](development_api_security_guidance.html) allows you to secure and mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time) 
   
 ## Clinical system suppliers ##
-* Text to be added - development actions required by providers *
 
  - read our GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
  - read about [clinical safety requirements](designprinciples_clinical_safety_principles.html) for clinical system suppliers
