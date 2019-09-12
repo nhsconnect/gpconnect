@@ -61,11 +61,11 @@ GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:targe
 
 To provide feedback on the GP Connect specification, send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
-### The Open API ecosystem
+## The Open API ecosystem
 
 GP Connect is part of a wider initiative to expose standards based on [Open APIs](designprinciples_open_api_principles.html#open-api){:target="_blank"} to promote innovation and improve care across the NHS.
 
-### INTEROPen
+## INTEROPen
 
 GP Connect FHIR profiles specified within this site have been developed by NHS Digital and where available use Care Connect profiles created in collaboration with the INTEROPen community.
 
