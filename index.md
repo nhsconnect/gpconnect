@@ -54,10 +54,26 @@ Our developer ecosystem takes you through each stage of a typical GP Connect API
 {% include warning.html content="This site is provided for information only and is intended for those engaged with NHS Digital in First of Type activities. Other parties are advised not to develop against these specifications until a formal announcement has been made." %}
 
 ## Community engagement ##
+
 GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
 
 ## Provide feedback ##
-To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
+
+To provide feedback on the GP Connect specification, send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
+
+### The Open API ecosystem
+
+GP Connect is part of a wider initiative to expose standards based on [Open APIs](designprinciples_open_api_principles.html#open-api){:target="_blank"} to promote innovation and improve care across the NHS.
+
+### INTEROPen
+
+GP Connect FHIR profiles specified within this site have been developed by NHS Digital and where available use Care Connect profiles created in collaboration with the INTEROPen community.
+
+The INTEROPen vision is to create a library of nationally defined HL7® FHIR® resources and interaction patterns that implementers can adopt to simplify integration and interoperability within England’s health and social care systems. Find out more on the [INTEROPen website](https://www.interopen.org/).
+
+## Timescales, benefits and more
+
+The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/article/1275/GP-Connect){:target="_blank"}.
 
 {% include twitterfollow.html %}
 
