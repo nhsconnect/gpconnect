@@ -21,18 +21,18 @@ It does not reflect the acceptance of the referral by the recipient or any onwar
 ## Referral classification
 
 GP Clincial Systems have taken a variety of approaches to the classification of referrals.
-The FHIR <code>ReferralRequests</code> has multiple elements to support the classification of the referral.
+The FHIR <code>ReferralRequest</code> has multiple elements to support the classification of referrals.
 Requirements analysis and PRSB documentation identifies a demand for a clear classification structure to the referral details.
 PRSB cites a high-level classification of a referral to a service and reason for referral.
 
 The referred to service has further classification of department, specialty, subspecialty, educational institution, mental health, etc.
 The reason for referral includes diagnosis, treatment, transfer of care due to relocation, investigation, second opinion, management of the patient (e.g. palliative care), provide referrer with advice / guidance.
 
-Analysis was undertaken as to whether the data in GP Clinical Systems, SNOMED CT terminology and FHIR resources could be aligned to achieve a reliable and meaningful classification structure.
+Analysis was undertaken as to whether the data in GP Clinical Systems, SNOMED CT terminology and FHIR resources could be aligned to achieve a reliable and meaningful classification structure in line with PRSB defintions.
 
 ### GP Clinical Systems
 
-There is limited commonality across GP Clinical Systems as to meta data associated with theis referral classification.
+There is limited commonality across GP Clinical Systems as to the meta data associated with their referral classification.
 
 All GP Clinical Systems support at least one READ / SNOMED CT coded field as the main code for the referral. 
 This may be constrained to a referral procedure code hierachy (descendants of <code>3457005 | Patient referral (procedure) |</code>) or open to a wide selection of codes covering at least clinical findings and procedures.
