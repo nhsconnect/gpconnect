@@ -176,6 +176,22 @@ For each `Observation` referenced in the `List` profile:
 <a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
+### Referral ###
+When GP Connect returns a referral it will supply all the referral data.
+
+The response to the query includes:
+* A `List` profile containing references to `ReferralRequest` for every Referral that met the search criteria
+
+For each `ReferralRequest` referenced in the `List` profile:
+*	The `ReferralRequest` profile of the Referral
+*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+<center>
+<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Referral_Return.png" alt="Referral Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+</center>
+
 ### Duplicate returned profiles ###
 
 Where the same instance of a profile is returned from multiple query responses (for example a medication is returned as part of the medication search and the consultation search), it will only be included once in the response message.
