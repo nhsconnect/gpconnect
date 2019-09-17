@@ -93,6 +93,14 @@ For each `ProblemHeader (Consultation)` referenced in the `List` profile:
     *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Uncategorised Data
+*	The `ReferralRequest` profile of any linked Referrals
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Referrals
+*	The `DocumentReference` profile of any linked Documents
+    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Documents
+*	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
+    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investifation    
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
