@@ -18,7 +18,7 @@ For a consuming system to be able to interpret this linkage information correctl
 ### GP Connect FHIR&reg; model ###
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations and Uncategorised Data. Other clinical areas will be added as they are developed.
+The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations and Documents. Other clinical areas will be added as they are developed.
 
 <a href="images/access_structured/GP_Connect_FHIR_Model.png"><img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
 
@@ -56,6 +56,14 @@ For each `Encounter` referenced in the `List` profile:
     *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Uncategorised Data
+*	The `ReferralRequest` profile of any linked Referrals
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Referrals
+*	The `DocumentReference` profile of any linked Documents
+    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Documents
+*	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
+    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investifation    
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above.
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
