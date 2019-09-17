@@ -209,6 +209,25 @@ For each `DocumentReference` referenced in the `List` profile:
 <a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Document_Return.png" alt="Document Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
+### Investigation ###
+When GP Connect returns an investigation it will supply all the investigation information.
+
+The response to the query includes:
+* A `List` profile containing references to `DiagnosticReport` for every Medication and Medical Device that met the search criteria
+
+For each `DiagnosticReport` referenced in the `List` profile:
+*  The `DiagnosticReport` profile of the Investigation
+*  The `ProcedureRequest` profile of the Investigation
+*	The `Specimen` profiles of the Investigation
+*	The `Observation` profiles of the Investigation
+*	The `DocumentReference` profiles of the Investigation
+    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Investigation_Return.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+
 ### Duplicate returned profiles ###
 
 Where the same instance of a profile is returned from multiple query responses (for example a medication is returned as part of the medication search and the consultation search), it will only be included once in the response message.
