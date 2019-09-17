@@ -55,7 +55,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Referr
 
 This is for business identifiers.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
 
 This **MUST** be a GUID.
 
@@ -64,7 +64,7 @@ _Providing_  systems **MUST** ensure this GUID is globally unique and a persiste
 Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
 If the referral was made via the e-Referral Service and a UBRN exists for the referral, then it **MUST** be included as an identifier.
-The codeSystem for this is XXXXXXXXXX
+The system identifier for this is XXXXXXXXXX
 
 ### basedOn
 
@@ -114,7 +114,7 @@ Fixed value of <code>order</code>.
 </table>
 
 A mapping is applied to the priority codes to align it to the e-Referral Service priority types.
-This **MUST** be populated where the source system has a referral priority which matches the e-Referral Service or can be reasonably mapped to those priority codes.
+This **MUST** be populated where the source system has a referral priority which matches the e-Referral Service priority codes or can be mapped to those priority codes.
 If there is a priority code for the referral but it is incompatible with the e-Referral Service priorities, this element **MUST** be excluded and the priority **MUST** be supplied in the <code>note</code> element. 
 
 ### serviceRequested
@@ -127,8 +127,8 @@ If there is a priority code for the referral but it is incompatible with the e-R
   </tr>
 </table>
 
-This **MUST NOT** be populated with the main SNOMED CT coded value for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
-This **MAY** be populated if the GP Clinical System holds a distinct entry for the type of service requested. 
+This **MUST NOT** be populated with the source system's main code for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
+This **MAY** be populated if the GP Clinical System also holds a distinct entry for the type of service requested. 
 
 ### subject
 
@@ -176,7 +176,7 @@ The user entered date for the referral.
   </tr>
 </table>
 
-Who has administered the referral request.
+The details of the person, practitioner or organisation responsible for the decision to refer the patient or, if is not attributed specifically, then populate with the recorder.
 
 ### requester.agent
 
@@ -190,7 +190,7 @@ Who has administered the referral request.
 
 Where a practitioner is recorded as the referrer, this **MUST** be the referenced <code>Practitioner</code>.
 If the referrer is not known, then this **SHOULD** be the practitioner who recorded the referral.
-If <code>Practitioner</code> cannot be populated with either of these, then any of the other resource options **MAY** be used as most appropriate.
+If the referral is not attributed to a practitioner, then any of the other resource options **MAY** be used as most appropriate.
 
 ### requester.onBehalfOf
 
