@@ -161,18 +161,36 @@ The `Medication` resource provides the coded representation of the medication.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Period</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-`Period.start` is **MANDATORY**. Where there is no defined start date this is populated with the recorded date.
+The period the medication or medical device is authorised under this medication/medical device plan. For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation. For acutes, this refers to the period of the prescription issue.
 
-`Period.end` is **REQUIRED**. Where there is a defined expiry or end date or where the end date can be derived (for example - from the duration) the end date **MUST** be supplied.
+`Period.start` is **MANDATORY**. 
 
-For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
+The date from which the medication or medical device is authorised under this plan. 
 
-For acutes this refers to the period of the prescription issue.
+Use one of the following dates in order of descending preference:
+*	The authorised date as recorded in the patient record.
+    * For authorisation that were performed during a consultation this will be the date when the consultation took place.
+*	The date of the first issue under the medication/medical device plan
+*	The date the medication/medical device plan was recorded onto the system (the audit date).
+
+
+`Period.end` is **REQUIRED**. 
+
+The date when the authorisation under this plan ends.
+
+Where the medication/medical device plan is still active, set to null.
+
+Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
+*	The end date recorded in the patient record
+*	The end date of the final issue under the medication/medical device plan
+*	The date the plan was updated to ended
+*	The Period.start date
+    * This option should only occur where data has been lost (for example during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date.
 
 
 ### dateAsserted ###
