@@ -72,6 +72,20 @@ This details the care setting in which the medication was prescribed. Currently 
 
 For repeat and repeat dispensed medications the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
+### extension[dosagelastchanged] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Only populate where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan.
+
+Set to the date when the dosage instructions were last changed.
+
 ### identifier ###
 
 <table class='resource-attributes'>
@@ -292,6 +306,9 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 </table>
 
 Complete dosage instructions as text.
+
+Where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan append the following warning text to end of the dosage instructions:
+* "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
 
 In exceptional cases where for legacy data there is no dosage recorded in the system then this MUST be populated with the text 'No information available'.
 
