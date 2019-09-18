@@ -52,11 +52,14 @@ Each problem record is linked to:
 When a clinical item is linked to the problem a reference to its FHIR&reg; resource is held in either extension[actualProblem] or extension[relatedClinicalContent].
 
 When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below.
-* For a Medication or Medical Device prescription plan - reference the MedicationRequest (intent = plan) resource
-* For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) resource
-* For an Allergy – reference the Allergy resource
-* For an Immunisation – reference the Immunization resource
-* For Uncategorised Data – reference the Observation – Uncategorised resource
+* For a Medication or Medical Device prescription plan - reference the MedicationRequest (intent = plan) profile
+* For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) profile
+* For an Allergy – reference the Allergy profile
+* For an Immunisation – reference the Immunization profile
+* For Uncategorised Data – reference the Observation – Uncategorised profile
+* For a Referral - reference the ReferralRequest profile
+* For a Document - reference the DocumentReference profile
+* For an Invesitgation - reference the DiagnosticReport profile
 
 ## Problems linking to problems
 
