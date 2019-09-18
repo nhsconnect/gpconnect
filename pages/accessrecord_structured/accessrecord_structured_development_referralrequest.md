@@ -188,9 +188,9 @@ The details of the person, practitioner or organisation responsible for the deci
   </tr>
 </table>
 
-Where a practitioner is recorded as the referrer, this **MUST** be the referenced <code>Practitioner</code>.
-If the referrer is not known, then this **SHOULD** be the practitioner who recorded the referral.
+The preferred agent is the practitioner responsible for the decision to refer the patient. 
 If the referral is not attributed to a practitioner, then any of the other resource options **MAY** be used as most appropriate.
+If the referral does not clearly identify responsibility for the referral decision or action, this **MUST** be the user who recorded the referral.
 
 ### requester.onBehalfOf
 
@@ -202,7 +202,8 @@ If the referral is not attributed to a practitioner, then any of the other resou
   </tr>
 </table>
 
-This **MUST** be populated if the <code>requester.agent</code> is a practitioner and the <code>Organization</code> associated to the <code>Practitioner</code> is not the GP Practice responsible for the referral.  
+This **MUST** be populated if the <code>requester.agent</code> is a practitioner and the <code>Organization</code> associated with the referenced <code>Practitioner</code> is not the GP Practice responsible for the referral.
+This element **SHOULD** be absent if the <code>requester.agent</code> is not a practitioner.
 
 ### specialty
 
@@ -214,8 +215,8 @@ This **MUST** be populated if the <code>requester.agent</code> is a practitioner
   </tr>
 </table>
 
-This **MUST NOT** be populated with the main SNOMED CT coded value for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
-This **MAY** be populated if the GP Clinical System holds a distinct entry for clinical / practitioner specialty being requested by the referral. 
+This **MUST NOT** be populated with the source system's main code for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
+This **MAY** be populated if the GP Clinical System holds a distinct entry for the clinical or practitioner specialty requested by the referral. 
 
 ### recipient
 
@@ -228,7 +229,7 @@ This **MAY** be populated if the GP Clinical System holds a distinct entry for c
 </table>
 
 This **MUST** be populated with the practitioner and / or organisation the patient has been referred to, if that is recorded in a suitable coded format.
-If there are recipient details of who the referral is to are captured as text entries and cannot be returned as a referenced resource, the details **MUST** be populated to the <code>note</code> as key value pairs.
+If the referral recipient details are in a form which cannot be returned as a referenced resource, the details **MUST** be populated to the <code>note</code> as key value pairs.
 
 ### reasonCode
 
@@ -240,8 +241,8 @@ If there are recipient details of who the referral is to are captured as text en
   </tr>
 </table>
 
-The primary SNOMED CT coded term for the type of referral.
-Additionally, SNOMED CT or locally coded entries **MAY** be included as reasons for the referral provided the term is distinctly a reason for referral, otherwise populate the information in <code>note</code> as key value pairs. 
+This **MUST** be populated with the source system's main coded entry for the referral.
+Additional, coded or text entries which are clearly captured as reasons for referral **MAY** be included. 
 
 ### description
 
@@ -253,7 +254,7 @@ Additionally, SNOMED CT or locally coded entries **MAY** be included as reasons 
   </tr>
 </table>
 
-The free text description for the referral.
+The free text description associated with the referral.
 
 ### supportingInfo
 
@@ -265,8 +266,11 @@ The free text description for the referral.
   </tr>
 </table>
 
-Reference to the referral letter(s) and any other supporting documents. 
-This can also include reference to any other resources which are relevant to the referral but are not specified to use any other <code>referralRequest</code> element, for instance, this could include reference to linked observations or test results.
+Reference to the referral letter(s) and any other supporting documents or resources which are not covered by other more specific elements, for instance this could include reference to linked observations or test results.
+
+This does not apply to a linked problem.
+The problem **MUST** be included in the bundle and reference to the <code>referralRequest</code>.
+The <code>referralRequest</code> **MUST NOT** reference to the problem.
 
 ### note
 
@@ -278,7 +282,7 @@ This can also include reference to any other resources which are relevant to the
   </tr>
 </table>
 
-Any additional information recorded against the referral.
+Any additional information recorded against the referral which is not accommodated by other elements.
 This could include additional categorisation of the referral or notes recorded against the referral after it has been made such as details of progress or outcomes.
 
 
