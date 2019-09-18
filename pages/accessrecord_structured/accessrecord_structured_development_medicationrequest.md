@@ -460,14 +460,28 @@ Prescription start and end dates.
 
 Start date is mandatory. Where there is a defined expiry or end date the end date **MUST** be supplied.
 
-For MedicationRequest instances where `intent` is set to `plan`:
+For `MedicationRequest` instances where `intent` is set to `plan`:
 
-- For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
-- For acutes this refers to the period of the prescription issue
+* This refers to the period that the medication/medical device plan is active.
+* This MUST mirror `MedicationStatement.effective`
 
-For MedicationRequest instances where `intent` is set to `order`:
+For `MedicationRequest` instances where `intent` is set to `order`:
 
-- This refers to the period of the prescription issue.
+*	This refers to the period that the issued prescription is active
+
+`Period.start` is **MANDATORY**. 
+
+Use one of the following dates in order of descending preference:
+*	The prescription issue date recorded in the patient record
+*	The date the prescription was recorded.
+
+`Period.end` is **MANDATORY**. 
+
+Use one of the following dates in order of descending preference:
+*	The prescription end date recorded in the patient record
+*	The prescription end date derived from period.start and the duration
+*	The Period.start date
+    * This option should only occur where data has been lost (for example during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
 
 
 ### dispenseRequest.quantity ###
