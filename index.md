@@ -12,15 +12,15 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-GP Connect is a service that can allow authorised clinical staff in GP practices and other care settings to share GP practice clinical information and data between IT systems, quickly and efficiently. This ensures patient medical information is available to clinicians when and where they need it, improving patient care.
+GP Connect allows authorised clinical staff in GP practices and other care settings to share GP practice clinical information and data between IT systems, quickly and efficiently. This ensures patient medical information is available to clinicians when and where they need it, improving patient care.
 
-<p>GP Connect is developing standardised {% include tooltip.html type="API" %} specifications to be used by any system for the sharing of data, so that clinicians in different care settings can:</p>
+<p>GP Connect is developing {% include tooltip.html type="API" %} specifications to be used by any system for the sharing of data, so that clinicians in different care settings can:</p>
 
 * view a patient’s GP practice record
 * import or download medication and allergies information from this record 
 *	manage a patient's GP appointments
 
-This will provide better, safer, more convenient care for patients and save time for clinicians. It will also help meet targets under [NHS England’s improving access to general practice programme](https://www.england.nhs.uk/gp/gpfv/redesign/improving-access/).
+This provides better, safer, more convenient care for patients and save time for clinicians. It also helps meet targets under [NHS England’s improving access to general practice programme](https://www.england.nhs.uk/gp/gpfv/redesign/improving-access/).
 
 ## GP Connect overview ##
 
