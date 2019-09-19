@@ -36,13 +36,26 @@ The consumer system:
 #### FHIR&reg; relative request ####
 
 ```http
-POST /Patient/$gpc.getstructuredrecord
+GET /DocumentReference?[subject={PatientNHSNumber}]
+                       [&created={search_prefix}creation_date]
+                       [&period={search_prefix}period_date]
+                       [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
+                       [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
+                       [&type={document_type}]
+                       [&custodian={OrgTypeCodeSystem}|{OrgTypeCode}]
+
 ```
 
 #### FHIR&reg; absolute request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.getstructuredrecord
+POST https://[proxy_server]/https://[provider_server]/[fhir_base]/DocumentReference?[subject={PatientNHSNumber}]
+                                                                  [&created={search_prefix}creation_date]
+                                                                  [&period={search_prefix}period_date]
+                                                                  [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
+                                                                  [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
+                                                                  [&type={document_type}]
+                                                                  [&custodian={OrgTypeCodeSystem}|{OrgTypeCode}]
 ```
 
 #### Request headers ####
@@ -54,7 +67,7 @@ Consumers **MUST** include the following additional HTTP request headers:
 | `Ssp-TraceID`        | Consumer's Trace ID (a GUID or UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1`|
+| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:documentreference-1`|
 
 Example HTTP request headers:
 
@@ -64,7 +77,7 @@ Content-Type: application/fhir+json;charset=utf-8
 Ssp-TraceID: 629ea9ba-a077-4d99-b289-7a9b19fd4e03
 Ssp-From: 200000000115
 Ssp-To: 200000000116
-Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1
+Ssp-InteractionID: urn:nhs:names:services:gpconnect-documents:fhir:rest:search:documentreference-1
 ```
 
 #### Payload request body ####
@@ -115,7 +128,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 ```http
 HTTP/1.1 200 OK
 Cache-Control: no-store
-Content-Type: application/json+fhir; charset=utf-8
+Content-Type: application/fhir+json; charset=utf-8
 Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
