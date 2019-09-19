@@ -89,7 +89,7 @@ SNOMED content in this area will not support retrieval behaviour, for example:
 
 The terminology in its current form is therefore unlikely to support the structured classification (as it crosses over such classification) and is not suited to structured retrieval queries. 
 
-### Design decision for classification
+### Design for classification
 
 The analysis provided no clear structure to apply to classification of referrals which the current data in GP clinical systems can support.
 The referrals SNOMED terminology does not lend itself to give benefit to a structured classification.
