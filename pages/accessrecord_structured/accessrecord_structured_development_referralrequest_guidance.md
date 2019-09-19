@@ -69,11 +69,11 @@ The <code>ReferralRequest</code> resource has several elements covering the clas
 None of the above elements are mandatory.
 <code>serviceRequested</code>, <code>specialty</code> and <code>reasonCode</code> are fairly distinct, but <code>type</code> appears to have significant overlap with all those elements. 
 
-The scope of the main referral code across GP clinical systems spans these <code>ReferralRequest</code> elements, that is there is not a strong alignment to any single element.
+The scope of the main referral code across GP clinical systems spans these <code>ReferralRequest</code> elements - that is, there is not a strong alignment to any single element.
 
 ### Referrals and SNOMED CT
 
-The SNOMED CT 'is a' hierarchy <code>3457005 | Patient referral (procedure) |</code>) was considered as a potential valueset for referrals.
+The SNOMED CT 'is a' hierarchy (<code>3457005 | Patient referral (procedure) |</code>) was considered as a potential valueset for referrals.
 However, it includes pre-coordinated referral concepts of various patterns which span all the classification elements listed above:
 * Referral to institution (for example, hospital)
 * Referral to speciality (for example, department)
@@ -89,7 +89,7 @@ SNOMED content in this area will not support retrieval behaviour, for example:
 
 The terminology in its current form is therefore unlikely to support the structured classification (as it crosses over such classification) and is not suited to structured retrieval queries. 
 
-### Design for classification
+### Design decision for classification
 
 The analysis provided no clear structure to apply to classification of referrals which the current data in GP clinical systems can support.
 The referrals SNOMED terminology does not lend itself to give benefit to a structured classification.
