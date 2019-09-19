@@ -241,11 +241,11 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     </tr>
 
     <tr>
-      <td><code class="highlighter-rouge">includePathology</code></td>
+      <td><code class="highlighter-rouge">includeInvestigations</code></td>
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
       <td>0..1</td>
-      <td>Include pathology test results in the response.</td>
+      <td>Include investigations in the response.</td>
     </tr>
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterResults</code></span></td>
@@ -253,8 +253,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..*</td>
       <td>
-        Filter the pathology test results to match the specified code(s)
-        <p><i>Part parameter: may only be provided if <code>includePathology</code> is set.</i></p>        
+        Filter the investigations to match the specified code(s)
+        <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>        
       </td>
     </tr>
     <tr>
@@ -263,8 +263,35 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Filter the test results to match the specified code(s)
-        <p><i>Part parameter: may only be provided if <code>includePathology</code> is set.</i></p>        
+        Filter the investigations to match the specified code(s)
+        <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>        
+      </td>
+    </tr>
+
+    <tr>
+      <td><code class="highlighter-rouge">includeReferrals</code></td>
+      <td><code class="highlighter-rouge"></code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>Include referrals in the response.</td>
+    </tr>
+    <tr>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">referralsSearchPeriod</code></span></td>
+      <td><code class="highlighter-rouge">Period</code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>
+        Restrict referrals by defining a time period
+
+        <ul>
+           <li>If the <code>referralsSearchPeriod</code> is not specified, all referrals will be returned.</li>
+           <li>If the <code>referralsSearchPeriod.start</code> is populated, all referrals on or after the <code>referralsSearchPeriod.start</code> <b>MUST</b> be returned.</li>
+           <li>If the <code>referralsSearchPeriod.end</code> is populated, all referrals on or before the <code>referralsSearchPeriod.end</code> <b>MUST</b> be returned.</li>
+           <li><code>referralsSearchPeriod.start</code> and <code>referralsSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
+          <li><code>referralsSearchPeriod.start</code> and <code>referralsSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
+      </ul>
+
+        <p><i>Part parameter: may only be provided if <code>includeReferrals</code> is set.</i></p>        
       </td>
     </tr>
 
@@ -355,7 +382,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
       ]
     },
     {
-      "name": "includePathology",
+      "name": "includeInvestigations",
       "part": [
         {
           "name": "filterResults",
@@ -370,6 +397,18 @@ The example below shows a fully populated `Parameters` resource as a request to 
           "valuePeriod": {
             "start": "2017-01-02",
             "end": "2017-07-02"
+          }
+        }
+      ]
+    },
+    {
+      "name": "includeReferrals",
+      "part": [
+        {
+          "name": "referralsSearchPeriod",
+          "valuePeriod": {
+            "start": "2016-12-25",
+            "end": "2018-12-25"
           }
         }
       ]
@@ -405,6 +444,9 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `filterStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `filterSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+|The `filterResults` parameter is passed with a code from a code system other than SNOMED CT | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+|The `resultsSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `referralsSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -511,7 +553,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeConsultations` parameter is set:
   - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
-  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources for linked clinical information
+  - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html), [`DocumentReference`]() and [`Immunization`](accessrecord_structured_development_immunization.html) resources for linked clinical information
   - and when the `numberOfMostRecent` parameter is set:
     - limit the number of returned consultations to match the included value
 
@@ -534,7 +576,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeProblems` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`Immunization`](accessrecord_structured_development_immunization.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
+  - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`Immunization`](accessrecord_structured_development_immunization.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html), [`DocumentReference`]() and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
 - and when the `filterStatus` parameter is set:
 
@@ -574,28 +616,45 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - and when an `end` value is set, all uncategorised data with an `Observation.effectiveTime` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, uncategorised data with an `Observation.effectiveTime` after the `start` and with an `Observation.effectiveTime` before the `end` **MUST** be returned
 
-##### Test results #####
+##### Investigations #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includePathology` parameter is not set:
+- when the `includeInvestigations` parameter is not set:
 
-  - no test result information shall be returned
+  - no investigations shall be returned
 
-- when the `includePathology` parameter is set:
+- when the `includeInvestigations` parameter is set:
 
-  - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) and &nbsp; [`Specimen`](accessrecord_structured_development_specimen.html) resources representing the patient's test results
+  - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html), [`DocumentReference`]() and &nbsp; [`Condition`](accessrecord_structured_problems.html) resources representing the patient's test results
 
   - when the `filterResults` parameter is set:
     - all test results matching the supplied SNOMED CT code(s) **MUST** be returned
 
   - and when the `resultSearchPeriod` parameter is set:
-    - when a `start` value is set, all test results after the date **MUST** be returned
-    - and when an `end` value is set, all test results before the date **MUST** be returned
+    - when a `start` value is set, all investigations after the date **MUST** be returned
+    - and when an `end` value is set, all investigations before the date **MUST** be returned
     - and when both a `start` and `end` are specified, test results after the `start` and before the `end` **MUST** be returned
 
 
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the resources above
+
+##### Referrals #####
+
+Provider systems **MUST** include the following in the response `Bundle`:
+
+- when the `includeReferrals` parameter is not set:
+
+  - no referrals information shall be returned
+
+- when the `includeReferrals` parameter is set:
+
+  - [`List`](accessrecord_structured_development_list.html), [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's referrals will be returned.
+
+- when the `referralsSearchPeriod` is set:
+  - when a `start` value is set, all referrals with an `ReferralRequest.authoredOn` after the date **MUST** be returned
+  - and when an `end` value is set, all referrals with an `ReferralRequest.authoredOn` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, referrals with an `ReferralRequest.authoredOn` after the `start` and with an `ReferralRequest.authoredOn` before the `end` **MUST** be returned
 
 #### Medication search date ####
 
