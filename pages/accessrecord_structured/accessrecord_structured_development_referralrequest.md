@@ -63,7 +63,7 @@ _Providing_  systems **MUST** ensure this GUID is globally unique and a persiste
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
-If the referral was made via the e-Referral Service and a UBRN exists for the referral, then it **MUST** be included as an identifier.
+If the referral was made via the e-Referral Service and a Unique Booking Reference Number (UBRN) exists for the referral, then it **MUST** be included as an identifier.
 The system identifier for this is XXXXXXXXXX
 
 ### basedOn
@@ -128,7 +128,7 @@ If there is a priority code for the referral but it is incompatible with the e-R
 </table>
 
 This **MUST NOT** be populated with the source system's main code for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
-This **MAY** be populated if the GP Clinical System also holds a distinct entry for the type of service requested. 
+This **MAY** be populated if the GP clinical system also holds a distinct entry for the type of service requested. 
 
 ### subject
 
@@ -202,7 +202,7 @@ If the referral does not clearly identify responsibility for the referral decisi
   </tr>
 </table>
 
-This **MUST** be populated if the <code>requester.agent</code> is a practitioner and the <code>Organization</code> associated with the referenced <code>Practitioner</code> is not the GP Practice responsible for the referral.
+This **MUST** be populated if the <code>requester.agent</code> is a practitioner and the <code>Organization</code> associated with the referenced <code>Practitioner</code> is not the GP practice responsible for the referral.
 This element **SHOULD** be absent if the <code>requester.agent</code> is not a practitioner.
 
 ### specialty
@@ -216,7 +216,7 @@ This element **SHOULD** be absent if the <code>requester.agent</code> is not a p
 </table>
 
 This **MUST NOT** be populated with the source system's main code for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
-This **MAY** be populated if the GP Clinical System holds a distinct entry for the clinical or practitioner specialty requested by the referral. 
+This **MAY** be populated if the GP clinical system holds a distinct entry for the clinical or practitioner specialty requested by the referral. 
 
 ### recipient
 
@@ -228,7 +228,7 @@ This **MAY** be populated if the GP Clinical System holds a distinct entry for t
   </tr>
 </table>
 
-This **MUST** be populated with the practitioner and / or organisation the patient has been referred to, if that is recorded in a suitable coded format.
+This **MUST** be populated with the practitioner and/or organisation the patient has been referred to, if that is recorded in a suitable coded format.
 If the referral recipient details are in a form which cannot be returned as a referenced resource, the details **MUST** be populated to the <code>note</code> as key value pairs.
 
 ### reasonCode
