@@ -93,7 +93,7 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
   <tr>
     <td>Topic</td>
     <td>List</td>
-    <td>Each Topic is held as a List containing references to each of the Headings under the Topic.<br>Where a Topic does not contain Headings the the List directly references Clinical Items.</td>
+    <td>Each Topic is held as a List containing references to each of the Headings under the Topic.<br>Where a Topic does not contain Headings the List directly references Clinical Items.</td>
   </tr>
   <tr>
     <td>Heading</td>
@@ -103,7 +103,7 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
   <tr>
     <td>Clinical Items</td>
     <td>Appropriate FHIR profile</td>
-    <td>Each Clinical Item will be head in the appropriate FHIR profile as defined elsewhere in this specification</td>
+    <td>Each Clinical Item will be head in the appropriate FHIR profile as defined elsewhere in this specification.</td>
   </tr></table>
 
 
@@ -158,7 +158,7 @@ When linking to a clinical item that is held in a single FHIR resource the refer
 * For Uncategorised Data – reference the `Observation` – Uncategorised profile
 * For a Referral - reference the `ReferralRequest` profile
 * For a Document - reference the `DocumentReference` profile
-* For an Invesitgation - reference the `DiagnosticReport` profile
+* For an Investigation - reference the `DiagnosticReport` profile
 
 ## Consultations containing unsupported clinical items
 
@@ -199,9 +199,9 @@ In effect, there will be a warning message that items were excluded from the res
 
 ## Draft Consultations
 
-In some GP practice clinical systems it is possible for the clinician to save a consultation record in a draft (or equivalent) status.
+In some GP practice clinical systems, it is possible for the clinician to save a consultation record in a draft (or equivalent) status.
 
-Consultations in this draft status MUST be included in the response. `Encounter.Status` is used to identify them as draft.
+Consultations in this draft status **MUST** be included in the response. `Encounter.Status` is used to identify them as draft.
 
 ## Suppression of empty consultations, topics and headings
 
@@ -223,7 +223,7 @@ The same approach is followed for empty topic and heading levels recorded at sou
 
 ## Consumer cautions
 
--   A consumer making consultation-oriented queries only **MUST NOT** expect to obtain all items in the patient record
+-   A consumer making consultation-oriented queries only **MUST NOT** expect to obtain all items in the patient record.
 -   Other GP Connect APIs will provide full access to items in the patient record including all medications, all allergies, all problems up to and including get whole record queries.
 
 ## Design decisions
