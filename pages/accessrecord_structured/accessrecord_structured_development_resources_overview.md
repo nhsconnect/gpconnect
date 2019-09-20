@@ -137,6 +137,14 @@ The cross care setting identifier and how it will work and be used is currently 
 * [List - consultation structure](accessrecord_structured_development_list_consultation.html) 
 * [Observation - narrative data](accessrecord_structured_development_guidance_observation_narrative.html)
 * [Condition - ProblemHeader](accessrecord_structured_problems.html)
+* [Diagnostic Report](accessrecord_structured_development_diagnosticreport.html)
+* [Specimen](accessrecord_structured_development_specimen.html)
+* [Observation - Test Group Header](accessrecord_structured_development_observation_testgroup.html)
+* [Observation - Test Result](accessrecord_structured_development_observation_testresult.html)
+* [Observation - Filing Comments](accessrecord_structured_development_observation_filingcomments.html)
+* [ProcedureRequest](accessrecord_structured_development_procedurerequest.html)
+* [ReferralRequest](accessrecord_structured_development_referralrequest.html)
+* [DocumentReference](accessrecord_structured_development_documents.html)
 
 ### Administrative ###
 
