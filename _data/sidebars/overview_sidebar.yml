@@ -16,11 +16,14 @@ entries:
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-      
+
       subfolders:
       - title: Release notes
         output: web
         subfolderitems:
+        - title: 1.2.5
+          url: /overview_release_notes_1_2_5.html
+          output: web
         - title: 1.2.4
           url: /overview_release_notes_1_2_4.html
           output: web
@@ -106,10 +109,10 @@ entries:
       output: web
     - title: General API guidance
       url: /development_general_api_guidance.html
-      output: web          
+      output: web
     - title: Branch surgeries
       url: /development_branch_surgeries.html
-      output: web          
+      output: web
     - title: FHIR&reg; resources
       url: /development_fhir_resource_guidance.html
       output: web
@@ -121,11 +124,11 @@ entries:
       output: web
     - title: Volumetric and performance
       url: /development_api_volume_and_performance.html
-      output: web          
+      output: web
     - title: Non-functional requirements
       url: /development_api_non_functional_requirements.html
       output: web
-          
+
   - title: Implement a capability
     output: web
     folderitems:
@@ -156,7 +159,7 @@ entries:
       output: web
     - title: Personal Demographic Service
       url: /integration_personal_demographic_service.html
-      output: web	
+      output: web
 
       subfolders:
       - title: Spine Directory Services
@@ -208,7 +211,7 @@ entries:
       subfolders:
       - title: External links
         output: web
-        subfolderitems:        
+        subfolderitems:
         - title: GPC Documentation repository
           external_url: https://github.com/nhsconnect/gpconnect
           output: web
@@ -260,7 +263,7 @@ entries:
           output: web
         - title: Design
           url: /tag_design.html
-          output: web   
+          output: web
         - title: Development
           url: /tag_development.html
           output: web
@@ -278,7 +281,7 @@ entries:
           output: web
         - title: Support
           url: /tag_support.html
-          output: web   
+          output: web
         - title: Clinical safety
           url: /tag_clinical_safety.html
           output: web
@@ -298,4 +301,3 @@ entries:
     - title: Run website locally
       url: /support_run_website_locally.html
       output: web
-
