@@ -64,6 +64,15 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 * All Immunisations will always be returned.
 
+### Referrals ###
+
+* Search for all Outbound Referrals within the specified date range
+    * The consumer system requests all items within a start and end date
+    * The provider system returns all items whose authoredOn date is within the start and end date (inclusive)
+    * Where there is a start date but no end date, the search goes to the end of the patient record
+    * Where there is an end date but no start date, the search goes from the start of the patient record
+    * Where no dates are supplied by the consumer, all outbound referral data items are returned
+
 ## Following a linkage ##
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
 
