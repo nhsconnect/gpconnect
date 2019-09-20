@@ -92,7 +92,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems **MUST**:
 
 - return a `200` **OK** HTTP status code to indicate successful execution of the operation.
-- return a `Binary` resource conforming to the [`Binary`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1) resource definition
+- return a `Binary` resource conforming to the [`Binary`](https://www.hl7.org/fhir/STU3/binary.html) resource definition
 -
 - include the `versionId` of the current version of the `Binary` resource.
 

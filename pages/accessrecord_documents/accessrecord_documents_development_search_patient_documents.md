@@ -38,20 +38,25 @@ Provider systems SHALL support the following include parameters:
 
 | Name | Description | Paths |
 |---|---|---|
-| `_include= DocumentReference:patient` | Include `Practitioner` resources referenced within the returned `Schedule` resources | `Schedule.actor:Practitioner` |
-| `_include= DocumentReference:custodian:Organization` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
-| `_include= DocumentReference:author:Organization` | Include `Organization` resources references from matching `Location` resources | `Location.managingOrganization` |
+| `_include= DocumentReference:patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.patient` |
+| `_include= DocumentReference:custodian:Organization` | Include `Organization` resources referenced within the returned `DocumentReference` resources | `DocumentReference.custodian:Organization` |
+| `_include= DocumentReference:author:Organization` | Include `Organization` resources references from matching `DocumentReference` resources | `DocumentReference.author` |
 
-Consumer systems SHALL send the following parameters in the request:
+Consumer systems MUST send the following parameters in the request:
 
 TODO: Add guidance on how parameters should be populated
+- subject **MUST** be included
 
-Consumer systems SHOULD send the following parameters in the request:
+Consumer systems **SHOULD** send the following parameters in the request:
 
-- `searchFilter` parameters - see [Enhanced slot filtering](#enhanced-slot-filtering).
+-  created
+- facility
+- author
+- type
 
+Consumer systems **MAY** send the following parameters in the request:
 
-
+-  description
 
 ## Prerequisites ##
 
@@ -86,13 +91,14 @@ GET /DocumentReference?[subject={PatientNHSNumber}]
 #### FHIR&reg; absolute request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/DocumentReference?[subject={PatientNHSNumber}]
-                                                                  [&created={search_prefix}creation_date]
-                                                                  [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
-                                                                  [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
-                                                                  [&type={document_type}]
-                                                                  [&custodian={OrgTypeCodeSystem}|{OrgTypeCode}]
-                                                                  [&description={document_title}]
+POST https://[proxy_server]/https://[provider_server]/[fhir_base]/
+                      DocumentReference?[subject={PatientNHSNumber}]
+                      [&created={search_prefix}creation_date]
+                      [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
+                      [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
+                      [&type={document_type}]
+                      [&custodian={OrgTypeCodeSystem}|{OrgTypeCode}]
+                      [&description={document_title}]
 ```
 
 #### Request headers ####
@@ -119,43 +125,19 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect-documents:fhir:rest:search:d
 
 #### Payload request body ####
 
-
+n/a
 
 #### Error handling ####
 
-The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+The provider system SHALL return an error if:
 
-The table below shown common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
+- facility contains an identifier other than an ODS code
+- author contains an identifier other than an ODS code
+- custodian contains an identifier other than an ODS code
 
-Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
+SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
-|-------------------------|-------------------|
-| Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
-| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The provider could not parse the `Parameters` resource.  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `patientNHSNumber` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `medicationSearchFromDate` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `consultationSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The end date of the `consultationSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-|The `filterResults` parameter is passed with a code from a code system other than SNOMED CT | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-|The `resultSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-|-------------------------|-------------------|
+Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
 
 
 ### Request response ###
@@ -174,23 +156,16 @@ Content-Length: 1464
 
 Provider systems **MUST**:
 
-- return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
-- return a `Bundle` conforming to the [`GPConnect-Searchset-Bundle-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) profile definition
+- return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's documents
+- return a [`Bundle`](http://hl7.org/fhir/STU3/bundle.html)
 - return the following resources in the `Bundle`:
   - `Patient` matching the NHS Number sent in the body of the request
   - `Organization` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - `OperationOutcome` containing warnings about any unsupported parameters
-  - resources holding consultations, problems, immunisations, allergies, intolerance, medication and uncategorised data according to the rules below:
-
-Provider systems **SHOULD**:
-
-
-
-
-- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the resources above
+  - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](accessrecord_structured_development_documents.html) profile that match the supplied search criteria
+  - Only `Organization` resources SHALL be returned where they are associated with the `DocumentReference` resources matching the query
 
 
 
