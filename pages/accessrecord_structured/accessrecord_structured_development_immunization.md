@@ -111,7 +111,7 @@ Where  _consuming_  systems are integrating data from this profile to their loca
   </tr>
 </table>
 
-Fixed to the value `completed` for all CareConnect profiles.
+Fixed to the value `completed` for all Care Connect profiles.
 
 ### notGiven
 
