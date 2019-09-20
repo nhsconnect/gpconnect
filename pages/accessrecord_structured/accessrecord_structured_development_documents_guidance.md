@@ -11,12 +11,6 @@ summary: "Guidance for the representation and consumption of documents"
 
 A clinical document (CD) is a written, printed or electronic record that provides evidence of medical care. Clinical documents must be accurate, timely and reflect specific services provided to a patient.
 Clinical documentation is used to facilitate inter-provider communication, allow evidence-based healthcare systems to automate decisions, provide evidence for legal records and create patient registry functions so public health agencies can manage and research large patient populations more efficiently.
-HL7 characterizes a document by the following properties:
- - Persistence – Documents are persistent over time. The content of the document does not change from one moment to another. A document represents information stored at a single instance in time.  
- - Wholeness - A document is a whole unit of information. Parts of the document may be created or edited separately, or may also be authenticated or legally authenticated, but the entire document is still to be treated as a whole unit.  
- - Stewardship –A document is maintained over its lifetime by a custodian, either an organization or a person entrusted with its care.
- - Context - A clinical document establishes the default context for its contents  
- - Potential for authentication - A clinical document is an assemblage of information that is intended to be legally authenticated.  
 
 ## Problem Statement ##
 
@@ -187,7 +181,7 @@ Standardise the search and retrieval of clinical documents from the GP Practices
    * Lack of versioning of documents in the GP Practices. DateTime stamp is used to identify the latest version of the document.
    * No nationally agreed list of Document Types - GP Practices have their own list of document types which may also include free text.
    * Poor metadata of documents - GP systems have poor metadata information about documents.
-   * Documents in disparate systems in a GP Practice - Documents metadata information and it’s versions may exist in disparate systems in a GP Practice. There is no master system for managing documents.
+   * Documents in disparate systems in a GP Practice - Documents metadata information and it’s versions may exist in disparate systems in a GP Practice. However, documents and it's basic information does sync back from Document Management Systems to the Clinical system.
 
 ## Scope ##
 
@@ -237,3 +231,31 @@ Paramedic, Paramedic s IT system, Patient, GPConnect APIs, GP Practice ITsystem
 5.	The Paramedic views the metadata information of matching documents on their system and requests to view the DNR document from the GP Practice system via GPConnect.
 6.	The Paramedics system receives the binary of the document and presents it in a readable format.
 7.	The Paramedic views the DNR document and use this information to assist their treatment of the Patient
+
+## Documents Classification ##
+GP clinical systems have taken a variety of approaches to the classification of documents. Document types vary across GP Practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
+To address this issue, GPConnect has created a valueset of document types. It is based on the Clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GPConnect document types valueset. Where the Providers have a code that does not exist in the value set, then they can provide their code and its value in the text field.
+
+## Patient records where document are not available ##
+GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GPConnect APIs would return a placeholder for documents specifying that there is a document but it is not available. The metadata information about the document would provide information about the Authoring Organisation of the document from where the document can be requested.
+
+## Document Format ##
+Providers to provide documents in the following industry acceptable format:
+* Plain Text (text/plain) - .txt
+* HTML Text (text/html) - .html, .htm
+* PDF (application/pdf) - .pdf
+* XML Text (text/xml) - .xml
+* RTF Text (text/rtf) - .rtf, .rtx
+* Basic Audio (audio/basic) - .au
+* PNG Image (image/png) - .png
+* GIF Image (image/gif) - .gif
+* JPEG Image (image/jpeg) - .jpg, .jpe, .jpeg
+* TIFF Image (image/tiff) - .tif, .tiff
+* MSWORD (application/msword) - .doc
+* MSWORD (application/vnd.openxmlformats-officedocument.wordprocessingml.document) - .docx
+DICOM
+
+
+
+
+
