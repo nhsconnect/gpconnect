@@ -233,11 +233,11 @@ Paramedic, Paramedic s IT system, Patient, GPConnect APIs, GP Practice ITsystem
 7.	The Paramedic views the DNR document and use this information to assist their treatment of the Patient
 
 ## Documents Classification ##
-GP clinical systems have taken a variety of approaches to the classification of documents. Document types vary across GP Practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
-To address this issue, GPConnect has created a valueset of document types. It is based on the Clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GPConnect document types valueset. Where the Providers have a code that does not exist in the value set, then they can provide their code and its value in the text field.
+Document types vary across GP Practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
+To address this issue, GPConnect has created a valueset of document types. It is based on the Clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GPConnect document types valueset. Where the Providers have a code that does not exist in the value set, they can provide their code and its value in the text field. This would improve the standardisation of document types across the GP Practices.
 
-## Patient records where document are not available ##
-GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GPConnect APIs would return a placeholder for documents specifying that there is a document but it is not available. The metadata information about the document would provide information about the Authoring Organisation of the document from where the document can be requested.
+## Patient records where documents are not available ##
+GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GPConnect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the Authoring Organisation of the document from where the document can be requested.
 
 ## Document Format ##
 Providers to provide documents in the following industry acceptable format:
@@ -253,8 +253,22 @@ Providers to provide documents in the following industry acceptable format:
 * TIFF Image (image/tiff) - .tif, .tiff
 * MSWORD (application/msword) - .doc
 * MSWORD (application/vnd.openxmlformats-officedocument.wordprocessingml.document) - .docx
-DICOM
+* DICOM
 
+## Multiple Versions of the Document ##
+A GP Practice may have multiple versions of the same document of the Patient in their clinical system. Providers would only return latest version of the document via the GPConnect APIs.
+
+## Internal or External Documents ##
+The GP Practice from which the document is being requested is the custodian of the document. Requirements analysis suggest that end-users would like to understand if the patient document that they are retrieving from the GP Practice is an internally generated document in the GP Practice or an external Organisation has sent that document to the GP Practice.
+If the 'Authoring Organisation' of the document is same as Custodian of the document then it's an internally generated document.
+If the 'Authoring Organisation' of the document is NOT the same as Custodian of the document then it's an externally generated document.
+
+## File Size of the document ##
+End-users would like to know the size of the document before retrieving the document. Providers would return the file size of the document in the response payload for Search Document GPConnect API request.
+
+## Multiple systems/providers being used in a GP Practice to manage documents ##
+A GP Practice may use Document Management systems for managing documents besides the clinical systems. The documents held in Document Management system sync to the clinical system along with it's basic information such as document type, clinical setting, organisation, description and date. Any read codes extracted in the document management system is also synced to the clinical system. This is done so that in case when the document management system is unavailable, the document is still available in the prinicple clinical system and vice versa.
+GPConnect APIs would search for documents and retrieve documents only from the clinical system.
 
 
 
