@@ -101,7 +101,7 @@ For each `ProblemHeader (Consultation)` referenced in the `List` profile:
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
     *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investifation    
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 Where a Problem links to a profile that is not yet supported by the provider system, then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html).
