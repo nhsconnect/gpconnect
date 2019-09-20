@@ -63,7 +63,7 @@ For each `Encounter` referenced in the `List` profile:
     *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investifation    
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investigation    
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above.
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
