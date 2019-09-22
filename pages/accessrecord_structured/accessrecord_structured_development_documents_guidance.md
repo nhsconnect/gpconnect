@@ -97,6 +97,10 @@ Standardise the search and retrieval of clinical documents from the GP practices
 </table>
 
 
+## Value Proposition ##
+
+ <IMG src="images/access_structured/ValueProp.png" alt="Value Proposition"  style="max-width:85%;max-height:80%;">
+ 
 ### Known issues ###
 
    * Lack of versioning of documents in the GP practices. DateTime stamp is used to identify the latest version of the document.
@@ -107,11 +111,6 @@ Standardise the search and retrieval of clinical documents from the GP practices
 ## Scope ##
 
   <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:60%;max-height:60%;">
-
-## Value Proposition ##
-
- <IMG src="images/access_structured/ValueProp.png" alt="Scope of documents"  style="max-width:85%;max-height:80%;">
-
 
 ## Use case ##
 
