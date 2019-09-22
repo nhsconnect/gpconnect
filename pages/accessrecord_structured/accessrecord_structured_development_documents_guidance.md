@@ -111,7 +111,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Use case ##
 
-<IMG src="images/access_structured/DistrictNursePatient.png" alt="District Nurse attends a Patient at home and views their discharge summary"  style="max-width:60%;max-height:60%;">
+<IMG src="images/access_structured/DistrictNursePatient.png" alt="District Nurse attends a Patient at home and views their discharge summary"  style="max-width:73%;max-height:60%;">
  
 ## Documents classification ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
