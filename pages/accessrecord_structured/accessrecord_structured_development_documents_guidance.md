@@ -111,48 +111,8 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Use case ##
 
-### a. Community pharmacist provides diabetes services ###
-
- **Scenario**
-
-The community pharmacist provides a diabetes service. Providing this service to patients can reduce the workload on the local GP practice(s), so the practice(s) can focus on higher priority or more critical services or provide greater convenience to the patient and, thus, the local GP practice(s) refer patients to the community pharmacist.
-
-**Actors**
-
-Patient, community pharmacist, GP Connect APIs, community pharmacy IT system, GP practice IT system
-
-**Main flow**
-
-1.	The patient is referred to the pommunity pharmacist for diabetes service by the GP.
-2.	The community pharmacist wants to view certain clinical documents of the patient.
-3.	The community pharmacist accesses GP Connect to search for information about matching clinical documents from the patient’s registered GP practice system.
-4.	GP Connect requests metadata information about clinical documents from the GP clinical system and presents it to the community pharmacy system.
-5.	The community pharmacists view this information and request to view a clinical document from the GP practice system via GP Connect.
-6.	Community pharmacy system receives binary of the requested document and presents it in a readable format
-7.	The community pharmacist views the clinical document and uses this information to assist their treatment of the patient.
-
-
-### b. Paramedic accesses Do Not Attempt Resuscitation (DNAR) document ###
-
-**Scenario**
-
-A paramedic is visiting a patient who has collapsed at home and needs to ascertain whether the patient has a Do Not Attempt Resuscitation order recorded on the GP system, and the date it was recorded.  Ideally, the paramedic would be able to see DNR history and associated information such as whether the patient and family are aware of the decision.  
-They should also be able to access an uploaded DNAR document, if it exists.
-
-**Actors**
-
-Paramedic, paramedic's IT system, patient, GP Connect APIs, GP practice IT system
-
-**Main flow**
-
-1.	Paramedic accesses patient information on their mobile EPR.
-2.	The paramedic wants to view DNAR document of the patient to understand patient’s consent to resuscitate or not.
-3.	Paramedic's system accesses GP Connect to search for information about any DNAR document of the patient from their registered GP practice’s clinical system.
-4.	GP Connect requests metadata information about matching documents of the patient from the GP practice system and presents it to the paramedic’s system.
-5.	The paramedic views the metadata information of matching documents on their system and requests to view the DNAR document from the GP practice system via GP Connect.
-6.	The paramedic's system receives the binary of the document and presents it in a readable format.
-7.	The paramedic views the DNAR document and uses this information to assist their treatment of the patient.
-
+<IMG src="images/access_structured/DistrictNursePatient.png" alt="District Nurse attends a Patient at home and views their discharge summary"  style="max-width:60%;max-height:60%;">
+ 
 ## Documents classification ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
 To address this issue, GP Connect has created a valueset of document types. It is based on the clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GP Connect document types valueset. Where the providers have a code that does not exist in the value set, they can provide their code and its value in the text field. This would improve the standardisation of document types across the GP practices.
