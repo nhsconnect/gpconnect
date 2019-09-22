@@ -221,6 +221,17 @@ Size of the file.
 The binary file (base64 binary). </br>
 This field will get populated only when the document is being retrieved. It will NOT be populated during the search document function.
 
+### status ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>code</code></td>
+  </tr>
+</table>
+
+current | superseded | entered-in-error
+This field will always have default value of current as only latest versions of the document can be retrieved.
+
 ### consultationReference ###
 
 <table class='resource-attributes'>
@@ -233,16 +244,4 @@ This field will get populated only when the document is being retrieved. It will
 
 Reference to the consultation the document was created/attached in.
 
-## Elements not in use ##
 
-The following elements **MUST NOT** be populated:
-
-### status ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-  </tr>
-</table>
-
-current | superseded | entered-in-error
