@@ -99,7 +99,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Value Proposition ##
 
- <IMG src="images/access_structured/ValueProp.png" alt="Value Proposition"  style="max-width:85%;max-height:80%;">
+ <IMG src="images/access_structured/ValueProp.png" alt="Value Proposition"  style="max-width:100%;max-height:80%;">
  
 ### Known issues ###
 
@@ -154,6 +154,8 @@ End-users would like to know the size of the document before retrieving the docu
 A GP practice may use document management systems for managing documents besides the clinical systems. The documents held in document management system sync to the clinical system along with its basic information such as document type, clinical setting, organisation, description and date. Any read codes extracted in the document management system is also synced to the clinical system. This is done so that, in case when the document management system is unavailable, the document is still available in the principal clinical system and vice versa.
 GP Connect APIs would search for documents and retrieve documents only from the clinical system.
 
+## Document Status ##
+Document Status would always have default value of 'current' as only the latest version of the document is retrievable from a GP Practice.
 
 
 
