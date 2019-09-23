@@ -13,7 +13,7 @@ The access record structured capability provides the ability to retrieve data fr
 
 ## Record structure in GP clinical systems
 
-There are several GP clinical systems in use in England and, although there are many differences in functionality, there are many categorisations that are common across most/all of the different systems. In GP Connect we have called these categorisations 'clinical areas' and have treated each one as a separate group of data that can be retrieved by the API. 
+There are several GP clinical systems in use in England and, although there are many differences in functionality, there are many categorisations that are common across most/all of the different systems. In GP Connect we have called these categorisations 'clinical areas' and have treated each one as a separate group of data that can be retrieved by the API.
 
 For each of these clinical areas in GP systems, there is usually a separate screen or module for entering and viewing data. However, it is normal that there are a number of different ways for a user to view data that has been entered. It is common, for instance, to view an allergy in a separate allergy screen, in a view of a consultation, in a date-ordered screen containing all clinical items often called a journal or care history screen or in a screen that is a one-page summary of the patient record.
 
@@ -52,5 +52,3 @@ The following pages describe each of the clinical areas in more detail and are f
 - [Problem guidance](accessrecord_structured_development_problems_guidance.html)
 - [Pathology guidance](accessrecord_structured_development_pathology_guidance.html)
 - [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
-- [Documents guidance](accessrecord_structured_development_documents_guidance.html)
-
