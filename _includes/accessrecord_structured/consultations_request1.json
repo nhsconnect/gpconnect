@@ -1,0 +1,34 @@
+{% highlight json %}
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeConsultations",
+      "part": [
+        {
+          "name": "numberOfMostRecent",
+          "valueInteger": "3"
+        }
+      ]
+    },
+    {
+      "name": "includeProblems",
+      "part": [
+        {
+          "name": "includeStatus",
+          "valueCode": "active"
+        }
+      ]
+    }
+  ]
+}
+
+{% endhighlight %}

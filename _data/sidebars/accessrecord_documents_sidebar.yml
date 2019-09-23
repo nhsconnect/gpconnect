@@ -1,0 +1,43 @@
+entries:
+- title: Access Record Documents
+  product: Access Record Documents
+  folders:
+
+  - title: Overview
+    output: web
+    folderitems:
+
+    - title: Overview
+      url: /accessrecord_documents_development.html
+      output: web
+    - title: Documents guidance
+      output: web
+      url: /accessrecord_documents_development_documents_guidance.html
+
+  - title: Document Resources
+    output: web
+    folderitems:
+
+    - title: <b class='resource'>DocumentReference</b>
+      output: web
+      url: /accessrecord_documents_development_documents.html
+    - title: <b class='resource'>Binary</b>
+      output: web
+      url: /accessrecord_documents_development_binary.html
+    - title: <b class='resource'>Bundle</b>
+      output: web
+      url: /accessrecord_documents_development_bundle.html
+    - title: Documents FHIR&reg; examples
+      output: web
+      url: /accessrecord_documents_development_fhir_examples_documents.html
+
+  - title: API definition
+    output: web, pdf
+    folderitems:
+
+    - title: Search for a patient's documents
+      url: /accessrecord_documents_development_search_patient_documents.html
+      output: web
+    - title: Retrieve a patient's documents
+      url: /accessrecord_documents_development_retrieve_patient_documents.html
+      output: web

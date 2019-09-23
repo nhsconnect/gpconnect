@@ -1,0 +1,12 @@
+{% if site.twitter %}
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@{{site.twitter_username}}">
+<meta name="twitter:creator" content="@{{site.twitter_username}}">
+{% if page.title %}<meta name="twitter:title" content="{{ page.title }}">
+{% else %}<meta name="twitter:title" content="{{ site.title }}">
+{% endif %}{% if page.url %}<meta name="twitter:url" content="{{ site.url }}{{ page.url }}">
+{% endif %}{% if page.description %}<meta name="twitter:description" content="{{ page.summary }}">
+{% else %}<meta name="twitter:description" content="{{ site.description }}">
+{% endif %}{% if page.thumbnail %}<meta name="twitter:image:src" content="{{ site.url }}/images/{{ page.thumbnail }}">
+{% else %}<meta name="twitter:image:src" content="{{ site.url }}/images/logo.png">{% endif %}
+{% endif %}

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<head>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Find a patient | gpconnect</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Find a patient" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model." />
+<meta property="og:description" content="GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model." />
+<link rel="canonical" href="http://localhost:4005/foundations_use_case_find_a_patient.html" />
+<meta property="og:url" content="http://localhost:4005/foundations_use_case_find_a_patient.html" />
+<meta property="og:site_name" content="gpconnect" />
+<script type="application/ld+json">
+{"description":"GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model.","@type":"WebPage","url":"http://localhost:4005/foundations_use_case_find_a_patient.html","headline":"Find a patient","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Use case for finding a patient resource by business identity">
+<meta name="keywords" content="foundationsuse_case,  foundations, patient, nhsnumber, pid">
+<title>Find a patient | GP Connect</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+<script src="js/image-map.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="icon" type="image/png"  href="images/favicon.png">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="gpconnect" href="http://localhost:4005/feed.xml">
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+	
+
+	<link rel="stylesheet" href="css/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>
+        $(document).ready(function(){
+		hljs.initHighlightingOnLoad();
+		});
+    </script>
+
+	
+    
+
+	
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> GP Connect API - FHIR&reg; APIs for GP IT systems</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+
+                <!-- GitHub icon -->
+                <a href="https://github.com/nhsconnect/gpconnect" target="_blank" class="fa fa-github fa-lg navbar-brand no_icon" aria-hidden="true">&nbsp;</a>
+
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Find a patient">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <img src="images/logo.png" alt="NHS Digital Logo" height="110" width="110" />
+    <li class="sidebarTitle">GP Connect Documents API 1.0.0-beta<br/><span style="font-size: smaller;">FHIR&reg; STU3</span></li>
+	<li class="sidebarSection">Foundations</li>
+
+    
+    <li id="gpcnavlink">
+        <a href="./"> Back to GP Connect</a>
+    </li>
+    
+
+    
+    
+    
+        
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="foundations.html">Introduction</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="foundations_ig.html">Information governance</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="foundations_design.html">Design decisions</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Development</a>
+        <ul>
+            
+            
+            
+            <li><a href="datalibraryfoundation.html">FHIR&reg; resources</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">API use cases</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="foundations_use_case_get_the_fhir_capability_statement.html">Get the FHIR&reg; capability statement</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li class="active"><a href="foundations_use_case_find_a_patient.html">Find a patient</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="foundations_use_case_read_a_patient.html">Read a patient</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="foundations_use_case_find_a_practitioner.html">Find a practitioner</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="foundations_use_case_read_a_practitioner.html">Read a practitioner</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="foundations_use_case_find_an_organisation.html">Find an organisation</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="foundations_use_case_read_an_organisation.html">Read an organisation</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="foundations_use_case_read_a_location.html">Read a location</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+    </li>
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+         
+
+
+
+
+ <div markdown="span" class="alert alert-danger" role="alert">
+	<i class="fa fa-exclamation-circle"></i>
+	<b>Version:</b> This is a <b>pre-release (draft) version</b> of the GP Connect API specification and is subject to change. For the current version and other specifications, please visit <a href="https://developer.nhs.uk/gp-connect-specification-versions/">GP Connect specifications page</a>.
+</div>
+
+ 
+
+<div class="post-header">
+   <h1 class="post-title-main">Find a patient</h1>
+</div>
+
+
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Use case for finding a patient resource by business identity</div>
+   
+
+   
+
+    
+    
+<!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+<script>
+$( document ).ready(function() {
+  // Handler for .ready() called.
+
+$('#toc').toc({ minimumHeaders: 0, listType: 'ul', showSpeed: 0, headers: 'h2,h3,h4' });
+
+/* this offset helps account for the space taken up by the floating toolbar. */
+$('#toc').on('click', 'a', function() {
+  var target = $(this.getAttribute('href'))
+    , scroll_target = target.offset().top
+
+  $(window).scrollTop(scroll_target - 10);
+  return false
+})
+  
+});
+</script>
+
+<div id="toc"></div>
+
+    
+
+  <h2 id="prerequisites">Prerequisites</h2>
+
+<h3 id="consumer">Consumer</h3>
+
+<p>The consumer system:</p>
+
+<ul>
+  <li>SHALL have previously resolved the organisation’s FHIR endpoint base URL through the <a href="https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html">Spine Directory Service</a></li>
+  <li>SHALL have previously traced the patient’s NHS number using the <a href="https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html">Personal Demographics Service</a> or an equivalent service</li>
+</ul>
+
+<h2 id="api-usage">API usage</h2>
+
+<p>Resolve (zero or more) <code class="highlighter-rouge">Patient</code> resources using a business identifier (that is, NHS number).</p>
+
+<h3 id="request-operation">Request operation</h3>
+
+<p>The consumer system:</p>
+
+<ul>
+  <li>
+    <p>SHALL populate the <code class="highlighter-rouge">[system]</code> field with a valid patient identifier system URL (that is, <code class="highlighter-rouge">https://fhir.nhs.uk/Id/nhs-number</code>).</p>
+  </li>
+  <li>
+    <p>SHALL apply percent encoding when constructing the request URL as indicated in <a href="https://tools.ietf.org/html/rfc3986#section-2.1">RFC 3986 Section 2.1</a>. This will ensure that downstream servers correctly handle the pipe <code class="highlighter-rouge">|</code> character, which must be used in the <code class="highlighter-rouge">identifier</code> parameter value below.</p>
+  </li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> GP Connect can only guarantee a successful response for searches using the identifier type <code class="highlighter-rouge">https://fhir.nhs.uk/Id/nhs-number</code>. Other identifier types may result in an error response if the provider does not recognise or support the identifier.</div>
+
+<h4 id="fhir-relative-request">FHIR relative request</h4>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">GET /Patient?identifier=[system]|[value]
+</span></code></pre></div></div>
+
+<h4 id="fhir-absolute-request">FHIR absolute request</h4>
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient?identifier=[system]|[value]
+</span></code></pre></div></div>
+
+<h4 id="request-headers">Request headers</h4>
+
+<p>Consumers SHALL include the following additional HTTP request headers:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Header</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">Ssp-TraceID</code></td>
+      <td>Consumer’s TraceID (i.e. GUID/UUID)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Ssp-From</code></td>
+      <td>Consumer’s ASID</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Ssp-To</code></td>
+      <td>Provider’s ASID</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">Ssp-InteractionID</code></td>
+      <td><code class="highlighter-rouge">urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="payload-request-body">Payload request body</h4>
+
+<p>N/A</p>
+
+<h4 id="error-handling">Error handling</h4>
+
+<p>Provider systems:</p>
+
+<ul>
+  <li>SHALL return a <a href="https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1">GPConnect-OperationOutcome-1</a> resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached</li>
+</ul>
+
+<p>For example, the:</p>
+
+<ul>
+  <li>business identifier <code class="highlighter-rouge">[system]</code> is not recognised/supported by the Provider system</li>
+  <li>business identifier fails structural validation checks (that is, not enough digits to be a valid NHS number)</li>
+</ul>
+
+<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Failure to find a record with the supplied business identifier is not considered an error condition.</div>
+
+<h3 id="request-response">Request response</h3>
+
+<h4 id="response-headers">Response headers</h4>
+
+<p>Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR® standards.</p>
+
+<h4 id="payload-response-body">Payload response body</h4>
+
+<p>Provider systems:</p>
+
+<ul>
+  <li>SHALL return a <code class="highlighter-rouge">200</code> <strong>OK</strong> HTTP status code on successful execution of the operation.</li>
+  <li>SHALL return zero or more matching <code class="highlighter-rouge">Patient</code> resources in a <code class="highlighter-rouge">Bundle</code> of <code class="highlighter-rouge">type</code> searchset.</li>
+  <li>SHALL only return <code class="highlighter-rouge">Patient</code> resources for <a href="overview_glossary.html#active-patient">active patients</a>.</li>
+  <li>
+    <p>SHALL return <code class="highlighter-rouge">Patient</code> resources that conform to the <a href="https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1">CareConnect-GPC-Patient-1</a> profile.</p>
+  </li>
+  <li>SHALL populate the following <code class="highlighter-rouge">Patient</code> fields:
+    <ul>
+      <li><code class="highlighter-rouge">meta.profile</code> with the profile URI</li>
+      <li><code class="highlighter-rouge">versionId</code> with the current version of each <code class="highlighter-rouge">Patient</code> resource.</li>
+      <li><code class="highlighter-rouge">identifier</code> with relevant business identifiers, including a minimum of the patient’s NHS number</li>
+      <li><code class="highlighter-rouge">name</code>
+        <ul>
+          <li>The patient resource SHALL contain a single instance of the name element with the <code class="highlighter-rouge">use</code> of <code class="highlighter-rouge">official</code> and SHALL contain the name synchronised with PDS.</li>
+        </ul>
+      </li>
+      <li><code class="highlighter-rouge">birthDate</code></li>
+      <li><code class="highlighter-rouge">gender</code></li>
+      <li><code class="highlighter-rouge">address</code> where available</li>
+      <li><code class="highlighter-rouge">telecom</code> where available</li>
+      <li><code class="highlighter-rouge">contact</code> with the patient’s contacts - see <a href="development_fhir_resource_guidance.html#patientcontact">Patient.contact population</a> for further details</li>
+      <li><code class="highlighter-rouge">registrationDetails.preferredBranchSurgery</code> with a reference to a <code class="highlighter-rouge">Location</code> resource representing the patient’s preferred branch surgery (see <a href="development_branch_surgeries.html">Branch surgeries</a> for more details)</li>
+      <li><code class="highlighter-rouge">nhsCommunication</code> with the patient’s language information, where available</li>
+      <li><code class="highlighter-rouge">managingOrganization</code> Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient’s registered practice which may be different</li>
+    </ul>
+  </li>
+  <li>
+    <p>SHALL meet <a href="development_fhir_resource_guidance.html#general-fhir-resource-population-requirements">General FHIR resource population requirements</a> populating all fields where data is available, excluding those listed below</p>
+  </li>
+  <li>SHALL NOT populate the following fields:
+    <ul>
+      <li><code class="highlighter-rouge">ethnicCategory</code></li>
+      <li><code class="highlighter-rouge">religiousAffiliation</code></li>
+      <li><code class="highlighter-rouge">patient-cadavericDonor</code></li>
+      <li><code class="highlighter-rouge">residentialStatus</code></li>
+      <li><code class="highlighter-rouge">treatmentCategory</code></li>
+      <li><code class="highlighter-rouge">birthPlace</code></li>
+      <li><code class="highlighter-rouge">maritalStatus</code></li>
+      <li><code class="highlighter-rouge">multipleBirthBoolean</code></li>
+    </ul>
+  </li>
+</ul>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bundle"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"searchset"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"entry"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"resource"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"resourceType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Patient"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"versionId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1469448000000"</span><span class="p">,</span><span class="w">
+          </span><span class="s2">"profile"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"</span><span class="w">
+          </span><span class="p">]</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="s2">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"preferredBranchSurgery"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"valueReference"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Location/785b4ff5-aced-4bdf-b7ed-34f92131ce97"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">},</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSCommunication-1"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"language"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bn"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Bengali"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">},</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"interpreterRequired"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"valueBoolean"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"identifier"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"extension"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="p">{</span><span class="w">
+                </span><span class="s2">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"valueCodeableConcept"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                  </span><span class="s2">"coding"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                      </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01"</span><span class="p">,</span><span class="w">
+                      </span><span class="s2">"display"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Number present and verified"</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                  </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+              </span><span class="p">}</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://fhir.nhs.uk/Id/nhs-number"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"9476719931"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"active"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"official"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"JACKSON Jane (Miss)"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"family"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jackson"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"given"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"Jane"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"Miss"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"telecom"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"system"</span><span class="p">:</span><span class="w"> </span><span class="s2">"phone"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"01454587554"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"female"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"birthDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1952-05-31"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"address"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="p">{</span><span class="w">
+            </span><span class="s2">"use"</span><span class="p">:</span><span class="w"> </span><span class="s2">"home"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"physical"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"line"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+              </span><span class="s2">"Trevelyan Square"</span><span class="p">,</span><span class="w">
+              </span><span class="s2">"Boar Ln"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+            </span><span class="s2">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Leeds"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"district"</span><span class="p">:</span><span class="w"> </span><span class="s2">"West Yorkshire"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"postalCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"LS1 6AE"</span><span class="w">
+          </span><span class="p">}</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="s2">"managingOrganization"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+          </span><span class="s2">"reference"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Organization/14"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="example-code">Example Code</h2>
+
+<h3 id="c">C#</h3>
+
+<div class="language-csharp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">var</span> <span class="n">client</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">FhirClient</span><span class="p">(</span><span class="s">"http://gpconnect.aprovider.nhs.net/GP001/STU3/1/"</span><span class="p">);</span>
+<span class="n">client</span><span class="p">.</span><span class="n">PreferredFormat</span> <span class="p">=</span> <span class="n">ResourceFormat</span><span class="p">.</span><span class="n">Json</span><span class="p">;</span>
+<span class="kt">var</span> <span class="n">query</span> <span class="p">=</span> <span class="k">new</span> <span class="kt">string</span><span class="p">[]</span> <span class="p">{</span> <span class="s">"identifier=https://fhir.nhs.uk/Id/nhs-number|9476719931"</span> <span class="p">};</span>
+<span class="kt">var</span> <span class="n">bundle</span> <span class="p">=</span> <span class="n">client</span><span class="p">.</span><span class="nf">Search</span><span class="p">(</span><span class="s">"Patient"</span><span class="p">,</span> <span class="n">query</span><span class="p">);</span>
+<span class="n">FhirSerializer</span><span class="p">.</span><span class="nf">SerializeResourceToXml</span><span class="p">(</span><span class="n">bundle</span><span class="p">).</span><span class="nf">Dump</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h3 id="java">Java</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">FhirContext</span> <span class="n">ctx</span> <span class="o">=</span> <span class="k">new</span> <span class="n">FhirContext</span><span class="o">();</span>
+<span class="n">IGenericClient</span> <span class="n">client</span> <span class="o">=</span> <span class="n">ctx</span><span class="o">.</span><span class="na">newRestfulGenericClient</span><span class="o">(</span><span class="s">"http://gpconnect.aprovider.nhs.net/GP001/STU3/1/"</span><span class="o">);</span>
+<span class="n">Bundle</span> <span class="n">bundle</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="na">search</span><span class="o">().</span><span class="na">forResource</span><span class="o">(</span><span class="n">Patient</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="o">.</span><span class="na">where</span><span class="o">(</span><span class="k">new</span> <span class="n">TokenClientParam</span><span class="o">(</span><span class="s">"identifier"</span><span class="o">).</span><span class="na">exactly</span><span class="o">().</span><span class="na">systemAndCode</span><span class="o">(</span><span class="s">"https://fhir.nhs.uk/Id/nhs-number"</span><span class="o">,</span> <span class="s">"9476719931"</span><span class="o">))</span>
+<span class="o">.</span><span class="na">encodedXml</span><span class="o">()</span>
+<span class="o">.</span><span class="na">execute</span><span class="o">();</span>
+</code></pre></div></div>
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_foundations.html" class="btn btn-default navbar-btn cursorNorm" role="button">foundations</a>
+        
+        
+        
+        
+        
+    </div>
+
+    
+
+</div>
+
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+                    <img class="pull-left" src="images/explanatoryline.png" alt="NHS Digital Explanatory Line"/>
+                    <br/>
+                    &copy;2019 NHS Digital<br />
+                     Site last generated: Sep 23, 2019 <br />
+                    <br/>
+                    <br/>
+                    <!-- OGL Licence -->
+                    <div class="open-government-licence">
+                        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon"><img src="images/licence/ogl-symbol-41px-retina-black.png"></img></a>
+                        <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon">Open Government Licence v3.0</a>, except where otherwise stated</p>
+                    </div>
+                    <div style="font-size: larger;"><a href="accessibility.html">Accessibility</a> | <a href="https://help.github.com/articles/github-privacy-statement/">Privacy</a> | <a href="support_communications.html">Contact us</a></div>
+                </div>
+            </div>
+</footer>
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

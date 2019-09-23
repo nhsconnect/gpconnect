@@ -1,0 +1,61 @@
+{% highlight json %}
+{
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
+    ]
+  },
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9432003812"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        },
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2017-06-04"
+        }
+      ]
+    }
+    {
+      "name": "includeTestResults",
+      "part": [
+        {
+          "name": "filterTestResults",
+          "valueCoding": {
+            "system": "http://snomed.info/sct",
+            "code": "721981007",
+            "display": "Diagnostic studies report"
+          }
+        },
+        {
+          "name": "testResultSearchPeriod",
+          "valuePeriod": {
+            "start": "2017-01-02",
+            "end": "2017-07-02"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endhighlight %}

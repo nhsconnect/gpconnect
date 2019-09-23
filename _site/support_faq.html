@@ -1,0 +1,963 @@
+<!DOCTYPE html>
+<head>
+    <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Frequently asked questions (FAQ) | gpconnect</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Frequently asked questions (FAQ)" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model." />
+<meta property="og:description" content="GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model." />
+<link rel="canonical" href="http://localhost:4005/support_faq.html" />
+<meta property="og:url" content="http://localhost:4005/support_faq.html" />
+<meta property="og:site_name" content="gpconnect" />
+<script type="application/ld+json">
+{"description":"GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model.","@type":"WebPage","url":"http://localhost:4005/support_faq.html","headline":"Frequently asked questions (FAQ)","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Frequently asked questions related to the GP Connect technical specification">
+<meta name="keywords" content="support,  support, faq, questions">
+<title>Frequently asked questions (FAQ) | GP Connect</title>
+<link rel="stylesheet" href="css/syntax.css">
+
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<!--<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">-->
+<link rel="stylesheet" href="css/modern-business.css">
+<link rel="stylesheet" href="css/lavish-bootstrap.css">
+<link rel="stylesheet" href="css/customstyles.css">
+<link rel="stylesheet" href="css/theme-blue.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="js/jquery.navgoco.min.js"></script>
+<script src="js/image-map.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/2.0.0/anchor.min.js"></script>
+<script src="js/toc.js"></script>
+<script src="js/customscripts.js"></script>
+
+<link rel="icon" type="image/png"  href="images/favicon.png">
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<link rel="alternate" type="application/rss+xml" title="gpconnect" href="http://localhost:4005/feed.xml">
+
+
+
+
+    <script>
+        $(document).ready(function() {
+            // Initialize navgoco with default options
+            $("#mysidebar").navgoco({
+                caretHtml: '',
+                accordion: true,
+                openClass: 'active', // open
+                save: false, // leave false or nav highlighting doesn't work right
+                cookie: {
+                    name: 'navgoco',
+                    expires: false,
+                    path: '/'
+                },
+                slide: {
+                    duration: 400,
+                    easing: 'swing'
+                }
+            });
+
+            $("#collapseAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', false);
+            });
+
+            $("#expandAll").click(function(e) {
+                e.preventDefault();
+                $("#mysidebar").navgoco('toggle', true);
+            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+        })
+    </script>
+	
+
+	<link rel="stylesheet" href="css/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>
+        $(document).ready(function(){
+		hljs.initHighlightingOnLoad();
+		});
+    </script>
+
+	
+    
+
+	
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container topnavlinks">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="fa fa-home fa-lg navbar-brand" href="index.html">&nbsp;<span class="projectTitle"> GP Connect API - FHIR&reg; APIs for GP IT systems</span></a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <!-- entries without drop-downs appear here -->
+                
+                
+                
+                <!-- entries with drop-downs appear here -->
+                <!-- conditional logic to control which topnav appears for the audience defined in the configuration file.-->
+                
+                
+
+                <!-- GitHub icon -->
+                <a href="https://github.com/nhsconnect/gpconnect" target="_blank" class="fa fa-github fa-lg navbar-brand no_icon" aria-hidden="true">&nbsp;</a>
+
+                <!--comment out this block if you want to hide search-->
+                <li>
+                    <!--start search-->
+                    <div id="search-demo-container">
+                        <input type="text" id="search-input" placeholder="search...">
+                        <ul id="results-container"></ul>
+                    </div>
+                    <script src="js/jekyll-search.js" type="text/javascript"></script>
+                    <script type="text/javascript">
+                            SimpleJekyllSearch.init({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                dataSource: 'search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="Frequently asked questions (FAQ)">{title}</a></li>',
+                    noResultsText: 'No results found.',
+                            limit: 10,
+                            fuzzy: true,
+                    })
+                    </script>
+                    <!--end search-->
+                </li>
+            </ul>
+        </div>
+        </div>
+        <!-- /.container -->
+</nav>
+
+<!-- Page Content -->
+<div class="container">
+    <div class="col-lg-12">&nbsp;</div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Sidebar Column -->
+        <div class="col-md-3">
+
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ul id="mysidebar" class="nav">
+    <img src="images/logo.png" alt="NHS Digital Logo" height="110" width="110" />
+    <li class="sidebarTitle">GP Connect Documents API 1.0.0-beta<br/><span style="font-size: smaller;">FHIR&reg; STU3</span></li>
+	<li class="sidebarSection"></li>
+
+    
+
+    
+    
+    
+    <li>
+        <a href="#">Overview</a>
+        <ul>
+            
+            
+            
+            <li><a href="index.html">Introduction</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="overview_engage.html">Getting started</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="overview_priority_capabilities.html">Capabilities</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Release notes</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="overview_release_notes_0_1_0.html">0.1.0</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Design approach</a>
+        <ul>
+            
+            
+            
+            <li><a href="designprinciples_open_api_principles.html">API design principles</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="designprinciples_development_principles.html">Development principles</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="designprinciples_data_model_principles.html">Data model principles</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="designprinciples_ig_principles.html">Information governance principles</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="designprinciples_clinical_safety_principles.html">Clinical safety principles</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="designprinciples_assurance_principles.html">Assurance principles</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="design_clinical_terminologies.html">Clinical terminologies</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="design_product_versioning.html">Specification versioning</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Explore</a>
+        <ul>
+            
+            
+            
+            <li><a href="system_demonstrator.html">System demonstrator</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="system_swagger.html">Interactive API documentation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="system_reference_postman.html">Postman API examples</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Development</a>
+        <ul>
+            
+            
+            
+            <li><a href="development_deliverables.html">Development deliverables</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_fhir_open_source_guidance.html">FHIR&reg; library</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_fhir_api_guidance.html">FHIR&reg; implementation</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_general_api_guidance.html">General API guidance</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_branch_surgeries.html">Branch surgeries</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_fhir_resource_guidance.html">FHIR&reg; resources</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_api_security_guidance.html">Security</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_fhir_error_handling_guidance.html">Error handling</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_api_volume_and_performance.html">Volumetric and performance</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="development_api_non_functional_requirements.html">Non-functional requirements</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Implement a capability</a>
+        <ul>
+            
+            
+            
+            <li><a href="foundations.html">Foundations</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="appointments.html"><b class="capability-not-available">Appointment Management</b></a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="accessrecord_structured.html"><b class="capability-not-available">Access Record Structured</b></a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="accessrecord_documents_development.html">Access Record Documents</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="accessrecord.html"><b class="capability-not-available">Access Record HTML</b></a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Integrate with Spine</a>
+        <ul>
+            
+            
+            
+            <li><a href="integration_illustrated.html">Spine integration illustrated</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="integration_system_topologies.html">System topologies</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="integration_cross_organisation_audit_and_provenance.html">Cross-organisation audit and provenance</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="integration_personal_demographic_service.html">Personal Demographic Service</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Spine Directory Services</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="integration_spine_directory_service.html">Overview and querying</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="integration_sds_registering_endpoints.html">Registering systems</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="integration_interaction_ids.html">Interaction IDs</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="integration_spine_secure_proxy.html">Spine Secure Proxy</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Test and assure</a>
+        <ul>
+            
+            
+            
+            <li><a href="testing_deliverables.html">Testing assets</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="testing_environments.html">Test environments</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="testing_api_provider_testing.html">Provider testing</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="testing_api_consumer_testing.html">Consumer testing</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+    
+    <li>
+        <a href="#">Help and support</a>
+        <ul>
+            
+            
+            
+            <li class="active"><a href="support_faq.html">Frequently asked questions</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="overview_glossary.html">Glossary</a></li>
+            
+            
+            
+            
+            
+            
+            <li><a href="support_communications.html">Communication channels</a></li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">External links</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="https://github.com/nhsconnect/gpconnect" target="_blank">GPC Documentation repository</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="https://digital.nhs.uk/services/gp-connect" target="_blank">GPC NHS Digital</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="https://github.com/nhsconnect/gpconnect-fhir/" target="_blank">GPC GitHub FHIR data library</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="https://github.com/nhsconnect/gpconnect-dotnet-examples/" target="_blank">GPC GitHub C# examples</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="https://github.com/nhsconnect/gpconnect-java-examples/" target="_blank">GPC GitHub Java examples</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="https://github.com/nhsconnect/gpconnect-provider-testing/" target="_blank">GPC GitHub provider test harness</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            <li class="subfolders">
+                <a href="#">Tags</a>
+                <ul>
+                    
+                    
+                    
+                    <li><a href="tag_getting_started.html">Getting started</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_first_of_type.html">First of Type</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_fhir.html">FHIR&reg;</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_structured.html">Structured</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_foundations.html">Foundations</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_htmlgetcarerecord.html">HTML Get Care Record</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_getcarerecord.html">Get Care Record</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_appointments.html">Appointments</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_engagement.html">Engagement</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_design.html">Design</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_development.html">Development</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_integration.html">Integration</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_testing.html">Testing</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_assurance.html">Assurance</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_deployment.html">Deployment</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_support.html">Support</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_clinical_safety.html">Clinical safety</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_information_governance.html">Information governance</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_commissioning.html">Commissioning</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_code_snippet.html">Code snippet</a></li>
+                    
+                    
+                    
+                    
+                    
+                    <li><a href="tag_usecase.html">Use case</a></li>
+                    
+                    
+                    
+                </ul>
+            </li>
+            
+            
+            
+            
+            
+            
+            <li><a href="support_run_website_locally.html">Run website locally</a></li>
+            
+            
+            
+            
+        </ul>
+        
+        
+        
+        <!-- if you aren't using the accordion, uncomment this block:
+           <p class="external">
+               <a href="#" id="collapseAll">Collapse All</a> | <a href="#" id="expandAll">Expand All</a>
+           </p>
+           -->
+    </li>
+</ul>
+</div>
+
+<!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
+<script>$("li.active").parents('li').toggleClass("active");</script>
+
+    <!-- Content Column -->
+    <div class="col-md-9">
+         
+
+
+
+
+ <div markdown="span" class="alert alert-danger" role="alert">
+	<i class="fa fa-exclamation-circle"></i>
+	<b>Version:</b> This is a <b>pre-release (draft) version</b> of the GP Connect API specification and is subject to change. For the current version and other specifications, please visit <a href="https://developer.nhs.uk/gp-connect-specification-versions/">GP Connect specifications page</a>.
+</div>
+
+ 
+
+<div class="post-header">
+   <h1 class="post-title-main">Frequently asked questions (FAQ)</h1>
+</div>
+
+
+
+
+
+<div class="post-content">
+
+   
+    <div class="summary">Frequently asked questions related to the GP Connect technical specification</div>
+   
+
+   
+
+    
+
+  <h2 id="which-serialisation-format-should-i-choose-as-an-gp-connect-api-consumer---json-or-xml">Which serialisation format should I choose as an GP Connect API consumer - JSON or XML?</h2>
+
+<p>JSON is supported by all four GP principal clinical system (PCS) suppliers which makes it a natural choice for API consumers. In addition it is approximately 30% smaller than XML when sent over the wire.</p>
+
+<p>XML is currently supported by three of the four GP PCS suppliers (Vision, Microtest and EMIS). If you have a strong preference to work with XML and will be using GP Connect to interoperate with specific GP PCS suppliers that support XML, then this may be a suitable choice.</p>
+
+<p>NHS Digital is investigating ways to bring XML support across all four GP PCS suppliers. However, at the current time our recommendation is to use JSON.</p>
+
+<p>For consumers with less experience working with JSON formats, <a href="https://www.hl7.org/fhir/STU3/downloads.html">implementation tools in your language of choice</a> simplify the process of producing FHIR in JSON.</p>
+
+<h2 id="why-is-the-technical-barrier-to-entry-to-gp-connect-quite-high">Why is the technical barrier to entry to GP Connect quite high?</h2>
+
+<p>We’re keen to deliver something that we can work with in an open and collaborative way quickly and safely that can be improved over time.</p>
+
+<p>This has meant that for ‘first of type’ we’ve made use of capabilities and governance from other central services such as:</p>
+
+<ul>
+  <li><a href="https://digital.nhs.uk/Demographics">PDS</a> using either a PDS compliant system or <a href="https://digital.nhs.uk/spine/sms">Spine Mini Service</a></li>
+  <li><a href="integration_spine_directory_service.html">SDS</a> for endpoint lookup</li>
+</ul>
+
+<p>This can be understandable frustrating as a consumer that does not already have access to these pre-requisites so we’re currently working to wrap these capabilities within a FHIR and RESTful interfaces.</p>
+
+<h2 id="it-is-not-clear-which-parts-of-the-fhir-standard-are-not-in-scope-for-the-gp-connect-programme">It is not clear which parts of the FHIR® standard are not in scope for the GP Connect programme.</h2>
+
+<p>Please refer to the <a href="development_fhir_api_guidance.html#fhir-out-of-scope">FHIR Out Of Scope</a> section for details on what parts of the FHIR standard are currently considered out of scope.</p>
+
+<h2 id="why-does-the-specification-include-crud-interactions-especially-delete-when-not-needed">Why does the specification include CRUD interactions especially DELETE when not needed?</h2>
+
+<p>The <a href="development_fhir_api_guidance.html#delete-resourcehttpswwwhl7orgfhirdstu2httphtmldelete">Delete Resource</a> section is included for completeness to illustrate how a RESTful API (such as FHIR) is designed to support the basic Create, Update and Delete (CRUD) operations. It is made clear in this section that GP Connect FoT clients and servers are not expected to implement this operation at this stage, but shouldn’t make implementation decisions that preclude the use of the DELETE HTTP verb in the future.
+It may be the case that the DELETE verb is used in future incarnations of GP Connect.  However, the effect of these on the target systems may be a “soft” delete.</p>
+
+<h2 id="why-does-the-specification-mandate-support-for-fhir-functionality-that-may-not-be-necessary-for-gp-connect">Why does the specification mandate support for FHIR functionality that may not be necessary for GP Connect?</h2>
+
+<p>In writing the FHIR implementation guidance for GP Connect we have worked hard to cut down the scope of the FHIR standard that needs to be considered when implementing the first tranche of development work. The “FHIR Out Of Scope” section was included to be as explicit as possible what FHIR functionality we don’t need at this stage. However, as with all standards there is a minimal viable subset which we should be looking to support.</p>
+
+<h2 id="why-is-support-built-in-for-accessing-specific-resources-when-the-requirement-is-for-the-record-for-a-specified-patient">Why is support built in for accessing specific resources when the requirement is for the record for a specified patient?</h2>
+
+<p>As outlined in the <a href="development_fhir_api_guidance.html#compartment-based-accesshttphl7orgfhircompartmentshtml">Compartment Based Access</a> section the scope of the Patient Compartment in the GP Connect FoT is limited to Appointment access only. Conceptually, any and all resources where the subject of the resource is a patient could be made available. However, this isn’t mandated.</p>
+
+<h2 id="why-does-the-guidance-include-support-for-amendment-to-appointments">Why does the guidance include support for amendment to appointments?</h2>
+
+<p>In one of the workshops there was a discussion around appointment updates being problematic and we did discuss putting them out of scope. However, after wider stakeholder review it was decided that we should look at limiting the scope of updates (rather than removing the requirement all together). Hence, we have decided to allow updating a small subset of fields on the appointment (i.e. appointment reason/description). We feel this strikes the right balance between allowing minor corrections to be made whilst avoiding the added complexity of some update use cases; particularly rescheduling which can arguably be more easily handled by a cancel operation followed by the creation of a new appointment.</p>
+
+<h2 id="why-is-resource-versioning-included-as-a-mandatory-requirement">Why is resource versioning included as a mandatory requirement?</h2>
+
+<p>It is a key principle of the FHIR RESTful APIs that all resources are versioned; without this support no updates to data can ever be safely performed. This is explained in the “Lost Updates” section and “Transactional Integrity” sections of the FHIR standard. Whilst we recognise that it is not necessary to persist versioned access to historical records, it is important that the latest record version can be ascertained. David Hay (Product Strategist at Orion Health) has a blog post on how systems that don’t fully support versions can handle this requirement in a simple and straight forward way.</p>
+
+<p><a href="https://fhirblog.com/2013/11/21/fhir-versioning-with-a-non-version-capable-back-end/">https://fhirblog.com/2013/11/21/fhir-versioning-with-a-non-version-capable-back-end/</a></p>
+
+<h2 id="will-it-be-necessary-in-all-cases-to-use-an-nhs-service-to-look-up-stafforganisationlocation-information-when-a-supplier-may-have-their-own-index-of-this-information">Will it be necessary in all cases to use an NHS service to look up staff/organisation/location information when a supplier may have their own index of this information?</h2>
+
+<p>You are welcome to use your own ODS index (that is, to find an organisation by name/address, and so on). However, you will need to perform an SDS lookup using the ODS code to resolve the FHIR endpoint that represents that ODS code for the purpose of exposing the Access Record and Appointment Management APIs.</p>
+
+<h2 id="it-will-be-necessary-in-some-use-cases-to-support-a-search-on-gmc-or-nmc-number-rather-than-sds-user-id-to-find-a-staff-member">It will be necessary in some use cases to support a search on GMC or NMC number rather than SDS User ID to find a staff member.</h2>
+
+<p>This has been added to our known issue list so we can provide more guidance on how this could work. However, it is important to note that the <a href="foundations_use_case_find_a_practitioner.html">Find A Practitioner</a> section gives an example of using a SDS User ID but the same API call could in fact also be used to search by other identifiers by changing the ‘system’ component of the search parameter.</p>
+
+<h2 id="why-does-the-guide-suggest-that-all-resources-should-include-text-in-the-display-property-when-this-information-is-also-in-the-html-view">Why does the guide suggest that all resources should include text in the display property when this information is also in the HTML view?</h2>
+
+<p>The display property is relevant to the Appointment Management and Foundations APIs, not the HTML view. More guidance on the use of the display property has been requested by a vendor to facilitate streamlined display of the structured data.</p>
+
+<h2 id="why-is-oauth2-not-used">Why is oAuth2 not used?</h2>
+
+<p>Authentication will be via mutual TLS/SSL authentication. The JWT web token has been proposed to allow the easy bundling of related authentication details and to eliminate the need for many separate customer headers, or a bespoke GP Connect bundling format to be defined, implemented and maintained.</p>
+
+<h2 id="why-are-json-web-tokens-jwt-required">Why are JSON Web Tokens (JWT) required?</h2>
+
+<p>Extra HTTP headers are needed for sending provenance/audit details. Sending this data in a JWT Bearer token (which is simply a fragment of JSON) is an easy way of achieving the communication of this data and various libraries exist to make authoring this content trivial.</p>
+
+<h2 id="why-is-nhs-number-not-being-used-as-the-actual-id-for-the-patient-resource">Why is NHS Number not being used as the actual ID for the Patient resource?</h2>
+
+<p>As outlined in the FHIR standard there is a clear demarcation between business identifiers (such as NHS Number and  CHI number) and logical identifiers which are opaque and only guaranteed to be valid on the FHIR server they are served from.</p>
+
+<p>FHIR’s logical IDs are strings which meet the following regex [A-Za-z0-9-.]{1,64} (in the reference implementations) logical IDs are often the physical record identity (for example, a database primary key or a document store guid). So whilst technically a vendor could use the NHS Number as their logical IDs (as it would match the regex above), this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical ID from the business ID.</p>
+
+<p>This approach is consistent with the FHIR reference implementations and commercial offerings and is in line with what the wider code4health community is asking for.</p>
+
+<h2 id="why-is-there-to-be-a-centrally-held-list-of-error-codes-in-addition-to-the-standard-http-response-codes">Why is there to be a centrally-held list of error codes in addition to the standard HTTP response codes?</h2>
+
+<p>The list of error codes is intended to allow consumer applications to make sense of errors that the human operator could potentially do something about. We recognise there is a cost-benefit trade-off in this space and will look to only introduce error codes (above that of the base FHIR specification) when they add sufficient value. For example a 400 - Bad Request error code in isolation doesn’t help you determine which input parameter(s) are malformed and similarly a 422 -  Unprocessable Entity doesn’t in isolation help you determine which business rule (or integrity constraint) has caused an operation to fail.</p>
+
+<p>Defining a small number of supplementary error codes to be included in the Operation Outcome entity allows sense to be made of these failing interactions (for example, you’ve requested an Appointment to be booked into a slot that is already Busy).</p>
+
+
+
+    <div class="tags">
+        
+        <b>Tags: </b>
+        
+        
+        
+        <a href="tag_support.html" class="btn btn-default navbar-btn cursorNorm" role="button">support</a>
+        
+        
+        
+    </div>
+
+    
+
+</div>
+
+
+<hr class="shaded"/>
+
+<footer>
+            <div class="row">
+                <div class="col-lg-12 footer">
+                    <img class="pull-left" src="images/explanatoryline.png" alt="NHS Digital Explanatory Line"/>
+                    <br/>
+                    &copy;2019 NHS Digital<br />
+                     Site last generated: Sep 23, 2019 <br />
+                    <br/>
+                    <br/>
+                    <!-- OGL Licence -->
+                    <div class="open-government-licence">
+                        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon"><img src="images/licence/ogl-symbol-41px-retina-black.png"></img></a>
+                        <p>All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license" class="no_icon">Open Government Licence v3.0</a>, except where otherwise stated</p>
+                    </div>
+                    <div style="font-size: larger;"><a href="accessibility.html">Accessibility</a> | <a href="https://help.github.com/articles/github-privacy-statement/">Privacy</a> | <a href="support_communications.html">Contact us</a></div>
+                </div>
+            </div>
+</footer>
+
+
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
+    </div>
+
+</body>
+
+</html>

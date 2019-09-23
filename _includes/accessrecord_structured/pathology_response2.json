@@ -1,0 +1,319 @@
+{% highlight json %}
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
+    ]
+  },
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e",
+      "resource": {
+        "address": [
+          {
+            "district": "WEST YORKSHIRE",
+            "city": "BRADFORD",
+            "postalCode": "BD9 6DP",
+            "line": [
+              "HEIGHTS LANE"
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "value": "RGD12",
+            "system": "https://fhir.nhs.uk/Id/ods-organization-code"
+          }
+        ],
+        "id": "d6407de7-0e86-45eb-93cb-035094aaa49e",
+        "resourceType": "Organization",
+        "name": "LINGFIELD ROYAL INFIRMARY",
+        "meta": {
+          "profile": [
+            "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f25e9d63-6a4e-4de6-b9dc-c912fda62b01",
+      "resource": {
+        "identifier": [
+          {
+            "value": "C8040642",
+            "system": "https://fhir.nhs.uk/Id/sds-user-id"
+          }
+        ],
+        "id": "f25e9d63-6a4e-4de6-b9dc-c912fda62b01",
+        "resourceType": "Practitioner",
+        "name": [
+          {
+            "family": "kahn",
+            "given": [
+              "Ibrahim"
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Practitioner-1"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09",
+      "resource": {
+        "gender": "female",
+        "birthDate": "1961-01-03",
+        "identifier": [
+          {
+            "value": "9432003812",
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "extension": [
+              {
+                "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+                      "display": "Number present and verified",
+                      "code": "01"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ],
+        "id": "8d6c2cd5-0eec-496a-88d0-3785a135df09",
+        "resourceType": "Patient",
+        "name": [
+          {
+            "family": "KAY",
+            "use": "official",
+            "given": [
+              "Michael"
+            ]
+          }
+        ],
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Patient-1"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d9df1431-22ac-462a-946a-f195f6c639af",
+      "resource": {
+        "note": [
+          {
+            "text": "High Blood Sugar"
+          }
+        ],
+        "requester": {
+          "agent": {
+            "display": "SCOTT",
+            "reference": "urn:uuid:f25e9d63-6a4e-4de6-b9dc-c912fda62b01"
+          }
+        },
+        "resourceType": "ProcedureRequest",
+        "performer": {
+          "display": "ST JAMES'S UNIVERSITY HOSPITAL",
+          "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+        },
+        "intent": "order",
+        "status": "active",
+        "identifier": [
+          {
+            "value": "7e9bbd01-4e52-420d-b05b-48bc671d6708",
+            "system": "https://tools.ietf.org/html/rfc4122"
+          }
+        ],
+        "id": "d9df1431-22ac-462a-946a-f195f6c639af",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "display": "Prostate specific antigen measurement (procedure)",
+              "code": "63476009"
+            }
+          ]
+        },
+        "subject": {
+          "display": "KAY, Michael",
+          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+        },
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProcedureRequest-1"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:efae5859-28df-4e7d-be91-6df56d8215e4",
+      "resource": {
+        "issued": "2019-03-03T12:00:00+00:00",
+        "result": [
+          {
+            "reference": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "urn:uuid:d9df1431-22ac-462a-946a-f195f6c639af"
+          }
+        ],
+        "status": "final",
+        "performer": [
+          {
+            "actor": {
+              "display": "ST JAMES'S UNIVERSITY HOSPITAL",
+              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+            }
+          }
+        ],
+        "specimen": [
+          {
+            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+          }
+        ],
+        "resourceType": "DiagnosticReport",
+        "id": "efae5859-28df-4e7d-be91-6df56d8215e4",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "display": "Diagnostic studies report",
+              "code": "721981007"
+            }
+          ]
+        },
+        "subject": {
+          "display": "KAY, Michael",
+          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+        },
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-DiagnosticReport-1"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123",
+      "resource": {
+        "receivedTime": "2019-01-29T15:00:00+00:00",
+        "resourceType": "Specimen",
+        "collection": {
+          "collectedDateTime": "2017-11-01T11:00:00+00:00",
+          "quantity": {
+            "value": 11,
+            "unit": "ng/mL"
+          }
+        },
+        "status": "available",
+        "identifier": [
+          {
+            "value": "1b663fc5-9dec-49c0-9eed-18a7cfa5a6b2",
+            "system": "https://tools.ietf.org/html/rfc4122"
+          }
+        ],
+        "id": "756a8361-79ce-4561-afcb-a91fe19df123",
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "display": "Venous blood (substance)",
+              "code": "53130003"
+            }
+          ]
+        },
+        "subject": {
+          "display": "KAY, Michael",
+          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+        },
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Specimen-1"
+          ]
+        }
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db",
+      "resource": {
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "display": "Pathology (qualifier value)",
+                "code": "394595002 "
+              }
+            ]
+          }
+        ],
+        "referenceRange": [
+          {
+            "high": {
+              "value": 4
+            },
+            "low": {
+              "value": 0
+            }
+          }
+        ],
+        "resourceType": "Observation",
+        "status": "final",
+        "valueQuantity": {
+          "value": 5.9000000000000004,
+          "unit": "ug/L"
+        },
+        "performer": [
+          {
+            "display": "ST JAMES'S UNIVERSITY HOSPITAL",
+            "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+          }
+        ],
+        "effectiveDateTime": "2017-11-01T15:00:00+00:00",
+        "specimen": {
+          "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+        },
+        "identifier": [
+          {
+            "value": "2af46949-4938-4c57-bad4-c4363e1965d5",
+            "system": "https://tools.ietf.org/html/rfc4122"
+          }
+        ],
+        "id": "dacb177a-9501-4dcc-8b22-b941791ae0db",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "display": "Prostate specific antigen level (observable entity)",
+              "code": "1030791000000100"
+            }
+          ]
+        },
+        "subject": {
+          "display": "KAY, Michael",
+          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+        },
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Observation-1"
+          ]
+        }
+      }
+    }
+  ],
+  "identifier": {
+    "value": "f36927ef-7703-45ed-b0e5-6ec6723cf0f6",
+    "system": "https://tools.ietf.org/html/rfc4122"
+  }
+}
+{% endhighlight %}

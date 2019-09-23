@@ -1,0 +1,200 @@
+{% highlight json %}
+{
+  "resourceType": "Bundle",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
+    ]
+  },
+  "type": "collection",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "04603d77-1a4e-4d63-b246-d7504f8bd833",
+        "meta": {
+          "versionId": "1469448000000",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1",
+            "extension": [
+              {
+                "url": "registrationPeriod",
+                "valuePeriod": {
+                  "start": "1962-07-13T00:00:00+00:00"
+                }
+              }
+            ]
+          }
+        ],
+        "identifier": [
+          {
+            "extension": [
+              {
+                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-NHSNumberVerificationStatus-1",
+                "valueCodeableConcept": {
+                  "coding": [
+                    {
+                      "system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+                      "code": "01",
+                      "display": "Number present and verified"
+                    }
+                  ]
+                }
+              }
+            ],
+            "system": "https://fhir.nhs.uk/Id/nhs-number",
+            "value": "9999999999"
+          }
+        ],
+        "active": true,
+        "name": [
+          {
+            "use": "official",
+            "text": "JACKSON Jane (Miss)",
+            "family": "Jackson",
+            "given": [
+              "Jane"
+            ],
+            "prefix": [
+              "Miss"
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "01454587554",
+            "use": "home"
+          }
+        ],
+        "gender": "female",
+        "birthDate": "1952-05-31",
+        "address": [
+          {
+            "use": "home",
+            "type": "physical",
+            "line": [
+              "Cable Place",
+              "Roundhay"
+            ],
+            "city": "Leeds",
+            "district": "West Yorkshire",
+            "postalCode": "LS1 5HT"
+          }
+        ],
+        "generalPractitioner": {
+          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        },
+        "managingOrganization": {
+          "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Organization",
+        "id": "db67f447-b30d-442a-8e31-6918d1367eeb",
+        "meta": {
+          "versionId": "636064088098730113",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+            "value": "O001"
+          }
+        ],
+        "name": "The Trevelyan Practice",
+        "address": [
+          {
+            "line": [
+              "Trevelyan Square",
+              "Boar Ln"
+            ],
+            "city": "Leeds",
+            "district": "West Yorkshire",
+            "postalCode": "LS1 6AE"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03003035678",
+            "use": "work"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Practitioner",
+        "id": "6c41ebfd-57c3-4162-9d7b-208c171a2fd7",
+        "meta": {
+          "versionId": "1469448000000",
+          "lastUpdated": "2016-07-25T12:00:00.000+00:00",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/sds-user-id",
+            "value": "G13579135"
+          }
+        ],
+        "name": [
+          {
+            "use": "usual",
+            "family": "Gilbert",
+            "given": [
+              "Nichole"
+            ],
+            "prefix": [
+              "Miss"
+            ]
+          }
+        ],
+        "gender": "female"
+      }
+    },
+    {
+      "resource": {
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1"
+          ]
+        },
+        "resourceType": "PractitionerRole",
+        "id": "e0244de8-07ef-4274-9f7a-d7067bcc8d21",
+        "practitioner": {
+          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        },
+        "organization": {
+          "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
+        },
+        "code": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+                "code": "R0260",
+                "display": "General Medical Practitioner"
+              }
+            ]
+          }
+        ]
+      }
+    },
+ 
+ 
+Add example here.....
+
+
+{% endhighlight %}
