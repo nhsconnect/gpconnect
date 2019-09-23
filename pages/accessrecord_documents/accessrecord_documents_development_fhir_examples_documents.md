@@ -24,9 +24,7 @@ The following is a set of request/response examples for Documents:
 
 <p>Example of a call to return the following items from a patient's structured record:</p>
 
-<ul>
-  <li>accessrecord_documents_sidebar</li>
-</ul>
+
 
 <br>
 <p style="line-height: 1; font-size: 18px">Request</p>
