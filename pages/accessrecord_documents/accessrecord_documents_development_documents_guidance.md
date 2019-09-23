@@ -96,17 +96,17 @@ Standardise the search and retrieval of clinical documents from the GP practices
     </tbody>
 </table>
 
-
-## Value Proposition ##
-
- <IMG src="images/access_structured/ValueProp.png" alt="Value Proposition"  style="max-width:100%;max-height:80%;">
-
 ### Known issues ###
 
    * Lack of versioning of documents in the GP practices. DateTime stamp is used to identify the latest version of the document.
    * No nationally agreed list of document types - GP practices have their own list of document types, which may also include free text.
    * Poor metadata of documents - GP systems have poor metadata information about documents.
    * Documents in disparate systems in a GP practice - documents metadata information and its versions may exist in disparate systems in a GP practice. However, documents and its basic information does sync back from document management systems to the clinical system.
+
+
+## Value Proposition ##
+
+ <IMG src="images/access_structured/ValueProp.png" alt="Value Proposition"  style="max-width:100%;max-height:80%;">
 
 ## Scope ##
 
