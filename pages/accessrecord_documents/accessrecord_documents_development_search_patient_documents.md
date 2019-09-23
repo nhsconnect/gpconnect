@@ -44,7 +44,6 @@ Provider systems SHALL support the following include parameters:
 
 Consumer systems MUST send the following parameters in the request:
 
-TODO: Add guidance on how parameters should be populated
 - subject **MUST** be included
 
 Consumer systems **SHOULD** send the following parameters in the request:
