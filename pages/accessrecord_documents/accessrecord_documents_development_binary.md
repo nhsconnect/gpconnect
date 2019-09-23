@@ -3,7 +3,7 @@ title: Bundle
 keywords: documents design
 tags: [design,documents]
 sidebar: accessrecord_documents_sidebar
-permalink: accessrecord_documents_development_bundle.html
+permalink: accessrecord_documents_development_binary.html
 summary: "Guidance for populating and consuming the Binary resource"
 div: resource-page
 ---

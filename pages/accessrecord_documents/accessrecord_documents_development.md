@@ -26,7 +26,8 @@ The following pages provide example request and response messages:
 
 The following API definitions are included in this capability:
 
-- [Retrieve a patient’s structured record](accessrecord_documents_development_retrieve_patient_documents.html)
+- [Query documents](accessrecord_documents_development_search_patient_documents)
+- [Retrieve documents](accessrecord_documents_development_retrieve_patient_documents.html)
 
 ## Spine interactions ##
 
