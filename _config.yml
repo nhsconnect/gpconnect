@@ -102,8 +102,6 @@ defaults:
 
 sidebars:
 - overview_sidebar
-- accessrecord_sidebar
-- accessrecord_documents_sidebar
 
 description: "GP Connect aims to support better clinical care by opening up information and data held within GP Practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model."
 # the description is used in the feed.xml file

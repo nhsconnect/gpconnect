@@ -13,9 +13,6 @@ entries:
     - title: Getting started
       url: /overview_engage.html
       output: web
-    - title: Capabilities
-      url: /overview_priority_capabilities.html
-      output: web
 
       subfolders:
       - title: Release notes
@@ -102,24 +99,65 @@ entries:
       url: /development_api_non_functional_requirements.html
       output: web
 
-  - title: Implement a capability
+  - title: Documents Overview
     output: web
     folderitems:
-    - title: Foundations
-      url: /foundations.html
-      output: web
-    - title: <b class="capability-not-available">Appointment Management</b>
-      url: /appointments.html
-      output: web
-    - title: <b class="capability-not-available">Access Record Structured</b>
-      url: /accessrecord_structured.html
-      output: web
-    - title: Access Record Documents
+
+    - title: Overview
       url: /accessrecord_documents_development.html
       output: web
-    - title: <b class="capability-not-available">Access Record HTML</b>
-      url: /accessrecord.html
+    - title: Documents guidance
       output: web
+      url: /accessrecord_documents_development_documents_guidance.html
+
+  - title: Document Resources
+    output: web
+    folderitems:
+
+    - title: <b class='resource'>DocumentReference</b>
+      output: web
+      url: /accessrecord_documents_development_documents.html
+    - title: <b class='resource'>Binary</b>
+      output: web
+      url: /accessrecord_documents_development_binary.html
+    - title: <b class='resource'>Bundle</b>
+      output: web
+      url: /accessrecord_documents_development_bundle.html
+    - title: Documents FHIR&reg; examples
+      output: web
+      url: /accessrecord_documents_development_fhir_examples_documents.html
+
+  - title: Document API definition
+    output: web, pdf
+    folderitems:
+
+    - title: Search for a patient's documents
+      url: /accessrecord_documents_development_search_patient_documents.html
+      output: web
+    - title: Retrieve a patient's documents
+      url: /accessrecord_documents_development_retrieve_patient_documents.html
+      output: web
+    - title: Get the FHIR&reg; capability statement
+      url: /foundations_use_case_get_the_fhir_capability_statement.html
+      output: web, pdf
+    - title: Find a patient
+      url: /foundations_use_case_find_a_patient.html
+      output: web, pdf
+    - title: Read a patient
+      url: /foundations_use_case_read_a_patient.html
+      output: web, pdf
+    - title: Find a practitioner
+      url: /foundations_use_case_find_a_practitioner.html
+      output: web, pdf
+    - title: Read a practitioner
+      url: /foundations_use_case_read_a_practitioner.html
+      output: web, pdf
+    - title: Find an organisation
+      url: /foundations_use_case_find_an_organisation.html
+      output: web, pdf
+    - title: Read an organisation
+      url: /foundations_use_case_read_an_organisation.html
+      output: web, pdf
 
   - title: Integrate with Spine
     output: web
