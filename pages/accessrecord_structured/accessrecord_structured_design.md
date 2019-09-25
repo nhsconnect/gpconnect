@@ -12,7 +12,7 @@ published: false
 
 What is the scope of the Access Record Structured capability?
 
-<span class="label label-info">DECISION</span> Currently the Access Record Structured capability will return a patient’s allergies, medications,  consultations, immunisations , problems and uncategorised data using the following FHIR&reg; profiles:
+<span class="label label-info">DECISION</span> Currently, the Access Record Structured capability will return a patient’s allergies, medications, consultations, immunisations, problems and uncategorised data using the following FHIR&reg; profiles:
 
  - AllergyIntolerance
  - Medication
@@ -91,4 +91,4 @@ The benefits of this approach are:
 
 ## Fabricated Consultations ##
 
-Systems which allow direct recording of data outside of Consultation contexts should not fabricate Consultations to return such data. To do so would be generating information and structure which does not exist on the source system and would obscure the genuine Consultation content (for example last X Consultations displayed in patient summaries). Systems in this category have clear distinctions between Consultations and other types of record content and to fabricate Consultations would distort this native behaviour.
+Systems which allow direct recording of data outside of Consultation contexts should not fabricate Consultations to return such data. To do so would be generating information and structure which does not exist on the source system and would obscure the genuine Consultation content (for example, last X Consultations displayed in patient summaries). Systems in this category have clear distinctions between Consultations and other types of record content and to fabricate Consultations would distort this native behaviour.
