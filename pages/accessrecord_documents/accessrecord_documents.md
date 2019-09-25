@@ -23,4 +23,4 @@ The Access Record Structured capability will expose data for a number of clinica
 6. Problems
 7. Pathology
 
-{% include roadmap.html content="Subsequent releases are to be scoped" %}
+{% include roadmap.html content="Subsequent releases are to be scoped." %}
