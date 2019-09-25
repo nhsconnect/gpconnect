@@ -196,13 +196,7 @@ entries:
 
         - title: Documents guidance
           output: web
-          url: /accessrecord_structured_development_documents_guidance.html
-        - title: <b class='resource'>DocumentReference</b>
-          output: web
-          url: /accessrecord_structured_development_documents.html
-        - title: Documents FHIR&reg; examples
-          output: web
-          url: /accessrecord_structured_development_fhir_examples_documents.html
+          url: /accessrecord_documents.html
 
   - title: API definition
     output: web, pdf
