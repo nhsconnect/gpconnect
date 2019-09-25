@@ -113,7 +113,7 @@ Descriptive name for the list. This will be taken from the 'display' element fro
 
 The purpose of the list.
 
-There are currently 6 possible purposes of a list in response to a query for a clinical area in GP Connect that will be represented by the following SNOMED codes.
+There are currently 9 possible purposes of a list in response to a query for a clinical area in GP Connect that will be represented by the following SNOMED codes.
 
 | Purpose | SNOMED Code |SNOMED Preferred Term / List.title|
 | ------ | ------ |
@@ -124,6 +124,8 @@ There are currently 6 possible purposes of a list in response to a query for a c
 |Consultation | 325851000000107| Consultation |
 |Problems | 717711000000103| Problems |
 |Uncategorised data | 826501000000100| Miscellaneous record |
+|Outbound Referrals | 792931000000107| Outbound referral |
+|Pathology | |  |
 
 The above code for 'Ended allergies' should be used for resolved allergies.
 
