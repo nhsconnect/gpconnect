@@ -22,19 +22,19 @@ Provider systems SHALL support the following search parameters:
 
 | Name | Type | Description | Paths |
 |---|---|---|---|
-| `subject` | `Patient` | the patient who is the subject of the document. | `DocumentReference.subject` |
+| `subject` | `Patient` | The patient who is the subject of the document. | `DocumentReference.subject` |
 | `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
-| `facility` | `token` | Additional details about where the content was created (e.g. clinical specialty). | `DocumentReference.clinicalSetting` |
+| `facility` | `token` | Additional details about where the content was created (for example, clinical specialty). | `DocumentReference.clinicalSetting` |
 | `author` | `Organization` | Who and/or what authored the document. | `DocumentReference.author` |
 | `type` | `token` | Kind of document. | `DocumentReference.type` |
 | `custodian` | `Organization` | Organisation which maintains this document. | `DocumentReference.custodian` |
 | `description` | `string` | Human-readable description (title). | `DocumentReference.title` |
 
-{% include note.html content="The supported search parameters MUST be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
+{% include note.html content="The supported search parameters **MUST** be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
 
 ## _include parameters ##
 
-Provider systems SHALL support the following include parameters:
+Provider systems **SHALL** support the following include parameters:
 
 | Name | Description | Paths |
 |---|---|---|
@@ -42,7 +42,7 @@ Provider systems SHALL support the following include parameters:
 | `_include= DocumentReference:custodian:Organization` | Include `Organization` resources referenced within the returned `DocumentReference` resources | `DocumentReference.custodian:Organization` |
 | `_include= DocumentReference:author:Organization` | Include `Organization` resources references from matching `DocumentReference` resources | `DocumentReference.author` |
 
-Consumer systems MUST send the following parameters in the request:
+Consumer systems **MUST** send the following parameters in the request:
 
 - subject **MUST** be included
 
@@ -128,13 +128,13 @@ n/a
 
 #### Error handling ####
 
-The provider system SHALL return an error if:
+The provider system **SHALL** return an error if:
 
 - facility contains an identifier other than an ODS code
 - author contains an identifier other than an ODS code
 - custodian contains an identifier other than an ODS code
 
-SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
+**SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -165,8 +165,6 @@ Provider systems **MUST**:
   - `PractitionerRole` matching the usual GP's role
   - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](accessrecord_structured_development_documents.html) profile that match the supplied search criteria
   - Only `Organization` resources SHALL be returned where they are associated with the `DocumentReference` resources matching the query
-
-
 
 #### Payload response examples ####
 
