@@ -53,6 +53,6 @@ The following pages describe each of the clinical areas in more detail and are f
 - [Pathology guidance](accessrecord_structured_development_pathology_guidance.html)
 - [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
 
-{% include note.html content="The Access Record Document capability is available in its own GP Connect specification version. 
+{% include note.html content="The Access Record Documents capability is available in its own GP Connect specification version. 
 Access Record Documents compliments Access Record Structure by retrieval of a documents list or individual documents.
 Please consult the [specification versions page](https://developer.nhs.uk/gp-connect-specification-versions/) for more details." %}
