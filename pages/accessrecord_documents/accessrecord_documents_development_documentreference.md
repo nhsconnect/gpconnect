@@ -158,7 +158,7 @@ Organisation which maintains this document.
   </tr>
 </table>
 
-Additional details about where the content was created (e.g. clinical specialty).
+Additional details about where the content was created (for example, clinical specialty).
 
 ### format ###
 
@@ -219,7 +219,7 @@ Size of the file.
 </table>
 
 The binary file (base64 binary). </br>
-This field will get populated only when the document is being retrieved. It will NOT be populated during the search document function.
+This field will get populated only when the document is being retrieved. It will **NOT** be populated during the search document function.
 
 ### status ###
 
