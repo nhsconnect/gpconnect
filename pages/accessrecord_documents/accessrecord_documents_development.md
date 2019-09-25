@@ -9,7 +9,7 @@ summary: "Development overview to the Access Record Documents capability"
 
 ## Introduction ##
 
-The access record documents capability provides the ability to retrieve unstructured documents from a patient's GP.
+The Access Record Documents capability provides the ability to retrieve unstructured documents from a patient's GP.
 
 ## FHIR&reg; resources ##
 
