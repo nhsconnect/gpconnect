@@ -192,23 +192,6 @@ For each `ReferralRequest` referenced in the `List` profile:
 <a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Referral_Return.png" alt="Referral Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
-### Document ###
-When GP Connect returns a document it will supply all the document metadata.
-
-The response to the query includes:
-* A `List` profile containing references to `DocumentReference` for every Document that met the search criteria
-
-For each `DocumentReference` referenced in the `List` profile:
-*	The `DocumentReference` profile of the Referral
-    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
-
-<center>
-<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Document_Return.png" alt="Document Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
-
 ### Investigation ###
 When GP Connect returns an investigation it will supply all the investigation information.
 
