@@ -21,7 +21,7 @@ This is usually a manual process whereby other GP practices and healthcare setti
 ## Objective ##
 
 Enable health and care organisations to electronically search for and retrieve patient's clinical documents from their GP practice.
-Standardise the search and retrieval of clinical documents from the GP practices using GP Connect API Standards.
+Standardise the search and retrieval of clinical documents from the GP practices using GP Connect API standards.
 
 ## As is ##
 
@@ -41,7 +41,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
         <tr>
             <td>1</td>
             <td>Send document</td>
-            <td>Hospital sends document to the GP practice</td>
+            <td>Hospital sends document to the GP practice.</td>
         </tr>
       <tr>
             <td>2</td>
@@ -66,12 +66,12 @@ Standardise the search and retrieval of clinical documents from the GP practices
       <tr>
             <td>6</td>
             <td>File document</td>
-            <td>Clinician extracts read codes, add read code or annotates the document.</td>
+            <td>Clinician extracts read codes, adds read code or annotates the document.</td>
         </tr>
       <tr>
             <td>7</td>
             <td>File document</td>
-            <td>Clinician add the document to a workflow.</td>
+            <td>Clinician adds the document to a workflow.</td>
         </tr>
       <tr>
             <td>8</td>
@@ -104,7 +104,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
    * Documents in disparate systems in a GP practice - documents metadata information and its versions may exist in disparate systems in a GP practice. However, documents and its basic information does sync back from document management systems to the clinical system.
 
 
-## Value Proposition ##
+## Value proposition ##
 
  <IMG src="images/access_structured/ValueProp.png" alt="Value Proposition"  style="max-width:100%;max-height:80%;">
 
@@ -114,11 +114,11 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Use case ##
 
-<IMG src="images/access_structured/DistrictNursePatient.png" alt="District Nurse attends a Patient at home and views their discharge summary"  style="max-width:73%;max-height:60%;">
+<IMG src="images/access_structured/DistrictNursePatient.png" alt="District nurse attends a patient at home and views their discharge summary"  style="max-width:73%;max-height:60%;">
 
 ## Documents classification ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
-To address this issue, GP Connect has created a valueset of document types. It is based on the clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GP Connect document types valueset. Where the providers have a code that does not exist in the value set, they can provide their code and its value in the text field. This would improve the standardisation of document types across the GP practices.
+To address this issue, GP Connect has created a valueset of document types. It is based on the clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GP Connect document types valueset. Where the providers have a code that does not exist in the valueset, they can provide their code and its value in the text field. This would improve the standardisation of document types across the GP practices.
 
 ## Patient records where documents are not available ##
 GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document from where the document can be requested.
@@ -143,7 +143,7 @@ Providers to provide documents in the following industry acceptable format:
 A GP practice may have multiple versions of the same document of the patient in their clinical system. Providers would only return latest version of the document via the GP Connect APIs.
 
 ## Internal or external documents ##
-The GP practice from which the document is being requested is the custodian of the document. Requirements analysis suggest that end-users would like to understand if the patient document that they are retrieving from the GP practice is an internally generated document in the GP practice or an external organisation has sent that document to the GP practice.
+The GP practice from which the document is being requested is the custodian of the document. Requirements analysis suggests that end-users would like to understand if the patient document that they are retrieving from the GP practice is an internally generated document in the GP practice or an external organisation has sent that document to the GP practice.
 If the 'Authoring Organisation' of the document is same as custodian of the document then it's an internally generated document.
 If the 'Authoring Organisation' of the document is NOT the same as custodian of the document then it's an externally generated document.
 
@@ -151,8 +151,8 @@ If the 'Authoring Organisation' of the document is NOT the same as custodian of 
 End-users would like to know the size of the document before retrieving the document. Providers would return the file size of the document in the response payload for Search Document GP Connect API request.
 
 ## Multiple systems/providers being used in a GP practice to manage documents ##
-A GP practice may use document management systems for managing documents besides the clinical systems. The documents held in document management system sync to the clinical system along with its basic information such as document type, clinical setting, organisation, description and date. Any read codes extracted in the document management system is also synced to the clinical system. This is done so that, in case when the document management system is unavailable, the document is still available in the principal clinical system and vice versa.
+A GP practice may use document management systems for managing documents besides the clinical systems. The documents held in document management system sync to the clinical system along with its basic information such as document type, clinical setting, organisation, description and date. Any read codes extracted in the document management system is also synced to the clinical system. This is done so that, in the case when the document management system is unavailable, the document is still available in the principal clinical system and vice versa.
 GP Connect APIs would search for documents and retrieve documents only from the clinical system.
 
 ## Document Status ##
-Document Status would always have default value of 'current' as only the latest version of the document is retrievable from a GP Practice.
+Document Status would always have default value of 'current' as only the latest version of the document is retrievable from a GP practice.
