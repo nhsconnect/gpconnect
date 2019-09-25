@@ -74,7 +74,7 @@ N/A
 
 Provider systems:
 
-- SHALL return a [`GPConnect-OperationOutcome-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- **SHALL** return a [`GPConnect-OperationOutcome-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 Examples of other scenarios which may result in error being returned:
 
@@ -91,9 +91,9 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems **MUST**:
 
-- return a `200` **OK** HTTP status code to indicate successful execution of the operation.
+- return a `200` **OK** HTTP status code to indicate successful execution of the operation
 - return a `Binary` resource conforming to the [`Binary`](accessrecord_documents_development_binary.html) resource definition
-- include the `versionId` of the current version of the `Binary` resource.
+- include the `versionId` of the current version of the `Binary` resource
 
 #### Payload response examples ####
 
