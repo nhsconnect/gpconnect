@@ -13,20 +13,20 @@ summary: "Use case for finding a patient resource by business identity"
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- **SHALL** have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
 
-Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS number).
+Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS Number).
 
 ### Request operation ###
 
 The consumer system:
 
-- SHALL populate the `[system]` field with a valid patient identifier system URL (that is, `https://fhir.nhs.uk/Id/nhs-number`).
+- **SHALL** populate the `[system]` field with a valid patient identifier system URL (that is, `https://fhir.nhs.uk/Id/nhs-number`)
 
-- SHALL apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character, which must be used in the `identifier` parameter value below.
+- **SHALL** apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character, which must be used in the `identifier` parameter value below.
 
 {% include important.html content="GP Connect can only guarantee a successful response for searches using the identifier type `https://fhir.nhs.uk/Id/nhs-number`. Other identifier types may result in an error response if the provider does not recognise or support the identifier." %}
 
@@ -44,7 +44,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient?identif
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -61,12 +61,12 @@ N/A
 
 Provider systems:
 
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+- **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
 
 For example, the:
 
-- business identifier `[system]` is not recognised/supported by the Provider system
-- business identifier fails structural validation checks (that is, not enough digits to be a valid NHS number)
+- business identifier `[system]` is not recognised/supported by the provider system
+- business identifier fails structural validation checks (that is, not enough digits to be a valid NHS Number)
 
 {% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
 
@@ -80,17 +80,17 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-- SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient).
-- SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
+- **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation
+- **SHALL** return zero or more matching `Patient` resources in a `Bundle` of `type` searchset
+- **SHALL** only return `Patient` resources for [active patients](overview_glossary.html#active-patient)
+- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile
 
-- SHALL populate the following `Patient` fields:
+- **SHALL** populate the following `Patient` fields:
   - `meta.profile` with the profile URI
-  - `versionId` with the current version of each `Patient` resource.
-  - `identifier` with relevant business identifiers, including a minimum of the patient's NHS number
+  - `versionId` with the current version of each `Patient` resource
+  - `identifier` with relevant business identifiers, including a minimum of the patient's NHS Number
   - `name`
-    - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
+    - The patient resource **SHALL** contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS
   - `birthDate`
   - `gender`
   - `address` where available
@@ -98,11 +98,11 @@ Provider systems:
   - `contact` with the patient's contacts - see [Patient.contact population](development_fhir_resource_guidance.html#patientcontact) for further details
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details)
   - `nhsCommunication` with the patient's language information, where available
-  - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice which may be different
+  - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice, which may be different
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+- **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
-- SHALL NOT populate the following fields:
+- **SHALL NOT** populate the following fields:
   - `ethnicCategory`
   - `religiousAffiliation`
   - `patient-cadavericDonor`
