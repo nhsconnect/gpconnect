@@ -68,9 +68,9 @@ The date when the latest prescription under this plan was issued. This will not 
 
 This details the care setting in which the medication or medical device was prescribed.
 
-Currently this field will only support two coded entries. If the medication/medical device was prescribed by the GP practice or by another organisation. If the providing organisation has more details about the type of prescribing organisation (for example that is was a dental practice or hospital) this **MUST** be included in the CodeableConcept.Text field.
+Currently this field will only support two coded entries, indicating whether the medication/medical device was prescribed by the GP practice or by another organisation. If the providing organisation has more details about the type of prescribing organisation (for example, that it was a dental practice or hospital), this **MUST** be included in the CodeableConcept.Text field.
 
-In the future the coded valueset will be built on to be more specific about where a medication/medical device was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be coded as well as in the text.
+In the future, the coded valueset will be built on to be more specific about where a medication/medical device was prescribed. For instance, if the patient was prescribed a medication by a hospital or bought a medication over the counter then this would be coded as well as in the text.
 
 For repeat and repeat dispensed medications/medical devices, the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
@@ -175,10 +175,10 @@ The period the medication or medical device is authorised under this medication/
 The date from which the medication or medical device is authorised under this plan. 
 
 Use one of the following dates in order of descending preference:
-*	The authorised date as recorded in the patient record.
-    * For authorisation that were performed during a consultation this will be the date when the consultation took place.
-*	The date of the first issue under the medication/medical device plan
-*	The date the medication/medical device plan was recorded onto the system (the audit date).
+*	the authorised date as recorded in the patient record
+    * for authorisation that were performed during a consultation this will be the date when the consultation took place
+*	the date of the first issue under the medication/medical device plan
+*	the date the medication/medical device plan was recorded onto the system (the audit date)
 
 
 `Period.end` is **REQUIRED**. 
@@ -188,11 +188,11 @@ The date when the authorisation under this plan ends.
 Where the medication/medical device plan is still active, set to null.
 
 Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
-*	The end date recorded in the patient record
-*	The end date of the final issue under the medication/medical device plan
-*	The date the plan was updated to ended
-*	The Period.start date
-    * This option should only occur where data has been lost (for example during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date.
+*	the end date recorded in the patient record
+*	the end date of the final issue under the medication/medical device plan
+*	the date the plan was updated to ended
+*	the Period.start date
+    * this option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date
 
 
 ### dateAsserted ###
@@ -219,7 +219,7 @@ Unless there is a distinct user-modifiable availability date/time for the author
   </tr>
 </table>
 
-Who the medication/medical device is for- that is, to whom it will be administered.
+Who the medication/medical device is for - that is, to whom it will be administered.
 
 Reference to patient.
 
@@ -267,7 +267,7 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 
 Complete dosage instructions as text.
 
-In exceptional cases where for legacy data there is no dosage recorded in the system then this MUST be populated with the text 'No information available'.
+In exceptional cases where for legacy data there is no dosage recorded in the system then this **MUST** be populated with the text 'No information available'.
 
 ### dosage.patientInstruction ###
 
