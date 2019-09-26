@@ -131,6 +131,9 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Consumer sessions illustrated
+      url: /accessrecord_documents_development_api_session.html
+      output: web
     - title: Search for a patient's documents
       url: /accessrecord_documents_development_search_patient_documents.html
       output: web
