@@ -177,12 +177,24 @@ Format/content rules for the document.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>url</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-URL to retrieve the document.
+URL to retrieve the document, this **MUST** be populated when the document is available.
+
+### attachment.title ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>string</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+To be used when only a placeholder for a document is available. This **MUST** be populated with the reason why the file isn't available.
 
 ### description ###
 
