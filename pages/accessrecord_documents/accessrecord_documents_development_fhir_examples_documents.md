@@ -30,7 +30,7 @@ The following is a set of request/response examples for Documents:
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 ```http
-GET /DocumentReference?
+GET /DocumentReference?subject=Patient/04603d77-1a4e-4d63-b246-d7504f8bd833&created=ge2019-06-24
 ```
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
