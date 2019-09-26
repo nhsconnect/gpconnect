@@ -29,45 +29,45 @@ For example, the problems record highlights that the patient has hypertension. I
 To support this, problems are linked to:
 
 * every consultation where the problem has been discussed or information about the problem has been recorded
-* every clinical item in the patient record that a clinician has identified as relevant to the problem (for example test results, medication)
+* every clinical item in the patient record that a clinician has identified as relevant to the problem (for example, test results, medication)
 * every other problem in the patient record that a clinician has identified as relevant to the problem
 
 ## Problem relationships
 Problem records are linked to consultations, clinical items and other problems. Different provider systems manage links to problems in different ways. To reduce the impact of this to consumers, the provider system will transform their problem linkages into a common model for export.
 
 Each problem record is linked to:
-*	All consultations where the problem was discussed or information about the problem was recorded
-    *	Consultations that are directly linked to the problem in the provider system; and
-    *	Consultations that created/updated a clinical item that has been linked to the problem
-*	All clinical items in the patient record that the recording clinician identified as giving further information about the problem
-    *	Clinical items that are directly linked to the problem in the provider system; and
-    *	Clinical items that are within a consultation topic that is linked to the problem
-*	Other problems that the recording clinician identified as giving further information about the problem
-    *	Problems that are directly linked to the problem in the provider system
+*	all consultations where the problem was discussed or information about the problem was recorded
+    *	consultations that are directly linked to the problem in the provider system; and
+    *	consultations that created/updated a clinical item that has been linked to the problem
+*	all clinical items in the patient record that the recording clinician identified as giving further information about the problem
+    *	clinical items that are directly linked to the problem in the provider system; and
+    *	clinical items that are within a consultation topic that is linked to the problem
+*	other problems that the recording clinician identified as giving further information about the problem
+    *	problems that are directly linked to the problem in the provider system
 
 <a href="images/access_structured/Problem_Relationships.png"><img src="images/access_structured/Problem_Relationships.png" alt="Problem Relationships" style="max-width:100%;max-height:100%;"></a>
 
 ## Clinical item references
 
-When a clinical item is linked to the problem a reference to its FHIR&reg; resource is held in either extension[actualProblem] or extension[relatedClinicalContent].
+When a clinical item is linked to the problem, a reference to its FHIR&reg; resource is held in either extension[actualProblem] or extension[relatedClinicalContent].
 
-When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below.
-* For a Medication or Medical Device prescription plan - reference the `MedicationRequest` (intent = plan) profile
-* For a Medication or Medical Device prescription issue - reference the `MedicationRequest` (intent = order) profile
-* For an Allergy – reference the `Allergy` profile
-* For an Immunisation – reference the `Immunization` profile
-* For Uncategorised Data – reference the `Observation` – Uncategorised profile
-* For a Referral - reference the `ReferralRequest` profile
-* For a Document - reference the `DocumentReference` profile
-* For an Invesitgation - reference the `DiagnosticReport` profile
+When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example, Medication and Medical Device) the reference must be to the FHIR resource specified below.
+* for a Medication or Medical Device prescription plan - reference the `MedicationRequest` (intent = plan) profile
+* for a Medication or Medical Device prescription issue - reference the `MedicationRequest` (intent = order) profile
+* for an Allergy – reference the `Allergy` profile
+* for an Immunisation – reference the `Immunization` profile
+* for Uncategorised Data – reference the `Observation` – Uncategorised profile
+* for a Referral - reference the `ReferralRequest` profile
+* for a Document - reference the `DocumentReference` profile
+* for an Investigation - reference the `DiagnosticReport` profile
 
 ## Problems linking to problems
 
-It is possible within GP Clinical Systems to link problems together. This is done by a clinician when they consider the problems to have a clinical impact or give context to each other.
+It is possible within GP clinical systems to link problems together. This is done by a clinician when they consider the problems to have a clinical impact or give context to each other.
 
-The methods and termonology used to link problems varies a great deal between clinical systems and are not compatible with each other. For example, in one GP clinical system grouping two problems merges them into a single problem while in another it keeps them as two separate problems that are linked together.
+The methods and terminology used to link problems varies a great deal between clinical systems and are not compatible with each other. For example, in one GP clinical system grouping two problems merges them into a single problem while in another it keeps them as two separate problems that are linked together.
 
-To resolve this, GP Connect will only show the logical linkage between problems (i.e. is the linked problem a parent, child or sibling) without reflecting the termonology of the provider system.
+To resolve this, GP Connect will only show the logical linkage between problems (whether the linked problem is a parent, child or sibling) without reflecting the terminology of the provider system.
 
 ## Problems linking to unsupported clinical items
 
@@ -101,15 +101,15 @@ The example below shows references to two items, one for an observation and anot
 
 ## Problems containing confidential items
 
-Where a Problem is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
+Where a Problem is marked as confidential it will (as per the structured requirements on confidentially) not be included in returned data and the Confidential Items warning message will be included in the `List` containing the query response.
 
 Where a Problem is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
-* The Problem will be included in the response as normal
-* The confidential item(s) will NOT be included in the response
-* There will be NO reference to the confidential item(s) in the `ProblemHeader (Condition)` profile.
-* The Confidential Items warning message will be included in the `List` containing the query response.
+* the Problem will be included in the response as normal
+* the confidential item(s) will NOT be included in the response
+* there will be NO reference to the confidential item(s) in the `ProblemHeader (Condition)` profile
+* the Confidential Items warning message will be included in the `List` containing the query response
 
-In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed from.
+In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed.
 
 ## Using the `List` resource for problem queries
 
