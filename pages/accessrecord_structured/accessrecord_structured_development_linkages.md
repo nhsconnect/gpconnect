@@ -6,6 +6,7 @@ sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_linkages.html
 summary: "Introduction to linkages between data items in GP Connect"
 ---
+
 ## Linkages ##
 One of the purposes in developing the FHIR&reg; profiles is to ensure that clinical data is, as much as possible, presented the same way regardless of the provider system. This ensures the consuming system (and clinician) will always know where to look for each type of information.
 
@@ -100,7 +101,7 @@ For each `ProblemHeader (Consultation)` referenced in the `List` profile:
     *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investifation    
+    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investigation    
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
