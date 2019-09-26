@@ -1,5 +1,5 @@
 ---
-title: Bundle
+title: Binary
 keywords: documents design
 tags: [design,documents]
 sidebar: accessrecord_documents_sidebar
@@ -10,13 +10,13 @@ div: resource-page
 
 ## Introduction ##
 
-The headings below list the elements of the `Bundle` profile and describe how to populate and consume them.
+The headings below list the elements of the `Binary` profile and describe how to populate and consume them.
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Binary resource definition](https://www.hl7.org/fhir/STU3/binary.html)." %}
 
-## Bundle elements ##
+## Binary elements ##
 
 The logical identifier of the `Binary` profile.
 
