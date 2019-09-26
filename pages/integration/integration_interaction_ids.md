@@ -25,8 +25,6 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 
 ## List of Interaction IDs ##
 
-### Foundations interactions ###
-
 | Operation                 | InteractionID             |
 |---------------------------|---------------------------|
 | [Read metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:metadata-1` |
@@ -37,13 +35,6 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 | [Read organisation](foundations_use_case_read_an_organisation.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:organization-1` |
 | [Organisation search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:organization-1` |
 | [Read location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:location-1` |
-
-
-
-### Access Record Documents interactions ###
-
-| Operation                 | InteractionID             |
-|---------------------------|---------------------------|
 | [Search for documents](accessrecord_documents_development_retrieve_patient_documents.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:documentreference-1` |
 | [Retrieve documents](accessrecord_documents_development_search_patient_documents.html)          | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:binary-1` |
 
