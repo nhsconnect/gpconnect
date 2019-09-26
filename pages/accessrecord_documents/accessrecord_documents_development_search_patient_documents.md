@@ -42,6 +42,7 @@ Provider systems **SHALL** support the following include parameters:
 | `_include= DocumentReference:custodian:Organization` | Include `Organization` resources referenced within the returned `DocumentReference` resources | `DocumentReference.custodian:Organization` |
 | `_include= DocumentReference:author:Organization` | Include `Organization` resources references from matching `DocumentReference` resources | `DocumentReference.author` |
 | `_include= DocumentReference:author:Practitioner` | Include `Practitioner` resources references from matching `DocumentReference` resources | `DocumentReference.author` |
+| `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources | `DocumentReference.author:Practitioner` |
 
 Consumer systems **MUST** send the following parameters in the request:
 
