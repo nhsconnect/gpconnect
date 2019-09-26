@@ -9,7 +9,7 @@ summary: "Development overview to the Access Record Structured capability"
 
 ## Introduction ##
 
-The access record structured capability provides the ability to retrieve data from a patient's GP record in a structured and coded format. In order to do this safely and effectively, we need to consider how GP systems store data about patients, how it is categorised/structured and how the context in which the data is entered by or displayed to the user may influence its meaning.
+The Access Record Structured capability provides the ability to retrieve data from a patient's GP record in a structured and coded format. In order to do this safely and effectively, we need to consider how GP systems store data about patients, how it is categorised/structured and how the context in which the data is entered by or displayed to the user may influence its meaning.
 
 ## Record structure in GP clinical systems
 
@@ -54,5 +54,5 @@ The following pages describe each of the clinical areas in more detail and are f
 - [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
 
 {% include note.html content="The Access Record Documents capability is available in its own GP Connect specification version. 
-Access Record Documents compliments Access Record Structure by retrieval of a documents list or individual documents.
+Access Record Documents complements Access Record Structure by retrieval of a documents list or individual documents.
 Please consult the [specification versions page](https://developer.nhs.uk/gp-connect-specification-versions/) for more details." %}
