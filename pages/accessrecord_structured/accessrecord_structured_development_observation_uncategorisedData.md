@@ -16,7 +16,7 @@ The headings below list the elements of the `Observation` profile and describe h
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
 
-## Observation Elements #
+## Observation elements #
 
 ### id ###
 
@@ -60,7 +60,7 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
 
 This **MUST** be a GUID.
 
-Providing systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
+Providing systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and is therefore stored with the source data).
 
 Where consuming systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
@@ -88,7 +88,7 @@ Fixed value of `final`.
 
 The clinical code that represents the data within the observation.
 
-Were the uncategorised data is free text without any clinical code set to 37331000000100 Comment note (record artifact).
+Where the uncategorised data is free text without any clinical code set to 37331000000100 Comment note (record artifact).
 
 ### subject ###
 
