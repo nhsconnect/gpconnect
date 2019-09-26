@@ -18,7 +18,7 @@ GP Connect has a number of architectural design principles, some of which have d
 
 ### GP Connect API implemented at an organization level
 
-The GP Connect API has been designed and developed to expose data at an organization level with a single FHIR server per organization. The GP Connect definition of an organization is the legal entity of an organization represented by an ODS code.
+The GP Connect API has been designed and developed to expose data at an organization level with a single FHIR server for each capability per organization. The GP Connect definition of an organization is the legal entity of an organization represented by an ODS code.
 
 The decision was made to expose the API at and organization level and tie the organization ODS code to the FHIR server endpoint, as the ODS code is the only commonly used identifier across the different GP system providers. The organization ODS code of a patient's registered GP practice is stored with their demographics record on the Spine. This makes it available to a consumer of the GP Connect API and allows the consumer to perform the endpoint lookup process required to target their request at the GP practice system that holds the patient record.
 
