@@ -111,7 +111,11 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1" },
-      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1" }
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1" }
   ],
   "rest": [
     {
