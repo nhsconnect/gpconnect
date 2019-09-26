@@ -276,7 +276,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Include referrals in the response.</td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">referralsSearchPeriod</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">referralSearchPeriod</code></span></td>
       <td><code class="highlighter-rouge">Period</code></td>
       <td>Optional</td>
       <td>0..1</td>
@@ -284,11 +284,11 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
         Restrict referrals by defining a time period
 
         <ul>
-           <li>If the <code>referralsSearchPeriod</code> is not specified, all referrals will be returned.</li>
-           <li>If the <code>referralsSearchPeriod.start</code> is populated, all referrals on or after the <code>referralsSearchPeriod.start</code> <b>MUST</b> be returned.</li>
-           <li>If the <code>referralsSearchPeriod.end</code> is populated, all referrals on or before the <code>referralsSearchPeriod.end</code> <b>MUST</b> be returned.</li>
-           <li><code>referralsSearchPeriod.start</code> and <code>referralsSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-          <li><code>referralsSearchPeriod.start</code> and <code>referralsSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
+           <li>If the <code>referralSearchPeriod</code> is not specified, all referrals will be returned.</li>
+           <li>If the <code>referralSearchPeriod.start</code> is populated, all referrals on or after the <code>referralSearchPeriod.start</code> <b>MUST</b> be returned.</li>
+           <li>If the <code>referralSearchPeriod.end</code> is populated, all referrals on or before the <code>referralSearchPeriod.end</code> <b>MUST</b> be returned.</li>
+           <li><code>referralSearchPeriod.start</code> and <code>referralSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
+          <li><code>referralSearchPeriod.start</code> and <code>referralSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
       </ul>
 
         <p><i>Part parameter: may only be provided if <code>includeReferrals</code> is set.</i></p>        
@@ -405,7 +405,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeReferrals",
       "part": [
         {
-          "name": "referralsSearchPeriod",
+          "name": "referralSearchPeriod",
           "valuePeriod": {
             "start": "2016-12-25",
             "end": "2018-12-25"
@@ -446,7 +446,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `filterSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |The `filterResults` parameter is passed with a code from a code system other than SNOMED CT | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |The `resultsSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `referralsSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `referralSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -651,7 +651,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - [`List`](accessrecord_structured_development_list.html), [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's referrals will be returned.
 
-- when the `referralsSearchPeriod` is set:
+- when the `referralSearchPeriod` is set:
   - when a `start` value is set, all referrals with an `ReferralRequest.authoredOn` after the date **MUST** be returned
   - and when an `end` value is set, all referrals with an `ReferralRequest.authoredOn` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, referrals with an `ReferralRequest.authoredOn` after the `start` and with an `ReferralRequest.authoredOn` before the `end` **MUST** be returned
