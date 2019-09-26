@@ -44,7 +44,7 @@ Mime type of the document.
 
 The actual content of the document encoded using base64.
 
-<h2 style="color:#ED1951;"> Bundle elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Binary elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
 
