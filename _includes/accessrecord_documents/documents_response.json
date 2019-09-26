@@ -9,9 +9,10 @@
   "type": "searchset",
   "entry": [
     {
+      "fullUrl": "http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentReference/27863182736",
       "resource": {
         "resourceType": "DocumentReference",
-        "id": "Consultation4-Topic1-Category-History-DocumentReference-1",
+        "id": "27863182736",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1"
@@ -52,7 +53,7 @@
           {
             "attachment": {
               "contentType": "application/msword",
-              "url": "http://exampleGPSystem.co.uk/Binary/07a6483f-732b-461e-86b6-edb665c45510",
+              "url": "http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/Binary/07a6483f-732b-461e-86b6-edb665c45510",
               "size": 3654
             }
           }
@@ -65,6 +66,7 @@
       }
     },
     {
+      "fullUrl": "http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/Organization/db67f447-b30d-442a-8e31-6918d1367eeb",
       "resource": {
         "resourceType": "Organization",
         "id": "db67f447-b30d-442a-8e31-6918d1367eeb",
@@ -102,6 +104,7 @@
       }
     },
     {
+      "fullUrl": "http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7",
       "resource": {
         "resourceType": "Practitioner",
         "id": "6c41ebfd-57c3-4162-9d7b-208c171a2fd7",
@@ -134,6 +137,7 @@
       }
     },
     {
+      "fullUrl": "http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21",
       "resource": {
         "resourceType": "PractitionerRole",
         "id": "e0244de8-07ef-4274-9f7a-d7067bcc8d21",
