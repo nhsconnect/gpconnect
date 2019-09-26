@@ -42,7 +42,7 @@ The FHIR RESTful API style guide defines the following URL conventions which are
 
 ### Service Root URL ###
 
-The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found. 
+The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found.
 
 The Service Root URL is the `[base]` portion of all FHIR APIs.
 
@@ -64,15 +64,15 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
 
 - `[GPC_MAJOR_VERSION]` identifies the major version number of the GP Connect specification that the API is built to.
 
-- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non-GP Connect requests (for example, via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
-  
+- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between logical FHIR servers defined by GP Connect capabilities.
+
 - The Service Root URL SHALL NOT contain a trailing `/`
 
 #### Example Service Root URL
 
 The provider SHALL publish the Service Root URL to [Spine Directory Services](integration_spine_directory_service.html), for example:
 
-`https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
+`https://provider.nhs.uk/GP0001/STU3/1/gpconnect-documents`
 
 Please see [Registering GP Connect systems in SDS for more details](integration_sds_registering_endpoints.html).
 
@@ -109,7 +109,7 @@ The following [HTTP verbs](http://hl7.org/fhir/STU3/valueset-http-verb.html) SHA
 
 #### Resource types ####
 
-GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/STU3/resourcelist.html) as detailed within the [FHIR Resource Guidance](development_fhir_resource_guidance.html). 
+GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/STU3/resourcelist.html) as detailed within the [FHIR Resource Guidance](development_fhir_resource_guidance.html).
 
 #### Resource ID ####
 
@@ -117,7 +117,7 @@ This is the [logical Id](http://hl7.org/fhir/STU3/resource.html#id) of the resou
 
 Once assigned, the identity SHALL never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring an integer key (for example, 2345)." %} 
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring an integer key (for example, 2345)." %}
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
 
@@ -170,7 +170,7 @@ To improve system performances clients/servers SHALL support GZIP compression.
 
 Compression is requested by setting the `Accept-Encoding` header to `gzip`.
 
-{% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %} 
+{% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %}
 
 ### [Inter-version compatibility](https://www.hl7.org/fhir/STU3/compatibility.html) ###
 
@@ -216,7 +216,7 @@ Providers SHALL use the following HTTP header to ensure that no intermediaries c
 
 Provider SHALL maintain resource state in line with the underlying system, including the state of any associated resources.
 
-For example: 
+For example:
 
 _If the practitioner associated with a schedule is changed on the provider's system, such as when a locum is standing in for a regular doctor, this should be reflected in all associated resources to that schedule. The diagram below shows the expected change to the appointment resources for this scenario._
 
@@ -235,7 +235,7 @@ Consumer systems SHALL compare the returned structured patient demographic data 
 The following data SHALL be cross-checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.   
 
 | Item | Resource field |
-| ---- | -------------- | 
+| ---- | -------------- |
 | Family name | patient.name.family |
 | Given name | patient.name.given |
 | Gender | patient.gender |
