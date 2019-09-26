@@ -61,7 +61,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
       <tr>
             <td>5</td>
             <td>File document</td>
-            <td>Clinician reads or meta data information to the document.</td>
+            <td>Clinician reads or adds meta data information to the document.</td>
         </tr>
       <tr>
             <td>6</td>
