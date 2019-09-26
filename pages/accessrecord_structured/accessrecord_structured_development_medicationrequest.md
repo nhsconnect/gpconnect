@@ -132,7 +132,7 @@ Only populate for a `MedicationRequest` with an `intent` = `plan`. Do not popula
 
 The dateTime the medication/medical device was stopped/discontinued.
 
-Mandatory for stopped/discontinued medications/medical devices as the date will always be known. In exceptional cases where for legacy data there is no statusReason recorder in the system then this MUST be populated with the text 'No information available'.
+Mandatory for stopped/discontinued medications/medical devices as the date will always be known. In exceptional cases where for legacy data there is no statusReason recorder in the system then this **MUST** be populated with the text 'No information available'.
 
 ### extension[statusReason].reason ###
 
@@ -383,7 +383,7 @@ The elements of the dosage datatype detailed below should be populated as descri
 
 Complete dosage instructions as text.
 
-In exceptional cases where for legacy data there is no dosage information recorded in the system then this MUST be populated with the text 'No information available'.
+In exceptional cases where for legacy data there is no dosage information recorded in the system then this **MUST** be populated with the text 'No information available'.
 
 ### dosageInstruction.patientInstruction ###
 
@@ -414,7 +414,7 @@ Start date is mandatory. Where there is a defined expiry or end date the end dat
 For `MedicationRequest` instances where `intent` is set to `plan`:
 
 * This refers to the period that the medication/medical device plan is active.
-* This MUST mirror `MedicationStatement.effective`
+* This **MUST** mirror `MedicationStatement.effective`
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
@@ -432,7 +432,7 @@ Use one of the following dates in order of descending preference:
 *	The prescription end date recorded in the patient record
 *	The prescription end date derived from period.start and the duration
 *	The Period.start date
-    * This option should only occur where data has been lost (for example during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
+    * This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
 
 
 ### dispenseRequest.quantity ###
