@@ -110,25 +110,8 @@ entries:
       output: web
       url: /accessrecord_documents_development_documents_guidance.html
 
-  - title: Document resources
+  - title: Document API
     output: web
-    folderitems:
-
-    - title: <b class='resource'>DocumentReference</b>
-      output: web
-      url: /accessrecord_documents_development_documents.html
-    - title: <b class='resource'>Binary</b>
-      output: web
-      url: /accessrecord_documents_development_binary.html
-    - title: <b class='resource'>Bundle</b>
-      output: web
-      url: /accessrecord_documents_development_bundle.html
-    - title: Documents FHIR&reg; examples
-      output: web
-      url: /accessrecord_documents_development_fhir_examples_documents.html
-
-  - title: Document API definition
-    output: web, pdf
     folderitems:
 
     - title: Consumer sessions illustrated
@@ -137,9 +120,21 @@ entries:
     - title: Search for a patient's documents
       url: /accessrecord_documents_development_search_patient_documents.html
       output: web
+    - title: <b class='resource'>- Bundle</b>
+      output: web
+      url: /accessrecord_documents_development_bundle.html
+    - title: <b class='resource'>- DocumentReference</b>
+      output: web
+      url: /accessrecord_documents_development_documents.html
     - title: Retrieve a patient's documents
       url: /accessrecord_documents_development_retrieve_patient_documents.html
       output: web
+    - title: <b class='resource'>- Binary</b>
+      output: web
+      url: /accessrecord_documents_development_binary.html
+    - title: Documents FHIR&reg; examples
+      output: web
+      url: /accessrecord_documents_development_fhir_examples_documents.html
     - title: Get the FHIR&reg; capability statement
       url: /foundations_use_case_get_the_fhir_capability_statement.html
       output: web, pdf
