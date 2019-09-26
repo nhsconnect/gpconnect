@@ -7,7 +7,7 @@ permalink: accessrecord_documents_development_api_session.html
 summary: "An illustration of consumer document API session"
 ---
 
-A GP Connect Document API consumer application would follow the API session below to retrieve a patient's documents.
+A GP Connect Document API consumer application would follow the typical API session described below to retrieve a patient's documents.
 
 ## Consumer session - querying and retrieving documents ##
 
