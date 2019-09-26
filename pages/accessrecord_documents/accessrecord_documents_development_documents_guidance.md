@@ -121,7 +121,7 @@ Document types vary across GP practices and may contain free text. Requirements 
 To address this issue, GP Connect has created a valueset of document types. It is based on the clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GP Connect document types valueset. Where the providers have a code that does not exist in the valueset, they can provide their code and its value in the text field. This would improve the standardisation of document types across the GP practices.
 
 ## Patient records where documents are not available ##
-GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document from where the document can be requested.
+GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document from where the document can be requested. More information about how this should be populated is available on the [DocumentReference page](accessrecord_documents_development_documentreference.html)
 
 ## Document format ##
 Providers to provide documents in the following industry acceptable format:
