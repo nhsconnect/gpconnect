@@ -344,9 +344,9 @@ The code <code>AP</code> (Administering Provider) **MUST** be used to designate 
 
 A reference to the <code>practitioner</code> profile for who administered and / or recorded the vaccine. 
 
-Where there is only a single practitioner recorded against the immunisation record
-- If the practitioner recording the vaccination also administered it, then associate a <code>practitioner.role</code> code <code>AP</code> (Administering Provider) with practitioner profile.
-- If the GP Clinical System cannot determine whether the practitioner administered the vaccine or recorded the vaccination event or both, then do not return a <code>practitioner.role</code>.
+Where there is only a single practitioner recorded against the immunisation record:
+- if the practitioner recording the vaccination also administered it, then associate a <code>practitioner.role</code> code <code>AP</code> (Administering Provider) with practitioner profile
+- if the GP Clinical System cannot determine whether the practitioner administered the vaccine or recorded the vaccination event or both, then do not return a <code>practitioner.role</code>
 
 This is mandatory where the <code>practitioner.role</code> is populated.
 
