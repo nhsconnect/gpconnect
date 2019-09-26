@@ -17,7 +17,7 @@ The consumer system:
 
 ## API use case ##
 
-This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+This page describes a single use case.
 
 ## Security ##
 

@@ -19,7 +19,7 @@ The consumer system:
 
 ## API use case ##
 
-This specification describes a single use cases. For complete details and background, please see the [Foundations Capability Bundle](foundations.html).
+This page describes a single use case. 
 
 ## Security ##
 
@@ -63,7 +63,7 @@ Provider systems **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.
 
 For example, the:
 
-- logical identifier of the resource is not valid/can't be found on the server 
+- logical identifier of the resource is not valid/can't be found on the server
 
 Refer to [Development - FHIR API Guidance - Error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -94,7 +94,7 @@ Provider systems:
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details)
   - `nhsCommunication` with the patient's language information, where available
   - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice, which may be different
-  
+
 - **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - **SHALL NOT** populate the following fields:
@@ -106,7 +106,7 @@ Provider systems:
   - `birthPlace`
   - `maritalStatus`
   - `multipleBirthBoolean`
-  
+
 ```json
 {
   "resourceType": "Patient",
