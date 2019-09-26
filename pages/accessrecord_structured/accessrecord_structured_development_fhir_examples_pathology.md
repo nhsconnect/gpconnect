@@ -9,7 +9,7 @@ summary: "Access Record Structured FHIR examples"
 
 
 
-The following is a set of request/response examples for pathology:
+The following is a set of request/response examples for Pathology:
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Example 1</a></li>
