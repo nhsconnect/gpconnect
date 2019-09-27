@@ -238,7 +238,7 @@ Format/content rules for the document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
+    <td><b>Data type:</b> <code>Reference(CareConnect-GPC-Encounter-1)</code></td>
     <td><b>Optionality:</b> Required/Optional</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -262,11 +262,11 @@ Additional details about where the content was created (for example, clinical sp
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><b>Data type:</b><code>Reference(CareConnect-GPC-Patient-1)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-Additional details about where the content was created (for example, clinical specialty).
+Patient demographics from source.
 
