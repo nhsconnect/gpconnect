@@ -9,14 +9,14 @@ summary: "Guidance for the representation and consumption of documents"
 
 ## What is a document? ##
 
-A clinical document (CD) is a written, printed or electronic record that provides evidence of medical care. Clinical documents must be accurate, timely and reflect specific services provided to a patient.
-Clinical documentation is used to facilitate inter-provider communication, allow evidence-based healthcare systems to automate decisions, provide evidence for legal records and create patient registry functions so public health agencies can manage and research large patient populations more efficiently.
+A clinical document (CD) is a written, printed or electronic record that provides evidence of medical care. Clinical documents must be accurate, timely and reflect specific services provided to a patient. A clinical document could be any document that the GP practice adds to a clinical record of the Patient.
 
 ## Problem statement ##
 
 A patient's GP practice is custodian of patient's clinical documents received from various health and care settings.
 Other practices and healthcare settings are not able to electronically search for a patient's document in the patient's GP practice and retrieve those documents.
 This is usually a manual process whereby other GP practices and healthcare settings ask a patient's GP practice for documents of the patient. The patient's GP practice then emails or faxes a patient's documents. This can lead to loss of valuable time and effort of GP practice's staff.
+GP practices have poor metadata of clinical documents and it makes it difficult for the clinicians to search the documents in the GP Practice.
 
 ## Objective ##
 
@@ -118,7 +118,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Documents classification ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
-To address this issue, GP Connect has created a valueset of document types. It is based on the clinical document indexing standards created by NHS Scotland. Providers would map their document types to the GP Connect document types valueset. Where the providers have a code that does not exist in the valueset, they can provide their code and its value in the text field. This would improve the standardisation of document types across the GP practices.
+To address this issue, GP Connect has recommended the use of clinical document indexing standards created by NHS Scotland. Document Type should contain a value from the Correspondence document type simple reference set (foundation metadata concept)' with Refset Id 999000391000000109. A text value can be provided for values that do not exist in the valueset. Using a document type refset would improve the standardisation of document types across the GP practices.
 
 ## Patient records where documents are not available ##
 GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document from where the document can be requested. More information about how this should be populated is available on the [DocumentReference page](accessrecord_documents_development_documentreference.html)
