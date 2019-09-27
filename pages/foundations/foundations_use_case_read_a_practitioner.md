@@ -9,7 +9,7 @@ summary: "Use case for reading a practitioner resource"
 
 ## API use case ##
 
-This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+This page describes a single use case. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
 
 ## Security ##
 
@@ -34,7 +34,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Practitioner/[i
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -49,7 +49,7 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
@@ -67,10 +67,10 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) profile.
+- **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
+- **SHALL** return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) profile.
 
-- SHALL populate the following `Practitioner` fields:
+- **SHALL** populate the following `Practitioner` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Practitioner` resource.
   - `identifier` with relevant business identifiers (for example, SDS User Id) for each `Practitioner` resource.
@@ -78,9 +78,9 @@ Provider systems:
   - `gender` where available
   - `nhsCommunication` with the practitioner's language information, where available
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+- **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
-- SHALL NOT populate the following fields:
+- **SHALL NOT** populate the following fields:
   - `telecom`
   - `address`
   - `birthDate`
