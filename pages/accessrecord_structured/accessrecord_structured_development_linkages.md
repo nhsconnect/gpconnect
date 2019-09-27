@@ -46,25 +46,25 @@ The response to the query includes:
 For each `Encounter` referenced in the `List` profile:
 *  The `Encounter` profile of the Consultation
 *	The `List` profiles that describe the structure of the Consultation
-*	The `ProblemHeader (Consultation)` profile of any directly linked Problems
+*	The `ProblemHeader (Condition)` profile of any directly linked Problems
 *	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
     * Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
     * Only include `MedicationRequest` (intent = order) for directly linked issues
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Medications and Medical Devices
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Medications and Medical Devices
 *	The `AllergyIntolerance` profile of any linked Allergies
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Allergies
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Allergies
 *	The `Immunization` profile of any linked Immunisations
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Immunisations
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Uncategorised Data
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Uncategorised Data
 *	The `ReferralRequest` profile of any linked Referrals
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Referrals
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
 *	The `DocumentReference` profile of any linked Documents
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Documents
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investigation    
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation    
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above.
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
@@ -80,28 +80,28 @@ Clinical items within the Consultation are always included in the response regar
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
 
 The response to the query includes:
-* A `List` profile containing references to `ProblemHeader (Consultation)` for every Problem that met the search criteria
+* A `List` profile containing references to `ProblemHeader (Condition)` for every Problem that met the search criteria
 
-For each `ProblemHeader (Consultation)` referenced in the `List` profile:
-*	The `ProblemHeader (Consultation)` profile of the Problem
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+For each `ProblemHeader (Condition)` referenced in the `List` profile:
+*	The `ProblemHeader (Condition)` profile of the Problem
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
     *	Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
     *	Only include `MedicationRequest` (intent = order) for directly linked issues
 *	The `AllergyIntolerance` profile of any linked Allergies
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Allergies
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Allergies
 *	The `Immunization` profile of any linked Immunisations
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Immunisations
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Uncategorised Data
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Uncategorised Data
 *	The `ReferralRequest` profile of any linked Referrals
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Referrals
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
 *	The `DocumentReference` profile of any linked Documents
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Documents
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Consultation)` profile of any Problems linked to the returned Investigation    
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation    
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
@@ -122,7 +122,7 @@ For each `MedicationStatement` referenced in the `List` profile:
 *  The `MedicationRequest` (intent = plan) profile of the Medication or Medical Device
 *	The `Medication` profile of the Medication and Medical Device
 *	Where requested, the `MedicationRequest` (intent = order) profile for every issue
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
@@ -137,7 +137,7 @@ The response to the query includes:
 
 For each `AllergyIntolerance` referenced in either of the `List` profiles:
 *	The `AllergyIntolerance` profile of the Allergy
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
     
@@ -153,7 +153,7 @@ The response to the query includes:
 
 For each `Immunization` referenced in the `List` profile:
 *	The `Immunization` profile of the Immunisation
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
@@ -169,7 +169,7 @@ The response to the query includes:
 
 For each `Observation` referenced in the `List` profile:
 *	The `Observation` profile of the Uncategorised Data
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
@@ -185,7 +185,7 @@ The response to the query includes:
 
 For each `ReferralRequest` referenced in the `List` profile:
 *	The `ReferralRequest` profile of the Referral
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
@@ -206,7 +206,7 @@ For each `DiagnosticReport` referenced in the `List` profile:
 *	The `Observation` profiles of the Investigation
 *	The `DocumentReference` profiles of the Investigation
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-*	The `ProblemHeader (Consultation)` profiles of any directly linked Problems
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
