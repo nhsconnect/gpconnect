@@ -75,18 +75,28 @@ _Providing_  systems **MUST** ensure this GUID is globally unique and a persiste
 
 Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
-### indexed ###
+### status ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Instant</code></td>
+    <td><b>Data type:</b> <code>code</code></td>
+  </tr>
+</table>
+
+current | superseded | entered-in-error
+This field will always have default value of current as only the latest version of the document is retrieved.
+
+### type ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-When the document reference was created.
-
+Kind of document.
 
 ### subject ###
 
@@ -112,6 +122,18 @@ A reference to the patient who is the subject of the document.
 
 Creation/Edit datetime of the document.
 
+### indexed ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Instant</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+When the document reference was created.
+
 ### author ###
 
 <table class='resource-attributes'>
@@ -124,17 +146,6 @@ Creation/Edit datetime of the document.
 
 Who and/or what authored the document.
 
-### type ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-Kind of document.
 
 ### custodian ###
 
@@ -148,53 +159,6 @@ Kind of document.
 
 Organisation which maintains this document.
 
-### clinicalSetting ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Additional details about where the content was created (for example, clinical specialty).
-
-### format ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>coding</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-
-Format/content rules for the document.
-
-### url ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>url</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-URL to retrieve the document, this **MUST** be populated when the document is available.
-
-### attachment.title ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-To be used when only a placeholder for a document is available. This **MUST** be populated with the reason why the file isn't available.
 
 ### description ###
 
@@ -208,7 +172,29 @@ To be used when only a placeholder for a document is available. This **MUST** be
 
 Human-readable description (title).
 
-### fileSize ###
+### content.attachment.data ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>base64Binary</code></td>
+    <td><b>Optionality:</b> Required/Optional</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+### content.attachment.url ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>url</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+URL to retrieve the document, this **MUST** be populated when the document is available.
+
+### content.attachment.size ###
 
 <table class='resource-attributes'>
   <tr>
@@ -220,31 +206,35 @@ Human-readable description (title).
 
 Size of the file.
 
-### binaryAttachment ###
+The binary file (base64 binary). </br>
+This field will get populated only when the document is being retrieved. It will **NOT** be populated during the search document function.
+
+### content.attachment.title ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>base64Binary</code></td>
-    <td><b>Optionality:</b> Required/Optional</td>
+    <td><b>Data type:</b> <code>string</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+To be used when only a placeholder for a document is available. This **MUST** be populated with the reason why the file isn't available.
+
+### content.format ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>coding</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-The binary file (base64 binary). </br>
-This field will get populated only when the document is being retrieved. It will **NOT** be populated during the search document function.
+Format/content rules for the document.
 
-### status ###
 
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-  </tr>
-</table>
-
-current | superseded | entered-in-error
-This field will always have default value of current as only latest versions of the document can be retrieved.
-
-### consultationReference ###
+### context.encounter ###
 
 <table class='resource-attributes'>
   <tr>
@@ -255,3 +245,28 @@ This field will always have default value of current as only latest versions of 
 </table>
 
 Reference to the consultation the document was created/attached in.
+
+### context.practiceSetting ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Additional details about where the content was created (for example, clinical specialty).
+
+### context.sourcePatientInfo ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Additional details about where the content was created (for example, clinical specialty).
+
