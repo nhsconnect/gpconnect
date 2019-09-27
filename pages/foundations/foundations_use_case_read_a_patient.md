@@ -13,13 +13,13 @@ summary: "Use case for reading a patient resource"
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
-- SHALL have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS number
+- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- **SHALL** have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS number
 
 ## API use case ##
 
-This specification describes a single use cases. For complete details and background, please see the [Foundations Capability Bundle](foundations.html).
+This page describes a single use case. For complete details and background, please see the [Foundations Capability Bundle](foundations.html).
 
 ## Security ##
 
@@ -44,7 +44,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -59,7 +59,7 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
@@ -77,10 +77,10 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
+- **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
+- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 
-- SHALL populate the following fields:
+- **SHALL** populate the following fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Patient` resource.
   - `identifier` with relevant business identifiers, including a minimum of the patient's NHS number
@@ -95,9 +95,9 @@ Provider systems:
   - `nhsCommunication` with the patient's language information, where available
   - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice which may be different
   
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+- **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
-- SHALL NOT populate the following fields:
+- **SHALL NOT** populate the following fields:
   - `ethnicCategory`
   - `religiousAffiliation`
   - `patient-cadavericDonor`
