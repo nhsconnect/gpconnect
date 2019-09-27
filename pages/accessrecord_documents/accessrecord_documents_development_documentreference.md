@@ -325,15 +325,5 @@ Patient demographics from source.
 
 Document security-tags is not required by GP Connect
 
-<h3 style="color:#ED1951;"> securityLabel </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-  </tr>
-</table>
-
-Document security-tags is not required by GP Connect
-
 <br>
 
