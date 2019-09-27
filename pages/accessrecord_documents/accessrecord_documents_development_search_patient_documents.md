@@ -18,7 +18,7 @@ Search for a patient's documents from a GP practice.
 
 ## Search parameters ##
 
-Provider systems SHALL support the following search parameters:
+Provider systems **SHALL** support the following search parameters:
 
 | Name | Type | Description | Paths |
 |---|---|---|---|
