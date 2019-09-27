@@ -291,7 +291,7 @@ Categorization of document is not required by GP Connect.
   </tr>
 </table>
 
-Who/what authenticated the document is not required by GP Connect
+Who/what authenticated the document is not required by GP Connect.
 
 <h3 style="color:#ED1951;"> relatesTo </h3>
 
@@ -301,7 +301,7 @@ Who/what authenticated the document is not required by GP Connect
   </tr>
 </table>
 replaces | transforms | signs | appends
-Relationships to other documents is not required by GP Connect
+Relationships to other documents is not required by GP Connect.
 
 ### context.sourcePatientInfo ###
 
@@ -323,7 +323,7 @@ Patient demographics from source.
   </tr>
 </table>
 
-Document security-tags is not required by GP Connect
+Document security-tags is not required by GP Connect.
 
 <br>
 
