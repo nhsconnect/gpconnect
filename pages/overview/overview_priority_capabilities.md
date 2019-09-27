@@ -14,7 +14,7 @@ GP Connect API is currently delivering the following interoperability capabiliti
 ## Access Record ##
 Access a patient's care record for the purpose of direct care.
 
-[![Img](images/overview/Folder_1_Blue.png) Access Record HTML](accessrecord.html)
+[![Img](images/overview/Folder_1_Blue.png?s=25) Access Record HTML](accessrecord.html)
 
 [![Img](images/overview/Organisation_chart_vertical_Blue.png) Access Record Structured](accessrecord_structured.html)
 
