@@ -29,23 +29,23 @@ Clearly not every medication will have a status of stopped but when it does this
 
 ## Definition of 'Must support' for use in the FHIR profiles
 
-In FHIR it alows the use of a flag titled 'Must support' to be attached to any give data item. The FHIR specification states 'The meaning of "support" is not defined by the base FHIR specification, but can be set to true in a profile. When a profile does this, it SHALL also make clear exactly what kind of "support" is required'
+In FHIR, it allows the use of a flag titled 'Must support' to be attached to any give data item. The FHIR specification states, "The meaning of "support" is not defined by the base FHIR specification, but can be set to true in a profile. When a profile does this, it SHALL also make clear exactly what kind of "support" is required".
 
-In the GP Connect FHIR profiles we have used the 'Must support' flag to represent the required data items as described above.
+In the GP Connect FHIR profiles, we have used the 'Must support' flag to represent the required data items as described above.
 
-This leads to our definition for use in GP Connect,
+This leads to our definition for use in GP Connect:
 
-**Must support** = if a system is providing resources and one of the items is flagged as 'Must support' the sytem **MUST** include the data item if it is available to be sent.
+**Must support** = if a system is providing resources and one of the items is flagged as 'Must support' the system **MUST** include the data item if it is available to be sent.
 
 ## Using the List resource ##
 
 The `List` resource in FHIR is used to manage collections of resources. 
 
-In GP Connect it is used to organise data returned by a query into groups of resources that can then be processed more easily. For each clinical area query, GP Connect will return a list that identifies the data returned for that query.
+In GP Connect, it is used to organise data returned by a query into groups of resources that can then be processed more easily. For each clinical area query, GP Connect will return a list that identifies the data returned for that query.
 
-- When an API call returns data for more than one clinical area, the list will identify which data has been returned for which clinical area.
-- Where there are no items returned, the list will be empty.
-- Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
+- when an API call returns data for more than one clinical area, the list will identify which data has been returned for which clinical area
+- where there are no items returned, the list will be empty
+- where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query - an attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources
 
 ## Warning codes
 
@@ -81,9 +81,9 @@ This only refers to data transmitted from GP to GP when a patient moves GP pract
 
 ## Data awaiting filing 
 
-When a GP Clinical system receives electronic data about a patient it will go through filing process during which the information is reviewed by a user and if suitable integrated into the patient's medical record. The details on how this process is managed vary between different GP Clinical Systems and GP Practices.
+When a GP clinical system receives electronic data about a patient it will go through filing process during which the information is reviewed by a user and if suitable integrated into the patient's medical record. The details on how this process is managed vary between different GP clinical systems and GP practices.
 
-GP Connect will not return electronic data that has been received by the GP Clinical System but has not yet been through the filing process. The data will only become available through GP Connect once it has integrated into the patient's medical record.
+GP Connect will not return electronic data that has been received by the GP clinical system but has not yet been through the filing process. The data will only become available through GP Connect once it has integrated into the patient's medical record.
 
 ## Common code systems ##
 
@@ -118,11 +118,11 @@ The following common identifier systems are used when populating `Identifier.sys
 
 The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are used in this capability pack:
 
-### Cross care setting identifier
+### Cross-care setting identifier
 
-It is intended that this will be a unique ID that will be persisted to help consuming systems distinguish data they have integrated previously to data which is new to them. This identifier is still being developed and as such although this may be populated by some suppliers it cannot be relied upon alone to identify resources in the current release.
+It is intended that this will be a unique ID that will be persisted to help consuming systems distinguish data they have integrated previously to data which is new to them. This identifier is still being developed and, as such, although this may be populated by some suppliers, it cannot be relied upon alone to identify resources in the current release.
 
-The cross care setting identifier and how it will work and be used is currently under discussion by a sub group of BIDA. 
+The cross-care setting identifier and how it will work and be used is currently under discussion by a subgroup of the British International Doctors' Association (BIDA). 
 
 
 ### Clinical ###
@@ -147,7 +147,7 @@ The cross care setting identifier and how it will work and be used is currently 
 * DocumentReference
 
 {% include note.html content="DocumentReference is part of the Access Record Documents capability which is available as its own GP Connect specification version. 
-Access Record Documents compliments Access Record Structure by retrieval of a documents list or individual documents.
+Access Record Documents complements Access Record Structure by retrieval of a documents list or individual documents.
 Please consult the [specification versions page](https://developer.nhs.uk/gp-connect-specification-versions/) for more details." %}
 
 ### Administrative ###
