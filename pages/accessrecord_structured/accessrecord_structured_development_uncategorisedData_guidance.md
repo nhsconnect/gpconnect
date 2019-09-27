@@ -43,7 +43,7 @@ Consideration was given to attempting to categorise data using the recorded clin
 
 ## Observation profile ##
 
-Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore uncategorised data will always be contained in an `Observation` profile.
+Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore, uncategorised data will always be contained in an `Observation` profile.
 
 ## Qualifiers ##
 
@@ -51,9 +51,9 @@ Qualifiers are used to refine the meaning of the coded element of the record.
 
 Each provider system supports a different set of qualifiers. However, there are three key qualifiers that are common across all provider systems:
 
-* Laterality - for example, a patient record may have a fracture of the left femur.
-* Severity - for example, a patient record may have a severe asthmatic attack.
-* Episodicity - for example, this is the patient's first episode of an asthmatic attack.
+* Laterality - for example, a patient record may have a fracture of the left femur
+* Severity - for example, a patient record may have a severe asthmatic attack
+* Episodicity - for example, this is the patient's first episode of an asthmatic attack
 
 The provider system will translate all of the qualifiers included with the clinical code into human-readable text and concatenate them with the text entered by the recorder (placing the qualifiers first) and placing in `observation.comment`.
 
@@ -72,7 +72,7 @@ and
 
 In these cases, each value will be exported in an instance of `observation.component`.
 
-This approach MUST be used for blood preasure readings where the systolic and diastolic values were taken together.
+This approach **MUST** be used for blood pressure readings where the systolic and diastolic values were taken together.
 
 ## Hierarchical Uncategorised Data ##
 There are cases where several pieces of uncategorised data are be related to each other in a hierarchical structure. 
@@ -80,16 +80,16 @@ There are cases where several pieces of uncategorised data are be related to eac
 For example: 
 * Alcohol Consumption
     * Breath alcohol level 15mmol/L
-    * O/E - spleen just palapable
+    * O/E - spleen just palpable
 
-Where this occurs the data is supplied in a flattened format with the herachical information made available to the consumer system if they want to rebuild the hierarchical structure.
+Where this occurs, the data is supplied in a flattened format with the hierarchical information made available to the consumer system if they want to rebuild the hierarchical structure.
 
-### Modeling ###
+### Modelling ###
 
-Each item of uncategorised data in the hierarchy is recorded is in its own `observation` profile. The structure is represented using the `observation.related` field.
+Each item of uncategorised data in the hierarchy is recorded is in its own `observation` profile. The structure is represented using the `observation.related` field:
 
-* The top level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member` 
-* The child items will contain `observation.related.target` pointing to the top level item with an `observation.related.type` of `derived-from`
+* the top level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member` 
+* the child items will contain `observation.related.target` pointing to the top level item with an `observation.related.type` of `derived-from`
 
 Note: This follows the same model that will be used to represent Investigations and Pathology.
 
