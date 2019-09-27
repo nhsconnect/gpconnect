@@ -102,7 +102,7 @@ Kind of document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
+    <td><b>Data type:</b> <code>Reference(CareConnect-GPC-Patient-1 | CareConnect-GPC-Practitioner-1)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -258,6 +258,51 @@ Reference to the consultation the document was created/attached in.
 
 Additional details about where the content was created (for example, clinical specialty).
 
+
+<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
+
+The following elements **MUST NOT** be populated:
+
+<h3 style="color:#ED1951;"> docStatus </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(preliminary | final | appended | amended | entered-in-error)</code></td>
+  </tr>
+</table>
+
+This is not required by GP Connect.
+
+<h3 style="color:#ED1951;"> class </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
+  </tr>
+</table>
+
+Categorization of document is not required by GP Connect.
+
+<h3 style="color:#ED1951;"> authenticator </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
+  </tr>
+</table>
+
+Who/what authenticated the document is not required by GP Connect
+
+<h3 style="color:#ED1951;"> relatesTo </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>code</code></td>
+  </tr>
+</table>
+replaces | transforms | signs | appends
+Relationships to other documents is not required by GP Connect
+
 ### context.sourcePatientInfo ###
 
 <table class='resource-attributes'>
@@ -269,4 +314,26 @@ Additional details about where the content was created (for example, clinical sp
 </table>
 
 Patient demographics from source.
+
+<h3 style="color:#ED1951;"> securityLabel </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
+  </tr>
+</table>
+
+Document security-tags is not required by GP Connect
+
+<h3 style="color:#ED1951;"> securityLabel </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>codeableConcept</code></td>
+  </tr>
+</table>
+
+Document security-tags is not required by GP Connect
+
+<br>
 
