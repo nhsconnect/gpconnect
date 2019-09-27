@@ -11,7 +11,7 @@ summary: "Use case for registering a patient with an organisation"
 
 The "Register a patient" use case creates a new temporary patient registration, or re-activates an existing "inactive" patient registration as a temporary patient registration within the GP practice system ([Definition of a GP Connect active patient](/overview_glossary.html#active-patient)).
 
-This specification describes a single use case. For complete details and background please see the [Foundations capability bundle](foundations.html).
+This page describes a single use case. For complete details and background please see the [Foundations capability bundle](foundations.html).
 
 {% include note.html content="This API use case is designed only to support the need to  register a **temporary** patient at a federated organisation as an enabler for federated appointment bookings. It does not change a patient's registered practice information as held on the Personal Demographics Service (PDS)." %}
 
@@ -26,8 +26,8 @@ This specification describes a single use case. For complete details and backgro
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- **SHALL** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
 
 
 ## API usage ##
@@ -48,7 +48,7 @@ POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.r
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -82,7 +82,7 @@ The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.h
 Within the `Patient` resource: 
 
 - The following fields SHALL be populated as a minimum to allow the provider system to perform a PDS trace:
-  - `identifier` with the patient's NHS number
+  - `identifier` with the patient's NHS Number
   - `name` including `family` and `given`, with the `use` element set to `official`.
     - No more than one instance of `name` where `use` is set to `official` SHALL be provided.
   - `birthDate`
@@ -98,7 +98,7 @@ Within the `Patient` resource:
 
 - The following fields MAY be populated in order to record temporary details known to the consuming system:
   - `address` with temporary address details, with the `use` of `temp`.  No more than one instance of this `use` SHALL be populated.
-  - `telecom` with temporary telephone details, with the `use` of `temp` and `system` of `phone`.  No more than one instance of this SHALL be populated.
+  - `telecom` with temporary telephone details, with the `use` of `temp` and `system` of `phone`.  No more than one instance of this **SHALL** be populated.
 
 - **All other fields MUST NOT be populated.**
 
@@ -191,12 +191,12 @@ On the wire a JSON serialised `$gpc.registerpatient` request would look somethin
 
 Before registering the patient record on the local system, the provider SHALL retrieve the patient's demographic record using a PDS Retrieval Query, and then:
 
-- **Verify the patient's NHS number according to the rules below**:
+- **Verify the patient's NHS Number according to the rules below**:
 
-  - The NHS number within the request is considered verified if:
+  - The NHS Number within the request is considered verified if:
     - The NHS number is found on PDS and the date of birth in the request exactly matches the date of birth held on PDS
     - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the first family name match and the initial character of the given match that held for the record on PDS.
-  - If both of the above checks fail to find a match then the NHS number is treated as not verified
+  - If both of the above checks fail to find a match then the NHS Number is treated as not verified
 
     {% include note.html content="The provider **MAY** use a [PDS Cross Check Trace](https://data.developer.nhs.uk/dms/mim/6.3.01/Domains/PDS/Document%20files/PDS%20IM.htm#_Toc_Section_2.10) to perform this step, instead of using a [PDS Retrieval](https://data.developer.nhs.uk/dms/mim/6.3.01/Domains/PDS/Document%20files/PDS%20IM.htm#_Toc_Section_2.4) and implementing the rules local locally.
     <br/>
@@ -212,11 +212,11 @@ Before registering the patient record on the local system, the provider SHALL re
 
 #### Duplicate record prevention
 
-Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using the patient's NHS number, and then:
+Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using the patient's NHS Number, and then:
 
 - **If a matching patient record IS found**:
 
-  - and the matching patient record's NHS number has not previously been traced or verified, it SHALL be verified using the [rules shown above](foundations_use_case_register_a_patient.html#pds-requirements)
+  - and the matching patient record's NHS Number has not previously been traced or verified, it SHALL be verified using the [rules shown above](foundations_use_case_register_a_patient.html#pds-requirements)
 
     - If the verification fails the registration SHALL be halted and an error returned to the consuming system
 
@@ -224,16 +224,16 @@ Before registering the patient record on the local system, the provider SHALL ch
 
     - is **active** (i.e. a currently registered patient, of any registration type):
 
-      - The registration SHALL be halted and error is returned to the consumer
+      - The registration **SHALL** be halted and error is returned to the consumer
 
     - is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
-      - The patient record SHALL be re-activated as a **temporary** patient 
+      - The patient record **SHALL** be re-activated as a **temporary** patient 
       - Follow the [Local registration requirements](foundations_use_case_register_a_patient.html#local-registration-requirements) when updating the patient's demographics
 
     - is recorded as **deceased**:
 
-      - The registration SHALL be halted and an error returned to the consuming system
+      - The registration **SHALL** be halted and an error returned to the consuming system
 
 - **If a matching patient record IS NOT found**:
 
@@ -269,7 +269,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
 | The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The NHS number could not be found on PDS, or verified against a PDS record | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The NHS Number could not be found on PDS, or verified against a PDS record | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The patient is marked as deceased on PDS, or on the provider system | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The registration request is for a sensitive patient | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The PDS record contains an invalid or superseded flag | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -293,15 +293,15 @@ Content-Length: 1464
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
-- SHALL include the URI of the relevant GP Connect `StructureDefinition` profile in the `Patient.meta.profile` element of the returned resources.
-- SHALL return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) 
-- SHALL populate the `Patient` resource with details of the newly registered or re-activated patient
+- **SHALL** return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
+- **SHALL** include the URI of the relevant GP Connect `StructureDefinition` profile in the `Patient.meta.profile` element of the returned resources.
+- **SHALL** return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) 
+- **SHALL** populate the `Patient` resource with details of the newly registered or re-activated patient
 
-- SHALL populate the following fields:
+- **SHALL** populate the following fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Patient` resource.
-  - `identifier` with relevant business identifiers, including a minimum of the patient's NHS number
+  - `identifier` with relevant business identifiers, including a minimum of the patient's NHS Number
   - `name`
   - `birthDate`
   - `gender`
@@ -313,9 +313,9 @@ Provider systems:
   - `nhsCommunication` with the patient's language information, where available
   - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice which may be different
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all  fields where data is available, excluding those listed below
+- **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all  fields where data is available, excluding those listed below
 
-- SHALL NOT populate the following fields:
+- **SHALL NOT** populate the following fields:
   - `ethnicCategory`
   - `religiousAffiliation`
   - `patient-cadavericDonor`
