@@ -652,9 +652,9 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - [`List`](accessrecord_structured_development_list.html), [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's referrals will be returned.
 
 - when the `referralSearchPeriod` is set:
-  - when a `start` value is set, all referrals with an `ReferralRequest.authoredOn` after the date **MUST** be returned
-  - and when an `end` value is set, all referrals with an `ReferralRequest.authoredOn` before the date **MUST** be returned
-  - and when both a `start` and `end` are specified, referrals with an `ReferralRequest.authoredOn` after the `start` and with an `ReferralRequest.authoredOn` before the `end` **MUST** be returned
+  - when a `start` value is set, all referrals with a `ReferralRequest.authoredOn` after the date **MUST** be returned
+  - and when an `end` value is set, all referrals with a `ReferralRequest.authoredOn` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, referrals with a `ReferralRequest.authoredOn` after the `start` and with an `ReferralRequest.authoredOn` before the `end` **MUST** be returned
 
 #### Medication search date ####
 
