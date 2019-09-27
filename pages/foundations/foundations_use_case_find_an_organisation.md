@@ -13,7 +13,7 @@ summary: "Use case for finding an organisation resource by business identity"
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 
 ## API usage ##
 
@@ -23,7 +23,7 @@ Resolve (zero or more) `Organization` resources using a business identifier (for
 
 The consumer system:
 
-- SHALL populate the `[system]` field with a valid organization identifier system URL (for example, `https://fhir.nhs.uk/Id/ods-organization-code`).
+- **SHALL** populate the `[system]` field with a valid organization identifier system URL (for example, `https://fhir.nhs.uk/Id/ods-organization-code`).
 
 - apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
@@ -43,7 +43,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Organization?id
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -79,9 +79,9 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation
-- SHALL return zero or more matching `Organization` resources in a `Bundle` of `type` searchset
-- SHALL return `Organization` resources that conform to the [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile
+- **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation
+- **SHALL** return zero or more matching `Organization` resources in a `Bundle` of `type` searchset
+- **SHALL** return `Organization` resources that conform to the [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) profile
 
 - SHALL populate the following `Organization` fields:
   - `meta.profile` with the profile URI
@@ -91,9 +91,9 @@ Provider systems:
   - `address` where available
   - `telecom` where available
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+- **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
-- SHALL NOT populate the following fields:
+- **SHALL NOT** populate the following fields:
   - `contact`
   - `endpoint`
 
