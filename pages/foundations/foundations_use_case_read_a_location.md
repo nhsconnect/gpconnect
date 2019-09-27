@@ -13,11 +13,11 @@ summary: "Use case for reading a location resource"
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
 
 ## API use case ##
 
-This specification describes a single use cases. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
+This page describes a single use case. For complete details and background please see the [Foundations Capability Bundle](foundations.html).
 
 ## Security ##
 
@@ -75,10 +75,10 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) profile.
+- **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
+- **SHALL** return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) profile.
 
-- SHALL populate the following `Location` fields:
+- **SHALL** populate the following `Location` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of each `Location` resource.
   - `name`
@@ -86,9 +86,9 @@ Provider systems:
   - `telecom` where available
   - `managingOrganization` with a reference to the 'managing' organisation. For Locations that are managed by GP practices, see [Branch surgeries](development_branch_surgeries.html) for more details.
 
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+- **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
-- SHALL NOT populate the following fields:
+- **SHALL NOT** populate the following fields:
   - `endpoint`
 
 ```json
