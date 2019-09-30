@@ -116,9 +116,9 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 <IMG src="images/access_structured/DistrictNursePatient.png" alt="District nurse attends a patient at home and views their discharge summary"  style="max-width:73%;max-height:60%;">
 
-## Documents classification ##
+## Document Type ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
-To address this issue, GP Connect has recommended the use of clinical document indexing standards created by NHS Scotland. Document Type should contain a value from the Correspondence document type simple reference set (foundation metadata concept)' with Refset Id 999000391000000109. A text value can be provided for values that do not exist in the valueset. Using a document type refset would improve the standardisation of document types across the GP practices.
+To address this issue, GP Connect has recommended the use of clinical document indexing standards created by NHS Scotland. Document Type should contain a value from the Correspondence document type simple reference set (foundation metadata concept)' with Refset Id 999000391000000109. A text value can be provided for values that do not exist in the valueset. 
 
 ## Patient records where documents are not available ##
 GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document from where the document can be requested. More information about how this should be populated is available on the [DocumentReference page](accessrecord_documents_development_documentreference.html)
