@@ -28,7 +28,7 @@ A patient's future appointment, irrespective of the booking organisation, and ir
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
 ## API usage ##
 
