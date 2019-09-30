@@ -138,7 +138,7 @@ entries:
         - title: Search for a patient's documents
           url: /accessrecord_documents_development_search_patient_documents.html
           output: web
-        - title: Retrieve a patient's documents
+        - title: Retrieve a patient's document
           url: /accessrecord_documents_development_retrieve_patient_documents.html
           output: web
         - title: Get the FHIR&reg; capability statement
