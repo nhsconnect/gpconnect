@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_ProcedureRequest.html
-summary: "Guidance on the representation of pathology reporting in GP Connect"
+summary: "Guidance on the representation of investigations reporting in GP Connect"
 div: resource-page
 ---
 ## Introduction ##
