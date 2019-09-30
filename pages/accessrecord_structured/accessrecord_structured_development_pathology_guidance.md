@@ -1,34 +1,35 @@
 ---
-title: Pathology guidance
+title: Investigations guidance
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_pathology_guidance.html
-summary: "Guidance on the representation of pathology messaging in GP Connect"
+summary: "Guidance on the representation of EDIFACT messaging in GP Connect"
 ---
 
-## Pathology scope in GP Connect
+## Investigations scope in GP Connect
 
-For this version of the specification the scope of pathology is considered to be making available any pathology results contained in GP systems that have been received from the lab by an EDIFACT message.
+For this version of the specification the scope of investigations is considered to be making available any investigations results contained in GP systems that have been received from the lab by an EDIFACT message.
 
 As such, there are a number of items that are **NOT** currently in scope. These are as follows:
 
-* pathology results that have been entered in a GP system using a code as an individual item (these may have a value and other qualifiers associated with them)
+* investigations results that have been entered in a GP system using a code as an individual item (these may have a value and other qualifiers associated with them)
 * test results that are received as documents or images
 * making available any test requests
 * providing the original test report document as it was provided to the practice
+* any other numeric results that do not form part of an EDIFACT message (blood pressure
 
 These may be addressed in future versions or within different areas of GP Connect - for example, manually entered results will be dealt with when we curate the uncategorised data in GP systems contained in the journal or care history areas.
 
-## Use of language to describe pathology reports
+## Use of language to describe investigation reports
 
-When describing pathology reports, different regions and professions sometimes use different words to describe the same entities. Therefore, for avoidance of confusion there are a couple of terms that we need to define.
+When describing investigation reports, different regions and professions sometimes use different words to describe the same entities. Therefore, for avoidance of confusion there are a couple of terms that we need to define.
 
 * Test group - is the phrase we are using to describe any group of tests that has been created by the laboratory or other providing organisation. These are often referred to as batteries, panels and profiles.
 
 * Test result - this is the result that has been provided by the laboratory or other provider. These may be standalone results or may be a part of a 'Test group'. They are also sometimes referred to as test analytes.
 
-## Pathology reporting in GP practices
+## Investigation reporting in GP practices
 
 Currently GP practices receive the majority of the results of investigations which they have requested in the form of the EDIFACT message. These are received into a workflow by the GP system and remain there until they are filed into the patient record by a user.
 
@@ -53,7 +54,7 @@ At the point at which the record is filed, there is opportunity for the user to 
 
 ## Report structure
 
-The following entity diagram describes the logical model for pathology in GP Connect:
+The following entity diagram describes the logical model for investigations in GP Connect:
 
 {: .center-image }
 ![Pathology logical model](images/access_structured/Pathology_Logical_Model.png)
@@ -73,11 +74,11 @@ In the image we have made the key entities more prominent. Entities representing
 
 The 'Test Report Document' and 'Test Result Document' are out of scope for the current iteration, but are represented in the diagram.
 
-We have modelled the pathology report in such a way that it will be able to support any data that is currently sent in the EDIFACT message and also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the many different patterns and types of result that can be sent so it can be easily adapted to support other test results stored in the GP system.
+We have modelled the investigations report in such a way that it will be able to support any data that is currently sent in the EDIFACT message and also leaves room to send further data items as and when providing systems are able to support them. The model is also intended to be flexible enough to support the many different patterns and types of result that can be sent so it can be easily adapted to support other test results stored in the GP system.
 
 ### Available FHIR resources
 
-There are a number of resources available in FHIR to represent the different entities that exist in pathology reporting. The resources that we are concerned with in order to represent our model are in the following table.
+There are a number of resources available in FHIR to represent the different entities that exist in investigation reporting. The resources that we are concerned with in order to represent our model are in the following table.
 
 | Resource name       | Description |
 |---------------------|-------------------|
