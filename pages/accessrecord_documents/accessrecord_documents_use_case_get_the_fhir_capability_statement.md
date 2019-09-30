@@ -3,7 +3,7 @@ title: Get the FHIR&reg; capability statement
 keywords: foundations, fhir
 tags: [foundations,use_case,fhir]
 sidebar: foundations_sidebar
-permalink: foundations_use_case_get_the_fhir_capability_statement.html
+permalink: accessrecord_documents_use_case_get_the_fhir_capability_statement.html
 summary: "Use case for getting the GP Connect FHIR server's capability statement"
 ---
 

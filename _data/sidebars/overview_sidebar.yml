@@ -110,37 +110,48 @@ entries:
       output: web
       url: /accessrecord_documents_development_documents_guidance.html
 
-  - title: Document API
+  - title: Documents API
     output: web
     folderitems:
 
     - title: Consumer sessions illustrated
       url: /accessrecord_documents_development_api_session.html
       output: web
-    - title: Search for a patient's documents
-      url: /accessrecord_documents_development_search_patient_documents.html
-      output: web
-    - title: <b class='resource'>- Bundle</b>
-      output: web
-      url: /accessrecord_documents_development_bundle.html
-    - title: <b class='resource'>- DocumentReference</b>
-      output: web
-      url: /accessrecord_documents_development_documents.html
-    - title: Retrieve a patient's documents
-      url: /accessrecord_documents_development_retrieve_patient_documents.html
-      output: web
-    - title: <b class='resource'>- Binary</b>
-      output: web
-      url: /accessrecord_documents_development_binary.html
     - title: Documents FHIR&reg; examples
       output: web
       url: /accessrecord_documents_development_fhir_examples_documents.html
-    - title: Get the FHIR&reg; capability statement
-      url: /foundations_use_case_get_the_fhir_capability_statement.html
-      output: web, pdf
-    - title: Find a patient
-      url: /foundations_use_case_find_a_patient.html
-      output: web, pdf
+
+      subfolders:
+      - title: FHIR resources
+        output: web, pdf
+        subfolderitems:
+
+        - title: Bundle
+          output: web
+          url: /accessrecord_documents_development_bundle.html
+        - title: DocumentReference
+          output: web
+          url: /accessrecord_documents_development_documents.html
+        - title: Binary
+          output: web
+          url: /accessrecord_documents_development_binary.html
+
+      - title: API definition
+        output: web, pdf
+        subfolderitems:
+
+        - title: Search for a patient's documents
+          url: /accessrecord_documents_development_search_patient_documents.html
+          output: web
+        - title: Retrieve a patient's documents
+          url: /accessrecord_documents_development_retrieve_patient_documents.html
+          output: web
+        - title: Get the FHIR&reg; capability statement
+          url: /accessrecord_documents_use_case_get_the_fhir_capability_statement.html
+          output: web, pdf
+        - title: Find a patient
+          url: /accessrecord_documents_use_case_find_a_patient.html
+          output: web, pdf
 
   - title: Integrate with Spine
     output: web

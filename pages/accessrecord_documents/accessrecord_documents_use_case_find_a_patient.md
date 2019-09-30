@@ -2,8 +2,8 @@
 title: Find a patient
 keywords: foundations, patient, nhsnumber, pid
 tags: [foundations,use_case]
-sidebar: foundations_sidebar
-permalink: foundations_use_case_find_a_patient.html
+sidebar: overview_sidebar
+permalink: accessrecord_documents_use_case_find_a_patient.html
 summary: "Use case for finding a patient resource by business identity"
 ---
 
