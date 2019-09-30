@@ -147,11 +147,11 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_consultations.html#
           output: web
 
-      - title: Pathology
+      - title: Investigations
         output: web
         subfolderitems:
 
-        - title: Pathology guidance
+        - title: Investigations guidance
           url: /accessrecord_structured_development_pathology_guidance.html
           output: web
         - title: <b class='resource'>DiagnosticReport</b>
@@ -172,7 +172,7 @@ entries:
         - title: <b class='resource'>ProcedureRequest</b>
           url: /accessrecord_structured_development_ProcedureRequest.html
           output: web
-        - title: Pathology FHIR&reg; examples
+        - title: Investigations FHIR&reg; examples
           url: /accessrecord_structured_development_fhir_examples_pathology.html
           output: web
 
