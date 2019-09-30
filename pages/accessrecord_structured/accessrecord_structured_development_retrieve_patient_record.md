@@ -709,7 +709,7 @@ Examples of the payload requests and responses can be found here:
 - [Consultations and problems - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_consultations.html)
 - [Immunizations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_immunizations.html)
 - [Uncategorised data - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_uncategorised.html)
-- [Pathology - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_pathology.html)
+- [Investigations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_pathology.html)
 
 To illustrate how forwards compatibility works, the following example has been included:
 - [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.3 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
