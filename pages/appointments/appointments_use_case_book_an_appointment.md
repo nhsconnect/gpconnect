@@ -30,8 +30,8 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service.
+- SHALL have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service.
 - SHALL have previously obtained the details for one or more free slots that are to be booked, using [Search for free slots](appointments_use_case_search_for_free_slots.html)
 - SHALL have previously performed a [Find a patient](foundations_use_case_find_a_patient.html) request to obtain the logical identifier for the patient on the organisation's FHIR server.
 
