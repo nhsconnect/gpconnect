@@ -91,7 +91,7 @@ The following GP Connect artefacts are released alongside the specification, but
 
 ### SDS interaction IDs ###
 
-[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
+[SDS interaction IDs](integration_interaction_ids.html) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
 
 ### Service Root URL format ###
 
