@@ -13,7 +13,7 @@ summary: "Use case for getting the GP Connect FHIR server's capability statement
 
 The consumer system:
 
-- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
 ## API usage ##
 
@@ -128,50 +128,6 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
           ]
         },
         {
-          "type": "Organization",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "searchParam": [
-            {
-              "name": "identifier",
-              "type": "token",
-              "documentation": "ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)"
-            }
-          ]
-        },
-        {
-          "type": "Practitioner",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "searchParam": [
-            {
-              "name": "identifier",
-              "type": "token",
-              "documentation": "SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)"
-            }
-          ]
-        },
-        {
-          "type": "Location",
-          "interaction": [
-            {
-              "code": "read"
-            }
-          ]
-        },
-        {
           "type": "Binary",
           "interaction": [
             {
@@ -231,16 +187,3 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 Consumer systems:
 - **SHOULD** request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server, this includes checking the version number specified in `CapabilityStatement.version`
 - consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organization's FHIR server.
-
-## Examples ##
-
-### C# ###
-
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library which is the official .NET API for HL7&reg; FHIR&reg;." %}
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-client.PreferredFormat = ResourceFormat.Json;
-var resource = client.CapabilityStatement();
-FhirSerializer.SerializeResourceToXml(resource).Dump();
-```
