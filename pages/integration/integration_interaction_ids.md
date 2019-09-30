@@ -9,9 +9,10 @@ summary: "A list of GP Connect API interaction IDs"
 
 ## GP Connect Interaction ID naming policy ##
 
-All interaction IDs are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`
+All interaction IDs are expected to follow the following format `urn:nhs:names:services:[programme]:[capability]:[standard]:[mechanism]:[operation]:[subject]`
 
-- Program = `gpconnect`
+- Programme = `gpconnect`
+- Capability = [ `documents` ]
 - Standard = `fhir`
 - Mechanism = [ `rest`, `operation` ]
 	- `rest` for RESTful API interactions
@@ -27,7 +28,7 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 
 | Operation                 | InteractionID             |
 |---------------------------|---------------------------|
-| [Read metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:metadata-1` |
-| [Patient search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:patient-1` |
-| [Search for documents](accessrecord_documents_development_retrieve_patient_documents.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:documentreference-1` |
-| [Retrieve documents](accessrecord_documents_development_search_patient_documents.html)          | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:binary-1` |
+| [Read metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1` |
+| [Patient search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1` |
+| [Search for documents](accessrecord_documents_development_retrieve_patient_documents.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1` |
+| [Retrieve documents](accessrecord_documents_development_search_patient_documents.html)          | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |

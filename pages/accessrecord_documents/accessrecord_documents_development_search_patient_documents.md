@@ -111,7 +111,7 @@ Consumers **MUST** include the following additional HTTP request headers:
 | `Ssp-TraceID`        | Consumer's Trace ID (a GUID or UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:documentreference-1`|
+| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1`|
 
 Example HTTP request headers:
 
@@ -121,7 +121,7 @@ Content-Type: application/fhir+json;charset=utf-8
 Ssp-TraceID: 629ea9ba-a077-4d99-b289-7a9b19fd4e03
 Ssp-From: 200000000115
 Ssp-To: 200000000116
-Ssp-InteractionID: urn:nhs:names:services:gpconnect-documents:fhir:rest:search:documentreference-1
+Ssp-InteractionID: urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1
 ```
 
 #### Payload request body ####
