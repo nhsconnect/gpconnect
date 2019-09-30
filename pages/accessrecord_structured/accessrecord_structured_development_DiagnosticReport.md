@@ -179,7 +179,7 @@ Reference to the specimen(s) on which these results were based.
 
 Reference to the result(s) which are contained in the DiagnosticReport. This may contain references to stan standalone test results, test group headers (which then reference further results) or a mixture of both.
 
-In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the patient record. This will be identified as the `observation.code` element will be populated with the SNOMED code ??????
+In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record. This will be identified as the `observation.code` element will be populated with the SNOMED code `37331000000100` for `Comment note`.
 
 ### codedDiagnosis ###
 
