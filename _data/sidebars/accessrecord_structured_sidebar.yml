@@ -209,3 +209,7 @@ entries:
     - title: API Version Compatibility
       url: /accessrecord_structured_development_version_compatibility.html
       output: web
+
+    - title: Forwards compatibility support example
+      url: /accessrecord_structured_development_fhir_examples_forwards_consultations.html
+      output: web
