@@ -13,8 +13,8 @@ summary: "Use case for finding a patient resource by business identity"
 
 The consumer system:
 
-- **SHALL** have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- **SHALL** have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- **SHALL** have previously traced the patient's NHS Number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
 
@@ -224,27 +224,4 @@ Provider systems:
     }
   ]
 }
-```
-
-## Example Code ##
-
-### C# ###
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-client.PreferredFormat = ResourceFormat.Json;
-var query = new string[] { "identifier=https://fhir.nhs.uk/Id/nhs-number|9476719931" };
-var bundle = client.Search("Patient", query);
-FhirSerializer.SerializeResourceToXml(bundle).Dump();
-```
-
-### Java ###
-
-```java
-FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-Bundle bundle = client.search().forResource(Patient.class)
-.where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/nhs-number", "9476719931"))
-.encodedXml()
-.execute();
 ```
