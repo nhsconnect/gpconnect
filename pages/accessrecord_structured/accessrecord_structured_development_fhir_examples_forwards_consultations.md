@@ -1,5 +1,5 @@
 ---
-title: FHIR&reg; Consultations examples
+title: Forward compatibility support examples
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
