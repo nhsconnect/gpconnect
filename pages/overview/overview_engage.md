@@ -85,5 +85,5 @@ The INTEROPen vision is to create a library of nationally defined HL7® FHIR® r
 
 ## Timescales, benefits and more
 
-The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/article/1275/GP-Connect){:target="_blank"}.
+The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect/){:target="_blank"}.
 
