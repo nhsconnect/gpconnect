@@ -1,0 +1,60 @@
+{% highlight json %}
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "includePrescriptionIssues",
+          "valueBoolean": true
+        },
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2017-06-04"
+        }
+      ]
+    },
+    {
+      "name": "includeConsultations",
+      "part": [
+        {
+          "name": "numberOfMostRecent",
+          "valueBoolean": "3"
+        }
+      ]
+    },
+    {
+      "name": "includeProblems",
+      "part": [
+        {
+          "name": "includeStatus",
+          "valueCode": "active"
+        },
+        {
+          "name": "includeSignificance",
+          "valueCode": "major"
+        }
+      ]
+    }
+  ]
+}
+
+{% endhighlight %}
