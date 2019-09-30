@@ -101,3 +101,11 @@ DiagnosticReport is at the centre of the model and all the other entities are li
 The `Observation` resource is used for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings, there will be only one FHIR profile that can then be populated appropriately for each individual use.
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.
+
+## Using the `List` resource for investigations queries
+
+The results of a query for investigations **MUST** return a `List` containing references to all the `DiagnosticReport` resources to represent each investigation report that is returned. The list code **MUST** be set to `887191000000108` for `Investigations and results`.
+
+The `List` **MUST** be populated in line with the guidance on `List` resources.
+
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
