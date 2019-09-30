@@ -50,7 +50,7 @@ The following pages describe each of the clinical areas in more detail and are f
 - [Uncategorised data guidance](accessrecord_structured_development_uncategorisedData_guidance.html)
 - [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
 - [Problem guidance](accessrecord_structured_development_problems_guidance.html)
-- [Pathology guidance](accessrecord_structured_development_pathology_guidance.html)
+- [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
 - [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
 
 {% include note.html content="The Access Record Documents capability is available in its own GP Connect specification version. 
