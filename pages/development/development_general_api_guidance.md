@@ -199,7 +199,7 @@ Clients SHALL add the following Spine proxy headers for audit and security purpo
 - `Ssp-To` - ASID which identifies the recipient's FHIR endpoint.
 - `Ssp-InteractionID` - identifies the FHIR interaction that is being performed <sup>1</sup>
 
-<sup>1</sup> please refer to the [Development - FHIR API guidance - operation guidance](development_fhir_operation_guidance.html) for full details.
+<sup>1</sup> please refer to the [Development - FHIR API guidance - operation guidance](integration_interaction_ids.html) for full details.
 
 The SSP SHALL perform the following checks to authenticate client request:
 
