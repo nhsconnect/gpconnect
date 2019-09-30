@@ -35,7 +35,7 @@ The Access Record Structured capability message set includes the following set o
 
 | Operation                 | InteractionID             |
 |---------------------------|---------------------------|
-| [Read metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:metadata-1` |
-| [Patient search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:patient-1` |
+| [Read metadata](accessrecord_documents_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:metadata-1` |
+| [Patient search](accessrecord_documents_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:patient-1` |
 | [Search for documents](accessrecord_documents_development_retrieve_patient_documents.html) | `urn:nhs:names:services:gpconnect-documents:fhir:rest:search:documentreference-1` |
 | [Retrieve documents](accessrecord_documents_development_search_patient_documents.html)          | `urn:nhs:names:services:gpconnect-documents:fhir:rest:read:binary-1` |
