@@ -64,6 +64,15 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 * All Immunisations will always be returned.
 
+### Investigations ###
+
+* Search for all Investigations within the specified date range
+    * The consumer system requests all items within a start and end date
+    * The provider system returns all items whose issued date is within the start and end date (inclusive)
+    * Where there is a start date but no end date, the search goes to the end of the patient record
+    * Where there is an end date but no start date, the search goes from the start of the patient record
+    * Where no dates are supplied by the consumer, all investigations data items are returned
+
 ### Referrals ###
 
 * Search for all Outbound Referrals within the specified date range
