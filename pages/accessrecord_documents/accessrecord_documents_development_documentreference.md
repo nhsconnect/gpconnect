@@ -96,7 +96,7 @@ This field will always have default value of current as only the latest version 
   </tr>
 </table>
 
-Kind of document.
+Kind of document, a value **SHOULD** be taken from the SNOMED refset 999000391000000109. Other classifications of documents should be sent as `text`.
 
 ### subject ###
 
@@ -138,7 +138,7 @@ When the document reference was created.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Data type:</b> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -326,4 +326,3 @@ Patient demographics from source.
 Document security-tags is not required by GP Connect.
 
 <br>
-
