@@ -13,9 +13,9 @@ summary: "Use case for reading a patient resource"
 
 The consumer system:
 
-- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- **SHALL** have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
-- **SHALL** have previously [resolved the logical ID of the patient](https://nhsconnect.github.io/gpconnect/foundations_use_case_find_a_patient.html) on the server using the NHS number
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service
+- SHALL have previously [resolved the logical ID of the patient](foundations_use_case_find_a_patient.html) on the server using the NHS number
 
 ## API use case ##
 

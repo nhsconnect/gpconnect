@@ -13,7 +13,7 @@ summary: "Use case for getting the GP Connect FHIR server's capability statement
 
 The consumer system:
 
-- **SHALL**v have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
 ## API usage ##
 

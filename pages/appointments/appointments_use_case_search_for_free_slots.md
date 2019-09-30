@@ -121,7 +121,7 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL request a maximum date range covering a two-week period
 
 {% include tip.html content="Multiple separate API calls can be made if a larger date range is required. However, consideration should be given to the load this placed on the provider system." %}

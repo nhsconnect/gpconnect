@@ -13,8 +13,8 @@ summary: "Use case for finding a patient resource by business identity"
 
 The consumer system:
 
-- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](https://nhsconnect.github.io/gpconnect/integration_spine_directory_service.html)
-- **SHALL** have previously traced the patient's NHS number using the [Personal Demographics Service]( https://nhsconnect.github.io/gpconnect/integration_personal_demographic_service.html) or an equivalent service
+- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
 
