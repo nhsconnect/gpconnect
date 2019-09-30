@@ -99,21 +99,16 @@ entries:
       url: /development_api_non_functional_requirements.html
       output: web
 
-  - title: Documents overview
+  - title: Documents API
     output: web
     folderitems:
 
-    - title: Overview
+    - title: Documents overview
       url: /accessrecord_documents_development.html
       output: web
     - title: Documents guidance
       output: web
       url: /accessrecord_documents_development_documents_guidance.html
-
-  - title: Documents API
-    output: web
-    folderitems:
-
     - title: Consumer sessions illustrated
       url: /accessrecord_documents_development_api_session.html
       output: web

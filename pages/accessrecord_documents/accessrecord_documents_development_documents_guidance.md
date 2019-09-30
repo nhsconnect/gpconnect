@@ -1,5 +1,5 @@
 ---
-title: Documents
+title: Documents guidance
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_documents_sidebar
