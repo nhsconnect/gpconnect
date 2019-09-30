@@ -21,7 +21,7 @@ The Access Record Structured capability will expose data for a number of clinica
 4. Uncategorised items
 5. Consultations
 6. Problems
-7. Pathology
+7. Investigations
 8. Referrals (Outbound)
 
 {% include note.html content="The Access Record Documents capability is available in its own GP Connect specification version. 
