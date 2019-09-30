@@ -131,7 +131,6 @@ The following table gives an overview of which parameters are supported in each 
  |        | includeUncategorisedData       |
  |             | &nbsp;&nbsp;&#8627; uncategorisedDataSearchPeriod|
  |        | includeInvestigations       |
- |             | &nbsp;&nbsp;&#8627; filterInvestigations|
  |             | &nbsp;&nbsp;&#8627; investigationSearchPeriod|
  |        | includeReferrals       |
  |             | &nbsp;&nbsp;&#8627; referralSearchPeriod|

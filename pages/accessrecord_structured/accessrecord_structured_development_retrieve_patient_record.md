@@ -248,22 +248,12 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Include investigations in the response.</td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterResults</code></span></td>
-      <td><code class="highlighter-rouge">Coding</code></td>
-      <td>Optional</td>
-      <td>0..*</td>
-      <td>
-        Filter the investigations to match the specified code(s)
-        <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>        
-      </td>
-    </tr>
-    <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">resultSearchPeriod</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">investigationSearchPeriod</code></span></td>
       <td><code class="highlighter-rouge">Period</code></td>
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Filter the investigations to match the specified code(s)
+        Filter the investigations to match the specified period
         <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>        
       </td>
     </tr>
@@ -385,15 +375,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeInvestigations",
       "part": [
         {
-          "name": "filterResults",
-          "valueCoding": {
-            "system": "http://snomed.info/sct",
-            "code": "",
-            "display": ""
-          }
-        },
-        {
-          "name": "resultSearchPeriod",
+          "name": "investigationSearchPeriod",
           "valuePeriod": {
             "start": "2017-01-02",
             "end": "2017-07-02"
@@ -444,7 +426,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `filterStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `filterSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-|The `filterResults` parameter is passed with a code from a code system other than SNOMED CT | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |The `resultsSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `referralSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
@@ -628,13 +609,10 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html), [`DocumentReference`]() and &nbsp; [`Condition`](accessrecord_structured_problems.html) resources representing the patient's test results
 
-  - when the `filterResults` parameter is set:
-    - all test results matching the supplied SNOMED CT code(s) **MUST** be returned
-
-  - and when the `resultSearchPeriod` parameter is set:
-    - when a `start` value is set, all investigations after the date **MUST** be returned
-    - and when an `end` value is set, all investigations before the date **MUST** be returned
-    - and when both a `start` and `end` are specified, test results after the `start` and before the `end` **MUST** be returned
+  - and when the `investigationSearchPeriod` parameter is set:
+    - when a `start` value is set, all investigations with a `DiagnosticReport.issued` after the date **MUST** be returned
+    - and when an `end` value is set, all investigations with a `DiagnosticReport.issued` before the date **MUST** be returned
+    - and when both a `start` and `end` are specified, investigations with a `DiagnosticReport.issued` after the `start` and before the `end` **MUST** be returned
 
 
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the resources above
@@ -654,7 +632,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - when the `referralSearchPeriod` is set:
   - when a `start` value is set, all referrals with a `ReferralRequest.authoredOn` after the date **MUST** be returned
   - and when an `end` value is set, all referrals with a `ReferralRequest.authoredOn` before the date **MUST** be returned
-  - and when both a `start` and `end` are specified, referrals with a `ReferralRequest.authoredOn` after the `start` and with an `ReferralRequest.authoredOn` before the `end` **MUST** be returned
+  - and when both a `start` and `end` are specified, referrals with a `ReferralRequest.authoredOn` after the `start` and with a `ReferralRequest.authoredOn` before the `end` **MUST** be returned
 
 #### Medication search date ####
 
