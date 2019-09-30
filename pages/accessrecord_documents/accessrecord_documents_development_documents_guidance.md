@@ -13,8 +13,8 @@ A clinical document (CD) is a written, printed or electronic record that provide
 
 ## Problem statement ##
 
-A patient's GP practice is custodian of patient's clinical documents received from various health and care settings.
-Other practices and healthcare settings are not able to electronically search for a patient's document in the patient's GP practice and retrieve those documents.
+A patient's registered GP practice is considered to be a custodian of its clinical documents received from various health and care settings.
+Other practices and healthcare settings are not able to electronically search for a patient's document in the patient's registered GP practice and retrieve those documents.
 This is usually a manual process whereby other GP practices and healthcare settings ask a patient's GP practice for documents of the patient. The patient's GP practice then emails or faxes a patient's documents. This can lead to loss of valuable time and effort of GP practice's staff.
 GP practices have poor metadata of clinical documents and it makes it difficult for the clinicians to search the documents in the GP Practice.
 
@@ -101,7 +101,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
    * Lack of versioning of documents in the GP practices. DateTime stamp is used to identify the latest version of the document.
    * No nationally agreed list of document types - GP practices have their own list of document types, which may also include free text.
    * Poor metadata of documents - GP systems have poor metadata information about documents.
-   * Documents in disparate systems in a GP practice - documents metadata information and its versions may exist in disparate systems in a GP practice. However, documents and its basic information does sync back from document management systems to the clinical system.
+   * Documents in disparate systems in a GP practice - Documents metadata information and its versions may exist in disparate systems in a GP practice. However, documents and its basic information does sync back from document management systems to the clinical system.
 
 
 ## Value proposition ##
@@ -116,12 +116,12 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 <IMG src="images/access_structured/DistrictNursePatient.png" alt="District nurse attends a patient at home and views their discharge summary"  style="max-width:73%;max-height:60%;">
 
-## Documents classification ##
+## Document Type ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
-To address this issue, GP Connect has recommended the use of clinical document indexing standards created by NHS Scotland. Document Type should contain a value from the Correspondence document type simple reference set (foundation metadata concept)' with Refset Id 999000391000000109. A text value can be provided for values that do not exist in the valueset. Using a document type refset would improve the standardisation of document types across the GP practices.
+To address this issue, GP Connect has recommended the use of clinical document indexing standards created by NHS Scotland. Document Type should contain a value from the Correspondence document type simple reference set (foundation metadata concept)' with Refset Id 999000391000000109. A text value can be provided for values that do not exist in the valueset. 
 
 ## Patient records where documents are not available ##
-GP clinical systems may have some migrated patient records that have information about the document but the document is not available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document from where the document can be requested. More information about how this should be populated is available on the [DocumentReference page](accessrecord_documents_development_documentreference.html)
+GP clinical systems may have some migrated patient records that have information about the document but the document may not be available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document. More information about how this should be populated is available on the [DocumentReference page](accessrecord_documents_development_documents.html)
 
 ## Document format ##
 Providers to provide documents in the following industry acceptable format:
@@ -140,12 +140,12 @@ Providers to provide documents in the following industry acceptable format:
 * DICOM
 
 ## Multiple versions of the document ##
-A GP practice may have multiple versions of the same document of the patient in their clinical system. Providers would only return latest version of the document via the GP Connect APIs.
+A GP practice may have multiple versions of the same document of the patient in their clinical system. Providers shall only return latest version of the document via the GP Connect APIs.
 
 ## Internal or external documents ##
 The GP practice from which the document is being requested is the custodian of the document. Requirements analysis suggests that end-users would like to understand if the patient document that they are retrieving from the GP practice is an internally generated document in the GP practice or an external organisation has sent that document to the GP practice.
-If the 'Authoring Organisation' of the document is same as custodian of the document then it's an internally generated document.
-If the 'Authoring Organisation' of the document is NOT the same as custodian of the document then it's an externally generated document.
+If the 'Authoring Organisation' of the document is the same as the custodian of the document then it's an internally generated document.
+If the 'Authoring Organisation' of the document is NOT the same as the custodian of the document then it's an externally generated document.
 
 ## File size of the document ##
 End-users would like to know the size of the document before retrieving the document. Providers would return the file size of the document in the response payload for Search Document GP Connect API request.
