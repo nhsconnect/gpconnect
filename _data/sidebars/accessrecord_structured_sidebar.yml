@@ -83,6 +83,10 @@ entries:
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
 
+        - title: Consultations (forwards compatibility support)
+          url: /accessrecord_structured_development_fhir_examples_forwards_consultations.html
+          output: web
+
       - title: API definition
         output: web
         subfolderitems:
