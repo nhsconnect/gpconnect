@@ -1,6 +1,6 @@
 <img src="images/logo.png" height=72>
 
-# GP Connect
+# GP Connect Documents
 
 This is the source repository for the GP Connect specification.
 
