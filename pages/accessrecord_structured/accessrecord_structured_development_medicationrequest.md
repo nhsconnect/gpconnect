@@ -186,6 +186,8 @@ This **MUST** be a GUID.
 
 Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
 
+If the EPS identifier is present then the identifier.value is where the EPS Id SHOULD also be added. The codeSystem for this identifier is https://fhir.nhs.uk/Id/eps-line-item-identifier
+
 ### basedOn ###
 
 <table class='resource-attributes'>
@@ -420,13 +422,13 @@ For `MedicationRequest` instances where `intent` is set to `order`:
 
 *	This refers to the period that the issued prescription is active
 
-`Period.start` is **MANDATORY**. 
+`Period.start` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 *	The prescription issue date recorded in the patient record
 *	The date the prescription was recorded.
 
-`Period.end` is **MANDATORY**. 
+`Period.end` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 *	The prescription end date recorded in the patient record
