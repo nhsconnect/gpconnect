@@ -109,7 +109,7 @@ description: "GP Connect aims to support better clinical care by opening up info
 sitemap: true
 
 # needed for sitemap.xml file only
-url: https://nhsconnect.github.io/gpconnect
+url: https://nhsconnect.github.io/gpconnect-documents
 
 repository: nhsconnect/gpconnect
 
