@@ -1,4 +1,4 @@
- {% highlight json %}
+{% highlight json %}
 {
   "resourceType": "Bundle",
   "meta": {
@@ -228,12 +228,12 @@
         "entry": [
           {
             "item": {
-              "reference": "Observation/Consultation1_topic2_category_Examination_Observation_1"
+              "reference": "Observation/Consultation1-topic2-category-Examination-Observation-1"
             }
           },
           {
             "item": {
-              "reference": "Observation/Consultation1_topic2_category_Examination_Observation_3"
+              "reference": "Observation/Consultation1-topic2-category-Examination-Observation-3"
             }
           }
         ]
@@ -242,12 +242,18 @@
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_topic2_category_Examination_Observation_1",
+        "id": "Consultation1-topic2-category-Examination-Observation-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "value": "336db4f4-7f78-48fd-82a7-2437202fc967"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -277,23 +283,33 @@
         "system": "http://unitsofmeasure.org",
         "code": "Cel"
       },
+
       "subject": {
         "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
       },
-      "encounter": {
-        "reference": "Encounter/Encounter1"
-      },
-      "effectiveDateTime": "2019-03-28T10:30:00"
+      "issued": "2019-03-28T10:30:00+00:00",
+      "performer":
+  			{
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+  			},
+
+      "effectiveDateTime": "2019-03-28T10:30:00+00:00"
     }},
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_topic2_category_Examination_Observation_2",
+        "id": "Consultation1-topic2-category-Examination-Observation-2",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "value": "2af97eb3-f5d7-493a-ad74-6cfed790007e"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -326,21 +342,29 @@
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
-        "context": {
-          "reference": "Encounter/Encounter1"
-        },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "issued": "2019-03-28T10:30:00+00:00",
+        "performer":
+    			{
+              "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+    			},
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation1_topic2_category_Examination_Observation_3",
+        "id": "Consultation1-topic2-category-Examination-Observation-3",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "value": "c1b39e39-47f1-46aa-92e0-b5ad69975548"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -373,10 +397,13 @@
         "subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
-        "context": {
-          "reference": "Encounter/Encounter1"
-        },
-        "effectiveDateTime": "2019-03-28T10:30:00"
+        "issued": "2019-03-28T10:30:00+00:00",
+        "performer":
+    			{
+              "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+    			},
+
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     }
   ]

@@ -136,7 +136,6 @@ The following table gives an overview of which parameters are supported in each 
  |             | &nbsp;&nbsp;&#8627; referralSearchPeriod|
  |-------------------------|-------------------|
 
-
 Consumers **MAY** determine programmatically which parameters have been implemented by the provider using the following process:
 - [retrieve the CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) from the provider
 - Locate the value in CapabilityStatement.operation[name='gpc.getstructuredrecord'].definition.reference, this will be a reference to an OperationDefinition

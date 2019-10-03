@@ -50,12 +50,12 @@
               "reference": "Condition/Problem-B-Swollen-Legs"
             }
 		  },
-		  {	
+		  {
             "item": {
               "reference": "Condition/Problem-D-URTI"
             }
           },
-		  {	
+		  {
             "item": {
               "reference": "Condition/Problem-E-Post-viral-cough"
             }
@@ -378,7 +378,7 @@
             "valueReference": {
               "reference": "Test Request items are not supported by the provider system"
             }
-          },		  
+          },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
@@ -610,7 +610,7 @@
 						}
 					}
                 ]
-			},	
+			},
 			{
 				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
 				"valueCode": [
@@ -1700,7 +1700,7 @@
             "item": {
               "reference": "Observation/Consultation1-Topic5-Category-History-Observation-4"
             }
-          }		  
+          }
         ]
       }
     },
@@ -2420,7 +2420,7 @@
               ]
             }
 		  ]
-		},	
+		},
         "subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
@@ -2843,7 +2843,7 @@
         },
         "context": {
           "reference": "Encounter/Encounter1"
-        },		
+        },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
 		"performer":  {
@@ -4545,7 +4545,7 @@
 		"issued": "2019-05-01T10:30:00+00:00",
 		"performer":  {
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},		
+		},
         "comment": "Overall doing better. Mood improving. Still gets bad days. Energy levels ok. Motivation improving. Started to go walking twice a week. First counsellor appointment due in two weeks."
       }
     },
@@ -4584,7 +4584,7 @@
 		"issued": "2019-05-01T10:30:00+00:00",
 		"performer":  {
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},	
+		},
         "comment": "MSE looks brighter. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
@@ -5618,7 +5618,7 @@
             "item": {
               "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-1"
             }
-          }, 
+          },
 		  {
             "item": {
               "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-2"
@@ -6397,7 +6397,7 @@
 		},
         "comment": "Likely venous insufficiency"
       }
-    }, 
+    },
 	{
       "resource": {
         "resourceType": "Observation",
