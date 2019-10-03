@@ -36,7 +36,7 @@
       "name": "includeConsultations",
       "part": [
         {
-          "name": "numberOfMostRecent",
+          "name": "includeNumberOfMostRecent",
           "valueBoolean": "3"
         }
       ]

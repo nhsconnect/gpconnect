@@ -14,7 +14,7 @@
       "name": "includeConsultations",
       "part": [
         {
-          "name": "numberOfMostRecent",
+          "name": "includeNumberOfMostRecent",
           "valueInteger": "3"
         }
       ]
