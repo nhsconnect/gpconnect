@@ -26,13 +26,7 @@ Provider systems SHALL be (or have previously been) tested and accredited to est
 Provider systems SHALL be tested for technical conformance of the following before they can be listed on the product catalogue:
 
  - [Spine Secure Proxy (SSP) integration](integration_spine_secure_proxy.html)
- - [Foundations](foundations.html)
-
-Provider systems SHALL be tested for conformance to one or more of the following capability packs:
-
- - [Access Record HTML](accessrecord.html)
- - [Access Record Structured](accessrecord_structured.html)
- - [Appointment Management](appointments.html)
+ - [Access Documents](accessrecord_documents_development_documents_guidance.html)
 
 {% include download.html content="Download the [GP Connect Provider Test Suite](https://github.com/nhsconnect/gpconnect-provider-testing) to help validate the technical conformance of your provider API implementation." %}
 

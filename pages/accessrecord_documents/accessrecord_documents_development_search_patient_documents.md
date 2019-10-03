@@ -165,7 +165,7 @@ Provider systems **MUST**:
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](accessrecord_structured_development_documents.html) profile that match the supplied search criteria
+  - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](accessrecord_documents_development_documents.html) profile that match the supplied search criteria
   - Only `Organization` resources SHALL be returned where they are associated with the `DocumentReference` resources matching the query
 
 #### Payload response examples ####

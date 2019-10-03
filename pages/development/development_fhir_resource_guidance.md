@@ -15,14 +15,9 @@ GP Connect versions 1.x use the [FHIR STU3](http://hl7.org/fhir/STU3/) standard 
 
 > Please see the [Data model principles](designprinciples_data_model_principles.html) page for further information.
 
-## Profiles for each capability pack
+## Profiles for documents
 
-The profiled FHIR resources required for each of the GP Connect capability packs are specified within the specific specification sections for each of the capabilities:
-
-* [Foundations](datalibraryfoundation.html)
-* [Access Record HTML](accessrecord.html)
-* [Access Record Structured](accessrecord_structured_development_resources_overview.html)
-* [Appointment Management](datalibraryappointment.html)
+Resources for documents are specified within the [documents capability](accessrecord_documents_development_documents_guidance.html)
 
 ## General FHIR resource population requirements
 
@@ -36,15 +31,13 @@ As GP Connect has made the FHIR resources open to aid in interoperability this m
 
 ### Use of Must-Support flag
 
-Some resource profiles used in GP Connect make use of the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) flag. 
+Some resource profiles used in GP Connect make use of the [Must-Support](https://www.hl7.org/fhir/STU3/conformance-rules.html#mustSupport) flag.
 
-Where a Must-Support flag is present on a resource element, a `consumer` system SHALL populate the field in the request body if data is available to do so, irrespective of the fact that field cardinality may be `0..1` or `0..*`. 
+Where a Must-Support flag is present on a resource element, a `consumer` system SHALL populate the field in the request body if data is available to do so, irrespective of the fact that field cardinality may be `0..1` or `0..*`.
 
 Similarly, `provider` systems SHALL populate an element in responses where data is available to do so, irrespective of optional cardinality. When a `provider` system receives data from a consumer for a field marked with the Must-Support flag, the provider system SHALL store this data field in such a way that the data element is preserved and the element can be populated in future responses to consumer requests for the resource in question.
 
 If an element within a FHIR profile is marked as must support then all sub elements of that element SHALL also be considered must support. For example, within the GP Connect Appointment profile the booking organization extension is flagged with must support on the extension. This means that the extension and all sub elements within the extension are must support and SHALL be stored in a way that the data is preserved and the booking organization can be populated in future responses to consumers requesting that resource.
-
-For example, see the [Register a patient request body](foundations_use_case_register_a_patient.html#payload-request-body).
 
 
 ## FHIR resource element/data type specific population requirements
@@ -67,7 +60,7 @@ The `Address` data type is used in many of the FHIR resources across the GP Conn
   - `postalCode`
   - `country`
 - Where an element is not present, the element SHALL NOT be populated.
-  
+
 - The `text` element SHOULD NOT be populated within the address.
 
 - `use` SHALL be populated for patient or patient contact addresses and SHOULD be populated in other contexts.

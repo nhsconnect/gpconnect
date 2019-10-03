@@ -49,7 +49,7 @@ Where this occurs, previous minor or patch versions of the specifications will e
 
 #### Non-breaking changes ####
 
-*Non-breaking changes* are: 
+*Non-breaking changes* are:
 
 - changes made to the specification that do not require a provider to update their API implementation
 - changes made to the specification that do require a provider to update their API implementation but do not cause a consuming system built to any minor or patch version of the same specification to break
@@ -91,7 +91,7 @@ The following GP Connect artefacts are released alongside the specification, but
 
 ### SDS interaction IDs ###
 
-[SDS interaction IDs](development_fhir_operation_guidance.html#foundations-capability-interactions) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
+[SDS interaction IDs](integration_interaction_ids.html) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
 
 ### Service Root URL format ###
 

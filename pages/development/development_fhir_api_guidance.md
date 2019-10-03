@@ -41,7 +41,7 @@ The Health Level Seven (HL7&reg;) International standards body maintains a list 
 
 ### FHIR in scope ###
 
-To help API implementers deal with the FHIR learning curve, NHS Digital has worked to constrain the scope of the FHIR&reg; standard that is expected to be implemented in the first tranche of development work as follows: 
+To help API implementers deal with the FHIR learning curve, NHS Digital has worked to constrain the scope of the FHIR&reg; standard that is expected to be implemented in the first tranche of development work as follows:
 
 1. [Resource](https://www.hl7.org/fhir/STU3/resource.html)
 	1. [Resource identity](https://www.hl7.org/fhir/STU3/resource.html#id)
@@ -53,7 +53,7 @@ To help API implementers deal with the FHIR learning curve, NHS Digital has work
 		3. [Organisation](https://www.hl7.org/fhir/STU3/organization.html) profiled as gpconnect-organization-1.
 		4. [Location](https://www.hl7.org/fhir/STU3/location.html) profiled as gpconnect-location-1
 	2. Care record API
-		1. Please refer to the [Resource data types](#ResourceDataType) section of this page. 
+		1. Please refer to the [Resource data types](#ResourceDataType) section of this page.
 	3. Bookings API
 		1. [Schedule](https://www.hl7.org/fhir/STU3/schedule.html) profiled as gpconnect-schedule-1
 		2. [Slot](https://www.hl7.org/fhir/STU3/slot.html) profiled as gpconnect-slot-1
@@ -66,7 +66,7 @@ To help API implementers deal with the FHIR learning curve, NHS Digital has work
 5. [Data types](https://www.hl7.org/fhir/STU3/datatypes.html)
 	1. [Primitive types](https://www.hl7.org/fhir/STU3/datatypes.html#primitive)
 		1. All primitive types SHALL be supported.
-	2. [Complex types](https://www.hl7.org/fhir/STU3/datatypes.html#complex) 
+	2. [Complex types](https://www.hl7.org/fhir/STU3/datatypes.html#complex)
 		1. The following complex types SHALL be supported.
 			1. [Identifier](https://www.hl7.org/fhir/STU3/datatypes.html#identifier)
 			2. [Coding](https://www.hl7.org/fhir/STU3/datatypes.html#codeableconcept)
@@ -98,7 +98,7 @@ To help API implementers deal with the FHIR learning curve, NHS Digital has work
 	4.  Search result parameters
 		1.  [_include](https://www.hl7.org/fhir/STU3/search.html#include) can be used internally inside a named `_query` operation.
 		2.  [_sort](https://www.hl7.org/fhir/STU3/search.html#sort) can be used internally inside a named `_query` operation.
-	
+
 3.  [Operations](https://www.hl7.org/fhir/STU3/operations.html)
 	1.  [Implementation defined operations](https://www.hl7.org/fhir/STU3/operations.html#extensibility)
 
@@ -153,7 +153,7 @@ GP Connect provider systems are not expected to implement the following aspects 
 		1. _count		
 		2. _summary
 		3. _elements
-		4. _contained 
+		4. _contained
 		5. _containedType
 	4. Chained parameters
 	5. Paging / Page count
@@ -176,7 +176,7 @@ A server's capability statement SHALL be available using the following [capabili
 GET [base]/metadata {?_format=[mime-type]}
 ```
 
-Refer to [Foundations - Get The FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR capability statement.
+Refer to [Foundations - Get The FHIR CapabilityStatement](accessrecord_documents_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR capability statement.
 
 ### FHIR resource conformance ###
 
@@ -192,9 +192,9 @@ Individual API bundles may be provided independently of each other. GP Connect c
 
 Where resource instance data available in clinical systems is either insufficient or corrupt and thus a resource cannot be constructed by a provider system which meets the associated FHIR profile, the following guidance describes expected behaviour:
 
-**Scenario: GET resource by logical ID** 
- 
-An HTTP 500 error should be returned with an OperationOutcome resource providing diagnostic details. This may include details of the resource in the location element. 
+**Scenario: GET resource by logical ID**
+
+An HTTP 500 error should be returned with an OperationOutcome resource providing diagnostic details. This may include details of the resource in the location element.
 
 **Scenario: FHIR response bundles**
 
@@ -224,7 +224,7 @@ For example:
 
 ### Resource narrative ###
 
-The FHIR [resource narrative](https://www.hl7.org/fhir/STU3/narrative.html) is not currently expected to be populated. 
+The FHIR [resource narrative](https://www.hl7.org/fhir/STU3/narrative.html) is not currently expected to be populated.
 
 ### Resource references ###
 
@@ -232,7 +232,7 @@ The FHIR resource model includes [resource references](http://hl7.org/fhir/STU3/
 
 A reference can be either:
 
-- a relative or absolute URL to a resource managed by the same resource server (a local reference), or 
+- a relative or absolute URL to a resource managed by the same resource server (a local reference), or
 - an absolute URL to a resource managed by another resource server (a remote reference)
 
 A provider’s ability to process a request relating to a resource may depend on its ability to utilise one or more resource references that the resource contains (for example, its ability to ‘follow the links’ to other resources).
@@ -262,7 +262,7 @@ Servers SHALL validate the existence of any referenced resources when creating o
 
 Refer to the GitHub hosted [GP Connect FHIR repository](https://github.com/nhsconnect/gpconnect-fhir) for the published FHIR profiles.
 
-Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/STU3/validation.html#jar) page for the most up to date details on how FHIR resources can be validated. 
+Refer to the [HL7&reg; FHIR&reg; Validator](https://www.hl7.org/fhir/STU3/validation.html#jar) page for the most up to date details on how FHIR resources can be validated.
 
 Servers SHALL provide a read interaction for every resource it accepts update interactions on.
 
@@ -302,7 +302,7 @@ Servers SHALL be expected to produce the following responses for GP Connect FoT:
 
 #### Response codes ####
 
-Servers SHALL produce the following main [HTTP status codes](http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml): 
+Servers SHALL produce the following main [HTTP status codes](http://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml):
 
 | HTTP status code | Description |
 | ---------------- | ----------- |
@@ -393,7 +393,7 @@ For example:
 GET [base]/Patient/1A6E1B1C-6340-4663-926C-9CD1306EAAF8?_format=application/xml+fhir
 ```
 
-{% include tip.html content="In this example the response format has been specified in the request URL using the `_format` parameter. This could also have been specified using the HTTP Accept header mechanism." %} 
+{% include tip.html content="In this example the response format has been specified in the request URL using the `_format` parameter. This could also have been specified using the HTTP Accept header mechanism." %}
 
 #### Response ####
 
@@ -542,7 +542,7 @@ GET [base]/AllergyIntolerance?patient.identifier=http://fhir.nhs.net/Id/nhs-numb
 #### Request ####
 
 ```http
-GET [base]/Patient?identifier=http://fhir.nhs.net/Id/nhs-number|9900002831 
+GET [base]/Patient?identifier=http://fhir.nhs.net/Id/nhs-number|9900002831
 ```
 
 If a patient resource for NHS number 9900002831 exists then the server SHALL return a bundle containing all patient resources with the specified NHS number identifier.
