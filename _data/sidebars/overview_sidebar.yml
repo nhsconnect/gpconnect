@@ -216,7 +216,7 @@ entries:
         output: web
         subfolderitems:
         - title: GPC Documentation repository
-          external_url: https://github.com/nhsconnect/gpconnect
+          external_url: https://github.com/nhsconnect/gpconnect-documents
           output: web
         - title: GPC NHS Digital
           external_url: https://digital.nhs.uk/services/gp-connect
