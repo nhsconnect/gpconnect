@@ -24,23 +24,45 @@ entries:
       url: /appointments.html
       output: web
     - title: Business requirements
-      url: /appointments_requirements.html
-      output: web
-    - title: Clinical scenarios
-      url: /appointments_clinical_scenarios.html
       output: web, pdf
-    - title: Information governance
-      url: /appointments_ig.html
+       folderitems:
+
+        - title: User Stories
+          url: /appointments_requirements.html
+          output: web, pdf   
+        - title: Use Cases
+          url: /appointments_requirements.html
+          output: web, pdf
+        - title: Clinical Engagement
+          url: /appointments_clinical_scenarios.html
+          output: web, pdf
+        - title: Wireframes
+          url: /appointments_wireframes.html
+          output: web
+        - title: Information and Governance
+          output: web, pdf
+          url: /appointments_ig.html
+          
+        - title: Additional provider requirements
+        output: web, pdf
+        subfolderitems:
+
+        - title: Slot availability management
+          url: /appointments_slotavailabilitymanagement.html
+          output: web, pdf
+          
+    - title: Design
       output: web, pdf
-    - title: Design decisions
+      folderitems:
+
+    - title: Design Decisions
       url: /appointments_design.html
       output: web
-    - title: Wireframes
-      url: /appointments_wireframes.html
-      output: web
-    - title: Known issues
-      url: /appointments_known_issues.html
+    - title: Known Issues
       output: web, pdf
+      url: /appointments_known_issues.html
+
+
 
   - title: Development
     output: web, pdf
@@ -76,10 +98,4 @@ entries:
           url: /appointments_use_case_cancel_an_appointment.html
           output: web, pdf
           
-      - title: Additional provider requirements
-        output: web, pdf
-        subfolderitems:
-
-        - title: Slot availability management
-          url: /appointments_slotavailabilitymanagement.html
-          output: web, pdf
+      
