@@ -11,9 +11,9 @@ summary: "Frequently asked questions related to the GP Connect technical specifi
 ## Which serialisation format should I choose as an GP Connect API consumer - JSON or XML? ##
 
 JSON is supported by all four GP principal clinical system (PCS) suppliers which makes it a natural choice for API consumers. In addition it is approximately 30% smaller than XML when sent over the wire.
- 
+
 XML is currently supported by three of the four GP PCS suppliers (Vision, Microtest and EMIS). If you have a strong preference to work with XML and will be using GP Connect to interoperate with specific GP PCS suppliers that support XML, then this may be a suitable choice.
- 
+
 NHS Digital is investigating ways to bring XML support across all four GP PCS suppliers. However, at the current time our recommendation is to use JSON.
 
 For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/STU3/downloads.html) simplify the process of producing FHIR in JSON.
@@ -62,7 +62,7 @@ You are welcome to use your own ODS index (that is, to find an organisation by n
 
 ## It will be necessary in some use cases to support a search on GMC or NMC number rather than SDS User ID to find a staff member. ##
 
-This has been added to our known issue list so we can provide more guidance on how this could work. However, it is important to note that the [Find A Practitioner](foundations_use_case_find_a_practitioner.html) section gives an example of using a SDS User ID but the same API call could in fact also be used to search by other identifiers by changing the ‘system’ component of the search parameter.
+This has been added to our known issue list so we can provide more guidance on how this could work. 
 
 ## Why does the guide suggest that all resources should include text in the display property when this information is also in the HTML view? ##
 
@@ -79,14 +79,13 @@ Extra HTTP headers are needed for sending provenance/audit details. Sending this
 ## Why is NHS Number not being used as the actual ID for the Patient resource? ##
 
 As outlined in the FHIR standard there is a clear demarcation between business identifiers (such as NHS Number and  CHI number) and logical identifiers which are opaque and only guaranteed to be valid on the FHIR server they are served from.
- 
+
 FHIR’s logical IDs are strings which meet the following regex [A-Za-z0-9\-\.]{1,64} (in the reference implementations) logical IDs are often the physical record identity (for example, a database primary key or a document store guid). So whilst technically a vendor could use the NHS Number as their logical IDs (as it would match the regex above), this won’t be mandated and can’t be relied upon by consumer applications, which will need to resolve the logical ID from the business ID.
- 
+
 This approach is consistent with the FHIR reference implementations and commercial offerings and is in line with what the wider code4health community is asking for.
 
 ## Why is there to be a centrally-held list of error codes in addition to the standard HTTP response codes? ##
 
-The list of error codes is intended to allow consumer applications to make sense of errors that the human operator could potentially do something about. We recognise there is a cost-benefit trade-off in this space and will look to only introduce error codes (above that of the base FHIR specification) when they add sufficient value. For example a 400 - Bad Request error code in isolation doesn’t help you determine which input parameter(s) are malformed and similarly a 422 -  Unprocessable Entity doesn’t in isolation help you determine which business rule (or integrity constraint) has caused an operation to fail. 
+The list of error codes is intended to allow consumer applications to make sense of errors that the human operator could potentially do something about. We recognise there is a cost-benefit trade-off in this space and will look to only introduce error codes (above that of the base FHIR specification) when they add sufficient value. For example a 400 - Bad Request error code in isolation doesn’t help you determine which input parameter(s) are malformed and similarly a 422 -  Unprocessable Entity doesn’t in isolation help you determine which business rule (or integrity constraint) has caused an operation to fail.
 
 Defining a small number of supplementary error codes to be included in the Operation Outcome entity allows sense to be made of these failing interactions (for example, you’ve requested an Appointment to be booked into a slot that is already Busy).
-

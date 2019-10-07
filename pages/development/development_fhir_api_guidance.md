@@ -372,10 +372,7 @@ Servers SHALL return an `ETag` header with the `version Id` of the resource.
 
 | Capability   | Resource(s) |
 | ------------ | ----------- |
-| **Foundations**     | `Patient`, `Practitioner`, `Organization` |
-| **Access Record**   | TBC |
-| **Appointments**    | `Appointment`, `Schedule`, `Slot`, `Location` |
-| **Tasks**           | `Order` |
+| **Access documents**     | `Binary` |
 
 {% include important.html content="In workshop discussions with all principal GP system vendors it has been agreed that record locking (inside the GP system) will not impact on the ability of clients to query the GP Connect APIs and to obtain the latest saved/committed clinical and administrative data." %}
 
