@@ -23,22 +23,19 @@ entries:
     - title: Introduction
       url: /appointments.html
       output: web
-    - title: Business requirements
-      output: web, pdf
-      folderitems:
+ 
+  - title: Business Requirements
+    output: web, pdf
+    folderitems:
 
-        - title: User Stories
-          url: /appointments_requirements.html
-          output: web, pdf
-        - title: Use Cases
-          url: /appointments_requirements.html
-          output: web, pdf
-        - title: Clinical Engagement
-          url: /appointments_clinical_scenarios.html
-          output: web, pdf
-        - title: Wireframes
-          url: /appointments_wireframes.html
-          output: web
-        - title: Information and Governance
-          output: web, pdf
-          url: /appointments_ig.html
+    - title: User Stories
+      url: /accessrecord_structured_requirements.html
+      output: web, pdf   
+    - title: Use Cases
+      url: /accessrecord_structured_usecases.html
+      output: web, pdf
+    - title: Clinical Engagement
+      url: /accessrecord_structured_clinical_engagement.html
+      output: web, pdf
+    - title: Information and Governance
+      output: web, pdf
