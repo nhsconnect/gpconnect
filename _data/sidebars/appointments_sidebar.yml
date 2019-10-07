@@ -68,7 +68,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview2
+    - title: Consumer sessions illustrated
       url: /appointments_consumer_sessions.html
       output: web
       
@@ -80,14 +80,24 @@ entries:
         subfolderitems:
 
         - title: <b class='resource'>Retrieve a patient's appointments</b>
-          url: /accessrecord_structured_development_allergies_guidance.html
+          url: /appointments_use_case_cancel_an_appointment.html
           output: web
         - title: <b class='resource'>Search for free slots</b>
-          url: /accessrecord_structured_development_medication_resource_relationships.html
+          url: /appointments_use_case_search_for_free_slots.html
           output: web
         - title: <b class='resource'>Read an appointment</b>
-          url: /accessrecord_structured_development_medication_guidance.html
+          url: /appointments_use_case_read_an_appointment.html
           output: web
+        - title: <b class='resource'>Book an appointment</b>
+          url: /appointments_use_case_book_an_appointment.html
+          output: web
+        - title: <b class='resource'>Amend an appointment</b>
+          url: /appointments_use_case_amend_an_appointment.html
+          output: web
+        - title: <b class='resource'>Cancel an appointment</b>
+          url: /appointments_use_case_cancel_an_appointment.html
+          output: web
+
 
 
           
