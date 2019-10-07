@@ -33,7 +33,8 @@ toc: false
     	<p><a href="/index.html">Introduction</a></p>
     	<p><a href="/overview_engage.html">Getting started</a></p>
     	<p><a href="/overview_priority_capabilities.html">Capabilities</a></p>
-	<p style="padding-top:8px">Release notes</p>	  
+	<p style="padding-top:8px">Release notes</p>
+	<p><a href="/overview_release_notes_1_2_4.html">1.2.4</a></p>  
     	<p><a href="/overview_release_notes_1_2_3.html">1.2.3</a></p>
     	<p><a href="/overview_release_notes_1_2_2.html">1.2.2</a></p>
     	<p><a href="/overview_release_notes_1_2_1.html">1.2.1</a></p>
@@ -43,7 +44,7 @@ toc: false
     	<p><a href="/overview_release_notes_1_0_0.html">1.0.0</a></p>
     	<p><a href="/overview_release_notes_0_5_0.html">0.5.0</a></p>
     <p style="font-size:18px; padding-top:15px">Design approach</p>
-    	<p><a href="/designprinciples_open_api_principles.html">API principles</a></p>
+    	<p><a href="/designprinciples_open_api_principles.html">API design principles</a></p>
 	<p><a href="/designprinciples_development_principles.html">Development principles</a></p>
 	<p><a href="/designprinciples_data_model_principles.html">Data model principles</a></p>
 	<p><a href="/designprinciples_ig_principles.html">Information governance principles</a></p>
@@ -66,7 +67,7 @@ toc: false
 	<p><a href="/development_fhir_resource_guidance.html">FHIR&reg; resources</a></p>
 	<p><a href="/development_api_security_guidance.html">Security</a></p>
 	<p><a href="/development_fhir_error_handling_guidance.html">Error handling</a></p>
-	<p><a href="/development_api_volume_and_performance.html">Volume and performance</a></p>
+	<p><a href="/development_api_volume_and_performance.html">Volumetric and performance</a></p>
 	<p><a href="/development_api_non_functional_requirements.html">Non-functional requirements</a></p>
     <p style="font-size:18px; padding-top:15px">Implement a capability</p>
 	<p><a href="/sitemap_foundations.html">Foundations (sitemap)</a></p>
