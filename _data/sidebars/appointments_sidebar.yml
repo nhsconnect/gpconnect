@@ -68,9 +68,9 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: Overview
-      url: /accessrecord_structured_development.html
-      output: web
+     - title: Consumer sessions illustrated
+      url: /appointments_consumer_sessions.html
+      output: web, pdf
       
       
       subfolders:
@@ -79,16 +79,32 @@ entries:
         output: web
         subfolderitems:
 
-        - title: <b class='resource'>Allergies guidance</b>
-          url: /accessrecord_structured_development_allergies_guidance.html
+        - title: <b class='resource'>Retrieve a patient's appointments</b>
+          url: /appointments_use_case_retrieve_a_patients_appointments.html
           output: web
-        - title: <b class='resource'>Medication resource relationships</b>
-          url: /accessrecord_structured_development_medication_resource_relationships.html
+        - title: <b class='resource'>Search for free slots</b>
+          url: /appointments_use_case_search_for_free_slots.html
           output: web
-        - title: <b class='resource'>Medication guidance</b>
-          url: /accessrecord_structured_development_medication_guidance.html
+        - title: <b class='resource'>Read an appointment</b>
+          url: /appointments_use_case_read_an_appointment.html
           output: web
-        
+          - title: <b class='resource'>Book an appointment</b>
+          url: /appointments_use_case_book_an_appointment.html
+          output: web
+        - title: <b class='resource'>Amend an appointment</b>
+          url: /appointments_use_case_amend_an_appointment.html
+          output: web
+        - title: <b class='resource'>Cancel an appointment</b>
+          url: /appointments_use_case_cancel_an_appointment.html
+          output: web
+          
+      - title: Additional provider requirements
+        output: web, pdf
+        subfolderitems:
+
+        - title: Slot availability management
+          url: /appointments_slotavailabilitymanagement.html
+          output: web, pdf        
     
 
           
