@@ -41,7 +41,7 @@ entries:
       url: /appointments_ig.html
       output: web, pdf
 
-  - title: Design1
+  - title: Design2
     output: web, pdf
     folderitems:
 
@@ -55,4 +55,39 @@ entries:
       output: web
       url: /appointments_known_issues.html
       
+  - title: Data Model1
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /accessrecord_structured_development_resources_overview.html
+      output: web
+
+      subfolders:
+
+      - title: FHIR&reg; resources
+        output: web
+        subfolderitems:
+
+        - title: <b class='resource'>AllergyIntolerance</b>
+          url: /accessrecord_structured_development_allergyintolerance.html
+          output: web
+        - title: <b class='resource'>Medication</b>
+          url: /accessrecord_structured_development_medication.html
+          output: web
+        - title: <b class='resource'>MedicationStatement</b>
+          url: /accessrecord_structured_development_medicationstatement.html
+          output: web
+        - title: <b class='resource'>MedicationRequest</b>
+          url: /accessrecord_structured_development_medicationrequest.html
+          output: web
+        - title: <b class='resource'>List</b>
+          url: /accessrecord_structured_development_list.html
+          output: web
+        - title: <b class='resource'>Bundle</b>
+          url: /accessrecord_structured_development_bundle.html
+          output: web
+          
+          
+
    
