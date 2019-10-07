@@ -55,19 +55,13 @@ entries:
       output: web
       url: /appointments_known_issues.html
       
-  - title: Data Model2
+  - title: Data Model3
     output: web, pdf
     folderitems:
 
-    - title: Overview2
-      url: /accessrecord_structured_development_resources_overview.html
-      output: web
-
-      subfolders:
-
-      - title: FHIR&reg; resources
-        url: /datalibraryappointment.html
-        output: web, pdf
+    - title: FHIR&reg; resources
+      url: /datalibraryappointment.html
+      output: web, pdf
 
           
           
