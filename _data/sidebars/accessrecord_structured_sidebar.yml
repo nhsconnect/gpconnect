@@ -19,6 +19,9 @@ entries:
     - title: Known issues
       url: /accessrecord_structured_known_issues.html
       output: web, pdf
+    - title: Sitemap
+      url: /sitemap_access_record_structured.html
+      output: web
 
   - title: Development
     output: web, pdf
