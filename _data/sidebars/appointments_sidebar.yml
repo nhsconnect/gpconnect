@@ -64,13 +64,13 @@ entries:
       output: web, pdf
       
             
-  - title: Development
+  - title: Development1
     output: web, pdf
     folderitems:
 
      - title: Consumer sessions illustrated
       url: /appointments_consumer_sessions.html
-      output: web, pdf
+      output: web
       
       
       subfolders:
@@ -97,15 +97,6 @@ entries:
         - title: <b class='resource'>Cancel an appointment</b>
           url: /appointments_use_case_cancel_an_appointment.html
           output: web
-          
-      - title: Additional provider requirements
-        output: web, pdf
-        subfolderitems:
-
-        - title: Slot availability management
-          url: /appointments_slotavailabilitymanagement.html
-          output: web, pdf        
-    
 
           
           
