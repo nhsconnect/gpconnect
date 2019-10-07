@@ -62,6 +62,34 @@ entries:
     - title: FHIR&reg; resources
       url: /datalibraryappointment.html
       output: web, pdf
+      
+            
+  - title: Development
+    output: web, pdf
+    folderitems:
+
+    - title: Overview
+      url: /accessrecord_structured_development.html
+      output: web
+      
+      
+      subfolders:
+
+      - title: Implementation Guidance
+        output: web
+        subfolderitems:
+
+        - title: <b class='resource'>Allergies guidance</b>
+          url: /accessrecord_structured_development_allergies_guidance.html
+          output: web
+        - title: <b class='resource'>Medication resource relationships</b>
+          url: /accessrecord_structured_development_medication_resource_relationships.html
+          output: web
+        - title: <b class='resource'>Medication guidance</b>
+          url: /accessrecord_structured_development_medication_guidance.html
+          output: web
+        
+    
 
           
           
