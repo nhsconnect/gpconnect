@@ -64,7 +64,7 @@ entries:
       output: web, pdf
       
             
-  - title: Development2
+  - title: Development3
     output: web, pdf
     folderitems:
 
@@ -97,8 +97,16 @@ entries:
         - title: <b class='resource'>Cancel an appointment</b>
           url: /appointments_use_case_cancel_an_appointment.html
           output: web
+          
+      - title: Additional provider requirements
+        output: web, pdf
+        subfolderitems:
 
-
+        - title: Slot availability management
+          url: /appointments_slotavailabilitymanagement.html
+          output: web, pdf
+          
+          
 
           
           
