@@ -40,3 +40,17 @@ entries:
     - title: Information and Governance
       url: /appointments_ig.html
       output: web, pdf
+
+  - title: Design
+    output: web, pdf
+    folderitems:
+
+    - title: Design Decisions
+      url: /appointments_design.html
+      output: web
+    - title: Wireframes
+      url: /appointments_wireframes.html
+      output: web
+    - title: Known Issues
+      output: web
+      url: /appointments_known_issues.html
