@@ -29,13 +29,14 @@ entries:
     folderitems:
 
     - title: User Stories
-      url: /accessrecord_structured_requirements.html
+      url: /appointments_requirements.html
       output: web, pdf   
     - title: Use Cases
-      url: /accessrecord_structured_usecases.html
+      url: /appointments_clinical_scenarios.html
       output: web, pdf
     - title: Clinical Engagement
-      url: /accessrecord_structured_clinical_engagement.html
+      url: /appointments_clinical_scenarios.html
       output: web, pdf
     - title: Information and Governance
+      url: /appointments_ig.html
       output: web, pdf
