@@ -1,5 +1,5 @@
 entries:
-- title: Appointment Management1
+- title: Appointment Management
   product: Appointment Management
   folders:
 
@@ -41,11 +41,11 @@ entries:
       url: /appointments_ig.html
       output: web, pdf
 
-  - title: Design2
+  - title: Design
     output: web, pdf
     folderitems:
 
-    - title: Design Decisions1
+    - title: Design Decisions
       url: /appointments_design.html
       output: web
     - title: Wireframes
@@ -55,7 +55,7 @@ entries:
       output: web
       url: /appointments_known_issues.html
       
-  - title: Data Model3
+  - title: Data Model
     output: web, pdf
     folderitems:
 
@@ -64,7 +64,7 @@ entries:
       output: web, pdf
       
             
-  - title: Development3
+  - title: Development
     output: web, pdf
     folderitems:
 
@@ -105,6 +105,11 @@ entries:
         - title: Slot availability management
           url: /appointments_slotavailabilitymanagement.html
           output: web, pdf
+        
+    
+  - title: Testing
+    output: web, pdf
+    folderitems:
           
           
 
