@@ -25,11 +25,11 @@ entries:
       output: web
     - title: Business requirements
       output: web, pdf
-       folderitems:
+      folderitems:
 
         - title: User Stories
           url: /appointments_requirements.html
-          output: web, pdf   
+          output: web, pdf
         - title: Use Cases
           url: /appointments_requirements.html
           output: web, pdf
@@ -42,6 +42,3 @@ entries:
         - title: Information and Governance
           output: web, pdf
           url: /appointments_ig.html
-          
-        
-      
