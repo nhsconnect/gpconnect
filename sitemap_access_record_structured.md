@@ -32,7 +32,7 @@ toc: false
    <p style="font-size:18px">Overview</p>
     	<p><a href="/accessrecord_structured.html">Introduction</a></p>
     	<p><a href="/accessrecord_structured_requirements.html">Business requirements</a></p>
-	 <p><a href="/pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.4.xlsx">Requirements catalogue</a></p> 
+	 <p><a href="/pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.1.xlsx">Requirements catalogue</a></p> 
     	<p><a href="/accessrecord_structured_known_issues.html">Known issues</a></p>
   </div>
   <div class="column">
@@ -79,7 +79,7 @@ toc: false
 	<p><a href="/aaccessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
 	<p><a href="/accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a>
 		
-	<p style="padding-top:8px">API definition g</p>
+	<p style="font-size:18px">API definition</p>
 	<p><a href="/accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="/accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
   </div>
