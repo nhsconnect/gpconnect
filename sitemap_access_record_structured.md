@@ -40,22 +40,45 @@ toc: false
 	<p><a href="/accessrecord_structured_development.html">Introduction</a></p>	
     	<p><a href="/accessrecord_structured_development_resources_overview.html">Resource population fundamentals</a></p>
 	<p><a href="/accessrecord_structured_development_linkages.html">Linkages</a></p>  
-	  <p><a href="/accessrecord_structured_development_search.html">Search criteria</a></p>  
-	<p><a href="/accessrecord_structured_development_medication_resource_relationships.html">Medication resource relationships</a></p>
-	<p><a href="/accessrecord_structured_development_medication_guidance.html">Medication guidance</a></p>  
-	<p style="padding-top:8px">FHIR&reg; resources</p>
-	<p><a href="/accessrecord_structured_development_resources_overview.html">Overview</a></p>
+	  <p><a href="/accessrecord_structured_development_search.html">Search criteria</a></p>
+	<p style="padding-top:8px">Structural resources</p>  
+	<p><a href="/accessrecord_structured_development_list.html">List</a></p>
+	<p><a href="/accessrecord_structured_development_bundle.html">Bundle</a></p>
+	<p style="padding-top:8px">Allergies</p>
+	<p><a href="/accessrecord_structured_development_allergies_guidance.html">Allergies guidance</a></p> 
 	<p><a href="/accessrecord_structured_development_allergyintolerance.html">AllergyIntolerance</a></p>
+	<p><a href="/accessrecord_structured_development_fhir_examples_allergies.html">Allergies FHIR&reg; example</a></p>  
+	<p style="padding-top:8px">Medications and medical devices</p>  
+	<p><a href="/accessrecord_structured_development_medication_resource_relationships.html">Medication and medical device resource relationships</a></p>
+	<p><a href="/accessrecord_structured_development_medication_guidance.html">Medication and medical resource guidance</a></p>  
 	<p><a href="/accessrecord_structured_development_medication.html">Medication</a></p>
 	<p><a href="/accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
 	<p><a href="/accessrecord_structured_development_medicationrequest.html">MedicationRequest</a></p>
-	<p><a href="/accessrecord_structured_development_list.html">List</a></p>
-	<p><a href="/accessrecord_structured_development_bundle.html">Bundle</a></p>
+	<p><a href="/accessrecord_structured_development_fhir_examples_medication.html">Medication FHIR&reg; examples</a></p>
+	
   </div>
   <div class="column">   
-	<p style="padding-top:8px">FHIR&reg; examples</p>
-	<p><a href="/accessrecord_structured_development_fhir_examples_allergies.html">Allergies</a></p>
-	<p><a href="/accessrecord_structured_development_fhir_examples_medication.html">Medication</a></p>
+	<p style="padding-top:8px">Immunisations</p>
+	<p><a href="/accessrecord_structured_development_immunization_guidance.html">Immunisations guidance</a></p>
+	<p><a href="/accessrecord_structured_development_immunization.html">Immunizations</a></p>
+	<p><a href="/accessrecord_structured_development_fhir_examples_immunizations.html">Immunization FHIR&reg; examples</a></p>
+	
+	<p style="padding-top:8px">Uncategorised data</p>
+	<p><a href="/accessrecord_structured_development_uncategorisedData_guidance.html">Uncategorised data guidance</a></p>
+	<p><a href="/accessrecord_structured_development_observation_uncategorisedData.html">Observation - uncategorised data</a></p>
+	<p><a href="/accessrecord_structured_development_fhir_examples_uncategorised.html">Uncategorised data FHIR® examples</a>
+	
+	<p style="padding-top:8px">Consultations</p>
+	<p><a href="/accessrecord_structured_development_consultation_guidance.html">Consultation guidance</a></p>
+	<p><a href="/accessrecord_structured_development_encounter.html">Encounter</a></p>
+	<p><a href="/accessrecord_structured_development_list_consultation.html">List - consultation structure</a>
+	<p><a href="/accessrecord_structured_development_fhir_examples_consultations.html">Consultation guidance</a>
+		
+	<p style="padding-top:8px">Problems</p>
+	<p><a href="/accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
+	<p><a href="/aaccessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
+	<p><a href="/accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a>
+		
 	<p style="padding-top:8px">API definition</p>
 	<p><a href="/accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="/accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
