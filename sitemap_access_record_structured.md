@@ -79,7 +79,7 @@ toc: false
 	<p><a href="/aaccessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
 	<p><a href="/accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a>
 		
-	<p style="padding-top:8px">API definition</p>
+	<p style="padding-top:8px">API definition g</p>
 	<p><a href="/accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="/accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
   </div>
