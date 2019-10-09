@@ -19,6 +19,9 @@ entries:
     - title: Known issues
       url: /accessrecord_structured_known_issues.html
       output: web, pdf
+    - title: Sitemap
+      url: /sitemap_access_record_structured.html
+      output: web
 
   - title: Development
     output: web, pdf
@@ -208,4 +211,8 @@ entries:
 
     - title: API Version Compatibility
       url: /accessrecord_structured_development_version_compatibility.html
+      output: web
+
+    - title: Forwards compatibility support example
+      url: /accessrecord_structured_development_fhir_examples_forwards_consultations.html
       output: web

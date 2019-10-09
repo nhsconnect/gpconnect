@@ -420,13 +420,13 @@ For `MedicationRequest` instances where `intent` is set to `order`:
 
 *	This refers to the period that the issued prescription is active
 
-`Period.start` is **MANDATORY**. 
+`Period.start` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 *	The prescription issue date recorded in the patient record
 *	The date the prescription was recorded.
 
-`Period.end` is **MANDATORY**. 
+`Period.end` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 *	The prescription end date recorded in the patient record
