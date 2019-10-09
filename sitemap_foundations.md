@@ -30,14 +30,14 @@ toc: false
 <div class="row">
   <div class="column">
    <p style="font-size:18px">Overview</p>
-    	<p><a href="/foundations.html">Introduction</a></p>
-    	<p><a href="/foundations_design.html">Design decisions</a></p>
+    	<p><a href="foundations.html">Introduction</a></p>
+    	<p><a href="foundations_design.html">Design decisions</a></p>
   </div>
   <div class="column">
     <p style="font-size:18px">Development</p>
-    	<p><a href="/datalibraryfoundation.html">FHIR resources</a></p>
+    	<p><a href="datalibraryfoundation.html">FHIR resources</a></p>
    <p style="padding-top:8px">API use cases</p>
-    	<p><a href="/foundations_use_case_get_the_fhir_conformance_profile.html">Get the FHIR conformance statement</a></p>
+    	<p><a href="foundations_use_case_get_the_fhir_conformance_profile.html">Get the FHIR conformance statement</a></p>
   </div>
  
 </div>
