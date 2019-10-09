@@ -33,6 +33,9 @@ entries:
     - title: Known issues
       url: /accessrecord_known_issues.html
       output: web, pdf
+    - title: Sitemap
+      url: /sitemap_access_record_html.html
+      output: web      
 
   - title: Development
     output: web, pdf
