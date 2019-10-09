@@ -30,6 +30,9 @@ entries:
     - title: Design decisions
       url: /foundations_design.html
       output: web, pdf
+    - title: Sitemap
+      url: /sitemap_foundations.html
+      output: web
       
   - title: Development
     output: web, pdf

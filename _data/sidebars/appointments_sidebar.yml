@@ -41,6 +41,9 @@ entries:
     - title: Known issues
       url: /appointments_known_issues.html
       output: web, pdf
+    - title: Sitemap
+      url: /sitemap_appointment_management.html
+      output: web
 
   - title: Development
     output: web, pdf
