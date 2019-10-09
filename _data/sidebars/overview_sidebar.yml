@@ -16,7 +16,9 @@ entries:
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-
+    - title: Sitemap
+      url: /sitemap.html
+      output: web
       subfolders:
       - title: Release notes
         output: web
