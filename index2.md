@@ -43,9 +43,6 @@ This guide has been created to support the adoption of Care Connect profiles and
 
 The above steps outline a complete API journey from imagination and exploring to developing local APIs using Care Connect profiles all the way to deploying a live API.
 
-{% include custom/contribute.html content="If you want to get involved in any part of this then please get in touch with careconnect@interopen.org "%}
-
-
 ## Pilot using the GP Connect APIs ##
 The GP Connect programme is now supporting the development of systems that connect with the APIs to use data from patient records and appointment schedulers for patient care by integrating it or importing it into local clinical systems.
 
