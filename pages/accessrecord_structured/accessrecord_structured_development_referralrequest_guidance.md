@@ -14,7 +14,7 @@ The referral record is of the event of a referral being made or an intention to 
 It does not reflect the acceptance of the referral by the recipient or any onward progress of the referral.
 
 A referral is typically defined as a request for transfer of care or request to provide assessment, treatment or clinical advice on the care of a patient. 
-This GP Connect profile is intended to align with this definition, but consumers should be aware that records may be included which are outside of the scope of this definition - see [Classification design decision](###classification-design-decision).
+This GP Connect profile is intended to align with this definition, but consumers should be aware that records may be included which are outside of the scope of this definition - see [Classification design decision](#classification-design-decision).
 
 A referral may be considered as a detailed document containing relevant medical history, presenting needs, problem management to date, current medications, allergies and so on. 
 As this profile is a record of the event of the referral, it does not itself contain such clinical background for the patient being referred. 
