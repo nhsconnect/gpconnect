@@ -71,7 +71,7 @@ toc: false
 	<p style="padding-top:8px">Problems</p>
 	<p><a href="accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
 	<p><a href="accessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
-	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a>	  
+	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a></p>	  
   </div>
   <div class="column">   
 		<p style="font-size:18px">API definition</p>
