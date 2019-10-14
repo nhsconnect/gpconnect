@@ -181,6 +181,8 @@ Human-readable description (title).
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
+Provider SHALL populate content.attachment.data field in API response for Retrieve a patient's docuent API request.
+Provider SHALL NOT populate content.attachment.data field in API response for Search a patient's documents API request.
 
 ### content.attachment.url ###
 
