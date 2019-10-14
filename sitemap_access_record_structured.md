@@ -32,10 +32,8 @@ toc: false
    <p style="font-size:18px">Overview</p>
     	<p><a href="accessrecord_structured.html">Introduction</a></p>
     	<p><a href="accessrecord_structured_requirements.html">Business requirements</a></p>
-	 <p><a href="pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.1.xlsx">Requirements catalogue</a></p> 
-    	<p><a href="accessrecord_structured_known_issues.html">Known issues</a></p>
-  </div>
-  <div class="column">
+	 <p><a href="pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.2.xlsx">Requirements catalogue</a></p> 
+    	<p><a href="accessrecord_structured_known_issues.html">Known issues</a></p>	  
     <p style="font-size:18px">Development</p>
 	<p><a href="accessrecord_structured_development.html">Introduction</a></p>	
     	<p><a href="accessrecord_structured_development_resources_overview.html">Resource population fundamentals</a></p>
@@ -48,6 +46,8 @@ toc: false
 	<p><a href="accessrecord_structured_development_allergies_guidance.html">Allergies guidance</a></p> 
 	<p><a href="accessrecord_structured_development_allergyintolerance.html">AllergyIntolerance</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_allergies.html">Allergies FHIR&reg; example</a></p>  
+  </div>
+  <div class="column">
 	<p style="padding-top:8px">Medications and medical devices</p>  
 	<p><a href="accessrecord_structured_development_medication_resource_relationships.html">Medication and medical device resource relationships</a></p>
 	<p><a href="accessrecord_structured_development_medication_guidance.html">Medication and medical resource guidance</a></p>  
@@ -59,7 +59,7 @@ toc: false
   <div class="column">   
 	<p style="padding-top:8px">Immunisations</p>
 	<p><a href="accessrecord_structured_development_immunization_guidance.html">Immunisations guidance</a></p>
-	<p><a href="accessrecord_structured_development_immunization.html">Immunizations</a></p>
+	<p><a href="accessrecord_structured_development_immunization.html">Immunization</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_immunizations.html">Immunization FHIR&reg; examples</a></p>
 	<p style="padding-top:8px">Uncategorised data</p>
 	<p><a href="accessrecord_structured_development_uncategorisedData_guidance.html">Uncategorised data guidance</a></p>
@@ -69,7 +69,7 @@ toc: false
 	<p><a href="accessrecord_structured_development_consultation_guidance.html">Consultation guidance</a></p>
 	<p><a href="accessrecord_structured_development_encounter.html">Encounter</a></p>
 	<p><a href="accessrecord_structured_development_list_consultation.html">List - consultation structure</a>
-	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Consultation guidance</a>
+	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Consultation FHIR&reg; examples</a>
 	<p style="padding-top:8px">Problems</p>
 	<p><a href="accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
 	<p><a href="aaccessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
