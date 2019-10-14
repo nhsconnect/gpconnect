@@ -55,7 +55,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Docume
   </tr>
 </table>
 
-Master Version Specific Identifier
+Master Version Specific Identifier. This unique identifier is used to identify the version of the document
 
 ### identifier ###
 
@@ -172,18 +172,6 @@ Organisation which maintains this document.
 
 Human-readable description (title).
 
-### content.attachment.data ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>base64Binary</code></td>
-    <td><b>Optionality:</b> Required/Optional</td>
-    <td><b>Cardinality:</b> 1..1</td>
-  </tr>
-</table>
-Provider SHALL populate content.attachment.data field in API response for Retrieve a patient's docuent API request.
-Provider SHALL NOT populate content.attachment.data field in API response for Search a patient's documents API request.
-
 ### content.attachment.url ###
 
 <table class='resource-attributes'>
@@ -194,7 +182,9 @@ Provider SHALL NOT populate content.attachment.data field in API response for Se
   </tr>
 </table>
 
-URL to retrieve the document, this **MUST** be populated when the document is available.
+URL to retrieve the document, this **MUST** be populated when the document is available. It is a reference to the document data i.e. the binary resource.
+URL SHALL point to the same content as found in content.attachment.data when populated.
+
 
 ### content.attachment.size ###
 
@@ -210,6 +200,7 @@ Size of the file.
 
 The binary file (base64 binary). </br>
 This field will get populated only when the document is being retrieved. It will **NOT** be populated during the search document function.
+
 
 ### content.attachment.title ###
 
@@ -234,6 +225,20 @@ To be used when only a placeholder for a document is available. This **MUST** be
 </table>
 
 Format/content rules for the document.
+
+### content.attachment.data ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>base64Binary</code></td>
+    <td><b>Optionality:</b> Required/Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+The actual data of the attachment - a sequence of bytes. In XML, represented using base64. 
+The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON.
+Provider SHALL populate content.attachment.data field in API response for Retrieve a patient's docuent API request.
+Provider SHALL NOT populate content.attachment.data field in API response for Search a patient's documents API request.
 
 
 ### context.encounter ###
