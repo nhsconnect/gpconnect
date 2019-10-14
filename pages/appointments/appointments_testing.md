@@ -7,8 +7,6 @@ permalink: appointments_testing.html
 summary: "Testing guidance"
 ---
 
-## Testing Overview ##
-
 Below is the suggested order in which the appointment capabilities should be implemented. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different Appointment Management endpoints. The Appointment Management capability test scenarios are dependent on the foundation capabilities and therefore the foundation endpoints should be developed and tested before implementing the Appointment Management capabilities.
 
 It’s recommended that you develop against the Automated Test Suite as this will help with creating a GP Connect compliant product. By implementing the endpoints in the order below, the Automated Test Suite set of tests for that endpoint can be run during development without you seeing errors due to pre-test API calls or post-test validation API calls relevant to the test being run and failing as they have not been developed yet.
