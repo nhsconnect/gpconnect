@@ -54,9 +54,8 @@ toc: false
 	<p><a href="accessrecord_structured_development_medication.html">Medication</a></p>
 	<p><a href="accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
 	<p><a href="accessrecord_structured_development_medicationrequest.html">MedicationRequest</a></p>
-	<p><a href="accessrecord_structured_development_fhir_examples_medication.html">Medication FHIR&reg; examples</a></p>	
-  </div>
-  <div class="column">   
+	<p><a href="accessrecord_structured_development_fhir_examples_medication.html">Medication FHIR&reg; examples</a></p>
+	  
 	<p style="padding-top:8px">Immunisations</p>
 	<p><a href="accessrecord_structured_development_immunization_guidance.html">Immunisations guidance</a></p>
 	<p><a href="accessrecord_structured_development_immunization.html">Immunization</a></p>
@@ -70,10 +69,21 @@ toc: false
 	<p><a href="accessrecord_structured_development_encounter.html">Encounter</a></p>
 	<p><a href="accessrecord_structured_development_list_consultation.html">List - consultation structure</a>
 	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Consultation FHIR&reg; examples</a>
+  </div>
+  <div class="column">   
 	<p style="padding-top:8px">Problems</p>
 	<p><a href="accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
 	<p><a href="aaccessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a>
+		<p style="padding-top:8px">Investigations</p>
+	<p><a href="accessrecord_structured_development_problems_guidance.html">Investigations guidance</a></p>
+	<p><a href="aaccessrecord_structured_problems.html">DiagnosticReport</a></p>
+	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Specimen</a>		
+	<p><a href="accessrecord_structured_development_problems_guidance.html">Observation - Test Group Header</a></p>
+	<p><a href="aaccessrecord_structured_problems.html">PObservation - Test Result</a></p>
+	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Observation - Filing Comments</a>
+	<p><a href="aaccessrecord_structured_problems.html">ProcedureRequest</a></p>
+	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Investigations FHIR® examples</a>
 	<p style="font-size:18px">API definition</p>
 	<p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
