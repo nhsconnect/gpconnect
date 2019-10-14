@@ -55,8 +55,7 @@ toc: false
 	<p><a href="accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
 	<p><a href="accessrecord_structured_development_medicationrequest.html">MedicationRequest</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_medication.html">Medication FHIR&reg; examples</a></p>
-	  
-	<p style="padding-top:8px">Immunisations</p>
+	  	<p style="padding-top:8px">Immunisations</p>
 	<p><a href="accessrecord_structured_development_immunization_guidance.html">Immunisations guidance</a></p>
 	<p><a href="accessrecord_structured_development_immunization.html">Immunization</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_immunizations.html">Immunization FHIR&reg; examples</a></p>
