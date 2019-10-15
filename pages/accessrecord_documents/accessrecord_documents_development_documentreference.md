@@ -183,8 +183,6 @@ Human-readable description (title).
 </table>
 
 URL to retrieve the document, this **MUST** be populated when the document is available. It is a reference to the document data i.e. the binary resource.
-URL SHALL point to the same content as found in content.attachment.data when populated.
-
 
 ### content.attachment.size ###
 
@@ -225,21 +223,6 @@ To be used when only a placeholder for a document is available. This **MUST** be
 </table>
 
 Format/content rules for the document.
-
-### content.attachment.data ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>base64Binary</code></td>
-    <td><b>Optionality:</b> Required/Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-The actual data of the attachment - a sequence of bytes. In XML, represented using base64. 
-The base64-encoded data SHALL be expressed in the same character set as the base resource XML or JSON.
-Provider SHALL populate content.attachment.data field in API response for Retrieve a patient's docuent API request.
-Provider SHALL NOT populate content.attachment.data field in API response for Search a patient's documents API request.
-
 
 ### context.encounter ###
 
@@ -300,6 +283,15 @@ Categorization of document is not required by GP Connect.
 
 Who/what authenticated the document is not required by GP Connect.
 
+<h3 style="color:#ED1951;"> content.attachment.data </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>base64Binary</code></td>
+  </tr>
+</table>
+Data of the attachment is not required by GPConnect as it will be populated in FHIR binnary resource. 
+
 <h3 style="color:#ED1951;"> relatesTo </h3>
 
 <table class='resource-attributes'>
@@ -309,8 +301,6 @@ Who/what authenticated the document is not required by GP Connect.
 </table>
 replaces | transforms | signs | appends
 Relationships to other documents is not required by GP Connect.
-
-### context.sourcePatientInfo ###
 
 <table class='resource-attributes'>
   <tr>
