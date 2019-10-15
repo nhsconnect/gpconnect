@@ -132,7 +132,7 @@ Creation/Edit datetime of the document.
   </tr>
 </table>
 
-When the document reference was created.
+When the GP Practice added the document to their clinical system.
 
 ### author ###
 
