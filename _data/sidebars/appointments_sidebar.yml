@@ -68,6 +68,10 @@ entries:
     output: web, pdf
     folderitems:
 
+    - title: Overview
+      url: /appointments_development.html
+      output: web
+
     - title: Consumer sessions illustrated
       url: /appointments_consumer_sessions.html
       output: web
