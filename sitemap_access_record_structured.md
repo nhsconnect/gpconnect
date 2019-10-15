@@ -74,8 +74,23 @@ toc: false
 	<p><a href="accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
 	<p><a href="accessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a>
+	<p style="padding-top:8px">Investigations</p>
+	<p><a href="accessrecord_structured_development_pathology_guidance.html">Investigations guidance</a></p>
+	<p><a href="accessrecord_structured_development_DiagnosticReport.html">DiagnosticReport</a></p>
+	<p><a href="accessrecord_structured_development_specimen.html">Specimen</a>
+	<p><a href="accessrecord_structured_development_observation_testGroup.html">Observation - Test Group Header</a></p>
+	<p><a href="accessrecord_structured_development_observation_testResult.html">Observation - Test Result</a></p>
+	<p><a href="accessrecord_structured_development_observation_filingComments.html">Observation - Filing Comments</a>
+	<p><a href="accessrecord_structured_development_ProcedureRequest.html">ProcedureRequest</a></p>
+	<p><a href="accessrecord_structured_development_fhir_examples_pathology.html">Investigations FHIR® examples</a>
+	<p style="padding-top:8px">Referrals</p>
+	<p><a href="accessrecord_structured_development_referralrequest_guidance.html">Referrals guidance</a></p>
+	<p><a href="accessrecord_structured_development_referralrequest.html">ReferralRequest</a></p>
+	<p><a href="accessrecord_structured_development_fhir_examples_referrals.html">Referrals FHIR® examples</a>
+	<p style="padding-top:8px">Documents</p>
+	<p><a href="accessrecord_documents.html">Documents guidance</a></p>
 	<p style="font-size:18px">API definition</p>
 	<p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
-  </div>
+
 
