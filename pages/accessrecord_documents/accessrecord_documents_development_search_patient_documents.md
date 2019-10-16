@@ -22,12 +22,11 @@ Provider systems **SHALL** support the following search parameters:
 
 | Name | Type | Description | Paths |
 |---|---|---|---|
-| `subject` | `Patient` | The patient who is the subject of the document. | `DocumentReference.subject` |
+| `subject` | `Patient` | Reference to the patient who is the subject of the document. | `DocumentReference.subject` |
 | `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
 | `facility` | `token` | Additional details about where the content was created (for example, clinical specialty). | `DocumentReference.clinicalSetting` |
 | `author` | `Organization` | Who and/or what authored the document. | `DocumentReference.author` |
 | `type` | `token` | Kind of document. | `DocumentReference.type` |
-| `custodian` | `Organization` | Organisation which maintains this document. | `DocumentReference.custodian` |
 | `description` | `string` | Human-readable description (title). | `DocumentReference.title` |
 
 {% include note.html content="The supported search parameters **MUST** be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
@@ -39,25 +38,21 @@ Provider systems **SHALL** support the following include parameters:
 | Name | Description | Paths |
 |---|---|---|
 | `_include= DocumentReference:patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.patient` |
-| `_include= DocumentReference:custodian:Organization` | Include `Organization` resources referenced within the returned `DocumentReference` resources | `DocumentReference.custodian:Organization` |
-| `_include= DocumentReference:author:Organization` | Include `Organization` resources references from matching `DocumentReference` resources | `DocumentReference.author` |
+| `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |
+| `_include= DocumentReference:author:Organization` | Details of organisations that authored the documents that are returned in DocumentReference resources |
 | `_include= DocumentReference:author:Practitioner` | Include `Practitioner` resources references from matching `DocumentReference` resources | `DocumentReference.author` |
 | `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources | `DocumentReference.author:Practitioner` |
 
 Consumer systems **MUST** send the following parameters in the request:
 
-- subject **MUST** be included
+- subject
 
-Consumer systems **SHOULD** send the following parameters in the request:
+Consumer systems **MAY** send the following parameters in the request:
 
 - created
 - facility
 - author
 - type
-
-Consumer systems **MAY** send the following parameters in the request:
-
--  description
 
 ## Prerequisites ##
 
@@ -79,21 +74,21 @@ The consumer system:
 #### FHIR&reg; relative request ####
 
 ```http
-GET /DocumentReference?[subject={PatientNHSNumber}]
-                       [&created={search_prefix}creation_date]
-                       [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
-                       [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
-                       [&type={document_type}]
-                       [&custodian={OrgTypeCodeSystem}|{OrgTypeCode}]
-                       [&description={document_title}]
+GET /DocumentReference?[subject={PatientLogicalId}]
+                       (&created={search_prefix}creation_date)
+                       (&facility={OrgTypeCodeSystem}|{OrgTypeCode})
+                       (&author={OrgTypeCodeSystem}|{OrgTypeCode})
+                       (&type={document_type})
+                       (&custodian={OrgTypeCodeSystem}|{OrgTypeCode})
+                       (&description={document_title})
 
 ```
 
 #### FHIR&reg; absolute request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/
-                      DocumentReference?[subject={PatientNHSNumber}]
+GET https://[proxy_server]/https://[provider_server]/[fhir_base]/
+                      DocumentReference?[subject={PatientLogicalId}]
                       [&created={search_prefix}creation_date]
                       [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
                       [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
