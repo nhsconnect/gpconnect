@@ -1,7 +1,7 @@
 ---
 title: Access Record Structured sitemap
 keywords: sitemap
-summary: A collection of links to Access Record HTML information
+summary: A collection of links to Access Record Structured information
 permalink: sitemap_access_record_structured.html
 sidebar: accessrecord_structured_sidebar
 toc: false
