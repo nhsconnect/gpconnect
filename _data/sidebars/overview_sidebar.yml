@@ -21,6 +21,9 @@ entries:
         - title: 1.0.0
           url: /overview_release_notes_1_0_0.html
           output: web
+        - title: 1.0.1
+          url: /overview_release_notes_1_0_1.html
+          output: web
 
   - title: Design approach
     output: web
