@@ -1,7 +1,7 @@
 ---
 title: Access Record Structured sitemap
 keywords: sitemap
-summary: A collection of links to Access Record HTML information
+summary: A collection of links to Access Record Structured information
 permalink: sitemap_access_record_structured.html
 sidebar: accessrecord_structured_sidebar
 toc: false
@@ -59,7 +59,7 @@ toc: false
   <div class="column">   
 	<p style="padding-top:8px">Immunisations</p>
 	<p><a href="accessrecord_structured_development_immunization_guidance.html">Immunisations guidance</a></p>
-	<p><a href="accessrecord_structured_development_immunization.html">Immunizations</a></p>
+	<p><a href="accessrecord_structured_development_immunization.html">Immunization</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_immunizations.html">Immunization FHIR&reg; examples</a></p>
 	<p style="padding-top:8px">Uncategorised data</p>
 	<p><a href="accessrecord_structured_development_uncategorisedData_guidance.html">Uncategorised data guidance</a></p>
@@ -69,10 +69,10 @@ toc: false
 	<p><a href="accessrecord_structured_development_consultation_guidance.html">Consultation guidance</a></p>
 	<p><a href="accessrecord_structured_development_encounter.html">Encounter</a></p>
 	<p><a href="accessrecord_structured_development_list_consultation.html">List - consultation structure</a>
-	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Consultation guidance</a>
+	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Consultation FHIR&reg; examples</a>
 	<p style="padding-top:8px">Problems</p>
 	<p><a href="accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
-	<p><a href="aaccessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
+	<p><a href="accessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a>
 	<p style="font-size:18px">API definition</p>
 	<p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
