@@ -37,7 +37,7 @@ toc: false
     <p style="font-size:18px">Development</p>
     	<p><a href="datalibraryfoundation.html">FHIR resources</a></p>
    <p style="padding-top:8px">API use cases</p>
-    	<p><a href="foundations_use_case_get_the_fhir_conformance_profile.html">Get the FHIR conformance statement</a></p>
+    	<p><a href="foundations_use_case_get_the_fhir_conformance_profile.html">Get the FHIR&reg; conformance statement</a></p>
   </div>
  
 </div>
