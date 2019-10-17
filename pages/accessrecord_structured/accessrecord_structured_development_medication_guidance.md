@@ -34,11 +34,29 @@ The resources required to describe diarised review activities and reminders for 
 
 Medication/Medical Device issues may be future-dated – for example, repeat dispensed medications or a deferred acute medication that may not be needed if the condition resolves.
 
-## Amendments
+## Amendments to the Medication/Medical Device in a plan
 
-Where an authorisation is amended – for example, Proprietary/Generic switch, altered dates, change of quantities and so on, then the existing authorisation/plan **SHOULD** be stopped or discontinued, and an appropriate reason supplied via `statusReason.reason`. A new authorisation **SHOULD** be created, in the form of a `MedicationStatement` and `MedicationRequest` with `intent` of `plan`, to hold the amended details. Subsequent issues of the medication **SHOULD** reference the amended authorisation rather than the previous version.
+All the prescriptions issued under a single medication/medical device plan MUST have the same medication/medical device.
 
-## Medication discontinuation/stopping ###
+Where the medication/medical device (including a Proprietary/Generic switch) of a medication/medical device plan is amended the existing authorisation/plan MUST be stopped or discontinued and a new authorisation created.
+
+## Amendments to the Dosage Instructions in a plan
+
+All the prescriptions issues under a single medication/medical device plan MUST have the same dosage instruction.
+
+Where the dosage instructions of a medication/medical device plan is amended the existing authorisation/plan MUST be stopped or discontinued and a new authorisation created.
+
+To ease the implementation of a single dosage instruction, there will be a period of time made available for the provider systems to fully support this requirement. 
+
+*	The requirement applies to all medication/medical device plans that are	created on the provider system after an agreed date (tbd)
+*	All medication/medical device plans (regardless of date and status) that contain prescription issues with different dosage instructions MUST included the additional information:
+    * set `MedicationStatement.Extension(dosagelastchanged)` to the date that the dosage instruction was last changed.
+    * add the text "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY", where DD-Mmm-YYYY is the date the dosage was last changed. 
+
+This will allow consumer systems and end users to identify medication/medical device plans with multiple dosages and take appropriate action.
+
+
+## Medication discontinuation/stopping
 
 Where a medication/medical device is stopped or discontinued then the status of the authorisation **MUST** be changed to 'stopped' and a textual stop reason provided via `statusReason.reason`.
 
