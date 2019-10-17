@@ -110,7 +110,7 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Scope ##
 
-  <IMG src="images/access_structured/ARDocsScope.jpg" alt="Scope of documents"  style="max-width:60%;max-height:60%;">
+  <IMG src="images/access_structured/ARDocsScope.JPG" alt="Scope of documents"  style="max-width:60%;max-height:60%;">
 
 ## Use case ##
 
