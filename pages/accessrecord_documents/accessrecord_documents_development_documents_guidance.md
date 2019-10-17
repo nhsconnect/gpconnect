@@ -124,20 +124,8 @@ To address this issue, GP Connect has recommended the use of clinical document i
 GP clinical systems may have some migrated patient records that have information about the document but the document may not be available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document. More information about how this should be populated is available on the [DocumentReference page](accessrecord_documents_development_documents.html)
 
 ## Document format ##
-Providers to provide documents in the following industry acceptable format:
-* Plain Text (text/plain) - .txt
-* HTML Text (text/html) - .html, .htm
-* PDF (application/pdf) - .pdf
-* XML Text (text/xml) - .xml
-* RTF Text (text/rtf) - .rtf, .rtx
-* Basic Audio (audio/basic) - .au
-* PNG Image (image/png) - .png
-* GIF Image (image/gif) - .gif
-* JPEG Image (image/jpeg) - .jpg, .jpe, .jpeg
-* TIFF Image (image/tiff) - .tif, .tiff
-* MSWORD (application/msword) - .doc
-* MSWORD (application/vnd.openxmlformats-officedocument.wordprocessingml.document) - .docx
-* DICOM
+Documents of industry standard format are allowed. Any local document formats are not allowed.
+
 
 ## Multiple versions of the document ##
 A GP practice may have multiple versions of the same document of the patient in their clinical system. Providers shall only return latest version of the document via the GP Connect APIs.
