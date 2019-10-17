@@ -68,15 +68,15 @@ toc: false
 	<p style="padding-top:8px">FHIR resources</p>
 	<p><a href="accessrecord_documents_development_bundle">Bundle</a></p> 
 	<p><a href="accessrecord_documents_development_documents.html">DocumentReference</a></p>
-	<p><a href="accessrecord_documents_development_binary.html">Binary</a></p>  	  
-	<p style="padding-top:8px">API definition</p>  
+	<p><a href="accessrecord_documents_development_binary.html">Binary</a></p>  
+  </div>
+  <div class="column">	  
+	<p>API definition</p>  
 	<p><a href="accessrecord_documents_development_search_patient_documents.html">Search for a patient's documents</a></p>
 	<p><a href="accessrecord_documents_development_retrieve_patient_documents">Retrieve a patient's document</a></p> 
 	<p><a href="accessrecord_documents_use_case_get_the_fhir_capability_statement.html">Get the FHIR® capability statement</a></p>
 	<p><a href="accessrecord_documents_use_case_find_a_patient.html">Find a patient</a></p>
-  </div>
-  <div class="column">
-    <p style="font-size:18px">Integrate with Spine</p>
+    <p style="font-size:18px; padding-top:15px">Integrate with Spine</p>
     	<p><a href="integration_illustrated.html">Spine integration illustrated</a></p>
 	<p><a href="integration_system_topologies.html">System topologies</a></p>
 	<p><a href="integration_illustrated.html">Cross-organisation audit and provenance</a></p>
