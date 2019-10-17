@@ -164,7 +164,7 @@ The `Consultation` within which the referral was recorded.
   </tr>
 </table>
 
-The user entered date for the referral.
+The main date for the referral as entered by the end user in accordance with the [date of referral guidance](accessrecord_structured_development_referralrequest_guidance.html#date-of-referral).
 
 ### requester
 
