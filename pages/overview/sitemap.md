@@ -32,9 +32,7 @@ toc: false
    <p style="font-size:18px">Overview</p>
     	<p><a href="index.html">Introduction</a></p>
     	<p><a href="overview_engage.html">Getting started</a></p>
-    	<p><a href="overview_priority_capabilities.html">Capabilities</a></p>
-	<p style="padding-top:8px">Release notes</p>
-	<p><a href="overview_release_notes_1_0_1.html">1.0.1</a></p>  
+	<p style="padding-top:8px">Release notes</p>  
 	<p><a href="overview_release_notes_1_0_0.html">1.0.0</a></p>  
     <p style="font-size:18px; padding-top:15px">Design approach</p>
     	<p><a href="designprinciples_open_api_principles.html">API design principles</a></p>
@@ -44,13 +42,13 @@ toc: false
 	<p><a href="designprinciples_clinical_safety_principles.html">Clinical safety principles</a></p>
 	<p><a href="designprinciples_assurance_principles.html">Assurance principles</a></p>
 	<p><a href="design_clinical_terminologies.html">Clinical terminologies</a></p>
-	<p><a href="design_product_versioning.html">Specification versioning</a></p> 
-  </div>
-  <div class="column">
-    <p style="font-size:18px">Explore</p>
+	<p><a href="design_product_versioning.html">Specification versioning</a></p>
+    <p style="font-size:18px; padding-top:15px">Explore</p>
     	<p><a href="system_demonstrator.html">System demonstrator</a></p>
 	<p><a href="system_swagger.html">Interactive API documentation</a></p>
-	<p><a href="system_reference_postman.html">Postman examples</a></p>
+	<p><a href="system_reference_postman.html">Postman examples</a></p> 
+  </div>
+  <div class="column">
     <p style="font-size:18px; padding-top:15px">Development</p>
     	<p><a href="development_deliverables.html">Development deliverables</a></p>
 	<p><a href="development_fhir_open_source_guidance.html">FHIR&reg; library</a></p>
@@ -67,6 +65,15 @@ toc: false
 	<p><a href="accessrecord_documents_development_documents_guidance">Documents guidance</a></p> 
 	<p><a href="accessrecord_documents_development_api_session.html">Consumer sessions illustrated</a></p>
 	<p><a href="accessrecord_documents_development_fhir_examples_documents.html">Documents FHIR® examples</a></p>
+	<p style="padding-top:8px">FHIR resources</p>
+	<p><a href="accessrecord_documents_development_bundle">Bundle</a></p> 
+	<p><a href="accessrecord_documents_development_documents.html">DocumentReference</a></p>
+	<p><a href="accessrecord_documents_development_binary.html">Binary</a></p>  	  
+	<p style="padding-top:8px">API definition</p>  
+	<p><a href="accessrecord_documents_development_search_patient_documents.html">Search for a patient's documents</a></p>
+	<p><a href="accessrecord_documents_development_retrieve_patient_documents">Retrieve a patient's document</a></p> 
+	<p><a href="accessrecord_documents_use_case_get_the_fhir_capability_statement.html">Get the FHIR® capability statement</a></p>
+	<p><a href="accessrecord_documents_use_case_find_a_patient.html">Find a patient</a></p>
   </div>
   <div class="column">
     <p style="font-size:18px">Integrate with Spine</p>
