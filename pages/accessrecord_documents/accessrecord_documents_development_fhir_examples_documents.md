@@ -13,7 +13,7 @@ The following is a set of request/response examples for Documents:
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Search for documents</a></li>
-  <li><a class="noCrossRef" href="#example2" data-toggle="tab">Retrieve documents</a></li>
+    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Retrieve documents</a></li>
   <!--    <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li> -->
 </ul>
   <div class="tab-content">
@@ -43,7 +43,7 @@ GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentRefer
 
 </div>
 
-<div role="tabpanel" class="tab-pane active" id="example2" markdown="1">
+<div role="tabpanel" class="tab-pane active" id="example2">
 
 <p style="line-height: 2; font-size: 20px">Retrieve documents</p>
 <p style="line-height: 1; font-size: 18px">Request</p>
