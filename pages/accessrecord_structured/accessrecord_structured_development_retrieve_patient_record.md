@@ -253,7 +253,16 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Filter the investigations to match the specified period
+        Restrict test results by defining a time period
+
+        <ul>
+           <li>If the <code>investigationSearchPeriod</code> is not specified, all test results will be returned.</li>
+           <li>If the <code>investigationSearchPeriod.start</code> is populated, all test results on or after the <code>investigationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
+           <li>If the <code>investigationSearchPeriod.end</code> is populated, all test results on or before the <code>investigationSearchPeriod.end</code> <b>MUST</b> be returned.</li>
+           <li><code>investigationSearchPeriod.start</code> and <code>investigationSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
+          <li><code>investigationSearchPeriod.start</code> and <code>investigationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
+      </ul>
+
         <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>        
       </td>
     </tr>
