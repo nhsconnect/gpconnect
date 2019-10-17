@@ -13,6 +13,9 @@ entries:
     - title: Getting started
       url: /overview_engage.html
       output: web
+    - title: Sitemap
+      url: /sitemap.html
+      output: web
 
       subfolders:
       - title: Release notes
