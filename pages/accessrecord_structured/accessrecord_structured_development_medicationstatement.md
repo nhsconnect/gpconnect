@@ -74,6 +74,20 @@ In the future, the coded valueset will be built on to be more specific about whe
 
 For repeat and repeat dispensed medications/medical devices, the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
+### extension[dosagelastchanged] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Only populate where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan.
+
+Set to the date when the dosage instructions were last changed.
+
 ### identifier ###
 
 <table class='resource-attributes'>
@@ -180,7 +194,6 @@ Use one of the following dates in order of descending preference:
 *	the date of the first issue under the medication/medical device plan
 *	the date the medication/medical device plan was recorded onto the system (the audit date)
 
-
 `Period.end` is **REQUIRED**. 
 
 The date when the authorisation under this plan ends.
@@ -267,7 +280,10 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 
 Complete dosage instructions as text.
 
-In exceptional cases where for legacy data there is no dosage recorded in the system then this **MUST** be populated with the text 'No information available'.
+Where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan append the following warning text to end of the dosage instructions:
+* "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
+
+In exceptional cases where for legacy data there is no dosage recorded in the system then this MUST be populated with the text 'No information available'.
 
 ### dosage.patientInstruction ###
 
