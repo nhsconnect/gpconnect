@@ -64,7 +64,7 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
 
 - `[GPC_MAJOR_VERSION]` identifies the major version number of the GP Connect specification that the API is built to.
 
-- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between logical FHIR servers defined by GP Connect capabilities.
+- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between logical FHIR servers defined by GP Connect capabilities. For example, the `[PROVIDER_ROUTING_SEGMENT]` could be `gpconnect-structured` for the Access Record Structured capability and `gpconnect-documents` for the Access Documents capability.
 
 - The Service Root URL SHALL NOT contain a trailing `/`
 
