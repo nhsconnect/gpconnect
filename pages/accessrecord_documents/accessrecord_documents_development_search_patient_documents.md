@@ -40,7 +40,7 @@ Provider systems **SHALL** support the following include parameters:
 | `_include= DocumentReference:patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.patient` |
 | `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |
 | `_include= DocumentReference:author:Organization` | Details of organisations that authored the documents that are returned in DocumentReference resources |
-| `_include= DocumentReference:author:Practitioner` | Include `Practitioner` resources references from matching `DocumentReference` resources | `DocumentReference.author` |
+| `_include= DocumentReference:author:Practitioner` | Details of organisations that authored the documents that are returned in DocumentReference resources |
 | `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources | `DocumentReference.author:Practitioner` |
 
 Consumer systems **MUST** send the following parameters in the request:
@@ -53,6 +53,16 @@ Consumer systems **MAY** send the following parameters in the request:
 - facility
 - author
 - type
+
+When using the 'created' parameter, consumers **MUST** do the following
+- to search for a lower boundary of a date:
+  - a single `created` parameter with a date prefixed by `ge` should be supplied
+- to search for a upper boundary of a date:
+  - a single `created` parameter with a date prefixed by `le` should be supplied
+- to search between two dates:
+  - two created parameters should be supplied
+    - a single `created` parameter with a date prefixed by `ge`
+    - a single `created` parameter with a date prefixed by `le`
 
 ## Prerequisites ##
 
@@ -161,6 +171,7 @@ Provider systems **MUST**:
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
   - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](accessrecord_documents_development_documents.html) profile that match the supplied search criteria
+    - where the `created` parameter has been supplied and `DocumentReference.created` doesn't exist, `DocumentReference.indexed` **MUST** be used instead
   - Only `Organization` resources SHALL be returned where they are associated with the `DocumentReference` resources matching the query
 
 #### Payload response examples ####
