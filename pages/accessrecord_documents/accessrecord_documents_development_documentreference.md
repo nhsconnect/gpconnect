@@ -178,7 +178,7 @@ Human-readable description (title).
   <tr>
     <td><b>Data type:</b> <code>url</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
@@ -195,10 +195,6 @@ URL to retrieve the document, this **MUST** be populated when the document is av
 </table>
 
 Size of the file.
-
-The binary file (base64 binary). </br>
-This field will get populated only when the document is being retrieved. It will **NOT** be populated during the search document function.
-
 
 ### content.attachment.title ###
 
