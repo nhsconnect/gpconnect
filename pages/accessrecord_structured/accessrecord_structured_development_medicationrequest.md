@@ -313,7 +313,7 @@ For a `MedicationRequest` with an `intent` = `order` this is the consultation wh
 
 Authorisation date, when the medication/medical device was authorised.
 
-Unless there is a distinct user-modifiable availabilityTime for the authorisation, this is the audit trail dateTime for when the authorisation was entered.
+Unless there is a distinct user-modifiable date and time for the authorisation, this is the audit trail dateTime for when the authorisation was entered.
 
 ### requester ###
 
