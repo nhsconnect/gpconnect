@@ -24,7 +24,7 @@ This capability enables structured information to be retrieved from the patient�
 
 [![Img](images/overview/Layers_Blue_smaller.png) Access Record Documents](accessrecord_documents.html)
 
-This capability provides the ability to retrieve unstructured documents from a patient’s GP Practice record |
+This capability provides the ability to retrieve unstructured documents from a patient’s GP Practice record
 
 ## Appointments ##
 Manage appointments in order to co-ordinate access to care.
