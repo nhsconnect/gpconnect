@@ -68,17 +68,17 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.5",
+  "version": "1.2.6",
   "name": "GP Connect",
   "status": "active",
-  "date": "2018-02-23",
+  "date": "2019-10-21",
   "publisher": "[Provider Software Vendor Name]",
   "contact": [
     {
       "name": "[Provider Software Vendor Contact Name]"
     }
   ],
-  "description": "This server implements the GP Connect API version 1.2.5",
+  "description": "This server implements the GP Connect API version 1.2.6",
   "copyright": "Copyright NHS Digital 2016-9",
   "kind": "capability",
   "software": {
