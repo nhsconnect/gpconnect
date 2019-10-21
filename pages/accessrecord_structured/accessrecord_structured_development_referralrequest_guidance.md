@@ -109,7 +109,7 @@ The <code>reasonCode</code> has been selected for populating with the main codin
 
 Providers **MUST** therefore return their main READ/SNOMED CT code for the referral in the <code>reasonCode</code>.
 Additionally, providers **MUST** return all other referral classification detail.
-Providers **MAY** populate additional detail to the <code>serviceRequested</code>, <code>specialty</code>. <code>reasonCode</code> and/or <code>note</code> element(s) as appropriate to the nature of its data.
+Providers **MAY** populate additional detail to the <code>serviceRequested</code>, <code>specialty</code>. <code>reasonCode</code> (in addition to the main referral code), <code>supportingInfo</code> and/or <code>note</code> element(s) as appropriate to the nature of its data.
 
 Consumer systems should be aware that, as a consequence of not constraining the allowable codes, some provider response may include amongst their coded entries for referrals some codes which reference the reason for referral or do not relate to a transfer of care such as 
 * Refer for MRI
@@ -121,10 +121,12 @@ Consumer systems should be aware that, as a consequence of not constraining the 
 
 Referrals made via the NHS e-Referral Service (eRS) **MUST** be included by the provider where they are recorded in the GP clinical system.
 The Unique Booking Reference Number (UBRN) **MUST** be included as an <code>identifier</code> if it is captured against the referral record.
+
 Consumers should be aware that referral details may be limited for referrals via eRS or may be more likely to vary from the resulting referral.
 Examples of limited details:
 * <code>recipient</code> is not specified
 * <code>reasonCode</code> is non-specific - for example, 'Referral for further care'
+The examples above also represent general data quality issues and can apply to any referral not just those via eRS.
 
 ## Referrer details
 
