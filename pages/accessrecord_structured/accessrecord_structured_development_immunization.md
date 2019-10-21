@@ -332,6 +332,8 @@ The code <code>EP</code> (Entering Provider) **MUST** be used to designate the p
 
 The code <code>AP</code> (Administering Provider) **MUST** be used to designate the practitioner as having administered the vaccination.
 
+{% include note.html content="Neither of the two codes listed in the extensible value set for immunization practitioner role have been considered appropriate for the practitioner recording the vaccination, so <code>EP</code> has been selected from the underlying valueset for the immunization practitioner roles. Please use the display name "Entering Provider" with this code, not the longer description from the value set" %}
+
 ### practitioner.actor
 
 <table class='resource-attributes'>
