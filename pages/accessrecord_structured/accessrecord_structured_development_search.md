@@ -57,7 +57,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * The consumer system request the last x consultations
      * The provider system returns the last x consultations
 * Where a single filter is supplied by the consumer, it is applied as defined above
-* Where both filters are supplied by the consumer, all the Consultations that match either of the filters are returned
+* The consumer **SHOULD NOT** include both filters, the provider **MUST NOT** return consultations and **MUST** return an error if both filters are included
 * If no filters are supplied by the consumer, all Consultations are returned
 
 ### Immunisations ###
