@@ -362,14 +362,15 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
-| `400`     | invalid |   Endpoint registered in SDS varies from target URL | 
-| `403`     | forbidden |   The sender or receiver's ASID is not authorised for this interaction | 
-| `405`     | not-supported | Bad request for an unsupported HTTP verb such as TRACE |
-| `415`     | not-supported | A consumer application asked for an unsupported media type |
-| `502`     | transient | A downstream server is offline |
-| `504`     | transient| A downstream server timed out |
+| `400`     | invalid |  Target URL varies from endpoint registered in SDS | 
+| `403`     | forbidden |  Sender ASID is not authorised for this interaction | 
+| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID | 
+| `405`     | not-supported | Method not allowed |
+| `415`     | not-supported | Unsupported media type |
+| `502`     | transient | Error communicating to target URL |
+| `504`     | transient| Server at target URL timed out |
 
-#### SSP error example: Target endpoint varies from SDS #####
+#### SSP error example: Target URL varies from endpoint registered in SDS #####
 
 ```json
 {
@@ -383,18 +384,43 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
                 "coding": [
                     {
                         "code": "400", 
-                        "display": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000099411007_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test", 
+                        "display": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test", 
                         "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
                     }
                 ]
             },
-            "diagnostics": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000099411007_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test",
+            "diagnostics": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test",
         }
     ] 
 }
 ```
 
-#### SSP error example: ASID check failed #####
+#### SSP error example: Sender ASID is not authorised for this interaction #####
+
+```json
+{
+    "resourceType": "OperationOutcome",
+    "id": "10960df2-29d1-4e71-823c-c0bb9d723012",
+    "issue": [
+        {
+            "code": "forbidden",
+            "severity": "error",
+            "details": {
+                "coding": [
+                    {
+                        "code": "403",
+                        "display": "ASID_CHECK_FAILED_MESSAGESENDER_100000000001",
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "ASID_CHECK_FAILED_MESSAGESENDER_100000000001"
+        }
+    ]
+}
+```
+
+#### SSP error example: Sender ASID is not authorised to send the interaction to receiver ASID #####
 
 ```json
 {
@@ -408,24 +434,24 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
                 "coding": [
                     {
                         "code": "403",
-                        "display": "FOT_CHECK_FAILED_MESSAGESENDER_200000008611_MESSAGERECEIVER_200000011509",
+                        "display": "FOT_CHECK_FAILED_MESSAGESENDER_200000000001_MESSAGERECEIVER_200000000002",
                         "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
                     }
                 ]
             },
-            "diagnostics": "FOT_CHECK_FAILED_MESSAGESENDER_200000008611_MESSAGERECEIVER_200000011509"
+            "diagnostics": "FOT_CHECK_FAILED_MESSAGESENDER_200000000001_MESSAGERECEIVER_200000000002"
         }
     ]
 }
 ```
 
-#### SSP error example: method not allowed #####
+#### SSP error example: Method not allowed #####
 
 ```json
 TBC
 ```
 
-#### SSP error example: unsupported media type #####
+#### SSP error example: Unsupported media type #####
 
 ```json
 {
@@ -450,7 +476,7 @@ TBC
 }
 ```
 
-#### SSP error example: bad gateway #####
+#### SSP error example: Error communicating to target URL #####
 
 ```json
 {
@@ -475,7 +501,7 @@ TBC
 }
 ```
 
-#### SSP error example: gateway timeout #####
+#### SSP error example: Server at target URL timed out #####
 
 ```json
 TBC
