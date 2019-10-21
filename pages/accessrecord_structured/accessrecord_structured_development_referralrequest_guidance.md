@@ -126,6 +126,7 @@ Consumers should be aware that referral details may be limited for referrals via
 Examples of limited details:
 * <code>recipient</code> is not specified
 * <code>reasonCode</code> is non-specific - for example, 'Referral for further care'
+
 The examples above also represent general data quality issues and can apply to any referral not just those via eRS.
 
 ## Referrer details
