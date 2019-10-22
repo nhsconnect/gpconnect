@@ -358,7 +358,7 @@ For example, if an unexpected internal exception is thrown by either an Operatio
 
 ### Spine Secure Proxy (SSP) errors ###
 
-When the Spine Secure Proxy cannot or will not process a request then one of the following errors **SHALL** be used to return debug details:
+When the Spine Secure Proxy cannot or will not process a request then one of the following errors are used to return debug details:
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
@@ -368,7 +368,6 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 | `405`     | not-supported | Method not allowed |
 | `415`     | not-supported | Unsupported media type |
 | `502`     | transient | Error communicating to target URL |
-| `504`     | transient| Server at target URL timed out |
 
 #### SSP error example: Target URL varies from endpoint registered in SDS #####
 
@@ -448,7 +447,24 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 #### SSP error example: Method not allowed #####
 
 ```json
-TBC
+{
+  "resourceType": "OperationOutcome",
+  "issue": [
+    {
+      "severity": "fatal",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/StructureDefinition/spine-operationoutcome-1",
+            "display": "405: Method Not Allowed",
+            "code": "405"
+          }
+        ]
+      },
+      "code": "forbidden"
+    }
+  ]
+}
 ```
 
 #### SSP error example: Unsupported media type #####
@@ -499,10 +515,4 @@ TBC
     }
   ]
 }
-```
-
-#### SSP error example: Server at target URL timed out #####
-
-```json
-TBC
 ```
