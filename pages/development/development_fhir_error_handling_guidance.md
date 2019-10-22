@@ -427,8 +427,8 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
     "id": "43A8BB0D-195E-4CF4-86F9-E8514F6EB585",
     "issue": [
         {
-            "severity": "error",
             "code": "forbidden",
+            "severity": "error",
             "details": {
                 "coding": [
                     {
@@ -451,17 +451,17 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
   "resourceType": "OperationOutcome",
   "issue": [
     {
+      "code": "forbidden",
       "severity": "fatal",
       "details": {
         "coding": [
           {
+            "code": "405",
             "system": "https://fhir.nhs.uk/StructureDefinition/spine-operationoutcome-1",
-            "display": "405: Method Not Allowed",
-            "code": "405"
+            "display": "405: Method Not Allowed"
           }
         ]
-      },
-      "code": "forbidden"
+      }
     }
   ]
 }
@@ -475,9 +475,9 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
   "id": "09a01679-2564-0fb4-5129-aecc81ea2706",
   "issue": [
     {
-      "details": {
       "code": "not-supported",
       "severity": "error",
+      "details": {
         "coding": [
           {
             "code": "415",
@@ -500,8 +500,8 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
   "id": "78D536C0-44D6-11E9-BFCD-17C1B88243CD",
   "issue": [
     {
-      "severity": "error",
       "code": "transient",
+      "severity": "error",
       "details": {
         "coding": [
           {
