@@ -83,9 +83,8 @@ Provider systems SHALL release a new major version of their GP Connect API along
 
 Provider systems SHOULD release a new minor or patch version, replacing the previous the previous minor or patch version.
 
-Provider systems SHALL be deployed with the provider APIs enabled by default.
+### Enablement ###
 
-Provider systems MAY provide a mechanism for a data controller at an organisation to choose to globally disable/enable the provider APIs (that is, turn on/off the overall GP Connect technical capability).
+Provider systems SHALL provide a mechanism for a data controller at a practice to choose to globally disable/enable the GP Connect provider APIs (that is, turn on/off the overall GP Connect technical capability at the practice), and this SHALL be deployed as disabled by default.
 
-Provider systems MAY allow each assured capability to be globally disabled/enabled independently of each other (Access Record HTML vs. Appointments vs Access Record Structured).
-	
+In addition, provider systems SHALL allow each assured GP Connect capability to be disabled/enabled independently of each other (Access Record HTML / Appointment Management / Access Record Structured / Access Document), and each capability SHALL be deployed as disabled by default.
