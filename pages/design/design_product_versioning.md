@@ -71,7 +71,7 @@ When a **pre-release label** is appended to the version number with a hyphen it 
 | *(no label)* 		| Live release API |
 | `discontinued`    | API which have been discontinued and should not be used for new development |
 
-{% include important.html content="The pre-release labels defined above apply to GP Connect API specification versions 0.7.2 and newer, and GP Connect API specification versions 1.2.4 and newer. For older specifications, please refer to the pre-release label definition on the specification versioning page in those specifications." %}
+{% include important.html content="The pre-release labels definitions above apply to GP Connect API specification versions 0.7.2 and newer, and GP Connect API specification versions 1.2.4 and newer. For older specifications, please refer to the pre-release label definitions on the specification versioning page in those specifications." %}
 
 ## Associated technical artefacts ##
 
