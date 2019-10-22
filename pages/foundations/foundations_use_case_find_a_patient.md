@@ -63,12 +63,15 @@ Provider systems:
 
 - SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
 
-For example, the:
+  For example, the:
 
-- business identifier `[system]` is not recognised/supported by the Provider system
-- business identifier fails structural validation checks (that is, not enough digits to be a valid NHS number)
+  - business identifier `[system]` is not recognised/supported by the Provider system
+  - business identifier fails structural validation checks (that is, not enough digits to be a valid NHS number)
+
+- SHALL omit the Patient resource from the Bundle (and return an empty Bundle), where the patient requested is flagged as PDS sensitive.  Please see [Information governance](foundations_ig.html#pds-sensitive-patients) for more information.
 
 {% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
+
 
 ### Request response ###
 

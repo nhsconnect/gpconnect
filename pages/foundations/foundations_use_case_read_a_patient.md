@@ -59,13 +59,17 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems:
 
-For example, the:
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
-- logical identifier of the resource is not valid/can't be found on the server 
+  For example, the:
 
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+  - logical identifier of the resource is not valid/can't be found on the server 
+
+  Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+- SHALL return a PATIENT_NOT_FOUND error where a request for a PDS sensitive flagged patient is received.  Please see [Information governance](foundations_ig.html#pds-sensitive-patients) for more information.
 
 ### Request response ###
 

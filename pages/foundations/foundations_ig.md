@@ -12,8 +12,12 @@ summary: "Information Governance controls applicable to the Foundations capabili
 
 When Foundations APIs are used to support the Appointment Management capability, the above flag SHALL NOT be applied by provider systems.
 
-## PDS S-flagged patients ##
+## PDS sensitive patients ##
 
-Consumer systems SHALL NOT send GP Connect requests for S-flagged patients.
+Consumer systems SHALL NOT send GP Connect requests for PDS sensitive (S-flagged) patients.
 
-In cases where a request for an S-flagged patient is sent, provider systems SHALL return a 'Patient Not Found' error.
+Provider systems SHALL NOT return patient information in cases where a request for a PDS sensitive patient is sent to the Foundations API endpoint.  For specific handling for each Foundation API endpoint, please follow the links below:
+
+- [Find a patient](foundations_use_case_find_a_patient.html#error-handling)
+- [Read a patient](foundations_use_case_read_a_patient.html#error-handling) 
+- [Register a patient](foundations_use_case_register_a_patient.html#error-handling)
