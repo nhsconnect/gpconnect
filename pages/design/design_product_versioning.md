@@ -11,7 +11,7 @@ summary: An overview of how the specification (and other technical assets) are v
 
 ## Introduction ##
 
-**GP Connect specification releases are assigned a single version number from 23 February 2018 onwards.**
+**GP Connect API specification releases are assigned a single version number from 23 February 2018 onwards.**
 
 The automated test suite, demonstrator and other artefacts released in line with the specification are also assigned the same single version number.
 
@@ -61,23 +61,21 @@ The version number may not be incremented when *stylistic changes* are made for 
 
 ### Pre-release (draft) labels ###
 
-When a **pre-release label** is appended to the version number with a hyphen it indicates the specification is still in draft, or has been discontinued.
+When a **pre-release label** is appended to the version number with a hyphen it indicates the maturity of the GP Connect API defined in that specification.
 
-{% include important.html content="The pre-release label is used to indicate that a specification is in draft (or has been discontinued), it **does not** indicate that a providing system has made a pre-release of their GP Connect software." %}
+| Pre-release label | Description            | 
+|-------------------|--------------------|
+| `alpha`           | Initial test API, likely to change substantially |
+| `beta`            | API that is still under active development and subject to change |
+| `rc` 			    | API that is largely complete and unlikely to change substantially, but still need further testing by a wider group of implementers before becoming live |
+| *(no label)* 		| Live release API |
+| `discontinued`    | API which have been discontinued and should not be used for new development |
 
-The pre-release labels used are as follows:
-
-| Pre-release Label | Example            | Description |
-|-------------------|--------------------|-------------|
-| `alpha`           | 1.1.0-alpha        | The version of the specification is being authored and is subject to frequent and or major changes. |
-| `beta`            | 1.1.0-beta         | The version of the specification is being internally reviewed and is subject to change. |
-| `rc`              | 1.1.0-rc           | The version of the specification is being reviewed by external parties including providers and consumers and is subject to corrections and minor change. |
-| *(no label)*      | 1.1.0              | The version of the specification is now fixed (immutable).  Further changes (excluding *stylistic change*) require a new version number. |
-| `discontinued`    | 1.1.0-discontinued | The version of the specification is no longer relevant and has been discontinued. |
+{% include important.html content="The pre-release labels defined above apply to GP Connect API specification versions 0.7.2 and newer, and GP Connect API specification versions 1.2.4 and newer. For older specifications, please refer to the pre-release label definition on the specification versioning page in those specifications." %}
 
 ## Associated technical artefacts ##
 
-The following GP Connect artefacts are released as part of or alongside the specification, taking the same version number as the specification:
+The following GP Connect API artefacts are released as part of or alongside the specification, taking the same version number as the specification:
 
 - [System demonstrator](system_demonstrator.html)
 - [Interactive API documentation](system_swagger.html)
@@ -85,13 +83,13 @@ The following GP Connect artefacts are released as part of or alongside the spec
 - SDS interaction IDs ([see below](#sds-interaction-ids))
 - Service Root URL format ([see below](#service-root-url-format))
 
-The following GP Connect artefacts are released alongside the specification, but use their own version number scheme:
+The following GP Connect API artefacts are released alongside the specification, but use their own version number scheme:
 
 - [FHIR profiles](development_fhir_resource_guidance.html)
 
 ### SDS interaction IDs ###
 
-[SDS interaction IDs](integration_interaction_ids.html) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect versions 0.x.x where there is no suffix.
+[SDS interaction IDs](integration_interaction_ids.html) change only when a new major version of the specification is released and are suffixed with the major version number, except for GP Connect API versions 0.x.x where there is no suffix.
 
 ### Service Root URL format ###
 
