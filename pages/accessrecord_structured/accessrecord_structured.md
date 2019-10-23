@@ -25,7 +25,7 @@ The Access Record Structured capability will expose data for a number of clinica
 8. Referrals (Outbound)
 
 {% include note.html content="The Access Document capability is available in its own GP Connect specification version. 
-Access Document compliments Access Record Structure by retrieval of a documents list or individual documents.
+Access Document complements Access Record Structure by retrieval of a documents list or individual documents.
 Please consult the [specification versions page](https://developer.nhs.uk/gp-connect-specification-versions/) for more details." %}
 
 {% include roadmap.html content="Subsequent releases are to be scoped" %}
