@@ -6,7 +6,7 @@
         <g id="guide" transform="translate(-1.000000, -12.000000)">
             <path d="M1,12.53 L106.555642,12.53 L133.098765,38.975123 L106.555642,65.42 L1,65.42 L27.5432716,38.975123 L1,12.53 Z" id="Fill-3" fill="#4F81BD"></path>
             <text id="Engage" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="0.0104529625" fill="#FFFFFF">
-                <tspan x="43.0178448" y="42.7087812">Getting started</tspan>
+                <tspan x="43.0178448" y="42.7087812">Get started</tspan>
             </text>
             <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
                 <tspan x="11.1990864" y="96.1018382">•</tspan>
@@ -89,7 +89,7 @@
             </text>
             <path d="M223.222222,12.53 L328.777901,12.53 L355.320988,38.975123 L328.777901,65.42 L223.222222,65.42 L249.765432,38.975123 L223.222222,12.53 Z" id="Fill-7" fill="#4F81BD"></path>
             <text id="Design-&amp;-" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="0.0243031345" fill="#FFFFFF">
-                <tspan x="267.231831" y="35">Design &amp;</tspan>
+                <tspan x="267.231831" y="35">Develop</tspan>
                 <tspan x="283.336543" y="52.4199982">	</tspan>
             </text>
             <text id="Build-" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="0.0243031345" fill="#FFFFFF">
