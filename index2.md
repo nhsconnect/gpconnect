@@ -29,9 +29,9 @@ The APIs are grouped into sets, known as 'capabilities', which enable specific b
 
 [Find out more about the capabilities](/overview_priority_capabilities.html)
 
-# Using this guide #
+# Using this specification #
 
-This guide has been created to support the adoption of GP Connect APIs and FHIR&reg; resources. As such the site is structured around GP Connect stakeholders including API users, developers and architects.  
+This specification has been created to support the adoption of GP Connect APIs and FHIR&reg; resources. As such, the site is structured around GP Connect stakeholders including API users, developers and architects.  
 
 {% include custom/api_overview.svg %}
 
