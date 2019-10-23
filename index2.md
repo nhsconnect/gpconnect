@@ -18,6 +18,8 @@ summary: An introduction to the GP Connect FHIR® APIs
 * import or download medication and allergies information from this record 
 *	manage a patient's GP appointments
 
+## Capabilities ##
+
 The APIs are grouped into sets, known as 'capabilities', which enable specific business functionality. GP Connect has worked with GP clinical system suppliers to deliver the following capabilities:
 
 *	Access Record HTML – enables clinicians to view a patient’s medical record
@@ -26,7 +28,7 @@ The APIs are grouped into sets, known as 'capabilities', which enable specific b
 
 [Find out more about the capabilities](/overview_priority_capabilities.html)
 
-# Using this specification #
+## Using this specification ##
 
 This specification has been created to support the adoption of GP Connect APIs and FHIR&reg; resources. As such, the site is structured around GP Connect stakeholders including API users, developers and architects.  
 
