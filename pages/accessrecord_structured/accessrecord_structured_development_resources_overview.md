@@ -146,8 +146,8 @@ The cross-care setting identifier and how it will work and be used is currently 
 * [ReferralRequest](accessrecord_structured_development_referralrequest.html)
 * DocumentReference
 
-{% include note.html content="DocumentReference is part of the Access Record Documents capability which is available as its own GP Connect specification version. 
-Access Record Documents complements Access Record Structure by retrieval of a documents list or individual documents.
+{% include note.html content="DocumentReference is part of the Access Document capability which is available as its own GP Connect specification version. 
+Access Document complements Access Record Structure by retrieval of a documents list or individual documents.
 Please consult the [specification versions page](https://developer.nhs.uk/gp-connect-specification-versions/) for more details." %}
 
 ### Administrative ###
