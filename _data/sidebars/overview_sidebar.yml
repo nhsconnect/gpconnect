@@ -10,6 +10,10 @@ entries:
       url: /index.html
       output: web, pdf
       type: homepage
+    - title: Introduction 2
+      url: /index2.html
+      output: web, pdf
+      type: homepage
     - title: Sitemap
       url: /sitemap.html
       output: web, pdf
