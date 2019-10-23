@@ -90,7 +90,7 @@
             <path d="M223.222222,12.53 L328.777901,12.53 L355.320988,38.975123 L328.777901,65.42 L223.222222,65.42 L249.765432,38.975123 L223.222222,12.53 Z" id="Fill-7" fill="#4F81BD"></path>
             <text id="Design-&amp;-" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="0.0243031345" fill="#FFFFFF">
                 <tspan x="267.231831" y="35">Develop</tspan>
-                <tspan x="283.336543" y="52.4199982">	</tspan>
+                <tspan x="283.336543" y="42.7087812">	</tspan>
             </text>
             <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
                 <tspan x="238.657531" y="97.1018382">•</tspan>
@@ -168,48 +168,42 @@
             <text id="Example-data" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.00905923452" fill="#000000">
                 <tspan x="356.997778" y="204.111875">Example data</tspan>
             </text>
-            <path d="M557.790123,12.53 L663.345802,12.53 L689.888889,38.975123 L663.345802,65.42 L557.790123,65.42 L584.333457,38.975123 L557.790123,12.53 Z" id="Fill-13" fill="#4F81BD"></path>
-            <text id="Deploy-" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="0.0243031345" fill="#FFFFFF">
-                <tspan x="600.34716" y="35">Deploy	</tspan>
-            </text>
-            <text id="(Pilot)" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="-0.0150696868" fill="#FFFFFF">
-                <tspan x="604.361108" y="51">(Pilot)</tspan>
+            <path d="M446.679012,12.53 L552.234691,12.53 L578.777778,38.975123 L552.234691,65.42 L446.679012,65.42 L473.222346,38.975123 L446.679012,12.53 Z" id="Fill-11" fill="#4F81BD"></path>
+            <text id="Assure" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="-0.0066202092" fill="#FFFFFF">
+                <tspan x="490.42932" y="41.7087812">Deploy</tspan>
             </text>
             <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-                <tspan x="569.344938" y="94.1018382">•</tspan>
+                <tspan x="459.115926" y="95.1018382">•</tspan>
             </text>
-            <text id="API-harness" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0057375147" fill="#000000">
-                <tspan x="580.456049" y="94.1018382">API harness</tspan>
+            <text id="Automated-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0057375147" fill="#000000">
+                <tspan x="470.227037" y="95.1018382">Automated	</tspan>
             </text>
-            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-                <tspan x="569.344938" y="116.241838">•</tspan>
-            </text>
-            <text id="Warranted-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0248374008" fill="#000000">
-                <tspan x="580.456049" y="116.241838">Warranted	</tspan>
-            </text>
-            <text id="environment" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.00150987238" fill="#000000">
-                <tspan x="580.456049" y="134.691838">environment</tspan>
+            <text id="tests" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.0166840889" fill="#000000">
+                <tspan x="470.227037" y="113.551838">tests</tspan>
             </text>
             <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-                <tspan x="569.344938" y="156.831838">•</tspan>
+                <tspan x="459.115926" y="135.691838">•</tspan>
             </text>
-            <text id="IG-/-IS" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.0254413486" fill="#000000">
-                <tspan x="580.456049" y="156.831838">IG / IS</tspan>
-            </text>
-            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-                <tspan x="569.344938" y="178.971838">•</tspan>
-            </text>
-            <text id="Spine-comms-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0229500588" fill="#000000">
-                <tspan x="580.456049" y="178.971838">Spine comms	</tspan>
+            <text id="Test-Reports" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0440882705" fill="#000000">
+                <tspan x="470.227037" y="135.691838">Test Reports</tspan>
             </text>
             <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-                <tspan x="569.344938" y="201.111875">•</tspan>
+                <tspan x="459.115926" y="157.831838">•</tspan>
             </text>
-            <text id="Record" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.0214401875" fill="#000000">
-                <tspan x="580.456049" y="201.111875">Record</tspan>
+            <text id="Test-Evidence" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0440882705" fill="#000000">
+                <tspan x="470.227037" y="157.831838">Test Evidence</tspan>
             </text>
-            <text id="locator" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0110975606" fill="#000000">
-                <tspan x="580.456049" y="219.561875">locator</tspan>
+            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="459.115926" y="179.971838">•</tspan>
+            </text>
+            <text id="Conformance-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0249128919" fill="#000000">
+                <tspan x="470.227037" y="179.971838">Conformance	</tspan>
+            </text>
+            <text id="reports" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.006114983" fill="#000000">
+                <tspan x="470.227037" y="198.421875">reports</tspan>
+            </text>
+            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="459.115926" y="220.561875">•</tspan>
             </text>
             <a xlink:href="overview_engage.html" target="_top">
                 <rect id="l-engage" fill-opacity="0" fill="#FFFFFF" x="0" y="0" width="105.824203" height="269.51751" class="s_link">
@@ -231,7 +225,7 @@
                     <text x="10" y="20" width="100%" height="100%" style="text-anchor: middle"> </text>
                 </rect>
             </a>
-            <a xlink:href="../CareConnectAPI/deploy.html" target="_top">
+            <a xlink:href="overview_deploy.html" target="_top">
                 <rect id="l-deploy" fill-opacity="0" fill="#FFFFFF" x="560.543948" y="0" width="214.824203" height="269.51751" class="s_link">
                     <text x="10" y="20" width="100%" height="100%" style="text-anchor: middle"> </text>
                 </rect>
