@@ -144,3 +144,7 @@ GP Connect APIs would search for documents and retrieve documents only from the 
 
 ## Document Status ##
 Document Status would always have default value of 'current' as only the latest version of the document is retrievable from a GP practice.
+
+## Unreviewed Document ##
+GPConnect APIs allow search and retrieval of documents that have not been reviewed and filed. It would enable the health and care workers to have access to the required documents at the right time and take informed decisions with the patient for their health and  care.
+It has been considered that there is the possibility that some of the unreviewed documents might be deemed and subsequently marked confidential at clinical review, but at this stage the clinical safety and continuity concerns outweigh the small risk of disclosure of data that may merit consideration of confidentiality policy application. 
