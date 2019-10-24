@@ -1,5 +1,5 @@
 ---
-title: Introduction - what is GP Connect?
+title: Introduction
 keywords: homepage
 tags: [introduction]
 sidebar: home_sidebar
@@ -17,6 +17,8 @@ summary: An introduction to the GP Connect FHIR® APIs
 * view a patient’s GP practice record
 * import or download medication and allergies information from this record 
 *	manage a patient's GP appointments
+
+This provides better, safer, more convenient care for patients and save time for clinicians. It also helps meet targets under [NHS England’s improving access to general practice programme](https://www.england.nhs.uk/gp/gpfv/redesign/improving-access/).
 
 ## Capabilities ##
 
@@ -47,12 +49,12 @@ We’ve developed a process called ‘First of Type’ to support this developme
 ## Community engagement ##
 GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
 
+## Timescales, benefits and more
+The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/article/1275/GP-Connect){:target="_blank"}.
+
 ## Provide feedback ##
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
 {% include twitterfollow.html %}
 
 {% include gitterbadge.html %}
-
-## Next step ##
-[Getting started](/overview_engage.html)
