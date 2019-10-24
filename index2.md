@@ -20,8 +20,7 @@ The GP Connect programme is supporting the development of products which will en
 * import or download medication and allergies information
 *	manage a patient's GP appointments
 
-GP Connect is developing standardised {% include tooltip.html type="API" %} specifications to be used by any system for the sharing of data.
-
+<p>GP Connect is developing standardised {% include tooltip.html type="API" %} specifications to be used by any system for the sharing of data.</p>
 
 ## Capabilities ##
 
