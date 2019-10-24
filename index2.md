@@ -12,7 +12,9 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-<p>GP Connect is developing standardised {% include tooltip.html type="API" %} specifications to support the development of products that allow GP practices and authorised staff to share clinical information and data between IT systems. The APIs are grouped into separate [capabilities](/overview_priority_capabilities.html), enabling clinicians in different care settings to:</p>  
+<p>GP Connect is developing standardised {% include tooltip.html type="API" %} specifications to support the development of products that allow GP practices and authorised staff to share clinical information and data between IT systems.</p>
+
+The APIs are grouped into separate [capabilities](/overview_priority_capabilities.html), enabling clinicians in different care settings to:</p>  
 
 * view a patient’s GP practice record - [Access Record HTML](/accessrecord.html)
 *	manage a patient's GP appointments - [Appointment Management](/appointments.html)
@@ -20,11 +22,9 @@ summary: An introduction to the GP Connect FHIR® APIs
 
 ## Using this specification ##
 
-This specification has been created to support the adoption of GP Connect APIs and FHIR&reg; resources. As such, the site is structured around GP Connect stakeholders including API users, developers and architects.  
+This specification has been created to support the adoption of GP Connect APIs and FHIR&reg; resources. Follow the steps below to complete your development journey using GP Connect APIs:
 
 {% include custom/api_overview.svg %}
-
-The above steps outline the complete development journey for developing products using GP Connect APIs.
 
 ## Pilot using the GP Connect APIs ##
 The GP Connect programme is now supporting the development of systems that connect with the APIs to use data from patient records and appointment schedulers for patient care by integrating it or importing it into local clinical systems.
