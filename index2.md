@@ -12,13 +12,16 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-<p>GP Connect is developing standardised {% include tooltip.html type="API" %} specifications to be used by any system for the sharing of data, so that clinicians in different care settings can:</p>
+GP Connect is a service that allows GP practices and authorised clinical staff to share and view GP practice clinical information and data between IT systems, quickly and efficiently.
+
+The GP Connect programme is supporting the development of products which will enable different systems to communicate so that clinicians in different care settings can:
 
 * view a patient’s GP practice record
-* import or download medication and allergies information from this record 
+* import or download medication and allergies information
 *	manage a patient's GP appointments
 
-This provides better, safer, more convenient care for patients and save time for clinicians. It also helps meet targets under [NHS England’s improving access to general practice programme](https://www.england.nhs.uk/gp/gpfv/redesign/improving-access/).
+GP Connect is developing standardised {% include tooltip.html type="API" %} specifications to be used by any system for the sharing of data.
+
 
 ## Capabilities ##
 
