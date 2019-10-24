@@ -10,7 +10,7 @@ summary: "FHIR&reg; resource ReferralRequest"
 ## What is an outbound referral?
 
 This GP Connect profile represents a list of outbound referral events as recorded in the GP clinical system's referral feature or categorised area.
-The referral record is of the event of a referral being made or an intention to refer the patient. 
+The referral record is of the event of a referral being made or an intention to refer the patient (if the referral record has been recorded but the actual referral has yet to be sent). 
 It does not reflect the acceptance of the referral by the recipient or any onward progress of the referral.
 
 A referral is typically defined as a request for transfer of care or request to provide assessment, treatment or clinical advice on the care of a patient. 
@@ -23,8 +23,7 @@ This profile may reference some clinical information, for example via a linked p
 ## Referral classification
 
 Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification structure to the referral details, separating the reason for referral from the service referred to with each having detailed sub-classifications.
-GP clinical systems have taken a variety of approaches to the classification of referrals.
-The FHIR <code>ReferralRequest</code> has multiple elements to support the classification of referrals.
+GP clinical systems have taken a variety of approaches to the classification of referrals and the FHIR <code>ReferralRequest</code> has multiple elements to support the classification of referrals.
 
 Analysis was undertaken as to whether GP clinical system data structures and recorded data, PRSB definitions and FHIR resources could be aligned and supported by SNOMED CT terminology to achieve a reliable and meaningful classification structure.
 
@@ -41,15 +40,13 @@ The <code>ReferralRequest</code> resource has several elements covering the clas
 
 <code>serviceRequested</code>, <code>specialty</code>, <code>reasonCode</code> and <code>reasonReference</code> are fairly distinct and may support the separation of the service referred to (serviceRequested and specialty) from reason for referral (reasonCode and reasonReference). 
 The FHIR elements may also support the sub-classification of service referred to and reason for referral.
-However, the full extent to which the sub-classification could be achieved was not fully investigated for the reason described below.
-
-The scope of the main referral code across GP clinical systems spans these <code>ReferralRequest</code> elements - that is, there is not a strong alignment to any single element.
+However, the full extent to which the sub-classification could be achieved was not fully investigated for the reason described in the following sections.
 
 ### GP clinical systems
 
 There is limited commonality across GP clinical systems as to the meta data associated with their referral classification.
 
-All GP clinical systems support at least one READ/SNOMED CT coded field as the main code for the referral. 
+All GP clinical systems have a READ/SNOMED CT coded field as the main code for the referral. 
 This may be constrained to a referral procedure code hierarchy (descendants of <code>3457005 | Patient referral (procedure) |</code>) or open to a much wide selection of codes which can extend beyond the recognised definition of a referral.
 GP clinical systems that constrain to the referral procedure codes (for a new referral entry) may contain other codes due to GP2GP transfers or legacy data.
 
@@ -65,13 +62,12 @@ Analysis of a large referral record set across two GP systems providers identifi
 * Advice and guidance request sent
 * Fast track referral for suspected skin cancer
 * 2 week rule referral - upper GI
-* Chest pain
 
-The main referral code can therefore be either a reason for referral or referred to service.
+The main referral code can therefore be either a reason for referral or referred to service and thus does not align distinctly to any of the FHIR elements.
 
 The GP system may have additional non-READ/SNOMED CT coded classification fields with fixed or locally configured valuesets.
 These are often optional fields. 
-These fields may have valuesets which span reason for referral and referred to service.
+These fields may have valuesets which align to or span reason for referral and referred to service.
 
 ### Referrals and SNOMED CT
 
@@ -111,11 +107,11 @@ Providers **MUST** therefore return their main READ/SNOMED CT code for the refer
 Additionally, providers **MUST** return all other referral classification detail.
 Providers **MAY** populate additional detail to the <code>serviceRequested</code>, <code>specialty</code>. <code>reasonCode</code> (in addition to the main referral code), <code>supportingInfo</code> and/or <code>note</code> element(s) as appropriate to the nature of its data.
 
-Consumer systems should be aware that, as a consequence of not constraining the allowable codes, some provider response may include amongst their coded entries for referrals some codes which reference the reason for referral or do not relate to a transfer of care such as 
-* Refer for MRI
+Consumer systems should be aware that, as a consequence of not constraining the allowable codes, some provider responses may include amongst their coded entries for referrals some codes which may be a reason for referral or do not relate to a transfer of care such as 
+* Abdominal pain
+* Chest pain
 * Full blood count (FBC)
 * Thyroid Function Test
-* Abdominal pain
 
 ## Referrals via the NHS e-Referral Service
 
@@ -139,7 +135,7 @@ If the organisation referenced from the bundled <code>practitioner</code> resour
 
 ## Referral status
 
-GP clinical systems support recording the status for a referral or derive a status according the actions which have been undertaken for the referral.
+GP clinical systems support recording the status for a referral or derive a status according to the actions which have been taken for the referral.
 However, the statuses are not standardised across GP clinical systems. 
 It is also understood that the GP practice may only be aware of a status change retrospectively and that the status of referrals are not routinely maintained in many GP practices.
 
@@ -154,7 +150,7 @@ Where details of the progress or outcome of the referral are captured in the GP 
 This is the priority given by the GP practice for the referral.
 This may differ from the priority given to the referral by the recipient.
 
-The <code>priority</code> is a restricted valueset and has been mapped to the eRS priority codes. 
+The <code>priority</code> is a restricted valueset mapped to the eRS priority codes. 
 The source GP clinical system may support priority values other than the eRS priority codes.
 If the priority in the source system is not one of the eRS priority codes and cannot be mapped to an eRS priority code, then a <code>priority</code> **MUST NOT** be included and the source system priority **MUST** be included as a key value pair in the <code>note</code> element.
 
@@ -163,7 +159,7 @@ If the priority in the source system is not one of the eRS priority codes and ca
 All GP clinical systems have a user selection date field against a referral.
 Providers **MUST** populate the <code>authoredOn</code> element with the user entered referral date.
 
-Consumers should be aware that the date may have slightly different meaning according to the GP clinical system and local practice for recording referrals.
+Consumers should be aware that the date may have slightly different meaning according to the GP clinical system and local practice for recording referrals. 
 
 ## Using the <code>List</code> resource for referral queries
 
