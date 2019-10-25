@@ -16,7 +16,7 @@ Consumer APIs need to go through a set of testing and assurance processes to ens
 - see which [environments](testing_environments.html) are available to support the technical accreditation and solution assurance process
 - read about the [consumer testing](testing_api_consumer_testing.html) process
 
-## Clinical system suppliers ## 
+## Provider system suppliers ## 
 
 - discover the [test resources](testing_deliverables.html) that support the holistic testing of provider APIs
 - see which [environments](testing_environments.html) are available to support the technical accreditation and solution assurance process
