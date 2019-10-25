@@ -9,12 +9,9 @@ summary: A brief introduction to the priority GP Connect capabilities
 ---
 
 
-GP Connect API is currently delivering the following interoperability capabilities:
+GP Connect is currently delivering the following interoperability capabilities:
 
 ## Access Record ##
-Access a patient's care record for the purpose of direct care.
-
-<br>
 
 [![Img](images/overview/Folder_1_Blue_smaller.png) Access Record HTML](accessrecord.html) 
 
@@ -35,11 +32,13 @@ This capability provides the ability to retrieve unstructured documents from a p
 <br>
 
 ## Appointments ##
-Manage appointments in order to co-ordinate access to care.
-
-<br>
-
 
 [![Img](images/overview/Calendar_Blue_smaller.png) Appointment Management](appointments.html) 
 
 This capability enables the management of GP practice appointments between different systems
+
+## Send Document ##
+
+[![Img](images/overview/Letter_Blue_smaller.png) Send Document](send_document.html) 
+
+This capability provides a simple and standardised means of sending a document to a GP Practice system
