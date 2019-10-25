@@ -166,6 +166,18 @@ The `Practitioner` profile representing the person responsible for recording the
 
 The value of the observation. This may be in any of the forms defined in the profile.
 
+### interpretation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
+
 ### comment ###
 
 <table class='resource-attributes'>
@@ -191,6 +203,8 @@ It **MUST** also include any text relating to the observation.
 </table>
 
 The reference range provides a guide for interpretation of the results.
+
+Where a reference range contains a less than '<' or greater than '>' operator it should be written to the referenceRange.text element as these operators are not supported in this context.
 
 ### related ###
 
@@ -244,14 +258,6 @@ The following elements **MUST NOT** be populated:
 </table>
 
 <h3 style="color:#ED1951;"> dataAbsentReason </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-<h3 style="color:#ED1951;"> interpretation </h3>
 
 <table class='resource-attributes'>
   <tr>
