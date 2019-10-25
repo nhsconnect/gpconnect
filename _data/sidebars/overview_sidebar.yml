@@ -152,9 +152,12 @@ entries:
     - title: Access Record Structured
       url: /accessrecord_structured.html
       output: web
-    - title: Access Document
+    - title: <b class="capability-not-available">Access Document</b>
       url: /accessrecord_documents.html
       output: web
+    - title: <b class="capability-not-available">Send Document</b>
+      url: /send_document.html
+      output:web
     - title: <b class="capability-not-available">Access Record HTML</b>
       url: /accessrecord.html
       output: web
