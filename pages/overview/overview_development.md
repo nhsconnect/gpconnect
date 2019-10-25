@@ -26,7 +26,7 @@ summary: Start building applications that use GP Connect to consume or expose da
   - additional HTTP headers and proxy URL - this gives you access to the [Spine Security Proxy](integration_spine_secure_proxy.html), the secure 'front door' of GP Connect APIs
   - configure HTTPS and TLS/MA - [security guidance](development_api_security_guidance.html) allows you to secure and mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time) 
   
-## Clinical system suppliers ##
+## Provider system suppliers ##
 
  - read our GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
  - read about [clinical safety requirements](designprinciples_clinical_safety_principles.html) for clinical system suppliers
