@@ -314,6 +314,9 @@ entries:
         - title: Use case
           url: /tag_usecase.html
           output: web
+        - title: Send Document
+          url: /tag_senddocument.html
+          output: web
 
     - title: Run website locally
       url: /support_run_website_locally.html
