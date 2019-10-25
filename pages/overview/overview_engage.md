@@ -49,7 +49,7 @@ summary: "Getting started with GP Connect"
                      <h4>Provider system supplier</h4>
                          <p align="left">You're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP.</p>
                      <p align="left">You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.</p>
-                     <a href="overview_clinical_system_supplier.html" class="btn btn-primary">More...</a>
+                     <a href="overview_provider_system_supplier.html" class="btn btn-primary">More...</a>
                  </div>
              </div>
          </div>
