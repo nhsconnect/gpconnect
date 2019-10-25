@@ -1,7 +1,7 @@
 ---
 title: Capabilities
 keywords: usecases
-tags: [use_case,htmlgetcarerecord,getcarerecord,appointments]
+tags: [use_case,htmlgetcarerecord,getcarerecord,appointments,senddocument]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_priority_capabilities.html
