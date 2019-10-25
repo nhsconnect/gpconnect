@@ -5,44 +5,32 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="guide" transform="translate(-1.000000, -12.000000)">
             <path d="M1,12.53 L106.555642,12.53 L133.098765,38.975123 L106.555642,65.42 L1,65.42 L27.5432716,38.975123 L1,12.53 Z" id="Fill-3" fill="#4F81BD"></path>
-            <text id="Engage" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="0.0104529625" fill="#FFFFFF">
+            <text id="Engage" font-family="Arial, Verdana" font-size="15" font-weight="normal" letter-spacing="0.0104529625" fill="#1273C2">
                 <tspan x="43.0178448" y="42.7087812">Get started</tspan>
             </text>
-            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
+            <text id="•" font-family="Arial, Verdana" font-size="13" font-weight="normal" fill="#000000">
                 <tspan x="11.1990864" y="96.1018382">•</tspan>
             </text>
-            <text id="Clinical-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0249128919" fill="#000000">
-                <tspan x="22.3101975" y="96.1018382">Clinical</tspan>
+            <text id="Clinical-" font-family="Arial, Verdana" font-size="13" font-weight="normal" letter-spacing="-0.0249128919" fill="#000000">
+                <tspan x="22.3101975" y="96.1018382">Consumer</tspan>
             </text>
-            <text id="scenarios" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0255923346" fill="#000000">
-                <tspan x="22.3101975" y="114.551838">scenarios</tspan>
+            <text id="scenarios" font-family="Arial, Verdana" font-size="13" font-weight="normal" letter-spacing="-0.0255923346" fill="#000000">
+                <tspan x="22.3101975" y="114.551838">suppliers</tspan>
             </text>
-            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
+            <text id="•" font-family="Arial, Verdana" font-size="13" font-weight="normal" fill="#000000">
                 <tspan x="11.1990864" y="136.691838">•</tspan>
             </text>
-            <text id="User-stories" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.000679442543" fill="#000000">
-                <tspan x="22.3101975" y="136.691838">User stories</tspan>
+            <text id="User-stories" font-family="Arial, Verdana" font-size="13" font-weight="normal" letter-spacing="0.000679442543" fill="#000000">
+                <tspan x="22.3101975" y="136.691838">Providers</tspan>
             </text>
-            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
+            <text id="•" font-family="Arial, Verdana" font-size="13" font-weight="normal" fill="#000000">
                 <tspan x="11.1990864" y="158.831838">•</tspan>
             </text>
-            <text id="Case-studies" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.000679442543" fill="#000000">
-                <tspan x="22.3101975" y="158.831838">Case Studies</tspan>
+            <text id="Case-studies" font-family="Arial, Verdana" font-size="13" font-weight="normal" letter-spacing="0.000679442543" fill="#000000">
+                <tspan x="22.3101975" y="158.831838">End user</tspan>
             </text>
-            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-                <tspan x="11.1990864" y="180.971838">•</tspan>
-            </text>
-            <text id="Benefits" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="0.0206852499" fill="#000000">
-                <tspan x="22.3101975" y="180.971838">Benefits</tspan>
-            </text>
-            <text id="•" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" fill="#000000">
-                <tspan x="11.1990864" y="203.111875">•</tspan>
-            </text>
-            <text id="Clinical-" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0249128919" fill="#000000">
-                <tspan x="22.3101975" y="203.111875">Clinical	</tspan>
-            </text>
-            <text id="inspiration" font-family="HelveticaNeue, Helvetica Neue" font-size="13" font-weight="normal" letter-spacing="-0.0110975606" fill="#000000">
-                <tspan x="22.3101975" y="221.561875">inspiration</tspan>
+            <text id="•" font-family="Arial, Verdana" font-size="13" font-weight="normal" fill="#000000">
+                <tspan x="11.1990864" y="180.971838">organisations</tspan>
             </text>
             <path d="M112.111111,12.53 L217.66679,12.53 L244.209877,38.975123 L217.66679,65.42 L112.111111,65.42 L138.654321,38.975123 L112.111111,12.53 Z" id="Fill-5" fill="#4F81BD"></path>
             <text id="Explore" font-family="HelveticaNeue, Helvetica Neue" font-size="15" font-weight="normal" letter-spacing="0.0104529625" fill="#FFFFFF">
