@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Access Record Structured
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar
