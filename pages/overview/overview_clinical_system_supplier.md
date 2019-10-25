@@ -4,11 +4,11 @@ keywords: clinical, provider
 tags: [clinical_supplier]
 toc: false
 sidebar: overview_sidebar
-permalink: overview_clinical_system_supplier.html
+permalink: overview_provider_system_supplier.html
 pathways: [provider]
 ---
 
-Clinical system suppliers or *providers*, such as EMIS Health, INPS Vision, Microtest Health or TPP, can use GP Connect to develop APIs that allow consumer applications to access GP data on their systems.
+Provider system suppliers (providers), such as EMIS Health, INPS Vision, Microtest Health or TPP, can use GP Connect to develop APIs that allow consumer applications to access GP data on their systems.
 
 ## Developer ecosystem
 
