@@ -37,6 +37,8 @@ This capability provides the ability to retrieve unstructured documents from a p
 
 This capability enables the management of GP practice appointments between different systems
 
+<br>
+
 ## Send Document ##
 
 [![Img](images/overview/Letter_Blue_smaller.png) Send Document](send_document.html) 
