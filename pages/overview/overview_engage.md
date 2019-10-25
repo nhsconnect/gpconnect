@@ -13,7 +13,7 @@ summary: "Getting started with GP Connect"
  <p>We have identified three main customer types:</p>
 
  - Consumer supplier
- - Clinical system supplier
+ - Provider system supplier
  - End-user organisation
  
 <p>To find out more, follow the relevant link below: </p>
@@ -46,8 +46,8 @@ summary: "Getting started with GP Connect"
                      </span>
                  </div>
                  <div class="panel-body" align="left">
-                     <h4>Clinical system supplier</h4>
-                         <p align="left">You're a GP clinical data supplier/provider, such as EMIS Health, INPS Vision, Microtest Health and TPP.</p>
+                     <h4>Provider system supplier</h4>
+                         <p align="left">You're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP.</p>
                      <p align="left">You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.</p>
                      <a href="overview_clinical_system_supplier.html" class="btn btn-primary">More...</a>
                  </div>
