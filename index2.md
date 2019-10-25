@@ -12,7 +12,9 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-<p>GP Connect's range of {% include tooltip.html type="API" %} specifications supports the development of products that can allow GP practices and authorised clinical staff to share information and data between IT systems.</p>
+GP Connect has worked with GP clinical system suppliers to develop [APIs]: Application Programming Interfaces.
+
+These APIs make data from clinical systems available in a standard form so that it can be used across different systems and be made available to clinicians who need access to the data for direct patient care.
 
 The APIs are grouped into separate [capabilities](/overview_priority_capabilities.html), so that clinicians in different care settings can:</p>  
 
