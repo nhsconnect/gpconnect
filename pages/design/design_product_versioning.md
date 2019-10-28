@@ -65,9 +65,8 @@ When a **pre-release label** is appended to the version number with a hyphen it 
 
 | Pre-release label | Description            | 
 |-------------------|--------------------|
-| `alpha`           | Initial test API, likely to change substantially |
-| `beta`            | API that is still under active development and subject to change |
-| `rc` 			    | API that is largely complete and unlikely to change substantially, but still need further testing by a wider group of implementers before becoming live |
+| `alpha`           | API that is still active development and subject to change |
+| `beta`            | API that is largely complete and unlikely to change substantially, but still need further testing by a wider group of implementers before becoming live |
 | *(no label)* 		| Live release API |
 | `discontinued`    | API which have been discontinued and should not be used for new development |
 
