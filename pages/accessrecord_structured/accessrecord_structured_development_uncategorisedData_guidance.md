@@ -105,7 +105,7 @@ For example, if four items of uncategorised data are recorded under the investig
 
 If the hierarchical data contains items from other clinical areas that are not held in an observation resource then these should always be included by referencing them from the header observation related element as a 'has-member' tpye. This will mean that unlike references to other observations references to these data items will be one directional as illustrated in the diagram below.
 
-<a href="images/access_structured/Uncategorised_Structure1.png"><IMG src="images/access_structured/Uncategorised_Structure1.png" alt="Uncateogirsed structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncateogirsed structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
    
 Where an item from a different clinical area that is not in an observation resource but in the native system is the header element. Then the provider sytem **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
