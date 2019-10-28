@@ -35,12 +35,22 @@ The three main considerations used to decide which data to return for each clini
 * include all the FHIR profiles required to fully describe the requested clinical area
 * include the FHIR profiles required to define all the linkages from the requested clinical area
 * include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area 
+For each clinical area in a query that returns data a list should be generated that contains links to all data items returned for that clinical area.
+
+## Dealing with confidential items ##
+
+Any clinical area that has not returned an item as it was confidential **SHALL** populate the relevant list with the warning code `confidential-items` as specified in the [resource population fundamentals page](https://gpconnect-1-3-2.netlify.com/accessrecord_structured_development_resources_overview.html).
+
+Problems are an exception to this rule. It is only necessary to indicate if a problem has not been returned due to confidentiality when responding to a specific problem query. Where problems are due to be returned as they are linked to an item returned as part of a query for a different clinical area, e.g. a medication query, but are omitted for confidentiality reasons  **MUST NOT** be marked with a warning code.
+
+The reason for the exception in the case of problems is due to the fact that problem linkages are applied manually and are therefore not consistent across the GP estate. As not everything that could be considered a problem will be linked then to warn that a problem was missing could lead to confusion as this is also possible when the warning is not present.
 
 ### Consultations ###
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
 The response to the query includes:
 * A `List` profile containing references to `Encounter` for every Consultation that met the search criteria
+* A `List` profile for each clinical area that data exists in the bundle
 
 For each `Encounter` referenced in the `List` profile:
 *  The `Encounter` profile of the Consultation
@@ -72,6 +82,7 @@ When GP Connect returns a problem it will supply the metadata and description of
 
 The response to the query includes:
 * A `List` profile containing references to `ProblemHeader (Condition)` for every Problem that met the search criteria
+* A `List` profile for each clinical area that data exists in the bundle
 
 For each `ProblemHeader (Condition)` referenced in the `List` profile:
 *	The `ProblemHeader (Condition)` profile of the Problem
@@ -99,6 +110,7 @@ When GP Connect returns a medication or medical device it will supply the prescr
 
 The response to the query includes:
 * A `List` profile containing references to `MedicationStatement` for every Medication and Medical Device that met the search criteria
+* A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `MedicationStatement` referenced in the `List` profile:
 *  The `MedicationStatement` profile of the Medication or Medical Device
@@ -117,6 +129,7 @@ When GP Connect returns an allergy it will supply all the allergy data.
 The response to the query includes:
 * A `List` profile containing references to `AllergyIntolerance` for every active Allergy
 * Where requested, a `List` profile containing references to `AllergyIntolerance` for every ended Allergy
+* A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `AllergyIntolerance` referenced in either of the `List` profiles:
 *	The `AllergyIntolerance` profile of the Allergy
@@ -133,6 +146,7 @@ When GP Connect returns an immunisation it will supply all the immunisation data
 
 The response to the query includes:
 * A `List` profile containing references to `Immunization` for every Immunisation
+* A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `Immunization` referenced in the `List` profile:
 *	The `Immunization` profile of the Immunisation
@@ -149,6 +163,7 @@ When GP Connect returns uncategorised data it will supply all the data about the
 
 The response to the query includes:
 * A `List` profile containing references to `Observation` for every Uncategorised Data that met the search criteria
+* A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `Observation` referenced in the `List` profile:
 *	The `Observation` profile of the Uncategorised Data
