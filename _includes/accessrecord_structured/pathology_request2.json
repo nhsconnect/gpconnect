@@ -37,18 +37,10 @@
       ]
     }
     {
-      "name": "includeTestResults",
+      "name": "includeInvestigations",
       "part": [
         {
-          "name": "filterTestResults",
-          "valueCoding": {
-            "system": "http://snomed.info/sct",
-            "code": "721981007",
-            "display": "Diagnostic studies report"
-          }
-        },
-        {
-          "name": "testResultSearchPeriod",
+          "name": "investigationSearchPeriod",
           "valuePeriod": {
             "start": "2017-01-02",
             "end": "2017-07-02"
