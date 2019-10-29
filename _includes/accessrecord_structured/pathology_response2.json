@@ -8,7 +8,6 @@
   },
   "entry": [
     {
-      "fullUrl": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e",
       "resource": {
         "address": [
           {
@@ -37,7 +36,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:f25e9d63-6a4e-4de6-b9dc-c912fda62b01",
       "resource": {
         "identifier": [
           {
@@ -63,7 +61,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09",
       "resource": {
         "gender": "female",
         "birthDate": "1961-01-03",
@@ -106,7 +103,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:d9df1431-22ac-462a-946a-f195f6c639af",
       "resource": {
         "note": [
           {
@@ -154,7 +150,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:efae5859-28df-4e7d-be91-6df56d8215e4",
       "resource": {
         "issued": "2019-03-03T12:00:00+00:00",
         "result": [
@@ -204,7 +199,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123",
       "resource": {
         "receivedTime": "2019-01-29T15:00:00+00:00",
         "resourceType": "Specimen",
@@ -244,7 +238,6 @@
       }
     },
     {
-      "fullUrl": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db",
       "resource": {
         "category": [
           {

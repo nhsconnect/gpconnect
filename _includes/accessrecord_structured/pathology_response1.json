@@ -4,11 +4,10 @@
     "meta": {
       "profile": [
         "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
-      ],
+      ]
     },
     "entry": [
       {
-        "fullUrl": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e",
         "resource": {
           "address": [
             {
@@ -38,7 +37,6 @@
       },
 
       {
-        "fullUrl": "urn:uuid:f25e9d63-6a4e-4de6-b9dc-c912fda62b01",
         "resource": {
           "identifier": [
             {
@@ -64,7 +62,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09",
         "resource": {
           "gender": "female",
           "birthDate": "1974-12-29",
@@ -107,7 +104,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:d9df1431-22ac-462a-946a-f195f6c639af",
         "resource": {
           "note": [
             {
@@ -155,7 +151,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:efae5859-28df-4e7d-be91-6df56d8215e4",
         "resource": {
           "issued": "2019-04-03T12:00:00+00:00",
           "result": [
@@ -205,7 +200,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123",
         "resource": {
           "receivedTime": "2017-11-01T15:00:00+00:00",
           "resourceType": "Specimen",
@@ -241,7 +235,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db",
         "resource": {
           "resourceType": "Observation",
           "related": [
@@ -374,7 +367,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db",
         "resource": {
           "category": [
             {
@@ -436,7 +428,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:32685afe-1d46-4d98-8279-39b9e96ee914",
         "resource": {
           "category": [
             {
@@ -498,7 +489,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:770b982d-be09-4744-a5d7-54e757947ffe",
         "resource": {
           "category": [
             {
@@ -560,7 +550,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:0a8aba3d-6b29-4dba-9c64-3a47516cc5eb",
         "resource": {
           "category": [
             {
@@ -622,7 +611,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:ddc43c3a-2863-4d6f-a926-162f5a4174b1",
         "resource": {
           "category": [
             {
@@ -684,7 +672,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:9825b7cf-de29-4c07-9b84-4af04dbf8233",
         "resource": {
           "category": [
             {
@@ -746,7 +733,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:e732e681-3a89-4433-a37b-3767dd19d809",
         "resource": {
           "category": [
             {
@@ -808,7 +794,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:2a604bea-1ef4-4cb1-97a0-f2a160f12679",
         "resource": {
           "category": [
             {
@@ -870,7 +855,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:704b6bb2-a1c0-429b-b901-c641e70345ec",
         "resource": {
           "category": [
             {
@@ -932,7 +916,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:53f4132c-0168-4327-8d69-560b13f5bb4e",
         "resource": {
           "category": [
             {
@@ -984,7 +967,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:c9e03e92-78b8-4e8e-9785-cbd9424e9380",
         "resource": {
           "category": [
             {
@@ -1046,7 +1028,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:9c61ad77-8c17-41aa-b795-f0fcb9f983d5",
         "resource": {
           "category": [
             {
@@ -1098,7 +1079,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:f67cb109-0890-4e47-9126-86da677c7008",
         "resource": {
           "category": [
             {
@@ -1160,7 +1140,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:1f2e71db-b9aa-4e4f-9a78-87f99fefc8bf",
         "resource": {
           "category": [
             {
@@ -1212,7 +1191,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:a23b563d-765a-4032-8dd3-c03178224f35",
         "resource": {
           "category": [
             {
@@ -1274,7 +1252,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:fedb7c2d-337c-435c-9169-612349783b5a",
         "resource": {
           "category": [
             {
@@ -1326,7 +1303,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:f9070943-7460-413a-a608-e15334b6e1d9",
         "resource": {
           "category": [
             {
@@ -1388,7 +1364,6 @@
         }
       },
       {
-        "fullUrl": "urn:uuid:66acb40a-e241-474a-92b5-c74f9aa6a854",
         "resource": {
           "category": [
             {
@@ -1442,5 +1417,5 @@
     ]
   }
 
-}
+
 {% endhighlight %}
