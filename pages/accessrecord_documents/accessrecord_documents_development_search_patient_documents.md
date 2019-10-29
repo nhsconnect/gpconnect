@@ -24,7 +24,7 @@ Provider systems **SHALL** support the following search parameters:
 |---|---|---|---|
 | `subject` | `Patient` | Reference to the patient who is the subject of the document. | `DocumentReference.subject` |
 | `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
-| `facility` | `token` | Additional details about where the content was created (for example, clinical specialty). | `DocumentReference.clinicalSetting` |
+| `facility` | `token` | Additional details about where the content was created (for example, clinical specialty). | `DocumentReference.context.practiceSetting` |
 | `author` | `Organization` | Who and/or what authored the document. | `DocumentReference.author` |
 | `type` | `token` | Kind of document. | `DocumentReference.type` |
 | `description` | `string` | Human-readable description (title). | `DocumentReference.title` |
@@ -46,6 +46,14 @@ Provider systems **SHALL** support the following include parameters:
 Consumer systems **MUST** send the following parameters in the request:
 
 - subject
+
+Consumer systems **MUST** also send the following parameters to reduce the number of API calls:
+
+- _include= DocumentReference:patient
+- _include= DocumentReference:custodian:Organization
+- _include= DocumentReference:author:Organization
+- _include= DocumentReference:author:Practitioner
+- _revinclude:recurse= PractitionerRole:practitioner
 
 Consumer systems **MAY** send the following parameters in the request:
 
