@@ -150,7 +150,7 @@ The audit trail timestamp representing when the data was recorded.
   </tr>
 </table>
 
-The `Practitioner` profile representing the person responsible for recording the data item. Where this is not available, the person who recorded the data item is used.
+The `Practitioner` profile representing the clinician responsible for making the observation. Where this is not available, the person who recorded the data item is used.
 
 ### value[x] ###
 
