@@ -146,7 +146,7 @@ The audit trail timestamp representing when the data was recorded.
   <tr>
     <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
