@@ -150,7 +150,12 @@ The audit trail timestamp representing when the data was recorded.
   </tr>
 </table>
 
-The `Practitioner` profile representing the clinician responsible for making the observation. Where this is not available, the person who recorded the data item is used.
+The `Practitioner` profile representing the clinician responsible for making the observation. 
+
+Where the observation was performed at another organisation and an `organisation` profile can be populated then that **SHALL** be populated here. This will be in addition to the clinical practitioner if 
+both are available.
+
+If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recordeed the data in the system.
 
 ### value[x] ###
 
