@@ -12,29 +12,45 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-GP Connect has worked with GP clinical system suppliers to develop Application Programming Interfaces (APIs).
+In partnership with principal GP clinical system suppliers, GP Connect has developed a set of {% include tooltip.html type="FHIR®" %} {% include tooltip.html type="API" %} specifications that make data from different clinical systems available to clinicians when and where they need it.
 
-These APIs make data from clinical systems available in a standard form so that it can be used across different systems and be made available to clinicians who need access to the data for direct patient care.
-
-The APIs are grouped into separate [capabilities](/overview_priority_capabilities.html), so that clinicians in different care settings can:  
+The specifications are grouped into separate [capabilities](/overview_priority_capabilities.html), so that clinicians in different care settings can:  
 
 * view a patient’s GP practice record - [Access Record HTML](/accessrecord.html)
-*	manage a patient's GP appointments - [Appointment Management](/appointments.html)
-* import or download medication and allergies information - [Access Record Structured](/accessrecord_structured/accessrecord_structured.html) 
+*	manage GP appointments - [Appointment Management](/appointments.html)
+* import or download medication and allergies information - [Access Record Structured]
+(/accessrecord_structured/accessrecord_structured.html) 
 
-## Using this specification ##
+GP Connect supports the development of products that use the clinical data made available by our specifications.
 
-This specification has been created to support the adoption of GP Connect APIs and FHIR&reg; resources. Follow the steps below to complete your development journey using GP Connect APIs:
+## Development journey ##
 
-{% include custom/api_overview.svg %}
+This specification contains all the technical resources you need to connect between clinical systems and GP data using the GP Connect FHIR® APIs. 
 
-## Pilot using the GP Connect APIs ##
-The GP Connect programme is now supporting the development of systems that connect with the APIs to use data from patient records and appointment schedulers for patient care by integrating it or importing it into local clinical systems.
+Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
 
-We’re working with selected partnerships of health and care organisations and software suppliers. Partnerships will use the APIs to develop technical solutions to local issues with sharing patient records and appointment booking across system boundaries.
-We’ve developed a process called ‘First of Type’ to support this development and provide assurance for these early products.
+{% include developer_journey.html %}
 
-[Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect)
+## Audience ##
+We have identified three main customer types:
+
+### Consumer suppliers ###
+*	You're a software development company already working with the NHS or would like to work with the NHS.
+*	You want to use GP Connect to develop an API to consume GP data. You intend to work with a suitable end-user organisation, which you may or may not have already identified.
+
+Use the developer ecosystem above to work through each stage of a typical GP Connect API project.
+
+### Provider system suppliers ###
+*	You're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP.
+*	You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.
+
+Use the developer ecosystem to work through each stage of a typical GP Connect API project. Information of particular relevance to providers is clearly marked.
+
+### End-user organisation ###
+*	You're a CCG with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting.
+*	You want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care.
+
+See [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect/getting-involved-with-gp-connect#information-for-commissioning-or-end-user-organisations).
 
 ## Community engagement ##
 GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
@@ -44,6 +60,8 @@ The content here is designed for a technical audience (that is, developers, arch
 
 ## Provide feedback ##
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
+
+{% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect provider APIs or consuming applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. See our GitHub [releases page](https://github.com/nhsconnect/gpconnect/releases) for more information." %}
 
 {% include twitterfollow.html %}
 
