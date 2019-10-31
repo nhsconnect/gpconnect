@@ -14,13 +14,12 @@ summary: An introduction to the GP Connect FHIR® APIs
 
 In partnership with principal GP clinical system suppliers, GP Connect has developed a set of FHIR&reg; API specifications, which make data from different clinical systems available to clinicians when and where they need it.
 
-The specifications are grouped into separate [capabilities](/overview_priority_capabilities.html), so that clinicians in different care settings can:  
+The specifications are grouped into separate [capabilities](/overview_priority_capabilities.html), so that clinicians in different care settings can, for example:  
 
 * view a patient’s GP practice record
 *	manage GP appointments
 * import or download medication and allergies information
-<br>
-<br>
+
 GP Connect supports the development of commerical products that use the clinical data made available by our specifications.
 
 ## Development journey ##
