@@ -12,19 +12,20 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-<p> In partnership with principal GP clinical system suppliers, GP Connect has developed a set of {% include tooltip.html type="FHIR&reg;" %} {% include tooltip.html type="API" %} specifications that make data from different clinical systems available to clinicians when and where they need it.</p>
+In partnership with principal GP clinical system suppliers, GP Connect has developed a set of FHIR&reg; API specifications, which make data from different clinical systems available to clinicians when and where they need it.
 
 The specifications are grouped into separate [capabilities](/overview_priority_capabilities.html), so that clinicians in different care settings can:  
 
 * view a patient’s GP practice record
 *	manage GP appointments
 * import or download medication and allergies information
-
-GP Connect supports the development of products that use the clinical data made available by our specifications.
+<br>
+<br>
+GP Connect supports the development of commerical products that use the clinical data made available by our specifications.
 
 ## Development journey ##
 
-This specification contains all the technical resources you need to connect between clinical systems and GP data using the GP Connect FHIR® APIs. 
+This specification contains all the technical resources you need to connect between clinical systems and GP data using the GP Connect FHIR® APIs.
 
 Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
 
@@ -33,13 +34,13 @@ Our developer ecosystem takes you through each stage of a typical GP Connect API
 ## Audience ##
 We have identified three main customer types:
 
-#### Consumer suppliers ####
+#### Consumer supplier ####
 *	You're a software development company already working with the NHS or would like to work with the NHS.
 *	You want to use GP Connect to develop an API to consume GP data. You intend to work with a suitable end-user organisation, which you may or may not have already identified.
 
 Use the developer ecosystem above to work through each stage of a typical GP Connect API project.
 
-#### Provider system suppliers ####
+#### Provider system supplier ####
 *	You're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP.
 *	You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.
 
