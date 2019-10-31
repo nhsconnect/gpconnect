@@ -112,13 +112,13 @@
         "requester": {
           "agent": {
             "display": "SCOTT",
-            "reference": "urn:uuid:f25e9d63-6a4e-4de6-b9dc-c912fda62b01"
+            "reference": "Practitioner/f25e9d63-6a4e-4de6-b9dc-c912fda62b01"
           }
         },
         "resourceType": "ProcedureRequest",
         "performer": {
           "display": "ST JAMES'S UNIVERSITY HOSPITAL",
-          "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+          "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
         },
         "intent": "order",
         "status": "active",
@@ -133,14 +133,14 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "display": "Prostate specific antigen measurement (procedure)",
+              "display": "Prostate specific antigen measurement",
               "code": "63476009"
             }
           ]
         },
         "subject": {
           "display": "KAY, Michael",
-          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
         },
         "meta": {
           "profile": [
@@ -154,12 +154,12 @@
         "issued": "2019-03-03T12:00:00+00:00",
         "result": [
           {
-            "reference": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db"
+            "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
           }
         ],
         "basedOn": [
           {
-            "reference": "urn:uuid:d9df1431-22ac-462a-946a-f195f6c639af"
+            "reference": "ProcedureRequest/d9df1431-22ac-462a-946a-f195f6c639af"
           }
         ],
         "status": "final",
@@ -167,13 +167,13 @@
           {
             "actor": {
               "display": "ST JAMES'S UNIVERSITY HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           }
         ],
         "specimen": [
           {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           }
         ],
         "resourceType": "DiagnosticReport",
@@ -189,7 +189,7 @@
         },
         "subject": {
           "display": "KAY, Michael",
-          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
         },
         "meta": {
           "profile": [
@@ -228,7 +228,7 @@
         },
         "subject": {
           "display": "KAY, Michael",
-          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
         },
         "meta": {
           "profile": [
@@ -244,7 +244,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Pathology (qualifier value)",
+                "display": "Pathology",
                 "code": "394595002 "
               }
             ]
@@ -269,12 +269,12 @@
         "performer": [
           {
             "display": "ST JAMES'S UNIVERSITY HOSPITAL",
-            "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+            "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
           }
         ],
         "effectiveDateTime": "2017-11-01T15:00:00+00:00",
         "specimen": {
-          "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+          "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
         },
         "identifier": [
           {
@@ -287,14 +287,14 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "display": "Prostate specific antigen level (observable entity)",
+              "display": "Prostate specific antigen level",
               "code": "1030791000000100"
             }
           ]
         },
         "subject": {
           "display": "KAY, Michael",
-          "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
         },
         "meta": {
           "profile": [

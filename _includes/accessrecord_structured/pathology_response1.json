@@ -113,13 +113,13 @@
           "requester": {
             "agent": {
               "display": "SMITH",
-              "reference": "urn:uuid:f25e9d63-6a4e-4de6-b9dc-c912fda62b01"
+              "reference": "Practitioner/f25e9d63-6a4e-4de6-b9dc-c912fda62b01"
             }
           },
           "resourceType": "ProcedureRequest",
           "performer": {
             "display": "GREENTOWN GENERAL HOSPITAL",
-            "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+            "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
           },
           "intent": "order",
           "status": "active",
@@ -141,7 +141,7 @@
           },
           "subject": {
             "display": "REARDON, John",
-            "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "meta": {
             "profile": [
@@ -155,12 +155,12 @@
           "issued": "2019-04-03T12:00:00+00:00",
           "result": [
             {
-              "reference": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db"
+              "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
             }
           ],
           "basedOn": [
             {
-              "reference": "urn:uuid:d9df1431-22ac-462a-946a-f195f6c639af"
+              "reference": "ProcedureRequest/d9df1431-22ac-462a-946a-f195f6c639af"
             }
           ],
           "status": "final",
@@ -168,13 +168,13 @@
             {
               "actor": {
                 "display": "GREENTOWN GENERAL HOSPITAL",
-                "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+                "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
               }
             }
           ],
           "specimen": [
             {
-              "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+              "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
             }
           ],
           "resourceType": "DiagnosticReport",
@@ -190,7 +190,7 @@
           },
           "subject": {
             "display": "REARDON, John",
-            "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "meta": {
             "profile": [
@@ -218,14 +218,14 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Venous blood specimen (specimen)",
+                "display": "Venous blood specimen",
                 "code": "122555007"
               }
             ]
           },
           "subject": {
             "display": "REARDON, John",
-            "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "meta": {
             "profile": [
@@ -240,92 +240,92 @@
           "related": [
             {
               "target": {
-                "reference": "urn:uuid:dacb177a-9501-4dcc-8b22-b941791ae0db"
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:32685afe-1d46-4d98-8279-39b9e96ee914"
+                "reference": "Observation/32685afe-1d46-4d98-8279-39b9e96ee914"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:770b982d-be09-4744-a5d7-54e757947ffe"
+                "reference": "Observation/770b982d-be09-4744-a5d7-54e757947ffe"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:0a8aba3d-6b29-4dba-9c64-3a47516cc5eb"
+                "reference": "Observation/0a8aba3d-6b29-4dba-9c64-3a47516cc5eb"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:ddc43c3a-2863-4d6f-a926-162f5a4174b1"
+                "reference": "Observation/ddc43c3a-2863-4d6f-a926-162f5a4174b1"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:9825b7cf-de29-4c07-9b84-4af04dbf8233"
+                "reference": "Observation/9825b7cf-de29-4c07-9b84-4af04dbf8233"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:e732e681-3a89-4433-a37b-3767dd19d809"
+                "reference": "Observation/e732e681-3a89-4433-a37b-3767dd19d809"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:2a604bea-1ef4-4cb1-97a0-f2a160f12679"
+                "reference": "Observation/2a604bea-1ef4-4cb1-97a0-f2a160f12679"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:704b6bb2-a1c0-429b-b901-c641e70345ec"
+                "reference": "Observation/704b6bb2-a1c0-429b-b901-c641e70345ec"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:53f4132c-0168-4327-8d69-560b13f5bb4e"
+                "reference": "Observation/53f4132c-0168-4327-8d69-560b13f5bb4e"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:c9e03e92-78b8-4e8e-9785-cbd9424e9380"
+                "reference": "Observation/c9e03e92-78b8-4e8e-9785-cbd9424e9380"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:9c61ad77-8c17-41aa-b795-f0fcb9f983d5"
+                "reference": "Observation/9c61ad77-8c17-41aa-b795-f0fcb9f983d5"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:f67cb109-0890-4e47-9126-86da677c7008"
+                "reference": "Observation/f67cb109-0890-4e47-9126-86da677c7008"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:1f2e71db-b9aa-4e4f-9a78-87f99fefc8bf"
+                "reference": "Observation/1f2e71db-b9aa-4e4f-9a78-87f99fefc8bf"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:a23b563d-765a-4032-8dd3-c03178224f35"
+                "reference": "Observation/a23b563d-765a-4032-8dd3-c03178224f35"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:fedb7c2d-337c-435c-9169-612349783b5a"
+                "reference": "Observation/fedb7c2d-337c-435c-9169-612349783b5a"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:f9070943-7460-413a-a608-e15334b6e1d9"
+                "reference": "Observation/f9070943-7460-413a-a608-e15334b6e1d9"
               }
             },
             {
               "target": {
-                "reference": "urn:uuid:66acb40a-e241-474a-92b5-c74f9aa6a854"
+                "reference": "Observation/66acb40a-e241-474a-92b5-c74f9aa6a854"
               }
             }
           ],
@@ -333,11 +333,11 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -357,7 +357,7 @@
           },
           "subject": {
             "display": "REARDON, John",
-            "reference": "urn:uuid:8d6c2cd5-0eec-496a-88d0-3785a135df09"
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "meta": {
             "profile": [
@@ -373,7 +373,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -393,7 +393,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -401,7 +401,7 @@
             "unit": "10*9/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -414,7 +414,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Total white cell count (observable entity)",
+                "display": "Total white cell count",
                 "code": "1022541000000102"
               }
             ]
@@ -434,7 +434,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -454,7 +454,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -462,7 +462,7 @@
             "unit": "10*12/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -475,7 +475,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Red blood cell count (observable entity)",
+                "display": "Red blood cell count",
                 "code": "1022451000000103"
               }
             ]
@@ -495,7 +495,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -515,7 +515,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -523,7 +523,7 @@
             "unit": "g/dL"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -536,7 +536,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Haemoglobin estimation (observable entity)",
+                "display": "Haemoglobin estimation",
                 "code": "1022431000000105"
               }
             ]
@@ -556,7 +556,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -576,7 +576,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -584,7 +584,7 @@
             "unit": "%"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -597,7 +597,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Haematocrit (observable entity)",
+                "display": "Haematocrit",
                 "code": "1022291000000105"
               }
             ]
@@ -617,7 +617,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -637,7 +637,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -645,7 +645,7 @@
             "unit": "fL"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -658,7 +658,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Mean corpuscular volume (observable entity)",
+                "display": "Mean corpuscular volume",
                 "code": "1022491000000106"
               }
             ]
@@ -678,7 +678,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -698,7 +698,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -706,7 +706,7 @@
             "unit": "pg"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -719,7 +719,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Mean corpuscular haemoglobin (observable entity)",
+                "display": "Mean corpuscular haemoglobin",
                 "code": "1022471000000107"
               }
             ]
@@ -739,7 +739,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -759,7 +759,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -767,7 +767,7 @@
             "unit": "g/dL"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -780,7 +780,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Mean corpuscular haemoglobin concentration (observable entity)",
+                "display": "Mean corpuscular haemoglobin concentration",
                 "code": "1022481000000109"
               }
             ]
@@ -800,7 +800,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -820,7 +820,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -828,7 +828,7 @@
             "unit": "10*9/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -841,7 +841,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Platelet count (observable entity)",
+                "display": "Platelet count",
                 "code": "1022651000000100"
               }
             ]
@@ -861,7 +861,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -881,7 +881,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -889,7 +889,7 @@
             "unit": "10*9/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -902,7 +902,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Neutrophil count (observable entity)",
+                "display": "Neutrophil count",
                 "code": "1022551000000104"
               }
             ]
@@ -922,7 +922,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -932,7 +932,7 @@
           "performer": [
             {
               "display": "ST JAMES'S UNIVERSITY HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -940,7 +940,7 @@
             "unit": "%"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -953,7 +953,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Percentage neutrophils (observable entity)",
+                "display": "Percentage neutrophils",
                 "code": "1015471000000105"
               }
             ]
@@ -973,7 +973,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -993,7 +993,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1001,7 +1001,7 @@
             "unit": "10*9/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1014,7 +1014,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Lymphocyte count (observable entity)",
+                "display": "Lymphocyte count",
                 "code": "1022581000000105"
               }
             ]
@@ -1034,7 +1034,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -1044,7 +1044,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1052,7 +1052,7 @@
             "unit": "%"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1065,7 +1065,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Percentage lymphocytes (observable entity)",
+                "display": "Percentage lymphocytes",
                 "code": "1015481000000107"
               }
             ]
@@ -1085,7 +1085,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -1105,7 +1105,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1113,7 +1113,7 @@
             "unit": "10*9/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1126,7 +1126,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Monocyte count (observable entity)",
+                "display": "Monocyte count",
                 "code": "1022591000000107"
               }
             ]
@@ -1146,7 +1146,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -1156,7 +1156,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1164,7 +1164,7 @@
             "unit": "%"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1177,7 +1177,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Percentage monocytes (observable entity)",
+                "display": "Percentage monocytes",
                 "code": "1015491000000109"
               }
             ]
@@ -1197,7 +1197,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -1217,7 +1217,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1225,7 +1225,7 @@
             "unit": "10*9/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1238,7 +1238,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Eosinophil count (observable entity)",
+                "display": "Eosinophil count",
                 "code": "1022561000000101"
               }
             ]
@@ -1258,7 +1258,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -1268,7 +1268,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1276,7 +1276,7 @@
             "unit": "%"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1289,7 +1289,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Percentage eosinophils (observable entity)",
+                "display": "Percentage eosinophils",
                 "code": "1015561000000104"
               }
             ]
@@ -1309,7 +1309,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -1329,7 +1329,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1337,7 +1337,7 @@
             "unit": "10*9/L"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1350,7 +1350,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Basophil count (observable entity)",
+                "display": "Basophil count",
                 "code": "1022571000000108"
               }
             ]
@@ -1370,7 +1370,7 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "display": "Pathology (qualifier value)",
+                  "display": "Pathology",
                   "code": "394595002 "
                 }
               ]
@@ -1380,7 +1380,7 @@
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
-              "reference": "urn:uuid:d6407de7-0e86-45eb-93cb-035094aaa49e"
+              "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
           "valueQuantity": {
@@ -1388,7 +1388,7 @@
             "unit": "%"
           },
           "specimen": {
-            "reference": "urn:uuid:756a8361-79ce-4561-afcb-a91fe19df123"
+            "reference": "Specimen/756a8361-79ce-4561-afcb-a91fe19df123"
           },
           "identifier": [
             {
@@ -1401,7 +1401,7 @@
             "coding": [
               {
                 "system": "http://snomed.info/sct",
-                "display": "Percentage basophils (observable entity)",
+                "display": "Percentage basophils",
                 "code": "1015501000000103"
               }
             ]
