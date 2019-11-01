@@ -47,17 +47,6 @@ entries:
       url: /overview_engage.html
       output: web, pdf
       type: web
-    - title: Consumer suppliers
-      url: /overview_consumer_supplier.html
-      output: web, pdf
-      type: web
-    - title: Clinical system suppliers
-      url: /overview_provider_system_supplier.html
-      output: web, pdf
-      type: web
-    - title: End-user organisations
-      external_url: https://digital.nhs.uk/services/gp-connect
-      output: web, pdf
 
   - title: Explore
     output: web
