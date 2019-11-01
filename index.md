@@ -3,7 +3,7 @@ title: Introduction
 keywords: homepage
 tags: [introduction]
 sidebar: overview_sidebar
-permalink: index2.html
+permalink: index.html
 toc: false
 summary: An introduction to the GP Connect FHIR® APIs
 ---
