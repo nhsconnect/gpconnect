@@ -84,10 +84,10 @@ Consumer systems:
 Only the following data elements can be modified when performing an appointment amendment:
 - `description` containing a brief description of the appointment.
   - Consumers SHALL impose a character limit of 100 characters for this element.
-  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for clinical information, such as transfer of care notes or a patient's conditions.
 - `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
   - Consumers SHALL impose a character limit of 500 characters for this element.
-  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for clinical information, such as transfer of care notes or a patient's conditions.
 
 {% include important.html content="It is recommended that Consumers read the Appointment they wish to amend (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
 

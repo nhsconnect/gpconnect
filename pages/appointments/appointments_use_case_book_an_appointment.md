@@ -102,7 +102,7 @@ The following data elements are mandatory (that is, data **MUST** be present):
 - the `created` element SHALL be populated with the date and time the appointment was created.
 - `description` containing a brief description of the appointment.
   - Consumers SHALL impose a character limit of 100 characters for this element.
-  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for clinical information, such as transfer of care notes or a patient's conditions.
 
 The following data elements **SHOULD** be included when available:
 - a practitioner `participant` of the appointment.
@@ -111,7 +111,7 @@ The following data elements **MAY** be included:
 
 - `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
   - Consumers SHALL impose a character limit of 500 characters for this element.
-  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+  - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for clinical information, such as transfer of care notes or a patient's conditions.
 
 The following data elements **MUST NOT** be included:
   - `reason`
