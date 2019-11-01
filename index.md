@@ -37,7 +37,7 @@ We have identified three main customer types:
 
 Use the developer ecosystem above to work through each stage of a typical GP Connect API project.
 
-#### Provider system supplier ####
+#### Provider supplier ####
 *	You're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP.
 *	You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.
 
