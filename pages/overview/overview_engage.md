@@ -8,6 +8,12 @@ permalink: overview_engage.html
 summary: "Getting started with GP Connect"
 ---
 
+- read about the GP Connect [Priority capabilities](overview_priority_capabilities.html)
+- look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
+	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> a decision has been made for first release.
+	- <span class="label label-warning">ASSUMPTION</span> an assumption has been made which is under review/needs validated
+
+
 ## Consumer suppliers ##
 
 <p>Consumer suppliers can develop applications that use GP Connect {% include tooltip.html type="FHIR&reg;" %} {% include tooltip.html type="API" %} specifications to consume GP data. To retrieve data from an end-user organisation, your application will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
