@@ -103,6 +103,8 @@ The status of the DiagnosticReport. In GP systems these are most likely to be 'f
 
 The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available - for example, pathology, microbiology.
 
+Consuming systems need to be aware the that where more detailed categories are provided the categorisation may vary, how laboratories categorise inthe uk is not consistent and this needs to be taken into account if any type of filtering is being considered.
+
 ### code ###
 
 <table class='resource-attributes'>
@@ -153,7 +155,7 @@ The date and time that the DiagnosticReport was issued by the laboratory or othe
   </tr>
 </table>
 
-Reference to the resource for the Organization that produced the DiagnosticReport. A `practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
+Reference to the resource for the Organization or Practitioner that produced the DiagnosticReport. A `practitioner` resource may  be referenced here but only where an `organization` is reference is provided.
 
 ### specimen ###
 
@@ -177,7 +179,7 @@ Reference to the specimen(s) on which these results were based.
   </tr>
 </table>
 
-Reference to the result(s) which are contained in the DiagnosticReport. This may contain references to stan standalone test results, test group headers (which then reference further results) or a mixture of both.
+Reference to the result(s) which are contained in the DiagnosticReport. This may contain references to stand standalone test results, test group headers (which then reference further results) or a mixture of both.
 
 In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record. This will be identified as the `observation.code` element will be populated with the SNOMED code `37331000000100` for `Comment note`.
 
