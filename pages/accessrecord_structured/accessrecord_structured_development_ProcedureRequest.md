@@ -97,12 +97,12 @@ This is mandatory in the base FHIR resource.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-The tests requested by the requesting HCP.
+The tests requested by the requesting HCP. Where no code is available then providers **Must** populate the `code.text` field with the text 'No code available'.
 
 ### subject ###
 
