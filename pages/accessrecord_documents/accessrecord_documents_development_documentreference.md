@@ -286,7 +286,7 @@ Who/what authenticated the document is not required by GP Connect.
     <td><b>Data type:</b> <code>base64Binary</code></td>
   </tr>
 </table>
-Data of the attachment is not required by GPConnect as it will be populated in FHIR binnary resource. 
+Data of the attachment is not required by GPConnect as it will be populated in FHIR binary resource. 
 
 <h3 style="color:#ED1951;"> relatesTo </h3>
 
