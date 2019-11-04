@@ -125,7 +125,7 @@ There are currently 9 possible purposes of a list in response to a query for a c
 |Problems | 717711000000103| Problems |
 |Uncategorised data | 826501000000100| Miscellaneous record |
 |Outbound Referrals | 792931000000107| Outbound referral |
-|Pathology | |  |
+|Investigations | 887191000000108| Investigations and Results  |
 
 The above code for 'Ended allergies' should be used for resolved allergies.
 
