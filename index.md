@@ -20,7 +20,7 @@ The specifications are grouped into separate [capabilities](/overview_priority_c
 *	manage GP appointments
 * import or download medication and allergies information
 
-GP Connect supports the development of commerical products that use the clinical data made available by our APIs. This specification contains all the technical resources you need to connect between clinical systems and GP data using the GP Connect FHIR® APIs.
+GP Connect supports the development of APIs to access data from General Practice patient records and appointment books for direct patient care. This specification contains all the technical resources you need to connect between your system and GP data using the GP Connect FHIR® APIs.
 
 ## Development journey ##
 
