@@ -22,12 +22,6 @@ The specifications are grouped into separate [capabilities](/overview_priority_c
 
 GP Connect supports the development of products that use the clinical data made available by our APIs. This specification contains all the technical resources you need to connect between your system and GP data.
 
-## Development ecosystem ##
-
-Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
-
-{% include developer_journey.html %}
-
 ## Audience ##
 We have identified three main customer types:
 
@@ -35,19 +29,25 @@ We have identified three main customer types:
 *	You're a software development company already working with the NHS or would like to work with the NHS.
 *	You want to use GP Connect to develop an API to consume GP data. You intend to work with a suitable end-user organisation, which you may or may not have already identified.
 
-Use the developer ecosystem above to work through each stage of a typical GP Connect API project.
+Use the developer ecosystem below to work through each stage of a typical GP Connect API project.
 
 #### Provider supplier ####
 *	You're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP.
 *	You want to use GP Connect to enable other systems to access GP data on your system for direct patient care.
 
-Use the developer ecosystem above to work through each stage of a typical GP Connect API project. Information of particular relevance to providers is clearly marked.
+Use the developer ecosystem below to work through each stage of a typical GP Connect API project. Information of particular relevance to providers is clearly marked.
 
 #### End-user organisation ####
-*	You're a CCG with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting.
+*	You're a clinical commissioning group (CCG) with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting.
 *	You want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care.
 
 See [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect/getting-involved-with-gp-connect#information-for-commissioning-or-end-user-organisations).
+
+## Development ecosystem ##
+
+Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
+
+{% include developer_journey.html %}
 
 ## Community engagement ##
 GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
