@@ -132,12 +132,14 @@ The date and time when the test was performed.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>instant</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Manadatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
 The date and time that the result was issued by the laboratory or other report provider.
+
+Is this is not provided for an individual result then it should inherit the date from the DiagnosticReport.
 
 
 ### performer ###
