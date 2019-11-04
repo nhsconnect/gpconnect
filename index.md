@@ -22,7 +22,7 @@ The specifications are grouped into separate [capabilities](/overview_priority_c
 
 GP Connect supports the development of products to access data from General Practice patient records and appointment books for direct patient care. This specification contains all the technical resources you need to connect between your system and GP data using the GP Connect FHIR® APIs.
 
-## Development journey ##
+## Development ecosystem ##
 
 Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
 
