@@ -151,6 +151,47 @@
     },
     {
       "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "title": "Investigations and Results",
+        "code": {
+          "coding": [
+            {
+              "display": "Investigations and Results",
+              "system": "http://snomed.info/sct",
+              "code": "887191000000108"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e4"
+            }
+          }
+        ],
+        "date": "2018-03-01T10:57:34+00:00",
+        "mode": "snapshot",
+        "orderedBy": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/list-order",
+              "code": "event-date"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
+        }
+      }
+    },
+    {
+      "resource": {
         "issued": "2019-03-03T12:00:00+00:00",
         "result": [
           {
