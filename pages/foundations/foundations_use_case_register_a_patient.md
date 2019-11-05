@@ -77,9 +77,11 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 #### Payload request body ####
 
-The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) resource conforming to the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) profile, with a single parameter of `registerPatient` containing a `Patient` resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.  This is the patient to be registered.
+The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) resource as specified by the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) definition, with a single parameter of `registerPatient` containing a `Patient` resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.  This is the patient to be registered.
 
 Within the `Patient` resource: 
+
+- The `meta.profile` field SHALL be populated with CareConnect-GPC-Patient-1 profile URL
 
 - The following fields SHALL be populated as a minimum to allow the provider system to perform a PDS trace:
   - `identifier` with the patient's NHS number
