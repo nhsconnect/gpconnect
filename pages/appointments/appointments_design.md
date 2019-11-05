@@ -110,7 +110,7 @@ Please see [Branch surgeries](development_branch_surgeries.html) for more inform
 
 ## Visits
 
-Visit appointments include home visits, visits to care homes and other community locations.
+A clinician may need to visit a patient away from the practice to provide health care. The visit could be at their home, care home, nursing home or a temporary address.
 
 Should visit slots/appointments be operable with all or a subset of the Appointment Management API interactions?
 
