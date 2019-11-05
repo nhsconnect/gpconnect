@@ -127,6 +127,8 @@ Reference to the resource for the Organization that carried out the tests. A `Pr
 
 Notes that relate to the test group header that were written by the performing `organization`.
 
+For example, the sample has haemolysed or has leaked.
+
 ### specimen ###
 
 <table class='resource-attributes'>
