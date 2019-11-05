@@ -46,6 +46,8 @@ GP systems are required to maintain the text formatting in order to preserve the
 
 ### Filing results into the patient record
 
+Filing results into the patient record is the process of integrating results that have been received in an EDIFACT message at the GP practice into the patient record. This is done by a user of the clinical system at the GP practice.
+
 When results are filed by the user it is possible to file the entire report or a 'test group'.
 
 Results may not always be filed on the day they were received. However, in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such, this date is an important date when moving records between GP systems.
