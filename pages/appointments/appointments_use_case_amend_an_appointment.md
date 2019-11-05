@@ -11,15 +11,13 @@ summary: "Amend an appointment for a patient at an organisation"
 
 This API is used to amend the `description` or `comment` fields of a patient's future appointment, obtained via either the [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html), or [Read an appointment](appointments_use_case_read_an_appointment.html) APIs.
 
-Any future appointment irrespective of booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+Any future appointment irrespective of booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.  This however excludes visit appointments and appointments that have been cancelled, both which cannot be amended using GP Connect.
 
 The typical flow to amend an appointment is:
 
  1. Search by NHS number for, or otherwise obtain, a `Patient` resource.
  2. Search for `Appointment` resources for the `Patient` resource.
  3. Choose an `Appointment` resource and update `description` and/or `comment` fields.
-
-Amending a cancelled appointment is NOT supported.
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -40,11 +38,13 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the amend appointment capability to amend:
+The consumer system SHALL only use the amend appointment interaction to amend:
 
   - `description` or `comment` fields.  Providers SHALL return an error when any other field is amended.
   - future appointments where appointment start date/time is after the current date/time. If the appointment start date/time is in the past the provider SHALL return an error.
   - appointments that have not been cancelled.  Providers SHALL return an error where an amendment to a cancelled appointment is received.
+
+Visit appointments (where the delivery channel is set to 'Visit') cannot be amended using GP Connect.  Providers SHALL return an error where an amendment to a visit appointment is received.
 
 ### Request operation ###
 
@@ -199,6 +199,7 @@ The provider system:
   - the appointment has been cancelled.  Provider systems should return a `422` error with error code `INVALID_RESOURCE`.
   - the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
   - the `description` or `comment` fields contain more characters than can be stored in the provider system
+  - the Appointment or referenced Slot(s) has a delivery channel of 'Visit'
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -322,42 +323,3 @@ Provider systems:
 }
 ```
 
-## Examples ##
-
-### C# ###
-
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
-client.PreferredFormat = ResourceFormat.Json;
-var appointment = client.Read<Appointment>("Appointment/9");
-// Update The Comment For The Appointment
-appointment.comment = "Free text updated comment.";
-var updatedAppointment = client.Update<Appointment>(appointment);
-FhirSerializer.SerializeResourceToJson(updatedAppointment).Dump();
-```
-
-### Java ###
-
-{% include tip.html content="Java code snippets utilise James Agnew's [hapi-fhir](https://github.com/jamesagnew/hapi-fhir/
-) library." %}
-
-```java
-// Read appointment to be updated
-FhirContext ctx = FhirContext.forStu3();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
-Appointment appointment = client.read().resource(Appointment.class).withId("9").execute();
-
-// Amend appointment comment
-appointment.setComment("Java Example Comment");
-
-// Update appointment
-MethodOutcome response = client.update()
-	.resource(appointment)
-	.prefer(PreferReturnEnum.REPRESENTATION)
-	.preferResponseType(Appointment.class)
-	.execute();
-
-System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(response.getResource()));
-```

@@ -11,7 +11,7 @@ summary: "Cancel an appointment for a patient at an organisation"
 
 This API is used to cancel a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.
 
-Any future appointment, irrespective of booking organisation and irrespective of whether the appointment was booked via the GP Connect API, can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+Any future appointment, irrespective of booking organisation and irrespective of whether the appointment was booked via the GP Connect API, can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.  This however excludes visit appointments which cannot be cancelled using GP Connect.
 
 The typical flow to cancel an appointment is:
 
@@ -38,7 +38,11 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the cancel appointment capability to cancel future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer system SHALL only use the cancel appointment interaction to cancel:
+
+  - future appointments where appointment start date/time is after the current date/time. If the appointment start date is in the past the provider SHALL return an error.
+
+Appointments for visits (where the delivery channel is set to 'Visit') cannot be cancelled using GP Connect.  Providers SHALL return an error where a cancellation to a visit appointment is received.
 
 ### Request operation ###
 
@@ -181,6 +185,7 @@ The provider system:
 - SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
 - SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
 - SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
+- SHALL return an error where the Appointment or referenced Slot(s) has a delivery channel of 'Visit'
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -312,47 +317,3 @@ Provider systems:
 
 {% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (for example, the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.status` are updated in line with any internal integrity constraints)." %}
 
-## Examples ##
-
-### C# ###
-
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
-client.PreferredFormat = ResourceFormat.Json;
-var appointment = client.Read<Appointment>("Appointment/9");
-// Cancel The Appointment
-appointment.Status = Appointment.AppointmentStatus.Cancelled;
-appointment.Extension.Add(new Extension("https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",new FhirString("Free text cancellation reason.")));
-var cancelledAppointment = client.Update<Appointment>(appointment);
-FhirSerializer.SerializeResourceToJson(cancelledAppointment).Dump();
-```
-
-### Java ###
-
-{% include tip.html content="Java code snippets utilise James Agnew's [hapi-fhir](https://github.com/jamesagnew/hapi-fhir/
-) library." %}
-
-```java
-// Read appointment to be updated
-FhirContext ctx = FhirContext.forStu3();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
-Appointment appointment = client.read().resource(Appointment.class).withId("9").execute();
-
-// Amend appointment status and cancellation reason
-appointment.setStatus(AppointmentStatusEnum.CANCELLED);
-ExtensionDt extension = new ExtensionDt(false);
-extension.setUrl("https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1");
-extension.setValue(new StringDt("Free text cancellation reason."));
-appointment.addUndeclaredExtension(extension);
-
-// Cancel appointment
-MethodOutcome response = client.update()
-	.resource(appointment)
-	.prefer(PreferReturnEnum.REPRESENTATION)
-	.preferResponseType(Appointment.class)
-	.execute();
-
-System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(response.getResource()));
-```

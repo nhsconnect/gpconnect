@@ -206,8 +206,9 @@ Provider systems:
   - `Slot` resources for the organisation which:
     - have a `status` of `free`
     - **and** fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
-    - **and** are bookable according to related defined [embargo/booking window](appointments_slotavailabilitymanagement.html#booking-windowembargo) rules 
+    - **and** are bookable according to related defined [slot availability management](appointments_slotavailabilitymanagement.html) rules 
     - **and** which match the search filter parameters of Booking Organisation (ODS Code) and/or organisation type, or are not restricted for booking by ODS code and/or organisation type
+    - **and** do not have a delivery channel of 'Visit'
 
   - `Schedule` resources associated with the returned `Slot` resources
 

@@ -37,9 +37,13 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer system SHALL only use the book appointment interaction to book:
 
-Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of Slots.
+  - appointments in the future, where the appointment start date and time is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+
+Appointments for visits (where the delivery channel is set to 'Visit') cannot be booked using GP Connect.
+
+Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of slots.
 
 ### Booking multiple adjacent slots ###
 
@@ -229,6 +233,7 @@ For example:
 - a business rule imposed by [Slot Availability Management](appointments_slotavailabilitymanagement.html) is breached, e.g. an organisational slot limit
 - multiple slots were requested for booking but do not meet the criteria for [booking multiple adjacent slots](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots)
 - the `description` or `comment` fields contain more characters than can be stored in the provider system
+- the requested Slot resource(s) have a delivery channel of 'Visit'
 
 Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -345,105 +350,3 @@ Provider systems:
 }
 ```
 
-## Examples ##
-
-### C# ###
-
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-client.PreferredFormat = ResourceFormat.Json;
-
-Appointment appointment = new Appointment();
-
-appointment.Status = Appointment.AppointmentStatus.Booked;
-appointment.Start = System.DateTimeOffset.Now;
-appointment.End = System.DateTimeOffset.Now.AddMinutes(30);
-
-var slotReference = new ResourceReference();
-slotReference.Reference = "Slot/1982";
-appointment.Slot.Add(slotReference);
-
-var patientParticipant = new Appointment.ParticipantComponent();
-patientParticipant.Actor = new ResourceReference();
-patientParticipant.Actor.Reference = "Patient/2";
-patientParticipant.Status = Appointment.ParticipationStatus.Accepted;
-appointment.Participant.Add(patientParticipant);
-
-var locationParticipant = new Appointment.ParticipantComponent();
-locationParticipant.Actor = new ResourceReference();
-locationParticipant.Actor.Reference = "Location/1";
-locationParticipant.Status = Appointment.ParticipationStatus.Accepted;
-appointment.Participant.Add(locationParticipant);
-
-appointment.created = new FhirDateTime(DateTime.Now);
-Organization organization = new Organization();
-organization.Name = "Example Organization Name";
-var contactPoint = new ContactPoint();
-contactPoint.System = ContactPoint.ContactPointSystem.Phone;
-contactPoint.Value = "0300 303 5678";
-organization.Telecom.Add(contactPoint);
-organization.Id = "1";
-appointment.Contained.Add(organization);
-var reference = new ResourceReference
-{
-Reference = "#1",
-};
-appointment.AddExtension("https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1", reference);
-
-Appointment appointmentCreated = client.Create<Appointment>(appointment);
-
-FhirSerializer.SerializeResourceToJson(appointmentCreated).Dump();
-```
-
-### Java ###
-
-{% include tip.html content="Java code snippets utilise James Agnew's [hapi-fhir](https://github.com/jamesagnew/hapi-fhir/
-) library." %}
-
-```java
-FhirContext fhirContext = FhirContext.forStu3();
-IGenericClient client = fhirContext.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-
-Appointment appointment = new Appointment();
-appointment.setStatus(AppointmentStatusEnum.BOOKED);
-
-Calendar startTime = Calendar.getInstance();
-Calendar endTime = Calendar.getInstance();
-endTime.add(Calendar.MINUTE, 30);
-appointment.setStart(new InstantDt(startTime));
-appointment.setEnd(new InstantDt(endTime));
-
-appointment.setSlot(Collections.singletonList(new ResourceReferenceDt("Slot/1982")));
-
-Appointment.Participant patientParticipant = new Appointment.Participant();
-patientParticipant.setActor(new ResourceReferenceDt("Patient/2"));
-patientParticipant.setStatus(ParticipationStatusEnum.ACCEPTED);
-appointment.addParticipant(patientParticipant);
-
-Appointment.Participant locationParticipant = new Appointment.Participant();
-locationParticipant.setActor(new ResourceReferenceDt("Location/1"));
-locationParticipant.setStatus(ParticipationStatusEnum.ACCEPTED);
-appointment.addParticipant(locationParticipant);
-
-Organization organization = new Organization();
-organization.setName("Test Organization Name");
-ContactPointDt telecom = new ContactPointDt();
-telecom.setSystem(ContactPointSystemEnum.PHONE);
-telecom.setValue("0300 303 5678");
-organization.setTelecom(Collections.singletonList(telecom));
-
-ExtensionDt extension = new ExtensionDt(false);
-extension.setUrl("https://fhir.nhs.uk/StructureDefinition/extension-gpconnect-booking-organisation-1");
-extension.setValue(new ResourceReferenceDt(organization));
-appointment.addUndeclaredExtension(extension);
-
-MethodOutcome response = client.create()
-	.resource(appointment)
-	.prefer(PreferReturnEnum.REPRESENTATION)
-	.preferResponseType(Appointment.class)
-	.execute();
-
-System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(response.getResource()));
-```

@@ -11,7 +11,11 @@ summary: "Retrieve a patient's future appointments at an organisation"
 
 This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted provider system. 
 
-All future appointments for the requested patient, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, will be returned from the provider system.
+All future appointments for the requested patient will be returned from the provider system, irrespective of:
+
+  - the booking organisation
+  - whether the appointment was booked via the GP Connect API or not
+  - the appointment's delivery channel (appointments of any delivery channel, including 'Visit' are returned in this interaction)
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the retrieval of a patient's appointments has been restricted to future appointments only. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
@@ -125,6 +129,10 @@ Provider systems:
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
 
 - SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
+- SHALL follow the following guidance for appointments where the delivery channel is `Visit`:
+  - the `Location` actor reference in `Appointment.participant` SHALL resolve to an ['unknown' visit Location](appointments_use_case_retrieve_a_patients_appointments.html#location-to-support-visit-appointments)
+  - where the type of visit is known (e.g. home visit, care home visit) then this shall be populated in the `comment` field
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
@@ -343,34 +351,35 @@ Provider systems:
 }
 ```
 
-## Examples ##
+### Location to support visit appointments
 
-### C# ###
+In [Read an appointment](appointments_use_case_read_an_appointment.html) and [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html), the `Appointment.participant` element contains an  actor reference of type `Location` which normally refers to the location that the appointment will take place, for example GP practice surgery or branch surgery.
 
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
+For appointments where the delivery channel is set to 'Visit', this SHALL NOT refer to the actual location of the appointment and instead SHALL refer to an 'unknown' visit Location.
 
-```csharp
-var client = new FhirClient(string.Format("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/"));
-client.PreferredFormat = ResourceFormat.Json;
-Bundle bundle = (Bundle)client.Get("Patient/2/Appointment");
-FhirSerializer.SerializeResourceToJson(bundle).Dump();
+Please see below for a sample 'unknown' visit Location.
+
+```json
+{
+  "resourceType": "Location",
+  "id": "19",
+  "meta": {
+    "versionId": "636064088100870233",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+    ]
+  },
+  "name": "Contact practice for location of the visit",
+  "address": [
+    {
+      "line": [
+        "Unknown"
+      ],
+      "city": "Unknown"
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/14"
+  }
+}
 ```
-
-### Java ###
-
-{% include tip.html content="Java code snippets utilise James Agnew's [hapi-fhir](https://github.com/jamesagnew/hapi-fhir/
-) library." %}
-
-```java
-FhirContext ctx = FhirContext.forStu3();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-
-Bundle responseBundle = client.search()
-  .forResource(Patient.class)
-  .withIdAndCompartment("2", "Appointment")
-  .returnBundle(ca.uhn.fhir.model.dstu2.resource.Bundle.class)
-  .execute();
-    
-System.out.println(ctx.newJsonParser().setPrettyPrint(true).encodeResourceToString(responseBundle));
-```
-

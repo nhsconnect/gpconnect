@@ -107,3 +107,14 @@ Please refer to the [glossary](overview_glossary.html) for a definition of a fed
 ## Branch surgeries
 
 Please see [Branch surgeries](development_branch_surgeries.html) for more information GP Connect handling of branch surgeries, and implications for Appointment Management.
+
+## Visits
+
+Visit appointments include home visits, visits to care homes and other community locations.
+
+Should visit slots/appointments be operable with all or a subset of the Appointment Management API interactions?
+
+- Search for free slots, Book appointment, Amend appointment, Cancel appointment, Read appointment, Retrieve a patient's appointments
+- <span class="label label-success">SELECTED</span> Read appointment, Retrieve a patient's appointments
+
+This decision to restrict the usage of visit slots/appointments to Read appointment and Retrieve a patient's appointments only is based on the complexity in booking visit appointments which typically involve triage by the practice, and differing practice policies for home visit appointment booking.

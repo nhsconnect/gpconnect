@@ -19,6 +19,7 @@ Given the increasing need for cross-organisational appointment access, there is 
 
 Provider systems SHALL:
 - enable provider system end-users to designate the slots within their appointment books as 'GP Connect bookable'. This is a broad control to make slots in the appointment book available for booking through the GP Connect API
+  - please note: it SHALL NOT be possible to mark slots which have a delivery channel of 'Visit' as 'GP Connect bookable'
 - enable provider system end-users to additionally specify which schedules/slots can be booked by an individual or list of organisations, and/or booking organisation type as well as enabling end-users to limit the number of slots which can be booked by this 'organisation access profile'.
 - use ODS organisation codes as the organisation identifier for individual or lists of organisations used for appointment availability management
 

@@ -7,15 +7,17 @@ permalink: appointments_use_case_read_an_appointment.html
 summary: "Read a patient's appointment at an organisation"
 ---
 
-
 ## Use case ##
 
 This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system.
 
-A patient's future appointment, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, is  returned by the provider system.
+A patient's future appointment will be returned from the provider system, irrespective of:
+
+  - the booking organisation
+  - whether the appointment was booked via the GP Connect API or not
+  - the appointment's delivery channel (appointments of any delivery channel, including 'Visit' are returned in this interaction)
 
 {% include important.html content="The Appointment Management capability pack is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
-
 
 ## Security ##
 
@@ -32,7 +34,7 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the read appointment capability to retrieve future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer system SHALL only use the read appointment capability to retrieve future appointments, where the appointment start date/time is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
 
 ### Request operation ###
@@ -93,6 +95,10 @@ Provider systems:
 - SHALL include all relevant business `identifier` details (if any) for the appointment resource.
 
 - SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
+- SHALL follow the following guidance for appointments where the delivery channel is `Visit`:
+  - the `Location` actor reference in `Appointment.participant` SHALL resolve to an ['unknown' visit Location](appointments_use_case_retrieve_a_patients_appointments.html#location-to-support-visit-appointments)
+  - where the type of visit is known (e.g. home visit, care home visit) then this shall be populated in the `comment` field
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
@@ -208,27 +214,3 @@ Provider systems:
 }
 ```
 
-## Examples ##
-
-### C# ###
-
-{% include tip.html content="C# code snippets utilise Ewout Kramer's [fhir-net-api](https://github.com/ewoutkramer/fhir-net-api) library, which is the official .NET API for HL7&reg; FHIR&reg;." %}
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-client.PreferredFormat = ResourceFormat.Json;
-var resource = client.Read<Appointment>("Appointment/148");
-FhirSerializer.SerializeResourceToJson(resource).Dump();
-```
-
-### Java ###
-
-{% include tip.html content="Java code snippets utilise James Agnew's [hapi-fhir](https://github.com/jamesagnew/hapi-fhir/
-) library." %}
-
-```java
-FhirContext ctx = FhirContext.forStu3();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1");
-Appointment appointment = client.read().resource(Appointment.class).withId("148").execute();
-System.out.println(fhirContext.newJsonParser().setPrettyPrint(true).encodeResourceToString(appointment));
-```
