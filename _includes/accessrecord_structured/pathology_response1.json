@@ -1,4 +1,3 @@
-{% highlight json %}
   {
     "resourceType": "Bundle",
     "type": "collection",
@@ -101,6 +100,47 @@
             "profile": [
               "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1"
             ]
+          }
+        }
+      },
+      {
+        "resource": {
+          "resourceType": "List",
+          "meta": {
+            "profile": [
+              "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+            ]
+          },
+          "status": "current",
+          "title": "Investigations and Results",
+          "code": {
+            "coding": [
+              {
+                "display": "Investigations and Results",
+                "system": "http://snomed.info/sct",
+                "code": "887191000000108"
+              }
+            ]
+          },
+          "entry": [
+            {
+              "item": {
+                "reference": "DiagnosticReport/efae5859-28df-4e7d-be91-6df56d8215e4"
+              }
+            }
+          ],
+          "date": "2018-03-01T10:57:34+00:00",
+          "mode": "snapshot",
+          "orderedBy": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/list-order",
+                "code": "event-date"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           }
         }
       },
@@ -453,13 +493,8 @@
           ],
           "resourceType": "Observation",
           "referenceRange": [
-            {
-              "high": {
-                "value": 5
-              },
-              "low": {
-                "value": 3.7999999999999998
-              }
+                        {
+              "text": "less than 3.8 to 5"
             }
           ],
           "performer": [
@@ -584,12 +619,7 @@
           "resourceType": "Observation",
           "referenceRange": [
             {
-              "high": {
-                "value": 0.46000000000000002
-              },
-              "low": {
-                "value": 0.35999999999999999
-              }
+              "text": "greater than 0.36 and less than 0.46"
             }
           ],
           "performer": [
@@ -946,6 +976,10 @@
               }
             ]
           },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          },
           "status": "final",
           "meta": {
             "profile": [
@@ -996,6 +1030,10 @@
                 "code": "1015471000000105"
               }
             ]
+          },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "status": "final",
           "meta": {
@@ -1058,6 +1096,10 @@
               }
             ]
           },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          },
           "status": "final",
           "meta": {
             "profile": [
@@ -1109,6 +1151,10 @@
               }
             ]
           },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          },
           "status": "final",
           "meta": {
             "profile": [
@@ -1133,12 +1179,7 @@
           "resourceType": "Observation",
           "referenceRange": [
             {
-              "high": {
-                "value": 0.80000000000000004
-              },
-              "low": {
-                "value": 0.20000000000000001
-              }
+              "text": "greater than 0.2 to greater than 0.8"
             }
           ],
           "performer": [
@@ -1169,6 +1210,10 @@
                 "code": "1022591000000107"
               }
             ]
+          },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "status": "final",
           "meta": {
@@ -1221,6 +1266,10 @@
               }
             ]
           },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          },
           "status": "final",
           "meta": {
             "profile": [
@@ -1245,12 +1294,7 @@
           "resourceType": "Observation",
           "referenceRange": [
             {
-              "high": {
-                "value": 0.40000000000000002
-              },
-              "low": {
-                "value": 0.040000000000000001
-              }
+              "text": "greater than 0.04 to greater than 0.4"
             }
           ],
           "performer": [
@@ -1281,6 +1325,10 @@
                 "code": "1022561000000101"
               }
             ]
+          },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "status": "final",
           "meta": {
@@ -1333,6 +1381,10 @@
               }
             ]
           },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          },
           "status": "final",
           "meta": {
             "profile": [
@@ -1358,7 +1410,7 @@
           "referenceRange": [
             {
               "high": {
-                "value": 0.10000000000000001
+                "value": 0.10
               },
               "low": {
                 "value": 0.02
@@ -1393,6 +1445,10 @@
                 "code": "1022571000000108"
               }
             ]
+          },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
           },
           "status": "final",
           "meta": {
@@ -1445,6 +1501,10 @@
               }
             ]
           },
+          "subject": {
+            "display": "REARDON, John",
+            "reference": "Patient/8d6c2cd5-0eec-496a-88d0-3785a135df09"
+          },
           "status": "final",
           "meta": {
             "profile": [
@@ -1455,6 +1515,3 @@
       }
     ]
   }
-
-
-{% endhighlight %}
