@@ -14,7 +14,7 @@ The Access Record Structured capability provides the ability to retrieve a patie
 - Allergies
 - Medications
 
-The capability consists of a single API operation for retrieving a patient's structured record which is listed below in [API definition](accessrecord_structured_development.html#api-definition).
+The capability consists of a single API operation for retrieving a patient's structured record, plus a capability statement operation describing the capability API, both of which are listed below in [API definition](accessrecord_structured_development.html#api-definition).
 
 ## Allergies and medication guidance
 
@@ -40,6 +40,7 @@ The following pages provide example request and response messages:
 The following API definitions are included in this capability:
 
 - [Retrieve a patient’s structured record](accessrecord_structured_development_retrieve_patient_record.html)
+- [Get the structured FHIR&reg; capability statement](accessrecord_structured_get_the_fhir_capability_statement.html)
 
 ## Spine interactions ##
 
