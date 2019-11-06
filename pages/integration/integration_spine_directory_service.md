@@ -58,6 +58,8 @@ Systems **SHOULD** cache SDS query results giving details of consuming system, e
 
 Systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
 
+Systems **MUST NOT** reuse the FHIR service root URL retrieved from SDS for an interaction in one GP Connect capability (such as Appointment Management) in another capability (such as Access Record Structured).  The two capabilities may have different FHIR service root URLs. 
+
 {% include important.html content="**Why have SDS queries changed in GP Connect API 1.2.3?**<br/>
 The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more seperate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
 The SDS queries in GP Connect API 1.2.2 and prior versions do not support this configuration, hence existing consumer systems **MUST** update their queries to to this version of the specification." %}
@@ -147,13 +149,14 @@ This query should return a single endpoint. In this case, the ldapquery returns 
 
 	# 472b35d4641b76454b13, Services, nhs
 	dn: uniqueIdentifier=472b35d4641b76454b13,ou=Services,o=nhs
-	nhsMhsEndPoint: https://pcs.thirdparty.nhs.uk/T99999/STU3/1
+	nhsMhsEndPoint: https://pcs.thirdparty.nhs.uk/T99999/STU3/1/gpconnect/structured
 	nhsMhsPartyKey: T99999-9999999
 
 	# search result
 	search: 1
 	result: 0 Success
 
+{% include important.html content="Please note the FHIR service root URL (endpoint) returned for one capability may be different from that for another capability, **at the same practice**.  Please ensure you do NOT re-use FHIR service root URLs (endpoints) between capabilities." %}
 
 ### Step 2: AS record lookup on SDS to determine the provider's ASID
 
@@ -189,7 +192,9 @@ The value returned in the `nhsMhsEndPoint` attribute in Step 1 should be treated
 
 In this example, to issue a Get Structured Record request, the following request would be made:
 
-`POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/STU3/1/Patient/$gpc.getstructuredrecord`
+```http
+POST https://testspineproxy.nhs.domain.uk/https://pcs.thirdparty.nhs.uk/T99999/STU3/1/gpconnect/structured/Patient/$gpc.getstructuredrecord
+```
 
 ## SDS TLS configuration ##
 

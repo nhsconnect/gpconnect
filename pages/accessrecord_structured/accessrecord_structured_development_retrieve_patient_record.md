@@ -22,7 +22,7 @@ Retrieve a patient's record in FHIR&reg; structured format from a GP practice.
 
 The consumer system:
 
-- **MUST** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- **MUST** have previously resolved the organisation's Access Record Structured FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - **MUST** have previously traced the patient's NHS Number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
@@ -42,7 +42,7 @@ POST /Patient/$gpc.getstructuredrecord
 #### FHIR&reg; absolute request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.getstructuredrecord
+POST https://[proxy_server]/https://[provider_server]/[structured_fhir_base]/Patient/$gpc.getstructuredrecord
 ```
 
 #### Request headers ####

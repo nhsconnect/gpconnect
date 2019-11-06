@@ -48,4 +48,5 @@ The Access Record Structured capability message set includes the following set o
 | Operation                 | Interaction ID            | 
 |---------------------------|---------------------------| 
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
+| [Read Structured Metadata](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:structured_metadata-1` |
 

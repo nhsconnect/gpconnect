@@ -27,7 +27,7 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 
 ### Foundations interactions ###
 
-| Operation                 | InteractionID             | 
+| Operation                 | Interaction ID            | 
 |---------------------------|---------------------------| 
 | [Read metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1` |
 | [Read patient](foundations_use_case_read_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1` | 
@@ -42,7 +42,7 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 
 ### Appointments capability interactions ###
 
-| Operation                 | InteractionID             | 
+| Operation                 | Interaction ID            | 
 |---------------------------|---------------------------| 
 | [Search for free slots](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:slot-1` |
 | [Read appointment](appointments_use_case_read_an_appointment.html)          | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1` |
@@ -53,9 +53,10 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 
 ### Access Record Structured interactions ###
 
-| Operation                 | InteractionID             | 
+| Operation                 | Interaction ID            | 
 |---------------------------|---------------------------| 
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
+| [Read Structured Metadata](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:structured_metadata-1` |
 
 ### Access Record HTML interactions ###
 

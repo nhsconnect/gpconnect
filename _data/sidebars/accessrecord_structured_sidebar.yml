@@ -98,6 +98,10 @@ entries:
           url: /accessrecord_structured_development_retrieve_patient_record.html
           output: web
 
-        - title: API Version Compatibility
+        - title: API version compatibility
           url: /accessrecord_structured_development_version_compatibility.html
+          output: web
+
+        - title: Get the structured FHIR&reg; capability statement
+          url: /accessrecord_structured_get_the_fhir_capability_statement.html
           output: web

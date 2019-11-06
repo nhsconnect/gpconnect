@@ -1,5 +1,5 @@
 ---
-title: API Version Compatibility
+title: API version compatibility
 keywords: getstructuredrecord, view
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
