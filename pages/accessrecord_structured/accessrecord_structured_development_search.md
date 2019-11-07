@@ -81,6 +81,15 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
     * Where there is a start date but no end date, the search goes to the end of the patient record
     * Where there is an end date but no start date, the search goes from the start of the patient record
     * Where no dates are supplied by the consumer, all outbound referral data items are returned
+    
+### Diary Entry data ###
+
+* Search for all Diary Entry data prior to a specified date
+     * The consumer system request all items prior to an end date
+     * The provider system returns all items whose 
+		* occurrence period start date is on or prior to the consumer supplied end date or
+		* occurrence date time is on or prior to the consumer supplied end date
+     * Where no end date is supplied by the consumer, all diary entries are returned
 
 ## Following a linkage ##
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
