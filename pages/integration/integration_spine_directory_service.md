@@ -156,7 +156,7 @@ This query should return a single endpoint. In this case, the ldapquery returns 
 	search: 1
 	result: 0 Success
 
-{% include important.html content="Please note the FHIR service root URL (endpoint) returned for one capability may be different from that for another capability, **at the same practice**.  Please ensure you do NOT re-use FHIR service root URLs (endpoints) between capabilities." %}
+{% include warning.html content="Please note the FHIR service root URL (endpoint) returned for one capability may be different from that for another capability, **at the same practice**.  Please ensure you **DO NOT** re-use FHIR service root URLs (endpoints) between capabilities." %}
 
 ### Step 2: AS record lookup on SDS to determine the provider's ASID
 
