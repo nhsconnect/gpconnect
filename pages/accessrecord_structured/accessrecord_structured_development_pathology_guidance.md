@@ -40,7 +40,7 @@ The EDIFACT message was defined by the Pathology Messaging Enabling Project and 
 It is a detailed specification and although it does contain some coding the majority of the fields contain text. Some of the text is also heavily formatted. See below example taken from a GP2GP HL7v3 message:
 
 {: .center-image }
-![Structured text example](images/access_structured/Pathology_structured_text_example_2.png)
+![Structured text example](images/access_structured/Pathology_structured_text_example_2.PNG)
 
 GP systems are required to maintain the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFACT report imported into the GP system **MUST** be maintained as they are in the GP2GP HL7 message.
 
