@@ -231,11 +231,11 @@ Reference to the item that is part of the list.
 
 Why the list is empty.
 
-A FHIR code of `No Content Recorded` **SHALL** be used if a query returns no results to enter into a list. In this case, the 'note' field **SHALL** be populated with the text 'Information not available'.
+A FHIR code of `no-content-recorded` **MUST** be used if a query returns no results to enter into a list. In this case, the 'note' field **MUST** be populated with the text 'Information not available'.
 
 <h2 style="color:#ED1951;"> List elements <b>not in use</b> </h2>
 
-The following elements **SHALL NOT** be populated:
+The following elements **MUST NOT** be populated:
 
 <h3 style="color:#ED1951;"> id </h3>
 
