@@ -232,6 +232,11 @@
             }
           },
           {
+            "item":{
+              "reference": "Observation/Consultation1-topic2-category-Examination-Observation-2"
+            }
+          },
+          {
             "item": {
               "reference": "Observation/Consultation1-topic2-category-Examination-Observation-3"
             }
