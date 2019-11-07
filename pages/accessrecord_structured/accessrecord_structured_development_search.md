@@ -82,7 +82,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
     * Where there is an end date but no start date, the search goes from the start of the patient record
     * Where no dates are supplied by the consumer, all outbound referral data items are returned
     
-### Diary Entry data ###
+### Diary entries ###
 
 * Search for all Diary Entry data prior to a specified date
      * The consumer system request all items prior to an end date
