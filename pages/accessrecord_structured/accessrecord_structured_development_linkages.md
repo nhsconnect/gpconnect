@@ -60,19 +60,22 @@ For each `Encounter` referenced in the `List` profile:
 *	The `ReferralRequest` profile of any linked Referrals
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
 *	The `DocumentReference` profile of any linked Documents
-    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation    
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above.
+*  The `ProcedureRequest`profile of any linked Diary Entries
+    * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Diary Entries
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
 
 Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
 
 
-Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Consultation that contains a Medication but does not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
+Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. 
+So, for example, if a consumer requests a Consultation that contains a Medication but does not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
 
 <a href="images/access_structured/Consultation_Return.png"><img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
@@ -102,12 +105,15 @@ For each `ProblemHeader (Condition)` referenced in the `List` profile:
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation    
+*  The `ProcedureRequest`profile of any linked Diary Entries
+    * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Diary Entries
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 Where a Problem links to a profile that is not yet supported by the provider system, then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html).
 
-Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. So, for example, if a consumer requests a Problem that links to a Medication but does not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
+Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. 
+So, for example, if a consumer requests a Problem that links to a Medication but does not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
 
 <a href="images/access_structured/Problem_Return.png"><img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
@@ -211,6 +217,22 @@ For each `DiagnosticReport` referenced in the `List` profile:
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Investigation_Return.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+
+### Diary Entry ###
+When GP Connect returns a diary entry it will supply all the diary entry data.
+
+The response to the query includes:
+* A `List` profile containing references to `ProcedureRequest` for every Diary Entry that met the search criteria
+
+For each `ProcedureRequest` referenced in the `List` profile:
+*	The `ProcedureRequest` profile of the Diary Entry
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+<center>
+<a href="images/access_structured/DiaryEntry_Return.png"><img src="images/access_structured/DiaryEntry_Return.png" alt="Diary Entry Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+</center>
 
 ### Duplicate returned profiles ###
 
