@@ -46,7 +46,11 @@ entries:
     - title: Getting started
       url: /overview_engage.html
       output: web, pdf
-      type: web
+      type: web  
+    - title: Capabilities
+      url: /overview_priority_capabilities.html
+      output: web, pdf
+      type: web 
 
   - title: Explore
     output: web
