@@ -151,7 +151,7 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 <a href="images/access_structured/Allergy_Return.png"><img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
-### Immunisation ###
+### Immunisations ###
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
 The response to the query includes:
@@ -183,7 +183,7 @@ For each `Observation` referenced in the `List` profile:
 <a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
-### Referral ###
+### Referrals ###
 When GP Connect returns a referral it will supply all the referral data.
 
 The response to the query includes:
@@ -199,7 +199,7 @@ For each `ReferralRequest` referenced in the `List` profile:
 <a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Referral_Return.png" alt="Referral Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
-### Investigation ###
+### Investigations ###
 When GP Connect returns an investigation it will supply all the investigation information.
 
 The response to the query includes:
@@ -218,7 +218,7 @@ For each `DiagnosticReport` referenced in the `List` profile:
 
 <a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Investigation_Return.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
-### Diary Entry ###
+### Diary entries ###
 When GP Connect returns a diary entry it will supply all the diary entry data.
 
 The response to the query includes:
