@@ -200,6 +200,17 @@ entries:
         - title: Documents guidance
           output: web
           url: /accessrecord_documents.html
+          
+      - title: Diary entries
+        output: web
+        subfolderitems:
+
+        - title: Diary entry guidance
+          output: web
+          url: /accessrecord_structured_development_diaryentry_guidance.html
+        - title: <b class='resource'>ProcedureRequest</b>
+          url: /accessrecord_structured_development_diaryentry.html
+          output: web
 
   - title: API definition
     output: web, pdf
