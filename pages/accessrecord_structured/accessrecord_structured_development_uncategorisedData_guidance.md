@@ -115,6 +115,6 @@ The results of a query for uncategorised data **MUST** return a `List` containin
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `no-content-recorded`.
 
 
