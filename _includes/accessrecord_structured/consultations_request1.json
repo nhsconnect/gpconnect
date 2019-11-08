@@ -15,7 +15,7 @@
       "part": [
         {
           "name": "includeNumberOfMostRecent",
-          "valueInteger": "3"
+          "valueInteger": 3
         }
       ]
     },

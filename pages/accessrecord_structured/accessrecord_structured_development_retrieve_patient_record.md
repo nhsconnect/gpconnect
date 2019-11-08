@@ -169,7 +169,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     </tr>
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeNumberOfMostRecent</code></span></td>
-      <td><code class="highlighter-rouge">Integer</code></td>
+      <td><code class="highlighter-rouge">positiveInt</code></td>
       <td>Optional</td>
       <td>0..1</td>
       <td>
@@ -293,7 +293,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
         },
         {
           "name": "includeNumberOfMostRecent",
-          "valueInteger": "3"
+          "valueInteger": 3
         }
       ]
     },
@@ -350,7 +350,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `consultationSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The end date of the `consultationSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The start date of the `consultationSearchPeriod` part parameter is greater than the end date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the start date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
