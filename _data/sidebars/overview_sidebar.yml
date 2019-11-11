@@ -158,9 +158,6 @@ entries:
     - title: <b class="capability-not-available">Access Record HTML</b>
       url: /accessrecord.html
       output: web
-    - title: <b class="capability-not-available">Access Document</b>
-      url: /accessrecord_documents.html
-      output: web
     - title: <b class="capability-not-available">Send Document</b>
       url: /send_document.html
       output: web
@@ -320,7 +317,7 @@ entries:
         - title: Send Document
           url: /tag_senddocument.html
           output: web
-          
+
     - title: Run website locally
       url: /support_run_website_locally.html
       output: web
