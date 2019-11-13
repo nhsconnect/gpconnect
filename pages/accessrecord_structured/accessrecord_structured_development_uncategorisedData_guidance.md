@@ -37,7 +37,7 @@ For example:
 
 Consideration was given to attempting to categorise data using the recorded clinical codes. It was decided not to progress this based on a clinical review of its risks and benefits.
 
-## Uncategorised data definition ## 
+## Uncategorised data definition ##
 
 * Uncategorised data is any item of data in the patient record that does not fit into one of the existing or planned clinical areas defined by GP Connect.
 
@@ -75,9 +75,9 @@ In these cases, each value will be exported in an instance of `observation.compo
 This approach MUST be used for blood preasure readings where the systolic and diastolic values were taken together.
 
 ## Hierarchical Uncategorised Data ##
-There are cases where several pieces of uncategorised data are be related to each other in a hierarchical structure. 
+There are cases where several pieces of uncategorised data are be related to each other in a hierarchical structure.
 
-For example: 
+For example:
 * Alcohol Consumption
     * Breath alcohol level 15mmol/L
     * O/E - spleen just palapable
@@ -88,7 +88,7 @@ Where this occurs the data is supplied in a flattened format with the herachical
 
 Each item of uncategorised data in the hierarchy is recorded is in its own `observation` profile. The structure is represented using the `observation.related` field.
 
-* The top level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member` 
+* The top level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member`
 * The child items will contain `observation.related.target` pointing to the top level item with an `observation.related.type` of `derived-from`
 
 Note: This follows the same model that will be used to represent Investigations and Pathology.
@@ -106,7 +106,7 @@ For example, if four items of uncategorised data are recorded under the investig
 If the hierarchical data contains items from other clinical areas that are not held in an observation resource then these should always be included by referencing them from the header observation related element as a 'has-member' tpye. This will mean that unlike references to other observations references to these data items will be one directional as illustrated in the diagram below.
 
 <a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncateogirsed structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
-   
+
 Where an item from a different clinical area that is not in an observation resource but in the native system is the header element. Then the provider sytem **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
 ## Using the `List` resource for uncategorised data queries
@@ -115,6 +115,4 @@ The results of a query for uncategorised data **MUST** return a `List` containin
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `no-content-recorded`.
-
-
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. In this case, `List.note` **MUST** be populated with the text 'Information not available'.

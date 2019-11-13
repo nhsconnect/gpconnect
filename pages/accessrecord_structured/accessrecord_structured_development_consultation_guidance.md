@@ -72,7 +72,7 @@ Consultations follow a common logical structure.
 
 ## Approach
 
-The logical structure of a Consultation is reflected in FHIR using the `Encounter` and `List` profiles. 
+The logical structure of a Consultation is reflected in FHIR using the `Encounter` and `List` profiles.
 
 <table class='resource-attributes'>
   <tr>
@@ -233,4 +233,4 @@ The results of a query for consultation details **MUST** return a `List` contain
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `no-content-recorded`.
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. In this case, `List.note` **MUST** be populated with the text 'Information not available'.

@@ -19,7 +19,7 @@ Vaccination is the administration of a vaccine to help the immune system develop
 
 ## What immunisation data is GP Connect sending?
 
-In GP Connect, what is sent in the `Immunization` resource is the event of a patient being administered a vaccination. 
+In GP Connect, what is sent in the `Immunization` resource is the event of a patient being administered a vaccination.
 This may be a contemporaneous record by the clinician administering the vaccination (or by another member of the practice staff recording the event directly on behalf of the clinician) or it may be a record of an immunisation administered elsewhere as reported to the registered GP practice by the patient, a carer, guardian or other representative of the patient or another healthcare provider.
 
 A record of an immunisation may be created as part of a scheduled programme of immunisations such as childhood immunisations, seasonal influenza vaccination or in response to specific circumstances (for example, prior to travel, disease outbreak or occupational risk).
@@ -28,7 +28,7 @@ A record of an immunisation may be created as part of a scheduled programme of i
 
 GP clinical systems do not all record the full vaccine product (dm+d code) for an immunisation.
 GP clinical systems often record the type of vaccine administered as opposed to the vaccine product.
-This may be as a procedure code or a local code which can be mapped to a procedure code. 
+This may be as a procedure code or a local code which can be mapped to a procedure code.
 GP Connect, therefore, uses the vaccination procedure code to denote the vaccine being administered.
 The vaccination procedure code is a mandatory element.
 The vaccine product code will often be a `nullFlavor` code, but the actual vaccine product **MUST** be included if it is available.
@@ -52,7 +52,7 @@ Options are to be evaluated for each not given use case and whether to include d
 ## Ineffective vaccination
 
 The Immunization FHIR profile contains elements to denote that a vaccination does not count towards immunity.
-This could be applied where a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break. 
+This could be applied where a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break.
 GP clinical systems do not have a standard means to identify an ineffective vaccination. Hence, immunisation records will always be returned as counting towards immunity.
 
 ## Reactions to a vaccine
@@ -79,5 +79,4 @@ The results of a query for immunisation details **MUST** return a `List` contain
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `no-content-recorded`.
-
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. In this case, `List.note` **MUST** be populated with the text 'Information not available'.
