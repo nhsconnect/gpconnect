@@ -68,7 +68,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "name": "GP Connect",
   "status": "active",
   "date": "2019-10-21",
