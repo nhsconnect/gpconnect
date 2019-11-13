@@ -6,6 +6,24 @@ sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_medication_guidance.html
 summary: "Guidance on the representation of medication in GP Connect"
 ---
+## Medication search criteria ###
+
+There are a 2 parameters that can be specified while retrieving medications. A search from date and a boolean that can be set to 'FALSE' in order to exclude medication issues. 
+
+As a default the medication issues are always included in the bundle that is returned. If the consumer specifically wants to retrieve the medication items without any of the issues then this **MUST** be specified in the request, in this case only the authorisations will be returned. That is the `MedicationStatement` and `MedicationRequest` with `intent` set to `plan` for each medication item. 
+
+Below is a further detail about how the search criteria should be applied,
+
+* Search for all Medications and Medical Devices that were active on or after the specified date
+     * The consumer system requests all items from a start date
+     * The provider system returns all plans whose effective period end date is null or is on or after the start date
+     * Where no date is supplied by the consumer, all medications and medical devices are returned
+* Do not include all the prescriptions issued under the returned medication/medical device plans
+     * The consumer system requests not to include prescription issues
+     * For each of the returned medication/medical device plans, the provider system only includes the authorisations
+     
+Technical details relating to the search criteria are available on the [Retrieve a patients structured record page](accessrecord_structured_development_retrieve_patient_record.html).
+
 ## Degraded medications
 
 Where degraded medication records arising from GP2GP record transfer or any other means are present in the patient record then these **MUST** be coded using the appropriate degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
