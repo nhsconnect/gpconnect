@@ -231,7 +231,7 @@ Reference to the item that is part of the list.
 
 Why the list is empty.
 
-A FHIR code of `no-content-recorded` **MUST** be recorded in emptyReason.code if a query returns no results to enter into a list. In this case, `List.note` **MUST** be populated with the text 'Information not available'.
+A FHIR code of `no-content-recorded` **MUST** be recorded in `emptyReason.code` if a query returns no results to enter into a list. In this case, `List.note` **MUST** be populated with the text 'Information not available'.
 
 <h2 style="color:#ED1951;"> List elements <b>not in use</b> </h2>
 
