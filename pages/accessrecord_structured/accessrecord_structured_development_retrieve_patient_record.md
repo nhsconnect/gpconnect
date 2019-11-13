@@ -113,9 +113,9 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includePrescriptionIssues</code></span></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
-      <td>Mandatory</td>
+      <td>Optional</td>
       <td>
-        Include each prescription issue in the response.
+        Include each prescription issue in the response, this parameter has a default value of 'true'.
         <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>        
       </td>
     </tr>
@@ -196,7 +196,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `medicationSearchFromDate` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeMedication` parameter is passed without the corresponding `includePrescriptionIssue` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
@@ -285,7 +284,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
     - no prescription issue information should be returned
 
-  - and when the `includePrescriptionIssues` parameter is set to `true`:
+  - and when the `includePrescriptionIssues` parameter is set to `true` or not included:
 
     - [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources with an `intent` of `order` representing the patient's prescription issues, for the above medication summary data
 

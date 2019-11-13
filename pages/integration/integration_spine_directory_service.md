@@ -58,7 +58,7 @@ Systems **SHOULD** cache SDS query results giving details of consuming system, e
 
 Systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
 
-Systems **MUST NOT** reuse the FHIR service root URL retrieved from SDS for an interaction in one GP Connect capability (such as Appointment Management) in another capability (such as Access Record Structured).  The two capabilities may have different FHIR service root URLs. 
+Systems **MUST NOT** reuse the FHIR service root URL retrieved from SDS for an interaction in one GP Connect capability (such as Appointment Management) in another capability (such as Access Record Structured).  The two capabilities may have different FHIR service root URLs.
 
 {% include important.html content="**Why have SDS queries changed in GP Connect API 1.2.3?**<br/>
 The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more seperate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
@@ -78,16 +78,16 @@ Consumer systems **MUST** lookup the FHIR service root URL and Party Key from th
 
 **Result attributes:**
 - Target organisation's FHIR service root URL
-	- `nhsMhsEndPoint` 
+	- `nhsMhsEndPoint`
 - Target organisation's Party Key
 	- `nhsMhsPartyKey`
 
 **ldapsearch query:**
 
 ```bash
-ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
+ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs"
 	"(&(nhsidcode=[odsCode]) (objectClass=nhsMhs) (nhsMhsSvcIA=[interactionId]))"
-	nhsMhsEndPoint nhsMhsPartyKey	
+	nhsMhsEndPoint nhsMhsPartyKey
 ```
 
 ### Step 2: Accredited System record lookup ###
@@ -101,17 +101,17 @@ Consumer systems **MUST** use the Party Key retrieved in Step 1 along with the p
 	- `objectClass` = `nhsAs`
 - MHS Party Key
 	- `nhsMHSPartyKey` = Target organisation's *Party key* as retrieved from the `nhsMhsPartyKey` attribute in step 1
-	
+
 **Result attributes:**
 - Target organisation's ASID
 	- `uniqueIdentifier`
 
 **ldapsearch query:**
-	
+
 ```bash
-ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs" 
+ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs"
 	"(&(nhsidcode=[odsCode]) (objectclass=nhsAs) (nhsMHSPartyKey=[nhsMHSPartyKey]))"
-	uniqueIdentifier	
+	uniqueIdentifier
 ```
 
 ## Worked example - looking up a provider's endpoint and ASID ##
@@ -124,13 +124,13 @@ A consuming system which needs to get the structured record of a patient record 
 **When**
 The consuming system interacts with GP Connect
 
-**Then** 
+**Then**
 The following steps **MUST** be followed:
 
 
 ### Step 0: PDS trace (pre-requisite step)
 
-The consuming system is responsible for [performing a PDS trace](integration_personal_demographic_service.html) to both verify the identity of the patient and retrieve the ODS code of the patient's registered primary care practice. 
+The consuming system is responsible for [performing a PDS trace](integration_personal_demographic_service.html) to both verify the identity of the patient and retrieve the ODS code of the patient's registered primary care practice.
 
 For this example, NHS number 9000000084 with demographic details Mr Anthony Tester, 19 Fictitious Avenue, Testtown returns the ODS code T99999.
 
@@ -140,11 +140,11 @@ For this example, NHS number 9000000084 with demographic details Mr Anthony Test
 
 Using the ODS code retrieved from Step 0, and the interaction ID of the required service, the following ldapsearch query is executed:
 
-	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs" 
-	"(&(nhsIDCode=T99999) (objectClass=nhsMhs) (nhsMhsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1))" 
+	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk -b "ou=services, o=nhs"
+	"(&(nhsIDCode=T99999) (objectClass=nhsMhs) (nhsMhsSvcIA=urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1))"
 	nhsMhsEndPoint nhsMhsPartyKey
-	
-	
+
+
 This query should return a single endpoint. In this case, the ldapquery returns the following results:
 
 	# 472b35d4641b76454b13, Services, nhs
@@ -162,12 +162,12 @@ This query should return a single endpoint. In this case, the ldapquery returns 
 
 The ASID is now looked up on SDS. The example below uses ldapsearch:
 
-	
-	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs" 
-	"(&(nhsIDCode=T99999) (objectClass=nhsAS) (nhsMHSPartyKey=T99999-9999999))" 
-	uniqueIdentifier 
 
-	
+	ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs"
+	"(&(nhsIDCode=T99999) (objectClass=nhsAS) (nhsMHSPartyKey=T99999-9999999))"
+	uniqueIdentifier
+
+
 This query should return a single matching accredited system object from SDS, the ASID being found in the uniqueIdentifier attribute. In this case, the ldapquery returns the following results:
 
 	999999999999, Services, nhs
@@ -178,7 +178,7 @@ This query should return a single matching accredited system object from SDS, th
 	search: 1
 	result: 0 Success
 
-	
+
 
 ### Step 3: Consumer constructs full GP Connect request URL to be sent to the Spine Security Proxy
 
@@ -226,7 +226,7 @@ AS record lookup on SDS to determine the consumer's ASID.
 	- `nhsAsSvcIA` = *Interaction ID*, please see GP Connect [Interaction IDs](integration_interaction_ids.html)
 - Manufacturer of the consumer system (the *ODS code* of the manufacturer of the consumer system)
 	- `nhsMhsManufacturerOrg` = *ODS code* of the consumer system supplier
-	
+
 **Result attributes:**
 - Consumer's ASID
 	- `uniqueIdentifier`
@@ -236,6 +236,5 @@ AS record lookup on SDS to determine the consumer's ASID.
 ```bash
 ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs"
 	"(&(nhsIDCode=[odsCode]) (objectClass=nhsAS) (nhsaASvcIA=[interactionId]) (nhsMhsManufacturerOrg=[odsCode]))"
-	uniqueIdentifier 
+	uniqueIdentifier
 ```
-
