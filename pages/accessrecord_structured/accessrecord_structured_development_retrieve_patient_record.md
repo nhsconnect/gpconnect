@@ -165,10 +165,6 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeMedication",
       "part": [
         {
-          "name": "includePrescriptionIssues",
-          "valueBoolean": true
-        },
-        {
           "name": "medicationSearchFromDate",
           "valueDate": "2017-06-04"
         }
