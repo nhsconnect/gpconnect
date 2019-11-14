@@ -24,6 +24,9 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
+        - title: 1.2.6
+          url: /overview_release_notes_1_2_6.html
+          output: web
         - title: 1.2.5
           url: /overview_release_notes_1_2_5.html
           output: web
@@ -309,7 +312,7 @@ entries:
         - title: Send Document
           url: /tag_senddocument.html
           output: web
-          
+
     - title: Run website locally
       url: /support_run_website_locally.html
       output: web
