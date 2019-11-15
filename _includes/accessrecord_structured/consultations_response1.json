@@ -14,7 +14,7 @@
         "id": "Problem_A_Anxiety_With_Depression",
         "meta": {
             "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
             ]
         },
         "clinicalStatus": "active",
@@ -214,7 +214,7 @@
     "id": "Problem_B_Swollen_Legs",
     "meta": {
         "profile": [
-        "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+        "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
         ]
     },
     "clinicalStatus": "active",
@@ -372,7 +372,7 @@
   "id": "Problem_D_URTI",
   "meta": {
       "profile": [
-      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
       ]
   },
   "clinicalStatus": "active",
