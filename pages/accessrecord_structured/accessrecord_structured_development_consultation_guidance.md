@@ -190,7 +190,7 @@ Where a Consultation is not marked as confidential but includes items that are m
 * The Consultation will be included in the response as normal
 * The confidential item(s) will NOT be included in the response
 * There will be NO reference to the confidential item(s) in the `List` profiles defining the Consultation structure.
-* The Confidential Items warning message will be included in the `List` containing the query response. The warning will NOT be included in the `List` profiles defining the Consultation structure.
+* The Confidential Items warning message will be included in the `List` for the relevant type of type data that was ommitted. For example if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query. The warning will NOT be included in the `List` profiles defining the Consultation structure.
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Consultation(s) they were removed from.
 
