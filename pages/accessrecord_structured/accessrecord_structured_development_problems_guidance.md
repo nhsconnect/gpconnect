@@ -104,9 +104,9 @@ Where a Problem is not marked as confidential but includes items that are marked
 * The Problem will be included in the response as normal
 * The confidential item(s) will NOT be included in the response
 * There will be NO reference to the confidential item(s) in the `ProblemHeader (Condition)` profile.
-* The Confidential Items warning message will be included in the `List` containing the query response.
+* The Confidential Items warning message will be included in the `List` on the relevant type of type data that was ommitted. For example if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query.
 
-In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed from.
+In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed.
 
 ## Using the `List` resource for problem queries
 
