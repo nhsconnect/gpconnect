@@ -145,6 +145,7 @@ The cross-care setting identifier and how it will work and be used is currently 
 * [ProcedureRequest](accessrecord_structured_development_procedurerequest.html)
 * [ReferralRequest](accessrecord_structured_development_referralrequest.html)
 * DocumentReference
+* [ProcedureRequest - Diary Entry](accessrecord_structured_development_diaryentry.html)
 
 {% include note.html content="DocumentReference is part of the Access Document capability which is available as its own GP Connect specification version. 
 Access Document complements Access Record Structure by retrieval of a documents list or individual documents.
