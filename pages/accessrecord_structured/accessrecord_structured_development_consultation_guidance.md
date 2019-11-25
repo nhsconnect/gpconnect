@@ -159,6 +159,7 @@ When linking to a clinical item that is held in a single FHIR resource the refer
 * For a Referral - reference the `ReferralRequest` profile
 * For a Document - reference the `DocumentReference` profile
 * For an Investigation - reference the `DiagnosticReport` profile
+* For a Diary Entry - reference the `ProcedureRequest` profile
 
 ## Consultations containing unsupported clinical items
 
