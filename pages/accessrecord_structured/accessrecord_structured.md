@@ -23,6 +23,7 @@ The Access Record Structured capability will expose data for a number of clinica
 6. Problems
 7. Investigations
 8. Referrals (Outbound)
+9. Diary Entries
 
 {% include note.html content="The Access Document capability is available in its own GP Connect specification version. 
 Access Document complements Access Record Structure by retrieval of a documents list or individual documents.
