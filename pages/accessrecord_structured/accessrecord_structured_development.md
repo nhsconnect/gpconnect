@@ -52,6 +52,7 @@ The following pages describe each of the clinical areas in more detail and are f
 - [Problem guidance](accessrecord_structured_development_problems_guidance.html)
 - [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
 - [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
+- [Diary Entries guidance](accessrecord_structured_development_diaryentry_guidance.html)
 
 {% include note.html content="The Access Document capability is available in its own GP Connect specification version. 
 Access Document complements Access Record Structure by retrieval of a documents list or individual documents.
