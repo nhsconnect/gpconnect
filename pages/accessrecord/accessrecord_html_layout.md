@@ -209,7 +209,7 @@ If no consumer end date applied:
 
 ```html
 <div class="date-banner">
-	<p>All data items from [Start Date]</p>
+	<p>Data items from [Start Date]</p>
 </div>
 ``` 
 
@@ -217,7 +217,7 @@ If no consumer start date applied:
 
 ```html
 <div class="date-banner">
-	<p>All data items until [End Date]</p> 
+	<p>Data items until [End Date]</p> 
 </div>
 ``` 
 

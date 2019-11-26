@@ -110,28 +110,28 @@ An example GP Connect Conformance Statement of type `capability` is shown below 
          "value": "application/json+fhir"
       }
    ],
-   "profile": {
-      "reference": [
-         {
-            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"
-         },
-         {
-            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"
-         },
-         {
-            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"
-         },
-         {
-            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"
-         },
-         {
-            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"
-         },
-         {
-            "value": "http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"
-         }
-      ]
-   },
+	"profile": {
+		  "reference": [
+			 {
+				"reference": "http://fhir.nhs.net/StructureDefinition/gpconnect-patient-1"
+			 },
+			 {
+				" reference ": "http://fhir.nhs.net/StructureDefinition/gpconnect-operationoutcome-1"
+			 },
+			 {
+				" reference ": "http://fhir.nhs.net/StructureDefinition/gpconnect-practitioner-1"
+			 },
+			 {
+				" reference ": "http://fhir.nhs.net/StructureDefinition/gpconnect-organization-1"
+			 },
+			 {
+				" reference ": "http://fhir.nhs.net/StructureDefinition/gpconnect-searchset-bundle-1"
+			 },
+			 {
+				" reference ": "http://fhir.nhs.net/StructureDefinition/gpconnect-carerecord-composition-1"
+			 }
+		  ]
+	   },
    "rest": {
       "mode": {
          "value": "server"
