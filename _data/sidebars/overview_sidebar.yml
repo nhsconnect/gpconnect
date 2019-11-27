@@ -128,8 +128,14 @@ entries:
     - title: <b class="capability-not-available">Access Record Structured</b>
       url: /accessrecord_rest.html
       output: web
+    - title: <b class="capability-not-available">Access Record Documents</b>
+      url: /accessrecord_documents.html
+      output: web
     - title: <b class="capability-not-available">Appointment Management</b>
       url: /appointments.html
+      output: web
+    - title: <b class="capability-not-available">Send Document</b>
+      url: /send_document.html
       output: web
 
   - title: Integrate with Spine
@@ -283,6 +289,9 @@ entries:
           output: web
         - title: Use case
           url: /tag_usecase.html
+          output: web
+        - title: Send Document
+          url: /tag_senddocument.html
           output: web
 
     - title: Run website locally

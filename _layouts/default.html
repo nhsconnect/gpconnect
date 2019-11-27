@@ -39,6 +39,17 @@
             $('[data-toggle="tooltip"]').tooltip()
         })
     </script>
+	
+
+	<link rel="stylesheet" href="/css/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    <script>
+        $(document).ready(function(){
+		hljs.initHighlightingOnLoad();
+		});
+    </script>
+
+	
     {% if page.datatable == true %}
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.5/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.5/js/jquery.dataTables.js"></script>
@@ -53,6 +64,7 @@
     </script>
     {% endif %}
 
+	
 </head>
 <body>
 {% include topnav.html %}
@@ -63,8 +75,9 @@
     <div class="row">
         <!-- Sidebar Column -->
         <div class="col-md-3">
-
           {% include sidebar.html %}
+		</div>  
+	
     <!-- Content Column -->
     <div class="col-md-9">
         {{content}}
