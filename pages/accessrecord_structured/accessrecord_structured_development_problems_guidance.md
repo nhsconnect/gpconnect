@@ -60,6 +60,7 @@ When linking to the clinical item that is held in a single FHIR resource the ref
 * for a Referral - reference the `ReferralRequest` profile
 * for a Document - reference the `DocumentReference` profile
 * for an Investigation - reference the `DiagnosticReport` profile
+* for a Diary Entry - reference the `ProcedureRequest` profile
 
 ## Problems linking to problems
 
