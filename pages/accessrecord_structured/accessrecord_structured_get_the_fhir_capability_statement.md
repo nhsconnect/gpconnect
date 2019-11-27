@@ -128,7 +128,7 @@ An example GP Connect API Access Record Structured `CapabilityStatement` is show
         {
           "name": "gpc.getstructuredrecord",
           "definition": {
-            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.8"
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.12"
           }
         }
       ]

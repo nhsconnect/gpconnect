@@ -69,7 +69,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 
 #### Payload request body ####
 
-The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.8) `OperationDefinition` profile.
+The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.12) `OperationDefinition` profile.
 
 The `Parameters` resource is populated with the parameters shown below.  Note: The ↳ character indicates a part parameter.
 
@@ -115,7 +115,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge">Boolean</code></td>
       <td>Optional</td>
       <td>
-        Include each prescription issue in the response, this parameter has a default value of 'true'.
+        Include each prescription issue in the response, this parameter has a default value of 'true'. More guidance relating to its use is available in the <a href="accessrecord_structured_development_medication_guidance.html#medication-search-criteria">Medication guidance page</a>
         <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>        
       </td>
     </tr>
@@ -164,10 +164,6 @@ The example below shows a fully populated `Parameters` resource as a request to 
     {
       "name": "includeMedication",
       "part": [
-        {
-          "name": "includePrescriptionIssues",
-          "valueBoolean": true
-        },
         {
           "name": "medicationSearchFromDate",
           "valueDate": "2017-06-04"

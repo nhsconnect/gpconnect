@@ -10,13 +10,7 @@
       }
     },
     {
-      "name": "includeMedication",
-      "part": [
-        {
-          "name": "includePrescriptionIssues",
-          "valueBoolean": true
-        }
-      ]
+      "name": "includeMedication"
     }
   ]
 }
