@@ -16,12 +16,14 @@ In partnership with principal GP clinical system suppliers, GP Connect has devel
 
 GP Connect supports the development of products that use the clinical data made available by our APIs.
 
+## FHIR&reg; API specifications ##
+
 Each specification has a dual objective:
 
 * to show consumer suppliers how to connect to the APIs from their applications
 * to show provider suppliers how to develop APIs that connect to their clinical data
 
-The specifications are arranged by version number and grouped into separate [capabilities](/overview_priority_capabilities.html), so that authorised users in different care settings can, for example:  
+The specifications are arranged by version number and grouped into separate capabilities, so that authorised users in different care settings can, for example:  
 
 * view a patient’s GP practice record
 *	manage GP appointments
