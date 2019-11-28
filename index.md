@@ -51,7 +51,7 @@ The specifications are arranged by version number and grouped into separate [cap
 *	Appointment Management - allows the management of GP practice appointments between different systems
 * Access Record Structured - enables structured, machine-readable information to be retrieved from the patient’s GP practice record (including medication and allergies) 
 
-The capabilities available in each specification are shown in the yellow, version box at the top of each page. To read about our versioning method, see [Specification versioning](design_product_versioning.html). To find out about other specifications, visit the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
+The capabilities available in each specification are shown in the yellow, version box at the top of each page. To read about our versioning method, see [Specification versioning](design_product_versioning.html). To find out about other specifications, visit the [Specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
 
 ## Developer ecosystem ##
 
