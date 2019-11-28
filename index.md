@@ -40,7 +40,8 @@ We have identified three main types of customer:
 
 #### Consumer supplier ####
 *	you're a software development company already working with the NHS or would like to work with the NHS
-*	you want to use GP Connect to develop an API to consume GP data. You intend to work with a suitable end-user organisation, which you may or may not have already identified
+*	you want to use GP Connect to develop a product that consumes GP data
+* you intend to work with a suitable end-user organisation, which you may or may not have already identified
 
 Our developer ecosystem takes you through each stage of a consumer supplier journey for a typical GP Connect API project. Click on a stage to find out more.
 
