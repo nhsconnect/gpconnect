@@ -39,4 +39,9 @@ Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, c
 - read about the GP Connect [capabilities](overview_priority_capabilities.html) within this specification
 - see the latest specifications and release notes in the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers)
 
+## Developer ecosystem ##
+
+Our developer ecosystem diagram takes you through each stage of a consumer supplier journey for a typical GP Connect API project. Click on a stage to find out more.
+
 {% include developer_journey.html %}
+
