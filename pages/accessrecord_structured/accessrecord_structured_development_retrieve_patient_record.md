@@ -214,6 +214,16 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Include immunisations in the response.</td>
     </tr>
     <tr>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">excludeNotGiven</code></span></td>
+      <td><code class="highlighter-rouge">Boolean</code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>
+        Only include immunisations that have been given in the response. The default value for this is <code>true</code>.
+        <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
+      </td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">includeUncategorisedData</code></td>
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
@@ -395,7 +405,13 @@ The example below shows a fully populated `Parameters` resource as a request to 
       ]
     },
     {
-      "name": "includeImmunisations"
+      "name": "includeImmunisations",
+      "part": [
+        {
+          "name": "excludeNotGiven",
+          "valueBoolean": true
+        }
+      ]
     },
     {
       "name": "includeUncategorisedData",
@@ -509,7 +525,7 @@ Provider systems **MUST**:
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - resources holding consultations, problems, immunisations, allergies, intolerance, medications, uncategorised data and warnings about unsupported parameters according to the rules below:
+  - resources holding consultations, problems, immunisations, allergies, intolerance, medications, uncategorised data, referrals, investigations, diary entries and warnings about unsupported parameters according to the rules below:
 
 Provider systems **SHOULD**:
 
@@ -628,6 +644,14 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - when the `includeImmunisations` parameter is set:
 
   - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
+
+- when the `excludeNotGiven` part parameter is set to `true` or not supplied:
+
+  - only immunisations where `notGiven` is set to `false` shall be returned
+
+- when the `excludeNotGiven` part parameter is set to `false`
+
+  - all immunisations where `notGiven` is set to `true` or `false` shall be returned
 
 ##### Uncategorised data #####
 
