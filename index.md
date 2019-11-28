@@ -23,11 +23,11 @@ Each specification has a dual objective:
 * to show consumer suppliers how to connect to the APIs from their applications
 * to show provider suppliers how to develop APIs that connect to their clinical data
 
-The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html), so that authorised users in different care settings can, for example:  
+The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html), for example:  
 
-* view a patient’s GP practice record with Access Record HTML
-*	manage GP appointments with Appointment Management
-* import or download medication and allergies information with Access Record Structured
+* Access Record HTML - provides a read-only view of a patient’s GP practice record 
+*	Appointment Management - allows the management of GP practice appointments between different systems
+* Access Record Structured - enables structured, machine-readable information to be retrieved from the patient’s GP practice record (including medication and allergies) 
 
 The capabilities available in each specification are shown in the yellow, version box at the top of each page. To find out about other specifications, visit the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
 
