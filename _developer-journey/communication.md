@@ -1,6 +1,6 @@
 ---
 name: Communication
-coord: "400,320,628,530"
+coord: "500,340,650,550"
 href: support_communications.html
 ---
 Communication
