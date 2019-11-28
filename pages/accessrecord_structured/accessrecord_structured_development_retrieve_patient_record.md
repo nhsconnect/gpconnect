@@ -294,6 +294,35 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       </td>
     </tr>
 
+
+    <tr>
+      <td><code class="highlighter-rouge">includeDiaryEntries</code></td>
+      <td><code class="highlighter-rouge"></code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>Include diary entries in the response.</td>
+    </tr>
+    <tr>
+      <td>&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">diaryEntriesSearchDate</code></td>
+      <td><code class="highlighter-rouge">Date</code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>
+        Restrict diary entries returned on or before the date specified. Rules:
+        <ul>
+      <li>If the <code>diaryEntriesSearchDate</code> is not specified, all diary entries will be returned.</li>
+      <li>If the <code>diaryEntriesSearchDate</code> is populated, all diary entries which occur on or before the <code>diaryEntriesSearchDate</code> <b>MUST</b> be returned.</li>
+      <li><code>diaryEntriesSearchDate</code> <b>MUST</b> be populated with a date greater than or equal to the current date.</li>
+          <li><code>diaryEntriesSearchDate</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
+      </ul>
+      <p><i>Part parameter: may only be provided if <code>includeDiaryEntries</code> is set.</i></p>
+      </td>
+    </tr>
+
+
+
+
+
   </tbody>
 </table>
 
@@ -403,6 +432,15 @@ The example below shows a fully populated `Parameters` resource as a request to 
           }
         }
       ]
+    },
+    {
+      "name": "includeDiaryEntries",
+      "part": [
+        {
+          "name": "diaryEntriesSearchDate",
+          "valueDate": "2017-06-04"
+        }
+      ]
     }
   ]
 }
@@ -443,6 +481,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The `diaryEntriesSearchDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `diaryEntriesSearchDate` part parameter is less than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |-------------------------|-------------------|
 
 ### Request response ###
@@ -643,6 +683,20 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - and when an `end` value is set, all referrals with a `ReferralRequest.authoredOn` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, referrals with a `ReferralRequest.authoredOn` after the `start` and with a `ReferralRequest.authoredOn` before the `end` **MUST** be returned
 
+##### Diary entries #####
+Provider systems **MUST** include the following in the response `Bundle`:
+
+- when the `includeDiaryEntries` parameter is not set:
+
+  - no diary entries shall be returned
+
+- when the `includeDiaryEntries` parameter is set:
+
+  - [`List`](accessrecord_structured_development_list.html), [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's diary entries will be returned.
+
+- when the `diaryEntriesSearchDate` parameter is set:
+  - all diary entries that occur on or before the `diaryEntriesSearchDate` **MUST** be returned
+
 #### Medication search date ####
 
 The `medicationSearchFromDate` identifies the start date of the requested medications search period. An end date cannot be requested by a consumer, so that all searches go to the end of the patient's record.
@@ -719,6 +773,8 @@ Examples of the payload requests and responses can be found here:
 - [Immunizations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_immunizations.html)
 - [Uncategorised data - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_uncategorised.html)
 - [Investigations - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_pathology.html)
+- [Referrals - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_referrals.html)
+- [Diary entries - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_diaryentries.html)
 
 To illustrate how forwards compatibility works, the following example has been included:
 - [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.3 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
