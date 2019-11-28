@@ -16,21 +16,6 @@ In partnership with principal GP clinical system suppliers, GP Connect has devel
 
 GP Connect supports the development of products that use the clinical data made available by our APIs.
 
-## About the FHIR&reg; API specifications ##
-
-Each specification has a dual objective:
- 
-* to show consumer suppliers how to connect to the APIs from their applications
-* to show provider suppliers how to develop APIs that connect to their clinical data
-
-The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html), for example:  
-
-* Access Record HTML - provides a read-only view of a patient’s GP practice record 
-*	Appointment Management - allows the management of GP practice appointments between different systems
-* Access Record Structured - enables structured, machine-readable information to be retrieved from the patient’s GP practice record (including medication and allergies) 
-
-The capabilities available in each specification are shown in the yellow, version box at the top of each page. To find out about other specifications, visit the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
-
 ## Audience ##
 The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect){:target="_blank"}.
 
@@ -56,6 +41,21 @@ Information of particular relevance to provider suppliers is indicated within th
 *	you want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care
 
 See [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect/getting-involved-with-gp-connect#information-for-commissioning-or-end-user-organisations).
+
+## About the FHIR&reg; API specifications ##
+
+Each specification has a dual objective:
+ 
+* to show consumer suppliers how to connect to the APIs from their applications
+* to show provider suppliers how to develop APIs that connect to their clinical data
+
+The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html), for example:  
+
+* Access Record HTML - provides a read-only view of a patient’s GP practice record 
+*	Appointment Management - allows the management of GP practice appointments between different systems
+* Access Record Structured - enables structured, machine-readable information to be retrieved from the patient’s GP practice record (including medication and allergies) 
+
+The capabilities available in each specification are shown in the yellow, version box at the top of each page. To find out about other specifications, visit the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
 
 ## Community engagement ##
 GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
