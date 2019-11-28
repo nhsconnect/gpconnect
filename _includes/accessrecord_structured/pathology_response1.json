@@ -1,3 +1,4 @@
+{% highlight json %}
   {
     "resourceType": "Bundle",
     "type": "collection",
@@ -1515,3 +1516,4 @@
       }
     ]
   }
+{% endhighlight %}
