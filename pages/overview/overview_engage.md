@@ -16,7 +16,7 @@ summary: "Getting started with GP Connect"
 	- <span class="label label-warning">ASSUMPTION</span> an assumption has been made which is under review/needs validated
 - read the GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
 
-### Integration with Spin ###
+### Integration with Spine ###
 
 <p>Consumer suppliers can develop applications that use GP Connect {% include tooltip.html type="FHIR&reg;" %} {% include tooltip.html type="API" %} specifications to consume GP data. To retrieve data from an end-user organisation, your application will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
 
@@ -38,3 +38,5 @@ Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, c
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html) within this specification
 - see the latest specifications and release notes in the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers)
+
+{% include developer_journey.html %}
