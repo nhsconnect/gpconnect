@@ -89,7 +89,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 ### Diary entries ###
 
 * Search for all Diary Entry data prior to a specified date
-     * The consumer system request all items prior to an end date
+     * The consumer system requests all items prior to an end date
      * The provider system returns all items whose 
 		* occurrence period start date is on or prior to the consumer supplied end date or
 		* occurrence date time is on or prior to the consumer supplied end date
