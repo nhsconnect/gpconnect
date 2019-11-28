@@ -62,7 +62,11 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 ### Immunisations ###
 
-* All Immunisations will always be returned.
+* All immunisations which have been given are always included.
+* Include immunisations which were intended but were not given
+    * The consumer requests immunisations which were not given
+    * The provider returns all immunisation given and intended but not given
+    * If no part parameters are included, the provider only returns given immunisations
 
 ### Investigations ###
 
