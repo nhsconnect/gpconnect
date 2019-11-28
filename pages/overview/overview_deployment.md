@@ -16,10 +16,11 @@ Once your consumer product has been assured it will be added to the NHSD Service
 - become a [First of Type](overview_first_of_type.html) deployment
 
 ## Provider suppliers ##
+
 *Text for providers* 
 
-## Developer ecosystem
+## Developer ecosystem ##
 
-Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
-  
+Our developer ecosystem diagram takes you through each stage of a consumer supplier journey for a typical GP Connect API project. Click on a stage to find out more.
+
 {% include developer_journey.html %}
