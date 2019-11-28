@@ -1,0 +1,29 @@
+{% highlight json %}
+{
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
+    ]
+  },
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeDiaryEntries",
+	  "part": [
+        {
+          "name": "diaryEntriesSearchDate",
+          "valueDate": "2017-06-04"
+        }
+      ]
+    }
+  ]
+}
+
+{% endhighlight %}
