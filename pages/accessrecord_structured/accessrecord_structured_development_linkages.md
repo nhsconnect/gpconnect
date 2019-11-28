@@ -19,11 +19,11 @@ For a consuming system to be able to interpret this linkage information correctl
 ### GP Connect FHIR&reg; model ###
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations and Documents. Other clinical areas will be added as they are developed.
+The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries. Other clinical areas will be added as they are developed.
 
 <a href="images/access_structured/GP_Connect_FHIR_Model.png"><img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
 
-<img src="images/access_structured/FHIR_model_key.png" alt="GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
+<img src="images/access_structured/FHIR_model_key.png" alt="Key for GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
 
 The relationships between two FHIR profiles are recorded in only one of the linked FHIR profiles (similar to in a relational database management system). This is shown by the direction of the arrow in the FHIR model. 
 
