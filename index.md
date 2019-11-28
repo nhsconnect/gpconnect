@@ -23,15 +23,13 @@ Each specification has a dual objective:
 * to show consumer suppliers how to connect to the APIs from their applications
 * to show provider suppliers how to develop APIs that connect to their clinical data
 
-The specifications are arranged by version number and grouped into separate capabilities, so that authorised users in different care settings can, for example:  
+The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html), so that authorised users in different care settings can, for example:  
 
 * view a patient’s GP practice record with Access Record HTML
 *	manage GP appointments with Appointment Management
 * import or download medication and allergies information with Access Record Structured
 
-The specification you are currently reading has [these capabilities](overview_priority_capabilities.html).
-
-To find out about other specifications, visit the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
+The capabilities available in each specification are shown in the yellow, version box at the top of each page. To find out about other specifications, visit the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
 
 ## Audience ##
 The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect){:target="_blank"}.
@@ -51,7 +49,7 @@ Our developer ecosystem takes you through each stage of a consumer supplier jour
 *	you're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP
 *	you want to use GP Connect to enable other systems to access GP data on your system for direct patient care
 
-See [Getting started](overview_engage.html).
+Information of particular relevance to provider suppliers is indicated within the specification.
 
 #### End-user organisation ####
 *	you're a clinical commissioning group (CCG) with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting
