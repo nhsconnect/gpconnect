@@ -8,13 +8,15 @@ permalink: overview_engage.html
 summary: "Getting started with GP Connect"
 ---
 
-- read about the GP Connect [Priority capabilities](overview_priority_capabilities.html)
-- look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
+## Consumer suppliers ##
+
+- read about the GP Connect [capabilities](overview_priority_capabilities.html)
+- look through the design decisions made so far in relation to each capability ([Foundations](foundations_design.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> a decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> an assumption has been made which is under review/needs validated
+- read the GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
 
-
-## Consumer suppliers ##
+### Integration with Spin ###
 
 <p>Consumer suppliers can develop applications that use GP Connect {% include tooltip.html type="FHIR&reg;" %} {% include tooltip.html type="API" %} specifications to consume GP data. To retrieve data from an end-user organisation, your application will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
 
@@ -30,28 +32,9 @@ summary: "Getting started with GP Connect"
 
 For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
 
-## Things to consider
-
-- read our GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
-- read about the GP Connect [priority capabilities](overview_priority_capabilities.html)
-- look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
-	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
-	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
-
 ## Provider suppliers ##
 
 Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, can use GP Connect to develop APIs that allow consumer applications to access GP data on their systems.
 
-## Things to consider
-
-- read our GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
-- read about the GP Connect [priority capabilities](overview_priority_capabilities.html)
-- look through the design decisions made so far in relation to each capability pack ([Foundations](foundations_design.html), [Access Record HTML](accessrecord.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
-	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
-	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated
-
-## Developer ecosystem
-
-Our developer ecosystem takes you through each stage of a typical GP Connect API project. Click on a stage to find out more.
-  
-{% include developer_journey.html %}
+- read about the GP Connect [capabilities](overview_priority_capabilities.html) within this specification
+- see the latest specifications and release notes in the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers)
