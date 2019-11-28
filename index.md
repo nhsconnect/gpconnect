@@ -63,8 +63,6 @@ GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:targe
 ## Provide feedback ##
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
-{% include important.html content="This site is under active development by the GP Connect team and is intended to provide all the technical resources you need to successfully develop GP Connect provider APIs or consuming applications. Some areas are being formulated and iterative updates to content will be added on a regular basis. See our GitHub [releases page](https://github.com/nhsconnect/gpconnect/releases) for more information." %}
-
 {% include twitterfollow.html %}
 
 {% include gitterbadge.html %}
