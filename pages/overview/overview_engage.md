@@ -16,6 +16,34 @@ summary: "Getting started with GP Connect"
 	- <span class="label label-warning">ASSUMPTION</span> an assumption has been made which is under review/needs validated
 - read the GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
 
+## Consumer supplier pathway ##
+
+- Read about the GP Connect capabilities
+- Study the prerequisites
+- Contact GP Connect Consumer Assurance team
+- Describe use case (purpose of your product)
+- Obtain use case approval
+- Receive Supplier Conformance Assessment List (SCAL)
+- Develop product
+- Communication – ongoing communication with GP Connect
+- Assurance:
+1 Test against internet-facing demonstrator
+2 Test against OpenTest demonstrator
+3 Test against environment demonstrator in Int
+4 Fill in SCAL
+5 Test against providers in Int
+- Receive technical conformance certificate
+- Receive connection agreement
+- End-user engagement:
+1 End-user portal
+2 Data sharing agreement
+3 SCAL review
+4 End-user declaration signed  (Speak to Sharon and Rebecca)
+- Deploy:
+1 Approval to Go Live
+2 Commissioner and Supplier Deployment Approach
+3 Go Live
+
 ### Integration with Spine ###
 
 <p>Consumer suppliers can develop applications that use GP Connect {% include tooltip.html type="FHIR&reg;" %} {% include tooltip.html type="API" %} specifications to consume GP data. To retrieve data from an end-user organisation, your application will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
