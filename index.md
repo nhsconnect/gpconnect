@@ -53,12 +53,6 @@ The specifications are arranged by version number and grouped into separate [cap
 
 The capabilities available in each specification are shown in the yellow, version box at the top of each page. To read about our versioning method, see [Specification versioning](design_product_versioning.html). To find out about other specifications, visit the [Specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
 
-## Developer ecosystem ##
-
-Our developer ecosystem diagram takes you through each stage of a consumer supplier journey for a typical GP Connect API project. Click on a stage to find out more.
-
-{% include developer_journey.html %}
-
 ## Community engagement ##
 GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
 
