@@ -10,7 +10,7 @@ summary: "Getting involved with GP Connect"
 
 ## The Open API ecosystem
 
-GP Connect is part of a wider initiative to expose standards based [Open APIs](designprinciples_open_api_principles.html#open-api){:target="_blank"} to promote innovation and improve care across the NHS.
+GP Connect is part of a wider initiative to expose standards based [Open APIs](designprinciples_open_api_principles.html) to promote innovation and improve care across the NHS.
 
 ### Capabilities
 
