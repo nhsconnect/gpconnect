@@ -31,7 +31,7 @@ Provider systems **MUST** be tested for technical conformance of the following b
 Provider systems **MUST** be tested for conformance to one or more of the following capability packs:
 
  - [Access Record HTML](accessrecord.html)
- - [Access Record Structured](accessrecord_rest.html)
+ - [Access Record Structured](accessrecord_structured.html)
  - [Appointment Management](appointments.html)
 
 {% include download.html content="Download the [GP Connect Provider Test Suite](https://github.com/nhsconnect/gpconnect-provider-testing) to help validate the technical conformance of your provider API implementation." %}

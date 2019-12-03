@@ -21,7 +21,7 @@ All HTTP communications are secured using TLS MA. This includes both legs of the
 
 A consumer system queries [Spine Directory Service](integration_spine_directory_service.html#querying-sds) using the provider's ODS code to determine:
 
-- the provider's [service root URL](development_general_api_guidance.html#service-root-url) (their "base endpoint")
+- the provider's [service root URL](development_fhir_api_guidance.html#service-root-url) (their "base endpoint")
 - the provider's ASID, used in headers below
 
 Once these are retrieved, a GP Connect HTTP request is constructed to send to the SSP in the following format:
