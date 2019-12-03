@@ -44,26 +44,26 @@ Providers must return all the columns as described in the table below, sorted by
 <table>
 <thead>
   <tr class="header">
-	<th width="5%">Order</th>
-	<th width="23%">Name</th>
-	<th width="58%">Description</th>
-	<th width="14%">Value details</th>
+	<th style="width:5%">Order</th>
+	<th style="width:23%">Name</th>
+	<th style="width:58%">Description</th>
+	<th style="width:14%">Value details</th>
   </tr>
  </thead>
   <tr>
-    <td align="center">1</td>
+    <td style="text-align:center">1</td>
     <td><code>Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em> </td>
     <td>The date of the observation</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr> 
   <tr>
-    <td align="center">2</td>
+    <td style="text-align:center">2</td>
     <td><code>Entry</code></td>
     <td>A short human readable free-text title for the observation</td>
     <td><code>free-text</code></td>
   </tr>
   <tr>
-    <td align="center">3</td>
+    <td style="text-align:center">3</td>
     <td><code>Value</code></td>
 	  <td>Value of the observation. As a minimum, this <strong>MUST</strong> include:
 		<ul>
@@ -74,7 +74,7 @@ Providers must return all the columns as described in the table below, sorted by
     <td><code>free-text</code></td>
   </tr>
   <tr>
-    <td align="center">4</td>
+    <td style="text-align:center">4</td>
     <td><code>Range</code></td>
     <td>Range of the observation, where available. As a minimum, this <strong>MUST</strong> include:
 		<ul>
@@ -85,7 +85,7 @@ Providers must return all the columns as described in the table below, sorted by
 	<td><code>free-text</code></td>
   </tr>
   <tr>
-    <td align="center">5</td>
+    <td style="text-align:center">5</td>
     <td><code>Details</code></td>
     <td>Longer human readable details for the observation</td>
     <td><code>free-text</code></td>
