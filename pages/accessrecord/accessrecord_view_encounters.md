@@ -49,9 +49,9 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value Details |
 | ----- | ---- | ----------- | ------------- |
-| <center>1</center> | `Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The date of the encounter | `dd-Mmm-yyyy` |
-| <center>2</center> | `Title`| A short human-readable title for the encounter, to be composed of a subset of the `Practitioner` and `Organization` details linked to the encounter| `free-text` |
-| <center>3</center> | `Details` | Longer human readable details for the encounter | `free-text` |
+| 1 | `Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The date of the encounter | `dd-Mmm-yyyy` |
+| 2 | `Title`| A short human-readable title for the encounter, to be composed of a subset of the `Practitioner` and `Organization` details linked to the encounter| `free-text` |
+| 3 | `Details` | Longer human readable details for the encounter | `free-text` |
 
 ## HTML view ##
 

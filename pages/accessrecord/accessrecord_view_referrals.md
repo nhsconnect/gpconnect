@@ -42,11 +42,11 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The date of the referral | `dd-Mmm-yyyy` |
-| <center>2</center> | `From` | Practitioner or Organisation referred from | `free-text` |
-| <center>3</center> | `To` | Practitioner or Organisation referred to | `free-text` |
-| <center>4</center> | `Priority` | The priority of the referral | `free-text` |
-| <center>5</center> | `Details` | Longer human readable details for the referral | `free-text` |
+| 1 | `Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The date of the referral | `dd-Mmm-yyyy` |
+| 2 | `From` | Practitioner or Organisation referred from | `free-text` |
+| 3 | `To` | Practitioner or Organisation referred to | `free-text` |
+| 4 | `Priority` | The priority of the referral | `free-text` |
+| 5 | `Details` | Longer human readable details for the referral | `free-text` |
 
 ## HTML view ##
 

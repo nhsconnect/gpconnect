@@ -72,10 +72,10 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The start date of the problem | `dd-Mmm-yyyy` |
-| <center>2</center> | `Entry`| A short human readable title for the problem | `free-text` |
-| <center>3</center> | `Significance`| The significance of the problem (meaning, Major or Minor) | `free-text` |
-| <center>4</center> | `Details` | Longer human readable details for the problem | `free-text` |
+| 1 | `Start Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The start date of the problem | `dd-Mmm-yyyy` |
+| 2 | `Entry`| A short human readable title for the problem | `free-text` |
+| 3 | `Significance`| The significance of the problem (meaning, Major or Minor) | `free-text` |
+| 4 | `Details` | Longer human readable details for the problem | `free-text` |
 
 
 
@@ -108,11 +108,11 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
-| <center>3</center> | `Entry`| A short human-readable title for the problem | `free-text` |
-| <center>4</center> | `Significance`| The significance of the problem (meaning, Major or Minor) | `free-text` |
-| <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
+| 1 | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
+| 2 | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
+| 3 | `Entry`| A short human-readable title for the problem | `free-text` |
+| 4 | `Significance`| The significance of the problem (meaning, Major or Minor) | `free-text` |
+| 5 | `Details` | Longer human readable details for the problem | `free-text` |
 
 Provider systems having 3 levels of significance **MUST** include inactive problems with the highest and mid-level significance in this subsection. If more than 3 levels of significance, then those equal to or greater than the mid-level significance **MUST** be included in this subsection. Provider systems **MUST NOT** include problems without a significance level in this subsection (for example, if significance is not mandatory and has not be recorded).
 
@@ -160,11 +160,11 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
-| <center>3</center> | `Entry`| A short human-readable title for the problem | `free-text` |
-| <center>4</center> | `Significance`| The significance of the problem  | `free-text` |
-| <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
+| 1 | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
+| 2 | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
+| 3 | `Entry`| A short human-readable title for the problem | `free-text` |
+| 4 | `Significance`| The significance of the problem  | `free-text` |
+| 5 | `Details` | Longer human readable details for the problem | `free-text` |
 
 
 Provider systems having 3 levels of significance **MUST** include inactive problems with the lowest level of significance in this subsection. If more than 3 levels of significance, then those less than the mid-level significance must be included in this subsection. Any inactive problems which do not have a significance level **MUST** be included in this section.

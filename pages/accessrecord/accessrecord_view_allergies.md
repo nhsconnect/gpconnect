@@ -69,8 +69,8 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value Details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
-| <center>2</center> | `Details` | Longer human-readable details for the allergy or adverse reaction | `free-text` |
+| 1 | `Start Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
+| 2 | `Details` | Longer human-readable details for the allergy or adverse reaction | `free-text` |
 
 
 ## Historical allergies and adverse reactions ##
@@ -97,9 +97,9 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date` | The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
-| <center>3</center> | `Details` | Longer human readable details for the allergy or adverse reaction | `free-text` |
+| 1 | `Start Date` | The start date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
+| 2 | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the allergy or adverse reaction | `dd-Mmm-yyyy` |
+| 3 | `Details` | Longer human readable details for the allergy or adverse reaction | `free-text` |
 
 
 ## HTML view ##

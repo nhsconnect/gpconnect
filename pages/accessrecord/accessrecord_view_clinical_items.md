@@ -44,9 +44,9 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The date of entry of the clinical item | `dd-Mmm-yyyy` |
-| <center>2</center> | `Entry`| A short human readable title for the clinical item | `free-text` |
-| <center>3</center> | `Details` | Longer human readable details for the clinical item | `free-text` |
+| 1 | `Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The date of entry of the clinical item | `dd-Mmm-yyyy` |
+| 2 | `Entry`| A short human readable title for the clinical item | `free-text` |
+| 3 | `Details` | Longer human readable details for the clinical item | `free-text` |
 
 ## HTML view ##
 
