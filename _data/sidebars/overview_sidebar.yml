@@ -152,7 +152,7 @@ entries:
     - title: Access Record Structured
       url: /accessrecord_structured.html
       output: web
-    - title: Access Record Documents
+    - title: Access Document
       url: /accessrecord_documents.html
       output: web
     - title: <b class="capability-not-available">Access Record HTML</b>
