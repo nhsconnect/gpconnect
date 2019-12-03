@@ -44,7 +44,6 @@ toc: false
 	<p style="padding-top:8px">HTML implementation guidance</p>
 	<p><a href="accessrecord_development_html_implementation_guide.html">Standards</a></p>
 	<p><a href="accessrecord_development_html_layout_guide.html">Layout</a></p>	
-	<p><a href="accessrecord_provider_variance.html">Provider variance</a></p>
 	
   </div>
   <div class="column">

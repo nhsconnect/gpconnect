@@ -90,7 +90,7 @@ Provider systems which also offer consumer functionality **MUST** use the same G
 
 ### 3.4 Format of Service Root URL ###
 
-The *Service Root URL* for a given ASID **MUST** be defined in the `nhsMhsEndPoint` attribute of the MHS record (i.e. the LDAP object of type nhsMhs). This URL **MUST** be in the format described in [Service Root URL versioning](development_general_api_guidance.html#service-root-url) guidance.
+The *Service Root URL* for a given ASID **MUST** be defined in the `nhsMhsEndPoint` attribute of the MHS record (i.e. the LDAP object of type nhsMhs). This URL **MUST** be in the format described in [Service Root URL versioning](development_fhir_api_guidance.html#service-root-url) guidance.
 
 As described in the [API versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, the practice's ODS code  **MUST** be placed in the FHIR server root URL, and this **MUST** match the value in the `nhsidcode` elements on the MHS and associated AS records.  ODS codes which refer to clinical systems as a single entity **MUST NOT** be used to provide routing. Practice specific ODS codes **MUST** be used for routing purposes in the FHIR Server Root URL found in the `nhsMhsEndPoint` attribute of the MHS record.
 

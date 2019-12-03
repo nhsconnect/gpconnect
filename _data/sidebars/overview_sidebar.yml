@@ -126,7 +126,7 @@ entries:
       url: /accessrecord.html
       output: web
     - title: <strong class="capability-not-available">Access Record Structured</strong>
-      url: /accessrecord_rest.html
+      url: /accessrecord_structured.html
       output: web
     - title: <strong class="capability-not-available">Access Document</strong>
       url: /accessrecord_documents.html
