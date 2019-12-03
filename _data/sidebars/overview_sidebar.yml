@@ -128,7 +128,7 @@ entries:
     - title: <strong class="capability-not-available">Access Record Structured</strong>
       url: /accessrecord_rest.html
       output: web
-    - title: <strong class="capability-not-available">Access Record Documents</strong>
+    - title: <strong class="capability-not-available">Access Document</strong>
       url: /accessrecord_documents.html
       output: web
     - title: <strong class="capability-not-available">Appointment Management</strong>
