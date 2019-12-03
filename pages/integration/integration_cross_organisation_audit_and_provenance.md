@@ -130,7 +130,7 @@ Consumers **MUST** populate the payload section of the JWT with the following cl
 - [`exp`](#exp-expiry-claim) (expiry)
 - [`iat`](#iat-issued-at-claim) (issued at)
 - [`reason_for_request`](#reason_for_request-claim)
-- [`requested_record`](#requested_record)
+- [`requested_record`](#requested_record-claim)
 - [`requested_scope`](#requested_scope-claim)
 - [`requesting_device`](#requesting_device-claim)
 - [`requesting_organization`](#requesting_organization-claim)
