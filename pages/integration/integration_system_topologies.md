@@ -8,7 +8,7 @@ summary: "Overview of the different types of deployment topologies for GP Connec
 ---
 
 {% include important.html content="The Spine Secure Proxy includes a mechanism to filter out all requests between organisations that are not registered on the proxy as having a mutual Data Sharing Agreement. Without this then all GP Connect consumers would be able to send requests to all GP Connect providers. 
-In order for the filtering solution to work each consumer/provider organisation MUST have their own unique [Spine ASID](#spine-endpoint-terms) configured on the SSP."%}
+In order for the filtering solution to work each consumer/provider organisation MUST have their own unique [Spine ASID](integration_sds_registering_endpoints.html) configured on the SSP."%}
 
 # Consumer Topologies #
 
@@ -21,8 +21,8 @@ Several consumer systems connecting to GP Connect via a shared message handling 
 This is a typical deployment for an area based or regional Portal, where a central system/TIE (Trust integration engine) acting as the message handling server connects to Spine for multiple organisations.
 
 Please note:
-- each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
-- consumer systems in the shared MHS topology have one [Party Key](#spine-endpoint-terms) shared amongst connecting organisations
+- each consumer system using GP Connect **MUST** have a unique [ASID](integration_sds_registering_endpoints.html) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
+- consumer systems in the shared MHS topology have one [Party Key](integration_sds_registering_endpoints.html) shared amongst connecting organisations
 
 {% include important.html content="In consumer system topologies where GP Connect consumer applications are provisioned via a portal or middleware hosted by another organisation, it is vital that the ASID sent in the `Ssp-From` header reflects the organisation from where the request originates, rather than the hosting organisation." %}
 
@@ -35,8 +35,8 @@ Several consumer systems connecting to GP Connect via their own message handling
 This could be different types of consumer systems, or the same type of consumer system deployed as separate instances.
 
 Please note:
-- each consumer system using GP Connect **MUST** have a unique [ASID](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
-- consumer systems using the separate MHS topology each have their own [Party Key](#spine-endpoint-terms)
+- each consumer system using GP Connect **MUST** have a unique [ASID](integration_sds_registering_endpoints.html) for each organisation that is using it, in order that messages flowing through Spine can be correctly identified back to the originating organisation
+- consumer systems using the separate MHS topology each have their own [Party Key](integration_sds_registering_endpoints.html)
 
 # Provider Topologies #
 
@@ -52,8 +52,8 @@ This is a typical deployment for a multi tenanted data centre hosted GP system s
 
 Please note:
 
-- each provider system using GP Connect **MUST** have an [ASID](#spine-endpoint-terms) **AND** [Party Key](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be routed to the correct destination organisation
-- each Party Key/ASID combination **MUST** be registered in SDS as a [CMA endpoint](#spine-endpoint-terms)
+- each provider system using GP Connect **MUST** have an [ASID](integration_sds_registering_endpoints.html) **AND** [Party Key](integration_sds_registering_endpoints.html) for each organisation that is using it, in order that messages flowing through Spine can be routed to the correct destination organisation
+- each Party Key/ASID combination **MUST** be registered in SDS as a [CMA endpoint](integration_sds_registering_endpoints.html)
 
 ## Provider system - separate MHS ##
 
@@ -63,8 +63,8 @@ Discrete instances of GP practice systems each serving a single GP Practice, and
 
 Please note:
 
-- each provider system using GP Connect **MUST** have an [ASID](#spine-endpoint-terms) **AND** [Party Key](#spine-endpoint-terms) for each organisation that is using it, in order that messages flowing through Spine can be routed to the correct destination organisation
-- each Party Key/ASID combination **MUST** be registered in SDS as a [CMA endpoint](#spine-endpoint-terms)
+- each provider system using GP Connect **MUST** have an [ASID](integration_sds_registering_endpoints.html) **AND** [Party Key](integration_sds_registering_endpoints.html) for each organisation that is using it, in order that messages flowing through Spine can be routed to the correct destination organisation
+- each Party Key/ASID combination **MUST** be registered in SDS as a [CMA endpoint](integration_sds_registering_endpoints.html)
 
 ## Spine/SDS terminology ##
 

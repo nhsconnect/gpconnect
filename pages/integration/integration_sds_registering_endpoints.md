@@ -62,7 +62,7 @@ GP Connect [interaction IDs](integration_interaction_ids.html) on an MHS record 
 
 Consumer systems MAY use a single GP Connect Party Key for multiple organisations, if they connect to Spine via a single shared message handling server.
 
-However, as per [1.1 Unique ASID per system used by an organisation](#11-unique-asid-per-system-used-by-an-organisation) each consumer organisation **MUST** have its own unique ASID.
+However, as per [1.1 Unique ASID per system used by an organisation](#11-unique-asid-per-organisation-using-a-system) each consumer organisation **MUST** have its own unique ASID.
 
 Please see [System topologies](integration_system_topologies.html) for more information.
 

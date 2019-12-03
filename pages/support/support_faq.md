@@ -35,7 +35,7 @@ Please refer to the [FHIR Out Of Scope](development_fhir_api_guidance.html#fhir-
 
 ## Why does the specification include CRUD interactions especially DELETE when not needed? ##
 
-The [Delete Resource](development_fhir_api_guidance.html#delete-resourcehttpswwwhl7orgfhirdstu2httphtmldelete) section is included for completeness to illustrate how a RESTful API (such as FHIR) is designed to support the basic Create, Update and Delete (CRUD) operations. It is made clear in this section that GP Connect FoT clients and servers are not expected to implement this operation at this stage but shouldn’t make implementation decisions that preclude the use of the DELETE HTTP verb in the future.
+The [Delete Resource](development_fhir_api_guidance.html#delete-resource) section is included for completeness to illustrate how a RESTful API (such as FHIR) is designed to support the basic Create, Update and Delete (CRUD) operations. It is made clear in this section that GP Connect FoT clients and servers are not expected to implement this operation at this stage but shouldn’t make implementation decisions that preclude the use of the DELETE HTTP verb in the future.
 It may be the case that the DELETE verb is used in future incarnations of GP Connect.  However the effect of these on the target systems may be a “soft” delete.
 
 ## Why does the specification mandate support for FHIR functionality that may not be necessary for GP Connect? ##
@@ -44,7 +44,7 @@ In writing the FHIR implementation guidance for GP Connect we have worked hard t
 
 ## Why is support built in for accessing specific resources when the requirement is for the record for a specified patient? ##
 
-As outlined in the [Compartment Based Access](development_fhir_api_guidance.html#compartment-based-accesshttphl7orgfhircompartmentshtml) section the scope of the Patient Compartment in the GP Connect FoT is limited to Appointment access only. Conceptually, any and all resources where the subject of the resource is a patient could be made available. However, this isn’t mandated.
+As outlined in the [Compartment Based Access](development_fhir_api_guidance.html#compartment-based-access) section the scope of the Patient Compartment in the GP Connect FoT is limited to Appointment access only. Conceptually, any and all resources where the subject of the resource is a patient could be made available. However, this isn’t mandated.
 
 ## Why does the guidance include support for amendment to appointments? ##
 

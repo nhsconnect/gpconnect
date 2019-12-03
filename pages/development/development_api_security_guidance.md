@@ -19,13 +19,13 @@ Provider Systems:
 
 - **MUST** only accept encrypted connections and drop connection attempts presented over insecure protocols
 
-- **MUST** only accept requests for its allocated ASID, as specified by the `Ssp-To` header,  on its matching endpoint URL
+- **MUST** only accept requests for its allocated ASID, as specified by the `Ssp-To` header, on its matching endpoint URL
 
 - **MUST** check that the `Ssp-InteractionID` value is consistent with the endpoint being requested
 
 - **MUST** check for the presence of all [SSP headers](integration_spine_security_proxy_implementation_guide.html#consumer)
 
-- **MUST** check that an [authorization bearer token](integration_cross_organisation_audit_and_provenance.html#json-web-tokens-jwt) in present and correctly formed
+- **MUST** check that an [authorization bearer token](integration_cross_organisation_audit_and_provenance.html#cross-organisation-audit-and-provenance-transport) in present and correctly formed
 
 - **MAY** authorise access to API endpoints through examining acceptable values in the JWT requested_scope claim
 
@@ -90,7 +90,7 @@ Cache-Control: no-store
 
 ## Authorisation of access to endpoints ##
 
-The primary purpose of the JWT claims is to [enable cross organisation provenance](integration_cross_organisation_audit_and_provenance.html#cross-organisation-audit--provenance-transport) information to be transmitted for auditing purposes.
+The primary purpose of the JWT claims is to [enable cross organisation provenance](integration_cross_organisation_audit_and_provenance.html#cross-organisation-audit-provenance-transport) information to be transmitted for auditing purposes.
 
 Provider systems **MAY** choose to use the value of the requested_scope claim to authorise access to APIs. In this case, provider systems **MUST** apply authorisation logic to endpoints as follows:
 

@@ -31,8 +31,8 @@ There is only a single main section for the summary section with six subsections
  - [Active Problems and Issues](accessrecord_view_summary.html#active-problems-and-issues)
  - [Major Inactive Problems and Issues](accessrecord_view_summary.html#major-inactive-problems-and-issues)
  - [Current Allergies and Adverse Reactions](accessrecord_view_summary.html#current-allergies-and-adverse-reactions)
- - [Acute Medication (Last 12 Months)](accessrecord_view_summary.html#acute-medication-issues-last-12-months)
- - [Current Repeat Medications](accessrecord_view_summary.html#current-repeat-medications)
+ - [Acute Medication (Last 12 Months)](accessrecord_view_summary.html#acute-medication-last-12-months)
+ - [Current Repeat Medications](accessrecord_view_summary.html#current-repeat-medication)
 
  
 ## Date filter ##

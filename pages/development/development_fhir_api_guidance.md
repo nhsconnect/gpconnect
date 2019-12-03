@@ -58,7 +58,7 @@ To help API implementers deal with the FHIR learning curve NHS Digital has worke
 		3. [Organization](https://www.hl7.org/fhir/DSTU2/organization.html) profiled as gpconnect-organization-1
 		4. [Location](https://www.hl7.org/fhir/DSTU2/location.html) profiled as gpconnect-location-1
 	2. care record API
-		1. please refer to the [Resource Type](#ResourceType) section of this document
+		1. please refer to the [Resource Type](#resource-type) section of this document
 	3. bookings API
 		1. [Schedule](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-schedule-1
 		2. [Slot](https://www.hl7.org/fhir/DSTU2/schedule.html) profiled as gpconnect-slot-1
