@@ -111,7 +111,7 @@ description: "GP Connect aims to support better clinical care by opening up info
 sitemap: false
 
 # needed for sitemap.xml file only
-url: https://developer.nhs.uk/apis/gpconnect-0-7-2/
+url: https://developer.nhs.uk/apis/gpconnect-0-7-2
 
 repository: nhsconnect/gpconnect
 
