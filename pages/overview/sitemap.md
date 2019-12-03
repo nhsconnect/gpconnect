@@ -62,7 +62,6 @@ toc: false
 	<p><a href="development_fhir_api_guidance.html">FHIR&reg; API guidance</a></p>
 	<p><a href="development_fhir_api_guidance.html">FHIR implementation</a></p>
 	<p><a href="development_fhir_operation_guidance.html">Operation guidance</a></p>
-	<p><a href="development_general_api_guidance.html">General API guidance</a></p>
 	<p><a href="development_fhir_resource_guidance.html">Resource guidance</a></p>
 	<p><a href="development_api_security_guidance.html">Security guidance</a></p>
 	<p><a href="development_fhir_error_handling_guidance.html">Error handling</a></p>

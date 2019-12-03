@@ -3,7 +3,7 @@ title: Access Record structured
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: overview_sidebar
-permalink: accessrecord_rest.html
+permalink: accessrecord_structured.html
 summary: "Introduction to the GP Connect Access Record Structured capability"
 ---
 
