@@ -51,7 +51,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
   - [Foundations](foundations.html) (e.g. resolve a patient to their logical identifier for further API calls)
   	- Note the foundation per-requisites are mandatory
   - [Access Record HTML](accessrecord.html) (e.g. Access html views from the primary care record)
-  - [Access Record Structured](accessrecord_rest.html) (e.g. Access structured data from the primary care record)
+  - [Access Record Structured](accessrecord_structured.html) (e.g. Access structured data from the primary care record)
   - [Appointment Management](appointments.html) (e.g. Book an appointment for a patient)
 - finally take a look at cross-cutting areas:
   - JSON Web Token - Provides [Cross organisation audit and provenance](integration_cross_organisation_audit_and_provenance.html) details

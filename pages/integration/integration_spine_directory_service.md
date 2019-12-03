@@ -27,7 +27,7 @@ This ASID is unique to a system deployed in a specific organisation, so the same
 
 Every GP Connect system also has one or more "MHS" records (or message handling server record), identified by Party Key and [Interaction ID](integration_interaction_ids.html).
 
-MHS records of GP Connect provider systems contain the endpoint of the target practice, as defined by the [FHIR service root URL](development_general_api_guidance.html#service-root-url).
+MHS records of GP Connect provider systems contain the endpoint of the target practice, as defined by the [FHIR service root URL](development_fhir_api_guidance.html#service-root-url).
 
 Please see [System topologies](integration_system_topologies.html) for more details on the allocation of ASIDs and Party Keys.
 
@@ -36,7 +36,7 @@ Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on
 
 ## Querying SDS ##
 
-GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) and ASID for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
+GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_fhir_api_guidance.html#service-root-url) and ASID for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
 
 This is a two-step process, as follows:
 
