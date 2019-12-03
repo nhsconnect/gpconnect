@@ -60,7 +60,7 @@ layout: default
 
     <div class="tags">
         {% if page.tags != null %}
-        <b>Tags: </b>
+        <strong>Tags: </strong>
         {% assign projectTags = site.data.tags.allowed-tags %}
         {% for tag in page.tags %}
         {% if projectTags contains tag %}

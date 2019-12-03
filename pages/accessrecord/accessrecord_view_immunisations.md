@@ -42,7 +42,7 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the immunisation | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The date of the immunisation | `dd-Mmm-yyyy` |
 | <center>2</center> | `Vaccination` | A short human readable free-text title for the immunisation | `free-text` |
 | <center>3</center> | `Part` | Part number of immunisation | `integer` |
 | <center>4</center> | `Contents` | Contents of the immunisation | `free-text` |

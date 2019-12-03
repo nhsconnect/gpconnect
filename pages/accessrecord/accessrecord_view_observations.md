@@ -52,7 +52,7 @@ Providers must return all the columns as described in the table below, sorted by
  </thead>
   <tr>
     <td align="center">1</td>
-    <td><code>Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i> </td>
+    <td><code>Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em> </td>
     <td>The date of the observation</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr> 
@@ -65,7 +65,7 @@ Providers must return all the columns as described in the table below, sorted by
   <tr>
     <td align="center">3</td>
     <td><code>Value</code></td>
-	  <td>Value of the observation. As a minimum, this <b>MUST</b> include:
+	  <td>Value of the observation. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Value</li>
 			<li>Value unit, where available</li>
@@ -76,10 +76,10 @@ Providers must return all the columns as described in the table below, sorted by
   <tr>
     <td align="center">4</td>
     <td><code>Range</code></td>
-    <td>Range of the observation, where available. As a minimum, this <b>MUST</b> include:
+    <td>Range of the observation, where available. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Range</li>
-			<li>Range unit, where available (unit <b>MUST</b> be included if it differs from the unit included in <code>Value</code>)</li>
+			<li>Range unit, where available (unit <strong>MUST</strong> be included if it differs from the unit included in <code>Value</code>)</li>
 		</ul>
 	</td>
 	<td><code>free-text</code></td>

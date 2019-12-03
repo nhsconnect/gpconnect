@@ -352,7 +352,7 @@ The consumer **MUST** populate the following [Practitioner](https://www.hl7.org/
 
 {% include important.html content= "the `Practitioner` resource **MUST** contain an identifier with the system `http://fhir.nhs.net/sds-user-id` rather than the system required by the resource profile `http://fhir.nhs.net/Id/sds-user-id`. This is required as there was an error during testing and assurance which resulted in the providers validating that the identifier in the resource has the incorrect value, so for consumers to make a successful call the incorrect system value needs to be included." %}
 
-<div class="alert alert-warning" role="alert"><i class="fa fa-warning"></i> <b>Important:</b> Providers should be aware of variance in the population of certain fields amongst existing consumer systems when reading this claim, specifically, the following are not always present: <ul><li> local user <code class="highlighter-rouge">identifier</code> </li><li> the <code class="highlighter-rouge">practitionerRole</code> </li></ul></div>
+<div class="alert alert-warning" role="alert"><em class="fa fa-warning"></em> <strong>Important:</strong> Providers should be aware of variance in the population of certain fields amongst existing consumer systems when reading this claim, specifically, the following are not always present: <ul><li> local user <code class="highlighter-rouge">identifier</code> </li><li> the <code class="highlighter-rouge">practitionerRole</code> </li></ul></div>
  
 The [Practitioner](https://www.hl7.org/fhir/DSTU2/practitioner.html) resource populated in this claim is a minimally populated resource to convey key details for audit, conforming to the base DSTU2 FHIR resources definition, and is not required to conform to a GP Connect FHIR resource profile.
 

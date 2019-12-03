@@ -125,16 +125,16 @@ entries:
     - title: Access Record HTML
       url: /accessrecord.html
       output: web
-    - title: <b class="capability-not-available">Access Record Structured</b>
+    - title: <strong class="capability-not-available">Access Record Structured</strong>
       url: /accessrecord_rest.html
       output: web
-    - title: <b class="capability-not-available">Access Record Documents</b>
+    - title: <strong class="capability-not-available">Access Record Documents</strong>
       url: /accessrecord_documents.html
       output: web
-    - title: <b class="capability-not-available">Appointment Management</b>
+    - title: <strong class="capability-not-available">Appointment Management</strong>
       url: /appointments.html
       output: web
-    - title: <b class="capability-not-available">Send Document</b>
+    - title: <strong class="capability-not-available">Send Document</strong>
       url: /send_document.html
       output: web
 

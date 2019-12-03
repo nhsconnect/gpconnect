@@ -44,7 +44,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The date of the administrative item | `dd-Mmm-yyyy` |
+| <center>1</center> | `Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The date of the administrative item | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry` | A short human readable free-text title for the administrative item | `free-text` |
 | <center>3</center> | `Details` | Longer human readable details for the administrative item, codes such as READ or SNOMED **MUST NOT** be included. | `free-text` |
 

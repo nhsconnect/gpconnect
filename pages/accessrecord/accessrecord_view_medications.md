@@ -95,16 +95,16 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">1</td>
     <td><code>Type</code></td>
-    <td>Type of medication issued (for example, <code>Acute, Acute Post-Dated, Acute - [Prescribing Agency Type]<sup><b>1</b></sup></code>).</td>
+    <td>Type of medication issued (for example, <code>Acute, Acute Post-Dated, Acute - [Prescribing Agency Type]<sup><strong>1</strong></sup></code>).</td>
     <td><code>free-text</code></td>
   </tr> 
   <tr>
     <td align="center">2</td>
-    <td><code>Start Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
+    <td><code>Start Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em></td>
     <td>The date of issue of the acute medications, except where:
 		<ul>
-			<li>the medication is post-dated it <b>MUST</b> be the post date</li>
-			<li>the medication is prescribed elsewhere it <b>MUST</b> be the expected start date if known, else the entered date </li>
+			<li>the medication is post-dated it <strong>MUST</strong> be the post date</li>
+			<li>the medication is prescribed elsewhere it <strong>MUST</strong> be the expected start date if known, else the entered date </li>
 		</ul>
 	</td>
     <td><code>dd-Mmm-yyyy</code></td>
@@ -118,7 +118,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">4</td>
     <td><code>Dosage Instruction</code></td>
-    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Dosage instructions for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Dosage Rate</li>
 			<li>Schedule (when / how often)</li>
@@ -130,7 +130,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">5</td>
     <td><code>Quantity</code></td>
-    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Quantity details for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Quantity</li>
 			<li>Quantity unit</li>
@@ -154,7 +154,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">8</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+    <td>If the medication record includes the information, the following details <strong>MUST</strong> be included (each item <strong>MUST</strong> be separated with a line break):
 		<ul>
 			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li><code>CANCELLED: </code> label with cancellation date and reason</li>
@@ -162,14 +162,14 @@ Providers **MUST** return all the columns as described in the table below, sorte
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Ear Infection</code>).</p>
+	<p>The provider <strong>MAY</strong> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Ear Infection</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
 </table>
 </div>
 
-<sup><b>1</b></sup> Where the medication was Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the Type, for example, 'Acute – Dentist'. If the medication item is identifiable as prescribed elsewhere but the type of organisation who prescribed it is not recorded, then the Type **MUST** be returned as 'Acute – Unknown Prescriber'.
+<sup><strong>1</strong></sup> Where the medication was Prescribed Elsewhere the prescribing agency (type of organisation responsible for authorising and issuing the medication) **MUST** be included with the Type, for example, 'Acute – Dentist'. If the medication item is identifiable as prescribed elsewhere but the type of organisation who prescribed it is not recorded, then the Type **MUST** be returned as 'Acute – Unknown Prescriber'.
 
 
 
@@ -229,8 +229,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Start Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
-    <td>The original date of authorisation of the repeat medication (if a provider system allows re-authorisation of a repeat medication the start date <b>MUST</b> be the first authorisation). If this is not known (for example, for prescribed elsewhere) then date of entry of the repeat medication record <b>MUST</b> be returned.</td>
+    <td><code>Start Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em></td>
+    <td>The original date of authorisation of the repeat medication (if a provider system allows re-authorisation of a repeat medication the start date <strong>MUST</strong> be the first authorisation). If this is not known (for example, for prescribed elsewhere) then date of entry of the repeat medication record <strong>MUST</strong> be returned.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>
   <tr>
@@ -242,7 +242,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">4</td>
     <td><code>Dosage Instruction</code></td>
-    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Dosage instructions for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Dosage Rate</li>
 			<li>Schedule (when / how often)</li>
@@ -254,7 +254,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">5</td>
     <td><code>Quantity</code></td>
-    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Quantity details for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Quantity</li>
 			<li>Quantity unit</li>
@@ -266,13 +266,13 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">6</td>
     <td><code>Last Issued Date</code></td>
-    <td>The last issue date. If the medication is repeat dispense or prescribed elsewhere this <b>MUST</b> be null.</td>
+    <td>The last issue date. If the medication is repeat dispense or prescribed elsewhere this <strong>MUST</strong> be null.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
     <td align="center">7</td>
     <td><code>Number of Prescriptions Issued</code></td>
-    <td>This <b>MUST</b> be the number issued up to the current date inclusive. For a repeat dispense this will be null. This <b>MUST</b> be null where no issues of the repeat have been made at the current date. If the medication is repeat dispensed or prescribed elsewhere this <b>MUST</b> be null.</td>
+    <td>This <strong>MUST</strong> be the number issued up to the current date inclusive. For a repeat dispense this will be null. This <strong>MUST</strong> be null where no issues of the repeat have been made at the current date. If the medication is repeat dispensed or prescribed elsewhere this <strong>MUST</strong> be null.</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
@@ -290,7 +290,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">10</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+    <td>If the medication record includes the information, the following details <strong>MUST</strong> be included (each item <strong>MUST</strong> be separated with a line break):
 		<ul>
 			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>Reason for the medication</li>
@@ -298,7 +298,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
 			<li>Other supporting information</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
+	<p>The provider <strong>MAY</strong> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -308,7 +308,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 
 
 
-<div class="bs-callout bs-callout-info"><i class="fa fa-info-circle"></i> <strong>Note:</strong> If the provider system allows the repeat medication (course/template) details to be amend so it differs from the latest prescription issued, then <ul><li>the latest details for the medication (course/template) <strong>MUST</strong> be returned by the provider</li><li>a subsection banner message <strong>MUST</strong> be added such as: the medication below is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. See the All Medication Issues subsection for all repeat prescriptions issued.</li></ul></div>
+<div class="bs-callout bs-callout-info"><em class="fa fa-info-circle"></em> <strong>Note:</strong> If the provider system allows the repeat medication (course/template) details to be amend so it differs from the latest prescription issued, then <ul><li>the latest details for the medication (course/template) <strong>MUST</strong> be returned by the provider</li><li>a subsection banner message <strong>MUST</strong> be added such as: the medication below is taken from a list of Repeat Medication Templates in the patient record which may have been amended since they were last issued. See the All Medication Issues subsection for all repeat prescriptions issued.</li></ul></div>
 
 
 ## Discontinued Repeat Medication##
@@ -370,8 +370,8 @@ Providers **MUST** return all the columns as described in the table below, sorte
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Last Issued Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
-    <td>The last issue date. If the medication is repeat dispense or prescribed elsewhere this <b>MUST</b> be null.</td>
+    <td><code>Last Issued Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em></td>
+    <td>The last issue date. If the medication is repeat dispense or prescribed elsewhere this <strong>MUST</strong> be null.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>
   <tr>
@@ -383,7 +383,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">4</td>
     <td><code>Dosage Instruction</code></td>
-    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Dosage instructions for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Dosage Rate</li>
 			<li>Schedule (when / how often)</li>
@@ -395,7 +395,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">5</td>
     <td><code>Quantity</code></td>
-    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Quantity details for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Quantity</li>
 			<li>Quantity unit</li>
@@ -419,7 +419,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
   <tr>
     <td align="center">8</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+    <td>If the medication record includes the information, the following details <strong>MUST</strong> be included (each item <strong>MUST</strong> be separated with a line break):
 		<ul>
 			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>Reason for the medication</li>
@@ -427,7 +427,7 @@ Providers **MUST** return all the columns as described in the table below, sorte
 			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
 			<li>Other supporting information</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
+	<p>The provider <strong>MAY</strong> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -494,8 +494,8 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   </tr>
  </thead>
   <tr>
-    <td align="center"><i class="fa fa-object-group" aria-hidden="true"></i></td>
-    <td><code>Medication Item</code> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
+    <td align="center"><em class="fa fa-object-group" aria-hidden="true"></em></td>
+    <td><code>Medication Item</code> <em class="fa fa-sort-asc" aria-hidden="true"></em></td>
     <td>Grouped distinct descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
     <td><code>free-text</code></td>
   </tr>
@@ -507,8 +507,8 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Start Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
-    <td>The date the medication was first prescribed. If this is not known (for example, for prescribed elsewhere) then date of entry <b>MUST</b> be used.</td>
+    <td><code>Start Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em></td>
+    <td>The date the medication was first prescribed. If this is not known (for example, for prescribed elsewhere) then date of entry <strong>MUST</strong> be used.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>
   <tr>
@@ -520,7 +520,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">4</td>
     <td><code>Dosage Instruction</code></td>
-    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Dosage instructions for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Dosage Rate</li>
 			<li>Schedule (when / how often)</li>
@@ -532,7 +532,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">5</td>
     <td><code>Quantity</code></td>
-    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Quantity details for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Quantity</li>
 			<li>Quantity unit</li>
@@ -544,13 +544,13 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">6</td>
     <td><code>Last Issued Date</code></td>
-    <td>The last issue of the medication item (acute or repeat). If the medication is repeat dispense or prescribed elsewhere this <b>MUST</b> be null.</td>
+    <td>The last issue of the medication item (acute or repeat). If the medication is repeat dispense or prescribed elsewhere this <strong>MUST</strong> be null.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>  
   <tr>
     <td align="center">7</td>
     <td><code>Number of Prescriptions Issued</code></td>
-    <td>The sum of the number of issues of the medication – actual issues not the max issues. If this is not known (for example, for medication prescribed elsewhere or repeat dispense, this <b>MUST</b> be null).</td>
+    <td>The sum of the number of issues of the medication – actual issues not the max issues. If this is not known (for example, for medication prescribed elsewhere or repeat dispense, this <strong>MUST</strong> be null).</td>
     <td><code>integer</code></td>
   </tr>
   <tr>
@@ -565,7 +565,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">9</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+    <td>If the medication record includes the information, the following details <strong>MUST</strong> be included (each item <strong>MUST</strong> be separated with a line break):
 		<ul>
 			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>For Repeat Dispense, the date of the last authorisation and the number of prescription issues authorised</li>
@@ -573,7 +573,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
+	<p>The provider <strong>MAY</strong> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Heart Failure</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  
@@ -630,8 +630,8 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   </tr>
  </thead>
   <tr>
-    <td align="center"><i class="fa fa-object-group" aria-hidden="true"></i></td>
-    <td><code>Medication Item</code> <i class="fa fa-sort-asc" aria-hidden="true"></i></td>
+    <td align="center"><em class="fa fa-object-group" aria-hidden="true"></em></td>
+    <td><code>Medication Item</code> <em class="fa fa-sort-asc" aria-hidden="true"></em></td>
     <td>Grouped distinct descriptive name of medication item (including dosage) (for example, <code>Ibuprofen 400mg tablets</code>).</td>
     <td><code>free-text</code></td>
   </tr>
@@ -643,7 +643,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   </tr>
   <tr>
     <td align="center">2</td>
-    <td><code>Issue Date</code> <i class="fa fa-sort-desc" aria-hidden="true"></i></td>
+    <td><code>Issue Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em></td>
     <td>The date the medication item was issued.</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr>
@@ -656,7 +656,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">4</td>
     <td><code>Dosage Instruction</code></td>
-    <td>Dosage instructions for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Dosage instructions for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Dosage Rate</li>
 			<li>Schedule (when / how often)</li>
@@ -668,7 +668,7 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">5</td>
     <td><code>Quantity</code></td>
-    <td>Quantity details for the medication item. As a minimum, this <b>MUST</b> include:
+    <td>Quantity details for the medication item. As a minimum, this <strong>MUST</strong> include:
 		<ul>
 			<li>Quantity</li>
 			<li>Quantity unit</li>
@@ -686,14 +686,14 @@ Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Ex
   <tr>
     <td align="center">7</td>
     <td><code>Additional Information</code></td>
-    <td>If the medication record includes the information, the following details <b>MUST</b> be included (each item <strong>MUST</strong> be separated with a line break):
+    <td>If the medication record includes the information, the following details <strong>MUST</strong> be included (each item <strong>MUST</strong> be separated with a line break):
 		<ul>
 			<li><code><strong>CONTROLLED DRUG</strong></code> label in <strong>bold</strong> text </li>
 			<li>Reason for the medication</li>
 			<li>Linked problems / diagnoses</li>
 			<li>Other supporting information</li>
 		</ul>
-	<p>The provider <b>MAY</b> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Ear Infection</code>).</p>
+	<p>The provider <strong>MAY</strong> include labels in addition to the ones specified to support additional text (for example, <code>Linked Problem : Ear Infection</code>).</p>
 	</td>
     <td><code>free-text</code></td>
   </tr>  

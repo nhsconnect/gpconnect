@@ -72,7 +72,7 @@ Providers must return all the columns as described in the table below, sorted by
 
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
-| <center>1</center> | `Start Date`  <i class="fa fa-sort-desc" aria-hidden="true">| The start date of the problem | `dd-Mmm-yyyy` |
+| <center>1</center> | `Start Date`  <em class="fa fa-sort-desc" aria-hidden="true">| The start date of the problem | `dd-Mmm-yyyy` |
 | <center>2</center> | `Entry`| A short human readable title for the problem | `free-text` |
 | <center>3</center> | `Significance`| The significance of the problem (meaning, Major or Minor) | `free-text` |
 | <center>4</center> | `Details` | Longer human readable details for the problem | `free-text` |
@@ -109,7 +109,7 @@ Providers must return all the columns as described in the table below, sorted by
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
+| <center>2</center> | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
 | <center>3</center> | `Entry`| A short human-readable title for the problem | `free-text` |
 | <center>4</center> | `Significance`| The significance of the problem (meaning, Major or Minor) | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
@@ -161,7 +161,7 @@ Providers must return all the columns as described in the table below, sorted by
 | Order | Name | Description | Value details &nbsp;&nbsp;&nbsp; |
 | ------------ | ------------ | ------------ |
 | <center>1</center> | `Start Date` | The start date of the problem | `dd-Mmm-yyyy` |
-| <center>2</center> | `End Date`  <i class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
+| <center>2</center> | `End Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The end date of the problem | `dd-Mmm-yyyy` |
 | <center>3</center> | `Entry`| A short human-readable title for the problem | `free-text` |
 | <center>4</center> | `Significance`| The significance of the problem  | `free-text` |
 | <center>5</center> | `Details` | Longer human readable details for the problem | `free-text` |
