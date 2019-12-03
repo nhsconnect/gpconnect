@@ -9,9 +9,9 @@ summary: "Details of what activities form the basis of testing for consumer appl
 
 Consumer systems **MUST** undertake a three stage testing process:
 
-- [Technical accreditation](testing_api_provider_testing.html#technicalaccreditation) for Spine connectivity prerequisites
-- [Technical conformance](testing_api_provider_testing.html#technicalconformance) for functional testing of consumer API usage
-- [Solution assurance](testing_api_provider_testing.html#solutionassurance) for functional, non-functional, ready-for-operation and clinical safety
+- [Technical accreditation](testing_api_provider_testing.html#technical-accreditation) for Spine connectivity prerequisites
+- [Technical conformance](testing_api_provider_testing.html#technical-conformance) for functional testing of consumer API usage
+- [Solution assurance](testing_api_provider_testing.html#solution-assurance) for functional, non-functional, ready-for-operation and clinical safety
 
 ## Technical accreditation ##
 
