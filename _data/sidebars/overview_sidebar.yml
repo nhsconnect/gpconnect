@@ -119,7 +119,7 @@ entries:
     - title: <b class="capability-not-available">Access Record Structured</b>
       url: /accessrecord_rest.html
       output: web
-    - title: <b class="capability-not-available">Access Record Documents</b>
+    - title: <b class="capability-not-available">Access Document</b>
       url: /accessrecord_documents.html
       output: web
     - title: <b class="capability-not-available">Appointment Management</b>
