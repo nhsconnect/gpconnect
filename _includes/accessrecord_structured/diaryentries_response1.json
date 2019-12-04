@@ -248,8 +248,8 @@
         "code": {
           "coding": [
             {
-              "code": "9999",
-              "display": "Diary",
+              "code": "714311000000108",
+              "display": "Diary Entries",
               "system": "http://snomed.info/sct"
             }
           ]
@@ -315,7 +315,20 @@
         "agent": {
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         }
-      }
+      },
+      "reasonCode": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "",
+            "display": ""
+          }
+        ]
+      },
+      "supportingInfor": {
+        "reference": ""
+      },
+      "note": ""
     }
   ]
 }
