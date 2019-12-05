@@ -214,12 +214,12 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Include immunisations in the response.</td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">excludeNotGiven</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeNotGiven</code></span></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Only include immunisations that have been given in the response. The default value for this is <code>true</code>.
+        Only include immunisations that have been given in the response. The default value for this is <code>false</code>.
         <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
       </td>
     </tr>
@@ -408,8 +408,8 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeImmunisations",
       "part": [
         {
-          "name": "excludeNotGiven",
-          "valueBoolean": true
+          "name": "includeNotGiven",
+          "valueBoolean": false
         }
       ]
     },
@@ -645,11 +645,11 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
 
-- when the `excludeNotGiven` part parameter is set to `true` or not supplied:
+- when the `includeNotGiven` part parameter is set to `false` or not supplied:
 
   - only immunisations where `notGiven` is set to `false` shall be returned
 
-- when the `excludeNotGiven` part parameter is set to `false`
+- when the `includeNotGiven` part parameter is set to `true`
 
   - all immunisations where `notGiven` is set to `true` or `false` shall be returned
 
