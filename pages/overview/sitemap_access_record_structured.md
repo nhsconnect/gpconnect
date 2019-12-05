@@ -34,8 +34,6 @@ toc: false
     	<p><a href="accessrecord_structured_requirements.html">Business requirements</a></p>
 	<p><a href="pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.2.xlsx">Requirements catalogue</a></p> 
     	<p><a href="accessrecord_structured_known_issues.html">Known issues</a></p>
-	  </div>
-  <div class="column">
     <p style="font-size:18px">Development</p>
 	<p><a href="accessrecord_structured_development.html">Introduction</a></p>	
     	<p><a href="accessrecord_structured_development_resources_overview.html">Resource population fundamentals</a></p>
@@ -44,6 +42,8 @@ toc: false
 	<p style="padding-top:8px">Structural resources</p>  
 	<p><a href="accessrecord_structured_development_list.html">List</a></p>
 	<p><a href="accessrecord_structured_development_bundle.html">Bundle</a></p>
+  </div>
+  <div class="column">
 	<p style="padding-top:8px">Allergies</p>
 	<p><a href="accessrecord_structured_development_allergies_guidance.html">Allergies guidance</a></p> 
 	<p><a href="accessrecord_structured_development_allergyintolerance.html">AllergyIntolerance</a></p>
@@ -55,8 +55,6 @@ toc: false
 	<p><a href="accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
 	<p><a href="accessrecord_structured_development_medicationrequest.html">MedicationRequest</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_medication.html">Medication FHIR&reg; examples</a></p>    	
-  </div>
-  <div class="column">
 	<p style="padding-top:8px">Immunisations</p>
 	<p><a href="accessrecord_structured_development_immunization_guidance.html">Immunisations guidance</a></p>
 	<p><a href="accessrecord_structured_development_immunization.html">Immunization</a></p>
@@ -69,7 +67,9 @@ toc: false
 	<p><a href="accessrecord_structured_development_consultation_guidance.html">Consultation guidance</a></p>
 	<p><a href="accessrecord_structured_development_encounter.html">Encounter</a></p>
 	<p><a href="accessrecord_structured_development_list_consultation.html">List - consultation structure</a>
-	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Consultation FHIR&reg; examples</a>
+	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Consultation FHIR&reg; examples</a></p>
+  </div>
+  <div class="column">
 	<p style="padding-top:8px">Problems</p>
 	<p><a href="accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
 	<p><a href="accessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
@@ -89,9 +89,11 @@ toc: false
 	<p><a href="accessrecord_structured_development_fhir_examples_referrals.html">Referrals FHIR® examples</a>
 	<p style="padding-top:8px">Documents</p>
 	<p><a href="accessrecord_documents.html">Documents guidance</a></p>
+	<p style="padding-top:8px">Diary entries</p>  
+	<p><a href="accessrecord_structured_development_diaryentry_guidance.html">Diary entry guidance</a></p>
+	<p><a href="accessrecord_structured_development_diaryentry.html">ProcedureRequest</a></p>
+	<p><a href="accessrecord_structured_development_fhir_examples_diaryentries.html">Diary entry FHIR® examples</a></p>
 	<p style="font-size:18px">API definition</p>
 	<p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>
-
-
-
+  </div>
