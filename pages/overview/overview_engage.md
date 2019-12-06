@@ -21,18 +21,19 @@ As an approximate guide you can expect to complete the following stages and task
 
 - Read about the GP Connect capabilities
 - Study the prerequisites
-- Contact GP Connect Consumer Assurance team
+- Contact GP team
 - Describe use case (purpose of your product)
 - Obtain use case approval
+- Contact GP Connect Consumer Assurance team
 - Receive Supplier Conformance Assessment List (SCAL)
 - Develop product
 - Communication – ongoing communication with GP Connect
 <p><strong>Assurance:</strong></p>
 - Test against internet-facing demonstrator
 - Test against OpenTest demonstrator
-- Test against environment demonstrator in Int
+- Test against environment demonstrator in Integration (INT)
 - Fill in and submit SCAL
-- Test against providers in Int
+- Test against providers in INT
 - Receive technical conformance certificate
 - Receive connection agreement
 <p><strong>End-user engagement:</strong></p>
