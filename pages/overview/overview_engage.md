@@ -27,23 +27,23 @@ As an approximate guide you can expect to complete the following stages and task
 - Receive Supplier Conformance Assessment List (SCAL)
 - Develop product
 - Communication – ongoing communication with GP Connect
-- Assurance:
-<p>1. Test against internet-facing demonstrator</p>
-<p>2. Test against OpenTest demonstrator</p>
-<p>3. Test against environment demonstrator in Int</p>
-<p>4. Fill in and submit SCAL</p>
-<p>5. Test against providers in Int</p>
+- <strong>Assurance:</strong>
+- 1. Test against internet-facing demonstrator
+- 2. Test against OpenTest demonstrator
+- 3. Test against environment demonstrator in Int
+- 4. Fill in and submit SCAL
+- 5. Test against providers in Int
 - Receive technical conformance certificate
 - Receive connection agreement
-- End-user engagement:
-<p>1. End-user portal</p>
-<p>2. Data sharing agreement</p>
-<p>3. SCAL review</p>
-<p>4. End-user declaration signed
-- Deploy:
-<p>1. Approval to Go Live</p>
-<p>2. Commissioner and Supplier Deployment Approach</p>
-<p>3. Go Live</p>
+- <strong>End-user engagement:</strong>
+- 1. End-user portal
+- 2. Data sharing agreement
+- 3. SCAL review
+- 4. End-user declaration signed
+- <strong>Deploy:</strong>
+- 1. Approval to Go Live
+- 2. Commissioner and Supplier Deployment Approach
+- 3. Go Live
 
 ### Integration with Spine ###
 
