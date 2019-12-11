@@ -279,7 +279,7 @@
       "resourceType": "ProcedureRequest",
       "meta": {
         "profile": [
-          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"
         ]
       },
       "id": "eba25af1-5b74-4790-aa5a-2134fd27ad45",
@@ -295,8 +295,8 @@
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "34431008",
-            "display": "Physiotherapy of chest (regime/therapy) "
+            "code": "314529007",
+            "display": "Medication review due"
           }
         ]
       },
@@ -315,20 +315,49 @@
         "agent": {
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         }
+      }
+    },
+    {
+      "resourceType": "ProcedureRequest",
+      "meta": {
+        "profile": [
+          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"
+        ]
       },
-      "reasonCode": {
+      "id": "eba25af1-5b74-4790-aa5a-2134fd57ad45",
+      "identifier": [
+        {
+          "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+          "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
+        }
+      ],
+      "status": "active",
+      "intent": "plan",
+      "code": {
         "coding": [
           {
             "system": "http://snomed.info/sct",
-            "code": "",
-            "display": ""
+            "code": "408490001",
+            "display": "Antipsychotic drug therapy"
           }
         ]
       },
-      "supportingInfor": {
-        "reference": ""
+      "subject": {
+        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
       },
-      "note": ""
+      "context": {
+        "reference": "Encounter/Encounter3"
+      },
+      "occurrence": {
+        "start": "2019-05-01",
+        "end": "2019-05-01"
+      },
+      "authoredOn": "2019-05-01",
+      "requester": {
+        "agent": {
+          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        }
+      }
     }
   ]
 }
