@@ -32,14 +32,14 @@ As an approximate guide you can expect to complete the following stages and task
 - Test against internet-facing demonstrator
 - Test against OpenTest demonstrator
 - Test against environment demonstrator in Integration (INT)
-- Fill in and submit SCAL
+- Fill in and submit SCAL, incuding evidence of clinical safety
 - Test against providers in INT
-- Receive technical conformance certificate
+- Consumer receives technical conformance certificate
 - Receive connection agreement
 <p><strong>End-user engagement:</strong></p>
-- End-user portal
+- Start of end-user group engagement with GP Connect (end-user group consists of, for example, practices that are sharing with a hospital)
 - Data sharing agreement
-- SCAL review
+- End-user group reviews SCAL
 - End-user declaration signed
 <p><strong>Deploy:</strong></p>
 - Approval to Go Live
