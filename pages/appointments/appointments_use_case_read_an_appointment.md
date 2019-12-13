@@ -10,7 +10,9 @@ summary: "Read a patient's appointment at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system, irrespective of the booking organisation. 
+This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system.
+
+A patient's future appointment, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, is  returned by the provider system.
 
 {% include important.html content="The Appointment Management capability pack is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 

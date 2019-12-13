@@ -15,11 +15,43 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 - [Spine Directory Service (SDS)](integration_spine_directory_service.html)
 - [Spine Secure Proxy (SSP)](integration_spine_secure_proxy.html)
 
-To illustrate this, an example is given below of all the steps required consume the GP Connect Appointments capability. For full details, please refer to the relevant spine pages.
+## Overview ##
 
-## Example: Integrate with Spine to book an appointment at a GP practice ##
+<img src="images/integration/gpconnect-flow.png" alt="Diagram showing the high level three step flow for making GP Connect calls" style="width: 60%;">
 
-The following sequence diagram illustrates all the steps which a GP Connect consumer would be required to undertake in order to book an appointment at a GP practice.
+**Step 1. Personal Demographics Service**
+
+A GP Connect consumer queries PDS for the patient in order to:
+
+  - Verify the patient's NHS number
+  - Retrieve the ODS organisation code of the patient's registered GP practice
+
+{% include important.html content="Appointment Management consumer suppliers may wish to build workflows that support appointment booking into other GP practices (other than the patient's registered practice) such as into Extended Access Hubs. For these consumers, an alternate mechanism for discovering the target practice's ODS organisation code is required. Please see the [Appointment Management Service Discovery page](appointments_service_discovery.html) for more details." %}
+
+For further details on this step please see the [Personal Demographic Service](integration_personal_demographic_service.html) page.
+
+**Step 2. Spine Directory Service**
+
+A GP Connect consumer queries SDS using the ODS organisation code retrieved in the previous step in order to retrieve:
+
+  - The GP practice's GP Connect service root URL (their FHIR endpoint)
+  - The GP practice's GP Connect ASID
+
+For further details on this step please see the [Spine Directory Services - overview and querying](integration_spine_directory_service.html) page.
+
+**Step 3 onwards. Spine Secure Proxy**
+
+A GP Connect consumer constructs a GP Connect FHIR request (incorporating the two items retrieved in the previous step), and sends it to the SSP.
+
+The SSP then forwards the request on to the GP Connect provider system which returns its response back through to the SSP to the consumer system.  A number of GP Connect FHIR requests may be made in order to satisfy the full workflow of the capability.
+
+For further details on this step please see the [Spine Secure Proxy](integration_spine_secure_proxy.html) page.
+
+Please see the full worked example below for the steps required to consume the GP Connect Appointment Management capability.
+
+## Worked example: Integrate with Spine to book an appointment at the patient's registered GP practice ##
+
+The following sequence diagram illustrates the steps which a GP Connect consumer would be required to undertake in order to book an appointment at the patient's registered GP practice.
 
 <img src="images/integration/integration_sequence_diagram.png" alt="Sequence diagram for booking an appointment end to end interactions" style="max-width:100%;max-height:100%;">
 
@@ -29,7 +61,8 @@ The steps shown in the diagram are detailed below.
 |------|-------------|
 |      | *Step 1 is optional in the sense that a cached version of a these trace results may be available to the consumer.* |    
 | 1a   | **Consumer** is responsible for performing a  [Personal Demographics Service(PDS)](integration_personal_demographic_service.html) Trace to both verify the NHS Number and obtain the ODS code of the GP Practice system. |
-| 1b   | **PDS** returns NHS Number verification status, and the ODS code of the GP Practice system. |
+| 1b   | **PDS** returns NHS Number verification status, and the ODS code of the patient's registered GP practice. |
+| Note: | *Appointment Management consumers that wish to book into other GP practices require [an alternate mechanism](appointments_service_discovery.html) for determining a GP practice ODS code. Regardless of the mechanism used to determine a GP practices ODS code, the PDS step is required in order to verify the patient's NHS number.* |
 |      |      |
 |      | *Step 2 is optional in the sense that cached or configured endpoint details for the Practice may be available from a previous SDS interaction.* |    
 | 2a   | **Consumer** calls Spine Directory Service again to discover the URL of the FHIR server endpoint at the practice | 

@@ -174,6 +174,7 @@ For repeats and repeat dispensed this refers to the period of the plan (the enti
 
 For acutes this refers to the period of the prescription issue.
 
+
 ### dateAsserted ###
 
 <table class='resource-attributes'>

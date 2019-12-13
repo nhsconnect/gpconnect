@@ -68,7 +68,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.3",
+  "version": "1.2.4-beta",
   "name": "GP Connect",
   "status": "active",
   "date": "2018-02-23",
@@ -78,7 +78,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
       "name": "[Provider Software Vendor Contact Name]"
     }
   ],
-  "description": "This server implements the GP Connect API version 1.2.3",
+  "description": "This server implements the GP Connect API version 1.2.4",
   "copyright": "Copyright NHS Digital 2016-9",
   "kind": "capability",
   "software": {
@@ -113,7 +113,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
     {
       "mode": "server",
       "security": {
-        "cors": "true"
+        "cors": true
       },
       "resource": [
         {
@@ -194,7 +194,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
               "code": "search-type"
             }
           ],
-          "updateCreate": "false",
+          "updateCreate": false,
           "searchParam": [
             {
               "name": "identifier",
@@ -246,7 +246,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
         {
           "name": "gpc.getstructuredrecord",
           "definition": {
-            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1"
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.8"
           }
         }
       ]

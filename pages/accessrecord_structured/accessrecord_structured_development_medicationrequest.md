@@ -194,6 +194,8 @@ This **MUST** be a GUID.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
+If the EPS identifier is present then the identifier.value is where the EPS Id SHOULD also be added. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/eps-line-item-identifier`
+
 ### basedOn ###
 
 <table class='resource-attributes'>
@@ -458,14 +460,15 @@ Prescription start and end dates.
 
 Start date is mandatory. Where there is a defined expiry or end date the end date **MUST** be supplied.
 
-For `MedicationRequest` instances where `intent` is set to `plan`:
+For MedicationRequest instances where `intent` is set to `plan`:
 
-* For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
-* For acutes this refers to the period of the prescription issue
+- For repeats and repeat dispensed this refers to the period of the plan (the entire cycle of prescriptions).
+- For acutes this refers to the period of the prescription issue
 
-For `MedicationRequest` instances where `intent` is set to `order`:
+For MedicationRequest instances where `intent` is set to `order`:
 
-* This refers to the period of the prescription issue.
+- This refers to the period of the prescription issue.
+
 
 ### dispenseRequest.quantity ###
 
@@ -520,7 +523,10 @@ Number of days' supply per dispense.
   </tr>
 </table>
 
-Nominated pharmacy for dispense.
+The organisation that dispensed the issue. This can only be completed where the provider organisation knows explicitly which organisation dispensed the issue. It cannot be assumed to be the nominated pharmacy or appliance supplier.
+
+Only populate for a `MedicationRequest` with an `intent` = `order`. For a `MedicationRequest` with an `intent` = `plan` this field is not populated.
+
 
 
 ### priorPrescription ###

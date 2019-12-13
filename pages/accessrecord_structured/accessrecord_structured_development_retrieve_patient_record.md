@@ -14,7 +14,7 @@ Retrieve a patient's record in FHIR&reg; structured format from a GP practice.
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization
-- GP Connect utilises JSON Web Tokens (JWT) to transmit clinical audit and provenance details 
+- GP Connect utilises JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## Prerequisites ##
 
@@ -69,7 +69,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstruct
 
 #### Payload request body ####
 
-The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` profile.
+The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.8) `OperationDefinition` profile.
 
 The `Parameters` resource is populated with the parameters shown below.  Note: The ↳ character indicates a part parameter.
 
@@ -126,10 +126,10 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>
         Restrict medications returned on or after the date specified. Rules:
         <ul>
-			<li>If the <code>medicationSearchFromDate</code> is not specified, all medication will be returned.</li> 
+			<li>If the <code>medicationSearchFromDate</code> is not specified, all medication will be returned.</li>
 			<li>If the <code>medicationSearchFromDate</code> is populated, all medications which are active on or after the <code>medicationSearchFromDate</code> <b>MUST</b> be returned.</li>
 			<li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li> 
+	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 01-02-2017) - that is, no partial dates, or with a time period or offset.</li>
     	</ul>
     	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
@@ -190,9 +190,9 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
 | The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The provider could not parse, or does not recognise a parameter name or value in the `Parameters` resource | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `patientNHSNumber` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) | 
-| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) | 
+| No recognised parameters are provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `patientNHSNumber` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `medicationSearchFromDate` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
@@ -229,7 +229,7 @@ Provider systems **MUST**:
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - resources holding allergies and intolerance and medication information according to the rules below:
+  - resources holding allergies, intolerance, medication information and warnings according to the rules below:
 
 Provider systems **SHOULD**:
 
@@ -274,9 +274,9 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - [`List`](accessrecord_structured_development_list.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
   - when the `medicationSearchFromDate` parameter is set:
-	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned 
+	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
 	  - A medication is considered active between its `effective.start` and `effective.end` (inclusive)
-		  - when a medication **does not** have an `effective.end`: 
+		  - when a medication **does not** have an `effective.end`:
 			- an acute medication is considered active on its `effective.start` only
 			- a repeat medication is considered on-going and is active from its `effective.start`
 			- when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
@@ -366,4 +366,3 @@ Examples of the payload requests and responses can be found here:
 
 - [Allergies - FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
 - [Medication - FHIR examples](accessrecord_structured_development_fhir_examples_medication.html)
-

@@ -9,7 +9,7 @@ entries:
 
     - title: Introduction
       url: /accessrecord_structured.html
-      output: web, pdf         
+      output: web, pdf
     - title: Business requirements
       url: /accessrecord_structured_requirements.html
       output: web, pdf
@@ -85,11 +85,19 @@ entries:
         - title: Medication
           url: /accessrecord_structured_development_fhir_examples_medication.html
           output: web
-          
+
+        - title: Forwards compatibility support
+          url: /accessrecord_structured_development_fhir_examples_forwards_consultations.html
+          output: web
+
       - title: API definition
         output: web
         subfolderitems:
 
         - title: Retrieve a patient's structured record
           url: /accessrecord_structured_development_retrieve_patient_record.html
+          output: web
+
+        - title: API Version Compatibility
+          url: /accessrecord_structured_development_version_compatibility.html
           output: web

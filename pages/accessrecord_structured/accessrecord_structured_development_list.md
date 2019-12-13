@@ -61,7 +61,7 @@ This only refers to data transmitted from GP to GP when a patient moves GP pract
 
 ### Data awaiting filing
 
-Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent.
+Where data exists in a provider system workflow that has not yet been integrated into the patient record, then it **MUST** not be sent. The associated text **MUST** also be added into the note field when the code is used.
 
 ## List elements ##
 
@@ -86,13 +86,13 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1
   <tr>
     <td><b>Data type:</b> <code>Extension</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-A code warning of an issue related to this list.
+A code or codes warning of an issue related to this list.
 
-This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It must be populated using the appropriate code from the table in the warning codes section above.
+This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It **MUST** be populated using the appropriate code from the table in the warning codes section above.
 
 
 ### extension[clinicalSetting] ###

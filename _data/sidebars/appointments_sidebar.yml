@@ -51,6 +51,9 @@ entries:
     - title: FHIR&reg; resources 
       url: /datalibraryappointment.html
       output: web, pdf
+    - title: Service discovery
+      url: /appointments_service_discovery.html
+      output: web
     - title: Consumer sessions illustrated
       url: /appointments_consumer_sessions.html
       output: web, pdf
