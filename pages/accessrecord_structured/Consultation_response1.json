@@ -69,7 +69,7 @@
         "id": "Problem-A-Anxiety-With-Depression",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
           ]
         },
  		"identifier": [
@@ -261,7 +261,7 @@
         "id": "Problem-B-Swollen-Legs",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
           ]
         },
 		"identifier": [
@@ -430,7 +430,7 @@
         "id": "Problem-D-URTI",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
           ]
         },
 		"identifier": [
@@ -564,7 +564,7 @@
         "id": "Problem-E-Post-viral-cough",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
           ]
         },
 		"identifier": [
@@ -698,7 +698,7 @@
         "id": "Encounter1",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1"
           ]
         },
         "identifier": [
@@ -3981,7 +3981,7 @@
         "id": "Encounter2",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1"
           ]
         },
         "identifier": [
@@ -5012,7 +5012,7 @@
         "id": "Encounter3",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1"
           ]
         },
         "identifier": [
