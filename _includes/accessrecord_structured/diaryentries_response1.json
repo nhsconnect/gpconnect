@@ -249,7 +249,7 @@
           "coding": [
             {
               "code": "714311000000108",
-              "display": "Diary Entries",
+              "display": "Patient recall administration",
               "system": "http://snomed.info/sct"
             }
           ]
@@ -306,11 +306,8 @@
       "context": {
         "reference": "Encounter/Encounter1"
       },
-      "occurrence": {
-        "start": "2019-03-28",
-        "end": "2019-03-28"
-      },
-      "authoredOn": "2019-03-28",
+      "occurrence": "2019-05-02",
+      "authoredOn": "2019-03-02",
       "requester": {
         "agent": {
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"

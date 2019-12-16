@@ -501,6 +501,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `diaryEntriesSearchDate` part parameter is less than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |-------------------------|-------------------|
 
+{% include important.html content="The HL7 FHIR specification states that Parameters.parameter MUST have one of part, value or resource. In the case of Parameters which just have optional part parameters it is valid to have no part parameters or value in a request." %}
+
 ### Request response ###
 
 #### Response headers ####
