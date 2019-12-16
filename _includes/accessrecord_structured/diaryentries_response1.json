@@ -271,6 +271,11 @@
             "item": {
               "reference": "ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45"
             }
+          },
+          {
+            "item": {
+              "reference": "ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd57ad45"
+            }
           }
         ]
       }
@@ -355,6 +360,57 @@
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         }
       }
+    },
+    {
+        "resource": {
+        "resourceType": "Condition",
+        "id": "aba25af1-5b74-4790-aa5a-2134fd57ad45",
+        "meta": {
+            "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
+            ]
+        },
+        "clinicalStatus": "active",
+        "code": {
+            "coding":
+            [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "449614009",
+                    "display": "Swelling of lower limb (finding)",
+                    "extension": [
+                        {
+                            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                            "extension": [
+                                {
+                                    "url": "DescriptionID",
+                                    "valueId": "2729461000000110"
+                                },
+                                {
+                                    "url": "descriptionDisplay",
+                                    "valueString": "Swollen leg"
+                                }
+                                ]
+                        }
+                    ]
+                }
+            ],
+            "text": "Swollen legs"
+        },
+        "subject": {
+            "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "extension": [
+        {
+            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference": {
+                "reference": "ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45"
+            }
+        }
+    	],
+        "assertedDate": "2018-09-28T10:30:00",
+        "onsetDateTime": "2019-03-28T10:30:00"
+    }
     }
   ]
 }
