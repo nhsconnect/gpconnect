@@ -219,7 +219,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Include not given immunisations in the response. This has been included to support future versions of the Access Record Structured and <b>MUST</b> not be used.
+        Include not given immunisations in the response. This has been included to support future versions of the Access Record Structured and <b>MUST</b> not be included in any requests.
         <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
       </td>
     </tr>
@@ -517,7 +517,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeImmunisations` parameter is set:
 
-  - A [`List`](accessrecord_structured_development_list.html) resource for each clinical area where data exists, [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations will be returned.
+  - A [`List`](accessrecord_structured_development_list.html) resource for each clinical area where data exists, [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations that have been given will be returned.
 
 ##### Uncategorised data #####
 
