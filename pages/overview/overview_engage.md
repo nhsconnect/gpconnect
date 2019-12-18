@@ -9,14 +9,6 @@ summary: "Getting started with GP Connect"
 ---
 
 ## Consumer suppliers ##
-
-- read about the GP Connect [capabilities](overview_priority_capabilities.html)
-- look through the design decisions made so far in relation to each capability ([Foundations](foundations_design.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
-	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> a decision has been made for first release.
-	- <span class="label label-warning">ASSUMPTION</span> an assumption has been made which is under review/needs validated
-- read the GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
-
-### Consumer supplier pathway ###
 As an approximate guide you can expect to complete the following stages and tasks on your GP Connect development journey:
 
 - Read about the GP Connect capabilities
@@ -46,6 +38,14 @@ As an approximate guide you can expect to complete the following stages and task
 - Commissioner and Supplier Deployment Approach
 - Go Live
 
+To get started, read the following pages:
+
+- read about the GP Connect [capabilities](overview_priority_capabilities.html)
+- look through the design decisions made so far in relation to each capability ([Foundations](foundations_design.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
+	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> a decision has been made for first release.
+	- <span class="label label-warning">ASSUMPTION</span> an assumption has been made which is under review/needs validated
+- read the GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
+
 ### Integration with Spine ###
 
 <p>Consumer suppliers can develop applications that use GP Connect {% include tooltip.html type="FHIR&reg;" %} {% include tooltip.html type="API" %} specifications to consume GP data. To retrieve data from an end-user organisation, your application will need to integrate with the {% include tooltip.html type="Spine" %} as follows:</p>
@@ -74,5 +74,8 @@ Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, c
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html) within this specification
 - see the latest specifications and release notes in the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers)
+- read the [Spine integration overview](https://gpc-spec-restructure2.netlify.com/integration_overview.html)
 
+### Provider ecosystem ###
 
+The provider ecosystem diagram takes you through each stage of a provider supplier journey for a typical GP Connect API project. Click on a stage to find out more.
