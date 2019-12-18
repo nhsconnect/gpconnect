@@ -1,108 +1,98 @@
-## definition of `menuitem`===========
-# title: string
-# url: string
-# output: [ enum{web, pdf} ] (expressed as comma separated string in YAML)
-# children?: [ menuitem ]
+entries:
+- title: Access Record HTML
+  product: Access Record HTML
+  folders:
 
-## top level property=================
-# entries: [ menuitem ]
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
 
-title: Access Record HTML
-product: Access Record HTML
-children:
-
-- title: Overview
-  output: web
-  children:
-
-  - title: Introduction
-    url: /accessrecord.html
+  - title: Overview
     output: web, pdf
-    type: homepage
-  - title: Sitemap
-    url: /sitemap_access_record_html.html
-    output: web, pdf
+    folderitems:
 
-- title: Business Requirements
-  output: web, pdf
-  children:
-
-  - title: Clinical scenarios
-    url: /accessrecord_clinical_scenarios.html
-    output: web, pdf
-
-- title: Design
-  output: web, pdf
-  children:
-
-  - title: Design Decisions
-    url: /accessrecord_design.html
-    output: web
-  - title: Known Issues
-    output: web
-    url: /accessrecord_known_issues.html
-          
-- title: Development
-  output: web, pdf
-  children:
-
-  - title: FHIR resources
-    url: /datalibraryaccessRecord.html
-    output: web, pdf
-    children:
-
-  - title: Implementation Guidance
-    output: web
-    children:
-      
-    - title: Standards
-      url: /accessrecord_development_html_implementation_guide.html
-      output: web
-    - title: Layout
-      url: /accessrecord_development_html_layout_guide.html
-      output: web
-
-    - title: HTML Views
-      output: 'web, pdf'
-      children:
-        
-      - title: Summary
-        url: /accessrecord_view_summary.html
-        output: web, pdf
-      - title: Encounters
-        url: /accessrecord_view_encounters.html
-        output: web, pdf
-      - title: Clinical items
-        url: /accessrecord_view_clinical_items.html
-        output: web, pdf
-      - title: Problems and issues
-        url: /accessrecord_view_problems.html
-        output: web, pdf
-      - title: Allergies and adverse reactions
-        url: /accessrecord_view_allergies.html
-        output: web, pdf
-      - title: Medications
-        url: /accessrecord_view_medications.html
-        output: web, pdf
-      - title: Referrals
-        url: /accessrecord_view_referrals.html
-        output: web, pdf
-      - title: Observations
-        url: /accessrecord_view_observations.html
-        output: web, pdf
-      - title: Immunisations
-        url: /accessrecord_view_immunisations.html
-        output: web, pdf
-      - title: Administrative items
-        url: /accessrecord_view_administrative_items.html
-        output: web, pdf
-
-
-    - title: API definition
+    - title: Introduction
+      url: /accessrecord.html
       output: web, pdf
-      children:
-        
-      - title: Retrieve a care record section
-        url: /accessrecord_use_case_retrieve_a_care_record_section.html
+      type: homepage
+    - title: Clinical scenarios
+      url: /accessrecord_clinical_scenarios.html
+      output: web, pdf
+    - title: Design decisions
+      url: /accessrecord_design.html
+      output: web, pdf
+    - title: Known issues
+      url: /accessrecord_known_issues.html
+      output: web, pdf
+    - title: Sitemap
+      url: /sitemap_access_record_html.html
+      output: web      
+
+  - title: Development
+    output: web, pdf
+    folderitems:
+
+      - title: FHIR resources
+        url: /datalibraryaccessRecord.html
         output: web, pdf
-    
+
+        subfolders:
+        - title: API use cases
+          output: web, pdf
+          subfolderitems:
+          - title: Retrieve a care record section
+            url: /accessrecord_use_case_retrieve_a_care_record_section.html
+            output: web, pdf
+
+        - title: HTML implementation guidance
+          output: web, pdf
+          subfolderitems:
+          - title: Standards
+            url: /accessrecord_development_html_implementation_guide.html
+            output: web, pdf
+          - title: Layout
+            url: /accessrecord_development_html_layout_guide.html
+            output: web, pdf
+
+        - title: HTML views
+          output: web, pdf
+          subfolderitems:
+          - title: Summary
+            url: /accessrecord_view_summary.html
+            output: web, pdf
+          - title: Encounters
+            url: /accessrecord_view_encounters.html
+            output: web, pdf
+          - title: Clinical items
+            url: /accessrecord_view_clinical_items.html
+            output: web, pdf
+          - title: Problems and issues
+            url: /accessrecord_view_problems.html
+            output: web, pdf
+          - title: Allergies and adverse reactions
+            url: /accessrecord_view_allergies.html
+            output: web, pdf
+          - title: Medications
+            url: /accessrecord_view_medications.html
+            output: web, pdf
+          - title: Referrals
+            url: /accessrecord_view_referrals.html
+            output: web, pdf
+          - title: Observations
+            url: /accessrecord_view_observations.html
+            output: web, pdf
+          - title: Immunisations
+            url: /accessrecord_view_immunisations.html
+            output: web, pdf
+          - title: Administrative items
+            url: /accessrecord_view_administrative_items.html
+            output: web, pdf

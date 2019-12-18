@@ -1,56 +1,49 @@
-## definition of `menuitem`===========
-# title: string
-# url: string
-# output: [ enum{web, pdf} ] (expressed as comma separated string in YAML)
-# children?: [ menuitem ]
+entries:
+- title: Foundations
+  product: Foundations
+  folders:
 
-## top level property=================
-# entries: [ menuitem ]
-
-title: Foundations
-product: Foundations
-children:
-
-- title:
-  output: pdf
-  type: frontmatter
-  children:
   - title:
-    url: /titlepage
     output: pdf
     type: frontmatter
-  - title:
-    url: /tocpage
-    output: pdf
-    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
 
-- title: Overview
-  output: web, pdf
-  children:
+  - title: Overview
+    output: web, pdf
+    folderitems:
 
-  - title: Introduction
-    url: /foundations.html
-    output: web, pdf
-    type: homepage
-  - title: Design decisions
-    url: /foundations_design.html
-    output: web, pdf
-  - title: Sitemap
-    url: /sitemap_foundations.html
-    output: web      
-    
-- title: Development
-  output: web, pdf
-  children:
-
-  - title: FHIR resources
-    url: /datalibraryfoundation.html
-    output: web, pdf
-    
-  - title: API use cases
-    output: web, pdf
-    children:
-
-    - title: Get the FHIR&reg; conformance profile
-      url: /foundations_use_case_get_the_fhir_conformance_profile.html
+    - title: Introduction
+      url: /foundations.html
       output: web, pdf
+      type: homepage
+    - title: Design decisions
+      url: /foundations_design.html
+      output: web, pdf
+    - title: Sitemap
+      url: /sitemap_foundations.html
+      output: web      
+      
+  - title: Development
+    output: web, pdf
+    folderitems:
+
+    - title: FHIR resources
+      url: /datalibraryfoundation.html
+      output: web, pdf
+
+      subfolders:
+      - title: API use cases
+        output: web, pdf
+        subfolderitems:
+
+        - title: Get the FHIR&reg; conformance profile
+          url: /foundations_use_case_get_the_fhir_conformance_profile.html
+          output: web, pdf

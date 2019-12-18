@@ -323,123 +323,6 @@ a.accordion-toggle, a.accordion-collapsed {
     text-decoration: none;
 }
 
-/* navbar */
-nav {
-  padding-top: 10px;
-  background-color: white;
-  border-bottom: solid 1px var(--color-gray);
-}
-.navbar-light .navbar-nav .nav-link:hover {
-  color: var(--color-blue-d);
-}
-.navbar-light .navbar-nav .nav-link:active {
-  color: var(--color-blue-xd);
-}
-.navbar-light .navbar-nav .nav-link.highlighted {
-  color: var(--color-gray-xd);
-}
-
-/* tree nav */
-
-#mysidebar {
-  display:block;
-}
-
-
-#mysidebar ul {
-  list-style: none;
-  margin-left:0em;
-}
-
-
-ul#mysidebar, #mysidebar ul{
-  list-style: none;
-  padding-left:0;
-}
-
-
-#mysidebar li{
-  margin-top:.1em;
-  line-height:1.1em;
-}
-
-#mysidebar li a {
-  font-size: 90%;
-}
-
-#mysidebar li > a{
-    display: block;
-}
-
-#mysidebar .page-link{
-  padding: 3px 5px;
-  border-radius:5px;
-}
-
-#mysidebar .page-link {
-  margin-left: 1em;
-}
-
-#mysidebar .leaf-node>.page-link::before{
-  content: "▪";
-  float:left;
-  width:1em;
-  margin-left:-1em;
-}
-
-
-#mysidebar .show-hide{
-  float:left;
-  width:.8em;
-  padding-left:.3em;
-}
-
-
-.tree-parent.expanded .nav-list{
-  display:block;
-}
-
-
-#mysidebar li.active a.show-hide,
-#mysidebar a.show-hide:hover,
-#mysidebar a.show-hide:active{
-  background:none;
-  border:none;
-  text-decoration: none;
-}
-
-
-#mysidebar li.active>a.page-link,
-#mysidebar a.page-link:hover{
-  background: lightblue;
-  text-decoration: none;
-}
-
-/* */
-
-.nav ul.series li {
-    list-style: decimal;
-    font-size:12px;
-}
-
-.nav ul.series li a:hover {
-    background-color: gray;
-}
-.nav ul.series {
-    padding-left: 30px;
-}
-
-.nav ul.series {
-    background-color: #FAFAFA;
-}
-
-/*
-a.dropdown-toggle.otherProgLangs {
-    color: #f7e68f !important;
-}
-*/
-
-
 /* navgoco sidebar styles (customized) */
 .nav, .nav ul, .nav li {
     list-style: none;
@@ -475,7 +358,6 @@ a.dropdown-toggle.otherProgLangs {
     text-decoration: none;
 }
 
-
 .nav li > a > span {
     float: right;
     font-size: 19px;
@@ -486,7 +368,6 @@ a.dropdown-toggle.otherProgLangs {
 .nav li > a > span:after {
     content: '\25be';
 }
-
 .nav li.open > a > span:after {
     content: '\25b4';
 }
@@ -518,15 +399,7 @@ ul#mysidebar {
 }
 
 .nav ul li ul li a {
-    padding-left: 25px;
-}
-
-.nav ul li ul li ul li a {
-    padding-left: 35px;
-}
-
-.nav ul li ul li ul li ul li a {
-    padding-left: 45px;
+    padding-left: 20px;
 }
 
 .nav li.thirdlevel > a {
@@ -863,7 +736,7 @@ ol.series li {
     display:block;
 }
 
-/* not sure if using this ...
+/* not sure if using this ...*/
 .navbar-inverse .navbar-collapse, .navbar-inverse .navbar-form {
     border-color: #248ec2 !important;
 }
@@ -886,10 +759,6 @@ ol.series li {
 .nav ul.series {
     background-color: #FAFAFA;
 }
-
-
-*/
-
 
 /*
 a.dropdown-toggle.otherProgLangs {
