@@ -38,7 +38,7 @@ As an approximate guide you can expect to complete the following stages and task
 - Commissioner and Supplier Deployment Approach
 - Go Live
 
-To get started, read the following pages:
+<p>To get started, read the following pages:
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html)
 - look through the design decisions made so far in relation to each capability ([Foundations](foundations_design.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
@@ -71,6 +71,8 @@ Our developer ecosystem diagram takes you through each stage of a consumer suppl
 ## Provider suppliers ##
 
 Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, can use GP Connect to develop APIs that allow consumer applications to access GP data on their systems.
+
+<p>To get started, read the following pages:
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html) within this specification
 - see the latest specifications and release notes in the [specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers)
