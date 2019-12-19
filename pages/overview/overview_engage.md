@@ -13,7 +13,7 @@ As an approximate guide you can expect to complete the following stages and task
 
 - Read about the GP Connect capabilities
 - Study the prerequisites
-- Contact GP team
+- Contact GP Connect team
 - Describe use case (purpose of your product)
 - Obtain use case approval
 - Contact GP Connect Consumer Assurance team
