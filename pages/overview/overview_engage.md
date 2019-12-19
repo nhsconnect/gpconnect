@@ -38,7 +38,7 @@ As an approximate guide you can expect to complete the following stages and task
 - Commissioner and Supplier Deployment Approach
 - Go Live
 
-<p>
+<p></p>
 <p>To get started, read the following pages:</p>
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html)
@@ -73,7 +73,7 @@ Our developer ecosystem diagram takes you through each stage of a consumer suppl
 
 Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, can use GP Connect to develop APIs that allow consumer applications to access GP data on their systems.
 
-<p>
+<p></p>
 <p>To get started, read the following pages:</p>
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html) within this specification
