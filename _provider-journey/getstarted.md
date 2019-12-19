@@ -1,6 +1,6 @@
 ---
 name: Get Started
-coord: "203,56,615,233"
+coord: "50,60,450,240"
 href: overview_engage.html
 ---
 Get Started
