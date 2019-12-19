@@ -62,3 +62,5 @@ To provide feedback on the GP Connect specification please send an email to the 
 {% include twitterfollow.html %}
 
 {% include gitterbadge.html %}
+
+<strong>Next step:</strong> [Getting started](overview_engage.html)
