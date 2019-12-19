@@ -19,8 +19,3 @@ Once your consumer product has been assured it will be added to the NHSD Service
 
 *Text for providers* 
 
-## Developer ecosystem ##
-
-Our developer ecosystem diagram takes you through each stage of a consumer supplier journey for a typical GP Connect API project. Click on a stage to find out more.
-
-{% include developer_journey.html %}
