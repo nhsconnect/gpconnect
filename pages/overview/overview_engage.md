@@ -38,7 +38,7 @@ As an approximate guide you can expect to complete the following stages and task
 - Commissioner and Supplier Deployment Approach
 - Go Live
 
-<p>To get started, read the following pages:
+<p>To get started, read the following pages:</p>
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html)
 - look through the design decisions made so far in relation to each capability ([Foundations](foundations_design.html), [Access Record Structured](accessrecord_structured_design.html) and [Appointment Management](appointments_design.html)) and get involved:
