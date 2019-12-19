@@ -1,6 +1,6 @@
 ---
 name: Develop
-coord: "630,200,860,500"
+coord: "615,170,860,470"
 href: overview_development.html
 ---
 Develop
