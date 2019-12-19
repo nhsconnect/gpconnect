@@ -1,6 +1,6 @@
 ---
 name: Deploy
-coord: "15,51,120,816"
+coord: "45,100,150,500"
 href: overview_deployment.html
 ---
 Deploy
