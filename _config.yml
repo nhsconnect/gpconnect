@@ -67,6 +67,8 @@ excerpt_separator: ""
 collections:
   developer-journey:
     output: false
+  provider-journey:
+    output: false
   accessrecord_examples:
     output: true
 
