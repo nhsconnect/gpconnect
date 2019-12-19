@@ -38,6 +38,7 @@ As an approximate guide you can expect to complete the following stages and task
 - Commissioner and Supplier Deployment Approach
 - Go Live
 
+<p>
 <p>To get started, read the following pages:</p>
 
 - read about the GP Connect [capabilities](overview_priority_capabilities.html)
