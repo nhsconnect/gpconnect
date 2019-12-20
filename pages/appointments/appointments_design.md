@@ -112,9 +112,9 @@ Please see [Branch surgeries](development_branch_surgeries.html) for more inform
 
 A clinician may need to visit a patient away from the practice to provide health care. The visit could be at their home, care home, nursing home or a temporary address.
 
-Should visit slots/appointments be operable with all or a subset of the Appointment Management API interactions?
+Which Appointment Management API interactions should support slots or appointments with a delivery channel of 'visit'?
 
-- Search for free slots, Book appointment, Amend appointment, Cancel appointment, Read appointment, Retrieve a patient's appointments
-- <span class="label label-success">SELECTED</span> Read appointment, Retrieve a patient's appointments
+- *All interactions:* Search for free slots, Book appointment, Amend appointment, Cancel appointment, Read appointment, Retrieve a patient's appointments
+- <span class="label label-success">SELECTED</span> *Only read only interactions:* Read appointment, Retrieve a patient's appointments
 
-This decision to restrict the usage of visit slots/appointments to Read appointment and Retrieve a patient's appointments only is based on the complexity in booking visit appointments which typically involve triage by the practice, and differing practice policies for home visit appointment booking.
+This decision to restrict the usage of visit slots/appointments to Read appointment and Retrieve a patient's appointments interactions only is based on the complexity in booking visit appointments which typically involve triage by the practice, and differing practice policies for home visit appointment booking.
