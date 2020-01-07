@@ -1,103 +1,95 @@
-entries:
-- title: Access Record Structured
-  product: Access Record Structured
-  folders:
+## definition of `menuitem`===========
+# title: string
+# url: string
+# output: [ enum{web, pdf} ] (expressed as comma separated string in YAML)
+# children?: [ menuitem ]
 
+## top level property=================
+# entries: [ menuitem ]
+
+title: Access Record Structured
+product: Access Record Structured
+children:
+
+- title: Overview
+  output: web, pdf
+  children:
+  - title: Introduction
+    url: /accessrecord_structured.html
+    output: web, pdf
+  - title: Business requirements
+    url: /accessrecord_structured_requirements.html
+    output: web, pdf
+  - title: Requirements catalogue <img src="images/nhsddownload.png" height="17" width="17" align="right">
+    url: /pages&#47;accessrecord_structured&#47;GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.4.xlsx"rel="nofollow" target="_blank"
+    output: web, pdf
+  - title: Design decisions
+    url: /accessrecord_structured_design.html
+    output: web, pdf
+  - title: Known issues
+    url: /accessrecord_structured_known_issues.html
+    output: web, pdf
+  - title: Sitemap
+    url: /sitemap_access_record_structured.html
+    output: web
+
+- title: Development
+  output: web, pdf
+  children:
   - title: Overview
-    output: web, pdf
-    folderitems:
-
-    - title: Introduction
-      url: /accessrecord_structured.html
-      output: web, pdf
-    - title: Business requirements
-      url: /accessrecord_structured_requirements.html
-      output: web, pdf
-    - title: Requirements catalogue <img src="images/nhsddownload.png" height="17" width="17" align="right">
-      url: /pages&#47;accessrecord_structured&#47;GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v1.4.xlsx"rel="nofollow" target="_blank"
-      output: web, pdf
-    - title: Design decisions
-      url: /accessrecord_structured_design.html
-      output: web, pdf
-    - title: Known issues
-      url: /accessrecord_structured_known_issues.html
-      output: web, pdf
-    - title: Sitemap
-      url: /sitemap_access_record_structured.html
-      output: web
-
-  - title: Development
-    output: web, pdf
-    folderitems:
-
+    url: /accessrecord_structured_development.html
+    output: web
+  - title: Allergies guidance
+    output: web
+    url: /accessrecord_structured_development_allergies_guidance.html
+  - title: Medication resource relationships
+    url: /accessrecord_structured_development_medication_resource_relationships.html
+    output: web
+  - title: Medication guidance
+    url: /accessrecord_structured_development_medication_guidance.html
+    output: web
+  - title: FHIR&reg; resources
+    output: web
+    children:
     - title: Overview
-      url: /accessrecord_structured_development.html
+      url: /accessrecord_structured_development_resources_overview.html
       output: web
-
-    - title: Allergies guidance
+    - title: <b class='resource'>AllergyIntolerance</b>
+      url: /accessrecord_structured_development_allergyintolerance.html
       output: web
-      url: /accessrecord_structured_development_allergies_guidance.html
-
-    - title: Medication resource relationships
-      url: /accessrecord_structured_development_medication_resource_relationships.html
+    - title: <b class='resource'>Medication</b>
+      url: /accessrecord_structured_development_medication.html
       output: web
-
-    - title: Medication guidance
-      url: /accessrecord_structured_development_medication_guidance.html
+    - title: <b class='resource'>MedicationStatement</b>
+      url: /accessrecord_structured_development_medicationstatement.html
       output: web
-
-      subfolders:
-
-      - title: FHIR&reg; resources
-        output: web
-        subfolderitems:
-
-        - title: Overview
-          url: /accessrecord_structured_development_resources_overview.html
-          output: web
-        - title: <b class='resource'>AllergyIntolerance</b>
-          url: /accessrecord_structured_development_allergyintolerance.html
-          output: web
-        - title: <b class='resource'>Medication</b>
-          url: /accessrecord_structured_development_medication.html
-          output: web
-        - title: <b class='resource'>MedicationStatement</b>
-          url: /accessrecord_structured_development_medicationstatement.html
-          output: web
-        - title: <b class='resource'>MedicationRequest</b>
-          url: /accessrecord_structured_development_medicationrequest.html
-          output: web
-        - title: <b class='resource'>List</b>
-          url: /accessrecord_structured_development_list.html
-          output: web
-        - title: <b class='resource'>Bundle</b>
-          url: /accessrecord_structured_development_bundle.html
-          output: web
-
-      - title: FHIR&reg; examples
-        output: web
-        subfolderitems:
-
-        - title: Allergies
-          url: /accessrecord_structured_development_fhir_examples_allergies.html
-          output: web
-
-        - title: Medication
-          url: /accessrecord_structured_development_fhir_examples_medication.html
-          output: web
-
-        - title: Forwards compatibility support
-          url: /accessrecord_structured_development_fhir_examples_forwards_consultations.html
-          output: web
-
-      - title: API definition
-        output: web
-        subfolderitems:
-
-        - title: Retrieve a patient's structured record
-          url: /accessrecord_structured_development_retrieve_patient_record.html
-          output: web
-
-        - title: API Version Compatibility
-          url: /accessrecord_structured_development_version_compatibility.html
-          output: web
+    - title: <b class='resource'>MedicationRequest</b>
+      url: /accessrecord_structured_development_medicationrequest.html
+      output: web
+    - title: <b class='resource'>List</b>
+      url: /accessrecord_structured_development_list.html
+      output: web
+    - title: <b class='resource'>Bundle</b>
+      url: /accessrecord_structured_development_bundle.html
+      output: web
+  - title: FHIR&reg; examples
+    output: web
+    children:
+    - title: Allergies
+      url: /accessrecord_structured_development_fhir_examples_allergies.html
+      output: web
+    - title: Medication
+      url: /accessrecord_structured_development_fhir_examples_medication.html
+      output: web
+    - title: Forwards compatibility support
+      url: /accessrecord_structured_development_fhir_examples_forwards_consultations.html
+      output: web
+  - title: API definition
+    output: web
+    children:
+    - title: Retrieve a patient's structured record
+      url: /accessrecord_structured_development_retrieve_patient_record.html
+      output: web
+    - title: API Version Compatibility
+      url: /accessrecord_structured_development_version_compatibility.html
+      output: web
