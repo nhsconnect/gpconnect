@@ -184,13 +184,9 @@ In exceptional cases where for legacy data there is no prescriptionType recorded
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific codeSystem for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
-This **MUST** be a GUID.
-
-*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
+There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
 
@@ -469,13 +465,13 @@ For `MedicationRequest` instances where `intent` is set to `order`:
 
 *	This refers to the period that the issued prescription is active
 
-`Period.start` is **MANDATORY**. 
+`Period.start` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 *	The prescription issue date recorded in the patient record
 *	The date the prescription was recorded.
 
-`Period.end` is **MANDATORY**. 
+`Period.end` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 *	The prescription end date recorded in the patient record
