@@ -472,6 +472,10 @@ ul#mysidebar, #mysidebar ul{
     content: '\25b4';
 }
 
+.nav li.active > a > span:after {
+    content: '\25b4';
+}
+
 .nav a:hover, .nav li.active > a {
     background-color: #8D8D8D;
     color: #f5f5f5;
