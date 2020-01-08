@@ -19,7 +19,7 @@ Forwards compatibility is the scenario where a consumer requests a higher versio
 In this scenario, providers **MUST** respond in the following way:
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
 - Include FHIR&reg; resources for supported parameters
-- as part of the returned bundle, include a single [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) with an `issue` for each unsupported parameter or part parameter where:
+- as part of the returned bundle, include a single [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) with an `issue` for each unsupported parameter or part parameter where:
   - `issue.code` = `not-supported`
   - `issue.severity` = `warning`
   - `issue.details.coding.system` = `https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1`
@@ -32,7 +32,7 @@ In this scenario, providers **MUST** respond in the following way:
   - `issue.details.text` = `<parameter-name>.<part-parameter-name> is an unrecognised parameter`
   - `issue.diagnostics` = `<parameter-name>.<part-parameter-name>`
 
-The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) for a request where the `includeConsultations` and `includeProblems` parameters weren't supported:
+The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) for a request where the `includeConsultations` and `includeProblems` parameters weren't supported:
 
 ```
 {
@@ -88,7 +88,7 @@ The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU
 
 Providers **MUST** report unsupported parameters at the least granular level, that is, unsupported part parameters **MUST** only be reported when their top level parameter is supported.
 
-Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource as specified above to check for incomplete data as a result of unsupported parameters. These warnings **MUST** be displayed to users to warn them that information is missing.
+Consumers **MUST** check for the presence of an [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) resource as specified above to check for incomplete data as a result of unsupported parameters. These warnings **MUST** be displayed to users to warn them that information is missing.
 
 The following table gives an overview of which parameters are supported in each version of the GP Connect API:
 
