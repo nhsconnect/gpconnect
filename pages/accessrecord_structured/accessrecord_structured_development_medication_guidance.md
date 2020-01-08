@@ -8,11 +8,11 @@ summary: "Guidance on the representation of medication in GP Connect"
 ---
 ## Medication search criteria ###
 
-There are a 2 parameters that can be specified while retrieving medications. A search from date and a boolean that can be set to 'false' in order to exclude medication issues.
+There are 2 parameters that can be specified while retrieving medications. A search from date and a boolean that can be set to 'false' in order to exclude medication issues.
 
-As a default the medication issues are always included in the bundle that is returned. If the consumer specifically wants to retrieve the medication items without any of the issues then this **MUST** be specified in the request, in this case only the authorisations will be returned. That is the `MedicationStatement` and `MedicationRequest` with `intent` set to `plan` for each medication item.
+As a default, the medication issues are always included in the bundle that is returned. If the consumer specifically wants to retrieve the medication items without any of the issues, then this **MUST** be specified in the request - in this case only the authorisations will be returned. That is, the `MedicationStatement` and `MedicationRequest` with `intent` set to `plan` for each medication item.
 
-Below is a further detail about how the search criteria should be applied,
+Below is a further detail about how the search criteria should be applied:
 
 * Search for all Medications and Medical Devices that were active on or after the specified date
      * The consumer system requests all items from a start date
@@ -22,11 +22,11 @@ Below is a further detail about how the search criteria should be applied,
      * The consumer system requests not to include prescription issues
      * For each of the returned medication/medical device plans, the provider system only includes the authorisations
 
-Technical details relating to the search criteria are available on the [Retrieve a patients structured record page](accessrecord_structured_development_retrieve_patient_record.html).
+Technical details relating to the search criteria are available on the [Retrieve a patient's structured record page](accessrecord_structured_development_retrieve_patient_record.html).
 
 ## Degraded medications
 
-Where degraded medication records arising from GP2GP record transfer or any other means are present in the patient record then these **MUST** be coded using the appropriate degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
+Where degraded medication records arising from GP2GP record transfer or any other means are present in the patient record, then these **MUST** be coded using the appropriate degrade code (`196421000000109`, Transfer-degraded medication entry) with the original medication name conveyed by `CodeableConcept.text`.
 
 ## Medication interoperability
 
@@ -54,20 +54,20 @@ Medication issues may be future-dated – for example, repeat dispensed medicati
 
 ## Amendments to the Medication/Medical Device in a plan
 
-All the prescriptions issued under a single medication/medical device plan MUST have the same medication/medical device.
+All the prescriptions issued under a single medication/medical device plan **MUST** have the same medication/medical device.
 
-Where the medication/medical device (including a Proprietary/Generic switch) of a medication/medical device plan is amended the existing authorisation/plan MUST be stopped or discontinued and a new authorisation created.
+Where the medication/medical device (including a Proprietary/Generic switch) of a medication/medical device plan is amended the existing authorisation/plan **MUST** be stopped or discontinued and a new authorisation created.
 
 ## Amendments to the Dosage Instructions in a plan
 
-All the prescriptions issues under a single medication/medical device plan MUST have the same dosage instruction.
+All the prescriptions issues under a single medication/medical device plan **MUST** have the same dosage instruction.
 
-Where the dosage instructions of a medication/medical device plan is amended the existing authorisation/plan MUST be stopped or discontinued and a new authorisation created.
+Where the dosage instructions of a medication/medical device plan is amended the existing authorisation/plan **MUST** be stopped or discontinued and a new authorisation created.
 
 To ease the implementation of a single dosage instruction, there will be a period of time made available for the provider systems to fully support this requirement.
 
 *	The requirement applies to all medication/medical device plans that are	created on the provider system after an agreed date (tbd)
-*	All medication/medical device plans (regardless of date and status) that contain prescription issues with different dosage instructions MUST included the additional information:
+*	All medication/medical device plans (regardless of date and status) that contain prescription issues with different dosage instructions **MUST** include the additional information:
     * set `MedicationStatement.Extension(dosagelastchanged)` to the date that the dosage instruction was last changed.
     * add the text "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY", where DD-Mmm-YYYY is the date the dosage was last changed.
 
