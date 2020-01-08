@@ -117,4 +117,4 @@ Which Appointment Management API interactions should support slots or appointmen
 - *All interactions:* Search for free slots, Book appointment, Amend appointment, Cancel appointment, Read appointment, Retrieve a patient's appointments
 - <span class="label label-success">SELECTED</span> *Only read only interactions:* Read appointment, Retrieve a patient's appointments
 
-This decision to restrict the usage of visit slots/appointments to Read appointment and Retrieve a patient's appointments interactions only is based on the complexity in booking visit appointments which typically involve triage by the practice, and differing practice policies for home visit appointment booking.
+This decision to restrict the usage of visit slots/appointments to Read appointment and Retrieve a patient's appointments interactions only is based on the complexity in booking visit appointments which typically involve triage by the practice, and differing practice policies for visit appointment booking.
