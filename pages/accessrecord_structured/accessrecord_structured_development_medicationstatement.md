@@ -96,11 +96,11 @@ Set to the date when the dosage instructions were last changed.
   </tr>
 </table>
 
-This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific codeSystem for the identifier.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
 There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
-Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifer at the same time.
 
 ### basedOn ###
 
