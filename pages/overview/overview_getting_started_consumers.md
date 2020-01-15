@@ -57,7 +57,7 @@ As an approximate guide you can expect to complete the following tasks on your G
 
 ## Developer ecosystem ##
 
-Our developer ecosystem diagram gives you an overview of a consumer supplier journey for a typical GP Connect API project. Click on each stage to find out more.
+Our developer ecosystem diagram gives you an overview of a consumer supplier journey for a typical GP Connect API project (including 'Getting started'). Click on subsequent stages to find out more.
 
 {% include developer_journey.html %}
 
