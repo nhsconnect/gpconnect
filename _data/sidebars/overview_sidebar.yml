@@ -43,10 +43,14 @@ entries:
   - title: Get started
     output: web
     folderitems:
-    - title: Getting started
-      url: /overview_engage.html
+    - title: Getting started for consumer suppliers
+      url: /overview_getting_started_consumers.html
       output: web, pdf
-      type: web  
+      type: web
+    - title: Getting started for provider suppliers
+      url: /overview_getting_started_providers.html
+      output: web, pdf
+      type: web    
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web, pdf
