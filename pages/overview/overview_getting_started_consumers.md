@@ -5,7 +5,7 @@ tags: [getting_started]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_getting_started_consumers.html
-summary: "First steps and overview of development process"
+summary: "Overview of development process and first steps"
 ---
 
 You may be working with an end user organisation to solve their business needs or developing an application to secure a place in the healthcare market. Whatever your reason for developing, this specification shows you how to connect to the GP Connect APIs and get your product ready for use.
