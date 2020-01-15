@@ -370,13 +370,13 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
       "details": {
         "coding": [
           {
-            "display": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/STU3/1/GPConnect/Patient",
+            "display": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/DSTU2/1/GPConnect/Patient",
             "code": "502",
             "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
           }
         ]
       },
-      "diagnostics": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/STU3/1/GPConnect/Patient"
+      "diagnostics": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/DSTU2/1/GPConnect/Patient"
     }
   ]
 }
