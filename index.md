@@ -66,4 +66,4 @@ To provide feedback on the GP Connect specification please send an email to the 
 &nbsp;
 &nbsp;
 
-<strong>Next step:</strong> [Getting started](overview_engage.html)
+<strong>Next step:</strong> [Getting started for consumer suppliers](overview_getting_started_consumers.html); [Getting started for provider suppliers](overview_getting_started_consumers.html)
