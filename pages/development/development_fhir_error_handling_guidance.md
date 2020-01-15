@@ -34,7 +34,7 @@ Provider systems **MUST** respond by returning one of the following `OperationOu
 | `400`     | INVALID_ODS_CODE   | ODS code invalid |
 | `404`     | PRACTITIONER_NOT_FOUND   | Practitioner record not found |
 
-#### Example 1. Invalid NHS Number supplied #####
+#### Example - Invalid NHS Number supplied #####
 
 For example, if an invalid NHS Number value is supplied to the `$gpc.getcarerecord` Operation the following error details would be returned:
 
@@ -58,7 +58,7 @@ For example, if an invalid NHS Number value is supplied to the `$gpc.getcarereco
 }
 ```
 
-#### Example 2. Patient not found #####
+#### Example - Patient not found #####
 
 For example, a valid NHS Number value is supplied to the `$gpc.getcarerecord` Operation but no GP record exists for that patient then the following error details would be returned:
 
@@ -91,7 +91,7 @@ Provider systems **MUST** returning one of the following `OperationOutcome` erro
 | `403` | NO_PATIENT_CONSENT | No Patient Consent To Share |
 | `403` | NON_AUTHORITATIVE | Non Authoritative |
 
-#### Example 3. No patient consent to share #####
+#### Example - No patient consent to share #####
 
 For example, the patient has requested that their record not be shared via the `$gpc.getcarerecord` Operation then the following error details would be returned:
 
@@ -123,7 +123,7 @@ For example, the patient has requested that their record not be shared via the `
 | `422`     | INVALID_PARAMETER | Submitted parameter is not valid. |
 | `422`     | REFERENCE_NOT_FOUND | Referenced resource not found. |
 
-#### Example 4. Invalid reference #####
+#### Example - Invalid reference #####
 
 For example, if the RESTful API fails when an invalid organisational reference is supplied, then the following error details would be returned:
 
@@ -163,7 +163,7 @@ When the FHIR server has received a request for an operation or FHIR resource wh
 
 
 
-#### Example 5. Unexpected exception #####
+#### Example - Unexpected exception #####
 
 For example, an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
 
@@ -197,7 +197,7 @@ When the server cannot or will not process a request due to an apparent client e
 | --------- | ---------- | ----------- |
 | `400`     | BAD_REQUEST | Submitted request is malformed / invalid. |
 
-#### Example 6. Malformed request syntax #####
+#### Example - Malformed request syntax #####
 
 For example, if the request could not be understood by the server due to malformed syntax, then the following error details would be returned:
 
@@ -221,125 +221,163 @@ For example, if the request could not be understood by the server due to malform
 }
 ```
 
-### Spine Security Proxy errors ###
+### Spine Secure Proxy (SSP) errors ###
 
-When the Spine Security Proxy cannot or will not process a request then the following errors **MUST** be used to return debug details.
+When the Spine Secure Proxy cannot or will not process a request then one of the following errors are used to return debug details:
 
-#### Example 7. Bad Request #####
+| HTTP code | Issue type | Description of error  |
+| --------- | ------- | ----------- |
+| `400`     | invalid |  Target URL varies from endpoint registered in SDS | 
+| `403`     | forbidden |  Sender ASID is not authorised for this interaction | 
+| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID | 
+| `405`     | not-supported | Method not allowed |
+| `415`     | not-supported | Unsupported media type |
+| `502`     | transient | Error communicating to target URL |
 
-| HTTP Code | HTTP Meaning | Description |
-| --------- | --------- | ----------- |
-| `400`     | Bad request | i.e. content of the request is invalid against the specification. |
+#### SSP error example: Target URL varies from endpoint registered in SDS #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "invalid",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+    "resourceType": "OperationOutcome", 
+    "id": "09a01679-2564-0fb4-5129-aecc81ea2706",
+    "issue": [
+        {
+            "code": "invalid", 
+            "severity": "error", 
+            "details": {
+                "coding": [
+                    {
+                        "code": "400", 
+                        "display": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test", 
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test",
+        }
+    ] 
 }
 ```
 
-#### Example 8. Forbidden #####
-
-| HTTP Code | HTTP Meaning | Description |
-| --------- | --------- | ----------- |
-| `403`     | Forbidden | i.e. ASID/InteractionID check has failed. |
+#### SSP error example: Sender ASID is not authorised for this interaction #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "forbidden",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+    "resourceType": "OperationOutcome",
+    "id": "10960df2-29d1-4e71-823c-c0bb9d723012",
+    "issue": [
+        {
+            "code": "forbidden",
+            "severity": "error",
+            "details": {
+                "coding": [
+                    {
+                        "code": "403",
+                        "display": "ASID_CHECK_FAILED_MESSAGESENDER_100000000001",
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "ASID_CHECK_FAILED_MESSAGESENDER_100000000001"
+        }
+    ]
 }
 ```
 
-#### Example 9. Method not allowed #####
-
-| HTTP Code | HTTP Meaning | Description |
-| --------- | --------- | ----------- |
-| `405`     | Method not allowed | i.e. asked for an unsupported HTTP verb such as PATCH. |
+#### SSP error example: Sender ASID is not authorised to send the interaction to receiver ASID #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "not-supported",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+    "resourceType": "OperationOutcome",
+    "id": "43A8BB0D-195E-4CF4-86F9-E8514F6EB585",
+    "issue": [
+        {
+            "code": "forbidden",
+            "severity": "error",
+            "details": {
+                "coding": [
+                    {
+                        "code": "403",
+                        "display": "FOT_CHECK_FAILED_MESSAGESENDER_200000000001_MESSAGERECEIVER_200000000002",
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "FOT_CHECK_FAILED_MESSAGESENDER_200000000001_MESSAGERECEIVER_200000000002"
+        }
+    ]
 }
 ```
 
-#### Example 10. Unsupported media type #####
-
-| HTTP Code | HTTP Meaning | Description |
-| --------- | --------- | ----------- |
-| `415`     | Unsupported media type | i.e. a consumer application asked for an unsupported media type. |
+#### SSP error example: Method not allowed #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "not-supported",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+  "resourceType": "OperationOutcome",
+  "issue": [
+    {
+      "code": "forbidden",
+      "severity": "fatal",
+      "details": {
+        "coding": [
+          {
+            "code": "405",
+            "system": "https://fhir.nhs.uk/StructureDefinition/spine-operationoutcome-1",
+            "display": "405: Method Not Allowed"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
-#### Example 11. Internal server error #####
-
-| HTTP Code | HTTP Meaning | Description |
-| --------- | --------- | ----------- |
-| `500`     | Internal server error | i.e. an unexpected error / exception has occured. |
+#### SSP error example: Unsupported media type #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "exception",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+  "resourceType": "OperationOutcome",
+  "id": "09a01679-2564-0fb4-5129-aecc81ea2706",
+  "issue": [
+    {
+      "code": "not-supported",
+      "severity": "error",
+      "details": {
+        "coding": [
+          {
+            "code": "415",
+            "display": "Unsupported_Media_Type",
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+          }
+        ]
+      },
+      "diagnostics": "Unsupported_Media_Type"
+    }
+  ]
 }
 ```
 
-#### Example 12. Bad gateway #####
-
-| HTTP Code | HTTP Meaning | Description |
-| --------- | --------- | ----------- |
-| `502`     | Bad gateway | i.e. downstream server is offline. |
+#### SSP error example: Error communicating to target URL #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "transient",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
-}
-```
-
-#### Example 13. Gateway timeout #####
-
-| HTTP Code | HTTP Meaning | Description |
-| --------- | --------- | ----------- |
-| `504`     | Gateway timeout | i.e. downstream server timed out. |
-
-```json
-{
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "transient",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+  "resourceType": "OperationOutcome",
+  "id": "78D536C0-44D6-11E9-BFCD-17C1B88243CD",
+  "issue": [
+    {
+      "code": "transient",
+      "severity": "error",
+      "details": {
+        "coding": [
+          {
+            "display": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/STU3/1/GPConnect/Patient",
+            "code": "502",
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+          }
+        ]
+      },
+      "diagnostics": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/STU3/1/GPConnect/Patient"
+    }
+  ]
 }
 ```
