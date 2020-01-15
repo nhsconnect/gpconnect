@@ -18,7 +18,7 @@ Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, c
 
 ## Provider ecosystem ##
 
-The provider ecosystem diagram takes you through each stage of a provider supplier journey for a typical GP Connect API project. Click on each stage to find out more.
+The provider ecosystem diagram takes you through each stage of a provider supplier journey for a typical GP Connect API project (including 'Getting started'). Click on subsequent stages to find out more.
 
 {% include provider_journey.html %}
 
