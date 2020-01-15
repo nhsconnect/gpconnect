@@ -40,7 +40,7 @@ entries:
           url: /overview_release_notes_0_5_0.html
           output: web
 
-  - title: Get started
+  - title: Getting started
     output: web
     folderitems:
     - title: Getting started for consumer suppliers
