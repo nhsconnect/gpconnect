@@ -119,8 +119,6 @@ Other participants, such as registrars, trainees or other parties present, may b
 
 No other values of participation type should be used.
 
-The authorship of the consultation/encounter - that is, the actual user who entered the information on the system should be expressed via <code>List.source</code>.
-
 ### period ###
 
 <table class='resource-attributes'>
