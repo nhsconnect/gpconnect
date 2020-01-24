@@ -9,8 +9,8 @@ summary: "Guidance for populating and consuming the Diary Entry profile"
 
 ## What is a Diary Entry?
 
-A diary entry is a proposal for clinical action to be undertaken at an indicative date in the future, which has not been completed or cancelled. 
-The diary entry is created unscheduled, that is, it is not an appointment (but may result in an appointment being created) and resources are not directly committed to it. 
+A diary entry is primarily a proposal for clinical action to be undertaken at an indicative date in the future, which has not been completed or cancelled. 
+The diary entry is dated but unscheduled, that is, it is not an appointment (but may result in an appointment being created) and resources are not directly committed to it. 
 The diary entry may be a reminder for a review, a follow up to a consultation / treatment / test, a recall or treatment to be provided according to a schedule.
 Diary entries may be known as Recalls within some GP Clinical Systems.
 
@@ -20,7 +20,7 @@ Some examples of actions which may be recorded as diary entries are:
 - Antipsychotic injections
 - Asthma review
 - Cytology Smear
-- Depo Provers 
+- Depo Provera 
 - Diabetes review
 - Epilepsy review
 - Mental Health review
@@ -29,14 +29,16 @@ Some examples of actions which may be recorded as diary entries are:
 - Seasonal influenza vaccination due 
 - Repeat Blood tests 
 
-Any future intention for a clinical action recorded as an Appointment or Task is out of scope.
+Any future intention for a clinical action recorded as an Appointment, Warning / Alert or Task is out of scope.
 
 ## Medication Reviews
 
 Medication reviews are considered to fall under the definition of a diary entry.
 GP clinical systems which have a separate feature for medication reviews **MUST** include the medication reviews.
-Medication reviews **MUST** be assigned the SNOMED CT code <code>314529007 | Medication review due (situation) |</code> regardless of the source system coding.
+These medication reviews **MUST** be assigned the SNOMED CT code <code>314529007 | Medication review due (situation) |</code> or one of its child codes as most appropriate.
 Hereafter, reference to diary entries **MUST** be assumed to include medication reviews.
+
+Consumers should be aware that medication reviews may occur in additional to the main, planned medication review recorded in the GP clinical system and shared via this resource.
 
 ## Diary Entry Status
 
@@ -56,10 +58,15 @@ The consumer system **MUST** maintain the diary entry's meaning as an incomplete
 
 ## Diary Entry planned date
 
-GP clinical systems may hold one or more date entries for the planned date for the diary entry. 
-By defintion, diary entries are not planned to occur on a specific date.
-Where it is supported by the data capture for a diary entry, a period during which the diary entry should occur is preferred.
+The planned date may be a single date or a date range according to the source GP clinical system and local recording practice. 
 The GP clinical system provider is to determine whether its data supports the inclusion of a period for the planned date or can only meaningfully return a single planned date.
+The planned date may represent an earliest date, latest date, indicative date or a combination but this may vary by record / use and the resource will not provide distinctions in this respect.
+
+## Dairy Entry authoredOn
+
+The Diary Entry <code>authoredOn</code> is the date the diary entry was captured on the GP clinical system.
+There may also be a consultation referenced which may have occurred on a different date.
+Consumer system which display an originating date for the diary entry (that is when the need for the action was determined) should give the consultation date primacy.
 
 ## Using the `List` resource for diary entry queries
 
