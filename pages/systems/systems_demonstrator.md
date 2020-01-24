@@ -17,6 +17,8 @@ summary: "Consumer system demonstrator and provider API reference implementation
 
 The GP Connect Demonstrator is a mock GP Connect consumer system, a reference implementation of the GP Connect provider APIs, and development and test tools ([interactive documentation](system_swagger.html) and [samples](system_reference_postman.html) for the Postman application).
 
+Please view to the [GP Connect Demonstrator](https://orange.testlab.nhs.uk/){:target="_blank"} website for more information.
+
 ![GP Connect Demonstrator high level overview](images/systems/demonstrator-high-level-overview.png)
 
 ## Example screenshots from the mock consumer system ##
