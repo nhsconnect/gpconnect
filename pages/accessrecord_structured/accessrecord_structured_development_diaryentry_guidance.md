@@ -54,7 +54,7 @@ GP clinical systems **MUST** populate the <code>code</code> with a valid SNOMED 
 GP clinical systems **MAY** include codes for incomplete diary entries which have a standard interpretation of a completed action (for example, procedure codes).
 These **MUST** be interpreted as incomplete by consumer systems.
 Consumer systems **MUST** ensure these are presented to system users in such a manner that it is clear and unambiguous that the coded item represents an incomplete planned action regardless of its text description or SNOMED CT meaning.  
-The consumer system **MUST** maintain the diary entry's meaning as an incomplete planned action wherever the code element may be accessed or exported, except where the action has been completed within the consumer system.
+The consumer system **MUST** maintain the diary entry's meaning as an incomplete planned action wherever the code element may be accessed or exported.
 
 ## Diary Entry planned date
 
