@@ -1,43 +1,33 @@
 ---
-title: System demonstrator
+title: GP Connect Demonstrator
 keywords: system, demonstrator
 tags: [system,demonstrator]
 sidebar: overview_sidebar
 permalink: system_demonstrator.html
-summary: "Demonstrator implementation of the GP Connect FHIR API"
+summary: "Consumer system demonstrator and provider API reference implementation"
 ---
 
-## Try the online demonstrator ##
+## Try now ##
 
-> View the latest build of the [GP Connect Demonstrator](https://orange.testlab.nhs.uk/){:target="_blank"} online now!
+> Go to the [GP Connect Demonstrator](https://orange.testlab.nhs.uk/){:target="_blank"} website now!
 
-{% include tip.html content="Data held in the GP Connect Demonstrator is reset each night to allow for easier testing. Please refer to the Demonstrator's in-built help for further details." %}
+{% include important.html content="Data held in the GP Connect Demonstrator is reset each night to allow for easier testing. Please refer to the Demonstrator's in-built help for further details." %}
 
-## Objective ##
+## Overview ##
 
-Take the [Ripple](http://rippleosi.org/){:target="_blank"} open source record viewer and use it to demonstrate the GP Connect APIs to validate and accelerate delivery of the GP Connect APIs. The demonstrator acts as a mock Consuming application to show how the data made available by the APIs could be used. 
+The GP Connect Demonstrator is a mock GP Connect consumer system, a reference implementation of the GP Connect provider APIs, and development and test tools ([interactive documentation](system_swagger.html) and [samples](system_reference_postman.html) for the Postman application).
 
-## Current status ##
+Please view to the [GP Connect Demonstrator](https://orange.testlab.nhs.uk/){:target="_blank"} website for more information.
 
-We now have a functioning user interface that can drive interactions with the FHIR-based APIs to implement the following capabilities:
+![GP Connect Demonstrator high level overview](images/systems/demonstrator-high-level-overview.png)
 
-- Access Record HTML
-- Appointment Management
+## Example screenshots from the mock consumer system ##
 
-## System architecture ##
+The following screen shows part of the Appointment Management functionality of the mock consumer system application:
 
-![API Consumer talking to API Provider via the Spine Secure Proxy](images/systems/API Consumer talking to API Provider via the Spine Security Proxy.png)
+![GP Connect Demonstrator Patient Summary](images/systems/GP Connect Demonstrator Patient Summary.png)
 
 ## Source code ##
 
-The GP Connect demonstrator is an open source software project using the [HAPI open-source FHIR library](http://hapifhir.io/){:target="_blank"}.
-
-
-- Download the source code from the
-[Demonstrator GitHub project repo](https://github.com/nhs-digital/gpconnect){:target="_blank"}
-
-- The project contains step by step instructions to set up a working instance on your own machine.
-
-## Example screens ##
-
-![GP Connect Demonstrator Patient Summary](images/systems/GP Connect Demonstrator Patient Summary.png)
+Download the source code from the
+[GP Connect Demonstrator Github repository](https://github.com/nhsconnect/gpconnect-demonstrator){:target="_blank"}.

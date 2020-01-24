@@ -91,7 +91,7 @@ entries:
   - title: Explore
     output: web
     folderitems:
-    - title: System demonstrator
+    - title: GP Connect Demonstrator
       url: /system_demonstrator.html
       output: web
     - title: Interactive API documentation
