@@ -15,7 +15,4 @@ Once your consumer product has been assured it will be added to the NHSD Service
 
 - become a [First of Type](overview_first_of_type.html) deployment
 
-## Provider suppliers ##
-
-*Text for providers* 
 
