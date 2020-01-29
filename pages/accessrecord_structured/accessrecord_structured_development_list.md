@@ -121,7 +121,7 @@ There are currently 6 possible purposes of a list in response to a query for a c
 |Allergies and adverse reactions | 886921000000105| Allergies and adverse reaction  |
 |Ended allergies | 1103671000000101| Ended allergies |
 |Immunisations | 1102181000000102| Immunisations |
-|List of consultations | 1149501000000101 | List of consultationa |
+|List of consultations | 1149501000000101 | List of consultations |
 |Problems | 717711000000103| Problems |
 |Uncategorised data | 826501000000100| Miscellaneous record |
 
