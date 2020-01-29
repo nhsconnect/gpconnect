@@ -93,7 +93,7 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
   <tr>
     <td>Topic</td>
     <td>List</td>
-    <td>Each Topic is held as a List containing references to each of the Headings under the Topic.<br>Where a Topic does not contain Headings the the List directly references Clinical Items.</td>
+    <td>Each Topic is held as a List containing references to each of the Headings under the Topic.<br>Where a Topic does not contain Headings the List directly references Clinical Items.</td>
   </tr>
   <tr>
     <td>Heading</td>
@@ -149,7 +149,7 @@ While there are differences between the two outputs, the consultation notes can 
 
 When a clinical item is linked to the consultation a reference to its FHIR® resource is held in the entry.item field of the appropriate list resource.
 
-When linking to a clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below.
+When linking to a clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example, Medication and Medical Device) the reference must be to the FHIR resource specified below.
 
 -   For a Medication or Medical Device prescription plan - reference the MedicationRequest (intent = plan) resource
 -   For a Medication or Medical Device prescription issue - reference the MedicationRequest (intent = order) resource
@@ -190,15 +190,15 @@ Where a Consultation is not marked as confidential but includes items that are m
 * The Consultation will be included in the response as normal
 * The confidential item(s) will NOT be included in the response
 * There will be NO reference to the confidential item(s) in the `List` profiles defining the Consultation structure.
-* The Confidential Items warning message will be included in the `List` for the relevant type of type data that was ommitted. For example if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query. The warning will NOT be included in the `List` profiles defining the Consultation structure.
+* The Confidential Items warning message will be included in the `List` for the relevant type of type data that was omitted. For example, if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query. The warning will NOT be included in the `List` profiles defining the Consultation structure.
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Consultation(s) they were removed from.
 
 ## Draft Consultations
 
-In some GP practice clinical systems it is possible for the clinician to save a consultation record in a draft (or equivalent) status.
+In some GP practice clinical systems, it is possible for the clinician to save a consultation record in a draft (or equivalent) status.
 
-Consultations in this draft status MUST be included in the response. `Encounter.Status` is used to identify them as draft.
+Consultations in this draft status **MUST** be included in the response. `Encounter.Status` is used to identify them as draft.
 
 ## Suppression of empty consultations, topics and headings
 
