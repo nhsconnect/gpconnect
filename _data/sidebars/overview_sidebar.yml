@@ -163,6 +163,30 @@ entries:
           url: /design_product_versioning.html
           output: web
 
+      - title: Integrate with Spine
+        output: web
+        subfolderitems:
+
+        - title: Spine integration illustrated
+          url: /integration_illustrated.html
+          output: web
+          type: homepage
+        - title: System topologies
+          url: /integration_system_topologies.html
+          output: web
+        - title: Cross-organisation audit and provenance
+          url: /integration_cross_organisation_audit_and_provenance.html
+          output: web
+        - title: Personal Demographic Service
+          url: /integration_personal_demographic_service.html
+          output: web
+        - title: Interaction IDs
+          url: /integration_interaction_ids.html
+          output: web
+        - title: Spine Secure Proxy
+          url: /integration_spine_secure_proxy.html
+          output: web
+
   - title: Test and assure
     output: web
     folderitems:
