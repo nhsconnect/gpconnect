@@ -1,80 +1,91 @@
-## definition of `menuitem`===========
-# title: string
-# url: string
-# output: [ enum{web, pdf} ] (expressed as comma separated string in YAML)
-# children?: [ menuitem ]
+entries:
+- title: Appointment Management
+  product: Appointment Management
+  folders:
 
-## top level property=================
-# entries: [ menuitem ]
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
 
-title: Appointment Management
-product: Appointment Management
-children:
+  - title: Overview
+    output: web, pdf
+    folderitems:
 
-- title: Overview
-  output: web, pdf
-  children:
-  - title: Introduction
-    url: /appointments.html
-    output: web
-  - title: Business requirements
-    url: /appointments_requirements.html
-    output: web
-  - title: Clinical scenarios
-    url: /appointments_clinical_scenarios.html
-    output: web, pdf
-  - title: Information governance
-    url: /appointments_ig.html
-    output: web, pdf
-  - title: Design decisions
-    url: /appointments_design.html
-    output: web
-  - title: Wireframes
-    url: /appointments_wireframes.html
-    output: web
-  - title: Known issues
-    url: /appointments_known_issues.html
-    output: web, pdf
-  - title: Sitemap
-    url: /sitemap_appointment_management.html
-    output: web
+    - title: Introduction
+      url: /appointments.html
+      output: web
+    - title: Business requirements
+      url: /appointments_requirements.html
+      output: web
+    - title: Clinical scenarios
+      url: /appointments_clinical_scenarios.html
+      output: web, pdf
+    - title: Information governance
+      url: /appointments_ig.html
+      output: web, pdf
+    - title: Design decisions
+      url: /appointments_design.html
+      output: web
+    - title: Wireframes
+      url: /appointments_wireframes.html
+      output: web
+    - title: Known issues
+      url: /appointments_known_issues.html
+      output: web, pdf
+    - title: Sitemap
+      url: /sitemap_appointment_management.html
+      output: web
 
-- title: Development
-  output: web, pdf
-  children:
-  - title: FHIR&reg; resources 
-    url: /datalibraryappointment.html
+  - title: Development
     output: web, pdf
-  - title: Service discovery
-    url: /appointments_service_discovery.html
-    output: web
-  - title: Consumer sessions illustrated
-    url: /appointments_consumer_sessions.html
-    output: web, pdf
-  - title: API use cases
-    output: web, pdf
-    children:
-    - title: Retrieve a patient's appointments
-      url: /appointments_use_case_retrieve_a_patients_appointments.html
+    folderitems:
+    - title: FHIR&reg; resources 
+      url: /datalibraryappointment.html
       output: web, pdf
-    - title: Search for free slots
-      url: /appointments_use_case_search_for_free_slots.html
+    - title: Service discovery
+      url: /appointments_service_discovery.html
+      output: web
+    - title: Consumer sessions illustrated
+      url: /appointments_consumer_sessions.html
       output: web, pdf
-    - title: Read an appointment
-      url: /appointments_use_case_read_an_appointment.html
-      output: web, pdf
-    - title: Book an appointment
-      url: /appointments_use_case_book_an_appointment.html
-      output: web, pdf
-    - title: Amend an appointment
-      url: /appointments_use_case_amend_an_appointment.html
-      output: web, pdf
-    - title: Cancel an appointment
-      url: /appointments_use_case_cancel_an_appointment.html
-      output: web, pdf       
-  - title: Additional provider requirements
-    output: web, pdf
-    children:
-    - title: Slot availability management
-      url: /appointments_slotavailabilitymanagement.html
-      output: web, pdf
+      
+      subfolders:
+      - title: API use cases
+        output: web, pdf
+        subfolderitems:
+
+        - title: Retrieve a patient's appointments
+          url: /appointments_use_case_retrieve_a_patients_appointments.html
+          output: web, pdf
+        - title: Search for free slots
+          url: /appointments_use_case_search_for_free_slots.html
+          output: web, pdf
+        - title: Read an appointment
+          url: /appointments_use_case_read_an_appointment.html
+          output: web, pdf
+        - title: Book an appointment
+          url: /appointments_use_case_book_an_appointment.html
+          output: web, pdf
+        - title: Amend an appointment
+          url: /appointments_use_case_amend_an_appointment.html
+          output: web, pdf
+        - title: Cancel an appointment
+          url: /appointments_use_case_cancel_an_appointment.html
+          output: web, pdf
+          
+      - title: Additional provider requirements
+        output: web, pdf
+        subfolderitems:
+
+        - title: Slot availability management
+          url: /appointments_slotavailabilitymanagement.html
+          output: web, pdf
