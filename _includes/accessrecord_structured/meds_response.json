@@ -130,7 +130,7 @@
             "use": "work"
           }
         ]
-      },
+      }
     },
     {
       "resource": {
@@ -265,6 +265,12 @@
             }
           }
         ],
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "13426283749629"
+          }
+        ],
         "basedOn": {
           "reference": "MedicationRequest/7e68abae-a50a-4dd2-8445-7a2aa9936bee"
         },
@@ -318,6 +324,12 @@
             }
           }
         ],
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "23426283749629"
+          }
+        ],
         "basedOn": {
           "reference": "MedicationRequest/8e078d04-8312-433a-b6b4-46bf52542b0c"
         },
@@ -356,6 +368,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "33426283749629"
+          }
+        ],
         "status": "completed",
         "intent": "plan",
         "medicationReference": {
@@ -424,6 +442,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "43426283749629"
+          }
+        ],
         "basedOn": {
           "reference": "MedicationRequest/7e68abae-a50a-4dd2-8445-7a2aa9936bee"
         },
@@ -497,6 +521,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "53426283749629"
+          }
+        ],
         "groupIdentifier": {
           "value": "urn:uuid:eba24af1-5b74-4790-aa5a-2134fd27ad75"
         },
@@ -583,6 +613,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "63426283749629"
+          }
+        ],
         "basedOn": {
           "reference": "MedicationRequest/8e078d04-8312-433a-b6b4-46bf52542b0c"
         },
@@ -659,6 +695,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "73426283749629"
+          }
+        ],
         "basedOn": {
           "reference": "MedicationRequest/8e078d04-8312-433a-b6b4-46bf52542b0c"
         },

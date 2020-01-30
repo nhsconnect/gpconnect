@@ -71,7 +71,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
   "version": "1.2.7",
   "name": "GP Connect",
   "status": "active",
-  "date": "2019-10-21",
+  "date": "2020-01-15",
   "publisher": "[Provider Software Vendor Name]",
   "contact": [
     {
@@ -79,7 +79,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
     }
   ],
   "description": "This server implements the GP Connect API version 1.2.6",
-  "copyright": "Copyright NHS Digital 2016-9",
+  "copyright": "Copyright NHS Digital 2016-20",
   "kind": "capability",
   "software": {
     "name": "[Provider Software Name]",

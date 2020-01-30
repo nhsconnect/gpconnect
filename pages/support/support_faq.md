@@ -15,8 +15,8 @@ NHS Digital strongly recommend that all consumer suppliers use JSON, for the fol
 - All of the GP PCS Suppliers support JSON, whereas they do not all support XML
 - JSON is 30% smaller than XML when sent over the wire
 - JSON is a MUST requirement across other NHS Digital interoperability programmes, whereas XML is not
- 
-For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/STU3/downloads.html) simplify the process of producing FHIR in JSON.
+
+For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/STU3/downloads.html) simplify the process of producing and consuming FHIR in JSON.
 
 ## Why is the technical barrier to entry to GP Connect quite high? ##
 
