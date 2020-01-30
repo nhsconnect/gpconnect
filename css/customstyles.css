@@ -468,7 +468,7 @@ ul#mysidebar, #mysidebar ul{
     content: '\25be';
 }
 
-.nav li.active > a > span:after {
+.nav li.open > a > span:after {
     content: '\25b4';
 }
 
