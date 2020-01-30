@@ -21,3 +21,6 @@ Consumer APIs need to go through a set of testing and assurance processes to ens
 - discover the [test resources](testing_deliverables.html) that support the holistic testing of provider APIs
 - see which [environments](testing_environments.html) are available to support the technical accreditation and solution assurance process
 - read about the [provider testing](testing_api_provider_testing.html) process
+
+## Next step ##
+[Deploy](/overview_deployment.html)
