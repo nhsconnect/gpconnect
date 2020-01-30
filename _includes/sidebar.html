@@ -60,6 +60,22 @@
            -->
     </li>
 </ul>
+
+<br>
+<br>
+<div class="panel panel-quick">
+    <div class="panel-heading">Quick links</div>
+        <div class="panel-body">
+            <ul style="padding-left:20px; color: #000000">
+                {% for item in quicklinks %}
+                        {{item.url}}
+                {% endfor %}
+            </ul>
+            <br>
+            <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+              <a href="javascript:history.go(-1)"> Go back to previous page</a>
+    </div>
+</div>
 </div>
 
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
