@@ -177,7 +177,7 @@ entries:
         - title: Cross-organisation audit and provenance
           url: /integration_cross_organisation_audit_and_provenance.html
           output: web
-        - title: Personal Demographic Service (PDS)
+        - title: Personal Demographic Service
           url: /integration_personal_demographic_service.html
           output: web
         - title: Spine Directory Services (SDS)
