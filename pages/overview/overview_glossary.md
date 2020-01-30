@@ -8,12 +8,12 @@ summary: "Glossary of terms used in the GP Connect FHIR&reg; API specification"
 toc: false
 ---
 
-<div>
 {% assign gloss = site.data.glossary | sort:'title' %}
 {% for item in gloss %}
-<dl>
-  <dt><h3>{{ item.title }}</h3></dt>
-  <dd>{{ item.value }}</dd>
-</dl>
+
+### {{ item.title }} ###
+
+<p> {{ item.value }} </p>
+ {{ item.html }} 
+
 {% endfor %}
-</div>
