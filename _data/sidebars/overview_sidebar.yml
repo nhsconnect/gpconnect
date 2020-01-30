@@ -177,21 +177,15 @@ entries:
         - title: Cross-organisation audit and provenance
           url: /integration_cross_organisation_audit_and_provenance.html
           output: web
-        - title: Personal Demographic Service
+        - title: Personal Demographic Service (PDS)
           url: /integration_personal_demographic_service.html
           output: web
-
-          subfolders:
-          - title: Spine Directory Services
-            output: web
-            subfolderitems:
-            - title: Overview and querying
-              url: /integration_spine_directory_service.html
-              output: web
-            - title: Registering systems
-              url: /integration_sds_registering_endpoints.html
-              output: web
-
+        - title: Spine Directory Services (SDS)
+          url: /integration_spine_directory_service.html
+          output: web
+        - title: Registering SDS systems
+          url: /integration_sds_registering_endpoints.html
+          output: web
         - title: Interaction IDs
           url: /integration_interaction_ids.html
           output: web
