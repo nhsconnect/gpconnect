@@ -59,7 +59,7 @@ entries:
   - title: Explore
     output: web
     folderitems:
-    - title: Exploring GP Connect
+    - title: Explore GP Connect
       url: /overview_explore.html
       output: web, pdf
       type: web
@@ -216,7 +216,7 @@ entries:
   - title: Deploy
     output: web
     folderitems:
-    - title: Deploying your system
+    - title: Deploy your system
       url: /overview_deployment.html
       output: web, pdf
       type: web
