@@ -111,9 +111,6 @@ entries:
     - title: Non-functional requirements
       url: /development_api_non_functional_requirements.html
       output: web
-    - title: First of type
-      url: /overview_first_of_type.html
-      output: web
 
       subfolders:
       - title: Implement a capability
