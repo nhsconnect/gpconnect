@@ -17,9 +17,9 @@ Once your consumer product has been assured it will be added to the NHSD Service
 
 ## Provider suppliers ##
 
-Reword this ---
-A DevMac(Development Milestone Achievement Certificate) and CATR(Clinical authority to Release) will be awarded by NHS Digital when all the above activities are complete.
+When you have successfully validated your implementation of the GP Connect API, the GP Connect Provider Assurance team will award you a First of Type Development Milestone Achievement Certificate (DevMac) and (following integration testing) approval to go live. 
 
-Provider supplier will then submit a RFC to NHS Digital Service Management to notify them that they intend to move from 'Design, Build & Test' phase into FOT.
+Your system will then enter a period of testing with a consumer supplier system (First of Type pilot). If this is achieved, full roll-out approval will be given and roll-out can begin in Live.
+
 
 
