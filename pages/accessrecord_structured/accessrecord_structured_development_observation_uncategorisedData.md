@@ -124,9 +124,7 @@ Optional reference to the `Encounter` profile representing the consultation cont
   </tr>
 </table>
 
-The datetime the observation was believed to be true.
-
-The effective datetime is when the observation related to the patient was asserted. In many cases, this will be when the observation is recorded onto the system however there are situations where they can differ. For example, if an observation is asserted during a home visit that is then recorded on the clinical system the following day, the effective datetime is the when the consultation took place, not the date it was recorded.
+Clinically relevant time/time-period for observation
 
 ### issued ###
 
