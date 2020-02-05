@@ -14,7 +14,7 @@ The headings below detail the elements of the `List` profile and describe how to
 
 {% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.5)." %}
 
 
 ## List elements ##

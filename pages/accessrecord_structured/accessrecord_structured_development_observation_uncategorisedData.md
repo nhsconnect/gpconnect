@@ -14,7 +14,7 @@ The headings below list the elements of the `Observation` profile and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1_history/1.3)." %}
 
 ## Observation Elements #
 
@@ -148,9 +148,9 @@ The audit trail timestamp representing when the data was recorded.
   </tr>
 </table>
 
-The `Practitioner` profile representing the clinician responsible for making the observation. 
+The `Practitioner` profile representing the clinician responsible for making the observation.
 
-Where the observation was performed at another organisation and an `organisation` profile can be populated then that **SHALL** be populated here. This will be in addition to the clinical practitioner if 
+Where the observation was performed at another organisation and an `organisation` profile can be populated then that **SHALL** be populated here. This will be in addition to the clinical practitioner if
 both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recordeed the data in the system.
@@ -217,7 +217,7 @@ Where a reference range contains a less than '<' or greater than '>' operator it
   </tr>
 </table>
 
-Contains any hierarchical information between uncategorised data items. 
+Contains any hierarchical information between uncategorised data items.
 
 * Populate `related.target` with a reference to the related item of uncategorised data
 * Where the related item is a child of this item set `related.type` to `has-member`
@@ -297,5 +297,3 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
-
-
