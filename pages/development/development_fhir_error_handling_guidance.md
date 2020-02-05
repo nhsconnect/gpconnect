@@ -17,8 +17,8 @@ In the event of an error, provider systems **SHALL** respond by providing an Ope
 
 The `GPConnect-OperationOutcome-1`:
 - **SHALL** contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/STU3/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
-- **SHALL** contain a definition of the type of error in the `OperationOutcome.issue.code` element, providing a value from the [issue-type](http://hl7.org/fhir/STU3/valueset-issue-type.html) value set. 
-- **SHALL** contain details of the `Spine error code` in the `OperationOutcome.issue.details.coding.code` and `OperationOutcome.issue.details.coding.display` fields. These shall be taken from the standard set of NHS Spine error codes as defined in the [spine-error-or-warning-code-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) value set. The Spine error and warning codes provide a greater degree of error handling granularity, and also ensure a standardised error handling approach across NHS APIs. 
+- **SHALL** contain a definition of the type of error in the `OperationOutcome.issue.code` element, providing a value from the [issue-type](http://hl7.org/fhir/STU3/valueset-issue-type.html) value set.
+- **SHALL** contain details of the `Spine error code` in the `OperationOutcome.issue.details.coding.code` and `OperationOutcome.issue.details.coding.display` fields. These shall be taken from the standard set of NHS Spine error codes as defined in the [spine-error-or-warning-code-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) value set. The Spine error and warning codes provide a greater degree of error handling granularity, and also ensure a standardised error handling approach across NHS APIs.
 - **SHOULD** provide additional diagnostic details of the error in the `OperationOutcome.diagnostics` property where such details securely provide additional error context for consumer applications.
 
 
@@ -26,7 +26,7 @@ The sections below provide guidance on the error details to be returned in a num
 
 ### Identity validation errors ####
 
-Provider systems **SHALL** respond by returning one of the following `OperationOutcome` error codes where FHIR resource identity error scenarios are encountered: 
+Provider systems **SHALL** respond by returning one of the following `OperationOutcome` error codes where FHIR resource identity error scenarios are encountered:
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | -----------|------------|-------------|
@@ -41,49 +41,61 @@ Provider systems **SHALL** respond by returning one of the following `OperationO
 
 #### Example: Invalid NHS number supplied #####
 
-If an invalid NHS number value is supplied to the `$gpc.getcarerecord` operation, the following error details would be returned:
+If an invalid NHS number value is supplied to the `$gpc.getstructuredrecord` operation, the following error details would be returned:
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"meta": {
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
-	},
-	"issue": [{
-		"severity": "error",
-		"code": "value",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "INVALID_NHS_NUMBER",
-				"display": "Invalid NHS number"
-			}]
-		}
-	}]
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "value",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "INVALID_NHS_NUMBER",
+            "display": "Invalid NHS number"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
 #### Example: Patient not found #####
 
-For example, if a valid NHS number value is supplied to the `$gpc.getcarerecord` operation but no GP record exists for that patient, then the following error details would be returned:
+For example, if a valid NHS number value is supplied to the `$gpc.getstructuredrecord` operation but no active GP record exists for that patient, then the following error details would be returned:
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"meta": {
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
-	},
-	"issue": [{
-		"severity": "error",
-		"code": "not-found",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "PATIENT_NOT_FOUND",
-				"display": "Patient not found"
-			}]
-		}
-	}]
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "not-found",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "PATIENT_NOT_FOUND",
+            "display": "Patient not found"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -93,18 +105,27 @@ This is a catch-all where a request for a resource instance cannot be found at t
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "not-found",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "NO_RECORD_FOUND",
-				"display": "No record found"
-			}]
-		}
-	}]
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "not-found",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "NO_RECORD_FOUND",
+            "display": "No record found"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -124,21 +145,27 @@ For example, if the patient has requested that their record should not be shared
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"meta": {
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
-	},
-	"issue": [{
-		"severity": "error",
-		"code": "forbidden",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "NO_PATIENT_CONSENT",
-				"display": "Patient has not provided consent to share data" 
-			}]
-		}
-	}]
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "forbidden",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "NO_PATIENT_CONSENT",
+            "display": "Patient has not provided consent to share data"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -156,21 +183,28 @@ For example, if the consumer attempted to register a patient that already has an
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"meta": {
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
-	},
-	"issue": [{
-		"severity": "error",
-		"code": "duplicate",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "DUPLICATE_REJECTED",
-				"display": "Create would lead to creation of duplicate resource" 
-			}]
-		}
-	}]
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "duplicate",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "DUPLICATE_REJECTED",
+            "display": "Create would lead to creation of duplicate resource"
+          }
+        ]
+      },
+      "diagnostics": "Patient record already exists with that NHS number"
+    }
+  ]
 }
 ```
 
@@ -202,23 +236,28 @@ For example, when using the 'Book an appointment' API use case, a consumer inclu
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"meta": {
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
-	},
-	"issue": [{
-		"severity": "error",
-		"code": "invalid",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "REFERENCE_NOT_FOUND",
-				"display": "FHIR reference not found"
-			}]
-		},
-	    "diagnostics": "Reference to Slot/6 - no such slot exists at the server"
-		"location": "/f:Slot/f:6"
-	}]
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "invalid",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "REFERENCE_NOT_FOUND",
+            "display": "FHIR reference not found"
+          }
+        ]
+      },
+      "diagnostics": "Reference to Slot/6 - no such slot exists at the server"
+    }
+  ]
 }
 ```
 
@@ -243,23 +282,29 @@ BAD_REQUEST Spine error codes should be used in the following types of scenario:
 For example, if the request contained a null `aud` claim in the JWT, then the following error details would be returned:
 
 ```json
- {
-	"resourceType": "OperationOutcome",
-	"meta": {
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
-	},
-	"issue": [{
-		"severity": "error",
-		"code": "invalid",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "BAD_REQUEST",
-				"display": "Bad request"
-			}]
-		},
-		"diagnostics": "Empty JWT aud claim"
-	}]
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "invalid",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "BAD_REQUEST",
+            "display": "Bad request"
+          }
+        ]
+      },
+      "diagnostics": "Empty JWT aud claim"
+    }
+  ]
 }
 ```
 
@@ -284,101 +329,190 @@ When the error is **unexpected** and the server can't be more specific on the ex
 For example, if an unexpected internal exception is thrown by either an Operation or RESTful API, then the following error details would be returned:
 
 ```json
- {
-	"resourceType": "OperationOutcome",
-	"meta": {
-		"profile": ["https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"]
-	},
-	"issue": [{
-		"severity": "error",
-		"code": "exception",
-		"details": {
-			"coding": [{
-				"system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-				"code": "INTERNAL_SERVER_ERROR",
-				"display": "Internal server error"
-			}]
-		},
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "exception",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "INTERNAL_SERVER_ERROR",
+            "display": "Internal server error"
+          }
+        ]
+      },
+      "diagnostics": "Any further internal debug details i.e. stack trace details etc."
+    }
+  ]
 }
 ```
 
 
 ### Spine Secure Proxy (SSP) errors ###
 
-When the Spine Secure Proxy cannot or will not process a request then one of the following errors **SHALL** be used to return debug details:
+When the Spine Secure Proxy cannot or will not process a request then one of the following errors are used to return debug details:
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
-| `403`     | forbidden |   The sender or receiver's ASID is not authorised for this interaction. | 
-| `405`     | not-supported | Bad request for an unsupported HTTP verb such as TRACE. |
-| `415`     | not-supported | A consumer application asked for an unsupported media type. |
-| `502`     | transient | A downstream server is offline. |
-| `504`     | transient| A downstream server timed out. |
+| `400`     | invalid |  Target URL varies from endpoint registered in SDS | 
+| `403`     | forbidden |  Sender ASID is not authorised for this interaction | 
+| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID | 
+| `405`     | not-supported | Method not allowed |
+| `415`     | not-supported | Unsupported media type |
+| `502`     | transient | Error communicating to target URL |
 
-#### SSP error example: ASID check failed #####
+#### SSP error example: Target URL varies from endpoint registered in SDS #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "forbidden",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+    "resourceType": "OperationOutcome", 
+    "id": "09a01679-2564-0fb4-5129-aecc81ea2706",
+    "issue": [
+        {
+            "code": "invalid", 
+            "severity": "error", 
+            "details": {
+                "coding": [
+                    {
+                        "code": "400", 
+                        "display": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test", 
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test",
+        }
+    ] 
 }
 ```
 
-#### SSP error example: method not allowed #####
+#### SSP error example: Sender ASID is not authorised for this interaction #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "not-supported",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+    "resourceType": "OperationOutcome",
+    "id": "10960df2-29d1-4e71-823c-c0bb9d723012",
+    "issue": [
+        {
+            "code": "forbidden",
+            "severity": "error",
+            "details": {
+                "coding": [
+                    {
+                        "code": "403",
+                        "display": "ASID_CHECK_FAILED_MESSAGESENDER_100000000001",
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "ASID_CHECK_FAILED_MESSAGESENDER_100000000001"
+        }
+    ]
 }
 ```
 
-#### SSP error example: unsupported media type #####
+#### SSP error example: Sender ASID is not authorised to send the interaction to receiver ASID #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "not-supported",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+    "resourceType": "OperationOutcome",
+    "id": "43A8BB0D-195E-4CF4-86F9-E8514F6EB585",
+    "issue": [
+        {
+            "code": "forbidden",
+            "severity": "error",
+            "details": {
+                "coding": [
+                    {
+                        "code": "403",
+                        "display": "FOT_CHECK_FAILED_MESSAGESENDER_200000000001_MESSAGERECEIVER_200000000002",
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "FOT_CHECK_FAILED_MESSAGESENDER_200000000001_MESSAGERECEIVER_200000000002"
+        }
+    ]
 }
 ```
 
-#### SSP error example: bad gateway #####
-
+#### SSP error example: Method not allowed #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "transient",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+  "resourceType": "OperationOutcome",
+  "issue": [
+    {
+      "code": "forbidden",
+      "severity": "fatal",
+      "details": {
+        "coding": [
+          {
+            "code": "405",
+            "system": "https://fhir.nhs.uk/StructureDefinition/spine-operationoutcome-1",
+            "display": "405: Method Not Allowed"
+          }
+        ]
+      }
+    }
+  ]
 }
 ```
 
-#### SSP error example: gateway timeout #####
+#### SSP error example: Unsupported media type #####
 
 ```json
 {
-	"resourceType": "OperationOutcome",
-	"issue": [{
-		"severity": "error",
-		"code": "transient",
-		"diagnostics": "Any further internal debug details i.e. stack trace details etc."
-	}]
+  "resourceType": "OperationOutcome",
+  "id": "09a01679-2564-0fb4-5129-aecc81ea2706",
+  "issue": [
+    {
+      "code": "not-supported",
+      "severity": "error",
+      "details": {
+        "coding": [
+          {
+            "code": "415",
+            "display": "Unsupported_Media_Type",
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+          }
+        ]
+      },
+      "diagnostics": "Unsupported_Media_Type"
+    }
+  ]
+}
+```
+
+#### SSP error example: Error communicating to target URL #####
+
+```json
+{
+  "resourceType": "OperationOutcome",
+  "id": "78D536C0-44D6-11E9-BFCD-17C1B88243CD",
+  "issue": [
+    {
+      "code": "transient",
+      "severity": "error",
+      "details": {
+        "coding": [
+          {
+            "display": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/STU3/1/GPConnect/Patient",
+            "code": "502",
+            "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+          }
+        ]
+      },
+      "diagnostics": "ERROR_COMMUNICATING_TO_ENDPOINT_URL_https://supplier.thirdparty.nhs.uk/D11111/STU3/1/GPConnect/Patient"
+    }
+  ]
 }
 ```

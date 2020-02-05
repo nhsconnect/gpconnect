@@ -22,7 +22,7 @@ Retrieve a patient's record in FHIR&reg; structured format from a GP practice. F
 
 The consumer system:
 
-- **MUST** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- **MUST** have previously resolved the organisation's Access Record Structured FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - **MUST** have previously traced the patient's NHS Number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
@@ -42,7 +42,7 @@ POST /Patient/$gpc.getstructuredrecord
 #### FHIR&reg; absolute request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.getstructuredrecord
+POST https://[proxy_server]/https://[provider_server]/[structured_fhir_base]/Patient/$gpc.getstructuredrecord
 ```
 
 #### Request headers ####
@@ -118,10 +118,9 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includePrescriptionIssues</code></span></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
-      <td>Mandatory</td>
-      <td>1..1</td>
+      <td>Optional</td>
       <td>
-        Include each prescription issue in the response.
+        Include each prescription issue in the response, this parameter has a default value of 'true'. More guidance relating to its use is available in the <a href="accessrecord_structured_development_medication_guidance.html#medication-search-criteria">Medication guidance page</a>
         <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>        
       </td>
     </tr>
@@ -282,10 +281,6 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "name": "includeMedication",
       "part": [
         {
-          "name": "includePrescriptionIssues",
-          "valueBoolean": true
-        },
-        {
           "name": "medicationSearchFromDate",
           "valueDate": "2017-06-04"
         }
@@ -341,7 +336,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 #### Error handling ####
 
-The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields is corrupt or a specific business rule/constraint is breached.
+The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
 The table below shows common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
 
@@ -350,7 +345,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 |-------------------------|-------------------|
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
-| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.10) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The provider could not parse the `Parameters` resource.  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | No recognised parameters are provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `patientNHSNumber` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
@@ -394,7 +389,7 @@ Content-Length: 1464
 Provider systems **MUST**:
 
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
-- return a `Bundle` conforming to the [`GPConnect-StructuredRecord-Bundle-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1) profile definition
+- return a `Bundle` conforming to the [`GPConnect-StructuredRecord-Bundle-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3) profile definition
 - return the following resources in the `Bundle`:
   - `Patient` matching the NHS Number sent in the body of the request
   - `Organization` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
@@ -457,7 +452,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
     - no prescription issue information should be returned
 
-  - and when the `includePrescriptionIssues` parameter is set to `true`:
+  - and when the `includePrescriptionIssues` parameter is set to `true` or not included:
 
     - [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources with an `intent` of `order` representing the patient's prescription issues, for the above medication summary data
 

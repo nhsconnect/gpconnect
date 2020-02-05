@@ -13,6 +13,6 @@ Download the [Postman](https://www.getpostman.com/){:target="_blank" class="no_i
 
 ## Try now ##
 
-> [Visit the GP Connect Demonstrator site and import our Postman samples](https://orange.testlab.nhs.uk/index.html#postman-samples)
+> Visit the [GP Connect Demonstrator site and import our Postman samples](https://orange.testlab.nhs.uk/index.html#postman-samples)
 
 ![IMG Find a patient in postman collection](images/explore/Postman Find a patient.png)

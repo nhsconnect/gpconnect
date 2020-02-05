@@ -14,7 +14,7 @@ The headings below list the elements of the `MedicationStatement` profile and de
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.2)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.6)." %}
 
 ## MedicationStatement elements ##
 
@@ -98,15 +98,11 @@ Set to the date when the dosage instructions were last changed.
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
-This **MUST** be a GUID.
-
-*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
-
-Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifer at the same time.
 
 ### basedOn ###
 
@@ -184,9 +180,9 @@ The `Medication` profile provides the coded representation of the medication/med
 
 The period the medication or medical device is authorised under this medication/medical device plan. For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation. For acutes, this refers to the period of the prescription issue.
 
-`Period.start` is **MANDATORY**. 
+`Period.start` is **MANDATORY**.
 
-The date from which the medication or medical device is authorised under this plan. 
+The date from which the medication or medical device is authorised under this plan.
 
 Use one of the following dates in order of descending preference:
 *	The authorised date as recorded in the patient record.
@@ -194,7 +190,7 @@ Use one of the following dates in order of descending preference:
 *	The date of the first issue under the medication/medical device plan
 *	The date the medication/medical device plan was recorded onto the system (the audit date).
 
-`Period.end` is **REQUIRED**. 
+`Period.end` is **REQUIRED**.
 
 The date when the authorisation under this plan ends.
 
