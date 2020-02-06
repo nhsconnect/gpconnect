@@ -54,15 +54,11 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross care setting identifier which MUST be populated. The system  identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
-This **MUST** be a GUID.
-
-Providing systems **MUST** ensure this GUID is globally unique and a persistent identifier (i.e. doesn’t change between requests and therefore stored with the source data).
-
-Where consuming systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 ### status ###
 
