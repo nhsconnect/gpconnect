@@ -255,8 +255,8 @@
         },
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
-            "value": "336db4f4-7f78-48fd-82a7-2437202fc967"
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "7846547856"
           }
         ],
         "status": "final",
@@ -311,8 +311,8 @@
         },
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
-            "value": "2af97eb3-f5d7-493a-ad74-6cfed790007e"
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "9834574938753498"
           }
         ],
         "status": "final",
@@ -366,8 +366,8 @@
         },
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
-            "value": "c1b39e39-47f1-46aa-92e0-b5ad69975548"
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "938457984375"
           }
         ],
         "status": "final",
