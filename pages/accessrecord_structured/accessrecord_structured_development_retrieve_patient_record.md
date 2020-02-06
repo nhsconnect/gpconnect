@@ -218,7 +218,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Include not given immunisations in the response. This has been included to support future versions of the Access Record Structured and <b>MUST</b> not be included in any requests.
+        Include not given immunisations in the response. This has been included to support future versions of the Access Record Structured, Providers **MUST** respond in line with the [forwards compatibility](accessrecord_structured_development_version_compatibility.html#forwards-compatibility) guidance if the part parameter is included in a request.
         <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
       </td>
     </tr>
