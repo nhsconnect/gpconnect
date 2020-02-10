@@ -1,3 +1,7 @@
+# Warning! The GP Connect Documents specification content has been merged into the GP Connect API specification repository at https://www.github.com/nhsconnect/gpconnect starting in branch release/1.5.0.
+
+# This repository is no longer the master copy of the Access Document specification.  Do not make changes in this repository.
+
 <img src="images/logo.png" height=72>
 
 # GP Connect Documents
