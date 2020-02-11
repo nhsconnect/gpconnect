@@ -63,6 +63,331 @@
         ]
       }
     },
+
+
+
+
+    {
+      "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "mode": "snapshot",
+        "title": "Medication List",
+        "code": {
+          "coding": [
+            {
+              "code": "933361000000108",
+              "display": "Medications and medical devices",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "date": "2018-03-01T10:57:34+00:00",
+        "orderedBy": {
+          "coding": [
+            {
+              "code": "event-date",
+              "system": "http://hl7.org/fhir/list-order"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "MedicationStatement/6bff710a-0bdc-4c9b-b98b-40db0a107edc"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationStatement/7bff710a-0bdc-4c9b-b98b-40db0a107edc"
+            }
+          }
+        ]
+      }
+    },
+
+
+    {
+      "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "mode": "snapshot",
+        "title": "Medication List",
+        "code": {
+          "coding": [
+            {
+              "code": "826501000000100",
+              "display": "Miscellaneous record",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "date": "2018-03-01T10:57:34+00:00",
+        "orderedBy": {
+          "coding": [
+            {
+              "code": "event-date",
+              "system": "http://hl7.org/fhir/list-order"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Social-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Plan-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Plan-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic3-flat-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic3-flat-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Plan-Observation-2"
+            }
+          }
+
+        ]
+      }
+    },
+
     {
       "resource": {
         "resourceType": "Condition",
