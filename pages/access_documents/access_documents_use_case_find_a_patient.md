@@ -4,7 +4,7 @@ keywords: foundations, patient, nhsnumber, pid
 tags: [foundations,use_case]
 sidebar: access_documents_sidebar
 permalink: access_documents_use_case_find_a_patient.html
-summary: "Find a patient by NHS number (Access Document specific)"
+summary: "Find a patient by NHS number on the Access Document FHIR server"
 ---
 
 {% include important.html content="This Find a Patient interaction is specific to the Access Document capability and is identified as such by a Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Consumer systems **SHALL** only use this Find a Patient interaction in conjunction with other Access Document interactions." %}

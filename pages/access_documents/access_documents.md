@@ -4,7 +4,7 @@ keywords: structured design
 tags: [design,structured]
 sidebar: access_documents_sidebar
 permalink: access_documents.html
-summary: "Overview to the Access Documents capability"
+summary: "Introduction to the Access Document capability"
 ---
 
 ## Introduction ##

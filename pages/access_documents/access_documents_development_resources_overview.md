@@ -4,7 +4,7 @@ keywords: getcarerecord
 tags: [design,structured]
 sidebar: access_documents_sidebar
 permalink: access_documents_development_resources_overview.html
-summary: "List of FHIR&reg; resource profiles used in the Access Documents capability"
+summary: "List of FHIR&reg; resource profiles used in the Access Document capability"
 ---
 
 ## Resources used in Access Documents ##

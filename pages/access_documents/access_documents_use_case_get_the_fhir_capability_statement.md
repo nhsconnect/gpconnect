@@ -4,7 +4,7 @@ keywords: foundations, fhir
 tags: [foundations,use_case,fhir]
 sidebar: access_documents_sidebar
 permalink: access_documents_use_case_get_the_fhir_capability_statement.html
-summary: "Get the Access Document FHIR capability statement"
+summary: "Get the FHIR capability statement from the Access Document FHIR server"
 ---
 
 {% include important.html content="This capability statement is specific to the Access Document capability and is identified as such by a Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Please see other capabilities for their respective capability statements." %}
