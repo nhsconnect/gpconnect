@@ -14,7 +14,7 @@ The headings below list the elements of the MedicationRequest resource and descr
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.5)" %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.6)" %}
 
 ## Overarching principles ##
 
@@ -505,7 +505,7 @@ If the value is text then the extension dispenseRequest.quantityText **MUST** be
   </tr>
 </table>
 
-This field is used to contain the units relating to the quantity. For example 'tablet(s)', 'capsule(s)' or 'dose(s)'. 
+This field is used to contain the units relating to the quantity. For example 'tablet(s)', 'capsule(s)' or 'dose(s)'.
 
 It may also be a textual representation of quantity. Only to be used in this way if there is no numerical value.
 
