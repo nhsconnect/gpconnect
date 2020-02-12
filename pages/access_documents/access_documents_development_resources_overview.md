@@ -7,7 +7,7 @@ permalink: access_documents_development_resources_overview.html
 summary: "List of FHIR&reg; resource profiles used in the Access Document capability"
 ---
 
-## Resources used in Access Documents ##
+## Resources used in Access Document ##
 
 * [Bundle](access_documents_development_bundle.html)
 * [DocumentReference](access_documents_development_documentreference.html)

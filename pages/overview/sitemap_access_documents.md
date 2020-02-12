@@ -43,9 +43,9 @@ toc: false
 		<p><a href="access_documents_development_documents.html">DocumentReference</a></p>
 		<p><a href="access_documents_development_binary.html">Binary</a></p>  
 		<p style="padding-top:8px;">API definition</p>
-		<p><a href="access_documents_development_search_patient_documents.html">Search for a patient's documents</a></p>
-		<p><a href="access_documents_development_retrieve_patient_documents.html">Retrieve a patient's document</a></p> 
 		<p><a href="access_documents_use_case_get_the_fhir_capability_statement.html">Get the FHIR® capability statement</a></p>
 		<p><a href="access_documents_use_case_find_a_patient.html">Find a patient</a></p>
+		<p><a href="access_documents_development_search_patient_documents.html">Search for a patient's documents</a></p>
+		<p><a href="access_documents_development_retrieve_patient_documents.html">Retrieve a patient's document</a></p> 
 	</div>
 </div>
