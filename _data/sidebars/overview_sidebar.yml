@@ -26,6 +26,12 @@ entries:
         - title: 1.5.0
           url: /overview_release_notes_1_5_0.html
           output: web
+        - title: Access Document 1.0.1
+          url: /overview_release_notes_documents_1_0_1.html
+          output: web
+        - title: Access Document 1.0.0
+          url: /overview_release_notes_documents_1_0_0.html
+          output: web
         - title: 1.4.1
           url: /overview_release_notes_1_4_1.html
           output: web
@@ -158,8 +164,8 @@ entries:
     - title: Access Record Structured
       url: /accessrecord_structured.html
       output: web
-    - title: <b class="capability-not-available">Access Document</b>
-      url: /accessrecord_documents.html
+    - title: Access Document
+      url: /access_documents.html
       output: web
     - title: <b class="capability-not-available">Send Document</b>
       url: /send_document.html

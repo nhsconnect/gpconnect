@@ -41,9 +41,9 @@ The following query to read a `Patient` resource is being sent to the patient's 
 
 <code class="highlighter-rouge">https://provider.nhs.uk/<b>D82809</b>/STU3/1/gpconnect/Patient/1</code>
 
-### Implications for Access Record HTML and Access Record Structured
+### Implications for Access Record HTML, Access Record Structured and Access Document
 
-There are no implications for Access Record HTML and Access Record Structured because the patient's record is requested from the GP practice as a whole and not from an individual surgery.
+There are no implications for Access Record HTML, Access Record Structured and Access Document because the patient's record and documents are requested from the GP practice as a whole and not from an individual surgery.
 
 ### Implications for Appointment Management
 

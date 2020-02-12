@@ -42,9 +42,17 @@ The FHIR RESTful API style guide defines the following URL conventions which are
 
 ### Service Root URL ###
 
-The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found. 
+The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address root address of where the resources defined by a capability are found.
 
-The Service Root URL is the `[base]` portion of all FHIR APIs.
+The Service Root URL is the `[base]` portion of FHIR URLs.
+
+It is important to note that the Service Root URL may be different for each GP Connect capability, as each capability is defined as its own FHIR server:
+
+- Appointment Management (including Foundations, which will always have the same Service Root URL as Appointment Management)
+- Access Record Structured
+- Access Document
+
+Each capability's Service Root URL may have a different path, or point to a different server, or a completely different supplier system.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
@@ -64,8 +72,13 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
 
 - `[GPC_MAJOR_VERSION]` identifies the major version number of the GP Connect specification that the API is built to.
 
-- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between GP Connect and non-GP Connect requests (for example, via a load balancer). If included, this optional provider routing segment SHALL be static across all the provider's GP Connect API endpoints.
-  
+- `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between logical FHIR servers defined by GP Connect capabilities, or other FHIR based APIs. For example, the `[PROVIDER_ROUTING_SEGMENT]` could be:
+  - `gpconnect` for the Appointment Management and Foundations capabilities
+  - `gpconnect/structured` for the Access Record Structured capability
+  - and `gpconnect/documents` for the Access Documents capability
+
+  **Please note:** The Appointment Management and Foundations capabilities **MUST** have the same `[PROVIDER_ROUTING_SEGMENT]` value.  Other capabilies **MAY** have different values.
+
 - The Service Root URL SHALL NOT contain a trailing `/`
 
 #### Example Service Root URL

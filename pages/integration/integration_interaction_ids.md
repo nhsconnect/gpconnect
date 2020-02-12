@@ -9,9 +9,18 @@ summary: "A list of GP Connect API interaction IDs"
 
 ## GP Connect Interaction ID naming policy ##
 
-All interaction IDs are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`
+All new interaction IDs follow the following format:
 
-- Program = `gpconnect`
+- ```urn:nhs:names:services:[programme]:[capability]:[standard]:[mechanism]:[operation]:[subject]```
+
+Many of the existing interaction IDs follow the older format, which omits the [capability] delimeter:
+
+- ```urn:nhs:names:services:[programme]:[standard]:[mechanism]:[operation]:[subject]```
+
+Where the fields above are defined as:
+
+- Programme = `gpconnect`
+- Capability = [ `documents` ]
 - Standard = `fhir`
 - Mechanism = [ `rest`, `operation` ]
 	- `rest` for RESTful API interactions
@@ -56,6 +65,15 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 | Operation                 | InteractionID             | 
 |---------------------------|---------------------------| 
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
+
+### Access Document interactions ###
+
+| Operation                 | InteractionID             |
+|---------------------------|---------------------------|
+| [Read metadata (Access Document)](access_documents_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1` |
+| [Patient search (Access Document)](access_documents_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1` |
+| [Search for documents](access_documents_development_search_patient_documents.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1` |
+| [Retrieve document](access_documents_development_retrieve_patient_documents.html.html)   | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |
 
 ### Access Record HTML interactions ###
 

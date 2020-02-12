@@ -34,6 +34,8 @@ toc: false
     	<p><a href="overview_engage.html">Getting started</a></p>
     	<p><a href="overview_priority_capabilities.html">Capabilities</a></p>
 	<p style="padding-top:8px">Release notes</p>
+  <p><a href="overview_release_notes_1_5_0.html">1.5.0</a></p>  
+  <p><a href="overview_release_notes_1_4_1.html">1.4.1</a></p>  
 	<p><a href="overview_release_notes_1_4_0.html">1.4.0</a></p>  
 	<p><a href="overview_release_notes_1_3_1.html">1.3.1</a></p>   
 	<p><a href="overview_release_notes_1_3_0.html">1.3.0</a></p>    
@@ -76,6 +78,7 @@ toc: false
 	<p><a href="sitemap_foundations.html">Foundations (sitemap)</a></p>
 	<p><a href="sitemap_appointment_management.html">Appointment Management (sitemap)</a></p> 
 	<p><a href="sitemap_access_record_structured.html">Access Record Structured (sitemap)</a></p>   
+  <p><a href="sitemap_access_documents.html">Access Document (sitemap)</a></p>   
   </div>
   <div class="column">
     <p style="font-size:18px">Integrate with Spine</p>

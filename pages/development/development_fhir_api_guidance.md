@@ -168,15 +168,15 @@ GP Connect provider systems are not expected to implement the following aspects 
 
 ### FHIR system conformance ###
 
-Servers SHALL provide a read-only [FHIR CapabilityStatement resource](https://www.hl7.org/fhir/STU3/capabilitystatement.html) that identifies all the profiles and operations that the server supports for each resource type.
+Provider systems SHALL provide read-only [FHIR CapabilityStatement resources](https://www.hl7.org/fhir/STU3/capabilitystatement.html) that identify all the profiles and operations that each FHIR server supports for each resource type.
 
-A server's capability statement SHALL be available using the following [capabilities interactions](http://hl7.org/fhir/STU3/http.html#capabilities):
+A FHIR server's capability statement SHALL be available using the following [capabilities interactions](http://hl7.org/fhir/STU3/http.html#capabilities):
 
 ```
 GET [base]/metadata {?_format=[mime-type]}
 ```
 
-Refer to [Foundations - Get The FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR capability statement.
+Refer to [Foundations - Get the FHIR capability statement](foundations_use_case_get_the_fhir_capability_statement.html) and [Access Document - Get the FHIR capability statement](access_documents_use_case_get_the_fhir_capability_statement.html) for example FHIR capability statements.
 
 ### FHIR resource conformance ###
 
@@ -373,9 +373,9 @@ Servers SHALL return an `ETag` header with the `version Id` of the resource.
 | Capability   | Resource(s) |
 | ------------ | ----------- |
 | **Foundations**     | `Patient`, `Practitioner`, `Organization` |
-| **Access Record**   | TBC |
+| **Access Record Structured**   | TBC |
 | **Appointments**    | `Appointment`, `Schedule`, `Slot`, `Location` |
-| **Tasks**           | `Order` |
+| **Access document**     | `Binary` |
 
 {% include important.html content="In workshop discussions with all principal GP system vendors it has been agreed that record locking (inside the GP system) will not impact on the ability of clients to query the GP Connect APIs and to obtain the latest saved/committed clinical and administrative data." %}
 

@@ -1,0 +1,77 @@
+entries:
+- title: Access Document
+  product: Access Document
+  folders:
+
+  - title:
+    output: pdf
+    type: frontmatter
+    folderitems:
+    - title:
+      url: /titlepage
+      output: pdf
+      type: frontmatter
+    - title:
+      url: /tocpage
+      output: pdf
+      type: frontmatter
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Introduction
+      url: /access_documents.html
+      output: web
+    - title: Documents guidance
+      output: web
+      url: /access_documents_development_documents_guidance.html
+    - title: Sitemap
+      url: /sitemap_access_documents.html
+      output: web
+
+  - title: Development
+    output: web, pdf
+    folderitems:
+
+    - title: Consumer sessions illustrated
+      url: /access_documents_development_api_session.html
+      output: web
+
+    - title: FHIR&reg; examples
+      output: web
+      url: /access_documents_development_fhir_examples_documents.html
+
+      subfolders:
+      - title: FHIR&reg; resources
+        output: web, pdf
+        subfolderitems:
+        - title: FHIR resources overview
+          output: web
+          url: /access_documents_development_resources_overview.html
+        - title: Bundle
+          output: web
+          url: /access_documents_development_bundle.html
+        - title: DocumentReference
+          output: web
+          url: /access_documents_development_documentreference.html
+        - title: Binary
+          output: web
+          url: /access_documents_development_binary.html
+
+      - title: API definition
+        output: web, pdf
+        subfolderitems:
+
+        - title: Get the FHIR&reg; capability statement
+          url: /access_documents_use_case_get_the_fhir_capability_statement.html
+          output: web, pdf
+        - title: Find a patient
+          url: /access_documents_use_case_find_a_patient.html
+          output: web, pdf
+        - title: Search for a patient's documents
+          url: /access_documents_development_search_patient_documents.html
+          output: web
+        - title: Retrieve a patient's document
+          url: /access_documents_development_retrieve_patient_documents.html
+          output: web
