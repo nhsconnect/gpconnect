@@ -41,7 +41,7 @@ The response payload is available as a json file by clicking on the link below. 
 
 <br>
 
-<a href="_includes/accessrecord_structured/consultations_response1.json">Response payload</a>
+<a href="pages/accessrecord_structured/consultations_response1.json">Response payload</a>
 
 <br>
 
