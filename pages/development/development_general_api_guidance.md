@@ -77,23 +77,23 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
   - `gpconnect/structured` for the Access Record Structured capability
   - and `gpconnect/documents` for the Access Documents capability
 
-  **Please note:** The Appointment Management and Foundations capabilities **MUST** have the same `[PROVIDER_ROUTING_SEGMENT]` value.  Other capabilies **MAY** have different values.
+  **Please note:** The Appointment Management and Foundations capabilities **SHALL** have the same `[PROVIDER_ROUTING_SEGMENT]` value.  Other capabilies **SHOULD** have different values.
 
-- The Service Root URL SHALL NOT contain a trailing `/`
+- The Service Root URL **SHALL NOT** contain a trailing `/`
 
 #### Example Service Root URL
 
-The provider SHALL publish the Service Root URL to [Spine Directory Services](integration_spine_directory_service.html), for example:
+The provider SHALL publish the Service Root URL for each capability to [Spine Directory Services](integration_spine_directory_service.html), for example:
 
-`https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
+`https://provider.nhs.uk/GP0001/STU3/1/gpconnect/structured`
 
 Please see [Registering GP Connect systems in SDS for more details](integration_sds_registering_endpoints.html).
 
-Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the practice's capability FHIR server](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
 The consumer system would therefore issue a request to the new version of the provider FHIR API to the following URL:
 
-`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect/[FHIR request]`
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect/structured/[FHIR request]`
 
 {% include important.html content="Please see [a worked example of the lookup and endpoint construction process](integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process) for consumer systems for more information." %}
 
@@ -122,7 +122,7 @@ The following [HTTP verbs](http://hl7.org/fhir/STU3/valueset-http-verb.html) SHA
 
 #### Resource types ####
 
-GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/STU3/resourcelist.html) as detailed within the [FHIR Resource Guidance](development_fhir_resource_guidance.html). 
+GP Connect provider systems SHALL support FHIR [resource types](http://hl7.org/fhir/STU3/resourcelist.html) as detailed within the [FHIR Resource Guidance](development_fhir_resource_guidance.html).
 
 #### Resource ID ####
 
@@ -130,7 +130,7 @@ This is the [logical Id](http://hl7.org/fhir/STU3/resource.html#id) of the resou
 
 Once assigned, the identity SHALL never change. `logical Ids` are always opaque, and external systems need not and should not attempt to determine their internal structure.
 
-{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring an integer key (for example, 2345)." %} 
+{% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring an integer key (for example, 2345)." %}
 
 For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
 
@@ -183,7 +183,7 @@ To improve system performances clients/servers SHALL support GZIP compression.
 
 Compression is requested by setting the `Accept-Encoding` header to `gzip`.
 
-{% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %} 
+{% include tip.html content="Applying content compression is key to reducing bandwidth needs and improving battery life for mobile devices." %}
 
 ### [Inter-version compatibility](https://www.hl7.org/fhir/STU3/compatibility.html) ###
 
@@ -229,7 +229,7 @@ Providers SHALL use the following HTTP header to ensure that no intermediaries c
 
 Provider SHALL maintain resource state in line with the underlying system, including the state of any associated resources.
 
-For example: 
+For example:
 
 _If the practitioner associated with a schedule is changed on the provider's system, such as when a locum is standing in for a regular doctor, this should be reflected in all associated resources to that schedule. The diagram below shows the expected change to the appointment resources for this scenario._
 
@@ -248,7 +248,7 @@ Consumer systems SHALL compare the returned structured patient demographic data 
 The following data SHALL be cross-checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.   
 
 | Item | Resource field |
-| ---- | -------------- | 
+| ---- | -------------- |
 | Family name | patient.name.family |
 | Given name | patient.name.given |
 | Gender | patient.gender |
