@@ -74,7 +74,7 @@ Provider systems:
 - **SHALL** return a `200` **OK** HTTP status code on successful retrieval of the capability statement
 - **SHALL** return a capability statement which conforms to the standard [FHIR CapabilityStatement](http://hl7.org/fhir/STU3/capabilitystatement.html)
 
-An example GP Connect capability statement is shown below ready for customisation and embedding into GP Connect Access Document assured provider systems. Providers should use this capability statement as a base for their own capability statement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect API specification version that the Access Document FHIR server implements.
+An example Access Document capability statement is shown below ready for customisation and embedding into assured provider systems. Providers should use this capability statement as a base for their own Access Document capability statement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect API specification version that the Access Document FHIR server implements.
 
 ```json
 {
