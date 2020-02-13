@@ -52,7 +52,7 @@ GET /Patient?identifier=[system]|[value]
 #### FHIR absolute request ####
 
 ```http
-GET https://[proxy_server]/https://[access_document_provider_server]/[access_document_fhir_base]/Patient?identifier=[system]|[value]
+GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/Patient?identifier=[system]|[value]
 ```
 
 #### Request headers ####
