@@ -375,7 +375,6 @@ Servers SHALL return an `ETag` header with the `version Id` of the resource.
 | **Foundations**     | `Patient`, `Practitioner`, `Organization` |
 | **Access Record**   | TBC |
 | **Appointments**    | `Appointment`, `Schedule`, `Slot`, `Location` |
-| **Tasks**           | `Order` |
 
 {% include important.html content="In workshop discussions with all principal GP system vendors it has been agreed that record locking (inside the GP system) will not impact on the ability of clients to query the GP Connect APIs and to obtain the latest saved/committed clinical and administrative data." %}
 
@@ -459,7 +458,6 @@ Location: [base]/[type]/[id]/_history/[vid]
 | **Foundations**   | &nbsp; |
 | **Access Record** | &nbsp; |
 | **Appointments**  | `Appointment` |
-| **Tasks**         | `Order` |
 
 {% include important.html content="In workshop discussions with all principal GP system vendors it has been agreed that record locking (inside the GP Community Independence Service (CIS)) will not impact on the ability of clients to query the GP Connect APIs and obtain the latest saved patient data." %}
 
@@ -482,7 +480,6 @@ The PUT operation will only be used to update existing resources. If the specifi
 | **Foundations**   | &nbsp; | &nbsp; |
 | **Access Record** | &nbsp; | &nbsp; |
 | **Appointments**  | `Appointment` | reason, description, comment |
-| **Tasks**         | &nbsp; | &nbsp; |
 
 ### Update example: Modify the appointment booking reason ###
 
@@ -501,7 +498,6 @@ DELETE [base]/[resourcetype]/[id]
 | **Foundations**   | &nbsp; |
 | **Access Record** | &nbsp; |
 | **Appointments**  | &nbsp; |
-| **Tasks**         | &nbsp; |
 
 {% include important.html content="GP Connect clients and servers are currently not expected to utilise the ability to delete a resource using the RESTful DELETE operation. However, this section is included as implementers should ensure that their implementation choices don't preclude the use of this HTTP verb in future release." %}
 
