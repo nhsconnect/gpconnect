@@ -40,7 +40,7 @@ The following pages provide example request and response messages:
 The following API definitions are included in this capability:
 
 - [Retrieve a patient’s structured record](accessrecord_structured_development_retrieve_patient_record.html)
-- [Get the structured FHIR&reg; capability statement](accessrecord_structured_get_the_fhir_capability_statement.html)
+- [Get the FHIR&reg; capability statement](accessrecord_structured_get_the_fhir_capability_statement.html)
 
 ## Spine interactions ##
 
@@ -49,4 +49,4 @@ The Access Record Structured capability message set includes the following set o
 | Operation                 | Interaction ID            |
 |---------------------------|---------------------------|
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
-| [Read Structured Metadata](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:structured_metadata-1` |
+| [Read Metadata (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1` |
