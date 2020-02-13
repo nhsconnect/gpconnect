@@ -65,7 +65,7 @@ Where the fields above are defined as:
 | Operation                 | Interaction ID            |
 |---------------------------|---------------------------|
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
-| [Read metadata (Access Record Structured)](accessrecord_structured_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1` |
+| [Read metadata (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1` |
 
 ### Access Record HTML interactions ###
 
