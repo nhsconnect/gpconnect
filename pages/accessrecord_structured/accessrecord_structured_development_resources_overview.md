@@ -144,12 +144,10 @@ The cross-care setting identifier and how it will work and be used is currently 
 * [Observation - Filing Comments](accessrecord_structured_development_observation_filingcomments.html)
 * [ProcedureRequest](accessrecord_structured_development_procedurerequest.html)
 * [ReferralRequest](accessrecord_structured_development_referralrequest.html)
-* DocumentReference
 * [ProcedureRequest - Diary Entry](accessrecord_structured_development_diaryentry.html)
+* DocumentReference - see note below
 
-{% include note.html content="DocumentReference is part of the Access Document capability which is available as its own GP Connect specification version. 
-Access Document complements Access Record Structure by retrieval of a documents list or individual documents.
-Please consult the [specification versions page](https://developer.nhs.uk/gp-connect-specification-versions/) for more details." %}
+{% include note.html content="DocumentReference is defined as part of a seperate [Access Document](access_documents.html) capability. Access Document complements Access Record Structured by allowing the querying and retrieval of documents for a patient." %}
 
 ### Administrative ###
 

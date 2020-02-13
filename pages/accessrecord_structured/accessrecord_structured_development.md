@@ -54,6 +54,4 @@ The following pages describe each of the clinical areas in more detail and are f
 - [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
 - [Diary Entries guidance](accessrecord_structured_development_diaryentry_guidance.html)
 
-{% include note.html content="The Access Document capability is available in its own GP Connect specification version. 
-Access Document complements Access Record Structure by retrieval of a documents list or individual documents.
-Please consult the [specification versions page](https://developer.nhs.uk/gp-connect-specification-versions/) for more details." %}
+{% include note.html content="Documents are defined in a seperate [Access Document](access_documents.html) capability, which complements Access Record Structured by allowing the querying and retrieval of documents for a patient." %}

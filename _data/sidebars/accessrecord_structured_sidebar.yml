@@ -199,7 +199,7 @@ entries:
 
         - title: Documents guidance
           output: web
-          url: /accessrecord_documents.html
+          url: /accessrecord_structured_development_documents_guidance.html
 
       - title: Diary entries
         output: web
@@ -223,7 +223,7 @@ entries:
       url: /accessrecord_structured_development_retrieve_patient_record.html
       output: web
 
-    - title: API Version Compatibility
+    - title: API version compatibility
       url: /accessrecord_structured_development_version_compatibility.html
       output: web
 
