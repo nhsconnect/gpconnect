@@ -65,6 +65,8 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
 
 Extension elements to hold details of repeat authorisation.
 
+**MUST** be absent for acute medications.
+
 
 ### extension[repeatInformation].numberOfRepeatPrescriptionsAllowed ###
 
@@ -80,14 +82,14 @@ The number of repeat issues authorised if specified.
 
 **MUST** be present where a repeat is authorised for a defined number of issues.
 
-**MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
+**MUST NOT** be specified where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
 
 
 ### extension[repeatInformation].numberOfRepeatPrescriptionsIssued ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>PositiveInt</code></td>
+    <td><b>Data type:</b> <code>UnsignedInt</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
