@@ -39,7 +39,7 @@ The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are us
 
 The `CodeableConcept` data type is used throughout this capability and the following guidance **SHALL** be followed in order to ensure consistent representation of coded data:
 
-{% include note.html content="Please see [Guidance on the population of CodeableConcept](pages/accessrecord_structured/guidance-on-the-population-of-codeableconcept.pdf)." %}
+{% include note.html content="Please see [Guidance on the population of CodeableConcept](pages/accessrecord_structured/GuidanceOnCodableConcept.pdf)." %}
 
 ### Common code systems ###
 
