@@ -9,7 +9,7 @@ summary: "Get the FHIR capability statement from the Access Record Structured FH
 
 {% include warning.html content="Consumer systems **MUST NOT** use this API interaction unless instructed to do so as it is not yet present in all live systems. Please use the [combined FHIR&reg; capability statement](foundations_use_case_get_the_fhir_capability_statement.html) instead." %}
 
-{% include important.html content="This capability statement is specific to the Access Record Structured capability and is identified as such by a Access Record Structured specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Please see other capabilities for their respective capability statements." %}
+{% include important.html content="This capability statement is specific to the Access Record Structured capability and is identified as such by an Access Record Structured specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Please see other capabilities for their respective capability statements." %}
 
 ## Use case ##
 
