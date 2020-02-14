@@ -46,13 +46,13 @@ The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the a
 
 The Service Root URL is the `[base]` portion of FHIR URLs.
 
-It is important to note that the Service Root URL may be different for each GP Connect capability, as each capability is defined as its own FHIR server:
+It is important to note that the Service Root URL will be different for each GP Connect capability (excluding Appointments and Foundations as mentioned below), as each capability is defined as its own FHIR server:
 
 - Appointment Management (including Foundations, which will always have the same Service Root URL as Appointment Management)
 - Access Record Structured
 - Access Document (available in a future version)
 
-Each capability's Service Root URL may have a different path, or point to a different server, or a completely different supplier system.
+Each capability's Service Root URL may have a different URL path, or point to a different server, or a completely different supplier system.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
@@ -77,7 +77,7 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
   - `gpconnect/structured` for the Access Record Structured capability
   - and `gpconnect/documents` for the Access Documents capability (available in a future version)
 
-  **Please note:** The Appointment Management and Foundations capabilities **SHALL** have the same `[PROVIDER_ROUTING_SEGMENT]` value.  Other capabilies **SHOULD** have different values.
+  **Please note:** The Appointment Management and Foundations capabilities **SHALL** have the same `[PROVIDER_ROUTING_SEGMENT]` value.  Other capabilies **SHALL** have different values.
 
 - The Service Root URL **SHALL NOT** contain a trailing `/`
 
