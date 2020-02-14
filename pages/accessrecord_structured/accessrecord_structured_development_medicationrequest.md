@@ -14,7 +14,7 @@ The headings below list the elements of the MedicationRequest resource and descr
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.5)" %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.6)" %}
 
 ## Overarching principles ##
 
@@ -65,6 +65,8 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
 
 Extension elements to hold details of repeat authorisation.
 
+**MUST** be absent for acute medications.
+
 
 ### extension[repeatInformation].numberOfRepeatPrescriptionsAllowed ###
 
@@ -80,14 +82,14 @@ The number of repeat issues authorised if specified.
 
 **MUST** be present where a repeat is authorised for a defined number of issues.
 
-**MUST NOT** be specified for acute medications or where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
+**MUST NOT** be specified where the number of repeat issues has not been defined. There is no concept of an initial dispense in GP Connect usage. Therefore, the `numberOfRepeats` allowed is the total number of allowed issues.
 
 
 ### extension[repeatInformation].numberOfRepeatPrescriptionsIssued ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>PositiveInt</code></td>
+    <td><b>Data type:</b> <code>UnsignedInt</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -185,8 +187,6 @@ In exceptional cases where for legacy data there is no prescriptionType recorded
 </table>
 
 This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
-
-There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
@@ -505,7 +505,7 @@ If the value is text then the extension dispenseRequest.quantityText **MUST** be
   </tr>
 </table>
 
-This field is used to contain the units relating to the quantity. For example 'tablet(s)', 'capsule(s)' or 'dose(s)'. 
+This field is used to contain the units relating to the quantity. For example 'tablet(s)', 'capsule(s)' or 'dose(s)'.
 
 It may also be a textual representation of quantity. Only to be used in this way if there is no numerical value.
 

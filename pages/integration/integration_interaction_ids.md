@@ -9,9 +9,18 @@ summary: "A list of GP Connect API interaction IDs"
 
 ## GP Connect Interaction ID naming policy ##
 
-All interaction IDs are expected to follow the following format `urn:nhs:names:services:[program]:[standard]:[mechanism]:[operation]:[subject]`
+All new interaction IDs follow the following format:
 
-- Program = `gpconnect`
+- ```urn:nhs:names:services:[programme]:[capability]:[standard]:[mechanism]:[operation]:[subject]```
+
+Many of the existing interaction IDs follow the older format, which omits the [capability] delimeter:
+
+- ```urn:nhs:names:services:[programme]:[standard]:[mechanism]:[operation]:[subject]```
+
+Where the fields above are defined as:
+
+- Programme = `gpconnect`
+- Capability = [ `structured`, `documents` ]
 - Standard = `fhir`
 - Mechanism = [ `rest`, `operation` ]
 	- `rest` for RESTful API interactions
@@ -56,7 +65,7 @@ All interaction IDs are expected to follow the following format `urn:nhs:names:s
 | Operation                 | Interaction ID            |
 |---------------------------|---------------------------|
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
-| [Read Structured Metadata](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:structured_metadata-1` |
+| [Read metadata (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1` |
 
 ### Access Record HTML interactions ###
 

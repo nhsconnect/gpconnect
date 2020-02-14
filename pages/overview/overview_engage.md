@@ -20,7 +20,7 @@ If you're planning on consuming data using GP Connect APIs then you're a consume
 
 ### Become an API provider
 
-If you're planning on providing data using GP Connect APIs then you're a provider system. 
+If you're planning on providing data using GP Connect APIs then you're a provider system.
 
 
 
@@ -31,10 +31,10 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 	- <span class="label label-success">SELECTED</span> / <span class="label label-info">DECISION</span> A decision has been made for first release.
 	- <span class="label label-warning">ASSUMPTION</span> An assumption has been made which is under review/needs validated.
 
-## 2. Explore ## 
+## 2. Explore ##
 
 - Try out the [GP Connect Demonstrator](system_demonstrator.html) system.
-- Optionally download the [GP Connect Demonstrator Codebase](https://github.com/nhs-digital/gpconnect){:target="_blank"} to see how it works. 
+- Optionally download the [GP Connect Demonstrator Codebase](https://github.com/nhs-digital/gpconnect){:target="_blank"} to see how it works.
 - Download our [PostMan Collection](system_reference_postman.html) and explore the GP Connect interactions.
 
 ## 3. Develop ##
@@ -54,7 +54,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 - Finally take a look at cross-cutting areas:
   - JSON Web Token - Provides [Cross organisation audit and provenance](integration_cross_organisation_audit_and_provenance.html) details.
   - Additional HTTP headers and proxy URL - This gives you access to the [Spine Secure Proxy](integration_spine_secure_proxy.html), the secure 'front door' of GP Connect APIs.
-  - Configure HTTPS and TLS/MA - [Security guidance](development_api_security_guidance.html) allows you to secure and mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time). 
+  - Configure HTTPS and TLS/MA - [Security guidance](development_api_security_guidance.html) allows you to secure and mutually authenticate your service with the Spine (which refers to two parties authenticating each other at the same time).
 
 ## 4. Assure ##
 
@@ -69,7 +69,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
-Some early feedback on the May 2016 release of the GP Connect draft specification can be found on the [OpenHealthHub forum](https://www.openhealthhub.org/c/fhir-implementation){:target="_blank"} under the category of "FHIR Implementation".
+Some early feedback on the May 2016 release of the GP Connect draft specification can be found on the *OpenHealthHub forum* (OpenHealthHub has now closed) under the category of "FHIR Implementation".
 
 ## Community engagement
 
@@ -86,4 +86,3 @@ The INTEROPen vision is to create a library of nationally defined HL7® FHIR® r
 ## Timescales, benefits and more
 
 The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect/){:target="_blank"}.
-

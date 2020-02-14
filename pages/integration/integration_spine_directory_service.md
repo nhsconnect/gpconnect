@@ -27,7 +27,7 @@ This ASID is unique to a system deployed in a specific organisation, so the same
 
 Every GP Connect system also has one or more "MHS" records (or message handling server record), identified by Party Key and [Interaction ID](integration_interaction_ids.html).
 
-MHS records of GP Connect provider systems contain the endpoint of the target practice, as defined by the [FHIR service root URL](development_general_api_guidance.html#service-root-url).
+MHS records of GP Connect provider systems contain the endpoint of a capability at the target practice, as defined by the [FHIR service root URL](development_general_api_guidance.html#service-root-url).
 
 Please see [System topologies](integration_system_topologies.html) for more details on the allocation of ASIDs and Party Keys.
 
@@ -38,14 +38,14 @@ Providers have GP Connect [interaction IDs](integration_interaction_ids.html) on
 
 ## Looking up a provider's endpoint and ASID ##
 
-GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) and ASID for a given GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
+GP Connect consumer systems are expected to resolve the [FHIR service root URL](development_general_api_guidance.html#service-root-url) and ASID for a given capability at a GP provider organisation using [Spine Directory Service (SDS)](http://digital.nhs.uk/spine) LDAP directory lookups.
 
 This is a two step process, as follows:
 
 > 1. Lookup the Message Handling System (MHS) record
 > 2. Lookup the Accredited System (AS) record
 
-The process allows a consumer system to retrieve the following details for a target GP provider organisation:
+The process allows a consumer system to retrieve the following details for a capability at a target GP provider organisation:
 
 - FHIR service root URL, retrieved from the `nhsMhsEndpoint` element in step 1
 - And the ASID, retrieved from `uniqueIdentifier` element in step 2
@@ -54,19 +54,23 @@ The FHIR service root URL is used to [construct the full target URL for a GP Con
 
 Please see below for more detail on the process.
 
-Systems **SHOULD** cache SDS query results giving details of consuming system, endpoints and endpoint capability on a per session basis.
+Consumer systems:
 
-Systems **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date consuming system, endpoint and endpoint capability.
+- **MUST NOT** reuse the FHIR service root URL retrieved from SDS for an interaction in one GP Connect capability (such as Appointment Management) in another capability (such as Access Record Structured).  The two capabilities will have different FHIR service root URLs.
 
-Systems **MUST NOT** reuse the FHIR service root URL retrieved from SDS for an interaction in one GP Connect capability (such as Appointment Management) in another capability (such as Access Record Structured).  The two capabilities may have different FHIR service root URLs.
+	{% include important.html content="Please note the FHIR service root URL (endpoint) returned for one capability may be different from that for another capability, **for the same provider practice**.  Please ensure you **DO NOT** re-use FHIR service root URLs (endpoints) between capabilities." %}
 
-{% include important.html content="**Why have SDS queries changed in GP Connect API 1.2.3?**<br/>
+- **SHOULD** cache SDS query results giving details of provider system endpoints and endpoint capability on a per session basis.
+
+- **MUST NOT** cache and re-use consuming system endpoint information derived from SDS across multiple patient encounters or practitioner usage sessions. Each new patient encounter will result in new lookups to ascertain the most up-to-date provider system endpoint and capability.
+
+{% include note.html content="**Why have SDS queries changed in GP Connect API 1.2.3?**<br/>
 The SDS queries in this version of the specification allow consumers to return the correct endpoint and ASID for a provider GP practice where the practice has multiple GP Connect ASIDs - this occurs where the practice is running one or more seperate GP Connect consumer systems (with their own ASIDs), in addition to their principal clinical system acting as a provider and consumer.<br/>
 The SDS queries in GP Connect API 1.2.2 and prior versions do not support this configuration, hence existing consumer systems **MUST** update their queries to to this version of the specification." %}
 
 ### Step 1: Message Handling System (MHS) record lookup  ###
 
-Consumer systems **MUST** lookup the FHIR service root URL and Party Key from the MHS record, using the ODS code of the target practice, as follows:
+Consumer systems **MUST** lookup the FHIR service root URL and Party Key from the MHS record, using the ODS code of the target practice and the GP Connect interaction ID, as follows:
 
 **Search criteria:**
 - Organisation code
@@ -156,7 +160,7 @@ This query should return a single endpoint. In this case, the ldapquery returns 
 	search: 1
 	result: 0 Success
 
-{% include important.html content="Please note the FHIR service root URL (endpoint) returned for one capability may be different from that for another capability, **at the same practice**.  Please ensure you **DO NOT** re-use FHIR service root URLs (endpoints) between capabilities." %}
+{% include important.html content="Please note the FHIR service root URL (endpoint) returned for one capability may be different from that for another capability, **for the same practice**.  Please ensure you **DO NOT** re-use FHIR service root URLs (endpoints) between capabilities." %}
 
 ### Step 2: AS record lookup on SDS to determine the provider's ASID
 
