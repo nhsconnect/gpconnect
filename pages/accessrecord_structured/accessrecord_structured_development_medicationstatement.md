@@ -14,7 +14,7 @@ The headings below list the elements of the `MedicationStatement` profile and de
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.6)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationStatement profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1/_history/1.7)." %}
 
 ## MedicationStatement elements ##
 
@@ -99,8 +99,6 @@ Set to the date when the dosage instructions were last changed.
 </table>
 
 This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
-
-There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifer at the same time.
 

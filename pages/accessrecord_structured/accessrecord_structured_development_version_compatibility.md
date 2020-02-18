@@ -119,7 +119,7 @@ The following table gives an overview of which parameters are supported in each 
  |-------------------------|-------------------|
 
 Consumers **MAY** determine programmatically which parameters have been implemented by the provider using the following process:
-- [Get the structured FHIR&reg; capability statement](accessrecord_structured_get_the_fhir_capability_statement.html) from the provider
+- [Get the FHIR&reg; capability statement](accessrecord_structured_get_the_fhir_capability_statement.html) from the provider's Access Record Structured FHIR server
 - Locate the value in CapabilityStatement.operation[name='gpc.getstructuredrecord'].definition.reference, this will be a reference to an `OperationDefinition`
 - Perform a HTTP GET to the value that was retrieved in the previous step
 - The parameters that are supported by the provider will be listed in `OperationDefinition.parameters`

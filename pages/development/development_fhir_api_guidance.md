@@ -58,7 +58,6 @@ To help API implementers deal with the FHIR learning curve, NHS Digital has work
 		1. [Schedule](https://www.hl7.org/fhir/STU3/schedule.html) profiled as gpconnect-schedule-1
 		2. [Slot](https://www.hl7.org/fhir/STU3/slot.html) profiled as gpconnect-slot-1
 		3. [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) profiled as gpconnect-appointment-1
-	3. Task API
 3. [Resource metadata](https://www.hl7.org/fhir/STU3/resource.html#Meta)
 	1. [Profile](https://www.hl7.org/fhir/STU3/resource.html#metadata)
 	2. [Version Id](https://www.hl7.org/fhir/STU3/resource.html#metadata)
@@ -168,15 +167,19 @@ GP Connect provider systems are not expected to implement the following aspects 
 
 ### FHIR system conformance ###
 
-Servers SHALL provide a read-only [FHIR CapabilityStatement resource](https://www.hl7.org/fhir/STU3/capabilitystatement.html) that identifies all the profiles and operations that the server supports for each resource type.
+Provider systems SHALL provide read-only [FHIR CapabilityStatement resources](https://www.hl7.org/fhir/STU3/capabilitystatement.html) that identify all the profiles and operations that each FHIR server supports for each resource type.
 
-A server's capability statement SHALL be available using the following [capabilities interactions](http://hl7.org/fhir/STU3/http.html#capabilities):
+A FHIR server's capability statement SHALL be available using the following [capabilities interactions](http://hl7.org/fhir/STU3/http.html#capabilities):
 
 ```
 GET [base]/metadata {?_format=[mime-type]}
 ```
 
-Refer to [Foundations - Get The FHIR CapabilityStatement](foundations_use_case_get_the_fhir_capability_statement.html) for an example GP Connect FHIR capability statement.
+Please note:  The `[base]` portion may vary based on the GP Connect capability.
+
+Refer to:
+- [Get the FHIR capability statement (Foundations)](foundations_use_case_get_the_fhir_capability_statement.html) for the capability statement describing the Foundations and Appointment Management capabilities
+- [Get the FHIR capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html) for the capability statement describing the Access Record Structured capability
 
 ### FHIR resource conformance ###
 
@@ -375,7 +378,6 @@ Servers SHALL return an `ETag` header with the `version Id` of the resource.
 | **Foundations**     | `Patient`, `Practitioner`, `Organization` |
 | **Access Record**   | TBC |
 | **Appointments**    | `Appointment`, `Schedule`, `Slot`, `Location` |
-| **Tasks**           | `Order` |
 
 {% include important.html content="In workshop discussions with all principal GP system vendors it has been agreed that record locking (inside the GP system) will not impact on the ability of clients to query the GP Connect APIs and to obtain the latest saved/committed clinical and administrative data." %}
 
@@ -459,7 +461,6 @@ Location: [base]/[type]/[id]/_history/[vid]
 | **Foundations**   | &nbsp; |
 | **Access Record** | &nbsp; |
 | **Appointments**  | `Appointment` |
-| **Tasks**         | `Order` |
 
 {% include important.html content="In workshop discussions with all principal GP system vendors it has been agreed that record locking (inside the GP Community Independence Service (CIS)) will not impact on the ability of clients to query the GP Connect APIs and obtain the latest saved patient data." %}
 
@@ -482,7 +483,6 @@ The PUT operation will only be used to update existing resources. If the specifi
 | **Foundations**   | &nbsp; | &nbsp; |
 | **Access Record** | &nbsp; | &nbsp; |
 | **Appointments**  | `Appointment` | reason, description, comment |
-| **Tasks**         | &nbsp; | &nbsp; |
 
 ### Update example: Modify the appointment booking reason ###
 
@@ -501,7 +501,6 @@ DELETE [base]/[resourcetype]/[id]
 | **Foundations**   | &nbsp; |
 | **Access Record** | &nbsp; |
 | **Appointments**  | &nbsp; |
-| **Tasks**         | &nbsp; |
 
 {% include important.html content="GP Connect clients and servers are currently not expected to utilise the ability to delete a resource using the RESTful DELETE operation. However, this section is included as implementers should ensure that their implementation choices don't preclude the use of this HTTP verb in future release." %}
 

@@ -42,7 +42,7 @@ POST /Patient/$gpc.getstructuredrecord
 #### FHIR&reg; absolute request ####
 
 ```http
-POST https://[proxy_server]/https://[provider_server]/[structured_fhir_base]/Patient/$gpc.getstructuredrecord
+POST https://[proxy_server]/https://[structured_provider_server]/[structured_fhir_base]/Patient/$gpc.getstructuredrecord
 ```
 
 #### Request headers ####

@@ -42,9 +42,17 @@ The FHIR RESTful API style guide defines the following URL conventions which are
 
 ### Service Root URL ###
 
-The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address where all of the resources defined by this interface are found.
+The [Service Root URL](https://www.hl7.org/fhir/STU3/http.html#general) is the address root address of where the resources defined by a capability are found.
 
-The Service Root URL is the `[base]` portion of all FHIR APIs.
+The Service Root URL is the `[base]` portion of FHIR URLs.
+
+It is important to note that the Service Root URL will be different for each GP Connect capability (excluding Appointments and Foundations as mentioned below), as each capability is defined as its own FHIR server:
+
+- Appointment Management (including Foundations, which will always have the same Service Root URL as Appointment Management)
+- Access Record Structured
+- Access Document (available in a future version)
+
+Each capability's Service Root URL may have a different URL path, or point to a different server, or a completely different supplier system.
 
 {% include important.html content="All URLs (and ids that form part of the URL) defined by this specification are case sensitive." %}
 
@@ -67,25 +75,25 @@ Provider systems SHALL publish Service Root URLs for major versions of FHIR APIs
 - `[PROVIDER_ROUTING_SEGMENT]` enables providers to differentiate between logical FHIR servers defined by GP Connect capabilities, or other FHIR based APIs. For example, the `[PROVIDER_ROUTING_SEGMENT]` could be:
   - `gpconnect` for the Appointment Management and Foundations capabilities
   - `gpconnect/structured` for the Access Record Structured capability
-  - and `gpconnect/documents` for the Access Documents capability
+  - and `gpconnect/documents` for the Access Documents capability (available in a future version)
 
-  **Please note:** The Appointment Management and Foundations capabilities **MUST** have the same `[PROVIDER_ROUTING_SEGMENT]` value.  Other capabilies **MAY** have different values.
+  **Please note:** The Appointment Management and Foundations capabilities **SHALL** have the same `[PROVIDER_ROUTING_SEGMENT]` value.  Other capabilies **SHALL** have different values.
 
-- The Service Root URL SHALL NOT contain a trailing `/`
+- The Service Root URL **SHALL NOT** contain a trailing `/`
 
 #### Example Service Root URL
 
-The provider SHALL publish the Service Root URL to [Spine Directory Services](integration_spine_directory_service.html), for example:
+The provider SHALL publish the Service Root URL for each capability to [Spine Directory Services](integration_spine_directory_service.html), for example:
 
-`https://provider.nhs.uk/GP0001/STU3/1/gpconnect`
+`https://provider.nhs.uk/GP0001/STU3/1/gpconnect/structured`
 
 Please see [Registering GP Connect systems in SDS for more details](integration_sds_registering_endpoints.html).
 
-Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the logical practice FHIR server](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
+Consumer systems are required to construct a [Service Root URL containing the SSP URL followed by the FHIR Server Root URL of the practice's capability FHIR server](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture) that is suitable for interacting with the SSP service. API provider systems will be unaware of the SSP URL prefix as this will be removed prior to calling the provider API endpoint.
 
 The consumer system would therefore issue a request to the new version of the provider FHIR API to the following URL:
 
-`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect/[FHIR request]`
+`https://[ssp_fqdn]/https://provider.nhs.uk/GP0001/STU3/1/gpconnect/structured/[FHIR request]`
 
 {% include important.html content="Please see [a worked example of the lookup and endpoint construction process](integration_spine_directory_service.html#worked-example-of-the-endpoint-lookup-process) for consumer systems for more information." %}
 

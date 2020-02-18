@@ -8,7 +8,7 @@ summary: "Overview of the different types of deployment topologies for GP Connec
 ---
 
 {% include important.html content="The Spine Secure Proxy (SSP) includes a mechanism to filter out all requests between organisations that are not registered on the proxy as having a mutual Data Sharing Agreement. Without this then all GP Connect consumers would be able to send requests to all GP Connect providers. 
-In order for the filtering solution to work each consumer/provider organisation MUST have their own unique [Spine ASID](#spine-endpoint-terms) configured on the SSP."%}
+In order for the filtering solution to work each consumer/provider organisation MUST have their own unique [Spine ASID](#spinesds-terminology) configured on the SSP."%}
 
 # Consumer topologies #
 

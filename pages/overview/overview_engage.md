@@ -69,7 +69,7 @@ If you're planning on providing data using GP Connect APIs then you're a provide
 
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
 
-Some early feedback on the May 2016 release of the GP Connect draft specification can be found on the [OpenHealthHub forum](https://www.openhealthhub.org/c/fhir-implementation){:target="_blank"} under the category of "FHIR Implementation".
+Some early feedback on the May 2016 release of the GP Connect draft specification can be found on the *OpenHealthHub forum* (OpenHealthHub has now closed) under the category of "FHIR Implementation".
 
 ## Community engagement
 

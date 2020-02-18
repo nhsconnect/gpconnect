@@ -14,7 +14,7 @@ The headings below list the elements of the `AllergyIntolerance` profile and des
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.2)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.7)." %}
 
 ## AllergyIntolerance elements ##
 
@@ -107,8 +107,6 @@ The reason why the allergy or intolerance has been resolved. In exceptional case
 </table>
 
 This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
-
-There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
