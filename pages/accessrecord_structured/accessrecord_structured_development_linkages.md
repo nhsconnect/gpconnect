@@ -203,7 +203,7 @@ For each `ReferralRequest` referenced in the `List` profile:
 When GP Connect returns an investigation it will supply all the investigation information.
 
 The response to the query includes:
-* A `List` profile containing references to `DiagnosticReport` for every Medication and Medical Device that met the search criteria
+* A `List` profile containing references to `DiagnosticReport` for every Investigation that met the search criteria
 
 For each `DiagnosticReport` referenced in the `List` profile:
 *  The `DiagnosticReport` profile of the Investigation
