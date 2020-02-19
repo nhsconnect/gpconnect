@@ -9,15 +9,16 @@ summary: "Interactive API documentation for the GP Connect FHIR API"
 
 ## Try now ##
 
-> [Try the interactive API documentation in your web browser now!](https://orange.testlab.nhs.uk/swagger/v1/)
+> Try the [interactive API documentation](https://orange.testlab.nhs.uk/swagger-v1.html) in your web browser now!
 
 ## Benefits ##
+	
+- view technical documentation for the GP Connect APIs
 
-- allows you to execute calls against the reference implementation and view the response
+- execute calls against the GP Connect API reference implementation and view the response
 
-- built using Swagger UI
+- using standard Swagger UI tooling
 
 ## Screenshot ##
 
 ![Interaction API documentation screenshot](images/systems/swagger.png)
-

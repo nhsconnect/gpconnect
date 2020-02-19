@@ -14,7 +14,15 @@ The headings below list the elements of the `MedicationRequest` profile and desc
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.2)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [MedicationRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1/_history/1.6)" %}
+
+## Overarching principles ##
+
+When populating the MedicationRequest profile it may appear that fields are duplicated in other associated resources. In the interests of minimising redundancy, the 2 following principles **MUST** be applied when populating the MedicationRequest profiles:
+
+1. All mandatory fields **MUST** be populated.
+
+2. Required fields **MUST** always be populated where the data exists in the system apart from where a lexically identical value exists for an equivalent data item in one of the parent profiles. For a MedicationRequest with `intent` of `plan` the associated MedicationStatement would be the parent profile. For a MedicationRequest with `intent` of `order`, the associated MedicationStatement and MedicationRequest with `intent` of `plan` are both considered parent profiles.
 
 ## MedicationRequest elements ##
 
@@ -79,7 +87,7 @@ The number of repeat issues authorised if specified.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>PositiveInt</code></td>
+    <td><b>Data type:</b> <code>UnsignedInt</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -176,15 +184,11 @@ In exceptional cases where for legacy data there is no prescriptionType recorded
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
-This **MUST** be a GUID.
-
-*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
-
-Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
+If the EPS identifier is present then the identifier.value is where the EPS Id SHOULD also be added. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/eps-line-item-identifier`
 
 ### basedOn ###
 
@@ -459,9 +463,9 @@ If the value is text, then the extension dispenseRequest.quantityText **MUST** b
   </tr>
 </table>
 
-Textual representation of quantity.
+This field is used to contain the units relating to the quantity. For example 'tablet(s)', 'capsule(s)' or 'dose(s)'.
 
-Only to be used if there is no numerical value.
+It may also be a textual representation of quantity. Only to be used in this way if there is no numerical value.
 
 ### dispenseRequest.expectedSupplyDuration ###
 

@@ -41,7 +41,8 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
 
 * Search for all Uncategorised Data within the specified date range
      * The consumer system request all items within a start and end date
-     * The provider system returns all items whose asserted date is within the start and end date (inclusive)
+     * The provider system returns all items whose effective date is within the start and end date (inclusive)
+     * The provider system returns all items that have no effective date.
      * Where no start date is supplied the search goes from the start of patient record
      * Where no end date is supplied the search goes to the end of patient record
      * Where no dates are supplied by the consumer, all uncategorised data items are returned
@@ -57,7 +58,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and w
      * The consumer system request the last x consultations
      * The provider system returns the last x consultations
 * Where a single filter is supplied by the consumer, it is applied as defined above
-* Where both filters are supplied by the consumer, all the Consultations that match either of the filters are returned
+* The consumer **SHOULD NOT** include both filters, the provider **MUST NOT** return consultations and **MUST** return an error if both filters are included
 * If no filters are supplied by the consumer, all Consultations are returned
 
 ### Immunisations ###

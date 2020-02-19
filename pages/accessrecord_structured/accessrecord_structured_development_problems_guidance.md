@@ -76,7 +76,7 @@ Depending on the GP Connect version supported by the provider system, it can be 
 
 Where a provider system is not able to export a linked clinical item, it will create a reference entry with the:
 
-* `Condition.extension[relatedClinicalContent.valueReference.reference.Display` set to “[Clinical area] items are not supported by the provider system.”
+* `Condition.extension[relatedClinicalContent.valueReference.Display` set to “[Clinical area] items are not supported by the provider system.”
 
    Where [Clinical area] identifies the type of the clinical item that is not supported.
 
@@ -105,10 +105,10 @@ The example below shows references to two items, one for an observation and anot
 Where a Problem is marked as confidential it will (as per the structured requirements on confidentially) not be included in returned data and the Confidential Items warning message will be included in the `List` containing the query response.
 
 Where a Problem is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
-* the Problem will be included in the response as normal
-* the confidential item(s) will NOT be included in the response
-* there will be NO reference to the confidential item(s) in the `ProblemHeader (Condition)` profile
-* the Confidential Items warning message will be included in the `List` containing the query response
+* The Problem will be included in the response as normal
+* The confidential item(s) will NOT be included in the response
+* There will be NO reference to the confidential item(s) in the `ProblemHeader (Condition)` profile.
+* The Confidential Items warning message will be included in the `List` on the relevant type of type data that was ommitted. For example if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query.
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed.
 
@@ -118,4 +118,4 @@ The results of a query for problem details **MUST** return a `List` containing r
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. In this case, `List.note` **MUST** be populated with the text 'Information not available'.

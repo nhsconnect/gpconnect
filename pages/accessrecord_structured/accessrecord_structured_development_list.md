@@ -14,7 +14,7 @@ The headings below detail the elements of the `List` profile and describe how to
 
 {% include important.html content="Any element not specifically detailed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.6)." %}
 
 
 ## List elements ##
@@ -121,7 +121,7 @@ There are currently 9 possible purposes of a list in response to a query for a c
 |Allergies and adverse reactions | 886921000000105| Allergies and adverse reaction  |
 |Ended allergies | 1103671000000101| Ended allergies |
 |Immunisations | 1102181000000102| Immunisations |
-|Consultation | 325851000000107| Consultation |
+|List of consultations | 1149501000000101 | List of consultations |
 |Problems | 717711000000103| Problems |
 |Uncategorised data | 826501000000100| Miscellaneous record |
 |Outbound Referrals | 792931000000107| Outbound referral |
@@ -234,11 +234,11 @@ Reference to the item that is part of the list.
 
 Why the list is empty.
 
-A FHIR code of `No Content Recorded` **SHALL** be used if a query returns no results to enter into a list. In this case, the 'note' field **SHALL** be populated with the text 'Information not available'.
+A FHIR code of `no-content-recorded` **MUST** be recorded in `emptyReason.code` if a query returns no results to enter into a list. In this case, `List.note` **MUST** be populated with the text 'Information not available'.
 
 <h2 style="color:#ED1951;"> List elements <b>not in use</b> </h2>
 
-The following elements **SHALL NOT** be populated:
+The following elements **MUST NOT** be populated:
 
 <h3 style="color:#ED1951;"> id </h3>
 
@@ -271,5 +271,3 @@ The following elements **SHALL NOT** be populated:
     <td><b>Data type:</b> <code>Reference(Practitioner, Patient, Device)</code></td>
   </tr>
 </table>
-
-

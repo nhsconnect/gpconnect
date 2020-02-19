@@ -92,7 +92,9 @@ Provider systems which also offer consumer functionality SHALL use the same GP C
 
 The *Service Root URL* for a given ASID SHALL be defined in the `nhsMhsEndPoint` attribute of the MHS record (i.e. the LDAP object of type nhsMhs). This URL SHALL be in the format described in [Service Root URL versioning](development_general_api_guidance.html#service-root-url) guidance.
 
-As described in the [API versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, the practice's ODS code  SHALL be placed in the FHIR server root URL, and this SHALL match the value in the `nhsidcode` elements on the MHS and associated AS records.  ODS codes which refer to clinical systems as a single entity SHALL NOT be used to provide routing. Practice specific ODS codes SHALL be used for routing purposes in the FHIR Server Root URL found in the `nhsMhsEndPoint` attribute of the MHS record.
+As described in the [API versioning](development_general_api_guidance.html#fhir-api-versioning) guidance, the practice's ODS code SHALL be placed in the FHIR server root URL, and this SHALL match the value in the `nhsidcode` elements on the MHS and associated AS records.  ODS codes which refer to clinical systems as a single entity SHALL NOT be used to provide routing. Practice specific ODS codes SHALL be used for routing purposes in the FHIR Server Root URL found in the `nhsMhsEndPoint` attribute of the MHS record.
+
+{% include important.html content="Please note the FHIR service root URL (endpoint) for one GP Connect capability may be different from that for another capability, **for the same provider practice and system**.  Please see the definition of the [FHIR Service Root URL](development_general_api_guidance.html#service-root-url) for more information." %}
 
 ### 3.5 nhsMhsEndPoint attribute SHALL contain the FHIR service root URL only ###
 
@@ -100,7 +102,7 @@ The `nhsMhsEndPoint` attribute in the MHS record SHALL contain the [FHIR Service
 
 An example of a FHIR server root URL for a [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html) interaction at practice GP0001 is:
 
-`https://provider.thirdparty.nhs.uk/GP0001/STU3/1`
+`https://provider.thirdparty.nhs.uk/GP0001/STU3/1/gpconnect/structured`
 
 Note that the `/Patient/$gpc.getstructuredrecord` is NOT added.
 
@@ -117,7 +119,6 @@ For example, all interactions associated with the Appointment Management capabil
 Source and destination ASID information is passed to the provider system from the Spine Security Proxy. Providers SHALL use this information for audit and debugging purposes only, and SHALL NOT use these headers to perform routing or lookups. 
 
 It is the responsibility of the SSP to perform lookups to determine consumer accreditation status. Routing shall be carried out as described above through practice-specific ODS codes present in the FHIR server root URL. 
-
 
 ---
 

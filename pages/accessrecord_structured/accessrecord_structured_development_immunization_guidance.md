@@ -11,22 +11,22 @@ summary: "Guidance for populating and consuming the Immunization FHIR&reg; resou
 
 Immunisation is the process by which an individual's immune system becomes fortified against an agent (known as the immunogen).
 
-When this system is exposed to molecules that are foreign to the body, called non-self, it will orchestrate an immune response, and it will also develop the ability to quickly respond to a subsequent encounter because of immunological memory. 
-This is a function of the adaptive immune system. 
+When this system is exposed to molecules that are foreign to the body, called non-self, it will orchestrate an immune response, and it will also develop the ability to quickly respond to a subsequent encounter because of immunological memory.
+This is a function of the adaptive immune system.
 Therefore, by exposing a person to an immunogen in a controlled way, the person's body can learn to protect itself: this is called active immunisation.
 
 ## What is a vaccination?
 
-Vaccination is the administration of a vaccine to help the immune system develop protection from a disease. 
-Vaccines contain a microorganism or virus in a weakened or killed state, or proteins or toxins from the organism. 
-In stimulating the body's adaptive immunity, they help prevent sickness from an infectious disease. 
-When a sufficiently large percentage of a population has been vaccinated, herd immunity results. 
-The effectiveness of vaccination has been widely studied and verified. 
+Vaccination is the administration of a vaccine to help the immune system develop protection from a disease.
+Vaccines contain a microorganism or virus in a weakened or killed state, or proteins or toxins from the organism.
+In stimulating the body's adaptive immunity, they help prevent sickness from an infectious disease.
+When a sufficiently large percentage of a population has been vaccinated, herd immunity results.
+The effectiveness of vaccination has been widely studied and verified.
 Vaccination is the most effective method of preventing infectious diseases; widespread immunity due to vaccination is largely responsible for the worldwide eradication of smallpox and the elimination of diseases such as polio and tetanus from much of the world.
 
 ## What immunisation data is GP Connect sending?
 
-In GP Connect, what is sent in the `Immunization` resource is the event of a patient being administered a vaccination. 
+In GP Connect, what is sent in the `Immunization` resource is the event of a patient being administered a vaccination.
 This may be a contemporaneous record by the clinician administering the vaccination (or by another member of the practice staff recording the event directly on behalf of the clinician) or it may be a record of an immunisation administered elsewhere as reported to the registered GP practice by the patient, a carer, guardian or other representative of the patient or another healthcare provider.
 
 A record of an immunisation may be created as part of a scheduled programme of immunisations such as childhood immunisations, seasonal influenza vaccination or in response to specific circumstances (for example, prior to travel, disease outbreak or occupational risk).
@@ -35,7 +35,7 @@ A record of an immunisation may be created as part of a scheduled programme of i
 
 GP clinical systems do not all record the full vaccine product (dm+d code) for an immunisation.
 GP clinical systems often record the type of vaccine administered as opposed to the vaccine product.
-This may be as a procedure code or a local code which can be mapped to a procedure code. 
+This may be as a procedure code or a local code which can be mapped to a procedure code.
 GP Connect, therefore, uses the vaccination procedure code to denote the vaccine being administered.
 The vaccination procedure code is a mandatory element.
 The vaccine product code will often be a `nullFlavor` code, but the actual vaccine product **MUST** be included if it is available.
@@ -64,7 +64,7 @@ The provider **MUST** populate elements as described below when sending details 
 
 * <code>extension[vaccinationProcedure]</code> **MUST** be the vaccination procedure which was intended but did not happen
 * <code>notGiven</code> **MUST** be <code>true</code>
-* <code>explanation.reasonNotGiven</code> **SHOULD** be included with the appropriate code for the reason the vaccination did not happen 
+* <code>explanation.reasonNotGiven</code> **SHOULD** be included with the appropriate code for the reason the vaccination did not happen
 
 See [immunization](accessrecord_structured_development_immunization.html) for full details of the elements.
 
@@ -121,14 +121,14 @@ If a consumer system needs to find records of consent, perhaps to check whether 
 ## Ineffective vaccination
 
 The Immunization FHIR profile contains elements to denote that a vaccination does not count towards immunity.
-This could be applied where a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break. 
-GP clinical systems do not have a standard means to identify an ineffective vaccination. 
+This could be applied where a vaccination is suspected or found to be ineffective, for example as a result of a product recall or cold chain break.
+GP clinical systems do not have a standard means to identify an ineffective vaccination.
 Hence, immunisation records will always be returned as counting towards immunity.
 
 ## Reactions to a vaccine
 
 Allergic or adverse reactions to an immunisation may be captured in the GP clinical system, but these are not generally directly associated to the immunisation event.
-It has not been considered reliable to link any allergic or adverse reaction to the immunisation record. 
+It has not been considered reliable to link any allergic or adverse reaction to the immunisation record.
 Therefore, information about reactions will not be included.
 For details of allergies or adverse reaction, the `AllergyIntolerance` resource **MUST** be requested.
 
@@ -151,5 +151,4 @@ The results of a query for immunisation details **MUST** return a `List` contain
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
-
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. In this case, `List.note` **MUST** be populated with the text 'Information not available'.

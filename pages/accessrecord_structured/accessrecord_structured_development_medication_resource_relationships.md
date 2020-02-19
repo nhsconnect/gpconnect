@@ -33,6 +33,8 @@ An acute prescription is when a medication or medical device is a one-off prescr
 
 If the patient needs further medication/medical device they would need to see their doctor again for them to assess their condition and decide if another prescription is appropriate.
 
+It is possible for clinicians where appropriate to post date acute medications. For instance, in a situation where a patient has flu like symptoms the clinician may provide a prescription for anti biotics dated a week in the future and advise the patient to use it if symptoms persist. This is also know as delayed prescribing.
+
 ### Repeat prescriptions
 
 A repeat prescription enables a patient to be issued more than one prescription without it being necessary to see their doctor after each individual prescription.

@@ -230,3 +230,7 @@ entries:
     - title: Forwards compatibility support example
       url: /accessrecord_structured_development_fhir_examples_forwards_consultations.html
       output: web
+
+    - title: Get the structured FHIR&reg; capability statement
+      url: /accessrecord_structured_get_the_fhir_capability_statement.html
+      output: web

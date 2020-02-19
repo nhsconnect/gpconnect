@@ -36,9 +36,12 @@ toc: false
 	<p style="padding-top:8px">Release notes</p>
   <p><a href="overview_release_notes_1_5_0.html">1.5.0</a></p>  
   <p><a href="overview_release_notes_1_4_1.html">1.4.1</a></p>  
-	<p><a href="overview_release_notes_1_4_0.html">1.4.0</a></p>  
+	<p><a href="overview_release_notes_1_4_0.html">1.4.0</a></p>
+  <p><a href="overview_release_notes_1_3_2.html">1.3.2</a></p>  
 	<p><a href="overview_release_notes_1_3_1.html">1.3.1</a></p>   
-	<p><a href="overview_release_notes_1_3_0.html">1.3.0</a></p>    
+	<p><a href="overview_release_notes_1_3_0.html">1.3.0</a></p>
+  <p><a href="overview_release_notes_1_2_6.html">1.2.6</a></p>  
+  <p><a href="overview_release_notes_1_2_5.html">1.2.5</a></p>      
 	<p><a href="overview_release_notes_1_2_4.html">1.2.4</a></p>  
     	<p><a href="overview_release_notes_1_2_3.html">1.2.3</a></p>
     	<p><a href="overview_release_notes_1_2_2.html">1.2.2</a></p>
@@ -56,7 +59,7 @@ toc: false
 	<p><a href="designprinciples_clinical_safety_principles.html">Clinical safety principles</a></p>
 	<p><a href="designprinciples_assurance_principles.html">Assurance principles</a></p>
 	<p><a href="design_clinical_terminologies.html">Clinical terminologies</a></p>
-	<p><a href="design_product_versioning.html">Specification versioning</a></p> 
+	<p><a href="design_product_versioning.html">Specification versioning</a></p>
   </div>
   <div class="column">
     <p style="font-size:18px">Explore</p>
@@ -76,7 +79,7 @@ toc: false
 	<p><a href="development_api_non_functional_requirements.html">Non-functional requirements</a></p>
     <p style="font-size:18px; padding-top:15px">Implement a capability</p>
 	<p><a href="sitemap_foundations.html">Foundations (sitemap)</a></p>
-	<p><a href="sitemap_appointment_management.html">Appointment Management (sitemap)</a></p> 
+	<p><a href="sitemap_appointment_management.html">Appointment Management (sitemap)</a></p>
 	<p><a href="sitemap_access_record_structured.html">Access Record Structured (sitemap)</a></p>   
   <p><a href="sitemap_access_documents.html">Access Document (sitemap)</a></p>   
   </div>

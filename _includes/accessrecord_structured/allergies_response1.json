@@ -255,6 +255,12 @@
           {
             "resourceType": "AllergyIntolerance",
             "id": "Resolved-1",
+            "identifier": [
+              {
+                "system": "https://provider.nhs.uk/data-identifier",
+                "value": "83426283749629"
+              }
+            ],
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-AllergyIntoleranceEnd-1",
@@ -396,6 +402,12 @@
       "resource": {
         "resourceType": "AllergyIntolerance",
         "id": "6bff710a-0bdc-4c9b-b98b-40db0a107edc",
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "83426283749639"
+          }
+        ],
         "reaction": [
           {
             "manifestation": [
@@ -481,6 +493,12 @@
       "resource": {
         "resourceType": "AllergyIntolerance",
         "id": "5eb0f76a-cecb-4b83-999d-ddb76e551a9b",
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "83426283749649"
+          }
+        ],
         "reaction": [
           {
             "manifestation": [
@@ -562,6 +580,12 @@
       "resource": {
         "resourceType": "AllergyIntolerance",
         "id": "d92b7d42-554d-4c92-b829-e76508185702",
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "83426283749659"
+          }
+        ],
         "verificationStatus": "unconfirmed",
         "type": "allergy",
         "code": {
