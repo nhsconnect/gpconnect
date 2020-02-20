@@ -119,6 +119,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includePrescriptionIssues</code></span></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
       <td>Optional</td>
+      <td>0..1</td>
       <td>
         Include each prescription issue in the response, this parameter has a default value of 'true'. More guidance relating to its use is available in the <a href="accessrecord_structured_development_medication_guidance.html#medication-search-criteria">Medication guidance page</a>
         <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>        
