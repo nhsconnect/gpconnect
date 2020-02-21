@@ -153,29 +153,7 @@ both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recordeed the data in the system.
 
-### value[x] ###
 
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Many</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-The value of the observation. This **MUST** be in the 
-
-### interpretation ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
 
 ### comment ###
 
@@ -221,18 +199,141 @@ Contains any hierarchical information between uncategorised data items.
 * Where the related item is a child of this item set `related.type` to `has-member`
 * Where the related item is a parent of this item set `related.type` to `derived-from`
 
-### component ###
+### systolic component ###
+
+### code ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The clinical code that represents systolic part of the blood pressure.
+
+Where there is an appropriate header code for a recognised triple recorded in the providing GP system this should be populated here. 
+
+If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
+
+### valueQuantity ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Many</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The value of the observation. This **MUST** be in the 
+
+### dataAbsentReason ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+If there is no code or value in this component then a data absent reason may be populated.
+
+### interpretation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
+
+### referenceRange ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-The only type of data that **MAY** use the component element is when a blood pressure is recorded as a pair of results.
+The reference range provides a guide for interpretation of the results.
 
+Where a reference range contains a less than '<' or greater than '>' operator it should be written to the referenceRange.text element as these operators are not supported in this context.
+
+### diastolic component ###
+
+### code ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The clinical code that represents systolic part of the blood pressure.
+
+Where there is an appropriate header code for a recognised triple recorded in the providing GP system this should be populated here. 
+
+If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
+
+### valueQuantity ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Many</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The value of the observation. This **MUST** be in the 
+
+### dataAbsentReason ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+If there is no value in this component then a data absent reason may be populated.
+
+### interpretation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
+
+### referenceRange ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The reference range provides a guide for interpretation of the results.
+
+Where a reference range contains a less than '<' or greater than '>' operator it should be written to the referenceRange.text element as these operators are not supported in this context.
 
 <br>
 
@@ -249,14 +350,6 @@ The following elements **MUST NOT** be populated:
 </table>
 
 <h3 style="color:#ED1951;"> category </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-<h3 style="color:#ED1951;"> dataAbsentReason </h3>
 
 <table class='resource-attributes'>
   <tr>
