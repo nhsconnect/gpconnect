@@ -199,7 +199,7 @@ Contains any hierarchical information between uncategorised data items.
 * Where the related item is a child of this item set `related.type` to `has-member`
 * Where the related item is a parent of this item set `related.type` to `derived-from`
 
-### systolic component ###
+## systolic component ##
 
 ### code ###
 
@@ -213,9 +213,7 @@ Contains any hierarchical information between uncategorised data items.
 
 The clinical code that represents systolic part of the blood pressure.
 
-Where there is an appropriate header code for a recognised triple recorded in the providing GP system this should be populated here. 
-
-If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
+A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategoriseddata_guidance.html).
 
 ### valueQuantity ###
 
@@ -227,7 +225,7 @@ If there is no header/panel code and only the code(s) for systolic and/or diasto
   </tr>
 </table>
 
-The value of the observation. This **MUST** be in the 
+The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'. 
 
 ### dataAbsentReason ###
 
@@ -267,7 +265,7 @@ The reference range provides a guide for interpretation of the results.
 
 Where a reference range contains a less than '<' or greater than '>' operator it should be written to the referenceRange.text element as these operators are not supported in this context.
 
-### diastolic component ###
+## diastolic component ##
 
 ### code ###
 
@@ -279,11 +277,9 @@ Where a reference range contains a less than '<' or greater than '>' operator it
   </tr>
 </table>
 
-The clinical code that represents systolic part of the blood pressure.
+The clinical code that represents diastolic part of the blood pressure.
 
-Where there is an appropriate header code for a recognised triple recorded in the providing GP system this should be populated here. 
-
-If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
+A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategoriseddata_guidance.html).
 
 ### valueQuantity ###
 
@@ -295,7 +291,7 @@ If there is no header/panel code and only the code(s) for systolic and/or diasto
   </tr>
 </table>
 
-The value of the observation. This **MUST** be in the 
+The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'. 
 
 ### dataAbsentReason ###
 
