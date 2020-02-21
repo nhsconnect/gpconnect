@@ -338,7 +338,9 @@ When requesting problems, the following part parameters **MUST NOT** be included
   - `includeMedications.medicationSearchFromDate`
   - `includeUncategorisedData.uncategorisedDataSearchPeriod`
 
-There are no restrictions on using combinations of top level parameters. 
+There are no restrictions on using combinations of top level parameters.
+
+Examples of queries are available on the [Search examples](accessrecord_structured_development_searchExamples.html) page.
 
 #### Error handling ####
 

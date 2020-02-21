@@ -15,22 +15,499 @@ The different approaches to requests that will return similar information have b
 
 
 
-	1. Summary Care Record Standard - include allergies, include Meds with fromDate of 1 year ago
+### Request allergies and medications from the last year
 
-	2. Enhanced SCR query - Would be above plus problems. Return all problems and recommend  display group by active/inactive and major/minor.  In the current build this would bring back all the medications not just the last years  worth of Meds but all Meds. 
-	It would be possible to do the standard summary care record query and then have a separate query for the problems. 
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2019-12-21"
+        }
+      ]
+    }
+  ]
+}
+```
 
-	3. Ability to request the last 3 consultations.
+### Return all medications, allergies and problems.
 
-	4. Last 3 consultations with Problems, Meds and allergies. Two options
-		a. If done in one query then all Meds would be returned.
-		b. Can do a 2 part query for all (Meds and allergies) and (problems and last 3 consultations)
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication"
+    }
+  ]
+},
+{
+  "name": "includeProblems"
+}
+```
 
-	5. Query for children - Enhanced SCR with vaccinations and observations
-		a. If done in one query will get all meds and all obs
-		b. If done in 2 queries will get last year of Meds, all allergies, Problems, Imms and Observations
-		c. If done in 2 queries could have (last year Meds and Obs) and all allergies, Problems, Imms
+### Request a patient's last three consultations.
 
-  6. Query everything in last 3 months
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeConsultations",
+      "part": [
+        {
+          "name": "includeNumberOfMostRecent",
+          "valueInteger": 3
+        }
+      ]
+    }
+  ]
+}
+```
 
+### Request a patient's last three consultations with problems, medications and allergies.
+#### If done in one query then all medications would be returned, no date filter could be applied.
 
+```json
+{
+"resourceType": "Parameters",
+"parameter": [
+	{
+		"name": "patientNHSNumber",
+		"valueIdentifier": {
+			"system": "https://fhir.nhs.uk/Id/nhs-number",
+			"value": "9999999999"
+		}
+	},
+	{
+		"name": "includeConsultations",
+		"part": [
+			{
+				"name": "includeNumberOfMostRecent",
+				"valueInteger": 3
+			}
+		]
+	},
+	{
+		"name": "includeProblems"
+	},
+	{
+		"name": "includeAllergies",
+		"part": [
+			{
+				"name": "includeResolvedAllergies",
+				"valueBoolean": true
+			}
+		]
+	},
+	{
+		"name": "includeMedication"
+	}
+]
+}
+```
+
+#### If done in two separate queries, the first would retrieve the last three consultations and problems and the second would retrieve allergies and medications for the last year.
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeConsultations",
+      "part": [
+        {
+          "name": "includeNumberOfMostRecent",
+          "valueInteger": 3
+        }
+      ]
+    },
+    {
+      "name": "includeProblems"
+    }
+  ]
+}
+```
+**THEN**
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2019-12-21"
+        }
+      ]
+    }
+  ]
+}
+```
+
+### Request child health information, medication, allergies, immunisations, problems and observations.
+#### If done in one query this would retrieve all medications and observations, no date filter could be applied.
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication"
+    },
+    {
+      "name": "includeProblems"
+    },
+    {
+      "name": "includeImmunisations"
+    },
+    {
+      "name": "includeUncategorisedData"
+    }
+  ]
+}
+```
+
+#### If done in two queries this would get last year of medications, all allergies, problems, immunisations and observations
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2019-12-21"
+        }
+      ]
+    }
+  ]
+}
+```
+**THEN**
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeProblems"
+    },
+    {
+      "name": "includeImmunisations"
+    },
+    {
+      "name": "includeUncategorisedData"
+    }
+  ]
+}
+```
+
+#### Another option would be two queries where the first retrieves the last year of medications and observations and the second retrieves all allergies, problems and immunisations
+
+```json
+
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2019-12-21"
+        }
+      ]
+    },
+		{
+      "name": "includeUncategorisedData",
+      "part": [
+        {
+          "name": "uncategorisedDataSearchPeriod",
+          "valuePeriod": {
+            "start": "2019-12-21",
+            "end": "2020-02-21"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+**THEN**
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeProblems"
+    },
+    {
+      "name": "includeImmunisations"
+    }
+  ]
+}
+```
+
+### Request all information that has been recorded for the patient in the last three months
+#### If done in one query this would return everything, no date filter could be applied on medications or observations.
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication"
+    },
+    {
+      "name": "includeConsultations",
+      "part": [
+        {
+          "name": "consultationSearchPeriod",
+          "valuePeriod": {
+            "start": "2019-12-21",
+            "end": "2020-02-21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "includeProblems"
+    },
+    {
+      "name": "includeImmunisations"
+    },
+    {
+      "name": "includeUncategorisedData"
+    }
+  ]
+}
+```
+
+#### If done in two queries this would be a query for the last three months for observations and medications and a second query for the last three months consultations and all allergies, problems and immunisations.
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeMedication",
+      "part": [
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "2019-12-21"
+        }
+      ]
+    },
+    {
+      "name": "includeUncategorisedData",
+      "part": [
+        {
+          "name": "uncategorisedDataSearchPeriod",
+          "valuePeriod": {
+            "start": "2019-12-21",
+            "end": "2020-02-21"
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+**THEN**
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+		{
+      "name": "includeConsultations",
+      "part": [
+        {
+          "name": "consultationSearchPeriod",
+          "valuePeriod": {
+            "start": "2019-12-21",
+            "end": "2020-02-21"
+          }
+        }
+      ]
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeProblems"
+    },
+    {
+      "name": "includeImmunisations"
+    }
+  ]
+}
+```
