@@ -121,7 +121,7 @@ We are not currently using this flag in GP Connect. However we have done some an
 Based on this analysis the following codes may in the future be sent as vital signs. They are provided here to enable consuming systems to filter using them if it is desired.
 #### Systolic vital signs codes
 Below is the SNOMED binding for systolic codes that represent vital signs in GP systems,
-'
+```
 << 271649006 | Systolic blood pressure (observable entity) |
 
 MINUS
@@ -131,11 +131,11 @@ MINUS
 << 716579001 | Baseline systolic blood pressure (observable entity) | OR
 
 << 315612005 | Target systolic blood pressure (observable entity) '
-
+```
 #### Diastolic vital signs codes
 Below is the SNOMED binding for diastolic codes that represent vital signs in GP systems,
-
-'<< 271650006 | Diastolic blood pressure (observable entity) |
+```
+<< 271650006 | Diastolic blood pressure (observable entity) |
 
 MINUS
 
@@ -144,7 +144,7 @@ MINUS
 << 716632005 | Baseline diastolic blood pressure (observable entity) | OR
 
 << 315613000 | Target diastolic blood pressure (observable entity)'
-
+```
 ### What codes will be sent using the defined blood pressure structure
 
 There are many different variations of blood pressure reading or target that are expressed in GP systems in the form of different codes.
@@ -157,6 +157,7 @@ DescriptionID - '125176019'
 Description - 'Blood pressure'
 #### Systolic codes
 The following systolic codes **MUST** be represented in line with the GP Connect blood pressure structure,
+```
 72313002	Systolic arterial pressure (observable entity)
 413606001	Average home systolic blood pressure (observable entity)
 407554009	Sitting systolic blood pressure (observable entity)
@@ -182,8 +183,10 @@ The following systolic codes **MUST** be represented in line with the GP Connect
 707303003	Post exercise systolic blood pressure response abnormal (finding)
 251071003	Invasive systolic arterial pressure (observable entity)
 1036551000000101	Non-invasive central systolic blood pressure (observable entity)
+```
 #### Diastolic codes
 The following diastolic codes **MUST** be represented in line with the GP Connect blood pressure structure,
+```
 1091811000000102	Diastolic arterial pressure (observable entity)
 413605002	Average home diastolic blood pressure (observable entity)
 407555005	Sitting diastolic blood pressure (observable entity)
@@ -209,8 +212,10 @@ The following diastolic codes **MUST** be represented in line with the GP Connec
 276781007	Left ventricular end-diastolic pressure (observable entity)
 276774000	Right ventricular end-diastolic pressure (observable entity)
 1036571000000105	Non-invasive central diastolic blood pressure (observable entity)
+```
 #### Excluded codes
 The following diastolic codes **MUST NOT** be represented using the GP Connect blood pressure structure and should be returned as individual observations,
+```
 315612005	Target systolic blood pressure (observable entity)
 198081000000101 Ambulatory systolic blood pressure (observable entity)
 314464000	24 hour systolic blood pressure (observable entity)
@@ -221,7 +226,7 @@ The following diastolic codes **MUST NOT** be represented using the GP Connect b
 716632005	Baseline diastolic blood pressure (observable entity)
 314465004	24 hour diastolic blood pressure (observable entity)
 814081000000101	Diastolic blood pressure centile (observable entity)
-
+```
 
 
 ## Using the `List` resource for uncategorised data queries
