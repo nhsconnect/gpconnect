@@ -14,10 +14,10 @@ summary: An introduction to the GP Connect FHIR® APIs
 
 In partnership with principal GP clinical system suppliers, GP Connect has developed a set of FHIR&reg; API specifications that make data from different clinical systems available to clinicians when and where they need it.
 
-GP Connect supports the development of products that use the clinical data made available by our APIs.
+GP Connect supports the development of products that use the clinical data made available by our APIs for direct care purposes.
 
 ## Audience ##
-The content here is designed for a technical audience (that is, developers, architects and data scientists). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect){:target="_blank"}.
+The content here is designed for a technical audience (that is, developers, architects and testers). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect){:target="_blank"}.
 
 We have identified three main types of customer:
 
@@ -27,13 +27,13 @@ We have identified three main types of customer:
 * you intend to work with a suitable end-user organisation, which you may or may not have already identified
 
 #### Provider supplier ####
-*	you're a GP clinical data supplier, such as EMIS Health, INPS Vision, Microtest Health and TPP
+*	you're a GP clinical system supplier or are working with the NHS to become one
 *	you want to use GP Connect to enable other systems to access GP data on your system for direct patient care
 
 Information of particular relevance to provider suppliers is indicated within the specification.
 
 #### End-user organisation ####
-*	you're a clinical commissioning group (CCG) with GP practices organised in a federation or hub; you're a hospital or provider of emergency care or other care setting
+*	you're a clinical commissioning group (CCG) with GP practices organised in a federation or Primary Care Network (PCN); you're a hospital or provider of emergency care or other care setting
 *	you want to use an existing GP Connect API or commission a new, GP Connect-enabled system to access GP data from more than one GP clinical data provider to improve direct patient care
 
 See [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connect/getting-involved-with-gp-connect#information-for-commissioning-or-end-user-organisations).
@@ -42,8 +42,8 @@ See [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connec
 
 Each specification has a dual objective:
  
-* to show consumer suppliers how to connect to the APIs from their applications
-* to show provider suppliers how to develop APIs that connect to their clinical data
+* to show consumer suppliers how to develop APIs for their applications so that they can access clinical data
+* to show provider suppliers how to develop APIs for their systems so that they can share their clinical data
 
 The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html), for example:  
 
