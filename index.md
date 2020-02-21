@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Introduction to GP Connect API
 keywords: homepage
 tags: [introduction]
 sidebar: overview_sidebar
@@ -12,12 +12,12 @@ summary: An introduction to the GP Connect FHIR® APIs
 [![Semver](http://img.shields.io/badge/semver-2.0.0-yellow.svg)](http://semver.org/spec/v2.0.0.html){:target="_blank" class="no_icon"} [![License](http://img.shields.io/:license-apache2-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html){:target="_blank" class="no_icon"} 
 {% endcomment %}
 
-In partnership with principal GP clinical system suppliers, GP Connect has developed a set of FHIR&reg; API specifications that make data from different clinical systems available to clinicians when and where they need it.
+In partnership with GP clinical system suppliers, GP Connect has developed a set of FHIR&reg; API specifications that make data from different clinical systems available to clinicians when and where they need it.
 
-GP Connect supports the development of products that use the clinical data made available by our APIs for direct care purposes.
+GP Connect supports the development of products that use the data made available by the APIs for direct care purposes.
 
 ## Audience ##
-The content here is designed for a technical audience (that is, developers, architects and testers). For other details, such as the vision, timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect){:target="_blank"}.
+The content here is designed for a technical audience (that is, developers, technical architects and testers). For timescales, business benefits and case studies, please see the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect){:target="_blank"}.
 
 We have identified three main types of customer:
 
@@ -42,19 +42,10 @@ See [Getting involved with GP Connect](https://digital.nhs.uk/services/gp-connec
 
 Each specification has a dual objective:
  
-* to show consumer suppliers how to develop APIs for their applications so that they can access clinical data
-* to show provider suppliers how to develop APIs for their systems so that they can share their clinical data
+* to show consumer suppliers how to develop APIs for their applications so they can access clinical data
+* to show provider suppliers how to develop APIs for their systems so they can share their clinical data
 
-The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html), for example:  
-
-* Access Record HTML - provides a read-only view of a patient’s GP practice record 
-*	Appointment Management - allows the management of GP practice appointments between different systems
-* Access Record Structured - enables structured, machine-readable information to be retrieved from the patient’s GP practice record (including medication and allergies) 
-
-The capabilities available in each specification are shown in the yellow, version box at the top of each page. To read about our versioning method, see [Specification versioning](design_product_versioning.html). To find out about other specifications, visit the [Specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
-
-## Community engagement ##
-GP Connect is working closely with [INTEROPen](http://www.interopen.org/){:target="_blank"}, a healthcare IT interoperability community of suppliers, NHS organisations and healthcare standards bodies in the UK.
+The specifications are arranged by version number and grouped into separate [capabilities](overview_priority_capabilities.html). To read about our versioning method, see [Specification versioning](design_product_versioning.html). To find out about other specifications, visit the [Specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
 
 ## Provide feedback ##
 To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
