@@ -9,7 +9,7 @@ summary: "Guidance for the representation and consumption of documents"
 
 ## What is a document? ##
 
-A clinical document (CD) is a written, printed or electronic record that provides evidence of medical care. Clinical documents must be accurate, timely and reflect specific services provided to a patient. A clinical document could be any document that the GP practice adds to a clinical record of the Patient.
+A clinical document is a written, printed or electronic record that provides evidence of medical care. Clinical documents must be accurate, timely and reflect specific services provided to a patient. A clinical document could be any document that the GP practice adds to a clinical record of the Patient.
 
 ## Problem statement ##
 
