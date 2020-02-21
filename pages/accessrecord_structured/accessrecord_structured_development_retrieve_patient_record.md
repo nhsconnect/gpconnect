@@ -324,6 +324,21 @@ The example below shows a fully populated `Parameters` resource as a request to 
   ]
 }
 ```
+##### Not permitted parameter combinations #####
+
+Certain combinations of query parameters have the potential to introduce clinical risks. To prevent these scenarios occurring, the following combinations of parameters are not permitted and **SHALL** not be used by consumers:
+
+When requesting consultations, the following part parameters **MUST NOT** be included:
+  - `includeMedications.medicationSearchFromDate`
+  - `includeUncategorisedData.uncategorisedDataSearchPeriod`
+  - `includeProblems.filterSignificance`
+  - `includeProblems.filterStatus`
+
+When requesting problems, the following part parameters **MUST NOT** be included:
+  - `includeMedications.medicationSearchFromDate`
+  - `includeUncategorisedData.uncategorisedDataSearchPeriod`
+
+There are no restrictions on using combinations of top level parameters. 
 
 #### Error handling ####
 
