@@ -436,7 +436,7 @@ Use one of the following dates in order of descending preference:
 *	The prescription end date recorded in the patient record
 *	The prescription end date derived from period.start and the duration
 *	The Period.start date
-    * This option should only occur where data has been lost (for example during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
+    * This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
 
 
 ### dispenseRequest.quantity ###
@@ -463,7 +463,7 @@ If the value is text, then the extension dispenseRequest.quantityText **MUST** b
   </tr>
 </table>
 
-This field is used to contain the units relating to the quantity. For example 'tablet(s)', 'capsule(s)' or 'dose(s)'.
+This field is used to contain the units relating to the quantity. For example, 'tablet(s)', 'capsule(s)' or 'dose(s)'.
 
 It may also be a textual representation of quantity. Only to be used in this way if there is no numerical value.
 
