@@ -9,13 +9,11 @@ summary: "Introduction to search criteria in GP Connect"
 
 ## Search examples ##
 
-We have developed a number of example searches that demonstrate the possible different ways a consumer may request data in GP Connect. These have been created in conjunction with our clinical team to demonstrate different ways of requesting similar data that we anticipate consumers are likely to require.
+We have developed a number of example searches that demonstrate the different ways a consumer may request data in GP Connect. These have been created in conjunction with our clinical team to demonstrate the possible ways of requesting similar data that we anticipate consumers are likely to require.
 
-The different approaches to requests that will return similar information have been chosen here to demonstrate the filter constraints that we have imposed to mitigate the risk described here in the search criteria page **LINK TORISK DETAIL**
+The different approaches to requests that will return similar information have been chosen here to demonstrate the filter constraints that we have imposed to mitigate the risk described here in the [Search criteria](accessrecord_structured_development_search.html) page.
 
-
-
-### 1. Request allergies and medications from the last year
+### 1. Request allergies and medications from the last year.
 
 ```json
 {
@@ -51,7 +49,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 2. Request medications for the last year, allergies and problems.
-#### a) If done in one query then all medications would be returned, no date filter could be applied
+#### a) If done in one query then all medications would be returned, no date filter could be applied.
 ```json
 {
   "resourceType": "Parameters",
@@ -82,7 +80,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-#### b) If done in two separate queries, the first would return allergies and problems and the second would return medications for the last year
+#### b) If done in two separate queries, the first would return allergies and problems and the second would return medications for the last year.
 
 ```json
 {
@@ -306,7 +304,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-#### b) If done in two queries this would get last year of medications, all allergies, problems, immunisations and observations
+#### b) If done in two queries this would get last year of medications, all allergies, problems, immunisations and observations.
 
 ```json
 {
@@ -366,7 +364,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-#### c) Another option would be two queries where the first retrieves the last year of medications and observations and the second retrieves all allergies, problems and immunisations
+#### c) Another option would be two queries where the first retrieves the last year of medications and observations and the second retrieves all allergies, problems and immunisations.
 
 ```json
 
@@ -436,7 +434,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-### 6. Request all information that has been recorded for the patient in the last three months
+### 6. Request all information that has been recorded for the patient in the last three months.
 #### a) If done in one query this would return everything, no date filter could be applied on medications or observations.
 ```json
 {
@@ -486,7 +484,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-#### b) If done in two queries this would be a query for the last three months for observations and medications and a second query for the last three months consultations and all allergies, problems and immunisations.
+#### b) If done in two queries this would be a query for the last three months for observations and medications and a second query for the last three months' consultations and all allergies, problems and immunisations.
 ```json
 {
   "resourceType": "Parameters",
