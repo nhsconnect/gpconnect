@@ -95,3 +95,69 @@ It is the responsibility of the consuming system to decide what data to request 
      * has met all of the GP Connect information governance (IG) requirements including data sharing agreements, confidentiality and auditing
 
 The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html).
+
+## Clinical risk when querying more than one clinical area ##
+
+When requesting data for more than one clinical area at the same time particularly when using filters, e.g. the medicationSearchFromDate, then it is important to be cautious when processing the results. 
+In this situation it is possible that the different parts of the query will return items that may be misleading to a user of a consuming system.
+
+Consider the example where a consuming system requests the medications from the last six months and all active problems. It is possible that one of the active problems links to a medication that is from longer than a years ago. In this case there is a risk that the consuming system may present the data to the user in a way that makes them believe they have the entire medicaton record from over a years ago until the current time. In the table below there is a summary of how the data from the example may exist in the GP system and what the 2 parts of the query may contain.
+
+For the example we will assume the query was made on the 1st February 2020,
+
+<table class='resource-attributes' border='1'>
+  <tr>
+    <td>Date</td>
+    <td>Medications in the GP system</td>
+    <td>Included in medications query return</td>
+    <td>Included in problems query return</td>
+  </tr>
+  <tr>
+    <td>03/01/2020</td>
+    <td>Paracetemol</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>05/12/2019</td>
+    <td>Ibuprofen</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>12/11/2019</td>
+    <td>Amoxicillin</td>
+    <td>Y</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>01/04/2019</td>
+    <td>Warfarin</td>
+    <td></td>
+    <td></td>
+  </tr> 
+  <tr>
+    <td>05/01/2019</td>
+    <td>Paracetemol</td>
+    <td></td>
+    <td>Y</td>
+  </tr>
+</table>
+
+From the data in the table we can clearly see that the Warfarin would not be returned in the query from either query, however the paracetemol which is from before the warfarin was prescribed would be returned.
+The clinical risk here is that a user of the consumer system may believe they have all the medications from the date of the 05/01/2019 when the Paracetemol was prescribed but they are actually missing a medication that exists in the GP system but is older than 6 months but more recent than the medication returned as it had been linked to a problem.
+
+## Measures introduced to mitigate the risk ##
+
+In order to mitigate this risk and emphasise the seperation of data in the different parts of certain queries we have introduced some rules around which filters can be used at the same time in order to prevent data with these sorts of gaps being returned in a single bundle.
+
+The technical details of these rules are detailed in the [Not permitted parameter combinations](accessrecord_structured_development_retrieve_patient_record.html)in the API definition retrieve a patients record page.
+
+These can be summarised as the following two rules,
+
+1) When requesting consultations problem filters, medication date fiter or uncategorised date filter **MUST NOT** be used.
+2) When requesting problems date filters for medications and uncategorised data **MUST NOT** be used.
+
+This data can still be requested with the same restrictions by using two calls and how this is done is detailed in the [Search examples page](accessrecord_structured_development_searchexamples.html).
+The search example relevant to the example given here is number 2 on the page where it details two different ways that you could query for the data.
+
