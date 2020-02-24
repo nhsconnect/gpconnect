@@ -95,7 +95,7 @@ It is the responsibility of the consuming system to decide what data to request 
      * has met all of the GP Connect information governance (IG) requirements including data sharing agreements, confidentiality and auditing
 
 The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html).
-
+<a name="clinicalrisk"></a>
 ## Clinical risk when querying more than one clinical area ##
 
 When requesting data for more than one clinical area at the same time and also using filters - for example, the medicationSearchFromDate, then it is important to be cautious when processing the results. 
