@@ -96,7 +96,7 @@ For each `ProblemHeader (Condition)` referenced in the `List` profile:
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Immunisations
 *	The `Observation` profile of any linked Uncategorised Data
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Uncategorised Data
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clincal profiles included above
+*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 Where a Problem links to a profile that is not yet supported by the provider system, then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html).
