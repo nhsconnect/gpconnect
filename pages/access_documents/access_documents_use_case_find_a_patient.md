@@ -72,16 +72,19 @@ N/A
 
 #### Error handling ####
 
-Provider systems:
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-- **SHALL** return a [GPConnect-OperationOutcome-1](development_fhir_error_handling_guidance.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
 
-For example, the:
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-- business identifier `[system]` is not recognised/supported by the provider system
-- business identifier fails structural validation checks (that is, not enough digits to be a valid NHS Number)
-
-{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| The `identifier` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `identifier` parameter contains a missing or unrecognised system | [`INVALID_IDENTIFIER_SYSTEM`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The NHS number provided is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+|-------------------------|-------------------|
 
 ### Request response ###
 
