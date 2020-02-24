@@ -8,7 +8,7 @@ summary: "Representation of medication processes using FHIR&reg profiles in GP C
 ---
 ## Ordering process in GP systems for medications and medical devices 
 
-The medication or medical device ordering process in GP systems can be considered to be a 2-stage process:
+The medication or medical device ordering process in GP systems can be considered to be a two-stage process:
 
 1. **The authorisation** - this is where the medication or medical device is initially added on to the GP systems. It represents a 'plan' that the GP intends to authorise a medication for the patient.
 
@@ -33,7 +33,7 @@ An acute prescription is when a medication or medical device is a one-off prescr
 
 If the patient needs further medication/medical device they would need to see their doctor again for them to assess their condition and decide if another prescription is appropriate.
 
-It is possible for clinicians where appropriate to post date acute medications. For instance, in a situation where a patient has flu like symptoms the clinician may provide a prescription for anti biotics dated a week in the future and advise the patient to use it if symptoms persist. This is also know as delayed prescribing.
+It is possible for clinicians where appropriate to postdate acute medications. For instance, in a situation where a patient has flu-like symptoms the clinician may provide a prescription for antibiotics dated a week in the future and advise the patient to use it if symptoms persist. This is also known as delayed prescribing.
 
 ### Repeat prescriptions
 
