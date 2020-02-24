@@ -84,7 +84,7 @@ Fixed value of `final`.
 
 The clinical code that represents the header or panel of the blood pressure.
 
-Where there is an appropriate header code for a recognised triple recorded in the providing GP system this should be populated here. 
+Where there is an appropriate header code for a recognised triple recorded in the providing GP system this **MUST** be populated here. 
 
 If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded, then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
 
@@ -116,7 +116,7 @@ Optional reference to the `Encounter` profile representing the consultation cont
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>DateTime</code></td>
+    <td><b>Data type:</b> <code>DateTime, Period</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -148,7 +148,7 @@ The audit trail timestamp representing when the data was recorded.
 
 The `Practitioner` profile representing the clinician responsible for making the observation.
 
-Where the observation was performed at another organisation and an `organisation` profile can be populated, then that **SHALL** be populated here. This will be in addition to the clinical practitioner if
+Where the observation was performed at another organisation and an `organisation` profile can be populated, then that **MUST** be populated here. This will be in addition to the clinical practitioner if
 both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recorded the data in the system.
