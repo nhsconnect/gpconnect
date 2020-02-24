@@ -16,7 +16,7 @@ The headings below list the elements of the `Observation` profile and describe h
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.4)." %}
 
-## Observation Elements #
+## Observation elements #
 
 ### id ###
 
@@ -54,7 +54,7 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
   </tr>
 </table>
 
-This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and is therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
 There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
@@ -86,7 +86,7 @@ The clinical code that represents the header or panel of the blood pressure.
 
 Where there is an appropriate header code for a recognised triple recorded in the providing GP system this should be populated here. 
 
-If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
+If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded, then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
 
 ### subject ###
 
@@ -98,7 +98,7 @@ If there is no header/panel code and only the code(s) for systolic and/or diasto
   </tr>
 </table>
 
-Reference to `Patient` profile representing the Patient against whom the data was recorded.
+Reference to `Patient` profile representing the patient against whom the data was recorded.
 
 ### context ###
 
@@ -148,7 +148,7 @@ The audit trail timestamp representing when the data was recorded.
 
 The `Practitioner` profile representing the clinician responsible for making the observation.
 
-Where the observation was performed at another organisation and an `organisation` profile can be populated then that **SHALL** be populated here. This will be in addition to the clinical practitioner if
+Where the observation was performed at another organisation and an `organisation` profile can be populated, then that **SHALL** be populated here. This will be in addition to the clinical practitioner if
 both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recorded the data in the system.
@@ -237,7 +237,7 @@ The value of the observation. This **MUST** be a 'quantity' data type and the un
   </tr>
 </table>
 
-If there is no code or value in this component then a data absent reason may be populated.
+If there is no code or value in this component, then a data absent reason may be populated.
 
 ### interpretation ###
 
@@ -249,7 +249,7 @@ If there is no code or value in this component then a data absent reason may be 
   </tr>
 </table>
 
-A human-readable clinical summary relating to the reading for example, if the patient was lying or standing.
+A human-readable clinical summary relating to the reading - for example, if the patient was lying or standing.
 
 ### bodysite ###
 
