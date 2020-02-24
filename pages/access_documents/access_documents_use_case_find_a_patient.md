@@ -86,6 +86,8 @@ Errors returned due to query parameter failure **MUST** include diagnostic infor
 | The NHS number provided is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 |-------------------------|-------------------|
 
+{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
+
 ### Request response ###
 
 #### Response headers ####
