@@ -43,7 +43,7 @@ Consideration was given to attempting to categorise data using the recorded clin
 
 ## Observation profile ##
 
-Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore, uncategorised data will always be contained in an `Observation` profile.
+Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR&reg; profile to use for the information. Therefore, uncategorised data will always be contained in an `Observation` profile.
 
 ## Qualifiers ##
 
@@ -93,9 +93,9 @@ Each item of uncategorised data in the hierarchy is recorded in its own `observa
 
 Note: This follows the same model that will be used to represent Investigations and Pathology.
 
-### Consultations and Problem ###
+### Consultations and problem ###
 
-Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a Consultation or Problem. If the item is recorded in a consultation it will be directly referenced by the consultation. If the item is linked to a problem it will be directly referenced by the problem.
+Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem. If the item is recorded in a consultation it will be directly referenced by the consultation. If the item is linked to a problem it will be directly referenced by the problem.
 
 For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile. If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
 
@@ -103,24 +103,24 @@ For example, if four items of uncategorised data are recorded under the investig
 
 ### Hierarchical data involving different clinical areas
 
-If the hierarchical data contains items from other clinical areas that are not held in an observation resource then these should always be included by referencing them from the header observation related element as a 'has-member' type. This will mean that unlike references to other observations references to these data items will be one directional as illustrated in the diagram below.
+If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the header observation related element as a 'has-member' type. This will mean that, unlike references to other observations, references to these data items will be one directional as illustrated in the diagram below.
 
 <a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
 
-Where an item from a different clinical area that is not in an observation resource but in the native system is the header element. Then the provider system **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
+Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year. 
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible. 
-In the majority of cases there are two components that compromise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure,
+In the majority of cases there are two components that compromise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure:
 
 ### The FHIR vital sign blood pressure profile
-This version GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, how we have specified blood pressures are represented is based on the   FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
+This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, the way we have represented specified blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
 The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs.
 We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. However, we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital-sign.
 Based on this analysis the following codes may in the future be sent as vital signs. They are provided here to enable consuming systems to filter using them if it is desired.
 #### Systolic vital signs codes
-Below is the SNOMED binding for systolic codes that represent vital signs in GP systems,
+Below is the SNOMED binding for systolic codes that represent vital signs in GP systems:
 ```
 << 271649006 | Systolic blood pressure (observable entity) |
 
@@ -133,7 +133,7 @@ MINUS
 << 315612005 | Target systolic blood pressure (observable entity) '
 ```
 #### Diastolic vital signs codes
-Below is the SNOMED binding for diastolic codes that represent vital signs in GP systems,
+Below is the SNOMED binding for diastolic codes that represent vital signs in GP systems:
 ```
 << 271650006 | Diastolic blood pressure (observable entity) |
 
@@ -151,12 +151,12 @@ There are many different variations of blood pressure reading or target that are
 
 #### Panel/header codes
 Any panel or header code that is recorded in conjunction with a recognised systolic or diastolic code **MUST** be used to populate the code in the main part of the observation.
-Where the systolic and or diastolic codes are present without a header/panel code then the following codes MUST be used to populate the principle code element
+Where the systolic and or diastolic codes are present without a header/panel code then the following codes **MUST** be used to populate the principle code element:
 ConceptID - '75367002'
 DescriptionID - '125176019'
 Description - 'Blood pressure'
 #### Systolic codes
-The following systolic codes **MUST** be represented in line with the GP Connect blood pressure structure,
+The following systolic codes **MUST** be represented in line with the GP Connect blood pressure structure:
 ```
 72313002	Systolic arterial pressure (observable entity)
 413606001	Average home systolic blood pressure (observable entity)
@@ -185,7 +185,7 @@ The following systolic codes **MUST** be represented in line with the GP Connect
 1036551000000101	Non-invasive central systolic blood pressure (observable entity)
 ```
 #### Diastolic codes
-The following diastolic codes **MUST** be represented in line with the GP Connect blood pressure structure,
+The following diastolic codes **MUST** be represented in line with the GP Connect blood pressure structure:
 ```
 1091811000000102	Diastolic arterial pressure (observable entity)
 413605002	Average home diastolic blood pressure (observable entity)
@@ -214,7 +214,7 @@ The following diastolic codes **MUST** be represented in line with the GP Connec
 1036571000000105	Non-invasive central diastolic blood pressure (observable entity)
 ```
 #### Excluded codes
-The following diastolic codes **MUST NOT** be represented using the GP Connect blood pressure structure and should be returned as individual observations,
+The following diastolic codes **MUST NOT** be represented using the GP Connect blood pressure structure and should be returned as individual observations:
 ```
 315612005	Target systolic blood pressure (observable entity)
 198081000000101 Ambulatory systolic blood pressure (observable entity)
