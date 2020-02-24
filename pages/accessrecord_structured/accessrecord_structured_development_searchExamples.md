@@ -49,7 +49,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 2. Request medications for the last year, allergies and problems
-**a) If done in one query then all medications would be returned, no date filter could be applied.**
+**a) If done in one query then all medications would be returned, no date filter could be applied:**
 ```json
 {
   "resourceType": "Parameters",
@@ -80,7 +80,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-**b) If done in two separate queries, the first would return allergies and problems and the second would return medications for the last year.**
+**b) If done in two separate queries, the first would return allergies and problems and the second would return medications for the last year:**
 
 ```json
 {
@@ -161,7 +161,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 4. Request a patient's last three consultations with problems, medications and allergies
-**a) If done in one query then all medications would be returned, no date filter could be applied**
+**a) If done in one query then all medications would be returned, no date filter could be applied:**
 
 ```json
 {
@@ -202,7 +202,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-**b) If done in two separate queries, the first would retrieve the last three consultations and problems and the second would retrieve allergies and medications for the last year**
+**b) If done in two separate queries, the first would retrieve the last three consultations and problems and the second would retrieve allergies and medications for the last year:**
 
 ```json
 {
@@ -266,7 +266,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 5. Request child health information, medication, allergies, immunisations, problems and observations
-**a) If done in one query this would retrieve all medications and observations, no date filter could be applied.**
+**a) If done in one query this would retrieve all medications and observations, no date filter could be applied:**
 
 ```json
 {
@@ -304,7 +304,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-**b) If done in two queries this would get last year of medications, all allergies, problems, immunisations and observations.**
+**b) If done in two queries this would get last year of medications, all allergies, problems, immunisations and observations:**
 
 ```json
 {
@@ -364,7 +364,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-**c) Another option would be two queries where the first retrieves the last year of medications and observations and the second retrieves all allergies, problems and immunisations**
+**c) Another option would be two queries where the first retrieves the last year of medications and observations and the second retrieves all allergies, problems and immunisations:**
 
 ```json
 
@@ -435,7 +435,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 6. Request all information that has been recorded for the patient in the last three months
-**a) If done in one query this would return everything, no date filter could be applied on medications or observations**
+**a) If done in one query this would return everything, no date filter could be applied on medications or observations:**
 ```json
 {
   "resourceType": "Parameters",
@@ -484,7 +484,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-**b) If done in two queries this would be a query for the last three months for observations and medications and a second query for the last three months' consultations and all allergies, problems and immunisations**
+**b) If done in two queries this would be a query for the last three months for observations and medications and a second query for the last three months' consultations and all allergies, problems and immunisations:**
 ```json
 {
   "resourceType": "Parameters",
