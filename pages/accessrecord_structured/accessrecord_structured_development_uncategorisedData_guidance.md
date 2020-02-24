@@ -117,7 +117,7 @@ In the majority of cases there are two components that compromise a blood pressu
 ### The FHIR vital sign blood pressure profile
 This version GP Connect does not support the 'vital signs' aspect of the FHIR specification. However how we have specified blood pressures are represented is based on the   FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
 The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs.
-We are not currently using this flag in GP Connect. However we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital-sign.
+We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. However we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital-sign.
 Based on this analysis the following codes may in the future be sent as vital signs. They are provided here to enable consuming systems to filter using them if it is desired.
 #### Systolic vital signs codes
 Below is the SNOMED binding for systolic codes that represent vital signs in GP systems,
