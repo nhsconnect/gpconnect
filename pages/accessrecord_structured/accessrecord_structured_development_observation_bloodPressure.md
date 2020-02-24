@@ -151,7 +151,7 @@ The `Practitioner` profile representing the clinician responsible for making the
 Where the observation was performed at another organisation and an `organisation` profile can be populated then that **SHALL** be populated here. This will be in addition to the clinical practitioner if
 both are available.
 
-If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recordeed the data in the system.
+If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recorded the data in the system.
 
 
 
@@ -249,8 +249,19 @@ If there is no code or value in this component then a data absent reason may be 
   </tr>
 </table>
 
-A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
+A human-readable clinical summary relating to the reading for example, if the patient was lying or standing.
 
+### bodysite ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Bodysite from which the observation was taken.
 ### referenceRange ###
 
 <table class='resource-attributes'>
@@ -346,14 +357,6 @@ The following elements **MUST NOT** be populated:
 </table>
 
 <h3 style="color:#ED1951;"> category </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-<h3 style="color:#ED1951;"> bodysite </h3>
 
 <table class='resource-attributes'>
   <tr>
