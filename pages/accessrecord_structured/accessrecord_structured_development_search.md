@@ -155,8 +155,8 @@ The technical details of these rules are detailed in the [Not permitted paramete
 
 These can be summarised as the following two rules,
 
-1) When requesting consultations problem filters, medication date fiter or uncategorised date filter **MUST NOT** be used.
-2) When requesting problems date filters for medications and uncategorised data **MUST NOT** be used.
+1. When requesting consultations problem filters, medication date fiter or uncategorised date filter **MUST NOT** be used.
+2. When requesting problems date filters for medications and uncategorised data **MUST NOT** be used.
 
 This data can still be requested with the same restrictions by using two calls and how this is done is detailed in the [Search examples page](accessrecord_structured_development_searchexamples.html).
 The search example relevant to the example given here is number 2 on the page where it details two different ways that you could query for the data.
