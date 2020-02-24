@@ -143,22 +143,21 @@ n/a
 
 #### Error handling ####
 
-The provider system MUST return a GPConnect-OperationOutcome-1 resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see Error handling guidance for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
 
-Errors returned due to query parameter failure MUST include diagnostic information detailing the invalid query parameter.
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
 |-------------------------|-------------------|
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
-| The NHS Number is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| A patient could not be found matching the NHS Number provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| A patient could not be found with the patient id provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The facility query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The author query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The custodian query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
