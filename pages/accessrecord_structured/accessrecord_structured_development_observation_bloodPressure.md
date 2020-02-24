@@ -153,8 +153,6 @@ both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recorded the data in the system.
 
-
-
 ### comment ###
 
 <table class='resource-attributes'>
@@ -169,19 +167,17 @@ This **MUST** include any qualifiers to the code element that were present in th
 
 It **MUST** also include any text relating to the observation.
 
-### referenceRange ###
+### bodysite ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-The reference range provides a guide for interpretation of the results.
-
-Where a reference range contains a less than '<' or greater than '>' operator it should be written to the referenceRange.text element as these operators are not supported in this context.
+Bodysite from which the observation was taken.
 
 ### related ###
 
@@ -201,7 +197,7 @@ Contains any hierarchical information between uncategorised data items.
 
 ## systolic component ##
 
-### code ###
+### component.code ###
 
 <table class='resource-attributes'>
   <tr>
@@ -215,11 +211,11 @@ The clinical code that represents systolic part of the blood pressure.
 
 A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategoriseddata_guidance.html).
 
-### valueQuantity ###
+### component.valueQuantity ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Many</code></td>
+    <td><b>Data type:</b> <code>Quantity</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -227,7 +223,7 @@ A list of the systolic blood pressure codes is included in the uncategorised gui
 
 The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'. 
 
-### dataAbsentReason ###
+### component.dataAbsentReason ###
 
 <table class='resource-attributes'>
   <tr>
@@ -239,7 +235,7 @@ The value of the observation. This **MUST** be a 'quantity' data type and the un
 
 If there is no code or value in this component, then a data absent reason may be populated.
 
-### interpretation ###
+### component.interpretation ###
 
 <table class='resource-attributes'>
   <tr>
@@ -251,18 +247,8 @@ If there is no code or value in this component, then a data absent reason may be
 
 A human-readable clinical summary relating to the reading - for example, if the patient was lying or standing.
 
-### bodysite ###
 
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Bodysite from which the observation was taken.
-### referenceRange ###
+### component.referenceRange ###
 
 <table class='resource-attributes'>
   <tr>
@@ -278,7 +264,7 @@ Where a reference range contains a less than '<' or greater than '>' operator it
 
 ## diastolic component ##
 
-### code ###
+### component.code ###
 
 <table class='resource-attributes'>
   <tr>
@@ -292,11 +278,11 @@ The clinical code that represents diastolic part of the blood pressure.
 
 A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategoriseddata_guidance.html).
 
-### valueQuantity ###
+### component.valueQuantity ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Many</code></td>
+    <td><b>Data type:</b> <code>Quantity</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -304,7 +290,7 @@ A list of the systolic blood pressure codes is included in the uncategorised gui
 
 The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'. 
 
-### dataAbsentReason ###
+### component.dataAbsentReason ###
 
 <table class='resource-attributes'>
   <tr>
@@ -316,7 +302,7 @@ The value of the observation. This **MUST** be a 'quantity' data type and the un
 
 If there is no value in this component then a data absent reason may be populated.
 
-### interpretation ###
+### component.interpretation ###
 
 <table class='resource-attributes'>
   <tr>
@@ -328,7 +314,7 @@ If there is no value in this component then a data absent reason may be populate
 
 A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
 
-### referenceRange ###
+### component.referenceRange ###
 
 <table class='resource-attributes'>
   <tr>
@@ -387,3 +373,24 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
+
+The following elements **MUST NOT** be populated at the panel/header level:
+
+<h3 style="color:#ED1951;"> value </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Many</code></td>
+  </tr>
+</table>
+
+<h3 style="color:#ED1951;"> referenceRange </h3>
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+  </tr>
+</table>
+
+
+
