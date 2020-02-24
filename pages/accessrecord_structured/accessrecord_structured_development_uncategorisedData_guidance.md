@@ -43,7 +43,7 @@ Consideration was given to attempting to categorise data using the recorded clin
 
 ## Observation profile ##
 
-Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore uncategorised data will always be contained in an `Observation` profile.
+Uncategorised data can contain many different types of clinical information. As the type is not known it is not possible to determine which is the correct FHIR profile to use for the information. Therefore, uncategorised data will always be contained in an `Observation` profile.
 
 ## Qualifiers ##
 
@@ -72,42 +72,42 @@ and
 
 In these cases, each value will be exported in an instance of `observation.component`.
 
-This approach MUST be used for blood preasure readings where the systolic and diastolic values were taken together.
+This approach **MUST** be used for blood pressure readings where the systolic and diastolic values were taken together.
 
-## Hierarchical Uncategorised Data ##
+## Hierarchical uncategorised data ##
 There are cases where several pieces of uncategorised data are be related to each other in a hierarchical structure.
 
 For example:
 * Alcohol Consumption
     * Breath alcohol level 15mmol/L
-    * O/E - spleen just palapable
+    * O/E - spleen just palpable
 
-Where this occurs the data is supplied in a flattened format with the herachical information made available to the consumer system if they want to rebuild the hierarchical structure.
+Where this occurs, the data is supplied in a flattened format with the hierachical information made available to the consumer system if they want to rebuild the hierarchical structure.
 
 ### Modeling ###
 
-Each item of uncategorised data in the hierarchy is recorded is in its own `observation` profile. The structure is represented using the `observation.related` field.
+Each item of uncategorised data in the hierarchy is recorded in its own `observation` profile. The structure is represented using the `observation.related` field.
 
-* The top level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member`
-* The child items will contain `observation.related.target` pointing to the top level item with an `observation.related.type` of `derived-from`
+* The top-level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member`
+* The child items will contain `observation.related.target` pointing to the top-level item with an `observation.related.type` of `derived-from`
 
 Note: This follows the same model that will be used to represent Investigations and Pathology.
 
 ### Consultations and Problem ###
 
-Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a Consultation or Problem. If the item is recorded in a consultation it will be directly referenced by the consultation, if the item is linked to a problem it will be directly referenced by the problem.
+Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a Consultation or Problem. If the item is recorded in a consultation it will be directly referenced by the consultation. If the item is linked to a problem it will be directly referenced by the problem.
 
 For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile. If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
 
 <a href="images/access_structured/Uncategorised_Structure.png"><IMG src="images/access_structured/Uncategorised_Structure.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
 
-### Heirarchical data involving different clinical areas
+### Hierarchical data involving different clinical areas
 
-If the hierarchical data contains items from other clinical areas that are not held in an observation resource then these should always be included by referencing them from the header observation related element as a 'has-member' tpye. This will mean that unlike references to other observations references to these data items will be one directional as illustrated in the diagram below.
+If the hierarchical data contains items from other clinical areas that are not held in an observation resource then these should always be included by referencing them from the header observation related element as a 'has-member' type. This will mean that unlike references to other observations references to these data items will be one directional as illustrated in the diagram below.
 
-<a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncateogirsed structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
 
-Where an item from a different clinical area that is not in an observation resource but in the native system is the header element. Then the provider sytem **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
+Where an item from a different clinical area that is not in an observation resource but in the native system is the header element. Then the provider system **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year. 
@@ -115,9 +115,9 @@ As this is the case there is a desire to represent the various blood pressure co
 In the majority of cases there are two components that compromise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure,
 
 ### The FHIR vital sign blood pressure profile
-This version GP Connect does not support the 'vital signs' aspect of the FHIR specification. However how we have specified blood pressures are represented is based on the   FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
+This version GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, how we have specified blood pressures are represented is based on the   FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
 The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs.
-We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. However we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital-sign.
+We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. However, we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital-sign.
 Based on this analysis the following codes may in the future be sent as vital signs. They are provided here to enable consuming systems to filter using them if it is desired.
 #### Systolic vital signs codes
 Below is the SNOMED binding for systolic codes that represent vital signs in GP systems,
