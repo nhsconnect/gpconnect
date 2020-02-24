@@ -96,7 +96,14 @@ It is the responsibility of the consuming system to decide what data to request 
 
 The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html).
 <a name="clinicalrisk"></a>
-## Clinical risk when querying more than one clinical area ##
+
+
+## Restrictions on query parameters when making searches ##
+
+We have introduced some rules to limit which query parameters can be used at the same time. This is to mitigate 
+the following risk.
+
+### Clinical risk when querying more than one clinical area ###
 
 When requesting data for more than one clinical area at the same time and also using filters - for example, the medicationSearchFromDate, then it is important to be cautious when processing the results. 
 In this situation, it is possible that the different parts of the query will return items that may be misleading to a user of a consuming system.
@@ -147,7 +154,7 @@ For the example we will assume the query was made on the 1st February 2020:
 From the data in the table we can clearly see that the warfarin would not be returned by either part of the query. However, the paracetamol which is from before the warfarin was prescribed would be returned.
 The clinical risk here is that a user of the consumer system may believe they have all the medications from the date of the 05/01/2019 when the paracetamol was prescribed but they are actually missing a medication that exists in the GP system but is older than 6 months but more recent than the medication returned that was linked to a problem.
 
-## Measures introduced to mitigate the risk ##
+### Restrictions on parameters to mitigate the risk ###
 
 In order to mitigate this risk and emphasise the separation of data in the different parts of certain queries, we have introduced some rules around which filters can be used at the same time. This will prevent data with these sorts of gaps being returned in a single bundle.
 
