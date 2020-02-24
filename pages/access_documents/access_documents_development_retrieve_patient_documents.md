@@ -72,15 +72,17 @@ N/A
 
 #### Error handling ####
 
-Provider systems:
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-- **SHALL** return a [`GPConnect-OperationOutcome-1`](development_fhir_error_handling_guidance.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
 
-Examples of other scenarios which may result in error being returned:
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-- Where a logical identifier of the resource is not valid/can’t be found on the server, a 404 HTTP Status code would be returned with the relevant OperationOutcome resource.
-
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| A document could not be found with the document id provided | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+|-------------------------|-------------------|
 
 ### Request response ###
 
