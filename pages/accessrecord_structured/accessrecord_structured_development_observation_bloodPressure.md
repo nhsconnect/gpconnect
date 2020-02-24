@@ -374,6 +374,8 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
+<br>
+
 The following elements **MUST NOT** be populated at the panel/header level:
 
 <h3 style="color:#ED1951;"> value </h3>
