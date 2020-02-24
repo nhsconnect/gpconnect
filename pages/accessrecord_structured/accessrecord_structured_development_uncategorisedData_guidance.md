@@ -75,7 +75,7 @@ In these cases, each value will be exported in an instance of `observation.compo
 This approach **MUST** be used for blood pressure readings where the systolic and diastolic values were taken together.
 
 ## Hierarchical uncategorised data ##
-There are cases where several pieces of uncategorised data are be related to each other in a hierarchical structure.
+There are cases where several pieces of uncategorised data are related to each other in a hierarchical structure.
 
 For example:
 * Alcohol Consumption
@@ -112,7 +112,7 @@ Where an item from a different clinical area that is not in an observation resou
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year. 
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible. 
-In the majority of cases there are two components that compromise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure:
+In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure:
 
 ### The FHIR vital sign blood pressure profile
 This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, the way we have represented specified blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
