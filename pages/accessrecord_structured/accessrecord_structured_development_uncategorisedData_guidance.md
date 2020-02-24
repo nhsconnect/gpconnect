@@ -114,10 +114,12 @@ Blood pressure is one of the most common observations that is recorded in GP rec
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible. 
 In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure:
 
+<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a>
+
 ### The FHIR vital sign blood pressure profile
 This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, the way we have represented specified blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
 The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs.
-We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. However, we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital-sign.
+We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. However, we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital sign.
 Based on this analysis the following codes may in the future be sent as vital signs. They are provided here to enable consuming systems to filter using them if it is desired.
 #### Systolic vital signs codes
 Below is the SNOMED binding for systolic codes that represent vital signs in GP systems:
@@ -145,7 +147,7 @@ MINUS
 
 << 315613000 | Target diastolic blood pressure (observable entity)'
 ```
-### What codes will be sent using the defined blood pressure structure
+### Which codes will be sent using the defined blood pressure structure?
 
 There are many different variations of blood pressure reading or target that are expressed in GP systems in the form of different codes.
 
@@ -214,7 +216,7 @@ The following diastolic codes **MUST** be represented in line with the GP Connec
 1036571000000105	Non-invasive central diastolic blood pressure (observable entity)
 ```
 #### Excluded codes
-The following diastolic codes **MUST NOT** be represented using the GP Connect blood pressure structure and should be returned as individual observations:
+The following codes **MUST NOT** be represented using the GP Connect blood pressure structure and should be returned as individual observations:
 ```
 315612005	Target systolic blood pressure (observable entity)
 198081000000101 Ambulatory systolic blood pressure (observable entity)
