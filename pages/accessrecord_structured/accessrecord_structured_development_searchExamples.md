@@ -108,7 +108,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
-**THEN**
+**AND**
 
 ```json
 {
@@ -230,7 +230,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
-**THEN**
+**AND**
 
 ```json
 {
@@ -329,7 +329,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
-**THEN**
+**AND**
 
 ```json
 {
@@ -402,7 +402,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
-**THEN**
+**AND**
 
 ```json
 {
@@ -521,7 +521,7 @@ The different approaches to requests that will return similar information have b
 }
 ```
 
-**THEN**
+**AND**
 ```json
 {
   "resourceType": "Parameters",

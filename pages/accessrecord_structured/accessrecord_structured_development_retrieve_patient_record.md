@@ -338,7 +338,7 @@ When requesting problems, the following part parameters **MUST NOT** be included
   - `includeMedications.medicationSearchFromDate`
   - `includeUncategorisedData.uncategorisedDataSearchPeriod`
 
-There are no restrictions on using combinations of top level parameters.
+In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
 
 Examples of queries are available on the [Search examples](accessrecord_structured_development_searchExamples.html) page.
 
@@ -376,6 +376,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | A part parameter is passed without a value | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| A combination of parameters is included that isn't permitted | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |-------------------------|-------------------|
 
 {% include important.html content="The HL7 FHIR specification states that Parameters.parameter MUST have one of part, value or resource. In the case of Parameters which just have optional part parameters it is valid to have no part parameters or value in a request." %}
