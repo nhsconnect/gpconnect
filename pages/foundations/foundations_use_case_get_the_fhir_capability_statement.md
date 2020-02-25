@@ -68,7 +68,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.3.2-beta",
+  "version": "1.3.2",
   "name": "GP Connect",
   "status": "active",
   "date": "2020-01-15",
@@ -250,7 +250,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
         {
           "name": "gpc.getstructuredrecord",
           "definition": {
-            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.10"
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.13"
           }
         }
       ]
