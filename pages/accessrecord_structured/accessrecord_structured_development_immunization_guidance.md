@@ -76,7 +76,7 @@ The above section addresses circumstances where an immunisation is not given at 
 It does not cover the circumstance of a prior expression of dissent to one or more vaccinations.
 Equally, there may be a consent for vaccinations captured in the GP system.
 
-Coded records of consent or dissent **MUST** be included with the immunisation bundle using an <code>observation</code> resource, as defined for [uncategorised data](accessrecord_structured_development_uncategorisedData_guidance.html).
+Coded records of consent or dissent **MUST** be included with the immunisation bundle using an <code>observation</code> resource, as defined for [uncategorised data](accessrecord_structured_development_observation_uncategoriseddata.html).
 Any coded record belonging to the following concepts **MUST** be included with the immunisation bundle regardless of whether the item was categorised as an immunisation at point of entry.
 
 - 310375005 | Immunization consent given (finding) |
@@ -84,6 +84,8 @@ Any coded record belonging to the following concepts **MUST** be included with t
 - 591000119102 | Vaccine refused by patient (situation) |
 
 These records **MUST** be excluded from the records returned for an uncategorised data request.
+
+Any consent or dissent returned as an 'Observation' resource **MUST** be included in the immunisations 'List'. 
 
 ### Ended records
 
@@ -130,7 +132,7 @@ This might also apply to the <code>doseQuantity</code> element if the GP system 
 
 ## Using the `List` resource for immunisation queries
 
-The results of a query for immunisation details **MUST** return a `List` containing references to all `Immunization` resources that are returned.
+The results of a query for immunisation details **MUST** return a `List` containing references to all `Immunization` and 'Observation' resources that are returned.
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
