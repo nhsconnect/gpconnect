@@ -463,7 +463,7 @@ If the value is text, then the extension dispenseRequest.quantityText **MUST** b
   </tr>
 </table>
 
-This field is used to contain the units relating to the quantity. For example 'tablet(s)', 'capsule(s)' or 'dose(s)'.
+This field is used to contain the units relating to the quantity. For example, 'tablet(s)', 'capsule(s)' or 'dose(s)'.
 
 It may also be a textual representation of quantity. Only to be used in this way if there is no numerical value.
 

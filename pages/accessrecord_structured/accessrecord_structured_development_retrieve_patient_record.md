@@ -457,6 +457,23 @@ The example below shows a fully populated `Parameters` resource as a request to 
   ]
 }
 ```
+##### Not permitted parameter combinations #####
+
+Certain combinations of query parameters have the potential to introduce clinical risks. To prevent these scenarios occurring, the following combinations of parameters are not permitted and **SHALL** not be used by consumers:
+
+When requesting consultations, the following part parameters **MUST NOT** be included:
+  - `includeMedications.medicationSearchFromDate`
+  - `includeUncategorisedData.uncategorisedDataSearchPeriod`
+  - `includeProblems.filterSignificance`
+  - `includeProblems.filterStatus`
+
+When requesting problems, the following part parameters **MUST NOT** be included:
+  - `includeMedications.medicationSearchFromDate`
+  - `includeUncategorisedData.uncategorisedDataSearchPeriod`
+
+In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
+
+Examples of queries are available on the [Search examples](accessrecord_structured_development_searchExamples.html) page.
 
 #### Error handling ####
 
@@ -496,6 +513,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `diaryEntriesSearchDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `diaryEntriesSearchDate` part parameter is less than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | A part parameter is passed without a value | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| A combination of parameters is included that isn't permitted | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |-------------------------|-------------------|
 
 {% include important.html content="The HL7 FHIR specification states that Parameters.parameter MUST have one of part, value or resource. In the case of Parameters which just have optional part parameters it is valid to have no part parameters or value in a request." %}

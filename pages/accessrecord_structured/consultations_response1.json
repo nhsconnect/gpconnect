@@ -21,6 +21,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "1570241000000115"
+                    }
+                  ]
+                }
+              ],
               "code": "717711000000103",
               "display": "Problems",
               "system": "http://snomed.info/sct"
@@ -81,6 +92,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2391371000000119"
+                    }
+                  ]
+                }
+              ],	
               "code": "933361000000108",
               "display": "Medications and medical devices",
               "system": "http://snomed.info/sct"
@@ -129,6 +151,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2149851000000119"
+                    }
+                  ]
+                }
+              ],	
               "code": "826501000000100",
               "display": "Miscellaneous record",
               "system": "http://snomed.info/sct"
@@ -418,10 +451,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "346979010"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Mixed anxiety and depressive disorder"
                     }
                   ]
                 }
@@ -903,6 +932,17 @@
 		"code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2872868013"
+                    }
+                  ]
+                }
+              ],	
               "system": "http://snomed.info/sct",
               "code": "445241004",
               "display": "Postviral cough"
@@ -980,9 +1020,9 @@
         "code": {
           "coding": [
             {
-              "display": "Consultation",
+              "display": "List of consultations",
               "system": "http://snomed.info/sct",
-              "code": "325851000000107"
+              "code": "1149501000000101"
             }
           ]
         },
@@ -1102,9 +1142,20 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],	
               "system": "http://snomed.info/sct",
               "code": "325851000000107",
-              "display": "Consultation encounter type"
+              "display": "Consultation"
             }
           ]
         },
@@ -1168,6 +1219,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1237,6 +1299,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1288,6 +1361,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1334,6 +1418,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1385,6 +1480,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1446,6 +1552,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1510,6 +1627,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1561,6 +1689,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1627,6 +1766,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1682,6 +1832,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1743,6 +1904,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1802,6 +1974,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1876,6 +2059,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1927,6 +2121,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1983,6 +2188,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -2044,6 +2260,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -2095,6 +2322,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -2150,6 +2388,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -2245,6 +2494,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -2294,10 +2554,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "397732011"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Never smoked tobacco"
                     }
                   ]
                 }
@@ -2347,10 +2603,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2713011000000113"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Alcohol units consumed per week"
                     }
                   ]
                 }
@@ -2396,18 +2648,18 @@
             {
               "system": "http://snomed.info/sct",
               "code": "308931006",
-              "display": "Walking practice (regime/therapy)",
+              "display": "Walking practice",
               "extension": [
                 {
                   "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                   "extension": [
                     {
                       "url": "DescriptionID",
-                      "valueId": "452320010"
+                      "valueId": "1456478014"
                     },
                     {
                       "url": "descriptionDisplay",
-                      "valueString": "Walking practice"
+                      "valueString": "Walking practice (regime/therapy)"
                     }
                   ]
                 }
@@ -2510,17 +2762,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56992301000001116"
-                    }
-                  ]
-                }
-              ],
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
               "system": "http://snomed.info/sct"
@@ -2686,6 +2927,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -2788,10 +3040,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "3008650016"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Temperature"
                     }
                   ]
                 }
@@ -2848,10 +3096,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2748921000000116"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Arterial oxygen saturation on room air at rest"
                     }
                   ]
                 }
@@ -2907,10 +3151,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "143107019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Respiratory rate"
                     }
                   ]
                 }
@@ -2967,10 +3207,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "406493011"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Pulse irregularly irregular"
                     }
                   ]
                 }
@@ -3016,6 +3252,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3055,6 +3302,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3098,10 +3356,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "78049019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Electrocardiographic monitoring"
                     }
                   ]
                 }
@@ -3152,10 +3406,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2474699019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Blood pressure recorded by patient at home"
                     }
                   ]
                 }
@@ -3198,6 +3448,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "163020007",
+			  "display": "O/E - blood pressure reading",
               "extension": [
                 {
                   "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdecsid",
@@ -3205,10 +3456,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "254063019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "O/E - blood pressure reading"
                     }
                   ]
                 }
@@ -3232,11 +3479,23 @@
             "code": {
               "coding": [
                 {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "254075012"
+                    }
+                  ]
+                }
+              ],
+				  "display" : "O/E - Systolic BP reading",
                   "system": "http://snomed.info/sct",
                   "code": "163030003"
                 }
               ],
-              "text": "O/E - Systolic BP reading"
+              "text": "O/E Systolic BP reading"
             },
             "valueQuantity": {
               "value": 130,
@@ -3247,11 +3506,23 @@
             "code": {
               "coding": [
                 {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "254076013"
+                    }
+                  ]
+                }
+              ],
+				  "display": "O/E - Diastolic BP reading",
                   "system": "http://snomed.info/sct",
                   "code": "163031004"
                 }
               ],
-              "text": "O/E - Diastolic BP reading"
+              "text": "O/E Diastolic BP reading"
             },
             "valueQuantity": {
               "value": 72,
@@ -3348,17 +3619,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56938601000001119"
-                    }
-                  ]
-                }
-              ],
               "display": "Amlodipine 10mg tablets",
               "code": "319284000",
               "system": "http://snomed.info/sct"
@@ -3524,6 +3784,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3573,10 +3844,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "82824016"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Cough"
                     }
                   ]
                 }
@@ -3843,17 +4110,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56978101000001114"
-                    }
-                  ]
-                }
-              ],
               "display": "Paracetamol 500mg tablets",
               "code": "322236009",
               "system": "http://snomed.info/sct"
@@ -4072,6 +4328,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4111,6 +4378,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4150,6 +4428,17 @@
 		"code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2872868013"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "445241004",
               "display": "Postviral cough"
@@ -4188,6 +4477,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4229,7 +4529,7 @@
             {
               "system": "http://snomed.info/sct",
               "code": "299373004",
-              "display": "Tenderness on medial joint lne of knee",
+              "display": "Tenderness on medial joint line of knee",
               "extension": [
                 {
                   "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
@@ -4237,10 +4537,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "440282017"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Tenderness on medial joint lne of knee"
                     }
                   ]
                 }
@@ -4280,6 +4576,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4385,9 +4692,20 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "325851000000107",
-              "display": "Consultation encounter type"
+              "display": "Consultation"
             }
           ]
         },
@@ -4436,6 +4754,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -4505,6 +4834,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -4564,6 +4904,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4610,6 +4961,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4656,6 +5018,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4702,6 +5075,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4758,6 +5142,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4804,6 +5199,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4854,6 +5260,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4893,6 +5310,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4942,10 +5370,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2713011000000113"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Alcohol units consumed per week"
                     }
                   ]
                 }
@@ -5057,17 +5481,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56992301000001116"
-                    }
-                  ]
-                }
-              ],
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
               "system": "http://snomed.info/sct"
@@ -5233,6 +5646,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5272,6 +5696,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5311,6 +5746,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5416,9 +5862,20 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "325851000000107",
-              "display": "Consultation encounter type"
+              "display": "Consultation"
             }
           ]
         },
@@ -5467,6 +5924,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -5536,6 +6004,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -5600,6 +6079,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -5646,6 +6136,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -5692,6 +6193,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -5738,6 +6250,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -5794,6 +6317,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -5840,6 +6374,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -5916,6 +6461,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -5971,6 +6527,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -6010,6 +6577,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -6059,10 +6637,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2713011000000113"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Alcohol units consumed per week"
                     }
                   ]
                 }
@@ -6174,17 +6748,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56992301000001116"
-                    }
-                  ]
-                }
-              ],
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
               "system": "http://snomed.info/sct"
@@ -6350,6 +6913,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -6389,6 +6963,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -6438,10 +7023,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "3008650016"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Temperature"
                     }
                   ]
                 }
@@ -6497,10 +7078,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2748921000000116"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Arterial oxygen saturation on room air at rest"
                     }
                   ]
                 }
@@ -6556,10 +7133,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "143107019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Respiratory rate"
                     }
                   ]
                 }
@@ -6615,12 +7188,7 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "406493011"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Pulse irregularly irregular"
-                    }
-                  ]
+                    }                  ]
                 }
               ]
             }
@@ -6664,6 +7232,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -6703,6 +7282,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "350678016"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "234050002",
               "display": "Venous insufficiency of leg"
@@ -6742,6 +7332,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"

@@ -10,7 +10,7 @@ summary: "Introduction to linkages between data items in GP Connect"
 ## Linkages ##
 One of the purposes in developing the FHIR&reg; profiles is to ensure that clinical data is, as much as possible, presented the same way regardless of the provider system. This ensures the consuming system (and clinician) will always know where to look for each type of information.
 
-However, information about the patient is not just held within the profiles but in how those profiles are linked together. 
+However, information about the patient is not just held within the profiles but in how those profiles are linked together.
 
 For example, linking a medication to a problem means that as well as the record showing what the patient is taking, it also explains why they are taking it.
 
@@ -25,7 +25,7 @@ The model currently covers Consultations, Problems, Medications and Medical Devi
 
 <img src="images/access_structured/FHIR_model_key.png" alt="Key for GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
 
-The relationships between two FHIR profiles are recorded in only one of the linked FHIR profiles (similar to in a relational database management system). This is shown by the direction of the arrow in the FHIR model. 
+The relationships between two FHIR profiles are recorded in only one of the linked FHIR profiles (similar to in a relational database management system). This is shown by the direction of the arrow in the FHIR model.
 
 For example, the `MedicationStatement` profile contains a field that can be used to look up the linked `Medication`. There is no field in the `Medication` profile that can be used to look up the linked `MedicationStatement`.
 
@@ -35,7 +35,7 @@ When a consumer system requests data on a clinical area the information is retur
 The three main considerations used to decide which data to return for each clinical area were:
 * include all the FHIR profiles required to fully describe the requested clinical area
 * include the FHIR profiles required to define all the linkages from the requested clinical area
-* include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area 
+* include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area
 For each clinical area in a query that returns data a list should be generated that contains links to all data items returned for that clinical area.
 
 ## Dealing with confidential items ##
@@ -84,7 +84,7 @@ For each `Encounter` referenced in the `List` profile:
 Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
 
 
-Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query. 
+Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query.
 So, for example, if a consumer requests a Consultation that contains a Medication but does not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
 
 <a href="images/access_structured/Consultation_Return.png"><img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
@@ -123,7 +123,7 @@ For each `ProblemHeader (Condition)` referenced in the `List` profile:
 
 Where a Problem links to a profile that is not yet supported by the provider system, then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html).
 
-Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query. 
+Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query.
 So, for example, if a consumer requests a Problem that links to a Medication but does not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
 
 <a href="images/access_structured/Problem_Return.png"><img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
@@ -159,7 +159,7 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 *	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
-    
+
 <center>
 <a href="images/access_structured/Allergy_Return.png"><img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>

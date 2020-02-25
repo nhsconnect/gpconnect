@@ -81,7 +81,7 @@ An example Access Record Structured capability statement is shown below ready fo
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.6",
+  "version": "1.3.2",
   "name": "GP Connect API - Access Record Structured",
   "status": "active",
   "date": "2020-02-10",

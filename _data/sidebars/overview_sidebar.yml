@@ -48,6 +48,7 @@ entries:
           output: web
         - title: 1.2.6
           url: /overview_release_notes_1_2_6.html
+          output: web
         - title: 1.2.5
           url: /overview_release_notes_1_2_5.html
           output: web

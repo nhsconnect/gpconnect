@@ -39,7 +39,10 @@ entries:
     - title: <b class='resource'>Search criteria</b>
       url: /accessrecord_structured_development_search.html
       output: web
-
+    - title: <b class='resource'>Search examples</b>
+      url: /accessrecord_structured_development_searchExamples.html
+      output: web
+      
       subfolders:
 
       - title: Structural resources
@@ -113,6 +116,9 @@ entries:
           output: web
         - title: <b class='resource'>Observation - uncategorised data</b>
           url: /accessrecord_structured_development_observation_uncategorisedData.html
+          output: web
+        - title: <b class='resource'>Observation - blood pressure</b>
+          url: /accessrecord_structured_development_observation_bloodPressure.html
           output: web
         - title: Uncategorised data FHIR&reg; examples
           url: /accessrecord_structured_development_fhir_examples_uncategorised.html
