@@ -46,7 +46,7 @@ GP clinical systems may capture details of circumstances where an immunisation h
 This version of the specification supports inclusion of intended vaccinations which were not given as defined by Digital Child Health.
 For details of the requirements see [National Events Management Service - Vaccinations](https://developer.nhs.uk/apis/ems-beta/vaccinations_1.html) or versions as subsequently published.
 
-Consumers should be aware that the presence of a vaccination not given record is only in relation to an intended vaccination event on a given day, that is it is not stating the vaccination has definitely never been given.
+Consumers should be aware that the presence of a vaccination not given record is only in relation to an intended vaccination event on a given day - that is, it is not stating the vaccination has definitely never been given.
 
 ### Populating elements for an immunisation not given
 
@@ -61,7 +61,7 @@ The provider **MUST** populate elements as described below when sending details 
 
 See [immunization](accessrecord_structured_development_immunization.html) for full details of the elements.
 
-### Consumer handling of immunications not given
+### Consumer handling of immunisations not given
 
 Consumer systems are to determine whether to request details of immunisations not given.
 A consumer system which requires not given immunisations **MUST** request this by specifying the part parameter.
@@ -116,8 +116,8 @@ If a patient record has multiple records of consent for a single type of vaccina
 ### Degraded records
 
 Any records which the GP clinical systems classifies as an immunisation consent or dissent, but which do not appear in the hierarchies above **MUST** also be included.
-Where there is an approapriate code which is outside of the stated hierarchy, then that **MAY** be used.
-Where there is no identifiably, appropriate SNOMED CT code for the consent or dissent, then the transfer degraded code **MUST** be used with a text element populated with the original text.
+Where there is an appropriate code which is outside of the stated hierarchy, then that **MAY** be used.
+Where there is no identifiably appropriate SNOMED CT code for the consent or dissent, then the transfer degraded code **MUST** be used with a text element populated with the original text.
 
 ConceptId - <code>196411000000103</code>
 DescriptionId - <code>294691000000115</code>
