@@ -73,7 +73,7 @@ Where  _consuming_  systems are integrating data from this profile to their loca
   </tr>
 </table>
 
-The provider **MUST** only include incomplete diary entries, that is complete or cancelled **MUST NOT** be included.
+The provider **MUST** only include incomplete diary entries - that is, complete or cancelled **MUST NOT** be included.
 
 The <code>status</code> **MUST** only be <code>active</code>.
 
@@ -123,7 +123,7 @@ The patient the diary entry relates to.
   </tr>
 </table>
 
-A reference to the consultation from which the diary entry originates, that is, the consultation which the diary entry was created within.
+A reference to the consultation from which the diary entry originates - that is, the consultation which the diary entry was created within.
 
 ### occurence
 
@@ -171,8 +171,8 @@ The person or system who entered the diary entry into the original source system
   </tr>
 </table>
 
-This **MUST** be the practitioner who entered the diary entry in the orginal source system, if it was entered by a user.
-If the diary entry was system generated and it is not possible to meaningfully associate the diary entry to a system user then this **MUST** be a <code>Device</code> representing the providing system or an <code>Organization</code> representing the GP Practice responsible for creating the record.
+This **MUST** be the practitioner who entered the diary entry in the original source system, if it was entered by a user.
+If the diary entry was system generated and it is not possible to meaningfully associate the diary entry to a system user then this **MUST** be a <code>Device</code> representing the providing system or an <code>Organization</code> representing the GP practice responsible for creating the record.
 
 ### reasonCode
 
@@ -197,7 +197,7 @@ This is the trigger reason for the diary entry not the action of the diary entry
   </tr>
 </table>
 
-Additional clinical information linked to the diary entry MAY be included, except a linked problem which MUST be included in the bundle as a <code>ProblemHeader(Condition)</code> which references the diary entry not vice versa.
+Additional clinical information linked to the diary entry **MAY** be included, except a linked problem which **MUST** be included in the bundle as a <code>ProblemHeader(Condition)</code> which references the diary entry, not vice versa.
 
 ### note
 
