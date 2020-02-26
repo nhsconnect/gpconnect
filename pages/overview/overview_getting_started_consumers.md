@@ -32,7 +32,7 @@ As an approximate guide you can expect to complete the following tasks on your G
 - Try out the GP Connect demonstrator
 - Choose capabilities
 <p><strong>Engagement:</strong></p>
-- Contact GP Connect team
+- Contact the [GP Connect](https://digital.nhs.uk/services/gp-connect/getting-involved-with-gp-connect/information-for-consumer-organisations) team
 - Describe use case (purpose of your product)
 - Obtain use case approval
 - Contact GP Connect Consumer Assurance team
