@@ -103,7 +103,7 @@ The status of the DiagnosticReport. In GP systems these are most likely to be 'f
 
 The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available - for example, pathology, microbiology.
 
-Consuming systems need to be aware the that where more detailed categories are provided the categorisation may vary, how laboratories categorise inthe uk is not consistent and this needs to be taken into account if any type of filtering is being considered.
+Consuming systems need to be aware that where more detailed categories are provided the categorisation may vary. How laboratories categorise in the UK is not consistent, and this needs to be taken into account if any type of filtering is being considered.
 
 ### code ###
 
@@ -115,7 +115,7 @@ Consuming systems need to be aware the that where more detailed categories are p
   </tr>
 </table>
 
-Due to the model that we have used the clinical code that represents the name of the test/analyte or test set will sit in an observation resource at either the 'Test group header' or 'Test result' level.
+Due to the model that we have used, the clinical code that represents the name of the test/analyte or test set will sit in an observation resource at either the 'Test group header' or 'Test result' level.
 
 As this item is mandatory in FHIR then suppliers should populate it with the SNOMED ConceptID `721981007` for `Diagnostic studies report`.
 
