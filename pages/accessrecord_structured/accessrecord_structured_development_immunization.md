@@ -187,7 +187,7 @@ If the immunisation was administered elsewhere, this may be an estimated or part
 This indicates whether the record is based on information from the person who administered or intended to administer the vaccine.
 
 This **MUST** be <code>true</code> where the immunisation record was recorded by the person who administered the vaccine or directly on behalf of the administrator of the vaccine (this includes recording the immunisation based on a complete, original, verifiable document from the administration of the vaccine).
-This **MUST** be <code>false</code> where it a secondary report of a vaccination for example the recollection of the patient, the patient's parent, carer or guardian or a secondary document.
+This **MUST** be <code>false</code> where it is a secondary report of a vaccination for example the recollection of the patient, the patient's parent, carer or guardian or a secondary document.
 
 As this relates to the context of the original source of the immunisation record, a record from a GP2GP transfer is still a primary record if it was originally recorded as primary.
 
