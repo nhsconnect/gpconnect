@@ -119,8 +119,9 @@ Any records which the GP clinical systems classifies as an immunisation consent 
 Where there is an approapriate code which is outside of the stated hierarchy, then that **MAY** be used.
 Where there is no identifiably, appropriate SNOMED CT code for the consent or dissent, then the transfer degraded code **MUST** be used with a text element populated with the original text.
 
-ConceptID - <code>196411000000103 | Transfer-degraded record entry (record artifact) |</code>
-DescriptionId - <code>294691000000115 | Transfer-degraded record entry |</code>
+ConceptId - <code>196411000000103</code>
+DescriptionId - <code>294691000000115</code>
+Description - <code>Transfer-degraded record entry</code>
 
 ## Ineffective vaccination
 
