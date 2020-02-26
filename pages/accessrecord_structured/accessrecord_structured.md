@@ -25,11 +25,11 @@ The Access Record Structured capability will expose data for a number of clinica
 8. Referrals (Outbound)
 9. Diary Entries
 
-{% include note.html content="Documents are defined in a seperate [Access Document](access_documents.html) capability, which complements Access Record Structured by allowing the querying and retrieval of documents for a patient." %}
+{% include note.html content="Documents are defined in a separate [Access Document](access_documents.html) capability, which complements Access Record Structured by allowing the querying and retrieval of documents for a patient." %}
 
 {% include roadmap.html content="Subsequent releases are to be scoped" %}
 
-## FHIR version ##
+## FHIR&reg; version ##
 Standard for Trial Use 3 (STU3) is the version of FHIR which will be adopted for the Access Record Structured capability. A decision was taken to uplift the profiles from the previous DSTU2 version for the following reasons:
 
  - STU3 is widely being adopted in the UK interoperability community
