@@ -1,5 +1,5 @@
 ---
-title: Diary Entry
+title: Diary entry
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
