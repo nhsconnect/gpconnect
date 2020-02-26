@@ -7,7 +7,7 @@ permalink: access_documents_use_case_get_the_fhir_capability_statement.html
 summary: "Get the FHIR capability statement from the Access Document FHIR server"
 ---
 
-{% include important.html content="This capability statement is specific to the Access Document capability and is identified as such by a Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Please see other capabilities for their respective capability statements." %}
+{% include important.html content="This capability statement is specific to the Access Document capability and is identified as such by an Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Please see other capabilities for their respective capability statements." %}
 
 ## Use case ##
 
