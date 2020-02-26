@@ -44,7 +44,9 @@ The vaccine product code will often be a `nullFlavor` code, but the actual vacci
 
 GP clinical systems may capture details of circumstances where an immunisation has not been given but there was an intention to.
 This version of the specification supports inclusion of intended vaccinations which were not given as defined by Digital Child Health.
-Consumers should be aware that the presence of a vaccination not given record is only in relation to an intended vaccination event on a given day, that is it is not stating the vaccination has definitely not been given.
+For details of the requirements see [National Events Management Service - Vaccinations](https://developer.nhs.uk/apis/ems-beta/vaccinations_1.html) or versions as subsequently published.
+
+Consumers should be aware that the presence of a vaccination not given record is only in relation to an intended vaccination event on a given day, that is it is not stating the vaccination has definitely never been given.
 
 ### Populating elements for an immunisation not given
 
@@ -67,10 +69,24 @@ The default is to return given immunisations only.
 
 Where a consumer system has requested immunisations not given, it will need to determine whether to present the details of immunisations not given as received (procedure code, modifier and qualifier) or to transform the information in some manner.
 Consumer systems not wishing to or not able to support the context modifier <code>notGiven</code> is <code>true</code> against the "given" procedure code **MAY** make use of an equivalent "not done" SNOMED CT codes.
-For all childhood vaccinations there should be an equivalent "not done" code within the refset <code>63041000000107 | Routine childhood immunisation schedule procedure not done simple reference set (foundation metadata concept)</code>.
+For all childhood vaccinations there should be an equivalent "not done" code within the refset: 
+
+<code>63041000000107 | Routine childhood immunisation schedule procedure not done simple reference set (foundation metadata concept)</code>.
+
+For example, the following elements received in an immunisation response
+
+<code>extension[vaccinationProcedure] = 170433008 | Measles mumps and rubella vaccination - second dose (procedure) |</code>
+<code>notGiven = true</code>
+
+might be translated to the SNOMED CT code for display or stored as
+
+<code>61761000000109 | Second measles, mumps and rubella vaccination not done (situation) |</code>
+
+subject to any constraints applied by a published conceptMap.
+
 The consumer **MAY** additionally need to handle <code>explanation.reasonNotGiven</code> alongside the "not done" code to provide the classified reason the vaccination was not given.
 
-## Consent for vaccination
+## Consent or dissent for vaccination
 
 The above section addresses circumstances where an immunisation is not given at the point of intending to give the vaccine.
 It does not cover the circumstance of a prior expression of dissent to one or more vaccinations.
@@ -102,6 +118,9 @@ If a patient record has multiple records of consent for a single type of vaccina
 Any records which the GP clinical systems classifies as an immunisation consent or dissent, but which do not appear in the hierarchies above **MUST** also be included.
 Where there is an approapriate code which is outside of the stated hierarchy, then that **MAY** be used.
 Where there is no identifiably, appropriate SNOMED CT code for the consent or dissent, then the transfer degraded code **MUST** be used with a text element populated with the original text.
+
+ConceptID - <code>196411000000103 | Transfer-degraded record entry (record artifact) |</code>
+DescriptionId - <code>294691000000115 | Transfer-degraded record entry |</code>
 
 ## Ineffective vaccination
 
