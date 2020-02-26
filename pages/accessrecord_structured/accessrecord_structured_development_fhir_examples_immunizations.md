@@ -13,8 +13,8 @@ The following is a set of request/response examples for Immunizations:
 
 <ul id="profileTabs" class="nav nav-tabs">
     <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Example 1</a></li>
-<!--    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Example 2</a></li>
-    <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li> -->
+    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Example 2</a></li>
+    <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li>
 </ul>
 
 <div class="tab-content">
@@ -40,13 +40,13 @@ The following is a set of request/response examples for Immunizations:
 
 
 </div>
-<!--
+
 <div role="tabpanel" class="tab-pane" id="example2">
 
 <p style="line-height: 2; font-size: 20px">Example 2</p>
 <p style="line-height: 1; font-size: 18px">Request</p>
 
-<p>Example of a call to return the following items from a patient’s structured record:</p>
+<p>Example of a call to return immunisations including those that weren't given:</p>
 
 <ul>
   <li>Immunizations</li>
@@ -69,7 +69,7 @@ The following is a set of request/response examples for Immunizations:
 <p style="line-height: 2; font-size: 20px">Example 3</p>
 <p style="line-height: 1; font-size: 18px">Request</p>
 
-<p>Example of a call to return the following items from a patient’s structured record:</p>
+<p>Example of a call to return immunisations where the patient has expressed dissent for all immunisations:</p>
 
 <ul>
   <li>Immunizations</li>
@@ -85,5 +85,5 @@ The following is a set of request/response examples for Immunizations:
 {% include accessrecord_structured/immunizations_response3.json %}
 
 
-</div> -->
+</div>
 </div>
