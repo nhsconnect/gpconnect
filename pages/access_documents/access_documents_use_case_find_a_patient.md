@@ -31,6 +31,10 @@ The consumer system:
 
 Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS Number).
 
+### Interaction diagram ###
+
+<img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/documents-find-patient-interaction-diagram.png"/>
+
 ### Request operation ###
 
 The consumer system:

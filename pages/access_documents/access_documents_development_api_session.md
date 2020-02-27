@@ -22,5 +22,5 @@ The sequence diagram below illustrates which individual API calls are required b
 | 1b   | **Provider** finds patient record and returns the logical identifier of the patient record at this practice in their system.|
 | 2a   | **Consumer** [queries for a list of the patient's documents](access_documents_development_search_patient_documents.html)|
 | 2b   | **Provider** responds with a list of document metadata for the patient's documents|
-| 2a   | **Consumer** makes a request to [retrieve a patient's document](access_documents_development_retrieve_patient_documents.html) using the location returned as part of the document metadata in step 2b|
+| 2a   | **Consumer** makes a request to [retrieve a document](access_documents_development_retrieve_patient_documents.html) using the location returned as part of the document metadata in step 2b|
 | 2b   | **Provider** responds with the requested document|

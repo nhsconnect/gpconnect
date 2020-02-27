@@ -74,7 +74,7 @@ Where the fields above are defined as:
 | [Read metadata (Access Document)](access_documents_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1` |
 | [Patient search (Access Document)](access_documents_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1` |
 | [Search for documents](access_documents_development_search_patient_documents.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1` |
-| [Retrieve document](access_documents_development_retrieve_patient_documents.html.html)   | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |
+| [Retrieve document](access_documents_development_retrieve_patient_documents.html)   | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |
 
 ### Access Record HTML interactions ###
 

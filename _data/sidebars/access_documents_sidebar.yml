@@ -72,6 +72,6 @@ entries:
         - title: Search for a patient's documents
           url: /access_documents_development_search_patient_documents.html
           output: web
-        - title: Retrieve a patient's document
+        - title: Retrieve a document
           url: /access_documents_development_retrieve_patient_documents.html
           output: web

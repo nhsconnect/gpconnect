@@ -81,7 +81,7 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/search-patient-document-interaction-diagram.png"/>
+<img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/documents-search-patient-document-interaction-diagram.png"/>
 
 ### Request ###
 
@@ -182,7 +182,7 @@ Content-Length: 1464
 
 Provider systems **MUST**:
 
-- return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's documents
+- return a `200` **OK** HTTP status code to indicate successful search of a patient's documents
 - return a [`Bundle`](access_documents_development_bundle.html)
 - return the following resources in the `Bundle`:
   - `Patient` matching the NHS Number sent in the body of the request

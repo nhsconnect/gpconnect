@@ -20,7 +20,7 @@ The [FHIR resources](access_documents_development_resources_overview.html) pages
 The following API definitions are included in this capability:
 
 - [Search for a patient's documents](access_documents_development_search_patient_documents)
-- [Retrieve a patient's document](access_documents_development_retrieve_patient_documents.html)
+- [Retrieve a document](access_documents_development_retrieve_patient_documents.html)
 
 ## Spine interactions ##
 

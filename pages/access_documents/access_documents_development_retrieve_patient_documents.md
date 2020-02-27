@@ -1,15 +1,15 @@
 ---
-title: Retrieve a patient's document
+title: Retrieve a document
 keywords: getstructuredrecord, view
 tags: [design,structured]
 sidebar: access_documents_sidebar
 permalink: access_documents_development_retrieve_patient_documents.html
-summary: "Retrieve a patient's document"
+summary: "Retrieve a document"
 ---
 
 ## Use case ##
 
-Retrieve a patient's documents from a GP practice.
+Retrieve a document from a GP practice.
 
 ## Security ##
 
@@ -29,7 +29,7 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Get patient's document interaction diagram" src="images/access_documents/get-patient-document-interaction-diagram.png"/>
+<img style="height: 400px;" alt="Retrieve a document interaction diagram" src="images/access_documents/documents-get-patient-document-interaction-diagram.png"/>
 
 ### Request ###
 
