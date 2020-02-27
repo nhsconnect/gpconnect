@@ -153,9 +153,10 @@ An example Access Document capability statement is shown below ready for customi
             }
           ],
           "searchInclude": [
-            "DocumentReference:patient"
-            "DocumentReference:custodian:Organization"
-            "DocumentReference:author:Organization"            
+            "DocumentReference:subject:Patient",
+            "DocumentReference:custodian:Organization",
+            "DocumentReference:author:Organization",
+            "DocumentReference:author:Practitioner"
           ],
           "searchParam": [
             {

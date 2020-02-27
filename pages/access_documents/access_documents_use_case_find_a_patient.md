@@ -104,7 +104,10 @@ Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation
 - **SHALL** return zero or more matching `Patient` resources in a `Bundle` of `type` searchset
-- **SHALL** only return `Patient` resources for [active patients](overview_glossary.html#active-patient)
+- **SHALL** only return `Patient` resources for [active patients](overview_glossary.html#active-patient) with a Regular/GMS registration type (i.e. where this is their registered GP practice)
+
+  {% include note.html content="Please note the restriction on returning patient records with a Regular/GMS registration type is a difference in behaviour between this Find a patient and [Find a patient](foundations_use_case_find_a_patient.html) in the Foundations capability." %}
+
 - **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8) profile
 
 - **SHALL** populate the following `Patient` fields:
