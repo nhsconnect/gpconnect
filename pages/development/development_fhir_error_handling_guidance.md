@@ -308,11 +308,9 @@ For example, if the request contained a null `aud` claim in the JWT, then the fo
 }
 ```
 
-
-
 ### Internal server errors ###
 
-When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED Spine error code **SHALL** be used.
+When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, or disabled, then the NOT_IMPLEMENTED Spine error code **SHALL** be used.
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
@@ -323,6 +321,35 @@ When the error is **unexpected** and the server can't be more specific on the ex
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ------- | ---------- | ----------- |
 | `500`     | processing | INTERNAL_SERVER_ERROR | Unexpected internal server error. |
+
+#### Example: Not implemented #####
+
+```json
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "exception",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "NOT_IMPLEMENTED",
+            "display": "FHIR resource or operation not implemented at server"
+          }
+        ]
+      },
+      "diagnostics": "The Access Document capability is disabled."
+    }
+  ]
+}
+```
 
 #### Example: Unexpected exception #####
 

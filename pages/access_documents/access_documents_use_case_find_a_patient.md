@@ -33,7 +33,7 @@ Resolve (zero or more) `Patient` resources using a business identifier (that is,
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/documents-find-patient-interaction-diagram.png"/>
+<img style="height: 400px;" alt="Find patient interaction diagram" src="images/access_documents/documents-find-patient-interaction-diagram.png"/>
 
 ### Request operation ###
 
@@ -88,6 +88,8 @@ Errors returned due to query parameter failure **MUST** include diagnostic infor
 | The `identifier` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The `identifier` parameter contains a missing or unrecognised system | [`INVALID_IDENTIFIER_SYSTEM`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The NHS number provided is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
 |-------------------------|-------------------|
 
 {% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
