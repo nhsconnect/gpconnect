@@ -168,12 +168,18 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
 The response to the query includes:
-* A `List` profile containing references to `Immunization` for every Immunisation
+* A `List` profile containing references to `Immunization` for every Immunisation and `Observation` for every consent / dissent to immunisation
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `Immunization` referenced in the `List` profile:
 *	The `Immunization` profile of the Immunisation
 *	The `ProblemHeader (Condition)` profiles of any directly linked Problems
+
+For each `Observation` referenced in the `List` profile:
+*	The `Observation` profile of the consent / dissent for immunisation
+*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
+
+For each `Immunization` and `Observation` referenced in the `List` profile:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
