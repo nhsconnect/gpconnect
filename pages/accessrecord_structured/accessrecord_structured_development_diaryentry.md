@@ -53,10 +53,8 @@ Fixed value **profile**
   </tr>
 </table>
 
-This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). 
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
 This **MUST** be scoped by a provider specific namespace for the identifier.
-
-There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
@@ -132,7 +130,7 @@ A reference to the consultation from which the diary entry originates - that is,
   </tr>
 </table>
 
-The date or date range when the diary entry is planned to occur. 
+The date or date range when the diary entry is planned to occur.
 
 ### authoredOn
 
