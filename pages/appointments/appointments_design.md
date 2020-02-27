@@ -19,7 +19,7 @@ The scope of appointment management is to deliver:
 
 The ability to create appointments for patients not known to the GP practice/diary owner:
 
-- If a patient is not known to the local system the appointment boking will be rejected by booking system. It will not be possible to register the patient.
+- If a patient is not known to the local system the appointment booking will be rejected by the booking system. It will not be possible to register the patient.
 - <span class="label label-success">SELECTED</span> If a patient is not known to the local system the appointment booking will be rejected by booking system. It will be possible to register the patient via the GP Connect 'Register a Patient' API, and then use 'Book an Appointment'.
 - If a patient is not known to the local system the appointment booking will be accepted and a patient record will be created with basic details about the patient (identifier).
 
@@ -31,15 +31,15 @@ When requesting the schedule of a particular diary, the level of detail returned
 
 - All booked appointments and available slots.
 - Only slots that are available (all types).
-- <span class="label label-success">SELECTED</span> Only slots that are available, have been marked/flagged as externally bookable via GP Connect and match the Booking Organisation Type and/or ODS Code and 'Embargo/Booking Window' rules.
+- <span class="label label-success">SELECTED</span> Only slots that are available, have been marked/flagged as externally bookable via GP Connect and match the Booking Organisation Type and/or Organisation Data Services (ODS) Code and 'Embargo/Booking Window' rules.
 
 
 ## Search parameters ##
 
 The following search parameters will be initially included:
 
-- All available common (across all four systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
-- <span class="label label-success">SELECTED</span> Date Range,  Booking Organisation Type, Booking Organisation ODS Code, Urgent Care (UC) Disposition Code and Service ID, are accommodated to reflect more targeted Provider system slot availability and return.  Consumers can then apply further filtering and/or sorting at the client side. The last 2 are required to support the use of GP Connect APIs by UC Services.  
+- All available common (across all four GP principal systems) slot defining criteria such as Gender, Slot Type, Slot Length, complex date/time ranges.
+- <span class="label label-success">SELECTED</span> Date Range,  Booking Organisation Type, Booking Organisation ODS Code, Urgent Care (UC) Disposition Code and Service ID, are accommodated to reflect more targeted provider system slot availability and return.  Consumers can then apply further filtering and/or sorting at the client side. The last 2 are required to support the use of GP Connect APIs by UC services.  
 
 {% include note.html content="The Search Filter specification is flexible to allow for further search parameters to be defined. Value sets will be defined for these to be used by subsequent provider system slot access control." %}
 
@@ -80,7 +80,7 @@ Please note: Amending a cancelled appointment is not supported.
 
 Are appointment amendments and/or cancellations only able to be made by organisations which booked them originally?
 
-<span class="label label-success">SELECTED</span> Cancellation and amendments to future Appointment Description and Comment, can be made by any organisation participating in a GP Connect Appointment Management data-sharing agreement with the appointment hosting organisation.
+<span class="label label-success">SELECTED</span> Cancellation and amendments to future Appointment Description and Comment, can be made by any organisation participating in a GP Connect Appointment Management data sharing agreement with the appointment hosting organisation.
 
 
 ## Tentative appointment booking ##
@@ -88,19 +88,19 @@ Are appointment amendments and/or cancellations only able to be made by organisa
 Is it possible to 'hold' an appointment slot obtained via GP Connect, and then confirm the booking at the end of a consultation/triage process?
 
 
-<span class="label label-success">SELECTED</span> This functional requirement is not supported due to the additional technical complexity it would demand.  End-users will need to book the appointment then cancel if necessary, and good practice will need to be locally specified in business rules and policies agreed by participating organisations.  For example the practice of reserving numerous slots at the start of a '111' Urgent Care Call triage by using the 'Book Appointment' API, and then cancelling, would be considered bad practice and could contravene such agreements.
+<span class="label label-success">SELECTED</span> This functional requirement is not supported due to the additional technical complexity it would demand.  End-users will need to book the appointment then cancel if necessary, and good practice will need to be locally specified in business rules and policies agreed by participating organisations.  For example the practice of reserving numerous slots at the start of a '111' Urgent Care Call triage by using the 'Book an Appointment' API, and then cancelling, would be considered bad practice and could contravene such agreements.
 
 ## Can appointments be rescheduled? ##
 
 The API will not make provision for rescheduling of appointments in a single interaction as a result of the limitation on which data elements of an appointment can be amended.
 
-Therefore, a consumer wishing to reschedule an appointment can do this through 2 API calls - firstly to cancel the existing appointment, then secondly to create a new appointment at the new date/time.
+Therefore, a consumer application wishing to reschedule an appointment can do this through 2 API calls - firstly to cancel the existing appointment, then secondly to create a new appointment at the new date/time.
 
 ## Responsibilities in a federated booking context
 
-Where there is a requirement for an implementation to provide an appointment management capability in a federated context, the GP Connect consumer implementation has the responsibility for defining the set of organisations which make up the federation. This consumer configuration will enable the consumer to make API calls to the relevant organisation set of endpoints in order to gain a federated view of appointments.
+Where there is a requirement for an implementation to provide an Appointment Management capability in a federated context, the GP Connect consumer implementation has the responsibility for defining the set of organisations which make up the federation. This consumer configuration will enable the consumer application to make API calls to the relevant organisation set of endpoints in order to gain a federated view of appointments.
 
-Neither the Spine Secure Proxy, nor the GP Connect provider will expose such federation configuration or expose any aggregated view of appointments for a federation.
+Neither the Spine Secure Proxy, nor the GP Connect provider system will expose such federation configuration or expose any aggregated view of appointments for a federation.
 
 Please refer to the [glossary](overview_glossary.html#federation) for a definition of a federation in this context.
 
