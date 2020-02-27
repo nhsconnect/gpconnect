@@ -22,14 +22,14 @@ Find out more on the [NHS Digital GP Connect homepage](https://digital.nhs.uk/se
 
 ## Audience ##
 The content here is designed for consumer suppliers and provider suppliers:
-
+&nbsp;
 **Consumer suppliers**
 *	you're a software development company already working with the NHS or would like to work with the NHS
 *	you want to use GP Connect to develop a product that consumes GP data
 * you intend to work with a suitable end-user organisation, which you may or may not have already identified
 
 See [Getting started for consumer suppliers](overview_getting_started_consumers.html)
-
+&nbsp;
 **Provider suppliers**
 *	you're a GP clinical system supplier or are working with the NHS to become one
 *	you want to use GP Connect to enable other systems to access GP data on your system for direct patient care
