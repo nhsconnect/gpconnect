@@ -68,6 +68,10 @@ The consumer system can specify which clinical areas it wishes to retrieve and, 
     * The consumer requests immunisations which were not given
     * The provider returns all immunisation given and intended but not given
     * If no part parameters are included, the provider only returns given immunisations
+* Include coded immunisation consent and dissent records
+    * The consumer requests consent and dissent records
+    * The provider returns all immunisation given and consent and dissent observations
+    * If no part parameters are included, the provider only returns given immunisations
 
 ### Investigations ###
 
