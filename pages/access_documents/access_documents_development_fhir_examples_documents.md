@@ -29,7 +29,7 @@ The following is a set of request/response examples for Documents:
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 ```http
-GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentReference?subject=Patient/04603d77-1a4e-4d63-b246-d7504f8bd833&created=ge2019-0624&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner:Practitioner
+GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Patient/04603d77-1a4e-4d63-b246-d7504f8bd833/DocumentReference?created=ge2019-0624&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner:Practitioner
 ```
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
@@ -51,7 +51,7 @@ GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentRefer
 
 <p style="line-height: 1; font-size: 18px">Request</p>
 
-<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs nginx"><span class="err"><span class="hljs-attribute">GET</span> http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/Binary/07a6483f-732b-461e-86b6-edb665c45510</span></code></pre></div>    </div>
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs nginx"><span class="err"><span class="hljs-attribute">GET</span> http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Binary/07a6483f-732b-461e-86b6-edb665c45510</span></code></pre></div>    </div>
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 

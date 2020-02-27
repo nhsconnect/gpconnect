@@ -22,7 +22,6 @@ Provider systems **SHALL** support the following search parameters:
 
 | Name | Type | Description | Paths |
 |---|---|---|---|
-| `subject` | `Patient` | Reference to the patient who is the subject of the document. | `DocumentReference.subject` |
 | `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
 | `facility` | `token` | Additional details about where the content was created (for example, clinical specialty). | `DocumentReference.context.practiceSetting` |
 | `author` | `Organization` | Who and/or what authored the document. | `DocumentReference.author` |
@@ -43,24 +42,20 @@ Provider systems **SHALL** support the following include parameters:
 | `_include= DocumentReference:author:Practitioner` | Details of organisations that authored the documents that are returned in DocumentReference resources |
 | `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources | `DocumentReference.author:Practitioner` |
 
-Consumer systems **MUST** send the following parameters in the request:
+Consumer systems **MUST** send the following parameters to reduce the number of API calls:
 
-- subject
-
-Consumer systems **MUST** also send the following parameters to reduce the number of API calls:
-
-- _include= DocumentReference:patient
-- _include= DocumentReference:custodian:Organization
-- _include= DocumentReference:author:Organization
-- _include= DocumentReference:author:Practitioner
-- _revinclude:recurse= PractitionerRole:practitioner
+- `_include=DocumentReference:patient`
+- `_include=DocumentReference:custodian:Organization`
+- `_include=DocumentReference:author:Organization`
+- `_include=DocumentReference:author:Practitioner`
+- `_revinclude:recurse=PractitionerRole:practitioner`
 
 Consumer systems **MAY** send the following parameters in the request:
 
-- created
-- facility
-- author
-- type
+- `created`
+- `facility`
+- `author`
+- `type`
 
 When using the 'created' parameter, consumers **MUST** do the following
 - to search for a lower boundary of a date:
@@ -92,27 +87,25 @@ The consumer system:
 #### FHIR&reg; relative request ####
 
 ```http
-GET /DocumentReference?[subject={PatientLogicalId}]
-                       (&created={search_prefix}creation_date)
-                       (&facility={OrgTypeCodeSystem}|{OrgTypeCode})
-                       (&author={OrgTypeCodeSystem}|{OrgTypeCode})
-                       (&type={document_type})
-                       (&custodian={OrgTypeCodeSystem}|{OrgTypeCode})
-                       (&description={document_title})
-
+GET /Patient/[id]/DocumentReference?
+                      {&created=[search_prefix]creation_date}
+                      {&facility=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&type=[document_type]}
+                      {&custodian=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&description=[document_title]}
 ```
 
 #### FHIR&reg; absolute request ####
 
 ```http
-GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/
-                      DocumentReference?[subject={PatientLogicalId}]
-                      [&created={search_prefix}creation_date]
-                      [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
-                      [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
-                      [&type={document_type}]
-                      [&custodian={OrgTypeCodeSystem}|{OrgTypeCode}]
-                      [&description={document_title}]
+GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/Patient/[id]/DocumentReference?
+                      {&created=[search_prefix]creation_date}
+                      {&facility=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&type=[document_type]}
+                      {&custodian=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&description=[document_title]}
 ```
 
 #### Request headers ####
