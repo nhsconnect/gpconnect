@@ -224,6 +224,16 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       </td>
     </tr>
     <tr>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeDissentConsent</code></span></td>
+      <td><code class="highlighter-rouge">Boolean</code></td>
+      <td>Optional</td>
+      <td>0..1</td>
+      <td>
+        Include information about consent and dissent for immunisations in the response. The default value for this is <code>false</code>.
+        <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
+      </td>
+    </tr>
+    <tr>
       <td><code class="highlighter-rouge">includeUncategorisedData</code></td>
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
@@ -405,6 +415,10 @@ The example below shows a fully populated `Parameters` resource as a request to 
       "part": [
         {
           "name": "includeNotGiven",
+          "valueBoolean": false
+        },
+        {
+          "name": "includeDissentConsent",
           "valueBoolean": false
         }
       ]
@@ -662,13 +676,21 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - A [`List`](accessrecord_structured_development_list.html) resource for each clinical area where data exists, [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations that have been given will be returned.
 
-- when the `includeNotGiven` part parameter is set to `false` or not supplied:
+  - and when the `includeNotGiven` part parameter is set to `false` or not supplied:
 
-  - only immunisations where `notGiven` is set to `false` shall be returned
+    - only immunisations where `notGiven` is set to `false` shall be returned
 
-- when the `includeNotGiven` part parameter is set to `true`
+  - and when the `includeNotGiven` part parameter is set to `true`
 
-  - all immunisations where `notGiven` is set to `true` or `false` shall be returned
+    - all immunisations where `notGiven` is set to `true` or `false` shall be returned
+
+  - and when the `includeDissentConsent` part parameter is set to `false` or not supplied:
+
+    - only immunisations will be returned
+
+  - and when the `includeDissentConsent` part parameter is set to `true`:
+
+    - An [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resource for each consent or dissent for immunisations will also be returned.
 
 ##### Uncategorised data #####
 
