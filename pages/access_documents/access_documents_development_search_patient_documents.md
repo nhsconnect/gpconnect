@@ -36,7 +36,7 @@ Provider systems **SHALL** support the following include parameters:
 
 | Name | Description | Paths |
 |---|---|---|
-| `_include= DocumentReference:patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.patient` |
+| `_include= DocumentReference:subject:Patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.subject` |
 | `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |
 | `_include= DocumentReference:author:Organization` | Details of organisations that authored the documents that are returned in DocumentReference resources |
 | `_include= DocumentReference:author:Practitioner` | Details of organisations that authored the documents that are returned in DocumentReference resources |
@@ -44,7 +44,7 @@ Provider systems **SHALL** support the following include parameters:
 
 Consumer systems **MUST** send the following parameters to reduce the number of API calls:
 
-- `_include=DocumentReference:patient`
+- `_include=DocumentReference:subject:Patient`
 - `_include=DocumentReference:custodian:Organization`
 - `_include=DocumentReference:author:Organization`
 - `_include=DocumentReference:author:Practitioner`
@@ -56,6 +56,7 @@ Consumer systems **MAY** send the following parameters in the request:
 - `facility`
 - `author`
 - `type`
+- `description`
 
 When using the 'created' parameter, consumers **MUST** do the following
 - to search for a lower boundary of a date:
@@ -87,7 +88,11 @@ The consumer system:
 #### FHIR&reg; relative request ####
 
 ```http
-GET /Patient/[id]/DocumentReference?
+GET /Patient/[id]/DocumentReference?[_include=DocumentReference:subject:Patient]
+                      [&_include=DocumentReference:custodian:Organization]
+                      [&_include=DocumentReference:author:Organization]
+                      [&_include=DocumentReference:author:Practitioner]
+                      [&_revinclude:recurse=PractitionerRole:practitioner]
                       {&created=[search_prefix]creation_date}
                       {&facility=[OrgTypeCodeSystem]|[OrgTypeCode]}
                       {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
@@ -99,7 +104,11 @@ GET /Patient/[id]/DocumentReference?
 #### FHIR&reg; absolute request ####
 
 ```http
-GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/Patient/[id]/DocumentReference?
+GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/Patient/[id]/DocumentReference?[_include=DocumentReference:subject:Patient]
+                      [&_include=DocumentReference:custodian:Organization]
+                      [&_include=DocumentReference:author:Organization]
+                      [&_include=DocumentReference:author:Practitioner]
+                      [&_revinclude:recurse=PractitionerRole:practitioner]
                       {&created=[search_prefix]creation_date}
                       {&facility=[OrgTypeCodeSystem]|[OrgTypeCode]}
                       {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
@@ -154,6 +163,7 @@ Errors returned due to query parameter failure **MUST** include diagnostic infor
 | The facility query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The author query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The custodian query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The request does not contain the mandatory _include parameters | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |-------------------------|-------------------|
 
 ### Request response ###
