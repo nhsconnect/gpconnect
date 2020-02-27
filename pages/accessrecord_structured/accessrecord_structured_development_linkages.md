@@ -184,7 +184,7 @@ For each `Immunization` and `Observation` referenced in the query response `List
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
-<a href="images/access_structured/Immunisation_Return.png"><img src="images/access_structured/Immunisation_Return.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+<a href="images/access_structured/Immunisation_Return_2.png"><img src="images/access_structured/Immunisation_Return_2.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Uncategorised data ###
