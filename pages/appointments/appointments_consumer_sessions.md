@@ -11,7 +11,7 @@ The Appointment Management consumer application makes use of individual API call
 
 ## Consumer session - booking an appointment ##
 
-The sequence diagram below illustrates which individual API calls are required by a consumer to book an appointment at a GP practice in the simplest case. It describes interactions of the consumer with the provider FHIR endpoint at the practice, and does not include details of the prerequisite interactions with Spine services. See [Spine integration illustrated](integration_illustrated.html) for details of an end-to-end appointment booking scenario with Spine service interactions included.
+The sequence diagram below illustrates which individual API calls are required by a consumer application to book an appointment at a GP practice in the simplest case. It describes interactions of the consumer application with the provider FHIR endpoint at the practice, and does not include details of the prerequisite interactions with Spine services. See [Spine integration illustrated](integration_illustrated.html) for details of an end-to-end appointment booking scenario with Spine service interactions included.
 
 ![Sequence diagram for booking an appointment - simplest case](images/appointments/sequence_book_simple.png)
 
@@ -28,9 +28,9 @@ The sequence diagram below illustrates which individual API calls are required b
 | 3b   | **Provider** responds with details of the booked appointment as confirmation of success. |
 
 
-## Consumer session - booking an appointment at a collection of federating practices ##
+## Consumer session - booking an appointment at a collection of federated GP practices ##
 
-Where a consumer user interface provides a view of available bookings across a collection of federating practices, some steps are repeated for each practice, as shown below:
+Where a consumer user interface provides a view of available bookings across a collection of federated GP practices, some steps are repeated for each practice, as shown below:
 
 ![Sequence diagram for booking an appointment - no patient found](images/appointments/sequence_book_simple_federated.png)
 
