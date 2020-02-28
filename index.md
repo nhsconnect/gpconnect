@@ -17,23 +17,22 @@ summary: An introduction to the GP Connect FHIR® APIs
 ## The GP Connect vision ##
 
 GP Connect aims to support better clinical care by opening up information and data held within GP practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model.
-
-<img src="images/overview/GP-Connect-overview.png" alt="Diagram showing data flow between organisations and clinical systems" class="center">
-
+<p>
+<img src="images/overview/GP-Connect-overview.png" alt="Diagram showing data flow between organisations and clinical systems" class="center" style="max-width:80%; max-height:80%;>                                                                                   </p>                                                                                                                                                  
 GP Connect allows users in a variety of care settings to access information from approved clinical systems using standard APIs, which are integrated with the [NHS Spine](https://digital.nhs.uk/services/spine).
 
 Find out more on the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect).
 
 ## Audience ##
 The content here is designed for consumer suppliers and provider suppliers:
-
+<br>
 **Consumer suppliers**
 *	you're a software development company already working with the NHS or would like to work with the NHS
 *	you want to use GP Connect to develop a product that consumes GP data
 * you intend to work with a suitable end-user organisation, which you may or may not have already identified
 
 See [Getting started for consumer suppliers](overview_getting_started_consumers.html)
-
+<br>
 **Provider suppliers**
 *	you're a GP clinical system supplier or are working with the NHS to become one
 *	you want to use GP Connect to enable other systems to access GP data on your system for direct patient care
