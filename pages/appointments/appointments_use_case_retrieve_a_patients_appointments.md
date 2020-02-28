@@ -9,7 +9,7 @@ summary: "Retrieve a patient's future appointments at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted provider system. 
+This specification describes a single use case enabling the consumer application to retrieve a patient's future appointment bookings from a targeted provider system. 
 
 All future appointments for the requested patient, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, will be returned from the provider system.
 
@@ -24,7 +24,7 @@ All future appointments for the requested patient, irrespective of the booking o
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service
@@ -43,10 +43,10 @@ Provider systems SHALL implement the following search parameters:
 | `start` | `date` | Appointment start date | `Appointment.start` |
 
 
-Consumer systems:
-- SHALL include two `start` search parameter with every request
-  - One of the `start` search parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like appointments where the appointment start date is on or after "2017-09-22".
-  - One of the `start` search parameter SHALL be supplied with the `le` search prefix. For example, `start=le2017-09-25`, which indicates that the consumer would like appointments where the appointment start date is on or before "2017-09-25"
+Consumer requests:
+- SHALL include two `start` search parameters with every request
+  - One of the `start` search parameters SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like appointments where the appointment start date is on or after "2017-09-22".
+  - One of the `start` search parameters SHALL be supplied with the `le` search prefix. For example, `start=le2017-09-25`, which indicates that the consumer would like appointments where the appointment start date is on or before "2017-09-25"
 - SHALL only include the date component of the search parameter and not a time component. The date SHALL include day, month and year elements.
 - SHALL NOT request a date range where any part of the date range is in the past
 - SHALL indicate to the end user that only appointments in the future will be returned from GP Connect and that the earliest that the user can request appointments is today's date
@@ -56,10 +56,10 @@ Consumer systems:
 Provider systems:
 - SHALL support the search prefixes `ge` and `le`
 - SHALL return an error if any part of the consumer requested search range is in the past
-  - If the consumer sends today's date the provider SHALL return all appointments for today, if the appointments are in the past because the current time is after the appointment time but the appointment start date is today's date, then the appointment SHALL still be returned in the response bundle
+  - If the consumer sends today's date the provider SHALL return all appointments for today. If the appointments are in the past because the current time is after the appointment time but the appointment start date is today's date, then the appointment SHALL still be returned in the response bundle
   - The error returned SHALL include a meaningful error message to indicate that the search parameters cannot request appointments in the past
 - SHALL return an error if either of the date parameters contain a time element
-- SHALL return an error if either of the two start date parameters are not sent with the consumers request
+- SHALL return an error if either of the two start date parameters are not sent with the consumer's request
 
 #### FHIR relative request ####
 
@@ -76,7 +76,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Ap
 
 #### Example request ####
 
-Retrieve all appointments for patient with logical id 1001 which start on or between 2017-07-11 and 2017-09-14:
+Retrieve all appointments for patient with logical id 1001 which start between 2017-07-11 and 2017-09-14 inclusive:
 
 ```json
 GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14
@@ -85,7 +85,7 @@ GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers requests SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
