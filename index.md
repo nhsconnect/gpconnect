@@ -20,6 +20,8 @@ GP Connect aims to support better clinical care by opening up information and da
 
 <img src="images/overview/GP_Connect_overview.png" alt="Diagram showing organisations accessing clinical systems" style="width: 60%;">
 
+<img src="images/integration/integration_sequence_diagram.png" alt="Sequence diagram for booking an appointment end to end interactions" style="max-width:100%;max-height:100%;">
+
 GP Connect allows users in a variety of care settings to access information from approved clinical systems using standard APIs, which are integrated with the [NHS Spine](https://digital.nhs.uk/services/spine).
 
 Find out more on the [NHS Digital GP Connect homepage](https://digital.nhs.uk/services/gp-connect).
