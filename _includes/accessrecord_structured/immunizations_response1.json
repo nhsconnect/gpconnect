@@ -308,8 +308,8 @@
         ],
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
-            "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "874365876458743"
           }
         ],
         "status": "completed",

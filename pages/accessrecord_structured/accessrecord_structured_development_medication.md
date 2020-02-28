@@ -14,7 +14,7 @@ The headings below list the elements of the `Medication` profile and describe ho
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Medication profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1)." %} 
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Medication profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1/_history/1.2)" %}
 
 ## Medication elements ##
 

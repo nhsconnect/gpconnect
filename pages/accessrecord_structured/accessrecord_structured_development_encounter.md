@@ -14,7 +14,7 @@ The headings below list the elements of the `Encounter` profile and describes ho
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Encounter profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Encounter profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.4)." %}
 
 ## Encounter elements ##
 
@@ -54,9 +54,11 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encoun
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
+
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 ### status ###
 
@@ -118,8 +120,6 @@ This should reference a `Practitioner` profile representing the individual with 
 Other participants, such as registrars, trainees or other parties present, may be referenced but with a participation type of <code>PART</code>.
 
 No other values of participation type should be used.
-
-The authorship of the consultation/encounter - that is, the actual user who entered the information on the system should be expressed via <code>List.source</code>.
 
 ### period ###
 

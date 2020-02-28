@@ -15,7 +15,7 @@ The headings below list the elements of the `Observation` resource and describe 
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.4)." %}
 
 ## Test result - `Observation` resource elements ##
 
@@ -55,15 +55,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
-This  **MUST**  be a GUID.
-
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and is therefore stored with the source data).
-
-Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 ### status ###
 

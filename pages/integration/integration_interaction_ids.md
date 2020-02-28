@@ -20,7 +20,7 @@ Many of the existing interaction IDs follow the older format, which omits the [c
 Where the fields above are defined as:
 
 - Programme = `gpconnect`
-- Capability = [ `documents` ]
+- Capability = [ `structured`, `documents` ]
 - Standard = `fhir`
 - Mechanism = [ `rest`, `operation` ]
 	- `rest` for RESTful API interactions
@@ -36,23 +36,23 @@ Where the fields above are defined as:
 
 ### Foundations interactions ###
 
-| Operation                 | InteractionID             | 
-|---------------------------|---------------------------| 
+| Operation                 | Interaction ID            |
+|---------------------------|---------------------------|
 | [Read metadata](foundations_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1` |
-| [Read patient](foundations_use_case_read_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1` | 
-| [Patient search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1` | 
-| [Read practitioner](foundations_use_case_read_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1` | 
-| [Practitioner search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1` | 
-| [Read organisation](foundations_use_case_read_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1` | 
+| [Read patient](foundations_use_case_read_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1` |
+| [Patient search](foundations_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1` |
+| [Read practitioner](foundations_use_case_read_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1` |
+| [Practitioner search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1` |
+| [Read organisation](foundations_use_case_read_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1` |
 | [Organisation search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1` |
-| [Read location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1` | 
-| [Register patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1` | 
+| [Read location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1` |
+| [Register patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1` |
 
 
 ### Appointments capability interactions ###
 
-| Operation                 | InteractionID             | 
-|---------------------------|---------------------------| 
+| Operation                 | Interaction ID            |
+|---------------------------|---------------------------|
 | [Search for free slots](appointments_use_case_search_for_free_slots.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:slot-1` |
 | [Read appointment](appointments_use_case_read_an_appointment.html)          | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1` |
 | [Create appointment](appointments_use_case_book_an_appointment.html)        | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment-1` |
@@ -62,9 +62,10 @@ Where the fields above are defined as:
 
 ### Access Record Structured interactions ###
 
-| Operation                 | InteractionID             | 
-|---------------------------|---------------------------| 
+| Operation                 | Interaction ID            |
+|---------------------------|---------------------------|
 | [Get Structured Record](accessrecord_structured_development_retrieve_patient_record.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
+| [Read metadata (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1` |
 
 ### Access Document interactions ###
 
@@ -73,7 +74,7 @@ Where the fields above are defined as:
 | [Read metadata (Access Document)](access_documents_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1` |
 | [Patient search (Access Document)](access_documents_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1` |
 | [Search for documents](access_documents_development_search_patient_documents.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1` |
-| [Retrieve document](access_documents_development_retrieve_patient_documents.html.html)   | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |
+| [Retrieve document](access_documents_development_retrieve_patient_documents.html)   | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |
 
 ### Access Record HTML interactions ###
 

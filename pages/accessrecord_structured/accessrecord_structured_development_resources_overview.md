@@ -11,7 +11,7 @@ summary: "List of FHIR&reg; resource profiles used in the Access Record Structur
 
 The `CodeableConcept` data type is used throughout this capability and the following guidance **SHALL** be followed in order to ensure consistent representation of coded data:
 
-{% include note.html content="Please see [Guidance on the population of CodeableConcept](pages/accessrecord_structured/guidance-on-the-population-of-codeableconcept.pdf)." %}
+{% include note.html content="Please see [Guidance on the population of CodeableConcept](pages/accessrecord_structured/GuidanceOnCodeableConcept.pdf)." %}
 
 ## Definitions of mandatory, required and optional
 
@@ -23,7 +23,7 @@ Throughout the profile pages within the specification we have a label for each d
 
 An example of a 'required' data item is the extension to the MedicationRequest profile for StatusReason.
 
-StatusReason is used in GP Connect to carry information about why the status of a medication has been changed to stopped. In GP systems when a medication is stopped the clinician has to enter a date when it was stopped and the reason why it was stopped. 
+StatusReason is used in GP Connect to carry information about why the status of a medication has been changed to stopped. In GP systems when a medication is stopped the clinician has to enter a date when it was stopped and the reason why it was stopped.
 
 Clearly not every medication will have a status of stopped but when it does this information is of a high clinical importance and **MUST** be included in the message.
 
@@ -39,7 +39,7 @@ This leads to our definition for use in GP Connect:
 
 ## Using the List resource ##
 
-The `List` resource in FHIR is used to manage collections of resources. 
+The `List` resource in FHIR is used to manage collections of resources.
 
 In GP Connect, it is used to organise data returned by a query into groups of resources that can then be processed more easily. For each clinical area query, GP Connect will return a list that identifies the data returned for that query.
 
@@ -73,13 +73,13 @@ The following table provides details of the warning codes that are to be used in
 
 Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
 
-Note: If the results of a search contained only confidential items, it would present as an `List` with no entries, an `emptyReason` and the Confidential Items warning code. 
+Note: If the results of a search contained only confidential items, it would present as an `List` with no entries, an `emptyReason` and the Confidential Items warning code.
 
 ### Data in transit
 
 This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice have not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
 
-## Data awaiting filing 
+## Data awaiting filing
 
 When a GP clinical system receives electronic data about a patient it will go through filing process during which the information is reviewed by a user and if suitable integrated into the patient's medical record. The details on how this process is managed vary between different GP clinical systems and GP practices.
 
@@ -118,12 +118,9 @@ The following common identifier systems are used when populating `Identifier.sys
 
 The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are used in this capability pack:
 
-### Cross-care setting identifier
+### Business identifiers for resources
 
-It is intended that this will be a unique ID that will be persisted to help consuming systems distinguish data they have integrated previously to data which is new to them. This identifier is still being developed and, as such, although this may be populated by some suppliers, it cannot be relied upon alone to identify resources in the current release.
-
-The cross-care setting identifier and how it will work and be used is currently under discussion by a subgroup of the British International Doctors' Association (BIDA). 
-
+Each clinical resource will have a unique business identifier that will be persisted to help consuming systems distinguish data they have integrated previously to data which is new to them. These identifiers will be scoped by a supplier specific namespace to ensure uniqueness.
 
 ### Clinical ###
 
@@ -132,9 +129,9 @@ The cross-care setting identifier and how it will work and be used is currently 
 * [MedicationStatement](accessrecord_structured_development_medicationstatement.html)
 * [MedicationRequest](accessrecord_structured_development_medicationrequest.html)
 * [Immunization](accessrecord_structured_development_immunization.html)
-* [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata) 
+* [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
 * [Encounter](accessrecord_structured_development_encounter.html)
-* [List - consultation structure](accessrecord_structured_development_list_consultation.html) 
+* [List - consultation structure](accessrecord_structured_development_list_consultation.html)
 * [Observation - narrative data](accessrecord_structured_development_guidance_observation_narrative.html)
 * [Condition - ProblemHeader](accessrecord_structured_problems.html)
 * [Diagnostic Report](accessrecord_structured_development_diagnosticreport.html)

@@ -21,6 +21,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "1570241000000115"
+                    }
+                  ]
+                }
+              ],
               "code": "717711000000103",
               "display": "Problems",
               "system": "http://snomed.info/sct"
@@ -43,27 +54,390 @@
           {
             "item": {
               "reference": "Condition/Problem-A-Anxiety-With-Depression"
-            },
+            }
+		  },
+		  {
             "item": {
               "reference": "Condition/Problem-B-Swollen-Legs"
-            },
+            }
+		  },
+		  {
             "item": {
               "reference": "Condition/Problem-D-URTI"
+            }
+          },
+		  {
+            "item": {
+              "reference": "Condition/Problem-E-Post-viral-cough"
             }
           }
         ]
       }
     },
+
+
+
+
+    {
+      "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "mode": "snapshot",
+        "title": "Medication List",
+        "code": {
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2391371000000119"
+                    }
+                  ]
+                }
+              ],	
+              "code": "933361000000108",
+              "display": "Medications and medical devices",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "date": "2018-03-01T10:57:34+00:00",
+        "orderedBy": {
+          "coding": [
+            {
+              "code": "event-date",
+              "system": "http://hl7.org/fhir/list-order"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "MedicationStatement/6bff710a-0bdc-4c9b-b98b-40db0a107edc"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationStatement/7bff710a-0bdc-4c9b-b98b-40db0a107edc"
+            }
+          }
+        ]
+      }
+    },
+
+
+    {
+      "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "mode": "snapshot",
+        "title": "Medication List",
+        "code": {
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2149851000000119"
+                    }
+                  ]
+                }
+              ],	
+              "code": "826501000000100",
+              "display": "Miscellaneous record",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "date": "2018-03-01T10:57:34+00:00",
+        "orderedBy": {
+          "coding": [
+            {
+              "code": "event-date",
+              "system": "http://hl7.org/fhir/list-order"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Social-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic1-Category-Plan-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Examination-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic2-Category-Plan-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic3-flat-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic3-flat-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic4-Category-History-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-History-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation1-Topic5-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic1-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation2-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic1-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Examination-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Consultation3-Topic2-Category-Plan-Observation-2"
+            }
+          }
+
+        ]
+      }
+    },
+
     {
       "resource": {
         "resourceType": "Condition",
         "id": "Problem-A-Anxiety-With-Depression",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
           ]
         },
-        "clinicalStatus": "active",
+ 		"identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "D06C0517-4D1C-11E3-A2DD-010000000161"
+          }
+        ],
+		"clinicalStatus": "active",
+		"category": "problem-list-item",
         "code": {
           "coding": [
             {
@@ -77,10 +451,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "346979010"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Mixed anxiety and depressive disorder"
                     }
                   ]
                 }
@@ -95,13 +465,27 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
+        "onsetDateTime": "2019-03-28T10:30:00+00:00",
+		"assertedDate": "2019-03-28T10:30:00+00:00",
+        "asserter": {
+          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        },
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
+			"valueCode": [
+				{
+				  "code": "major",
+				  "display": "Major"
+				}
+			]
+		  },
+		  {
+			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
             "valueReference": {
-              "reference": "List/Consultation1-Topic1"
+              "reference": "Observation/Consultation1-Topic1-Category-History-Observation-2"
             }
-          },
+		  },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
@@ -141,25 +525,13 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-1"
+              "reference": "Referral items are not supported by the provider system"
             }
           },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
               "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-2"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "Encounter/Encounter1"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "List/Consultation2-Topic1"
             }
           },
           {
@@ -201,18 +573,6 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Encounter/Encounter3"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "List/Consultation3-Topic1"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
               "reference": "Observation/Consultation3-Topic1-Category-History-Observation-1"
             }
           },
@@ -246,9 +606,7 @@
               "reference": "Observation/Consultation3-Topic1-Category-Plan-Observation-1"
             }
           }
-        ],
-        "assertedDate": "2019-03-28T10:30:00+00:00",
-        "onsetDateTime": "2019-03-28T10:30:00+00:00"
+        ]
       }
     },
     {
@@ -257,10 +615,17 @@
         "id": "Problem-B-Swollen-Legs",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
           ]
         },
+		"identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "62658072-28af-47e5-b81c-bc0521d5c41c"
+          }
+        ],
         "clinicalStatus": "active",
+		"category": "problem-list-item",
         "code": {
           "coding": [
             {
@@ -292,14 +657,29 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
+        "onsetDateTime": "2019-03-28T10:30:00+00:00",
+		"assertedDate": "2019-03-28T10:30:00+00:00",
+		"asserter": {
+          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        },
+		"note": "due to obesity and poor mobility and previous DVT",
         "extension": [
+			  {
+				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
+				"valueCode": [
+					{
+					  "code": "major",
+					  "display": "Major"
+					}
+				]
+			},
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
             "valueReference": {
-              "reference": "List/Consultation1-Topic2"
-            }
-          },
-          {
+              "reference": "Observation/Consultation1-Topic2-Category-History-Observation-2"
+           }
+		  },
+		  {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
               "reference": "Observation/Consultation1-Topic2-Category-History-Observation-1"
@@ -350,13 +730,7 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Encounter/Encounter3"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "List/Consultation3-Topic2"
+              "reference": "Test Request items are not supported by the provider system"
             }
           },
           {
@@ -401,10 +775,8 @@
               "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-1"
             }
           }
-        ],
-        "assertedDate": "2019-03-28T10:30:00+00:00",
-        "onsetDateTime": "2019-03-28T10:30:00+00:00"
-      }
+        ]
+		}
     },
     {
       "resource": {
@@ -412,11 +784,18 @@
         "id": "Problem-D-URTI",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-ProblemHeader-Condition-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
           ]
         },
+		"identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "D03A94D9-4D1C-11E3-A2DD-010000000161"
+          }
+        ],
         "clinicalStatus": "active",
-        "code": {
+        "category": "problem-list-item",
+		"code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
@@ -431,7 +810,7 @@
                       "valueId": "1231298013"
                     },
                     {
-                      "url": "descriptionDisplay",
+                      "url": "DescriptionDisplay",
                       "valueString": "Upper respiratory tract infection"
                     }
                   ]
@@ -446,13 +825,42 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
+        "onsetDateTime": "2019-03-28T10:30:00+00:00",
+		"assertedDate": "2019-03-28T10:30:00+00:00",
+		"asserter": {
+          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        },
         "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
+                  "extension": [
+                    {
+                      "url": "type",
+                      "valueCode": "Parent"
+                    },
+                    {
+                      "url": "target",
+                      "valueReference": {
+					     "reference": "Condition/Problem-E-Post-viral-cough"
+						}
+					}
+                  ]
+                },
+		  {
+				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
+				"valueCode": [
+					{
+					  "code": "major",
+					  "display": "Major"
+					}
+				]
+		  },
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
             "valueReference": {
-              "reference": "List/Consultation1-Topic4"
-            }
-          },
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-5"
+           }
+		  },
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
@@ -480,12 +888,6 @@
           {
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
-              "reference": "Observation/Consultation1-Topic4-Category-Plan-Observation-1"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
               "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
             }
           },
@@ -493,18 +895,6 @@
             "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
               "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Order-1"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "Encounter/Encounter2"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "List/Consultation2-Topic2"
             }
           },
           {
@@ -519,9 +909,101 @@
               "reference": "Observation/Consultation2-Topic2-Category-Plan-Observation-1"
             }
           }
+        ]
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "Condition",
+        "id": "Problem-E-Post-viral-cough",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1"
+          ]
+        },
+		"identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "CFE8F260-4D1C-11E3-9E6B-010000001205"
+          }
         ],
-        "assertedDate": "2019-03-28T10:30:00+00:00",
-        "onsetDateTime": "2019-03-28T10:30:00+00:00"
+        "clinicalStatus": "active",
+        "category": "problem-list-item",
+		"code": {
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2872868013"
+                    }
+                  ]
+                }
+              ],	
+              "system": "http://snomed.info/sct",
+              "code": "445241004",
+              "display": "Postviral cough"
+                }
+            ]
+        },
+        "subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter2"
+        },
+        "onsetDateTime": "2019-03-28T10:30:00+00:00",
+		"assertedDate": "2019-03-28T10:30:00+00:00",
+		"asserter": {
+          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        },
+        "extension": [
+			{
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
+                  "extension": [
+                    {
+                      "url": "type",
+                      "valueCode": "Child"
+                    },
+                    {
+                      "url": "target",
+                      "valueReference": {
+					     "reference": "Condition/Problem-D-URTI"
+						}
+					}
+                ]
+			},
+			{
+				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
+				"valueCode": [
+					{
+					  "code": "major",
+					  "display": "Major"
+					}
+				]
+			},
+          {
+			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
+            "valueReference": {
+              "reference": "Observation/Consultation1-Topic5-Category-History-Observation-4"
+           }
+		  },
+          {
+            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference": {
+              "reference": "Observation/Consultation2-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference": {
+              "reference": "Observation/Consultation2-Topic1-Category-Plan-Observation-2"
+            }
+          }
+        ]
       }
     },
     {
@@ -538,9 +1020,9 @@
         "code": {
           "coding": [
             {
-              "display": "Consultation",
+              "display": "List of consultations",
               "system": "http://snomed.info/sct",
-              "code": "325851000000107"
+              "code": "1149501000000101"
             }
           ]
         },
@@ -581,9 +1063,15 @@
         "id": "Encounter1",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "b6dfd800-7e80-41ba-9f91-0a5d981271f2"
+          }
+        ],
         "status": "finished",
         "type": [
           {
@@ -654,9 +1142,20 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],	
               "system": "http://snomed.info/sct",
               "code": "325851000000107",
-              "display": "Consultation encounter type"
+              "display": "Consultation"
             }
           ]
         },
@@ -720,6 +1219,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -766,7 +1276,7 @@
         ],
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
             "valueReference": {
               "reference": "Condition/Problem-A-Anxiety-With-Depression"
             }
@@ -789,6 +1299,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -816,7 +1337,12 @@
             "item": {
               "reference": "Observation/Consultation1-Topic1-Category-History-Observation-1"
             }
-          }
+          },
+		  {
+			"item": {
+				"reference": "Observation/Consultation1-Topic1-Category-History-Observation-2"
+				}
+		  }
         ]
       }
     },
@@ -835,6 +1361,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -881,6 +1418,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -932,6 +1480,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -967,7 +1526,7 @@
           },
           {
             "item": {
-              "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-1"
+              "reference": "Referral items are not supported by the provider system"
             }
           },
           {
@@ -993,6 +1552,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1034,7 +1604,7 @@
         ],
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
             "valueReference": {
               "reference": "Condition/Problem-B-Swollen-Legs"
             }
@@ -1057,6 +1627,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1084,7 +1665,12 @@
             "item": {
               "reference": "Observation/Consultation1-Topic2-Category-History-Observation-1"
             }
-          }
+          },
+		  {
+			"item:": {
+			  "reference": "Observation/Consultation1-Topic2-Category-History-Observation-2"
+			  }
+		  }
         ]
       }
     },
@@ -1103,6 +1689,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1169,6 +1766,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1199,7 +1807,7 @@
           },
           {
             "item": {
-              "display": "Referral items are not supported by the provider system"
+              "display": "Test request items are not supported by the provider system"
             }
           },
           {
@@ -1224,6 +1832,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1285,6 +1904,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1318,6 +1948,14 @@
               "reference": "List/Consultation1-Topic4-Category-Plan"
             }
           }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
+            "valueReference": {
+              "reference": "Condition/Problem-D-URTI"
+            }
+          }
         ]
       }
     },
@@ -1336,6 +1974,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1378,11 +2027,16 @@
             "item": {
               "reference": "Observation/Consultation1-Topic4-Category-History-Observation-4"
             }
+          },
+		  {
+            "item": {
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-5"
+            }
           }
         ],
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
             "valueReference": {
               "reference": "Condition/Problem-D-URTI"
             }
@@ -1405,6 +2059,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1428,11 +2093,6 @@
           ]
         },
         "entry": [
-          {
-            "item": {
-              "reference": "Observation/Consultation1-Topic4-Category-Plan-Observation-1"
-            }
-          },
           {
             "item": {
               "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Order-1"
@@ -1461,6 +2121,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -1517,6 +2188,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1554,6 +2236,11 @@
             "item": {
               "reference": "Observation/Consultation1-Topic5-Category-History-Observation-3"
             }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-History-Observation-4"
+            }
           }
         ]
       }
@@ -1573,6 +2260,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1624,6 +2322,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -1654,7 +2363,7 @@
           },
           {
             "item": {
-              "reference": "Observation/Consultation1-Topic5-Category-Plan-Observation-2"
+              "reference": "Referral items are not supported by the provider system"
             }
           }
         ]
@@ -1669,10 +2378,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "2eb8c7d2-db86-4381-a1cb-f98081bdd322"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -1686,9 +2412,69 @@
           "reference": "Encounter/Encounter1"
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Come for review. Overall doing better. Mood still low but improvig. More good days than bad. Energy levels ok. Motivation improving. Support from neighbour visits daily"
-      }
-    },
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":
+			{
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+			},
+        "comment": "Come for review. Overall doing better. Mood still low but improving. More good days than bad. Energy levels ok. Motivation improving. Support from neighbour visits daily"
+	  }
+	},
+{
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation1-Topic1-Category-History-Observation-2",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "00d91fe6-d6c7-48c9-a3df-2576a3028e9e"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "231504006",
+              "display": "Mixed anxiety and depressive disorder",
+              "extension": [
+                {
+                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "346979010"
+                    },
+                    {
+                      "url": "descriptionDisplay",
+                      "valueString": "Mixed anxiety and depressive disorder"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "text": "Anxiety with depression"
+        },
+        "subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":
+			{
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+			}
+	  }
+	},
     {
       "resource": {
         "resourceType": "Observation",
@@ -1698,10 +2484,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "9057767b-bec8-4693-9966-aeb7180273de"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -1715,6 +2518,10 @@
           "reference": "Encounter/Encounter1"
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
         "comment": "MSE euthymic. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
@@ -1727,6 +2534,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "7b3241ab-3bc9-468a-b859-e9c1e83cb733"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -1741,10 +2554,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "397732011"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Never smoked tobacco"
                     }
                   ]
                 }
@@ -1758,8 +2567,12 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
-      }
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		}
+	  }
     },
     {
       "resource": {
@@ -1770,6 +2583,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "f85ad281-0d1a-44e1-995f-5fd91806adb9"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -1784,10 +2603,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2713011000000113"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Alcohol units consumed per week"
                     }
                   ]
                 }
@@ -1805,43 +2620,11 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Consultation1-Topic1-Category-Plan-Observation-1",
-        "meta": {
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
-          ]
-        },
-        "status": "final",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "308448008",
-              "display": "Referral to counselor",
-              "extension": [
-                {
-                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "451782016"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Referral to counsellor"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        }
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  }
       }
     },
     {
@@ -1853,24 +2636,30 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "da70bdad-4199-470a-a2a3-e2a874d51a96"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
               "code": "308931006",
-              "display": "Walking practice (regime/therapy)",
+              "display": "Walking practice",
               "extension": [
                 {
                   "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                   "extension": [
                     {
                       "url": "DescriptionID",
-                      "valueId": "452320010"
+                      "valueId": "1456478014"
                     },
                     {
                       "url": "descriptionDisplay",
-                      "valueString": "Walking practice"
+                      "valueString": "Walking practice (regime/therapy)"
                     }
                   ]
                 }
@@ -1878,6 +2667,11 @@
             }
           ]
         },
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
         "comment": "Advised re local walking group"
       }
     },
@@ -1890,6 +2684,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "a6ffc811-427a-445d-a14c-f5c4eaeea45d"
+          }
+        ],
         "status": "completed",
         "intent": "plan",
         "medicationReference": {
@@ -1930,7 +2730,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-03-28",
+			"end" : "2019-04-25"
           }
         },
         "extension": [
@@ -1961,17 +2762,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56992301000001116"
-                    }
-                  ]
-                }
-              ],
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
               "system": "http://snomed.info/sct"
@@ -2016,7 +2806,10 @@
         "medicationReference": {
           "reference": "Medication/c260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectivePeriod": {
+			"start": "2019-03-28",
+			"end": "2019-04-25"
+		},
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -2047,6 +2840,12 @@
         "basedOn": [
           {
             "reference": "MedicationRequest/MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "a8e2e70b-deae-4095-a357-948f20a2c24f"
           }
         ],
         "status": "completed",
@@ -2089,7 +2888,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-03-28",
+			"end": "2019-04-25"
           }
         },
         "extension": [
@@ -2117,10 +2917,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "315873a1-90a3-4d67-bb77-f524597bb105"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -2134,8 +2951,65 @@
           "reference": "Encounter/Encounter1"
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
         "comment": "2 months - bilateral swollen lower legs"
       }
+    },
+	{
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation1-Topic2-Category-History-Observation-2",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "6a655e44-3a0c-4f54-ae6d-240ede80f38c"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "449614009",
+              "display": "Swelling of lower limb",
+              "extension": [
+                {
+                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2729461000000110"
+                    },
+                    {
+                      "url": "descriptionDisplay",
+                      "valueString": "Swollen leg"
+                    }
+                  ]
+                }
+              ]
+            }
+		  ]
+		},
+        "subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  }
+		}
     },
     {
       "resource": {
@@ -2146,6 +3020,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "66b3ba3a-1b48-4862-8485-91935f83e379"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -2160,10 +3040,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "3008650016"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Temperature"
                     }
                   ]
                 }
@@ -2184,6 +3060,10 @@
           "reference": "Encounter/Encounter1"
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
         "comment": "Patient looks flushed"
       }
     },
@@ -2196,6 +3076,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "0a297909-f2a2-4018-8ae6-28cab9e1cfa1"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -2210,10 +3096,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2748921000000116"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Arterial oxygen saturation on room air at rest"
                     }
                   ]
                 }
@@ -2233,8 +3115,12 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
-      }
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		}
+	  }
     },
     {
       "resource": {
@@ -2245,6 +3131,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "382e30ce-94dd-4c3b-b2b6-b383aa2ad871"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -2259,10 +3151,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "143107019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Respiratory rate"
                     }
                   ]
                 }
@@ -2283,6 +3171,10 @@
           "reference": "Encounter/Encounter1"
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
         "comment": "Chest clear"
       }
     },
@@ -2295,6 +3187,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "537a8de2-19ce-4f47-8db3-2c45e50f4b4e"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -2309,10 +3207,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "406493011"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Pulse irregularly irregular"
                     }
                   ]
                 }
@@ -2332,8 +3226,12 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
-      }
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		}
+	  }
     },
     {
       "resource": {
@@ -2344,10 +3242,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "04839d1d-1292-40e6-a0df-6217b447d325"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -2361,6 +3276,10 @@
           "reference": "Encounter/Encounter1"
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
         "comment": "Swelling lower legs bilaterally. Mild pitting oedema. Heart sounds normal. No distress. Abdomen normal. No cervical lymphadenopathy. Throat normal. Ears normal"
       }
     },
@@ -2373,10 +3292,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "9a86a734-d738-4681-a008-d8881db2493d"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -2390,6 +3326,10 @@
           "reference": "Encounter/Encounter1"
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
         "comment": "Advice to mobilise more. Review with results."
       }
     },
@@ -2403,7 +3343,6 @@
           ]
         },
         "status": "final",
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "code": {
           "coding": [
             {
@@ -2417,18 +3356,26 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "78049019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Electrocardiographic monitoring"
                     }
                   ]
                 }
               ]
             }
           ]
-        }
-      }
+
+        },
+		"subject": {
+          "reference": "Patient/3ddadd9a-e64a-4b6c-bdec-45ef1fcb89e2"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		}
+	  }
     },
     {
       "resource": {
@@ -2439,8 +3386,13 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "56d714ad-3fd3-4281-b1bb-c165352354cd"
+          }
+        ],
         "status": "final",
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
         "code": {
           "coding": [
             {
@@ -2454,10 +3406,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2474699019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Blood pressure recorded by patient at home"
                     }
                   ]
                 }
@@ -2465,7 +3413,18 @@
             }
           ]
         },
-        "comment": "average 150/90 last six weeks"
+        "subject": {
+          "reference": "Patient/3ddadd9a-e64a-4b6c-bdec-45ef1fcb89e2"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+		  },
+		"comment": "average 150/90 last six weeks"
       }
     },
     {
@@ -2477,24 +3436,19 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
-        "status": "final",
-        "performer": [
+        "identifier": [
           {
-            "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "ae522c81-1b93-4d45-9c57-19249031350f"
           }
         ],
-        "subject": {
-          "reference": "Patient/3ddadd9a-e64a-4b6c-bdec-45ef1fcb89e2"
-        },
-        "context": {
-          "reference": "Encounter/Encounter1"
-        },
-        "effectiveDateTime": "1989-04-06T10:14:00",
+        "status": "final",
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
               "code": "163020007",
+			  "display": "O/E - blood pressure reading",
               "extension": [
                 {
                   "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdecsid",
@@ -2502,10 +3456,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "254063019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "O/E - blood pressure reading"
                     }
                   ]
                 }
@@ -2513,16 +3463,39 @@
             }
           ]
         },
+		"subject": {
+          "reference": "Patient/3ddadd9a-e64a-4b6c-bdec-45ef1fcb89e2"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "component": [
           {
             "code": {
               "coding": [
                 {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "254075012"
+                    }
+                  ]
+                }
+              ],
+				  "display" : "O/E - Systolic BP reading",
                   "system": "http://snomed.info/sct",
                   "code": "163030003"
                 }
               ],
-              "text": "O/E - Systolic BP reading"
+              "text": "O/E Systolic BP reading"
             },
             "valueQuantity": {
               "value": 130,
@@ -2533,11 +3506,23 @@
             "code": {
               "coding": [
                 {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "254076013"
+                    }
+                  ]
+                }
+              ],
+				  "display": "O/E - Diastolic BP reading",
                   "system": "http://snomed.info/sct",
                   "code": "163031004"
                 }
               ],
-              "text": "O/E - Diastolic BP reading"
+              "text": "O/E Diastolic BP reading"
             },
             "valueQuantity": {
               "value": 72,
@@ -2556,6 +3541,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "059015db-0c0d-4b12-b3fa-300abdc5e8a3"
+          }
+        ],
         "status": "completed",
         "intent": "plan",
         "medicationReference": {
@@ -2596,7 +3587,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-03-28",
+			"end": "2019-04-25"
           }
         },
         "extension": [
@@ -2627,17 +3619,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56938601000001119"
-                    }
-                  ]
-                }
-              ],
               "display": "Amlodipine 10mg tablets",
               "code": "319284000",
               "system": "http://snomed.info/sct"
@@ -2682,7 +3663,10 @@
         "medicationReference": {
           "reference": "Medication/d260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectivePeriod": {
+			"start": "2019-03-28",
+			"end": "2019-04-25"
+		},
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -2710,6 +3694,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "c19496d1-83e2-4438-936a-c94da1ac1bfb"
+          }
+        ],
         "basedOn": [
           {
             "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"
@@ -2755,7 +3745,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-03-28",
+			"end": "2019-04-25"
           }
         },
         "extension": [
@@ -2783,10 +3774,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "055db718-1a8e-4caf-9224-385d87e67ab9"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -2799,7 +3807,11 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "2 weeks cough - white sputum - no blood, 1 week nose running, 5 days sore throat, No shortness of breath"
       }
     },
@@ -2812,6 +3824,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "b5a1152c-f915-4d11-a455-d650b38c9706"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -2826,17 +3844,24 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "82824016"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Cough"
                     }
                   ]
                 }
               ]
             }
           ]
-        }
+        },
+		"subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -2848,31 +3873,48 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "1809bdf0-1149-454e-8376-f5d809c922b3"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": "267101005",
-              "display": "Nasal discharge present",
+              "code": "82272006",
+              "display": "Common cold",
               "extension": [
                 {
                   "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                   "extension": [
                     {
                       "url": "DescriptionID",
-                      "valueId": "397999013"
+                      "valueId": "136465014"
                     },
                     {
                       "url": "descriptionDisplay",
-                      "valueString": "Nose running"
+                      "valueString": "Acute coryza"
                     }
                   ]
                 }
               ]
             }
           ]
-        }
+        },
+		"subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -2884,6 +3926,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "1eaaab06-41b5-4333-9028-c1d90c9e9133"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -2908,39 +3956,74 @@
               ]
             }
           ]
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Consultation1-Topic4-Category-Plan-Observation-1",
-        "meta": {
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
-          ]
         },
-        "status": "final",
-        "code": {
-          "coding": [
-            {
-              "system": "http://snomed.info/sct",
-              "code": "37331000000100",
-              "display": "Comment note"
-            }
-          ]
-        },
-        "subject": {
+		"subject": {
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Patient to take Amlodipine 10mg tablets and monitor blood"
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation1-Topic4-Category-History-Observation-5",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "04168671-c28b-4096-ac5c-be703605ee9e"
+          }
+        ],
+        "status": "final",
+		"code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "54150009",
+              "display": "Upper respiratory infection",
+              "extension": [
+                {
+                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "1231298013"
+                    },
+                    {
+                      "url": "DescriptionDisplay",
+                      "valueString": "Upper respiratory tract infection"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+		"subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
+      }
+    },
+   {
       "resource": {
         "resourceType": "MedicationRequest",
         "id": "Consultation1-Topic4-Category-Plan-Medication-Plan-1",
@@ -2949,6 +4032,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "e227f7cc-dfc2-454a-8e28-0a1c71ef126c"
+          }
+        ],
         "status": "completed",
         "intent": "plan",
         "medicationReference": {
@@ -2989,7 +4078,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-03-28",
+			"end": "2019-04-25"
           }
         },
         "extension": [
@@ -3020,17 +4110,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56978101000001114"
-                    }
-                  ]
-                }
-              ],
               "display": "Paracetamol 500mg tablets",
               "code": "322236009",
               "system": "http://snomed.info/sct"
@@ -3075,7 +4154,10 @@
         "medicationReference": {
           "reference": "Medication/a260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
+        "effectivePeriod": {
+			"start": "2019-03-28",
+			"end": "2019-04-25"
+		},
         "dateAsserted": "2019-03-28",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
@@ -3103,6 +4185,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "1afdd010-e1c6-470a-a8c6-450523e47c6d"
+          }
+        ],
         "basedOn": [
           {
             "reference": "Consultation1-Topic4-Category-Plan-Medication-Plan-1"
@@ -3148,7 +4236,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-03-28",
+			"end": "2019-04-25"
           }
         },
         "extension": [
@@ -3176,6 +4265,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "0568ea1c-15ed-47f0-99c3-d3d04c48ab13"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -3200,7 +4295,18 @@
               ]
             }
           ]
-        }
+        },
+		"subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -3212,10 +4318,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "3fc884e6-a327-4076-b4c5-6b02192c5160"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3228,7 +4351,11 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+ 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "Similar problem 3 months ago - settled after 2 weeks"
       }
     },
@@ -3241,10 +4368,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "a2693876-dd02-4421-8575-6bd8e8e46119"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3257,8 +4401,61 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "No locking.No effusion. No giving way"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation1-Topic5-Category-History-Observation-4",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "a2693876-dd02-4421-8575-6bd8e8e46119"
+          }
+        ],
+        "status": "final",
+		"code": {
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2872868013"
+                    }
+                  ]
+                }
+              ],
+              "system": "http://snomed.info/sct",
+              "code": "445241004",
+              "display": "Postviral cough"
+                }
+            ]
+        },
+        "subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -3270,10 +4467,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "b5a66da1-fb5b-4c39-976f-be2c21340eb7"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3286,7 +4500,11 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "No effusion. Full range of movement. Ligaments normal"
       }
     },
@@ -3299,13 +4517,19 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "9163a07a-bcb5-402d-8124-d8cc66b87be8"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
               "system": "http://snomed.info/sct",
               "code": "299373004",
-              "display": "Tenderness on medial joint lne of knee",
+              "display": "Tenderness on medial joint line of knee",
               "extension": [
                 {
                   "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
@@ -3313,17 +4537,24 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "440282017"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Tenderness on medial joint lne of knee"
                     }
                   ]
                 }
               ]
             }
           ]
-        }
+        },
+		"subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -3335,46 +4566,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "656d0ab8-6be6-4119-a538-956541e5949c"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
-              "system": "http://snomed.info/sct",
-              "code": "308447003",
-              "display": "Referral to physiopherapist",
               "extension": [
                 {
-                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                   "extension": [
                     {
                       "url": "DescriptionID",
-                      "valueId": "451781011"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Referral to physiopherapist"
+                      "valueId": "87901000000115"
                     }
                   ]
                 }
-              ]
-            }
-          ]
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Consultation1-Topic5-Category-Plan-Observation-2",
-        "meta": {
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
-          ]
-        },
-        "status": "final",
-        "code": {
-          "coding": [
-            {
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3387,7 +4599,11 @@
         "context": {
           "reference": "Encounter/Encounter1"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
+		"issued": "2019-03-28T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "Analgesia advice, try knee support daytime"
       }
     },
@@ -3397,9 +4613,15 @@
         "id": "Encounter2",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "2f8f5c13-2c74-4d25-ad94-631be9e59670"
+          }
+        ],
         "status": "finished",
         "type": [
           {
@@ -3432,7 +4654,7 @@
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                    "code": "AUT",
+                    "code": "AUTH",
                     "display": "Author"
                   }
                 ]
@@ -3444,8 +4666,8 @@
           }
         ],
         "period": {
-          "start": "2019-03-28T10:30:00+00:00",
-          "end": "2019-03-28T10:38:00"
+          "start": "2019-05-01T10:30:00+00:00",
+          "end": "2019-05-01T10:38:00"
         },
         "length": {
           "value": 8,
@@ -3470,9 +4692,20 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "325851000000107",
-              "display": "Consultation encounter type"
+              "display": "Consultation"
             }
           ]
         },
@@ -3482,7 +4715,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3521,6 +4754,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -3533,7 +4777,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3567,7 +4811,7 @@
         ],
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
             "valueReference": {
               "reference": "Condition/Problem-A-Anxiety-With-Depression"
             }
@@ -3590,6 +4834,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -3602,7 +4857,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3626,9 +4881,9 @@
         ],
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
             "valueReference": {
-              "reference": "Condition/Problem-D-URTI"
+              "reference": "Condition/Problem-E-Post-viral-cough"
             }
           }
         ]
@@ -3649,6 +4904,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -3661,7 +4927,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3695,6 +4961,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -3707,7 +4984,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3741,6 +5018,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -3753,7 +5041,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3787,6 +5075,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -3799,7 +5098,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3843,6 +5142,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -3855,7 +5165,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3889,6 +5199,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -3901,7 +5222,7 @@
         "encounter": {
           "reference": "Encounter/Encounter2"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-05-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -3929,10 +5250,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "3352c57a-a28c-4995-9826-3a8c5dbcae90"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3945,8 +5283,12 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Come for review. Overall doing better. Mood improving. Still get bad days. Energy levels ok. Motivation improving. Started to go walking twice a week. First counselor appointment in two weeks. Patient has been lightly drinking."
+        "effectiveDateTime": "2019-05-01T10:30:00+00:00",
+		"issued": "2019-05-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "Overall doing better. Mood improving. Still gets bad days. Energy levels ok. Motivation improving. Started to go walking twice a week. First counsellor appointment due in two weeks."
       }
     },
     {
@@ -3958,10 +5300,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "1f52c366-9638-4042-8863-a1c9c357e8b4"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -3974,8 +5333,12 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "MSE euthymic. Not anxious. No DSH/hallucinations/abnormal thoughts"
+        "effectiveDateTime": "2019-05-01T10:30:00+00:00",
+		"issued": "2019-05-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "MSE looks brighter. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
     {
@@ -3987,6 +5350,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "1c388cca-8d1d-40d3-8049-bef119eeda27"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -4001,10 +5370,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2713011000000113"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Alcohol units consumed per week"
                     }
                   ]
                 }
@@ -4022,7 +5387,11 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
+        "effectiveDateTime": "2019-05-01T10:30:00+00:00",
+		"issued": "2019-05-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -4034,6 +5403,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "19e81871-5cad-4a0e-a387-6121b2f2bafd"
+          }
+        ],
         "status": "completed",
         "intent": "plan",
         "medicationReference": {
@@ -4042,13 +5417,13 @@
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
-        "authoredOn": "2019-03-28",
+        "authoredOn": "2019-05-01",
         "recorder": {
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
         },
         "note": [
           {
-            "text": "Pharmacy Notes: NOTES FOR PHARMACY"
+            "text": "Pharmacy Notes: NOTES FOR PHARMACY, Patient Notes: Continue citalopram 20mg od. Encourage to take every day"
           }
         ],
         "dosageInstruction": [
@@ -4074,7 +5449,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-05-01",
+			"end": "2019-05-29"
           }
         },
         "extension": [
@@ -4105,17 +5481,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56992301000001116"
-                    }
-                  ]
-                }
-              ],
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
               "system": "http://snomed.info/sct"
@@ -4136,7 +5501,7 @@
         "extension": [
           {
             "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1",
-            "valueDateTime": "2019-03-28"
+            "valueDateTime": "2019-05-01"
           },
           {
             "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1",
@@ -4160,8 +5525,11 @@
         "medicationReference": {
           "reference": "Medication/b260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
-        "dateAsserted": "2019-03-28",
+        "effectivePeriod": {
+			"start": "2019-05-01",
+			"end": "2019-05-29"
+		},
+        "dateAsserted": "2019-05-01",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
@@ -4188,6 +5556,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "3bd272e2-3002-4eed-9730-325eb61665a5"
+          }
+        ],
         "basedOn": [
           {
             "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
@@ -4201,7 +5575,7 @@
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
-        "authoredOn": "2019-03-28",
+        "authoredOn": "2019-05-01",
         "recorder": {
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
         },
@@ -4233,7 +5607,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-05-01",
+			"end": "2019-05-29"
           }
         },
         "extension": [
@@ -4261,10 +5636,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "0a376ee5-a69f-4056-9b46-dea04cda92ad"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4277,8 +5669,12 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Continue with current actions and monitor progress"
+        "effectiveDateTime": "2019-05-01T10:30:00+00:00",
+		"issued": "2019-05-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "Review in 4 weeks or earlier if problems"
       }
     },
     {
@@ -4290,10 +5686,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "1490bbdc-9c18-4631-afa5-615253b9b963"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4306,7 +5719,11 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+        "effectiveDateTime": "2019-05-01T10:30:00+00:00",
+		"issued": "2019-05-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "Patient reports the condition has cleared but develops cough when lies down to sleep."
       }
     },
@@ -4319,10 +5736,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "2b45be94-e119-484e-9de6-66685145742e"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4335,7 +5769,11 @@
         "context": {
           "reference": "Encounter/Encounter2"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+        "effectiveDateTime": "2019-05-01T10:30:00+00:00",
+		"issued": "2019-05-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "Recommend that before sleep, patient has a hot drink. Sleep with head in elevated position."
       }
     },
@@ -4345,9 +5783,15 @@
         "id": "Encounter3",
         "meta": {
           "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "f597338b-b2f0-4cab-8222-c69789045d8"
+          }
+        ],
         "status": "finished",
         "type": [
           {
@@ -4380,7 +5824,7 @@
                 "coding": [
                   {
                     "system": "http://terminology.hl7.org/CodeSystem/v3-ParticipationType",
-                    "code": "AUT",
+                    "code": "AUTH",
                     "display": "Author"
                   }
                 ]
@@ -4392,8 +5836,8 @@
           }
         ],
         "period": {
-          "start": "2019-03-28T10:30:00+00:00",
-          "end": "2019-03-28T10:38:00+00:00"
+          "start": "2019-06-01T10:30:00+00:00",
+          "end": "2019-06-01T10:38:00+00:00"
         },
         "length": {
           "value": 8,
@@ -4418,9 +5862,20 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "600711000000114"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "325851000000107",
-              "display": "Consultation encounter type"
+              "display": "Consultation"
             }
           ]
         },
@@ -4430,7 +5885,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4469,6 +5924,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -4481,7 +5947,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4515,7 +5981,7 @@
         ],
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
             "valueReference": {
               "reference": "Condition/Problem-A-Anxiety-With-Depression"
             }
@@ -4538,6 +6004,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "63541000000116"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "25851000000105",
               "display": "Topic (EHR)"
@@ -4550,7 +6027,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4579,7 +6056,7 @@
         ],
         "extension": [
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-Topic-To-Problem-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
             "valueReference": {
               "reference": "Condition/Problem-B-Swollen-Legs"
             }
@@ -4602,6 +6079,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4614,7 +6102,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4648,6 +6136,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4660,7 +6159,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4694,6 +6193,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4706,7 +6216,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4740,6 +6250,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4752,7 +6273,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4796,6 +6317,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4808,7 +6340,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4842,6 +6374,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4854,7 +6397,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4892,12 +6435,12 @@
           },
           {
             "item": {
-              "display": "Referral items are not supported by the provider system"
+              "display": "Pathology report items are not supported by the provider system"
             }
           },
           {
             "item": {
-              "display": "Referral items are not supported by the provider system"
+              "display": "Pathology report items are not supported by the provider system"
             }
           }
         ]
@@ -4918,6 +6461,17 @@
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "62271000000118"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "24781000000107",
               "display": "Category (EHR)"
@@ -4930,7 +6484,7 @@
         "encounter": {
           "reference": "Encounter/Encounter3"
         },
-        "date": "2019-03-28T10:30:00+00:00",
+        "date": "2019-06-01T10:30:00+00:00",
         "orderedBy": {
           "coding": [
             {
@@ -4945,6 +6499,11 @@
             "item": {
               "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-1"
             }
+          },
+		  {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-2"
+            }
           }
         ]
       }
@@ -4958,10 +6517,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "8b043e08-89c1-4ba9-be15-f47acd8903bd"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -4974,8 +6550,12 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Come for review. Overall doing better. Mood improving. Still get bad days. Energy levels ok. Motivation improving. Continued to go walking twice a week. Attended first counselor appointment but not sure if it helped. Patient has been lightly drinking."
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "Overall doing better. Mood slowly improving. Still gets bad days. Energy levels ok. Motivation improving. Continues to go walking twice a week. Attended first counsellor appointment but not sure if it helped."
       }
     },
     {
@@ -4987,10 +6567,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "c67257f4-a46c-4c36-a75d-f325212755fb"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5003,8 +6600,12 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "MSE euthymic. Not anxious. No DSH/hallucinations/abnormal thoughts"
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "MSE smiling. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
     {
@@ -5016,6 +6617,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "3408a795-074c-4134-8ffb-25416c07b899"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -5030,10 +6637,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2713011000000113"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Alcohol units consumed per week"
                     }
                   ]
                 }
@@ -5051,7 +6654,11 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -5063,6 +6670,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "626a674a-3610-4235-8575-348119ec0367"
+          }
+        ],
         "status": "completed",
         "intent": "plan",
         "medicationReference": {
@@ -5071,7 +6684,7 @@
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
-        "authoredOn": "2019-03-28",
+        "authoredOn": "2019-06-01",
         "recorder": {
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
         },
@@ -5103,7 +6716,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-06-01",
+			"end": "2019-06-29"
           }
         },
         "extension": [
@@ -5134,17 +6748,6 @@
         "code": {
           "coding": [
             {
-              "extension": [
-                {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                  "extension": [
-                    {
-                      "url": "DescriptionID",
-                      "valueId": "56992301000001116"
-                    }
-                  ]
-                }
-              ],
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
               "system": "http://snomed.info/sct"
@@ -5165,7 +6768,7 @@
         "extension": [
           {
             "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1",
-            "valueDateTime": "2019-03-28"
+            "valueDateTime": "2019-06-01"
           },
           {
             "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1",
@@ -5189,8 +6792,11 @@
         "medicationReference": {
           "reference": "Medication/f260b451-9821-42de-81f9-ba86dcea2c32"
         },
-        "effectiveDateTime": "2019-03-28",
-        "dateAsserted": "2019-03-28",
+        "effectivePeriod": {
+			"start": "2019-06-01",
+			"end": "2019-06-29"
+		},
+        "dateAsserted": "2019-06-01",
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
@@ -5217,6 +6823,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "aba514c4-8e6d-470e-b12c-c93e962f00e7"
+          }
+        ],
         "basedOn": [
           {
             "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
@@ -5230,7 +6842,7 @@
         "subject": {
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
-        "authoredOn": "2019-03-28",
+        "authoredOn": "2019-06-01",
         "recorder": {
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
         },
@@ -5262,7 +6874,8 @@
             "value": 28
           },
           "validityPeriod": {
-            "start": "2019-03-28"
+            "start": "2019-06-01",
+			"end": "2019-06-29"
           }
         },
         "extension": [
@@ -5290,10 +6903,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "689d60ee-40f5-4ff9-9a35-221c2044e3e7"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5306,8 +6936,12 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Continue with current actions and monitor progress."
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "Review in 2 months or earlier if problems."
       }
     },
     {
@@ -5319,10 +6953,27 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "541efff5-68a8-413b-aa70-5b4d9f2d5ccc"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5335,7 +6986,11 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
         "comment": "4 months - bilateral swollen lower legs"
       }
     },
@@ -5348,6 +7003,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "8c4908e8-0236-4eab-8d59-09295bd06911"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -5362,10 +7023,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "3008650016"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Temperature"
                     }
                   ]
                 }
@@ -5374,7 +7031,7 @@
           ]
         },
         "valueQuantity": {
-          "value": 36.7,
+          "value": 37.1,
           "unit": "C",
           "system": "http://unitsofmeasure.org",
           "code": "Cel"
@@ -5385,7 +7042,11 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -5397,6 +7058,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "a7efc48a-fd8e-4dc8-8b90-976a760d6e71"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -5411,10 +7078,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "2748921000000116"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Arterial oxygen saturation on room air at rest"
                     }
                   ]
                 }
@@ -5434,7 +7097,11 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -5446,6 +7113,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "f9b9b95b-1d2b-4eef-8534-be61a8a3f8a4"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -5460,10 +7133,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "143107019"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Respiratory rate"
                     }
                   ]
                 }
@@ -5483,8 +7152,11 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Heart sounds normal"
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
@@ -5496,6 +7168,12 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "9e0bf96e-7e04-4b3e-8145-45e8bc0e0858"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
@@ -5510,12 +7188,7 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "406493011"
-                    },
-                    {
-                      "url": "descriptionDisplay",
-                      "valueString": "Pulse irregularly irregular"
-                    }
-                  ]
+                    }                  ]
                 }
               ]
             }
@@ -5533,22 +7206,43 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		}
       }
     },
     {
       "resource": {
         "resourceType": "Observation",
-        "id": "Consultation3-Topic2-Category-History-Observation-5",
+        "id": "Consultation3-Topic2-Category-Examination-Observation-5",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "f2aa2fa5-cceb-4ae8-bde7-5efee2601a7d"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5561,11 +7255,15 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Swelling lower legs bilaterally. Mild pitting oedema. Chest clear. No distress. Abdomen normal. No cervical lymphadenopathy. Throat normal. Ears normal.Swelling has noticeably reduced from examiniation two months ago. Blood count and ECG have not identified any cause."
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "Swelling lower legs bilaterally. Mild pitting oedema. Heart sounds normal. Chest clear. No distress. Abdomen normal. No cervical lymphadenopathy. Throat normal. Ears normal. Swelling has noticeably reduced from examiniation two months ago. Blood count and ECG have not identified any cause."
       }
     },
-    {
+	{
       "resource": {
         "resourceType": "Observation",
         "id": "Consultation3-Topic2-Category-Plan-Observation-1",
@@ -5574,10 +7272,77 @@
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
           ]
         },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "d2df1eed-f03e-4137-925c-8b332ef4c656"
+          }
+        ],
         "status": "final",
         "code": {
           "coding": [
             {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "350678016"
+                    }
+                  ]
+                }
+              ],
+              "system": "http://snomed.info/sct",
+              "code": "234050002",
+              "display": "Venous insufficiency of leg"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
+        },
+        "context": {
+          "reference": "Encounter/Encounter3"
+        },
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "Likely venous insufficiency"
+      }
+    },
+	{
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Consultation3-Topic2-Category-Plan-Observation-2",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "4a72cb08-baff-4ec8-a3bb-ed0f993f652e"
+          }
+        ],
+        "status": "final",
+        "code": {
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "87901000000115"
+                    }
+                  ]
+                }
+              ],
               "system": "http://snomed.info/sct",
               "code": "37331000000100",
               "display": "Comment note"
@@ -5590,8 +7355,12 @@
         "context": {
           "reference": "Encounter/Encounter3"
         },
-        "effectiveDateTime": "2019-03-28T10:30:00+00:00",
-        "comment": "Continue with current actions and monitor progress."
+        "effectiveDateTime": "2019-06-01T10:30:00+00:00",
+		"issued": "2019-06-01T10:30:00+00:00",
+		"performer":  {
+          "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
+		},
+        "comment": "Refer to nurse for dopplers and if suitable support stockings."
       }
     },
     {

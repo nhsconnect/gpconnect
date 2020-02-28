@@ -53,15 +53,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Referr
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
-This **MUST** be a GUID.
-
-_Providing_  systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and, therefore, is stored with the source data).
-
-Where  _consuming_  systems are integrating data from this resource to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 If the referral was made via the e-Referral Service and a Unique Booking Reference Number (UBRN) exists for the referral, then it **MUST** be included as an identifier.
 The system identifier for this is `https://fhir.nhs.uk/Id/ubr-number`.
@@ -115,7 +109,7 @@ Fixed value of <code>order</code>.
 
 A mapping is applied to the priority codes to align it to the e-Referral Service priority types.
 This **MUST** be populated where the source system has a referral priority which matches the e-Referral Service priority codes or can be mapped to those priority codes.
-If there is a priority code for the referral but it is incompatible with the e-Referral Service priorities, this element **MUST** be excluded and the priority **MUST** be supplied in the <code>note</code> element. 
+If there is a priority code for the referral but it is incompatible with the e-Referral Service priorities, this element **MUST** be excluded and the priority **MUST** be supplied in the <code>note</code> element.
 
 ### serviceRequested
 
@@ -128,7 +122,7 @@ If there is a priority code for the referral but it is incompatible with the e-R
 </table>
 
 This **MUST NOT** be populated with the source system's main code for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
-This **MAY** be populated if the GP clinical system also holds a distinct entry for the type of service requested. 
+This **MAY** be populated if the GP clinical system also holds a distinct entry for the type of service requested.
 
 ### subject
 
@@ -188,7 +182,7 @@ The details of the person, practitioner or organisation responsible for the deci
   </tr>
 </table>
 
-The preferred agent is the practitioner responsible for the decision to refer the patient. 
+The preferred agent is the practitioner responsible for the decision to refer the patient.
 If the referral is not attributed to a practitioner, then any of the other resource options **MAY** be used as most appropriate.
 If the referral does not clearly identify responsibility for the referral decision or action, this **MUST** be the user who recorded the referral.
 
@@ -216,7 +210,7 @@ This element **SHOULD** be absent if the <code>requester.agent</code> is not a p
 </table>
 
 This **MUST NOT** be populated with the source system's main code for the referral, which **MUST** be returned in the <code>reasonCode</code> element.
-This **MAY** be populated if the GP clinical system holds a distinct entry for the clinical or practitioner specialty requested by the referral. 
+This **MAY** be populated if the GP clinical system holds a distinct entry for the clinical or practitioner specialty requested by the referral.
 
 ### recipient
 
@@ -242,7 +236,7 @@ If the referral recipient details are in a form which cannot be returned as a re
 </table>
 
 This **MUST** be populated with the source system's main coded entry for the referral.
-Additional, coded or text entries which are clearly captured as reasons for referral **MAY** be included. 
+Additional, coded or text entries which are clearly captured as reasons for referral **MAY** be included.
 
 ### description
 

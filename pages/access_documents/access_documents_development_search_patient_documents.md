@@ -22,7 +22,6 @@ Provider systems **SHALL** support the following search parameters:
 
 | Name | Type | Description | Paths |
 |---|---|---|---|
-| `subject` | `Patient` | Reference to the patient who is the subject of the document. | `DocumentReference.subject` |
 | `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
 | `facility` | `token` | Additional details about where the content was created (for example, clinical specialty). | `DocumentReference.context.practiceSetting` |
 | `author` | `Organization` | Who and/or what authored the document. | `DocumentReference.author` |
@@ -37,30 +36,27 @@ Provider systems **SHALL** support the following include parameters:
 
 | Name | Description | Paths |
 |---|---|---|
-| `_include= DocumentReference:patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.patient` |
+| `_include= DocumentReference:subject:Patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.subject` |
 | `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |
 | `_include= DocumentReference:author:Organization` | Details of organisations that authored the documents that are returned in DocumentReference resources |
 | `_include= DocumentReference:author:Practitioner` | Details of organisations that authored the documents that are returned in DocumentReference resources |
 | `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources | `DocumentReference.author:Practitioner` |
 
-Consumer systems **MUST** send the following parameters in the request:
+Consumer systems **MUST** send the following parameters to reduce the number of API calls:
 
-- subject
-
-Consumer systems **MUST** also send the following parameters to reduce the number of API calls:
-
-- _include= DocumentReference:patient
-- _include= DocumentReference:custodian:Organization
-- _include= DocumentReference:author:Organization
-- _include= DocumentReference:author:Practitioner
-- _revinclude:recurse= PractitionerRole:practitioner
+- `_include=DocumentReference:subject:Patient`
+- `_include=DocumentReference:custodian:Organization`
+- `_include=DocumentReference:author:Organization`
+- `_include=DocumentReference:author:Practitioner`
+- `_revinclude:recurse=PractitionerRole:practitioner`
 
 Consumer systems **MAY** send the following parameters in the request:
 
-- created
-- facility
-- author
-- type
+- `created`
+- `facility`
+- `author`
+- `type`
+- `description`
 
 When using the 'created' parameter, consumers **MUST** do the following
 - to search for a lower boundary of a date:
@@ -85,34 +81,40 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/search-patient-document-interaction-diagram.png"/>
+<img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/documents-search-patient-document-interaction-diagram.png"/>
 
 ### Request ###
 
 #### FHIR&reg; relative request ####
 
 ```http
-GET /DocumentReference?[subject={PatientLogicalId}]
-                       (&created={search_prefix}creation_date)
-                       (&facility={OrgTypeCodeSystem}|{OrgTypeCode})
-                       (&author={OrgTypeCodeSystem}|{OrgTypeCode})
-                       (&type={document_type})
-                       (&custodian={OrgTypeCodeSystem}|{OrgTypeCode})
-                       (&description={document_title})
-
+GET /Patient/[id]/DocumentReference?[_include=DocumentReference:subject:Patient]
+                      [&_include=DocumentReference:custodian:Organization]
+                      [&_include=DocumentReference:author:Organization]
+                      [&_include=DocumentReference:author:Practitioner]
+                      [&_revinclude:recurse=PractitionerRole:practitioner]
+                      {&created=[search_prefix]creation_date}
+                      {&facility=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&type=[document_type]}
+                      {&custodian=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&description=[document_title]}
 ```
 
 #### FHIR&reg; absolute request ####
 
 ```http
-GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/
-                      DocumentReference?[subject={PatientLogicalId}]
-                      [&created={search_prefix}creation_date]
-                      [&facility={OrgTypeCodeSystem}|{OrgTypeCode}]
-                      [&author={OrgTypeCodeSystem}|{OrgTypeCode}]
-                      [&type={document_type}]
-                      [&custodian={OrgTypeCodeSystem}|{OrgTypeCode}]
-                      [&description={document_title}]
+GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/Patient/[id]/DocumentReference?[_include=DocumentReference:subject:Patient]
+                      [&_include=DocumentReference:custodian:Organization]
+                      [&_include=DocumentReference:author:Organization]
+                      [&_include=DocumentReference:author:Practitioner]
+                      [&_revinclude:recurse=PractitionerRole:practitioner]
+                      {&created=[search_prefix]creation_date}
+                      {&facility=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&type=[document_type]}
+                      {&custodian=[OrgTypeCodeSystem]|[OrgTypeCode]}
+                      {&description=[document_title]}
 ```
 
 #### Request headers ####
@@ -143,16 +145,28 @@ n/a
 
 #### Error handling ####
 
-The provider system **SHALL** return an error if:
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-- facility contains an identifier other than an ODS code
-- author contains an identifier other than an ODS code
-- custodian contains an identifier other than an ODS code
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
 
-**SHALL** return a [GPConnect-OperationOutcome-1](development_fhir_error_handling_guidance.html) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
-
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| A patient could not be found with the patient id provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The facility query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The author query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The custodian query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The request does not contain the mandatory _include parameters | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+|-------------------------|-------------------|
 
 ### Request response ###
 
@@ -170,7 +184,7 @@ Content-Length: 1464
 
 Provider systems **MUST**:
 
-- return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's documents
+- return a `200` **OK** HTTP status code to indicate successful search of a patient's documents
 - return a [`Bundle`](access_documents_development_bundle.html)
 - return the following resources in the `Bundle`:
   - `Patient` matching the NHS Number sent in the body of the request

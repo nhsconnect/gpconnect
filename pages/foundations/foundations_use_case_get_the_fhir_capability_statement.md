@@ -71,7 +71,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
   "version": "1.5.0",
   "name": "GP Connect",
   "status": "active",
-  "date": "2018-02-23",
+  "date": "2020-01-15",
   "publisher": "[Provider Software Vendor Name]",
   "contact": [
     {
@@ -254,7 +254,7 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
         {
           "name": "gpc.getstructuredrecord",
           "definition": {
-            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.11"
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.15"
           }
         }
       ]

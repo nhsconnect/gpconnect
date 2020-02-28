@@ -10,13 +10,13 @@ summary: "Frequently asked questions related to the GP Connect technical specifi
 
 ## Which serialisation format should I choose as an GP Connect API consumer - JSON or XML? ##
 
-JSON is supported by all four GP principal clinical system (PCS) suppliers which makes it a natural choice for API consumers. In addition it is approximately 30% smaller than XML when sent over the wire.
- 
-XML is currently supported by three of the four GP PCS suppliers (Vision, Microtest and EMIS). If you have a strong preference to work with XML and will be using GP Connect to interoperate with specific GP PCS suppliers that support XML, then this may be a suitable choice.
- 
-NHS Digital is investigating ways to bring XML support across all four GP PCS suppliers. However, at the current time our recommendation is to use JSON.
+NHS Digital strongly recommend that all consumer suppliers use JSON, for the following reasons:
 
-For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/STU3/downloads.html) simplify the process of producing FHIR in JSON.
+- All of the GP PCS Suppliers support JSON, whereas they do not all support XML
+- JSON is 30% smaller than XML when sent over the wire
+- JSON is a MUST requirement across other NHS Digital interoperability programmes, whereas XML is not
+
+For consumers with less experience working with JSON formats, [implementation tools in your language of choice](https://www.hl7.org/fhir/STU3/downloads.html) simplify the process of producing and consuming FHIR in JSON.
 
 ## Why is the technical barrier to entry to GP Connect quite high? ##
 

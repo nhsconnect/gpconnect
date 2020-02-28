@@ -14,7 +14,7 @@ The headings below list the elements of the `AllergyIntolerance` profile and des
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.2)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [AllergyIntolerance profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1/_history/1.7)." %}
 
 ## AllergyIntolerance elements ##
 
@@ -106,15 +106,9 @@ The reason why the allergy or intolerance has been resolved. In exceptional case
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross care setting identifier which **MUST** be populated. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
-This **MUST** be a GUID.
-
-*Providing* systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
-
-Where *consuming* systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 ### clinicalStatus ###
 
@@ -168,7 +162,7 @@ Set to `allergy` for reactions which are allergenic in nature (immunological), a
 
 Use `medication` for all drug allergy types, `environment` for all non-drug allergies. The other values in the ValueSet (food and biologic) **MUST NOT** be used.
 
-It is expected that it will always be possible to assign a category of ‘medication’ for drug allergies or ‘environmental’ for all other types of allergy/intolerance. Generally, the choice in a given system is explicit. The GP suppliers MUST follow the categorisation already in use in populating the GP2GP message.
+It is expected that it will always be possible to assign a category of ‘medication’ for drug allergies or ‘environmental’ for all other types of allergy/intolerance. Generally, the choice in a given system is explicit. The GP suppliers **MUST** follow the categorisation already in use in populating the GP2GP message.
 
 In some cases, the type of allergy/intolerance may be more general - for example, a system designated type of `Other` or equivalent. In such cases, if the allergy/intolerance entry interacts with prescribing decision support it **MUST** be assigned a category of `medication`. Otherwise, the category of `environment` **MUST** be used.
 

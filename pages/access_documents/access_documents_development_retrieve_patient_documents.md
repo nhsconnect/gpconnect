@@ -1,15 +1,15 @@
 ---
-title: Retrieve a patient's document
+title: Retrieve a document
 keywords: getstructuredrecord, view
 tags: [design,structured]
 sidebar: access_documents_sidebar
 permalink: access_documents_development_retrieve_patient_documents.html
-summary: "Retrieve a patient's document"
+summary: "Retrieve a document"
 ---
 
 ## Use case ##
 
-Retrieve a patient's documents from a GP practice.
+Retrieve a document from a GP practice.
 
 ## Security ##
 
@@ -29,7 +29,7 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Get patient's document interaction diagram" src="images/access_documents/get-patient-document-interaction-diagram.png"/>
+<img style="height: 400px;" alt="Retrieve a document interaction diagram" src="images/access_documents/documents-get-patient-document-interaction-diagram.png"/>
 
 ### Request ###
 
@@ -72,15 +72,19 @@ N/A
 
 #### Error handling ####
 
-Provider systems:
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-- **SHALL** return a [`GPConnect-OperationOutcome-1`](development_fhir_error_handling_guidance.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
 
-Examples of other scenarios which may result in error being returned:
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-- Where a logical identifier of the resource is not valid/can’t be found on the server, a 404 HTTP Status code would be returned with the relevant OperationOutcome resource.
-
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| A document could not be found with the document id provided | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+|-------------------------|-------------------|
 
 ### Request response ###
 

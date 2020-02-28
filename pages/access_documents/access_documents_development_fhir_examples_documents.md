@@ -9,17 +9,17 @@ summary: "Access Document FHIR examples"
 
 
 
-The following is a set of request/response examples for Documents:
+The following is a set of request/response examples for Access Document:
 
 <ul id="profileTabs" class="nav nav-tabs">
-    <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Search for documents</a></li>
-    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Retrieve documents</a></li>
+    <li class="active"><a class="noCrossRef" href="#example1" data-toggle="tab">Search for a patient's documents</a></li>
+    <li><a class="noCrossRef" href="#example2" data-toggle="tab">Retrieve a document</a></li>
   <!--    <li><a class="noCrossRef" href="#example3" data-toggle="tab">Example 3</a></li> -->
 </ul>
 <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="example1" markdown="1">
 
-<p style="line-height: 2; font-size: 20px">Search for documents</p>
+<p style="line-height: 2; font-size: 20px">Search for a patient's documents</p>
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 <p>Example of a search for a list of a patient's documents:</p>
@@ -29,7 +29,7 @@ The following is a set of request/response examples for Documents:
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 ```http
-GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentReference?subject=Patient/04603d77-1a4e-4d63-b246-d7504f8bd833&created=ge2019-0624&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner:Practitioner
+GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Patient/04603d77-1a4e-4d63-b246-d7504f8bd833/DocumentReference?created=ge2019-0624&_include=DocumentReference:subject:Patient&_include=DocumentReference:custodian:Organization&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner
 ```
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
@@ -40,10 +40,10 @@ GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentRefer
 
 <div role="tabpanel" class="tab-pane active" id="example2">
 
-<p style="line-height: 2; font-size: 20px">Retrieve documents</p>
+<p style="line-height: 2; font-size: 20px">Retrieve a document</p>
 <p style="line-height: 1; font-size: 18px">Request</p>
 
-<p>Example of a request to retrieve a document for a patient:</p>
+<p>Example of a request to retrieve a document:</p>
 
 
 
@@ -51,7 +51,7 @@ GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/DocumentRefer
 
 <p style="line-height: 1; font-size: 18px">Request</p>
 
-<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs nginx"><span class="err"><span class="hljs-attribute">GET</span> http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect-documents/Binary/07a6483f-732b-461e-86b6-edb665c45510</span></code></pre></div>    </div>
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs nginx"><span class="err"><span class="hljs-attribute">GET</span> http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Binary/07a6483f-732b-461e-86b6-edb665c45510</span></code></pre></div>    </div>
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 

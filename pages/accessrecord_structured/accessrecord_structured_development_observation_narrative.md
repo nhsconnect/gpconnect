@@ -19,7 +19,7 @@ Because FHIR&reg; does not provide an underlying resource suitable for represent
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.4)." %}
 
 ## Approach ##
 
@@ -65,9 +65,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 
 ### status ###

@@ -15,7 +15,7 @@
       }
     },
     {
-      "name": "includeUncategorised",
+      "name": "includeUncategorisedData",
       "part": [
         {
           "name": "uncategorisedDataSearchPeriod",

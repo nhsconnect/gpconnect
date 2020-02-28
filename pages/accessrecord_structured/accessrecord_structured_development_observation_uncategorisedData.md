@@ -14,7 +14,7 @@ The headings below list the elements of the `Observation` profile and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.4)." %}
 
 ## Observation elements #
 
@@ -54,15 +54,11 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
+There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
-This **MUST** be a GUID.
-
-Providing systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and is therefore stored with the source data).
-
-Where consuming systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 ### status ###
 
@@ -124,11 +120,7 @@ Optional reference to the `Encounter` profile representing the consultation cont
   </tr>
 </table>
 
-The datetime the observation was believed to be true.
-
-The effective datetime is when the observation related to the patient was asserted. In many cases, this will be when the observation is recorded onto the system however there are situations where they can differ. For example, if an observation is asserted during a home visit that is then recorded on the clinical system the following day, the effective datetime is the when the consultation took place, not the date it was recorded.
-
-Where no asserted date is available, the recorded date is used.
+Clinically relevant time/time-period for observation
 
 ### issued ###
 
@@ -148,11 +140,16 @@ The audit trail timestamp representing when the data was recorded.
   <tr>
     <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 1..*</td>
   </tr>
 </table>
 
-The `Practitioner` profile representing the person responsible for recording the data item. Where this is not available, the person who recorded the data item is used.
+The `Practitioner` profile representing the clinician responsible for making the observation.
+
+Where the observation was performed at another organisation and an `organisation` profile can be populated then that **SHALL** be populated here. This will be in addition to the clinical practitioner if
+both are available.
+
+If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recordeed the data in the system.
 
 ### value[x] ###
 
@@ -165,6 +162,18 @@ The `Practitioner` profile representing the person responsible for recording the
 </table>
 
 The value of the observation. This may be in any of the forms defined in the profile.
+
+### interpretation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
 
 ### comment ###
 
@@ -192,6 +201,8 @@ It **MUST** also include any text relating to the observation.
 
 The reference range provides a guide for interpretation of the results.
 
+Where a reference range contains a less than '<' or greater than '>' operator it should be written to the referenceRange.text element as these operators are not supported in this context.
+
 ### related ###
 
 <table class='resource-attributes'>
@@ -202,7 +213,7 @@ The reference range provides a guide for interpretation of the results.
   </tr>
 </table>
 
-Contains any hierarchical information between uncategorised data items. 
+Contains any hierarchical information between uncategorised data items.
 
 * Populate `related.target` with a reference to the related item of uncategorised data
 * Where the related item is a child of this item set `related.type` to `has-member`
@@ -251,14 +262,6 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-<h3 style="color:#ED1951;"> interpretation </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
 <h3 style="color:#ED1951;"> bodysite </h3>
 
 <table class='resource-attributes'>
@@ -290,5 +293,3 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> <code>BackboneElement</code></td>
   </tr>
 </table>
-
-

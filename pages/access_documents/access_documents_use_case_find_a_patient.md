@@ -7,7 +7,7 @@ permalink: access_documents_use_case_find_a_patient.html
 summary: "Find a patient by NHS number on the Access Document FHIR server"
 ---
 
-{% include important.html content="This Find a Patient interaction is specific to the Access Document capability and is identified as such by a Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Consumer systems **SHALL** only use this Find a Patient interaction in conjunction with other Access Document interactions." %}
+{% include important.html content="This Find a Patient interaction is specific to the Access Document capability and is identified as such by an Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Consumer systems **SHALL** only use this Find a Patient interaction in conjunction with other Access Document interactions." %}
 
 ## Use case ##
 
@@ -30,6 +30,10 @@ The consumer system:
 ## API usage ##
 
 Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS Number).
+
+### Interaction diagram ###
+
+<img style="height: 400px;" alt="Find patient interaction diagram" src="images/access_documents/documents-find-patient-interaction-diagram.png"/>
 
 ### Request operation ###
 
@@ -72,14 +76,21 @@ N/A
 
 #### Error handling ####
 
-Provider systems:
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
 
-- **SHALL** return a [GPConnect-OperationOutcome-1](development_fhir_error_handling_guidance.html) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
 
-For example, the:
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-- business identifier `[system]` is not recognised/supported by the provider system
-- business identifier fails structural validation checks (that is, not enough digits to be a valid NHS Number)
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| The `identifier` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `identifier` parameter contains a missing or unrecognised system | [`INVALID_IDENTIFIER_SYSTEM`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The NHS number provided is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+|-------------------------|-------------------|
 
 {% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
 
@@ -95,7 +106,10 @@ Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation
 - **SHALL** return zero or more matching `Patient` resources in a `Bundle` of `type` searchset
-- **SHALL** only return `Patient` resources for [active patients](overview_glossary.html#active-patient)
+- **SHALL** only return `Patient` resources for [active patients](overview_glossary.html#active-patient) with a Regular/GMS registration type (i.e. where this is their registered GP practice)
+
+  {% include note.html content="Please note the restriction on returning patient records with a Regular/GMS registration type is a difference in behaviour between this Find a patient and [Find a patient](foundations_use_case_find_a_patient.html) in the Foundations capability." %}
+
 - **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8) profile
 
 - **SHALL** populate the following `Patient` fields:

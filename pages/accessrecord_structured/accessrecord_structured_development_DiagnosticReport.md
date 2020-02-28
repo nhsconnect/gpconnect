@@ -14,7 +14,7 @@ The headings below list the elements of the `DiagnosticReport` resource and desc
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_dagnosticReport.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [DiagnosticReport profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [DiagnosticReport profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3)." %}
 
 ## `DiagnosticReport` resource elements ##
 
@@ -54,15 +54,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The codeSystem for this identifier is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
-This **MUST** be a GUID.
-
-_Providing_  systems  **MUST**  ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and therefore stored with the source data).
-
-Where  _consuming_  systems are integrating data from this resource to their local system, they  **MUST**  also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 
 ### basedOn ###
@@ -103,7 +97,7 @@ The status of the DiagnosticReport. In GP systems these are most likely to be 'f
 
 The general type of test report. A default value of <code>Laboratory</code> should be used if a more specific value is not available - for example, pathology, microbiology.
 
-Consuming systems need to be aware the that where more detailed categories are provided the categorisation may vary, how laboratories categorise inthe uk is not consistent and this needs to be taken into account if any type of filtering is being considered.
+Consuming systems need to be aware that where more detailed categories are provided the categorisation may vary. How laboratories categorise in the UK is not consistent, and this needs to be taken into account if any type of filtering is being considered.
 
 ### code ###
 
@@ -115,7 +109,7 @@ Consuming systems need to be aware the that where more detailed categories are p
   </tr>
 </table>
 
-Due to the model that we have used the clinical code that represents the name of the test/analyte or test set will sit in an observation resource at either the 'Test group header' or 'Test result' level.
+Due to the model that we have used, the clinical code that represents the name of the test/analyte or test set will sit in an observation resource at either the 'Test group header' or 'Test result' level.
 
 As this item is mandatory in FHIR then suppliers should populate it with the SNOMED ConceptID `721981007` for `Diagnostic studies report`.
 

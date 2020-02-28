@@ -13,7 +13,7 @@ The headings below list the elements of the `Immunization` profile and describe 
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_immunization.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Immunization profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Immunization profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1/_history/1.5)." %}
 
 ## Immunization elements
 
@@ -91,15 +91,9 @@ The procedure code describing the vaccine that was administered or was intended 
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
-This **MUST** be a GUID.
-
-_Providing_  systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and, therefore, is stored with the source data).
-
-Where  _consuming_  systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 ### status
 
@@ -191,7 +185,7 @@ If the immunisation was administered elsewhere, this may be an estimated or part
 This indicates whether the record is based on information from the person who administered or intended to administer the vaccine.
 
 This **MUST** be <code>true</code> where the immunisation record was recorded by the person who administered the vaccine or directly on behalf of the administrator of the vaccine (this includes recording the immunisation based on a complete, original, verifiable document from the administration of the vaccine).
-This **MUST** be <code>false</code> where it a secondary report of a vaccination for example the recollection of the patient, the patient's parent, carer or guardian or a secondary document. 
+This **MUST** be <code>false</code> where it is a secondary report of a vaccination for example the recollection of the patient, the patient's parent, carer or guardian or a secondary document.
 
 As this relates to the context of the original source of the immunisation record, a record from a GP2GP transfer is still a primary record if it was originally recorded as primary.
 
@@ -328,12 +322,14 @@ This **MUST** also include the practitioner who administered the vaccine if diff
   </tr>
 </table>
 
-The role of the referenced practitioner, if known. 
+The role of the referenced practitioner, if known.
 Where the role is unknown this **MUST** be absent.
 
 The code <code>EP</code> (Entering Provider) **MUST** be used to designate the practitioner as having recorded the vaccination (or reason not given).
 
 The code <code>AP</code> (Administering Provider) **MUST** be used to designate the practitioner as having administered the vaccination or intending to if the vaccine was not given.
+
+{% include note.html content="EP is not included in the extensible [value set for immunization.practitioner.role](http://hl7.org/fhir/stu3/valueset-immunization-role.html) (which includes only OP and AP codes). EP has been selected from the [parent valueset](http://hl7.org/fhir/stu3/v2/0443/index.html) as a more suitable code. Please use the display name 'Entering Provider' with this code, not the longer description from the value set" %}
 
 {% include note.html content="EP is not included in the extensible [value set for immunization.practitioner.role](http://hl7.org/fhir/stu3/valueset-immunization-role.html) (which includes only OP and AP codes). EP has been selected from the [parent valueset](http://hl7.org/fhir/stu3/v2/0443/index.html) as a more suitable code. Please use the display name 'Entering Provider' with this code, not the longer description from the value set" %}
 
@@ -347,7 +343,7 @@ The code <code>AP</code> (Administering Provider) **MUST** be used to designate 
   </tr>
 </table>
 
-A reference to the <code>practitioner</code> profile for who administered and / or recorded the vaccine. 
+A reference to the <code>practitioner</code> profile for who administered and / or recorded the vaccine.
 
 Where there is only a single practitioner recorded against the immunisation record:
 - if the practitioner recording the vaccination also administered it (or intended to), then associate a <code>practitioner.role</code> code <code>AP</code> (Administering Provider) with practitioner profile

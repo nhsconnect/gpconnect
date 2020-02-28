@@ -1,5 +1,5 @@
 ---
-title: Diary Entry
+title: Diary entry
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -13,7 +13,7 @@ The headings below list the elements of the `Diary Entry (ProcedureRequest)` pro
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_diaryentry.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3)." %}
 
 ## Diary Entry (ProcedureRequest) elements
 
@@ -53,15 +53,10 @@ Fixed value **profile**
   </tr>
 </table>
 
-This is for business identifiers.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data).
+This **MUST** be scoped by a provider specific namespace for the identifier.
 
-This is sliced to include a cross-care setting identifier which **MUST** be populated. The system identifier for this is  `https://fhir.nhs.uk/Id/cross-care-setting-identifier`.
-
-This **MUST** be a GUID.
-
-_Providing_  systems **MUST** ensure this GUID is globally unique and a persistent identifier (that is, it doesn’t change between requests and, therefore, is stored with the source data).
-
-Where  _consuming_  systems are integrating data from this profile to their local system, they **MUST** also persist this GUID at the same time.
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 ### status
 
@@ -73,7 +68,7 @@ Where  _consuming_  systems are integrating data from this profile to their loca
   </tr>
 </table>
 
-The provider **MUST** only include incomplete diary entries, that is complete or cancelled **MUST NOT** be included.
+The provider **MUST** only include incomplete diary entries - that is, complete or cancelled **MUST NOT** be included.
 
 The <code>status</code> **MUST** only be <code>active</code>.
 
@@ -123,7 +118,7 @@ The patient the diary entry relates to.
   </tr>
 </table>
 
-A reference to the consultation from which the diary entry originates, that is, the consultation which the diary entry was created within.
+A reference to the consultation from which the diary entry originates - that is, the consultation which the diary entry was created within.
 
 ### occurence
 
@@ -135,7 +130,7 @@ A reference to the consultation from which the diary entry originates, that is, 
   </tr>
 </table>
 
-The date or date range when the diary entry is planned to occur. 
+The date or date range when the diary entry is planned to occur.
 
 ### authoredOn
 
@@ -171,8 +166,8 @@ The person or system who entered the diary entry into the original source system
   </tr>
 </table>
 
-This **MUST** be the practitioner who entered the diary entry in the orginal source system, if it was entered by a user.
-If the diary entry was system generated and it is not possible to meaningfully associate the diary entry to a system user then this **MUST** be a <code>Device</code> representing the providing system or an <code>Organization</code> representing the GP Practice responsible for creating the record.
+This **MUST** be the practitioner who entered the diary entry in the original source system, if it was entered by a user.
+If the diary entry was system generated and it is not possible to meaningfully associate the diary entry to a system user then this **MUST** be a <code>Device</code> representing the providing system or an <code>Organization</code> representing the GP practice responsible for creating the record.
 
 ### reasonCode
 
@@ -197,7 +192,7 @@ This is the trigger reason for the diary entry not the action of the diary entry
   </tr>
 </table>
 
-Additional clinical information linked to the diary entry MAY be included, except a linked problem which MUST be included in the bundle as a <code>ProblemHeader(Condition)</code> which references the diary entry not vice versa.
+Additional clinical information linked to the diary entry **MAY** be included, except a linked problem which **MUST** be included in the bundle as a <code>ProblemHeader(Condition)</code> which references the diary entry, not vice versa.
 
 ### note
 

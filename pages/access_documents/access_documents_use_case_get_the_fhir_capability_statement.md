@@ -7,7 +7,7 @@ permalink: access_documents_use_case_get_the_fhir_capability_statement.html
 summary: "Get the FHIR capability statement from the Access Document FHIR server"
 ---
 
-{% include important.html content="This capability statement is specific to the Access Document capability and is identified as such by a Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Please see other capabilities for their respective capability statements." %}
+{% include important.html content="This capability statement is specific to the Access Document capability and is identified as such by an Access Document specific [interaction ID](#request-headers) and [service root URL](#fhir-absolute-request) path. Please see other capabilities for their respective capability statements." %}
 
 ## Use case ##
 
@@ -27,6 +27,10 @@ The consumer system:
 - **SHALL** have previously resolved the organisation's Access Document FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
 ## API usage ##
+
+### Interaction diagram ###
+
+<img style="height: 400px;" alt="Get the FHIR&reg; capability statement interaction diagram" src="images/access_documents/documents-get-capability-statement-interaction-diagram.png"/>
 
 ### Request operation ###
 
@@ -59,7 +63,19 @@ N/A
 
 #### Error handling ####
 
-Provider systems are expected to always be able to return a valid capability statement.
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
+
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
+
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`NOT_IMPLEMENTED`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+|-------------------------|-------------------|
+
 
 ### Request response ###
 
@@ -153,9 +169,10 @@ An example Access Document capability statement is shown below ready for customi
             }
           ],
           "searchInclude": [
-            "DocumentReference:patient"
-            "DocumentReference:custodian:Organization"
-            "DocumentReference:author:Organization"            
+            "DocumentReference:subject:Patient",
+            "DocumentReference:custodian:Organization",
+            "DocumentReference:author:Organization",
+            "DocumentReference:author:Practitioner"
           ],
           "searchParam": [
             {

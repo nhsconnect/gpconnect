@@ -30,7 +30,7 @@ This document is designed to address these challenges:
 
 For GP Connect, a consultation is the structure within which source systems group one or more clinical record entries which occurred at the same time and for the same or similar purpose attributed to or asserted by the same actor.
 
-- the provider system determines under what circumstances to create a consultation. This may vary between provider systems
+- the provider system determines under what circumstances to create a consultation - this may vary between provider systems
 - consultations do not exclusively represent clinician-patient encounters, although they are commonly used for that purpose
 - consultations may record purely administrative or communications triggered events on source systems (for example, repeat medication administration, a pathology report filed into the patient record via messaging workflow)
 - consultations are generally assigned and attributed to what can loosely be termed a 'Date/Doctor/Place/Type' (Encounter), although these attributes may be overridden or refined in the context of individual record entries within the consultation
@@ -40,11 +40,11 @@ For GP Connect, a consultation is the structure within which source systems grou
 
 ## Logical structure
 
-Consultations follow a common logical structure.
+Consultations follow a common logical structure:
 
 -   Context
 
-    Each consultation has context data that describes when and where the consultation took place, the patient it covered and who else was involved (such as a doctor). This information is usually generated automatically by the provider system but it may include some manually recorded values.
+    Each consultation has context data that describes when and where the consultation took place, the patient it covered, and who else was involved (such as a doctor). This information is usually generated automatically by the provider system but it may include some manually recorded values.
 
 -   Topics
 
@@ -72,7 +72,7 @@ Consultations follow a common logical structure.
 
 ## Approach
 
-The logical structure of a Consultation is reflected in FHIR using the `Encounter` and `List` profiles. 
+The logical structure of a Consultation is reflected in FHIR using the `Encounter` and `List` profiles.
 
 <table class='resource-attributes'>
   <tr>
@@ -88,7 +88,7 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
   <tr>
     <td>-</td>
     <td>List</td>
-    <td>The clinical information is grouped and organised within multiple List profiles. The top level list contains references to each of the Topics within the Consultation</td>
+    <td>The clinical information is grouped and organised within multiple List profiles. The top level list contains references to each of the Topics within the Consultation.</td>
   </tr>
   <tr>
     <td>Topic</td>
@@ -149,7 +149,7 @@ While there are differences between the two outputs, the consultation notes can 
 
 When a clinical item is linked to the consultation a reference to its FHIR® resource is held in the entry.item field of the appropriate list resource.
 
-When linking to a clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example Medication and Medical Device) the reference must be to the FHIR resource specified below.
+When linking to a clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example, Medication and Medical Device) the reference must be to the FHIR resource specified below.
 
 * For a Medication or Medical Device prescription plan - reference the `MedicationRequest` (intent = plan) profile
 * For a Medication or Medical Device prescription issue - reference the `MedicationRequest` (intent = order) profile
@@ -167,7 +167,7 @@ Depending on the GP Connect version supported by the provider system it can be p
 
 Where a provider system is not able to export a linked clinical item, it will create a section.section.entry (or section.entry) entry with the:
 
--   `List.entry.item.Reference.Display` set to “[Clinical area] items are not supported by the provider system.”
+-   `List.entry.item.display` set to “[Clinical area] items are not supported by the provider system.”
 
        Where [Clinical area] identifies the type of the clinical item that is not supported.
 
@@ -191,10 +191,10 @@ The example below shows references to two items, one for an observation and anot
 Where a Consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
 
 Where a Consultation is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
-* The Consultation will be included in the response as normal
-* The confidential item(s) will NOT be included in the response
-* There will be NO reference to the confidential item(s) in the `List` profiles defining the Consultation structure.
-* The Confidential Items warning message will be included in the `List` containing the query response. The warning will NOT be included in the `List` profiles defining the Consultation structure.
+* the Consultation will be included in the response as normal
+* the confidential item(s) will NOT be included in the response
+* there will be NO reference to the confidential item(s) in the `List` profiles defining the Consultation structure
+* the Confidential Items warning message will be included in the `List` for the relevant type of type data that was omitted (for example, if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query) - the warning will NOT be included in the `List` profiles defining the Consultation structure
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Consultation(s) they were removed from.
 
@@ -214,9 +214,9 @@ The same approach is followed for empty topic and heading levels recorded at sou
 
 ## What information may be recorded outside of consultations
 
--   Some systems do not restrict entry of clinical data to a consultation context - that is, it is possible to record clinical information about a patient without starting or initiating a consultation.
--   Such 'Non-Consultation' behaviour does not imply any loss of information or structure by the source system - that is, the record items are still fully recorded and attributed.
--   But because they are recorded outside of a consultation context, they will not be returned by an API query directed at returning consultation resources (see 'Design decisions' section below).
+-  some systems do not restrict entry of clinical data to a consultation context - that is, it is possible to record clinical information about a patient without starting or initiating a consultation
+-   such 'Non-Consultation' behaviour does not imply any loss of information or structure by the source system - that is, the record items are still fully recorded and attributed
+-   but because they are recorded outside of a consultation context, they will not be returned by an API query directed at returning consultation resources (see 'Design decisions' section below)
 
 ## Consumer guidance
 
@@ -237,4 +237,4 @@ The results of a query for consultation details **MUST** return a `List` contain
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. In this case, `List.note` **MUST** be populated with the text 'Information not available'.
