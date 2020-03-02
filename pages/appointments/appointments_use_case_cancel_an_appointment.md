@@ -11,7 +11,7 @@ summary: "Cancel an appointment for a patient at an organisation"
 
 This API is used to cancel a patient's future appointment, obtained via use of either Retrieve a Patient's Appointments, or Read an Appointment APIs.
 
-Any future appointment, irrespective of booking organisation and irrespective of whether the appointment was booked via the GP Connect API, can be cancelled by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+Any future appointment, irrespective of booking organisation and irrespective of whether the appointment was booked via the GP Connect API, can be cancelled by a consumer organisation participating with the appointment hosting provider organisation in a GP Connect deployment.
 
 The typical flow to cancel an appointment is:
 
@@ -30,7 +30,7 @@ The typical flow to cancel an appointment is:
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service.
@@ -38,7 +38,7 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the cancel appointment capability to cancel future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer application SHALL only use the cancel appointment capability to cancel future appointments where appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider system SHALL return an error.
 
 ### Request operation ###
 
@@ -56,7 +56,7 @@ PUT https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment/[id
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumer applications SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -70,11 +70,11 @@ Consumers SHALL include the following additional HTTP request headers:
 
 The request payload is a profiled version of the standard FHIR&reg; [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) resource. See the [FHIR resources](/datalibraryappointment.html) page for more details.
 
-Consumer systems:
+Consumer applications:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
-  {% include important.html content="It is recommended that Consumers read the Appointment they wish to cancel (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
+  {% include important.html content="It is recommended that consumer applications read the Appointment they wish to cancel (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
 
 Only the following data elements can be modified when performing an appointment cancellation:
 - the appointment `status` MUST be updated to "cancelled"
