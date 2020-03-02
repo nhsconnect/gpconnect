@@ -28,7 +28,7 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR&reg; endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service.
@@ -37,13 +37,13 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer application SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
 Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of Slots.
 
 ### Booking multiple adjacent slots ###
 
-To book more than one slot in the same Book Appointment message, a consumer needs to be able to identify which adjacent slots may be booked together.  This is determined by the following rules:
+To book more than one slot in the same Book Appointment message, a consumer application needs to be able to identify which adjacent slots may be booked together.  This is determined by the following rules:
   - Two slots (Slot A and Slot B) are adjacent when the start time of Slot B equals the end time of Slot A
   - The adjacent slots SHALL reference the same `Schedule` resource
   - The adjacent slots SHALL both have the same `deliveryChannel` value
@@ -65,7 +65,7 @@ POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumer applications SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -79,7 +79,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) resource. See the [FHIR resources](/datalibraryappointment.html) page for more detail.
 
-Consumer systems:
+Consumer applications:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
