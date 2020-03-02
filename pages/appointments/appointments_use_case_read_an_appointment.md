@@ -10,7 +10,7 @@ summary: "Read a patient's appointment at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system.
+This specification describes a single use case enabling the consumer application to obtain the details of a specific future appointment from a targeted provider system.
 
 A patient's future appointment, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, is  returned by the provider system.
 
@@ -26,13 +26,13 @@ A patient's future appointment, irrespective of the booking organisation, and ir
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
 ## API usage ##
 
-The consumer system SHALL only use the read appointment capability to retrieve future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+The consumer application SHALL only use the read appointment capability to retrieve future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
 
 ### Request operation ###
@@ -51,7 +51,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment/[id
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumer applications SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
