@@ -9,7 +9,7 @@ summary: "Search for free slots within a date range at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to request from the targeted provider system slots matching the selected date range, booking organisation ODS Code and Type, and other parameters including UC Disposition Code and Service ID. 
+This specification describes a single use case enabling the consumer application to request from the targeted provider system slots matching the selected date range, booking organisation Organisation Data Service (ODS) Code and Type, and other parameters including Urgent Care (UC) Disposition Code and Service ID. 
 
 Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API use case could be used in the context of a typical consumer appointment management session.
 
@@ -42,7 +42,7 @@ Provider systems SHALL support the following include parameters:
 | `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
 | `_include:recurse= Location:managingOrganization` | Include `Organization` resources references from matching `Location` resources | `Location.managingOrganization` |
 
-Consumer systems SHALL send the following parameters in the request:
+Consumer applications SHALL send the following parameters in the request:
 
 - The `start` parameter SHALL only be included once in the request.
 - The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
@@ -59,11 +59,11 @@ Consumer systems SHALL send the following parameters in the request:
 
 - `_include=Slot:schedule` specifies that associated `Schedule` resources are returned.
 
-Consumer systems SHOULD send the following parameters in the request:
+Consumer applications SHOULD send the following parameters in the request:
 
 - `searchFilter` parameters - see [Enhanced slot filtering](#enhanced-slot-filtering).
 
-Consumer systems MAY send the following *_include* parameters in the request, to minimise the number of API calls required to prepare an appointment booking:
+Consumer applications MAY send the following *_include* parameters in the request, to minimise the number of API calls required to prepare an appointment booking:
 
 - `_include:recurse=Schedule:actor:Practitioner`
 - `_include:recurse=Schedule:actor:Location`
@@ -82,7 +82,7 @@ In order for providers to return the appropriate slots for the consumer, the con
 | `searchFilter` | `https://fhir.nhs.uk/Id/ods-organization-code` | Consumer ODS organisation code, e.g. `A11111`|
 | `searchFilter` | `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | Consumer organisation type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1), e.g. `urgent-care` |
 
-Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
+Where search filters are sent by consumer applications which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), provider systems who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
 ## Search for free slots on the wire ##
 
@@ -102,11 +102,11 @@ GET /Slot?status=free&start=ge2019-03-29T12:00:00+00:00&end=le2019-04-01T17:00:0
 
 Please see the conditions in which a consumer may book multiple adjacent slots on the [Book an appointment](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots) page.
 
-## Consumer display requirements ##
+## Consumer application display requirements ##
 
 The fields below allow a patient to choose and attend an appointment appropriate to their needs.
 
-In order to prevent incorrect or unsuitable bookings, and to allow a patient to attend the appointment at the correct time, place or via the correct delivery channel, consumer systems SHALL support the following fields: 
+In order to prevent incorrect or unsuitable bookings, and to allow a patient to attend the appointment at the correct time, place or via the correct delivery channel, consumer applications SHALL support the following fields: 
 
 - Start date and time
 - End date and time, or duration
@@ -119,7 +119,7 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL request a maximum date range covering a two-week period
