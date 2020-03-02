@@ -126,9 +126,6 @@ entries:
   - title: Development
     output: web
     folderitems:
-    - title: Development deliverables
-      url: /development_deliverables.html
-      output: web
     - title: FHIR&reg; library
       url: /development_fhir_open_source_guidance.html
       output: web

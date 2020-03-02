@@ -67,7 +67,6 @@ toc: false
 	<p><a href="system_swagger.html">Interactive API documentation</a></p>
 	<p><a href="system_reference_postman.html">Postman examples</a></p>
     <p style="font-size:18px; padding-top:15px">Development</p>
-    	<p><a href="development_deliverables.html">Development deliverables</a></p>
 	<p><a href="development_fhir_open_source_guidance.html">FHIR&reg; library</a></p>
 	<p><a href="development_fhir_api_guidance.html">FHIR&reg; implementation</a></p>
 	<p><a href="development_general_api_guidance.html">General API guidance</a></p>
