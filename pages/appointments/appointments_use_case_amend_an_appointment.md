@@ -11,7 +11,7 @@ summary: "Amend an appointment for a patient at an organisation"
 
 This API is used to amend the `description` or `comment` fields of a patient's future appointment, obtained via either the [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html), or [Read an appointment](appointments_use_case_read_an_appointment.html) APIs.
 
-Any future appointment irrespective of booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, can be amended by a consuming organisation participating with the appointment hosting organisation in a GP Connect deployment.
+Any future appointment irrespective of booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, can be amended by a consumer organisation participating with the appointment hosting provider organisation in a GP Connect deployment.
 
 The typical flow to amend an appointment is:
 
@@ -32,7 +32,7 @@ Amending a cancelled appointment is NOT supported.
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service
@@ -40,11 +40,11 @@ The consumer system:
 
 ## API usage ##
 
-The consumer system SHALL only use the amend appointment capability to amend:
+The consumer application SHALL only use the amend appointment capability to amend:
 
-  - `description` or `comment` fields.  Providers SHALL return an error when any other field is amended.
-  - future appointments where appointment start date/time is after the current date/time. If the appointment start date/time is in the past the provider SHALL return an error.
-  - appointments that have not been cancelled.  Providers SHALL return an error where an amendment to a cancelled appointment is received.
+  - `description` or `comment` fields.  Provider systems SHALL return an error when any other field is amended.
+  - future appointments where appointment start date/time is after the current date/time. If the appointment start date/time is in the past the provider system SHALL return an error.
+  - appointments that have not been cancelled.  Provider systems SHALL return an error where an amendment to a cancelled appointment is received.
 
 ### Request operation ###
 
@@ -62,7 +62,7 @@ PUT https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment/[id
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumer applications SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -76,17 +76,17 @@ Consumers SHALL include the following additional HTTP request headers:
 
 The request payload is a profiled version of the standard FHIR [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) resource. See [FHIR resources](/datalibraryappointment.html) page for more detail.
 
-Consumer systems:
+Consumer applications:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 - SHALL NOT amend an appointment with a status of `cancelled`
 
 Only the following data elements can be modified when performing an appointment amendment:
 - `description` containing a brief description of the appointment.
-  - Consumers SHALL impose a character limit of 100 characters for this element.
+  - Consumer applications SHALL impose a character limit of 100 characters for this element.
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
 - `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
-  - Consumers SHALL impose a character limit of 500 characters for this element.
+  - Consumer applications SHALL impose a character limit of 500 characters for this element.
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
 
 {% include important.html content="It is recommended that Consumers read the Appointment they wish to amend (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
@@ -97,8 +97,8 @@ When receiving `description` and `comment` fields in the provider system:
 
 - Providers systems SHALL store information received in `description` and `comment` fields, supporting the character limit lengths shown above 
 - Providers systems SHALL NOT truncate information received in `description` or `comment` fields
-- Providers SHALL return `description` and `comment` fields to the consumer in the response payload, as stored
-- Where a consumer sends information longer than character limits supported, an error SHALL be returned to the consumer
+- Providers systems SHALL return `description` and `comment` fields to the consumer in the response payload, as stored
+- Where a consumer application sends information longer than character limits supported, an error SHALL be returned to the consumer
 - Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
 
 #### Example request body ####
