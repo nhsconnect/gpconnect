@@ -11,9 +11,9 @@ summary: "Use case for getting the GP Connect FHIR server's capability statement
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- SHALL have previously resolved the provider organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
 ## API usage ##
 
@@ -63,7 +63,7 @@ Provider systems:
 - **SHALL** return a `200` **OK** HTTP status code on successful retrieval of the capability statement
 - **SHALL** return a capability statement which conforms to the standard [FHIR CapabilityStatement](http://hl7.org/fhir/STU3/capabilitystatement.html)
 
-An example GP Connect CapabilityStatement is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
+An example GP Connect CapabilityStatement is shown below ready for customisation and embedding into GP Connect assured provider systems. Provider systems should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
 
 ```json
 {
@@ -263,9 +263,9 @@ An example GP Connect CapabilityStatement is shown below ready for customisation
 }
 ```
 
-Consumer systems:
+Consumer applications:
 - **SHOULD** request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server, this includes checking the version number specified in `CapabilityStatement.version`
-- Consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organization's FHIR server.
+- Consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organisation's FHIR server.
 
 ## Examples ##
 
