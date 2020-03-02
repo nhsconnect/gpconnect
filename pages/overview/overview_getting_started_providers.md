@@ -8,7 +8,7 @@ permalink: overview_getting_started_providers.html
 summary: "Overview of development process and first steps"
 ---
 
-Provider suppliers, such as EMIS Health, INPS Vision, Microtest Health or TPP, can use GP Connect to develop APIs that allow consumer applications to access data on their systems.
+You are a GP clinical system supplier or are working with the NHS to become one. You want to use GP Connect to enable other systems to access GP data on your system for *direct patient care*. Provider suppliers (such as EMIS Health, INPS Vision, Microtest Health and TPP) can use GP Connect to develop APIs that allow consumer applications to access data on their systems.
 
 ## Introductory topics ##
 
