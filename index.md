@@ -26,8 +26,8 @@ In partnership with GP clinical system suppliers, GP Connect has developed a set
 ## Audience ##
 The GP Connect specifications are designed for:
 
-* Consumer suppliers - developers of applications that use GP Connect FHIR® APIs – for example, a system supplier in an acute or mental health care setting. See [Getting started for consumer suppliers](overview_getting_started_consumers.html)
-* Provider suppliers - suppliers of GP clinical systems that provide data through the GP Connect FHIR® APIs. See [Getting started for provider suppliers](overview_getting_started_providers.html)
+* Consumer suppliers - developers of applications that use GP Connect FHIR® APIs – for example, a system supplier in an acute or mental health care setting. See [Getting started for consumer suppliers](overview_getting_started_consumers.html).
+* Provider suppliers - suppliers of GP clinical systems that provide data through the GP Connect FHIR® APIs. See [Getting started for provider suppliers](overview_getting_started_providers.html).
 
 ## Specifications ##
 Each specification has a dual objective:
