@@ -18,24 +18,24 @@ The following business identifier types are to be supported by GP Connect system
 | ODS Site Code | Location | `https://fhir.nhs.uk/Id/ods-site-code` |
 | SDS User ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |
 
-{% include important.html content="Support for additional identifier types in line with the existing GPSoC requirements is also under consideration." %}
+{% include important.html content="Support for additional identifier types in line with the existing GP Systems of Choice (GPSoC) requirements is also under consideration." %}
 
 
 ## Definition of Organisation and Location entities ##
 
-The GP practice organisation is a legal entity which is represented by the FHIR `Organization` resource. This entity will have an assigned [ODS code](https://digital.nhs.uk/organisation-data-service). 
+The GP practice organisation is a legal entity which is represented by the FHIR `Organization` resource. This entity will have an assigned Organisation Data Service [(ODS) code](https://digital.nhs.uk/organisation-data-service). 
 
 The practice organisation will have one or more operating locations (also known as 'sites' or 'branches') which, together, perform the patient healthcare for which the organisation is legally responsible. Each operating location is represented by a FHIR `Location` resource. 
 
 Where ODS site codes are defined in Spine configuration, these map to GP practice operating locations, and hence to location FHIR resources.
 
-The above definition of the organization and location are particularly relevant to two elements within the `Patient` resource and the `location participant` within the `Appointment` resource.
+The above definition of the organisation and location are particularly relevant to two elements within the `Patient` resource and the `location participant` within the `Appointment` resource.
 
-### Organization and location in the patient resource ###
+### Organisation and location in the patient resource ###
 
-The [Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) resource contains the `managingOrganization` element which should reference an organization resource representing the legal entity which is responsible for the patient's record.
+The [Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) resource contains the `managingOrganization` element which should reference an organisation resource representing the legal entity which is responsible for the patient's GP record.
 
-The [Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) resource also contains the `preferredBranchSurgery` element within the [Registration Details](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1) extension. This preferred branch surgery should contain a reference to a location resource representing the patient's preferred operating location which may be a branch surgery or the organization's main surgery.
+The [Patient](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) resource also contains the `preferredBranchSurgery` element within the [Registration Details](https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-RegistrationDetails-1) extension. This preferred branch surgery should contain a reference to a location resource representing the patient's preferred operating location which may be a branch surgery or the organisation's main surgery.
 
 ### Location in the appointment resource ###
 
