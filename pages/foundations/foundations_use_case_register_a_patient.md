@@ -24,7 +24,7 @@ This page describes a single use case. For complete details and background pleas
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
@@ -48,7 +48,7 @@ POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.r
 
 #### Request headers ####
 
-Consumers **SHALL** include the following additional HTTP request headers:
+Consumer applications **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
@@ -96,7 +96,7 @@ Within the `Patient` resource:
   
     {% include important.html content="If the above *\"SHOULD\"* fields are not provided, the provider system will use demographics retrieved from PDS in order to create the patient's record." %}
 
-- The following fields MAY be populated in order to record temporary details known to the consuming system:
+- The following fields MAY be populated in order to record temporary details known to the consumer application:
   - `address` with temporary address details, with the `use` of `temp`.  No more than one instance of this `use` SHALL be populated.
   - `telecom` with temporary telephone details, with the `use` of `temp` and `system` of `phone`.  No more than one instance of this **SHALL** be populated.
 
@@ -195,7 +195,7 @@ Before registering the patient record on the local system, the provider SHALL re
 
   - The NHS Number within the request is considered verified if:
     - The NHS number is found on PDS and the date of birth in the request exactly matches the date of birth held on PDS
-    - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the first family name match and the initial character of the given match that held for the record on PDS.
+    - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the first family name match and the initial character of the given name match that held for the record on PDS.
   - If both of the above checks fail to find a match then the NHS Number is treated as not verified
 
     {% include note.html content="The provider **MAY** use a [PDS Cross Check Trace](https://data.developer.nhs.uk/dms/mim/6.3.01/Domains/PDS/Document%20files/PDS%20IM.htm#_Toc_Section_2.10) to perform this step, instead of using a [PDS Retrieval](https://data.developer.nhs.uk/dms/mim/6.3.01/Domains/PDS/Document%20files/PDS%20IM.htm#_Toc_Section_2.4) and implementing the rules local locally.
@@ -212,19 +212,19 @@ Before registering the patient record on the local system, the provider SHALL re
 
 #### Duplicate record prevention
 
-Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using the patient's NHS Number, and then:
+Before registering the patient record on the local system, the provider system SHALL check the practice patient index for matching patients using the patient's NHS Number, and then:
 
 - **If a matching patient record IS found**:
 
   - and the matching patient record's NHS Number has not previously been traced or verified, it SHALL be verified using the [rules shown above](foundations_use_case_register_a_patient.html#pds-requirements)
 
-    - If the verification fails the registration SHALL be halted and an error returned to the consuming system
+    - If the verification fails the registration SHALL be halted and an error returned to the consumer application
 
   - Then, if the matching patient record:
 
     - is **active** (i.e. a currently registered patient, of any registration type):
 
-      - The registration **SHALL** be halted and error is returned to the consumer
+      - The registration **SHALL** be halted and an error returned to the consumer application
 
     - is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
@@ -233,7 +233,7 @@ Before registering the patient record on the local system, the provider SHALL ch
 
     - is recorded as **deceased**:
 
-      - The registration **SHALL** be halted and an error returned to the consuming system
+      - The registration **SHALL** be halted and an error returned to the consumer application
 
 - **If a matching patient record IS NOT found**:
 
@@ -246,16 +246,16 @@ Before registering the patient record on the local system, the provider SHALL ch
 
 - **The patient record SHOULD be created or updated using**:
 
-  - demographic details sent by the consumer
+  - demographic details sent by the consumer application
   - supplemented by demographics returned from a PDS Retrieval Query where elements were omitted by the consumer or not part of the payload request message
-  - temporary address or temporary telecom details sent by the consumer SHOULD be marked with an end date aligned with the expiry date of the temporary record.
+  - temporary address or temporary telecom details sent by the consumer application SHOULD be marked with an end date aligned with the expiry date of the temporary record.
 
 - **If the provider system synchronises temporary patient records with PDS**:
   - an update SHALL NOT automatically be sent to PDS
   - PDS synchronisation SHALL occur where a user is present during the next routine synchronisation event (for example, a receptionist opening the patient's record)
   - temporary address or temporary telecom details SHOULD be marked with an end date.
 
-- **a populated `Patient` resource representing the record created, or reactivated and updated, SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below**.
+- **a populated `Patient` resource representing the record created, or reactivated and updated, SHALL be returned to the consumer application shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below**.
 
 #### Error Handling ####
 
@@ -268,7 +268,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 |-------------------------|-------------------|
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
-| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The `Parameters` resource passed by the consumer application including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The NHS Number could not be found on PDS, or verified against a PDS record | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The patient is marked as deceased on PDS, or on the provider system | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The registration request is for a sensitive patient | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
