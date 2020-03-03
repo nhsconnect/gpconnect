@@ -19,7 +19,7 @@ The Foundations capability covers the basic API requirements and prerequisites n
 
 ### PDS ###
 
-You need to be able to provide a verified NHS number to use an API. You can do this using a Spine accredited system, a Demographics Batch Service (DBS) batch-traced record (CSV), or using a Spine Mini Services Provider (HL7v3).
+You need to be able to provide a verified NHS Number to use an API. You can do this using a Spine accredited system, a Demographics Batch Service (DBS) batch-traced record (CSV), or using a Spine Mini Services Provider (HL7v3).
 
 ### SDS / ODS ###
 
@@ -43,8 +43,13 @@ The following individual API calls make up the Foundations capability and suppor
 
 - [Get the FHIR capability statement](foundations_use_case_get_the_fhir_capability_statement.html)
 - [Find a patient](foundations_use_case_find_a_patient.html)
+- [Read a patient](foundations_use_case_read_a_patient.html)
 - [Find a practitioner](foundations_use_case_find_a_practitioner.html)
+- [Read a practitioner](foundations_use_case_read_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
+- [Read an organisation](foundations_use_case_read_an_organisation.html)
+- [Read a location](foundations_use_case_read_a_location.html)
+- [Register a patient](foundations_use_case_register_a_patient.html)
 
 
 ## Consumer application code examples
