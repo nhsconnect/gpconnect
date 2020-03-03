@@ -34,7 +34,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Practitioner/[i
 
 #### Request headers ####
 
-Consumers **SHALL** include the following additional HTTP request headers:
+Consumer applications **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
