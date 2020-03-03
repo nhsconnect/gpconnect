@@ -11,11 +11,11 @@ summary: "Use case for reading a patient resource"
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service
-- SHALL have previously [resolved the logical ID of the patient](foundations_use_case_find_a_patient.html) on the server using the NHS number
+- SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service
+- SHALL have previously [resolved the logical ID of the patient](foundations_use_case_find_a_patient.html) on the server using the NHS Number
 
 ## API use case ##
 
@@ -44,7 +44,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]
 
 #### Request headers ####
 
-Consumers **SHALL** include the following additional HTTP request headers:
+Consumer applications **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
