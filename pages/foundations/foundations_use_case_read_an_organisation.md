@@ -10,7 +10,7 @@ summary: "Use case for reading an organisation resource"
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - MAY have previously [resolved the logical ID of the organisation](foundations_use_case_find_an_organisation.html) from the ODS Organisation Code.
@@ -42,7 +42,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Organization/[i
 
 #### Request headers ####
 
-Consumers **SHALL** include the following additional HTTP request headers:
+Consumer applications **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
