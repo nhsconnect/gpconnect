@@ -11,18 +11,18 @@ summary: "Use case for finding a patient resource by business identity"
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
 
-Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS number).
+Resolve (zero or more) `Patient` resources using a business identifier (that is, NHS Number).
 
 ### Request operation ###
 
-The consumer system:
+The consumer application:
 
 - **SHALL** populate the `[system]` field with a valid patient identifier system URL (that is, `https://fhir.nhs.uk/Id/nhs-number`).
 
@@ -44,7 +44,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient?identif
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumer applications SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
