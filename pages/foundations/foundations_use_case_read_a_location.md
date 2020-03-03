@@ -11,7 +11,7 @@ summary: "Use case for reading a location resource"
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
@@ -42,7 +42,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Location/[id]
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumer applications SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
