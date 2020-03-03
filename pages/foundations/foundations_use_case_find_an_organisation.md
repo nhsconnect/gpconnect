@@ -11,7 +11,7 @@ summary: "Use case for finding an organisation resource by business identity"
 
 ### Consumer ###
 
-The consumer system:
+The consumer application:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 
@@ -21,9 +21,9 @@ Resolve (zero or more) `Organization` resources using a business identifier (for
 
 ### Request operation ###
 
-The consumer system:
+The consumer application:
 
-- **SHALL** populate the `[system]` field with a valid organization identifier system URL (for example, `https://fhir.nhs.uk/Id/ods-organization-code`).
+- **SHALL** populate the `[system]` field with a valid organisation identifier system URL (for example, `https://fhir.nhs.uk/Id/ods-organization-code`).
 
 - apply percent encoding when constructing the request URL as indicated in [RFC 3986 Section 2.1](https://tools.ietf.org/html/rfc3986#section-2.1). This will ensure that downstream servers correctly handle the pipe `|` character which must be used in the `identifier` parameter value below.
 
@@ -43,7 +43,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Organization?id
 
 #### Request headers ####
 
-Consumers **SHALL** include the following additional HTTP request headers:
+Consumer applications **SHALL** include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
