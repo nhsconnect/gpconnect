@@ -22,6 +22,10 @@ Our developer ecosystem diagram gives you an overview of a consumer supplier jou
 	- <span class="label label-warning">ASSUMPTION</span> an assumption has been made which is under review/needs validated
 - read the GP Connect [FHIR&reg; API guidance](development_fhir_api_guidance.html) common to all APIs
 
+## Integration with Spine ##
+
+Consumer suppliers can develop applications that use GP Connect specifications to consume GP data. To retrieve data from a provider supplier, your application will need to integrate with the Spine.
+
 ## Development journey ##
 
 As an approximate guide you can expect to complete the following tasks on your GP Connect development journey:
