@@ -163,7 +163,7 @@ If neither the performing organisation or the clinical practitioner is known the
   </tr>
 </table>
 
-This **MUST** include any qualifiers to the code element that were present in the sending system. These should be reported as a code and value pair as specified in the [uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance.html).
+This **MUST** include any qualifiers to the code element that were present in the sending system. These should be reported as a code and value pair as specified in the [uncategorised data guidance](accessrecord_structured_development_uncategorisedData_guidance.html).
 
 It **MUST** also include any text relating to the observation.
 
