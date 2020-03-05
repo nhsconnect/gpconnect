@@ -112,7 +112,7 @@ entries:
       url: /system_reference_postman.html
       output: web
 
-  - title: Development
+  - title: Develop
     output: web
     folderitems:
     - title: Develop with GP Connect
