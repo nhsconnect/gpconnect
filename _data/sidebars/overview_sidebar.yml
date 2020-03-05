@@ -231,6 +231,14 @@ entries:
       url: /testing_api_consumer_testing.html
       output: web
 
+  - title: Deploy
+    output: web
+    folderitems:
+    - title: Deploy your system
+      url: /overview_deployment.html
+      output: web, pdf
+      type: homepage
+
   - title: Help and support
     output: web
     folderitems:
