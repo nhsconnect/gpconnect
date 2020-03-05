@@ -98,7 +98,11 @@ entries:
   - title: Explore
     output: web
     folderitems:
-    - title: GP Connect Demonstrator
+    - title: Explore GP Connect
+      url: /overview_explore.html
+      output: web, pdf
+      type: homepage
+    - title: GP Connect demonstrator
       url: /system_demonstrator.html
       output: web
     - title: Interactive API documentation
@@ -111,6 +115,10 @@ entries:
   - title: Development
     output: web
     folderitems:
+    - title: Develop with GP Connect
+      url: /overview_development.html
+      output: web, pdf
+      type: homepage
     - title: Development deliverables
       url: /development_deliverables.html
       output: web
@@ -201,6 +209,10 @@ entries:
   - title: Test and assure
     output: web
     folderitems:
+    - title: Test and assure
+      url: /overview_test_and_assurance.html
+      output: web, pdf
+      type: homepage
     - title: Testing assets
       url: /testing_deliverables.html
       output: web
