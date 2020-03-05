@@ -177,8 +177,8 @@ entries:
   - title: Integrate with Spine
     output: web
     folderitems:  
-    - title: Spine integration illustrated
-      url: /integration_illustrated.html
+    - title: Integrate with Spine
+      url: /overview_spine_integration.html
       output: web
     - title: Spine integration illustrated
       url: /integration_illustrated.html
