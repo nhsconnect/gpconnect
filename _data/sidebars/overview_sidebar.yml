@@ -28,8 +28,9 @@ entries:
 
       subfolders:
       - title: Design approach
-        output: web
+        output: web        
         subfolderitems:
+        
         - title: API design principles
           url: /designprinciples_open_api_principles.html
           output: web
@@ -55,11 +56,11 @@ entries:
         - title: Specification versioning
           url: /design_product_versioning.html
           output: web
-
-      subfolders:
+          
       - title: Release notes
         output: web
         subfolderitems:
+        
         - title: 1.2.6
           url: /overview_release_notes_1_2_6.html
           output: web
