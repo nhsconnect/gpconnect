@@ -24,10 +24,12 @@ GP Connect aims to support better clinical care by opening up information and da
 In partnership with GP clinical system suppliers and other key parties, GP Connect has developed a set of FHIR&reg; API specifications that make data from different clinical systems available to clinicians when and where they need it. GP Connect supports the development of products that use the data made available by the APIs for *direct care purposes*.
 
 ## Audience ##
-The GP Connect specifications are designed for:
+The GP Connect specifications are intended for a technical audience:
 
 * Consumer suppliers - developers of applications that use GP Connect FHIR® APIs – for example, a system supplier in an acute or mental health care setting. See [Getting started for consumer suppliers](overview_getting_started_consumers.html).
 * Provider suppliers - suppliers of GP clinical systems that provide data through the GP Connect FHIR® APIs. See [Getting started for provider suppliers](overview_getting_started_providers.html).
+
+For news, case studies and information about how you can get involved, please see the [GP Connect website](https://digital.nhs.uk/services/gp-connect).
 
 ## Specifications ##
 Each specification has a dual objective:
