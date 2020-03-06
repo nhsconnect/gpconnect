@@ -10,7 +10,7 @@ summary: "Overview of development process and first steps"
 
 You may be working with an end user organisation to solve their business needs or developing an application to secure a place in the healthcare market. Whatever your reason for developing, this specification shows you how to connect to the GP Connect APIs and get your product ready for use.
 
-Our developer ecosystem diagram gives you an overview of a consumer supplier journey for a typical GP Connect API project (including 'Getting started'). Click on subsequent stages to find out more.
+Our developer ecosystem diagram gives you an overview of a consumer supplier journey for a typical GP Connect API project. Click on the stages to find out more.
 
 {% include developer_journey.html %}
 
@@ -26,7 +26,7 @@ Our developer ecosystem diagram gives you an overview of a consumer supplier jou
 
 Consumer suppliers can develop applications that use GP Connect specifications to consume GP data. To retrieve data from a provider supplier, your application will need to integrate with the [Spine](overview_spine_integration.html).
 
-## Development journey ##
+## Development and assurance process ##
 
 As an approximate guide you can expect to complete the following tasks on your GP Connect development journey:
 
