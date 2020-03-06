@@ -19,7 +19,7 @@ children:
   - title: Sitemap
     url: /sitemap_access_record_structured.html
     output: web
-	
+
 - title: Business Requirements
   output: web, pdf
   children:
