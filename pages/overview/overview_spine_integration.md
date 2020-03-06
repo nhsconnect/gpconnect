@@ -18,7 +18,7 @@ To retrieve data from a provider supplier, your application will need to integra
 <p>5. Provider returns data to SSP.</p>
 <p>6. SSP passes data to consumer.</p>
 
-![Img](images/overview/gp_connect_apis.png)
+![Img](images/integration/gp_connect_apis.png)
 
 For more details on consumer request interactions, see the [SSP implementation guide](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html).
 
