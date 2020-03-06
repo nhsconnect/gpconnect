@@ -56,7 +56,3 @@ As an approximate guide you can expect to complete the following tasks on your G
 - Commissioner and Supplier Deployment Approach
 - Go Live
 
-
-
-## Next step ##
-[Explore](/overview_explore.html)
