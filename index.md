@@ -21,7 +21,7 @@ GP Connect aims to support better clinical care by opening up information and da
 <img src="images/overview/GP-Connect-overview.png" alt="Diagram showing data flow between organisations and clinical systems" class="center">
                                                                                                                                                     <br>
                                                                                                                                                     
-In partnership with GP clinical system suppliers and other key parties, GP Connect has developed a set of FHIR&reg; API specifications that make data from different clinical systems available to clinicians when and where they need it. GP Connect supports the development of products that use the data made available by the APIs for *direct care purposes*.
+In partnership with GP clinical system suppliers and other key parties, GP Connect has developed a set of FHIR&reg; API specifications that make patient information from different clinical systems available to clinicians and administration staff when and where they need it. GP Connect supports the development of products that use the data made available by the APIs for *direct care purposes*.
 
 ## Audience ##
 The GP Connect specifications are intended for a technical audience:
