@@ -75,7 +75,7 @@ children:
       output: web
   - title: Implementation guidance
     output: web
-	children:
+    children:
     - title: Structural resources
       output: web
       children:
