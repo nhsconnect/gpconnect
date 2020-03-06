@@ -39,9 +39,6 @@ Each specification has a dual objective:
 
 The specifications are arranged by [version number](design_product_versioning.html) and grouped into separate [capabilities](overview_priority_capabilities.html). To find out about other specifications, visit the [Specification directory](https://digital.nhs.uk/services/gp-connect/gp-connect-specifications-for-developers).
 
-## Provide feedback ##
-To provide feedback on the GP Connect specification please send an email to the [GP Connect Team Inbox](mailto://gpconnect@nhs.net).
-
 {% include twitterfollow.html %}
 
 {% include gitterbadge.html %}
