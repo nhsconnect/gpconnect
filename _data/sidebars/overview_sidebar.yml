@@ -102,7 +102,7 @@ entries:
       url: /overview_explore.html
       output: web, pdf
       type: homepage
-    - title: GP Connect demonstrator
+    - title: GP Connect Demonstrator
       url: /system_demonstrator.html
       output: web
     - title: Interactive API documentation
