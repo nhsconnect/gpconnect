@@ -6,7 +6,7 @@ sidebar: overview_sidebar
 toc: false
 pathways: [consumer,provider]
 permalink: overview_development.html
-summary: Start building applications that use GP Connect to consume or expose data
+summary: Start building functionality to enable your application or system to consume or expose data
 ---
 
 ## Consumer suppliers ##
