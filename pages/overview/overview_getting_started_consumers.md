@@ -24,7 +24,7 @@ Our developer ecosystem diagram gives you an overview of a consumer supplier jou
 
 ## Integration with Spine ##
 
-Consumer suppliers can develop applications that use GP Connect specifications to consume GP data. To retrieve data from a provider supplier, your application will need to integrate with the [Spine](overview_spine_integration.html).
+Consumer suppliers can develop applications that use GP Connect specifications to consume GP data. To retrieve data from a provider supplier, your application will need to integrate with the [Spine](overview_spine_integration.html). This will involve using the Personal Demographics Service (PDS) and Spine Secure Proxy (SSP).
 
 ## Development and assurance process ##
 
@@ -33,7 +33,7 @@ As an approximate guide you can expect to complete the following tasks on your G
 <p><strong>Get started and explore</strong></p>
 - Read about the GP Connect capabilities
 - Study the prerequisites
-- Try out the GP Connect demonstrator
+- Try out the GP Connect Demonstrator
 - Choose capabilities
 <p><strong>Engagement:</strong></p>
 - Contact the [GP Connect](https://digital.nhs.uk/services/gp-connect/getting-involved-with-gp-connect/information-for-consumer-organisations) team
