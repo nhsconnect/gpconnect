@@ -17,9 +17,6 @@ children:
   - title: Introduction
     url: /access_documents.html
     output: web
-  - title: Documents guidance
-    output: web
-    url: /access_documents_development_documents_guidance.html
   - title: Sitemap
     url: /sitemap_access_documents.html
     output: web
