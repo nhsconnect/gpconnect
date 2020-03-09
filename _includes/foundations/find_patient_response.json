@@ -1,3 +1,4 @@
+{% highlight json %}
 {
   "resourceType": "Bundle",
   "type": "searchset",
@@ -109,3 +110,4 @@
     }
   ]
 }
+{% endhighlight %}
