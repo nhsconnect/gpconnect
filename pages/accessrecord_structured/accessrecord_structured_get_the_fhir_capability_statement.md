@@ -30,6 +30,10 @@ The consumer system:
 
 ## API usage ##
 
+### Interaction diagram ###
+
+<img style="height: 400px;" alt="Get the FHIR&reg; capability statement interaction diagram" src="images/access_structured/get-structured-capability-statement-interaction-diagram.png"/>
+
 ### Request operation ###
 
 #### FHIR relative request ####
@@ -61,7 +65,19 @@ N/A
 
 #### Error handling ####
 
-Provider systems are expected to always be able to return a valid capability statement.
+The provider system **MUST** return a `GPConnect-OperationOutcome-1` resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code. Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response or to determine the response for errors encountered that are not shown below.
+
+Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
+
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+|-------------------------|-------------------|
+
 
 ### Request response ###
 
