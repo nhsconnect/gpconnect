@@ -1,3 +1,4 @@
+{% highlight json %}
 {
   "resourceType": "Patient",
   "id": "2",
@@ -101,3 +102,4 @@
     "reference": "Organization/14"
   }
 }
+{% endhighlight %}
