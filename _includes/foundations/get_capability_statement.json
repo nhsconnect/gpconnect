@@ -1,0 +1,189 @@
+{% highlight json %}
+{
+  "resourceType": "CapabilityStatement",
+  "version": "1.2.6",
+  "name": "GP Connect",
+  "status": "active",
+  "date": "2020-01-15",
+  "publisher": "[Provider Software Vendor Name]",
+  "contact": [
+    {
+      "name": "[Provider Software Vendor Contact Name]"
+    }
+  ],
+  "description": "This server implements the GP Connect API version 1.2.6",
+  "copyright": "Copyright NHS Digital 2016-20",
+  "kind": "capability",
+  "software": {
+    "name": "[Provider Software Name]",
+    "version": "[Provider Software Version]",
+    "releaseDate": "[Provider Software Release Date]"
+  },
+  "fhirVersion": "3.0.1",
+  "acceptUnknown": "both",
+  "format": [
+    "application/fhir+json",
+    "application/fhir+xml"
+  ],
+  "profile": [
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-AllergyIntolerance-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1" }
+  ],
+  "rest": [
+    {
+      "mode": "server",
+      "security": {
+        "cors": true
+      },
+      "resource": [
+        {
+          "type": "Patient",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "identifier",
+              "type": "token",
+              "documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
+            }
+          ]
+        },
+        {
+          "type": "Organization",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "identifier",
+              "type": "token",
+              "documentation": "ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)"
+            }
+          ]
+        },
+        {
+          "type": "Practitioner",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "identifier",
+              "type": "token",
+              "documentation": "SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)"
+            }
+          ]
+        },
+        {
+          "type": "Location",
+          "interaction": [
+            {
+              "code": "read"
+            }
+          ]
+        },
+        {
+          "type": "Appointment",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "create"
+            },
+            {
+              "code": "update"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "updateCreate": false,
+          "searchParam": [
+            {
+              "name": "identifier",
+              "type": "token",
+              "documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
+            }
+          ]
+        },
+        {
+          "type": "Slot",
+          "interaction": [
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchInclude": [
+            "Schedule:actor:Location",
+            "Schedule:actor:Practitioner",
+            "Slot:schedule",
+            "Location:managingOrganization"
+          ],
+          "searchParam": [
+            {
+              "name": "start",
+              "type": "date"
+            },
+            {
+              "name": "end",
+              "type": "date"
+            },
+            {
+              "name": "status",
+              "type": "token"
+            },
+            {
+              "name": "searchFilter",
+              "type": "token"
+            }
+          ]
+        }
+      ],
+      "operation": [
+        {
+          "name": "gpc.registerpatient",
+          "definition": {
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1"
+          }
+        },
+        {
+          "name": "gpc.getstructuredrecord",
+          "definition": {
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.12"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endhighlight %}
