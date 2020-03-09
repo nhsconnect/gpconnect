@@ -13,7 +13,7 @@ summary: Start building functionality to enable your application or system to co
 
 - familiarise yourself with HL7&reg; FHIR&reg; ([developer introduction](http://www.hl7.org/implement/standards/fhir/STU3/overview-dev.html){:target="_blank"}, [executive summary](http://www.hl7.org/implement/standards/fhir/STU3/summary.html){:target="_blank"}, or [clinical intro](http://www.hl7.org/implement/standards/fhir/STU3/overview-clinical.html){:target="_blank"})
 - grab an [open source FHIR development library](development_fhir_open_source_guidance.html) for your favourite programming language
-- which serialisation format should I choose as an GP Connect API consumer - [JSON or XML?](serialisation_format.html)
+- which serialisation format should I choose as an GP Connect API consumer - NHS Digital recommends all new consumer systems use JSON - see [Frequently asked questions](support_faq.html) for more information
 - explore the GP Connect profiled FHIR resources, a variation of the international [FHIR resources](https://www.hl7.org/fhir/STU3/){:target="_blank"}, for [Foundations](datalibraryfoundation.html), [Access Record HTML](datalibraryaccessRecord.html), and [Appointment Management](datalibraryappointment.html).
 - dig in deep and explore one or more of the GP Connect capability packs and start building new or hitting existing APIs
   - [Foundations](foundations.html) (for example, resolve a patient to their logical identifier for further API calls)
