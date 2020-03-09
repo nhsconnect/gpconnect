@@ -11,23 +11,23 @@ title: Access Documents
 levels: one
 children:
 
-- title: Overview2
+- title: Overview
   output: web, pdf
   children:
-  - title: Introduction1
+  - title: Introduction
     url: /access_documents.html
     output: web
   - title: Sitemap
     url: /sitemap_access_documents.html
     output: web 
-  - title: Business requirements1
+  - title: Business requirements
     output: web, pdf
     children: 
-  - title: Documents guidance1
+  - title: Documents guidance
     output: web
     url: /access_documents_development_documents_guidance.html
 
-- title: Development2
+- title: Development
   output: web, pdf
   children:
   - title: FHIR&reg; examples
@@ -63,6 +63,6 @@ children:
     - title: Retrieve a document
       url: /access_documents_development_retrieve_patient_documents.html
       output: web
-  - title: Consumer sessions illustrated2
+  - title: Consumer sessions illustrated
     url: /access_documents_development_api_session.html
     output: web
