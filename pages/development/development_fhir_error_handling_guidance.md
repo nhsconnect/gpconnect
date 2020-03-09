@@ -337,9 +337,11 @@ For example, if the request contained a null `aud` claim in the JWT, then the fo
 }
 ```
 
+
+
 ### Internal server errors ###
 
-When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, or disabled, then the NOT_IMPLEMENTED Spine error code **SHALL** be used.
+When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED Spine error code **SHALL** be used.
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
