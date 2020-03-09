@@ -72,7 +72,7 @@ Extension elements to hold details of repeat authorisation.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>PositiveInt</code></td>
+    <td><b>Data type:</b> <code>UnsignedInt</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
