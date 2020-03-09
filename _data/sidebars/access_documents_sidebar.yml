@@ -23,10 +23,10 @@ children:
   - title: Business requirements1
     output: web, pdf
     children: 
-    - title: Documents guidance1
-      output: web
-      url: /access_documents_development_documents_guidance.html
-    
+  - title: Documents guidance1
+    output: web
+    url: /access_documents_development_documents_guidance.html
+
 - title: Development2
   output: web, pdf
   children:
@@ -63,6 +63,6 @@ children:
     - title: Retrieve a document
       url: /access_documents_development_retrieve_patient_documents.html
       output: web
-   - title: Consumer sessions illustrated2
+  - title: Consumer sessions illustrated2
     url: /access_documents_development_api_session.html
     output: web
