@@ -23,9 +23,9 @@ children:
   - title: Business requirements
     output: web, pdf
     children: 
-  - title: Documents guidance
-    output: web
-    url: /access_documents_development_documents_guidance.html
+    - title: Documents guidance
+      output: web
+      url: /access_documents_development_documents_guidance.html
 
 - title: Development
   output: web, pdf
