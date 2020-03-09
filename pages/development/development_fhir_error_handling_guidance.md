@@ -169,6 +169,35 @@ For example, if the patient has requested that their record should not be shared
 }
 ```
 
+#### Example: Access denied #####
+
+```json
+{
+  "resourceType": "OperationOutcome",
+  "meta": {
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1"
+    ]
+  },
+  "issue": [
+    {
+      "severity": "error",
+      "code": "forbidden",
+      "details": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "code": "ACCESS_DENIED",
+            "display": "Access denied"
+          }
+        ]
+      },
+      "diagnostics": "The Access Document capability is disabled at this practice."
+    }
+  ]
+}
+```
+
 ### Duplicate errors ###
 
 When responding to consumer API requests, provider systems **SHALL** return one of the following `OperationOutcome` details when a resource could not be created or updated because it would cause a duplicate in the provider system:
