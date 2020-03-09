@@ -74,3 +74,6 @@ entries:
         - title: Register a patient
           url: /foundations_use_case_register_a_patient.html
           output: web, pdf
+        - title: Patient examples test
+          url: /foundations_fhir_examples_patient.html
+          output: web, pdf       
