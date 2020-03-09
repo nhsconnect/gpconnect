@@ -11,7 +11,7 @@ title: Access Documents
 levels: one
 children:
 
-- title: Overview1
+- title: Overview2
   output: web, pdf
   children:
   - title: Introduction1
@@ -27,12 +27,9 @@ children:
       output: web
       url: /access_documents_development_documents_guidance.html
     
-- title: Development
+- title: Development2
   output: web, pdf
   children:
-  - title: Consumer sessions illustrated
-    url: /access_documents_development_api_session.html
-    output: web
   - title: FHIR&reg; examples
     output: web
     url: /access_documents_development_fhir_examples_documents.html
@@ -51,7 +48,7 @@ children:
     - title: Binary
       output: web
       url: /access_documents_development_binary.html
-  - title: API definition
+  - title: API use cases
     output: web, pdf
     children:
     - title: Get the FHIR&reg; capability statement
@@ -66,3 +63,6 @@ children:
     - title: Retrieve a document
       url: /access_documents_development_retrieve_patient_documents.html
       output: web
+   - title: Consumer sessions illustrated2
+    url: /access_documents_development_api_session.html
+    output: web
