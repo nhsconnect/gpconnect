@@ -52,6 +52,11 @@ GET
 http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient/2
 ```
 
+```http
+GET 
+http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number|9476719931
+```
+
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 {% include foundations/read_patient_response.json %}
