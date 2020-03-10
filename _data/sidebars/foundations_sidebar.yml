@@ -77,3 +77,6 @@ entries:
         - title: Patient examples test
           url: /foundations_fhir_examples_patient.html
           output: web, pdf       
+        - title: Practitioner examples test
+          url: /foundations_fhir_examples_practitioner.html
+          output: web, pdf
