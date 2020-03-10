@@ -74,8 +74,8 @@ entries:
         - title: Register a patient
           url: /foundations_use_case_register_a_patient.html
           output: web, pdf
-        - title: Patient examples test
-          url: /foundations_fhir_examples_patient.html
+        - title: Capability statement examples test
+          url: /foundations_fhir_examples_capability.html
           output: web, pdf       
         - title: Practitioner examples test
           url: /foundations_fhir_examples_practitioner.html
