@@ -26,5 +26,4 @@ GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Location/17
 
 {% include foundations/read_location_response.json %}
 
-</div>
-</div>
+
