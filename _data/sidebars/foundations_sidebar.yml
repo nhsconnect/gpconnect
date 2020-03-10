@@ -80,3 +80,6 @@ entries:
         - title: Practitioner examples test
           url: /foundations_fhir_examples_practitioner.html
           output: web, pdf
+        - title: Organisation examples test
+          url: /foundations_fhir_examples_organisation.html
+          output: web, pdf
