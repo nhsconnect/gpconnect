@@ -52,7 +52,6 @@ GET
 http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient/2
 ```
 
-
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 {% include foundations/read_patient_response.json %}
