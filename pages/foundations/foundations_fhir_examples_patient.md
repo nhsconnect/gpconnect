@@ -47,10 +47,8 @@ http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient?identifier=https://
 
 <p style="line-height: 1; font-size: 18px">Request</p>
 
-```http
-GET 
-http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient/2
-```
+
+<div class="language-http highlighter-rouge"><div class="highlight"><pre class="highlight"><code class="hljs nginx"><span class="err"><span class="hljs-attribute">GET</span> http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Binary/07a6483f-732b-461e-86b6-edb665c45510</span></code></pre></div>    </div>
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
