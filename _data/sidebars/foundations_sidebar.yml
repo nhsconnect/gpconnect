@@ -83,3 +83,6 @@ entries:
         - title: Organisation examples test
           url: /foundations_fhir_examples_organisation.html
           output: web, pdf
+        - title: Location examples test
+          url: /foundations_fhir_examples_location.html
+          output: web, pdf
