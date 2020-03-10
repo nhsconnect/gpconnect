@@ -1,4 +1,3 @@
-
 ---
 title: FHIR&reg; examples
 keywords: foundations examples
