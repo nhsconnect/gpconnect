@@ -22,4 +22,4 @@ GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/metadata
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
-{% include foundations/read_capability_response.json %}
+{% include foundations/get_fhir_capability_statement.json %}
