@@ -48,7 +48,8 @@ http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient?identifier=https://
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 ```http
-GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient/2
+GET 
+http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient/2
 ```
 
 
