@@ -20,7 +20,7 @@ The following is a set of request/response examples for the Patient profile in t
 
 <p style="line-height: 2; font-size: 20px">Find a patient</p>
 
-<p>Example of a search for a patient by their NHS Number:</p>
+<p>Example of a search for a patient by their NHS Number</p>
 
 <br/>
 
@@ -41,18 +41,14 @@ http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient?identifier=https://
 
 <p style="line-height: 2; font-size: 20px">Read a patient</p>
 
-<p>Example of a request to retrieve a patient’s details:</p>
-
-
+<p>Example of a request to retrieve a patient’s details</p>
 
 <br/>
 
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 ```http
-GET 
-
-http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient/2
+GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/Patient/2
 ```
 
 
