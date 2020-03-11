@@ -124,28 +124,20 @@ Based on this analysis the following codes may in the future be sent as vital si
 #### Systolic vital signs codes
 Below is the SNOMED binding for systolic codes that represent vital signs in GP systems:
 ```
-<< 271649006 | Systolic blood pressure (observable entity) |
-
-MINUS
-
-<< 314464000 | 24 hour systolic blood pressure (observable entity) | OR
-
-<< 716579001 | Baseline systolic blood pressure (observable entity) | OR
-
-<< 315612005 | Target systolic blood pressure (observable entity) '
+271649006 | Systolic blood pressure |
+OR 72313002 | Systolic arterial pressure |
+OR 400974009 | Standing systolic blood pressure |
+OR 407554009 | Sitting systolic blood pressure |
+OR 407556006 | Lying systolic blood pressure |
 ```
 #### Diastolic vital signs codes
 Below is the SNOMED binding for diastolic codes that represent vital signs in GP systems:
 ```
-<< 271650006 | Diastolic blood pressure (observable entity) |
-
-MINUS
-
-<< 314465004 | 24 hour diastolic blood pressure (observable entity) | OR
-
-<< 716632005 | Baseline diastolic blood pressure (observable entity) | OR
-
-<< 315613000 | Target diastolic blood pressure (observable entity)'
+271650006 | Diastolic blood pressure |
+OR 1091811000000102 | Diastolic arterial pressure |
+OR 400975005 | Standing diastolic blood pressure |
+OR 407555005 | Sitting diastolic blood pressure |
+OR 407557002 | Lying diastolic blood pressure |
 ```
 ### Which codes will be sent using the defined blood pressure structure?
 
