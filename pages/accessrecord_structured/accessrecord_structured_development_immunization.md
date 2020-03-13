@@ -331,8 +331,6 @@ The code <code>AP</code> (Administering Provider) **MUST** be used to designate 
 
 {% include note.html content="EP is not included in the extensible [value set for immunization.practitioner.role](http://hl7.org/fhir/stu3/valueset-immunization-role.html) (which includes only OP and AP codes). EP has been selected from the [parent valueset](http://hl7.org/fhir/stu3/v2/0443/index.html) as a more suitable code. Please use the display name 'Entering Provider' with this code, not the longer description from the value set" %}
 
-{% include note.html content="EP is not included in the extensible [value set for immunization.practitioner.role](http://hl7.org/fhir/stu3/valueset-immunization-role.html) (which includes only OP and AP codes). EP has been selected from the [parent valueset](http://hl7.org/fhir/stu3/v2/0443/index.html) as a more suitable code. Please use the display name 'Entering Provider' with this code, not the longer description from the value set" %}
-
 ### practitioner.actor
 
 <table class='resource-attributes'>
