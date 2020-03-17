@@ -79,13 +79,14 @@ children:
       output: web, pdf
     - title: Cancel an appointment
       url: /appointments_use_case_cancel_an_appointment.html
-      output: web, pdf       
-  - title: Additional provider requirements
+      output: web, pdf  
+      
+  - title: Implementation guidance
     output: web, pdf
     children:
     - title: Slot availability management
       url: /appointments_slotavailabilitymanagement.html
       output: web, pdf
-        - title: Consumer sessions illustrated
-    url: /appointments_consumer_sessions.html
-    output: web, pdf
+    - title: Consumer sessions illustrated
+      url: /appointments_consumer_sessions.html
+      output: web, pdf
