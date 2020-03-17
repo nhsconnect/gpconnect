@@ -17,7 +17,14 @@ children:
   - title: Introduction
     url: /appointments.html
     output: web
-  - title: Business requirements
+  - title: Sitemap
+    url: /sitemap_appointment_management.html
+    output: web
+    
+- title: Business requirements
+  output: web
+  children:
+  - title: Requirements   
     url: /appointments_requirements.html
     output: web
   - title: Clinical scenarios
@@ -26,31 +33,32 @@ children:
   - title: Information governance
     url: /appointments_ig.html
     output: web, pdf
-  - title: Design decisions
-    url: /appointments_design.html
-    output: web
   - title: Wireframes
     url: /appointments_wireframes.html
     output: web
   - title: Known issues
     url: /appointments_known_issues.html
     output: web, pdf
-  - title: Sitemap
-    url: /sitemap_appointment_management.html
+  
+- title: Design
+  output: web
+  children:
+  - title: Design decisions
+    url: /appointments_design.html
     output: web
 
 - title: Development
   output: web, pdf
   children:
+  - title: Introduction 
+    output: web, pdf
   - title: FHIR&reg; resources 
     url: /datalibraryappointment.html
     output: web, pdf
   - title: Service discovery
     url: /appointments_service_discovery.html
     output: web
-  - title: Consumer sessions illustrated
-    url: /appointments_consumer_sessions.html
-    output: web, pdf
+
   - title: API use cases
     output: web, pdf
     children:
@@ -78,3 +86,6 @@ children:
     - title: Slot availability management
       url: /appointments_slotavailabilitymanagement.html
       output: web, pdf
+        - title: Consumer sessions illustrated
+    url: /appointments_consumer_sessions.html
+    output: web, pdf
