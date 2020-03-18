@@ -84,7 +84,7 @@ Fixed value of `final`.
 
 The clinical code that represents the header or panel of the blood pressure.
 
-Where there is an appropriate header code for a recognised triple recorded in the providing GP system this **MUST** be populated here. 
+Where there is an appropriate header code for a recognised triple recorded in the providing GP system this **MUST** be populated here.
 
 If there is no header/panel code and only the code(s) for systolic and/or diastolic components are recorded, then this **MUST** be populated with the SNOMED codes conceptID '75367002' and the descriptionID of the preferred term '125176019' which has the description 'Blood pressure' and is an observable entity.
 
@@ -209,7 +209,7 @@ Contains any hierarchical information between uncategorised data items.
 
 The clinical code that represents systolic part of the blood pressure.
 
-A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategoriseddata_guidance.html).
+A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategorisedData_guidance.html).
 
 ### component.valueQuantity ###
 
@@ -221,7 +221,7 @@ A list of the systolic blood pressure codes is included in the uncategorised gui
   </tr>
 </table>
 
-The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'. 
+The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'.
 
 ### component.dataAbsentReason ###
 
@@ -276,7 +276,7 @@ Where a reference range contains a less than '<' or greater than '>' operator it
 
 The clinical code that represents diastolic part of the blood pressure.
 
-A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategoriseddata_guidance.html).
+A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategorisedData_guidance.html).
 
 ### component.valueQuantity ###
 
@@ -288,7 +288,7 @@ A list of the systolic blood pressure codes is included in the uncategorised gui
   </tr>
 </table>
 
-The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'. 
+The value of the observation. This **MUST** be a 'quantity' data type and the units used **MUST** be 'mm[Hg]'.
 
 ### component.dataAbsentReason ###
 
@@ -393,6 +393,3 @@ The following elements **MUST NOT** be populated at the panel/header level:
     <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
-
-
-
