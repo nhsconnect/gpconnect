@@ -8,6 +8,8 @@
   value: "A set of functions and procedures that allows the creation of applications which access the features or data of an application or other service to deliver specific cross-organisational business capability. The aim of GP Connect FHIR&reg; APIs is to provide access to data and workflow within GP clinical systems."
 - title: Appointment
   value: An organised contact between a specific Patient and a Health Service Provider at a specified date, time and location
+- title: AS record
+  value: "LDAP object of type nhsAs in SDS, uniquely identified by ASID, and representing a Spine connected system deployed to an organisation."
 - title: Capability
   value: "The GP Connect FHIR® APIs are managed within ‘capabilities’ that focus on a particular business area of general practice and wider cross-organisational interoperability. Capabilities are organised within ‘capability packs’, which include:<ul><li>Appointment Management</li><li>Access Record HTML</li><li>Access Record Structured</li></ul>"
 - title: Certificate Revocation List (CRL)
@@ -23,7 +25,7 @@
 - title: Clinical safety
   value: "The process of evaluating clinical safety risk. See <a href='https://digital.nhs.uk/services/solution-assurance/the-clinical-safety-team/clinical-risk-management-standards' target='_blank'>clinical risk management standards</a>."
 - title: Combined Message Handling Server and Accredited System (CMA) endpoint
-  value: "An endpoint registered with Spine for a single system."
+  value: "A way of registering MHS and AS record for a system at a single organisation which creates a Party key and ASID for use only at that organisation."
 - title: Commissioning organisation
   value: The lead organisation involved in commissioning a sharing solution on behalf of multiple health and care organisations
 - title: Connection agreement
@@ -59,7 +61,7 @@
 - title: Fully Qualified Domain Name (FQDN)
   value: "The complete domain name for a specific computer, or host, on the internet. The FQDN consists of two parts - the hostname and the domain name."
 - title: GP Systems of Choice (GPSoC) contract
-  value: "A contractual framework to supply IT systems and services to GP practices and associated organisations in England. Suppliers gain approval to offer services through a centrally controlled contract."
+  value: "A contractual framework to supply IT systems and services to GP practices and associated organisations in England. The GPSoC Framework ended on 31 March 2018, when a continuity agreement was agreed, to ensure that the essential core services from GPSoC remain available until a replacement GP IT Framework is in place."
 - title: INTEROPen
   value: "An open collaboration of individuals, industry, standards organisations and health and care providers, who have agreed to work together to accelerate the development of open standards for interoperability in the health and social care sector."
 - title: JSON Web Token (JWT)
@@ -70,6 +72,8 @@
   value: "A middleware system that handles messaging to and from Spine."
 - title: MHS endpoint
   value: "An endpoint registered with Spine for use with multiple systems via a message handling server. Each system has its own ASID."
+- title: MHS record
+  value: "LDAP object of type nhsMhs in SDS, uniquely identified by Party key, and representing a message handling server."
 - title: Network Time Protocol (NTP)
   value: "A networking protocol for clock synchronisation between computer systems over packet-switched, variable-latency data networks."
 - title: NHS Number
@@ -78,6 +82,8 @@
   value: "A conceptual model that characterises and standardises the communication functions of a computing system without regard to its underlying internal structure and technology."
 - title: Organisational Data Service (ODS)
   value: "NHS Digital team responsible for publishing organisation and practitioner codes, along with related national policies and standards. Also responsible for the maintenance of the organisation and person nodes of the Spine Directory Service."
+- title: Party key
+  value: "The unique identifier of an MHS record."
 - title: Patient's GP record
   value: "An electronic record relating to a patient, containing personal, administrative and clinical information about the patient."
 - title: Personal Demographics Service (PDS)
@@ -89,11 +95,11 @@
 - title: Privacy Enhanced Mail (PEM)
   value: "A file format for storing and sending cryptographic keys, certificates, and other data."
 - title: Provider organisation
-  value: "Organisation that holds the Patient GP record - typically a GP prctice which can act as an individual, or be represented by a CCG or STP."
-- title: Provider supplier
-  value: "The provider of a clinical system that is the source of GP data."
+  value: "Organisation that holds the patient GP record - typically a GP practice which can act as an individual, or be represented by a CCG or STP."
+- title: Provider supplier organisation
+  value: "A software development company which supplies provider systems, principal clinical systems where the patient GP record is held."
 - title: Provider system
-  value: "A GP clinical system that provides data through the GP Connect FHIR® APIs."
+  value: "A GP clinical system that holds patient data and provides it through the GP Connect FHIR® APIs."
 - title: Proxy server
   value: "A server that acts as an intermediary for requests from clients seeking resources from other servers."
 - title: Release candidate (RC)
@@ -110,6 +116,8 @@
   value: "A collection of national applications, services and directories operated by NHS Digital that supports the health and social care sector in the exchange of information in national and local IT systems."
 - title: Spine Secure Proxy (SSP)
   value: "A forward proxy used as a front end to control and protect access to GP principal clinical systems exposing FHIR®-based RESTful APIs. SSP also validates the existence of a data-sharing relationship between requesting and providing organisations. Also known as ‘Spine Security Proxy’."
+- title: Sustainability and transformation partnership
+  value: "These are areas covering all of England, where local NHS organisations and councils drew up shared proposals to improve health and care in the areas they serve."
 - title: Target Operating Model (TOM)
   value: "Part of an assessment framework and a NHS Digital self-certification tool. It acts as a risk management vehicle, enabling safe distributed risk ownership and responsibility amongst the participants involved - from NHS Digital to the supplier, and the end user organisation (EUO). For a consumer supplier, it is designed to document the details of a product including technical, information governance (IG), clinical safety and functionality. For the end user organisation, the TOM highlights their responsibilities in terms of ensuring that a local system meets the technical, IG, clinical safety and functionality required for the business context and relies on the EUO assuming local responsibility for assurance and risk ownership of the deploying product."
 - title: Transport Layer Security (TLS)
