@@ -147,6 +147,15 @@
           }
         ],
         "context": {
+          "practiceSetting" : {
+            "coding": [
+              {
+                "system": "http://snomed.info/sct",
+                "code": "1060971000000108",
+                "display": "General practice service"
+              }
+            ]
+          }
           "encounter": {
             "reference": "Encounter/4"
           }
