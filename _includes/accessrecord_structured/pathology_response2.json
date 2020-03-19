@@ -1,6 +1,7 @@
 {% highlight json %}
 {
   "resourceType": "Bundle",
+  "type": "collection",
   "meta": {
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
@@ -344,10 +345,6 @@
         }
       }
     }
-  ],
-  "identifier": {
-    "value": "f36927ef-7703-45ed-b0e5-6ec6723cf0f6",
-    "system": "https://tools.ietf.org/html/rfc4122"
-  }
+  ]
 }
 {% endhighlight %}

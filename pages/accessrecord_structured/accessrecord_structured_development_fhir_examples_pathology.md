@@ -31,8 +31,6 @@ The following is a set of request/response examples for Pathology:
 <br>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 
-<p>Note: The <code class="highlighter-rouge">includeTestResults</code> parameter has explicitly been set to <code class="highlighter-rouge">721981007</code>.</p>
-
 
 
 {% include accessrecord_structured/pathology_request1.json %}

@@ -287,91 +287,109 @@
           "resourceType": "Observation",
           "related": [
             {
+              "type": "has-member",
               "target": {
-                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae067"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/32685afe-1d46-4d98-8279-39b9e96ee914"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/770b982d-be09-4744-a5d7-54e757947ffe"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/0a8aba3d-6b29-4dba-9c64-3a47516cc5eb"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/ddc43c3a-2863-4d6f-a926-162f5a4174b1"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/9825b7cf-de29-4c07-9b84-4af04dbf8233"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/e732e681-3a89-4433-a37b-3767dd19d809"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/2a604bea-1ef4-4cb1-97a0-f2a160f12679"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/704b6bb2-a1c0-429b-b901-c641e70345ec"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/53f4132c-0168-4327-8d69-560b13f5bb4e"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/c9e03e92-78b8-4e8e-9785-cbd9424e9380"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/9c61ad77-8c17-41aa-b795-f0fcb9f983d5"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/f67cb109-0890-4e47-9126-86da677c7008"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/1f2e71db-b9aa-4e4f-9a78-87f99fefc8bf"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/a23b563d-765a-4032-8dd3-c03178224f35"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/fedb7c2d-337c-435c-9169-612349783b5a"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/f9070943-7460-413a-a608-e15334b6e1d9"
               }
             },
             {
+              "type": "has-member",
               "target": {
                 "reference": "Observation/66acb40a-e241-474a-92b5-c74f9aa6a854"
               }
@@ -438,6 +456,14 @@
               }
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
@@ -457,7 +483,7 @@
               "system": "https://tools.ietf.org/html/rfc4122"
             }
           ],
-          "id": "dacb177a-9501-4dcc-8b22-b941791ae0db",
+          "id": "dacb177a-9501-4dcc-8b22-b941791ae067",
           "code": {
             "coding": [
               {
@@ -496,6 +522,14 @@
           "referenceRange": [
                         {
               "text": "less than 3.8 to 5"
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
             }
           ],
           "performer": [
@@ -563,6 +597,14 @@
               }
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
@@ -621,6 +663,14 @@
           "referenceRange": [
             {
               "text": "greater than 0.36 and less than 0.46"
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
             }
           ],
           "performer": [
@@ -685,6 +735,14 @@
               },
               "low": {
                 "value": 80
+              }
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
               }
             }
           ],
@@ -753,6 +811,14 @@
               }
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
@@ -815,6 +881,14 @@
               },
               "low": {
                 "value": 310
+              }
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
               }
             }
           ],
@@ -883,6 +957,14 @@
               }
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
@@ -948,6 +1030,14 @@
               }
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "performer": [
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
@@ -1009,6 +1099,14 @@
               "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "valueQuantity": {
             "value": 77.700000000000003,
             "unit": "%"
@@ -1065,6 +1163,14 @@
               },
               "low": {
                 "value": 1
+              }
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
               }
             }
           ],
@@ -1129,6 +1235,14 @@
               "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "valueQuantity": {
             "value": 14.300000000000001,
             "unit": "%"
@@ -1189,6 +1303,14 @@
               "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "valueQuantity": {
             "value": 0.47999999999999998,
             "unit": "10*9/L"
@@ -1244,6 +1366,14 @@
               "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "valueQuantity": {
             "value": 7.0999999999999996,
             "unit": "%"
@@ -1296,6 +1426,14 @@
           "referenceRange": [
             {
               "text": "greater than 0.04 to greater than 0.4"
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
             }
           ],
           "performer": [
@@ -1359,6 +1497,14 @@
               "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
             }
           ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
+            }
+          ],
           "valueQuantity": {
             "value": 0.90000000000000002,
             "unit": "%"
@@ -1415,6 +1561,14 @@
               },
               "low": {
                 "value": 0.02
+              }
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
               }
             }
           ],
@@ -1477,6 +1631,14 @@
             {
               "display": "GREENTOWN GENERAL HOSPITAL",
               "reference": "Organization/d6407de7-0e86-45eb-93cb-035094aaa49e"
+            }
+          ],
+          "related": [
+            {
+              "type": "derived-from",
+              "target": {
+                "reference": "Observation/dacb177a-9501-4dcc-8b22-b941791ae0db"
+              }
             }
           ],
           "valueQuantity": {
