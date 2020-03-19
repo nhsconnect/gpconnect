@@ -16,12 +16,16 @@
   value: "The structured patient record is split into a number of Clinical Areas each of which describes a different type of clinical data."
 - title: Clinical Authority To Release (CATR)
   value: "Granted by NHS Digital Clinical Safety Group. It confirms that all clinical safety documents have been completed to the required standard."
+- title: Clinical Commissioning Group (CCG)
+  value: "CCGs were created following the Health and Social Care Act in 2012, and replaced Primary Care Trusts on 1st April 2013. They are clinically-led statutory NHS bodies responsible for the planning and commissioning of health care services for their local area."
 - title: Clinical Item
   value: "A single item of data in the structured patient record."
 - title: Clinical safety
   value: "The process of evaluating clinical safety risk. See <a href='https://digital.nhs.uk/services/solution-assurance/the-clinical-safety-team/clinical-risk-management-standards' target='_blank'>clinical risk management standards</a>."
 - title: Combined Message Handling Server and Accredited System (CMA) endpoint
   value: "An endpoint registered with Spine for a single system."
+- title: Commissioning organisation
+  value: The lead organisation involved in commissioning a sharing solution on behalf of multiple health and care organisations
 - title: Connection agreement
   value: "A legal and commercial agreement between NHS Digital and a supplier that is using NHS Digital services to provide or consume (GP) data (previously known as Terms of Use)."
 - title: Consumer application
@@ -84,6 +88,8 @@
   value: "The name given to a group of suppliers that provide GPs with the core system available under the GPSoC contract (also known as 'providers'). The current suppliers are:<ul><li>EMIS Health</li><li>Microtest</li><li>TPP</li><li>Vision</li></ul>"
 - title: Privacy Enhanced Mail (PEM)
   value: "A file format for storing and sending cryptographic keys, certificates, and other data."
+- title: Provider organisation
+  value: "Organisation that holds the Patient GP record - typically a GP prctice which can act as an individual, or be represented by a CCG or STP."
 - title: Provider supplier
   value: "The provider of a clinical system that is the source of GP data."
 - title: Provider system
@@ -95,7 +101,7 @@
 - title: Role Based Access Control (RBAC)
   value: "An integral part of the Spine security process."
 - title: Slot
-  value: "."
+  value: "A pre-defined period of time at a specified location, with a specific healthcare professional in attendance, which may be booked for a patient as an Appointment."
 - title: Spine Directory Service (SDS)
   value: "Central directory of organisations, users and services for consumption by Spine-related applications. GP Connect systems use SDS data about NHS-registered users and accredited systems and services."
 - title: SOAP heading
@@ -110,3 +116,5 @@
   value: "A cryptographic protocol that provides communications security over a computer network."
 - title: Threat Protection System (TPS)
   value: "A category of security solutions that defend against sophisticated malware or hacking-based attacks targeting sensitive data."
+- title: Urgent and Emergency Care (UEC)
+  value: "."
