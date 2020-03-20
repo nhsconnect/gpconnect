@@ -151,7 +151,6 @@ entries:
           url: /design_product_versioning.html
           output: web
 
-
       subfolders:
       - title: Implement a capability
         output: web        
