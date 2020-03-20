@@ -121,6 +121,7 @@ entries:
       output: web
 
       subfolders:
+      
       - title: Design approach
         output: web        
         subfolderitems:
@@ -150,8 +151,7 @@ entries:
         - title: Specification versioning
           url: /design_product_versioning.html
           output: web
-
-      subfolders:
+          
       - title: Implement a capability
         output: web        
         subfolderitems:
@@ -174,8 +174,7 @@ entries:
         - title: <b class="capability-not-available">Send Document</b>
           url: /send_document.html
           output: web
-
-      subfolders:
+          
       - title: Integrate with Spine
         output: web        
         subfolderitems:
