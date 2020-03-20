@@ -176,7 +176,7 @@ entries:
           output: web
 
       subfolders:
-      - title: Integrate with Spin
+      - title: Integrate with Spine
         output: web        
         subfolderitems:
         
