@@ -81,38 +81,7 @@ entries:
     - title: Postman API examples
       url: /system_reference_postman.html
       output: web
-
-      subfolders:
-      - title: Design approach
-        output: web        
-        subfolderitems:
-        
-        - title: API design principles
-          url: /designprinciples_open_api_principles.html
-          output: web
-        - title: Development principles
-          url: /designprinciples_development_principles.html
-          output: web
-          type: homepage
-        - title: Data model principles
-          url: /designprinciples_data_model_principles.html
-          output: web
-        - title: Information governance principles
-          url: /designprinciples_ig_principles.html
-          output: web
-        - title: Clinical safety principles
-          url: /designprinciples_clinical_safety_principles.html
-          output: web
-        - title: Assurance principles
-          url: /designprinciples_assurance_principles.html
-          output: web
-        - title: Clinical terminologies
-          url: /design_clinical_terminologies.html
-          output: web
-        - title: Specification versioning
-          url: /design_product_versioning.html
-          output: web
-
+      
   - title: Develop
     output: web
     folderitems:
@@ -150,6 +119,38 @@ entries:
     - title: Non-functional requirements
       url: /development_api_non_functional_requirements.html
       output: web
+
+      subfolders:
+      - title: Design approach
+        output: web        
+        subfolderitems:
+        
+        - title: API design principles
+          url: /designprinciples_open_api_principles.html
+          output: web
+        - title: Development principles
+          url: /designprinciples_development_principles.html
+          output: web
+          type: homepage
+        - title: Data model principles
+          url: /designprinciples_data_model_principles.html
+          output: web
+        - title: Information governance principles
+          url: /designprinciples_ig_principles.html
+          output: web
+        - title: Clinical safety principles
+          url: /designprinciples_clinical_safety_principles.html
+          output: web
+        - title: Assurance principles
+          url: /designprinciples_assurance_principles.html
+          output: web
+        - title: Clinical terminologies
+          url: /design_clinical_terminologies.html
+          output: web
+        - title: Specification versioning
+          url: /design_product_versioning.html
+          output: web
+
 
       subfolders:
       - title: Implement a capability
