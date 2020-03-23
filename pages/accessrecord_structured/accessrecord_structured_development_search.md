@@ -165,6 +165,6 @@ These can be summarised by the following two rules:
 1. When requesting consultations, problem filters, medication date filter or uncategorised date filter **MUST NOT** be used.
 2. When requesting problems, date filters for medications and uncategorised data **MUST NOT** be used.
 
-This data can still be requested with the same restrictions by using two calls and how this is done is detailed in the [Search examples](accessrecord_structured_development_searchexamples.html) page.
+This data can still be requested with the same restrictions by using two calls and how this is done is detailed in the [Search examples](accessrecord_structured_development_searchExamples.html) page.
 The search example relevant to the example given here is number 2 on the page where it details two different ways that you could query for the data.
 
