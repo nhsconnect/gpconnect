@@ -85,8 +85,7 @@
         "planningHorizon": {
           "start": "2016-08-15T09:00:00+01:00",
           "end": "2016-08-15T12:00:00+01:00"
-        },
-        "comment": "Schedule 1 for general appointments"
+        }
       }
     },
     {
@@ -102,13 +101,11 @@
         "identifier": [
           {
             "system": "https://fhir.nhs.uk/Id/sds-user-id",
-            "value": "S001"
+            "value": "111122223333"
           }
         ],
         "name": {
-          "family": [
-            "Black"
-          ],
+          "family": "Black",
           "given": [
             "Sarah"
           ],
@@ -144,7 +141,7 @@
           "use": "work"
         },
         "managingOrganization": {
-          "reference": "Organization/14"
+          "reference": "Organization/23"
         }
       }
     },
@@ -161,7 +158,7 @@
         "identifier": [
           {
             "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-            "value": "O001"
+            "value": "A00001"
           }
         ],
         "name": "The Trevelyan Practice",
