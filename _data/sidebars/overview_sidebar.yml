@@ -19,9 +19,6 @@ entries:
     - title: Capabilities
       url: /overview_priority_capabilities.html
       output: web
-    - title: Clinical safety principles
-      url: /designprinciples_clinical_safety_principles.html
-      output: web
     - title: Sitemap
       url: /sitemap.html
       output: web
