@@ -1,0 +1,35 @@
+{
+  "resourceType": "Organization",
+  "id": "23",
+  "meta": {
+    "versionId": "636064088098730113",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+    ]
+  },
+  "identifier": [
+    {
+      "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+      "value": "O001"
+    }
+  ],
+  "name": "The Trevelyan Practice",
+  "address": [
+    {
+      "line": [
+        "Trevelyan Square",
+        "Boar Ln"
+      ],
+      "city": "Leeds",
+      "district": "West Yorkshire",
+      "postalCode": "LS1 6AE"
+    }
+  ],
+  "telecom": [
+    {
+      "system": "phone",
+      "value": "03003035678",
+      "use": "work"
+    }
+  ]
+}
