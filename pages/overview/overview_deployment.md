@@ -1,12 +1,12 @@
 ---
-title: Deploy/roll out your system
+title: Deploying your system
 keywords: deploy
 tags: [deployment]
 sidebar: overview_sidebar
 toc: false
 permalink: overview_deployment.html
 pathways: [consumer,provider]
-summary: "Deploying/rolling out your product"
+summary: "Deploying your product"
 ---
 
 ## Consumer suppliers ##
