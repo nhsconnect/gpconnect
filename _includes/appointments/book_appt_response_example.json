@@ -61,8 +61,7 @@
   "end": "2017-05-30T10:25:00+01:00",
   "slot": [
     {
-      "reference": "Slot/1",
-      "display": "Slot 1"
+      "reference": "Slot/1"
     }
   ],
   "created": "2017-05-25T13:48:41+01:00",
@@ -70,15 +69,13 @@
   "participant": [
     {
       "actor": {
-        "reference": "Patient/1",
-        "display": "Mr. Mike Smith"
+        "reference": "Patient/1"
       },
       "status": "accepted"
     },
     {
       "actor": {
-        "reference": "Location/32",
-        "display": "Leeds GP Clinic"
+        "reference": "Location/32"
       },
       "status": "accepted"
     }
