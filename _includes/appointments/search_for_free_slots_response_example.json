@@ -18,6 +18,11 @@
             "valueCode": "In-person"
           }
         ],
+        "serviceType": [
+          {
+            "text": "General GP Appointment"
+          }
+        ],
         "schedule": {
           "reference": "Schedule/14"
         },
@@ -40,6 +45,11 @@
           {
             "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
             "valueCode": "In-person"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "General GP Appointment"
           }
         ],
         "schedule": {
@@ -74,6 +84,9 @@
             }
           }
         ],
+        "serviceCategory": {
+          "text": "General GP Appointments"
+        },
         "actor": [
           {
             "reference": "Location/17"

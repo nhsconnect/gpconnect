@@ -134,6 +134,8 @@ Provider systems:
   - the `Location` actor reference in `Appointment.participant` SHALL resolve to an ['unknown' visit Location](appointments_use_case_retrieve_a_patients_appointments.html#location-to-support-visit-appointments)
   - where the type of visit is known (e.g. home visit, care home visit) then this shall be populated in the `comment` field
 
+- SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
