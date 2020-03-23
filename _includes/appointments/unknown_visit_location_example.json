@@ -1,0 +1,22 @@
+{
+  "resourceType": "Location",
+  "id": "19",
+  "meta": {
+    "versionId": "636064088100870233",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+    ]
+  },
+  "name": "Contact practice for location of the visit",
+  "address": [
+    {
+      "line": [
+        "Unknown"
+      ],
+      "city": "Unknown"
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/14"
+  }
+}
