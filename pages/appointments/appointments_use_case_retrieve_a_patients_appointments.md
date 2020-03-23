@@ -140,8 +140,215 @@ Provider systems:
   - `reason`
   - `specialty`
 
+
 ```json
-{% include appointments/retrieve_patients_appts_response_example.json %}
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "148",
+        "meta": {
+          "versionId": "1503310820000",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A00001"
+              }
+            ],
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+                    "code": "gp-practice"
+                  }
+                ]
+              }
+            ],
+            "name": "Test Organization Name",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0300 303 5678"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          }
+        ],
+        "status": "booked",
+        "description": "GP Connect Appointment description 148",
+        "start": "2017-08-21T10:20:00+01:00",
+        "end": "2017-08-21T10:50:00+01:00",
+        "slot": [
+          {
+            "reference": "Slot/544"
+          },
+          {
+            "reference": "Slot/545"
+          },
+          {
+            "reference": "Slot/546"
+          }
+        ],
+        "created": "2017-07-09T13:48:41+01:00",
+        "comment": "Test Appointment Comment 148",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Practitioner/2"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Appointment",
+        "id": "149",
+        "meta": {
+          "versionId": "1503440820000",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
+          ]
+        },
+        "contained": [
+          {
+            "resourceType": "Organization",
+            "id": "1",
+            "meta": {
+              "profile": [
+                "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
+              ]
+            },
+            "identifier": [
+              {
+                "system": "https://fhir.nhs.uk/Id/ods-organization-code",
+                "value": "A00001"
+              }
+            ],
+            "type": [
+              {
+                "coding": [
+                  {
+                    "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+                    "code": "gp-practice"
+                  }
+                ]
+              }
+            ],
+            "name": "Test Organization Name 2",
+            "telecom": [
+              {
+                "system": "phone",
+                "value": "0300 303 5679"
+              }
+            ]
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-BookingOrganisation-1",
+            "valueReference": {
+              "reference": "#1"
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          }
+        ],
+        "status": "booked",
+        "description": "GP Connect Appointment description 148",
+        "start": "2016-08-16T11:20:00+01:00",
+        "end": "2016-08-16T11:30:00+01:00",
+        "slot": [
+          {
+            "reference": "Slot/303"
+          }
+        ],
+        "created": "2016-08-14T13:48:41+01:00",
+        "participant": [
+          {
+            "actor": {
+              "reference": "Patient/2"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "Location/1"
+            },
+            "status": "accepted"
+          }
+        ]
+      }
+    }
+  ]
+}
 ```
 
 ### Location to support visit appointments
@@ -153,5 +360,26 @@ For appointments where the delivery channel is set to 'Visit', this SHALL NOT re
 Please see below for a sample 'unknown' visit Location.
 
 ```json
-{% include appointments/unknown_visit_location_example.json %}
+{
+  "resourceType": "Location",
+  "id": "19",
+  "meta": {
+    "versionId": "636064088100870233",
+    "profile": [
+      "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
+    ]
+  },
+  "name": "Contact practice for location of the visit",
+  "address": [
+    {
+      "line": [
+        "Unknown"
+      ],
+      "city": "Unknown"
+    }
+  ],
+  "managingOrganization": {
+    "reference": "Organization/14"
+  }
+}
 ```
