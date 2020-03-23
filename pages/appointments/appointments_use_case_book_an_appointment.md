@@ -180,5 +180,5 @@ Provider systems:
   - `specialty`
 
 ```json
-{% include appointments/amend_appt_response_example.json %}
+{% include appointments/book_appt_response_example.json %}
 ```
