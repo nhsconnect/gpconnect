@@ -15,7 +15,7 @@
         "identifier": [
           {
             "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-            "value": "O001"
+            "value": "A00001"
           }
         ],
         "name": "The Trevelyan Practice",
