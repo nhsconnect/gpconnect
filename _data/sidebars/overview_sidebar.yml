@@ -227,10 +227,10 @@ entries:
       url: /testing_api_consumer_testing.html
       output: web
 
-  - title: Deploy/roll out
+  - title: Deploy
     output: web
     folderitems:
-    - title: Deploy/roll out your system
+    - title: Deploy your system
       url: /overview_deployment.html
       output: web, pdf
       type: homepage
