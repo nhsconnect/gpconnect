@@ -38,7 +38,7 @@ The three main considerations used to decide which data to return for each clini
 * include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area
 For each clinical area in a query that returns data a list should be generated that contains links to all data items returned for that clinical area.
 
-## Dealing with confidential items ##
+### Dealing with confidential items ###
 
 Any clinical area that has not returned an item as it was confidential **SHALL** populate the relevant list with the warning code `confidential-items` as specified in the [resource population fundamentals page](https://gpconnect-1-3-2.netlify.com/accessrecord_structured_development_resources_overview.html).
 

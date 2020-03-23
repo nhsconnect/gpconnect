@@ -112,27 +112,6 @@ Provider systems:
   - `maritalStatus`
   - `multipleBirthBoolean`
 
-
-
-## Example Code ##
-
-### C# ###
-
-```csharp
-var client = new FhirClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-client.PreferredFormat = ResourceFormat.Json;
-var query = new string[] { "identifier=https://fhir.nhs.uk/Id/nhs-number|9476719931" };
-var bundle = client.Search("Patient", query);
-FhirSerializer.SerializeResourceToXml(bundle).Dump();
-```
-
-### Java ###
-
-```java
-FhirContext ctx = new FhirContext();
-IGenericClient client = ctx.newRestfulGenericClient("http://gpconnect.aprovider.nhs.net/GP001/STU3/1/");
-Bundle bundle = client.search().forResource(Patient.class)
-.where(new TokenClientParam("identifier").exactly().systemAndCode("https://fhir.nhs.uk/Id/nhs-number", "9476719931"))
-.encodedXml()
-.execute();
+```json
+{% include foundations/find_patient_response_example.json %}
 ```
