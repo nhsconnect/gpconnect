@@ -233,12 +233,6 @@ entries:
         - title: GPC GitHub FHIR data library
           external_url: https://github.com/nhsconnect/gpconnect-fhir/
           output: web
-        - title: GPC GitHub C# examples
-          external_url: https://github.com/nhsconnect/gpconnect-dotnet-examples/
-          output: web
-        - title: GPC GitHub Java examples
-          external_url: https://github.com/nhsconnect/gpconnect-java-examples/
-          output: web
         - title: GPC GitHub provider test harness
           external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
           output: web
