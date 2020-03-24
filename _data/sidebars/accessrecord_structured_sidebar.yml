@@ -46,18 +46,15 @@ children:
   - title: <strong class='resource'>Resource population fundamentals</strong>
     url: /accessrecord_structured_development_resources_overview.html
     output: web
-  - title: FHIR&reg resources
+  - title: <strong class='resource'>Linkages</strong>
+    url: /accessrecord_structured_development_linkages.html
     output: web
-    children:
-    - title: <strong class='resource'>Linkages</strong>
-      url: /accessrecord_structured_development_linkages.html
-      output: web
-    - title: <strong class='resource'>Search criteria</strong>
-      url: /accessrecord_structured_development_search.html
-      output: web
-    - title: <strong class='resource'>Search examples</strong>
-      url: /accessrecord_structured_development_searchExamples.html
-      output: web
+  - title: <strong class='resource'>Search criteria</strong>
+    url: /accessrecord_structured_development_search.html
+    output: web
+  - title: <strong class='resource'>Search examples</strong>
+    url: /accessrecord_structured_development_searchExamples.html
+    output: web
   - title: API use cases
     output: web, pdf
     children:
