@@ -14,7 +14,7 @@ Clinical safety is about promoting and helping to embed clinically safer working
 The development of the GP Connect specification is supported by a team of clinicians at NHS Digital. The clinicians are responsible for decision-making relating to requirements that have a clinical safety impact. A clinical safety officer oversees all the development of GP Connect products and maintains a hazard log through direct engagement and regular hazard workshops. Hazard workshops will include clinicians from outside of the GP Connect team, wherever possible, to provide a wider perspective on the assessment of clinical safety of the products.
 
 ## Who is responsible for the clinical safety of consumer systems?
-The assurance and assessment of clinical risk in the development of consuming systems is **outside** the remit of NHS Digital, therefore:
+The assurance and assessment of clinical risk in the development of consuming systems is **outside** the remit of NHS Digital. Therefore:
 * all consuming systems **MUST** nominate a clinical safety officer
 * this person **MUST** be a suitably qualified and experienced clinician
 * the clinical safety officer’s role for the consuming system is to ensure that effective clinical risk management is carried out during the development and during any modification of health IT systems using the clinical safety framework guidelines: [DCB0129: Clinical Risk Management: its Application in the Manufacture of Health IT Systems](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems)
