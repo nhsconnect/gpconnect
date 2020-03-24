@@ -36,9 +36,6 @@ children:
   - title: Overview
     url: /accessrecord_structured_development.html
     output: web
-  - title: Known issues
-    url: /accessrecord_structured_known_issues.html
-    output: web, pdf
 
 - title: Development
   output: web, pdf
@@ -223,3 +220,6 @@ children:
       - title: Diary entry FHIR&reg; examples
         url: /accessrecord_structured_development_fhir_examples_diaryentries.html
         output: web
+  - title: Known issues
+    url: /accessrecord_structured_known_issues.html
+    output: web, pdf
