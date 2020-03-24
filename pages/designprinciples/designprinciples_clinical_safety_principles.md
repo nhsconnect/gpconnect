@@ -11,11 +11,9 @@ summary: "High-level design principles related to the clinical safety of the sys
 Clinical safety is about promoting and helping to embed clinically safer working practice methods and proactive risk management for patient safety enabled by IT with consistent application across the NHS.
 
 ## Who is responsible for the clinical safety of the GP Connect specification?
-
 The development of the GP Connect specification is supported by a team of clinicians at NHS Digital. The clinicians are responsible for decision-making relating to requirements that have a clinical safety impact. A clinical safety officer oversees all the development of GP Connect products and maintains a hazard log through direct engagement and regular hazard workshops. Hazard workshops will include clinicians from outside of the GP Connect team, wherever possible, to provide a wider perspective on the assessment of clinical safety of the products.
 
 ## Who is responsible for the clinical safety of consumer systems?
-
 The assurance and assessment of clinical risk in the development of consuming systems is **outside** the remit of NHS Digital, therefore:
 * all consuming systems **MUST** nominate a clinical safety officer
 * this person **MUST** be a suitably qualified and experienced clinician
@@ -27,7 +25,6 @@ The assurance and assessment of clinical risk in the development of consuming sy
 * when deploying the consuming system to an end-user organisation the consumer must make their hazard log available to the clinical safety officer of that end-user organisation to review
 
 ## Who is responsible for clinical safety during the deployment, use and decommissioning of the consuming system in end-user organisations?
-
 The clinical safety officer in the end-user organisation is responsible for ensuring the safety of a health IT system in that organisation through the application of clinical risk management. This clinical safety officer will be responsible for sign-off of the system as safe to use in their organisation, using the clinical safety framework guidelines: [DCB0160: Clinical Risk Management: its Application in the Deployment and Use of Health IT Systems](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0160-clinical-risk-management-its-application-in-the-deployment-and-use-of-health-it-systems)
 
 The purpose of this standard is to promote and ensure that effective clinical risk management is carried out by those health organisations that are responsible for deploying, using, maintaining or decommissioning health IT systems within the NHS.
