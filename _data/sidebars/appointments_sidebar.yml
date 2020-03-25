@@ -59,7 +59,7 @@ children:
     url: /appointments_service_discovery.html
     output: web
 
-  - title: API use cases
+  - title: API definition
     output: web, pdf
     children:
     - title: Retrieve a patient's appointments

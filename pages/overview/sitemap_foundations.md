@@ -37,7 +37,7 @@ toc: false
   <div class="column">
     <p style="font-size:18px">Development</p>
     	<p><a href="datalibraryfoundation.html">FHIR&reg; resources</a></p>
-   <p style="padding-top:8px">API use cases</p>
+   <p style="padding-top:8px">API definition</p>
     	<p><a href="foundations_use_case_get_the_fhir_capability_statement.html">Get the FHIR&reg; capability statement</a></p>
     	<p><a href="foundations_use_case_find_a_patient.html">Find a patient</a></p>
     	<p><a href="foundations_use_case_read_a_patient.html">Read a patient</a></p>
