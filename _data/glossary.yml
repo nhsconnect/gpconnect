@@ -7,7 +7,9 @@
 - title: Application Programming Interface (API)
   value: "A set of functions and procedures that allows the creation of applications which access the features or data of an application or other service to deliver specific cross-organisational business capability. The aim of GP Connect FHIR&reg; APIs is to provide access to data and workflow within GP clinical systems."
 - title: Appointment
-  value: An organised contact between a specific Patient and a Health Service Provider at a specified date, time and location
+  value: "An organised contact between a specific Patient and a Health Service Provider at a specified date, time and location."
+- title: Appointment Slot
+  value: "A pre-defined period of time at a specified location, with a specific healthcare professional in attendance, which may be booked for a patient as an Appointment."
 - title: AS record
   value: "LDAP object of type nhsAs in SDS, uniquely identified by ASID, and representing a Spine connected system deployed to an organisation."
 - title: Capability
@@ -106,8 +108,6 @@
   value: "In the context of a development of the GP Connect specification, denotes that the specification is close to completion and is being reviewed by external parties (including providers and consumers) and is subject to corrections and minor change."
 - title: Role Based Access Control (RBAC)
   value: "An integral part of the Spine security process."
-- title: Slot
-  value: "A pre-defined period of time at a specified location, with a specific healthcare professional in attendance, which may be booked for a patient as an Appointment."
 - title: Spine Directory Service (SDS)
   value: "Central directory of organisations, users and services for consumption by Spine-related applications. GP Connect systems use SDS data about NHS-registered users and accredited systems and services."
 - title: SOAP heading
