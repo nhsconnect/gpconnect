@@ -80,6 +80,7 @@ Consumer systems:
 - SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 - SHALL NOT amend an appointment with a status of `cancelled`
+- SHALL NOT send the `cancellation-reason` extension
 
 Only the following data elements can be modified when performing an appointment amendment:
 - `description` containing a brief description of the appointment.

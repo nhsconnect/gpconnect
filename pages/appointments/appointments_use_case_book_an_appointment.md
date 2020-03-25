@@ -121,6 +121,7 @@ The following data elements **MAY** be included:
 The following data elements **MUST NOT** be included:
   - `reason`
   - `specialty`
+  - the `cancellation-reason` extension
 
 {% include note.html content="The provider system receiving the bookingOrganization details SHALL store, return and display these details as required by the [Must-Support](development_fhir_api_guidance.html#use-of-must-support-flag) flag." %}
 
