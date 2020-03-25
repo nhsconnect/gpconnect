@@ -59,6 +59,6 @@ As an approximate guide you can expect to complete the following tasks on your G
 <p><strong>Deployment:</strong></p>
 - Approval to Go Live
 - Commissioner and Supplier Deployment Approach
-- Go Live..
+- Go Live
 
 
