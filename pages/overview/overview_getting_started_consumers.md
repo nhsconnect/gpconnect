@@ -47,7 +47,7 @@ As an approximate guide you can expect to complete the following tasks on your G
 - Test against internet-facing demonstrator
 - Test against OpenTest demonstrator
 - Test against demonstrator in Integration (INT) test environment
-- Fill in and submit SCAL, incuding evidence of clinical safety
+- Fill in and submit SCAL, including evidence of clinical safety
 - Test against providers in INT
 - Consumer receives technical conformance certificate
 - Receive connection agreement
