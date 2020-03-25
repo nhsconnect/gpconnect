@@ -46,13 +46,13 @@ toc: false
     	<p><a href="overview_release_notes_1_1_0.html">1.1.0</a></p>
     	<p><a href="overview_release_notes_1_0_0.html">1.0.0</a></p>
     	<p><a href="overview_release_notes_0_5_0.html">0.5.0</a></p>
-  </div>
-  <div class="column">
     <p style="font-size:18px">Explore</p>
     	<p><a href="overview_explore.html">Explore GP Connect</a></p>
     	<p><a href="system_demonstrator.html">System demonstrator</a></p>
 	<p><a href="system_swagger.html">Interactive API documentation</a></p>
 	<p><a href="system_reference_postman.html">Postman examples</a></p>
+  </div>
+  <div class="column">
     <p style="font-size:18px; padding-top:15px">Development</p>
     	<p><a href="overview_development.html">Develop with GP Connect</a></p>
     	<p><a href="development_deliverables.html">Development deliverables</a></p>
