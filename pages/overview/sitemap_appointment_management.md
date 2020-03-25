@@ -43,7 +43,7 @@ toc: false
     	<p><a href="datalibraryappointment.html">FHIR&reg; resources</a></p>	 
     	<p><a href="appointments_service_discovery.html">Service discovery</a></p>
 	 <p><a href="appointments_consumer_sessions.html">Consumer sessions illustrated</a></p>
-	<p style="padding-top:8px">API use cases</p>
+	<p style="padding-top:8px">API definition</p>
 	<p><a href="appointments_use_case_retrieve_a_patients_appointments.html">Retrieve a patient's appointments</a></p>
 	  <p><a href="appointments_use_case_search_for_free_slots.html">Search for free slots</a></p>
 	  <p><a href="appointments_use_case_read_an_appointment.html">Read an appointment</a></p>
