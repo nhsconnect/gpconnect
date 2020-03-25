@@ -40,7 +40,7 @@ The consumer system:
 
 The consumer system SHALL only use the cancel appointment interaction to cancel:
 
-  - future appointments where appointment start date/time is after the current date/time. If the appointment start date is in the past the provider SHALL return an error.
+  - future appointments where appointment start date and time is after the current date and time. If the appointment start date and time is in the past the provider SHALL return an error.
 
 Appointments for visits (where the delivery channel is set to 'Visit') cannot be cancelled using GP Connect.  Providers SHALL return an error where a cancellation to a visit appointment is received.
 
@@ -100,7 +100,7 @@ The provider system:
 
 - SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional details when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
-- SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
+- SHALL return an error if the appointment being cancelled is in the past (the appointment start date and time is before the current date and time).
 - SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
 - SHALL return an error where the Appointment or referenced Slot(s) has a delivery channel of 'Visit'
 

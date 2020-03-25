@@ -117,7 +117,7 @@ The provider system:
 - SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error where:
   - any appointment details other than the appointment `comment` or `description` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
-  - the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
+  - the appointment being amended is in the past (the appointment start date/time is before the current date/time).
   - the appointment has been cancelled.  Provider systems should return a `422` error with error code `INVALID_RESOURCE`.
   - the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
   - the `description` or `comment` fields contain more characters than can be stored in the provider system

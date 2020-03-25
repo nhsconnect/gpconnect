@@ -39,7 +39,7 @@ The consumer system:
 
 The consumer system SHALL only use the book appointment interaction to book:
 
-  - appointments in the future, where the appointment start date and time is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
+  - appointments in the future, where the appointment start date and time is after the current date and time. If the appointment start date and time is in the past the provider SHALL return an error.
 
 Appointments for visits (where the delivery channel is set to 'Visit') cannot be booked using GP Connect.
 
