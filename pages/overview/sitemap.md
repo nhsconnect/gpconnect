@@ -53,7 +53,7 @@ toc: false
 	<p><a href="system_reference_postman.html">Postman examples</a></p>
   </div>
   <div class="column">
-    <p style="font-size:18px; padding-top:15px">Development</p>
+    <p style="font-size:18px">Development</p>
     	<p><a href="overview_development.html">Develop with GP Connect</a></p>
     	<p><a href="development_deliverables.html">Development deliverables</a></p>
 	<p><a href="development_fhir_open_source_guidance.html">FHIR&reg; library</a></p>
