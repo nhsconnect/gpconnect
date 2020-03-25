@@ -9,7 +9,7 @@ summary: "Overview of the Appointment Management capability pack"
 
 ## Purpose ##
 
-To meet strategic objectives to improve access to GP care, the Appointment Management (AM) APIs enable consumer system administrative and clinical end users to book and manage GP practice appointments held in any of the four GP principal practice systems. The implementation of the APIs within patient apps (to support patient direct access) is out of scope for initial deployment. Some API specification items may be uplifted in the future to reflect the requirements identified by related Appointment Management initiatives within the GP IT and Interoperability domains.
+To meet strategic objectives to improve access to GP care, the Appointment Management API enables consumer system administrative and clinical end users to book and manage GP practice appointments held in any of the four GP principal practice systems. The implementation of the APIs within patient apps (to support patient direct access) is out of scope for initial deployment. Some API specification items may be uplifted in the future to reflect the requirements identified by related Appointment Management initiatives within the GP IT and Interoperability domains.
 
 ## Example scenarios ##
 
@@ -45,7 +45,7 @@ The call centre will retrieve and select in-hours or extended hours appointments
 
 {% include note.html content="While the GP Connect programme primarily assumes that the appointment-hosting (provider) systems are the GP principal systems, the API technical design has accommodated the minimum viable features required to support booking and managing of appointments at UC providers such as Minor Injuries Units and GP out-of-hours services. This means that UC consumers will not need to use different APIs depending on the type of organisation they are targeting. **This deployment care setting is currently out of scope for the GP Connect programme FoT deployments, which only incorporates assurance of the API fulfilment by the GP principal provider systems. The assurance and deployment of the APIs by UC provider systems will be progressed by NHS Digital Integrated Urgent Care programmes.**" %}  
 
-## API use cases ##
+## API definition ##
 
 The following individual API calls are used by consumers to implement the Appointment Management capability:
 
@@ -59,15 +59,6 @@ The following individual API calls are used by consumers to implement the Appoin
 ## Examples of consumer Appointment Management sessions
 
 The use of the individual API calls listed above by consumers to fulfil business processes is illustrated with focus on the booking of an appointment. See [Appointment Management consumer sessions illustrated](appointments_consumer_sessions.html).
-
-## Consumer code examples
-
-Consumer side code examples are available for each of GP Connect interactions within the following GitHub repositories. The repositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
-
-[.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
-
-[JAVA](https://github.com/nhsconnect/gpconnect-java-examples)
-
 
 ## Profiled FHIR resources ##
 
@@ -89,7 +80,7 @@ The Appointment Management capability message set includes the following set of 
 
 ## Implementation and testing ##
 
-Below is the suggested order in which the appointment capabilities should be implemented. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different Appointment Management endpoints. The Appointment Management capability test scenarios are dependent on the foundation capabilities and therefore the foundation endpoints should be developed and tested before implementing the Appointment Management capabilities.
+Below is the suggested order in which the appointment capabilities should be implemented as a provider supplier. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different Appointment Management endpoints. The Appointment Management capability test scenarios are dependent on the foundation capabilities and therefore the foundation endpoints should be developed and tested before implementing the Appointment Management capabilities.
 
 It’s recommended that you develop against the Automated Test Suite as this will help with creating a GP Connect compliant product. By implementing the endpoints in the order below, the Automated Test Suite set of tests for that endpoint can be run during development without you seeing errors due to pre-test API calls or post-test validation API calls relevant to the test being run and failing as they have not been developed yet.
 
