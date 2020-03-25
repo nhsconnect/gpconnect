@@ -59,7 +59,7 @@ entries:
       output: web, pdf
       
       subfolders:
-      - title: API use cases
+      - title: API definition
         output: web, pdf
         subfolderitems:
 

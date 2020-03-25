@@ -37,7 +37,7 @@ Refer to [Development Guidance - FHIR API Guidance - Common API Guidance](develo
 - Search for an organisation by `ODS Code`
 - Search for a practitioner by `SDS UserID`
 
-## API use cases ##
+## API definition ##
 
 The following individual API calls make up the Foundations capability and support the other capability packs:
 
@@ -50,16 +50,6 @@ The following individual API calls make up the Foundations capability and suppor
 - [Read an organisation](foundations_use_case_read_an_organisation.html)
 - [Read a location](foundations_use_case_read_a_location.html)
 - [Register a patient](foundations_use_case_register_a_patient.html)
-
-
-## Consumer application code examples
-
-Consumer side code examples are available for each of GP Connect interactions within the following GitHub repositories. The repositories contain a different branch for each release of the specification, the code within these branches matches the requirements of the specification within that release.
-
-[.NET](https://github.com/nhsconnect/gpconnect-dotnet-examples)
-
-[JAVA](https://github.com/nhsconnect/gpconnect-java-examples)
-
 
 ## Spine interactions
 
@@ -75,18 +65,12 @@ The Foundations capability message set includes the following set of Spine inter
 | [Read Organisation](foundations_use_case_read_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1` |
 | [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1` |
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1` | 
-
-
-The Register Patient API use case, which is included in the Foundations capability, has a separate "Register Patient" message set:
-
-| Operation                 | InteractionID             | 
-|---------------------------|---------------------------| 
 | [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1`
 
 
 ## Implementation and testing ##
 
-Below is the suggested order in which the Foundations capability should be implemented. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different Foundations endpoints.
+Below is the suggested order in which the Foundations capabilities should be implemented by provider suppliers. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different Foundation endpoints.
 
 It is advisable to develop against the Automated Test Suite as this will assist with creating a GP Connect compliant product. By implementing the endpoints in the order below, this means that the automated test suite set of tests for that endpoint can be run during development without the developer seeing errors due to pre-test API calls or post-test validation API calls relevant to the test being run and failing as they have not been developed yet.
 
