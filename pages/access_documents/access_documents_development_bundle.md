@@ -74,6 +74,18 @@ See below for subelements of this BackboneElement.
 
 A resource carried within the Bundle. This can be any type of resource, for example `Patient`, `Organization`, `DocumentReference`.
 
+### entry.fullUrl ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The fullUrl for the resource, this MUST be an absolute URL. The URL will not resolve in the case of resources that don't have a read endpoint, for example, Practitioner. These non-resolvable URLs are used to assist consumers in resolving references within Bundle resources.
+
 <h2 style="color:#ED1951;"> Bundle elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
@@ -99,13 +111,5 @@ The following elements **SHALL NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Instant</code></td>
-  </tr>
-</table>
-
-<h3 style="color:#ED1951;"> entry.fullUrl </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
   </tr>
 </table>
