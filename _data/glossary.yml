@@ -78,8 +78,8 @@
   value: "LDAP object of type nhsMhs in SDS, uniquely identified by Party key, and representing a message handling server."
 - title: Network Time Protocol (NTP)
   value: "A networking protocol for clock synchronisation between computer systems over packet-switched, variable-latency data networks."
-- title: NHS Number
-  value: "A unique 10-digit identifier that is assigned to everyone who is registered with the NHS in England."
+- title: NHS number
+  value: "A unique 10-digit identifier that is assigned to everyone who is registered with the NHS in England or Wales."
 - title: Open Systems Interconnection (OSI)
   value: "A conceptual model that characterises and standardises the communication functions of a computing system without regard to its underlying internal structure and technology."
 - title: Organisational Data Service (ODS)
@@ -87,11 +87,11 @@
 - title: Party key
   value: "The unique identifier of an MHS record."
 - title: Patient's GP record
-  value: "An electronic record relating to a patient, containing personal, administrative and clinical information about the patient."
+  value: "An electronic record relating to a patient and held at their GP Practice, containing personal, administrative and clinical information about the patient."
 - title: Personal Demographics Service (PDS)
   value: "The national electronic database of patient demographic information. Each person’s electronic NHS care record comprises demographic information - address, date of birth and NHS number; and medical information. GP Connect systems use the PDS to obtain a patient’s NHS number, date of birth and current GP organisation."
 - title: Principal clinical system
-  value: "The system that provides the essential functionality to support clinical and administrative processes within the practice."
+  value: "The system that provides the essential functionality to support clinical and administrative processes within the GP Practice."
 - title: Principal clinical systems suppliers
   value: "The name given to a group of suppliers that provide GPs with the core system available under the GPSoC contract (also known as 'providers'). The current suppliers are:<ul><li>EMIS Health</li><li>Microtest</li><li>TPP</li><li>Vision</li></ul>"
 - title: Privacy Enhanced Mail (PEM)
