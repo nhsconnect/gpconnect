@@ -34,6 +34,19 @@ The consumer system:
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service
 - SHALL have previously [resolved the logical ID of the patient](foundations_use_case_find_a_patient.html) on the server using the NHS Number
 
+## Consumer display requirements ##
+
+Consumer systems SHALL support the following fields: 
+
+- Start date and time
+- End date and time, or duration
+- Delivery channel (in-person, telephone, video)
+- Slot type and schedule type (see `Appointment.serviceType` and `Appointment.serviceCategory`)
+- Location name and address
+- Practitioner role (e.g. General Medical Practitioner, Nurse)
+- Practitioner name and gender
+
+
 ## API usage ##
 
 ### Request operation ###
