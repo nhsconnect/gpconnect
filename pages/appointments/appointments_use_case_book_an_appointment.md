@@ -47,6 +47,7 @@ To book more than one slot in the same Book Appointment message, a consumer need
   - Two slots (Slot A and Slot B) are adjacent when the start time of Slot B equals the end time of Slot A
   - The adjacent slots SHALL reference the same `Schedule` resource
   - The adjacent slots SHALL both have the same `deliveryChannel` value
+  - The adjacent slots SHALL both have the same `serviceType` value
   - If the slots do not conform to one or more of the rules above, they SHALL NOT be accepted as part of the same appointment booking
 
 ### Request operation ###
@@ -172,6 +173,8 @@ Provider systems:
 - SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
+
+- SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
