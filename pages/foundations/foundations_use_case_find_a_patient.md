@@ -104,7 +104,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-- SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient). Where a patient is active but their NHS number has never been traced or verified, please see the [Provider system find patient requirements](#provider-system-unverified-record-requirements) above.
+- SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient). Where a patient is active but their NHS number has never been traced or verified, please see the [provider system unverified record requirements](#provider-system-unverified-record-requirements) above.
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 
 - SHALL populate the following `Patient` fields:
