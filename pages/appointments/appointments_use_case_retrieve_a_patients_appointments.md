@@ -36,7 +36,7 @@ The consumer system:
 
 ## Consumer display requirements ##
 
-Consumer systems SHALL support the following fields: 
+Consumer systems SHALL support the following fields in order to provide the full context of the appointment: 
 
 - Start date and time
 - End date and time, or duration
@@ -45,7 +45,6 @@ Consumer systems SHALL support the following fields:
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
-
 
 ## API usage ##
 
