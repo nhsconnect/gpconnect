@@ -120,7 +120,7 @@ Provider systems:
 
 #### Provider system unverified record requirements ####
 
-Where an **[active](overview_glossary.html#active-patient) matching patient record** is found, but the **NHS number on this record has never been traced or verified** (either on PDS, or indirectly via NHSAIS), the provider SHALL retrieve the patient's demographic record using a PDS Retrieval Query, and then:
+Where an **[active](overview_glossary.html#active-patient) matching patient record** is found, but the **NHS number on this record has never been traced or verified** (either on PDS, or indirectly via NHAIS), the provider SHALL retrieve the patient's demographic record using a PDS Retrieval Query, and then:
 
 - Verify the patient's NHS number according to the rules below:
 
