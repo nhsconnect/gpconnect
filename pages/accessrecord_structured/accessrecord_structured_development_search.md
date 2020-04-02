@@ -90,12 +90,12 @@ The consumer system can specify which clinical areas it wishes to retrieve and, 
     * Where there is a start date but no end date, the search goes to the end of the patient record
     * Where there is an end date but no start date, the search goes from the start of the patient record
     * Where no dates are supplied by the consumer, all outbound referral data items are returned
-    
+
 ### Diary entries ###
 
 * Search for all Diary Entry data prior to a specified date
      * The consumer system requests all items prior to an end date
-     * The provider system returns all items whose 
+     * The provider system returns all items whose
 		* occurrence period start date is on or prior to the consumer supplied end date or
 		* occurrence date time is on or prior to the consumer supplied end date
      * Where no end date is supplied by the consumer, all diary entries are returned
@@ -115,17 +115,17 @@ There may be a decision by the consuming system (or by a user of the consuming s
 This version of GP Connect does not allow a consumer to search for a specific item in the patient record by its identifier. Instead the consumer should use the supported filters to retrieve a larger dataset and then search for the required item(s) within that dataset.
 
 For example:
-* To display a specific consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data. 
+* To display a specific consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data.
 
 ## Scale of search ##
 
 It is the responsibility of the consuming system to decide what data to request from the provider systems. When determining how wide to make the search criteria, the consumer system must consider the following guidelines:
 
-* Always apply the [Caldicott Principles](https://www.igt.hscic.gov.uk/Caldicott2Principles.aspx) 
+* Always apply the [Caldicott Principles](https://www.igt.hscic.gov.uk/Caldicott2Principles.aspx)
 * The first API query on a patient should aim to retrieve the amount of data required to support the majority of queries that their clinician/user will make whilst avoiding the retrieval of large quantities of unnecessary data
 * Where a follow-up query is required it should aim to retrieve sufficient data to support any other queries that their clinician/user will make
 * The consumer system should aim to avoid scenarios where more than two queries are required on the same patient as part of the same local interaction with a clinician/user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
-* It is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the unnecessary data before presenting it to their clinicians/users where the consumer organisation: 
+* It is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the unnecessary data before presenting it to their clinicians/users where the consumer organisation:
      * has determined it is necessary to support patient care
      * has met all of the GP Connect information governance (IG) requirements including data sharing agreements, confidentiality and auditing
 
@@ -135,12 +135,12 @@ The details on how this is implemented in an API can be found in the [API defini
 
 ## Restrictions on query parameters when making searches ##
 
-We have introduced some rules to limit which query parameters can be used at the same time. This is to mitigate 
+We have introduced some rules to limit which query parameters can be used at the same time. This is to mitigate
 the following risk.
 
 ### Clinical risk when querying more than one clinical area ###
 
-When requesting data for more than one clinical area at the same time and also using filters - for example, the medicationSearchFromDate, then it is important to be cautious when processing the results. 
+When requesting data for more than one clinical area at the same time and also using filters - for example, the medicationSearchFromDate, then it is important to be cautious when processing the results.
 In this situation, it is possible that the different parts of the query will return items that may be misleading to a user of a consuming system.
 
 Consider the example where a consuming system requests the medications from the last six months and all active problems. It is possible that one of the active problems links to a medication that is from longer than a year ago. In this case, there is a risk that the consuming system may present the data to the user in a way that may lead them to believe they have the entire medication record from over a year ago until the current time. In the table below there is a summary of how the data from the example may exist in the GP system and what the two parts of the query may contain.
@@ -177,7 +177,7 @@ For the example we will assume the query was made on the 1st February 2020:
     <td>Warfarin</td>
     <td></td>
     <td></td>
-  </tr> 
+  </tr>
   <tr>
     <td>05/01/2019</td>
     <td>Paracetamol</td>
@@ -191,15 +191,9 @@ The clinical risk here is that a user of the consumer system may believe they ha
 
 ### Restrictions on parameters to mitigate the risk ###
 
-In order to mitigate this risk and emphasise the separation of data in the different parts of certain queries, we have introduced some rules around which filters can be used at the same time. This will prevent data with these sorts of gaps being returned in a single bundle.
+In order to mitigate this risk and emphasise the separation of data in the different parts of certain queries, we have introduced some rules around which filters can be used at the same time. For example, problem filters and medication date filters can't be used while requesting consultations. This will prevent data with these sorts of gaps being returned in a single bundle.
 
 The technical details of these rules are detailed in the 'Not permitted parameter combinations' section of the [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html) page.
 
-These can be summarised by the following two rules:
-
-1. When requesting consultations, problem filters, medication date filter or uncategorised date filter **MUST NOT** be used.
-2. When requesting problems, date filters for medications and uncategorised data **MUST NOT** be used.
-
 This data can still be requested with the same restrictions by using two calls and how this is done is detailed in the [Search examples](accessrecord_structured_development_searchExamples.html) page.
 The search example relevant to the example given here is number 2 on the page where it details two different ways that you could query for the data.
-

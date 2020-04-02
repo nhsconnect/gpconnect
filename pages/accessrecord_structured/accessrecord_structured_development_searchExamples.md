@@ -266,7 +266,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 5. Request child health information, medication, allergies, immunisations, problems and observations
-**a) If done in one query this would retrieve all medications and observations, no date filter could be applied:**
+**a) If done in one query this would retrieve all medications and observations, no filters could be applied:**
 
 ```json
 {
