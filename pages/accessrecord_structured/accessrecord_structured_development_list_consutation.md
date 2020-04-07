@@ -190,7 +190,7 @@ Will contain at least one reference to a `List` profile providing the Topic leve
 
 The List level representing the Topic level of the consultation structure.
 
-### extension(problemReference)
+### extension(relatedProblemHeader)
 
 <table class='resource-attributes'>
         <tr>
