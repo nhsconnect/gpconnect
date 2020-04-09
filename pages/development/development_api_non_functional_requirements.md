@@ -11,7 +11,7 @@ summary: "Details of non-functional requirements (NFRs) that describe system att
 
 ### Security ###
 
-Provider systems SHALL resist unauthorised, accidental or unintended usage and provide access only to legitimate users.
+Provider systems ccSHALL resist unauthorised, accidental or unintended usage and provide access only to legitimate users.
 
 Please refer to the [Security guidance](development_api_security_guidance.html) page for technical details.
 
