@@ -1,6 +1,6 @@
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.6",
+  "version": "1.2.7",
   "name": "GP Connect",
   "status": "active",
   "date": "2020-01-15",
@@ -10,7 +10,7 @@
       "name": "[Provider Software Vendor Contact Name]"
     }
   ],
-  "description": "This server implements the GP Connect API version 1.2.6",
+  "description": "This server implements the GP Connect API version 1.2.7",
   "copyright": "Copyright NHS Digital 2016-20",
   "kind": "capability",
   "software": {
