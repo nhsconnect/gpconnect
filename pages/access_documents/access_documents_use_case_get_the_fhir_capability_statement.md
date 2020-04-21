@@ -174,11 +174,10 @@ An example Access Document capability statement is shown below ready for customi
             "DocumentReference:author:Organization",
             "DocumentReference:author:Practitioner"
           ],
+          "searchRevInclude": [
+            "PractitionerRole:practitioner"
+          ],
           "searchParam": [
-            {
-              "name": "subject",
-              "type": "Patient"
-            },
             {
               "name": "created",
               "type": "date"
