@@ -39,7 +39,7 @@ Provider systems **SHALL** support the following include parameters:
 | `_include= DocumentReference:subject:Patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.subject` |
 | `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |
 | `_include= DocumentReference:author:Organization` | Details of organisations that authored the documents that are returned in DocumentReference resources |
-| `_include= DocumentReference:author:Practitioner` | Details of organisations that authored the documents that are returned in DocumentReference resources |
+| `_include= DocumentReference:author:Practitioner` | Details of who/what authored the documents that are returned in DocumentReference resources |
 | `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources | `DocumentReference.author:Practitioner` |
 
 Consumer systems **MUST** send the following parameters to reduce the number of API calls:
@@ -97,7 +97,6 @@ GET /Patient/[id]/DocumentReference?[_include=DocumentReference:subject:Patient]
                       {&facility=[care_setting_type]}
                       {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
                       {&type=[document_type]}
-                      {&custodian=[OrgTypeCodeSystem]|[OrgTypeCode]}
                       {&description=[document_title]}
 ```
 
@@ -113,7 +112,6 @@ GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_b
                       {&facility=[care_setting_type]}
                       {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
                       {&type=[document_type]}
-                      {&custodian=[OrgTypeCodeSystem]|[OrgTypeCode]}
                       {&description=[document_title]}
 ```
 
