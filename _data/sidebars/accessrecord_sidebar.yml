@@ -87,7 +87,9 @@ children:
     - title: Administrative items
       url: /accessrecord_view_administrative_items.html
       output: web, pdf
- 
+    - title: Emergency codes
+      url: /accessrecord_view_emergency.html
+      output: web, pdf 
    
    
 

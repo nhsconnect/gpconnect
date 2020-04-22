@@ -27,6 +27,7 @@ The purpose of this section is to provide a summarised view of the pertinent cli
 
 There is only a single main section for the summary section with six subsections:
 
+ - [Emergency Codes](accessrecord_view_emergency.html)
  - [Last 3 Encounters](accessrecord_view_summary.html#last-3-encounters)
  - [Active Problems and Issues](accessrecord_view_summary.html#active-problems-and-issues)
  - [Major Inactive Problems and Issues](accessrecord_view_summary.html#major-inactive-problems-and-issues)
@@ -44,6 +45,16 @@ Date filters are not supported for this section. All relevant records shall be r
 Provider message describing at a summary level how they have populated this section.
 
 ## Sections detail ##
+
+### Emergency Codes ###
+
+This section is configurable to be visible during a time of emergency. It contains details based on a configurable list of coded items that may or may not be visible elsewhere in the patient's record.
+
+{% include callout.html content="Please see HTML guidance in the [Emergency Codes](accessrecord_view_emergency.html) section. " type="primary" %} 
+
+{% include custominfocallout.html content="**Important:** the Emergency Codes section is only available on the Summary view." type="warning" %}
+
+
 
 ### Last 3 Encounters ###
 

@@ -206,7 +206,7 @@ The following HTML IDs **MUST** be applied across the HTML views:
 | `adm-tab`          | Applied within the `<table>` tag of the Administrative Items table                       | Administrative Items
 | `all-tab-curr`     | Applied within the `<table>` tag of the Current Allergies and Adverse Reactions table    | Allergies and Adverse Reactions & Summary
 | `all-tab-hist`     | Applied within the `<table>` tag of the Historical Allergies and Adverse Reactions table | Allergies and Adverse Reactions
-| `cli-tab`          | Applied within the `<table>` tag of the Clinical Item table                              | Clinical Items
+| `cli-tab`          | Applied within the `<table>` tag of the Clinical Item table and Summary (Emergency Codes)| Clinical Items & Summary (Emergency Codes)
 | `enc-tab`          | Applied within the `<table>` tag of the Encounters table                                 | Encounters & Summary
 | `imm-tab`          | Applied within the `<table>` tag of the Immunisations table                              | Immunisations
 | `med-tab-acu-med`  | Applied within the `<table>` tag of the Acute Medication (Last 12 Months)                | Medications & Summary

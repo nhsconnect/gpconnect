@@ -292,6 +292,7 @@ Date filtering is not applicable to all views and for those supporting date filt
 |                                     |                  | Other inactive problems and issues          | Consumer supplied |
 | **Referrals**                       | `REF`            | N/A                                         | Consumer supplied |
 | **Summary**                         | `SUM`            | N/A                                         | N/A               |
+| **Emergency Codes**                 |  N/A             | N/A                                         | N/A               |
 
 
 The default time frame **MUST** be configurable in unit of month(s). It **MUST** be configurable by section (meaning, different sections can be configured with different defaults).
