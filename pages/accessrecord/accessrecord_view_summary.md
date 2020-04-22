@@ -25,7 +25,7 @@ The purpose of this section is to provide a summarised view of the pertinent cli
 
 ## Sections ##
 
-There is only a single main section for the summary section with six subsections:
+There is only a single main section for the summary section with seven subsections:
 
  - [Emergency Codes](accessrecord_view_emergency.html)
  - [Last 3 Encounters](accessrecord_view_summary.html#last-3-encounters)
