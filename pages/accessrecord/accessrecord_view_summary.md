@@ -48,7 +48,7 @@ Provider message describing at a summary level how they have populated this sect
 
 ### Emergency Codes ###
 
-This section is configurable to be visible during a time of emergency. It contains details based on a configurable list of coded items that may or may not be visible elsewhere in the patient's record.
+This section is configurable to be visible during a time of emergency. It contains entries based on a configurable list of coded items that are visible elsewhere in the patient's record.
 
 {% include callout.html content="Please see HTML guidance in the [Emergency Codes](accessrecord_view_emergency.html) section. " type="primary" %} 
 
