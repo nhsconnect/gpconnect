@@ -42,7 +42,7 @@ Providers must return all the columns as described in the table below, sorted by
 | ------------ | ------------ | ------------ |
 | 1 | `Date`  <em class="fa fa-sort-desc" aria-hidden="true"> | The date of entry of the coded item | `dd-Mmm-yyyy` |
 | 2 | `Entry`| Preferred term text for the coded item  | `free-text` |
-| 3 | `Location` | The name of the HTML view(s) where this coded item is visible elsewhere in the record | `free-text` |
+| 3 | `Location of further information` | The name of the HTML view(s) where this coded item is visible elsewhere in the record | `free-text` |
 
 ## Additional functionality ##
 
@@ -53,6 +53,7 @@ The following requirements **MUST** be fulfilled without need of code release:
  - The Emergency codes view **MUST** contain configuration to allow the provider to switch on and off as necessary.
  - The section content banner text **MUST** be a configurable item.
 
+{% include custominfocallout.html content="**Information:** NHSD will supply the list of codes to be configured, and communicate when this functionality should be switch on/off." type="warning" %}
 
 ## HTML view ##
 
