@@ -208,17 +208,17 @@ Size of the file.
 
 To be used when only a placeholder for a document is available. This **MUST** be populated with the reason why the file isn't available.
 
-### content.format ###
+### content.attachment.contentType ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>coding</code></td>
+    <td><b>Data type:</b> <code>Code</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-Format/content rules for the document.
+MIME type for the document.
 
 ### context.encounter ###
 
@@ -286,7 +286,7 @@ Who/what authenticated the document is not required by GP Connect.
     <td><b>Data type:</b> <code>base64Binary</code></td>
   </tr>
 </table>
-Data of the attachment is not required by GP Connect as it will be populated in FHIR binary resource. 
+Data of the attachment is not required by GP Connect as it will be populated in FHIR binary resource.
 
 <h3 style="color:#ED1951;"> relatesTo </h3>
 
