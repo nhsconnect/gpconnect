@@ -18,7 +18,7 @@ The assurance and assessment of clinical risk in the development of consuming sy
 * all consuming systems **MUST** nominate a clinical safety officer
 * this person **MUST** be a suitably qualified and experienced clinician
 * the clinical safety officer’s role for the consuming system is to ensure that effective clinical risk management is carried out during the development and during any modification of health IT systems using the clinical safety framework guidelines: [DCB0129: Clinical Risk Management: its Application in the Manufacture of Health IT Systems](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dcb0129-clinical-risk-management-its-application-in-the-manufacture-of-health-it-systems)
-* the [GP Connect programme hazard log](downloads/clinical_safety/GP_Connect_Hazard_Log-Consumers.xlsx) should be requested, reviewed, and used to highlight potential hazards that may be identified during the development of the consuming system
+* the [GP Connect programme hazard log](https://github.com/nhsconnect/gpconnect/blob/feature/1.2.6-landing-pages/downloads/clinical_safety/GP_Connect_Hazard_Log-Consumers.xlsx) should be requested, reviewed, and used to highlight potential hazards that may be identified during the development of the consuming system
 * hazards should be scored and mitigated and are the responsibility of the consuming system
 * any new hazards should be identified, scored and mitigated
 * during development, consuming system developers must ensure they have adequate input from clinicians who will be using the system
