@@ -82,7 +82,7 @@ Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
 - SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-- SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient).
+- SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient). Where a patient is active but their NHS number has never been traced or verified, please see the [provider system unverified record requirements](#provider-system-unverified-record-requirements) below.
 - SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
 
 - SHALL populate the following `Patient` fields:
@@ -115,3 +115,23 @@ Provider systems:
 ```json
 {% include foundations/find_patient_response_example.json %}
 ```
+
+#### Provider system unverified record requirements ####
+
+Where an **[active](overview_glossary.html#active-patient) matching patient record** is found, but the **NHS number on this record has never been traced or verified** (either on PDS, or indirectly via NHAIS), the provider SHALL retrieve the patient's demographic record using a PDS Retrieval Query, and then:
+
+- Verify the patient's NHS number according to the rules below:
+
+  - The NHS number is considered verified if:
+    - The NHS number is found on PDS and the date of birth on the local system exactly matches the date of birth held on PDS
+    - OR should 2 out of 3 parts of the date of birth match (YYYY or MM or DD) AND the first 3 characters of the first family name match and the initial character of the given match that held for the record on PDS.
+  - If both of the above checks fail to find a match then the NHS number is not considered as verified
+
+- In addition, check that the patient is not recorded as deceased on PDS
+
+- In addition, check that patient's PDS record does not have any of the following PDS flags:
+  - Invalid
+  - Sensitive
+  - Superseded
+
+If all three steps above succeed the patient's NHS number SHALL be marked as verified, and the patient SHALL be included in the response bundle. Otherwise the patient's NHS number SHALL NOT be marked as verified and SHALL NOT be included in the response bundle.
