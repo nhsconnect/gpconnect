@@ -203,7 +203,15 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 |-------------------------|-------------------|
 
-{% include important.html content="The HL7 FHIR specification states that Parameters.parameter MUST have one of part, value or resource. However, in the case of Parameters which just have optional part parameters such as includeProblems it is valid to have no part parameters or value in a request." %}
+<div class="alert alert-warning" role="alert">
+  <i class="fa fa-warning"></i> <b>Important:</b> The HL7 FHIR specification states that Parameters.parameter MUST have one of part, value or resource. However, in the case of Parameters which just have optional part parameters such as `includeProblems` it is valid to have no part parameters or value in a request. The following is an example of the `includeProblems` parameter with no part parameters:<br/>
+</div>
+
+```json
+{
+  "name": "includeProblems"
+}
+```
 
 ### Request response ###
 
