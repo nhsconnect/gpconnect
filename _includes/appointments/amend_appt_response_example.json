@@ -66,6 +66,14 @@
     }
   ],
   "status": "booked",
+  "serviceCategory": {
+    "text": "General GP Appointments"
+  },
+  "serviceType": [
+    {
+      "text": "General GP Appointment"
+    }
+  ],
   "description": "Free text description updated.",
   "start": "2017-05-30T10:00:00+01:00",
   "end": "2017-05-30T10:25:00+01:00",

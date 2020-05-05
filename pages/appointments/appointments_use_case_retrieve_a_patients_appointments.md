@@ -30,6 +30,18 @@ The consumer application:
 - SHALL have previously traced the patient's NHS Number using the [Personal Demographics Service]( integration_personal_demographic_service.html) or an equivalent service
 - SHALL have previously [resolved the logical ID of the patient](foundations_use_case_find_a_patient.html) on the server using the NHS Number
 
+## Consumer display requirements ##
+
+Consumer systems SHALL support the following fields in order to provide the full context of the appointment: 
+
+- Start date and time
+- End date and time, or duration
+- Delivery channel (in-person, telephone, video)
+- Slot type and schedule type (see `Appointment.serviceType` and `Appointment.serviceCategory`)
+- Location name and address
+- Practitioner role (e.g. General Medical Practitioner, Nurse)
+- Practitioner name and gender
+
 ## API usage ##
 
 ### Request operation ###
@@ -125,6 +137,8 @@ Provider systems:
 - SHALL return all appointments for the patient within the requested period signified by the `start` search parameter(s). All appointments including cancelled appointments should be returned as part of the response, no additional filtering should be applied.
 
 - SHALL populate `Appointment.start`, `Appointment.end`, `Appointment.created` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
+- SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
