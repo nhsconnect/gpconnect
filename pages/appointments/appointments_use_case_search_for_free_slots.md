@@ -111,6 +111,7 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 - Start date and time
 - End date and time, or duration
 - Delivery channel (in-person, telephone, video)
+- Slot type and schedule type (see `Slot.serviceType` and `Schedule.serviceCategory`)
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
@@ -234,6 +235,8 @@ Provider systems:
 - Only `Schedule`, `Practitioner`, `Location` and `Organization` resources SHALL be returned where they are associated with the `Slot` resources matching the query
 
 - SHALL populate `Slot.start`, `Slot.end`, `Schedule.planningHorizon.start` and `Schedule.planningHorizon.end` elements in (UK) local time in the format `yyyy-mm-ddThh:mm:ss+hh:mm`, with the timezone offset `+00:00` for UTC and `+01:00` for BST
+
+- SHALL populate `Slot.serviceType.text` with a practice defined slot type description, and where available `Schedule.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).  The slot and schedule description fields SHOULD be the same as those visible in the NHS App.
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
