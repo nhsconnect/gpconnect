@@ -1,4 +1,3 @@
-{% highlight json %}
 {
   "resourceType": "Bundle",
   "meta": {
@@ -323,10 +322,6 @@
                         {
                           "url": "DescriptionID",
                           "valueId": "56962301000001119"
-                        },
-                        {
-                          "url": "DescriptionDisplay",
-                          "valueString": "Aspirin 75mg dispersible tablets"
                         }
                       ]
                     }
@@ -424,10 +419,6 @@
                           {
                             "url": "DescriptionID",
                             "valueId": "446685017"
-                          },
-                          {
-                            "url": "DescriptionDisplay",
-                            "valueString": "O/E - itchy rash"
                           }
                         ]
                       }
@@ -455,10 +446,6 @@
                     {
                       "url": "DescriptionID",
                       "valueId": "56966201000001112"
-                    },
-                    {
-                      "url": "DescriptionDisplay",
-                      "valueString": "Amoxicillin 250mg capsules"
                     }
                   ]
                 }
@@ -520,7 +507,8 @@
                       }
                     ]
                   }
-                ]
+                ],
+			"text": "Anaphalactic shock"
               }
             ],
             "severity": "severe"
@@ -551,7 +539,8 @@
                 }
               ]
             }
-          ]
+          ],
+		  "text": "Nut allergy"
         },
         "clinicalStatus": "active",
         "patient": {
@@ -606,7 +595,8 @@
                 }
               ]
             }
-          ]
+          ],
+		  "text": "Allergy to paracetemol"
         },
         "clinicalStatus": "active",
         "patient": {
@@ -633,4 +623,3 @@
     }
   ]
 }
-{% endhighlight %}
