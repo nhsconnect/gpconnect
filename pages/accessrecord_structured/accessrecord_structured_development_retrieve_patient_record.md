@@ -199,8 +199,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | A part parameter is passed without a value | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 |-------------------------|-------------------|
 
 <div class="alert alert-warning" role="alert">
