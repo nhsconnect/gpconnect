@@ -13,7 +13,7 @@ However, the guidance given below is the definitive error handling definition fo
 
 ### Operation outcome usage ####
 
-In the event of an error, provider systems **SHALL** respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1). 
+In the event of an error, provider systems **SHALL** respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1).
 
 The `GPConnect-OperationOutcome-1`:
 - **SHALL** contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/STU3/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
@@ -131,13 +131,13 @@ This is a catch-all where a request for a resource instance cannot be found at t
 
 ### Security validation errors ###
 
-When responding to consumer API requests, provider systems **SHALL** return one of the following `OperationOutcome` details when enforcement of local consent rules result in an error condition: 
+When responding to consumer API requests, provider systems **SHALL** return one of the following `OperationOutcome` details when enforcement of local consent rules result in an error condition:
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | -----------|------------|-------------|
 | `403` | forbidden | NO_PATIENT_CONSENT | Patient has not provided consent to share data |
 | `403` | forbidden | NO_ORGANISATION_CONSENT | Organisation has not provided consent to share data |
-| `403` | forbidden | ACCESS_DENIED | Access denied |
+| `403` | forbidden | ACCESS DENIED | Access denied |
 
 #### Example: No patient consent to share #####
 
@@ -187,7 +187,7 @@ For example, if the patient has requested that their record should not be shared
         "coding": [
           {
             "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
-            "code": "ACCESS_DENIED",
+            "code": "ACCESS DENIED",
             "display": "Access denied"
           }
         ]
@@ -257,7 +257,7 @@ INVALID_RESOURCE would be used in situations such as the following:
 - Resource fails to validate against StructureDefinition (either in request body or in JSON Web Tokens (JWT) claim).
 - A resource fails to be processed because of a FHIR constraint, or other rule application, where the error is not already covered by other error codes
 
-REFERENCE_NOT_FOUND describes a scenario where a consumer POSTs a FHIR resource which contains a FHIR reference that cannot be found. 
+REFERENCE_NOT_FOUND describes a scenario where a consumer POSTs a FHIR resource which contains a FHIR reference that cannot be found.
 
 #### Example: Reference not found #####
 
@@ -299,7 +299,7 @@ When the server cannot or will not process a request due to an apparent client e
 | `400`     | invalid | BAD_REQUEST | Submitted request is malformed/invalid. |
 
 BAD_REQUEST Spine error codes should be used in the following types of scenario:
-- JWT claims information is not valid JSON, is null, or has an invalid value 
+- JWT claims information is not valid JSON, is null, or has an invalid value
 - invalid FHIR resource in JWT claim (for example, patient resource when practitioner expected)
 - malformed JSON or XML content in request body
 - an expected header (for example, `interaction ID header`) is missing or invalid
@@ -391,9 +391,9 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
-| `400`     | invalid |  Target URL varies from endpoint registered in SDS | 
-| `403`     | forbidden |  Sender ASID is not authorised for this interaction | 
-| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID | 
+| `400`     | invalid |  Target URL varies from endpoint registered in SDS |
+| `403`     | forbidden |  Sender ASID is not authorised for this interaction |
+| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID |
 | `405`     | not-supported | Method not allowed |
 | `415`     | not-supported | Unsupported media type |
 | `502`     | transient | Error communicating to target URL |
@@ -402,24 +402,24 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 
 ```json
 {
-    "resourceType": "OperationOutcome", 
+    "resourceType": "OperationOutcome",
     "id": "09a01679-2564-0fb4-5129-aecc81ea2706",
     "issue": [
         {
-            "code": "invalid", 
-            "severity": "error", 
+            "code": "invalid",
+            "severity": "error",
             "details": {
                 "coding": [
                     {
-                        "code": "400", 
-                        "display": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test", 
+                        "code": "400",
+                        "display": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test",
                         "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
                     }
                 ]
             },
             "diagnostics": "ENDPOINT_https://supplier.thirdparty.nhs.uk/v1/fhir/_CPAID_S000000000001_VARIES_FROM_TARGETURL_https://supplier.thirdparty.nhs.uk/v1/test",
         }
-    ] 
+    ]
 }
 ```
 
