@@ -28,7 +28,7 @@ The purpose of this section is to provide a summarised view of the pertinent cli
 
 There is only a single main section for the summary section with six subsections:
 
- - [Emergency Codes](accessrecord_view_emergency.html)
+ - [Emergency Codes](accessrecord_view_summary.html#emergency-codes)
  - [Active problems and issues](accessrecord_view_summary.html#active-problems-and-issues)
  - [Current medication issues](accessrecord_view_summary.html#current-medication-issues)
  - [Current repeat medications](accessrecord_view_summary.html#current-repeat-medications)
