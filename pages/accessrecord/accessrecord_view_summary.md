@@ -41,12 +41,13 @@ Date filters are not supported for this section. All relevant records shall be r
 
 ## Emergency Codes ##
 
-This section is configurable to be visible during a time of emergency. It contains details based on a configurable list of coded items that may or may not be visible elsewhere in the patient's record.
+This section is configurable to be visible during a time of emergency. It contains entries based on a configurable list of coded items that are visible elsewhere in the patient's record.
 
 {% include callout.html content="Please see HTML guidance in the [Emergency Codes](accessrecord_view_emergency.html) section. " type="primary" %} 
 
 {% include custominfocallout.html content="**Important:** the Emergency Codes section is only available on the Summary view." type="warning" %}
 
+**Information associated with the current emergency can be found here [nshconnect/gpconnect-emergency-codes](https://github.com/nhsconnect/gpconnect-emergency-codes)**
 
 ## Active problems and issues ##
 
