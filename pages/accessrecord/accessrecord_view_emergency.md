@@ -56,7 +56,7 @@ The following requirements **MUST** be fulfilled without need of code release:
 
 **Information associated with the current emergency can be found here [nshconnect/gpconnect-emergency-codes](https://github.com/nhsconnect/gpconnect-emergency-codes)**
 
-{% include custominfocallout.html content="**Information:** NHSD will supply the list of codes to be configured, and communicate when this functionality should be switch on/off." type="warning" %}
+{% include custominfocallout.html content="**Information:** NHSD will supply the list of codes to be configured, and communicate when this functionality should be switched on/off." type="warning" %}
  
 ## HTML view ##
 
