@@ -54,7 +54,7 @@ This section is configurable to be visible during a time of emergency. It contai
 
 {% include custominfocallout.html content="**Important:** the Emergency Codes section is only available on the Summary view." type="warning" %}
 
-
+**Information associated with the current emergency can be found here [nshconnect/gpconnect-emergency-codes](https://github.com/nhsconnect/gpconnect-emergency-codes)**
 
 ### Last 3 Encounters ###
 
