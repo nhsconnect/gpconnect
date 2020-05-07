@@ -9,7 +9,7 @@ summary: "Emergency codes HTML view"
 
 {% include custominfocallout.html content="**Warning:** the Emergency codes section is only ever visible on the Summary view. It cannot be requested independently like the other HTML views. Items in this view will also be visible in other HTML views." type="danger" %}
 
-{% include custominfocallout.html content="**Information:** information associated with the current emergency can be found here [nshconnect/gpconnect-emergency-codes](https://github.com/nhsconnect/gpconnect-emergency-codes)." type="warning" %}
+{% include custominfocallout.html content="**Information:** information associated with the current emergency can be found here [nshconnect/gpconnect-emergency-codes](https://github.com/nhsconnect/gpconnect-emergency-codes)." type="danger" %}
 
 
 ## Clinical narrative ##
