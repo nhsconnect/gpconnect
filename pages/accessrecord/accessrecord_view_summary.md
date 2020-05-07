@@ -27,7 +27,7 @@ The purpose of this section is to provide a summarised view of the pertinent cli
 
 There is only a single main section for the summary section with seven subsections:
 
- - [Emergency Codes](accessrecord_view_emergency.html)
+ - [Emergency Codes](accessrecord_view_summary.html#emergency-codes)
  - [Last 3 Encounters](accessrecord_view_summary.html#last-3-encounters)
  - [Active Problems and Issues](accessrecord_view_summary.html#active-problems-and-issues)
  - [Major Inactive Problems and Issues](accessrecord_view_summary.html#major-inactive-problems-and-issues)
