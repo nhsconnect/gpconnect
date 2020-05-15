@@ -189,6 +189,8 @@ Provider systems **MUST**:
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
+  - `Practitioner` resources for supplementary actors
+  - `PractitionerRole` resources for the roles of supplementary actors
   - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](access_documents_development_documentreference.html) profile that match the supplied search criteria
     - where the `created` parameter has been supplied and `DocumentReference.created` doesn't exist, `DocumentReference.indexed` **MUST** be used instead
   - Only `Organization` resources SHALL be returned where they are associated with the `DocumentReference` resources matching the query
