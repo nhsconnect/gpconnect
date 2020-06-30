@@ -89,8 +89,8 @@ The clinical code that represents the name of the test group - for example, Full
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
