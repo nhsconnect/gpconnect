@@ -194,19 +194,6 @@
     },
     {
       "resource": {
-        "resourceType": "Organization",
-        "id": "db67f447-b30d-442a-8e31-6918d1367eec",
-        "meta": {
-          "versionId": "636064088098730113",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1"
-          ]
-        },
-        "name": "Acme Drug Corp"
-      }
-    },
-    {
-      "resource": {
         "resourceType": "Location",
         "id": "17",
         "meta": {
@@ -359,8 +346,7 @@
         "agent": {
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         }
-      },
-      "note": ""
+      }
     },
     {
         "resource": {
@@ -381,7 +367,7 @@
                     "display": "Swelling of lower limb (finding)",
                     "extension": [
                         {
-                            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
                             "extension": [
                                 {
                                     "url": "DescriptionID",
@@ -403,7 +389,7 @@
         },
         "extension": [
         {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
             "valueReference": {
                 "reference": "ProcedureRequest/eba25af1-5b74-4790-aa5a-2134fd27ad45"
             }
