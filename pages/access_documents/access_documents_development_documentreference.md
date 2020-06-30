@@ -76,6 +76,8 @@ Where *consuming* systems are integrating data from this resource to their local
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>code</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
