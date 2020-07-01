@@ -22,37 +22,61 @@ body {
     margin-top: -5px;
 }
 .bs-callout-default {
-    border-left-color: #777;
+	border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;
+    border-color: #777;
 }
 .bs-callout-default h4 {
     color: #777;
 }
 .bs-callout-primary {
-    border-left-color: #428bca;
+	border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;
+    border-color: #428bca;
 }
 .bs-callout-primary h4 {
     color: #428bca;
 }
 .bs-callout-success {
-    border-left-color: #5cb85c;
+	border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;    
+	border-color: #5cb85c;
 }
 .bs-callout-success h4 {
     color: #5cb85c;
 }
 .bs-callout-danger {
-    border-left-color: #d9534f;
+	border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;    
+	border-color: #d9534f;
 }
 .bs-callout-danger h4 {
     color: #d9534f;
 }
 .bs-callout-warning {
-    border-left-color: #f0ad4e;
+	border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;
+    border-color: #f0ad4e;
 }
 .bs-callout-warning h4 {
     color: #f0ad4e;
 }
 .bs-callout-info {
-    border-left-color: #5bc0de;
+    border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;
+	border-color: #5bc0de;
 }
 .bs-callout-info h4 {
     color: #5bc0de;
