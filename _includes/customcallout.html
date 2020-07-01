@@ -1,0 +1,29 @@
+{% if include.type == "warning" %}  
+
+<div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-exclamation-circle"></em> <strong>Warning:</strong> {{include.content}}</div>
+
+{% elsif include.type == "info" %}
+
+<div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-warning"></em> <strong>Important:</strong> {{include.content}}</div>
+
+{% elsif include.type == "danger" %}  
+
+<div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-exclamation-circle"></em> <strong>Warning:</strong> {{include.content}}</div>
+
+{% elsif include.type == "primary" %}  
+
+<div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-warning"></em> <strong>Information:</strong> {{include.content}}</div>
+
+{% elsif include.type == "success" %}  
+
+<div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-wrench"></em> <strong>To-do:</strong> {{include.content}}</div>
+
+{% elsif include.type == "default" %}
+
+<div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-warning"></em> <strong>Important:</strong> {{include.content}}</div>
+
+{% else %}
+
+<div markdown="span" class="bs-callout bs-callout-default"><em class="fa fa-warning"></em> <strong>Important:</strong> {{include.content}}</div>
+
+{% endif %}
