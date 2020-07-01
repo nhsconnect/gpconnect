@@ -2,7 +2,7 @@
 
 <div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-exclamation-circle"></em> <strong>Warning:</strong> {{include.content}}</div>
 
-{% elsif include.type == "info" %}
+{% elsif include.type == "primary" %}
 
 <div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-warning"></em> <strong>Important:</strong> {{include.content}}</div>
 
@@ -10,7 +10,7 @@
 
 <div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-exclamation-circle"></em> <strong>Warning:</strong> {{include.content}}</div>
 
-{% elsif include.type == "primary" %}  
+{% elsif include.type == "info" %}  
 
 <div markdown="span" class="bs-callout bs-callout-{{include.type}}"><em class="fa fa-warning"></em> <strong>Information:</strong> {{include.content}}</div>
 
