@@ -3,7 +3,7 @@
 - title: Accredited System Identifier (ASID)
   value: "A unique number allocated to a system on accreditation for connection to Spine."
 - title: Active patient
-  value: "An Active patient as defined by GP Connect is any patient on a provider's system that has <i>Not Left</i> and is <i>Not Deceased</i>. The patient SHALL have also been traced and verified using PDS before their details are shared through the GP Connect API. <p></p><p>The concept of Active is related to the patient's registration <i>status</i> rather than to the patient's registration <i>type</i>. A provider's system may have a number of different statuses which should be considered Active, many of those statuses may apply to a number of different registration type.</p>"
+  value: "An Active patient as defined by GP Connect is any patient on a provider's system that has <em>Not Left</em> and is <em>Not Deceased</em>. The patient SHALL have also been traced and verified using PDS before their details are shared through the GP Connect API. <p></p><p>The concept of Active is related to the patient's registration <em>status</em> rather than to the patient's registration <em>type</em>. A provider's system may have a number of different statuses which should be considered Active, many of those statuses may apply to a number of different registration type.</p>"
 - title: Application Programming Interface (API)
   value: "A set of functions and procedures that allows the creation of applications which access the features or data of an application or other service to deliver specific cross-organisational business capability. The aim of GP Connect FHIR&reg; APIs is to provide access to data and workflow within GP clinical systems."
 - title: Capability
