@@ -34,7 +34,7 @@ children:
   - title: FHIR&reg; resources
     url: /datalibraryfoundation.html
     output: web, pdf
-  - title: API use cases
+  - title: API definition
     output: web, pdf
     children:
     - title: Get the FHIR&reg; capability statement
