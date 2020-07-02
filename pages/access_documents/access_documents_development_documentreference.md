@@ -22,9 +22,9 @@ The headings below list the elements of the DocumentReference resource and descr
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -35,9 +35,9 @@ The logical identifier of the DocumentReference resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -49,9 +49,9 @@ Fixed value `https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Docume
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -61,9 +61,9 @@ Master Version Specific Identifier. This unique identifier is used to identify t
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -79,7 +79,7 @@ Where  _consuming_  systems are integrating data from this resource to their loc
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
+    <td><strong>Data type:</strong> <code>code</code></td>
   </tr>
 </table>
 
@@ -90,9 +90,9 @@ This field will always have default value of current as only the latest version 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>codeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -102,9 +102,9 @@ Kind of document, a value **SHOULD** be taken from the SNOMED refset 99900039100
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(CareConnect-GPC-Patient-1 | CareConnect-GPC-Practitioner-1)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(CareConnect-GPC-Patient-1 | CareConnect-GPC-Practitioner-1)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -114,9 +114,9 @@ A reference to the patient who is the subject of the document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> DateTime</td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> DateTime</td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -126,9 +126,9 @@ Creation/Edit datetime of the document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Instant</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Instant</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -138,9 +138,9 @@ When the GP Practice added the document to their clinical system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -151,9 +151,9 @@ Who and/or what authored the document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Organisation)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Organisation)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -164,9 +164,9 @@ Organisation which maintains this document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -176,9 +176,9 @@ Human-readable description (title).
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>url</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>url</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -188,9 +188,9 @@ URL to retrieve the document, this **MUST** be populated when the document is av
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>unsignedInt</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>unsignedInt</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -200,9 +200,9 @@ Size of the file.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -212,9 +212,9 @@ To be used when only a placeholder for a document is available. This **MUST** be
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>coding</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>coding</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -224,9 +224,9 @@ Format/content rules for the document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(CareConnect-GPC-Encounter-1)</code></td>
-    <td><b>Optionality:</b> Required/Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(CareConnect-GPC-Encounter-1)</code></td>
+    <td><strong>Optionality:</strong> Required/Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -236,16 +236,16 @@ Reference to the consultation the document was created/attached in.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>codeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
 Additional details about where the content was created (for example, clinical specialty).
 
 
-<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Elements <strong>not in use</strong> </h2>
 
 The following elements **MUST NOT** be populated:
 
@@ -253,7 +253,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(preliminary | final | appended | amended | entered-in-error)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(preliminary | final | appended | amended | entered-in-error)</code></td>
   </tr>
 </table>
 
@@ -263,7 +263,7 @@ This is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>codeableConcept</code></td>
   </tr>
 </table>
 
@@ -273,7 +273,7 @@ Categorization of document is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
+    <td><strong>Data type:</strong> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
   </tr>
 </table>
 
@@ -283,7 +283,7 @@ Who/what authenticated the document is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>base64Binary</code></td>
+    <td><strong>Data type:</strong> <code>base64Binary</code></td>
   </tr>
 </table>
 Data of the attachment is not required by GP Connect as it will be populated in FHIR binary resource. 
@@ -292,7 +292,7 @@ Data of the attachment is not required by GP Connect as it will be populated in 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
+    <td><strong>Data type:</strong> <code>code</code></td>
   </tr>
 </table>
 replaces | transforms | signs | appends
@@ -300,9 +300,9 @@ Relationships to other documents is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code>Reference(CareConnect-GPC-Patient-1)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong><code>Reference(CareConnect-GPC-Patient-1)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -312,7 +312,7 @@ Patient demographics from source.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>codeableConcept</code></td>
   </tr>
 </table>
 

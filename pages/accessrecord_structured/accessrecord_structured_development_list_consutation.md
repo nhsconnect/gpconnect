@@ -41,9 +41,9 @@ The population of List attributes that are common to all of the consultation lis
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>Id</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>Id</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -53,9 +53,9 @@ The logical identifier of the `List` profile.
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>uri</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>uri</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -67,9 +67,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>Code</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>Code</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -79,9 +79,9 @@ Fixed value of `current`.
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>Code</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>Code</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -91,9 +91,9 @@ Fixed value of `snapshot`.
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code> Reference(Patient)</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code> Reference(Patient)</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -105,9 +105,9 @@ The patient reference is provided by all Lists in the structure rather than the 
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>Reference(Encounter)</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -119,9 +119,9 @@ The Encounter reference is provided by all Lists in the structure rather than th
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>dateTime</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>dateTime</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -135,9 +135,9 @@ The clinically significant or effective consultation date is provided by the ass
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>CodeableConcept</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -153,9 +153,9 @@ The following attributes are specific to the List level representing the consult
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>string</code></td>
-                <td><b>Optionality:</b> Required</td>
-                <td><b>Cardinality:</b> 0..1</td>
+                <td><strong>Data type:</strong> <code>string</code></td>
+                <td><strong>Optionality:</strong> Required</td>
+                <td><strong>Cardinality:</strong> 0..1</td>
         </tr>
 </table>
 
@@ -166,9 +166,9 @@ This duplicates the consultation type/name provided at <code>Encounter.type</cod
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>CodeableConcept</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -178,9 +178,9 @@ Fixed value of `325851000000107 |Consultation|`
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>BackboneElement</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..*</td>
+                <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..*</td>
         </tr>
 </table>
 
@@ -194,9 +194,9 @@ The List level representing the Topic level of the consultation structure.
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>reference</code></td>
-                <td><b>Optionality:</b> Required</td>
-                <td><b>Cardinality:</b> 0..*</td>
+                <td><strong>Data type:</strong> <code>reference</code></td>
+                <td><strong>Optionality:</strong> Required</td>
+                <td><strong>Cardinality:</strong> 0..*</td>
         </tr>
 </table>
 
@@ -208,9 +208,9 @@ These links will have been added by a clinician at the sending practice.
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>string</code></td>
-                <td><b>Optionality:</b> Required</td>
-                <td><b>Cardinality:</b> 0..1</td>
+                <td><strong>Data type:</strong> <code>string</code></td>
+                <td><strong>Optionality:</strong> Required</td>
+                <td><strong>Cardinality:</strong> 0..1</td>
         </tr>
 </table>
 
@@ -220,9 +220,9 @@ The name of the corresponding Topic section in the source consultation if it is 
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>CodeableConcept</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -232,9 +232,9 @@ Fixed value of `25851000000105 |Topic (EHR)|`
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>BackboneElement</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..*</td>
+                <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..*</td>
         </tr>
 </table>
 
@@ -252,9 +252,9 @@ The level of the consultation that represents the heading sections (SOAP heading
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>string</code></td>
-                <td><b>Optionality:</b> Required</td>
-                <td><b>Cardinality:</b> 0..1</td>
+                <td><strong>Data type:</strong> <code>string</code></td>
+                <td><strong>Optionality:</strong> Required</td>
+                <td><strong>Cardinality:</strong> 0..1</td>
         </tr>
 </table>
 
@@ -264,9 +264,9 @@ The name of the heading section on the source system represented by this List in
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>CodeableConcept</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..1</td>
+                <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..1</td>
         </tr>
 </table>
 
@@ -276,15 +276,15 @@ Fixed value of `24781000000107 |Category (EHR)|`
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>BackboneElement</code></td>
-                <td><b>Optionality:</b> Mandatory</td>
-                <td><b>Cardinality:</b> 1..*</td>
+                <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+                <td><strong>Optionality:</strong> Mandatory</td>
+                <td><strong>Cardinality:</strong> 1..*</td>
         </tr>
 </table>
 
 Each <code>entry.item</code> is a reference to a profile representing a clinical record entry in the source system - for example, medications, allergies, problems, diagnoses, and so on. They will be recorded in the same order that the items appear when viewed in a consultation in the GP system.
 
-<h2 style="color:#ED1951;"> List elements <b>not in use</b> for consultations</h2>
+<h2 style="color:#ED1951;"> List elements <strong>not in use</strong> for consultations</h2>
 
 The following elements **SHALL NOT** be populated:
 
@@ -292,7 +292,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>identifier</code></td>
+                <td><strong>Data type:</strong> <code>identifier</code></td>
         </tr>
 </table>
 
@@ -300,7 +300,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
+                <td><strong>Data type:</strong> <code>Reference(Practitioner)</code></td>
         </tr>
 </table>
 
@@ -308,7 +308,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>Annotation</code></td>
+                <td><strong>Data type:</strong> <code>Annotation</code></td>
         </tr>
 </table>
 
@@ -316,7 +316,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>CodeableConcept</code></td>
+                <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
         </tr>
 </table>
 
@@ -324,7 +324,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>Boolean</code></td>
+                <td><strong>Data type:</strong> <code>Boolean</code></td>
         </tr>
 </table>
 
@@ -332,6 +332,6 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
         <tr>
-                <td><b>Data type:</b> <code>dateTime</code></td>
+                <td><strong>Data type:</strong> <code>dateTime</code></td>
         </tr>
 </table>

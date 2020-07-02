@@ -24,9 +24,9 @@ The logical identifier of the `Binary` profile.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>type</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>type</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -36,15 +36,15 @@ Mime type of the document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>base64Binary</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>base64Binary</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
 The actual content of the document encoded using base64.
 
-<h2 style="color:#ED1951;"> Binary elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Binary elements <strong>not in use</strong> </h2>
 
 The following elements **SHALL NOT** be populated:
 
@@ -52,6 +52,6 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Any)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Any)</code></td>
   </tr>
 </table>

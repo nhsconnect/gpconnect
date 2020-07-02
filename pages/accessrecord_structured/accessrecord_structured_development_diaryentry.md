@@ -21,9 +21,9 @@ The headings below list the elements of the `Diary Entry (ProcedureRequest)` pro
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -33,9 +33,9 @@ The logical identifier of the `Diary Entry (ProcedureRequest)` profile.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -47,9 +47,9 @@ Fixed value **profile**
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -62,9 +62,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -76,9 +76,9 @@ The <code>status</code> **MUST** only be <code>active</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -88,9 +88,9 @@ The <code>intent</code> **MUST** only be <code>plan</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -100,9 +100,9 @@ The planned event, action or activity.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -112,9 +112,9 @@ The patient the diary entry relates to.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Encounter)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -124,9 +124,9 @@ A reference to the consultation from which the diary entry originates - that is,
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime | Period</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>dateTime | Period</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -136,9 +136,9 @@ The date or date range when the diary entry is planned to occur.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -148,9 +148,9 @@ The date the diary entry was entered into the original source system. This may b
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -160,9 +160,9 @@ The person or system who entered the diary entry into the original source system
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Practitioner | Organization | Device)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Practitioner | Organization | Device)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -173,9 +173,9 @@ If the diary entry was system generated and it is not possible to meaningfully a
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -186,9 +186,9 @@ This is the trigger reason for the diary entry not the action of the diary entry
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Observation)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference(Observation)</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -198,16 +198,16 @@ Additional clinical information linked to the diary entry **MAY** be included, e
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Annotation</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Annotation</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
 Free text narrative to describe the reason for the diary entry or the action / activity required by the diary entry.
 This is for additional content beyond the <code>code</code> and <code>reasonCode</code> coded elements and is not intended to duplicate the content of those elements.
 
-<h2 style="color:#ED1951;"> ProcedureRequest elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> ProcedureRequest elements <strong>not in use</strong> </h2>
 
 The following elements **MUST NOT** be populated:
 
@@ -215,7 +215,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
   </tr>
 </table>
 
@@ -223,7 +223,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean</code></td>
+    <td><strong>Data type:</strong> <code>Boolean</code></td>
   </tr>
 </table>
 
@@ -231,7 +231,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -239,7 +239,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean | CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>Boolean | CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -247,7 +247,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Organization)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Organization)</code></td>
   </tr>
 </table>
 
@@ -255,7 +255,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -263,7 +263,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Device | RelatedPerson | Patient | Organization | Practitioner | HealthService)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Device | RelatedPerson | Patient | Organization | Practitioner | HealthService)</code></td>
   </tr>
 </table>
 
@@ -271,7 +271,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Observation | Condition)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Observation | Condition)</code></td>
   </tr>
 </table>
 
@@ -283,7 +283,7 @@ The diary entry **MUST NOT** reference to the problem.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Specimen)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Specimen)</code></td>
   </tr>
 </table>
 
@@ -291,7 +291,7 @@ The diary entry **MUST NOT** reference to the problem.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -299,7 +299,7 @@ The diary entry **MUST NOT** reference to the problem.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Provenance)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Provenance)</code></td>
   </tr>
 </table>
 

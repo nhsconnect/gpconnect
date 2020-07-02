@@ -112,7 +112,7 @@ Currently, when a patient's record is viewed in the LCR, their current and past 
 <td>The clinician then reviews the information presented and determines the best course of action in response to the information. This may involve requesting additional data sets from GP Connect to supplement the data already presented within this list.</td>
 </tr>
 <tr class="odd">
-<td colspan="2"><b>Exceptions</b></td>
+<td colspan="2"><strong>Exceptions</strong></td>
 </tr>
 <tr class="even">
 <td>Step 4a</td>

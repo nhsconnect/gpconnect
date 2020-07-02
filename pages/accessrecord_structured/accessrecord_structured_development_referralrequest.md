@@ -21,9 +21,9 @@ The headings below list the elements of the ReferralRequest resource and describ
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -33,9 +33,9 @@ The logical identifier of the ReferralRequest resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -47,9 +47,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Referr
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -64,9 +64,9 @@ The system identifier for this is `https://fhir.nhs.uk/Id/ubr-number`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(CarePlan, ProcedureRequest, ReferralRequest)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference(CarePlan, ProcedureRequest, ReferralRequest)</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -76,9 +76,9 @@ Indicates any plans or prior referrals that this referral is intended to fulfill
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -89,9 +89,9 @@ Referrals 'entered in error' must not be included.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -101,9 +101,9 @@ Fixed value of <code>order</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -115,9 +115,9 @@ If there is a priority code for the referral but it is incompatible with the e-R
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -128,9 +128,9 @@ This **MAY** be populated if the GP clinical system also holds a distinct entry 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -140,9 +140,9 @@ A reference to the patient who is the subject of the referral.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Encounter)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -152,9 +152,9 @@ The `Consultation` within which the referral was recorded.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -164,9 +164,9 @@ The main date for the referral as entered by the end user in accordance with the
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -176,9 +176,9 @@ The details of the person, practitioner or organisation responsible for the deci
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Device, Organization, Patient, RelatedPerson, Practitioner)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Device, Organization, Patient, RelatedPerson, Practitioner)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -190,9 +190,9 @@ If the referral does not clearly identify responsibility for the referral decisi
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Organization)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Organization)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -203,9 +203,9 @@ This element **SHOULD** be absent if the <code>requester.agent</code> is not a p
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -216,9 +216,9 @@ This **MAY** be populated if the GP clinical system holds a distinct entry for t
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(HealthcareService, Organization, Practitioner)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference(HealthcareService, Organization, Practitioner)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -229,9 +229,9 @@ If the referral recipient details are in a form which cannot be returned as a re
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> CodeableConcept</td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> CodeableConcept</td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -242,9 +242,9 @@ Additional, coded or text entries which are clearly captured as reasons for refe
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -254,9 +254,9 @@ The free text description associated with the referral.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Any)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference(Any)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -270,9 +270,9 @@ The <code>referralRequest</code> **MUST NOT** reference to the problem.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Annotation</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Annotation</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -280,7 +280,7 @@ Any additional information recorded against the referral which is not accommodat
 This could include additional categorisation of the referral or notes recorded against the referral after it has been made such as details of progress or outcomes.
 
 
-<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Elements <strong>not in use</strong> </h2>
 
 The following elements **MUST NOT** be populated:
 
@@ -288,7 +288,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(ActivityDefinition, PlanDefinition)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(ActivityDefinition, PlanDefinition)</code></td>
   </tr>
 </table>
 
@@ -298,7 +298,7 @@ This is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(ReferralRequest)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(ReferralRequest)</code></td>
   </tr>
 </table>
 
@@ -309,7 +309,7 @@ Any association to a prior, completed referral can be made via the basedOn eleme
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
   </tr>
 </table>
 
@@ -319,7 +319,7 @@ This is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -330,7 +330,7 @@ The <code>reasonCode</code> element **MUST** be used for the SNOMED CT coded ref
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime, Period</code></td>
+    <td><strong>Data type:</strong> <code>dateTime, Period</code></td>
   </tr>
 </table>
 
@@ -338,7 +338,7 @@ The <code>reasonCode</code> element **MUST** be used for the SNOMED CT coded ref
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(ProblemHeader-Condition)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(ProblemHeader-Condition)</code></td>
   </tr>
 </table>
 
@@ -350,7 +350,7 @@ The <code>referralRequest</code> **MUST NOT** reference to the problem.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Provenance)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Provenance)</code></td>
   </tr>
 </table>
 

@@ -13,9 +13,9 @@ summary: "Guidance for populating the Composition resource"
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -25,9 +25,9 @@ The logical identifier of the `Composition` resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -37,9 +37,9 @@ The `Composition` profile URL.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -53,9 +53,9 @@ This is sliced to include a cross-care setting identifier which **MUST** be popu
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -65,9 +65,9 @@ Fixed values of `final`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -77,9 +77,9 @@ Use fixed value code of `325851000000107 |Consultation encounter type (record ar
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -89,9 +89,9 @@ Reference to the `Patient` resource for the patient whose patient record contain
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Encounter)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -101,9 +101,9 @@ Mandatory reference to the `Encounter` resource providing the context for the Co
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -113,9 +113,9 @@ The system rather than clinical date time for when the consultation was last edi
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Practitioner)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -125,9 +125,9 @@ The system (audit trail) user attributed to the authoring or modification the co
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -161,9 +161,9 @@ Not used in GP Connect
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -179,9 +179,9 @@ But also is this link needed - if standardisation means expanding linkages to ch
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -193,9 +193,9 @@ Will not be present where a consultation section is untitled on the source syste
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -209,9 +209,9 @@ TBD - Either not used in GP Connect. Any textual rendering of the Composition co
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -222,9 +222,9 @@ Explicitly identified that each composition is a snapshot of the current consult
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -235,9 +235,9 @@ By convention, the order entries should appear is the default order subsections 
 ### Composition.section.entry ###
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Observation | AllergyIntolerance | MedicationRequest | ReferralRequest ... TO DO Constrain to finalised set of GP Connect resources)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference(Observation | AllergyIntolerance | MedicationRequest | ReferralRequest ... TO DO Constrain to finalised set of GP Connect resources)</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -255,9 +255,9 @@ Where a system allows 'empty' sections to be recorded these should be suppressed
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>section</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>section</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -275,9 +275,9 @@ Nested **Composition.section.section** attributes are used to represent structur
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -299,9 +299,9 @@ TBD - demand on outcome of narrative discussion
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -312,9 +312,9 @@ Explicitly identifies that each composition section and subsection is a snapshot
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -325,9 +325,9 @@ By convention the order used is the default order subsections or entries are dis
 ### Composition.section.section.entry ###
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Observation | AllergyIntolerance | MedicationRequest | ReferralRequest ... TO DO Constrain to finalised set of GP Connect resources)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Reference(Observation | AllergyIntolerance | MedicationRequest | ReferralRequest ... TO DO Constrain to finalised set of GP Connect resources)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 

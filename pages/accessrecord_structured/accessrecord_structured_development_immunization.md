@@ -21,9 +21,9 @@ The headings below list the elements of the `Immunization` profile and describe 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -33,9 +33,9 @@ The logical identifier of the `Immunization` profile.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -47,9 +47,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immuni
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>boolean</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>boolean</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -59,9 +59,9 @@ Indicates whether a parent was present at the immunisation.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -73,9 +73,9 @@ If the immunisation has been transferred by GP2GP this **SHOULD** be the recorde
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -85,9 +85,9 @@ The procedure code describing the vaccine that was administered or was intended 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -99,9 +99,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -111,9 +111,9 @@ Fixed to the value `completed` for all Care Connect profiles.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Boolean</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -124,9 +124,9 @@ Value of `true` for vaccinations which were intended but not given.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -138,9 +138,9 @@ Where the vaccine product that was administered is not known then the null flavo
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -150,9 +150,9 @@ A reference to the patient due to be immunised.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Encounter)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -163,9 +163,9 @@ This may represent when the vaccination was administered, intended to be adminis
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -176,9 +176,9 @@ If the immunisation was administered elsewhere, this may be an estimated or part
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Boolean</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -195,9 +195,9 @@ If it is not known whether the record of the vaccination was made from a primary
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -212,9 +212,9 @@ This **MUST** be absent where <code>primarySource</code> is <code>true</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Location)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Location)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -228,9 +228,9 @@ If the immunisation record in the GP Clinical System does not record a location 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Organization)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Organization)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -240,9 +240,9 @@ The manufacturer of the vaccine.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -252,9 +252,9 @@ The batch number of the vaccine.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>date</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>date</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -264,9 +264,9 @@ The expiry date of the batch the vaccine is from.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -277,9 +277,9 @@ This **MUST** be absent for an intended vaccination which was not given.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -290,9 +290,9 @@ This **MUST** be absent for an intended vaccination which was not given.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>SimpleQuantity</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>SimpleQuantity</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -303,9 +303,9 @@ This **MUST** be absent for an intended vaccination which was not given.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -316,9 +316,9 @@ This **MUST** also include the practitioner who administered the vaccine if diff
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b>Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong>Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -337,9 +337,9 @@ The code <code>AP</code> (Administering Provider) **MUST** be used to designate 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Practitioner)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -355,9 +355,9 @@ This is mandatory where the <code>practitioner.role</code> is populated.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Annotation</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Annotation</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -367,9 +367,9 @@ Notes about the immunization.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -380,9 +380,9 @@ This **MUST** be absent if <code>notGiven</code> is <code>true</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -393,9 +393,9 @@ This **MUST** be absent if <code>notGiven</code> is <code>false</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -406,9 +406,9 @@ This **MUST** be absent if <code>notGiven</code> is <code>true</code>.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>positiveInt</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>positiveInt</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -418,9 +418,9 @@ If the immunisation is achieved via a series of vaccinations, this is the positi
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -430,9 +430,9 @@ A description for the vaccination protocol this vaccination is administered unde
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>positiveInt</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>positiveInt</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -442,9 +442,9 @@ The number of doses in the series which are required for vaccination given (at t
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -454,15 +454,15 @@ The disease or diseases the patient is being immunised against.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality</b> Mandatory</td>
-    <td><b>Cardinality</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality</strong> Mandatory</td>
+    <td><strong>Cardinality</strong> 1..1</td>
   </tr>
 </table>
 
 Fixed value `count`
 
-<h2 style="color:#ED1951;"> Immunization elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Immunization elements <strong>not in use</strong> </h2>
 
 The following elements **MUST NOT** be populated:
 
@@ -470,7 +470,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -480,7 +480,7 @@ Any reaction to an immunization **MUST** be sent separately in an `AllergyIntole
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Organization)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Organization)</code></td>
   </tr>
 </table>
 
@@ -488,7 +488,7 @@ Any reaction to an immunization **MUST** be sent separately in an `AllergyIntole
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
+    <td><strong>Data type:</strong> <code>string</code></td>
   </tr>
 </table>
 
@@ -496,7 +496,7 @@ Any reaction to an immunization **MUST** be sent separately in an `AllergyIntole
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 

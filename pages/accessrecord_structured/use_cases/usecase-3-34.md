@@ -110,7 +110,7 @@ The system will be able to harness multiple FHIR objects in order to form a more
 <td>The clinician then reviews the information presented and determines the best course of action in response to the information. This may involve requesting additional data sets from GP Connect to supplement the data already presented within this list.</td>
 </tr>
 <tr class="odd">
-<td><b>Exceptions</b></td>
+<td><strong>Exceptions</strong></td>
 <td></td>
 </tr>
 <tr class="even">

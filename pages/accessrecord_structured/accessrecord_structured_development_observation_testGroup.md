@@ -22,9 +22,9 @@ The headings below list the elements of the `Observation` resource and describe 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -34,9 +34,9 @@ The logical identifier of the observation resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -48,9 +48,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observ
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -62,9 +62,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -76,9 +76,9 @@ In GP systems, these are most likely to be 'final'. However, 'preliminary' repor
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -88,9 +88,9 @@ The clinical code that represents the name of the test group - for example, Full
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -100,9 +100,9 @@ A reference to the patient who the observation is about.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference (Practitioner/Organisation)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -113,9 +113,9 @@ Reference to the resource for the Organization that carried out the tests. A `Pr
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -127,9 +127,9 @@ For example, the sample has haemolysed or has leaked.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -139,9 +139,9 @@ Reference to the specimen on which these results were based.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -159,7 +159,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><strong>Data type:</strong> <code>reference</code></td>
   </tr>
 </table>
 
@@ -167,7 +167,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -175,7 +175,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -183,7 +183,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -191,7 +191,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -199,7 +199,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -207,7 +207,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -215,7 +215,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -223,7 +223,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -231,7 +231,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -239,7 +239,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -247,7 +247,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>
 
@@ -256,6 +256,6 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> BackboneElement</td>
+    <td><strong>Data type:</strong> BackboneElement</td>
   </tr>
 </table>

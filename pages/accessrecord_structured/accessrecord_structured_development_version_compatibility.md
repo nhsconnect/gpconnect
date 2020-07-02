@@ -82,8 +82,8 @@ The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU
 ```
 
 <div markdown="span" class="alert alert-warning" role="alert">
-	<i class="fa fa-warning"></i>
-	<b>Note:</b> where no valid parameters are provided in a request, an OperationOutcome with a severity of error <b>MUST</b> to be returned as specified in the <a href="accessrecord_structured_development_retrieve_patient_record.html#error-handling">error handling section</a>
+	<em class="fa fa-warning"></em>
+	<strong>Note:</strong> where no valid parameters are provided in a request, an OperationOutcome with a severity of error <strong>MUST</strong> to be returned as specified in the <a href="accessrecord_structured_development_retrieve_patient_record.html#error-handling">error handling section</a>
 </div>
 
 Providers **MUST** report unsupported parameters at the least granular level, that is, unsupported part parameters **MUST** only be reported when their top level parameter is supported.

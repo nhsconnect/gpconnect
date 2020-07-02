@@ -21,9 +21,9 @@ The headings below list the elements of the ProcedureRequest resource and descri
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -33,9 +33,9 @@ The logical identifier of the DiagnosticReport resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -47,9 +47,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -62,9 +62,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -76,9 +76,9 @@ This is mandatory in the base FHIR resource. However as this resource in our mod
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -90,9 +90,9 @@ This is mandatory in the base FHIR resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -102,9 +102,9 @@ The tests requested by the requesting HCP. Where no code is available then provi
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -114,9 +114,9 @@ A reference to the `Patient` that the ProcedureRequest is about.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference (Practitioner/Organization)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -126,9 +126,9 @@ Reference to the resource for the practitioner or organization that is requested
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference (Practitioner/Organization)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -138,9 +138,9 @@ Reference to the resource for the practitioner or organization that created the 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>codeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -150,9 +150,9 @@ An explanation or justification for why this diagnostic investigation is being r
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code> reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code> reference</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -162,9 +162,9 @@ A reference to any conditions the patient has that are supplied by the requestin
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -180,7 +180,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><strong>Data type:</strong> <code>reference</code></td>
   </tr>
 </table>
 
@@ -188,7 +188,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><strong>Data type:</strong> <code>reference</code></td>
   </tr>
 </table>
 
@@ -196,7 +196,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><strong>Data type:</strong> <code>reference</code></td>
   </tr>
 </table>
 
@@ -204,7 +204,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
   </tr>
 </table>
 
@@ -212,7 +212,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
+    <td><strong>Data type:</strong> <code>code</code></td>
   </tr>
 </table>
 
@@ -222,7 +222,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>boolean</code></td>
+    <td><strong>Data type:</strong> <code>boolean</code></td>
   </tr>
 </table>
 
@@ -232,7 +232,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -240,7 +240,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
   </tr>
 </table>
 
@@ -248,7 +248,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime/Period/Timing</code></td>
+    <td><strong>Data type:</strong> <code>dateTime/Period/Timing</code></td>
   </tr>
 </table>
 
@@ -258,7 +258,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Boolean/CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>Boolean/CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -266,7 +266,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
   </tr>
 </table>
 
@@ -274,7 +274,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -284,7 +284,7 @@ Out of scope for the current itera
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
   </tr>
 </table>
 
@@ -292,7 +292,7 @@ Out of scope for the current itera
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
   </tr>
 </table>
 
@@ -300,7 +300,7 @@ Out of scope for the current itera
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeablConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeablConcept</code></td>
   </tr>
 </table>
 
@@ -308,6 +308,6 @@ Out of scope for the current itera
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
   </tr>
 </table>

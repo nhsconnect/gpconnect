@@ -76,9 +76,9 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
 
 <table class='resource-attributes'>
   <tr>
-    <td width="15%"><b>Logical Structure</b></td>
-    <td width="15%"><b>FHIR Profile</b></td>
-    <td width="70%"><b>Description</b></td>
+    <td width="15%"><strong>Logical Structure</strong></td>
+    <td width="15%"><strong>FHIR Profile</strong></td>
+    <td width="70%"><strong>Description</strong></td>
   </tr>
   <tr>
     <td>Context</td>

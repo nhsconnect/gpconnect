@@ -22,9 +22,9 @@ The headings below list the elements of the `DiagnosticReport` resource and desc
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -34,9 +34,9 @@ The logical identifier of the `DiagnosticReport` resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -48,9 +48,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -63,9 +63,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>reference</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -77,9 +77,9 @@ As currently test requests are not submitted in a FHIR format this is not the or
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -89,9 +89,9 @@ The status of the DiagnosticReport. In GP systems these are most likely to be 'f
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>CodableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -103,9 +103,9 @@ Consuming systems need to be aware that where more detailed categories are provi
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -117,9 +117,9 @@ As this item is mandatory in FHIR then suppliers should populate it with the SNO
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -130,9 +130,9 @@ A reference to the `Patient` who the DiagnosticReport is about.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>instant</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>instant</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -143,9 +143,9 @@ The date and time that the DiagnosticReport was issued by the laboratory or othe
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference (Practitioner/Organization)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -155,9 +155,9 @@ Reference to the resource for the Organization or Practitioner that produced the
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -167,9 +167,9 @@ Reference to the specimen(s) on which these results were based.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -181,9 +181,9 @@ In GP systems this will also contain a reference to an `observation` that contai
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>codeableConcept</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -193,9 +193,9 @@ A coded finding of the test report. Produced by the organisation that performed 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>string</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -204,7 +204,7 @@ Clinical Interpretation of test results in a text format and notes written by pe
 For clarity notes may be captured at a number of levels within a DiagnosticReport. There may also be notes related to the specimen, test group header or individual test result. It is the consuming systems responsibility to make sure all relevant notes are displayed to the user.
 
 <br>
-<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Elements <strong>not in use</strong> </h2>
 
 The following elements **MUST NOT** be populated:
 
@@ -212,7 +212,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Period</code></td>
+    <td><strong>Data type:</strong> <code>Period</code></td>
   </tr>
 </table>
 
@@ -222,7 +222,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
   </tr>
 </table>
 
@@ -233,7 +233,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
   </tr>
 </table>
 
@@ -243,7 +243,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -253,7 +253,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
+    <td><strong>Data type:</strong> <code>string</code></td>
   </tr>
 </table>
 

@@ -22,9 +22,9 @@ The headings below list the elements of the `AllergyIntolerance` profile and des
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -34,9 +34,9 @@ The logical identifier of the `AllergyIntolerance` profile.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -48,9 +48,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Allerg
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code>Reference</code></td>
-    <td><b>Optionality:</b>Required</td>
-    <td><b>Cardinality:</b>0..1</td>
+    <td><strong>Data type:</strong><code>Reference</code></td>
+    <td><strong>Optionality:</strong>Required</td>
+    <td><strong>Cardinality:</strong>0..1</td>
   </tr>
 </table>
 
@@ -60,9 +60,9 @@ Contains a link to the consultation where the allergy was first recorded.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code>extension</code></td>
-    <td><b>Optionality:</b>Required</td>
-    <td><b>Cardinality:</b>0..1</td>
+    <td><strong>Data type:</strong><code>extension</code></td>
+    <td><strong>Optionality:</strong>Required</td>
+    <td><strong>Cardinality:</strong>0..1</td>
   </tr>
 </table>
 
@@ -74,9 +74,9 @@ Must be populated if the `clinicalStatus` is set to `resolved`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code>dateTime</code></td>
-    <td><b>Optionality:</b>Mandatory</td>
-    <td><b>Cardinality:</b>1..1</td>
+    <td><strong>Data type:</strong><code>dateTime</code></td>
+    <td><strong>Optionality:</strong>Mandatory</td>
+    <td><strong>Cardinality:</strong>1..1</td>
   </tr>
 </table>
 
@@ -88,9 +88,9 @@ Must be populated if the `clinicalStatus` is set to `resolved`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b>Mandatory</td>
-    <td><b>Cardinality:</b>1..1</td>
+    <td><strong>Data type:</strong> <code>String</code></td>
+    <td><strong>Optionality:</strong>Mandatory</td>
+    <td><strong>Cardinality:</strong>1..1</td>
   </tr>
 </table>
 
@@ -100,9 +100,9 @@ The reason why the allergy or intolerance has been resolved. In exceptional case
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -114,9 +114,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -128,9 +128,9 @@ GP systems which support the concept of resolved/ended allergies **MUST** set th
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -142,9 +142,9 @@ Fixed value of `unconfirmed`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -154,9 +154,9 @@ Set to `allergy` for reactions which are allergenic in nature (immunological), a
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -170,9 +170,9 @@ In some cases, the type of allergy/intolerance may be more general - for example
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code>Code</code></td>
-    <td><b>Optionality:</b>Required</td>
-    <td><b>Cardinality:</b>0..1</td>
+    <td><strong>Data type:</strong><code>Code</code></td>
+    <td><strong>Optionality:</strong>Required</td>
+    <td><strong>Cardinality:</strong>0..1</td>
   </tr>
 </table>
 
@@ -184,9 +184,9 @@ It **MAY** be used in conjunction with reaction/severity by systems which suppor
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -204,9 +204,9 @@ Where the AllergyIntolerance has no coded representation in the source system, b
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -216,9 +216,9 @@ A reference to the Patient who has, or had, the allergy or intolerance specified
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -230,9 +230,9 @@ This field **MUST** be populated where the GP system records an explicit onset d
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -246,9 +246,9 @@ Where no asserted date is available, the recorded date is used.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -258,9 +258,9 @@ Who recorded the allergy in the clinical system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 Source of the information about the allergy.
@@ -269,9 +269,9 @@ Source of the information about the allergy.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -283,9 +283,9 @@ This data item may not currently be available from providing systems and in this
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Annotation</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Annotation</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -297,9 +297,9 @@ Must be used to contain any textual data relevant to the allergy.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -319,9 +319,9 @@ If the patient has been asked, but is unable to specify a reaction the nullFlavo
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>String</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -333,9 +333,9 @@ A consuming system **MAY** concatenate the contents (appropriately labelled) wit
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code>Code</code></td>
-    <td><b>Optionality:</b>Required</td>
-    <td><b>Cardinality:</b>0..1</td>
+    <td><strong>Data type:</strong><code>Code</code></td>
+    <td><strong>Optionality:</strong>Required</td>
+    <td><strong>Cardinality:</strong>0..1</td>
   </tr>
 </table>
 
@@ -345,9 +345,9 @@ Severities of `Mild`, `Moderate`, `Severe` are mapped directly to the ValueSet. 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Optional</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Optional</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -356,7 +356,7 @@ The route by which exposure to the substance causing the reaction occurred. Util
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
 
 
-<h2 style="color:#ED1951;"> AllergyIntolerance elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> AllergyIntolerance elements <strong>not in use</strong> </h2>
 
 The following elements **SHALL NOT** be populated:
 
@@ -364,7 +364,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(DiagnosticReport)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(DiagnosticReport)</code></td>
   </tr>
 </table>
 
@@ -372,7 +372,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
   </tr>
 </table>
 
@@ -380,7 +380,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Instant</code></td>
+    <td><strong>Data type:</strong> <code>Instant</code></td>
   </tr>
 </table>
 
@@ -388,7 +388,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Annotation</code></td>
+    <td><strong>Data type:</strong> <code>Annotation</code></td>
   </tr>
 </table>
 
@@ -398,7 +398,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
   </tr>
 </table>
 
@@ -408,7 +408,7 @@ Onset explicitly supplied via `AllergyIntolerance.onset[dateTime]`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 

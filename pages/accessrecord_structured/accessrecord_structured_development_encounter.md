@@ -22,9 +22,9 @@ The headings below list the elements of the `Encounter` profile and describes ho
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -34,9 +34,9 @@ The logical identifier of the `Encounter` profile.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -48,9 +48,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encoun
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -64,9 +64,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -81,9 +81,9 @@ Hence, use the most appropriate value from limited set available.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -93,9 +93,9 @@ Carries the consultation type as displayed by the system. This may be a SNOMED C
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -106,9 +106,9 @@ Reference to <code>Patient</code> profile representing the patient against whom 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -125,9 +125,9 @@ No other values of participation type should be used.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Period</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Period</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -143,9 +143,9 @@ The <code>period</code> attribute may be omitted where the effective/clinical da
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Duration</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Duration</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -156,9 +156,9 @@ Should be calculated and populated where an end time for the consultation is kno
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Location)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Reference(Location)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -170,9 +170,9 @@ References an instance of the `Location` profile that provides more detail on wh
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Organization)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Organization)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -180,7 +180,7 @@ Reference to the responsible organisation for the consultation/encounter.
 
 <br>
 
-<h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Elements <strong>not in use</strong> </h2>
 
 The following elements **SHALL NOT** be populated.
 
@@ -188,7 +188,7 @@ The following elements **SHALL NOT** be populated.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -196,7 +196,7 @@ The following elements **SHALL NOT** be populated.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><strong>Data type:</strong> <code>Coding</code></td>
   </tr>
 </table>
 
@@ -204,7 +204,7 @@ The following elements **SHALL NOT** be populated.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -212,7 +212,7 @@ The following elements **SHALL NOT** be populated.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -220,7 +220,7 @@ The following elements **SHALL NOT** be populated.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(EpisodeOfCare)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(EpisodeOfCare)</code></td>
   </tr>
 </table>
 
@@ -230,7 +230,7 @@ The current scope of GP Connect excludes episode of care.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(ReferralRequest)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(ReferralRequest)</code></td>
   </tr>
 </table>
 
@@ -240,7 +240,7 @@ The current scope of GP Connect excludes inbound referrals.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Appointment)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Appointment)</code></td>
   </tr>
 </table>
 
@@ -248,7 +248,7 @@ The current scope of GP Connect excludes inbound referrals.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -258,7 +258,7 @@ The reason for the consultation will be associated to the <code>appointment</cod
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -268,7 +268,7 @@ The diagnosis will be associated to the consultation via the <code>list</code> p
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Account)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Account)</code></td>
   </tr>
 </table>
 
@@ -276,7 +276,7 @@ The diagnosis will be associated to the consultation via the <code>list</code> p
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
   </tr>
 </table>
 
@@ -284,6 +284,6 @@ The diagnosis will be associated to the consultation via the <code>list</code> p
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Encounter)</code></td>
   </tr>
 </table>

@@ -22,9 +22,9 @@ The headings below list the elements of the `MedicationStatement` profile and de
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -34,9 +34,9 @@ The logical identifier of the `MedicationStatement` profile.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -48,9 +48,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medica
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -60,9 +60,9 @@ The date when the latest prescription under this plan was issued. This will not 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -78,9 +78,9 @@ For repeat and repeat dispensed medications/medical devices, the value identifie
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -92,9 +92,9 @@ Set to the date when the dosage instructions were last changed.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Identifier</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>Identifier</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -106,9 +106,9 @@ Where *consuming* systems are integrating data from this resource to their local
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -120,9 +120,9 @@ Every MedicationStatement **MUST** be based on a `MedicationRequest` with `inten
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Encounter)</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -134,9 +134,9 @@ As per base profile guidance.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -156,9 +156,9 @@ For acute, the status refers to the status of the prescription issue.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Medication)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Medication)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -170,9 +170,9 @@ The `Medication` profile provides the coded representation of the medication/med
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Period</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Period</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -206,9 +206,9 @@ Where the medication/medical device plan has ended use one of the following date
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>dateTime</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -220,9 +220,9 @@ Unless there is a distinct user-modifiable availability date/time for the author
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>Reference(Patient)</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -234,9 +234,9 @@ Reference to patient.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>code</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -252,9 +252,9 @@ This element has been included in this section as providers **MUST** populate it
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Annotation</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>Annotation</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -266,9 +266,9 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>String</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -283,9 +283,9 @@ In exceptional cases where for legacy data there is no dosage recorded in the sy
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>String</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
@@ -293,7 +293,7 @@ Additional instructions for patient - that is, RHS of prescription label.
 
 <br><br>
 
-<h2 style="color:#ED1951;"> MedicationStatement elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> MedicationStatement elements <strong>not in use</strong> </h2>
 
 The following elements **SHALL NOT** be populated:
 
@@ -301,7 +301,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
   </tr>
 </table>
 
@@ -309,7 +309,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Instant</code></td>
+    <td><strong>Data type:</strong> <code>Instant</code></td>
   </tr>
 </table>
 
@@ -317,7 +317,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Complex Extension</code></td>
+    <td><strong>Data type:</strong> <code>Complex Extension</code></td>
   </tr>
 </table>
 
@@ -327,7 +327,7 @@ This is not in scope for this version of GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(MedicationAdministration, MedicationDispense, MedicationStatement, Procedure, Observation)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(MedicationAdministration, MedicationDispense, MedicationStatement, Procedure, Observation)</code></td>
   </tr>
 </table>
 
@@ -337,7 +337,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -347,7 +347,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient, Practitioner, RelatedPerson, Organization)  </code></td>
+    <td><strong>Data type:</strong> <code>Reference(Patient, Practitioner, RelatedPerson, Organization)  </code></td>
   </tr>
 </table>
 
@@ -357,7 +357,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Any)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Any)</code></td>
   </tr>
 </table>
 
@@ -367,7 +367,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
+    <td><strong>Data type:</strong> <code>code</code></td>
   </tr>
 </table>
 
@@ -377,7 +377,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -387,7 +387,7 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><strong>Data type:</strong> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
@@ -397,7 +397,7 @@ This information is available via linking to a Problem record.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
+    <td><strong>Data type:</strong> <code>Reference(Condition), Reference(Observation)</code></td>
   </tr>
 </table>
 

@@ -24,9 +24,9 @@ The logical identifier of the `Bundle` profile.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..*</td>
   </tr>
 </table>
 
@@ -38,9 +38,9 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRe
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>type</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><strong>Data type:</strong> <code>type</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 1..1</td>
   </tr>
 </table>
 
@@ -52,9 +52,9 @@ Fixed value of `collection`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..*</td>
+    <td><strong>Data type:</strong> <code>BackboneElement</code></td>
+    <td><strong>Optionality:</strong> Required</td>
+    <td><strong>Cardinality:</strong> 0..*</td>
   </tr>
 </table>
 
@@ -66,15 +66,15 @@ See below for subelements of this BackboneElement.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Resource</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><strong>Data type:</strong> <code>Resource</code></td>
+    <td><strong>Optionality:</strong> Mandatory</td>
+    <td><strong>Cardinality:</strong> 0..1</td>
   </tr>
 </table>
 
 A resource carried within the Bundle.  This can any type of resource, for example `Patient`, `Organization`, `AllergyIntolerance`.
 
-<h2 style="color:#ED1951;"> Bundle elements <b>not in use</b> </h2>
+<h2 style="color:#ED1951;"> Bundle elements <strong>not in use</strong> </h2>
 
 The following elements **SHALL NOT** be populated:
 
@@ -82,7 +82,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
   </tr>
 </table>
 
@@ -90,7 +90,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
+    <td><strong>Data type:</strong> <code>Id</code></td>
   </tr>
 </table>
 
@@ -98,7 +98,7 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Instant</code></td>
+    <td><strong>Data type:</strong> <code>Instant</code></td>
   </tr>
 </table>
 
@@ -106,6 +106,6 @@ The following elements **SHALL NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
+    <td><strong>Data type:</strong> <code>uri</code></td>
   </tr>
 </table>

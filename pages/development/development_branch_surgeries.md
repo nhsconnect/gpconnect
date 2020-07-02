@@ -39,7 +39,7 @@ Therefore, when a GP Connect request is sent, it is sent to a practice as a whol
 
 The following query to read a `Patient` resource is being sent to the patient's GP practice identified by the ODS code `D82809`:
 
-<code class="highlighter-rouge">https://provider.nhs.uk/<b>D82809</b>/STU3/1/gpconnect/Patient/1</code>
+<code class="highlighter-rouge">https://provider.nhs.uk/<strong>D82809</strong>/STU3/1/gpconnect/Patient/1</code>
 
 ### Implications for Access Record HTML, Access Record Structured and Access Document
 
