@@ -1,265 +1,268 @@
-entries:
-- title: GP Connect
-  levels: one
-  folders:
+## definition of `menuitem`===========
+# title: string
+# url: string
+# output: [ enum{web, pdf} ] (expressed as comma separated string in YAML)
+# children?: [ menuitem ]
 
-  - title: Overview
+## top level property=================
+# entries: [ menuitem ]
+
+title: GP Connect Core
+levels: one
+children:
+
+- title: Overview
+  output: web
+  children:
+  - title: Introduction
+    url: /index.html
+    output: web, pdf
+    type: homepage
+  - title: Getting started
+    url: /overview_engage.html
     output: web
-    folderitems:
-    - title: Introduction
-      url: /index.html
-      output: web, pdf
-      type: homepage
-    - title: Getting started
-      url: /overview_engage.html
-      output: web
-    - title: Capabilities
-      url: /overview_priority_capabilities.html
-      output: web
-    - title: Sitemap
-      url: /sitemap.html
-      output: web
-      subfolders:
-      - title: Release notes
-        output: web
-        subfolderitems:
-        - title: 1.5.0
-          url: /overview_release_notes_1_5_0.html
-          output: web
-        - title: Access Document 1.0.1
-          url: /overview_release_notes_documents_1_0_1.html
-          output: web
-        - title: Access Document 1.0.0
-          url: /overview_release_notes_documents_1_0_0.html
-          output: web
-        - title: 1.4.1
-          url: /overview_release_notes_1_4_1.html
-          output: web
-        - title: 1.4.0
-          url: /overview_release_notes_1_4_0.html
-          output: web
-        - title: 1.3.2
-          url: /overview_release_notes_1_3_2.html
-          output: web
-        - title: 1.3.1
-          url: /overview_release_notes_1_3_1.html
-          output: web
-        - title: 1.3.0
-          url: /overview_release_notes_1_3_0.html
-          output: web
-        - title: 1.2.7
-          url: /overview_release_notes_1_2_7.html
-          output: web
-        - title: 1.2.6
-          url: /overview_release_notes_1_2_6.html
-          output: web
-        - title: 1.2.5
-          url: /overview_release_notes_1_2_5.html
-          output: web
-        - title: 1.2.4
-          url: /overview_release_notes_1_2_4.html
-          output: web
-        - title: 1.2.3
-          url: /overview_release_notes_1_2_3.html
-          output: web
-        - title: 1.2.2
-          url: /overview_release_notes_1_2_2.html
-          output: web
-        - title: 1.2.1
-          url: /overview_release_notes_1_2_1.html
-          output: web
-        - title: 1.2.0
-          url: /overview_release_notes_1_2_0.html
-          output: web
-        - title: 1.1.1
-          url: /overview_release_notes_1_1_1.html
-          output: web
-        - title: 1.1.0
-          url: /overview_release_notes_1_1_0.html
-          output: web
-        - title: 1.0.0
-          url: /overview_release_notes_1_0_0.html
-          output: web
-        - title: 0.5.0
-          url: /overview_release_notes_0_5_0.html
-          output: web
-
-  - title: Design approach
+  - title: Capabilities
+    url: /overview_priority_capabilities.html
     output: web
-    folderitems:
-
-    - title: API design principles
-      url: /designprinciples_open_api_principles.html
-      output: web
-    - title: Development principles
-      url: /designprinciples_development_principles.html
-      output: web
-      type: homepage
-    - title: Data model principles
-      url: /designprinciples_data_model_principles.html
-      output: web
-    - title: Information governance principles
-      url: /designprinciples_ig_principles.html
-      output: web
-    - title: Clinical safety principles
-      url: /designprinciples_clinical_safety_principles.html
-      output: web
-    - title: Assurance principles
-      url: /designprinciples_assurance_principles.html
-      output: web
-    - title: Clinical terminologies
-      url: /design_clinical_terminologies.html
-      output: web
-    - title: Specification versioning
-      url: /design_product_versioning.html
-      output: web
-
-  - title: Explore
+  - title: Sitemap
+    url: /sitemap.html
     output: web
-    folderitems:
-    - title: GP Connect Demonstrator
-      url: /system_demonstrator.html
-      output: web
-    - title: Interactive API documentation
-      url: /system_swagger.html
-      output: web
-    - title: Postman API examples
-      url: /system_reference_postman.html
-      output: web
-
-  - title: Development
+  - title: Release notes
     output: web
-    folderitems:
-    - title: FHIR&reg; library
-      url: /development_fhir_open_source_guidance.html
+    children:
+    - title: 1.5.0
+      url: /overview_release_notes_1_5_0.html
       output: web
-    - title: FHIR&reg; implementation
-      url: /development_fhir_api_guidance.html
+    - title: Access Document 1.0.1
+      url: /overview_release_notes_documents_1_0_1.html
       output: web
-    - title: General API guidance
-      url: /development_general_api_guidance.html
+    - title: Access Document 1.0.0
+      url: /overview_release_notes_documents_1_0_0.html
       output: web
-    - title: Branch surgeries
-      url: /development_branch_surgeries.html
+    - title: 1.4.1
+      url: /overview_release_notes_1_4_1.html
       output: web
-    - title: FHIR&reg; resources
-      url: /development_fhir_resource_guidance.html
+    - title: 1.4.0
+      url: /overview_release_notes_1_4_0.html
       output: web
-    - title: Security
-      url: /development_api_security_guidance.html
+    - title: 1.3.1
+      url: /overview_release_notes_1_3_1.html
       output: web
-    - title: Error handling
-      url: /development_fhir_error_handling_guidance.html
+    - title: 1.3.0
+      url: /overview_release_notes_1_3_0.html
       output: web
-    - title: Volumetric and performance
-      url: /development_api_volume_and_performance.html
+    - title: 1.2.6
+      url: /overview_release_notes_1_2_6.html
       output: web
-    - title: Non-functional requirements
-      url: /development_api_non_functional_requirements.html
+    - title: 1.2.5
+      url: /overview_release_notes_1_2_5.html
+      output: web
+    - title: 1.2.4
+      url: /overview_release_notes_1_2_4.html
+      output: web
+    - title: 1.2.3
+      url: /overview_release_notes_1_2_3.html
+      output: web
+    - title: 1.2.2
+      url: /overview_release_notes_1_2_2.html
+      output: web
+    - title: 1.2.1
+      url: /overview_release_notes_1_2_1.html
+      output: web
+    - title: 1.2.0
+      url: /overview_release_notes_1_2_0.html
+      output: web
+    - title: 1.1.1
+      url: /overview_release_notes_1_1_1.html
+      output: web
+    - title: 1.1.0
+      url: /overview_release_notes_1_1_0.html
+      output: web
+    - title: 1.0.0
+      url: /overview_release_notes_1_0_0.html
+      output: web
+    - title: 0.5.0
+      url: /overview_release_notes_0_5_0.html
       output: web
 
-  - title: Implement a capability
+- title: Design approach
+  output: web
+  children:
+  - title: API design principles
+    url: /designprinciples_open_api_principles.html
     output: web
-    folderitems:
-    - title: Foundations
-      url: /foundations.html
-      output: web
-    - title: Appointment Management
-      url: /appointments.html
-      output: web
-    - title: Access Record Structured
-      url: /accessrecord_structured.html
-      output: web
-    - title: Access Document
-      url: /access_documents.html
-      output: web
-    - title: <b class="capability-not-available">Send Document</b>
-      url: /send_document.html
-      output: web
-    - title: <b class="capability-not-available">Access Record HTML</b>
-      url: /accessrecord.html
-      output: web
-
-  - title: Integrate with Spine
+  - title: Development principles
+    url: /designprinciples_development_principles.html
     output: web
-    folderitems:
-    - title: Spine integration illustrated
-      url: /integration_illustrated.html
-      output: web
-    - title: System topologies
-      url: /integration_system_topologies.html
-      output: web
-    - title: Cross-organisation audit and provenance
-      url: /integration_cross_organisation_audit_and_provenance.html
-      output: web
-    - title: Personal Demographic Service
-      url: /integration_personal_demographic_service.html
-      output: web
-
-      subfolders:
-      - title: Spine Directory Services
-        output: web
-        subfolderitems:
-        - title: Overview and querying
-          url: /integration_spine_directory_service.html
-          output: web
-        - title: Registering systems
-          url: /integration_sds_registering_endpoints.html
-          output: web
-
-    - title: Interaction IDs
-      url: /integration_interaction_ids.html
-      output: web
-    - title: Spine Secure Proxy
-      url: /integration_spine_secure_proxy.html
-      output: web
-
-  - title: Test and assure
+    type: homepage
+  - title: Data model principles
+    url: /designprinciples_data_model_principles.html
     output: web
-    folderitems:
-    - title: Testing assets
-      url: /testing_deliverables.html
-      output: web
-    - title: Test environments
-      url: /testing_environments.html
-      output: web
-    - title: Provider testing
-      url: /testing_api_provider_testing.html
-      output: web
-    - title: Consumer testing
-      url: /testing_api_consumer_testing.html
-      output: web
-
-  - title: Help and support
+  - title: Information governance principles
+    url: /designprinciples_ig_principles.html
     output: web
-    folderitems:
-    - title: Frequently asked questions
-      url: /support_faq.html
-      output: web
-    - title: Glossary
-      url: /overview_glossary.html
-      output: web
-    - title: Communication channels
-      url: /support_communications.html
-      output: web
+  - title: Clinical safety principles
+    url: /designprinciples_clinical_safety_principles.html
+    output: web
+  - title: Assurance principles
+    url: /designprinciples_assurance_principles.html
+    output: web
+  - title: Clinical terminologies
+    url: /design_clinical_terminologies.html
+    output: web
+  - title: Specification versioning
+    url: /design_product_versioning.html
+    output: web
 
-      subfolders:
-      - title: External links
-        output: web
-        subfolderitems:
-        - title: GPC Documentation repository
-          external_url: https://github.com/nhsconnect/gpconnect
-          output: web
-        - title: GPC NHS Digital
-          external_url: https://digital.nhs.uk/services/gp-connect/
-          output: web
-        - title: GPC GitHub FHIR data library
-          external_url: https://github.com/nhsconnect/gpconnect-fhir/
-          output: web
-        - title: GPC GitHub provider test harness
-          external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
-          output: web
+- title: Explore
+  output: web
+  children:
+  - title: GP Connect Demonstrator
+    url: /system_demonstrator.html
+    output: web
+  - title: Interactive API documentation
+    url: /system_swagger.html
+    output: web
+  - title: Postman API examples
+    url: /system_reference_postman.html
+    output: web
 
-    - title: Run website locally
-      url: /support_run_website_locally.html
+- title: Development
+  output: web
+  children:
+  - title: FHIR&reg; library
+    url: /development_fhir_open_source_guidance.html
+    output: web
+  - title: FHIR&reg; implementation
+    url: /development_fhir_api_guidance.html
+    output: web
+  - title: General API guidance
+    url: /development_general_api_guidance.html
+    output: web
+  - title: Branch surgeries
+    url: /development_branch_surgeries.html
+    output: web
+  - title: FHIR&reg; resources
+    url: /development_fhir_resource_guidance.html
+    output: web
+  - title: Security
+    url: /development_api_security_guidance.html
+    output: web
+  - title: Error handling
+    url: /development_fhir_error_handling_guidance.html
+    output: web
+  - title: Volumetric and performance
+    url: /development_api_volume_and_performance.html
+    output: web
+  - title: Non-functional requirements
+    url: /development_api_non_functional_requirements.html
+    output: web
+
+- title: Implement a capability
+  output: web
+  children:
+  - title: Foundations
+    url: /foundations.html
+    output: web
+  - title: Appointment Management
+    url: /appointments.html
+    output: web
+  - title: Access Record Structured
+    url: /accessrecord_structured.html
+    output: web
+  - title: Access Document
+    url: /access_documents.html
+    output: web
+  - title: <strong class="capability-not-available">Access Record HTML</strong>
+    url: /accessrecord.html
+    output: web
+  - title: <strong class="capability-not-available">Access Document</strong>
+    url: /accessrecord_documents.html
+    output: web
+  - title: <strong class="capability-not-available">Send Document</strong>
+    url: /send_document.html
+    output: web
+
+- title: Integrate with Spine
+  output: web
+  children:
+  - title: Spine integration illustrated
+    url: /integration_illustrated.html
+    output: web
+  - title: System topologies
+    url: /integration_system_topologies.html
+    output: web
+  - title: Cross-organisation audit and provenance
+    url: /integration_cross_organisation_audit_and_provenance.html
+    output: web
+  - title: Personal Demographic Service
+    url: /integration_personal_demographic_service.html
+    output: web
+  - title: Spine Directory Services
+    output: web
+    children:
+    - title: Overview and querying
+      url: /integration_spine_directory_service.html
       output: web
+    - title: Registering systems
+      url: /integration_sds_registering_endpoints.html
+      output: web
+  - title: Interaction IDs
+    url: /integration_interaction_ids.html
+    output: web
+  - title: Spine Secure Proxy
+    url: /integration_spine_secure_proxy.html
+    output: web
+
+- title: Test and assure
+  output: web
+  children:
+  - title: Testing assets
+    url: /testing_deliverables.html
+    output: web
+  - title: Test environments
+    url: /testing_environments.html
+    output: web
+  - title: Provider testing
+    url: /testing_api_provider_testing.html
+    output: web
+  - title: Consumer testing
+    url: /testing_api_consumer_testing.html
+    output: web
+
+- title: Help and support
+  output: web
+  children:
+  - title: Frequently asked questions
+    url: /support_faq.html
+    output: web
+  - title: Glossary
+    url: /overview_glossary.html
+    output: web
+  - title: Communication channels
+    url: /support_communications.html
+    output: web
+  - title: External links
+    output: web
+    children:
+    - title: GPC Documentation repository
+      external_url: https://github.com/nhsconnect/gpconnect
+      output: web
+    - title: GPC NHS Digital
+      external_url: https://digital.nhs.uk/services/gp-connect/
+      output: web
+    - title: GPC GitHub FHIR data library
+      external_url: https://github.com/nhsconnect/gpconnect-fhir/
+      output: web
+    - title: GPC GitHub C# examples
+      external_url: https://github.com/nhsconnect/gpconnect-dotnet-examples/
+      output: web
+    - title: GPC GitHub Java examples
+      external_url: https://github.com/nhsconnect/gpconnect-java-examples/
+      output: web
+    - title: GPC GitHub provider test harness
+      external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
+      output: web  
+  - title: Run website locally
+    url: /support_run_website_locally.html
+    output: web

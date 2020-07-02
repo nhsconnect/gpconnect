@@ -1,76 +1,66 @@
-entries:
-- title: Foundations
-  product: Foundations
-  folders:
+## definition of `menuitem`===========
+# title: string
+# url: string
+# output: [ enum{web, pdf} ] (expressed as comma separated string in YAML)
+# children?: [ menuitem ]
 
-  - title:
-    output: pdf
-    type: frontmatter
-    folderitems:
-    - title:
-      url: /titlepage
-      output: pdf
-      type: frontmatter
-    - title:
-      url: /tocpage
-      output: pdf
-      type: frontmatter
+## top level property=================
+# entries: [ menuitem ]
 
-  - title: Overview
+title: Foundations
+product: Foundations
+children:
+
+- title: Overview
+  output: web, pdf
+  children:
+  - title: Introduction
+    url: /foundations.html
     output: web, pdf
-    folderitems:
-
-    - title: Introduction
-      url: /foundations.html
-      output: web, pdf
-      type: homepage
-    - title: Information governance
-      url: /foundations_ig.html
-      output: web, pdf
-    - title: Design decisions
-      url: /foundations_design.html
-      output: web, pdf
-    - title: Sitemap
-      url: /sitemap_foundations.html
-      output: web
-      
-  - title: Development
+    type: homepage
+  - title: Information governance
+    url: /foundations_ig.html
     output: web, pdf
-    folderitems:
-
-    - title: FHIR&reg; resources
-      url: /datalibraryfoundation.html
+  - title: Design decisions
+    url: /foundations_design.html
+    output: web, pdf
+  - title: Sitemap
+    url: /sitemap_foundations.html
+    output: web
+    
+- title: Development
+  output: web, pdf
+  children:
+  - title: FHIR&reg; resources
+    url: /datalibraryfoundation.html
+    output: web, pdf
+  - title: API use cases
+    output: web, pdf
+    children:
+    - title: Get the FHIR&reg; capability statement
+      url: /foundations_use_case_get_the_fhir_capability_statement.html
       output: web, pdf
-
-      subfolders:
-      - title: API definition
-        output: web, pdf
-        subfolderitems:
-
-        - title: Get the FHIR&reg; capability statement
-          url: /foundations_use_case_get_the_fhir_capability_statement.html
-          output: web, pdf
-        - title: Find a patient
-          url: /foundations_use_case_find_a_patient.html
-          output: web, pdf
-        - title: Read a patient
-          url: /foundations_use_case_read_a_patient.html
-          output: web, pdf
-        - title: Find a practitioner
-          url: /foundations_use_case_find_a_practitioner.html
-          output: web, pdf
-        - title: Read a practitioner
-          url: /foundations_use_case_read_a_practitioner.html
-          output: web, pdf
-        - title: Find an organisation
-          url: /foundations_use_case_find_an_organisation.html
-          output: web, pdf
-        - title: Read an organisation 
-          url: /foundations_use_case_read_an_organisation.html
-          output: web, pdf
-        - title: Read a location
-          url: /foundations_use_case_read_a_location.html
-          output: web, pdf
-        - title: Register a patient
-          url: /foundations_use_case_register_a_patient.html
-          output: web, pdf
+    - title: Find a patient
+      url: /foundations_use_case_find_a_patient.html
+      output: web, pdf
+    - title: Read a patient
+      url: /foundations_use_case_read_a_patient.html
+      output: web, pdf
+    - title: Find a practitioner
+      url: /foundations_use_case_find_a_practitioner.html
+      output: web, pdf
+    - title: Read a practitioner
+      url: /foundations_use_case_read_a_practitioner.html
+      output: web, pdf
+    - title: Find an organisation
+      url: /foundations_use_case_find_an_organisation.html
+      output: web, pdf
+    - title: Read an organisation 
+      url: /foundations_use_case_read_an_organisation.html
+      output: web, pdf
+    - title: Read a location
+      url: /foundations_use_case_read_a_location.html
+      output: web, pdf
+    - title: Register a patient
+      url: /foundations_use_case_register_a_patient.html
+      output: web, pdf
