@@ -279,12 +279,13 @@ div#toc ul li {
     margin: 8px 0px 8px 22px;
     font-size: 90%;
     list-style: square;
+	overflow-wrap: break-word;
 }
 div#toc ul {
     background-color: whitesmoke;
     padding: 5px;
     border-radius: 5px;
-    max-width: 400px;
+    max-width: 500px;
     color: gray;
 }
 
@@ -743,8 +744,8 @@ a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
 
-h3 {color: #000000; font-weight:normal; font-size:130%;}
-h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic;}
+h3 {color: #000000; font-weight:normal; font-size:130%; overflow-wrap: break-word;}
+h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic; overflow-wrap: break-word;}
 
 .alert, .callout {
     overflow: hidden;
@@ -865,7 +866,7 @@ ol.series li {
 
 span.muted {color: #666;}
 
-table code {background-color: transparent;}
+table code {background-color: transparent; overflow-wrap: break-word;}
 
 .highlight .err {
     color: #a61717;
@@ -1322,6 +1323,7 @@ hr {
 
 .resource {
     font-weight: normal;
+	overflow-wrap: break-word;
 }
 
 .resource-attributes {
@@ -1334,6 +1336,7 @@ hr {
     border-right: 0px;
     border-top: 0px;
     width: 100%;
+	overflow-wrap: break-word;
 }
 
 table.resource-attributes tr td {
