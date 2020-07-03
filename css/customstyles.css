@@ -280,6 +280,7 @@ div#toc ul li {
     font-size: 90%;
     list-style: square;
 	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 div#toc ul {
     background-color: whitesmoke;
@@ -744,8 +745,8 @@ a.fa.fa-envelope-o.mailto {
     font-weight: 600;
 }
 
-h3 {color: #000000; font-weight:normal; font-size:130%; overflow-wrap: break-word;}
-h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic; overflow-wrap: break-word;}
+h3 {color: #000000; font-weight:normal; font-size:130%; overflow-wrap: break-word; word-wrap: break-word;}
+h4 {color: #808080; font-weight:normal; font-size:120%; font-style:italic; overflow-wrap: break-word; word-wrap: break-word;}
 
 .alert, .callout {
     overflow: hidden;
@@ -1324,6 +1325,7 @@ hr {
 .resource {
     font-weight: normal;
 	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .resource-attributes {
@@ -1337,6 +1339,7 @@ hr {
     border-top: 0px;
     width: 100%;
 	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 table.resource-attributes tr td {
@@ -1350,17 +1353,23 @@ table.resource-attributes tr td {
 .resource-attributes tr td:nth-child(1)
 {
     padding-left: 10px;
-    width: 33%;
+    width: 50%;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .resource-attributes tr td:nth-child(2) {
     background-color: transparent;
-    width: 33%;
+    width: 25%;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .resource-attributes tr td:nth-child(3) {
     padding-left: 25px;
-    width: 33%;
+    width: 25%;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 
 .resource-page h3 {
