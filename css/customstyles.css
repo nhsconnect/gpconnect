@@ -1,5 +1,7 @@
 body {
     font-size:15px;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
 }
 .bs-callout {
     padding: 20px;
@@ -1340,6 +1342,7 @@ hr {
     width: 100%;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
+	table-layout: fixed;
 }
 
 table.resource-attributes tr td {
@@ -1353,21 +1356,21 @@ table.resource-attributes tr td {
 .resource-attributes tr td:nth-child(1)
 {
     padding-left: 10px;
-    width: 50%;
+    width: 35%;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .resource-attributes tr td:nth-child(2) {
     background-color: transparent;
-    width: 25%;
+    width: 32%;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .resource-attributes tr td:nth-child(3) {
     padding-left: 25px;
-    width: 25%;
+    width: 33%;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
