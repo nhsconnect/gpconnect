@@ -1363,14 +1363,14 @@ table.resource-attributes tr td {
 
 .resource-attributes tr td:nth-child(2) {
     background-color: transparent;
-    width: 32%;
+    width: 31%;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
 
 .resource-attributes tr td:nth-child(3) {
     padding-left: 25px;
-    width: 33%;
+    width: 34%;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
 }
