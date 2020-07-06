@@ -209,7 +209,7 @@ Contains any hierarchical information between uncategorised data items.
 
 The clinical code that represents systolic part of the blood pressure.
 
-A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategorisedData_guidance.html).
+A list of the systolic blood pressure codes is included in the [uncategorised guidance page](accessrecord_structured_development_uncategorisedData_guidance.html).
 
 ### component.valueQuantity ###
 
@@ -276,7 +276,7 @@ Where a reference range contains a less than '<' or greater than '>' operator it
 
 The clinical code that represents diastolic part of the blood pressure.
 
-A list of the systolic blood pressure codes is included in the uncategorised guidance page [here](accessrecord_structured_development_uncategorisedData_guidance.html).
+A list of the systolic blood pressure codes is included in the [uncategorised guidance page](accessrecord_structured_development_uncategorisedData_guidance.html).
 
 ### component.valueQuantity ###
 

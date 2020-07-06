@@ -200,7 +200,7 @@ If the EPS identifier is present then the identifier.value is where the EPS Id S
   </tr>
 </table>
 
-This field is used to create the links between `MedicationRequest` profiles to represent the medication ordering process as described [here](accessrecord_structured_development_medication_resource_relationships.html). This **MUST** be used when a profile has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` profile that has an `intent` set to `plan`.
+This field is used to create the links between `MedicationRequest` profiles to represent the medication ordering process as described on the [medication resource relationships page](accessrecord_structured_development_medication_resource_relationships.html). This **MUST** be used when a profile has an `intent` element that is set to `order` and is `basedOn` a `MedicationRequest` profile that has an `intent` set to `plan`.
 
 **DO NOT USE** for authorisations - that is, for a `MedicationRequest` with `intent` of `plan`.
 

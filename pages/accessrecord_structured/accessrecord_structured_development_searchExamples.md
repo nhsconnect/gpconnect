@@ -11,7 +11,7 @@ summary: "Introduction to search criteria in GP Connect"
 
 We have developed a number of example searches that demonstrate the different ways a consumer may request data in GP Connect. These have been created in conjunction with our clinical team to demonstrate the possible ways of requesting similar data that we anticipate consumers are likely to require.
 
-The different approaches to requests that will return similar information have been chosen here to demonstrate the filter constraints that we have imposed to mitigate the risk described here in the [Search criteria](accessrecord_structured_development_search.html#clinicalrisk) page.
+The different approaches to requests that will return similar information have been chosen here to demonstrate the filter constraints that we have imposed to mitigate the risk described in the [Search criteria](accessrecord_structured_development_search.html#clinicalrisk) page.
 
 ### 1. Request allergies and medications from the last year
 
