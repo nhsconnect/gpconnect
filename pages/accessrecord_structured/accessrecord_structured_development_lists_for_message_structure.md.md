@@ -18,7 +18,7 @@ When either problems or consultations are requested then it will contain further
 - When an API call returns data for more than one clinical area, the list will identify which data has been returned for which clinical area.
 - Where problems or consultations are requested lists will be supplied for each clinical area that has data contained in/linked to the conultations or problems returned
 - Where there are no items returned, the list will be empty.
-- Where the return includes warning messages (for example, when clinical data is excluded), those messages will be in the list profile.manage negation where no resources are present in a system to be returned by a query. An attribution that is common to the resources it references will be returned, differentiating between items at different stages of a workflow, providing a mechanism to deal with warnings that can be applied to the group of resources.
+- Where the return includes warning codes for example, to indicate when clinical data is excluded, those codes will be included in the list profile.
 
 In this version of the GP Connect specifiaction there are 19 types of lists containing data that can be returned and that are listed in the table below. NB lists are also used to structure consultations, how this works is detailed here 
 
@@ -45,6 +45,10 @@ In this version of the GP Connect specifiaction there are 19 types of lists cont
 |Uncategorised data | 826501000000100| Miscellaneous record |
 
 ## Warning codes
+
+Warning codes are used to manage negation where resources are present in a system to be returned by a query but are not included in the returned data for a specific reason.
+
+Warning codes will be returned in the list when any item that would have been included in that list as a response to the query is not present due to one of the defined reasons. In the case where an item may have been present in more than one list, e.g. medications and medications related to problems, the warning code will be present in both lists. Any warning codes returned will be contained in the extension List.extension[warningCode]. 
 
 The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
 
