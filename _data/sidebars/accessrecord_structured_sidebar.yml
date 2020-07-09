@@ -33,6 +33,9 @@ entries:
     - title: <b class='resource'>Resource population fundamentals</b>
       url: /accessrecord_structured_development_resources_overview.html
       output: web
+    - title: <b class='resource'>Using lists to return data</b>
+      url: /accessrecord_structured_development_lists_for_message_structure.html
+      output: web
     - title: <b class='resource'>Linkages</b>
       url: /accessrecord_structured_development_linkages.html
       output: web
