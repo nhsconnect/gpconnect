@@ -753,6 +753,8 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeInvestigations` parameter is set:
 
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) resources that match the supplied query parameters
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) resources
   - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html), [`DocumentReference`]() and &nbsp; [`Condition`](accessrecord_structured_problems.html) resources representing the patient's test results
 
   - and when the `investigationSearchPeriod` parameter is set:
@@ -773,7 +775,9 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeReferrals` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's referrals will be returned.
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources that match the supplied query parameters
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources
+  - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's referrals will be returned.
 
 - when the `referralSearchPeriod` is set:
   - when a `start` value is set, all referrals with a `ReferralRequest.authoredOn` after the date **MUST** be returned
@@ -789,7 +793,9 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeDiaryEntries` parameter is set:
 
-  - [`List`](accessrecord_structured_development_list.html), [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's diary entries will be returned.
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources that match the supplied query parameters
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources
+  - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's diary entries will be returned.
 
 - when the `diaryEntriesSearchDate` parameter is set:
   - all diary entries that occur on or before the `diaryEntriesSearchDate` **MUST** be returned
