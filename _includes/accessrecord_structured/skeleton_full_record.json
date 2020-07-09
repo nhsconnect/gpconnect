@@ -243,32 +243,36 @@
         "resourceType": "Condition",
         "id": "Condition1",
         ...
-		  "extension": [
-        {
-          "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-          "valueReference": {
-            "reference": "MedicationStatement/MedicationStatement3"
-          }
+        "context": {
+          "reference": "Encounter/Encounter1"
         },
-        {
-          "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-          "valueReference": {
-            "reference": "AllergyIntolerance/AllergyIntolerance3"
+  		  "extension": [
+          {
+            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference": {
+              "reference": "MedicationStatement/MedicationStatement3"
+            }
+          },
+          {
+            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference": {
+              "reference": "AllergyIntolerance/AllergyIntolerance3"
+            }
+          },
+          {
+            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference": {
+              "reference": "Observation/Observation3"
+            }
+          },
+          {
+            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference": {
+              "reference": "Immunization/Immunization3"
+            }
           }
-        },
-        {
-          "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-          "valueReference": {
-            "reference": "Observation/Observation3"
-          }
-        },
-        {
-          "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-          "valueReference": {
-            "reference": "Immunization/Immunization3"
-          }
-        }
-      ]
+        ]
+      }
     },
     {
       "resource": {
