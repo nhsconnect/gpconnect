@@ -23,11 +23,25 @@ The list containing resolved allergies is a special case as it is a list that is
 
 In this version of the GP Connect specifiaction there are 30 types of lists containing data that can be returned and that are listed in the table below. 
 
+### Primary lists in the query response
+
 | Purpose | SNOMED Code |SNOMED Preferred Term | List.title|
 | ------ | ------ |
 |Allergies and adverse reactions | 886921000000105| Allergies and adverse reactions |Allergies and adverse reactions |
 |Allergies that have been ended | 1103671000000101| Ended allergies |Ended allergies |
 |Consultations | 1149501000000101 | List of consultations |List of consultations |
+|Diary Entries | 714311000000108 | Patient recall administration | Patient recall administration |
+|Immunisations | 1102181000000102| Immunisations | Immunisations |
+|Investigations | 887191000000108| Investigations and Results | Investigations and Results |
+|Medications and medical devices | 933361000000108| Medications and medical devices | Medications and medical devices |
+|Outbound Referrals | 792931000000107| Outbound referral | Outbound referral |
+|Problems | 717711000000103| Problems | Problems |
+|Uncategorised data | 826501000000100| Miscellaneous record | Uncategorised data |
+
+### Secondary lists in the query response
+
+| Purpose | SNOMED Code |SNOMED Preferred Term | List.title|
+| ------ | ------ |
 |Consultations - allergies contained in Consultations | 886921000000105| Allergies and adverse reactions  |Allergies contained in Consultations|
 |Consultations - allergies that have been ended contained in Consultations |1103671000000101| Ended allergies | Ended allergies contained in Consultations|
 |Consultations - Diary entries contained in Consultations |714311000000108 | Patient recall administration |Diary entries contained in Consultations|
@@ -38,15 +52,9 @@ In this version of the GP Connect specifiaction there are 30 types of lists cont
 |Consultations - Outbound referrals in Consultations |792931000000107| Outbound referral |Outbound referrals contained in Consultations|
 |Consultations - Problems contained in Consultations |717711000000103| Problems |Problems contained in Consultations|
 |Consultations - uncategorised data contained in Consultations |826501000000100| Miscellaneous record |Miscalaneous data contained in Consultations|
-|Diary Entries | 714311000000108 | Patient recall administration | Patient recall administration |
-|Immunisations | 1102181000000102| Immunisations | Immunisations |
-|Investigations | 887191000000108| Investigations and Results | Investigations and Results |
-|Medications and medical devices | 933361000000108| Medications and medical devices | Medications and medical devices |
-|Outbound Referrals | 792931000000107| Outbound referral | Outbound referral |
-|Problems | 717711000000103| Problems | Problems |
 |Problems - allergies related to problems |886921000000105| Allergies and adverse reactions |Allergies related to problems|
 |Problems - allergies that have been ended related to problems | 1103671000000101| Ended allergies | Ended allergies related to problems|
-|Problems - consultations related to problems |0000000|Consultations related to problems|
+|Problems - consultations related to problems |1149501000000101 | List of consultations |Consultations related to problems|
 |Problems - diary entries related to problems |714311000000108 | Patient recall administration | Diary entries related to problems|
 |Problems - documents related to problems |0000000|Documents related to problems|
 |Problems - immunisations related to problems |1102181000000102| Immunisations | Immunisations related to problems|
@@ -55,30 +63,26 @@ In this version of the GP Connect specifiaction there are 30 types of lists cont
 |Problems - outbound referrals related to problems |792931000000107 | Outbound referral | Outbound referrals related to problems|
 |Problems - linked problems not relating to the primary query|717711000000103| Problems |Related problems|
 |Problems - uncategorised data related to problems |826501000000100| Miscellaneous record | Miscalaneous data related to problems|
-|Uncategorised data | 826501000000100| Miscellaneous record | Uncategorised data
 
 NB lists are also used to structure consultations, how this works is detailed here **Add link to List use in consultations**
 
 ## Using lists to respond to queries for consultations
 
-Represnting data that is returned in relation to both consultations and problems requires a response that is able to return multiple types of data, a consultation may contain any type of clinical data that can be entered into a GP system and a problem can be linked to any type of data that can be entered into a GP system.
+Represnting data that is returned in relation to both consultations and problems requires a response that is able to return multiple types of data . A response to a query about consultations or problems may contain any type of clinical data that can be entered into a GP system.
 
-In GP Connect we use secondary lists to organise these contained or linked items. When either of these clinical areas is queried then up to 11 secondary lists may be returned. Each of these list is detailed in the above table. These lists will only be returned where data exists in the clinical system that is returned as part of the query. If no data suitable to populate a list is present in the record that is being sent then the list will not be included in the response. For example if a query was made to GP Connect for all problems in a record but none of these problems related to an outbound referral, then there would be no list for 'Outbound referrals related to problems' contained in the response.
+In GP Connect we use secondary lists to organise these contained or linked items. When either of these clinical areas is queried then up to 11 secondary lists may be returned. Each list is detailed in the above table. 
 
- - Secondary lists will only be present where problems or consultations clinical areas have been queried directly
- - Secondary lists will only be present where data is available. They will not return an empty list.
- - Secondary lists will contain the appropriate warning code(s) where information has been excluded
- 
- ## Using lists to respond to queries for problems
+These lists will only be returned where data exists in the clinical system that is returned as part of the query. If no data suitable to populate a list is present in the record that is being sent then the list will not be included in the response. 
 
-Represnting data that is returned in relation to both consultations and problems requires a response that is able to return multiple types of data, a consultation may contain any type of clinical data that can be entered into a GP system and a problem can be linked to any type of data that can be entered into a GP system.
-
-In GP Connect we use secondary lists to organise these contained or linked items. When either of these clinical areas is queried then up to 11 secondary lists may be returned. Each of these list is detailed in the above table. These lists will only be returned where data exists in the clinical system that is returned as part of the query. If no data suitable to populate a list is present in the record that is being sent then the list will not be included in the response. For example if a query was made to GP Connect for all problems in a record but none of these problems related to an outbound referral, then there would be no list for 'Outbound referrals related to problems' contained in the response.
+For example if a query was made to GP Connect for all problems in a record but none of these problems related to an outbound referral, then there would be no list for 'Outbound referrals related to problems' contained in the response.
 
  - Secondary lists will only be present where problems or consultations clinical areas have been queried directly
  - Secondary lists will only be present where data is available. They will not return an empty list.
  - Secondary lists will contain the appropriate warning code(s) where information has been excluded
  
+## The secondary list for related problems
+
+Only one secondary list will be used 
 
 ## Warning codes
 
