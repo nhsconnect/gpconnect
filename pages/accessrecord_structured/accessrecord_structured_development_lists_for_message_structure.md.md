@@ -19,9 +19,11 @@ In GP Connect it is used to organise data returned by a query into groups of res
 
 When either problems or consultations are requested then in addition to the primary list the response will contain further secondary lists which detail resources that are contained in the requested consultations or have been linked to the the problems that are returned. All the information needed to process the data from these clinical areas will be contained in these primary and secondary lists. The secondary lists related to each area are contained in the table below.
 
-The list containing resolved allergies is a special case as it is a list that is contained within the allergies list. This is a safetey precaution intended to reduce the risk of resolved allergies being confused with active allergies. Further details about how the allergies lists work can be found on the allergies guidance page. **insert link to allergy page**
+The list containing resolved allergies is a special case as it is a list that is contained within the allergies list. This is a safetey precaution intended to reduce the risk of resolved allergies being confused with active allergies. Further details about how the allergies lists work can be found on the [allergies guidance page](accessrecord_structured_development_allergies_guidance.html#resolved-allergies-and-intolerances). 
 
-In this version of the GP Connect specifiaction there are 30 types of lists containing data that can be returned and that are listed in the table below. 
+In GP Connect we also use lists to represent the structure of consultations. This is a separate topic that is documented in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
+
+In this version of the GP Connect specifiaction there are 10 types of primary lists that contain the data returned in response to a query that are listed in the table below. 
 
 ### Primary lists in the query response
 
@@ -39,6 +41,8 @@ In this version of the GP Connect specifiaction there are 30 types of lists cont
 |Uncategorised data | 826501000000100| Miscellaneous record | Uncategorised data |
 
 ### Secondary lists in the query response
+
+There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are detailed in the table below.
 
 | Purpose | SNOMED Code |SNOMED Preferred Term | List.title|
 | ------ | ------ |
@@ -64,9 +68,7 @@ In this version of the GP Connect specifiaction there are 30 types of lists cont
 |Problems - linked problems not relating to the primary query|717711000000103| Problems |Related problems|
 |Problems - uncategorised data related to problems |826501000000100| Miscellaneous record | Miscalaneous data related to problems|
 
-NB lists are also used to structure consultations, how this works is detailed here **Add link to List use in consultations**
-
-## Using lists to respond to queries for consultations
+## Using secondary lists to respond to queries for consultations and problems
 
 Represnting data that is returned in relation to both consultations and problems requires a response that is able to return multiple types of data . A response to a query about consultations or problems may contain any type of clinical data that can be entered into a GP system.
 
@@ -76,19 +78,32 @@ These lists will only be returned where data exists in the clinical system that 
 
 For example if a query was made to GP Connect for all problems in a record but none of these problems related to an outbound referral, then there would be no list for 'Outbound referrals related to problems' contained in the response.
 
+The following rules apply to how secondary lists are populated
+
  - Secondary lists will only be present where problems or consultations clinical areas have been queried directly
- - Secondary lists will only be present where data is available. They will not return an empty list.
+ - Secondary lists will only be present where data is available. 
+ - If data has been excluded from a secondary list for one of the reasons defined in the warning code section then the relevcant warning code **SHALL** be included. 
+ - For consultation secondary lists where data is excluded a warning code **SHALL** be present even if no other data is contained in the list.
+ - Secondary lists will never return an empty list with no warning codes.
  - Secondary lists will contain the appropriate warning code(s) where information has been excluded
  
 ## The secondary list for related problems
 
-Only one secondary list will be used 
+The secondary list for problems is an exception to the rules above. 
+
+This list **MAY** be returned as part of any query and **MUST** contain problems that have been linked to any item in the primary list that is returned.
+
+Only one related problem list **SHALL** be returned even if multiple clinical areas are queried. This means it is possible that this list will contain problems that are linked to multiple clinical areas. It is the responsibility of the consuming system to determine which items are linked to the problems in this list.
+
+
 
 ## Warning codes
 
 Warning codes are used to manage negation where resources are present in a system to be returned by a query but are not included in the returned data for a specific reason.
 
-Warning codes will be returned in the list when any item that would have been included in that list as a response to the query is not present due to one of the defined reasons. In the case where an item may have been present in more than one list, e.g. medications and medications related to problems, the warning code will be present in both lists. Any warning codes returned will be contained in the extension List.extension[warningCode].
+Warning codes will be returned in the primary and secondary lists defined on this page when any item that would have been included in that list as a response to the query is not present due to one of the defined reasons. In the case where an item may have been present in more than one list, e.g. medications and medications related to problems, the warning code will be present in both lists. Any warning codes returned will be contained in the extension List.extension[warningCode].
+
+Warning codes will **NOT** be returned in any of the lists used to represent consultations structure that are defined in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
 
 The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
 
@@ -107,6 +122,11 @@ The following table provides details of the warning codes that are to be used in
     <td>Data in Transit</td>
     <td>data-in-transit</td>
     <td>Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.</td>
+  </tr>
+   <tr>
+    <td>Data awaiting filing</td>
+    <td>data-awaiting-filing</td>
+    <td>Patient record contains some items in the GP practice workflow that have not been reviewed for inculsion in this message; information recorded before dd-Mmm-yyyy may be missing.</td>
   </tr>
 </table>
 
