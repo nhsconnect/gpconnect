@@ -145,7 +145,6 @@ For each `MedicationStatement` referenced in the `List` profile:
 * The `Medication` profile of the Medication and Medical Device
 * Where requested, the `MedicationRequest` (intent = order) profile for every issue
 * The `ProblemHeader (Condition)` profiles of any directly linked Problems
-* The `Encounter` profiles of any referenced Consultations
 * All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
@@ -163,7 +162,6 @@ The response to the query includes:
 For each `AllergyIntolerance` referenced in either of the `List` profiles:
 * The `AllergyIntolerance` profile of the Allergy
 * The `ProblemHeader (Condition)` profiles of any directly linked Problems
-* The `Encounter` profiles of any referenced Consultations
 * All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
