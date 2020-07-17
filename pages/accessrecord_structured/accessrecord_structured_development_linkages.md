@@ -289,7 +289,7 @@ The resources included in the bundle will be as described in the relevant sectio
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
-<a href="images/access_structured/Medications_Allergies_Return.png"><img src="images/access_structured/Medications_Allegies_Return.png" alt="Medications and Allergies Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+<a href="images/access_structured/Medications_Allergies_Return.png"><img src="images/access_structured/Medications_Allergies_Return.png" alt="Medications and Allergies Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Multiple clinical areas query - including Problems or Consultations ###
