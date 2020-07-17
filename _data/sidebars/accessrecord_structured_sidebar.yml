@@ -39,14 +39,23 @@ entries:
     - title: <b class='resource'>Linkages</b>
       url: /accessrecord_structured_development_linkages.html
       output: web
-    - title: <b class='resource'>Search criteria</b>
-      url: /accessrecord_structured_development_search.html
-      output: web
-    - title: <b class='resource'>Search examples</b>
-      url: /accessrecord_structured_development_searchExamples.html
-      output: web
       
       subfolders:
+
+      - title: Search
+        output: web
+        subfolderitems:
+
+        - title: <b class='resource'>Search criteria</b>
+          url: /accessrecord_structured_development_search.html
+          output: web
+        - title: <b class='resource'>Common searches</b>
+          url: /accessrecord_structured_development_commonSearches.html
+          output: web
+        - title: <b class='resource'>Search examples</b>
+          url: /accessrecord_structured_development_searchExamples.html
+          output: web
+
 
       - title: Structural resources
         output: web
