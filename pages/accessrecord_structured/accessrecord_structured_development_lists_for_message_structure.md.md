@@ -17,13 +17,13 @@ In GP Connect it is used to organise data returned by a query into groups of res
 - Where there are no items returned, the primary list will be returned empty.
 - Where the return includes warning codes for example, to indicate when clinical data is excluded, those codes will be included in any list profile the item would have been present in.
 
-When either problems or consultations are requested then in addition to the primary list the response will contain further secondary lists which detail resources that are contained in the requested consultations or have been linked to the the problems that are returned. All the information needed to process the data from these clinical areas will be contained in these primary and secondary lists. The secondary lists related to each area are contained in the table below.
+When either problems or consultations are requested then in addition to the primary list the response will contain further secondary lists which detail resources that are contained in the requested consultations or have been linked to the problems that are returned. All the information needed to process the data from these clinical areas will be contained in these primary and secondary lists. The secondary lists related to each area are contained in the table below.
 
-The list containing resolved allergies is a special case as it is a list that is contained within the allergies list. This is a safetey precaution intended to reduce the risk of resolved allergies being confused with active allergies. Further details about how the allergies lists work can be found on the [allergies guidance page](accessrecord_structured_development_allergies_guidance.html#resolved-allergies-and-intolerances). 
+The list containing resolved allergies is a special case as it is a list that is contained within the allergies list. This is a safety precaution intended to reduce the risk of resolved allergies being confused with active allergies. Further details about how the allergies lists work can be found on the [allergies guidance page](accessrecord_structured_development_allergies_guidance.html#resolved-allergies-and-intolerances). 
 
 In GP Connect we also use lists to represent the structure of consultations. This is a separate topic that is documented in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
 
-In this version of the GP Connect specifiaction there are 10 types of primary lists that contain the data returned in response to a query that are listed in the table below. 
+In this version of the GP Connect specification there are 10 types of primary lists that contain the data returned in response to a query that are listed in the table below. 
 
 ### Primary lists in the query response
 
@@ -70,7 +70,7 @@ There are also 21 secondary lists that will contain data that is linked to probl
 
 ## Using secondary lists to respond to queries for consultations and problems
 
-Represnting data that is returned in relation to both consultations and problems requires a response that is able to return multiple types of data . A response to a query about consultations or problems may contain any type of clinical data that can be entered into a GP system.
+Representing data that is returned in relation to both consultations and problems requires a response that is able to return multiple types of data. A response to a query about consultations or problems may contain any type of clinical data that can be entered into a GP system.
 
 In GP Connect we use secondary lists to organise these contained or linked items. When either of these clinical areas is queried then up to 11 secondary lists may be returned. Each list is detailed in the above table. 
 
@@ -81,11 +81,10 @@ For example if a query was made to GP Connect for all problems in a record but n
 The following rules apply to how secondary lists are populated
 
  - Secondary lists will only be present where problems or consultations clinical areas have been queried directly
- - Secondary lists will only be present where data is available. 
- - If data has been excluded from a secondary list for one of the reasons defined in the warning code section then the relevcant warning code **SHALL** be included. 
- - For consultation secondary lists where data is excluded a warning code **SHALL** be present even if no other data is contained in the list.
- - Secondary lists will never return an empty list with no warning codes.
- - Secondary lists will contain the appropriate warning code(s) where information has been excluded
+ - Secondary lists will only be present where data is available
+ - If data has been excluded from a secondary list for one of the reasons defined in the warning code section, then the relevant warning code(s) **SHALL** be included
+ - For consultation secondary lists where data is excluded a warning code **SHALL** be present even if no other data is contained in the list
+ - Secondary lists will never return an empty list with no warning codes
  
 ## The secondary list for related problems
 
