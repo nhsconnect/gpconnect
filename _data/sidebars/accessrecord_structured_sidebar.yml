@@ -50,7 +50,7 @@ entries:
           url: /accessrecord_structured_development_search.html
           output: web
         - title: <b class='resource'>Multi area searches</b>
-          url: /accessrecord_structured_development_MultiAreaSearches.html
+          url: /accessrecord_structured_development_searchMultiAreaSearches.html
           output: web
         - title: <b class='resource'>Search examples</b>
           url: /accessrecord_structured_development_searchExamples.html
