@@ -18,16 +18,17 @@ When searching for data for more than one clinical area there are a number of fa
  
 These factors are all to some extent related and finding the approach that best suits a consumers use case will require the developers of the system to understand, prioritise and balance them. As they do this they will need to mitigate any clinical risks by using levers such as design, testing and end user training. 
 
-There are resources on the consumer test hub including how to access GP Connect test data and definitions and the consumer version of the GP Connect Hazard log. 
+There are resources on the GP Connect consumer test hub including how to access GP Connect test data and definitions and the consumer version of the GP Connect Hazard log. 
 
 ****Insert consumer hub link here****
 
-In addition to this predefined queries with details of their advantages, clinical risks and mitigations are detailed further down this page.
+In addition to this predefined queries with details of their advantages, clinical risks and mitigations are included further down this page.
 
 ## Restrictions on query parameters when making searches ##
 
-We have introduced some rules to limit which query parameters can be used at the same time. This is to mitigate
-the following risk.
+We have included some rules to limit which query part parameters can be used at the same time. These rules are documented on [the API page](accessrecord_structured_development_retrieve_patient_record.html#not-permitted-parameter-combinations).
+
+This is to mitigate the following risk.
 
 ### Clinical risk when querying more than one clinical area ###
 
