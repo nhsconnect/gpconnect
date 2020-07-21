@@ -23,8 +23,8 @@ Examples of possible problems:
 *	Lives alone		
 
 As well as highlighting an item, the problem record also links that item to all the other information in the patient record that describes what has happened in regard to that item.
-
-For example, the problems record highlights that the patient has hypertension. It also shows how the hypertension was identified, what discussions have taken place with the patient about their hypertension and what treatments and medication the patient is on to help manage their hypertension.
+For example, the problems record highlights that the patient has hypertension. 
+It also shows how the hypertension was identified, what discussions have taken place with the patient about their hypertension and what treatments and medication the patient is on to help manage their hypertension.
 
 To support this, problems are linked to:
 
@@ -45,7 +45,7 @@ Each problem record is linked to:
 *	other problems that the recording clinician identified as giving further information about the problem
     *	problems that are directly linked to the problem in the provider system
 
-<a href="images/access_structured/Problem_Relationships_1_5.png"><img src="images/access_structured/Problem_Relationships_1_5.png" alt="Problem Relationships" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Problem_Relationships_1_5_v2.png"><img src="images/access_structured/Problem_Relationships_1_5_v2.png" alt="Problem Relationships" style="max-width:100%;max-height:100%;"></a>
 
 ## Clinical item references
 
@@ -55,6 +55,7 @@ When linking to the clinical item that is held in a single FHIR resource the ref
 * for a Medication or Medical Device prescription plan - reference the `MedicationRequest` (intent = plan) profile
 * for a Medication or Medical Device prescription issue - reference the `MedicationRequest` (intent = order) profile
 * for an Allergy – reference the `Allergy` profile
+* for a Consultation - reference the `Encounters` profile
 * for an Immunisation – reference the `Immunization` profile
 * for Uncategorised Data – reference the `Observation` – Uncategorised profile
 * for a Referral - reference the `ReferralRequest` profile
@@ -76,7 +77,7 @@ Depending on the GP Connect version supported by the provider system, it can be 
 
 Where a provider system is not able to export a linked clinical item, it will create a reference entry with the:
 
-* `Condition.extension[relatedClinicalContent.valueReference.Display` set to “[Clinical area] items are not supported by the provider system.”
+* `Condition.extension[relatedClinicalContent].valueReference.Display` set to “[Clinical area] items are not supported by the provider system.”
 
    Where [Clinical area] identifies the type of the clinical item that is not supported.
 
