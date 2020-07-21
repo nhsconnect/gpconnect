@@ -49,8 +49,8 @@ entries:
         - title: <b class='resource'>Search criteria</b>
           url: /accessrecord_structured_development_search.html
           output: web
-        - title: <b class='resource'>Common searches</b>
-          url: /accessrecord_structured_development_commonSearches.html
+        - title: <b class='resource'>Multi area searches</b>
+          url: /accessrecord_structured_development_MultiAreaSearches.html
           output: web
         - title: <b class='resource'>Search examples</b>
           url: /accessrecord_structured_development_searchExamples.html
