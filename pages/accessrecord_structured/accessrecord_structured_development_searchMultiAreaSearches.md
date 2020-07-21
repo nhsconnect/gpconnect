@@ -121,6 +121,47 @@ Description and advantages, possible use cases
 
 #### Request
 
+The request would be similar to the below but with the correct date and NHS number.
+
+```json
+{
+"resourceType": "Parameters",
+"parameter": [
+	{
+		"name": "patientNHSNumber",
+		"valueIdentifier": {
+			"system": "https://fhir.nhs.uk/Id/nhs-number",
+			"value": "9999999999"
+		}
+	},
+	{
+		"name": "includeConsultations",
+		"part": [
+			{
+				"name": "includeNumberOfMostRecent",
+				"valueInteger": 3
+			}
+		]
+	},
+	{
+		"name": "includeProblems"
+	},
+	{
+		"name": "includeAllergies",
+	},
+	{
+		"name": "includeMedication"
+     "part": [
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "today()-one year"
+        }
+      ]
+	}
+]
+}
+```
+
 #### Clinical risk
 
 #### Mitigations
@@ -129,6 +170,48 @@ Description and advantages, possible use cases
 Description and advantages, possible use cases
 
 #### Request
+
+```json
+{
+  "resourceType": "Parameters",
+  "parameter": [
+    {
+      "name": "patientNHSNumber",
+      "valueIdentifier": {
+        "system": "https://fhir.nhs.uk/Id/nhs-number",
+        "value": "9999999999"
+      }
+    },
+    {
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
+    },
+    {
+      "name": "includeMedication"
+       "part": [
+        {
+          "name": "medicationSearchFromDate",
+          "valueDate": "today()-one year"
+        }
+      ] 
+    },
+    {
+      "name": "includeProblems"
+    },
+    {
+      "name": "includeImmunisations"
+    },
+    {
+      "name": "includeUncategorisedData"
+    }
+  ]
+}
+```
 
 #### Clinical risk
 
