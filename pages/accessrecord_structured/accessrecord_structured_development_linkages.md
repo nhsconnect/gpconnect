@@ -33,7 +33,7 @@ For example, the `MedicationStatement` profile contains a field that can be used
 There is no field in the `Medication` profile that can be used to look up the linked `MedicationStatement`.
 
 ## FHIR profiles returned on query ##
-When a consumer system requests data on a clinical area the information is returned across a number of FHIR profiles. 
+When a consumer system requests data on a clinical area the information may be returned across a number of FHIR profiles. 
 Choosing which FHIR profiles to return is a balancing act between including enough linked profiles to give the consumer system a comprehensive response to their query but not including so many linked profiles as to swamp the consumer system with data.
 
 The three main considerations used to decide which data to return for each clinical area were:
@@ -43,7 +43,7 @@ The three main considerations used to decide which data to return for each clini
 
 For each clinical area in a query that returns data a list should be generated that contains links to all data items returned for that clinical area.
 Some query responses will contain more than one list for a clinical area. 
-The nature of the list can be determined from the code assigned to the list, see [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html) for details of using Lists and the list codes.
+The nature of the list can be determined from the list elements, see [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html) for details.
 
 ### Consultations ###
 
@@ -84,7 +84,7 @@ Where a Consultation links to a profile that is not yet supported by the provide
 Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
 
 Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query.
-So, for example, if a consumer requests Consultations but does not request Medications in the query, and there are consultationa that contain medications the provider will include the Medication contained in the Consultation in its response.
+So, for example, if a consumer requests consultations then any medications that are contained in the consultations returned will be present in the bundle, regardles of the medications parameter being absent or set to false in the request.
 
 <a href="images/access_structured/Consultation_Return_v2.png"><img src="images/access_structured/Consultation_Return_v2.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
@@ -263,60 +263,34 @@ For each `ProcedureRequest` referenced in the `List` profile:
 <a href="images/access_structured/DiaryEntry_Return.png"><img src="images/access_structured/DiaryEntry_Return.png" alt="Diary Entry Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
-### Multiple clinical areas query - without Problems or Consultations ###
+### Multiple clinical areas requests ###
 
-The examples shown until this point describe the response a request for a single clinical area.
-The response to a request for more than one clinical area, but not including consultations or problems, must follow the principles above consolidating the common items, such as the problems list.
-For example, when a request for medications and allergies is sent, GP Connect will supply the following data.
-   
-The response to the query includes:
-* A `List` profile containing references to `MedicationStatement` for every Medication and Medical Device that met the search criteria
-* A `List` profile containing references to `AllergyIntolerance` for every active Allergy
-* Where requested, a `List` profile containing references to `AllergyIntolerance` for every ended Allergy
-* A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
+The details above have described the response a request for a single clinical area.
+The consumer may include more than one clinical area in a request.
+The request must be compliant with the criteria for multiple parameters as described in [API Definition - Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
 
-The resources included in the bundle will be as described in the relevant sections above for the individual clinical areas, thus for medications and allergies they will be as follows.
-*  For each `MedicationStatement` referenced in the `List` profile:
-    * The `MedicationStatement` profile of the Medication or Medical Device
-    * The `MedicationRequest` (intent = plan) profile of the Medication or Medical Device
-    * The `Medication` profile of the Medication and Medical Device
-    * Where requested, the `MedicationRequest` (intent = order) profile for every issue
-    * The `ProblemHeader (Condition)` profiles of any directly linked Problems
-* For each `AllergyIntolerance` referenced in either of the `List` profiles:
-    * The `AllergyIntolerance` profile of the Allergy
-    * The `ProblemHeader (Condition)` profiles of any directly linked Problems
-* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+In responding to a valid multiple parameter request, the provider must return lists and resources as defined above for each clinical area included in the request.
+In addition, the provider must return `List` resources as described in [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
+This may result in consolidated or multiple `List` profiles for clinical areas.
+The following models demonstrate this.
+
+This model is an example of a request for medications and allergies. 
+It is included to show how related problem references are consolidated into a single `List` profile where more than one clinical area has been requested. 
+This applies regardles of which clincial areas or how many clinical areas are included in the request.
 
 <center>
 <a href="images/access_structured/Medications_Allergies_Return.png"><img src="images/access_structured/Medications_Allergies_Return.png" alt="Medications and Allergies Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
-### Multiple clinical areas query - including Problems or Consultations ###
-
-A query request for multiple clinical areas which includes consultation or problems will follow similar rules as described above, but has some additional requirements for the inclusion and population of `List` profiles.
-[Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html) provides full details of the `List` profiles to return and how to populate them.
-The consequence of those principles is that multiple `List` profiles are returned for clinical areas.
-For example if Problems, Consultations and other clinical areas are requested the response will contain the following `List` Profiles.
-
-Primary `List` profiles for
-* `ProblemHeader(Condition)` for every Problem in the response meeting the Problems search criteria plus all Problems returned in response to requests for other clinical areas except Consultations
-* `Encounters` for every Consultation in the response meeting the Consultation search criteria in the request
-* each other clinical area included in the request, each such `List` will only include references to the resources returned which match the search criteria for that clinical area
-
-Secondary `List` profiles (as applicable) for
-* each clinical area returned which links to a Consultation where the Consulation meets the Consultation search criteria in the request, including Problems
-* each clinical area returned which links to a Problem where the Problem meets the Problem search criteria in the request, including Consultations
-* related Problems where the Problems do not meet the Problem search criteria in the request but are returned as they are linked to a Problem which meets the search criteria 
-
-The resources included in the bundle will be as described above for each clinical area included in the request.
-
-The image below reflects a request for Medications, Allergiesm Problems and Consultations.
+This model is an example of a request for consultations, problems, medications and allergies.
+It also includes a consolidated related problems `List` profile, but is included to show the multiple `List` profiles returned due to the inclusion of 
+* a primary list for each of the requested clinical areas
+* secondary lists for all clinical areas contained in consultations or linked to problems, regardless of inclusion in the request
 
 <center>
 <a href="images/access_structured/Summary_Return.png"><img src="images/access_structured/Summary_Return.png" alt="Medications, Allergies, Problems and Consultations Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
- 
+
 ### Duplicate returned profiles ###
 
 Where the same instance of a profile is returned from multiple query responses (for example a medication is returned as part of the medication search and the consultation search), it will only be included once in the response message.
