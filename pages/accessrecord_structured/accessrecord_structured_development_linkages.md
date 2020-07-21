@@ -84,7 +84,7 @@ Where a Consultation links to a profile that is not yet supported by the provide
 Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
 
 Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query.
-So, for example, if a consumer requests consultations then any medications that are contained in the consultations returned will be present in the bundle, regardles of the medications parameter being absent or set to false in the request.
+So, for example, if a consumer requests consultations then any medications that are contained in the consultations returned will be present in the bundle, regardless of the medications parameter being absent or set to false in the request.
 
 <a href="images/access_structured/Consultation_Return_v2.png"><img src="images/access_structured/Consultation_Return_v2.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
@@ -100,7 +100,7 @@ The response to the query includes:
 For each `ProblemHeader (Condition)` referenced in the `List` profile:
 *	The `ProblemHeader (Condition)` profile of the Problem
 *	The `ProblemHeader (Condition)` profiles of any directly linked Problems
-*	The 'Encounter' profiles of any linked Consultations
+*	The `Encounter` profiles of any linked Consultations
 *   The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
     *	Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
     *	Only include `MedicationRequest` (intent = order) for directly linked issues
