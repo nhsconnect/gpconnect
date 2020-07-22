@@ -186,6 +186,13 @@ The example below shows references to two items, one for an observation and anot
 }
 ```
 
+This requirement is specific to clinical areas defined by GP Connect which are not supported by the provider.
+Any records contained in a consultation which are specified as out of scope for a defined clinical area which the provider supports **MUST** be returned as an observation resource using the [uncategorised data definition](accessrecord_structured_development_observation_uncategorisedData.html) for a free text note.
+The returned resource should represent the full text as presented in the GP system, including additional notes and qualifiers, not just the code description.
+
+An example is a provider that supports referrals and a consultation contains an inbound referral but GP Connect limits the scope of referrals to outbound referrals only.
+The inbound referral would be returned as free text as described above.
+
 ## Consultations containing confidential items
 
 Where a Consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
