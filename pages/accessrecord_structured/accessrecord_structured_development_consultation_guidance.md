@@ -169,7 +169,7 @@ The provider **MUST** return the following items as text, where they are contain
 * Test requests (which are not in scope of `investigations`)
 
 These must be returned in an `Observation` resource in the same manner as a comment note and as defined in the [uncategorised data profile](accessrecord_structured_development_observation_uncategorisedData.html).
-The returned resource should represent the full text as presented in the GP system, including notes and qualifiers, not just the code description.
+The returned resource must represent the full text as presented in the GP system, including notes and qualifiers, not just the code description.
 
 ## Consultations containing unsupported clinical items
 
