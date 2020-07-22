@@ -161,6 +161,16 @@ When linking to a clinical item that is held in a single FHIR resource the refer
 * For an Investigation - reference the `DiagnosticReport` profile
 * For a Diary Entry - reference the `ProcedureRequest` profile
 
+## Coded clinical items returned as text
+
+The provider **MUST** return the following items as text, where they are contained in returned consultations, as they are not covered by the clinical areas defined in this specification version
+* Inbound referrals
+* Completed diary entries
+* Test requests (which are not in scope of `investigations`)
+
+These must be returned in an `Observation` resource in the same manner as a comment note and as defined in the [uncategorised data profile](accessrecord_structured_development_observation_uncategorisedData.html).
+The returned resource should represent the full text as presented in the GP system, including notes and qualifiers, not just the code description.
+
 ## Consultations containing unsupported clinical items
 
 Depending on the GP Connect version supported by the provider system it can be possible for the consultation to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the consultation contains a link to a referral record, but the provider system does not yet support exporting referrals.
@@ -185,13 +195,6 @@ The example below shows references to two items, one for an observation and anot
   }
 }
 ```
-
-This requirement is specific to clinical areas defined by GP Connect which are not supported by the provider.
-Any records contained in a consultation which are specified as out of scope for a defined clinical area which the provider supports **MUST** be returned as an observation resource using the [uncategorised data definition](accessrecord_structured_development_observation_uncategorisedData.html) for a free text note.
-The returned resource should represent the full text as presented in the GP system, including additional notes and qualifiers, not just the code description.
-
-An example is a provider that supports referrals and a consultation contains an inbound referral but GP Connect limits the scope of referrals to outbound referrals only.
-The inbound referral would be returned as free text as described above.
 
 ## Consultations containing confidential items
 
