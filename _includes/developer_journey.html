@@ -1,6 +1,6 @@
 <img src="images/development/NHS_API_Development_Journey-1024x835.jpg" alt="Developer Journey" usemap="#developer-journey" width="1024" height="835"/>
 <map name="developer-journey">
-{% for s in site.developer-journey %}
+{% for s in site.developer-journey | sort:'order' %}
     <area shape="rect" coords="{{ s.coord }}" 
           href="{{ s.href }}" 
           alt="{{ s.name }}" title="{{ s.name }}" >
