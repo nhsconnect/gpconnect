@@ -27,7 +27,7 @@ In this version of the GP Connect specification there are 10 types of primary li
 
 ### Primary lists in the query response
 
-| Purpose | SNOMED Code |SNOMED Preferred Term | List.title|
+| Clinical area | SNOMED Code |SNOMED Preferred Term | List.title|
 | ------ | ------ |
 |Allergies and adverse reactions | 886921000000105| Allergies and adverse reactions |Allergies and adverse reactions |
 |Allergies that have been ended | 1103671000000101| Ended allergies |Ended allergies |
@@ -44,29 +44,29 @@ In this version of the GP Connect specification there are 10 types of primary li
 
 There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are detailed in the table below.
 
-| Purpose | SNOMED Code |SNOMED Preferred Term | List.title|
+| List.title | SNOMED Code |SNOMED Preferred Term | 
 | ------ | ------ |
-|Consultations - allergies contained in Consultations | 886921000000105| Allergies and adverse reactions  |Allergies contained in Consultations|
-|Consultations - allergies that have been ended contained in Consultations |1103671000000101| Ended allergies | Ended allergies contained in Consultations|
-|Consultations - Diary entries contained in Consultations |714311000000108 | Patient recall administration |Diary entries contained in Consultations|
-|Consultations - Documents contained in Consultations |0000000|Documents contained in Consultations |
-|Consultations - immunisations contained in Consultations |1102181000000102| Immunisations | Immunisations contained in Consultations | 
-|Consultations - investigations contained in Consultations |887191000000108| Investigations and Results |Investigations and results contained in Consultations|
-|Consultations - medications contained in Consultations |933361000000108| Medications and medical devices |Medications and medical devices contained in Consultations|
-|Consultations - Outbound referrals in Consultations |792931000000107| Outbound referral |Outbound referrals contained in Consultations|
-|Consultations - Problems contained in Consultations |717711000000103| Problems |Problems contained in Consultations|
-|Consultations - uncategorised data contained in Consultations |826501000000100| Miscellaneous record |Miscalaneous data contained in Consultations|
-|Problems - allergies related to problems |886921000000105| Allergies and adverse reactions |Allergies related to problems|
-|Problems - allergies that have been ended related to problems | 1103671000000101| Ended allergies | Ended allergies related to problems|
-|Problems - consultations related to problems |1149501000000101 | List of consultations |Consultations related to problems|
-|Problems - diary entries related to problems |714311000000108 | Patient recall administration | Diary entries related to problems|
-|Problems - documents related to problems |0000000|Documents related to problems|
-|Problems - immunisations related to problems |1102181000000102| Immunisations | Immunisations related to problems|
-|Problems - investigations related to problems |887191000000108| Investigations and Results |Investigations related to problems|
-|Problems - medications related to problems |933361000000108| Medications and medical devices | Medications and medical devices related to problems|
-|Problems - outbound referrals related to problems |792931000000107 | Outbound referral | Outbound referrals related to problems|
-|Problems - linked problems not relating to the primary query|717711000000103| Problems |Related problems|
-|Problems - uncategorised data related to problems |826501000000100| Miscellaneous record | Miscalaneous data related to problems|
+|Consultations - allergies contained in Consultations | 886921000000105| Allergies and adverse reactions  |
+|Consultations - allergies that have been ended contained in Consultations |1103671000000101| Ended allergies | 
+|Consultations - Diary entries contained in Consultations |714311000000108 | Patient recall administration |
+|Consultations - Documents contained in Consultations |163161000000103|Documents and Correspondence |
+|Consultations - immunisations contained in Consultations |1102181000000102| Immunisations | 
+|Consultations - investigations contained in Consultations |887191000000108| Investigations and Results |
+|Consultations - medications contained in Consultations |933361000000108| Medications and medical devices |
+|Consultations - Outbound referrals in Consultations |792931000000107| Outbound referral |
+|Consultations - Problems contained in Consultations |717711000000103| Problems |
+|Consultations - uncategorised data contained in Consultations |826501000000100| Miscellaneous record |
+|Problems - allergies related to problems |886921000000105| Allergies and adverse reactions |
+|Problems - allergies that have been ended related to problems | 1103671000000101| Ended allergies | 
+|Problems - consultations related to problems |1149501000000101 | List of consultations |
+|Problems - diary entries related to problems |714311000000108 | Patient recall administration | 
+|Problems - documents related to problems |163161000000103|Documents and Correspondence |
+|Problems - immunisations related to problems |1102181000000102| Immunisations | 
+|Problems - investigations related to problems |887191000000108| Investigations and Results |
+|Problems - medications related to problems |933361000000108| Medications and medical devices | 
+|Problems - outbound referrals related to problems |792931000000107 | Outbound referral | 
+|Problems - linked problems not relating to the primary query|717711000000103| Problems |
+|Problems - uncategorised data related to problems |826501000000100| Miscellaneous record |
 
 ## Using secondary lists to respond to queries for consultations and problems
 
