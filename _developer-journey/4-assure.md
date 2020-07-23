@@ -1,6 +1,6 @@
 ---
 name: Assure
-coord: "190,527,560,830"
+coord: "170,470,560,830"
 href: testing_deliverables.html
 order: 4
 ---
