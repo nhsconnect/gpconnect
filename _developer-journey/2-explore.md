@@ -1,6 +1,6 @@
 ---
 name: Explore
-coord: "739,51,1012,301"
+coord: "739,30,1012,331"
 href: system_demonstrator.html
 order: 2
 ---
