@@ -116,7 +116,7 @@ In order to help consuming systems manage the risk of multiple area searches and
 
 These searches are exceptions to the rules that we have imposed on search parameters and will use combinations of filters that are not available to consumers when building their own searches. These have been created to reduce the burden on suppliers from an API and volume of data perspective while also giving us the opportunity to highlight the clinical risks that are present when these queries are used. 
 
-This will mean we will provide the code needed to request these queries so consuming systems can pick up and use efficient queries that will pull back a set of data that they are likely to need in one call. While doing this it will be possible for us to highlight to them the precise risks involved in the query and offer advice to help them mitigate these risks.
+Here we provide the code needed make these requests so consuming systems can pick up and use efficient queries that will pull back a set of data that they are likely to need in one call. We also highlight to them the precise risks involved in the queries and offer advice to help them mitigate these risks.
 
 As consumers build and use the API we will gather feedback about the queries we have defined and change or add to them as necessary. In time we may build a library of searches depending on the demand and how useful suppliers find them.
 
