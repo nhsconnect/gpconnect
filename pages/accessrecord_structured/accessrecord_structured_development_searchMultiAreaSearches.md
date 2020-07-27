@@ -110,7 +110,7 @@ This data can still be requested with the same restrictions by using two calls a
 
 The search example above is shown as example number 2 on that page.
 
-## Predefined searches multi area searches for common use cases
+## Predefined multi area searches for common use cases
 
 In order to help consuming systems manage the risk of multiple area searches and to help providers by minimising calls to the API and the volume of data returned we have decided to introduce some predefined searches.
 
