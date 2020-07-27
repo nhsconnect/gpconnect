@@ -32,29 +32,29 @@ When searching for data for more than one clinical area there are several factor
  - Scale of search required
  - The volume and complexity of the data that may be returned
  
-These factors are all related and finding the best approach for a consumers use case requires the developers of the system to understand, prioritise and balance them. As In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training. 
+These factors are all related and finding the best approach for a consumers use case requires the developers/commisioners of the system to understand, prioritise and balance them. In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training recording these in the clinical safety case and hazard log that they produce. 
 
-There are resources on the GP Connect consumer test hub
+There are resources on the GP Connect consumer test hub that are available in order support this proccess,
 
- - including how to access GP Connect test data and definitions
- - the consumer version of the GP Connect Hazard log. 
+ - GP Connect stuctured test data records
+ - test data definitions
+ - a list of known clinical risks and possible mitigations 
+ - guidance for clinical safety officers
 
-****Insert consumer hub link here****
+[GP Connect consumer support hub](https://github.com/nhsconnect/gpc-consumer-support/wiki).
 
-
-
-## Restrictions on query parameters when making searches ##
+### Restrictions on query parameters when making searches ##
 
 We have included some rules to limit which query part parameters can be used at the same time. These rules are documented on [the API page](accessrecord_structured_development_retrieve_patient_record.html#not-permitted-parameter-combinations). In addition to this predefined queries with details of their advantages, clinical risks and mitigations are included further down this page.
 
 This is to mitigate the following risk.
 
-### Clinical risk when querying more than one clinical area ###
+#### Clinical risk when querying more than one clinical area ###
 
 When requesting data for more than one clinical area at the same time and also using part parameters, e.g. medicationSearchFromDate, then it is important to be cautious when processing the results.
 In this situation, it is possible that the different parts of the query will return items that may be misleading to a user of a consuming system.
 
-Consider the example where a consuming system requests the medications from the last six months and all active problems. It is possible that one of the active problems links to a medication that is from longer than a year ago. In the table below there is a summary of how the data from the example may exist in the GP system and what the two parts of the query may contain.
+Consider the example where a consuming system requests the medications from the last six months and all active problems. It is possible that one of the active problems links to a medication that is from longer than a year ago. The data held in the GP system is represented in the table below along with what the two parts of the query may contain.
 
 For the example we will assume the query was made on the 1st February 2020:
 
@@ -97,16 +97,17 @@ For the example we will assume the query was made on the 1st February 2020:
   </tr>
 </table>
 
-In this situation, it is possible that the different parts of the query will return items that may be misleading to a user of a consuming system. From the data in the table we can clearly see that the warfarin would not be returned by either part of the query. However, the paracetamol which is from before the warfarin was prescribed would be returned.
-The clinical risk here is that a user of the consumer system may believe they have all the medications from the date of the 05/01/2019 when the paracetamol was prescribed but they are actually missing a medication that exists in the GP system but is older than 6 months but more recent than the medication returned that was linked to a problem.
+In this situation, the medications returned by the two separate parts of the query may be misleading to a user of a consuming system. From the data in the table we can clearly see that the warfarin would not be returned by either part of the query. However, the paracetamol which is from before the warfarin was prescribed would be returned.
+The clinical risk here is that a user of the consumer system may believe they have all the medications from the date of the 05/01/2019 when the paracetamol was prescribed but they are actually missing a medication that exists in the GP system but is older than 6 months but more recent than the medication returned that was linked to the problem.
 
-### Restrictions on parameters to mitigate the risk ###
+#### Restrictions on parameters to mitigate the risk ###
 
 In order to mitigate this risk and emphasise the separation of data in the different parts of certain queries, we have introduced rules around which filters can be used at the same time. For example, problem filters and medication date filters can't be used while requesting consultations. This will prevent data with these sorts of gaps being returned in a single bundle.
 
 The technical details of these rules are detailed in the 'Not permitted parameter combinations' section of the [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html) page.
 
 This data can still be requested with the same restrictions by using two calls and how this is done is detailed in the [Search examples](accessrecord_structured_development_searchExamples.html) page.
+
 The search example above is shown as example number 2 on that page.
 
 ## Predefined searches multi area searches for common use cases
@@ -115,17 +116,17 @@ In order to help consuming systems manage the risk of multiple area searches and
 
 These searches are exceptions to the rules that we have imposed on search parameters and will use combinations of filters that are not available to consumers when building their own searches. These have been created to reduce the burden on suppliers from an API and volume of data perspective while also giving us the opportunity to highlight the clinical risks that are present when these queries are used. 
 
-This will mean we will provide the code needed to request these queries so consuming systems can pick up and use efficient queries that will pull back all the data they are likely to need in one call. While doing this it will be possible for us to highlight to them the precise risks involved in the query and offer advice to help them mitigate these risks.
+This will mean we will provide the code needed to request these queries so consuming systems can pick up and use efficient queries that will pull back a set of data that they are likely to need in one call. While doing this it will be possible for us to highlight to them the precise risks involved in the query and offer advice to help them mitigate these risks.
 
 As consumers build and use the API we will gather feedback about the queries we have defined and change or add to them as necessary. In time we may build a library of searches depending on the demand and how useful suppliers find them.
 
-### Last 3 consultations, last 1 years medications, allergies and problems
+### Pre-defined search 1 - Last 3 consultations, last 1 years medications, allergies and problems
 
-Description and advantages, possible use cases
+We have included this search as the last 3 consultations and problems are areas we have had feedback are the most in demand pieces of information after medications and allergies. It is intended to give a good picture of the patients recent GP record without having to return all the data for their medications.
 
 #### Request
 
-The request would be similar to the below but with the correct date and NHS number.
+A skeleton request is included below consumers just need to insert the correct date and NHS number.
 
 ```json
 {
@@ -166,8 +167,11 @@ The request would be similar to the below but with the correct date and NHS numb
 }
 ```
 
-### Last 3 consultations, last 1 years medications, allergies, immunisations, problems and uncategorised data
-Description and advantages, possible use cases
+### Pre-defined search 2 - Last 3 consultations, last 1 years medications, allergies, immunisations, problems and uncategorised data
+
+This query covers all the same data returned in rep-defined search 1 with the addition of immunisations and uncategorised data. 
+
+This search is intended to cover common use cases relating to peadiatric care where childhood vaccinations and observations may often be required.
 
 #### Request
 
@@ -225,4 +229,7 @@ It can occur if a medication either contained in a consultation or linked to a p
 
 When processing data that is recieved consuming systems should exercise caution when processing medication data that is returned as part of a problem or consultation.
 
-If the medication data is not included in the medications list as it is not returned as part of the medications 
+If additional medication data than that included in the primary medications list is returned by the query, for instance as a part of a problem or consultation. Then the consuming system **MUST** consider how this is processed and/or displayed to the user. 
+
+ - It may be best to display the secondary list medication data separately to the medications returned in the main medications list. 
+ - Consumers should consider if there are appropriate places to display prominent/disruptive warnings to their users to ensure that they are aware of any possible gaps in the data.
