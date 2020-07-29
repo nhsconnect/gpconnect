@@ -113,7 +113,7 @@ When populating this field the provider system must include every consultation w
 * consultations that are directly linked to the problem in the provider system; and
 * consultations that created/updated a clinical item that has been linked to the problem
 
-References may be created to `Encounter`, `MedicationRequest`, `AllergyIntolerance`, `Immunization`, `Observation - Uncategorised`.
+References may be created to `Encounter`, `MedicationRequest`, `AllergyIntolerance`, `Immunization`, `Observation - Uncategorised`, `ReferralRequest`, `DocumentReference`, `DiagnosticReport` or `ProcedureRequest`.
 
 ### extension[problemSignificance] ###
 
