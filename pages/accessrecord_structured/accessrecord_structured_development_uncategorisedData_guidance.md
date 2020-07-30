@@ -12,7 +12,8 @@ When a clinician/user of a GP clinical system records clinical data they may, as
 
 For example, where the clinician uses a GP system's allergy function to record a patient’s allergy information it is explicitly identified in the system as an allergy.
 
-The volume of this categorisation varies between provider systems. For the majority of provider systems, the following types of information are explicitly categorised when they are recorded.
+The volume of this categorisation varies between provider systems. 
+For the majority of provider systems, the following types of information are explicitly categorised when they are recorded.
 * Allergy
 * Appointment
 * Consultation
@@ -38,8 +39,9 @@ For example:
 Consideration was given to attempting to categorise data using the recorded clinical codes. It was decided not to progress this based on a clinical review of its risks and benefits.
 
 ## Uncategorised data definition ##
-
-* Uncategorised data is any item of data in the patient record that does not fit into one of the existing or planned clinical areas defined by GP Connect.
+Uncategorised data will include the following 
+* data items in the patient record that do not fit into one of the existing or planned clinical areas defined by GP Connect
+* inbound referrals (GP Connect referral resource is defined as outbound referrals only) 
 
 ## Observation profile ##
 
