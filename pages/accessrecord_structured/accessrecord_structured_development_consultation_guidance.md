@@ -164,7 +164,6 @@ When linking to a clinical item that is held in a single FHIR resource the refer
 ## Coded clinical items returned as text
 
 The provider **MUST** return the following items as text, where they are contained in returned consultations, as they are not covered by the clinical areas defined in this specification version
-* Inbound referrals
 * Completed diary entries
 * Test requests (which are not in scope of `investigations`)
 
