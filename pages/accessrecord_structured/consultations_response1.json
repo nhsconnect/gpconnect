@@ -102,7 +102,7 @@
                     }
                   ]
                 }
-              ],	
+              ],
               "code": "933361000000108",
               "display": "Medications and medical devices",
               "system": "http://snomed.info/sct"
@@ -147,7 +147,7 @@
         },
         "status": "current",
         "mode": "snapshot",
-        "title": "Medication List",
+        "title": "Uncategorised data List",
         "code": {
           "coding": [
             {
@@ -161,7 +161,7 @@
                     }
                   ]
                 }
-              ],	
+              ],
               "code": "826501000000100",
               "display": "Miscellaneous record",
               "system": "http://snomed.info/sct"
@@ -437,7 +437,17 @@
           }
         ],
 		"clinicalStatus": "active",
-		"category": "problem-list-item",
+		"category": [
+			{
+				  "coding": [
+					{
+					  "system": "http://hl7.org/fhir/condition-category",
+					  "code": "problem-list-item",
+					  "display": "Problem List Item"
+					}
+				]
+			}
+		],
         "code": {
           "coding": [
             {
@@ -473,12 +483,7 @@
         "extension": [
           {
 			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
-			"valueCode": [
-				{
-				  "code": "major",
-				  "display": "Major"
-				}
-			]
+			"valueCode": "major"
 		  },
 		  {
 			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
@@ -625,7 +630,17 @@
           }
         ],
         "clinicalStatus": "active",
-		"category": "problem-list-item",
+		"category": [
+			{
+				  "coding": [
+					{
+					  "system": "http://hl7.org/fhir/condition-category",
+					  "code": "problem-list-item",
+					  "display": "Problem List Item"
+					}
+				]
+			}
+		],
         "code": {
           "coding": [
             {
@@ -662,16 +677,11 @@
 		"asserter": {
           "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
         },
-		"note": "due to obesity and poor mobility and previous DVT",
+		"note": [{"text": "due to obesity and poor mobility and previous DVT"}],
         "extension": [
 			  {
 				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
-				"valueCode": [
-					{
-					  "code": "major",
-					  "display": "Major"
-					}
-				]
+				"valueCode": "major"
 			},
           {
 			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
@@ -794,7 +804,17 @@
           }
         ],
         "clinicalStatus": "active",
-        "category": "problem-list-item",
+		"category": [
+			{
+				  "coding": [
+					{
+					  "system": "http://hl7.org/fhir/condition-category",
+					  "code": "problem-list-item",
+					  "display": "Problem List Item"
+					}
+				]
+			}
+		],
 		"code": {
           "coding": [
             {
@@ -832,11 +852,11 @@
         },
         "extension": [
                 {
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
+                  "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ConditionRelationship-1",
                   "extension": [
                     {
                       "url": "type",
-                      "valueCode": "Parent"
+                      "valueCode": "parent"
                     },
                     {
                       "url": "target",
@@ -847,13 +867,8 @@
                   ]
                 },
 		  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
-				"valueCode": [
-					{
-					  "code": "major",
-					  "display": "Major"
-					}
-				]
+				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
+				"valueCode": "major"
 		  },
           {
 			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
@@ -928,7 +943,17 @@
           }
         ],
         "clinicalStatus": "active",
-        "category": "problem-list-item",
+		"category": [
+			{
+				  "coding": [
+					{
+					  "system": "http://hl7.org/fhir/condition-category",
+					  "code": "problem-list-item",
+					  "display": "Problem List Item"
+					}
+				]
+			}
+		],
 		"code": {
           "coding": [
             {
@@ -942,7 +967,7 @@
                     }
                   ]
                 }
-              ],	
+              ],
               "system": "http://snomed.info/sct",
               "code": "445241004",
               "display": "Postviral cough"
@@ -962,11 +987,11 @@
         },
         "extension": [
 			{
-                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedProblemHeader-1",
+                  "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-ConditionRelationship-1",
                   "extension": [
                     {
                       "url": "type",
-                      "valueCode": "Child"
+                      "valueCode": "child"
                     },
                     {
                       "url": "target",
@@ -978,12 +1003,7 @@
 			},
 			{
 				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ProblemSignificance-1",
-				"valueCode": [
-					{
-					  "code": "major",
-					  "display": "Major"
-					}
-				]
+				"valueCode": "major"
 			},
           {
 			"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ActualProblem-1",
@@ -1152,7 +1172,7 @@
                     }
                   ]
                 }
-              ],	
+              ],
               "system": "http://snomed.info/sct",
               "code": "325851000000107",
               "display": "Consultation"
@@ -1468,6 +1488,365 @@
     {
       "resource": {
         "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "mode": "snapshot",
+        "title": "Consultations - medications contained in consultations",
+        "code": {
+          "coding": [
+            {
+              "code": "933361000000108",
+              "display": "Medications and medical devices",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "date": "2018-03-01T10:57:34+00:00",
+        "orderedBy": {
+          "coding": [
+            {
+              "code": "event-date",
+              "system": "http://hl7.org/fhir/list-order"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Plan"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation1-Topic1-Category-Plan-Medication-Order"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Plan-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation1-Topic3-flat-Medication-Order-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Order-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation1-Topic4-Category-Plan-Medication-Plan-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Plan"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation2-Topic1-Category-Plan-Medication-Order"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Plan"
+            }
+          },
+          {
+            "item": {
+              "reference": "MedicationRequest/Consultation3-Topic1-Category-Plan-Medication-Order"
+            }
+          },
+        ]
+      }
+    },
+
+
+    {
+      "resource": {
+        "resourceType": "List",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1"
+          ]
+        },
+        "status": "current",
+        "mode": "snapshot",
+        "title": "Consultations - uncategorised data contained in consultations",
+        "code": {
+          "coding": [
+            {
+              "code": "826501000000100",
+              "display": "Miscellaneous record",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "date": "2018-03-01T10:57:34+00:00",
+        "orderedBy": {
+          "coding": [
+            {
+              "code": "event-date",
+              "system": "http://hl7.org/fhir/list-order"
+            }
+          ]
+        },
+        "entry": [
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic1-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic1-Category-Social-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic1-Category-Plan-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-Examination-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-Plan-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic3-flat-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic3-flat-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic4-Category-History-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-History-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-History-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-History-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic5-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation2-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation2-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation2-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation2-Topic1-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation2-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation2-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic1-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic1-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic1-Category-Social-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic1-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-History-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-3"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-4"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Examination-Observation-5"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-1"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation3-Topic2-Category-Plan-Observation-2"
+            }
+          },
+          {
+            "item": {
+              "reference": "Observation/Consultation1-Topic2-Category-History-Observation-2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "List",
         "id": "Consultation1-Topic1-Category-Plan",
         "meta": {
           "profile": [
@@ -1667,7 +2046,7 @@
             }
           },
 		  {
-			"item:": {
+			"item": {
 			  "reference": "Observation/Consultation1-Topic2-Category-History-Observation-2"
 			  }
 		  }
@@ -2413,10 +2792,10 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":
+		"performer":[
 			{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-			},
+			}],
         "comment": "Come for review. Overall doing better. Mood still low but improving. More good days than bad. Energy levels ok. Motivation improving. Support from neighbour visits daily"
 	  }
 	},
@@ -2469,10 +2848,10 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":
+		"performer":[
 			{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-			}
+			}]
 	  }
 	},
     {
@@ -2519,9 +2898,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
         "comment": "MSE euthymic. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
@@ -2569,9 +2948,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		}
+		}]
 	  }
     },
     {
@@ -2622,9 +3001,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  }
+		  }]
       }
     },
     {
@@ -2669,9 +3048,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
         "comment": "Advised re local walking group"
       }
     },
@@ -2952,9 +3331,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
         "comment": "2 months - bilateral swollen lower legs"
       }
     },
@@ -3006,9 +3385,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  }
+		  }]
 		}
     },
     {
@@ -3061,9 +3440,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
         "comment": "Patient looks flushed"
       }
     },
@@ -3117,9 +3496,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		}
+		}]
 	  }
     },
     {
@@ -3172,9 +3551,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
         "comment": "Chest clear"
       }
     },
@@ -3228,9 +3607,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		}
+		}]
 	  }
     },
     {
@@ -3277,9 +3656,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
         "comment": "Swelling lower legs bilaterally. Mild pitting oedema. Heart sounds normal. No distress. Abdomen normal. No cervical lymphadenopathy. Throat normal. Ears normal"
       }
     },
@@ -3327,9 +3706,9 @@
         },
         "effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
         "comment": "Advice to mobilise more. Review with results."
       }
     },
@@ -3372,9 +3751,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		}
+		}]
 	  }
     },
     {
@@ -3421,9 +3800,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
-		  },
+		  }],
 		"comment": "average 150/90 last six weeks"
       }
     },
@@ -3471,9 +3850,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "component": [
           {
             "code": {
@@ -3688,7 +4067,7 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "MedicationRequest/Consultation1-Topic3-flat-Medication-Order-1",
+        "id": "Consultation1-Topic3-flat-Medication-Order-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
@@ -3809,9 +4188,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "2 weeks cough - white sputum - no blood, 1 week nose running, 5 days sore throat, No shortness of breath"
       }
     },
@@ -3859,9 +4238,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -3912,9 +4291,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -3965,9 +4344,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -4018,9 +4397,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
    {
@@ -4304,9 +4683,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -4353,9 +4732,9 @@
         },
  		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Similar problem 3 months ago - settled after 2 weeks"
       }
     },
@@ -4403,9 +4782,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "No locking.No effusion. No giving way"
       }
     },
@@ -4453,9 +4832,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -4502,9 +4881,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "No effusion. Full range of movement. Ligaments normal"
       }
     },
@@ -4552,9 +4931,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -4601,9 +4980,9 @@
         },
 		"effectiveDateTime": "2019-03-28T10:30:00+00:00",
 		"issued": "2019-03-28T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Analgesia advice, try knee support daytime"
       }
     },
@@ -4667,7 +5046,7 @@
         ],
         "period": {
           "start": "2019-05-01T10:30:00+00:00",
-          "end": "2019-05-01T10:38:00"
+          "end": "2019-05-01T10:38:00+00:00"
         },
         "length": {
           "value": 8,
@@ -5285,9 +5664,9 @@
         },
         "effectiveDateTime": "2019-05-01T10:30:00+00:00",
 		"issued": "2019-05-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Overall doing better. Mood improving. Still gets bad days. Energy levels ok. Motivation improving. Started to go walking twice a week. First counsellor appointment due in two weeks."
       }
     },
@@ -5335,9 +5714,9 @@
         },
         "effectiveDateTime": "2019-05-01T10:30:00+00:00",
 		"issued": "2019-05-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "MSE looks brighter. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
@@ -5389,9 +5768,9 @@
         },
         "effectiveDateTime": "2019-05-01T10:30:00+00:00",
 		"issued": "2019-05-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -5671,9 +6050,9 @@
         },
         "effectiveDateTime": "2019-05-01T10:30:00+00:00",
 		"issued": "2019-05-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Review in 4 weeks or earlier if problems"
       }
     },
@@ -5721,9 +6100,9 @@
         },
         "effectiveDateTime": "2019-05-01T10:30:00+00:00",
 		"issued": "2019-05-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Patient reports the condition has cleared but develops cough when lies down to sleep."
       }
     },
@@ -5771,9 +6150,9 @@
         },
         "effectiveDateTime": "2019-05-01T10:30:00+00:00",
 		"issued": "2019-05-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Recommend that before sleep, patient has a hot drink. Sleep with head in elevated position."
       }
     },
@@ -6552,9 +6931,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Overall doing better. Mood slowly improving. Still gets bad days. Energy levels ok. Motivation improving. Continues to go walking twice a week. Attended first counsellor appointment but not sure if it helped."
       }
     },
@@ -6602,9 +6981,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "MSE smiling. Not anxious. No DSH/hallucinations/abnormal thoughts"
       }
     },
@@ -6656,9 +7035,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -6938,9 +7317,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Review in 2 months or earlier if problems."
       }
     },
@@ -6988,9 +7367,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "4 months - bilateral swollen lower legs"
       }
     },
@@ -7044,9 +7423,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -7099,9 +7478,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -7154,9 +7533,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -7208,9 +7587,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		}
+		}]
       }
     },
     {
@@ -7257,9 +7636,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Swelling lower legs bilaterally. Mild pitting oedema. Heart sounds normal. Chest clear. No distress. Abdomen normal. No cervical lymphadenopathy. Throat normal. Ears normal. Swelling has noticeably reduced from examiniation two months ago. Blood count and ECG have not identified any cause."
       }
     },
@@ -7307,9 +7686,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Likely venous insufficiency"
       }
     },
@@ -7357,9 +7736,9 @@
         },
         "effectiveDateTime": "2019-06-01T10:30:00+00:00",
 		"issued": "2019-06-01T10:30:00+00:00",
-		"performer":  {
+		"performer":  [{
           "reference": "Practitioner/ff266bb2-cddb-4d03-837c-bd64d4bbe4eb"
-		},
+		}],
         "comment": "Refer to nurse for dopplers and if suitable support stockings."
       }
     },
@@ -7394,7 +7773,7 @@
                 "valueCodeableConcept": {
                   "coding": [
                     {
-                      "system": "https://fhir.nhs.uk/CareConnect-NHSNumberVerificationStatus-1",
+                      "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
                       "code": "01",
                       "display": "Number present and verified"
                     }
