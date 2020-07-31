@@ -180,19 +180,7 @@ An example Access Document capability statement is shown below ready for customi
               "type": "date"
             },
             {
-              "name": "facility",
-              "type": "token"
-            },
-            {
               "name": "author",
-              "type": "token"
-            },
-            {
-              "name": "type",
-              "type": "token"
-            },
-            {
-              "name": "custodian",
               "type": "token"
             },
             {
