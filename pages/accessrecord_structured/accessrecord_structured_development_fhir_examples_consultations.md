@@ -27,7 +27,6 @@ The following is a set of request/response examples for Consultations and proble
 
 <ul>
   <li>Consultations</li>
-  <li>Problems</li>
 </ul>
 
 <br>
