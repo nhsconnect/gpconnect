@@ -17,7 +17,7 @@ Please read [the following guidance](http://gpconnect.netlify.com/accessrecord_s
 
 ## PractitionerRole
 
-There is an issue with the PractitionerRole resource in the base FHIR&reg; specification. It occurs in GP Connect when a practitioner has more than one PractitionerRole associated with them and both are returned in the same bundle. 
+There is an issue with the PractitionerRole resource in the base FHIR&reg; specification. It occurs in GP Connect when a practitioner has more than one PractitionerRole associated with them and both are returned in the same bundle.
 
 An example of where this happens would be if a list of medications contained two medications that were prescribed by the same practitioner:
 
@@ -39,3 +39,15 @@ Depending on the provider system not every item in a patient's clinical record w
 The purpose of GP Connect is to make the data recorded in the patient's GP practice record available throughput the NHS to support the direct care of the patient. If there are any gaps, mistakes or other quality issues with the data in the GP practice record, these issues will show up in the data supplied by GP Connect. The quality of data will depend on the work done by local GP practices and will vary a great deal across the estate.
 
 Further work to improve the quality of data recorded in the GP practice is outside the scope of GP Connect.
+
+## Blood pressure
+Guidance on how to populate [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1) with blood pressure information needs to go through the curation process
+
+## CodeableConcept guidance
+The CodeableConcept guidance document needs to go through curation
+
+## Immunisations mapping table
+
+## Immunisations concept IDs
+
+## Immunisations not given dissents
