@@ -47,5 +47,5 @@ Guidance on how to populate [https://fhir.nhs.uk/STU3/StructureDefinition/CareCo
 The CodeableConcept guidance document needs to go through curation
 
 ## Immunisations
-The CareConnect immunisation profile is currently subject to curation regarding potential changes to the way in which it defines immunisation events where the vaccine is not given.
-This specification will needed to be updated in due course with any changes resulting from that curation process.
+The CareConnect immunization profile is currently subject to curation regarding potential changes to the way in which it defines immunisation events where the vaccine is not given.
+This specification will need to be updated in due course with any changes resulting from that curation process.
