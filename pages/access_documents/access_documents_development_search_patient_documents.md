@@ -23,12 +23,11 @@ Provider systems **SHALL** support the following search parameters:
 | Name | Type | Description | Paths |
 |---|---|---|---|
 | `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
-| `facility` | `token` | Additional details about where the content was created (for example, clinical specialty). | `DocumentReference.context.practiceSetting` |
 | `author` | `Organization` | Who and/or what authored the document. | `DocumentReference.author` |
-| `type` | `token` | Kind of document. | `DocumentReference.type` |
-| `description` | `string` | Human-readable description (title). | `DocumentReference.title` |
+| `description` | `string` | Keyword based search | `DocumentReference.description` + `DocumentReference.type` |
 
 {% include note.html content="The supported search parameters **MUST** be included in the Access Document [FHIR capability statement](access_documents_use_case_get_the_fhir_capability_statement.html)." %}
+{% include important.html content="The `type` and `facility` parameters have been removed from the API. These will be reinstated in the future when provider systems contain the metadata to support them. The original release of the Access Documents capability contained `type` and `facility` parameters which could be used to search for types of clinical document and the types of clinical settings where they were created. These have been removed while the quality of the metadata in provider systems around these items improves. They will be reinstated at the point that they can be supported." %}
 
 ## _include parameters ##
 
@@ -53,9 +52,7 @@ Consumer systems **MUST** send the following parameters to reduce the number of 
 Consumer systems **MAY** send the following parameters in the request:
 
 - `created`
-- `facility`
 - `author`
-- `type`
 - `description`
 
 When using the 'created' parameter, consumers **MUST** do the following
@@ -158,7 +155,6 @@ Errors returned due to query parameter failure **MUST** include diagnostic infor
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The facility query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The author query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The request does not contain the mandatory _include parameters | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
@@ -193,6 +189,7 @@ Provider systems **MUST**:
   - `PractitionerRole` resources for the roles of supplementary actors
   - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](access_documents_development_documentreference.html) profile that match the supplied search criteria
     - where the `created` parameter has been supplied and `DocumentReference.created` doesn't exist, `DocumentReference.indexed` **MUST** be used instead
+    - where the 'description' parameter has been supplied, both DocumentReference.description and DocumentReference.type **MUST** be searched
   - Only `Organization` resources SHALL be returned where they are associated with the `DocumentReference` resources matching the query
 
 #### Payload response examples ####
