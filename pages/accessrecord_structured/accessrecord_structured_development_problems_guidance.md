@@ -71,6 +71,15 @@ The methods and terminology used to link problems varies a great deal between cl
 
 To resolve this, GP Connect will only show the logical linkage between problems (whether the linked problem is a parent, child or sibling) without reflecting the terminology of the provider system.
 
+## Problems linking to out of scope clinical items
+
+The following items may be recorded in defined clinical areas which are supported by the provider but the clinical items are out of scope in this version of the specification
+- Complete diary entries
+- Test requests not part of investigation reports
+
+If these clinical items are linked to a problem, they will not be referenced in the provider response.
+An encounter reference **MUST** be included as a reference from the problem where applicable, as defined above, regardless of the absence of a reference to the clinical item.
+
 ## Problems linking to unsupported clinical items
 
 Depending on the GP Connect version supported by the provider system, it can be possible for the problem to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the problem contains a link to a referral record but the provider system does not yet support exporting referrals.
