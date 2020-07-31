@@ -9,7 +9,7 @@ summary: "Introduction to linkages between data items in GP Connect"
 
 ## Linkages ##
 
-One of the purposes in developing the FHIR&reg; profiles is to ensure that clinical data is, as much as possible, presented the same way regardless of the provider system. 
+One of the purposes in developing the FHIR&reg; profiles is to ensure that clinical data is, as much as possible, presented the same way regardless of the provider system.
 This ensures the consuming system (and clinician) will always know where to look for each type of information.
 However, information about the patient is not just held within the profiles but in how those profiles are linked together.
 For example, linking a medication to a problem means that as well as the record showing what the patient is taking, it also explains why they are taking it.
@@ -20,20 +20,20 @@ For a consuming system to be able to interpret this linkage information correctl
 
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries. 
+The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries.
 Other clinical areas will be added as they are developed.
 
 <a href="images/access_structured/GP_Connect_FHIR_Model_v2.png"><img src="images/access_structured/GP_Connect_FHIR_Model_v2.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
 
 <img src="images/access_structured/FHIR_model_key.png" alt="Key for GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
 
-The relationships between two FHIR profiles are recorded in only one of the linked FHIR profiles (similar to in a relational database management system). 
+The relationships between two FHIR profiles are recorded in only one of the linked FHIR profiles (similar to in a relational database management system).
 This is shown by the direction of the arrow in the FHIR model.
-For example, the `MedicationStatement` profile contains a field that can be used to look up the linked `Medication`. 
+For example, the `MedicationStatement` profile contains a field that can be used to look up the linked `Medication`.
 There is no field in the `Medication` profile that can be used to look up the linked `MedicationStatement`.
 
 ## FHIR profiles returned on query ##
-When a consumer system requests data on a clinical area the information may be returned across a number of FHIR profiles. 
+When a consumer system requests data on a clinical area the information may be returned across a number of FHIR profiles.
 Choosing which FHIR profiles to return is a balancing act between including enough linked profiles to give the consumer system a comprehensive response to their query but not including so many linked profiles as to swamp the consumer system with data.
 
 The three main considerations used to decide which data to return for each clinical area were:
@@ -42,7 +42,7 @@ The three main considerations used to decide which data to return for each clini
 * include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area
 
 For each clinical area in a query that returns data a list should be generated that contains links to all data items returned for that clinical area.
-Some query responses will contain more than one list for a clinical area. 
+Some query responses will contain more than one list for a clinical area.
 The nature of the list can be determined from the list elements, see [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html) for details.
 
 ### Consultations ###
@@ -71,6 +71,7 @@ For each `Encounter` referenced in the `List` profile:
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
 *	The `DocumentReference` profile of any linked Documents
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file
+    * In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     *   Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
@@ -80,7 +81,7 @@ For each `Encounter` referenced in the `List` profile:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     *   Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
-Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. 
+Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response.
 Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
 
 Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query.
@@ -94,7 +95,7 @@ When GP Connect returns a problem it will supply the metadata and description of
 
 The response to the query includes:
 * A `List` profile containing references to `ProblemHeader (Condition)` for every Problem that met the search criteria
-* A `List` profile containing references to `ProblemHeader (Condition)` for every Problem not meeting the search critieria but directly linked to a Problem which does meet the search criteria 
+* A `List` profile containing references to `ProblemHeader (Condition)` for every Problem not meeting the search critieria but directly linked to a Problem which does meet the search criteria
 * A `List` profile for each clinical area that data exists in the bundle
 
 For each `ProblemHeader (Condition)` referenced in the `List` profile:
@@ -114,6 +115,7 @@ For each `ProblemHeader (Condition)` referenced in the `List` profile:
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
 *	The `DocumentReference` profile of any linked Documents
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+    * In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
@@ -132,7 +134,7 @@ So, for example, if a consumer requests a Problem that links to a Medication but
 
 ### Medications and medical devices ###
 
-When GP Connect returns a medication or medical device it will supply the prescription plan information. 
+When GP Connect returns a medication or medical device it will supply the prescription plan information.
 Unless excluded by the consumer request, GP Connect will also return all the prescription issues made under the plan.
 
 The response to the query includes:
@@ -274,8 +276,8 @@ In addition, the provider must return `List` resources as described in [Using li
 This may result in consolidated or multiple `List` profiles for clinical areas.
 The following models demonstrate this.
 
-This model is an example of a request for medications and allergies. 
-It is included to show how related problem references are consolidated into a single `List` profile where more than one clinical area has been requested. 
+This model is an example of a request for medications and allergies.
+It is included to show how related problem references are consolidated into a single `List` profile where more than one clinical area has been requested.
 This applies regardles of which clincial areas or how many clinical areas are included in the request.
 
 <center>
@@ -283,7 +285,7 @@ This applies regardles of which clincial areas or how many clinical areas are in
 </center>
 
 This model is an example of a request for consultations, problems, medications and allergies.
-It also includes a consolidated related problems `List` profile, but is included to show the multiple `List` profiles returned due to the inclusion of 
+It also includes a consolidated related problems `List` profile, but is included to show the multiple `List` profiles returned due to the inclusion of
 * a primary list for each of the requested clinical areas
 * secondary lists for all clinical areas contained in consultations or linked to problems, regardless of inclusion in the request
 
