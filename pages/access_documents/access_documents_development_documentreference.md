@@ -176,11 +176,11 @@ Human-readable description (title).
   <tr>
     <td><b>Data type:</b> <code>url</code></td>
     <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 1..1</td>
+    <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
-URL to retrieve the document, this **MUST** be populated when the document is available. It is a reference to the document data i.e. the binary resource.
+URL to retrieve the document, this **MUST** be populated when the document is available. This **MUST** contain the full URL to the Binary resource, including when the DocumentReference is being included in an Access Record Structured Bundle.
 
 ### content.attachment.size ###
 
@@ -204,7 +204,7 @@ Size of the file.
   </tr>
 </table>
 
-To be used when only a placeholder for a document is available. This **MUST** be populated with the reason why the file isn't available.
+To be used when only a placeholder for a document is available. This **SHOULD** be populated with the reason why the file isn't available.
 
 ### content.attachment.contentType ###
 
