@@ -240,8 +240,6 @@ A reference can be either:
 
 A provider’s ability to process a request relating to a resource may depend on its ability to utilise one or more resource references that the resource contains (for example, its ability to ‘follow the links’ to other resources).
 
-{% include important.html content="GP Connect clients and servers SHALL use local relative references only and as such the resources will be expected to reside on the same server." %}
-
 
 ### Resource metadata ###
 
