@@ -118,10 +118,10 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Document Type ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
-To address this issue, GP Connect has recommended the use of clinical document indexing standards created by NHS Scotland. Document Type should contain a value from the Correspondence document type simple reference set (foundation metadata concept)' with Refset Id 999000391000000109. A text value can be provided for values that do not exist in the valueset. 
+To address this issue, GP Connect has recommended the use of clinical document indexing standards created by NHS Scotland. Document Type should contain a value from the Correspondence document type simple reference set (foundation metadata concept)' with Refset Id 999000391000000109. A text value can be provided for values that do not exist in the valueset.
 
 ## Patient records where documents are not available ##
-GP clinical systems may have some migrated patient records that have information about the document but the document may not be available to the clinical system. To resolve this, GP Connect APIs would return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document would provide information about the authoring organisation of the document. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html).
+GP clinical systems may have some patient records that have information about the document but the document may not be available to the clinical system. To resolve this, GP Connect APIs should return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document should provide information about the authoring organisation of the document. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html#contentattachmenttitle).
 
 ## Document format ##
 Documents of industry standard format are allowed. Any local document formats are not allowed.
@@ -150,4 +150,4 @@ GP Connect APIs are currently restricted to search and retrieval of documents th
 
 ## Unreviewed Documents ##
 GP Connect APIs allow search and retrieval of documents that have not been reviewed and filed. It would enable the health and care workers to have access to the required documents at the right time and take informed decisions with the patient for their health and  care.
-It has been considered that there is the possibility that some of the unreviewed documents might be deemed and subsequently marked confidential at clinical review, but at this stage the clinical safety and continuity concerns outweigh the small risk of disclosure of data that may merit consideration of confidentiality policy application. 
+It has been considered that there is the possibility that some of the unreviewed documents might be deemed and subsequently marked confidential at clinical review, but at this stage the clinical safety and continuity concerns outweigh the small risk of disclosure of data that may merit consideration of confidentiality policy application.
