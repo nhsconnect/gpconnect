@@ -9,7 +9,7 @@ summary: "Demonstrator implementation of the GP Connect FHIR API"
 
 ## Try the online demonstrator ##
 
-> View the latest build of the [GP Connect Demonstrator](https://orange.testlab.nhs.uk/gpconnect-demonstrator/v0/){:target="_blank"} online now!
+> View the latest build of the [GP Connect Demonstrator](https://orange.testlab.nhs.uk/demonstrator-v0.html){:target="_blank"} online now!
 
 {% include tip.html content="Data held in the GP Connect Demonstrator is reset each night to allow for easier testing. Please refer to the Demonstrator's in-built help for further details." %}
 
