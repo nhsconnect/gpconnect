@@ -163,6 +163,8 @@ If neither the performing organisation or the clinical practitioner is known the
 
 The value of the observation. This may be in any of the forms defined in the profile.
 
+Where applicable the value **MUST** use the units specified as part of the [FHIR vital signs specification](hl7.org/fhir/observation-vitalsigns.html).
+
 ### interpretation ###
 
 <table class='resource-attributes'>
