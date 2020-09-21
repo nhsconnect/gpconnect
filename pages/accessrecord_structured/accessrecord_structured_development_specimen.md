@@ -148,6 +148,8 @@ Details of when/how the specimen was collected.
 
 Whether or how long patient abstained from food and/or drink.
 
+Where this is indicated in the incoming EDIFACT report it will be indicated with an 'F'. This **MUST** be used to populate the coding.text element.
+
 ### collection.collector ###
 
 <table class='resource-attributes'>
