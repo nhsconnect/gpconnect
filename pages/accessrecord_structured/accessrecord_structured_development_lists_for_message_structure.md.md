@@ -82,6 +82,7 @@ The following rules apply to how secondary lists are populated
 
  - Secondary lists will only be present where problems or consultations clinical areas have been queried directly
  - Secondary lists will only be present where data is available
+ - Secondary lists for items related to problems will include items related to the problem by the extensions relatedClinicalContent and actualProblem
  - If data has been excluded from a secondary list for one of the reasons defined in the warning code section, then the relevant warning code(s) **SHALL** be included
  - For consultation secondary lists where data is excluded a warning code **SHALL** be present even if no other data is contained in the list
  - Secondary lists will never return an empty list with no warning codes
