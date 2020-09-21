@@ -159,7 +159,7 @@ A skeleton request is included below consumers just need to insert the correct d
 	        "part": [
 			{
 			  "name": "medicationSearchFromDate",
-			  "valueDate": "today()-one year"
+			  "valueDate": "today()-365 days"
 			}
 	      ]
 	}
@@ -203,7 +203,7 @@ This search is intended to cover common use cases relating to peadiatric care wh
       "part": [
         {
           "name": "medicationSearchFromDate",
-          "valueDate": "today()-one year"
+          "valueDate": "today()-365 days"
         }
       ] 
     },
