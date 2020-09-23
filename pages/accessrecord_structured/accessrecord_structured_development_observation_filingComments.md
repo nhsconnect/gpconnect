@@ -104,7 +104,7 @@ A reference to the patient who the observation is about.
   </tr>
 </table>
 
-The dateTime when the 'Test report' or 'Test group' was filed into the patient record.
+The dateTime when the 'Test report', 'Test group' or 'Test result' was filed into the patient record.
 
 ### issued ###
 
@@ -128,7 +128,7 @@ The date time that the time/comment was recorded in the GP system.
   </tr>
 </table>
 
-Reference to the resource for the organisation and/or practitioner that filed the 'Test report' or 'Test group' was filed into the patient record.
+Reference to the resource for the organisation and/or practitioner that filed the 'Test report', 'Test group' or 'Test result' was filed into the patient record.
 
 ### value[x] ###
 
@@ -140,7 +140,7 @@ Reference to the resource for the organisation and/or practitioner that filed th
   </tr>
 </table>
 
-Where a 'Test group' has been filed the value should match the code from the 'Test group header' resource.
+Where a 'Test group' or 'Test result' has been filed the value should match the code from the 'Test group header' or 'Test result' resource respectively.
 
 ### comment ###
 
@@ -152,7 +152,7 @@ Where a 'Test group' has been filed the value should match the code from the 'Te
   </tr>
 </table>
 
-Notes added by the GP practice clinician about the 'Test report' or 'Test group' that has been filed into the patient record.
+Notes added by the GP practice clinician about the 'Test report', 'Test group' or 'Test result' that has been filed into the patient record.
 
 
 ### related ###
@@ -165,7 +165,7 @@ Notes added by the GP practice clinician about the 'Test report' or 'Test group'
   </tr>
 </table>
 
-Reference to the test group header or test report that the filing comments resource relates to.
+Reference to the test result, test group header or test report that the filing comments resource relates to.
 
 This **MUST** be qualified using the related.type 'derived-from'.
 
