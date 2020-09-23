@@ -169,4 +169,4 @@ The result of a query for referral details **MUST** return a <code>List</code> c
 
 The <code>List</code> **MUST** be populated in line with the guidance on <code>List</code> resources.
 
-If the <code>List</code> is empty, then an empty <code>List</code> **MUST** be returned with an <code>emptyReason</code> with the value <code>noContent</code>.
+If the <code>List</code> is empty, then an empty <code>List</code> **MUST** be returned with an <code>emptyReason</code> with the value <code>no-content-recorded</code>.
