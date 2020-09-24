@@ -800,6 +800,14 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - when the `diaryEntriesSearchDate` parameter is set:
   - all diary entries that occur on or before the `diaryEntriesSearchDate` **MUST** be returned
 
+#### Unknown and partial date handling in searches ####
+
+Where parameters contain part parameters for date searches, the following **SHALL** apply:
+- clinical information where an effective date is unknown or not recorded shall be returned alongside information that matches the supplied dates
+- where partial dates have been recorded, they will be evaluated against the supplied dates in the following way:
+  - Dates with only the year specified are equivalent to an interval that starts on the first instant of January 1st and ends on the last instant of December 31st
+  - Dates with only the year and month specified are equivalent to an interval that starts at the first instant of the first day of the month and ends on the last instant of the last day of the month
+
 #### Medication search date ####
 
 The `medicationSearchFromDate` identifies the start date of the requested medications search period. An end date cannot be requested by a consumer, so that all searches go to the end of the patient's record.
