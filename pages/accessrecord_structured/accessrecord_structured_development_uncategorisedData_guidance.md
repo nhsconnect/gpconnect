@@ -123,7 +123,9 @@ This version of GP Connect does not support the 'vital signs' aspect of the FHIR
 
 However, the way we have represented blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
 The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs. We are not currently using this flag in GP Connect. 
+
 Where possible blood pressures exported via GP Connect though will be exported using the same structure as the vital signs blood pressure profile. They **MUST** always use the same units, mm[Hg] whether exported in the triple structure or as individual observations. 
+
 GP Connect has improved the consistency of the data that will be exported, it is however the responsibility of the consuming system to interpret the blood pressure codes they recieve regardless of whether they are in a triple structure or as individual observations.
 
 ### Simple blood pressure representation
@@ -143,13 +145,14 @@ The way simple blood pressures are recorded in different clinical systems varies
 In GP Connect we have decided that all of these variations will be represented using the triple structure in order to make the representation more uniform.
  
 The triple will contain the following SNOMED codes for the panel, systolic and diastolic components,
- - the panel code from the originating system so could be either 163020007 On examination - blood pressure reading (finding) or 386534000 Arterial blood pressure (observable entity). 
- - 1091811000000102 Diastolic arterial pressure (observable entity)
- - 72313002 Systolic arterial pressure (observable entity)
+ 
+| Panel code | Systolic blood pressure code | Diastolic blood pressure code |
+|---|---|---|
+|163020007 On examination - blood pressure reading (finding) or 386534000 Arterial blood pressure (observable entity)| 1091811000000102 Diastolic arterial pressure (observable entity) |72313002 Systolic arterial pressure (observable entity) |
  
 Where there is only a single component value recorded then the triple **MUST** still be represented using the relevant 3 codes with the component representing the missing reading containing the relevant dataAbsentReason code.
 
-### Other blood pressures that will be in the same structure
+### Blood pressures that will be in the same structure
 
 The table contains other blood pressure readings that **MUST** always be represented when exported from GP Connect as triples in line with the simple blood pressure format.
 
@@ -162,7 +165,7 @@ The table contains other blood pressure readings that **MUST** always be represe
 
 In addition to the triples that have been defined here any blood pressure that is recorded as a triple within the GP clinical system **MUST** always follow this structure.
 
-### Other blood pressure readings with no defined triples
+### Blood pressure readings with no defined triples
 
 Where the blood pressure reading has not been defined here and is not recorded in the local system as a triple then these will be exported as individual observations. These observations **MUST** be linked using the 'related' element with a value of 'has-member' where they are recorded as a pair but with no panel code.
 
