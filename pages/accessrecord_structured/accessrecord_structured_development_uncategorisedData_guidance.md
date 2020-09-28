@@ -121,109 +121,50 @@ In the majority of cases there are two components that comprise a blood pressure
 ### The FHIR vital sign blood pressure profile
 This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, the way we have represented specified blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
 The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs.
-We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. However, we have done some analysis on how blood pressures are recorded within GP systems in the UK to consider which codes would be appropriate to be sent as a vital sign.
-Based on this analysis the following codes may in the future be sent as vital signs. They are provided here to enable consuming systems to filter using them if it is desired.
-#### Systolic vital signs codes
-Below is the SNOMED binding for systolic codes that represent vital signs in GP systems:
-```
-271649006 | Systolic blood pressure |
-OR 72313002 | Systolic arterial pressure |
-OR 400974009 | Standing systolic blood pressure |
-OR 407554009 | Sitting systolic blood pressure |
-OR 407556006 | Lying systolic blood pressure |
-```
-#### Diastolic vital signs codes
-Below is the SNOMED binding for diastolic codes that represent vital signs in GP systems:
-```
-271650006 | Diastolic blood pressure |
-OR 1091811000000102 | Diastolic arterial pressure |
-OR 400975005 | Standing diastolic blood pressure |
-OR 407555005 | Sitting diastolic blood pressure |
-OR 407557002 | Lying diastolic blood pressure |
-```
-### Which codes will be sent using the defined blood pressure structure?
+We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. 
+Where possible blood pressures exported via GP Connect though will be exported using the same structure as the vital signs blood pressure profile. They **MUST** always use the same units (mm[Hg]) whether exported in the triple structure or as individual observations.
 
-There are many different variations of blood pressure reading or target that are expressed in GP systems in the form of different codes.
+GP Connect has improved the consistency of the data that will be exported, it is however the responsibility of the consuming system to interpret the blood pressure codes they recieve regardless of whether they are in a triple structure or as individual observations.
 
-#### Panel/header codes
-Any panel or header code that is recorded in conjunction with a recognised systolic or diastolic code **MUST** be used to populate the code in the main part of the observation.
-Where the systolic and or diastolic codes are present without a header/panel code then the following codes **MUST** be used to populate the principle code element:
-ConceptID - '75367002'
-DescriptionID - '125176019'
-Description - 'Blood pressure'
-#### Systolic codes
-The following systolic codes **MUST** be represented in line with the GP Connect blood pressure structure:
-```
-72313002	Systolic arterial pressure (observable entity)
-413606001	Average home systolic blood pressure (observable entity)
-407554009	Sitting systolic blood pressure (observable entity)
-400974009	Standing systolic blood pressure (observable entity)
-314449000	Average 24 hour systolic blood pressure (observable entity)
-314446007	Average day interval systolic blood pressure (observable entity)
-314445006	Average night interval systolic blood pressure (observable entity)
-407556006	Lying systolic blood pressure (observable entity)
-271649006	Systolic blood pressure (observable entity)
-314440001	Average systolic blood pressure (observable entity)
-787541000000108	Highest brachial systolic pressure (observable entity)
-314448008	Maximum 24 hour systolic blood pressure (observable entity)
-314447003	Minimum 24 hour systolic blood pressure (observable entity)
-314439003	Maximum systolic blood pressure (observable entity)
-314444005	Maximum day interval systolic blood pressure (observable entity)
-314438006	Minimum systolic blood pressure (observable entity)
-314441002	Minimum day interval systolic blood pressure (observable entity)
-314442009	Minimum night interval systolic blood pressure (observable entity)
-314443004	Maximum night interval systolic blood pressure (observable entity)
-276780008	Left ventricular systolic pressure (observable entity)
-276772001	Right ventricular systolic pressure (observable entity)
-251070002	Non-invasive systolic arterial pressure (observable entity)
-707303003	Post exercise systolic blood pressure response abnormal (finding)
-251071003	Invasive systolic arterial pressure (observable entity)
-1036551000000101	Non-invasive central systolic blood pressure (observable entity)
-```
-#### Diastolic codes
-The following diastolic codes **MUST** be represented in line with the GP Connect blood pressure structure:
-```
-1091811000000102	Diastolic arterial pressure (observable entity)
-413605002	Average home diastolic blood pressure (observable entity)
-407555005	Sitting diastolic blood pressure (observable entity)
-400975005	Standing diastolic blood pressure (observable entity)
-314462001	Average 24 hour diastolic blood pressure (observable entity)
-314461008	Average day interval diastolic blood pressure (observable entity)
-314460009	Average night interval diastolic blood pressure (observable entity)
-407557002	Lying diastolic blood pressure (observable entity)
-271650006	Diastolic blood pressure (observable entity)
-314453003	Average diastolic blood pressure (observable entity)
-314459004	Maximum 24 hour diastolic blood pressure (observable entity)
-314456006	Minimum 24 hour diastolic blood pressure (observable entity)
-314452008	Maximum diastolic blood pressure (observable entity)
-314451001	Minimum diastolic blood pressure (observable entity)
-314454009	Minimum day interval diastolic blood pressure (observable entity)
-314455005	Minimum night interval diastolic blood pressure (observable entity)
-314457002	Maximum night interval diastolic blood pressure (observable entity)
-314458007	Maximum day interval diastolic blood pressure (observable entity)
-174255007	Non-invasive diastolic arterial pressure (observable entity)
-250769004	Pulmonary artery diastolic pressure (observable entity)
-251073000	Invasive diastolic arterial pressure (observable entity)
-276773006	Right ventricular diastolic pressure (observable entity)
-276781007	Left ventricular end-diastolic pressure (observable entity)
-276774000	Right ventricular end-diastolic pressure (observable entity)
-1036571000000105	Non-invasive central diastolic blood pressure (observable entity)
-```
-#### Excluded codes
-The following codes **MUST NOT** be represented using the GP Connect blood pressure structure and should be returned as individual observations:
-```
-315612005	Target systolic blood pressure (observable entity)
-198081000000101 Ambulatory systolic blood pressure (observable entity)
-314464000	24 hour systolic blood pressure (observable entity)
-716579001	Baseline systolic blood pressure (observable entity)
-814101000000107	Systolic blood pressure centile (observable entity)
-315613000	Target diastolic blood pressure (observable entity)
-198091000000104	Ambulatory diastolic blood pressure (observable entity)
-716632005	Baseline diastolic blood pressure (observable entity)
-314465004	24 hour diastolic blood pressure (observable entity)
-814081000000101	Diastolic blood pressure centile (observable entity)
-```
+### Simple blood pressure representation
 
+The way simple blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different representations,
+
+ - Recorded as the following triple, 
+      - 163020007 On examination - blood pressure reading (finding)
+      - 1091811000000102 Diastolic arterial pressure (observable entity) 
+      - 72313002 Systolic arterial pressure (observable entity)
+ - Recorded as 2 individual readings that are grouped together with no panel code using the same systolic and diastolic codes as above,
+      - 1091811000000102 Diastolic arterial pressure (observable entity)
+      - 72313002 Systolic arterial pressure (observable entity)
+ - Recorded using a panel code with two readings but no systolic and diastolic codes. This is under 2 separate panel codes 
+      - 163020007 On examination - blood pressure reading (finding) and 386534000 Arterial blood pressure (observable entity)
+ 
+In GP Connect we have decided that all of these variations will be represented using the triple structure in order to make the representation more uniform.
+ 
+The triple will contain the following SNOMED codes for the panel, systolic and diastolic components,
+ - the panel code from the originating system so could be either 163020007 On examination - blood pressure reading (finding) or 386534000 Arterial blood pressure (observable entity). 
+ - 1091811000000102 Diastolic arterial pressure (observable entity)
+ - 72313002 Systolic arterial pressure (observable entity)
+ 
+Where there is only a single component value recorded then the triple **MUST** still be represented using the relevant 3 codes with the component representing the missing reading containing the relevant dataAbsentReason code.
+
+### Other blood pressures that will be in the same structure
+
+The table contains other blood pressure readings that **MUST** always be represented when exported from GP Connect as triples in line with the simple blood pressure format.
+
+| Panel code | Systolic blood pressure code | Diastolic blood pressure code |
+|---|---|---|
+| 75367002 Blood pressure (observable entity) | 271649006 Systolic blood pressure |271650006  Diastolic blood pressure |
+| 163034007 Standing blood pressure (observable entity) | 400974009 Standing systolic blood pressure | 400975005 Standing diastolic blood pressure |
+| 163035008 Sitting blood pressure (observable entity) | 407554009 Sitting systolic blood pressure | 407555005 Sitting diastolic blood pressure |
+| 163033001 Lying blood pressure (observable entity) | 407556006 Lying systolic blood pressure | 407557002 Lying diastolic blood pressure |
+
+In addition to the triples that have been defined here any blood pressure that is recorded as a triple within the GP clinical system **MUST** always follow this structure.
+
+### Other blood pressure readings with no defined triples
+
+Where the blood pressure reading has not been defined here and is not recorded in the local system as a triple then these will be exported as individual observations. These observations **MUST** be linked using the 'related' element with a value of 'has-member' where they are recorded as a pair but with no panel code.
 
 ## Using the `List` resource for uncategorised data queries
 
