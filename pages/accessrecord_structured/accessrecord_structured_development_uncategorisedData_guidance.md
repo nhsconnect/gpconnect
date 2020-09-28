@@ -119,16 +119,16 @@ In the majority of cases there are two components that comprise a blood pressure
 <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a>
 
 ### The FHIR vital sign blood pressure profile
-This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, the way we have represented specified blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
-The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs.
-We are not currently using this flag in GP Connect as there is currently no consensus in the UK as to what is/isn't a vital sign. 
-Where possible blood pressures exported via GP Connect though will be exported using the same structure as the vital signs blood pressure profile. They **MUST** always use the same units (mm[Hg]) whether exported in the triple structure or as individual observations.
+This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification as there is currently no consensus in the UK as to what is/isn't a vital sign. 
 
+However, the way we have represented blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
+The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs. We are not currently using this flag in GP Connect. 
+Where possible blood pressures exported via GP Connect though will be exported using the same structure as the vital signs blood pressure profile. They **MUST** always use the same units, mm[Hg] whether exported in the triple structure or as individual observations. 
 GP Connect has improved the consistency of the data that will be exported, it is however the responsibility of the consuming system to interpret the blood pressure codes they recieve regardless of whether they are in a triple structure or as individual observations.
 
 ### Simple blood pressure representation
 
-The way simple blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different representations,
+The way simple blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different patterns,
 
  - Recorded as the following triple, 
       - 163020007 On examination - blood pressure reading (finding)
