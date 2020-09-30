@@ -112,7 +112,7 @@ Reference to <code>Patient</code> profile representing the patient against whom 
   </tr>
 </table>
 
-This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system with <code>participant.type</code> value of <code>AUTH</code> from the vocabulary.
+This **MUST** be populated with the Reference(Practitioner) of the person that recorded the consultation on the system with <code>participant.type</code> value of <code>REC</code>, recorder, from the vocabulary.
 
 Where there are additional participants, will always be populated with at least one <code>participant.individual</code> Reference(Practitioner) with <code>participant.type</code> value of <code>PPRF</code> from the vocabulary.
 This should reference a `Practitioner` profile representing the individual with primary attribution for the consultation/encounter (usually the single primary attributed user shown in system journals or other views).
