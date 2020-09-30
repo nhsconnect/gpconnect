@@ -42,31 +42,31 @@ In this version of the GP Connect specification there are 10 types of primary li
 
 ### Secondary lists in the query response
 
-There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are detailed in the table below.
+There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are defined in this [codeSystem](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1) and are detailed in the table below.
 
-| List.title | SNOMED Code |SNOMED Preferred Term | 
+| List.title | Code | Display | 
 | ------ | ------ |
-|Consultations - allergies contained in Consultations | 886921000000105| Allergies and adverse reactions  |
-|Consultations - allergies that have been ended contained in Consultations |1103671000000101| Ended allergies | 
-|Consultations - Diary entries contained in Consultations |714311000000108 | Patient recall administration |
-|Consultations - Documents contained in Consultations |163161000000103|Documents and Correspondence |
-|Consultations - immunisations contained in Consultations |1102181000000102| Immunisations | 
-|Consultations - investigations contained in Consultations |887191000000108| Investigations and Results |
-|Consultations - medications contained in Consultations |933361000000108| Medications and medical devices |
-|Consultations - Outbound referrals in Consultations |792931000000107| Outbound referral |
-|Consultations - Problems contained in Consultations |717711000000103| Problems |
-|Consultations - uncategorised data contained in Consultations |826501000000100| Miscellaneous record |
-|Problems - allergies related to problems |886921000000105| Allergies and adverse reactions |
-|Problems - allergies that have been ended related to problems | 1103671000000101| Ended allergies | 
-|Problems - consultations related to problems |1149501000000101 | List of consultations |
-|Problems - diary entries related to problems |714311000000108 | Patient recall administration | 
-|Problems - documents related to problems |163161000000103|Documents and Correspondence |
-|Problems - immunisations related to problems |1102181000000102| Immunisations | 
-|Problems - investigations related to problems |887191000000108| Investigations and Results |
-|Problems - medications related to problems |933361000000108| Medications and medical devices | 
-|Problems - outbound referrals related to problems |792931000000107 | Outbound referral | 
-|Problems - linked problems not relating to the primary query|717711000000103| Problems |
-|Problems - uncategorised data related to problems |826501000000100| Miscellaneous record |
+| Consultations - allergies contained in consultations  | Consultations - allergies contained in consultations  | Consultations - allergies contained in consultations  |
+| Consultations - allergies that have been ended contained in consultations  | Consultations - allergies that have been ended contained in consultations  | Consultations - allergies that have been ended contained in consultations  |
+| Consultations - diary entries contained in consultations  | Consultations - diary entries contained in consultations  | Consultations - diary entries contained in consultations  |
+| Consultations - documents contained in consultations  | Consultations - documents contained in consultations  | Consultations - documents contained in consultations  |
+| Consultations - immunisations contained in consultations  | Consultations - immunisations contained in consultations  | Consultations - immunisations contained in consultations  |
+| Consultations - investigations contained in consultations  | Consultations - investigations contained in consultations  | Consultations - investigations contained in consultations  |
+| Consultations - medications contained in consultations  | Consultations - medications contained in consultations  | Consultations - medications contained in consultations  |
+| Consultations - outbound referrals in consultations  | Consultations - outbound referrals in consultations  | Consultations - outbound referrals in consultations  |
+| Consultations - problems contained in consultations  | Consultations - problems contained in consultations  | Consultations - problems contained in consultations  |
+| Consultations - uncategorised data contained in consultations  | Consultations - uncategorised data contained in consultations  | Consultations - uncategorised data contained in consultations  |
+| Problems - allergies related to problems  | Problems - allergies related to problems  | Problems - allergies related to problems  |
+| Problems - allergies that have been ended related to problems  | Problems - allergies that have been ended related to problems  | Problems - allergies that have been ended related to problems  |
+| Problems - consultations related to problems  | Problems - consultations related to problems  | Problems - consultations related to problems  |
+| Problems - diary entries related to problems  | Problems - diary entries related to problems  | Problems - diary entries related to problems  |
+| Problems - documents related to problems  | Problems - documents related to problems  | Problems - documents related to problems  |
+| Problems - immunisations related to problems  | Problems - immunisations related to problems  | Problems - immunisations related to problems  |
+| Problems - investigations related to problems  | Problems - investigations related to problems  | Problems - investigations related to problems  |
+| Problems - medications related to problems  | Problems - medications related to problems  | Problems - medications related to problems  |
+| Problems - outbound referrals related to problems  | Problems - outbound referrals related to problems  | Problems - outbound referrals related to problems  |
+| Problems - linked problems not relating to the primary query | Problems - linked problems not relating to the primary query | Problems - linked problems not relating to the primary query |
+| Problems - uncategorised data related to problems | Problems - uncategorised data related to problems | Problems - uncategorised data related to problems |
 
 ## Using secondary lists to respond to queries for consultations and problems
 
@@ -94,8 +94,6 @@ The secondary list for problems is an exception to the rules above.
 This list **MAY** be returned as part of any query and **MUST** contain problems that have been linked to any item in the primary list that is returned.
 
 Only one related problem list **SHALL** be returned even if multiple clinical areas are queried. This means it is possible that this list will contain problems that are linked to multiple clinical areas. It is the responsibility of the consuming system to determine which items are linked to the problems in this list.
-
-
 
 ## Warning codes
 
