@@ -197,13 +197,13 @@ The example below shows references to two items, one for an observation and anot
 
 ## Consultations containing confidential items
 
-Where a Consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included returned data and the Confidential Items warning message will be included in the `List` containing the query response.
+Where a Consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included in the returned data and the Confidential Items warning message will be included in the primary `List` containing the query response.
 
 Where a Consultation is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
 * the Consultation will be included in the response as normal
 * the confidential item(s) will NOT be included in the response
 * there will be NO reference to the confidential item(s) in the `List` profiles defining the Consultation structure
-* the Confidential Items warning message will be included in the `List` for the relevant type of type data that was omitted (for example, if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query) - the warning will NOT be included in the `List` profiles defining the Consultation structure
+* the Confidential Items warning message will be included in the appropriate [secondary list](accessrecord_structured_development_lists_for_message_structure.html) for the relevant type of type data that was omitted (for example, if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the `List`  'Consultations - uncategorised data contained in consultations' that was returned as part of the query) - the warning will NOT be included in the `List` profiles defining the Consultation structure
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Consultation(s) they were removed from.
 
