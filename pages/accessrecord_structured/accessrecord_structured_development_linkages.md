@@ -45,6 +45,31 @@ For each clinical area in a query that returns data a list should be generated t
 Some query responses will contain more than one list for a clinical area.
 The nature of the list can be determined from the list elements, see [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html) for details.
 
+## Consultations and problems containing unsupported clinical items
+
+Depending on the GP Connect version supported by the provider system it can be possible for the consultation or problem to link to a clinical item that the provider system is not yet able to export with GP Connect. For example, if the consultation contains a link to a referral record, but the provider system does not yet support exporting referrals.
+
+Where a provider system is not able to export a linked clinical item, it will create a section.section.entry (or section.entry) entry with the:
+
+-   `List.entry.item.display` set to “[Clinical area] items are not supported by the provider system.”
+
+       Where [Clinical area] identifies the type of the clinical item that is not supported.
+
+The example below shows references to two items, one for an observation and another for referrals that aren't supported by the provider system:
+
+```json
+{
+  "item": {
+    "reference": "Observation/6734572634"
+  }
+},
+{
+  "item": {
+    "display": "Referral items are not supported by the provider system"
+  }
+}
+```
+
 ### Consultations ###
 
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.

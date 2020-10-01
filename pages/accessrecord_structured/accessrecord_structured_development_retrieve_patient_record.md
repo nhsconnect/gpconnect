@@ -584,6 +584,9 @@ Consumers systems **MUST NOT**:
 
 - rely on order or index of elements within the `Bundle` resource in order to parse encapsulated resources.
 
+##### Unavailability of data #####
+There are scenarios where requested clinical areas may not be returned, these are listed on the  [Configuration for supported clinical areas](accessrecord_structured_development_clinical_area_config.html) page along with guidance on implementation. Consumer systems **MUST** be able to handle this unavailability and warn users that some information hasn't been returned.
+
 ##### Allergies #####
 
 Provider systems **MUST** include the following in the response `Bundle`:

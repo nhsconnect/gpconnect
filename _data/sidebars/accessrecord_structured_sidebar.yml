@@ -39,8 +39,7 @@ entries:
     - title: <b class='resource'>Linkages</b>
       url: /accessrecord_structured_development_linkages.html
       output: web
-      
-      subfolders:
+      subfolderitems:
 
       - title: Search
         output: web
@@ -243,6 +242,10 @@ entries:
 
     - title: API version compatibility
       url: /accessrecord_structured_development_version_compatibility.html
+      output: web
+
+    - title: <b class='resource'>Configuration for clinical areas</b>
+      url: /accessrecord_structured_development_clinical_area_config.html
       output: web
 
     - title: Forwards compatibility support example
