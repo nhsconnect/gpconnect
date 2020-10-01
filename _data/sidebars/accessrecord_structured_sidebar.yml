@@ -39,7 +39,8 @@ entries:
     - title: <b class='resource'>Linkages</b>
       url: /accessrecord_structured_development_linkages.html
       output: web
-      subfolderitems:
+
+      subfolders:
 
       - title: Search
         output: web
