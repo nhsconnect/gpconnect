@@ -17,10 +17,10 @@ Also, in addition to the [enablement switch defined in the non-functional requir
 ## Requirements
 
 ### Clinical areas
-The configuration of the Provider system **MUST** allow for clinical areas to be switched on or off for all sites without requiring a release. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` for each clinical area that isn't supported according to the rules below.
+The configuration of the Provider system **MUST** allow for clinical areas to be switched on or off for all sites without requiring a release. For example, in the case of a clinical safety incident with a clinical area where a provider would be required to turn off the clinical area across their entire estate. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` for each clinical area that isn't supported according to the rules below.
 
 ### Site switch
-In addition to the above, the configuration of the Provider system **MUST** allow for a clinical area to be switched on or off at one or more sites without requiring a release. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` for each clinical area that isn't supported according to the rules below.
+In addition to the above, the configuration of the Provider system **MUST** allow for a clinical area to be switched on or off at one or more sites without requiring a release. For example, in the scenario where there was a data quality issue with a clinical area at a single site. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` for each clinical area that isn't supported according to the rules below.
 
 ### Consumer systems
 Consumer systems **MUST** be able to handle the unavailability of clinical areas and warn users that information hasn't been returned.
