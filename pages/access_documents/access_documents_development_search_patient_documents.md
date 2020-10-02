@@ -91,9 +91,7 @@ GET /Patient/[id]/DocumentReference?[_include=DocumentReference:subject:Patient]
                       [&_include=DocumentReference:author:Practitioner]
                       [&_revinclude:recurse=PractitionerRole:practitioner]
                       {&created=[search_prefix]creation_date}
-                      {&facility=[care_setting_type]}
                       {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
-                      {&type=[document_type]}
                       {&description=[document_title]}
 ```
 
@@ -106,9 +104,7 @@ GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_b
                       [&_include=DocumentReference:author:Practitioner]
                       [&_revinclude:recurse=PractitionerRole:practitioner]
                       {&created=[search_prefix]creation_date}
-                      {&facility=[care_setting_type]}
                       {&author=[OrgTypeCodeSystem]|[OrgTypeCode]}
-                      {&type=[document_type]}
                       {&description=[document_title]}
 ```
 
