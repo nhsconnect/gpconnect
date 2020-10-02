@@ -16,7 +16,7 @@ It is the responsibility of the consuming system to decide what data to request 
 * Where a follow-up query is required it should aim to retrieve sufficient data to support any other queries that their clinician/user will make
 * The consumer system should aim to avoid scenarios where more than two queries are required on the same patient as part of the same local interaction with a clinician/user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
 * It is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the unnecessary data before presenting it to their clinicians/users where the consumer organisation:
-    
+
      * has determined it is necessary to support patient care
      * has met all of the GP Connect information governance (IG) requirements including data sharing agreements, confidentiality and auditing
 
@@ -31,14 +31,14 @@ When searching for data for more than one clinical area there are several factor
  - Information governance
  - Scale of search required
  - The volume and complexity of the data that may be returned
- 
-These factors are all related and finding the best approach for a consumers use case requires the developers/commisioners of the system to understand, prioritise and balance them. In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training recording these in the clinical safety case and hazard log that they produce. 
+
+These factors are all related and finding the best approach for a consumers use case requires the developers/commisioners of the system to understand, prioritise and balance them. In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training recording these in the clinical safety case and hazard log that they produce.
 
 There are resources on the GP Connect consumer test hub that are available in order support this proccess,
 
  - GP Connect stuctured test data records
  - test data definitions
- - a list of known clinical risks and possible mitigations 
+ - a list of known clinical risks and possible mitigations
  - guidance for clinical safety officers
 
 [GP Connect consumer support hub](https://github.com/nhsconnect/gpc-consumer-support/wiki).
@@ -114,7 +114,7 @@ The search example above is shown as example number 2 on that page.
 
 In order to help consuming systems manage the risk of multiple area searches and to help providers by minimising calls to the API and the volume of data returned we have decided to introduce some predefined searches.
 
-These searches are exceptions to the rules that we have imposed on search parameters and will use combinations of filters that are not available to consumers when building their own searches. These have been created to reduce the burden on suppliers from an API and volume of data perspective while also giving us the opportunity to highlight the clinical risks that are present when these queries are used. 
+These searches are exceptions to the rules that we have imposed on search parameters and will use combinations of filters that are not available to consumers when building their own searches. These have been created to reduce the burden on suppliers from an API and volume of data perspective while also giving us the opportunity to highlight the clinical risks that are present when these queries are used.
 
 Here we provide the code needed make these requests so consuming systems can pick up and use efficient queries that will pull back a set of data that they are likely to need in one call. We also highlight to them the precise risks involved in the queries and offer advice to help them mitigate these risks.
 
@@ -151,9 +151,15 @@ A skeleton request is included below consumers just need to insert the correct d
 	{
 		"name": "includeProblems"
 	},
-	{
-		"name": "includeAllergies"
-	},
+  {
+    "name": "includeAllergies",
+    "part": [
+      {
+        "name": "includeResolvedAllergies",
+        "valueBoolean": true
+      }
+    ]
+  },
 	{
 		"name": "includeMedication",
 	        "part": [
@@ -169,7 +175,7 @@ A skeleton request is included below consumers just need to insert the correct d
 
 ### Pre-defined search 2 - Last 3 consultations, last 1 years medications, allergies, immunisations, problems and uncategorised data
 
-This query covers all the same data returned in rep-defined search 1 with the addition of immunisations and uncategorised data. 
+This query covers all the same data returned in rep-defined search 1 with the addition of immunisations and uncategorised data.
 
 This search is intended to cover common use cases relating to peadiatric care where childhood vaccinations and observations may often be required.
 
@@ -196,7 +202,13 @@ This search is intended to cover common use cases relating to peadiatric care wh
 	]
     },
     {
-      "name": "includeAllergies"
+      "name": "includeAllergies",
+      "part": [
+        {
+          "name": "includeResolvedAllergies",
+          "valueBoolean": true
+        }
+      ]
     },
     {
       "name": "includeMedication",
@@ -205,7 +217,7 @@ This search is intended to cover common use cases relating to peadiatric care wh
           "name": "medicationSearchFromDate",
           "valueDate": "today()-365 days"
         }
-      ] 
+      ]
     },
     {
       "name": "includeProblems"
@@ -221,15 +233,15 @@ This search is intended to cover common use cases relating to peadiatric care wh
 ```
 ### Clinical risk
 
-The clinical risks that are associated with these 2 queries are the same as the risk outlined above. 
+The clinical risks that are associated with these 2 queries are the same as the risk outlined above.
 
-It can occur if a medication either contained in a consultation or linked to a problem is returned that is more than a year old. 
+It can occur if a medication either contained in a consultation or linked to a problem is returned that is more than a year old.
 
 ### Mitigations
 
 When processing data that is recieved consuming systems should exercise caution when processing medication data that is returned as part of a problem or consultation.
 
-If additional medication data than that included in the primary medications list is returned by the query, for instance as a part of a problem or consultation. Then the consuming system **MUST** consider how this is processed and/or displayed to the user. 
+If additional medication data than that included in the primary medications list is returned by the query, for instance as a part of a problem or consultation. Then the consuming system **MUST** consider how this is processed and/or displayed to the user.
 
- - It may be best to display the secondary list medication data separately to the medications returned in the main medications list. 
+ - It may be best to display the secondary list medication data separately to the medications returned in the main medications list.
  - Consumers should consider if there are appropriate places to display prominent/disruptive warnings to their users to ensure that they are aware of any possible gaps in the data.
