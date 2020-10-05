@@ -156,12 +156,12 @@ In GP Connect we have decided that all of these variations will be represented u
  
 <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a> 
  
-The triple will contain the following SNOMED codes for the panel, systolic and diastolic components,
+The triple may contain any combination of the following SNOMED codes for the panel, systolic and diastolic components,
  
 | Panel code | Systolic blood pressure code | Diastolic blood pressure code |
 |---|---|---|
-|163020007 On examination - blood pressure reading (finding) or 386534000 Arterial blood pressure (observable entity)| 1091811000000102 Diastolic arterial pressure (observable entity) |72313002 Systolic arterial pressure (observable entity) |
-| 75367002 Blood pressure (observable entity) | 271649006 Systolic blood pressure |271650006  Diastolic blood pressure |
+|163020007 On examination - blood pressure reading (finding) or 386534000 Arterial blood pressure (observable entity) or 75367002 Blood pressure (observable entity)| 72313002 Systolic arterial pressure (observable entity) or 271649006 Systolic blood pressure | 1091811000000102 Diastolic arterial pressure (observable entity) or 271650006  Diastolic blood pressure |
+
 
 Where there is only a single component value recorded then the triple **MUST** still be represented using the relevant 3 codes with the component representing the missing reading containing the relevant dataAbsentReason code.
 
