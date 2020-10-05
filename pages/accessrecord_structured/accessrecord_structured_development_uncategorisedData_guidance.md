@@ -147,7 +147,7 @@ The way standard blood pressures are recorded in different clinical systems vari
       - 72313002 Systolic arterial pressure (observable entity)
  - Recorded using a panel code with two readings but no systolic and diastolic codes. This is under 2 separate panel codes 
  
- <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponents.png"></a>   
+ <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponent.png"></a>   
  
    Using the following codes, 
       - 163020007 On examination - blood pressure reading (finding) and 386534000 Arterial blood pressure (observable entity)
