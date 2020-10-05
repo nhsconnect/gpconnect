@@ -79,7 +79,8 @@ If the immunisation has been transferred by GP2GP this **SHOULD** be the recorde
   </tr>
 </table>
 
-The procedure code describing the vaccine that was administered or was intended to be administered.
+The procedure code describing the vaccine that was administered or the situation code for a vaccination that was intended to be administered but was not done.
+See the profile for the valid codes.
 
 ### identifier
 
