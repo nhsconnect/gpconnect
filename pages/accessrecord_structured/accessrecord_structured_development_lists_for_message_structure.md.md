@@ -46,27 +46,27 @@ There are also 21 secondary lists that will contain data that is linked to probl
 
 | List.title | Code | Display |
 | ------ | ------ |
-| Consultations - allergies contained in consultations  | Consultations - allergies contained in consultations  | Consultations - allergies contained in consultations  |
-| Consultations - allergies that have been ended contained in consultations  | Consultations - allergies that have been ended contained in consultations  | Consultations - allergies that have been ended contained in consultations  |
-| Consultations - diary entries contained in consultations  | Consultations - diary entries contained in consultations  | Consultations - diary entries contained in consultations  |
-| Consultations - documents contained in consultations  | Consultations - documents contained in consultations  | Consultations - documents contained in consultations  |
-| Consultations - immunisations contained in consultations  | Consultations - immunisations contained in consultations  | Consultations - immunisations contained in consultations  |
-| Consultations - investigations contained in consultations  | Consultations - investigations contained in consultations  | Consultations - investigations contained in consultations  |
-| Consultations - medications contained in consultations  | Consultations - medications contained in consultations  | Consultations - medications contained in consultations  |
-| Consultations - outbound referrals in consultations  | Consultations - outbound referrals in consultations  | Consultations - outbound referrals in consultations  |
-| Consultations - problems contained in consultations  | Consultations - problems contained in consultations  | Consultations - problems contained in consultations  |
-| Consultations - uncategorised data contained in consultations  | Consultations - uncategorised data contained in consultations  | Consultations - uncategorised data contained in consultations  |
-| Problems - allergies related to problems  | Problems - allergies related to problems  | Problems - allergies related to problems  |
-| Problems - allergies that have been ended related to problems  | Problems - allergies that have been ended related to problems  | Problems - allergies that have been ended related to problems  |
-| Problems - consultations related to problems  | Problems - consultations related to problems  | Problems - consultations related to problems  |
-| Problems - diary entries related to problems  | Problems - diary entries related to problems  | Problems - diary entries related to problems  |
-| Problems - documents related to problems  | Problems - documents related to problems  | Problems - documents related to problems  |
-| Problems - immunisations related to problems  | Problems - immunisations related to problems  | Problems - immunisations related to problems  |
-| Problems - investigations related to problems  | Problems - investigations related to problems  | Problems - investigations related to problems  |
-| Problems - medications related to problems  | Problems - medications related to problems  | Problems - medications related to problems  |
-| Problems - outbound referrals related to problems  | Problems - outbound referrals related to problems  | Problems - outbound referrals related to problems  |
-| Problems - linked problems not relating to the primary query | Problems - linked problems not relating to the primary query | Problems - linked problems not relating to the primary query |
-| Problems - uncategorised data related to problems | Problems - uncategorised data related to problems | Problems - uncategorised data related to problems |
+| Consultations - allergies contained in consultations  | consultations-allergies-contained-in-consultations  | Consultations - allergies contained in consultations  |
+| Consultations - allergies that have been ended contained in consultations  |consultations-allergies-that-have-been-ended-contained-in-consultations  | Consultations - allergies that have been ended contained in consultations  |
+| Consultations - diary entries contained in consultations  | consultations-diary-entries-contained-in-consultations  | Consultations - diary entries contained in consultations  |
+| Consultations - documents contained in consultations  | consultations-documents-contained-in-consultations  | Consultations - documents contained in consultations  |
+| Consultations - immunisations contained in consultations  | consultations-immunisations-contained-in-consultations  | Consultations - immunisations contained in consultations  |
+| Consultations - investigations contained in consultations  |consultations-investigations-contained-in-consultations  | Consultations - investigations contained in consultations  |
+| Consultations - medications contained in consultations  | consultations-medications-contained-in-consultations  | Consultations - medications contained in consultations  |
+| Consultations - outbound referrals in consultations  | consultations-outbound-referrals-in-consultations  | Consultations - outbound referrals in consultations  |
+| Consultations - problems contained in consultations  | consultations-problems-contained-in-consultations  | Consultations - problems contained in consultations  |
+| Consultations - uncategorised data contained in consultations  | consultations-uncategorised-data-contained-in-consultations  | Consultations - uncategorised data contained in consultations  |
+| Problems - allergies related to problems  | problems-allergies-related-to-problems  | Problems - allergies related to problems  |
+| Problems - allergies that have been ended related to problems  | problems-allergies-that-have-been-ended-related-to-problems  | Problems - allergies that have been ended related to problems  |
+| Problems - consultations related to problems  | problems-consultations-related-to-problems  | Problems - consultations related to problems  |
+| Problems - diary entries related to problems  | problems-diary-entries-related-to-problems  | Problems - diary entries related to problems  |
+| Problems - documents related to problems  | problems-documents-related-to-problems  | Problems - documents related to problems  |
+| Problems - immunisations related to problems  | problems-immunisations-related-to-problems  | Problems - immunisations related to problems  |
+| Problems - investigations related to problems  | problems-investigations-related-to-problems  | Problems - investigations related to problems  |
+| Problems - medications related to problems  | problems-medications-related-to-problems  | Problems - medications related to problems  |
+| Problems - outbound referrals related to problems  | problems-outbound-referrals-related-to-problems  | Problems - outbound referrals related to problems  |
+| Problems - linked problems not relating to the primary query | problems-linked-problems-not-relating-to-the-primary-query | Problems - linked problems not relating to the primary query |
+| Problems - uncategorised data related to problems | problems-uncategorised-data-related-to-problems | Problems - uncategorised data related to problems |
 
 ## Using secondary lists to respond to queries for consultations and problems
 
