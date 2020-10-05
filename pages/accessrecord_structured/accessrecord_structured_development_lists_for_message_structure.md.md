@@ -19,11 +19,11 @@ In GP Connect it is used to organise data returned by a query into groups of res
 
 When either problems or consultations are requested then in addition to the primary list the response will contain further secondary lists which detail resources that are contained in the requested consultations or have been linked to the problems that are returned. All the information needed to process the data from these clinical areas will be contained in these primary and secondary lists. The secondary lists related to each area are contained in the table below.
 
-The list containing resolved allergies is a special case as it is a list that is contained within the allergies list. This is a safety precaution intended to reduce the risk of resolved allergies being confused with active allergies. Further details about how the allergies lists work can be found on the [allergies guidance page](accessrecord_structured_development_allergies_guidance.html#resolved-allergies-and-intolerances). 
+The list containing resolved allergies is a special case as it is a list that is contained within the allergies list. This is a safety precaution intended to reduce the risk of resolved allergies being confused with active allergies. Further details about how the allergies lists work can be found on the [allergies guidance page](accessrecord_structured_development_allergies_guidance.html#resolved-allergies-and-intolerances).
 
 In GP Connect we also use lists to represent the structure of consultations. This is a separate topic that is documented in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
 
-In this version of the GP Connect specification there are 10 types of primary lists that contain the data returned in response to a query that are listed in the table below. 
+In this version of the GP Connect specification there are 10 types of primary lists that contain the data returned in response to a query that are listed in the table below.
 
 ### Primary lists in the query response
 
@@ -34,7 +34,7 @@ In this version of the GP Connect specification there are 10 types of primary li
 |Consultations | 1149501000000101 | List of consultations |List of consultations |
 |Diary Entries | 714311000000108 | Patient recall administration | Patient recall administration |
 |Immunisations | 1102181000000102| Immunisations | Immunisations |
-|Investigations | 887191000000108| Investigations and Results | Investigations and Results |
+|Investigations | 887191000000108| Investigations and results | Investigations and results |
 |Medications and medical devices | 933361000000108| Medications and medical devices | Medications and medical devices |
 |Outbound Referrals | 792931000000107| Outbound referral | Outbound referral |
 |Problems | 717711000000103| Problems | Problems |
@@ -44,7 +44,7 @@ In this version of the GP Connect specification there are 10 types of primary li
 
 There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are defined in this [codeSystem](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1) and are detailed in the table below.
 
-| List.title | Code | Display | 
+| List.title | Code | Display |
 | ------ | ------ |
 | Consultations - allergies contained in consultations  | Consultations - allergies contained in consultations  | Consultations - allergies contained in consultations  |
 | Consultations - allergies that have been ended contained in consultations  | Consultations - allergies that have been ended contained in consultations  | Consultations - allergies that have been ended contained in consultations  |
@@ -72,9 +72,9 @@ There are also 21 secondary lists that will contain data that is linked to probl
 
 Representing data that is returned in relation to both consultations and problems requires a response that is able to return multiple types of data. A response to a query about consultations or problems may contain any type of clinical data that can be entered into a GP system.
 
-In GP Connect we use secondary lists to organise these contained or linked items. When either of these clinical areas is queried then up to 11 secondary lists may be returned. Each list is detailed in the above table. 
+In GP Connect we use secondary lists to organise these contained or linked items. When either of these clinical areas is queried then up to 11 secondary lists may be returned. Each list is detailed in the above table.
 
-These lists will only be returned where data exists in the clinical system that is returned as part of the query. If no data suitable to populate a list is present in the record that is being sent then the list will not be included in the response. 
+These lists will only be returned where data exists in the clinical system that is returned as part of the query. If no data suitable to populate a list is present in the record that is being sent then the list will not be included in the response.
 
 For example if a query was made to GP Connect for all problems in a record but none of these problems related to an outbound referral, then there would be no list for 'Outbound referrals related to problems' contained in the response.
 
@@ -86,10 +86,10 @@ The following rules apply to how secondary lists are populated
  - If data has been excluded from a secondary list for one of the reasons defined in the warning code section, then the relevant warning code(s) **SHALL** be included
  - For consultation secondary lists where data is excluded a warning code **SHALL** be present even if no other data is contained in the list
  - Secondary lists will never return an empty list with no warning codes
- 
+
 ## The secondary list for related problems
 
-The secondary list for problems is an exception to the rules above. 
+The secondary list for problems is an exception to the rules above.
 
 This list **MAY** be returned as part of any query and **MUST** contain problems that have been linked to any item in the primary list that is returned.
 
