@@ -114,9 +114,7 @@ Where an item from a different clinical area that is not in an observation resou
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year.
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible.
-In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure:
-
-<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a>
+In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. 
 
 ### The FHIR vital sign blood pressure profile
 This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification as there is currently no consensus in the UK as to what is/isn't a vital sign. 
@@ -128,28 +126,43 @@ Where possible blood pressures exported via GP Connect though will be exported u
 
 GP Connect has improved the consistency of the data that will be exported, it is however the responsibility of the consuming system to interpret the blood pressure codes they recieve regardless of whether they are in a triple structure or as individual observations.
 
-### Simple blood pressure representation
+### Standard blood pressure representation
 
-The way simple blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different patterns,
+The way standard blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different patterns,
 
- - Recorded as the following triple, 
+ - Recorded as the following triple
+ 
+<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Triple.png"></a>   
+ 
+   Using the following codes, 
       - 163020007 On examination - blood pressure reading (finding)
       - 1091811000000102 Diastolic arterial pressure (observable entity) 
       - 72313002 Systolic arterial pressure (observable entity)
  - Recorded as 2 individual readings that are grouped together with no panel code using the same systolic and diastolic codes as above,
+ 
+ <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_ComponentCodes.png"></a>   
+ 
+   Using the following codes, 
       - 1091811000000102 Diastolic arterial pressure (observable entity)
       - 72313002 Systolic arterial pressure (observable entity)
  - Recorded using a panel code with two readings but no systolic and diastolic codes. This is under 2 separate panel codes 
+ 
+ <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponents.png"></a>   
+ 
+   Using the following codes, 
       - 163020007 On examination - blood pressure reading (finding) and 386534000 Arterial blood pressure (observable entity)
  
 In GP Connect we have decided that all of these variations will be represented using the triple structure in order to make the representation more uniform.
+ 
+<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a> 
  
 The triple will contain the following SNOMED codes for the panel, systolic and diastolic components,
  
 | Panel code | Systolic blood pressure code | Diastolic blood pressure code |
 |---|---|---|
 |163020007 On examination - blood pressure reading (finding) or 386534000 Arterial blood pressure (observable entity)| 1091811000000102 Diastolic arterial pressure (observable entity) |72313002 Systolic arterial pressure (observable entity) |
- 
+| 75367002 Blood pressure (observable entity) | 271649006 Systolic blood pressure |271650006  Diastolic blood pressure |
+
 Where there is only a single component value recorded then the triple **MUST** still be represented using the relevant 3 codes with the component representing the missing reading containing the relevant dataAbsentReason code.
 
 ### Blood pressures that will be in the same structure
@@ -158,7 +171,6 @@ The table contains other blood pressure readings that **MUST** always be represe
 
 | Panel code | Systolic blood pressure code | Diastolic blood pressure code |
 |---|---|---|
-| 75367002 Blood pressure (observable entity) | 271649006 Systolic blood pressure |271650006  Diastolic blood pressure |
 | 163034007 Standing blood pressure (observable entity) | 400974009 Standing systolic blood pressure | 400975005 Standing diastolic blood pressure |
 | 163035008 Sitting blood pressure (observable entity) | 407554009 Sitting systolic blood pressure | 407555005 Sitting diastolic blood pressure |
 | 163033001 Lying blood pressure (observable entity) | 407556006 Lying systolic blood pressure | 407557002 Lying diastolic blood pressure |
