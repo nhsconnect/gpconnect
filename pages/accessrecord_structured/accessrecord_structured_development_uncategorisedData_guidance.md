@@ -140,7 +140,7 @@ The way standard blood pressures are recorded in different clinical systems vari
  
    Where there is no panel code then '163020007 On examination - blood pressure reading (finding)' **MUST** be used in the GP Connect triple.
    
- - Recorded using a panel code with two readings but no systolic and diastolic codes. This is under 2 separate panel codes from the table below,
+ - Recorded using a panel code with two readings but no systolic and diastolic codes. This may be recorded as either of the 2 panel codes from the table below,
  
  <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponent.png"></a>   
  
