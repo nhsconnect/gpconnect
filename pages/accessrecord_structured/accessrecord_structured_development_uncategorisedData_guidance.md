@@ -130,29 +130,26 @@ GP Connect has improved the consistency of the data that will be exported, it is
 
 The way standard blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different patterns,
 
- - Recorded as the following triple
+ - Recorded as the following triple in the below structure and using any of the codes from the table below,
  
 <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Triple.png"></a>   
  
-   Using the following codes, 
-      - 163020007 On examination - blood pressure reading (finding)
-      - 1091811000000102 Diastolic arterial pressure (observable entity) 
-      - 72313002 Systolic arterial pressure (observable entity)
- - Recorded as 2 individual readings that are grouped together with no panel code using the same systolic and diastolic codes as above,
+ - Recorded as 2 individual readings that are grouped together with no panel code using any of the systolic and diastolic codes from the table below,
  
  <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_ComponentCodes.png"></a>   
  
-   Using the following codes, 
-      - 1091811000000102 Diastolic arterial pressure (observable entity)
-      - 72313002 Systolic arterial pressure (observable entity)
- - Recorded using a panel code with two readings but no systolic and diastolic codes. This is under 2 separate panel codes 
+   Where there is no panel code then '163020007 On examination - blood pressure reading (finding)' **MUST** be used in the GP Connect triple.
+   
+ - Recorded using a panel code with two readings but no systolic and diastolic codes. This is under 2 separate panel codes from the table below,
  
  <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponent.png"></a>   
  
-   Using the following codes, 
+   Where there is only a panel code the following codes **MUST** be used to complete the triple for export in GP Connect, 
       - 163020007 On examination - blood pressure reading (finding) and 386534000 Arterial blood pressure (observable entity)
  
 In GP Connect we have decided that all of these variations will be represented using the triple structure in order to make the representation more uniform.
+
+Following the guidance above to determine the appropriate codes for the triple will result in the following structure which may contain any of the codes from the table below, 
  
 <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a> 
  
@@ -160,8 +157,9 @@ The triple may contain any combination of the following SNOMED codes for the pan
  
 | Panel code | Systolic blood pressure code | Diastolic blood pressure code |
 |---|---|---|
-|163020007 On examination - blood pressure reading (finding) or 386534000 Arterial blood pressure (observable entity) or 75367002 Blood pressure (observable entity)| 72313002 Systolic arterial pressure (observable entity) or 271649006 Systolic blood pressure | 1091811000000102 Diastolic arterial pressure (observable entity) or 271650006  Diastolic blood pressure |
-
+|163020007 On examination - blood pressure reading (finding)  | 72313002 Systolic arterial pressure (observable entity)  | 1091811000000102 Diastolic arterial pressure (observable entity) |
+| 386534000 Arterial blood pressure (observable entity) | 271649006 Systolic blood pressure | 271650006  Diastolic blood pressure |
+| 75367002 Blood pressure (observable entity) | | |
 
 Where there is only a single component value recorded then the triple **MUST** still be represented using the relevant 3 codes with the component representing the missing reading containing the relevant dataAbsentReason code.
 
