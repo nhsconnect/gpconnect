@@ -29,7 +29,7 @@ The following is a set of request/response examples for Access Document:
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 ```http
-GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Patient/04603d77-1a4e-4d63-b246-d7504f8bd833/DocumentReference?created=ge2019-06-24&_include=DocumentReference:subject:Patient&_include=DocumentReference:custodian:Organization&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner&facility=1060971000000108&author=https://fhir.nhs.uk/Id/sds-user-id|G13579135&type=824331000000106
+GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Patient/04603d77-1a4e-4d63-b246-d7504f8bd833/DocumentReference?created=ge2019-06-24&_include=DocumentReference:subject:Patient&_include=DocumentReference:custodian:Organization&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner&author=https://fhir.nhs.uk/Id/sds-user-id|G13579135
 ```
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
