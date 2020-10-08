@@ -23,7 +23,7 @@ Provider systems **SHALL** support the following search parameters:
 | Name | Type | Description | Paths |
 |---|---|---|---|
 | `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
-| `author` | `Organization` | Who and/or what authored the document. | `DocumentReference.author` |
+| `author` | `token` | Who and/or what authored the document. | `DocumentReference.author` |
 | `description` | `string` | Keyword based search | `DocumentReference.description` + `DocumentReference.type` |
 
 {% include note.html content="The supported search parameters **MUST** be included in the Access Document [FHIR capability statement](access_documents_use_case_get_the_fhir_capability_statement.html)." %}
