@@ -29,18 +29,15 @@ Consumer systems **MUST** be able to handle the unavailability of clinical areas
 In the above scenarios, providers **MUST** respond in the following way:
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
 - Include FHIR&reg; resources for supported parameters
-- as part of the returned bundle, include a single [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) with an `issue` for each unsupported parameter or part parameter where:
+- as part of the returned bundle, include a single [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) with an `issue` for each clinical area that has been disabled where:
   - `issue.code` = `not-supported`
   - `issue.severity` = `warning`
   - `issue.details.coding.system` = `https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1`
   - `issue.details.coding.code` = `NOT_IMPLEMENTED`
   - `issue.details.coding.display` = `Not implemented`
-- Where it's an unsupported parameter the following **MUST** be supplied:
-  - `issue.details.text` = `<parameter-name>` is an unrecognised parameter`
+- For each disabled clinical area the following **MUST** be supplied:
+  - `issue.details.text` = `<parameter-name>` has been disabled`
   - `issue.diagnostics` = `<parameter-name>`
-- Where it's an unsupported part parameter the following **MUST** be supplied:
-  - `issue.details.text` = `<parameter-name>.<part-parameter-name> is an unrecognised parameter`
-  - `issue.diagnostics` = `<parameter-name>.<part-parameter-name>`
 
   The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) for a request where the `includeProblems` clinical area has been turned off:
 
