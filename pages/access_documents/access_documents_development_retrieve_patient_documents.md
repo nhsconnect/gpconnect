@@ -31,6 +31,10 @@ The consumer system:
 
 <img style="height: 400px;" alt="Retrieve a document interaction diagram" src="images/access_documents/documents-get-patient-document-interaction-diagram.png"/>
 
+<div class="screen-reader-text">
+A consuming system attempts to retrieve a document by sending a GET binary ID request to the GP Connect API. If successful, the API returns a binary resource. If unsuccessful, it returns an error response.
+</div>
+
 ### Request ###
 
 #### FHIR&reg; relative request ####
