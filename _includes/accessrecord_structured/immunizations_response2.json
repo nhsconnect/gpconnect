@@ -452,8 +452,8 @@
               "coding": [
                 {
                   "system": "http://snomed.info/sct",
-                  "code": "170378007",
-                  "display": "First hepatitis A vaccination"
+                  "code": "6041000175108",
+                  "display": "Hepatitis A vaccination not done"
                 }
               ]
             }
