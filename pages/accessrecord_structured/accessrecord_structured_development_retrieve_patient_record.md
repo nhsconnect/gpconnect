@@ -29,7 +29,11 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Get structured record interaction diagram" src="images/access_structured/get-structured-record-interaction-diagram.png"/>
+<p><img style="height: 400px;" alt="Get structured record interaction diagram" src="images/access_structured/get-structured-record-interaction-diagram.png"/></p>
+
+<div class="screen-reader-text">
+A consuming system attempts to retrieve a patient’s structured record by sending a POST patient identifier request to the GP Connect API. If successful, the API returns a structured record bundle resource. If unsuccessful, it returns an error response.
+</div>
 
 ### Request operation ###
 
