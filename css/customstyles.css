@@ -403,33 +403,33 @@ ul#mysidebar, #mysidebar ul{
 }
 
 #mysidebar ul li a {
-	padding: 4px 10px 4px 15px;
-	font-size: 12px;
-}
-
-#mysidebar ul li ul li a {
 	padding: 4px 10px 4px 25px;
 	font-size: 12px;
 }
 
-#mysidebar ul li ul li ul li a {
-	padding: 4px 10px 4px 35px;
-}
-
-#mysidebar ul li ul li ul li ul li a {
+#mysidebar ul li ul li a {
 	padding: 4px 10px 4px 45px;
+	font-size: 12px;
 }
 
-#mysidebar ul li ul li ul li ul li ul li a {
+#mysidebar ul li ul li ul li a {
 	padding: 4px 10px 4px 55px;
 }
 
-#mysidebar ul li ul li ul li ul li ul li ul li a {
+#mysidebar ul li ul li ul li ul li a {
 	padding: 4px 10px 4px 65px;
 }
 
-#mysidebar ul li ul li ul li ul li ul li ul li ul li a {
+#mysidebar ul li ul li ul li ul li ul li a {
 	padding: 4px 10px 4px 75px;
+}
+
+#mysidebar ul li ul li ul li ul li ul li ul li a {
+	padding: 4px 10px 4px 85px;
+}
+
+#mysidebar ul li ul li ul li ul li ul li ul li ul li a {
+	padding: 4px 10px 4px 95px;
 }
 
 #mysidebar .page-link{
@@ -455,6 +455,10 @@ ul#mysidebar, #mysidebar ul{
 }
 
 .tree-parent.expanded .nav-list{
+  display:block;
+}
+
+.tree-arrow.expanded .nav-list{
   display:block;
 }
 
@@ -488,21 +492,26 @@ ul#mysidebar, #mysidebar ul{
     font-weight: bolder;
 }
 
+
+/* \25b4 up arrow, \25be down arrow, \25b8 right arrow */
+
+
+
 .nav li > a > span:after {
-    content: '\25be';
+    content: '\25b8';
 }
 
 .nav li.active > a > span:after {
-    content: '\25b4';
+    content: '\25be';
 }
 
 .nav a:hover, .nav li.active > a {
-    background-color: #8D8D8D;
-    color: #f5f5f5;
+    background-color: #ffffff;
+    color: #ffffff;
 }
 
 .nav > li.active > a  {
-    background-color: #347DBE;
+    background-color: #ffffff;
 }
 
 .nav li a {
@@ -538,11 +547,11 @@ ul#mysidebar {
     color: #0010fc;
     font-weight:bold;
     padding-left:20px;
-    background-color: #dfefff !important;
+    background-color: #f1f1f1 !important;
 }
 
 .nav ul li a {
-    background-color: #f3f9ff;
+    background-color: #f1f1f1;
 }
 
 .nav li a {
@@ -554,13 +563,12 @@ ul#mysidebar {
 }
 
 .nav ul li a {
-    border-top:1px solid #dfefff;
     padding-left: 15px;
 }
 
 .nav #gpcnavlink > a:before {
-    content: '\25c0';
-    font-size: 10px;
+    content: '\25c2';
+	vertical-align: center;
 }
 
 #gpcnavlink {
@@ -1564,3 +1572,45 @@ a.no_icon:after
   width: 1px;
   word-wrap: normal !important;
 }
+
+.blue-diagram {
+    margin: auto;
+	width: 40%;
+	border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;
+	border-color: #4672C4;
+	background-color: #4672C4;
+	padding: 4px 10px;
+	color: #ffffff;
+    text-align: center;
+	font-size: 12px;
+}
+
+.blue-diagram-full {
+    margin: auto;
+	width: 100%;
+	border-style: solid;
+    border-width: 1px;
+    border-left-width: 5px;
+    border-right-width: 1px;
+	border-color: #4672C4;
+	background-color: #4672C4;
+	padding: 4px 10px;
+	color: #ffffff;
+    text-align: center;
+	font-size: 12px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
