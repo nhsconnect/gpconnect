@@ -120,26 +120,197 @@ There are two primary ways that consultation notes are recorded on native GP sys
 
 -   Consultation notes for a heading are recorded as a single piece of free text. Any clinical coded information under the same heading is associated to that text as a whole.
 
-<a href="images/access_structured/Consultation_text_1a.png"><IMG src="images/access_structured/Consultation_text_1a.png" alt="Free text with multiple clinical codes"  style="max-width:100%;max-height:100%;"></a>
+<p style="text-align:center; font-size:22px; color:#005eb8">
+	Model One
+</p>
+<div class="blue-diagram">
+	The patient has Temperature 36.7 C Patient looks flushed. <br/>
+	Arterial oxygen saturation room air at rest 96%. Respiratory rate <br/>
+	16 / min Taken over 30 seconds. Pule irregularly irregular 70 / min <br/>
+	Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
+	clear. Heart sounds normal. No distress. Abdomen normal. <br/>
+	No cervical lymphadenopathy. Throat normal. Ears normal.
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 703421000 - Temperature <br/>
+	36.7 C <br/>
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 1097811000000100 - Arterial oxygen <br/>
+	saturation breathing room air at rest <br/>
+	96%
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 86290005 - Respiratory rate <br/>
+	16 / min <br/>
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 271637005 - Pulse irregularly irregular <br/>
+	70 /min <br/>
+</div>
+<br/>
+
 
 -   Consultation notes for a heading are recorded as a collection of observations, each with a clinical code and or text. When read together in order they produce the consultation notes.
     Note – this may be entering free text format dynamically identifying codes or through forms where there are specific fields for codes and free text.
 
-<center>
-<a href="images/access_structured/Consultation_text_1b.png"><IMG src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text"  style="max-width:40%;max-height:40%;"></a>
-</center>
-&nbsp;
 
+<br/>
+<p style="text-align:center; font-size:22px; color:#005eb8">
+	Model Two
+</p>
+<div class="blue-diagram">
+	Uncategorised - 703421000 - Temperature <br/>
+	36.7 C <br/>
+	Patient looks flushed
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 1097811000000100 - Arterial oxygen <br/>
+	saturation breathing room air at rest <br/>
+	96%
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 86290005 - Respiratory rate <br/>
+	16 / min <br/>
+	Taken over 30 seconds
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 271637005 - Pulse irregularly irregular <br/>
+	70 /min <br/>
+</div>
+<p></p>
+<div class="blue-diagram">
+	Uncategorised - 37331000000100 - Comment Note <br/>
+	Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
+	clear. Heart sounds normal. No distress. Abdomen normal. <br/>
+	No cervical lymphadenopathy. Throat normal. Ears normal.
+</div>
 
+<br/>
 When reflecting these in FHIR it is important they these two methods are represented in a way that retains the structural information they contain, does not create any unintended clinical meaning and can be viewed / imported. This is done by taking any free text in model one and representing it as uncategorised data and positioning it as the first clinical item under the heading.
+<br/>
+<br/>
+<div class="flex-container">
+  <div class="flex-child">
+	<p style="text-align:center; font-size:22px; color:#005eb8">
+		From Model One
+	</p>
+	<div class="blue-diagram-full">
+		The patient has Temperature 36.7 C Patient looks flushed. <br/>
+		Arterial oxygen saturation room air at rest 96%. Respiratory rate <br/>
+		16 / min Taken over 30 seconds. Pule irregularly irregular 70 / min <br/>
+		Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
+		clear. Heart sounds normal. No distress. Abdomen normal. <br/>
+		No cervical lymphadenopathy. Throat normal. Ears normal.
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 703421000 - Temperature <br/>
+		36.7 C <br/>
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 1097811000000100 - Arterial oxygen <br/>
+		saturation breathing room air at rest <br/>
+		96%
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 86290005 - Respiratory rate <br/>
+		16 / min <br/>
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 271637005 - Pulse irregularly irregular <br/>
+		70 /min <br/>
+	</div>
+  </div>
+  
+  <div class="flex-child">
+	<p style="text-align:center; font-size:22px; color:#005eb8">
+		From Model Two
+	</p>
+	<div class="blue-diagram-full">
+		Uncategorised - 703421000 - Temperature <br/>
+		36.7 C <br/>
+		Patient looks flushed
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 1097811000000100 - Arterial oxygen <br/>
+		saturation breathing room air at rest <br/>
+		96%
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 86290005 - Respiratory rate <br/>
+		16 / min <br/>
+		Taken over 30 seconds
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 271637005 - Pulse irregularly irregular <br/>
+		70 /min <br/>
+	</div>
+	<p></p>
+	<div class="blue-diagram-full">
+		Uncategorised - 37331000000100 - Comment Note <br/>
+		Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
+		clear. Heart sounds normal. No distress. Abdomen normal. <br/>
+		No cervical lymphadenopathy. Throat normal. Ears normal.
+	</div>
+  </div>
+</div>
 
-<a href="images/access_structured/Consultation_text_2.png"><IMG src="images/access_structured/Consultation_text_2.png" alt="Consultation text in FHIR"  style="max-width:100%;max-height:100%;"></a>
-
-
+<br/>
 
 While there are differences between the two outputs, the consultation notes can be derived from both by reading through each clinical item in order and merging the Term Text, Clinical Code, Values and Comment into a single narrative.
 
-<a href="images/access_structured/Consultation_text_3.png"><IMG src="images/access_structured/Consultation_text_3.png" alt="Reconstituted Consultation Text"  style="max-width:100%;max-height:100%;"></a>
+<br/>
+
+<div class="flex-container">
+  <div class="flex-child">
+	<p style="text-align:center; font-size:22px; color:#005eb8">
+		From Model One
+	</p>
+	<div class="blue-diagram-full">
+		The patient has Temperature 36.7 C Patient looks flushed. <br/>
+		Arterial oxygen saturation room air at rest 96%. Respiratory rate <br/>
+		16 / min Taken over 30 seconds. Pule irregularly irregular 70 / min <br/>
+		Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
+		clear. Heart sounds normal. No distress. Abdomen normal. <br/>
+		No cervical lymphadenopathy. Throat normal. Ears normal. <br/>
+		Temperature (703421000) 36.7 C <br/>
+		Arterial oxygen saturation breathing room air at rest <br/>
+		(1097811000000100) 96% <br/>
+		Respiratory rate (86290005) 16 / min <br/>
+		Pulse irregularly irregular (271637005) 70 / min
+	</div>
+  </div>
+  <div class="flex-child">
+	<p style="text-align:center; font-size:22px; color:#005eb8">
+		From Model Two
+	</p>
+	<div class="blue-diagram-full">
+		Temperature (703421000) 36.7 C Patient looks flushed <br/>
+		Arterial oxygen saturation breathing room air at rest <br/>
+		(1097811000000100) 96% <br/>
+		Respiratory rate (86290005) 16 / min Taken over 30 seconds <br/>
+		Pulse irregularly irregular (271637005) 70 / min <br/>
+		Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
+		clear. Heart sounds normal. No distress. Abdomen normal. <br/>
+		No cervical lymphadenopathy. Throat normal. Ears normal.
+	</div>
+  </div>
+</div>
+<br/>
 
 ## Example
 
