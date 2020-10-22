@@ -30,7 +30,11 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Get the FHIR&reg; capability statement interaction diagram" src="images/access_documents/documents-get-capability-statement-interaction-diagram.png"/>
+<p><img style="height: 400px;" alt="Get the FHIR&reg; capability statement interaction diagram" src="images/access_documents/documents-get-capability-statement-interaction-diagram.png"/></p>
+
+<div class="screen-reader-text">
+A consuming system attempts to get the Access Document FHIR capability statement by sending a GET metadata request to the GP Connect API. If successful, the API returns a capability statement resource. If unsuccessful, it returns an error response.
+</div>
 
 ### Request operation ###
 
