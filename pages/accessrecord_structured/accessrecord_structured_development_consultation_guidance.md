@@ -126,7 +126,7 @@ There are two primary ways that consultation notes are recorded on native GP sys
 <div class="blue-diagram">
 	The patient has Temperature 36.7 C Patient looks flushed. <br/>
 	Arterial oxygen saturation room air at rest 96%. Respiratory rate <br/>
-	16 / min Taken over 30 seconds. Pule irregularly irregular 70 / min <br/>
+	16 / min Taken over 30 seconds. Pulse irregularly irregular 70 / min <br/>
 	Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
 	clear. Heart sounds normal. No distress. Abdomen normal. <br/>
 	No cervical lymphadenopathy. Throat normal. Ears normal.
@@ -150,7 +150,7 @@ There are two primary ways that consultation notes are recorded on native GP sys
 <p></p>
 <div class="blue-diagram">
 	Uncategorised - 271637005 - Pulse irregularly irregular <br/>
-	70 /min <br/>
+	70 / min <br/>
 </div>
 <br/>
 
@@ -183,7 +183,7 @@ There are two primary ways that consultation notes are recorded on native GP sys
 <p></p>
 <div class="blue-diagram">
 	Uncategorised - 271637005 - Pulse irregularly irregular <br/>
-	70 /min <br/>
+	70 / min <br/>
 </div>
 <p></p>
 <div class="blue-diagram">
@@ -205,7 +205,7 @@ When reflecting these in FHIR it is important they these two methods are represe
 	<div class="blue-diagram-full">
 		The patient has Temperature 36.7 C Patient looks flushed. <br/>
 		Arterial oxygen saturation room air at rest 96%. Respiratory rate <br/>
-		16 / min Taken over 30 seconds. Pule irregularly irregular 70 / min <br/>
+		16 / min Taken over 30 seconds. Pulse irregularly irregular 70 / min <br/>
 		Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
 		clear. Heart sounds normal. No distress. Abdomen normal. <br/>
 		No cervical lymphadenopathy. Throat normal. Ears normal.
@@ -229,7 +229,7 @@ When reflecting these in FHIR it is important they these two methods are represe
 	<p></p>
 	<div class="blue-diagram-full">
 		Uncategorised - 271637005 - Pulse irregularly irregular <br/>
-		70 /min <br/>
+		70 / min <br/>
 	</div>
   </div>
   
@@ -257,7 +257,7 @@ When reflecting these in FHIR it is important they these two methods are represe
 	<p></p>
 	<div class="blue-diagram-full">
 		Uncategorised - 271637005 - Pulse irregularly irregular <br/>
-		70 /min <br/>
+		70 / min <br/>
 	</div>
 	<p></p>
 	<div class="blue-diagram-full">
@@ -283,7 +283,7 @@ While there are differences between the two outputs, the consultation notes can 
 	<div class="blue-diagram-full">
 		The patient has Temperature 36.7 C Patient looks flushed. <br/>
 		Arterial oxygen saturation room air at rest 96%. Respiratory rate <br/>
-		16 / min Taken over 30 seconds. Pule irregularly irregular 70 / min <br/>
+		16 / min Taken over 30 seconds. Pulse irregularly irregular 70 / min <br/>
 		Swelling lower legs bilaterally. Mild pitting oedema. Chest <br/>
 		clear. Heart sounds normal. No distress. Abdomen normal. <br/>
 		No cervical lymphadenopathy. Throat normal. Ears normal. <br/>
