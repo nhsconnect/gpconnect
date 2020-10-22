@@ -33,7 +33,11 @@ Resolve (zero or more) `Patient` resources using a business identifier (that is,
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Find patient interaction diagram" src="images/access_documents/documents-find-patient-interaction-diagram.png"/>
+<p><img style="height: 400px;" alt="Find patient interaction diagram" src="images/access_documents/documents-find-patient-interaction-diagram.png"/></p>
+
+<div class="screen-reader-text">
+A consuming system attempts to find a patient’s document by sending a GET patient identifier request to the GP Connect API. If successful, the API returns a searchset bundle resource. If unsuccessful, it returns an error response.
+</div>
 
 ### Request operation ###
 
