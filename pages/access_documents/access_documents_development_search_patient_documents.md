@@ -81,7 +81,11 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/documents-search-patient-document-interaction-diagram.png"/>
+<p><img style="height: 400px;" alt="Search for patient's documents interaction diagram" src="images/access_documents/documents-search-patient-document-interaction-diagram.png"/></p>
+
+<div class="screen-reader-text">
+A consuming system attempts to search for a patient’s document by sending a GET patient ID document reference request to the GP Connect API. If successful, the API returns a searchset bundle resource. If unsuccessful, it returns an error response.
+</div>
 
 ### Request ###
 
