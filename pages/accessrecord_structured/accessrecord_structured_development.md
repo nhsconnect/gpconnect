@@ -25,6 +25,10 @@ We have defined a data model for the whole GP record that we are working through
 
 <a href="images/access_structured/GP_Record_Clinical_Areas_Overview_v2.png"><img src="images/access_structured/GP_Record_Clinical_Areas_Overview_v2.png" alt="Logical Model" style="max-width:100%;max-height:100%;"></a>
 
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
+
 In the diagram each of the boxes with a blue outline represents a clinical area. These each contain 1 or more boxes representing FHIR&reg; resources. The FHIR resource boxes are colour coded:
 
 * Green - are resources that were defined for use in GP Connect in a previous version of the specification
