@@ -109,8 +109,15 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
 
 <a href="images/access_structured/Consultation_FHIR_Resource_Model.png"><IMG src="images/access_structured/Consultation_FHIR_Resource_Model.png" alt="Consultation FHIR Resource Model" style="max-width:100%;max-height:100%;"></a>
 
+<div class="screen-reader-text">
+A consultation FHIR resource model diagram summarises the previous description of consultation structure. In addition, it shows that a consultation or record entry may be attributed to more than one actor acting in a different role. It states that record entries may appear directly within a consultation without being embedded in the topic/heading structure. By convention, an artificial topic level will be generated to accommodate record entries recorded within this flat structure. A consultation may exhibit both styles but be represented within different topics. The diagram also says that each heading may contain multiple record entries of different types represented by an appropriate FHIR resource.
+</div>
 
 <a href="images/access_structured/Consultation_Stucture.png"><IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
+	
+<div class="screen-reader-text">
+The diagram shows a consultation split into topics with headings and entries. Record entries may also appear directly within a consultation outside the topic/section level. Entries are handled directly within a generated topic level. The logical structure of a Consultation is reflected in FHIR using the Encounter and List profiles. Consultations may incorporate a range of different record entries, such as observations.
+</div>
 
 ## Consultation notes
 
