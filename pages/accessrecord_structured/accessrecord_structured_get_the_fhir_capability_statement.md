@@ -97,7 +97,7 @@ An example Access Record Structured capability statement is shown below ready fo
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.3.2",
+  "version": "1.5.0",
   "name": "GP Connect API - Access Record Structured",
   "status": "active",
   "date": "2020-02-10",
@@ -134,9 +134,9 @@ An example Access Record Structured capability statement is shown below ready fo
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2" }
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1/_history/1.5" },
-      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1/_history/1.4" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Condition-ProblemHeader-1/_history/1.5" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1/_history/1.5" },
-      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.4" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.4.2" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3" },
@@ -153,7 +153,7 @@ An example Access Record Structured capability statement is shown below ready fo
         {
           "name": "gpc.getstructuredrecord",
           "definition": {
-            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.15"
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.16"
           }
         }
       ]

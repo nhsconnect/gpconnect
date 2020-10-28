@@ -14,7 +14,7 @@ The headings below list the elements of the DocumentReference resource and descr
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the [DocumentReference profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.2)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the [DocumentReference profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3)." %}
 
 ## DocumentReference elements ##
 
@@ -192,7 +192,7 @@ URL to retrieve the document, this **MUST** be populated when the document is av
   </tr>
 </table>
 
-Size of the file.
+Size of the file. Where the document is unavailable this **MUST** be set to `0`.
 
 ### content.attachment.title ###
 
