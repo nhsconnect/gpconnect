@@ -19,6 +19,10 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 
 <img src="images/integration/gpconnect-flow.png" alt="Diagram showing the high level three step flow for making GP Connect calls" style="width: 60%;">
 
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
+
 **Step 1. Personal Demographics Service**
 
 A GP Connect consumer queries PDS for the patient in order to:
