@@ -19,11 +19,15 @@ For a consuming system to be able to interpret this linkage information correctl
 ### GP Connect FHIR&reg; model ###
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries. Other clinical areas will be added as they are developed.
-
 <a href="images/access_structured/GP_Connect_FHIR_Model.png"><img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
 
 <img src="images/access_structured/FHIR_model_key.png" alt="Key for GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
+
+The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries. Other clinical areas will be added as they are developed.
 
 The relationships between two FHIR profiles are recorded in only one of the linked FHIR profiles (similar to in a relational database management system). This is shown by the direction of the arrow in the FHIR model.
 
@@ -48,6 +52,12 @@ The reason for the exception in the case of problems is due to the fact that pro
 
 ### Consultations ###
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
+
+<a href="images/access_structured/Consultation_Return.png"><img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `Encounter` for every Consultation that met the search criteria
@@ -83,14 +93,17 @@ For each `Encounter` referenced in the `List` profile:
 
 Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response. Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
 
-
 Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query.
 So, for example, if a consumer requests a Consultation that contains a Medication but does not explicitly request Medications in the query, the provider will still include the Medication contained in the Consultation as part of its response.
 
-<a href="images/access_structured/Consultation_Return.png"><img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
-
 ### Problems ###
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
+
+<a href="images/access_structured/Problem_Return.png"><img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `ProblemHeader (Condition)` for every Problem that met the search criteria
@@ -126,10 +139,14 @@ Where a Problem links to a profile that is not yet supported by the provider sys
 Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query.
 So, for example, if a consumer requests a Problem that links to a Medication but does not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
 
-<a href="images/access_structured/Problem_Return.png"><img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
-
 ### Medications and medical devices ###
 When GP Connect returns a medication or medical device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
+
+<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Medication_Return.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `MedicationStatement` for every Medication and Medical Device that met the search criteria
@@ -144,10 +161,16 @@ For each `MedicationStatement` referenced in the `List` profile:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Medication_Return.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
-
 ### Allergies ###
 When GP Connect returns an allergy it will supply all the allergy data.
+
+<center>
+<a href="images/access_structured/Allergy_Return.png"><img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+</center>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `AllergyIntolerance` for every active Allergy
@@ -160,12 +183,17 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<center>
-<a href="images/access_structured/Allergy_Return.png"><img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
 
 ### Immunisations ###
 When GP Connect returns an immunisation it will supply all the immunisation data.
+
+<center>
+<a href="images/access_structured/Immunisation_Return_2.png"><img src="images/access_structured/Immunisation_Return_2.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+</center>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `Immunization` for every Immunisation and `Observation` for every consent / dissent to immunisation (referred to below as query response `List` profile)
@@ -183,12 +211,16 @@ For each `Immunization` and `Observation` referenced in the query response `List
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<center>
-<a href="images/access_structured/Immunisation_Return_2.png"><img src="images/access_structured/Immunisation_Return_2.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
-
 ### Uncategorised data ###
 When GP Connect returns uncategorised data it will supply all the data about the uncategorised data.
+
+<center>
+<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+</center>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `Observation` for every Uncategorised Data that met the search criteria
@@ -200,12 +232,16 @@ For each `Observation` referenced in the `List` profile:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<center>
-<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
-
 ### Referrals ###
 When GP Connect returns a referral it will supply all the referral data.
+
+<center>
+<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Referral_Return.png" alt="Referral Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+</center>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `ReferralRequest` for every Referral that met the search criteria
@@ -216,12 +252,14 @@ For each `ReferralRequest` referenced in the `List` profile:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<center>
-<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Referral_Return.png" alt="Referral Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
-
 ### Investigations ###
 When GP Connect returns an investigation it will supply all the investigation information.
+
+<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Investigation_Return.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `DiagnosticReport` for every Investigation that met the search criteria
@@ -237,10 +275,16 @@ For each `DiagnosticReport` referenced in the `List` profile:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Investigation_Return.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
-
 ### Diary entries ###
 When GP Connect returns a diary entry it will supply all the diary entry data.
+
+<center>
+<a href="images/access_structured/DiaryEntry_Return.png"><img src="images/access_structured/DiaryEntry_Return.png" alt="Diary Entry Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+</center>
+
+<div class="screen-reader-text">
+This diagram is explained in the following text:
+</div>
 
 The response to the query includes:
 * A `List` profile containing references to `ProcedureRequest` for every Diary Entry that met the search criteria
@@ -250,10 +294,6 @@ For each `ProcedureRequest` referenced in the `List` profile:
 *	The `ProblemHeader (Condition)` profiles of any directly linked Problems
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
-
-<center>
-<a href="images/access_structured/DiaryEntry_Return.png"><img src="images/access_structured/DiaryEntry_Return.png" alt="Diary Entry Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
 
 ### Duplicate returned profiles ###
 
