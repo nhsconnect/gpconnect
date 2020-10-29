@@ -82,6 +82,7 @@ Errors returned due to query parameter failure **MUST** include diagnostic infor
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
 | A document could not be found with the document id provided | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The document could not be retrieved due to it exceeding the file size limit | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 |-------------------------|-------------------|
