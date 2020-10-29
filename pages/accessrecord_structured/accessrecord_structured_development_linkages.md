@@ -19,7 +19,7 @@ For a consuming system to be able to interpret this linkage information correctl
 ### GP Connect FHIR&reg; model ###
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-<a href="images/access_structured/GP_Connect_FHIR_Model.png"><img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/GP_Connect_FHIR_Model.png"><img src="images/access_structured/GP_Connect_FHIR_Model.svg" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
 
 
 <div class="screen-reader-text">
