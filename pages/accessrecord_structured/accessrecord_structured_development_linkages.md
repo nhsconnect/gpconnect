@@ -21,7 +21,6 @@ To support this, GP Connect has developed a FHIR model that identifies all the G
 
 <a href="images/access_structured/GP_Connect_FHIR_Model.png"><img src="images/access_structured/GP_Connect_FHIR_Model.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
 
-<img src="images/access_structured/FHIR_model_key.png" alt="Key for GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
