@@ -391,9 +391,10 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
-| `400`     | invalid |  Target URL varies from endpoint registered in SDS |
-| `403`     | forbidden |  Sender ASID is not authorised for this interaction |
-| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID |
+| `400`     | invalid |  Target URL varies from endpoint registered in SDS | 
+| `403`     | forbidden |  Sender ASID is not authorised for this interaction | 
+| `403`     | forbidden | Receiver ASID is not authorised for this interaction |
+| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID | 
 | `405`     | not-supported | Method not allowed |
 | `415`     | not-supported | Unsupported media type |
 | `502`     | transient | Error communicating to target URL |
@@ -447,6 +448,32 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
     ]
 }
 ```
+
+#### SSP error example: Receiver ASID is not authorised for this interaction #####
+
+```json
+{
+    "resourceType": "OperationOutcome",
+    "id": "018C2550-358F-4F68-BE19-88C80A859E0A",
+    "issue": [
+        {
+            "code": "forbidden",
+            "severity": "error",
+            "details": {
+                "coding": [
+                    {
+                        "code": "403",
+                        "display": "PARTYKEY_INTERACTION_CHECK_FAILED_MESSAGERECEIVER_200000000002",
+                        "system": "http://fhir.nhs.net/ValueSet/gpconnect-schedule-response-code-1-0"
+                    }
+                ]
+            },
+            "diagnostics": "PARTYKEY_INTERACTION_CHECK_FAILED_MESSAGERECEIVER_200000000002"
+        }
+    ]
+}
+```
+
 
 #### SSP error example: Sender ASID is not authorised to send the interaction to receiver ASID #####
 
