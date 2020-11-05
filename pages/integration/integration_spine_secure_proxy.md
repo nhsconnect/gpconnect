@@ -15,7 +15,9 @@ It provides a single security point for both authentication and authorisation fo
 
 All HTTP communications are secured using TLS MA. This includes both legs of the request, from consumer system to the proxy and then from the proxy to provider system.
 
-![Spine Security Proxy](images/integration/ssp-diagram.png)
+<br/>
+<object type="image/svg+xml" data="images/integration/ssp-diagram.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Spine Security Proxy"></object>
+<br/>
 
 ## Constructing a request ##
 

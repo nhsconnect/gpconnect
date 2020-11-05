@@ -14,7 +14,9 @@ In order for the filtering solution to work each consumer/provider organisation 
 
 ## Consumer system - shared MHS ##
 
-![Consumer topology 2](images/integration/consumer-topology-2.png)<br>
+<br/>
+<object type="image/svg+xml" data="images/integration/consumer-topology-2.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Consumer topology - shared MHS"></object>
+<br/>
 
 Several consumer systems connecting to GP Connect via a shared message handling server.
 
@@ -28,7 +30,9 @@ Please note:
 
 ## Consumer system - separate MHS ##
 
-![Consumer topology 1](images/integration/consumer-topology-1.png)<br>
+<br/>
+<object type="image/svg+xml" data="images/integration/consumer-topology-1.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Consumer topology - separate MHS"></object>
+<br/>
 
 Several consumer systems connecting to GP Connect via their own message handling servers.
 
@@ -42,7 +46,9 @@ Please note:
 
 ## Provider system - shared MHS ##
 
-![Provider topology 2](images/integration/provider-topology-2.png) 
+<br/>
+<object type="image/svg+xml" data="images/integration/provider-topology-2.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Provider topology - shared MHS"></object>
+<br/>
 
 {% include important.html content="Please note in the diagram above, the shared message handling server holds three party keys, one associated with each practice. Party Key 1 is for the practice with ASID 1, Party Key 2 is for the practice with ASID 2, and so on."%}
 
@@ -57,7 +63,9 @@ Please note:
 
 ## Provider system - separate MHS ##
 
-![Provider topology 1](images/integration/provider-topology-1.png) 
+<br/>
+<object type="image/svg+xml" data="images/integration/provider-topology-1.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Provider topology - separate MHS"></object>
+<br/>
 
 Discrete instances of GP practice systems each serving a single GP practice, and each with their own message handling server.
 

@@ -13,9 +13,12 @@ A GP practice may operate from a single surgery (location) or from multiple surg
 
 In GP Connect, a GP practice is represented by an `Organization` resource, and the surgeries are represented by `Location` resources.  The surgery `Location` is linked to the GP practice `Organization` via the `Location.managingOrganisation` element.
 
-![image-title-here](images/appointments/branch-surgeries.png){:class="img-responsive"}
+<br/>
+<object type="image/svg+xml" data="images/appointments/branch-surgeries.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="GP Connect branch surgeries overview">
+</object>
+<br/>
 
-A GP practice operating multiple surgeries usually designates one of the surgeries as a *main* surgery and the rest as *branch* surgeries. The designation of surgeries as *main* and *branch* doesn't have significant impact on GP Connect other than the main surgery normally having the same name and address as the GP practice, and the branch surgeries having different names and addresses.
+A GP practice operating multiple surgeries usually designates one of the surgeries as a *main* surgery and the rest as *branch* surgeries. The designation of surgeries as *main* and *branch' doesn't have significant impact on GP Connect other than the main surgery normally having the same name and address as the GP practice, and the branch surgeries having different names and addresses.
 
 When a patient registers at a GP practice with multiple surgeries, they are assigned a 'preferred' surgery, even though the patient is formally registered to the GP practice (organisation) as a whole, and can usually attend appointments at any of the surgeries (locations).
 
