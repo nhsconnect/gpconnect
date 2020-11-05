@@ -235,7 +235,9 @@ _If the practitioner associated with a schedule is changed on the provider's sys
 
 _When the appointment is booked, the appointment resource is associated with a slot resource and references the practitioner resource associated with the schedule in which the slot resides. If the schedule is then updated within the provider system to reflect the change of practitioner from the original doctor to a locum doctor, then the practitioner reference with the schedule will be updated. If a consumer then performs a read of the appointment the returned appointment resource should reflect the updated practitioner on the schedule._
 
-![Diagram of reflection of state](images/development/Reseource Reflection of state.png)
+
+<object type="image/svg+xml" data="images/development/resource-reflection-of-state.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="GP Connect Demonstrator high level overview"></object>
+<br/>
 
 Servers SHALL default to the `return=representation` behaviour (that is, returning the entire resource) for interactions that create or update resources.
 

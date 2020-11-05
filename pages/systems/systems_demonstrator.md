@@ -19,7 +19,10 @@ The GP Connect Demonstrator is a mock GP Connect consumer system, a reference im
 
 Please view the [GP Connect Demonstrator](https://orange.testlab.nhs.uk/){:target="_blank"} website for more information.
 
-![GP Connect Demonstrator high level overview](images/systems/demonstrator-high-level-overview.png)
+<br/>
+<object type="image/svg+xml" data="images/systems/gpconnect-demonstrator-overview.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="GP Connect Demonstrator high level overview"></object>
+<br/>
+
 
 ## Example screenshots from the mock consumer system ##
 
