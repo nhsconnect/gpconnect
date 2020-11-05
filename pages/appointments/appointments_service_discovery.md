@@ -11,7 +11,9 @@ summary: "Determining which GP practices to book into"
 
 ### Patient's registered practice ###
 
-<img src="images/integration/gpconnect-appts-flow.png" alt="Diagram showing the high level three step flow for making GP Connect calls" style="width: 60%;">
+<br/>
+<object type="image/svg+xml" data="images/integration/gpconnect-appts-flow.svg" style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" alt="Diagram showing the high level three step flow for making GP Connect calls"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -35,7 +37,9 @@ For example a pre-configured pick list of organisations on the booking screen of
 
 #### Directory of Services (DOS) - currently for UEC consumers only ####
 
-<img src="images/integration/gpconnect-appts-dos-flow.png" alt="Diagram showing the high level four step flow for making GP Connect calls when using Directory of Services" style="width: 60%;">
+<br/>
+<object type="image/svg+xml" data="images/integration/gpconnect-appts-dos-flow.svg" style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" alt="Diagram showing the high level four step flow for making GP Connect calls when using Directory of Services"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
