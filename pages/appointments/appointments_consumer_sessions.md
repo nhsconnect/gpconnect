@@ -13,7 +13,9 @@ The Appointment Management consumer application makes use of individual API call
 
 The sequence diagram below illustrates which individual API calls are required by a consumer to book an appointment at a GP practice in the simplest case. It describes interactions of the consumer with the provider FHIR endpoint at the practice, and does not include details of the prerequisite interactions with Spine services. See [Spine integration illustrated](integration_illustrated.html) for details of an end-to-end appointment booking scenario with Spine service interactions included.
 
-![Sequence diagram for booking an appointment - simplest case](images/appointments/sequence_book_simple.png)
+<br/>
+<object type="image/svg+xml" data="images/appointments/sequence_book_simple.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Sequence diagram for booking an appointment - simplest case"></object>
+<br/>
 
 
 | Step | Description |
@@ -32,8 +34,9 @@ The sequence diagram below illustrates which individual API calls are required b
 
 Where a consumer user interface provides a view of available bookings across a collection of federating practices, some steps are repeated for each practice, as shown below:
 
-![Sequence diagram for booking an appointment - no patient found](images/appointments/sequence_book_simple_federated.png)
-
+<br/>
+<object type="image/svg+xml" data="images/appointments/sequence_book_simple_federated.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Sequence diagram for booking an appointment - in a federation"></object>
+<br/>
 
 | Step | Description |
 |------|-------------|
@@ -51,8 +54,9 @@ Where a consumer user interface provides a view of available bookings across a c
 
 ## Consumer session - booking an appointment - no patient record ##
 
-![Sequence diagram for booking an appointment - no patient found](images/appointments/sequence_book_no_patient.png)
-
+<br/>
+<object type="image/svg+xml" data="images/appointments/sequence_book_no_patient.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Sequence diagram for booking an appointment - no patient found"></object>
+<br/>
 
 | Step | Description |
 |------|-------------|

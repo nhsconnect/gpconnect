@@ -48,8 +48,11 @@ Consumer systems SHALL send the following parameters in the request:
 - The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
 - The `end` parameter SHALL only be included once in the request.
 - The `end` parameter SHALL be supplied with the `le` search prefix. For example, `end=le2017-09-26`, which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
- 
-  ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
+
+
+<br/>
+<object type="image/svg+xml" data="images/appointments/SearchForFreeSlots.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Date range parameters"></object>
+<br/>
 
 - The `start` and `end` parameters SHALL contain a search prefix as specified above, and:
   - either, a `date` in the format `yyyy-mm-dd`. Partial dates are not allowed.

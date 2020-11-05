@@ -13,8 +13,9 @@ The following profiled FHIR&reg; resources are used in the current version of th
 
 The FHIR resources are linked to each other by reference as highlighted in the diagram below:
 
-![Diagram - Resource relationship structure](images/appointments/ResourceRelationshipsStructure.png)
-
+<br/>
+<object type="image/svg+xml" data="images/appointments/ResourceRelationshipsStructure.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Resource relationship structure"></object>
+<br/>
 
 ---
 
