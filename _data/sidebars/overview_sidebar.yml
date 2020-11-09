@@ -167,62 +167,60 @@ children:
     - title: Specification versioning
       url: /design_product_versioning.html
       output: web
-
-- title: Implement a capability
-  output: web
-  children:
-  - title: Foundations
-    url: /foundations.html
-    output: web
-  - title: Appointment Management
-    url: /appointments.html
-    output: web
-  - title: Access Record Structured
-    url: /accessrecord_structured.html
-    output: web
-  - title: Access Document
-    url: /access_documents.html
-    output: web
-  - title: <strong class="capability-not-available">Access Record HTML</strong>
-    url: /accessrecord.html
-    output: web
-  - title: <strong class="capability-not-available">Access Document</strong>
-    url: /accessrecord_documents.html
-    output: web
-  - title: <strong class="capability-not-available">Send Document</strong>
-    url: /send_document.html
-    output: web
-
-- title: Integrate with Spine
-  output: web
-  children:
-  - title: Spine integration illustrated
-    url: /integration_illustrated.html
-    output: web
-  - title: System topologies
-    url: /integration_system_topologies.html
-    output: web
-  - title: Cross-organisation audit and provenance
-    url: /integration_cross_organisation_audit_and_provenance.html
-    output: web
-  - title: Personal Demographic Service
-    url: /integration_personal_demographic_service.html
-    output: web
-  - title: Spine Directory Services
+  - title: Implement a capability
     output: web
     children:
-    - title: Overview and querying
-      url: /integration_spine_directory_service.html
+    - title: Foundations
+      url: /foundations.html
       output: web
-    - title: Registering systems
-      url: /integration_sds_registering_endpoints.html
+    - title: Appointment Management
+      url: /appointments.html
       output: web
-  - title: Interaction IDs
-    url: /integration_interaction_ids.html
+    - title: Access Record Structured
+      url: /accessrecord_structured.html
+      output: web
+    - title: Access Document
+      url: /access_documents.html
+      output: web
+    - title: <strong class="capability-not-available">Access Record HTML</strong>
+      url: /accessrecord.html
+      output: web
+    - title: <strong class="capability-not-available">Access Document</strong>
+      url: /accessrecord_documents.html
+      output: web
+    - title: <strong class="capability-not-available">Send Document</strong>
+      url: /send_document.html
+      output: web
+  - title: Integrate with Spine
     output: web
-  - title: Spine Secure Proxy
-    url: /integration_spine_secure_proxy.html
-    output: web
+    children:
+    - title: Spine integration illustrated
+      url: /integration_illustrated.html
+      output: web
+    - title: System topologies
+      url: /integration_system_topologies.html
+      output: web
+    - title: Cross-organisation audit and provenance
+      url: /integration_cross_organisation_audit_and_provenance.html
+      output: web
+    - title: Personal Demographic Service
+      url: /integration_personal_demographic_service.html
+      output: web
+    - title: Spine Directory Services
+      output: web
+      children:
+      - title: Overview and querying
+        url: /integration_spine_directory_service.html
+        output: web
+      - title: Registering systems
+        url: /integration_sds_registering_endpoints.html
+        output: web
+    - title: Interaction IDs
+      url: /integration_interaction_ids.html
+      output: web
+    - title: Spine Secure Proxy
+      url: /integration_spine_secure_proxy.html
+      output: web
 
 - title: Test and assure
   output: web
