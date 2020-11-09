@@ -225,6 +225,10 @@ children:
 - title: Test and assure
   output: web
   children:
+  - title: Test and assure
+    url: /overview_test_and_assurance.html
+    output: web, pdf
+    type: homepage
   - title: Testing assets
     url: /testing_deliverables.html
     output: web
@@ -237,6 +241,14 @@ children:
   - title: Consumer testing
     url: /testing_api_consumer_testing.html
     output: web
+    
+- title: Test and assure
+  output: web
+  children:    
+  - title: Deploy your system
+    url: /overview_deployment.html
+    output: web, pdf
+    type: homepage   
 
 - title: Help and support
   output: web
