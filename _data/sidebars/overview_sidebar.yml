@@ -242,7 +242,7 @@ children:
     url: /testing_api_consumer_testing.html
     output: web
     
-- title: Test and assure
+- title: Deploy
   output: web
   children:    
   - title: Deploy your system
