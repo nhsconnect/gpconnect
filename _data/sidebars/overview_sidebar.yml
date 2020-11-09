@@ -88,6 +88,19 @@ children:
       url: /overview_release_notes_0_5_0.html
       output: web
 
+- title: Explore
+  output: web
+  children:
+  - title: GP Connect Demonstrator
+    url: /system_demonstrator.html
+    output: web
+  - title: Interactive API documentation
+    url: /system_swagger.html
+    output: web
+  - title: Postman API examples
+    url: /system_reference_postman.html
+    output: web
+
 - title: Design approach
   output: web
   children:
@@ -116,20 +129,7 @@ children:
   - title: Specification versioning
     url: /design_product_versioning.html
     output: web
-
-- title: Explore
-  output: web
-  children:
-  - title: GP Connect Demonstrator
-    url: /system_demonstrator.html
-    output: web
-  - title: Interactive API documentation
-    url: /system_swagger.html
-    output: web
-  - title: Postman API examples
-    url: /system_reference_postman.html
-    output: web
-
+    
 - title: Development
   output: web
   children:
