@@ -18,9 +18,12 @@ children:
     url: /index.html
     output: web, pdf
     type: homepage
-  - title: Getting started
-    url: /overview_engage.html
+  - title: Getting started for consumers
+    url: /overview_getting_started_consumers.html
     output: web
+  - title: Getting started for providers
+    url: /overview_getting_started_providers.html
+    output: web    
   - title: Capabilities
     url: /overview_priority_capabilities.html
     output: web
