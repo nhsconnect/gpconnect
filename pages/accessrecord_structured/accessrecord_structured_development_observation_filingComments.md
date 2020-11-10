@@ -165,7 +165,8 @@ Notes added by the GP practice clinician about the 'Test report', 'Test group' o
   </tr>
 </table>
 
-Reference to the test result, test group header or test report that the filing comments resource relates to.
+Reference to the test result or test group header that the filing comments resource relates to.
+Where the filing comments relate to the test report, the reference is made from the 'Test report' to the filing comment only.
 
 This **MUST** be qualified using the related.type 'derived-from'.
 
