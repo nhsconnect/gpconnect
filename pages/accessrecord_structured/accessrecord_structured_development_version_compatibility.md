@@ -129,6 +129,7 @@ The following table gives an overview of which parameters are supported in each 
 |             | &nbsp;&nbsp;&#8627; includeSignificance|
 |        | includeImmunisations       |
 |             | &nbsp;&nbsp;&#8627; includeNotGiven|
+|             | &nbsp;&nbsp;&#8627; includeStatus|
 |        | includeUncategorisedData       |
 |             | &nbsp;&nbsp;&#8627; uncategorisedDataSearchPeriod|
 |        | includeInvestigations       |

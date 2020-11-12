@@ -224,7 +224,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       </td>
     </tr>
     <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeDissentConsent</code></span></td>
+      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeStatus</code></span></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
       <td>Optional</td>
       <td>0..1</td>
@@ -418,7 +418,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
           "valueBoolean": false
         },
         {
-          "name": "includeDissentConsent",
+          "name": "includeStatus",
           "valueBoolean": false
         }
       ]
@@ -483,7 +483,7 @@ When requesting consultations, the following part parameters **MUST NOT** be inc
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
   - `includeImmunisations.includeNotGiven`
-  - `includeImmunisations.includeDissentConsent`
+  - `includeImmunisations.includeStatus`
 
 When requesting problems, the following part parameters **MUST NOT** be included:
   - `includeMedications.medicationSearchFromDate`
@@ -491,7 +491,7 @@ When requesting problems, the following part parameters **MUST NOT** be included
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
   - `includeImmunisations.includeNotGiven`
-  - `includeImmunisations.includeDissentConsent`
+  - `includeImmunisations.includeStatus`
 
 In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
 
@@ -719,13 +719,13 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
     - all immunisations where `notGiven` is set to `true` or `false` shall be returned
 
-  - and when the `includeDissentConsent` part parameter is set to `false` or not supplied:
+  - and when the `includeStatus` part parameter is set to `false` or not supplied:
 
     - only immunisations will be returned
 
-  - and when the `includeDissentConsent` part parameter is set to `true`:
+  - and when the `includeStatus` part parameter is set to `true`:
 
-    - An [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resource for each consent or dissent for immunisations will also be returned.
+    - [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the status of patient's immunisations will also be returned.
 
 ##### Uncategorised data #####
 
