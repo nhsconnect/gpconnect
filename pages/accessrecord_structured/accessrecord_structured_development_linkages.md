@@ -19,11 +19,9 @@ For a consuming system to be able to interpret this linkage information correctl
 ### GP Connect FHIR&reg; model ###
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-
-
+<br/>
 <object type="image/svg+xml" data="images/access_structured/GP_Connect_FHIR_Model.svg" style="max-width:100%;max-height:100%;" alt="GP Connect FHIR Model"></object>
 <br/>
-
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -189,9 +187,9 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 ### Immunisations ###
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
-<center>
-<a href="images/access_structured/Immunisation_Return_2.png"><img src="images/access_structured/Immunisation_Return_2.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
+<br/>
+<object type="image/svg+xml" data="images/access_structured/images/access_structured/Immunisation_Return_2.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical Model"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -257,7 +255,9 @@ For each `ReferralRequest` referenced in the `List` profile:
 ### Investigations ###
 When GP Connect returns an investigation it will supply all the investigation information.
 
-<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Investigation_Return.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+<br/>
+<object type="image/svg+xml" data="images/access_structured/images/access_structured/Investigation_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical Model"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -280,9 +280,9 @@ For each `DiagnosticReport` referenced in the `List` profile:
 ### Diary entries ###
 When GP Connect returns a diary entry it will supply all the diary entry data.
 
-<center>
-<a href="images/access_structured/DiaryEntry_Return.png"><img src="images/access_structured/DiaryEntry_Return.png" alt="Diary Entry Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
+<br/>
+<object type="image/svg+xml" data="images/access_structured/images/access_structured/DiaryEntry_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical Model"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
