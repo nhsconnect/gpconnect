@@ -188,7 +188,7 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
 <br/>
-<object type="image/svg+xml" data="images/access_structured/images/access_structured/Immunisation_Return_2.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical Model"></object>
+<object type="image/svg+xml" data="images/access_structured/Immunisation_Return_2.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Immunisation Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -256,7 +256,7 @@ For each `ReferralRequest` referenced in the `List` profile:
 When GP Connect returns an investigation it will supply all the investigation information.
 
 <br/>
-<object type="image/svg+xml" data="images/access_structured/images/access_structured/Investigation_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical Model"></object>
+<object type="image/svg+xml" data="images/access_structured/Investigation_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Investigation Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -281,7 +281,7 @@ For each `DiagnosticReport` referenced in the `List` profile:
 When GP Connect returns a diary entry it will supply all the diary entry data.
 
 <br/>
-<object type="image/svg+xml" data="images/access_structured/images/access_structured/DiaryEntry_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical Model"></object>
+<object type="image/svg+xml" data="images/access_structured/DiaryEntry_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Diary Entry Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
