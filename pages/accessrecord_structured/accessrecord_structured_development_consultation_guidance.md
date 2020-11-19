@@ -321,7 +321,9 @@ While there are differences between the two outputs, the consultation notes can 
 
 ## Example
 
-<a href="images/access_structured/Consultation_Example_v6.png"><IMG src="images/access_structured/Consultation_Example_v6.png" alt="Sequence diagram for retrieving a patient record"  style="max-width:100%;max-height:100%;"></a>
+<br/>
+<object type="image/svg+xml" data="images/access_structured/Consultation_Example_v6.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical Model"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
