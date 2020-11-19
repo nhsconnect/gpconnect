@@ -24,7 +24,7 @@ Defining all the clinical data areas within a patient record has enabled GP Conn
 We have defined a data model for the whole GP record that we are working through a clinical area at a time. This is illustrated in the diagram below:
 
 <br/>
-<object type="image/svg+xml" data="images/access_structured/GP_Record_Clinical_Areas_Overview_v2.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Logical model of the GP medical record"></object>
+<object type="image/svg+xml" data="images/access_structured/GP_Record_Clinical_Areas_Overview_v2.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Logical model of the GP medical record"></object>
 <br/>
 
 <div class="screen-reader-text">
