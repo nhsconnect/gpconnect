@@ -20,10 +20,10 @@
 		.st5 {fill:#4672c4;stroke:#c8c8c8;stroke-width:0.25}
 		.st6 {fill:#4672c4;stroke:#c7c8c8;stroke-width:0.25}
 		.st7 {fill:#feffff;font-family:Calibri;font-size:0.75em}
-		.st8 {marker-end:url(#mrkr4-41);stroke:#4672c4;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st8 {marker-end:url(#mrkr4-38);stroke:#4672c4;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
 		.st9 {fill:#4672c4;fill-opacity:1;stroke:#4672c4;stroke-opacity:1;stroke-width:0.28409090909091}
 		.st10 {fill:#feffff;font-family:Calibri;font-size:0.833336em}
-		.st11 {marker-start:url(#mrkr4-262);stroke:#4672c4;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
+		.st11 {marker-start:url(#mrkr4-248);stroke:#4672c4;stroke-linecap:round;stroke-linejoin:round;stroke-width:1}
 		.st12 {fill:none;stroke:#000000;stroke-width:0.25}
 		.st13 {fill:#4672c4;font-family:Calibri;font-size:1.00001em}
 		.st14 {fill:none;fill-rule:evenodd;font-size:12px;overflow:visible;stroke-linecap:square;stroke-miterlimit:3}
@@ -34,11 +34,11 @@
 		<g id="lend4">
 			<path d="M 2 1 L 0 0 L 2 -1 L 2 1 " style="stroke:none"/>
 		</g>
-		<marker id="mrkr4-41" class="st9" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
+		<marker id="mrkr4-38" class="st9" v:arrowType="4" v:arrowSize="2" v:setback="7.04" refX="-7.04" orient="auto"
 				markerUnits="strokeWidth" overflow="visible">
 			<use xlink:href="#lend4" transform="scale(-3.52,-3.52) "/>
 		</marker>
-		<marker id="mrkr4-262" class="st9" v:arrowType="4" v:arrowSize="2" v:setback="6.68" refX="6.68" orient="auto"
+		<marker id="mrkr4-248" class="st9" v:arrowType="4" v:arrowSize="2" v:setback="6.68" refX="6.68" orient="auto"
 				markerUnits="strokeWidth" overflow="visible">
 			<use xlink:href="#lend4" transform="scale(3.52) "/>
 		</marker>
@@ -120,7 +120,7 @@
 			<text x="14.78" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Consultation</text>		</g>
 		<g id="shape1123-9" v:mID="1123" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1318.11)">
 			<title>Process.1123</title>
-			<desc>Medication – 321987003 - Citalopram 20mg tablets</desc>
+			<desc>Medication | 321987003 | Citalopram 20mg tablets</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -147,9 +147,8 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="15.57" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Medication –<tspan
-						dx="5.014em" class="st3">-</tspan> Citalopram 20mg tablets</text>		</g>
-		<g id="shape1180-13" v:mID="1180" v:groupContext="shape" v:layerMember="0" transform="translate(510.236,-1204.72)">
+			<text x="15.11" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Medication | 321987003 | Citalopram 20mg tablets</text>		</g>
+		<g id="shape1180-12" v:mID="1180" v:groupContext="shape" v:layerMember="0" transform="translate(510.236,-1204.72)">
 			<title>Process.1180</title>
 			<desc>Problem Swollen legs</desc>
 			<v:custProps>
@@ -180,7 +179,7 @@
 			<rect x="0" y="1619.43" width="70.8661" height="28.3465" class="st1"/>
 			<text x="21.66" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Problem<v:newlineChar/><tspan
 						x="15.44" dy="1.2em" class="st3">Swollen legs</tspan></text>		</g>
-		<g id="shape1182-17" v:mID="1182" v:groupContext="shape" v:layerMember="0" transform="translate(510.236,-651.968)">
+		<g id="shape1182-16" v:mID="1182" v:groupContext="shape" v:layerMember="0" transform="translate(510.236,-651.968)">
 			<title>Process.1182</title>
 			<desc>Problem Upper respiratory tract infection</desc>
 			<v:custProps>
@@ -211,9 +210,9 @@
 			<rect x="0" y="1619.43" width="70.8661" height="28.3465" class="st1"/>
 			<text x="21.66" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Problem<v:newlineChar/><tspan
 						x="6.44" dy="1.2em" class="st3">Upper respiratory </tspan><tspan x="12.46" dy="1.2em" class="st3">tract infection</tspan></text>		</g>
-		<g id="shape1183-22" v:mID="1183" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1403.15)">
+		<g id="shape1183-21" v:mID="1183" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1403.15)">
 			<title>Process.1183</title>
-			<desc>Uncategorised – 266919005 - Never smoked tobacco</desc>
+			<desc>Uncategorised | 266919005 | Never smoked tobacco</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -240,11 +239,10 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="13.26" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="5.014em" class="st3">-</tspan> Never smoked tobacco</text>		</g>
-		<g id="shape1185-26" v:mID="1185" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1360.63)">
+			<text x="12.79" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 266919005 | Never smoked tobacco</text>		</g>
+		<g id="shape1185-24" v:mID="1185" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1360.63)">
 			<title>Process.1185</title>
-			<desc>Uncategorised – 1082641000000100 - Alcohol units consumed per...</desc>
+			<desc>Uncategorised | 1082641000000100 | Alcohol units consumed per...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -271,10 +269,10 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="15.28" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="8.562em" class="st3">-</tspan> Alcohol units <tspan x="66.4" dy="1.2em" class="st3">consumed per week</tspan><tspan
-						x="76.24" dy="1.2em" class="st3">0 units / week</tspan></text>		</g>
-		<g id="shape1191-32" v:mID="1191" v:groupContext="shape" transform="translate(99.2126,-1530.71)">
+			<text x="14.82" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 1082641000000100 | Alcohol units <tspan
+						x="66.4" dy="1.2em" class="st3">consumed per week<v:newlineChar/></tspan><tspan x="76.24" dy="1.2em"
+						class="st3">0 units / week</tspan></text>		</g>
+		<g id="shape1191-29" v:mID="1191" v:groupContext="shape" transform="translate(99.2126,-1530.71)">
 			<title>Ellipse.1191</title>
 			<desc>Anxiety with Depression</desc>
 			<v:userDefs>
@@ -285,25 +283,25 @@
 			<path d="M0 1633.61 A42.5197 14.1732 0 0 1 85.04 1633.61 A42.5197 14.1732 0 1 1 0 1633.61 Z" class="st6"/>
 			<text x="19.65" y="1630.91" class="st7" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Anxiety with <tspan
 						x="22.05" dy="1.2em" class="st3">Depression</tspan></text>		</g>
-		<g id="shape1192-36" v:mID="1192" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
+		<g id="shape1192-33" v:mID="1192" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
 			<title>Dynamic connector.1192</title>
 			<path d="M0 1647.78 L0 1661.95 L28.39 1661.95" class="st8"/>
 		</g>
-		<g id="shape1193-42" v:mID="1193" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
+		<g id="shape1193-39" v:mID="1193" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
 			<title>Dynamic connector.1193</title>
 			<path d="M0 1647.78 L0 1761.17 L35.48 1761.17" class="st8"/>
 		</g>
-		<g id="shape1195-47" v:mID="1195" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1403.15)">
+		<g id="shape1195-44" v:mID="1195" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1403.15)">
 			<title>Dynamic connector.1195</title>
 			<path d="M0 1647.78 L0 1676.13 L56.74 1676.13" class="st8"/>
 		</g>
-		<g id="shape1196-52" v:mID="1196" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
+		<g id="shape1196-49" v:mID="1196" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
 			<title>Dynamic connector.1196</title>
 			<path d="M0 1647.78 L0 1846.2 L35.48 1846.2" class="st8"/>
 		</g>
-		<g id="shape1197-57" v:mID="1197" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1275.59)">
+		<g id="shape1197-54" v:mID="1197" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1275.59)">
 			<title>Process.1197</title>
-			<desc>Referral – 308448008 - Referral to counsellor</desc>
+			<desc>Referral | 308448008 | Referral to counsellor</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -330,11 +328,10 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="25.98" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Referral –<tspan
-						dx="5.014em" class="st3">-</tspan> Referral to counsellor  </text>		</g>
-		<g id="shape1198-61" v:mID="1198" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1233.07)">
+			<text x="25.52" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Referral | 308448008 | Referral to counsellor  </text>		</g>
+		<g id="shape1198-57" v:mID="1198" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1233.07)">
 			<title>Process.1198</title>
-			<desc>Uncategorised – 308931006 - Walking practice Advised re local...</desc>
+			<desc>Uncategorised | 308931006 | Walking practice Advised re local...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -361,9 +358,9 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="23.51" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="5.014em" class="st3">-</tspan> Walking practice<tspan x="49.86" dy="1.2em" class="st3">Advised re local walking group</tspan></text>		</g>
-		<g id="shape1199-66" v:mID="1199" v:groupContext="shape" transform="translate(184.252,-1403.15)">
+			<text x="23.04" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 308931006 | Walking practice<v:newlineChar/><tspan
+						x="49.86" dy="1.2em" class="st3">Advised re local walking group</tspan></text>		</g>
+		<g id="shape1199-61" v:mID="1199" v:groupContext="shape" transform="translate(184.252,-1403.15)">
 			<title>Ellipse.1199</title>
 			<desc>Social</desc>
 			<v:userDefs>
@@ -373,11 +370,11 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="23.69" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Social</text>		</g>
-		<g id="shape1200-69" v:mID="1200" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1410.24)">
+		<g id="shape1200-64" v:mID="1200" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1410.24)">
 			<title>Dynamic connector.1200</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1201-74" v:mID="1201" v:groupContext="shape" transform="translate(184.252,-1502.36)">
+		<g id="shape1201-69" v:mID="1201" v:groupContext="shape" transform="translate(184.252,-1502.36)">
 			<title>Ellipse.1201</title>
 			<desc>History</desc>
 			<v:userDefs>
@@ -387,7 +384,7 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 0 1 70.87 1633.61 A35.4331 14.1732 0 1 1 0 1633.61 Z" class="st6"/>
 			<text x="20.9" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>History</text>		</g>
-		<g id="shape1202-77" v:mID="1202" v:groupContext="shape" transform="translate(184.252,-1445.67)">
+		<g id="shape1202-72" v:mID="1202" v:groupContext="shape" transform="translate(184.252,-1445.67)">
 			<title>Ellipse.1202</title>
 			<desc>Examiniation</desc>
 			<v:userDefs>
@@ -397,7 +394,7 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="9.03" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Examiniation</text>		</g>
-		<g id="shape1203-80" v:mID="1203" v:groupContext="shape" transform="translate(184.252,-1318.11)">
+		<g id="shape1203-75" v:mID="1203" v:groupContext="shape" transform="translate(184.252,-1318.11)">
 			<title>Ellipse.1203</title>
 			<desc>Plan</desc>
 			<v:userDefs>
@@ -407,55 +404,55 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="26.68" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Plan</text>		</g>
-		<g id="shape1204-83" v:mID="1204" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
+		<g id="shape1204-78" v:mID="1204" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
 			<title>Dynamic connector.1204</title>
 			<path d="M0 1647.78 L0 1661.95 L35.48 1661.95" class="st8"/>
 		</g>
-		<g id="shape1205-88" v:mID="1205" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
+		<g id="shape1205-83" v:mID="1205" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1530.71)">
 			<title>Dynamic connector.1205</title>
 			<path d="M0 1647.78 L0 1718.65 L35.48 1718.65" class="st8"/>
 		</g>
-		<g id="shape1206-93" v:mID="1206" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1325.2)">
+		<g id="shape1206-88" v:mID="1206" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1325.2)">
 			<title>Dynamic connector.1206</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1207-98" v:mID="1207" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1318.11)">
+		<g id="shape1207-93" v:mID="1207" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1318.11)">
 			<title>Dynamic connector.1207</title>
 			<path d="M0 1647.78 L0 1676.13 L56.74 1676.13" class="st8"/>
 		</g>
-		<g id="shape1208-103" v:mID="1208" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1318.11)">
+		<g id="shape1208-98" v:mID="1208" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1318.11)">
 			<title>Dynamic connector.1208</title>
 			<path d="M0 1647.78 L0 1718.65 L56.74 1718.65" class="st8"/>
 		</g>
-		<g id="shape1211-108" v:mID="1211" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
+		<g id="shape1211-103" v:mID="1211" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
 			<title>Dynamic connector.1211</title>
 			<path d="M0 1647.78 L0 1761.17 L-56.74 1761.17" class="st8"/>
 		</g>
-		<g id="shape1212-113" v:mID="1212" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
+		<g id="shape1212-108" v:mID="1212" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
 			<title>Dynamic connector.1212</title>
 			<path d="M0 1647.78 L0 1803.69 L-56.74 1803.69" class="st8"/>
 		</g>
-		<g id="shape1213-118" v:mID="1213" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
+		<g id="shape1213-113" v:mID="1213" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
 			<title>Dynamic connector.1213</title>
 			<path d="M0 1647.78 L0 1846.2 L-56.74 1846.2" class="st8"/>
 		</g>
-		<g id="shape1214-123" v:mID="1214" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
+		<g id="shape1214-118" v:mID="1214" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
 			<title>Dynamic connector.1214</title>
 			<path d="M0 1647.78 L0 1888.72 L-56.74 1888.72" class="st8"/>
 		</g>
-		<g id="shape1215-128" v:mID="1215" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
+		<g id="shape1215-123" v:mID="1215" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
 			<title>Dynamic connector.1215</title>
 			<path d="M0 1647.78 L0 1931.24 L-56.74 1931.24" class="st8"/>
 		</g>
-		<g id="shape1216-133" v:mID="1216" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1559.06)">
+		<g id="shape1216-128" v:mID="1216" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1559.06)">
 			<title>Dynamic connector.1216</title>
 			<path d="M0 1647.78 L0 1633.61 L-439.42 1633.61" class="st8"/>
 		</g>
-		<g id="shape1217-138" v:mID="1217" v:groupContext="shape" v:layerMember="1" transform="translate(184.252,-1551.97)">
+		<g id="shape1217-133" v:mID="1217" v:groupContext="shape" v:layerMember="1" transform="translate(184.252,-1551.97)">
 			<title>Dynamic connector.1217</title>
 			<path d="M0 1654.87 L318.94 1654.87" class="st8"/>
 		</g>
-		<g id="shape1218-143" v:mID="1218" v:groupContext="shape" transform="translate(99.2126,-1204.72)">
+		<g id="shape1218-138" v:mID="1218" v:groupContext="shape" transform="translate(99.2126,-1204.72)">
 			<title>Ellipse.1218</title>
 			<desc>Swollen legs</desc>
 			<v:userDefs>
@@ -465,11 +462,11 @@
 			<v:textRect cx="42.5197" cy="1633.61" width="74.41" height="24.8032"/>
 			<path d="M0 1633.61 A42.5197 14.1732 0 0 1 85.04 1633.61 A42.5197 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="20.03" y="1636.31" class="st7" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Swollen legs</text>		</g>
-		<g id="shape1220-146" v:mID="1220" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1204.72)">
+		<g id="shape1220-141" v:mID="1220" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1204.72)">
 			<title>Dynamic connector.1220</title>
 			<path d="M0 1647.78 L0 1931.24 L35.48 1931.24" class="st8"/>
 		</g>
-		<g id="shape1222-151" v:mID="1222" v:groupContext="shape" transform="translate(184.252,-1176.38)">
+		<g id="shape1222-146" v:mID="1222" v:groupContext="shape" transform="translate(184.252,-1176.38)">
 			<title>Ellipse.1222</title>
 			<desc>History</desc>
 			<v:userDefs>
@@ -479,7 +476,7 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 0 1 70.87 1633.61 A35.4331 14.1732 0 1 1 0 1633.61 Z" class="st6"/>
 			<text x="20.9" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>History</text>		</g>
-		<g id="shape1223-154" v:mID="1223" v:groupContext="shape" transform="translate(184.252,-1133.86)">
+		<g id="shape1223-149" v:mID="1223" v:groupContext="shape" transform="translate(184.252,-1133.86)">
 			<title>Ellipse.1223</title>
 			<desc>Examiniation</desc>
 			<v:userDefs>
@@ -489,7 +486,7 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="9.03" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Examiniation</text>		</g>
-		<g id="shape1224-157" v:mID="1224" v:groupContext="shape" transform="translate(184.252,-907.087)">
+		<g id="shape1224-152" v:mID="1224" v:groupContext="shape" transform="translate(184.252,-907.087)">
 			<title>Ellipse.1224</title>
 			<desc>Plan</desc>
 			<v:userDefs>
@@ -499,29 +496,29 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="26.68" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Plan</text>		</g>
-		<g id="shape1225-160" v:mID="1225" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1204.72)">
+		<g id="shape1225-155" v:mID="1225" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1204.72)">
 			<title>Dynamic connector.1225</title>
 			<path d="M0 1647.78 L0 1661.95 L35.48 1661.95" class="st8"/>
 		</g>
-		<g id="shape1226-165" v:mID="1226" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1204.72)">
+		<g id="shape1226-160" v:mID="1226" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-1204.72)">
 			<title>Dynamic connector.1226</title>
 			<path d="M0 1647.78 L0 1704.47 L35.48 1704.47" class="st8"/>
 		</g>
-		<g id="shape1227-170" v:mID="1227" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
+		<g id="shape1227-165" v:mID="1227" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
 			<title>Dynamic connector.1227</title>
 			<path d="M0 1647.78 L0 1987.94 L28.39 1987.94" class="st8"/>
 		</g>
-		<g id="shape1228-175" v:mID="1228" v:groupContext="shape" v:layerMember="1" transform="translate(184.252,-1225.98)">
+		<g id="shape1228-170" v:mID="1228" v:groupContext="shape" v:layerMember="1" transform="translate(184.252,-1225.98)">
 			<title>Dynamic connector.1228</title>
 			<path d="M0 1654.87 L318.94 1654.87" class="st8"/>
 		</g>
-		<g id="shape1229-180" v:mID="1229" v:groupContext="shape" v:layerMember="1" transform="translate(581.102,-1218.9)">
+		<g id="shape1229-175" v:mID="1229" v:groupContext="shape" v:layerMember="1" transform="translate(581.102,-1218.9)">
 			<title>Dynamic connector.1229</title>
 			<path d="M0 1647.78 L14.17 1647.78 L14.17 1293.45 L-474.85 1293.45" class="st8"/>
 		</g>
-		<g id="shape1231-185" v:mID="1231" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1133.86)">
+		<g id="shape1231-180" v:mID="1231" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1133.86)">
 			<title>Process.1231</title>
-			<desc>Uncategorised – 703421000 – Temperature 36.7 C Patient looks ...</desc>
+			<desc>Uncategorised | 703421000 | Temperature 36.7 C Patient looks ...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -548,16 +545,15 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="28.44" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="5.014em" class="st3">–</tspan> Temperature<tspan x="89.08" dy="1.2em" class="st3">36.7 C</tspan><tspan
-						x="65.22" dy="1.2em" class="st3">Patient looks flushed</tspan></text>		</g>
-		<g id="shape1232-191" v:mID="1232" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1140.94)">
+			<text x="28.74" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 703421000 | Temperature<v:newlineChar/><tspan
+						x="89.08" dy="1.2em" class="st3">36.7 C<v:newlineChar/></tspan><tspan x="65.22" dy="1.2em" class="st3">Patient looks flushed</tspan></text>		</g>
+		<g id="shape1232-185" v:mID="1232" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1140.94)">
 			<title>Dynamic connector.1232</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1234-196" v:mID="1234" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1091.34)">
+		<g id="shape1234-190" v:mID="1234" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1091.34)">
 			<title>Process.1234</title>
-			<desc>Uncategorised – 1097811000000100 - Arterial oxygen saturation...</desc>
+			<desc>Uncategorised | 1097811000000100 | Arterial oxygen saturation...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -584,65 +580,65 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="11.66" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="8.562em" class="st3">-</tspan> Arterial oxygen <tspan x="39.66" dy="1.2em" class="st3">saturation breathing room air at rest</tspan><tspan
+			<text x="11.19" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 1097811000000100 | Arterial oxygen <tspan
+						x="39.66" dy="1.2em" class="st3">saturation breathing room air at rest<v:newlineChar/></tspan><tspan
 						x="92.3" dy="1.2em" class="st3">96%</tspan></text>		</g>
-		<g id="shape1235-202" v:mID="1235" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1133.86)">
+		<g id="shape1235-195" v:mID="1235" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1133.86)">
 			<title>Dynamic connector.1235</title>
 			<path d="M0 1647.78 L0 1676.13 L56.74 1676.13" class="st8"/>
 		</g>
-		<g id="shape1236-207" v:mID="1236" v:groupContext="shape" transform="translate(283.465,-1488.19)">
+		<g id="shape1236-200" v:mID="1236" v:groupContext="shape" transform="translate(283.465,-1488.19)">
 			<title>Rectangle.1236</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note Come for review...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note Come for review...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1626.52" width="198.43" height="42.5197"/>
 			<rect x="0" y="1605.26" width="198.425" height="42.5197" class="st5"/>
-			<text x="14.67" y="1614.52" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="6.25" dy="1.2em" class="st3">Come for review. Overall doing better. Mood still low but </tspan><tspan
+			<text x="14.97" y="1614.52" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="6.25" dy="1.2em" class="st3">Come for review. Overall doing better. Mood still low but </tspan><tspan
 						x="10.19" dy="1.2em" class="st3">improving. More good days than bad. Energy levels ok. </tspan><tspan
 						x="2.09" dy="1.2em" class="st3">Motivation improving. Support from neighbour </tspan>– visits daily  </text>		</g>
-		<g id="shape1237-214" v:mID="1237" v:groupContext="shape" transform="translate(283.465,-1445.67)">
+		<g id="shape1237-206" v:mID="1237" v:groupContext="shape" transform="translate(283.465,-1445.67)">
 			<title>Rectangle.1237</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note MSE euthymic. N...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note MSE euthymic. N...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.67" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="14.65" dy="1.2em" class="st3">MSE euthymic. Not anxious. No DSH/hallucinations/</tspan><tspan
-						x="68.12" dy="1.2em" class="st3">abnormal thoughts</tspan></text>		</g>
-		<g id="shape1238-220" v:mID="1238" v:groupContext="shape" transform="translate(283.465,-1176.38)">
+			<text x="14.97" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="14.65" dy="1.2em" class="st3">MSE euthymic. Not anxious. No DSH/hallucinations/</tspan><tspan x="68.12"
+						dy="1.2em" class="st3">abnormal thoughts</tspan></text>		</g>
+		<g id="shape1238-211" v:mID="1238" v:groupContext="shape" transform="translate(283.465,-1176.38)">
 			<title>Rectangle.1238</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note 2 months - bila...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note 2 months - bila...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.67" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="36.62" dy="1.2em" class="st3">2 months </tspan>- bilateral swollen lower legs</text>		</g>
-		<g id="shape1239-225" v:mID="1239" v:groupContext="shape" transform="translate(283.465,-949.606)">
+			<text x="14.97" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="36.62" dy="1.2em" class="st3">2 months </tspan>- bilateral swollen lower legs</text>		</g>
+		<g id="shape1239-215" v:mID="1239" v:groupContext="shape" transform="translate(283.465,-949.606)">
 			<title>Rectangle.1239</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note Swelling lower ...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note Swelling lower ...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1626.52" width="198.43" height="42.5197"/>
 			<rect x="0" y="1605.26" width="198.425" height="42.5197" class="st5"/>
-			<text x="14.67" y="1614.52" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="5.28" dy="1.2em" class="st3">Swelling lower legs bilaterally. Mild pitting oedema. Chest </tspan><tspan
+			<text x="14.97" y="1614.52" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="5.28" dy="1.2em" class="st3">Swelling lower legs bilaterally. Mild pitting oedema. Chest </tspan><tspan
 						x="3.95" dy="1.2em" class="st3">clear. Heart sounds normal. No distress. Abdomen normal. </tspan><tspan
 						x="3.22" dy="1.2em" class="st3">No cervical lymphadenopathy. Throat normal. Ears normal.</tspan></text>		</g>
-		<g id="shape1240-232" v:mID="1240" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1048.82)">
+		<g id="shape1240-221" v:mID="1240" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1048.82)">
 			<title>Process.1240</title>
-			<desc>Uncategorised – 86290005 - Respiratory rate 16 / min, Taken o...</desc>
+			<desc>Uncategorised | 86290005 | Respiratory rate 16 / min, Taken o...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -669,15 +665,15 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="26.34" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="4.507em" class="st3">-</tspan> Respiratory rate<tspan x="46.72" dy="1.2em" class="st3">16 / min, Taken over 30 seconds</tspan></text>		</g>
-		<g id="shape1241-237" v:mID="1241" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1133.86)">
+			<text x="25.87" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 86290005 | Respiratory rate<v:newlineChar/><tspan
+						x="46.72" dy="1.2em" class="st3">16 / min, Taken over 30 seconds</tspan></text>		</g>
+		<g id="shape1241-225" v:mID="1241" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1133.86)">
 			<title>Dynamic connector.1241</title>
 			<path d="M0 1647.78 L0 1718.65 L56.74 1718.65" class="st8"/>
 		</g>
-		<g id="shape1242-242" v:mID="1242" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1006.3)">
+		<g id="shape1242-230" v:mID="1242" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-1006.3)">
 			<title>Process.1242</title>
-			<desc>Uncategorised – 271637005 - Pulse irregularly irregular 70 / ...</desc>
+			<desc>Uncategorised | 271637005 | Pulse irregularly irregular 70 / ...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -704,42 +700,42 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="9.57" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="5.014em" class="st3">-</tspan> Pulse irregularly irregular<tspan x="85.59" dy="1.2em" class="st3">70 / min</tspan></text>		</g>
-		<g id="shape1243-247" v:mID="1243" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1133.86)">
+			<text x="9.1" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 271637005 | Pulse irregularly irregular<v:newlineChar/><tspan
+						x="85.59" dy="1.2em" class="st3">70 / min</tspan></text>		</g>
+		<g id="shape1243-234" v:mID="1243" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1133.86)">
 			<title>Dynamic connector.1243</title>
 			<path d="M0 1647.78 L0 1761.17 L56.74 1761.17" class="st8"/>
 		</g>
-		<g id="shape1244-252" v:mID="1244" v:groupContext="shape" transform="translate(283.465,-907.087)">
+		<g id="shape1244-239" v:mID="1244" v:groupContext="shape" transform="translate(283.465,-907.087)">
 			<title>Rectangle.1244</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note Advice to mobil...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note Advice to mobil...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.67" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="26.27" dy="1.2em" class="st3">Advice to mobilise more. Review with results</tspan></text>		</g>
-		<g id="shape1245-257" v:mID="1245" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1148.03)">
+			<text x="14.97" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="26.27" dy="1.2em" class="st3">Advice to mobilise more. Review with results</tspan></text>		</g>
+		<g id="shape1245-243" v:mID="1245" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1148.03)">
 			<title>Dynamic connector.1245</title>
 			<path d="M6.68 1647.78 L7.04 1647.78 L63.78 1647.78 L63.78 1591.09" class="st11"/>
 		</g>
-		<g id="shape1246-263" v:mID="1246" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1105.51)">
+		<g id="shape1246-249" v:mID="1246" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1105.51)">
 			<title>Dynamic connector.1246</title>
 			<path d="M6.68 1647.78 L7.04 1647.78 L63.78 1647.78 L63.78 1548.57" class="st11"/>
 		</g>
-		<g id="shape1247-268" v:mID="1247" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1062.99)">
+		<g id="shape1247-254" v:mID="1247" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1062.99)">
 			<title>Dynamic connector.1247</title>
 			<path d="M6.68 1647.78 L7.04 1647.78 L63.78 1647.78 L63.78 1506.05" class="st11"/>
 		</g>
-		<g id="shape1248-273" v:mID="1248" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1020.47)">
+		<g id="shape1248-259" v:mID="1248" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-1020.47)">
 			<title>Dynamic connector.1248</title>
 			<path d="M6.68 1647.78 L7.04 1647.78 L63.78 1647.78 L63.78 1463.53" class="st11"/>
 		</g>
-		<g id="shape1249-278" v:mID="1249" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-864.567)">
+		<g id="shape1249-264" v:mID="1249" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-864.567)">
 			<title>Process.1249</title>
-			<desc>Test Request – 396550006 – Blood Test Request for Bloods U+E,...</desc>
+			<desc>Test Request | 396550006 | Blood Test Request for Bloods U+E,...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -766,11 +762,11 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="35.19" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Test Request –<tspan
-						dx="5.014em" class="st3">–</tspan> Blood Test<tspan x="26.74" dy="1.2em" class="st3">Request for Bloods U+E, FBC, LFT, NTproBNP</tspan></text>		</g>
-		<g id="shape1250-283" v:mID="1250" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-822.047)">
+			<text x="35.5" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Test Request | 396550006 | Blood Test<v:newlineChar/><tspan
+						x="26.74" dy="1.2em" class="st3">Request for Bloods U+E, FBC, LFT, NTproBNP</tspan></text>		</g>
+		<g id="shape1250-268" v:mID="1250" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-822.047)">
 			<title>Process.1250</title>
-			<desc>Test Request – 46825001 - Electrocardiographic monitoring</desc>
+			<desc>Test Request | 46825001 | Electrocardiographic monitoring</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -797,46 +793,45 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="2.64" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Test Request –<tspan
-						dx="4.507em" class="st3">-</tspan> Electrocardiographic monitoring</text>		</g>
-		<g id="shape1251-287" v:mID="1251" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-907.087)">
+			<text x="2.18" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Test Request | 46825001 | Electrocardiographic monitoring</text>		</g>
+		<g id="shape1251-271" v:mID="1251" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-907.087)">
 			<title>Dynamic connector.1251</title>
 			<path d="M0 1647.78 L0 1676.13 L56.74 1676.13" class="st8"/>
 		</g>
-		<g id="shape1252-292" v:mID="1252" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-907.087)">
+		<g id="shape1252-276" v:mID="1252" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-907.087)">
 			<title>Dynamic connector.1252</title>
 			<path d="M0 1647.78 L0 1718.65 L56.74 1718.65" class="st8"/>
 		</g>
-		<g id="shape1253-297" v:mID="1253" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-878.74)">
+		<g id="shape1253-281" v:mID="1253" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-878.74)">
 			<title>Dynamic connector.1253</title>
 			<path d="M6.68 1647.78 L7.04 1647.78 L63.78 1647.78 L63.78 1321.8" class="st11"/>
 		</g>
-		<g id="shape1254-302" v:mID="1254" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-836.22)">
+		<g id="shape1254-286" v:mID="1254" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-836.22)">
 			<title>Dynamic connector.1254</title>
 			<path d="M6.68 1647.78 L7.04 1647.78 L63.78 1647.78 L63.78 1279.28" class="st11"/>
 		</g>
-		<g id="shape1255-307" v:mID="1255" v:groupContext="shape" transform="translate(99.2126,-793.701)">
+		<g id="shape1255-291" v:mID="1255" v:groupContext="shape" transform="translate(99.2126,-793.701)">
 			<title>Ellipse.1255</title>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<path d="M0 1633.61 A42.5197 14.1732 0 0 1 85.04 1633.61 A42.5197 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 		</g>
-		<g id="shape1256-309" v:mID="1256" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-793.701)">
+		<g id="shape1256-293" v:mID="1256" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-793.701)">
 			<title>Dynamic connector.1256</title>
 			<path d="M0 1647.78 L0 1746.99 L134.69 1746.99" class="st8"/>
 		</g>
-		<g id="shape1260-314" v:mID="1260" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-793.701)">
+		<g id="shape1260-298" v:mID="1260" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-793.701)">
 			<title>Dynamic connector.1260</title>
 			<path d="M0 1647.78 L0 1661.95 L134.69 1661.95" class="st8"/>
 		</g>
-		<g id="shape1261-319" v:mID="1261" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-793.701)">
+		<g id="shape1261-303" v:mID="1261" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-793.701)">
 			<title>Dynamic connector.1261</title>
 			<path d="M0 1647.78 L0 1704.47 L134.69 1704.47" class="st8"/>
 		</g>
-		<g id="shape1262-324" v:mID="1262" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-765.354)">
+		<g id="shape1262-308" v:mID="1262" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-765.354)">
 			<title>Process.1262</title>
-			<desc>Uncategorised – 413153004 - Blood pressure recorded by patien...</desc>
+			<desc>Uncategorised | 413153004 | Blood pressure recorded by patien...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -863,12 +858,12 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="5.65" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="5.014em" class="st3">-</tspan> Blood pressure recorded by <tspan x="73.05" dy="1.2em" class="st3">patient at home</tspan><tspan
-						x="57.8" dy="1.2em" class="st3">average for last six weeks</tspan></text>		</g>
-		<g id="shape1273-330" v:mID="1273" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-680.315)">
+			<text x="5.19" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 413153004 | Blood pressure recorded by <tspan
+						x="73.05" dy="1.2em" class="st3">patient at home<v:newlineChar/></tspan><tspan x="57.8" dy="1.2em"
+						class="st3">average for last six weeks</tspan></text>		</g>
+		<g id="shape1273-313" v:mID="1273" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-680.315)">
 			<title>Process.1273</title>
-			<desc>Medication – 319284000 - Amlodipine 10mg tablets Patient to t...</desc>
+			<desc>Medication | 319284000 | Amlodipine 10mg tablets Patient to t...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -895,16 +890,16 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.85" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Medication –<tspan
-						dx="5.014em" class="st3">-</tspan> Amlodipine 10mg tablets<tspan x="2.2" dy="1.2em" class="st3">Patient to take Amlodipine 10mg tablets and monitor blood </tspan><tspan
+			<text x="14.38" y="1626.41" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Medication | 319284000 | Amlodipine 10mg tablets<v:newlineChar/><tspan
+						x="2.2" dy="1.2em" class="st3">Patient to take Amlodipine 10mg tablets and monitor blood </tspan><tspan
 						x="85.11" dy="1.2em" class="st3">pressure</tspan></text>		</g>
-		<g id="shape1277-336" v:mID="1277" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
+		<g id="shape1277-318" v:mID="1277" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
 			<title>Dynamic connector.1277</title>
 			<path d="M0 1647.78 L0 2398.96 L28.39 2398.96" class="st8"/>
 		</g>
-		<g id="shape1280-341" v:mID="1280" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-722.835)">
+		<g id="shape1280-323" v:mID="1280" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-722.835)">
 			<title>Process.1280</title>
-			<desc>Uncategorised – 75367002 - Blood pressure 155 / 96 mmHg</desc>
+			<desc>Uncategorised | 75367002 | Blood pressure 155 / 96 mmHg</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -931,9 +926,9 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="28.17" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="4.507em" class="st3">-</tspan> Blood pressure<tspan x="74.05" dy="1.2em" class="st3">155 / 96 mmHg</tspan></text>		</g>
-		<g id="shape1282-346" v:mID="1282" v:groupContext="shape" transform="translate(99.2126,-651.968)">
+			<text x="27.71" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 75367002 | Blood pressure<v:newlineChar/><tspan
+						x="74.05" dy="1.2em" class="st3">155 / 96 mmHg</tspan></text>		</g>
+		<g id="shape1282-327" v:mID="1282" v:groupContext="shape" transform="translate(99.2126,-651.968)">
 			<title>Ellipse.1282</title>
 			<desc>Upper respiratory tract infection</desc>
 			<v:userDefs>
@@ -944,11 +939,11 @@
 			<path d="M0 1633.61 A42.5197 14.1732 0 0 1 85.04 1633.61 A42.5197 14.1732 0 1 1 0 1633.61 Z" class="st6"/>
 			<text x="9.9" y="1630.91" class="st7" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Upper respiratory <tspan
 						x="16.67" dy="1.2em" class="st3">tract infection</tspan></text>		</g>
-		<g id="shape1283-350" v:mID="1283" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-651.968)">
+		<g id="shape1283-331" v:mID="1283" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-651.968)">
 			<title>Dynamic connector.1283</title>
 			<path d="M0 1647.78 L0 1846.2 L35.48 1846.2" class="st8"/>
 		</g>
-		<g id="shape1284-355" v:mID="1284" v:groupContext="shape" transform="translate(184.252,-623.622)">
+		<g id="shape1284-336" v:mID="1284" v:groupContext="shape" transform="translate(184.252,-623.622)">
 			<title>Ellipse.1284</title>
 			<desc>History</desc>
 			<v:userDefs>
@@ -958,7 +953,7 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 0 1 70.87 1633.61 A35.4331 14.1732 0 1 1 0 1633.61 Z" class="st6"/>
 			<text x="20.9" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>History</text>		</g>
-		<g id="shape1286-358" v:mID="1286" v:groupContext="shape" transform="translate(184.252,-439.37)">
+		<g id="shape1286-339" v:mID="1286" v:groupContext="shape" transform="translate(184.252,-439.37)">
 			<title>Ellipse.1286</title>
 			<desc>Plan</desc>
 			<v:userDefs>
@@ -968,13 +963,13 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="26.68" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Plan</text>		</g>
-		<g id="shape1287-361" v:mID="1287" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-651.968)">
+		<g id="shape1287-342" v:mID="1287" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-651.968)">
 			<title>Dynamic connector.1287</title>
 			<path d="M0 1647.78 L0 1661.95 L35.48 1661.95" class="st8"/>
 		</g>
-		<g id="shape1290-366" v:mID="1290" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-439.37)">
+		<g id="shape1290-347" v:mID="1290" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-439.37)">
 			<title>Process.1290</title>
-			<desc>Medication – 322236009 - Paracetamol 500mg tablets</desc>
+			<desc>Medication | 322236009 | Paracetamol 500mg tablets</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -1001,181 +996,177 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="11.04" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Medication –<tspan
-						dx="5.014em" class="st3">-</tspan> Paracetamol 500mg tablets</text>		</g>
-		<g id="shape1291-370" v:mID="1291" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-446.457)">
+			<text x="10.57" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Medication | 322236009 | Paracetamol 500mg tablets</text>		</g>
+		<g id="shape1291-350" v:mID="1291" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-446.457)">
 			<title>Dynamic connector.1291</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1295-375" v:mID="1295" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
+		<g id="shape1295-355" v:mID="1295" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
 			<title>Dynamic connector.1295</title>
 			<path d="M0 1647.78 L0 2540.69 L28.39 2540.69" class="st8"/>
 		</g>
-		<g id="shape1296-380" v:mID="1296" v:groupContext="shape" transform="translate(283.465,-609.449)">
+		<g id="shape1296-360" v:mID="1296" v:groupContext="shape" transform="translate(283.465,-609.449)">
 			<title>Rectangle.1296</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note 2 weeks cough –...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note 2 weeks cough –...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1626.52" width="198.43" height="42.5197"/>
 			<rect x="0" y="1605.26" width="198.425" height="42.5197" class="st5"/>
-			<text x="14.67" y="1619.32" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="8.53" dy="1.2em" class="st3">2 weeks cough </tspan>– white sputum – no blood, 1 week nose <tspan
+			<text x="14.97" y="1619.32" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="8.53" dy="1.2em" class="st3">2 weeks cough </tspan>– white sputum – no blood, 1 week nose <tspan
 						x="15.2" dy="1.2em" class="st3">running , 5 days sore throat, No shortness of breath</tspan></text>		</g>
-		<g id="shape1301-386" v:mID="1301" v:groupContext="shape" v:layerMember="1" transform="translate(184.252,-673.228)">
+		<g id="shape1301-365" v:mID="1301" v:groupContext="shape" v:layerMember="1" transform="translate(184.252,-673.228)">
 			<title>Dynamic connector.1301</title>
 			<path d="M0 1654.87 L318.94 1654.87" class="st8"/>
 		</g>
-		<g id="shape1302-391" v:mID="1302" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-453.543)">
+		<g id="shape1302-370" v:mID="1302" v:groupContext="shape" v:layerMember="1" transform="translate(481.89,-453.543)">
 			<title>Dynamic connector.1302</title>
 			<path d="M6.68 1647.78 L7.04 1647.78 L63.78 1647.78 L63.78 1449.35" class="st11"/>
 		</g>
-		<g id="shape1304-396" v:mID="1304" v:groupContext="shape" v:layerMember="1" transform="translate(581.102,-666.142)">
+		<g id="shape1304-375" v:mID="1304" v:groupContext="shape" v:layerMember="1" transform="translate(581.102,-666.142)">
 			<title>Dynamic connector.1304</title>
 			<path d="M0 1647.78 L14.17 1647.78 L14.17 740.69 L-474.85 740.69" class="st8"/>
 		</g>
-		<g id="shape1305-401" v:mID="1305" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1523.62)">
+		<g id="shape1305-380" v:mID="1305" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1523.62)">
 			<title>Dynamic connector.1305</title>
 			<path d="M0 1654.87 L21.31 1654.87" class="st8"/>
 		</g>
-		<g id="shape1306-406" v:mID="1306" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1452.76)">
+		<g id="shape1306-385" v:mID="1306" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1452.76)">
 			<title>Dynamic connector.1306</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1307-411" v:mID="1307" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1183.46)">
+		<g id="shape1307-390" v:mID="1307" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-1183.46)">
 			<title>Dynamic connector.1307</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1308-416" v:mID="1308" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1148.03)">
+		<g id="shape1308-395" v:mID="1308" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-1148.03)">
 			<title>Dynamic connector.1308</title>
 			<path d="M0 1647.78 L0 1824.94 L56.74 1824.94" class="st8"/>
 		</g>
-		<g id="shape1309-421" v:mID="1309" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-914.173)">
+		<g id="shape1309-400" v:mID="1309" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-914.173)">
 			<title>Dynamic connector.1309</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1310-426" v:mID="1310" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-644.882)">
+		<g id="shape1310-405" v:mID="1310" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-644.882)">
 			<title>Dynamic connector.1310</title>
 			<path d="M0 1654.87 L21.31 1654.87" class="st8"/>
 		</g>
-		<g id="shape1312-431" v:mID="1312" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1204.72)">
+		<g id="shape1312-410" v:mID="1312" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1204.72)">
 			<title>Dynamic connector.1312</title>
 			<path d="M0 1647.78 L0 1661.95 L-56.74 1661.95" class="st8"/>
 		</g>
-		<g id="shape1313-436" v:mID="1313" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1204.72)">
+		<g id="shape1313-415" v:mID="1313" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1204.72)">
 			<title>Dynamic connector.1313</title>
 			<path d="M0 1647.78 L0 1881.64 L-56.74 1881.64" class="st8"/>
 		</g>
-		<g id="shape1314-441" v:mID="1314" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1204.72)">
+		<g id="shape1314-420" v:mID="1314" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1204.72)">
 			<title>Dynamic connector.1314</title>
 			<path d="M0 1647.78 L0 1931.24 L-56.74 1931.24" class="st8"/>
 		</g>
-		<g id="shape1315-446" v:mID="1315" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
+		<g id="shape1315-425" v:mID="1315" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
 			<title>Dynamic connector.1315</title>
 			<path d="M0 1647.78 L0 1669.04 L-56.74 1669.04" class="st8"/>
 		</g>
-		<g id="shape1316-451" v:mID="1316" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
+		<g id="shape1316-430" v:mID="1316" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-1530.71)">
 			<title>Dynamic connector.1316</title>
 			<path d="M0 1647.78 L0 1718.65 L-56.74 1718.65" class="st8"/>
 		</g>
-		<g id="shape1317-456" v:mID="1317" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
+		<g id="shape1317-435" v:mID="1317" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
 			<title>Dynamic connector.1317</title>
 			<path d="M0 1647.78 L0 1669.04 L-56.74 1669.04" class="st8"/>
 		</g>
-		<g id="shape1319-461" v:mID="1319" v:groupContext="shape" transform="translate(283.465,-566.929)">
+		<g id="shape1319-440" v:mID="1319" v:groupContext="shape" transform="translate(283.465,-566.929)">
 			<title>Rectangle.1319</title>
-			<desc>Uncategorised – 49727002 – Cough</desc>
+			<desc>Uncategorised | 49727002 | Cough</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="41.5" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="4.507em" class="st3">–</tspan> Cough</text>		</g>
-		<g id="shape1320-465" v:mID="1320" v:groupContext="shape" transform="translate(283.465,-481.89)">
+			<text x="41.8" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 49727002 | Cough</text>		</g>
+		<g id="shape1320-443" v:mID="1320" v:groupContext="shape" transform="translate(283.465,-481.89)">
 			<title>Rectangle.1320</title>
-			<desc>Uncategorised – 162397003 – Sore throat</desc>
+			<desc>Uncategorised | 162397003 | Sore throat</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="31.36" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="5.014em" class="st3">–</tspan> Sore throat</text>		</g>
-		<g id="shape1321-469" v:mID="1321" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
+			<text x="31.66" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 162397003 | Sore throat</text>		</g>
+		<g id="shape1321-446" v:mID="1321" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
 			<title>Dynamic connector.1321</title>
 			<path d="M0 1647.78 L0 1718.65 L-56.74 1718.65" class="st8"/>
 		</g>
-		<g id="shape1322-474" v:mID="1322" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
+		<g id="shape1322-451" v:mID="1322" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
 			<title>Dynamic connector.1322</title>
 			<path d="M0 1647.78 L0 1803.69 L-56.74 1803.69" class="st8"/>
 		</g>
-		<g id="shape1323-479" v:mID="1323" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-623.622)">
+		<g id="shape1323-456" v:mID="1323" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-623.622)">
 			<title>Dynamic connector.1323</title>
 			<path d="M0 1647.78 L0 1690.3 L56.74 1690.3" class="st8"/>
 		</g>
-		<g id="shape1324-484" v:mID="1324" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-623.622)">
+		<g id="shape1324-461" v:mID="1324" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-623.622)">
 			<title>Dynamic connector.1324</title>
 			<path d="M0 1647.78 L0 1775.34 L56.74 1775.34" class="st8"/>
 		</g>
-		<g id="shape1325-489" v:mID="1325" v:groupContext="shape" transform="translate(99.2126,-1593.64)">
+		<g id="shape1325-466" v:mID="1325" v:groupContext="shape" transform="translate(99.2126,-1593.64)">
 			<title>Sheet.1325</title>
 			<desc>Topic</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="42.5197" cy="1636.72" width="85.04" height="22.1102"/>
 			<rect x="0" y="1625.67" width="85.0394" height="22.1102" class="st12"/>
 			<text x="29.37" y="1640.32" class="st13" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Topic</text>		</g>
-		<g id="shape1326-492" v:mID="1326" v:groupContext="shape" transform="translate(184.252,-1593.64)">
+		<g id="shape1326-469" v:mID="1326" v:groupContext="shape" transform="translate(184.252,-1593.64)">
 			<title>Sheet.1326</title>
 			<desc>Heading</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="35.4331" cy="1636.72" width="70.87" height="22.1102"/>
 			<rect x="0" y="1625.67" width="70.8661" height="22.1102" class="st12"/>
 			<text x="15.33" y="1640.32" class="st13" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Heading</text>		</g>
-		<g id="shape1327-495" v:mID="1327" v:groupContext="shape" transform="translate(283.465,-1593.64)">
+		<g id="shape1327-472" v:mID="1327" v:groupContext="shape" transform="translate(283.465,-1593.64)">
 			<title>Sheet.1327</title>
 			<desc>Clinical Item</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1636.72" width="198.43" height="22.1102"/>
 			<rect x="0" y="1625.67" width="198.425" height="22.1102" class="st12"/>
 			<text x="69.29" y="1640.32" class="st13" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Clinical Item</text>		</g>
-		<g id="shape1328-498" v:mID="1328" v:groupContext="shape" transform="translate(510.236,-1593.64)">
+		<g id="shape1328-475" v:mID="1328" v:groupContext="shape" transform="translate(510.236,-1593.64)">
 			<title>Sheet.1328</title>
 			<desc>Problem</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="35.4331" cy="1636.72" width="70.87" height="22.1102"/>
 			<rect x="0" y="1625.67" width="70.8661" height="22.1102" class="st12"/>
 			<text x="14.77" y="1640.32" class="st13" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Problem</text>		</g>
-		<g id="shape1329-501" v:mID="1329" v:groupContext="shape" transform="translate(28.3465,-1593.64)">
+		<g id="shape1329-478" v:mID="1329" v:groupContext="shape" transform="translate(28.3465,-1593.64)">
 			<title>Sheet.1329</title>
 			<desc>Consultation</desc>
 			<v:textBlock v:margins="rect(4,4,4,4)" v:tabSpace="42.5197"/>
 			<v:textRect cx="35.4331" cy="1636.72" width="70.87" height="22.1102"/>
 			<rect x="0" y="1625.67" width="70.8661" height="22.1102" class="st12"/>
 			<text x="4.45" y="1640.32" class="st13" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Consultation</text>		</g>
-		<g id="shape1330-504" v:mID="1330" v:groupContext="shape" transform="translate(283.465,-524.409)">
+		<g id="shape1330-481" v:mID="1330" v:groupContext="shape" transform="translate(283.465,-524.409)">
 			<title>Rectangle.1330</title>
-			<desc>Uncategorised – 82272006 – Acute coryza</desc>
+			<desc>Uncategorised | 82272006 | Acute coryza</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="30.98" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="4.507em" class="st3">–</tspan> Acute coryza</text>		</g>
-		<g id="shape1331-508" v:mID="1331" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-623.622)">
+			<text x="31.28" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 82272006 | Acute coryza</text>		</g>
+		<g id="shape1331-484" v:mID="1331" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-623.622)">
 			<title>Dynamic connector.1331</title>
 			<path d="M0 1647.78 L0 1732.82 L56.74 1732.82" class="st8"/>
 		</g>
-		<g id="shape1332-513" v:mID="1332" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
+		<g id="shape1332-489" v:mID="1332" v:groupContext="shape" v:layerMember="1" transform="translate(545.669,-651.968)">
 			<title>Dynamic connector.1332</title>
 			<path d="M0 1647.78 L0 1761.17 L-56.74 1761.17" class="st8"/>
 		</g>
-		<g id="shape1334-518" v:mID="1334" v:groupContext="shape" transform="translate(99.2126,-411.024)">
+		<g id="shape1334-494" v:mID="1334" v:groupContext="shape" transform="translate(99.2126,-411.024)">
 			<title>Ellipse.1334</title>
 			<desc>Knee Pain</desc>
 			<v:userDefs>
@@ -1185,11 +1176,11 @@
 			<v:textRect cx="42.5197" cy="1633.61" width="74.41" height="24.8032"/>
 			<path d="M0 1633.61 A42.5197 14.1732 0 0 1 85.04 1633.61 A42.5197 14.1732 0 1 1 0 1633.61 Z" class="st6"/>
 			<text x="24.44" y="1636.31" class="st7" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Knee Pain</text>		</g>
-		<g id="shape1335-521" v:mID="1335" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-411.024)">
+		<g id="shape1335-497" v:mID="1335" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-411.024)">
 			<title>Dynamic connector.1335</title>
 			<path d="M0 1647.78 L0 1789.51 L35.48 1789.51" class="st8"/>
 		</g>
-		<g id="shape1336-526" v:mID="1336" v:groupContext="shape" transform="translate(184.252,-382.677)">
+		<g id="shape1336-502" v:mID="1336" v:groupContext="shape" transform="translate(184.252,-382.677)">
 			<title>Ellipse.1336</title>
 			<desc>History</desc>
 			<v:userDefs>
@@ -1199,7 +1190,7 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 0 1 70.87 1633.61 A35.4331 14.1732 0 1 1 0 1633.61 Z" class="st6"/>
 			<text x="20.9" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>History</text>		</g>
-		<g id="shape1337-529" v:mID="1337" v:groupContext="shape" transform="translate(184.252,-255.118)">
+		<g id="shape1337-505" v:mID="1337" v:groupContext="shape" transform="translate(184.252,-255.118)">
 			<title>Ellipse.1337</title>
 			<desc>Examination</desc>
 			<v:userDefs>
@@ -1209,13 +1200,13 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="10.18" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Examination</text>		</g>
-		<g id="shape1338-532" v:mID="1338" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-411.024)">
+		<g id="shape1338-508" v:mID="1338" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-411.024)">
 			<title>Dynamic connector.1338</title>
 			<path d="M0 1647.78 L0 1661.95 L35.48 1661.95" class="st8"/>
 		</g>
-		<g id="shape1339-537" v:mID="1339" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-212.598)">
+		<g id="shape1339-513" v:mID="1339" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-212.598)">
 			<title>Process.1339</title>
-			<desc>Uncategorised – 299373004 - Tenderness on medial joint line o...</desc>
+			<desc>Uncategorised | 299373004 | Tenderness on medial joint line o...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -1242,77 +1233,77 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="6.43" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="5.014em" class="st3">-</tspan> Tenderness on medial joint <tspan x="80.25" dy="1.2em" class="st3">line of knee</tspan></text>		</g>
-		<g id="shape1340-542" v:mID="1340" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-255.118)">
+			<text x="5.96" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 299373004 | Tenderness on medial joint <tspan
+						x="80.25" dy="1.2em" class="st3">line of knee</tspan></text>		</g>
+		<g id="shape1340-517" v:mID="1340" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-255.118)">
 			<title>Dynamic connector.1340</title>
 			<path d="M0 1647.78 L0 1676.13 L56.74 1676.13" class="st8"/>
 		</g>
-		<g id="shape1341-547" v:mID="1341" v:groupContext="shape" transform="translate(283.465,-340.157)">
+		<g id="shape1341-522" v:mID="1341" v:groupContext="shape" transform="translate(283.465,-340.157)">
 			<title>Rectangle.1341</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note Similar problem...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note Similar problem...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.67" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="12.47" dy="1.2em" class="st3">Similar problem 3 months ago </tspan>– settled after 2 weeks</text>		</g>
-		<g id="shape1342-552" v:mID="1342" v:groupContext="shape" transform="translate(283.465,-255.118)">
+			<text x="14.97" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="12.47" dy="1.2em" class="st3">Similar problem 3 months ago </tspan>– settled after 2 weeks</text>		</g>
+		<g id="shape1342-526" v:mID="1342" v:groupContext="shape" transform="translate(283.465,-255.118)">
 			<title>Rectangle.1342</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note No effusion. Fu...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note No effusion. Fu...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.67" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="7.59" dy="1.2em" class="st3">No effusion. Full range of movement. Ligaments normal.</tspan></text>		</g>
-		<g id="shape1345-557" v:mID="1345" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-389.764)">
+			<text x="14.97" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><tspan
+						x="7.59" dy="1.2em" class="st3">No effusion. Full range of movement. Ligaments normal.</tspan></text>		</g>
+		<g id="shape1345-530" v:mID="1345" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-389.764)">
 			<title>Dynamic connector.1345</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1346-562" v:mID="1346" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-262.205)">
+		<g id="shape1346-535" v:mID="1346" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-262.205)">
 			<title>Dynamic connector.1346</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1349-567" v:mID="1349" v:groupContext="shape" transform="translate(283.465,-382.677)">
+		<g id="shape1349-540" v:mID="1349" v:groupContext="shape" transform="translate(283.465,-382.677)">
 			<title>Rectangle.1349</title>
-			<desc>Uncategorised – 30989003 – Knee Pain 3 weeks medial right kne...</desc>
+			<desc>Uncategorised | 30989003 | Knee Pain 3 weeks medial right kne...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="35.76" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="4.507em" class="st3">–</tspan> Knee Pain<tspan x="28.45" dy="1.2em" class="st3">3 weeks medial right knee pain. No trauma. </tspan> </text>		</g>
-		<g id="shape1353-572" v:mID="1353" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-382.677)">
+			<text x="36.06" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 30989003 | Knee Pain<v:newlineChar/><tspan
+						x="28.45" dy="1.2em" class="st3">3 weeks medial right knee pain. No trauma. </tspan> </text>		</g>
+		<g id="shape1353-544" v:mID="1353" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-382.677)">
 			<title>Dynamic connector.1353</title>
 			<path d="M0 1647.78 L0 1676.13 L56.74 1676.13" class="st8"/>
 		</g>
-		<g id="shape1355-577" v:mID="1355" v:groupContext="shape" transform="translate(283.465,-297.638)">
+		<g id="shape1355-549" v:mID="1355" v:groupContext="shape" transform="translate(283.465,-297.638)">
 			<title>Rectangle.1355</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note No locking. No ...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note No locking. No ...</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.67" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="35.92" dy="1.2em" class="st3">No locking. No effusion. No giving way.</tspan></text>		</g>
-		<g id="shape1356-582" v:mID="1356" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-382.677)">
+			<text x="14.97" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><v:paragraph
+						v:horizAlign="1"/><tspan x="35.92" dy="1.2em" class="st3">No locking. No effusion. No giving way.</tspan></text>		</g>
+		<g id="shape1356-553" v:mID="1356" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-382.677)">
 			<title>Dynamic connector.1356</title>
 			<path d="M0 1647.78 L0 1718.65 L56.74 1718.65" class="st8"/>
 		</g>
-		<g id="shape1357-587" v:mID="1357" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
+		<g id="shape1357-558" v:mID="1357" v:groupContext="shape" v:layerMember="1" transform="translate(63.7795,-1559.06)">
 			<title>Dynamic connector.1357</title>
 			<path d="M0 1647.78 L0 2781.64 L28.39 2781.64" class="st8"/>
 		</g>
-		<g id="shape1358-592" v:mID="1358" v:groupContext="shape" transform="translate(184.252,-170.079)">
+		<g id="shape1358-563" v:mID="1358" v:groupContext="shape" transform="translate(184.252,-170.079)">
 			<title>Ellipse.1358</title>
 			<desc>Plan</desc>
 			<v:userDefs>
@@ -1322,9 +1313,9 @@
 			<v:textRect cx="35.4331" cy="1633.61" width="62.01" height="24.8031"/>
 			<path d="M0 1633.61 A35.4331 14.1732 0 1 1 70.87 1633.61 A35.4331 14.1732 0 0 1 0 1633.61 Z" class="st6"/>
 			<text x="26.68" y="1636.61" class="st10" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Plan</text>		</g>
-		<g id="shape1359-595" v:mID="1359" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-127.559)">
+		<g id="shape1359-566" v:mID="1359" v:groupContext="shape" v:layerMember="0" transform="translate(283.465,-127.559)">
 			<title>Process.1359</title>
-			<desc>Uncategorised – 37331000000100 – Comment Note Analgesia advic...</desc>
+			<desc>Uncategorised | 37331000000100 | Comment Note Analgesia advic...</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
 						v:langID="1033" v:cal="0"/>
@@ -1351,28 +1342,27 @@
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="14.67" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised –<tspan
-						dx="7.548em" class="st3">–</tspan> Comment Note<tspan x="29.32" dy="1.2em" class="st3">Analgesia advice, try knee support daytime</tspan></text>		</g>
-		<g id="shape1360-600" v:mID="1360" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-170.079)">
+			<text x="14.97" y="1631.21" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Uncategorised | 37331000000100 | Comment Note<v:newlineChar/><v:paragraph
+						v:horizAlign="1"/><tspan x="29.32" dy="1.2em" class="st3">Analgesia advice, try knee support daytime</tspan></text>		</g>
+		<g id="shape1360-570" v:mID="1360" v:groupContext="shape" v:layerMember="1" transform="translate(219.685,-170.079)">
 			<title>Dynamic connector.1360</title>
 			<path d="M0 1647.78 L0 1676.13 L56.74 1676.13" class="st8"/>
 		</g>
-		<g id="shape1361-605" v:mID="1361" v:groupContext="shape" transform="translate(283.465,-170.079)">
+		<g id="shape1361-575" v:mID="1361" v:groupContext="shape" transform="translate(283.465,-170.079)">
 			<title>Rectangle.1361</title>
-			<desc>Referral – 308447003 – Referral to physiotherapist</desc>
+			<desc>Referral | 308447003 | Referral to physiotherapist</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
 			</v:userDefs>
 			<v:textBlock v:margins="rect(2,2,2,2)" v:tabSpace="42.5197"/>
 			<v:textRect cx="99.2126" cy="1633.61" width="198.43" height="28.3465"/>
 			<rect x="0" y="1619.43" width="198.425" height="28.3465" class="st5"/>
-			<text x="16.84" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Referral –<tspan
-						dx="5.014em" class="st3">–</tspan> Referral to physiotherapist</text>		</g>
-		<g id="shape1362-609" v:mID="1362" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-177.165)">
+			<text x="17.14" y="1636.01" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Referral | 308447003 | Referral to physiotherapist</text>		</g>
+		<g id="shape1362-578" v:mID="1362" v:groupContext="shape" v:layerMember="1" transform="translate(255.118,-177.165)">
 			<title>Dynamic connector.1362</title>
 			<path d="M0 1640.69 L21.31 1640.69" class="st8"/>
 		</g>
-		<g id="shape1363-614" v:mID="1363" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-411.024)">
+		<g id="shape1363-583" v:mID="1363" v:groupContext="shape" v:layerMember="1" transform="translate(141.732,-411.024)">
 			<title>Dynamic connector.1363</title>
 			<path d="M0 1647.78 L0 1874.55 L35.48 1874.55" class="st8"/>
 		</g>
