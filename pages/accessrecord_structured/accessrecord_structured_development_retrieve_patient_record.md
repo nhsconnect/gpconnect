@@ -795,7 +795,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-{% include image.html file="access_structured/data_filter_scenario1.jpg" url="images/access_structured/data_filter_scenario1.jpg"  max-width="100" caption="click image for full size view" %}
+<object type="image/svg+xml" data="images/access_structured/data_filter_scenario1.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 1"></object>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario2">
@@ -806,7 +806,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-{% include image.html file="access_structured/data_filter_scenario2.jpg" url="images/access_structured/data_filter_scenario2.jpg"  max-width="100" caption="click image for full size view" %}
+<object type="image/svg+xml" data="images/access_structured/data_filter_scenario2.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 2"></object>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario3">
@@ -817,7 +817,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-{% include image.html file="access_structured/data_filter_scenario3.jpg" url="images/access_structured/data_filter_scenario3.jpg"  max-width="100" caption="click image for full size view" %}
+<object type="image/svg+xml" data="images/access_structured/data_filter_scenario3.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 3"></object>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario4">
@@ -828,7 +828,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-{% include image.html file="access_structured/data_filter_scenario4.jpg" url="images/access_structured/data_filter_scenario4.jpg"  max-width="100" caption="click image for full size view" %}
+<object type="image/svg+xml" data="images/access_structured/data_filter_scenario4.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 4"></object>
 </div>
 </div>
 
