@@ -21,7 +21,9 @@ This supersedes the previous scheme whereby the constituent capability packs (Ac
 
 The specification version number is based on the [Semantic Versioning 2.0.0](http://semver.org/){:target="_blank"} standard.
 
-![Semantic versioning diagram](images/design/semantic-versioning.png)
+<br/>
+<object type="image/svg+xml" data="images/design/semantic-versioning.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Semantic versioning diagram"></object>
+<br/>
 
 When a specification is released, the version number is incremented as follows:
 
