@@ -29,7 +29,8 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<p><img style="height: 400px;" alt="Get structured record interaction diagram" src="images/access_structured/get-structured-record-interaction-diagram.png"/></p>
+
+<object type="image/svg+xml" data="images/access_structured/get-structured-record-interaction-diagram.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Get structured record interaction diagram"></object>
 
 <div class="screen-reader-text">
 A consuming system attempts to retrieve a patient’s structured record by sending a POST patient identifier request to the GP Connect API. If successful, the API returns a structured record bundle resource. If unsuccessful, it returns an error response.
@@ -838,8 +839,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
 
 The following diagram illustrates the population of the response `Bundle` according to the parameters in the inbound `Parameters` request resource:
 
-<img style="max-height: 100%; max-width: 100%" alt="Structured Bundle response" src="images/access_structured/structured-bundle-response.png"/>
-
+<object type="image/svg+xml" data="images/access_structured/structured-bundle-response.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Structured Bundle response"></object>
 #### Payload response examples ####
 
 Examples of the payload requests and responses can be found here:
