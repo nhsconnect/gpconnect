@@ -20,12 +20,12 @@
 	</style>
 
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
-		<title>Page-1</title>
+		<title></title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
 		<v:layer v:name="Flowchart" v:index="0"/>
 		<g id="shape2-1" v:mID="2" v:groupContext="shape" v:layerMember="0" transform="translate(18.12,-131.506)">
-			<title>Process</title>
+			<title></title>
 			<desc>Search documents in Primary Care (clinical system)</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
@@ -57,7 +57,7 @@
 			<text x="17.35" y="183.09" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Search documents in <tspan
 						x="16.88" dy="1.2em" class="st3">Primary Care (clinical </tspan><tspan x="54.59" dy="1.2em" class="st3">system)</tspan></text>		</g>
 		<g id="shape3-6" v:mID="3" v:groupContext="shape" v:layerMember="0" transform="translate(192.923,-131.506)">
-			<title>Process.3</title>
+			<title></title>
 			<desc>Metadata</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
@@ -87,7 +87,7 @@
 			<rect x="0" y="149.626" width="153.543" height="92.126" class="st1"/>
 			<text x="48.88" y="199.89" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Metadata</text>		</g>
 		<g id="shape4-9" v:mID="4" v:groupContext="shape" v:layerMember="0" transform="translate(367.726,-131.506)">
-			<title>Process.4</title>
+			<title></title>
 			<desc>Retrieve documents in Primary Care (clinical system)</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
@@ -119,7 +119,7 @@
 			<text x="12.68" y="183.09" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Retrieve documents in <tspan
 						x="16.88" dy="1.2em" class="st3">Primary Care (clinical </tspan><tspan x="54.59" dy="1.2em" class="st3">system)</tspan></text>		</g>
 		<g id="shape5-14" v:mID="5" v:groupContext="shape" v:layerMember="0" transform="translate(542.529,-131.506)">
-			<title>Process.5</title>
+			<title></title>
 			<desc>View binary documents in Primary Care (clinical system)</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
@@ -151,7 +151,7 @@
 			<text x="2.91" y="183.09" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>View binary documents in <tspan
 						x="16.88" dy="1.2em" class="st3">Primary Care (clinical </tspan><tspan x="54.59" dy="1.2em" class="st3">system)</tspan></text>		</g>
 		<g id="shape6-19" v:mID="6" v:groupContext="shape" v:layerMember="0" transform="translate(274.419,-18.12)">
-			<title>Process.6</title>
+			<title></title>
 			<desc>Auditing</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
@@ -181,7 +181,7 @@
 			<rect x="0" y="149.626" width="153.543" height="92.126" class="st1"/>
 			<text x="52.84" y="199.89" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Auditing</text>		</g>
 		<g id="shape7-22" v:mID="7" v:groupContext="shape" v:layerMember="0" transform="translate(449.222,-18.12)">
-			<title>Process.7</title>
+			<title></title>
 			<desc>IG Requirements</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"
@@ -211,7 +211,7 @@
 			<rect x="0" y="149.626" width="153.543" height="92.126" class="st1"/>
 			<text x="29.01" y="199.89" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>IG Requirements</text>		</g>
 		<g id="shape8-25" v:mID="8" v:groupContext="shape" v:layerMember="0" transform="translate(99.6161,-18.12)">
-			<title>Process.8</title>
+			<title></title>
 			<desc>Document Access - Security</desc>
 			<v:custProps>
 				<v:cp v:nameU="Cost" v:lbl="Cost" v:prompt="" v:type="7" v:format="@" v:sortKey="" v:invis="false" v:ask="false"

@@ -36,18 +36,18 @@
 		</marker>
 	</defs>
 	<g v:mID="0" v:index="1" v:groupContext="foregroundPage">
-		<title>Page-1</title>
+		<title></title>
 		<v:pageProperties v:drawingScale="1" v:pageScale="1" v:drawingUnits="19" v:shadowOffsetX="9" v:shadowOffsetY="-9"/>
 		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(60.87,463.86) scale(1,-1)">
-			<title>Lifeline</title>
+			<title></title>
 			<path d="M0 414.24 L0 49.74" class="st1"/>
 		</g>
 		<g id="shape2-4" v:mID="2" v:groupContext="shape" transform="translate(371.37,463.86) scale(1,-1)">
-			<title>Lifeline.14</title>
+			<title></title>
 			<path d="M0 414.24 L0 49.74" class="st1"/>
 		</g>
 		<g id="shape3-7" v:mID="3" v:groupContext="shape" transform="translate(65.37,-236.37)">
-			<title>Message (seq.diag)</title>
+			<title></title>
 			<desc>2a: Find a patient</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
@@ -63,25 +63,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline</title>
+			<title></title>
 			<g id="shape5-15" v:mID="5" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.5</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape6-18" v:mID="6" v:groupContext="shape">
-				<title>Sheet.6</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape7-21" v:mID="7" v:groupContext="shape">
-				<title>Sheet.7</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape8-24" v:mID="8" v:groupContext="shape">
-				<title>Sheet.8</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape9-27" v:mID="9" v:groupContext="shape">
-				<title>Sheet.9</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -99,25 +99,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline.22</title>
+			<title></title>
 			<g id="shape11-34" v:mID="11" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.11</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape12-37" v:mID="12" v:groupContext="shape">
-				<title>Sheet.12</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape13-40" v:mID="13" v:groupContext="shape">
-				<title>Sheet.13</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape14-43" v:mID="14" v:groupContext="shape">
-				<title>Sheet.14</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape15-46" v:mID="15" v:groupContext="shape">
-				<title>Sheet.15</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -130,7 +130,7 @@
 			</g>
 		</g>
 		<g id="shape16-52" v:mID="16" v:groupContext="shape" transform="translate(366.87,-204.87) scale(-1,1)">
-			<title>Message (seq.diag).28</title>
+			<title></title>
 			<desc>2b: No patient returned</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
@@ -141,7 +141,7 @@
 			<path d="M0 414.24 L301.5 414.24" class="st2"/>
 			<text x="-211.55" y="411.09" transform="scale(-1,1)" class="st4" v:langID="2057"><v:paragraph/><v:tabList/>2b: No patient returned  </text>		</g>
 		<g id="shape17-58" v:mID="17" v:groupContext="shape" transform="translate(65.37,-155.37)">
-			<title>Message (seq.diag).30</title>
+			<title></title>
 			<desc>3a: Register a patient</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
@@ -157,25 +157,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline.31</title>
+			<title></title>
 			<g id="shape19-65" v:mID="19" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.19</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape20-68" v:mID="20" v:groupContext="shape">
-				<title>Sheet.20</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape21-71" v:mID="21" v:groupContext="shape">
-				<title>Sheet.21</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape22-74" v:mID="22" v:groupContext="shape">
-				<title>Sheet.22</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape23-77" v:mID="23" v:groupContext="shape">
-				<title>Sheet.23</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -193,25 +193,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline.37</title>
+			<title></title>
 			<g id="shape25-84" v:mID="25" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.25</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape26-87" v:mID="26" v:groupContext="shape">
-				<title>Sheet.26</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape27-90" v:mID="27" v:groupContext="shape">
-				<title>Sheet.27</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape28-93" v:mID="28" v:groupContext="shape">
-				<title>Sheet.28</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape30-96" v:mID="30" v:groupContext="shape">
-				<title>Sheet.30</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -224,7 +224,7 @@
 			</g>
 		</g>
 		<g id="shape31-102" v:mID="31" v:groupContext="shape" transform="translate(366.87,-123.87) scale(-1,1)">
-			<title>Message (seq.diag).42</title>
+			<title></title>
 			<desc>3b: Registered patient returned</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
@@ -235,7 +235,7 @@
 			<path d="M0 414.24 L301.5 414.24" class="st2"/>
 			<text x="-230.53" y="411.09" transform="scale(-1,1)" class="st4" v:langID="2057"><v:paragraph/><v:tabList/>3b: Registered patient returned  </text>		</g>
 		<g id="shape32-108" v:mID="32" v:groupContext="shape" transform="translate(65.37,-330.87)">
-			<title>Message (seq.diag).44</title>
+			<title></title>
 			<desc>1a: Search for free slots</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
@@ -251,25 +251,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline.45</title>
+			<title></title>
 			<g id="shape34-115" v:mID="34" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.34</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape35-118" v:mID="35" v:groupContext="shape">
-				<title>Sheet.35</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape36-121" v:mID="36" v:groupContext="shape">
-				<title>Sheet.36</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape37-124" v:mID="37" v:groupContext="shape">
-				<title>Sheet.37</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape38-127" v:mID="38" v:groupContext="shape">
-				<title>Sheet.38</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -287,25 +287,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline.51</title>
+			<title></title>
 			<g id="shape40-134" v:mID="40" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.40</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape41-137" v:mID="41" v:groupContext="shape">
-				<title>Sheet.41</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape42-140" v:mID="42" v:groupContext="shape">
-				<title>Sheet.42</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape43-143" v:mID="43" v:groupContext="shape">
-				<title>Sheet.43</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape44-146" v:mID="44" v:groupContext="shape">
-				<title>Sheet.44</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -318,7 +318,7 @@
 			</g>
 		</g>
 		<g id="shape45-152" v:mID="45" v:groupContext="shape" transform="translate(366.87,-299.37) scale(-1,1)">
-			<title>Message (seq.diag).57</title>
+			<title></title>
 			<desc>1b: Free slots returned</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
@@ -334,25 +334,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Class</title>
+			<title></title>
 			<g id="shape47-159" v:mID="47" v:groupContext="shape" transform="translate(121.5,1.13687E-13)">
-				<title>Sheet.47</title>
+				<title></title>
 				<path d="M0 414.24 L0 364.74 L0 414.24 Z" class="st7"/>
 			</g>
 			<g id="shape48-162" v:mID="48" v:groupContext="shape">
-				<title>Sheet.48</title>
+				<title></title>
 				<path d="M121.5 414.24 L0 414.24 L121.5 414.24 Z" class="st7"/>
 			</g>
 			<g id="shape49-165" v:mID="49" v:groupContext="shape">
-				<title>Sheet.49</title>
+				<title></title>
 				<path d="M121.5 414.24 L0 414.24 L121.5 414.24 Z" class="st7"/>
 			</g>
 			<g id="shape50-168" v:mID="50" v:groupContext="shape">
-				<title>Sheet.50</title>
+				<title></title>
 				<path d="M121.5 414.24 L0 414.24 L121.5 414.24 Z" class="st7"/>
 			</g>
 			<g id="shape51-171" v:mID="51" v:groupContext="shape">
-				<title>Sheet.51</title>
+				<title></title>
 				<desc>GP Connect Consumer</desc>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
@@ -374,25 +374,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Class.1</title>
+			<title></title>
 			<g id="shape53-180" v:mID="53" v:groupContext="shape" transform="translate(121.5,1.13687E-13)">
-				<title>Sheet.53</title>
+				<title></title>
 				<path d="M0 414.24 L0 364.74 L0 414.24 Z" class="st10"/>
 			</g>
 			<g id="shape54-183" v:mID="54" v:groupContext="shape">
-				<title>Sheet.54</title>
+				<title></title>
 				<path d="M121.5 414.24 L0 414.24 L121.5 414.24 Z" class="st10"/>
 			</g>
 			<g id="shape55-186" v:mID="55" v:groupContext="shape">
-				<title>Sheet.55</title>
+				<title></title>
 				<path d="M121.5 414.24 L0 414.24 L121.5 414.24 Z" class="st10"/>
 			</g>
 			<g id="shape56-189" v:mID="56" v:groupContext="shape">
-				<title>Sheet.56</title>
+				<title></title>
 				<path d="M121.5 414.24 L0 414.24 L121.5 414.24 Z" class="st10"/>
 			</g>
 			<g id="shape57-192" v:mID="57" v:groupContext="shape">
-				<title>Sheet.57</title>
+				<title></title>
 				<desc>GP Connect Provider</desc>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
@@ -409,7 +409,7 @@
 							x="35.97" dy="1.2em" class="st9">Provider</tspan></text>			</g>
 		</g>
 		<g id="shape58-200" v:mID="58" v:groupContext="shape" transform="translate(65.37,-69.87)">
-			<title>Message (seq.diag).58</title>
+			<title></title>
 			<desc>4a: Book an appointment</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
@@ -425,25 +425,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline.59</title>
+			<title></title>
 			<g id="shape60-207" v:mID="60" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.60</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape61-210" v:mID="61" v:groupContext="shape">
-				<title>Sheet.61</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape62-213" v:mID="62" v:groupContext="shape">
-				<title>Sheet.62</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape63-216" v:mID="63" v:groupContext="shape">
-				<title>Sheet.63</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape64-219" v:mID="64" v:groupContext="shape">
-				<title>Sheet.64</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -461,25 +461,25 @@
 				<v:ud v:nameU="Format" v:val="VT0(0):26"/>
 				<v:ud v:nameU="ActiveObject" v:prompt="0,0626" v:val="VT0(0):26"/>
 			</v:userDefs>
-			<title>Part, Lifeline.65</title>
+			<title></title>
 			<g id="shape66-226" v:mID="66" v:groupContext="shape" transform="translate(9,1.7053E-13)">
-				<title>Sheet.66</title>
+				<title></title>
 				<path d="M0 414.24 L0 351.24 L0 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape67-229" v:mID="67" v:groupContext="shape">
-				<title>Sheet.67</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape68-232" v:mID="68" v:groupContext="shape">
-				<title>Sheet.68</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape69-235" v:mID="69" v:groupContext="shape">
-				<title>Sheet.69</title>
+				<title></title>
 				<path d="M9 414.24 L0 414.24 L9 414.24 Z" class="st5"/>
 			</g>
 			<g id="shape70-238" v:mID="70" v:groupContext="shape">
-				<title>Sheet.70</title>
+				<title></title>
 				<v:userDefs>
 					<v:ud v:nameU="TabSize" v:val="VT0(0.125):0"/>
 				</v:userDefs>
@@ -492,7 +492,7 @@
 			</g>
 		</g>
 		<g id="shape71-244" v:mID="71" v:groupContext="shape" transform="translate(366.87,-38.37) scale(-1,1)">
-			<title>Message (seq.diag).71</title>
+			<title></title>
 			<desc>4b: Booked appointment returned</desc>
 			<v:userDefs>
 				<v:ud v:nameU="State" v:val="VT0(1):26"/>
