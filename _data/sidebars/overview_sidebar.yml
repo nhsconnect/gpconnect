@@ -33,7 +33,7 @@ children:
   - title: Release notes
     output: web
     children:
-    - title: 1.5.0
+    - title: Release 1.5.0
       url: /overview_release_notes_1_5_0.html
       output: web
     - title: Access Document 1.0.1
@@ -42,49 +42,49 @@ children:
     - title: Access Document 1.0.0
       url: /overview_release_notes_documents_1_0_0.html
       output: web
-    - title: 1.4.1
+    - title: Release 1.4.1
       url: /overview_release_notes_1_4_1.html
       output: web
-    - title: 1.4.0
+    - title: Release 1.4.0
       url: /overview_release_notes_1_4_0.html
       output: web
-    - title: 1.3.1
+    - title: Release 1.3.1
       url: /overview_release_notes_1_3_1.html
       output: web
-    - title: 1.3.0
+    - title: Release 1.3.0
       url: /overview_release_notes_1_3_0.html
       output: web
-    - title: 1.2.6
+    - title: Release 1.2.6
       url: /overview_release_notes_1_2_6.html
       output: web
-    - title: 1.2.5
+    - title: Release 1.2.5
       url: /overview_release_notes_1_2_5.html
       output: web
-    - title: 1.2.4
+    - title: Release 1.2.4
       url: /overview_release_notes_1_2_4.html
       output: web
-    - title: 1.2.3
+    - title: Release 1.2.3
       url: /overview_release_notes_1_2_3.html
       output: web
-    - title: 1.2.2
+    - title: Release 1.2.2
       url: /overview_release_notes_1_2_2.html
       output: web
-    - title: 1.2.1
+    - title: Release 1.2.1
       url: /overview_release_notes_1_2_1.html
       output: web
-    - title: 1.2.0
+    - title: Release 1.2.0
       url: /overview_release_notes_1_2_0.html
       output: web
-    - title: 1.1.1
+    - title: Release 1.1.1
       url: /overview_release_notes_1_1_1.html
       output: web
-    - title: 1.1.0
+    - title: Release 1.1.0
       url: /overview_release_notes_1_1_0.html
       output: web
-    - title: 1.0.0
+    - title: Release 1.0.0
       url: /overview_release_notes_1_0_0.html
       output: web
-    - title: 0.5.0
+    - title: Release 0.5.0
       url: /overview_release_notes_0_5_0.html
       output: web
 
