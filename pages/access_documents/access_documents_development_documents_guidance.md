@@ -25,7 +25,9 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## As is ##
 
-<IMG src="images/access_documents/As-Is.jpg" alt="As is process for search and retrieval of documents from a GP practice"  style="max-width:80%;max-height:80%;">
+<br/>
+<object type="image/svg+xml" data="images/access_documents/As-Is.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="As is process for search and retrieval of documents from a GP practice"></object>
+<br/>
 
 ### Process steps
 
@@ -106,15 +108,21 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ## Value proposition ##
 
- <IMG src="images/access_documents/ValueProp.png" alt="Value Proposition"  style="max-width:100%;max-height:80%;">
+<br/>
+<object type="image/svg+xml" data="images/access_documents/ValueProp.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Value Proposition"></object>
+<br/>
 
 ## Scope ##
 
-  <IMG src="images/access_documents/ARDocsScope.JPG" alt="Scope of documents"  style="max-width:60%;max-height:60%;">
+<br/>
+<object type="image/svg+xml" data="images/access_documents/ARDocsScope.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Scope of documents"></object>
+<br/>
 
 ## Use case ##
 
-<IMG src="images/access_documents/DistrictNursePatient.png" alt="District nurse attends a patient at home and views their discharge summary"  style="max-width:73%;max-height:60%;">
+<br/>
+<object type="image/svg+xml" data="images/access_documents/DistrictNursePatient.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="District nurse attends a patient at home and views their discharge summary"></object>
+<br/>
 
 ## Document Type ##
 Document types vary across GP practices and may contain free text. Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
