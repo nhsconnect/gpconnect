@@ -27,7 +27,7 @@ To support this, GP Connect has developed a FHIR model that identifies all the G
 This diagram is explained in the following text:
 </div>
 
-<object type="image/svg+xml" data="images/access_structured/FHIR_model_key.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="GP Connect FHIR Model Key"></object>
+<object type="image/svg+xml" data="images/access_structured/FHIR_model_key.svg" style="max-width:100%;max-height:100%;" alt="GP Connect FHIR Model Key"></object>
 <br/>
 
 The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries. Other clinical areas will be added as they are developed.
