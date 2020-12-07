@@ -27,7 +27,6 @@ To support this, GP Connect has developed a FHIR model that identifies all the G
 This diagram is explained in the following text:
 </div>
 
-<br/>
 <object type="image/svg+xml" data="images/access_structured/FHIR_model_key.svg" style="max-width:100%;max-height:100%;" alt="GP Connect FHIR Model Key"></object>
 <br/>
 
@@ -57,7 +56,8 @@ The reason for the exception in the case of problems is due to the fact that pro
 ### Consultations ###
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
-<a href="images/access_structured/Consultation_Return.png"><img src="images/access_structured/Consultation_Return.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+<object type="image/svg+xml" data="images/access_structured/Consultation_Return.svg" style="max-width:100%;max-height:100%;" alt="Consultation Returned FHIR profiles"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -103,7 +103,8 @@ So, for example, if a consumer requests a Consultation that contains a Medicatio
 ### Problems ###
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
 
-<a href="images/access_structured/Problem_Return.png"><img src="images/access_structured/Problem_Return.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+<object type="image/svg+xml" data="images/access_structured/Problem_Return.svg" style="max-width:100%;max-height:100%;" alt="Problem Returned FHIR profiles"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
