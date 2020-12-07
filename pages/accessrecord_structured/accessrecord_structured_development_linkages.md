@@ -20,14 +20,14 @@ For a consuming system to be able to interpret this linkage information correctl
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
 <br/>
-<object type="image/svg+xml" data="images/access_structured/GP_Connect_FHIR_Model.svg" style="max-width:100%;max-height:100%;" alt="GP Connect FHIR Model"></object>
+<object type="image/svg+xml" data="images/access_structured/GP_Connect_FHIR_Model.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="GP Connect FHIR Model"></object>
 <br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
 </div>
 
-<object type="image/svg+xml" data="images/access_structured/FHIR_model_key.svg" style="max-width:100%;max-height:100%;" alt="GP Connect FHIR Model Key"></object>
+<object type="image/svg+xml" data="images/access_structured/FHIR_model_key.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="GP Connect FHIR Model Key"></object>
 <br/>
 
 The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries. Other clinical areas will be added as they are developed.
@@ -56,7 +56,7 @@ The reason for the exception in the case of problems is due to the fact that pro
 ### Consultations ###
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
-<object type="image/svg+xml" data="images/access_structured/Consultation_Return.svg" style="max-width:100%;max-height:100%;" alt="Consultation Returned FHIR profiles"></object>
+<object type="image/svg+xml" data="images/access_structured/Consultation_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Consultation Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -103,8 +103,7 @@ So, for example, if a consumer requests a Consultation that contains a Medicatio
 ### Problems ###
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
 
-<object type="image/svg+xml" data="images/access_structured/Problem_Return.svg" style="max-width:100%;max-height:100%;" alt="Problem Returned FHIR profiles"></object>
-<br/>
+<object type="image/svg+xml" data="images/access_structured/Problem_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Problem Returned FHIR profiles"></object>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -147,7 +146,7 @@ So, for example, if a consumer requests a Problem that links to a Medication but
 ### Medications and medical devices ###
 When GP Connect returns a medication or medical device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
 
-<object type="image/svg+xml" data="images/access_structured/Medication_Return.svg" style="max-width:100%;max-height:100%;" alt="Medication and Medical Device Returned FHIR profiles"></object>
+<object type="image/svg+xml" data="images/access_structured/Medication_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication and Medical Device Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -170,7 +169,7 @@ For each `MedicationStatement` referenced in the `List` profile:
 ### Allergies ###
 When GP Connect returns an allergy it will supply all the allergy data.
 
-<object type="image/svg+xml" data="images/access_structured/Allergy_Return.svg" style="max-width:100%;max-height:100%;" alt="Allergy Returned FHIR profiles"></object>
+<object type="image/svg+xml" data="images/access_structured/Allergy_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Allergy Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -218,7 +217,6 @@ For each `Immunization` and `Observation` referenced in the query response `List
 When GP Connect returns uncategorised data it will supply all the data about the uncategorised data.
 
 <object type="image/svg+xml" data="images/access_structured/Uncategorised_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Uncategorised Data Returned FHIR profiles"></object>
-<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -282,7 +280,6 @@ For each `DiagnosticReport` referenced in the `List` profile:
 When GP Connect returns a diary entry it will supply all the diary entry data.
 
 <object type="image/svg+xml" data="images/access_structured/DiaryEntry_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Diary Entry Returned FHIR profiles"></object>
-<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
