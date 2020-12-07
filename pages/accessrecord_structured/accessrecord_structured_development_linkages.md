@@ -147,7 +147,8 @@ So, for example, if a consumer requests a Problem that links to a Medication but
 ### Medications and medical devices ###
 When GP Connect returns a medication or medical device it will supply the prescription plan information. If asked for by the consumer, GP Connect will also return all the prescription issues made under the plan.
 
-<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Medication_Return.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+<object type="image/svg+xml" data="images/access_structured/Medication_Return.svg" style="max-width:100%;max-height:100%;" alt="Medication and Medical Device Returned FHIR profiles"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
