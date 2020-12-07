@@ -170,9 +170,8 @@ For each `MedicationStatement` referenced in the `List` profile:
 ### Allergies ###
 When GP Connect returns an allergy it will supply all the allergy data.
 
-<center>
-<a href="images/access_structured/Allergy_Return.png"><img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
+<object type="image/svg+xml" data="images/access_structured/Allergy_Return.svg" style="max-width:100%;max-height:100%;" alt="Allergy Returned FHIR profiles"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -189,12 +188,10 @@ For each `AllergyIntolerance` referenced in either of the `List` profiles:
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-
 ### Immunisations ###
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
-<br/>
-<object type="image/svg+xml" data="images/access_structured/Immunisation_Return_2.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Immunisation Returned FHIR profiles"></object>
+<object type="image/svg+xml" data="images/access_structured/Immunisation_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Immunisation Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -220,9 +217,8 @@ For each `Immunization` and `Observation` referenced in the query response `List
 ### Uncategorised data ###
 When GP Connect returns uncategorised data it will supply all the data about the uncategorised data.
 
-<center>
-<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
+<object type="image/svg+xml" data="images/access_structured/Uncategorised_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Uncategorised Data Returned FHIR profiles"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -241,9 +237,8 @@ For each `Observation` referenced in the `List` profile:
 ### Referrals ###
 When GP Connect returns a referral it will supply all the referral data.
 
-<center>
-<a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Referral_Return.png" alt="Referral Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
-</center>
+<object type="image/svg+xml" data="images/access_structured/Referral_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Referral Returned FHIR profiles"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -262,7 +257,7 @@ For each `ReferralRequest` referenced in the `List` profile:
 When GP Connect returns an investigation it will supply all the investigation information.
 
 <br/>
-<object type="image/svg+xml" data="images/access_structured/Investigation_Return.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Investigation Returned FHIR profiles"></object>
+<object type="image/svg+xml" data="images/access_structured/Investigation_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Investigation Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -286,8 +281,7 @@ For each `DiagnosticReport` referenced in the `List` profile:
 ### Diary entries ###
 When GP Connect returns a diary entry it will supply all the diary entry data.
 
-<br/>
-<object type="image/svg+xml" data="images/access_structured/DiaryEntry_Return.svg" style="max-width:90%;max-height:90%;display:block;margin: 0 auto;" alt="Diary Entry Returned FHIR profiles"></object>
+<object type="image/svg+xml" data="images/access_structured/DiaryEntry_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Diary Entry Returned FHIR profiles"></object>
 <br/>
 
 <div class="screen-reader-text">
@@ -306,6 +300,5 @@ For each `ProcedureRequest` referenced in the `List` profile:
 ### Duplicate returned profiles ###
 
 Where the same instance of a profile is returned from multiple query responses (for example a medication is returned as part of the medication search and the consultation search), it will only be included once in the response message.
-
 
 The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html).
