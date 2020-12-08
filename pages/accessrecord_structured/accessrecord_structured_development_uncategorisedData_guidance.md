@@ -98,8 +98,9 @@ Note: This follows the same model that will be used to represent Investigations 
 Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem. If the item is recorded in a consultation it will be directly referenced by the consultation. If the item is linked to a problem it will be directly referenced by the problem.
 
 For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile. If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
-
-<a href="images/access_structured/Uncategorised_Structure.png"><IMG src="images/access_structured/Uncategorised_Structure.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
+ 
+<object type="image/svg+xml" data="images/access_structured/Uncategorised_Structure.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Uncateogirsed Structure"></object>
+<br/>
 
 ### Hierarchical data involving different clinical areas
 
