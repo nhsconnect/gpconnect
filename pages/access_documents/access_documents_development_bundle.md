@@ -48,6 +48,18 @@ The type of the Bundle.
 
 Fixed value of `searchset`.
 
+### id ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+A logical id for the bundle. This **MUST** be set to the same value as the `Ssp-TraceID` header in the request.
+
 ### entry ###
 
 <table class='resource-attributes'>

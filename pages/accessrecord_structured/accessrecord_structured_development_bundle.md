@@ -48,6 +48,18 @@ The type of the Bundle.
 
 Fixed value of `collection`.
 
+### id ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+A logical id for the bundle. This **MUST** be set to the same value as the `Ssp-TraceID` header in the request.
+
 ### entry ###
 
 <table class='resource-attributes'>
@@ -77,14 +89,6 @@ A resource carried within the Bundle.  This can any type of resource, for exampl
 <h2 style="color:#ED1951;"> Bundle elements <b>not in use</b> </h2>
 
 The following elements **SHALL NOT** be populated:
-
-<h3 style="color:#ED1951;"> id </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Id</code></td>
-  </tr>
-</table>
 
 <h3 style="color:#ED1951;"> meta.versionId </h3>
 
