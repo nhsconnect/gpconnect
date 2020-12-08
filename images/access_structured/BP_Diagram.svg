@@ -25,11 +25,11 @@
 		<v:userDefs>
 			<v:ud v:nameU="msvThemeOrder" v:val="VT0(0):26"/>
 		</v:userDefs>
-		<title>BP_Diagram</title>
+		<title></title>
 		<v:pageProperties v:drawingScale="0.0393701" v:pageScale="0.0393701" v:drawingUnits="24" v:shadowOffsetX="8.50394"
 				v:shadowOffsetY="-8.50394"/>
 		<g id="shape1-1" v:mID="1" v:groupContext="shape" transform="translate(18.25,-18.25)">
-			<title>Rectangle</title>
+			<title></title>
 			<desc>Observation Header/Panel</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
@@ -40,7 +40,7 @@
 			<text x="160.76" y="56.7" class="st2" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Observation<v:newlineChar/><tspan
 						x="155.06" dy="1.2em" class="st3">Header/Panel</tspan></text>		</g>
 		<g id="shape2-5" v:mID="2" v:groupContext="shape" transform="translate(39.8828,-40.9645)">
-			<title>Rectangle.2</title>
+			<title></title>
 			<desc>Observation.component Systolic component</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>
@@ -51,7 +51,7 @@
 			<text x="7.25" y="162.58" class="st4" v:langID="2057"><v:paragraph v:horizAlign="1"/><v:tabList/>Observation.component<v:newlineChar/><tspan
 						x="22.86" dy="1.2em" class="st3">Systolic component</tspan></text>		</g>
 		<g id="shape3-9" v:mID="3" v:groupContext="shape" transform="translate(234.578,-40.9645)">
-			<title>Rectangle.3</title>
+			<title></title>
 			<desc>Observation.component Diastolic component</desc>
 			<v:userDefs>
 				<v:ud v:nameU="visVersion" v:val="VT0(15):26"/>

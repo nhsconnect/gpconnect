@@ -37,32 +37,32 @@
 		</marker>
 	</defs>
 	<g>
-		<title>Page-1</title>
+		<title></title>
 		<g id="shape1195-1" transform="translate(113.636,-179.083)">
-			<title>Rectangle.1195</title>
+			<title></title>
 			<rect x="0" y="199.175" width="70.8661" height="28.3465" class="st1"/>
 		</g>
 		<g id="shape1196-3" transform="translate(7.33661,-170.579)">
-			<title>Sheet.1196</title>
+			<title></title>
 			<desc>FHIR Profile</desc>
 			<rect x="0" y="185.002" width="70.8662" height="42.5197" class="st2"/>
 			<text x="4" y="209.26" class="st3">FHIR Profile</text>		</g>
 		<g id="shape1197-6" transform="translate(198.675,-179.083)">
-			<title>Rectangle.1197</title>
+			<title></title>
 			<rect x="0" y="199.175" width="70.8661" height="28.3465" class="st4"/>
 		</g>
 		<g id="shape1199-8" transform="translate(283.715,-179.083)">
-			<title>Rectangle.1199</title>
+			<title></title>
 			<rect x="0" y="199.175" width="70.8661" height="28.3465" class="st5"/>
 		</g>
 		<g id="group1201-10" transform="translate(353.163,-48.2676)">
-			<title>Relationship.1201</title>
+			<title></title>
 			<g id="shape1202-11" transform="translate(-22.3821,21.4139)">
-				<title>Sheet.1202</title>
+				<title></title>
 				<desc>1..1</desc>
 				<text x="0.91" y="225.12" class="st6">1..1</text>			</g>
 			<g id="shape1203-13" transform="translate(-219.544,5.08908)">
-				<title>Sheet.1203</title>
+				<title></title>
 				<desc>0..*</desc>
 				<text x="0.91" y="225.12" class="st6">0..*</text>			</g>
 			<g id="shape1201-15">
@@ -70,12 +70,12 @@
 			</g>
 		</g>
 		<g id="shape1204-21" transform="translate(239.778,-5.46064)">
-			<title>Sheet.1204</title>
+			<title></title>
 			<desc>Cardinality of FHIR profile being referenced</desc>
 			<rect x="0" y="199.175" width="92.126" height="28.3465" class="st2"/>
 			<text x="4.39" y="210.95" class="st9">Cardinality of FHIR profile <tspan x="18.3" dy="1.2em" class="st10">being referenced</tspan></text>		</g>
 		<g id="shape1208-25" transform="translate(193.006,-47.9803)">
-			<title>Sheet.1208</title>
+			<title></title>
 			<desc>The arrow points towards the FHIR Profile that is being refer...</desc>
 			<rect x="0" y="183.585" width="167.953" height="43.937" class="st2"/>
 			<text x="4.87" y="188.75" class="st9">The arrow points towards the FHIR Profile that is <tspan x="4.69" dy="1.2em"
@@ -83,43 +83,43 @@
 						class="st10">that contains the reference. If the line has </tspan><tspan x="13.17" dy="1.2em" class="st10">arrows in both directions both FHIR Profiles </tspan><tspan
 						x="31.78" dy="1.2em" class="st10">contain a reference to the other</tspan></text>		</g>
 		<g id="shape1210-32" transform="translate(8.75394,-14.6732)">
-			<title>Sheet.1210</title>
+			<title></title>
 			<desc>Reference between FHIR Profiles.</desc>
 			<rect x="0" y="156.656" width="76.5354" height="70.8661" class="st2"/>
 			<text x="4" y="183.09" class="st3">Reference <tspan x="4" dy="1.2em" class="st10">between FHIR </tspan><tspan x="4"
 						dy="1.2em" class="st10">Profiles.</tspan></text>		</g>
 		<g id="shape1211-37" transform="translate(113.636,-55.0669)">
-			<title>Sheet.1211</title>
+			<title></title>
 			<desc>Cardinality of FHIR profile containing the reference</desc>
 			<rect x="0" y="199.884" width="73.7008" height="27.6378" class="st2"/>
 			<text x="6.74" y="206.5" class="st9">Cardinality of FHIR <tspan x="8.21" dy="1.2em" class="st10">profile containing </tspan><tspan
 						x="14.75" dy="1.2em" class="st10">the reference</tspan></text>		</g>
 		<g id="shape1212-42" transform="translate(7.33662,-113.886)">
-			<title>Sheet.1212</title>
+			<title></title>
 			<desc>Multiple FHIR Profiles within a Clinical Area</desc>
 			<rect x="0" y="185.002" width="80.7874" height="42.5197" class="st2"/>
 			<text x="4" y="197.26" class="st3">Multiple FHIR <tspan x="4" dy="1.2em" class="st10">Profiles within a </tspan><tspan
 						x="4" dy="1.2em" class="st10">Clinical Area</tspan></text>		</g>
 		<g id="shape1213-47" transform="translate(136.313,-119.555)">
-			<title>Rectangle.1213</title>
+			<title></title>
 			<rect x="0" y="199.175" width="70.8661" height="28.3465" class="st1"/>
 		</g>
 		<g id="shape1214-49" transform="translate(263.872,-119.555)">
-			<title>Rectangle.1214</title>
+			<title></title>
 			<rect x="0" y="199.175" width="70.8661" height="28.3465" class="st1"/>
 		</g>
 		<g id="shape1215-51" transform="translate(122.14,-105.382)">
-			<title>Sheet.1215</title>
+			<title></title>
 			<path d="M0 227.52 L226.77 227.52 L226.77 170.83 L0 170.83 L0 227.52 Z" class="st11"/>
 		</g>
 		<g id="group1216-53" transform="translate(207.179,-126.642)">
-			<title>Relationship.1216</title>
+			<title></title>
 			<g id="shape1217-54" transform="translate(5.86139,-12.0976)">
-				<title>Sheet.1217</title>
+				<title></title>
 				<desc>1..1</desc>
 				<text x="0.91" y="225.12" class="st6">1..1</text>			</g>
 			<g id="shape1218-56" transform="translate(35.5392,2.51695)">
-				<title>Sheet.1218</title>
+				<title></title>
 				<desc>1..1</desc>
 				<text x="0.91" y="225.12" class="st6">1..1</text>			</g>
 			<g id="shape1216-58">
@@ -127,11 +127,11 @@
 			</g>
 		</g>
 		<g id="shape1223-64" transform="translate(326.984,14.4232) rotate(90)">
-			<title>Sheet.1223</title>
+			<title></title>
 			<path d="M0 227.52 L212.6 227.52" class="st14"/>
 		</g>
 		<g id="shape1228-67" transform="translate(0.25,-213.098)">
-			<title>Sheet.1228</title>
+			<title></title>
 			<desc>Key</desc>
 			<rect x="0" y="213.348" width="368.504" height="14.1732" class="st2"/>
 			<text x="175.43" y="224.04" class="st15">Key</text>		</g>
