@@ -45,7 +45,8 @@ Each problem record is linked to:
 *	other problems that the recording clinician identified as giving further information about the problem
     *	problems that are directly linked to the problem in the provider system
 
-<a href="images/access_structured/Problem_Relationships_1_5.png"><img src="images/access_structured/Problem_Relationships_1_5.png" alt="Problem Relationships" style="max-width:100%;max-height:100%;"></a>
+<object type="image/svg+xml" data="images/access_structured/Problem_Relationships_1_5.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Problem Relationships"></object>
+<br/>
 
 ## Clinical item references
 
