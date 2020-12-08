@@ -32,7 +32,8 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Get the FHIR&reg; capability statement interaction diagram" src="images/access_structured/get-structured-capability-statement-interaction-diagram.png"/>
+<object type="image/svg+xml" data="images/access_structured/get-structured-capability-statement-interaction-diagram.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Get the FHIR&reg; capability statement interaction diagram"></object>
+<br/>
 
 ### Request operation ###
 
