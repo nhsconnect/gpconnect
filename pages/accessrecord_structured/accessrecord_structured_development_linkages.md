@@ -19,9 +19,7 @@ For a consuming system to be able to interpret this linkage information correctl
 ### GP Connect FHIR&reg; model ###
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
 
-<br/>
 <object type="image/svg+xml" data="images/access_structured/GP_Connect_FHIR_Model.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="GP Connect FHIR Model"></object>
-<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -57,7 +55,6 @@ The reason for the exception in the case of problems is due to the fact that pro
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
 <object type="image/svg+xml" data="images/access_structured/Consultation_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Consultation Returned FHIR profiles"></object>
-<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
