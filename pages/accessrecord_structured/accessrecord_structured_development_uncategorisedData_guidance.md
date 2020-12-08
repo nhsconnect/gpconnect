@@ -99,14 +99,16 @@ Being in a hierarchy has no impact on the linkage between an item of uncategoris
 
 For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile. If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
  
-<object type="image/svg+xml" data="images/access_structured/Uncategorised_Structure.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Uncateogirsed Structure"></object>
+<object type="image/svg+xml" data="images/access_structured/Uncategorised_Structure.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Uncategorised Structure"></object>
 <br/>
 
 ### Hierarchical data involving different clinical areas
 
 If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the header observation related element as a 'has-member' type. This will mean that, unlike references to other observations, references to these data items will be one directional as illustrated in the diagram below.
 
-<a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
+<object type="image/svg+xml" data="images/access_structured/Uncategorised_Structured1.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Uncategorised structure with items from different clinical areas"></object>
+<br/>
+
 
 Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
@@ -115,7 +117,8 @@ Blood pressure is one of the most common observations that is recorded in GP rec
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible.
 In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. The diagram below demonstrates this structure:
 
-<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a>
+<object type="image/svg+xml" data="images/access_structured/BP_Diagram.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Observation header panel"></object>
+<br/>
 
 ### The FHIR vital sign blood pressure profile
 This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification. However, the way we have represented specified blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
