@@ -93,9 +93,8 @@ The GP Connect profile of the `MedicationRequest` will be used to represent the 
 
 ### Acute medication
 
-<center>
-<a href="images/access_structured/Acute_Medication.png"><img src="images/access_structured/Acute_Medication.png" alt="Acute Medication Diagram" style="max-width:60%;max-height:60%;"></a>
-</center>
+<object type="image/svg+xml" data="images/access_structured/Acute_Medication.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Acute Medication Diagram"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -105,9 +104,8 @@ An acute medication is represented by a `MedicationStatement` and two `Medicatio
 
 ### Repeat prescription and repeat dispense
 
-<center>
-<a href="images/access_structured/Repeat_Medication.png"><img src="images/access_structured/Repeat_Medication.png" alt="Repeat Medication Diagram" style="max-width:60%;max-height:60%;"></a>
-</center>
+<object type="image/svg+xml" data="images/access_structured/Repeat_Medication.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Repeat Medication Diagram"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -125,6 +123,9 @@ For repeat dispensed medication or medical device, some of the resources relatin
 <a href="images/access_structured/Unissused_Medication.png"><img src="images/access_structured/Unissused_Medication.png" alt="Unissued Medication Diagram" style="max-width:60%;max-height:60%;"></a>
 </center>
 
+<object type="image/svg+xml" data="images/access_structured/Unissused_Medication.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Unissued Medication Diagram"></object>
+<br/>
+
 <div class="screen-reader-text">
 This diagram is explained in the following text:
 </div>
@@ -133,9 +134,8 @@ Unissued medications/medical devices and medications/medical devices that have b
 
 ### Using the `List` resource for medication/medical devices queries
 
-<center>
-<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Medication_Return.png" alt="Unissued Medication Diagram" style="max-width:100%;max-height:100%;"></a>
-</center>
+<object type="image/svg+xml" data="images/access_structured/Medication_Return.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Unissued Medication Diagram"></object>
+<br/>
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
