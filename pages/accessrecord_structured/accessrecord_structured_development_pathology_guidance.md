@@ -58,8 +58,8 @@ At the point at which the record is filed, there is opportunity for the user to 
 
 The following entity diagram describes the logical model for investigations in GP Connect:
 
-{: .center-image }
-![Pathology logical model](images/access_structured/Pathology_Logical_Model.png)
+<object type="image/svg+xml" data="images/access_structured/Pathology_Logical_Model.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Pathology Logical Model"></object>
+<br/>
 
 In the image we have made the key entities more prominent. Entities representing organizations and practitioners sit in the background but are still part of the exported data.
 
@@ -95,8 +95,8 @@ There are other resources that may be relevant in the future, such as imagingStu
 
 We have mapped these resources on to the logical model in the diagram below:
 
-{: .center-image }
-![Pathology logical model with FHIR resource names](images/access_structured/Pathology_Logical_Model_with_FHIR_resource_names.png)
+<object type="image/svg+xml" data="images/access_structured/Pathology_Logical_Model_with_FHIR_resource_names.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Pathology Logical Model with FHIR resource names"></object>
+<br/>
 
 DiagnosticReport is at the centre of the model and all the other entities are linked to from there.
 
