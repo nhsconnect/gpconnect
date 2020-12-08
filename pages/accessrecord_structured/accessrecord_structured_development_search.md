@@ -147,29 +147,32 @@ Consider the example where a consuming system requests the medications from the 
 
 For the example we will assume the query was made on the 1st February 2020:
 
-<table class='resource-attributes' border='1'>
+<table>
+<thead>
   <tr>
-    <td>Date</td>
-    <td>Medications in the GP system</td>
-    <td>Included in medications query return</td>
-    <td>Included in problems query return</td>
+    <th>Date</th>
+    <th>Medications in the GP system</th>
+    <th>Included in medications query return</th>
+    <th>Included in problems query return</th>
   </tr>
+</thead>
+<tbody>
   <tr>
     <td>03/01/2020</td>
     <td>Paracetamol</td>
-    <td>Y</td>
+    <td style="text-align:center">Y</td>
     <td></td>
   </tr>
   <tr>
     <td>05/12/2019</td>
     <td>Ibuprofen</td>
-    <td>Y</td>
+    <td style="text-align:center">Y</td>
     <td></td>
   </tr>
   <tr>
     <td>12/11/2019</td>
     <td>Amoxicillin</td>
-    <td>Y</td>
+    <td style="text-align:center">Y</td>
     <td></td>
   </tr>
   <tr style="background-color:Orange">
@@ -182,8 +185,9 @@ For the example we will assume the query was made on the 1st February 2020:
     <td>05/01/2019</td>
     <td>Paracetamol</td>
     <td></td>
-    <td>Y</td>
+    <td style="text-align:center">Y</td>
   </tr>
+</tbody>
 </table>
 
 From the data in the table we can clearly see that the warfarin would not be returned by either part of the query. However, the paracetamol which is from before the warfarin was prescribed would be returned.
