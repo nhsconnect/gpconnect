@@ -46,7 +46,6 @@ Each problem record is linked to:
     *	problems that are directly linked to the problem in the provider system
 
 <object type="image/svg+xml" data="images/access_structured/Problem_Relationships_1_5.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Problem Relationships"></object>
-<br/>
 
 ## Clinical item references
 
