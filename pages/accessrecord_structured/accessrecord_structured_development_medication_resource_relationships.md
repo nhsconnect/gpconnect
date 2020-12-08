@@ -119,10 +119,6 @@ For repeat dispensed medication or medical device, some of the resources relatin
 
 ### Unissued medications/medical devices and medication/medical devices prescribed elsewhere
 
-<center>
-<a href="images/access_structured/Unissused_Medication.png"><img src="images/access_structured/Unissused_Medication.png" alt="Unissued Medication Diagram" style="max-width:60%;max-height:60%;"></a>
-</center>
-
 <object type="image/svg+xml" data="images/access_structured/Unissused_Medication.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Unissued Medication Diagram"></object>
 <br/>
 
