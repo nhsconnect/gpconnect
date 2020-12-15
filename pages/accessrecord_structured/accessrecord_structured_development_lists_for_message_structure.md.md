@@ -1,4 +1,4 @@
----
+https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1---
 title: Returning data in lists
 keywords: structured design
 tags: [design,structured]
@@ -42,7 +42,7 @@ In this version of the GP Connect specification there are 10 types of primary li
 
 ### Secondary lists in the query response
 
-There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are defined in this [codeSystem](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1) and are detailed in the table below.
+There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are defined in this [codeSystem](https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1) and are detailed in the table below.
 
 | List.title | Code | Display |
 | ------ | ------ |
