@@ -113,7 +113,7 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
 
 \* Cardinalities in the above diagram are based on a principle of suppressing empty consultations and subsections at source.
 
-<br></br>
+<br>
 
 <div class="screen-reader-text">
 A consultation FHIR resource model diagram summarises the previous description of consultation structure. In addition, it shows that a consultation or record entry may be attributed to more than one actor acting in a different role. It states that record entries may appear directly within a consultation without being embedded in the topic/heading structure. By convention, an artificial topic level will be generated to accommodate record entries recorded within this flat structure. A consultation may exhibit both styles but be represented within different topics. The diagram also says that each heading may contain multiple record entries of different types represented by an appropriate FHIR resource.
