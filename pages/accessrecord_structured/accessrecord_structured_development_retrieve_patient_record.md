@@ -393,7 +393,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
         },
         {
           "name": "includeNumberOfMostRecent",
-          "valueInteger": 3
+          "valuePositiveInt": 3
         }
       ]
     },

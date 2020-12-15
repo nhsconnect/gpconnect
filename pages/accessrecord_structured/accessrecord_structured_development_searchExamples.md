@@ -152,7 +152,7 @@ The different approaches to requests that will return similar information have b
       "part": [
         {
           "name": "includeNumberOfMostRecent",
-          "valueInteger": 3
+          "valuePositiveInt": 3
         }
       ]
     }
@@ -179,7 +179,7 @@ The different approaches to requests that will return similar information have b
 		"part": [
 			{
 				"name": "includeNumberOfMostRecent",
-				"valueInteger": 3
+				"valuePositiveInt": 3
 			}
 		]
 	},
@@ -220,7 +220,7 @@ The different approaches to requests that will return similar information have b
       "part": [
         {
           "name": "includeNumberOfMostRecent",
-          "valueInteger": 3
+          "valuePositiveInt": 3
         }
       ]
     },

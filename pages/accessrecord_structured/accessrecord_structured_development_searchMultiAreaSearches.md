@@ -144,7 +144,7 @@ A skeleton request is included below consumers just need to insert the correct d
 		"part": [
 			{
 				"name": "includeNumberOfMostRecent",
-				"valueInteger": 3
+				"valuePositiveInt": 3
 			}
 		]
 	},
@@ -197,7 +197,7 @@ This search is intended to cover common use cases relating to peadiatric care wh
 	"part": [
 		{
 			"name": "includeNumberOfMostRecent",
-			"valueInteger": 3
+			"valuePositiveInt": 3
 		}
 	]
     },
