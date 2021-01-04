@@ -510,9 +510,17 @@ ul#mysidebar, #mysidebar ul{
     color: #ffffff;
 }
 
-.nav > li.active > a  {
+/*.nav > li.active > a  {
     background-color: #ffffff;
 }
+*/
+
+.nav > li.active > a {
+    background-color: #005eb8;
+}
+
+.nav > li > a:hover {
+    background-color: #005eb8;
 
 .nav li a {
     font-size: 12px;
