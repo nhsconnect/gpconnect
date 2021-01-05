@@ -31,6 +31,10 @@ This may be a contemporaneous record by the clinician administering the vaccinat
 
 A record of an immunisation may be created as part of a scheduled programme of immunisations such as childhood immunisations, seasonal influenza vaccination or in response to specific circumstances (for example, prior to travel, disease outbreak or occupational risk).
 
+If a vaccination is recorded as an issued medication, the details of the issued medication are not included in the immunisations response.
+The medication details **MUST** be sent as medication resources (if the consumer requests medications). 
+This may be in addition to an immunisation resource for the event of the vaccination administration, depending on how the immunisation event was recorded. 
+
 ## Using the procedure code
 
 GP clinical systems do not all record the full vaccine product (dm+d code) for an immunisation.
