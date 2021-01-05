@@ -18,11 +18,10 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 ## Overview ##
 
 <br/>
-<object type="image/svg+xml" data="images/integration/gpconnect-flow.svg" style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" alt="Diagram showing the high level three step flow for making GP Connect calls"></object>
+<div style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" >
+	{% include images/integration/gpconnect-flow.svg %}
+</div>
 <br/>
-
-{% include svg.html type="" data="images/integration/gpconnect-flow.svg" style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" alt="Diagram showing the high level three step flow for making GP Connect calls"  %}
-
 
 <div class="screen-reader-text">
 This diagram is explained in the following text:
@@ -62,9 +61,9 @@ Please see the full worked example below for the steps required to consume the G
 
 The following sequence diagram illustrates the steps which a GP Connect consumer would be required to undertake in order to book an appointment at the patient's registered GP practice.
 
-<br/>
-<object type="image/svg+xml" data="images/integration/integration_sequence_diagram.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Sequence diagram for booking an appointment end to end interactions"></object>
-<br/>
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+{% include images/integration/integration_sequence_diagram.svg %}
+</div>
 
 The steps shown in the diagram are detailed below.
 
