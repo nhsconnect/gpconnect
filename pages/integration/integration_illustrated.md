@@ -21,7 +21,7 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 <object type="image/svg+xml" data="images/integration/gpconnect-flow.svg" style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" alt="Diagram showing the high level three step flow for making GP Connect calls"></object>
 <br/>
 
-{% include svg.html type="image/svg+xml" data="images/integration/gpconnect-flow.svg" style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" alt="Diagram showing the high level three step flow for making GP Connect calls"  %}
+{% include svg.html type="" data="images/integration/gpconnect-flow.svg" style="max-width:70%;max-height:70%;display:block;margin: 0 auto;" alt="Diagram showing the high level three step flow for making GP Connect calls"  %}
 
 
 <div class="screen-reader-text">
