@@ -1620,3 +1620,25 @@ a.no_icon:after
 .flex-child:first-child {
     margin-right: 20px;
 } 
+
+
+.screen-reader, .screen-reader-focusable { 
+	border: 0; 
+	clip: rect(0 0 0 0); 
+	height: 1px; 
+	margin: -1px; 
+	overflow: hidden; 
+	padding: 0; 
+	position: absolute; 
+	white-space: nowrap; 
+	width: 1px; } 
+
+.screen-reader-focusable:active, 
+.screen-reader-focusable:focus { 
+	clip: auto; 
+	height: auto; 
+	margin: 0; 
+	overflow: visible; 
+	position: static; 
+	white-space: normal; 
+	width: auto; }

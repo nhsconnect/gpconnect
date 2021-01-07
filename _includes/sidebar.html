@@ -3,12 +3,10 @@
 
 
 <img src="{{ "/images/logo.png" }}" alt="NHS Digital Logo" height="110" width="110" alt="NHS Digital Logo"/>
-<ul class="nav"> 
-	<li class="sidebarTitle" style="list-style-type:none;">GP Connect API {{ gpconnectVersion }}<br/><span style="font-size: smaller;">FHIR&reg; {{ fhirVersion }}</span></li>
-</ul>
-<ul class="nav">
-	<li class="sidebarSection" style="list-style-type:none;">{{sidebar.title}}</li>	
-</ul>
+ 
+<p class="sidebarTitle" style="list-style-type:none;">GP Connect API {{ gpconnectVersion }}<br/><span style="font-size: smaller;">FHIR&reg; {{ fhirVersion }}</span></p>
+<p class="sidebarSection" style="list-style-type:none;">{{sidebar.title}}</p>	
+
 
 <ul class="nav">	
 {% if showbackbutton == true %}
@@ -22,7 +20,7 @@
   {% include {{the_sidebar}} menuitems=sidebar.children %}
 </ul>
 
-
+<a href="#main" class="screen-reader">Skip to main content</a>
 <br>
 <br>
 <div class="panel panel-quick">
