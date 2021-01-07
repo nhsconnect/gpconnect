@@ -2,9 +2,13 @@
 {% include custom/sidebarconfigs.html %}
 
 
-<img src="{{ "/images/logo.png" }}" alt="NHS Digital Logo" height="110" width="110" />
-<li class="sidebarTitle" style="list-style-type:none;">GP Connect API {{ gpconnectVersion }}<br/><span style="font-size: smaller;">FHIR&reg; {{ fhirVersion }}</span></li>
-<li class="sidebarSection" style="list-style-type:none;">{{sidebar.title}}</li>	
+<img src="{{ "/images/logo.png" }}" alt="NHS Digital Logo" height="110" width="110" alt="NHS Digital Logo"/>
+<ul class="nav"> 
+	<li class="sidebarTitle" style="list-style-type:none;">GP Connect API {{ gpconnectVersion }}<br/><span style="font-size: smaller;">FHIR&reg; {{ fhirVersion }}</span></li>
+</ul>
+<ul class="nav">
+	<li class="sidebarSection" style="list-style-type:none;">{{sidebar.title}}</li>	
+</ul>
 
 <ul class="nav">	
 {% if showbackbutton == true %}
@@ -17,6 +21,7 @@
 <ul id="mysidebar" class="nav">
   {% include {{the_sidebar}} menuitems=sidebar.children %}
 </ul>
+
 
 <br>
 <br>
