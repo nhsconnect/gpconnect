@@ -29,11 +29,12 @@ The consumer system:
 
 ### Interaction diagram ###
 
-
-<object type="image/svg+xml" data="images/access_structured/get-structured-record-interaction-diagram.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Get structured record interaction diagram"></object>
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+	{% include images/access_structured/get-structured-record-interaction-diagram.svg %}
+</div>
 
 <div class="screen-reader-text">
-A consuming system attempts to retrieve a patient’s structured record by sending a POST patient identifier request to the GP Connect API. If successful, the API returns a structured record bundle resource. If unsuccessful, it returns an error response.
+The interaction diagram above shows a consuming system attempting to retrieve a patient’s structured record by sending a POST patient identifier request ($gpc.getstructuredrecord) to the GP Connect API. If successful, the API returns a structured record bundle resource (GPConnect-Structured-Record-Bundle-1). If unsuccessful, it returns an error response (GPConnect-OperationOutcome-1).
 </div>
 
 ### Request operation ###
@@ -558,6 +559,17 @@ Content-Type: application/fhir+json; charset=utf-8
 Date: Sun, 07 Aug 2016 11:13:05 GMT
 Content-Length: 1464
 ```
+#### Bundle population illustrated ####
+
+The following diagram illustrates the population of the response `Bundle` according to the parameters in the inbound `Parameters` request resource:
+
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+	{% include images/access_structured/structured-bundle-response.svg %}
+</div>
+
+<div class="screen-reader-text">
+The diagram above is explained in detail in the sections below.
+</div>
 
 #### Payload response body ####
 
@@ -796,7 +808,9 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<object type="image/svg+xml" data="images/access_structured/data_filter_scenario1.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 1"></object>
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+	{% include images/access_structured/data_filter_scenario1.svg %}
+</div>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario2">
@@ -807,7 +821,9 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<object type="image/svg+xml" data="images/access_structured/data_filter_scenario2.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 2"></object>
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+	{% include images/access_structured/data_filter_scenario2.svg %}
+</div>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario3">
@@ -818,7 +834,9 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<object type="image/svg+xml" data="images/access_structured/data_filter_scenario3.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 3"></object>
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+	{% include images/access_structured/data_filter_scenario3.svg %}
+</div>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario4">
@@ -829,17 +847,106 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<object type="image/svg+xml" data="images/access_structured/data_filter_scenario4.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Medication search date - scenario 4"></object>
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+	{% include images/access_structured/data_filter_scenario4.svg %}
+</div>
 </div>
 </div>
 
 <br/>
 
-#### Bundle population illustrated ####
+<div class="screen-reader-text">
+The scenario diagrams illustrate the amount of data returned based on the search parameters provided. The information below explains the status of data returned in the diagram based on the scenario search dates:
 
-The following diagram illustrates the population of the response `Bundle` according to the parameters in the inbound `Parameters` request resource:
+<table>
+<thead>
+<tr>
+<th>Data</th>
+<th>Data Returned in bundle? - yes/no</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acute with start and end date within the search period</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Acute with start and end date before the search period</td>
+<td>No </td>
+</tr>
+<tr>
+<td>Acute with start date within the search period and end date after the current date</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Acute with start date only within the search period</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Acute with start date only before the search period</td>
+<td>No </td>
+</tr>
+<tr>
+<td>Repeat with start and end date within the search period</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Repeat with start and end date before the search period</td>
+<td>No </td>
+</tr>
+<tr>
+<td>Repeat with start date within the search period and end date after the current date</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Repeat with start date before the search period and end date after the current date</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Repeat with start date only within the search period</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Repeat with start date only before the search period</td>
+<td>No </td>
+</tr>
+<tr>
+<td>Repeat dispensed with start and end date within the search period</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Repeat dispensed with start and end date before the search period</td>
+<td>No </td>
+</tr>
+<tr>
+<td>Repeat dispensed with start date before the search period and end date after the current date</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Acute with future start date (after the current date)</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Repeat that has completed and been authorised within the search period</td>
+<td>Yes </td>
+</tr>
+<tr>
+<td>Repeat that has completed and been authorised and completed before search period</td>
+<td>No </td>
+</tr>
+<tr>
+<td>Reauthorised repeat within with search period</td>
+<td>Yes </td>
+</tr>
+</tbody>
+</table>
 
-<object type="image/svg+xml" data="images/access_structured/structured-bundle-response.svg" style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" alt="Structured Bundle response"></object>
+
+</div>
+
+
+
+
 #### Payload response examples ####
 
 Examples of the payload requests and responses can be found here:
