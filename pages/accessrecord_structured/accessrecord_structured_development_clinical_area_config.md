@@ -17,7 +17,7 @@ Also, in addition to the [enablement switch defined in the non-functional requir
 ## Requirements
 
 ### Clinical areas
-The configuration of the Provider system **MUST** allow for clinical areas to be switched on or off for all sites without requiring a release. This MUST be achieved using a single configuration iten or action. For example, in the case of a clinical safety incident with a clinical area where a provider would be required to turn off the clinical area across their entire estate. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` for each clinical area that isn't supported according to the rules below. The following clinical areas can be configured to be on or off:
+The configuration of the Provider system **MUST** allow for clinical areas to be switched on or off for all sites without requiring a release. This MUST be achieved using a single configuration item or action. For example, in the case of a clinical safety incident with a clinical area where a provider would be required to turn off the clinical area across their entire estate. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` with an `issue` element for each clinical area that isn't supported according to the rules below. The following clinical areas can be configured to be on or off:
 - Medications
 - Allergies
 - Consultations
@@ -29,10 +29,10 @@ The configuration of the Provider system **MUST** allow for clinical areas to be
 - Diary entries
 - Documents
 
-Documents MUST be switched off when the Access Documents capability isn't [enabled at a practice](development_api_non_functional_requirements.html#enablement).
+The Documents item controls whether `DocumentReference` resources are returned as part of the structured response. This can be used independently of the Access Documents capability [enablement switch](development_api_non_functional_requirements.html#enablement) but Documents MUST be switched off when the Access Documents capability is switched off.
 
 ### Site switch
-In addition to the above, the configuration of the Provider system **MUST** allow for the availability of a clinical area to be switched on or off at one or more sites without requiring a release. For example, in the scenario where there was a data quality issue with a clinical area at a single site. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` for each clinical area that isn't available according to the rules below.
+In addition to the above, the configuration of the Provider system **MUST** allow for the availability of a clinical area to be switched on or off at one or more sites without requiring a release. For example, in the scenario where there was a data quality issue with a clinical area at a single site. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` with an `issue` element for each clinical area that isn't available according to the rules below.
 
 ### Consumer systems
 Consumer systems **MUST** be able to handle the unavailability of clinical areas and warn users that information hasn't been returned.
@@ -50,7 +50,7 @@ In the above scenarios, providers **MUST** respond in the following way:
 - For each disabled clinical area the following **MUST** be supplied:
   - `issue.details.text` = `<parameter-name>` has been disabled`
   - `issue.diagnostics` = `<parameter-name>`
-  - Where the documents capability has been switched off 'Documents' MUST be returned in place of <parameter-name>
+  - Where the documents has been switched off 'DocumentReferences' MUST be returned in place of `<parameter-name>`.
 
   The example shows a fully populated [`OperationOutcome`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1/_history/1.2) for a request where the `includeProblems` clinical area has been turned off:
 
