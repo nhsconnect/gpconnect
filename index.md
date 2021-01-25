@@ -19,7 +19,7 @@ summary: An introduction to the GP Connect FHIR® APIs
 GP Connect aims to support better clinical care by opening up information and data held within GP practice IT systems for use across health and social care. The GP Connect vision will be achieved by standardising integration and simplifying the operating model.
 
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
 	{% include images/overview/GP_Connect_overview.svg %}
 </div>
 
