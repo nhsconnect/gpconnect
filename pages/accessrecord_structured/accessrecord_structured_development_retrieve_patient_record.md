@@ -29,9 +29,7 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
-	{% include images/access_structured/get-structured-record-interaction-diagram.svg %}
-</div>
+<img style="height: 400px;" alt="Get structured record interaction diagram" src="images/access_structured/get-structured-record-interaction-diagram.png"/>
 
 <div class="screen-reader-text">
 The interaction diagram above shows a consuming system attempting to retrieve a patient’s structured record by sending a POST patient identifier request ($gpc.getstructuredrecord) to the GP Connect API. If successful, the API returns a structured record bundle resource (GPConnect-Structured-Record-Bundle-1). If unsuccessful, it returns an error response (GPConnect-OperationOutcome-1).
@@ -563,9 +561,7 @@ Content-Length: 1464
 
 The following diagram illustrates the population of the response `Bundle` according to the parameters in the inbound `Parameters` request resource:
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
-	{% include images/access_structured/structured-bundle-response.svg %}
-</div>
+<img style="max-height: 100%; max-width: 100%" alt="Structured Bundle response" src="images/access_structured/structured-bundle-response.png"/>
 
 <div class="screen-reader-text">
 The diagram above is explained in detail in the sections below.
@@ -808,9 +804,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
-	{% include images/access_structured/data_filter_scenario1.svg %}
-</div>
+<img style="max-width: 100%" alt="search date scenario 1" src="images/access_structured/data_filter_scenario1.jpg"/>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario2">
@@ -821,9 +815,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
-	{% include images/access_structured/data_filter_scenario2.svg %}
-</div>
+<img style="max-width: 100%" alt="search date scenario 2" src="images/access_structured/data_filter_scenario2.jpg"/>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario3">
@@ -834,9 +826,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
-	{% include images/access_structured/data_filter_scenario3.svg %}
-</div>
+<img style="max-width: 100%" alt="search date scenario 3" src="images/access_structured/data_filter_scenario3.jpg"/>
 </div>
 
 <div role="tabpanel" class="tab-pane" id="scenario4">
@@ -847,9 +837,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
-	{% include images/access_structured/data_filter_scenario4.svg %}
-</div>
+<img style="max-width: 100%" alt="search date scenario 4" src="images/access_structured/data_filter_scenario4.jpg"/>
 </div>
 </div>
 

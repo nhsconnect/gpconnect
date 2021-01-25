@@ -43,3 +43,15 @@ $("li.active").parents('li').toggleClass("active");
 <script>
 $("li.active").parents('li').attr("aria-expanded","true");
 </script>
+<script>
+$("li.active").attr("aria-expanded","true");
+</script>
+<script>
+$("ul.active").toggleClass("active");
+</script>
+<script>
+$("ul.active").attr("aria-expanded","true");
+</script>
+<script>
+$("li.active").parents('ul').attr("aria-expanded","true");
+</script>
