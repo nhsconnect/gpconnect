@@ -29,7 +29,7 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
 	{% include images/access_structured/get-structured-record-interaction-diagram.svg %}
 </div>
 
@@ -563,7 +563,7 @@ Content-Length: 1464
 
 The following diagram illustrates the population of the response `Bundle` according to the parameters in the inbound `Parameters` request resource:
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
 	{% include images/access_structured/structured-bundle-response.svg %}
 </div>
 
@@ -808,7 +808,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
 	{% include images/access_structured/data_filter_scenario1.svg %}
 </div>
 </div>
@@ -821,7 +821,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
 	{% include images/access_structured/data_filter_scenario2.svg %}
 </div>
 </div>
@@ -834,7 +834,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
 	{% include images/access_structured/data_filter_scenario3.svg %}
 </div>
 </div>
@@ -847,7 +847,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
   </tr>
 </table>
 
-<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;" >
+<div style="max-width:100%;max-height:100%;display:block;margin: 0 auto;pointer-events: none" >
 	{% include images/access_structured/data_filter_scenario4.svg %}
 </div>
 </div>
