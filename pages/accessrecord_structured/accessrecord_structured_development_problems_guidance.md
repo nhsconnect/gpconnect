@@ -60,7 +60,7 @@ When linking to the clinical item that is held in a single FHIR resource the ref
 * for Uncategorised Data – reference the `Observation` – Uncategorised profile
 * for a Referral - reference the `ReferralRequest` profile
 * for a Document - reference the `DocumentReference` profile
-* for an Investigation - reference the `DiagnosticReport` profile - if any item related to a diagnostic report is flagged as a problem the link **MUST** still be to the diagnosticReport
+* for an Investigation - reference the `DiagnosticReport` profile - if any item related to a diagnostic report is flagged as a problem the diagnosticReport **MUST** be linked to the problem as a related clinical item.
 * for a Diary Entry - reference the `ProcedureRequest` profile
 
 ## Problems linking to problems
