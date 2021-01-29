@@ -108,6 +108,17 @@ A reference to the patient who the observation is about.
 
 Reference to the resource for the Organization that carried out the tests. A `Practitioner` resource may also be referenced here but only where an `organization` is reference is provided.
 
+### interpretation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
 
 ### comment ###
 
@@ -204,14 +215,6 @@ The following elements **MUST NOT** be populated:
 </table>
 
 ### dataAbsentReason ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
-  </tr>
-</table>
-
-### interpretation ###
 
 <table class='resource-attributes'>
   <tr>
