@@ -103,6 +103,8 @@ Warning codes will be returned in the primary and secondary lists defined on thi
 
 Warning codes will **NOT** be returned in any of the lists used to represent consultations structure that are defined in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
 
+Where a warning code is returned related to an item from a given clinical area, for example referrals, if the referrals capability is turned off then the warning code **MUST** still be returned if the list that it would have been present in is still contained in the response. This applies to all clinical areas.
+
 The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
 
 <table class='resource-attributes' border='1'>
