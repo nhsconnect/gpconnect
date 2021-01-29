@@ -96,6 +96,20 @@ The clinical code that represents the name of the test group - for example, Full
 
 A reference to the patient who the observation is about.
 
+### issued ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>instant</code></td>
+    <td><b>Optionality:</b> Manadatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The date and time that the result was issued by the laboratory or other report provider.
+
+Is this is not provided for a test group header result then it should inherit the date from the DiagnosticReport.
+
 ### performer ###
 
 <table class='resource-attributes'>
@@ -195,14 +209,6 @@ The following elements **MUST NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-### issued ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
 
