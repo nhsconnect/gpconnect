@@ -2,8 +2,8 @@
 
   {% comment %} Is this supposed to be output on the `web`site?{% endcomment %}
   {% if item.output contains "web" %}
-  <li class="{% if item.children.size > 0 %}tree-parent{% endif %}{% if page.url == item.url %}active{% endif %}">  
-    {% if item.children.size > 0 %}  {% endif %}
+  <li class="{% if item.children.size > 0 %}tree-parent{% endif %} {% if page.url == item.url %}active{% endif %}"> 
+    {% if item.children.size > 0 %}  {% endif %}  
     <a href="{{item.url | remove: "/"}}">{{ item.title }}</a>
       {% if item.children.size > 0 %}
       <ul class="nav nav-list" style="font-size:98%">
@@ -14,4 +14,3 @@
   {% endif %}{% comment %} /"if web" {% endcomment %}
 
 {% endfor %}{% comment %} /each item {% endcomment %}
-
