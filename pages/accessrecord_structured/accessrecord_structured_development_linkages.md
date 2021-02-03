@@ -144,7 +144,8 @@ For each `ProblemHeader (Condition)` referenced in the `List` profile:
     *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
 *	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
     * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation    
+    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation
+    *  Where an `observation` that represents a test or test group header has been made the actual problem then the 'diagnosticReport' it is from **MUST** be linked to the problem in    the `relatedClinicalContent` extension.
 *  The `ProcedureRequest`profile of any linked Diary Entries
     * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Diary Entries
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
