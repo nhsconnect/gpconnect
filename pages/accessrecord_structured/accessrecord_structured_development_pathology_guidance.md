@@ -42,7 +42,7 @@ It is a detailed specification and although it does contain some coding the majo
 {: .center-image }
 ![Structured text example](images/access_structured/Pathology_structured_text_example_2.PNG)
 
-GP systems are required to maintain the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFACT report imported into the GP system **MUST** be maintained as they are in the GP2GP HL7 message.
+GP systems are required to maintain the text formatting in order to preserve the meaning. This will also be true of the GP Connect messaging, any structured text from the EDIFACT report imported into the GP system **MUST** be maintained as they are in the GP2GP HL7 message. The line separator /n **MUST** be used to maintain the original message structure.
 
 ### Filing results into the patient record
 
