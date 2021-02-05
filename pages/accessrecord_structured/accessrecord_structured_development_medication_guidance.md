@@ -64,15 +64,34 @@ All the prescriptions issues under a single medication/medical device plan **MUS
 
 Where the dosage instructions of a medication/medical device plan is amended the existing authorisation/plan **MUST** be stopped or discontinued and a new authorisation created.
 
-To ease the implementation of a single dosage instruction, there will be a period of time made available for the provider systems to fully support this requirement.
+When splitting the plan due to a change in dosage the original authorisation should retain the repeat information as it was at the instant before the dosage changed. The new authorisation should contain the number of authorised issues remaining from the original plan and the number of issues at the new dosage. The new plan should reference the origianl plan using the `priorPrescription` element.
 
-*	The requirement applies to all medication/medical device plans that are	created on the provider system after an agreed date (tbd)
-*	All medication/medical device plans (regardless of date and status) that contain prescription issues with different dosage instructions **MUST** include the additional information:
-    * set `MedicationStatement.Extension(dosagelastchanged)` to the date that the dosage instruction was last changed.
-    * add the text "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY", where DD-Mmm-YYYY is the date the dosage was last changed.
+For example,
 
-This will allow consumer systems and end users to identify medication/medical device plans with multiple dosages and take appropriate action.
+Consider the case where Furosemide 20mg tablets had been authorised as a repeat with 6 authorised issues with a dosage of 'twice daily as advised', 1 issue was made at this dosage and then the dosage was changed to 'One to be taken each morning'. The `authoredOn` and `validityPeriod.start` dates should be retained from the original authorisation.
 
+The original plan would contain,
+
+MedicationRequest.id - E9881EF6-EF3A-4556-9202-A437C5E31128-HD-1
+MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsAllowed) - 6
+MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsIssued) - 1
+At the original dosage, MedicationRequest.dosageIntruction.text - 'twice daily as advised'
+authoredOn - 2020-12-21T10:59:37.493+00:00
+validityPeriod.start - 2020-12-21
+
+and the new plan would contain,
+
+MedicationRequest.id - E9881EF6-EF3A-4556-9202-A437C5E31128
+MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsAllowed) - 5
+MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsIssued) - 0
+At the new dosage, MedicationRequest.dosageIntruction.text - 'One to be taken each morning'
+With MedicationRequest.priorPrescription - E9881EF6-EF3A-4556-9202-A437C5E31128-HD-1
+authoredOn - 2020-12-21T10:59:37.493+00:00
+validityPeriod.start - 2020-12-21
+
+The populated resources for this example are available <p style="line-height: 1; font-size: 18px">here</p>
+
+{% include accessrecord_structured/split_plan.json %}
 
 ## Medication discontinuation/stopping
 
