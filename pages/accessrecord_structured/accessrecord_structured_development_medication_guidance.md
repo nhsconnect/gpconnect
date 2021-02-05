@@ -72,22 +72,26 @@ Consider the case where Furosemide 20mg tablets had been authorised as a repeat 
 
 The original plan would contain,
 
-MedicationRequest.id - E9881EF6-EF3A-4556-9202-A437C5E31128-HD-1
-MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsAllowed) - 6
-MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsIssued) - 1
-At the original dosage, MedicationRequest.dosageIntruction.text - 'twice daily as advised'
-authoredOn - 2020-12-21T10:59:37.493+00:00
-validityPeriod.start - 2020-12-21
+|element|value|
+| ------ | ------ |
+|MedicationRequest.id | E9881EF6-EF3A-4556-9202-A437C5E31128-HD-1|
+|MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsAllowed) | 6 |
+|MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsIssued) | 1 |
+|MedicationRequest.dosageIntruction.text | 'twice daily as advised' |
+|authoredOn | 2020-12-21T10:59:37.493+00:00 |
+|validityPeriod.start | 2020-12-21 |
 
 and the new plan would contain,
 
-MedicationRequest.id - E9881EF6-EF3A-4556-9202-A437C5E31128
-MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsAllowed) - 5
-MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsIssued) - 0
-At the new dosage, MedicationRequest.dosageIntruction.text - 'One to be taken each morning'
-With MedicationRequest.priorPrescription - E9881EF6-EF3A-4556-9202-A437C5E31128-HD-1
-authoredOn - 2020-12-21T10:59:37.493+00:00
-validityPeriod.start - 2020-12-21
+|element|value|
+| ------ | ------ |
+|MedicationRequest.id | E9881EF6-EF3A-4556-9202-A437C5E31128 |
+|MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsAllowed) | 5 |
+|MedicationRequest.extension(repeatinformation).extension(numberOfRepeatsIssued) | 0 |
+|MedicationRequest.dosageIntruction.text | 'One to be taken each morning' |
+|MedicationRequest.priorPrescription | E9881EF6-EF3A-4556-9202-A437C5E31128-HD-1 |
+|authoredOn | 2020-12-21T10:59:37.493+00:00 |
+|validityPeriod.start | 2020-12-21 |
 
 The populated resources for this example are available <p style="line-height: 1; font-size: 18px">here</p>
 
