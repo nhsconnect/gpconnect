@@ -74,20 +74,6 @@ In the future, the coded valueset will be built on to be more specific about whe
 
 For repeat and repeat dispensed medications/medical devices, the value identifies the care setting where the medication plan (rather than any specific issue in the plan) was authorised.
 
-### extension[dosagelastchanged] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>dateTime</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
-  </tr>
-</table>
-
-Only populate where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan.
-
-Set to the date when the dosage instructions were last changed.
-
 ### identifier ###
 
 <table class='resource-attributes'>
