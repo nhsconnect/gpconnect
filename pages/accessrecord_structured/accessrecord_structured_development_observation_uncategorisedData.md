@@ -231,7 +231,7 @@ Contains any hierarchical information between uncategorised data items.
   </tr>
 </table>
 
-The only type of data that **MAY** use the component element is when a blood pressure is recorded as a pair of results.
+This **MAY** be used for the component part of a blood pressure that is recorded as a triple or to carry qualifying data to the main observation code from providing systems.
 
 
 <br>
