@@ -231,7 +231,7 @@ Contains any hierarchical information between uncategorised data items.
   </tr>
 </table>
 
-This **MAY** be used for the component part of a blood pressure that is recorded as a triple or to carry qualifying data to the main observation code from providing systems.
+This **MAY** be used for the component part of a blood pressure that is recorded as a triple or to carry qualifying data to the main observation code.
 
 
 <br>
