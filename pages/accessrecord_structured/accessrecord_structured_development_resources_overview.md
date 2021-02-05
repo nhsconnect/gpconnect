@@ -49,41 +49,7 @@ In GP Connect, it is used to organise data returned by a query into groups of re
 
 ## Warning codes
 
-The following table provides details of the warning codes that are to be used in the warningCode extension in GP Connect. More guidance for each code follows in the subsequent sections.
-
-<table class='resource-attributes' border='1'>
-  <tr>
-    <td>Display</td>
-    <td>Code</td>
-    <td>Associated text</td>
-  </tr>
-  <tr>
-    <td>Confidential Items</td>
-    <td>confidential-items</td>
-    <td>Items excluded due to confidentiality and/or patient preferences.</td>
-  </tr>
-  <tr>
-    <td>Data in Transit</td>
-    <td>data-in-transit</td>
-    <td>Patient record transfer from previous GP practice not yet complete; information recorded before dd-Mmm-yyyy may be missing.</td>
-  </tr>
-</table>
-
-### Confidential items
-
-Where items have been excluded from the returned resources due to patient consent preferences or as they are part of the exclusion dataset this **MUST** be indicated at the list level. If an item that would have been an entry in a list is excluded the warningCode field **MUST** be populated using the confidential items warning code from the above table. The associated text **MUST** also be added into the note field when the code is used.
-
-Note: If the results of a search contained only confidential items, it would present as an `List` with no entries, an `emptyReason` and the Confidential Items warning code.
-
-### Data in transit
-
-This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice have not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.
-
-### Data awaiting filing
-
-When a GP clinical system receives electronic data about a patient it will go through filing process during which the information is reviewed by a user and if suitable integrated into the patient's medical record. The details on how this process is managed vary between different GP clinical systems and GP practices.
-
-GP Connect will not return electronic data that has been received by the GP clinical system but has not yet been through the filing process. The data will only become available through GP Connect once it has integrated into the patient's medical record.
+Details on the warning codes available in the GP Connect message and how they are populated are on the page [Returning data in lists page](accessrecord_structured_development_lists_for_message_structure.html). 
 
 ## Common code systems ##
 
