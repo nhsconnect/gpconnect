@@ -138,7 +138,7 @@ The audit trail timestamp representing when the data was recorded.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner, Organization)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
@@ -146,10 +146,10 @@ The audit trail timestamp representing when the data was recorded.
 
 The `Practitioner` profile representing the clinician responsible for making the observation.
 
-Where the observation was performed at another organisation and an `organisation` profile can be populated then that **SHALL** be populated here. This will be in addition to the clinical practitioner if
-both are available.
+Where the observation was performed at another organisation and an `Organization` profile can be populated then that **MUST** be populated here. 
+This will be in addition to the clinical practitioner if both are available.
 
-If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recordeed the data in the system.
+If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person who recorded the data in the system.
 
 ### value[x] ###
 
