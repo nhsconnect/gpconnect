@@ -29,7 +29,7 @@ The configuration of the Provider system **MUST** allow for clinical areas to be
 - Diary entries
 - Documents
 
-The Documents item controls whether `DocumentReference` resources are returned as part of the structured response. This can be used independently of the Access Documents capability [enablement switch](development_api_non_functional_requirements.html#enablement) but Documents MUST be switched off when the Access Documents capability is switched off.
+The Documents item controls whether `DocumentReference` resources are returned as part of the structured response, this configuration item works independently of the Access Documents capability [enablement switch](development_api_non_functional_requirements.html#enablement).
 
 ### Site switch
 In addition to the above, the configuration of the Provider system **MUST** allow for the availability of a clinical area to be switched on or off at one or more sites without requiring a release. For example, in the scenario where there was a data quality issue with a clinical area at a single site. Where information for a clinical area isn't returned, provider systems **MUST** return an `OperationOutcome` with an `issue` element for each clinical area that isn't available according to the rules below.
