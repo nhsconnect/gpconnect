@@ -291,6 +291,29 @@ For each `ProcedureRequest` referenced in the `List` profile:
 <a href="images/access_structured/DiaryEntry_Return.png"><img src="images/access_structured/DiaryEntry_Return.png" alt="Diary Entry Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
+### Problem and Consultation linkages ###
+
+The sections above show general details of the linkages for problems or consultations responses.
+This section looks at the representation of problem and consultation linkages, when consultations have been requested.
+Providers **SHOULD** return all references between all resources wherever possible and include the actual clinical item which relates to the problem header whether the actual problem item or a subsequent recording of the problem. 
+
+The example below represents a simple case of a consultation and its content which all relates to a single, new problem.
+* The problem header references to the consultation, the consultation topic, the actual problem and any other content of the consultation
+* The consultation topic references the problem header
+* The actual problem is included as a resource (an uncategorised data observation in this case) and references the consultation
+* All other content of the consultation references the consultation and is referenced by the problem header
+
+<center>
+<a href="images/access_structured/Consultation_and_Problem_1_v1.png"><img src="images/access_structured/Consultation_and_Problem_1_v1.png" alt="Consultation and Problem Returned FHIR resources and linkages" style="max-width:70%;max-height:70%;"></a>
+</center>
+
+This further example represents a subsequent consultation which includes further information related to the problem above and other information related to a new problem recorded in the same consultation.
+The consultation content relating to the existing and new problem is represented as described above, except the existing problem is shown with a new instance of a clinical item which is the same term.
+
+<center>
+<a href="images/access_structured/Consultation_and_Problem_1_v1.png"><img src="images/access_structured/Consultation_and_Problem_1_v1.png" alt="Consultation and Problem Returned FHIR resources and linkages" style="max-width:70%;max-height:70%;"></a>
+</center>
+
 ### Multiple clinical areas requests ###
 
 The details above have described the response a request for a single clinical area.
