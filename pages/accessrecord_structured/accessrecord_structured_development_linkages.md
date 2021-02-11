@@ -311,7 +311,7 @@ This further example represents a subsequent consultation which includes further
 The consultation content relating to the existing and new problem is represented as described above, except the existing problem is shown with a new instance of a clinical item which is the same term.
 
 <center>
-<a href="images/access_structured/Consultation_and_Problem_1_v1.png"><img src="images/access_structured/Consultation_and_Problem_1_v1.png" alt="Consultation and Problem Returned FHIR resources and linkages" style="max-width:70%;max-height:70%;"></a>
+<a href="images/access_structured/Consultation_and_Problem_2_v1.png"><img src="images/access_structured/Consultation_and_Problem_2_v1.png" alt="Consultation and Problem Returned FHIR resources and linkages" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Multiple clinical areas requests ###
