@@ -74,22 +74,22 @@ The default is to return given immunisations only.
 
 Where a consumer system has requested immunisations not given, it **MUST** ensure that the not given data remains clearly distinct from given vaccinations. The consumer **MAY** need to handle <code>explanation.reasonNotGiven</code> alongside the "not done" code to provide the classified reason the vaccination was not given.
 
-## Consent or dissent for vaccination
+## Additional information about vaccinations 
 
 The above section addresses circumstances where an immunisation is not given at the point of intending to give the vaccine.
-It does not cover the circumstance of a prior expression of dissent to one or more vaccinations.
-Equally, there may be a consent for vaccinations captured in the GP system.
+GP Systems may capture other coded information relating to vaccinations other than the administration of the vaccine in an immunisations feature / module / categorisation.
+This may be information regarding consent, dissent, invitations for vaccination, etc.
+Where provider categorise such coded information as immunisation data, then it **MUST** only return it against an immunisation request.
+GP Connect includes the parameter `includeStatus` to enable the consumer to specify the inclusion / exclusion of this information.
+See [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html) for full details of the parameter use.
 
-Coded records of consent or dissent **MUST** be included with the immunisation bundle using an <code>observation</code> resource, as defined for [uncategorised data](accessrecord_structured_development_observation_uncategoriseddata.html).
-Any coded record belonging to the following concepts **MUST** be included with the immunisation bundle regardless of whether the item was categorised as an immunisation at point of entry.
+Such coded records **MUST** be included with the immunisation bundle using an <code>observation</code> resource, as defined for [uncategorised data](accessrecord_structured_development_observation_uncategoriseddata.html).
 
-- 310375005 | Immunization consent given (finding) |
-- 310376006 | Immunization consent not given (finding) |
-- 591000119102 | Vaccine refused by patient (situation) |
+Records returned against an immunisation request under the scope of this definition **MUST** be 
+- excluded from the records returned for an uncategorised data request
+- included in the immunisations `List`
 
-These records **MUST** be excluded from the records returned for an uncategorised data request.
-
-Any consent or dissent returned as an 'Observation' resource **MUST** be included in the immunisations 'List'. 
+Consumers shoud note than GP Systems differ with respect to additional information categorised as immunisations, therefore the same coded data may be returned against an immunisation or uncategorised data request by different provider systems.
 
 ### Ended records
 
