@@ -1324,8 +1324,8 @@ table > tbody > tr.tableSubHeading {
 }
 
 .capability-not-available {
-    color: #aaaaaa;
-    font-weight: normal;
+    color: #aaaaaa!important;
+    font-weight: bold!important;
 }
 
 @media (max-width:700px) {
