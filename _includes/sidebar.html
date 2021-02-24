@@ -53,7 +53,9 @@
             $(this).attr('aria-expanded', 'true');
         });
 
-        if ($el.data('url') !== "") { window.location.replace($el.data('url')); }
+        if ($el.data('url') !== "") {
+            window.location.assign($el.data('url'));
+        }
     });
 
     if (window.location.pathname === '/') {
@@ -62,6 +64,13 @@
 
     $('a[data-url="' + window.location.pathname + '"]').parents("li.tree-parent").children("a").each(function () {
         $(this).attr('aria-expanded', 'true');
+    });
+
+    $('a').each(function () {
+        if ($(this).data('url') !== '') {
+            var re = new RegExp(/^.*\//);
+            $(this).attr('data-url', re.exec(window.location.href) + $(this).data('url'));
+        }
     });
 
     $("li.active").parents("li").toggleClass("active");
