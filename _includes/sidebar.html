@@ -67,9 +67,9 @@
     });
 
     $('a').each(function () {
-        if ($(this).data('url') !== '') {
+        if ($(this).data('url') !== '' && typeof($(this).data('url')) !== "undefined" ) {
             var re = new RegExp(/^.*\//);
-            $(this).attr('data-url', re.exec(window.location.href) + $(this).data('url'));
+            $(this).attr('data-url', re.exec(window.location.href) + $(this).data('url').replace(/^\//g, ''));
         }
     });
 
