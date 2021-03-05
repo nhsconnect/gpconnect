@@ -1,0 +1,60 @@
+---
+title: QuestionnaireResponse
+keywords: getcarerecord
+tags: [getcarerecord]
+sidebar: accessrecord_structured_sidebar
+permalink: accessrecord_structured_development_questionnaireResponse.html
+summary: "Guidance for populating and consuming the questionnaireResponse profile for hierarchichal uncategorised data"
+div: resource-page
+---
+## Introduction ##
+
+The headings below list the elements of the `questionnaireResponse` profile and describes how to populate and consume them for hierarchichal uncategorised data.
+
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
+
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [QuestionnaireResponse profile definition](https://simplifier.net/nhsdigitalstu3assets/careconnect-questionnaireresponse-1)." %}
+
+## QuestionnaireResponse elements ##
+
+### id ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Id</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The logical identifier of the `questionnaireResponse` profile.
+
+### meta.profile ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The `questionnaireResponse` profile URL.
+
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-questionnaireResponse-1](https://simplifier.net/nhsdigitalstu3assets/careconnect-questionnaireResponse-1).
+
+### identifier ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Identifier</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..*</td>
+  </tr>
+</table>
+
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
+
+There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
+
+Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
