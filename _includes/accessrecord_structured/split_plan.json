@@ -1,3 +1,4 @@
+{% highlight json %}
 {
     "resourceType": "Bundle",
     "meta": {
@@ -269,3 +270,4 @@
         }
     ]
 }
+{% endhighlight %}
