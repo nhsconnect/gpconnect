@@ -91,7 +91,7 @@ Where clinical areas are unavailable, references to them will need to be populat
 
 Where a clinical area has been turned off, it will create a section.section.entry (or section.entry) entry with the:
 
--   `List.entry.item.display` set to “[Clinical area] items are unavailable.”
+-   `List.entry.item.display` set to “[Clinical area] items have been disabled.”
 
        Where [Clinical area] identifies the type of the clinical item that isn't available.
 
