@@ -58,3 +58,119 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 There may be more than one identifier where data has been migrated across practices or provider systems and different provider specific identifiers have been assigned.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
+
+### parent ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+Link to the 'Observation' that is the parent to this `questionnaireResponse`.
+
+Every `questionnaireResponse` **MUST** have a parent `Observation`.
+
+### questionnaire ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Reference to the set of questions or form being answered.
+
+### status ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>code</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+The status of the `questionnaireResponse`.
+
+Fixed value of 'completed'
+
+### subject ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Patient)</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+Reference to patient this `questionnaireResponse` is about.
+
+### context ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The `Encounter` within which the `questionnaireResponse` was authored.
+
+### authored ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+When this `questionnaireResponse` was created on the system.
+
+### item.linkId ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>String</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Pointer to a specific item from a linked `questionnaire`.
+
+### item.text ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>String</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A text description of the question this item is an answer to or name of the group.
+
+
+### item.answer ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Multiple</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+Answer to the question or item contained in the group.
+
+
+
