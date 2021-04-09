@@ -23,6 +23,9 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
+        - title: 1.5.0-gp2gp
+          url: /overview_release_notes_1_5_0_gp2gp.html
+          output: web
         - title: 1.5.0
           url: /overview_release_notes_1_5_0.html
           output: web
