@@ -58,10 +58,8 @@
             window.location.assign(re.exec(window.location.href) + $el.data('url').replace(/^\//g, ''));
         }
     });
-
-    console.log(window.location);
-
-    if (window.location.pathname === '/') {
+    
+    if ($('a[aria-expanded="true"]').length === 0) {
         $('ul#mysidebar li:first > a').attr("aria-expanded", "true");
     }
 
