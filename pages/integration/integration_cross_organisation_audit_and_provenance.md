@@ -192,7 +192,9 @@ The value **SHALL** be an integer representing seconds past 01 Jan 1970 00:00:00
 
 The purpose for which access is being requested.
 
-As GP Connect only supports usage for direct care, this value **SHALL** be set to `directcare`.
+GP Connect supports two reasons for requesting the patient record:
+- `directcare` where the record is being requested to support direct care
+- `migration` where the record is being retrieved for the purpose of migration, for example, a GP2GP record transfer
 
 **Example**: `"reason_for_request": "directcare"`
 
@@ -211,9 +213,23 @@ Please the table below for which values to populate.
 | `organization/*.read` | Other read request | - [Get the capability statement](foundations_use_case_get_the_fhir_capability_statement.html)<br/>- [Find a practitioner](foundations_use_case_find_a_practitioner.html)<br/>- [Read practitioner](foundations_use_case_read_a_practitioner.html)<br/>- [Find an organisation](foundations_use_case_find_an_organisation.html)<br/>- [Read organisation](foundations_use_case_read_an_organisation.html)<br/>- [Read location](foundations_use_case_read_a_location.html)<br/>- [Search for free slots](appointments_use_case_search_for_free_slots.html)<br/>- [Get the capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)<br/> |
 | `organization/*.write` | Other write request | *(none currently)* |
 
+In addition to the above values, the table below contains claims around the sensitivity/confidentiality of the requested information.
+
+| Claim value | Description | When to use |
+|-------|-------------|------|
+|conf/N|Normal confidentiality| - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/>
+- [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/>
+- [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>|
+|conf/R|Restricted confidentiality|Restricted confidentiality	This MUST be only be used in a restricted set of use cases, this is currently restricted to GP2GP record transfers. In this scenario, provider systems will check whether the requesting organisation is permitted to retrieve sensitive information from the patient's record.
+- [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/>
+- [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/>
+- [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/> |
+
+Where multiple values are required, they **MUST** be provided as a space separated string.
+
 Providers should also read the associated [Security guidance](development_api_security_guidance.html#authorisation-of-access-to-endpoints) in relation to this claim.
 
-**Example**: `"requested_scope": "patient/*.read"`
+**Example**: `"requested_scope": "patient/*.read conf/N"`
 
 ---
 
@@ -288,7 +304,7 @@ To contain the logged on user's identifier(s) (for example, login details / user
 
 {% include important.html content="This field **SHALL NOT** be populated with fixed values or a generic \"system\" user. The values **SHALL** represent the logged on user making the request." %}
 
-The consumer **SHALL** populate the following [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) fields:
+The consumer **SHALL** populate the following [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) fields. The only exception to this is for GP2GP record transfers where the fields **SHOULD** be populated:
 
 - `id` with a unique [logical](https://www.hl7.org/fhir/STU3/resource.html#id) identifier (e.g. user ID or GUID) for the logged on user. This **SHALL** match the value of the [`sub` (subject) claim](integration_cross_organisation_audit_and_provenance.html#sub-subject-claim).
 - `name` with:
