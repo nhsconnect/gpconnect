@@ -208,7 +208,7 @@ Please the table below for which values to populate.
 
 | Claim value | Description | When to use |
 |-------|-------------|------|
-| `patient/*.read` | Patient record read request | - [Find a patient](foundations_use_case_find_a_patient.html)<br/> - [Read a patient](foundations_use_case_read_a_patient.html)<br/> - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)<br/> - [Read an appointment](appointments_use_case_read_an_appointment.html)<br/> - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Find a patient (Access Document)](access_documents_use_case_find_a_patient.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>
+| `patient/*.read` | Patient record read request | - [Find a patient](foundations_use_case_find_a_patient.html)<br/> - [Read a patient](foundations_use_case_read_a_patient.html)<br/> - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)<br/> - [Read an appointment](appointments_use_case_read_an_appointment.html)<br/> - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/> - [Find a patient (Access Document)](access_documents_use_case_find_a_patient.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>
 | `patient/*.write` | Patient record write request | - [Register a patient](foundations_use_case_register_a_patient.html)<br/>- [Book an appointment](appointments_use_case_book_an_appointment.html)<br/>- [Amend an appointment](appointments_use_case_amend_an_appointment.html)<br/>- [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)<br/> |
 | `organization/*.read` | Other read request | - [Get the capability statement](foundations_use_case_get_the_fhir_capability_statement.html)<br/>- [Find a practitioner](foundations_use_case_find_a_practitioner.html)<br/>- [Read practitioner](foundations_use_case_read_a_practitioner.html)<br/>- [Find an organisation](foundations_use_case_find_an_organisation.html)<br/>- [Read organisation](foundations_use_case_read_an_organisation.html)<br/>- [Read location](foundations_use_case_read_a_location.html)<br/>- [Search for free slots](appointments_use_case_search_for_free_slots.html)<br/>- [Get the capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)<br/> |
 | `organization/*.write` | Other write request | *(none currently)* |
@@ -218,10 +218,12 @@ In addition to the above values, the table below contains claims around the sens
 | Claim value | Description | When to use |
 |-------|-------------|------|
 |conf/N|Normal confidentiality| - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/>
+- [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/>
 - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/>
 - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>|
 |conf/R|Restricted confidentiality|Restricted confidentiality	This MUST be only be used in a restricted set of use cases, this is currently restricted to GP2GP record transfers. In this scenario, provider systems will check whether the requesting organisation is permitted to retrieve sensitive information from the patient's record.
 - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/>
+- [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/>
 - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/>
 - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/> |
 
