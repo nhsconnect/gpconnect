@@ -98,7 +98,12 @@ The consumer system can specify which clinical areas it wishes to retrieve and, 
      * The provider system returns all items whose
 		* occurrence period start date is on or prior to the consumer supplied end date or
 		* occurrence date time is on or prior to the consumer supplied end date
-     * Where no end date is supplied by the consumer, all diary entries are returned
+
+### Full record
+
+* Include all information from the patient's record
+* where sensitive information has been requested, the provider system **MUST** return all information that would be included in a GP2GP record transfer
+
 
 ## Following a linkage ##
 For the majority of scenarios, the information required by the consumer can be retrieved through a single query. The consumer system identifies which clinical areas of the patient record it requires and which search criteria should be applied, then calls the GP Connect API. The provider system then returns all the requested information in a single bundle.
@@ -116,5 +121,3 @@ This version of GP Connect does not allow a consumer to search for a specific it
 
 For example:
 * To display a specific consultation linked to a problem, the consumer system could request all the consultations that took place within the active period of the problem then search for the required consultation within the returned data.
-
-
