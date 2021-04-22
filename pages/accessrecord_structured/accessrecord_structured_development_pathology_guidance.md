@@ -54,6 +54,8 @@ Results may not always be filed on the day they were received. However, in most 
 
 At the point at which the record is filed, there is opportunity for the user to provide comments against the report or part of the report that they are filing.
 
+GP Connect will return any diagnosticReports that are associated with a patient whether they have been filled or not. Where reports have been filed there will be a 'Filing comments' observation that says when the result/report was filed and details any comments made by the user at the time. 
+
 ## Report structure
 
 The following entity diagram describes the logical model for investigations in GP Connect:
