@@ -116,7 +116,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
       <td>0..1</td>
-      <td>Include the patient's full clinical record in the response. Where this parameter is used the parameters below **MUST NOT** be used.</td>
+      <td>Include the patient's full clinical record in the response.</td>
     </tr>
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeSensitiveInformation</code></span></td>
@@ -124,7 +124,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Include confidential and sensitive information in the response, this parameter has a default value of 'false'. This parameter can only be set to true if an appropriate `requested_scope` value is provided in the JWT, more guidance is available in the  <a href="integration_cross_organisation_audit_and_provenance.html#requested_scope-claim">Cross-organisation audit and provenance page</a>
+        Include confidential and sensitive information in the response, this parameter has a default value of 'true'. This parameter can only be set to true if an appropriate `requested_scope` value is provided in the JWT, more guidance is available in the  <a href="integration_cross_organisation_audit_and_provenance.html#requested_scope-claim">Cross-organisation audit and provenance page</a>
         <p><i>Part parameter: may only be provided if <code>includeFullRecord</code> is set.</i></p>        
       </td>
     </tr>
