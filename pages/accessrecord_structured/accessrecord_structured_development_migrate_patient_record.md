@@ -70,7 +70,15 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.migratest
 
 #### Authorisation ####
 
-This interaction can only be used when patient's information is being migrated between GP practices.
+{% include important.html content="The following may need to be moved to the Patient Switching Standard" %}
+
+This interaction can only be used when patient's information is being migrated between GP practices. When a request to migrate the patient's record is made, the provider system **MUST** check that the requesting system is the patient's registered GP practice by checking this against PDS. The following steps will need to be performed:
+- The requesting practice will need to perform a PDS trace to retrieve the patient's current registered practice
+- The requesting practice **MUST** record the patient's current registered practice
+- The requesting practice updates PDS as the patient's registered practice
+- The requesting practice looks up the previously registered practice's endpoint on SDS
+- The requesting practice makes a request to migrate the patient's record
+- The previously registered practice **MUST** check that the ODS code for the requesting practice matches the patient's registered practice on PDS
 
 #### Availability of data ####
 
