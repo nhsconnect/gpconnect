@@ -246,10 +246,10 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources representing the patient's referrals will be returned.
 - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources representing the patient's diary entries will be returned.
 
-  - and when the `includeSensitiveInformation` parameter is set to `false`:
+- and when the `includeSensitiveInformation` parameter is set to `false`:
 
-    - only non confidential information will be returned
+  - only non confidential information will be returned
 
-  - and when the `includeSensitiveInformation` parameter is set to `true`:
+- and when the `includeSensitiveInformation` parameter is set to `true`:
 
-    - confidential and sensitive information will be returned
+  - confidential and sensitive information will be returned
