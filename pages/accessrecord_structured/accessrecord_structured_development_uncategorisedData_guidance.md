@@ -84,16 +84,14 @@ For example:
     * Breath alcohol level 15mmol/L
     * O/E - spleen just palpable
 
-Where this occurs, the data is supplied in a flattened format with the hierarchical information made available to the consumer system if they want to rebuild the hierarchical structure.
+Where this occurs, the data is supplied in a format where the hierarchical information is made available to the consumer system if they want to rebuild the hierarchical structure or if not they can consume each of the resources individually flattening out the structure if it is not of benefit to their users.
 
 ### Modelling ###
 
-Each item of uncategorised data in the hierarchy is recorded in its own `observation` profile. The structure is represented using the `observation.related` field.
+Each item of uncategorised data in the hierarchy is recorded in its own FHIR resource, this may be an `observation`, `immunization` or any other that is defined in GP Connect . The structure is represented using the `questionnaireResponse` resource.
 
-* The top-level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member`
-* The child items will contain `observation.related.target` pointing to the top-level item with an `observation.related.type` of `derived-from`
-
-Note: This follows the same model that will be used to represent Investigations and Pathology.
+* The top-level item will contain an `observation` in the `questionnaireResponse.parent` element. 
+* The child items will be pointed to as references to the relevant resources within the `questionnaireResponse.item.answer` field(s). 
 
 ### Consultations and problem ###
 
