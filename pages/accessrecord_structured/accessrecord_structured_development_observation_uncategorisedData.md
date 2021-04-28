@@ -210,16 +210,12 @@ Where a reference range contains a less than '<' or greater than '>' operator it
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
+    <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Contains any hierarchical information between uncategorised data items.
-
-* Populate `related.target` with a reference to the related item of uncategorised data
-* Where the related item is a child of this item set `related.type` to `has-member`
-* Where the related item is a parent of this item set `related.type` to `derived-from`
+Can be used to reference another resource related to this observation
 
 ### component ###
 
