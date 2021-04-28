@@ -103,11 +103,11 @@ For example, if four items of uncategorised data are recorded under the investig
 
 ### Hierarchical data involving different clinical areas
 
-If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the header observation related element as a 'has-member' type. This will mean that, unlike references to other observations, references to these data items will be one directional as illustrated in the diagram below.
+If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from as items in the questoinnaireResponse as for any other uncategorised 'observation' resource. T
 
 <a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
 
-Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
+Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year.
