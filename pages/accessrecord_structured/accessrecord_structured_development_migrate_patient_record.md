@@ -29,7 +29,7 @@ The consumer system:
 
 ### Interaction diagram ###
 
-<img style="height: 400px;" alt="Get structured record interaction diagram" src="images/access_structured/get-structured-record-interaction-diagram.png"/>
+<img style="height: 400px;" alt="Get structured record interaction diagram" src="images/access_structured/migrate-structured-record-interaction-diagram.png"/>
 
 ### Request operation ###
 
@@ -72,22 +72,22 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.migratest
 
 {% include important.html content="The following may need to be moved to the Patient Switching Standard" %}
 
-This interaction can only be used when patient's information is being migrated between GP practices. When a request to migrate the patient's record is made, the provider system **MUST** check that the requesting system is the patient's registered GP practice by checking this against PDS. The following steps will need to be performed:
-- The requesting practice will need to perform a PDS trace to retrieve the patient's current registered practice
-- The requesting practice **MUST** record the patient's current registered practice
-- The requesting practice updates PDS as the patient's registered practice
-- The requesting practice looks up the previously registered practice's endpoint on SDS
-- The requesting practice makes a request to migrate the patient's record
-- The previously registered practice **MUST** check that the ODS code for the requesting practice matches the patient's registered practice on PDS
+This interaction can only be used when patient's information is being migrated between GP practices. When a request to migrate the patient's record is made, the provider system **MUST** check that the consumer system is the patient's registered GP practice by checking this against PDS. The following steps will need to be performed:
+- The consuming system will need to perform a PDS trace to retrieve the patient's current registered practice
+- The consuming system **MUST** record the patient's current registered practice
+- The consuming system updates PDS as the patient's registered practice
+- The consuming system looks up the previously registered practice's endpoint on SDS
+- The consuming system makes a request to migrate the patient's record
+- The providing system **MUST** check that the ODS code for the consuming system matches the patient's registered practice on PDS
 
 #### Availability of data ####
 
-The record migration use case requires that information is always available regardless of whether the [structured capability has been enabled](development_api_non_functional_requirements.html#enablement), or information isn't due to the [configuration for clinical areas](accessrecord_structured_development_clinical_area_config.html).
+The record migration use case requires that information is always available regardless of whether the [structured capability has been enabled](development_api_non_functional_requirements.html#enablement), or whether clinical areas have been turned off using [configuration for clinical areas](accessrecord_structured_development_clinical_area_config.html).
 
 
 #### Payload request body ####
 
-The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.15) `OperationDefinition` profile.
+The payload request body comprises a `Parameters` resource, conforming to the [GPConnect-MigrateStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-MigrateStructuredRecord-Operation-1/_history/1.15) `OperationDefinition` profile.
 
 The `Parameters` resource is populated with the parameters shown below.  Note: The ↳ character indicates a part parameter.
 
@@ -135,7 +135,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
 </table>
 
 
-The example below shows a fully populated `Parameters` resource as a request to the `$gpc.getstructuredrecord` operation:
+The example below shows a fully populated `Parameters` resource as a request to the `$gpc.migratestructuredrecord` operation:
 
 ```json
 {
@@ -208,11 +208,11 @@ Provider systems **MUST**:
 - return a `Bundle` conforming to the [`GPConnect-StructuredRecord-Bundle-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3) profile definition
 - return the following resources in the `Bundle`:
   - `Patient` matching the NHS Number sent in the body of the request
-  - `Organization` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`
+  - `Organization` matching the patient's previously registered GP practice, where their record is being migrated from, referenced from `Patient.generalPractitioner`
   - `Organization` matching the organisation serving the request, if different from above, referenced from `Patient.managingOrganization`
   - `Practitioner` matching the patient's usual GP, if they have one, referenced from `Patient.generalPractitioner`
   - `PractitionerRole` matching the usual GP's role
-  - resources holding consultations, problems, immunisations, allergies, intolerance, medications, uncategorised data, referrals, investigations, diary entries and warnings about unsupported parameters according to the rules below:
+  - resources holding consultations, problems, immunisations, allergies, intolerance, medications, uncategorised data, referrals, investigations and diary entries according to the rules below:
 
 Provider systems **SHOULD**:
 
@@ -233,8 +233,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - when the `includeFullRecord` parameter is set:
 
 - A [`List`](accessrecord_structured_development_list.html) resource for each clinical area referencing resources that have been returned
-- A [`List`](accessrecord_structured_development_list.html) resource for each clinical area referencing resources that are linked from the returned [`Condition`](accessrecord_structured_problems.html) resources
-- A [`List`](accessrecord_structured_development_list.html) resource for each clinical area referencing resources that are linked from the returned consultations
+- A [`List`](accessrecord_structured_development_list.html) resource for secondary lists referencing resources contained in requested problems and consultations
 
 - [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html), [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication
 - [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances
@@ -245,6 +244,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html), [`DocumentReference`]() resources representing the patient's test results
 - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources representing the patient's referrals will be returned.
 - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources representing the patient's diary entries will be returned.
+- [`DocumentReference`]() resources representing the patient's documents.
 
 - and when the `includeSensitiveInformation` parameter is set to `false`:
 
@@ -253,3 +253,6 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - and when the `includeSensitiveInformation` parameter is set to `true`:
 
   - confidential and sensitive information will be returned
+
+###### Documents #####
+ `DocumentReference` resources containing document metadata including location will be returned as part of the response `Bundle`. Retrieval of these **MUST** be performed using the [Retrieve a document](access_documents_development_retrieve_patient_documents.html) API in the [Access Document capability](access_documents.html).

@@ -604,7 +604,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeFullRecord` parameter is not set:
 
-  - no clinical information shall be returned
+  - clinical information shall be returned in response to the other Parameters listed below
 
 - when the `includeFullRecord` parameter is set:
 

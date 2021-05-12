@@ -102,7 +102,7 @@ The consumer system can specify which clinical areas it wishes to retrieve and, 
 ### Full record
 
 * Include all information from the patient's record
-* where sensitive information has been requested, the provider system **MUST** return all information that would be included in a GP2GP record transfer
+* where sensitive information has been requested, the provider system **MUST** return all information that would be included in a GP2GP record transfer. This only applies to the migrate patient record interaction.
 
 
 ## Following a linkage ##

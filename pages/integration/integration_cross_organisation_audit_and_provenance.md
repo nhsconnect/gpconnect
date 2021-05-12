@@ -204,7 +204,7 @@ GP Connect supports two reasons for requesting the patient record:
 
 The scope of the request.
 
-Please the table below for which values to populate.
+Please see the table below for which values to populate.
 
 | Claim value | Description | When to use |
 |-------|-------------|------|
@@ -217,11 +217,11 @@ In addition to the above values, the table below contains claims around the sens
 
 | Claim value | Description | When to use |
 |-------|-------------|------|
-|conf/N|Normal confidentiality| - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/>
+| conf/N | Normal confidentiality | - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/>
 - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/>
 - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/>
 - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>|
-|conf/R|Restricted confidentiality|Restricted confidentiality	This MUST be only be used in a restricted set of use cases, this is currently restricted to GP2GP record transfers. In this scenario, provider systems will check whether the requesting organisation is permitted to retrieve sensitive information from the patient's record.
+| conf/R | Restricted confidentiality | Restricted confidentiality	This MUST be only be used in a restricted set of use cases, this is currently restricted to GP2GP record transfers. In this scenario, provider systems will check whether the requesting organisation is permitted to retrieve sensitive information from the patient's record.
 - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/>
 - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/>
 - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/>
@@ -306,7 +306,7 @@ To contain the logged on user's identifier(s) (for example, login details / user
 
 {% include important.html content="This field **SHALL NOT** be populated with fixed values or a generic \"system\" user. The values **SHALL** represent the logged on user making the request." %}
 
-The consumer **SHALL** populate the following [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) fields. The only exception to this is for GP2GP record transfers where the fields **SHOULD** be populated:
+The consumer **SHALL** populate the following [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) fields. The only exception to this is for the [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html) interaction where the fields **SHOULD** be populated:
 
 - `id` with a unique [logical](https://www.hl7.org/fhir/STU3/resource.html#id) identifier (e.g. user ID or GUID) for the logged on user. This **SHALL** match the value of the [`sub` (subject) claim](integration_cross_organisation_audit_and_provenance.html#sub-subject-claim).
 - `name` with:
