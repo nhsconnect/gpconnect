@@ -331,7 +331,11 @@ Unless there is a distinct user-modifiable date and time for the authorisation, 
 
 Person and their organization requesting authorisation for prescription.
 
-To be used if the medication/medical device was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
+To be used if the medication/medical device.
+
+May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
+
+If it was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
 
 If the medication/medical device has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
 
@@ -345,9 +349,7 @@ If the medication/medical device has been prescribed elsewhere and, for example,
   </tr>
 </table>
 
-The responsible `Practitioner` who authorised the medication/medical device.
-
-May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
+The person who entered the record on the system.
 
 ### note ###
 
