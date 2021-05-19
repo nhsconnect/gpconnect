@@ -188,7 +188,7 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
-If the EPS identifier is present then the identifier.value is where the EPS Id SHOULD also be added. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/eps-line-item-identifier`
+If the EPS identifier is present then the identifier.value is where the EPS Id SHOULD also be added. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/prescription-order-item-number`
 
 ### basedOn ###
 
@@ -213,10 +213,9 @@ This field is used to create the links between `MedicationRequest` profiles to r
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
+The EPS prescriptionID if this medication or medical device has been prescribed via the Electronic Prescriptions Service. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is `identifier.value`.
 
-Composite request this is part of. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is `identifier.value`.
-
-All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
+All EPS prescribed drugs **MUST** have the prescriptionID present in this field.
 
 ### status ###
 
