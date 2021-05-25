@@ -75,3 +75,6 @@ entries:
         - title: Retrieve a document
           url: /access_documents_development_retrieve_patient_documents.html
           output: web
+        - title: Migrate a document
+          url: /access_documents_development_migrate_patient_documents.html
+          output: web
