@@ -215,7 +215,7 @@ This field is used to create the links between `MedicationRequest` profiles to r
 </table>
 The EPS prescriptionID if this medication or medical device has been prescribed via the Electronic Prescriptions Service. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is `identifier.value`.
 
-All EPS prescribed drugs **MUST** have the prescriptionID present in this field.
+All EPS prescribed drugs **MUST** have the prescriptionID present in this field and have `system` element set to `https://fhir.nhs.uk/Id/prescription-order-number`.
 
 ### status ###
 
