@@ -109,6 +109,18 @@ If the hierarchical data contains items from other clinical areas that are not h
 
 Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
+## Representing inbound referrals ##
+
+As noted above, inbound referrals are to be returned using `observation` resources as per this guidance.
+The following additions / exceptions apply to the population of elements, otherwise populate as per the [uncategorised data profile](accessrecord_structured_development_observation_uncategoriseddata) implementation guidance. 
+
+* Where known, the referrer details **MUST** be returned using the `performer` element
+* The `performer` element **MAY** be absent, for example if the referrer is not recorded
+* Additional fields capturing details of the referral in the source system **SHOULD** be returned in the `component`
+   * Populate `component.code.text` with the data label
+   * Populate `component.valueString` with the data item text
+* Self referrals **MUST** be identified by including the text "Self referral" in the `comment` element
+
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year.
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible.
