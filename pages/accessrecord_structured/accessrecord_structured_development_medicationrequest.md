@@ -336,8 +336,6 @@ May not always be the user who entered the record on the system but, where a sys
 
 If it was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
 
-If the medication/medical device has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
-
 ### recorder ###
 
 <table class='resource-attributes'>
