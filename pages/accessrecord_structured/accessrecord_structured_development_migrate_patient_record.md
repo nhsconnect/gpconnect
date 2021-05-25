@@ -114,15 +114,15 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
     <tr>
       <td><code class="highlighter-rouge">includeFullRecord</code></td>
       <td><code class="highlighter-rouge"></code></td>
-      <td>Optional</td>
-      <td>0..1</td>
+      <td>Mandatory</td>
+      <td>1..1</td>
       <td>Include the patient's full clinical record in the response.</td>
     </tr>
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">includeSensitiveInformation</code></span></td>
       <td><code class="highlighter-rouge">Boolean</code></td>
-      <td>Optional</td>
-      <td>0..1</td>
+      <td>Mandatory</td>
+      <td>1..1</td>
       <td>
         Include confidential and sensitive information in the response, this parameter has a default value of 'true'. This parameter can only be set to true if an appropriate `requested_scope` value is provided in the JWT, more guidance is available in the  <a href="integration_cross_organisation_audit_and_provenance.html#requested_scope-claim">Cross-organisation audit and provenance page</a>
         <p><i>Part parameter: may only be provided if <code>includeFullRecord</code> is set.</i></p>        
@@ -180,8 +180,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | An unauthorised request has been made for sensitive information  | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | A part parameter is passed without a value | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
@@ -254,5 +252,5 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - confidential and sensitive information will be returned
 
-###### Documents #####
+##### Documents #####
  `DocumentReference` resources containing document metadata including location will be returned as part of the response `Bundle`. Retrieval of these **MUST** be performed using the [Retrieve a document](access_documents_development_retrieve_patient_documents.html) API in the [Access Document capability](access_documents.html).
