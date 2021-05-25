@@ -45,6 +45,10 @@ GET /Binary/[id]
 GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_base]/Binary/[id]
 ```
 
+#### File size limit ####
+
+Documents up to 5MB can be retrieved using this interaction.
+
 #### Request headers ####
 
 Consumers **MUST** include the following additional HTTP request headers:
