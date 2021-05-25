@@ -137,7 +137,15 @@ If the 'Authoring Organisation' of the document is NOT the same as the custodian
 ## File size of the document ##
 End-users would like to know the size of the document before retrieving the document. Providers would return the file size of the document in the response payload for Search Document GP Connect API request.
 
-Documents that are over 100mb **MUST NOT** be retrievable using the GP Connect API, instead a placeholder should be returned specifying that the document hasn't been returned due to its file size. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html#contentattachmenttitle). 
+Documents **MUST NOT** be retrievable using the GP Connect API when they are over the following file size limits:
+- [Retrieve a document](access_documents_development_retrieve_patient_documents.html) - 5MB
+- [Migrate a document](access_documents_development_migrate_patient_documents.html) - 100MB
+
+Documents that are over 5mb **MUST NOT** be retrievable using the GP Connect API,
+
+instead a placeholder should be returned specifying that the document hasn't been returned due to its file size. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html#contentattachmenttitle).
+
+
 
 ## Multiple systems/providers being used in a GP practice to manage documents ##
 A GP practice may use document management systems for managing documents besides the clinical systems. The documents held in document management system sync to the clinical system along with its basic information such as document type, clinical setting, organisation, description and date. Any read codes extracted in the document management system is also synced to the clinical system. This is done so that, in the case when the document management system is unavailable, the document is still available in the principal clinical system and vice versa.
