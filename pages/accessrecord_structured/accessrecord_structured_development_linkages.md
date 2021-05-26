@@ -16,6 +16,8 @@ For example, linking a medication to a problem means that as well as the record 
 
 For a consuming system to be able to interpret this linkage information correctly, it needs to be presented in the same way regardless of the providing system.
 
+{% include note.html content="The diagrams are illustrative to support the specification text. There may be some simplifications or omissions, for instance not all possible linkages to the resources for investigations are shown." %}
+
 ### GP Connect FHIR&reg; model ###
 
 To support this, GP Connect has developed a FHIR model that identifies all the GP Connect FHIR profiles and how they are related together to store the patient record.
