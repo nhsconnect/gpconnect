@@ -97,7 +97,7 @@ An example Access Record Structured capability statement is shown below ready fo
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "name": "GP Connect API - Access Record Structured",
   "status": "active",
   "date": "2020-02-10",
@@ -107,8 +107,8 @@ An example Access Record Structured capability statement is shown below ready fo
       "name": "[Provider Software Vendor Contact Name]"
     }
   ],
-  "description": "This server implements the GP Connect API - Access Record Structured version 1.5.0",
-  "copyright": "Copyright NHS Digital 2016-20",
+  "description": "This server implements the GP Connect API - Access Record Structured version 1.5.1",
+  "copyright": "Copyright NHS Digital 2016-21",
   "kind": "capability",
   "software": {
     "name": "[Provider Software Name]",
@@ -156,7 +156,13 @@ An example Access Record Structured capability statement is shown below ready fo
           "definition": {
             "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.16"
           }
-        }
+        },
+        {
+          "name": "gpc.migratestructuredrecord",
+          "definition": {
+            "reference": "https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-MigrateStructuredRecord-Operation-1/_history/1.1"
+          }
+        },
       ]
     }
   ]
