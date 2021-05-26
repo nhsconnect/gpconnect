@@ -118,7 +118,7 @@ The following additions / exceptions apply to the population of elements, otherw
 * The `performer` element **MAY** be absent, for example if the referrer is not recorded
 * Additional fields capturing details of the referral in the source system **SHOULD** be returned in the `component`
    * Populate `component.code.text` with the data label
-   * Populate `component.valueString` with the data item text
+   * Populate `component.value` with the data item code / text
 * Self referrals **MUST** be identified by including the text "Self referral" in the `comment` element
 
 ## Representing blood pressure readings from GP systems
