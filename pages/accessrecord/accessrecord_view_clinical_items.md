@@ -49,7 +49,7 @@ Providers must return all the columns as described in the table below, sorted by
 | 3 | `Details` | Longer human readable details for the clinical item | `free-text` |
   
 The provider **MAY** include or exclude items which are included in the [observations](accessrecord_view_observations.html) view.
-If 'observations' are included, all the details which are included in the Value, Range and Details column **MUST** be included in the Details column.
+If 'observations' are included, all the details which are included in the Value, Range and Details columns in the observations view **MUST** be included in the Details column of this view.
 
 ## HTML view ##
 
