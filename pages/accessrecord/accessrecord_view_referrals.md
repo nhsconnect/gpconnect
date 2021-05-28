@@ -46,7 +46,7 @@ Providers must return all the columns as described in the table below, sorted by
 | 2 | `From` | Practitioner or Organisation referred from | `free-text` |
 | 3 | `To` | Practitioner or Organisation referred to | `free-text` |
 | 4 | `Priority` | The priority of the referral | `free-text` |
-| 5 | `Details` | Longer human readable details for the referral | `free-text` |
+| 5 | `Details` | Longer human readable details for the referral. This **MUST** include all clinically relevant information about the referral which is not included in the other columns. This **MUST** include the original term text for the main coded item describing the referral, which **MUST** be the first item. Any additional information, such as the free text descriptionof the referral, **MUST** separated from the original clinical term by a new line. A label **SHOULD** preface additional information where necessary for reliable interpretation of the information. | `free-text` |
 
 ## HTML view ##
 
