@@ -66,6 +66,10 @@ The GP clinical system provider is to determine whether its data supports the in
 Wherever feasible and meaningful, a date period is preferred.
 The planned date(s) may represent an earliest date, latest date, indicative date or a combination but this may vary by record / use and the resource will not provide distinctions in this respect.
 
+Consumers may include a part parameter to return only diary entries up to a selected date in the future.
+As the search filter only provides an upper boundary and has to be a future date, diary entries which are `active` and have passed their planned date will always be included.
+Full details about search criteria for diary entries is detailed in the [Search criteria](accessrecord_structured_development_search.html#diary-entries) and [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html#request-operation) pages.
+
 ## Dairy entry authoredOn
 
 The diary entry <code>authoredOn</code> is the date the diary entry was captured on the GP clinical system.
