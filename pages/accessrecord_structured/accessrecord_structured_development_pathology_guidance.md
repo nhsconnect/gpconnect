@@ -106,6 +106,11 @@ The `Observation` resource is used for three different entities within the model
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.
 
+## Investigations and Problems
+
+There is specific guidance for representing the relationship of a problem to an investigation.
+Details are provided on the [Problem guidance](accessrecord_structured_development_problems_guidance.html).
+
 ## Using the `List` resource for investigations queries
 
 The results of a query for investigations **MUST** return a `List` containing references to all the `DiagnosticReport` resources to represent each investigation report that is returned. The list code **MUST** be set to `887191000000108` for `Investigations and results`.
