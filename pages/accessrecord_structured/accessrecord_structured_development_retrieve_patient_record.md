@@ -229,7 +229,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Include information about consent and dissent for immunisations in the response. The default value for this is <code>false</code>.
+        Include information about consent and dissent for immunisations in the response. The default value for this is <code>true</code>.
         <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
       </td>
     </tr>
@@ -739,7 +739,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources that match the supplied query parameters
   - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources
-  - [`Condition`](accessrecord_structured_problems.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
+  - [`Condition`](accessrecord_structured_problems.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [QuestionnaireResponse](accessrecord_structured_development_questionnaireResponse.html) resources representing the patient's uncategorised data will be returned.
 
 - when the `uncategorisedDataSearchPeriod` is set:
   - when a `start` value is set, all uncategorised data with an `Observation.effectiveTime` after the date **MUST** be returned
