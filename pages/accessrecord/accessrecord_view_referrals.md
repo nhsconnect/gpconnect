@@ -40,6 +40,7 @@ Provider message describing at a summary level how they have populated this sect
 
 Providers must return all the columns as described in the table below, sorted by `Date` descending:
 
+<div>
 <table>
 <thead>
   <tr class="header">
@@ -51,7 +52,7 @@ Providers must return all the columns as described in the table below, sorted by
  </thead>
   <tr>
     <td style="text-align:center">1</td>
-    <td><code>Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></td>
+    <td><code>Date</code> <em class="fa fa-sort-desc" aria-hidden="true"></em></td>
     <td>The date of the referral</td>
     <td><code>dd-Mmm-yyyy</code></td>
   </tr> 
@@ -87,6 +88,7 @@ Providers must return all the columns as described in the table below, sorted by
 	<td><code>free-text</code></td>
   </tr>
 </table>
+</div>
  
   
 ## HTML view ##
