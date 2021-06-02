@@ -92,7 +92,6 @@ Providers must return all the columns as described in the table below, sorted by
 			<li>Any additional information, such as the free text description of the referral, <strong>MUST</strong> separated from the original clinical term by a new line</li>
 			<li>A label <strong>SHOULD</strong> preface additional information where necessary for reliable interpretation of the information</li>
 		</ul>
-	<p>for example, <code>14 capsule</code></p>
 	</td>
 	<td><code>free-text</code></td>
   </tr>
