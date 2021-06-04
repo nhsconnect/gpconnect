@@ -471,6 +471,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
   ]
 }
 ```
+
 ##### Not permitted parameter combinations #####
 
 Certain combinations of query parameters have the potential to introduce clinical risks. To prevent these scenarios occurring, the following combinations of parameters are not permitted and **SHALL** not be used by consumers:
@@ -496,6 +497,10 @@ When requesting problems, the following part parameters **MUST NOT** be included
 In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
 
 Examples of queries are available on the [Search examples](accessrecord_structured_development_searchExamples.html) page.
+
+#### Related problem headers not returned due to search criteria #### 
+
+If a problem is related to another problem using the `relatedProblemHeader` extension it is possible that the related problem header is not returned due to the restrictions of the search criteria. It is possible for many problems to be related to each other and if the user needs to fully understand the problem relationships these can be returned by requesting all problems.  This is done by not specifying a filter for significance or status and putting `includeProblems` in the request. This will result in all problems recorded on the GP system being returned and will include all links between problems.
 
 #### Error handling ####
 
