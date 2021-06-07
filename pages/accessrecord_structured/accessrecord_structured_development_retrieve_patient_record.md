@@ -483,7 +483,6 @@ When requesting consultations, the following part parameters **MUST NOT** be inc
   - `includeProblems.filterStatus`
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
-  - `includeImmunisations.includeNotGiven`
   - `includeImmunisations.includeStatus`
 
 When requesting problems, the following part parameters **MUST NOT** be included:
@@ -491,7 +490,6 @@ When requesting problems, the following part parameters **MUST NOT** be included
   - `includeUncategorisedData.uncategorisedDataSearchPeriod`
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
-  - `includeImmunisations.includeNotGiven`
   - `includeImmunisations.includeStatus`
 
 In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
