@@ -96,6 +96,18 @@ The clinical code that represents the name of the test group - for example, Full
 
 A reference to the patient who the observation is about.
 
+### effective[x] ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>dateTime/Period</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+The date and time when the test was performed.
+
 ### issued ###
 
 <table class='resource-attributes'>
@@ -201,14 +213,6 @@ The following elements **MUST NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> BackboneElement</td>
-  </tr>
-</table>
-
-### effective[x] ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
 
