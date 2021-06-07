@@ -73,6 +73,8 @@ The methods and terminology used to link problems varies a great deal between cl
 
 To resolve this, GP Connect will only show the logical linkage between problems (whether the linked problem is a parent, child or sibling) without reflecting the terminology of the provider system.
 
+Problem linkages may be impaced by filtering. See the guidance in the [retrieve a patients structured record page.](https://gpc-structured-1-5-0.netlify.app/accessrecord_structured_development_retrieve_patient_record.html)
+
 ## Problems linking to out of scope clinical items
 
 The following items may be recorded in defined clinical areas which are supported by the provider but the clinical items are out of scope in this version of the specification
