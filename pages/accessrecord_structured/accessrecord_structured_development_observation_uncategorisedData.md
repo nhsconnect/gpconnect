@@ -139,8 +139,8 @@ The audit trail timestamp representing when the data was recorded.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Practitioner, Organization)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
@@ -150,6 +150,9 @@ Where the observation was performed at another organisation and an `Organization
 This will be in addition to the clinical practitioner if both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person who recorded the data in the system.
+
+Additional criteria apply for representation of an inbound referral.
+See the [guidance page](accessrecord_structured_development_uncategoriseddata_guidance#representing-inbound-referrals) for details.
 
 ### value[x] ###
 
@@ -229,6 +232,8 @@ Can be used to reference another resource related to this observation
 
 This **MAY** be used for the component part of a blood pressure that is recorded as a triple or to carry qualifying data to the main observation code.
 
+This **MAY** be used for inbound referrals.
+See the [guidance page](accessrecord_structured_development_uncategoriseddata_guidance#representing-inbound-referrals) for details.
 
 <br>
 
