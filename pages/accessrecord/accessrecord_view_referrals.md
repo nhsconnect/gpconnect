@@ -81,7 +81,7 @@ Providers must return all the columns as described in the table below, sorted by
 		<ul>
 			<li>This <strong>MUST</strong> include all clinically relevant information about the referral which is not included in the other columns</li>
 			<li>This <strong>MUST</strong> include the original term text for the main coded item describing the referral, which <strong>MUST</strong> be the first item</li>
-			<li>Any additional information, such as the free text description of the referral, <strong>MUST</strong> separated from the original clinical term by a new line</li>
+			<li>Any additional information, such as the free text description of the referral, <strong>MUST</strong> be separated from the original clinical term by a new line</li>
 			<li>A label <strong>SHOULD</strong> preface additional information where necessary for reliable interpretation of the information</li>
 		</ul>
 	</td>
