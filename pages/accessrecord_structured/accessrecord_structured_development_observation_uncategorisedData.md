@@ -84,7 +84,7 @@ Fixed value of `final`.
 
 The clinical code that represents the data within the observation.
 
-Where the uncategorised data is free text without any clinical code set to 37331000000100 Comment note.
+For free text without any clinical code set to `37331000000100 Comment note`.
 
 ### subject ###
 
