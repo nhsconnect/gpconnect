@@ -114,7 +114,9 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
 
 ## Consultation notes
 
-Consultation notes are the human readable version of the clinical information recorded under each heading. They may or may not be accompanied by a clinically coded version of the information.
+Consultation notes are the human readable version of the clinical information recorded under each heading. 
+They may or may not be accompanied by a clinically coded version of the information.
+Where text is entered freely into a consultation without being associated with a clinical code it will be returned in an `Observation` with the SNOMED code `37331000000100 Comment note`
 
 There are two primary ways that consultation notes are recorded on native GP systems:
 
