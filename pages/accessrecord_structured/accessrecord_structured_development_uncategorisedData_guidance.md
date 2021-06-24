@@ -29,19 +29,23 @@ For the majority of provider systems, the following types of information are exp
 * Test Request
 
 ## What is uncategorised data? ##
-There is data that a clinician/user will enter without identifying what type of information they are recording. This information is usually entered as either free text or a combination of clinical code(s), values, qualifiers and text.
+There is data that a clinician/user will enter without identifying what type of information they are recording. 
+This information is usually entered as a combination of clinical code(s), values, qualifiers and text.
 
 For example:
 * the clinician records the patient’s resting pulse by recording the resting pulse clinical code followed by a value of the patient’s pulse.
 * the clinician records that a patient has a sore throat by recording the sore throat clinical code
-* the clinician records that a patient reports being irritable with their family as a piece of free text
 
-Consideration was given to attempting to categorise data using the recorded clinical codes. It was decided not to progress this based on a clinical review of its risks and benefits.
+Consideration was given to attempting to categorise data using the recorded clinical codes. 
+It was decided not to progress this based on a clinical review of its risks and benefits.
 
 ## Uncategorised data definition ##
 Uncategorised data will include the following 
 * data items in the patient record that do not fit into one of the existing or planned clinical areas defined by GP Connect
 * inbound referrals (GP Connect referral resource is defined as outbound referrals only) 
+
+Where text is entered freely into a consultation without being associated with a clinical code it will not be returned as an item of uncategorised data. 
+This free text will ONLY be returned as part of the consultation and will be returned in an `Observation` with the SNOMED code `37331000000100 Comment note`.
 
 ## Observation profile ##
 
