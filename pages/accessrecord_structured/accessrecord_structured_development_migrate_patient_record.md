@@ -254,4 +254,4 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - confidential and sensitive information will be returned
 
 ##### Documents #####
- `DocumentReference` resources containing document metadata including location will be returned as part of the response `Bundle`. Retrieval of these **MUST** be performed using the [Retrieve a document](access_documents_development_retrieve_patient_documents.html) API in the [Access Document capability](access_documents.html).
+ `DocumentReference` resources containing document metadata including location will be returned as part of the response `Bundle`. Retrieval of these **MUST** be performed using the [Migrate a document](access_documents_development_migrate_patient_documents.html) API in the [Access Document capability](access_documents.html).
