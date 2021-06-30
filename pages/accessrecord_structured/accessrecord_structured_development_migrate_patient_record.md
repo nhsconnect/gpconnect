@@ -78,7 +78,7 @@ This interaction can only be used when patient's information is being migrated b
 - The consuming system updates PDS as the patient's registered practice
 - The consuming system looks up the previously registered practice's endpoint on SDS
 - The consuming system makes a request to migrate the patient's record
-- The providing system **MUST** check that the ODS code for the consuming system matches the patient's registered practice on PDS
+- The providing system **MUST** check that the ODS code supplied in the `requesting_organization` claim in the JWT matches the patient's registered practice on PDS
 
 #### Availability of data ####
 
@@ -183,6 +183,7 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | A part parameter is passed without a value | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| An unrecognised parameter is included in the request | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 |-------------------------|-------------------|
 
 
