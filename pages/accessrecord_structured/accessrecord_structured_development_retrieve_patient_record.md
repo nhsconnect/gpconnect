@@ -91,17 +91,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>1..1</td>
       <td>NHS Number of the patient for whom to retrieve the structured record.</td>
     </tr>
-
-
-    <tr>
-      <td><code class="highlighter-rouge">includeFullRecord</code></td>
-      <td><code class="highlighter-rouge"></code></td>
-      <td>Optional</td>
-      <td>0..1</td>
-      <td>Include the patient's full clinical record in the response. Where this parameter is used the parameters below **MUST NOT** be used.</td>
-    </tr>
-
-
     <tr>
       <td><code class="highlighter-rouge">includeAllergies</code></td>
       <td><code class="highlighter-rouge"></code></td>
@@ -240,7 +229,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>Optional</td>
       <td>0..1</td>
       <td>
-        Include information about consent and dissent for immunisations in the response. The default value for this is <code>false</code>.
+        Include information about consent and dissent for immunisations in the response. The default value for this is <code>true</code>.
         <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
       </td>
     </tr>
@@ -482,6 +471,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
   ]
 }
 ```
+
 ##### Not permitted parameter combinations #####
 
 Certain combinations of query parameters have the potential to introduce clinical risks. To prevent these scenarios occurring, the following combinations of parameters are not permitted and **SHALL** not be used by consumers:
@@ -493,7 +483,6 @@ When requesting consultations, the following part parameters **MUST NOT** be inc
   - `includeProblems.filterStatus`
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
-  - `includeImmunisations.includeNotGiven`
   - `includeImmunisations.includeStatus`
 
 When requesting problems, the following part parameters **MUST NOT** be included:
@@ -501,12 +490,15 @@ When requesting problems, the following part parameters **MUST NOT** be included
   - `includeUncategorisedData.uncategorisedDataSearchPeriod`
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
-  - `includeImmunisations.includeNotGiven`
   - `includeImmunisations.includeStatus`
 
 In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
 
 Examples of queries are available on the [Search examples](accessrecord_structured_development_searchExamples.html) page.
+
+#### Related problem headers not returned due to search criteria ####
+
+If a problem is related to another problem using the `relatedProblemHeader` extension it is possible that the related problem header is not returned due to the restrictions of the search criteria. It is possible for many problems to be related to each other and if the user needs to fully understand the problem relationships these can be returned by requesting all problems.  This is done by not specifying a filter for significance or status and putting `includeProblems` in the request. This will result in all problems recorded on the GP system being returned and will include all links between problems.
 
 #### Error handling ####
 
@@ -597,20 +589,6 @@ Consumers systems **MUST NOT**:
 
 ##### Unavailability of data #####
 There are scenarios where requested clinical areas may not be returned, these are listed on the  [Configuration for supported clinical areas](accessrecord_structured_development_clinical_area_config.html) page along with guidance on implementation. Consumer systems **MUST** be able to handle this unavailability and warn users that some information hasn't been returned.
-
-##### Full record #####
-
-Provider systems **MUST** include the following in the response `Bundle`:
-
-- when the `includeFullRecord` parameter is not set:
-
-  - clinical information shall be returned in response to the other Parameters listed below
-
-- when the `includeFullRecord` parameter is set:
-
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that match the supplied query parameters
-  - A [`List`](accessrecord_structured_development_list.html) resource for each clinical area referencing resources that are linked from the returned [`Condition`](accessrecord_structured_problems.html) resources
-  - [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html), [`Immunization`](accessrecord_structured_development_immunization.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html), [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html), [`DocumentReference`]() and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems and all linked clinical information.
 
 ##### Allergies #####
 
@@ -764,7 +742,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources that match the supplied query parameters
   - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources
-  - [`Condition`](accessrecord_structured_problems.html) and [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data will be returned.
+  - [`Condition`](accessrecord_structured_problems.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [QuestionnaireResponse](accessrecord_structured_development_questionnaireResponse.html) resources representing the patient's uncategorised data will be returned.
 
 - when the `uncategorisedDataSearchPeriod` is set:
   - when a `start` value is set, all uncategorised data with an `Observation.effectiveTime` after the date **MUST** be returned
