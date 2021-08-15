@@ -53,18 +53,18 @@ When the service ID supplier switch is set to OFF:
 When the service ID supplier switch is set to ON AT SELECTED ORGANISATIONS:
 
 - For organisations in the selected organisation list that are eligible to use GP Connect:
-  - the organisation-controlled service ID configuration screen(s) **SHALL** be visible
-  - the effect of Service ID filtering upon the API **SHALL** be dependent on the organisation-controlled service ID configuration
+  - the organisation configuration and enablement switch **SHALL** be visible
+  - the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration and enablement switch
 - For organisations NOT held in the selected organisation list:
-	- the organisation-controlled service ID configuration screen(s) **SHALL NOT** be visible, or take effect upon the API
+	- the organisation configuration and enablement switch **SHALL NOT** be visible, or take effect upon the API
 
 ### Supplier switch set to ON ###
 
 When the service ID supplier switch is set to ON:
 
 - For ALL organisations in the supplier's system that are eligible to use GP Connect:
-	- the organisation-controlled service ID configuration UI **SHALL** be visible
-	- the effect of Service ID filtering upon the API **SHALL** be dependent on the organisation-controlled service ID configuration
+	- the organisation configuration and enablement switch **SHALL** be visible
+	- the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration and enablement switch
 
 {% include note.html content="This state has been included so that when service ID filtering configuration can be made available to all organisations using the supplier's system, there is no need to continue to maintain the selected organisation list." %}
 
