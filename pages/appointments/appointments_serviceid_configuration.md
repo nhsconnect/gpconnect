@@ -11,7 +11,7 @@ summary: "Configuration to support the rollout of the service ID filtering featu
 Service ID filtering in a provider system **SHALL** be controlled by two levels of configuration:
 
 1. a supplier-controlled configuration availability switch ("supplier switch")
-2. organisation-controlled configuration, incorporating an enablement switch ("organisation configuration" and "enablement switch")
+2. organisation-controlled configuration, incorporating an enablement switch ("organisation configuration")
 
 The supplier switch allows the service ID filtering configuration to be made available to selected (or all) organisations using the supplier's provider system.
 
@@ -53,18 +53,18 @@ When the service ID supplier switch is set to OFF:
 When the service ID supplier switch is set to ON AT SELECTED ORGANISATIONS:
 
 - For organisations in the selected organisation list that are eligible to use GP Connect:
-  - the organisation configuration and enablement switch **SHALL** be visible
-  - the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration and enablement switch
+  - the organisation configuration **SHALL** be visible
+  - the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration
 - For organisations NOT held in the selected organisation list:
-	- the organisation configuration and enablement switch **SHALL NOT** be visible, or take effect upon the API
+	- the organisation configuration **SHALL NOT** be visible, or take effect upon the API
 
 ### Supplier switch set to ON ###
 
 When the service ID supplier switch is set to ON:
 
 - For ALL organisations in the supplier's system that are eligible to use GP Connect:
-	- the organisation configuration and enablement switch **SHALL** be visible
-	- the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration and enablement switch
+	- the organisation configuration **SHALL** be visible
+	- the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration
 
 {% include note.html content="This state has been included so that when service ID filtering configuration can be made available to all organisations using the supplier's system, there is no need to continue to maintain the selected organisation list." %}
 
