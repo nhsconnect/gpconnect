@@ -54,6 +54,7 @@ entries:
     - title: Service discovery
       url: /appointments_service_discovery.html
       output: web
+
     - title: Consumer sessions illustrated
       url: /appointments_consumer_sessions.html
       output: web, pdf
@@ -80,6 +81,14 @@ entries:
           output: web, pdf
         - title: Cancel an appointment
           url: /appointments_use_case_cancel_an_appointment.html
+          output: web, pdf
+
+      - title: Service ID filtering
+        output: web, pdf
+        subfolderitems:
+
+        - title: Provider system configuration
+          url: /appointments_serviceid_configuration.html
           output: web, pdf
           
       - title: Additional provider requirements
