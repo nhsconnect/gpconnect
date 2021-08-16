@@ -135,7 +135,7 @@ The organisation enablement switch **SHALL**:
 	- user responsible for the change
 	- current and previous state of the switch
 
-{% include note.html content="The enablement switch is required so that organisations can set up their list of service IDs before slots are filtered by service ID.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
+{% include note.html content="The purpose of the enablement switch is so that organisations can set up their list of service IDs before slots are filtered by service ID.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
 <br/>In addition, some organisations may not wish to or need to use service ID filtering, such as those with a single DOS service. " %}
 
 
