@@ -11,7 +11,7 @@ summary: "Configuration to support the rollout of the service ID filtering featu
 Service ID filtering in a provider system **SHALL** be controlled by two levels of configuration:
 
 1. a supplier-controlled configuration visibility switch ("supplier switch")
-2. organisation-controlled configuration ("organisation configuration"), incorporating an enablement switch
+2. organisation-controlled configuration ("organisation configuration"), incorporating an enablement switch ("organisation switch")
 
 The supplier switch allows the service ID filtering configuration to be made visible to selected (or all) organisations using the supplier's provider system.
 
