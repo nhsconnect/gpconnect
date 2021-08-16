@@ -108,11 +108,13 @@ The list of services **SHALL** be maintained irrespective of the value of the or
 
 If there is already a list of DOS service IDs in the provider system provided by the current organisation, this **SHOULD** be used rather than creating a new list of service IDs.
 
-Provider systems **MAY** make use of the DOS API to:
+#### Service list validation ####
+
+Provider systems **MAY** make use of the [Search by Service ID](https://developer.nhs.uk/apis/dos-api/byServiceId.html) endpoint in the DOS API to:
 - validate that any service ID entered by the user appears on the DOS in is therefore a valid service
 - pull back the service name which corresponds with the service id and display it on the screen
 
-{% include todo.html content="Provide DOS API details" %}
+The *Service by ODS Code* endpoint in the DOS API **MUST NOT** be used as this will not return a complete list of DOS services provided by an organisation.  Furthermore it is important that the service list entered by the a user is provided with assistance for their DOS lead to ensure DOS correctly represents the organisations service offering.
 
 ### Linking services to schedules ###
 
