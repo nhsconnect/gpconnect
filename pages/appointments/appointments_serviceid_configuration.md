@@ -11,11 +11,11 @@ summary: "Configuration to support the rollout of the service ID filtering featu
 Service ID filtering in a provider system **SHALL** be controlled by two levels of configuration:
 
 1. a supplier-controlled configuration visibility switch ("supplier switch")
-2. organisation-controlled configuration, incorporating an enablement switch ("organisation configuration")
+2. organisation-controlled configuration ("organisation configuration"), incorporating an enablement switch
 
 The supplier switch allows the service ID filtering configuration to be made visible to selected (or all) organisations using the supplier's provider system.
 
-Once the service ID configuration screens are made available to an organisation, a user at the organisation can configure service ID filtering, and once configuration is completed, enable service ID filtering on so that the configuration takes effect upon the API, for their organisation.
+Once the service ID configuration screens are made available to an organisation, a user at the organisation can configure service ID filtering, and once configuration is completed, switch service ID filtering on so that the configuration takes effect upon the API, for their organisation.
 
 ## Supplier switch ##
 
@@ -104,7 +104,7 @@ Changes to the list **SHALL** be audited, capturing:
 - user responsible for the change
 - current and previous values
 
-The list of services **SHALL** be maintained irrespective of the value of the enablement switch, so they can be set up prior to the local switch being ON.
+The list of services **SHALL** be maintained irrespective of the value of the organisation switch, so they can be set up prior to the local switch being ON.
 
 If there is already a list of DOS service IDs in the provider system provided by the current organisation, this **SHOULD** be used rather than creating a new list of service IDs.
 
@@ -127,7 +127,7 @@ Linking between services and schedules **MAY** occur in different ways, dependin
 - Services may be assigned to schedules (or their "templates") on the schedule or schedule "template" screen when they are created
 - Schedule "templates" (or "template types") may be assigned to services on the service list
 
-Linking between services and schedules **SHALL** be possible irrespective of the value of the enablement switch, so a user can create links prior to the local switch being ON.
+Linking between services and schedules **SHALL** be possible irrespective of the value of the organisation switch, so a user can create links prior to the local switch being ON.
 
 Linking between services and schedules (or their "templates") **SHALL** be audited, capturing:
 - date/time of change
@@ -138,7 +138,7 @@ Linking between services and schedules (or their "templates") **SHALL** be audit
 
 Linking between services and schedules or schedule templates **SHALL** be mandatory for a user to perform where:
 
-- the [enablement switch](#enablement-switch) is set to ON
+- the [organisation switch](#organisation-switch) is set to ON
 - and a schedule or schedule template is marked as [GP Connect bookable](appointments_slotavailabilitymanagement.html#appointment-availability-control)
 
 When linking a service to a schedule (or schedule template), the list **SHALL** be driven from the [service list](#service-list) in the organisation configuration, and **SHALL** in addition include a 'Not applicable' option.
@@ -149,15 +149,15 @@ A special value of 'Not applicable' **SHALL** also be available to be selected, 
 
 #### GP Connect bookable prompt ####
 
-If a slot is amended to become 'GP Connect bookable' and the [enablement switch](#enablement-switch) is set to ON, and the slot's schedule is not linked to a service, the user **SHALL** be prompted and required to select a service from the service list (or a 'Not applicable' option) to link to the slot's schedule.
+If a slot is amended to become 'GP Connect bookable' and the [organisation switch](#organisation-switch) is set to ON, and the slot's schedule is not linked to a service, the user **SHALL** be prompted and required to select a service from the service list (or a 'Not applicable' option) to link to the slot's schedule.
 
-If a schedule is amended to become 'GP Connect bookable' and the [enablement switch](#enablement-switch) is set to ON, and the schedule is not linked to a service, the user **SHALL** be prompted and required to select a service from the service list (or a 'Not applicable' option) to link to the schedule.
+If a schedule is amended to become 'GP Connect bookable' and the [organisation switch](#organisation-switch) is set to ON, and the schedule is not linked to a service, the user **SHALL** be prompted and required to select a service from the service list (or a 'Not applicable' option) to link to the schedule.
 
-### Enablement switch ###
+### Organisation switch ###
 
 The organisation configuration **SHALL** include a service ID filtering enablement switch that allows a user at a provider organisation to enable or disable service ID filtering for their organisation.
 
-The organisation enablement switch **SHALL**:
+The organisation switch **SHALL**:
 
 - control service ID filtering enablement for the current organisation
 - only be controlled by appropriate staff logged on at the provider organisation
@@ -168,28 +168,28 @@ The organisation enablement switch **SHALL**:
 	- user responsible for the change
 	- current and previous state of the switch
 
-{% include note.html content="The purpose of the enablement switch is so that organisations can set up their list of service IDs and link them to sessions/rotas, before filtering by service ID is enabled.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
+{% include note.html content="The purpose of the organisation switch is so that organisations can set up their list of service IDs and link them to sessions/rotas, before they enable service ID filtering.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
 <br/>In addition, some organisations may not wish to or need to use service ID filtering, such as those with a single DOS service. " %}
 
 
-#### Enablement switch set to OFF ####
+#### Organisation switch set to OFF ####
 
-When the organisation's enablement switch is set to OFF:
+When the organisation switch is set to OFF:
 
 - service ID filtering in the API **SHALL NOT** take effect
 	- `schedule.actor:healthcareservice` parameter on [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) **SHALL** be ignored
   - **TBC**
 
-#### Enablement switch set to ON ####
+#### Organisation switch set to ON ####
 
-When the organisation's enablement switch is set to ON:
+When the organisation switch is set to ON:
 
 - service ID filtering in the API **SHALL** take effect
   - **TBC**
 
-#### Changing the enablement switch ####
+#### Changing the organisation switch ####
 
-When a user attempts to change the enablement switch from OFF to ON the user **SHALL**:
+When a user attempts to change the organisation switch from OFF to ON the user **SHALL**:
 
 - be prevented from doing so if:
   - [GP Connect, or GP Connect Appointment Management are disabled](development_api_non_functional_requirements.html#enablement) at the organisation
