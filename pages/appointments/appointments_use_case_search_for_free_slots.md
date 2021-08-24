@@ -112,9 +112,12 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 - End date and time, or duration
 - Delivery channel (in-person, telephone, video)
 - Slot type and schedule type (see `Slot.serviceType` and `Schedule.serviceCategory`)
+- Service name (where present, see [service ID filtering](appointments_serviceid_filtering.html) for more information)
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
+
+{% include note.html content="*Start date and time*, *End date and time or duration*, *Delivery channel*, *Slot type* are part of or derived from the `Slot` resource.  The remaining fields are part of or derived from the `Schedule` resource, or resources referenced by it." %}
 
 ## Prerequisites ##
 

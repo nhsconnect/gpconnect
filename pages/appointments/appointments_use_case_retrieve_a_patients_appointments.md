@@ -38,9 +38,12 @@ Consumer systems SHALL support the following fields in order to provide the full
 - End date and time, or duration
 - Delivery channel (in-person, telephone, video)
 - Slot type and schedule type (see `Appointment.serviceType` and `Appointment.serviceCategory`)
+- Service name (where present, see [service ID filtering](appointments_serviceid_filtering.html) for more information)
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
+
+Consumer systems displaying a list of a patient's appointments SHALL use [Read practitioner](foundations_use_case_read_a_practitioner.html), [Read location](foundations_use_case_read_a_location.html) and [Read healthcare service](foundations_use_case_read_a_healthcareservice.html) endpoints to retrieve service, location and practitioner fields associated with the patient's appointments.
 
 ## API usage ##
 

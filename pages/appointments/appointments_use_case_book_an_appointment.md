@@ -35,6 +35,19 @@ The consumer system:
 - SHALL have previously obtained the details for one or more free slots that are to be booked, using [Search for free slots](appointments_use_case_search_for_free_slots.html)
 - SHALL have previously performed a [Find a patient](foundations_use_case_find_a_patient.html) request to obtain the logical identifier for the patient on the organisation's FHIR server.
 
+## Consumer display requirements ##
+
+Consumer systems SHALL display the following fields upon a successful booking in order to confirm the full context of the appointment to the user: 
+
+- Start date and time
+- End date and time, or duration
+- Delivery channel (in-person, telephone, video)
+- Slot type and schedule type (see `Appointment.serviceType` and `Appointment.serviceCategory`)
+- Service name (where present, see [service ID filtering](appointments_serviceid_filtering.html) for more information)
+- Location name and address
+- Practitioner role (e.g. General Medical Practitioner, Nurse)
+- Practitioner name and gender
+
 ## API usage ##
 
 The consumer system SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
