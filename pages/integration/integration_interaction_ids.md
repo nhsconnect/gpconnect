@@ -45,9 +45,10 @@ Where the fields above are defined as:
 | [Practitioner search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1` |
 | [Read organisation](foundations_use_case_read_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1` |
 | [Organisation search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1` |
+| [Read healthcare service](foundations_use_case_read_a_healthcareservice.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:healthcareservice-1` |
+| [Healthcare service search](foundations_use_case_find_a_healthcareservice.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:healthcareservice-1` |
 | [Read location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1` |
 | [Register patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1` |
-
 
 ### Appointments capability interactions ###
 
