@@ -10,8 +10,8 @@ summary: "Configuration to support the rollout of the service ID filtering featu
 
 Service ID filtering in a provider system **SHALL** be controlled by two levels of configuration:
 
-1. a supplier-controlled configuration visibility switch ("supplier switch")
-2. organisation-controlled configuration ("organisation configuration"), incorporating an enablement switch ("organisation switch")
+1. a supplier-controlled configuration enablement switch ("supplier switch")
+2. organisation-controlled configuration ("organisation configuration"), incorporating an organisation enablement switch ("organisation switch")
 
 The supplier switch allows the service ID filtering configuration to be made visible to selected (or all) organisations using the supplier's provider system.
 
@@ -46,7 +46,7 @@ The supplier switch, and associated selected organisation list **SHALL**:
 When the service ID supplier switch is set to OFF:
 
 - For ALL organisations in the supplier's system:
-	- the organisation-controlled service ID configuration **SHALL NOT** be visible to users, or take effect upon the API
+	- the organisation-controlled service ID configuration **SHALL NOT** be visible to users, and **SHALL NOT** take effect upon the API (regardless of the value of the organisation switch)
 
 ### Supplier switch set to ON AT SELECTED ORGANISATIONS ###
 
@@ -56,7 +56,7 @@ When the service ID supplier switch is set to ON AT SELECTED ORGANISATIONS:
   - the organisation configuration **SHALL** be visible
   - the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration
 - For organisations NOT held in the selected organisation list:
-	- the organisation configuration **SHALL NOT** be visible, or take effect upon the API
+	- the organisation configuration **SHALL NOT** be visible, and **SHALL NOT** take effect upon the API (regardless of the value of the organisation switch)
 
 ### Supplier switch set to ON ###
 
@@ -71,13 +71,13 @@ When the service ID supplier switch is set to ON:
 
 ## Organisation configuration ##
 
-The organisation configuration for service ID filtering **SHALL** used by staff within a provider organisation to:
+The organisation configuration for service ID filtering **SHALL** be used by staff within a provider organisation to:
 
 - set up a list of services for their organisation (taken from the service(s) in DOS provided by the organisation)
 - assign services to schedules (or schedule "templates")
 - enable or disable service ID filtering for their organisation
 
-{% include important.html content="See [supplier switch](#supplier-switch) above for conditions when the organisation configuration is available to a provider organisation." %}
+{% include important.html content="See [supplier switch](#supplier-switch) above for conditions when the organisation configuration is visible to a provider organisation." %}
 
 ### Service list ###
 
@@ -111,10 +111,10 @@ If there is already a list of DOS service IDs in the provider system provided by
 #### Service list validation ####
 
 Provider systems **MAY** make use of the [Search by Service ID](https://developer.nhs.uk/apis/dos-api/byServiceId.html) endpoint in the DOS API to:
-- validate that any service ID entered by the user appears on the DOS in is therefore a valid service
+- validate that any service ID entered by the user appears on the DOS and is therefore a valid service
 - pull back the service name which corresponds with the service id and display it on the screen
 
-The *Service by ODS Code* endpoint in the DOS API **MUST NOT** be used as this will not return a complete list of DOS services provided by an organisation.  Furthermore it is important that the service list entered by the a user is provided with assistance for their DOS lead to ensure DOS correctly represents the organisations service offering.
+The *Service by ODS Code* endpoint in the DOS API **MUST NOT** be used as this will not return a complete list of DOS services provided by an organisation.  Furthermore it is important that when entering the service list, the user is assisted by their DOS lead, to ensure the DOS correctly represents the services offered by their organisation.
 
 ### Linking services to schedules ###
 
@@ -129,7 +129,7 @@ Linking between services and schedules **MAY** occur in different ways, dependin
 - Services may be assigned to schedules (or their "templates") on the schedule or schedule "template" screen when they are created
 - Schedule "templates" (or "template types") may be assigned to services on the service list
 
-Linking between services and schedules **SHALL** be possible irrespective of the value of the organisation switch, so a user can create links prior to the local switch being ON.
+Linking between services and schedules **SHALL** be possible irrespective of the value of the organisation switch, so a user can create links prior to the organisation switch being ON.
 
 Linking between services and schedules (or their "templates") **SHALL** be audited, capturing:
 - date/time of change
@@ -141,13 +141,11 @@ Linking between services and schedules (or their "templates") **SHALL** be audit
 Linking between services and schedules or schedule templates **SHALL** be mandatory for a user to perform where:
 
 - the [organisation switch](#organisation-switch) is set to ON
-- and a schedule or schedule template is marked as [GP Connect bookable](appointments_slotavailabilitymanagement.html#appointment-availability-control)
+- and a schedule or schedule template or slot within a schedule is marked as [GP Connect bookable](appointments_slotavailabilitymanagement.html#appointment-availability-control)
 
-When linking a service to a schedule (or schedule template), the list **SHALL** be driven from the [service list](#service-list) in the organisation configuration, and **SHALL** in addition include a 'Not applicable' option.
+When linking a service to a schedule (or schedule template), the list **SHALL** be driven from the [service list](#service-list) in the organisation configuration, and in addition **SHALL** include a 'Not applicable' option.
 
 In all other circumstances, linking between services and schedules or schedule templates **SHALL NOT** be mandatory for a user to perform.
-
-A special value of 'Not applicable' **SHALL** also be available to be selected, in addition to the [service list](#service-list).
 
 #### GP Connect bookable prompt ####
 
@@ -173,6 +171,7 @@ The organisation switch **SHALL**:
 {% include note.html content="The purpose of the organisation switch is so that organisations can set up their list of service IDs and link them to sessions/rotas, before they enable service ID filtering.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
 <br/>In addition, some organisations may not wish to or need to use service ID filtering, such as those with a single DOS service. " %}
 
+{% include important.html content="Please note if the [supplier switch](#supplier-switch) is set to OFF, or set to ON AT SELECTED ORGANISATIONS and the current organisation is not in the selected organisation list, the organisation configuration including the organisation switch **SHALL NOT** be visible, and **SHALL NOT** take effect upon the API, regardless of the value of the organisation switch." %}
 
 #### Organisation switch set to OFF ####
 
@@ -180,14 +179,18 @@ When the organisation switch is set to OFF:
 
 - service ID filtering in the API **SHALL NOT** take effect
 	- `schedule.actor:healthcareservice` parameter on [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) **SHALL** be ignored
-  - **TBC**
+  - ...
+
+{% include todo.html content="List areas to disable" %}
 
 #### Organisation switch set to ON ####
 
 When the organisation switch is set to ON:
 
 - service ID filtering in the API **SHALL** take effect
-  - **TBC**
+  - ...
+  
+{% include todo.html content="List areas to enable" %}
 
 #### Changing the organisation switch ####
 
