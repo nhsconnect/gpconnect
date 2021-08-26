@@ -7,20 +7,6 @@ permalink: foundations_design.html
 summary: "Overview of the design decisions made in relation to the Foundations capability pack"
 ---
 
-## Business identifiers ##
-
-The following business identifier types are to be supported by GP Connect systems:
-
-| Identifier | Resource | System |
-| ---------- | -------- | ------ |
-| NHS Number | Patient | `https://fhir.nhs.uk/Id/nhs-number` |
-| ODS Code | Organisation | `https://fhir.nhs.uk/Id/ods-organization-code` |
-| ODS Site Code | Location | `https://fhir.nhs.uk/Id/ods-site-code` |
-| SDS User ID | Practitioner | `https://fhir.nhs.uk/Id/sds-user-id` |
-
-{% include important.html content="Support for additional identifier types in line with the existing GPSoC requirements is also under consideration." %}
-
-
 ## Definition of Organisation and Location entities ##
 
 The GP practice organisation is a legal entity which is represented by the FHIR `Organization` resource. This entity will have an assigned [ODS code](https://digital.nhs.uk/organisation-data-service). 

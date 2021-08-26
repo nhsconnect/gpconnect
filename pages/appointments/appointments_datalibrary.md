@@ -26,7 +26,7 @@ The FHIR resources above are used in the following API interactions:
 
 ##### Response #####
 
-- [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html), with entries of:
+- [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html), populated with:
   - [GPConnect-Slot-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html))
   - [GPConnect-Schedule-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/schedule.html))
   - [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) (based on [FHIR Location](https://www.hl7.org/fhir/STU3/location.html))
@@ -56,7 +56,7 @@ The Appointment resource and Organization resource (used to hold the booking org
 
 ##### Response #####
 
-- [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html), with entries of:
+- [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html), populated with:
 	- [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) (based on [FHIR Appointment](https://www.hl7.org/fhir/STU3/appointment.html)), with a contained resource of:
 		- [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/STU3/organization.html))
 
