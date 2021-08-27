@@ -330,8 +330,6 @@ Unless there is a distinct user-modifiable date and time for the authorisation, 
 
 Person and their organization requesting authorisation for prescription.
 
-To be used if the medication/medical device.
-
 May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
 
 If it was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
