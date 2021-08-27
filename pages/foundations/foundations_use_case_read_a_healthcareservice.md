@@ -1,6 +1,6 @@
 ---
 title: Read a healthcare service
-keywords: foundations, service
+keywords: foundations, service, DOS
 tags: [foundations, use_case]
 sidebar: foundations_sidebar
 permalink: foundations_use_case_read_a_healthcareservice.html
@@ -19,7 +19,7 @@ The consumer system:
 
 Retrieve a healthcare service by logical id.
 
-{% include note.html content="This interaction is currently used to retrieve healthcare services operated by the provider organisation, that have been configured in order to allow searching for appointment slots by DOS service.  For more information see [service ID filtering](appointments_serviceid_filtering.html) in the Appointment Management capability.
+{% include note.html content="This interaction is currently used to retrieve healthcare services operated by the provider organisation that have been configured in order to allow searching for appointment slots by DOS service.  For more information see [service ID filtering](appointments_serviceid_filtering.html) in the Appointment Management capability.
 It may be generalised in future to allow healthcare services to be retreived for other purposes." %}
 
 ## Security ##
