@@ -19,8 +19,7 @@ The consumer system:
 
 Retrieve a healthcare service by logical id.
 
-{% include note.html content="This interaction is currently used to retrieve healthcare services operated by the provider organisation that have been configured in order to allow searching for appointment slots by DOS service.  For more information see [service ID filtering](appointments_serviceid_filtering.html) in the Appointment Management capability.
-It may be generalised in future to allow healthcare services to be retreived for other purposes." %}
+{% include note.html content="This interaction is used to retrieve healthcare services that have been defined by the provider organisation to support [appointment service ID filtering](appointments_serviceid_filtering.html)." %}
 
 ## Security ##
 
@@ -70,7 +69,6 @@ Errors returned due to query parameter failure **SHALL** include diagnostic info
 | Error encountered        | Spine error code returned |
 |-------------------------|-------------------|
 | A healthcare service could not be found using the id provided | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| Service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to OFF  | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The Foundations capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 |-------------------------|-------------------|
@@ -86,7 +84,11 @@ Provider systems are not expected to add any specific headers beyond those descr
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation
-- **SHALL** return a matching service from the provider organisation's [service list](appointments_serviceid_configuration.html#service-list) in their service ID filtering configuration
+
+- **SHALL** read a matching service from the provider organisation's [service list](appointments_serviceid_configuration.html#service-list) in their service ID filtering configuration
+  - except where the service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to OFF
+
+  {% include note.html content="If the [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to OFF, the service list is treated as being empty for the purposes of this interaction." %}
 
 - **SHALL** return a `HealthcareService` resource that conforms to the [CareConnect-GPC-HealthcareService-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-HealthcareService-1) profile
 
@@ -97,9 +99,24 @@ Provider systems:
     - `profile` with the profile URI
   - `identifier` with the DOS service ID (see [FHIR resources](datalibraryfoundation.html#common-identifier-systems) for population of the identifier.system field)
   - `providedBy` with a reference to the organisation providing the service
-  - `location` with reference to the location at which the service operates
   - `name` with the service's name
 
-```json
-{% include foundations/read_healthcareservice_response_example.json %}
+### Examples ###
+
+#### Read a healthcare service by id ####
+
+##### Request #####
+
+```http
+{% include foundations/read_healthcareservice_request_example_1.txt %}
 ```
+
+##### Response when a matching resource is found #####
+
+```json
+{% include foundations/read_healthcareservice_response_example_1.json %}
+```
+
+##### Response when a matching resource is not found #####
+
+See [error handling](#error-handling).
