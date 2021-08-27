@@ -87,6 +87,10 @@ entries:
         output: web, pdf
         subfolderitems:
 
+        - title: Service ID filtering
+          url: /appointments_serviceid_filtering.html
+          output: web, pdf
+
         - title: Provider system configuration
           url: /appointments_serviceid_configuration.html
           output: web, pdf
