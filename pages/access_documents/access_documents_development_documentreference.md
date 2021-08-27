@@ -94,7 +94,8 @@ This field will always have default value of current as only the latest version 
   </tr>
 </table>
 
-Kind of document, a value **SHOULD** be taken from the SNOMED refset 999000391000000109. Other classifications of documents should be sent as `text`.
+Kind of document, a value **SHOULD** be taken from the SNOMED refset `1127551000000109 |Record composition type simple reference set (foundation metadata concept)|`. 
+Other classifications of documents **SHOULD** be sent as `text`.
 
 ### subject ###
 
