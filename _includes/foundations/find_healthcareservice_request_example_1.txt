@@ -1,0 +1,1 @@
+GET /HealthcareService?identifier=https://fhir.nhs.uk/Id/uec-dos-service-id|1000000123

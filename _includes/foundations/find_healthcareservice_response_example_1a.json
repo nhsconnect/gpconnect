@@ -1,0 +1,28 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "15",
+        "meta": {
+          "versionId": "636064088100870233",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-HealthcareService-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/uec-dos-service-id",
+            "value": "1000000123"
+          }
+        ],
+        "providedBy": {
+          "reference": "Organization/14"
+        },
+        "name": "West Road GP Hub"
+      }
+    }
+  ]
+}
