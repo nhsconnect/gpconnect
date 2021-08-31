@@ -1,0 +1,1 @@
+GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14

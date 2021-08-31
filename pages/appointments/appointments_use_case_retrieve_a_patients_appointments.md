@@ -9,11 +9,11 @@ summary: "Retrieve a patient's future appointments at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted provider system. 
+This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings at a provider organisation. 
 
-All future appointments for the requested patient, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, will be returned from the provider system.
+All future appointments for the requested patient, irrespective of the organisation that made the original booking or whether the appointment was booked via the GP Connect API, will be returned by the provider system.
 
-{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the retrieval of a patient's appointments has been restricted to future appointments only. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the retrieval of a patient's appointments has been restricted to future appointments only. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
@@ -43,7 +43,7 @@ Consumer systems SHALL support the following fields in order to provide the full
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
 
-Consumer systems displaying a list of a patient's appointments SHALL use [Read practitioner](foundations_use_case_read_a_practitioner.html), [Read location](foundations_use_case_read_a_location.html) and [Read healthcare service](foundations_use_case_read_a_healthcareservice.html) endpoints to retrieve service, location and practitioner fields associated with the patient's appointments.
+Consumer systems displaying a list of a patient's appointments SHALL use [Read practitioner](foundations_use_case_read_a_practitioner.html), [Read location](foundations_use_case_read_a_location.html) and [Read healthcare service](foundations_use_case_read_a_healthcareservice.html) endpoints in order to retrieve the service, location and practitioner fields above associated with the patient's appointments.
 
 ## API usage ##
 
@@ -88,15 +88,6 @@ GET /Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper
 ```http
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper_date_range_boundary]
 ```
-
-#### Example request ####
-
-Retrieve all appointments for patient with logical id 1001 which start on or between 2017-07-11 and 2017-09-14:
-
-```json
-GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14
-```
-
 
 #### Request headers ####
 
@@ -143,12 +134,39 @@ Provider systems:
 
 - SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
+- SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
+  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service ID filtering
+  - and the service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `reason`
   - `specialty`
 
+
+### Examples ###
+
+#### Retrieve a patient's appointments ####
+
+##### Request #####
+
+Retrieve all appointments for patient with logical id 1001 which start between 2017-07-11 and 2017-09-14 inclusive:
+
+```http
+{% include appointments/retrieve_patients_appts_request_example.txt %}
+```
+
+##### Response when the patient has appoinments in the date range provided #####
+
+The response example includes two appointments for the patient, with the organisations that made the original bookings populated as included resources.
+
 ```json
-{% include appointments/retrieve_patients_appts_response_example.json %}
+{% include appointments/retrieve_patients_appts_response_example_1a.json %}
+```
+
+##### Response when the patient has no appointments in the date range provided #####
+
+```json
+{% include appointments/retrieve_patients_appts_response_example_1b.json %}
 ```

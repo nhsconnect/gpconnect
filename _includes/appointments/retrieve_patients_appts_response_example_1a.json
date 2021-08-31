@@ -5,7 +5,7 @@
     {
       "resource": {
         "resourceType": "Appointment",
-        "id": "148",
+        "id": "149",
         "meta": {
           "versionId": "1503310820000",
           "profile": [
@@ -24,7 +24,7 @@
             "identifier": [
               {
                 "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                "value": "A00001"
+                "value": "A00123"
               }
             ],
             "type": [
@@ -37,11 +37,11 @@
                 ]
               }
             ],
-            "name": "Test Organization Name",
+            "name": "West Road GP Practice",
             "telecom": [
               {
                 "system": "phone",
-                "value": "0300 303 5678"
+                "value": "03003035678"
               }
             ]
           }
@@ -59,8 +59,8 @@
               "coding": [
                 {
                   "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
-                  "code": "R0260",
-                  "display": "General Medical Practitioner"
+                  "code": "R0600",
+                  "display": "Specialist Nurse Practitioner"
                 }
               ]
             }
@@ -72,15 +72,15 @@
         ],
         "status": "booked",
         "serviceCategory": {
-          "text": "General GP Appointments"
+          "text": "Nurse Appointments"
         },
         "serviceType": [
           {
-            "text": "General GP Appointment"
+            "text": "Nurse Appointment"
           }
         ],
         "description": "GP Connect Appointment description 148",
-        "start": "2017-08-21T10:20:00+01:00",
+        "start": "2017-08-21T10:30:00+01:00",
         "end": "2017-08-21T10:50:00+01:00",
         "slot": [
           {
@@ -88,9 +88,6 @@
           },
           {
             "reference": "Slot/545"
-          },
-          {
-            "reference": "Slot/546"
           }
         ],
         "created": "2017-07-09T13:48:41+01:00",
@@ -98,7 +95,7 @@
         "participant": [
           {
             "actor": {
-              "reference": "Patient/2"
+              "reference": "Patient/1001"
             },
             "status": "accepted"
           },
@@ -120,7 +117,7 @@
     {
       "resource": {
         "resourceType": "Appointment",
-        "id": "149",
+        "id": "150",
         "meta": {
           "versionId": "1503440820000",
           "profile": [
@@ -139,7 +136,7 @@
             "identifier": [
               {
                 "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-                "value": "A00001"
+                "value": "Z100"
               }
             ],
             "type": [
@@ -147,16 +144,16 @@
                 "coding": [
                   {
                     "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
-                    "code": "gp-practice"
+                    "code": "urgent-care"
                   }
                 ]
               }
             ],
-            "name": "Test Organization Name 2",
+            "name": "North Ambulance Service",
             "telecom": [
               {
                 "system": "phone",
-                "value": "0300 303 5679"
+                "value": "01111222333"
               }
             ]
           }
@@ -195,24 +192,30 @@
           }
         ],
         "description": "GP Connect Appointment description 148",
-        "start": "2016-08-16T11:20:00+01:00",
-        "end": "2016-08-16T11:30:00+01:00",
+        "start": "2017-08-17T11:20:00+01:00",
+        "end": "2017-08-17T11:30:00+01:00",
         "slot": [
           {
             "reference": "Slot/303"
           }
         ],
-        "created": "2016-08-14T13:48:41+01:00",
+        "created": "2017-08-14T13:48:41+01:00",
         "participant": [
           {
             "actor": {
-              "reference": "Patient/2"
+              "reference": "Patient/1001"
             },
             "status": "accepted"
           },
           {
             "actor": {
               "reference": "Location/1"
+            },
+            "status": "accepted"
+          },
+          {
+            "actor": {
+              "reference": "HealthcareService/15"
             },
             "status": "accepted"
           }
