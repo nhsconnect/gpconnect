@@ -16,10 +16,5 @@
   "providedBy": {
     "reference": "Organization/14"
   },
-  "location": [
-    {
-      "reference": "Location/14"
-    }
-  ],
-  "name": "West Portsmouth GP Hub"
+  "name": "West Road GP Hub"
 }
