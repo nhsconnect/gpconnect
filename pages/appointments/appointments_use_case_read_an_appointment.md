@@ -10,11 +10,11 @@ summary: "Read a patient's appointment at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a targeted provider system.
+This specification describes a single use case enabling the consumer to obtain the details of a specific future appointment from a provider organisation.
 
-A patient's future appointment, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, is  returned by the provider system.
+A patient's future appointment, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, is returned by the provider system.
 
-{% include important.html content="The Appointment Management capability pack is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability is aimed at the administration of a patient's appointments. As a result of information governance (IG) requirements, the read appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 
 ## Security ##
@@ -96,12 +96,33 @@ Provider systems:
 
 - SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
+- SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
+  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service ID filtering
+  - and the service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `reason`
   - `specialty`
 
+### Examples ###
+
+#### Read an appointment by id ####
+
+##### Request #####
+
+```http
+{% include appointments/read_appt_request_example.txt %}
+```
+
+##### Response when a matching resource is found #####
+
 ```json
 {% include appointments/read_appt_response_example.json %}
 ```
+
+##### Response when a matching resource is not found #####
+
+See [error handling](#error-handling).
+
