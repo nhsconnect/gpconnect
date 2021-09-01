@@ -209,15 +209,10 @@ The consumer system constructs an `Appointment` resource from slot (and its asso
 {% include appointments/book-appt-request-payload-1.json %}
 ```
 
-##### Response when the booking was successful #####
+##### Response #####
 
 The provider system responds back with the Appointment resource with the `id` field populated to indicate the appointment was booked.
 
 ```json
 {% include appointments/book-appt-response-payload-1.json %}
 ```
-
-##### Response when the booking was unsuccessful #####
-
-See [error handling](#error-handling).
-
