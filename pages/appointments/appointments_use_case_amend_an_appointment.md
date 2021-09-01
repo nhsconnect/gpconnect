@@ -21,7 +21,7 @@ The typical flow to amend an appointment is:
 
 Amending a cancelled appointment is NOT supported.
 
-{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
@@ -101,13 +101,6 @@ When receiving `description` and `comment` fields in the provider system:
 - Where a consumer sends information longer than character limits supported, an error SHALL be returned to the consumer
 - Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
 
-#### Example request body ####
-
-On the wire, a JSON serialised request would look something like the following:
-
-```json
-{% include appointments/amend_appt_request_example.json %}
-```
 
 #### Error handling ####
 
@@ -140,12 +133,32 @@ Provider systems:
 
 - SHALL populate `serviceType.text` with the practice defined slot type description, and where available `serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
+- SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
+  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service ID filtering
+  - and the service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `reason`
   - `specialty`
 
+### Examples ###
+
+#### Amend an appointment ####
+
+##### Request #####
+
+```http
+{% include appointments/amend-appt-request-header-1.txt %}
+```
+
 ```json
-{% include appointments/amend_appt_response_example.json %}
+{% include appointments/amend-appt-request-payload-1.json %}
+```
+
+##### Response #####
+
+```json
+{% include appointments/amend-appt-response-payload-1.json %}
 ```
