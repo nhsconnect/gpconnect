@@ -121,8 +121,3 @@ Provider systems:
 ```json
 {% include appointments/read-appt-response-payload-1.json %}
 ```
-
-##### Response when a matching resource is not found #####
-
-See [error handling](#error-handling).
-
