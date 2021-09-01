@@ -19,14 +19,24 @@
       "identifier": [
         {
           "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-          "value": "A00001"
+          "value": "Z100"
         }
       ],
-      "name": "Test Organization Name",
+      "type": [
+        {
+          "coding": [
+            {
+              "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
+              "code": "urgent-care"
+            }
+          ]
+        }
+      ],
+      "name": "North Ambulance Service",
       "telecom": [
         {
           "system": "phone",
-          "value": "0300 303 5678"
+          "value": "01111222333"
         }
       ]
     }

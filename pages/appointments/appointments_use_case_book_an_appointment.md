@@ -9,11 +9,11 @@ summary: "Book an appointment for a patient at an organisation"
 
 ## Use case ##
 
-{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements the book appointment capability has been restricted to future appointments. See [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments)." %}
+{% include important.html content="The Appointment Management capability is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements the book appointment capability has been restricted to future appointments. See [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments)." %}
 
 The typical flow to book an appointment is:
 
- 1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
+ 1. Search by NHS number for, or otherwise obtain, a `Patient` resource.
  2. Search for available `Slot` resources by date range.
  3. Create an `Appointment` for the chosen `Slot` and `Patient` resources.
 
@@ -52,7 +52,7 @@ Consumer systems SHALL display the following fields upon a successful booking in
 
 The consumer system SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
-Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of Slots.
+Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of slots.
 
 ### Booking multiple adjacent slots ###
 
@@ -119,13 +119,16 @@ The following data elements are mandatory (that is, data **MUST** be present):
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
 
 The following data elements **SHOULD** be included when available:
-- a practitioner `participant` of the appointment.
+- a practitioner `participant` of the appointment
+- a healthcare service `participant` of the appointment
 
 The following data elements **MAY** be included:
 
 - `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
   - Consumers SHALL impose a character limit of 500 characters for this element.
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
+
+{% include important.html content="Provider systems **MUST** not expect the fields in the *SHOULD* and *MAY* sections above to be present all request messages." %}
 
 The following data elements **MUST NOT** be included:
   - `reason`
@@ -142,14 +145,6 @@ When receiving `description` and `comment` fields in the provider system:
 - Providers SHALL return `description` and `comment` fields to the consumer in the response payload, as stored
 - Where a consumer sends information longer than character limits supported, an error SHALL be returned to the consumer
 - Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
-
-#### Example request body ####
-
-On the wire, a JSON serialised request would look something like the following:
-
-```json
-{% include appointments/book_appt_request_example.json %}
-```
 
 #### Error handling ####
 
@@ -188,12 +183,41 @@ Provider systems:
 - SHALL include the `versionId` of the current version of each appointment resource.
 - SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
+- SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
+  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service ID filtering
+  - and the service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
+
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `reason`
   - `specialty`
 
-```json
-{% include appointments/book_appt_response_example.json %}
+### Examples ###
+
+#### Book an appointment ####
+
+##### Request #####
+
+The consumer system constructs an `Appointment` resource from slot (and its associated schedule) chosen by the user and posts the resource to the `/Appointment` endpoint in order to book the appointment.  The consumer organisation making the booking is populated as a contained resource.
+
+```http
+{% include appointments/book-appt-request-header-1.txt %}
 ```
+
+```json
+{% include appointments/book-appt-request-payload-1.json %}
+```
+
+##### Response when the booking was successful #####
+
+The provider system responds back with the Appointment resource with the `id` field populated to indicate the appointment was booked.
+
+```json
+{% include appointments/book-appt-response-payload-1.json %}
+```
+
+##### Response when the booking was unsuccessful #####
+
+See [error handling](#error-handling).
+
