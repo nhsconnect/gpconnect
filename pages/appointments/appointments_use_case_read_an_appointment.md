@@ -113,13 +113,13 @@ Provider systems:
 ##### Request #####
 
 ```http
-{% include appointments/read_appt_request_example.txt %}
+{% include appointments/read-appt-request-header-1.txt %}
 ```
 
 ##### Response when a matching resource is found #####
 
 ```json
-{% include appointments/read_appt_response_example.json %}
+{% include appointments/read-appt-response-payload-1.json %}
 ```
 
 ##### Response when a matching resource is not found #####
