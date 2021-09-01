@@ -32,11 +32,11 @@
           ]
         }
       ],
-      "name": "Test Organization Name",
+      "name": "West Road GP Practice",
       "telecom": [
         {
           "system": "phone",
-          "value": "0300 303 5678"
+          "value": "0300303 5678"
         }
       ]
     }
