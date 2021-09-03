@@ -1,0 +1,1 @@
+GET /Slot?status=free&start=ge2017-10-20&end=le2017-10-31&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001

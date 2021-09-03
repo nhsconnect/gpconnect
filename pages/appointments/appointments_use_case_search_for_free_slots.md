@@ -89,13 +89,13 @@ Where search filters are sent by consumers which are not explicitly supported in
 On the wire, a search for free slots request sending all parameters, and searching on date, would look something like the following:
 
 ```http
-GET /Slot?status=free&start=ge2017-10-20&end=le2017-10-31&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
+{% include appointments/search-for-free-slots-request-header-1.txt %}
 ```
 
 A search for free slots request sending only mandatory and required parameters, and searching on date and time, would look something like the following:
 
 ```http
-GET /Slot?status=free&start=ge2019-03-29T12:00:00+00:00&end=le2019-04-01T17:00:00+01:00&_include=Slot:schedule&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
+{% include appointments/search-for-free-slots-request-header-2.txt %}
 ```
 
 ## Booking multiple adjacent slots ##
@@ -246,5 +246,5 @@ Provider systems:
 - SHALL NOT populate the `specialty` field on `Schedule` or `Slot`  
 
 ```json
-{% include appointments/search_for_free_slots_response_example.json %}
+{% include appointments/search-for-free-slots-response-payload-1.json %}
 ```
