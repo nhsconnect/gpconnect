@@ -126,11 +126,11 @@ Provider systems:
 
 {% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (for example, the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.status` are updated in line with any internal integrity constraints)." %}
 
-### Examples ###
+## Examples ##
 
-#### Cancel an appointment ####
+### Cancel an appointment ###
 
-##### Request #####
+#### Request ####
 
 ```http
 {% include appointments/cancel-appt-request-header-1.txt %}
@@ -140,7 +140,7 @@ Provider systems:
 {% include appointments/cancel-appt-request-payload-1.json %}
 ```
 
-##### Response #####
+#### Response ####
 
 ```json
 {% include appointments/cancel-appt-response-payload-1.json %}

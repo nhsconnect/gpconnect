@@ -106,17 +106,17 @@ Provider systems:
   - `reason`
   - `specialty`
 
-### Examples ###
+## Examples ##
 
-#### Read an appointment by id ####
+### Read an appointment by id ###
 
-##### Request #####
+#### Request ####
 
 ```http
 {% include appointments/read-appt-request-header-1.txt %}
 ```
 
-##### Response when a matching resource is found #####
+#### Response ####
 
 ```json
 {% include appointments/read-appt-response-payload-1.json %}

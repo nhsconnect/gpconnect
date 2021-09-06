@@ -193,11 +193,11 @@ Provider systems:
   - `reason`
   - `specialty`
 
-### Examples ###
+## Examples ##
 
-#### Book an appointment ####
+### Book an appointment ###
 
-##### Request #####
+#### Request ####
 
 The consumer system constructs an `Appointment` resource from slot (and its associated schedule) chosen by the user and posts the resource to the `/Appointment` endpoint in order to book the appointment.  The consumer organisation making the booking is populated as a contained resource.
 
@@ -209,7 +209,7 @@ The consumer system constructs an `Appointment` resource from slot (and its asso
 {% include appointments/book-appt-request-payload-1.json %}
 ```
 
-##### Response #####
+#### Response ####
 
 The provider system responds back with the Appointment resource with the `id` field populated to indicate the appointment was booked.
 

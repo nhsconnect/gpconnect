@@ -143,11 +143,11 @@ Provider systems:
   - `reason`
   - `specialty`
 
-### Examples ###
+## Examples ##
 
-#### Amend an appointment ####
+### Amend an appointment ###
 
-##### Request #####
+#### Request ####
 
 ```http
 {% include appointments/amend-appt-request-header-1.txt %}
@@ -157,7 +157,7 @@ Provider systems:
 {% include appointments/amend-appt-request-payload-1.json %}
 ```
 
-##### Response #####
+#### Response ####
 
 ```json
 {% include appointments/amend-appt-response-payload-1.json %}

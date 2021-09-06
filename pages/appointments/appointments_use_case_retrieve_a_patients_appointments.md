@@ -145,11 +145,11 @@ Provider systems:
   - `specialty`
 
 
-### Examples ###
+## Examples ##
 
-#### Retrieve a patient's appointments ####
+### Retrieve a patient's appointments ###
 
-##### Request #####
+#### Request ####
 
 Retrieve all appointments for patient with logical id 1001 which start between 2017-07-11 and 2017-09-14 inclusive:
 
@@ -157,7 +157,7 @@ Retrieve all appointments for patient with logical id 1001 which start between 2
 {% include appointments/retrieve-patient-appts-request-header-1.txt %}
 ```
 
-##### Response when the patient has appoinments in the date range provided #####
+#### Response when the patient has appoinments in the date range provided ####
 
 The response example includes two appointments for the patient, with the organisations that made the original bookings populated as included resources.
 
@@ -165,7 +165,7 @@ The response example includes two appointments for the patient, with the organis
 {% include appointments/retrieve-patient-appts-response-payload-1a.json %}
 ```
 
-##### Response when the patient has no appointments in the date range provided #####
+#### Response when the patient has no appointments in the date range provided ####
 
 ```json
 {% include appointments/retrieve-patient-appts-response-payload-1b.json %}
