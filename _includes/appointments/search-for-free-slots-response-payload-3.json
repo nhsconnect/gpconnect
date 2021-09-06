@@ -1,0 +1,102 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "entry": [
+    {
+      "resource": {
+        "resourceType": "Slot",
+        "id": "1584",
+        "meta": {
+          "versionId": "1471219260000",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "General GP Appointment"
+          }
+        ],
+        "schedule": {
+          "reference": "Schedule/14"
+        },
+        "status": "free",
+        "start": "2019-03-29T11:30:00+01:00",
+        "end": "2019-03-29T11:40:00+01:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Slot",
+        "id": "1644",
+        "meta": {
+          "versionId": "1471219260112",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Slot-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+            "valueCode": "In-person"
+          }
+        ],
+        "serviceType": [
+          {
+            "text": "NHS Health Check"
+          }
+        ],
+        "schedule": {
+          "reference": "Schedule/14"
+        },
+        "status": "free",
+        "start": "2019-03-29T11:40:00+01:00",
+        "end": "2019-03-29T11:50:00+01:00"
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Schedule",
+        "id": "14",
+        "meta": {
+          "versionId": "1469444400000",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+                  "code": "R0260",
+                  "display": "General Medical Practitioner"
+                }
+              ]
+            }
+          }
+        ],
+        "serviceCategory": {
+          "text": "General GP Appointments"
+        },
+        "actor": [
+          {
+            "reference": "Location/17"
+          }
+        ],
+        "planningHorizon": {
+          "start": "2019-03-29T09:00:00+01:00",
+          "end": "2019-03-29T12:00:00+01:00"
+        }
+      }
+    }
+  ]
+}

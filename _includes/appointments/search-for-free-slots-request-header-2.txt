@@ -1,1 +1,11 @@
-GET /Slot?status=free&start=ge2019-03-29T12:00:00+00:00&end=le2019-04-01T17:00:00+01:00&_include=Slot:schedule&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
+GET /Slot?status=free
+  &start=ge2017-10-20
+  &end=le2017-10-31
+  &_include=Slot:schedule
+  &_include:recurse=Schedule:actor:Practitioner
+  &_include:recurse=Schedule:actor:Location
+  &_include:recurse=Schedule:actor:HealthcareService
+  &_include:recurse=Location:managingOrganization
+  &searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|R50
+  &searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|urgent-care
+  &service.identifier=1000123
