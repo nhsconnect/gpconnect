@@ -83,7 +83,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's trace ID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment-1` |
@@ -146,26 +146,6 @@ When receiving `description` and `comment` fields in the provider system:
 - Where a consumer sends information longer than character limits supported, an error SHALL be returned to the consumer
 - Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
 
-#### Error handling ####
-
-Provider systems:
-
-- SHALL return an HTTP status "409" with an error message "DUPLICATE_REJECTED" when an appointment cannot be booked because the referenced slots within the appointment resource no longer have the status `free`, such as when the slot has been used to book a different appointment between the "search for free slots" request and the "book appointment" request.
-- SHALL return an error if `reason` or `specialty` is included in the appointment resource sent by the consumer.
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-
-For example:
-
-- the submitted `start` and `end` date range does not match that of the requested slot(s)
-- one or more of the requested `Slot` resources does not exist or already has a `status` of busy
-- a business rule imposed by [Slot Availability Management](appointments_slotavailabilitymanagement.html) is breached, e.g. an organisational slot limit
-- multiple slots were requested for booking but do not meet the criteria for [booking multiple adjacent slots](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots)
-- the `description` or `comment` fields contain more characters than can be stored in the provider system
-
-Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
-
-{% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place, to prevent misuse of appointment booking outside of the GP Connect API implementation." %}
-
 ### Request response ###
 
 #### Response headers ####
@@ -192,6 +172,27 @@ Provider systems:
 - SHALL NOT populate the following fields:
   - `reason`
   - `specialty`
+
+#### Error handling ####
+
+Provider systems:
+
+- SHALL return an HTTP status "409" with an error message "DUPLICATE_REJECTED" when an appointment cannot be booked because the referenced slots within the appointment resource no longer have the status `free`, such as when the slot has been used to book a different appointment between the "search for free slots" request and the "book appointment" request.
+- SHALL return an error if `reason` or `specialty` is included in the appointment resource sent by the consumer.
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+
+For example:
+
+- the submitted `start` and `end` date range does not match that of the requested slot(s)
+- one or more of the requested `Slot` resources does not exist or already has a `status` of busy
+- a business rule imposed by [Slot Availability Management](appointments_slotavailabilitymanagement.html) is breached, e.g. an organisational slot limit
+- multiple slots were requested for booking but do not meet the criteria for [booking multiple adjacent slots](appointments_use_case_book_an_appointment.html#booking-multiple-adjacent-slots)
+- the `description` or `comment` fields contain more characters than can be stored in the provider system
+
+Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+{% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place, to prevent misuse of appointment booking outside of the GP Connect API implementation." %}
+
 
 ## Examples ##
 

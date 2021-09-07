@@ -95,23 +95,14 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's trace ID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1` |
 
 #### Payload request body ####
 
-N/A
-
-### Error handling ###
-
-Provider systems:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
-- SHALL return an error if any part of the consumer supplied date range is in the past. The OperationOutcome returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
-- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details SHALL be returned in the diagnostics element.
-
+No payload is sent in the request.
 
 ### Request response ###
 
@@ -144,6 +135,13 @@ Provider systems:
   - `reason`
   - `specialty`
 
+### Error handling ###
+
+Provider systems:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+- SHALL return an error if any part of the consumer supplied date range is in the past. The OperationOutcome returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
+- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details SHALL be returned in the diagnostics element.
 
 ## Examples ##
 

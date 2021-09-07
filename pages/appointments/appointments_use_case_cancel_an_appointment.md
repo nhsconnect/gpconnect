@@ -60,7 +60,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (that is, GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's trace ID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1` |
@@ -83,17 +83,6 @@ Only the following data elements can be modified when performing an appointment 
   {% include important.html content="If any content other than the appointment cancellation reason or appointment status is updated the server SHALL reject the amendment and return an error." %}
 
   {% include note.html content="GP Connect does not impose a character limit on the cancellation reason extension within the cancellation request, but due to differences in the provider system the cancellation reason may be truncated when stored in the provider system due to character limits." %}
-
-#### Error handling ####
-
-The provider system:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional details when one or more data fields are corrupt or a specific business rule/constraint is breached.
-- SHALL return an error if any appointment details other than the appointment `status` and `cancellation-reason` fields are attempted to be updated.
-- SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
-- SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
-
-Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
 ### Request response ###
 
@@ -126,11 +115,25 @@ Provider systems:
 
 {% include important.html content="A status response `200` **OK** implies that the state of any resources affected by the appointment cancellation (for example, the associated `Slot`) subsequently reflects the cancellation (for example, `Appointment.status`, `Slot.status` are updated in line with any internal integrity constraints)." %}
 
+#### Error handling ####
+
+The provider system:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional details when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an error if any appointment details other than the appointment `status` and cancellation reason extension fields are attempted to be updated.
+- SHALL return an error if the appointment being cancelled is in the past (the appointment start dateTime is before the current date and time).
+- SHALL return an error if the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
+
+Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+
 ## Examples ##
 
 ### Cancel an appointment ###
 
 #### Request ####
+
+The Appointment resource is submitted with the `status` field set to `cancelled` and a FHIR extension carrying the reason for cancellation.
 
 ```http
 {% include appointments/cancel-appt-request-header-1.txt %}
