@@ -8,4 +8,4 @@ GET /Slot?status=free
   &_include:recurse=Location:managingOrganization
   &searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|R50
   &searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|urgent-care
-  &service.identifier=1000123
+  &service.identifier=https://fhir.nhs.uk/Id/uec-dos-service-id|1000123
