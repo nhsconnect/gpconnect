@@ -83,16 +83,20 @@ entries:
           url: /appointments_use_case_cancel_an_appointment.html
           output: web, pdf
 
-      - title: Service ID filtering
+      - title: Service filtering
         output: web, pdf
         subfolderitems:
 
-        - title: Service ID filtering
+        - title: Introduction
           url: /appointments_serviceid_filtering.html
           output: web, pdf
 
         - title: Provider system configuration
           url: /appointments_serviceid_configuration.html
+          output: web, pdf
+
+        - title: Common service topologies
+          url: /appointments_service_topologies.html
           output: web, pdf
           
       - title: Additional provider requirements
