@@ -21,7 +21,7 @@ GP practices running "in hours" GP services for their registered patients only *
 
 ### GP practices also running extended access hubs ###
 
-GP practices that also run extended access hubs *MAY* configure services within their GP system to mirror the 
+GP practices that also run extended access hubs from the same clinical system (i.e. share an appointment book), and want to receive GP Connect appointment bookings into both *SHOULD* [set up services in their service filtering configuration](appointments_serviceid_configuration.html#service-list) and switch on service filtering in order to accept bookings via Directory of Services (DOS).
 
 <img src="images/appointments/service-topologies-2.png" style="padding-bottom: 10px;" />
 
