@@ -1,6 +1,14 @@
 {
   "resourceType": "Bundle",
   "type": "searchset",
+  "meta": {
+    "tag": [
+      {
+        "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceIdFilteringStatus-1",
+        "code": "organisation-switch-off"
+      }
+    ]
+  },
   "entry": [
     {
       "resource": {
