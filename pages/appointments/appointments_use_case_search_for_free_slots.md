@@ -61,7 +61,7 @@ Consumer systems SHALL send the following parameters in the request:
 
 Where a Consumer system has used [Directory of Services (DOS) to locate a service to book at](appointments_service_discovery.html#directory-of-services-dos---currently-for-uec-consumers-only), the consumer system SHALL send the following parameter in the request:
 
-- The `service.identifier` parameter with the service ID of the chosen DOS service, e.g. `service.identifier=1000123`  (see [Service ID filtering](appointments_serviceid_filtering.html) for more information)
+- The `service.identifier` parameter with the service ID of the chosen DOS service, e.g. `service.identifier=https://fhir.nhs.uk/Id/uec-dos-service-id|1000123`  (see [Service ID filtering](appointments_serviceid_filtering.html) for more information)
 
 Consumer systems SHOULD send the following parameters in the request:
 
@@ -138,7 +138,7 @@ GET /Slot?[start={search_prefix}start_date]
           {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
-          {&service.identifier={ServiceID}}
+          {&service.identifier={ServiceIDCodeSystem|ServiceID}}
 ```
 
 #### FHIR absolute request ####
@@ -155,7 +155,7 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
           {&_include:recurse=Location:managingOrganization}
           {&searchFilter={OrgTypeCodeSystem}|{OrgTypeCode}}
           {&searchFilter={OrgODSCodeSystem}|{OrgODSCode}}
-          {&service.identifier={ServiceID}}
+          {&service.identifier={ServiceIDCodeSystem|ServiceID}}
 ```
 
 #### Request headers ####
