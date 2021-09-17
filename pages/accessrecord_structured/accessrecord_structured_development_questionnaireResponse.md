@@ -140,12 +140,12 @@ When this `questionnaireResponse` was created on the system.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-Pointer to a specific item from a linked `questionnaire`.
+Pointer to a specific item from a linked `questionnaire`. Where the questionnaireResponse does not link back to a questionnaire this should be populated with the rubric of the 'parent' observation.
 
 ### item.text ###
 
