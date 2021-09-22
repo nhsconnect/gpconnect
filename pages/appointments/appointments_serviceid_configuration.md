@@ -87,15 +87,16 @@ A service in the list **SHALL** at a minimum be comprised of:
 
 - service ID
 - service name
+- service type
 
 The user at the organisation **SHALL** be able to:
 
 - view the list
 - add, delete and change the services in the list
 
-{% include note.html content="The correct service IDs and names to use will be determined with assistance from the DOS leads" %}
+{% include note.html content="The correct list of services for a provider organisation to configure will be determined with assistance from the DOS leads" %}
 
-The screenshot below shows an example service in Directory of Service (DOS) showing the service ID and name fields.
+The screenshot below shows an example service in Directory of Service (DOS) showing the service ID, name and type fields.
 
 <img src="images/appointments/dos-screenshot.png" style="width: 500px; padding-bottom: 10px;" />
 
@@ -112,7 +113,7 @@ If there is already a list of DOS service IDs in the provider system provided by
 
 Provider systems **MAY** make use of the [Search by Service ID](https://developer.nhs.uk/apis/dos-api/byServiceId.html) endpoint in the DOS API to:
 - validate that any service ID entered by the user appears on the DOS and is therefore a valid service
-- pull back the service name which corresponds with the service id and display it on the screen
+- pull back the service name and type which corresponds with the service ID and display it on the screen
 
 The *Service by ODS Code* endpoint in the DOS API **MUST NOT** be used as this will not return a complete list of DOS services provided by an organisation.  Furthermore it is important that when entering the service list, the user is assisted by their DOS lead, to ensure the DOS correctly represents the services offered by their organisation.
 
