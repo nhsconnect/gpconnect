@@ -88,11 +88,11 @@ entries:
         subfolderitems:
 
         - title: Introduction
-          url: /appointments_serviceid_filtering.html
+          url: /appointments_service_filtering.html
           output: web, pdf
 
         - title: Provider system configuration
-          url: /appointments_serviceid_configuration.html
+          url: /appointments_service_configuration.html
           output: web, pdf
 
         - title: Common service topologies

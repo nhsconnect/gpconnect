@@ -3,7 +3,7 @@ title: Appointment Management service filtering
 keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar
-permalink: appointments_serviceid_filtering.html
+permalink: appointments_service_filtering.html
 summary: "Supporting search by DOS service ID"
 ---
 

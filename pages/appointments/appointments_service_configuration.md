@@ -3,7 +3,7 @@ title: Provider system configuration for service filtering
 keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar
-permalink: appointments_serviceid_configuration.html
+permalink: appointments_service_configuration.html
 summary: "Configuration to support the rollout of the service filtering feature"
 ---
 <br/>
