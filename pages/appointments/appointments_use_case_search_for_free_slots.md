@@ -61,7 +61,7 @@ Consumer systems SHALL send the following parameters in the request:
 
 Where a Consumer system has used [Directory of Services (DOS) to locate a service to book at](appointments_service_discovery.html#directory-of-services-dos---currently-for-uec-consumers-only), the consumer system SHALL send the following parameter in the request:
 
-- The `service.identifier` parameter with the service ID of the chosen DOS service, e.g. `service.identifier=https://fhir.nhs.uk/Id/uec-dos-service-id|1000123`  (see [Service ID filtering](appointments_serviceid_filtering.html) for more information)
+- The `service.identifier` parameter with the service ID of the chosen DOS service, e.g. `service.identifier=https://fhir.nhs.uk/Id/uec-dos-service-id|1000123`  (see [Service filtering](appointments_serviceid_filtering.html) for more information)
 
 Consumer systems SHOULD send the following parameters in the request:
 
@@ -103,7 +103,7 @@ In order to prevent incorrect or unsuitable bookings, and to allow a patient to 
 - End date and time, or duration
 - Delivery channel (in-person, telephone, video)
 - Slot type and schedule type (see `Slot.serviceType` and `Schedule.serviceCategory`)
-- Service name (where present, see [service ID filtering](appointments_serviceid_filtering.html) for more information)
+- Service name (where present, see [service filtering](appointments_serviceid_filtering.html) for more information)
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
@@ -204,10 +204,10 @@ Provider systems:
     - **and** which match the search filter parameters of booking organisation (ODS code) and/or organisation type, or are not restricted for booking by ODS code and/or organisation type
     - **and** reference a `Schedule` with a `actor` of type `HealthcareService`, **where**:
       - the consumer has sent a `service.identifier` search parameter in the request
-      - **and** the service ID filtering [organisation switch is ON](appointments_serviceid_configuration.html#organisation-switch-set-to-on)
+      - **and** the service filtering [organisation switch is ON](appointments_serviceid_configuration.html#organisation-switch-set-to-on)
       - **and** a `HealthcareService.identifier` element matches the token passed in the `service` parameter
 
-      {% include important.html content="The `service.identifier` and the HealthcareService `_include` parameters do not take effect (i.e. are ignored) if the provider organisation has the service ID filtering [organisation switch set to OFF](appointments_serviceid_configuration.html#organisation-switch-set-to-off)" %}
+      {% include important.html content="The `service.identifier` and the HealthcareService `_include` parameters do not take effect (i.e. are ignored) if the provider organisation has the service filtering [organisation switch set to OFF](appointments_serviceid_configuration.html#organisation-switch-set-to-off)" %}
 
   - `Schedule` resources associated with the returned `Slot` resources
 
@@ -221,9 +221,9 @@ Provider systems:
 
     - SHALL populate the `Location` resource according to population requirements for [Read a location](foundations_use_case_read_a_location.html#payload-response-body)
 
-  - `HealthcareService` resources associated with the returned `Schedule` resources where requested by the consumer using the `_include:recurse=Schedule:actor:HealthcareService` parameter and where the service ID filtering [organisation switch is ON](appointments_serviceid_configuration.html#organisation-switch-set-to-on)
+  - `HealthcareService` resources associated with the returned `Schedule` resources where requested by the consumer using the `_include:recurse=Schedule:actor:HealthcareService` parameter and where the service filtering [organisation switch is ON](appointments_serviceid_configuration.html#organisation-switch-set-to-on)
 
-    - `HealthcareService` resources and their reference in `Schedule.actor` SHALL NOT be populated when the service ID filtering [organisation switch is OFF](appointments_serviceid_configuration.html#organisation-switch-set-to-off) regardless of the parameters sent by the consumer
+    - `HealthcareService` resources and their reference in `Schedule.actor` SHALL NOT be populated when the service filtering [organisation switch is OFF](appointments_serviceid_configuration.html#organisation-switch-set-to-off) regardless of the parameters sent by the consumer
 
     - SHALL populate the `HealthcareService` resource according to population requirements for [Read a healthcare service](foundations_use_case_read_a_healthcareservice.html#payload-response-body)
 
@@ -248,7 +248,7 @@ Provider systems:
 
 - SHALL NOT populate the `specialty` field on `Schedule` or `Slot`  
 
-- SHALL indicate the service ID filtering status of the search:
+- SHALL indicate the service filtering status of the search:
   - only when the consumer sends the `service.identifier` parameter in the request
   - by using the `Bundle.meta.tag` element populating the system and code elements with [GPConnect-ServiceFilteringStatus]((https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceFilteringStatus-1))
 
@@ -265,7 +265,7 @@ The provider system:
 
 - SHALL return a [RECORD_NOT_FOUND](development_fhir_error_handling_guidance.html#example-resource-not-found) error with the diagnostics element providing detail of the issue when:
   - the consumer system has populated the `service.identifier` parameter in the request
-  - *AND* the provider organisation has the [service ID filtering switch set to ON](appointments_serviceid_configuration.html#organisation-switch-set-to-on)
+  - *AND* the provider organisation has the [service filtering switch set to ON](appointments_serviceid_configuration.html#organisation-switch-set-to-on)
   - *AND* the DOS service ID in the `service.identifier` parameter value is not contained in the provider organisation's [service list](appointments_serviceid_configuration.html#service-list)
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
@@ -296,7 +296,7 @@ The example response includes two Slot resources matching the search criteria, a
 
 Because the consumer has not sent the service.identifier parameter, the response has not been filtered by service - schedules linked to any service, or not linked to a service at all, could be returned.
 
-In this example the schedule matching the search criteria has been linked to a service by the provider organisation (and they have switched on the service ID filtering feature) so the service has been returned in the Bundle as a HealthcareService resource.  Please see the examples further down this page for a response where a HealthcareService resource is not returned.
+In this example the schedule matching the search criteria has been linked to a service by the provider organisation (and they have switched on the service filtering feature) so the service has been returned in the Bundle as a HealthcareService resource.  Please see the examples further down this page for a response where a HealthcareService resource is not returned.
 
 ```json
 {% include appointments/search-for-free-slots-response-payload-1.json %}
@@ -322,7 +322,7 @@ The example below shows a typical search for free slots request from a consumer 
 
 The example response includes two Slot resources matching the search criteria, and associated Schedule, Location, Practitioner and Organization resources.
 
-The consumer has searched with a service ID from DOS, however in this example the provider organisation has not enabled [service ID filtering](appointments_serviceid_filtering.html) and has therefore ignored the service.identifier parameter sent in the request.  Because the consumer sent the service.identifier parameter in the request, the `Bundle.meta.tag` element is populated to indicate whether the parameter was applied when filtering the returned slots.
+The consumer has searched with a service ID from DOS, however in this example the provider organisation has not enabled [service filtering](appointments_serviceid_filtering.html) and has therefore ignored the service.identifier parameter sent in the request.  Because the consumer sent the service.identifier parameter in the request, the `Bundle.meta.tag` element is populated to indicate whether the parameter was applied when filtering the returned slots.
 
 ```json
 {% include appointments/search-for-free-slots-response-payload-2.json %}
@@ -348,7 +348,7 @@ The example below shows a typical search for free slots request:
 
 The example response includes two Slot resources matching the search criteria, and associated Schedule and Organization resources.
 
-In this example the provider organisation has not enabled [service ID filtering](appointments_serviceid_filtering.html).  This can be seen in the example response below as the Schedule resource is not linked to a HealthcareService resource, and there are no HealthcareService resources in the response Bundle. Please see the example above for a response where a HealthcareService resource is returned.
+In this example the provider organisation has not enabled [service filtering](appointments_serviceid_filtering.html).  This can be seen in the example response below as the Schedule resource is not linked to a HealthcareService resource, and there are no HealthcareService resources in the response Bundle. Please see the example above for a response where a HealthcareService resource is returned.
 
 This example also shows the absence of a Practitioner resource.  This may happen where a provider organisation has not yet assigned a named practitioner to an appointment schedule.
 

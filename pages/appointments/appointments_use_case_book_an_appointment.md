@@ -43,7 +43,7 @@ Consumer systems SHALL display the following fields upon a successful booking in
 - End date and time, or duration
 - Delivery channel (in-person, telephone, video)
 - Slot type and schedule type (see `Appointment.serviceType` and `Appointment.serviceCategory`)
-- Service name (where present, see [service ID filtering](appointments_serviceid_filtering.html) for more information)
+- Service name (where present, see [service filtering](appointments_serviceid_filtering.html) for more information)
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
@@ -164,8 +164,8 @@ Provider systems:
 - SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
 - SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
-  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service ID filtering
-  - and the service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
+  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service filtering
+  - and the service filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 

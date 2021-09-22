@@ -104,8 +104,8 @@ Provider systems:
 - SHALL populate `serviceType.text` with the practice defined slot type description, and where available `serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
 - SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
-  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service ID filtering
-  - and the service ID filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
+  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service filtering
+  - and the service filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 

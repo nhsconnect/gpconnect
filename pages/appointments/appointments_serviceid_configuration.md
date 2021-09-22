@@ -1,35 +1,35 @@
 ---
-title: Provider system configuration for service ID filtering
+title: Provider system configuration for service filtering
 keywords: appointments design
 tags: [design,appointments]
 sidebar: appointments_sidebar
 permalink: appointments_serviceid_configuration.html
-summary: "Configuration to support the rollout of the service ID filtering feature"
+summary: "Configuration to support the rollout of the service filtering feature"
 ---
 <br/>
 
-Service ID filtering in a provider system **SHALL** be controlled by two levels of configuration:
+Service filtering in a provider system **SHALL** be controlled by two levels of configuration:
 
 1. a supplier-controlled configuration enablement switch ("supplier switch")
 2. organisation-controlled configuration ("organisation configuration"), incorporating an organisation enablement switch ("organisation switch")
 
-The supplier switch allows the service ID filtering configuration to be made visible to selected (or all) organisations using the supplier's provider system.
+The supplier switch allows the service filtering configuration to be made visible to selected (or all) organisations using the supplier's provider system.
 
-Once the service ID configuration screens are made available to an organisation, a user at the organisation can configure service ID filtering, and once configuration is completed, switch service ID filtering on so that the configuration takes effect upon the API, for their organisation.
+Once the service configuration screens are made available to an organisation, a user at the organisation can configure service filtering, and once configuration is completed, switch service filtering on so that the configuration takes effect upon the API, for their organisation.
 
 ## Supplier switch ##
 
-The visibility of the service ID filtering configuration in a provider system **SHALL** be controlled by a global supplier system switch, with three states:
+The visibility of the service filtering configuration in a provider system **SHALL** be controlled by a global supplier system switch, with three states:
 
 1. OFF
 2. ON AT SELECTED ORGANISATIONS - this state requires an associated selected organisation list
 3. ON
 
-{% include note.html content="The supplier switch allows service ID filtering configuration to be made available to provider organisations in a controlled manner, and not before Directory of Services changes have been made to support them." %}
+{% include note.html content="The supplier switch allows service filtering configuration to be made available to provider organisations in a controlled manner, and not before Directory of Services changes have been made to support them." %}
 
 The supplier switch, and associated selected organisation list **SHALL**:
 
-- control service ID filtering functionality as described in the sub-sections below
+- control service filtering functionality as described in the sub-sections below
 - only be controlled by appropriate staff at the supplier
 - be changed and applied quickly to the supplier's system without requiring a code change or software release
 - be initially defaulted to OFF, and empty
@@ -39,43 +39,43 @@ The supplier switch, and associated selected organisation list **SHALL**:
 	- current and previous state of the switch
 	- changes to the selected organisation list (if any)
 
-{% include important.html content="The configuration visibility switch does not affect service ID filtering changes in an appointments consumer in the same supplier system, such as displaying service name when searching for free slots." %}
+{% include important.html content="The configuration visibility switch does not affect service filtering changes in an appointments consumer in the same supplier system, such as displaying service name when searching for free slots." %}
 
 ### Supplier switch set to OFF ###
 
-When the service ID supplier switch is set to OFF:
+When the service filtering supplier switch is set to OFF:
 
 - For ALL organisations in the supplier's system:
-	- the organisation-controlled service ID configuration **SHALL NOT** be visible to users, and **SHALL NOT** take effect upon the API (regardless of the value of the organisation switch)
+	- the organisation-controlled service configuration **SHALL NOT** be visible to users, and **SHALL NOT** take effect upon the API (regardless of the value of the organisation switch)
 
 ### Supplier switch set to ON AT SELECTED ORGANISATIONS ###
 
-When the service ID supplier switch is set to ON AT SELECTED ORGANISATIONS:
+When the service filtering supplier switch is set to ON AT SELECTED ORGANISATIONS:
 
 - For organisations in the selected organisation list that are eligible to use GP Connect:
   - the organisation configuration **SHALL** be visible
-  - the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration
+  - the effect of service filtering upon the API **SHALL** be dependent on the organisation configuration
 - For organisations NOT held in the selected organisation list:
 	- the organisation configuration **SHALL NOT** be visible, and **SHALL NOT** take effect upon the API (regardless of the value of the organisation switch)
 
 ### Supplier switch set to ON ###
 
-When the service ID supplier switch is set to ON:
+When the service filtering supplier switch is set to ON:
 
 - For ALL organisations in the supplier's system that are eligible to use GP Connect:
 	- the organisation configuration **SHALL** be visible
-	- the effect of service ID filtering upon the API **SHALL** be dependent on the organisation configuration
+	- the effect of service filtering upon the API **SHALL** be dependent on the organisation configuration
 
-{% include note.html content="This state has been included so that when service ID filtering configuration can be made available to all organisations using the supplier's system, there is no need to continue to maintain the selected organisation list." %}
+{% include note.html content="This state has been included so that when service filtering configuration can be made available to all organisations using the supplier's system, there is no need to continue to maintain the selected organisation list." %}
 
 
 ## Organisation configuration ##
 
-The organisation configuration for service ID filtering **SHALL** be used by staff within a provider organisation to:
+The organisation configuration for service filtering **SHALL** be used by staff within a provider organisation to:
 
 - set up a list of services for their organisation (taken from the service(s) in DOS provided by the organisation)
 - assign services to schedules (or schedule "templates")
-- enable or disable service ID filtering for their organisation
+- enable or disable service filtering for their organisation
 
 {% include important.html content="See [supplier switch](#supplier-switch) above for conditions when the organisation configuration is visible to a provider organisation." %}
 
@@ -119,7 +119,7 @@ The *Service by ODS Code* endpoint in the DOS API **MUST NOT** be used as this w
 
 ### Linking services to schedules ###
 
-The organisation configuration **SHALL** include the ability for a user to link services to schedules, so that service ID filtering can return free slots for a service.
+The organisation configuration **SHALL** include the ability for a user to link services to schedules, so that service filtering can return free slots for a service.
 
 {% include important.html content="The term schedule (in line with FHIR nomenclature) is used to indicate a grouping of slots, however in provider systems these are typically called sessions or rotas, and in fact the linking may occur to session or rota templates, rather than to instances of sessions/rotas." %}
 
@@ -156,11 +156,11 @@ If a schedule is amended to become 'GP Connect bookable' and the [organisation s
 
 ### Organisation switch ###
 
-The organisation configuration **SHALL** include a service ID filtering enablement switch that allows a user at a provider organisation to enable or disable service ID filtering for their organisation.
+The organisation configuration **SHALL** include a service filtering enablement switch that allows a user at a provider organisation to enable or disable service filtering for their organisation.
 
 The organisation switch **SHALL**:
 
-- control service ID filtering enablement for the current organisation
+- control service filtering enablement for the current organisation
 - only be controlled by appropriate staff logged on at the provider organisation
 - allow two states (ON and OFF), and be initially defaulted to OFF
 - take effect immediately
@@ -169,8 +169,8 @@ The organisation switch **SHALL**:
 	- user responsible for the change
 	- current and previous state of the switch
 
-{% include note.html content="The purpose of the organisation switch is so that organisations can set up their list of service IDs and link them to sessions/rotas, before they enable service ID filtering.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
-<br/>In addition, some organisations may not wish to or need to use service ID filtering, such as those with a single DOS service. " %}
+{% include note.html content="The purpose of the organisation switch is so that organisations can set up their list of service IDs and link them to sessions/rotas, before they enable service filtering.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
+<br/>In addition, some organisations may not wish to or need to use service filtering, such as those with a single DOS service. " %}
 
 {% include important.html content="Please note if the [supplier switch](#supplier-switch) is set to OFF, or set to ON AT SELECTED ORGANISATIONS and the current organisation is not in the selected organisation list, the organisation configuration including the organisation switch **SHALL NOT** be visible, and **SHALL NOT** take effect upon the API, regardless of the value of the organisation switch." %}
 
@@ -178,7 +178,7 @@ The organisation switch **SHALL**:
 
 When the organisation switch is set to OFF:
 
-- service ID filtering in the API **SHALL NOT** take effect
+- service filtering in the API **SHALL NOT** take effect
 	- `schedule.actor:healthcareservice` parameter on [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) **SHALL** be ignored
   - ...
 
@@ -188,7 +188,7 @@ When the organisation switch is set to OFF:
 
 When the organisation switch is set to ON:
 
-- service ID filtering in the API **SHALL** take effect
+- service filtering in the API **SHALL** take effect
   - ...
   
 {% include todo.html content="List areas to enable" %}
