@@ -64,7 +64,7 @@ Once a consumer system user has selected a service from the list returned by the
 
 This logic is described in the context of a full [GP Connect workflow example](https://developer.nhs.uk/apis/uec-appointments/dos_endpoints_booking.html) in the Urgent and Emergency Care Appointment Booking specification.
 
-##### Service filtering #####
+##### DOS service filtering #####
 
 Consumer systems that have used the DOS to determine a practice to book at must send the DOS service ID as part of the [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) call.
 
