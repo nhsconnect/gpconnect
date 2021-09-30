@@ -7,24 +7,13 @@ permalink: appointments_requirements.html
 summary: "Clinical, user and governance requirements that must be supported by the solution"
 ---
 
-The GP Connect requirements documentation for the Appointment Management Capability contains the set of business and solution requirements as defined in the API specifications and FHIR Structure Definitions. The GP Connect specification SHALL be regarded as authoritative where difference, contradiction, or inaccuracy is identified between the specification and the following requirements documentation.
+The GP Connect documentation for Appointment Management contains the set of business and solution requirements as defined in the API specifications and FHIR profiles. The GP Connect specification SHALL be regarded as authoritative where difference, contradiction, or inaccuracy is identified between the specification and the following user stories.
 
 The requirements and resulting API design have been developed in collaboration with NHS England, the GP Principal System Suppliers, clinical and GP Practice administrative stakeholders, FoT CCGs, and NHS Digital Urgent Care teams.
 
-## User stories, API requirements & use cases ##
-The business requirements are described as a set of high-level user stories with corresponding functional specification requirements. System use case descriptions and activity diagrams detail how the Capability APIs are used in the end-to-end processes of booking an appointment, or amending/cancelling an appointment.
+## User stories ##
 
+The business requirements are described as a set of high-level user stories.
 
-## Requirements Documentation ##
-
-This consists of:
-
-- an Excel workbook containing NHS England source clinical scenarios, user stories, API specification requirements, high-level use case model
-
-     - [GP Connect Requirements Document for Appointment Management](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20Capability%20Requirements%20-%20Developer%20Portal.xlsx)
-        
-
-- Use case descriptions and activity diagrams of end-to-end Book Appointment and Amend/Cancel Appointment processes 
-
-     - [GP Connect Appointment Management API Use Cases](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Mgmt%20%20API%20Use%20Cases.docx)
+- [GP Connect Appointment Management User Stories](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Management%20User%20Stories.xlsx)
         
