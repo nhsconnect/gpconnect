@@ -42,6 +42,10 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:metadata-1`|
 
+Consumer systems:
+- SHOULD request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
+- MAY cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organization's FHIR server.
+
 #### Payload request body ####
 
 N/A
@@ -61,15 +65,23 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful retrieval of the capability statement
+- SHALL return a capability statement which represents the GP Connect API implementation
 - SHALL return a capability statement which conforms to the standard [FHIR CapabilityStatement](http://hl7.org/fhir/STU3/capabilitystatement.html)
 
-An example GP Connect CapabilityStatement is shown below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
+An GP Connect CapabilityStatement is shown in the example section below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
 
-```json
-{% include foundations/get_capability_statement_response_example.json %}
+### Examples ###
+
+#### Get the FHIR capability statement ####
+
+##### Request #####
+
+```http
+{% include foundations/get-capability-statement-request-header-1.txt %}
 ```
 
-Consumer systems:
-- SHOULD request the capability statement from the FHIR server endpoint in order to ascertain details of the implementation of GP Connect capabilities delivered by the FHIR server
-- Consumers may also cache the capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organization's FHIR server.
+##### Response #####
 
+```json
+{% include foundations/get-capability-statement-response-payload-1.json %}
+```

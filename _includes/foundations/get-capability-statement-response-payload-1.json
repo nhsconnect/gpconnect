@@ -3,7 +3,7 @@
   "version": "1.2.8",
   "name": "GP Connect",
   "status": "active",
-  "date": "2020-01-15",
+  "date": "2021-01-03",
   "publisher": "[Provider Software Vendor Name]",
   "contact": [
     {
@@ -11,7 +11,7 @@
     }
   ],
   "description": "This server implements the GP Connect API version 1.2.8",
-  "copyright": "Copyright NHS Digital 2016-20",
+  "copyright": "Copyright NHS Digital 2016-21",
   "kind": "capability",
   "software": {
     "name": "[Provider Software Name]",
@@ -30,6 +30,7 @@
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1" },
+      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-HealthcareService-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1" },
@@ -62,7 +63,7 @@
             {
               "name": "identifier",
               "type": "token",
-              "documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
+              "documentation": "NHS number (e.g. https://fhir.nhs.uk/Id/nhs-number|123456789)"
             }
           ]
         },
@@ -80,7 +81,25 @@
             {
               "name": "identifier",
               "type": "token",
-              "documentation": "ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)"
+              "documentation": "ODS code (e.g. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)"
+            }
+          ]
+        },
+        {
+          "type": "HealthcareService",
+          "interaction": [
+            {
+              "code": "read"
+            },
+            {
+              "code": "search-type"
+            }
+          ],
+          "searchParam": [
+            {
+              "name": "identifier",
+              "type": "token",
+              "documentation": "DOS service ID (e.g. https://fhir.nhs.uk/Id/uec-dos-service-id|100000123)"
             }
           ]
         },
@@ -98,7 +117,7 @@
             {
               "name": "identifier",
               "type": "token",
-              "documentation": "SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)"
+              "documentation": "SDS user ID (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)"
             }
           ]
         },
@@ -129,9 +148,8 @@
           "updateCreate": false,
           "searchParam": [
             {
-              "name": "identifier",
-              "type": "token",
-              "documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
+              "name": "start",
+              "type": "date"
             }
           ]
         },
@@ -145,17 +163,18 @@
           "searchInclude": [
             "Schedule:actor:Location",
             "Schedule:actor:Practitioner",
+            "Schedule:actor:HealthcareService",
             "Slot:schedule",
             "Location:managingOrganization"
           ],
           "searchParam": [
             {
               "name": "start",
-              "type": "date"
+              "type": "dateTime"
             },
             {
               "name": "end",
-              "type": "date"
+              "type": "dateTime"
             },
             {
               "name": "status",
@@ -164,6 +183,12 @@
             {
               "name": "searchFilter",
               "type": "token"
+            },
+            {
+              "name": "service.identifier",
+              "definition": "https://fhir.nhs.uk/STU3/SearchParameter/GPConnect-Slot-ServiceIdentifier-SearchParameter-1",
+              "type": "token",
+              "documentation": "UEC DOS service ID (i.e. https://fhir.nhs.uk/Id/uec-dos-service-id|1000123)"
             }
           ]
         }
