@@ -251,7 +251,7 @@ Provider systems:
 - SHALL indicate the service filtering status of the search:
   - only when the consumer sends the `service.identifier` parameter in the request
   - by using the `Bundle.meta.tag` element populating the system and code elements with [GPConnect-ServiceFilteringStatus-1]((https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceFilteringStatus-1))
-  - matching the `disabled-supplier-switch`, `disabled-organization-switch`, `enabled` values with the current state of the supplier switch and organisation switch 
+  - matching the `supplier-disabled`, `organization-disabled`, `enabled` values with the current state of the supplier switch and organisation switch 
 
 ### Error handling ####
 

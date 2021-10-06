@@ -5,7 +5,7 @@
     "tag": [
       {
         "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceFilteringStatus-1",
-        "code": "disabled-organization-switch"
+        "code": "organization-disabled"
       }
     ]
   },
