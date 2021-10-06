@@ -4,8 +4,8 @@
   "meta": {
     "tag": [
       {
-        "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceIdFilteringStatus-1",
-        "code": "organisation-switch-off"
+        "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceFilteringStatus-1",
+        "code": "disabled-organization-switch"
       }
     ]
   },
