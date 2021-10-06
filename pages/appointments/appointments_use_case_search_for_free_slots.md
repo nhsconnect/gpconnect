@@ -250,7 +250,7 @@ Provider systems:
 
 - SHALL indicate the service filtering status of the search:
   - only when the consumer sends the `service.identifier` parameter in the request
-  - by using the `Bundle.meta.tag` element populating the system and code elements with [GPConnect-ServiceFilteringStatus-1]((https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceFilteringStatus-1))
+  - by using the [Extension-GPConnect-ServiceFilteringStatus-1](https://fhir.nhs.uk/STU3/Extension/Extension-GPConnect-ServiceFilteringStatus-1) extension populating the valueCode element with [GPConnect-ServiceFilteringStatus-1]((https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-ServiceFilteringStatus-1))
   - matching the `supplier-disabled`, `organization-disabled`, `enabled` values with the current state of the supplier switch and organisation switch 
 
 ### Error handling ####
@@ -323,7 +323,7 @@ The example below shows a typical search for free slots request from a consumer 
 
 The example response includes two Slot resources matching the search criteria, and associated Schedule, Location, Practitioner and Organization resources.
 
-The consumer has searched with a service ID from DOS, however in this example the provider organisation has not enabled [service filtering](appointments_service_filtering.html) and has therefore ignored the service.identifier parameter sent in the request.  Because the consumer sent the service.identifier parameter in the request, the `Bundle.meta.tag` element is populated to indicate whether the parameter was applied when filtering the returned slots.
+The consumer has searched with a service ID from DOS, however in this example the provider organisation has not enabled [service filtering](appointments_service_filtering.html) and has therefore ignored the service.identifier parameter sent in the request.  Because the consumer sent the service.identifier parameter in the request, the `Bundle.extension` element is populated to indicate whether the service filtering is enabled and therefore whether the parameter was applied.
 
 ```json
 {% include appointments/search-for-free-slots-response-payload-2.json %}
