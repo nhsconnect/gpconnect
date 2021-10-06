@@ -50,8 +50,9 @@ toc: false
 	  <p><a href="appointments_use_case_book_an_appointment.html">Book an appointment</a></p>
 	  <p><a href="appointments_use_case_amend_an_appointment.html">Amend an appointment</a></p>
 	  <p><a href="appointments_use_case_cancel_an_appointment.html">Cancel an appointment</a></p>	
-	  <p style="padding-top:8px">Service ID filtering</p>
-	  <p><a href="appointments_serviceid_configuration.html">Provider system configuration</a></p>
+	  <p style="padding-top:8px">Service filtering</p>
+	  <p><a href="appointments_service_filtering.html">Introduction</a></p>
+	  <p><a href="appointments_service_configuration.html">Provider system configuration</a></p>
 	  <p style="padding-top:8px">Additional provider requirements</p>
 	  <p><a href="appointments_slotavailabilitymanagement.html">Slot availability management</a></p>
   </div>
