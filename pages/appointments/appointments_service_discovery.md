@@ -48,7 +48,7 @@ When booking into other practices, DOS replaces the function of PDS in determini
 
 ##### Determining the ODS code to use for GP Connect from DOS #####
 
-Once a consumer system user has selected a service from the list returned by the DOS search, the system needs to determine the ODS code to use to look up the practice's GP Connect endpoint in SDS. The logic to do so is described below:
+Once a consumer system user has selected a service from the list returned by the DOS search, the system needs to determine the ODS code to use to look up the practice's GP Connect endpoint in SDS. An example of the logic to do so is shown below:
 
 1. Check the `serviceEndpoints` element of the chosen service in the DOS search response:
 
@@ -61,6 +61,8 @@ Once a consumer system user has selected a service from the list returned by the
 	a. If there is a match, then use this ODS code to lookup the GP Connect endpoint in SDS.
 
 	b. If there is no match then booking via GP Connect is not possible for this service.
+
+{% include important.html content="The logic to determine the GP Connect ODS code from DOS above is illustrative and should be adapted to the consumer system's workflow and support for other appointment booking standards." %}
 
 This logic is described in the context of a full [GP Connect workflow example](https://developer.nhs.uk/apis/uec-appointments/dos_endpoints_booking.html) in the Urgent and Emergency Care Appointment Booking specification.
 
