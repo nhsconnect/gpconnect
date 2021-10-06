@@ -29,7 +29,8 @@ The visibility of the service filtering configuration in a provider system **SHA
 
 The supplier switch, and associated selected organisation list **SHALL**:
 
-- control service filtering functionality as described in the sub-sections below
+- control the visibility of service filtering organisation configuration
+- override the organisation switch when set to OFF 
 - only be controlled by appropriate staff at the supplier
 - be changed and applied quickly to the supplier's system without requiring a code change or software release
 - be initially defaulted to OFF, and empty
@@ -46,7 +47,8 @@ The supplier switch, and associated selected organisation list **SHALL**:
 When the service filtering supplier switch is set to OFF:
 
 - For ALL organisations in the supplier's system:
-	- the organisation-controlled service configuration **SHALL NOT** be visible to users, and **SHALL NOT** take effect upon the API (regardless of the value of the organisation switch)
+	- the organisation-controlled service configuration **SHALL NOT** be visible to users
+  - the organisation switch **SHALL** be deemed to be OFF regardless of its actual value
 
 ### Supplier switch set to ON AT SELECTED ORGANISATIONS ###
 
@@ -54,9 +56,10 @@ When the service filtering supplier switch is set to ON AT SELECTED ORGANISATION
 
 - For organisations in the selected organisation list that are eligible to use GP Connect:
   - the organisation configuration **SHALL** be visible
-  - the effect of service filtering upon the API **SHALL** be dependent on the organisation configuration
+  
 - For organisations NOT held in the selected organisation list:
-	- the organisation configuration **SHALL NOT** be visible, and **SHALL NOT** take effect upon the API (regardless of the value of the organisation switch)
+	- the organisation configuration **SHALL NOT** be visible
+	- the organisation switch **SHALL** be deemed to be OFF regardless of its actual value
 
 ### Supplier switch set to ON ###
 
@@ -64,7 +67,6 @@ When the service filtering supplier switch is set to ON:
 
 - For ALL organisations in the supplier's system that are eligible to use GP Connect:
 	- the organisation configuration **SHALL** be visible
-	- the effect of service filtering upon the API **SHALL** be dependent on the organisation configuration
 
 {% include note.html content="This state has been included so that when service filtering configuration can be made available to all organisations using the supplier's system, there is no need to continue to maintain the selected organisation list." %}
 
@@ -175,26 +177,35 @@ The organisation switch **SHALL**:
 {% include note.html content="The purpose of the organisation switch is so that organisations can set up their list of service IDs and link them to sessions/rotas, before they enable service filtering.  If the feature was deployed in the enabled state without the list of service IDs set up, no slots would be returned to consumers that requested free slots for a specific service.
 <br/>In addition, some organisations may not wish to or need to use service filtering, such as those with a single DOS service. " %}
 
-{% include important.html content="Please note if the [supplier switch](#supplier-switch) is set to OFF, or set to ON AT SELECTED ORGANISATIONS and the current organisation is not in the selected organisation list, the organisation configuration including the organisation switch **SHALL NOT** be visible, and **SHALL NOT** take effect upon the API, regardless of the value of the organisation switch." %}
+{% include important.html content="Please note if the [supplier switch](#supplier-switch) is set to OFF, or set to ON AT SELECTED ORGANISATIONS and the current organisation is not in the selected organisation list, the organisation configuration including the organisation switch **SHALL NOT** be visible, and the organisation switch **SHALL** be deemed to be OFF regardless of its actual value." %}
 
 #### Organisation switch set to OFF ####
 
-When the organisation switch is set to OFF:
+When the organisation switch is set to OFF the following service filtering API changes **SHALL NOT** be functional:
 
-- service filtering in the API **SHALL NOT** take effect
-	- `schedule.actor:healthcareservice` parameter on [Search for free slots](appointments_use_case_search_for_free_slots.html#search-parameters) **SHALL** be ignored
-  - ...
+- [Search for free slots](appointments_use_case_search_for_free_slots.html)
+	- `schedule.actor:healthcareservice` and `service.identifier` request parameters **SHALL** be ignored
+  - `Schedule.actor` references of type `HealthcareService` in the response payload **SHALL NOT** be populated 
+  - `HealthcareService` resources in the response payload **SHALL NOT** be populated 
 
-{% include todo.html content="List areas to disable" %}
+- [Retrieve a patient's appointments](appointments_use_case_search_for_free_slots.html#search-parameters), [Read an appointment](appointments_use_case_read_an_appointment.html), [Book an appointment](appointments_use_case_book_an_appointment.html), [Amend an appointment](appointments_use_case_amend_an_appointment.html), [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)
+	- `Appointment.participant` references of type `HealthcareService` in the response payload **SHALL** not be populated
+
+All other service filtering API changes **SHALL** be functional:
+
+- [Search for free slots](appointments_use_case_search_for_free_slots.html)
+  - The GPConnect-ServiceFilteringStatus-1 extension **SHALL** be populated when the consumer sends the `service.identifier` parameter
+
+- [Read a healthcare service](foundations_use_case_read_a_healthcareservice.html), [Find a healthcare service](foundations_use_case_find_a_healthcareservice.html)
+  - The endpoints **SHALL** be functional however the service list **SHALL** be treated as empty
+
+- [Get the FHIR capability statement](foundations_use_case_get_the_fhir_capability_statement.html)
+  - The capability statement **SHALL** include all endpoints and parameters relating to the change, including those parameters above that are ignored
+  - The GPConnect-ServiceFilteringStatus-1 extension **SHALL** be populated
 
 #### Organisation switch set to ON ####
 
-When the organisation switch is set to ON:
-
-- service filtering in the API **SHALL** take effect
-  - ...
-  
-{% include todo.html content="List areas to enable" %}
+When the organisation switch is set to ON all service filtering API changes **SHALL** be functional, including those ignored or not populated above.
 
 #### Changing the organisation switch ####
 
