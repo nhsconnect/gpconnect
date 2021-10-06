@@ -190,6 +190,12 @@
               "type": "token",
               "documentation": "UEC DOS service ID (i.e. https://fhir.nhs.uk/Id/uec-dos-service-id|1000123)"
             }
+          ],
+          "extension" : [
+            {
+              "system": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
+              "valueCode": "organization-disabled"
+            }
           ]
         }
       ],

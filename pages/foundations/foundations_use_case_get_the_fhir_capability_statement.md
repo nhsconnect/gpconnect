@@ -70,7 +70,7 @@ Provider systems:
 
 An GP Connect CapabilityStatement is shown in the example section below ready for customisation and embedding into GP Connect assured provider systems. Providers should use this CapabilityStatement as a base for their own CapabilityStatement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect specification version which the FHIR server implements.
 
-{% include important.html content="The HealthcareService endpoint and service.identifier parameter should be visible in the capability statement regardless of the state of the service filtering organisation switch [appointment service ID filtering](appointments_serviceid_filtering.html)." %}
+{% include important.html content="The current status of [service filtering enablement](appointments_service_configuration.html) SHALL be populated using [Extension-GPConnect-ServiceFilteringStatus-1](https://fhir.nhs.uk/STU3/Extension/Extension-GPConnect-ServiceFilteringStatus-1)under the resource definition for Slot, as shown in the example below. The `service.identifier` parameter definition under the resource definition for Slot should always be present regardless of the enablement status." %}
 
 
 ### Examples ###
