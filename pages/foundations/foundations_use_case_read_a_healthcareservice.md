@@ -108,13 +108,13 @@ Provider systems:
 ##### Request #####
 
 ```http
-{% include foundations/read_healthcareservice_request_example_1.txt %}
+{% include foundations/read-healthcareservice-request-header-1.txt %}
 ```
 
 ##### Response when a matching resource is found #####
 
 ```json
-{% include foundations/read_healthcareservice_response_example_1.json %}
+{% include foundations/read-healthcareservice-response-payload-1.json %}
 ```
 
 ##### Response when a matching resource is not found #####

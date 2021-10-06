@@ -116,19 +116,19 @@ Searching with an identifier parameter returns all `HealthcareService` resources
 ##### Request #####
 
 ```http
-{% include foundations/find_healthcareservice_request_example_1.txt %}
+{% include foundations/find-healthcareservice-request-header-1.txt %}
 ```
 
 ##### Response when a matching resource is found #####
 
 ```json
-{% include foundations/find_healthcareservice_response_example_1a.json %}
+{% include foundations/find-healthcareservice-response-payload-1a.json %}
 ```
 
 ##### Response when a matching resource is not found #####
 
 ```json
-{% include foundations/find_healthcareservice_response_example_1b.json %}
+{% include foundations/find-healthcareservice-response-payload-1b.json %}
 ```
 
 
@@ -139,11 +139,11 @@ Searching without parameters returns all `HealthcareService` resources.
 ##### Request #####
 
 ```http
-{% include foundations/find_healthcareservice_request_example_2.txt %}
+{% include foundations/find-healthcareservice-request-header-2.txt %}
 ```
 
 ##### Response #####
 
 ```json
-{% include foundations/find_healthcareservice_response_example_2.json %}
+{% include foundations/find-healthcareservice-response-payload-2.json %}
 ```
