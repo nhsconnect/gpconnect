@@ -105,7 +105,7 @@ Within the `Patient` resource:
 On the wire a JSON serialised `$gpc.registerpatient` request would look something like the following:
 
 ```json
-{% include foundations/register_patient_request_example.json %}
+{% include foundations/register-patient-request-payload-1.json %}
 ```
 
 ### Provider system registration requirements ###
@@ -251,5 +251,5 @@ Provider systems:
   - `multipleBirthBoolean`
 
 ```json
-{% include foundations/register_patient_response_example.json %}
+{% include foundations/register-patient-response-payload-1.json %}
 ```
