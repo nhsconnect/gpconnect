@@ -15,21 +15,9 @@ When a user of one these systems chooses a service from DOS to book the patient 
 
 This consumer system user must browse through the slots returned to determine which are related to the service they chose. This is error prone due to the variability in slot naming and may lead to an incorrect booking.
 
-### Booking at a provider organisation with one DOS service ##
+### Example ##
 
-This **IS NOT an issue where the provider organisation is only running one service**, such as in this example, since all free slots correspond with the service chosen.
-
-The example below shows a practice with one location providing appointments to its registered patients.
-
-When a consumer system user chooses this service and searches for free slots, all slots shown correspond with the service selected.
-
-<img src="images/appointments/service-and-dos-1.png" />
-
-### Booking at a provider organisation with more than one DOS service ##
-
-This **IS an issue when the provider organisation runs more than one service**.
-
-In the example below the practice is running two services - GP surgery for registered patients, and an extended access hub for its own patients and patients registered to other practices within the local area.
+In the example below the practice is running two services - GP surgery for registered patients, and an extended access hub for its own patients and for patients registered to other practices within the local area.
 
 When a consumer system user chooses one of these services and searches for free slots, if service filtering is not enabled at the provider organisation, all GP Connect bookable slots are returned for the organisation - including slots for both services.  The user must now look at the individual slots to work out which are related to the service chosen.
 
@@ -37,7 +25,9 @@ When a consumer system user chooses one of these services and searches for free 
 
 Although the slots will be labelled according to the [consumer display requirements](appointments_use_case_search_for_free_slots.html#consumer-display-requirements) and therefore include multiple descriptive fields such as slot type and schedule type, it is not intuitive for the user to receive slots for services not chosen by them, and selecting a slot becomes error prone due to variability in slot type and schedule type naming.  Furthermore it prevents the comissioning rules applied in the DOS service search from functioning correctly - a patient may be booked into a slot for which they are not eligible.
 
-{% include note.html content="Please note the ODS code shown against each DOS service is the ODS code used to determine the GP Connect endpoint, determined according to [these rules](appointments_service_discovery.html#directory-of-services-dos---currently-for-uec-consumers-only), and may not be the same as the 'main' ODS code field on the DOS service." %}
+{% include note.html content="The ODS code shown against each DOS service is the ODS code used to determine the GP Connect endpoint, determined according to [these rules](appointments_service_discovery.html#directory-of-services-dos---currently-for-uec-consumers-only), and may not be the same as the 'main' ODS code field on the DOS service." %}
+
+{% include important.html content="Service filtering is not required at a practice with only one service listed on DOS, since a slot search at this practice will return only slots relating to the practice's single service." %}
 
 ## Service filtering - the solution ##
 
@@ -69,6 +59,8 @@ Consumer systems sending a DOS service ID in the Search for free slots request w
 Service filtering will be enabled gradually across GP Connect provider organisations, starting with organisations that run GP access hubs.
 
 Practices with branch surgeries are currently out of scope due to a current restriction (Sep 2021) in the DOS search results - DOS services representing branch surgeries are not currently returned in the DOS search results in most circumstances.
+
+Practices running a single service will not be enabled since all slots returned are for the service.
 
 ## When will service filtering NOT be used? ##
 
