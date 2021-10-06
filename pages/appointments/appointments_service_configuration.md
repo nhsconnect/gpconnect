@@ -136,6 +136,10 @@ Linking between services and schedules (or their "templates") **SHALL** be audit
 - user responsible for the change
 - current and previous link state
 
+#### Cardinality ####
+
+A schedule **SHALL** either be linked to a maximum of one service, or be not linked to a service.
+
 #### Optionality ####
 
 Linking between services and schedules or schedule templates **SHALL** be mandatory for a user to perform where:
