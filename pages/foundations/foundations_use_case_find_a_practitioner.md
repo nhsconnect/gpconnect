@@ -93,5 +93,5 @@ Provider systems:
   - `qualification`
 
 ```json
-{% include foundations/find_practitioner_response_example.json %}
+{% include foundations/find-practitioner-response-payload-1.json %}
 ```

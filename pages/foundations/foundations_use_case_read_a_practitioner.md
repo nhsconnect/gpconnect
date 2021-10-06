@@ -88,5 +88,5 @@ Provider systems:
   - `qualification`
 
 ```json
-{% include foundations/read_practitioner_response_example.json %}
+{% include foundations/read-practitioner-response-payload-1.json %}
 ```

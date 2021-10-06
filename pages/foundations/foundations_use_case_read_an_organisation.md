@@ -93,5 +93,5 @@ Provider systems:
   - `endpoint`
 
 ```json
-{% include foundations/read_organization_response_example.json %}
+{% include foundations/read-organization-response-payload-1.json %}
 ```
