@@ -94,10 +94,6 @@ entries:
         - title: Provider system configuration
           url: /appointments_service_configuration.html
           output: web, pdf
-
-        - title: Common service topologies
-          url: /appointments_service_topologies.html
-          output: web, pdf
           
       - title: Additional provider requirements
         output: web, pdf

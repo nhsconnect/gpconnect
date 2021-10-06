@@ -27,7 +27,7 @@ When a consumer system user chooses this service and searches for free slots, al
 
 ### Booking at a provider organisation with more than one DOS service ##
 
-This **IS an issue occurs when the provider organisation runs more than one service**.
+This **IS an issue when the provider organisation runs more than one service**.
 
 In the example below the practice is running two services - GP surgery for registered patients, and an extended access hub for its own patients and patients registered to other practices within the local area.
 
