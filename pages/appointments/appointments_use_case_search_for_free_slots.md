@@ -28,7 +28,7 @@ Provider systems SHALL support the following search parameters:
 | `start` | `date` or `dateTime` | Slot start date, or date and time | `Slot.start` |
 | `end` | `date` or `dateTime` | Slot end date, or date and time | `Slot.end` |
 | `searchFilter` | `token` | A generic token to allow consumers to pass additional search criteria to the provider. | *(n/a)* |
-| `service.identifier` | `token` | HealthcareService ID of the schedule of the slots being requested<br/>See [FHIR SearchParameter](https://fhir.nhs.uk/SearchParameter) | `Slot.schedule.actor: HealthcareService.identifier` |
+| `service.identifier` | `token` | HealthcareService identifier of the schedule of the slots being requested<br/>See [GPConnect-Slot-ServiceIdentifier-1 SearchParameter definition](https://fhir.nhs.uk/STU3/SearchParameter/GPConnect-Slot-ServiceIdentifier-1) | `Slot.schedule.actor: HealthcareService.identifier` |
 
 ## _include parameters ##
 
