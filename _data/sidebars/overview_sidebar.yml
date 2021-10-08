@@ -23,7 +23,10 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
-        - title: 1.5.0
+        - title: 1.5.0 - release
+          url: /overview_release_notes_1_5_0_release.html
+          output: web
+        - title: 1.5.0 - working
           url: /overview_release_notes_1_5_0.html
           output: web
         - title: Access Document 1.0.1
