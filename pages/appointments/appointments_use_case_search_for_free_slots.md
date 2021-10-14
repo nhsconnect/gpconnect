@@ -264,7 +264,7 @@ The provider system:
   - the `status` parameter is absent or is present with a value other than `free`
   - the `_include=Slot:schedule` parameter is absent
 
-- SHALL return a [RECORD_NOT_FOUND](development_fhir_error_handling_guidance.html#example-resource-not-found) error with the diagnostics element providing detail of the issue when:
+- SHALL return a [NO_RECORD_FOUND](development_fhir_error_handling_guidance.html#example-resource-not-found) error with the diagnostics element providing detail of the issue when:
   - the consumer system has populated the `service.identifier` parameter in the request
   - *AND* the provider organisation has the [service filtering switch set to ON](appointments_service_configuration.html#organisation-switch-set-to-on)
   - *AND* the DOS service ID in the `service.identifier` parameter value is not contained in the provider organisation's [service list](appointments_service_configuration.html#service-list)
