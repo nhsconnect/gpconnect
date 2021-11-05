@@ -720,42 +720,7 @@ The following changes were made to clarify and correct issues in the GP Connect 
 ---
 
 
-### Clarification of clinical area configuration
 
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- The use of `OperationOutcome` has been corrected so that a single `OperationOutcome` is returned with multiple `issue` elements when clinical areas have been switched off.
-- Clarification that 'Documents' controls whether `DocumentReference` resources are returned as part of the structured response.
-- Documents must be switched off when the Access Documents capability is switched off
-- `issue.diagnostics` and `issue.details.text` MUST contain 'DocumentReferences' when they have been turned off
-- Switching off a clinical are MUST be achieved via a single configuration item or action.
-
-
-**Pages changed:**
-
-- [Configuration for supported clinical areas](accessrecord_structured_development_clinical_area_config.html)
-
----
-
-### Added HealthcareService to CapabilityStatement
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- HealthcareService has been added to the CapabilityStatement
-
-**Pages changed:**
-
-- [Get the FHIR&reg; capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)
-
----
 
 ### Updated the profile description of uncategorised data observation
 
@@ -955,23 +920,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ---
 
-### Clarification of clinical area configuration
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Rewording to clarify the use of `OperationOutcome` when clinical areas have been switched off.
-- Empty lists with basic information are permitted to be returned for disabled clinical areas.
-- References **MUST** be populated with “[Clinical area] items have been disabled.”
-
-
-**Pages changed:**
-
-- [Configuration for supported clinical areas](accessrecord_structured_development_clinical_area_config.html)
-
----
 
 ### Diary Entries Search
 
@@ -991,25 +939,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ---
 
-### Updates to API page
-
-**Tickets:** &nbsp; [#1059](https://github.com/nhsconnect/gpconnect/issues/1059)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- includeImmunisations.includeStatus has a default value of `true`
-- Added QuestionnaireResponse to uncategorised data response
-- updated bundle population diagram
-
-**Pages changed:**
-
-- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
-
----
 
 ### Update to guidance on free text records
 
@@ -1027,5 +956,360 @@ Minor changes to the text to clarify that free text recorded in consultation use
 
 - [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance#uncategorised-data-definition)
 - [Consultation guidance](accessrecord_structured_development_consultation_guidance.html#consultation-notes)
+
+---
+
+
+## NEW NOTES FOR RELEASE
+
+Notes under here for the published version
+
+
+---
+
+#### Added Access Document capability to 1.5.0 ####
+
+**Affects**&nbsp; Access Documents
+
+**Description:**
+
+- Access Document has been moved from a separate specification into 1.5.0
+- Update service root URL definition to accommodate the Access Document capability API being defined as its own FHIR server
+- Add explicit error handling response for Access Document calls
+
+**Pages changed:**
+
+- [Search for a patient's documents](access_documents_development_search_patient_documents.html)
+- [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)
+- [Consumer sessions illustrated](access_documents_development_api_session.html)
+- [Interaction IDs](integration_interaction_ids.html)
+- [General API guidance](development_general_api_guidance.html#service-root-url)
+- [Find a patient](access_documents_use_case_find_a_patient.html)
+
+---
+
+#### Document search API updates ####
+
+**Tickets:** [#941](https://github.com/nhsconnect/gpconnect/issues/941)
+
+**Affects:**&nbsp; Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Change search for patient documents to use a patient compartment based URL
+-   Previously: `/DocumentReference?patientId=111&queryParam=`
+-   Now: `/Patient/111/DocumentReference?queryParam=`
+- The syntax of the Patient `_include` parameter for Search for a patient's documents was incorrect and has been updated
+- the facility parameter now uses a token instead of an identifier as its datatype
+- Updated examples to include all search parameters
+- The facility parameter was updated to use a token instead of an identifier when searching for a patient's documents.
+- Practitioner and PractitionerRole resources for supplementary actors have been added to the response payload
+- The `type` and `facility` search parameters have been removed from the search API in the Access Documents capability
+- The `description` parameter has been updated to state it's a keyword based search and that `DocumentReference.type` and `DocumentReference.title` will be searched.
+- Corrected description of `author` parameter to be a `token` in line with the rest of the specification
+
+**Pages changed:**
+
+- [Search for a patient's documents](access_documents_development_search_patient_documents.html)
+- [FHIR&reg; examples](access_documents_development_fhir_examples_documents.html)
+- [Get the FHIR&reg; capability statement (Access Document)](access_documents_use_case_get_the_fhir_capability_statement.html)
+
+---
+
+#### Find Patient API updates ####
+
+**Tickets:** [#938](https://github.com/nhsconnect/gpconnect/issues/938)
+
+**Affects:**&nbsp; Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Find Patient is Access Document should return only return patients who have a Regular/GMS registration type (i.e. patients where this is their registered practice)
+- Temporary, emergency and other non regular registration types must be excluded from the results
+- This behaviour applies only to Find Patient in the Access Document capability
+- The error condition for an `INVALID_IDENTIFIER_SYSTEM` in Find a patient has been changed to `INVALID_PARAMETER`
+
+**Pages changed:**
+
+---
+
+#### Error response when a capability is disabled by the practice ####
+
+**Tickets:** [#943](https://github.com/nhsconnect/gpconnect/issues/943)
+
+**Affects:**&nbsp; Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Add error handling behaviour for each API endpoint when GP Connect as a whole or the Access Document capability is disabled
+
+**Pages changed:**
+
+- [Get the FHIR&reg; capability statement (Access Document)](access_documents_use_case_get_the_fhir_capability_statement.html#error-handling)
+- [Find a patient (Access Document)](access_documents_use_case_find_a_patient.html#error-handling)
+- [Search for a patient's documents](access_documents_development_search_patient_documents.html#error-handling)
+- [Retrieve a document](access_documents_development_retrieve_patient_documents.html#error-handling)
+
+---
+
+#### Clarification of Bundle.fullUrl ####
+
+**Tickets:** [#967](https://github.com/nhsconnect/gpconnect/issues/967)
+
+**Affects:**&nbsp; Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Clarification has been added on use of URLs in Bundle.fullUrl. They **MUST** be used even when not resolvable as these are intended for use by consumers when resolving references in the bundle and not for retrieving resources..
+
+**Pages changed:**
+
+- [Search for a patient's documents](access_documents_development_search_patient_documents.html)
+- [FHIR&reg; examples](access_documents_development_fhir_examples_documents.html)
+
+---
+
+
+#### Updates to CapabilityStatement
+
+**Tickets:**
+
+**Affects:**&nbsp; Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- version number has been set to 1.5.0
+- CapabilityStatement for Access Document has been updated so that correct types are used for search parameters
+- subject, type and facility have been removed from search parameters
+- the read interaction has been removed from Patient.
+- Add minor version numbers to profiles listed in the capability statement
+
+**Pages changed:**
+
+- [Get the FHIR&reg; capability statement](access_documents_use_case_get_the_fhir_capability_statement.html)
+
+---
+
+#### Updates to DocumentReference population guidance
+
+**Tickets:**
+
+**Affects:**&nbsp; Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Guidance for the DocumentReference profile has been updated, the MIME type for the document is now recorded in `content.attachment.contentType`. This replaces the use of `content.format`.
+- DocumentReference.context.practiceSetting guidance updated so text can be used where code is outside of refset
+- DocumentReference.identifier guidance has been updated in line with use of identifier attributes in Access Record Structured
+- DocumentReference.content.attachment.title SHOULD be populated with a reason when a document is unavailable
+
+**Pages changed:**
+
+- [DocumentReference](access_documents_development_documentreference.html)
+
+---
+
+### Document retrieval file size limit
+
+**Affects:**&nbsp; Access Documents
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- A file size limit has been introduced to the Access Documents capability, documents over 5mb will not be retrievable.
+- An error will be returned by the provider system if a document larger than 5mb is requested
+- Clarification on how to set file size for documents that aren't available
+
+**Pages changed:**
+
+- [Guidance for the representation and consumption of documents](access_documents_development_documents_guidance.html#file-size-of-the-document)
+- [Retrieve a document](access_documents_development_retrieve_patient_documents.html)
+
+---
+
+### Access Record Structured ###
+
+#### Add immunisations not given
+
+**Tickets:** [#849](https://github.com/nhsconnect/gpconnect/issues/849)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- added `includeNotGiven` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
+- added `includeDissentConsent` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
+- updated bundle population diagram to include `includeNotGiven` and `includeStatus` part parameters and `QuestionnaireResponse`
+- Updated immunisation guidance to include details of inclusion of immunisation not given for providers
+- Added guidance for consumers for handling immunisations not given
+- Updated immunization profile to include additional guidance and valuesets
+- Observations representing the status of a patient's immunisations will be returned
+- includeImmunisations.includeStatus has a default value of `true`
+- Added QuestionnaireResponse to uncategorised data response
+
+
+**Pages changed:**
+
+- [Search Criteria](accessrecord_structured_development_search.html)
+- [Immunisations guidance](accessrecord_structured_development_immunization_guidance.html)
+- [Immunization](accessrecord_structured_development_immunization.html)
+- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
+
+---
+
+
+#### API Updates ####
+
+**Tickets:**&nbsp; [#904](https://github.com/nhsconnect/gpconnect/issues/914)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:**&nbsp; Providers and consumers
+
+**Description:**&nbsp;
+
+- An error condition has been added that states part parameters must not be included without a value
+- Clarification stating that it is valid to include an empty Parameters.parameter in the case where it has only specified with optional part parameters.
+- Part parameters have been added to the mot permitted parameter combinations
+  - `includeReferrals.referralSearchPeriod`
+  - `includeDiaryEntries.diaryEntriesSearchDate`
+  - `includeImmunisations.includeNotGiven`
+  - `includeImmunisations.includeDissentConsent`
+- The error code for access denied has been updated to use the value from the value set, `ACCESS DENIED`
+- Clarification has been added around how information with partial or unknown dates should be returned for clinical areas which have date search parameters
+
+**Pages changed:**&nbsp;
+
+- [Retrieve a patient's record - error handling](accessrecord_structured_development_retrieve_patient_record.html#error-handling)
+
+---
+
+#### Updates to profiles
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:**&nbsp; Providers and consumers
+
+**Description:**&nbsp;
+
+- The `crossCareSettingIdentifier` slice on `identifier` has been removed from the following profiles:
+  - [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DiagnosticReport-1/_history/1.3)
+  - [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3)
+  - [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1/_history/1.5)
+  - [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.4)
+  - [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ReferralRequest-1/_history/1.2)
+  - [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3)
+
+**Pages changed:**&nbsp;
+
+- [DiagnosticReport](accessrecord_structured_development_DiagnosticReport.html)
+- [ProcedureRequest](accessrecord_structured_development_ProcedureRequest.html)
+- [DiaryEntry - ProcedureRequest](accessrecord_structured_development_diaryentry.html)
+- [Immunization](accessrecord_structured_development_immunization.html)
+- [Observation - Filing Comments](accessrecord_structured_development_observation_filingcomments.html)
+- [Observation - Narrative](accessrecord_structured_development_guidance_observation_narrative.html)
+- [Observation - Test Group Header](accessrecord_structured_development_observation_testGroup.html)
+- [Observation - Test Result](accessrecord_structured_development_observation_testResult.html)
+- [ReferralRequest](accessrecord_structured_development_referralrequest.html)
+- [Specimen](accessrecord_structured_development_specimen.html)
+
+---
+
+
+#### Updates to structured capability statement
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:**&nbsp; Providers and consumers
+
+**Description:**&nbsp;
+
+- update version number in CapabilityStatement to 1.5.0
+- update minor version numbers in profile listing
+- update OperationDefinition minor version number
+- HealthcareService has been added to the CapabilityStatement
+
+**Pages changed:**
+
+- [Get the FHIR&reg; capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)
+
+---
+
+#### Configuration of supported clinical areas
+
+**Tickets:**&nbsp; [#1026](https://github.com/nhsconnect/gpconnect/issues/1026)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- A page has been added with guidance on how provider systems **MUST** be able to configure which clinical areas are available
+- The API has been updated to state how unavailable clinical areas are returned
+- Guidance on unavailable clinical areas has been added to the Linkages page
+- Guidance on populating references has been added
+- A list of configurable clinical areas has been added
+- The warning has been updated for populating an `OperationOutcome`
+- Empty lists with basic information are permitted to be returned for disabled clinical areas.
+- Switching off a clinical are MUST be achieved via a single configuration item or action.
+- Documents must be switched off when the Access Documents capability is switched off
+
+**Pages changed:**
+
+- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html#unavailability-of-data)
+- [Configuration for supported clinical areas](accessrecord_structured_development_clinical_area_config.html)
+- [Linkages](accessrecord_structured_development_linkages.html)
+
+---
+
+### Bundle.id must now be populated
+
+**Affects:**&nbsp; Access Structured, Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Bundle.id must now be populated.
+
+**Pages changed:**
+
+- [Bundle](accessrecord_structured_development_bundle.html)
+- [Bundle](access_documents_development_bundle.html)
+
+---
+
+### Updated examples for includeNumberOfMostRecent part parameter
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- All examples of `includeNumberOfMostRecent` have been updated to use valuePositiveInt inline with the specification
+
+**Pages changed:**
+
+- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
+- [FHIR&reg; Examples](accessrecord_structured_development_fhir_examples_consultations.html)
+- [Search examples](accessrecord_structured_development_searchExamples.html)
+- [Multi area searches](accessrecord_structured_development_searchmultiareasearches)
 
 ---
