@@ -13,7 +13,16 @@ The requirements and resulting API design have been developed in collaboration w
 
 ## User stories ##
 
-The business requirements are described as a set of high-level user stories.
+### Appointment Management ###
+
+The Appointment Management business requirements are described as a set of high-level user stories:
 
 - [GP Connect Appointment Management User Stories](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Management%20User%20Stories.xlsx)
         
+
+### Service filtering ###
+
+The service filtering business requirements introduced in the 1.2.8 specification are described in the following set of user stories:
+
+- [GP Connect Appointment Management Service Filtering User Stories](pages/appointments/businessrequirements/GP%20Connect%20Appointment%20Management%20Service%20Filtering%20User%20Stories%201.3.xlsx)
+
