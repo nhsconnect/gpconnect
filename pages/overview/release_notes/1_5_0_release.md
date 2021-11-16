@@ -959,6 +959,23 @@ Minor changes to the text to clarify that free text recorded in consultation use
 
 ---
 
+### Updated List guidance 
+
+**Tickets:** &nbsp; [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider systems
+
+**Description:**
+
+Updated the guidance for the title element, so that it referenced using the titles defined in the 'Using lists to return data' guidance.
+
+**Pages changed:**
+
+- [List](accessrecord_structured_development_list.html#title)
+
+---
 
 ## NEW NOTES FOR RELEASE
 
