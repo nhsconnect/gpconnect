@@ -153,35 +153,39 @@
           ],
           "postalCode": "LS1 6AE"
         },
-        "telecom": {
-          "system": "phone",
-          "value": "03003035678",
-          "use": "work"
-        },
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03003035678",
+            "use": "work"
+          }
+        ],
         "managingOrganization": {
           "reference": "Organization/23"
         }
       }
     },
     {
-      "resourceType": "HealthcareService",
-      "id": "3",
-      "meta": {
-        "versionId": "636064088100870233",
-        "profile": [
-          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-HealthcareService-1"
-        ]
-      },
-      "identifier": [
-        {
-          "system": "https://fhir.nhs.uk/Id/uec-dos-service-id",
-          "value": "1000000123"
-        }
-      ],
-      "providedBy": {
-        "reference": "Organization/23"
-      },
-      "name": "The Trevelyan GP Hub"
+      "resource": {
+        "resourceType": "HealthcareService",
+        "id": "3",
+        "meta": {
+          "versionId": "636064088100870233",
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-HealthcareService-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://fhir.nhs.uk/Id/uec-dos-service-id",
+            "value": "1000000123"
+          }
+        ],
+        "providedBy": {
+          "reference": "Organization/23"
+        },
+        "name": "The Trevelyan GP Hub"
+      }
     },
     {
       "resource": {
@@ -200,20 +204,24 @@
           }
         ],
         "name": "The Trevelyan Practice",
-        "address": {
-          "line": [
-            "Trevelyan Square",
-            "Boar Ln"
-          ],
-          "city": "Leeds",
-          "district": "West Yorkshire",
-          "postalCode": "LS1 6AE"
-        },
-        "telecom": {
-          "system": "phone",
-          "value": "03003035678",
-          "use": "work"
-        }
+        "address": [
+          {
+            "line": [
+              "Trevelyan Square",
+              "Boar Ln"
+            ],
+            "city": "Leeds",
+            "district": "West Yorkshire",
+            "postalCode": "LS1 6AE"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03003035678",
+            "use": "work"
+          }
+        ]
       }
     }
   ]
