@@ -323,7 +323,7 @@ The example below shows a typical search for free slots request from a consumer 
 
 The example response includes two Slot resources matching the search criteria, and associated Schedule, Location, Practitioner and Organization resources.
 
-The consumer has searched with a service ID from DOS, however in this example the provider organisation has not enabled [service filtering](appointments_service_filtering.html) and has therefore ignored the service.identifier parameter sent in the request.  Because the consumer sent the service.identifier parameter in the request, the `Bundle.extension` element is populated to indicate whether the service filtering is enabled and therefore whether the parameter was applied.
+The consumer has searched with a service ID from DOS, however in this example the provider organisation has not enabled [service filtering](appointments_service_filtering.html) and has therefore ignored the service.identifier parameter sent in the request.  Because the consumer sent the service.identifier parameter in the request, the `Bundle.meta.extension` element is populated to indicate whether the service filtering is enabled and therefore whether the parameter was applied.
 
 ```json
 {% include appointments/search-for-free-slots-response-payload-2.json %}
