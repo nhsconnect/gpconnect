@@ -1,12 +1,14 @@
 {
   "resourceType": "Bundle",
   "type": "searchset",
-  "extension" : [
-    {
-      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
-      "valueCode": "organization-disabled"
-    }
-  ],
+  "meta": {
+    "extension" : [
+      {
+        "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
+        "valueCode": "organization-disabled"
+      }
+    ]
+  },
   "entry": [
     {
       "resource": {
