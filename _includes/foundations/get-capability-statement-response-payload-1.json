@@ -48,6 +48,12 @@
       "security": {
         "cors": true
       },
+      "extension" : [
+        {
+          "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
+          "valueCode": "organization-disabled"
+        }
+      ],
       "resource": [
         {
           "type": "Patient",
@@ -189,12 +195,6 @@
               "definition": "https://fhir.nhs.uk/STU3/SearchParameter/GPConnect-Slot-ServiceIdentifier-1",
               "type": "token",
               "documentation": "UEC DOS service ID (i.e. https://fhir.nhs.uk/Id/uec-dos-service-id|1000123)"
-            }
-          ],
-          "extension" : [
-            {
-              "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
-              "valueCode": "organization-disabled"
             }
           ]
         }
