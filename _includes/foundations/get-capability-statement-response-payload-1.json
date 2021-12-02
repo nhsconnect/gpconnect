@@ -24,6 +24,12 @@
     "application/fhir+json",
     "application/fhir+xml"
   ],
+  "extension" : [
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
+      "valueCode": "organization-disabled"
+    }
+  ],
   "profile": [
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1" },
@@ -48,12 +54,6 @@
       "security": {
         "cors": true
       },
-      "extension" : [
-        {
-          "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
-          "valueCode": "organization-disabled"
-        }
-      ],
       "resource": [
         {
           "type": "Patient",
