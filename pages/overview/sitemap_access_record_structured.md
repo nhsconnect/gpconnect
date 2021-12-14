@@ -104,7 +104,9 @@ toc: false
   <p><a href="accessrecord_structured_development_diaryentry.html">ProcedureRequest</a></p>
   <p><a href="accessrecord_structured_development_fhir_examples_diaryentries.html">Diary entry FHIR&reg; examples</a></p>
   </div>
-<div class="column">
+</div>
+<div class="row">
+   <div class="column">
 	<p style="font-size:18px">API definition</p>
 	<p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
