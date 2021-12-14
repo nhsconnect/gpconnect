@@ -61,12 +61,12 @@ toc: false
 	<p><a href="accessrecord_structured_development_medicationstatement.html">MedicationStatement</a></p>
 	<p><a href="accessrecord_structured_development_medicationrequest.html">MedicationRequest</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_medication.html">Medication FHIR&reg; examples</a></p>
+  </div>
+  <div class="column">   
 	<p style="padding-top:8px">Immunisations</p>
 	<p><a href="accessrecord_structured_development_immunization_guidance.html">Immunisations guidance</a></p>
 	<p><a href="accessrecord_structured_development_immunization.html">Immunization</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_immunizations.html">Immunization FHIR&reg; examples</a></p>
-  </div>
-  <div class="column">   
 	<p style="padding-top:8px">Uncategorised data</p>
 	<p><a href="accessrecord_structured_development_uncategorisedData_guidance.html">Uncategorised data guidance</a></p>
 	<p><a href="accessrecord_structured_development_observation_uncategorisedData.html">Observation - uncategorised data</a></p>
