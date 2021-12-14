@@ -39,6 +39,7 @@ toc: false
     <p style="font-size:18px">Development</p>
 	<p><a href="accessrecord_structured_development.html">Introduction</a></p>
     	<p><a href="accessrecord_structured_development_resources_overview.html">Resource population fundamentals</a></p>
+		<p><a href="accessrecord_structured_development_lists_for_message_structure.html">Using lists to return data</a></p>
 	<p><a href="accessrecord_structured_development_linkages.html">Linkages</a></p>  
 	<p style="padding-top:8px">Search</p>  
 	  <p><a href="accessrecord_structured_development_search.html">Search criteria</a></p>
@@ -68,6 +69,7 @@ toc: false
 	<p><a href="accessrecord_structured_development_uncategorisedData_guidance.html">Uncategorised data guidance</a></p>
 	<p><a href="accessrecord_structured_development_observation_uncategorisedData.html">Observation - uncategorised data</a></p>
 	<p><a href="accessrecord_structured_development_observation_bloodPressure.html">Observation - blood pressure</a></p>
+	<p><a href="accessrecord_structured_development_questionnaireresponse.html">QuestionnaireResponse</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_uncategorised.html">Uncategorised data FHIR® examples</a></p>
 	<p style="padding-top:8px">Consultations</p>
 	<p><a href="accessrecord_structured_development_consultation_guidance.html">Consultation guidance</a></p>
@@ -104,6 +106,7 @@ toc: false
 	<p style="font-size:18px">API definition</p>
 	<p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
+	<p><a href="accessrecord_structured_development_clinical_area_config.html">Configuration for clinical areas</a></p>  
 	<p><a href="accessrecord_structured_development_fhir_examples_forwards_consultations.html">Forwards compatibility support example</a></p>
   <p><a href="accessrecord_structured_get_the_fhir_capability_statement.html">Get the FHIR&reg; capability statement</a></p>  
   </div>
