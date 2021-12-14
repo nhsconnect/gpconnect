@@ -30,7 +30,7 @@ In the diagram each of the boxes with a blue outline represents a clinical area.
 These each contain 1 or more boxes representing FHIR&reg; resources. 
 The FHIR resource boxes are colour coded:
 
-* Green - are resources that were defined for use in GP Connect in a previous version of the specification
+* Green - are resources that are defined for GP Connect use in this version of the specification
 * Blue - are resources that have yet to have their GP Connect usage defined
 
 The clinical areas that are contained in the larger box on the right-hand side, labelled 'Clinical Item', are the clinical areas in which pieces of clinical information are held. 
