@@ -30,9 +30,7 @@ The Access Record Structured capability will expose data for a number of clinica
 {% include roadmap.html content="Subsequent releases are to be scoped" %}
 
 ## FHIR&reg; version ##
-Standard for Trial Use 3 (STU3) is the version of FHIR which will be adopted for the Access Record Structured capability. A decision was taken to uplift the profiles from the previous DSTU2 version for the following reasons:
+Standard for Trial Use 3 (STU3) is the version of FHIR which was adopted for the Access Record Structured capability. This was the current version at the time development was started by the GP systems suppliers.
 
- - STU3 is widely being adopted in the UK interoperability community
- - there are many breaking changes between DSTU2 and STU3
- - no supplier development had started on the previous DSTU2 versions
- - the STU3 profiles offer additional clinical value
+The project is considering it's approach to uplifting to UKCore (the UK specific project for FHIR based on R4). It is currently exploring the mapping between versions and is involved in a proof of concept to see if it is possible to transform between the current GP Connect profiles detailed in this specification and the new UKCore profiles. If successful this may enable consumer suppliers to develop in either version.
+
