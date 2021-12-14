@@ -40,12 +40,8 @@ The purpose of GP Connect is to make the data recorded in the patient's GP pract
 
 Further work to improve the quality of data recorded in the GP practice is outside the scope of GP Connect.
 
-## Blood pressure
-Guidance on how to populate [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1) with blood pressure information needs to go through the curation process
+## Data sharing from other care settings into GP practices ##
 
-## CodeableConcept guidance
-The CodeableConcept guidance document needs to go through curation
+Only the data that is owned by the GP practice is able to be shared via GP Connect.
 
-## Immunisations
-The CareConnect immunization profile is currently subject to curation regarding potential changes to the way in which it defines immunisation events where the vaccine is not given.
-This specification will need to be updated in due course with any changes resulting from that curation process.
+This means that if a GP practice is sharing in data that was entered in another care setting, such as a community practice, and displaying it to the users at the GP practice then it cannot share this data via GP Connect. As the GP practice is not the data controller for data entered in other care settings it does not have the right to share that data.
