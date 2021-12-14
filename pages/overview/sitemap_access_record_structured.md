@@ -26,7 +26,6 @@ toc: false
   clear: both;
 }
 </style>
-
 <div class="row">
   <div class="column">
    <p style="font-size:18px">Overview</p>
@@ -35,6 +34,9 @@ toc: false
 	 <p><a href="pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.1.xlsx">Requirements catalogue</a></p>
     	<p><a href="accessrecord_structured_known_issues.html">Known issues</a></p>
   </div>
+</div>
+
+<div class="row">
   <div class="column">
     <p style="font-size:18px">Development</p>
 	<p><a href="accessrecord_structured_development.html">Introduction</a></p>
