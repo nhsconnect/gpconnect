@@ -99,19 +99,24 @@ Each item of uncategorised data in the hierarchy is recorded in its own FHIR res
 
 ### Consultations and problem ###
 
-Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem. If the item is recorded in a consultation it will be directly referenced by the consultation. If the item is linked to a problem it will be directly referenced by the problem.
+Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem. 
+If the item is recorded in a consultation it will be directly referenced by the consultation. 
+If the item is linked to a problem it will be directly referenced by the problem.
 
-For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile. If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
+For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. 
+Direct references to all four items will be populated in the `List(Heading)` profile. 
+If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
 
-<a href="images/access_structured/Uncategorised_Structure.png"><IMG src="images/access_structured/Uncategorised_Structure.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Uncategorised_Structure_v2.png"><IMG src="images/access_structured/Uncategorised_Structure_v2.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
 
 ### Hierarchical data involving different clinical areas
 
-If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from as items in the questoinnaireResponse as for any other uncategorised 'observation' resource. T
+If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the questoinnaireResponse as for any other uncategorised 'observation' resource.
 
-<a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Uncategorised_Structured1_v2.png"><IMG src="images/access_structured/Uncategorised_Structured1_v2.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
 
-Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
+Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. 
+This **MUST** be done in accordance with the [uncategorised observation guidelines](accessrecord_structured_development_observation_uncategoriseddata) and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
 ## Representing inbound referrals ##
 
