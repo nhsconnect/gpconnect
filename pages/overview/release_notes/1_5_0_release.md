@@ -820,7 +820,7 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ### Updated diagrams for linkages between resources
 
-**Tickets:** &nbsp; [#1042](https://github.com/nhsconnect/gpconnect/issues/1042), [#1044](https://github.com/nhsconnect/gpconnect/issues/1044), [#1060](https://github.com/nhsconnect/gpconnect/issues/1060)
+**Tickets:** &nbsp; [#1042](https://github.com/nhsconnect/gpconnect/issues/1042), [#1044](https://github.com/nhsconnect/gpconnect/issues/1044), [#1060](https://github.com/nhsconnect/gpconnect/issues/1060), [#1127](https://github.com/nhsconnect/gpconnect/issues/1127)
 
 **Affects:**&nbsp; Access Structured
 
@@ -831,11 +831,13 @@ The following changes were made to clarify and correct issues in the GP Connect 
 - Diagrams updated to show correct relationship of linkages for filing comments
 - Diagrams updated to show additional problem and consultation linkages
 - Note added that diagrams do not include all possible linkages
+- Diagrams updated for medication resource relationships to correct intent labels typo
 
 **Pages changed:**
 
 - [Linkages](accessrecord_structured_development_linkages.html)
 - [Problem guidance](accessrecord_structured_development_problems_guidance.html)
+- [Medication resource relationship](accessrecord_structured_development_medication_resource_relationships.html)
 
 ---
 
