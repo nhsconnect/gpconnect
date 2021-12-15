@@ -127,5 +127,5 @@ The `List` **MUST** be populated in line with the guidance on `List` resources.
 If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason` with the value `noContent`.
 
 <center>
-<a href="images/access_structured/Medication_Return.png"><img src="images/access_structured/Medication_Return.png" alt="Unissued Medication Diagram" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Medication_Return_v2.png"><img src="images/access_structured/Medication_Return_v2.png" alt="Unissued Medication Diagram" style="max-width:100%;max-height:100%;"></a>
 </center>
