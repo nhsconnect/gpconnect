@@ -719,12 +719,9 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ---
 
+### Updated guidance and profiles for uncategorised data
 
-
-
-### Updated the profile description of uncategorised data observation
-
-**Tickets:**&nbsp; [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037)
+**Tickets:**&nbsp; [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
 
 **Affects:**&nbsp; Access Structured
 
@@ -735,29 +732,14 @@ The following changes were made to clarify and correct issues in the GP Connect 
 - Updated to reflect the range of data that can be used to populate the component element
 - Updated the performer element to include organization in reference types
 - Minor re-word for code for free text
-
-**Pages changed:**
-
-- [Observation - uncategorised data)](accessrecord_structured_development_observation_uncategoriseddata.html)
-
----
-
-### Added guidance for inbound referrals
-
-**Tickets:** [#1066](https://github.com/nhsconnect/gpconnect/issues/1066)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
 - Section added with additional guidance for populating the observation resource for an inbound referral and updated the profile guidance
+- Updated guidance and diagrams for hierarchical data and added questionnaireResponse profile
 
 **Pages changed:**
 
 - [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance)
 - [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
+- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse)
 
 ---
 
