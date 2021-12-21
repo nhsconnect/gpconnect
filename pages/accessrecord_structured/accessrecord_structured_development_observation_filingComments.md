@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_filingComments.html
 summary: "Guidance for populating and consuming investigations data in GP Connect"
+div: resource-page
 ---
 
 
