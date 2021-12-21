@@ -95,6 +95,18 @@ Fixed value of `37331000000100` for `Comment note`.
 
 A reference to the patient who the observation is about.
 
+### context ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A reference to the `Encounter` profile representing the consultation the test report is filed against.
+
 ### effective[x] ###
 
 <table class='resource-attributes'>
@@ -190,14 +202,6 @@ The following elements **MUST NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>CodableConcept</code></td>
-  </tr>
-</table>
-
-### context ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
 
