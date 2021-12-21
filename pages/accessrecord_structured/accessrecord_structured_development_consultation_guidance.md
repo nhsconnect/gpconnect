@@ -244,7 +244,7 @@ The same approach is followed for empty topic and heading levels recorded at sou
 
 ## Using the `List` resource for consultation queries
 
-The results of a query for consultation details **MUST** return a `List` containing references to all the `Encounters` resources which represent each consultation that is returned.
+The results of a query for consultation details **MUST** return a `List` containing references to all the `Encounter` resources which represent each consultation that is returned.
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
