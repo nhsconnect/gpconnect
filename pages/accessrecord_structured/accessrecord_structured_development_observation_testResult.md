@@ -109,6 +109,18 @@ The clinical code that represents the name of the test result or test analyte.
 
 A reference to the patient who the observation is about.
 
+### context ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A reference to the `Encounter` profile representing the consultation the test result is associated to.
+
 ### effective[x] ###
 
 <table class='resource-attributes'>
@@ -269,14 +281,6 @@ The following elements **MUST NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>reference</code></td>
-  </tr>
-</table>
-
-### context ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
 
