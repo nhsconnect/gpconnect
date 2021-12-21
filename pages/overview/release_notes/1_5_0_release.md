@@ -909,9 +909,9 @@ The following changes were made to clarify and correct issues in the GP Connect 
 ---
 
 
-### Diary Entries Search
+### Diary Entries guidance
 
-**Tickets:** &nbsp; [#1062](https://github.com/nhsconnect/gpconnect/issues/1062)
+**Tickets:** &nbsp; [#1062](https://github.com/nhsconnect/gpconnect/issues/1062), [#1144](https://github.com/nhsconnect/gpconnect/issues/1144)
 
 **Affects:**&nbsp; Access Structured
 
@@ -920,6 +920,7 @@ The following changes were made to clarify and correct issues in the GP Connect 
 **Description:**
 
 - Note added regarding search criteria to be explicit about inclusion of historic, active diary entries
+- Amended guidance for medication reviews
 
 **Pages changed:**
 
