@@ -35,10 +35,10 @@ Any future intention for a clinical action recorded as an Appointment, Warning /
 
 Medication reviews are considered to fall under the definition of a diary entry.
 GP clinical systems which have a separate feature for medication reviews **MUST** include the medication reviews within diary entries.
-These medication reviews **MUST** be assigned the SNOMED CT code <code>314529007 | Medication review due (situation) |</code> or one of its child codes as most appropriate.
+The entered medication review code can be sent or the provider **MAY** substitute with the SNOMED CT code <code>314529007 | Medication review due (situation) |</code> as most appropriate.
 Hereafter, reference to diary entries **MUST** be assumed to include medication reviews.
 
-Consumers should be aware that medication reviews may occur in additional to the main, planned medication review(s) recorded in the GP clinical system and shared via this resource.
+Consumers should be aware that medication reviews may occur in addition to the main, planned medication review(s) recorded in the GP clinical system and shared via this resource.
 
 ## Diary entry status
 
