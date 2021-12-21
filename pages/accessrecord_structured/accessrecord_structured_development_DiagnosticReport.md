@@ -125,6 +125,17 @@ As this item is mandatory in FHIR then suppliers should populate it with the SNO
 
 A reference to the `Patient` who the DiagnosticReport is about.
 
+### context ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A reference to the `Encounter` profile representing the consultation the test report is associated to.
 
 ### issued ###
 
@@ -221,17 +232,6 @@ The following elements **MUST NOT** be populated:
 </table>
 
 Out of scope for the current iteration.
-
-<h3 style="color:#ED1951;"> context </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-  </tr>
-</table>
-
-Out of scope for the current iteration.
-
 
 <h3 style="color:#ED1951;"> imagingStudy </h3>
 
