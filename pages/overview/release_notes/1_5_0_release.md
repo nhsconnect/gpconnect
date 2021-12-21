@@ -745,7 +745,7 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ### Updates to Investigations guidance
 
-**Tickets:** [#1051](https://github.com/nhsconnect/gpconnect/issues/1051), [#1061](https://github.com/nhsconnect/gpconnect/issues/1061), [#1063](https://github.com/nhsconnect/gpconnect/issues/1063)
+**Tickets:** [#1051](https://github.com/nhsconnect/gpconnect/issues/1051), [#1061](https://github.com/nhsconnect/gpconnect/issues/1061), [#1063](https://github.com/nhsconnect/gpconnect/issues/1063), [#1143](https://github.com/nhsconnect/gpconnect/issues/1143)
 
 **Affects:**&nbsp; Access Structured
 
@@ -756,11 +756,15 @@ The following changes were made to clarify and correct issues in the GP Connect 
 - Add a line to say to use \n to keep line breaks in textual results. Updated pathology guidance page to specify use of \n to maintain line breaks.
 - Note added regarding linkage between investigations and problems
 - DiagnosticReport guidance for result element expanded to be explicit that only test result which are not part of a test group should be referenced from this element
+- Moved the context element from the do not populate list to be required / optional for diagnoticReport and observation profiles
 
 **Pages changed:**
 
 - [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
 - [DiagnosticReport](accessrecord_structured_development_diagnosticreport#result)
+- [Observation - Test Group Header](accessrecord_structured_development_observation_testGroup.html)
+- [Observation - Test Result](accessrecord_structured_development_observation_testResult.html)
+- [Observation - Filing Comments](accessrecord_structured_development_observation_filingComments.html)
 
 ---
 
