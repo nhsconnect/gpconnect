@@ -966,6 +966,24 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 ---
 
+### Updated consultations guidance
+
+**Tickets:** &nbsp; [#1145](https://github.com/nhsconnect/gpconnect/issues/1145)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+Changed the query response List profile guidance to reference Encounter resources instead of Lists used for the Consultation structure.
+
+**Pages changed:**
+
+- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html#using-the-list-resource-for-consultation-queries)
+
+---
+
 ## NEW NOTES FOR RELEASE
 
 Notes under here for the published version
