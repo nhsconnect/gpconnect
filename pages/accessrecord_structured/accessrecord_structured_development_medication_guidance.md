@@ -16,11 +16,11 @@ Below is a further detail about how the search criteria should be applied:
 
 * Search for all Medications and Medical Devices that were active on or after the specified date
      * The consumer system requests all items from a start date
-     * The provider system returns all plans whose effective period end date is null or is on or after the start date
+     * The provider system returns all authorisations (MedicationStatement and MedicationRequest with intent set to ‘plan’) whose effective period end date is null or is on or after the start date
      * Where no date is supplied by the consumer, all medications and medical devices are returned
-* Do not include all the prescriptions issued under the returned medication/medical device plans
+* Do not include all the prescriptions issued under the returned medication/medical device authorisations
      * The consumer system requests not to include prescription issues
-     * For each of the returned medication/medical device plans, the provider system only includes the authorisations
+     * For each of the returned medication/medical device item, the provider system only includes the authorisations
 
 Technical details relating to the search criteria are available on the [Retrieve a patient's structured record page](accessrecord_structured_development_retrieve_patient_record.html).
 
@@ -46,7 +46,7 @@ It is possible for historic/legacy medications/medical devices to be displayed w
 
 ## Medication reviews
 
-The resources required to describe diarised review activities and reminders for medication reviews are out of scope for this guidance.
+Medication reviews are not in the scope of the medication clinical area. These are available in the 'Diary entry' clinical area if they have been coded with a due date.
 
 ## Future-dated prescriptions
 
@@ -93,7 +93,7 @@ and the new plan would contain,
 |authoredOn | 2020-12-21T10:59:37.493+00:00 |
 |validityPeriod.start | 2020-12-21 |
 
-The populated resources for this example are available <p style="line-height: 1; font-size: 18px">here</p>
+The populated resources for this example are shown below,
 
 {% include accessrecord_structured/split_plan.json %}
 
