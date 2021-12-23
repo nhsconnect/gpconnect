@@ -245,7 +245,7 @@ If there is no code or value in this component, then a data absent reason may be
   </tr>
 </table>
 
-A human-readable clinical summary relating to the reading - for example, if the patient was lying or standing.
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
 
 
 ### component.referenceRange ###
