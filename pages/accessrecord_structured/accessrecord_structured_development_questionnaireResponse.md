@@ -164,13 +164,15 @@ A text description of the question this item is an answer to or name of the grou
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Multiple</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Answer to the question or item contained in the group.
+Answer to the question or item contained in the group. 
+
+In the current build of GP Connect this will always be in the form of a reference to another resource.
 
 
 
