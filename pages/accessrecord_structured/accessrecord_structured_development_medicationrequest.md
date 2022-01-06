@@ -168,7 +168,7 @@ The textual reason either free text or the term of a code for stopping/discontin
   </tr>
 </table>
 
-If a medication/medical device is an acute, delayed acute, repeat or repeat dispense.
+If a medication/medical device is an acute (code : `acute`), delayed acute (`delayed-prescribing`), repeat (`repeat`) or repeat dispense (`repeat-dispensing`).
 
 This field provides an explicit repeat/acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
