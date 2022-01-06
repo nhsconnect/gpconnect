@@ -851,7 +851,7 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ### Updated medication request profile guidance
 
-**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993)
+**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
 
 **Affects:**&nbsp; Access Structured
 
@@ -860,6 +860,7 @@ The following changes were made to clarify and correct issues in the GP Connect 
 **Description:**
 
 - Removed acute-handwritten from list of supported prescription types
+- Added codes against prescription type descriptions
 
 **Pages changed:**
 
