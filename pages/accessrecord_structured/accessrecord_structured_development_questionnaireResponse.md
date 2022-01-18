@@ -145,7 +145,9 @@ When this `questionnaireResponse` was created on the system.
   </tr>
 </table>
 
-Pointer to a specific item from a linked `questionnaire`. Where the questionnaireResponse does not link back to a questionnaire this should be populated with the rubric of the 'parent' observation.
+Pointer to a specific item from a linked `questionnaire`. 
+Where the questionnaireResponse does not link back to a questionnaire this should be populated with the rubric of the 'parent' observation.
+If the 'parent' observation does not have a text description which can be used, then populate with ‘No information available’. 
 
 ### item.text ###
 
