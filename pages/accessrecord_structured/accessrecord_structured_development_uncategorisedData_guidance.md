@@ -118,6 +118,17 @@ If the hierarchical data contains items from other clinical areas that are not h
 Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. 
 This **MUST** be done in accordance with the [uncategorised observation guidelines](accessrecord_structured_development_observation_uncategoriseddata) and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
 
+### Different clinical areas against an uncategorised data request only
+   
+The above example demonstrate the structure for the hierachical date and the relationship with consultations.
+The same principles apply if consultations are not requested.
+This example shows where only uncategorised data has been requested but the hierarchical data includes resources from a different clinical area, an allergy in this case.
+The questionnaireResponse is populated identical to the example above.
+However, only resources which satisfy the criteria of the request are included.
+The diagram therefore shows the response for uncategorised data only, thus the items in grey boxes (encounter and allergyIntolerance resources) are referenced but not included.
+   
+
+
 ## Representing inbound referrals ##
 
 As noted above, inbound referrals are to be returned using `observation` resources as per this guidance.
