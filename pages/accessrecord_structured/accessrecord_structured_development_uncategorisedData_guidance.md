@@ -127,7 +127,7 @@ The questionnaireResponse is populated identical to the example above.
 However, only resources which satisfy the criteria of the request are included.
 The diagram therefore shows the response for uncategorised data only, thus the items in grey boxes (encounter and allergyIntolerance resources) are referenced but not included.
    
-
+<a href="images/access_structured/Uncat_plus_hierarchy.png"><IMG src="images/access_structured/Uncat_plus_hierarchy.png" alt="Different clinical areas without consultations included" style="max-width:100%;max-height:100%;"></a>
 
 ## Representing inbound referrals ##
 
