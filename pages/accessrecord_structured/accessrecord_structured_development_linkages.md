@@ -249,6 +249,7 @@ The response to the query includes:
 For each `ReferralRequest` referenced in the `List` profile:
 *	The `ReferralRequest` profile of the Referral
 *	The `ProblemHeader (Condition)` profiles of any directly linked Problems
+*	The `DocumentReference` profiles of any directly linked Documents (do not include the `Binary`)
 *  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
     * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
