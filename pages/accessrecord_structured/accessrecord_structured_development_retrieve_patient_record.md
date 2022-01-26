@@ -810,7 +810,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
   - A [`List`](accessrecord_structured_development_list.html) resource referencing [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources that match the supplied query parameters
   - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources
-  - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's referrals will be returned.
+  - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html), [`Condition`](accessrecord_structured_problems.html) and [`DocumentReference`]() resources representing the patient's referrals will be returned.
 
 - when the `referralSearchPeriod` is set:
   - when a `start` value is set, all referrals with a `ReferralRequest.authoredOn` after the date **MUST** be returned
