@@ -154,7 +154,7 @@ Reference to the patient.
   </tr>
 </table>
 
-Whre the list is used to create primary or seciondary lists in response to a query this is  when the list was created.
+Where the list is used to create primary or secondary lists in response to a query this is when the list was created.
 
 Where a list is used to represent a consultation this is the date the consultation was recorded as specified on the [list consultation page](accessrecord_structured_development_list_consultation.html) 
 
