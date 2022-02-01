@@ -138,6 +138,7 @@ When responding to consumer API requests, provider systems **SHALL** return one 
 | `403` | forbidden | NO_PATIENT_CONSENT | Patient has not provided consent to share data |
 | `403` | forbidden | NO_ORGANISATION_CONSENT | Organisation has not provided consent to share data |
 | `403` | forbidden | ACCESS DENIED | Access denied |
+| `403` | forbidden | NOT_AUTHORISED | Not authorised |
 
 #### Example: No patient consent to share #####
 
@@ -391,10 +392,10 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
-| `400`     | invalid |  Target URL varies from endpoint registered in SDS | 
-| `403`     | forbidden |  Sender ASID is not authorised for this interaction | 
+| `400`     | invalid |  Target URL varies from endpoint registered in SDS |
+| `403`     | forbidden |  Sender ASID is not authorised for this interaction |
 | `403`     | forbidden | Receiver ASID is not authorised for this interaction |
-| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID | 
+| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID |
 | `405`     | not-supported | Method not allowed |
 | `415`     | not-supported | Unsupported media type |
 | `502`     | transient | Error communicating to target URL |

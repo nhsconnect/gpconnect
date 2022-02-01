@@ -98,6 +98,9 @@ Errors returned due to query parameter failure **MUST** include diagnostic infor
 | The document could not be retrieved due to it exceeding the file size limit | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| An unauthorised request has been made for sensitive information  | [`NOT_AUTHORISED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The ODS code in the JWT doesn't match the ODS code for the patient's registered practice on PDS  | [`NOT_AUTHORISED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The JWT `requested_scope` is set to `conf/N` when a request has been made for sensitive information  | [`NOT_AUTHORISED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 |-------------------------|-------------------|
 
 ### Request response ###
