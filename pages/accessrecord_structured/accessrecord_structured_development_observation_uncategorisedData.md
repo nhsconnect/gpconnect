@@ -14,7 +14,7 @@ The headings below list the elements of the `Observation` profile and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7)." %}
 
 ## Observation elements #
 
@@ -146,7 +146,7 @@ The audit trail timestamp representing when the data was recorded.
 
 The `Practitioner` profile representing the clinician responsible for making the observation.
 
-Where the observation was performed at another organisation and an `Organization` profile can be populated then that **MUST** be populated here. 
+Where the observation was performed at another organisation and an `Organization` profile can be populated then that **MUST** be populated here.
 This will be in addition to the clinical practitioner if both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person who recorded the data in the system.
