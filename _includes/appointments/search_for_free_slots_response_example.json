@@ -117,15 +117,17 @@
             "value": "111122223333"
           }
         ],
-        "name": {
-          "family": "Black",
-          "given": [
-            "Sarah"
-          ],
-          "prefix": [
-            "Mrs"
-          ]
-        },
+        "name": [
+          {
+            "family": "Black",
+            "given": [
+              "Sarah"
+            ],
+            "prefix": [
+              "Mrs"
+            ]
+          }
+        ],
         "gender": "female"
       }
     },
