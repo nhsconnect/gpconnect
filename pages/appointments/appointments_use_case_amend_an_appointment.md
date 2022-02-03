@@ -21,7 +21,7 @@ The typical flow to amend an appointment is:
 
 Amending a cancelled appointment is NOT supported.
 
-{% include important.html content="The Appointment Management capability is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the amend appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
@@ -66,7 +66,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's trace ID (i.e. GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:update:appointment-1` |
@@ -101,6 +101,28 @@ When receiving `description` and `comment` fields in the provider system:
 - Where a consumer sends information longer than character limits supported, an error SHALL be returned to the consumer
 - Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
 
+#### Example request body ####
+
+On the wire, a JSON serialised request would look something like the following:
+
+```json
+{% include appointments/amend_appt_request_example.json %}
+```
+
+#### Error handling ####
+
+The provider system:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an error where:
+  - any appointment details other than the appointment `comment` or `description` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
+  - the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
+  - the appointment has been cancelled.  Provider systems should return a `422` error with error code `INVALID_RESOURCE`.
+  - the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
+  - the `description` or `comment` fields contain more characters than can be stored in the provider system
+
+Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
 ### Request response ###
 
 #### Response headers ####
@@ -118,46 +140,12 @@ Provider systems:
 
 - SHALL populate `serviceType.text` with the practice defined slot type description, and where available `serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
-- SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
-  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service filtering
-  - and the service filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
-
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `reason`
   - `specialty`
 
-#### Error handling ####
-
-The provider system:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached.
-- SHALL return an error where:
-  - any appointment details other than the appointment `comment` or `description` are amended. The appointment resource should be considered invalid and the provider system should return a `422` error with error code `INVALID_RESOURCE`.
-  - the appointment being amended is in the past (the appointment start dateTime is before the current date and time).
-  - the appointment has been cancelled.  Provider systems should return a `422` error with error code `INVALID_RESOURCE`.
-  - the version identifier in the `If-Match` header does not match the Appointment's current version identifier.  See [Managing resource contention](development_general_api_guidance.html#managing-resource-contention).
-  - the `description` or `comment` fields contain more characters than can be stored in the provider system
-
-Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
-
-## Examples ##
-
-### Amend an appointment ###
-
-#### Request ####
-
-```http
-{% include appointments/amend-appt-request-header-1.txt %}
-```
-
 ```json
-{% include appointments/amend-appt-request-payload-1.json %}
-```
-
-#### Response ####
-
-```json
-{% include appointments/amend-appt-response-payload-1.json %}
+{% include appointments/amend_appt_response_example.json %}
 ```

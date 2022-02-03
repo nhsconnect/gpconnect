@@ -113,7 +113,7 @@ Provider systems:
   - `multipleBirthBoolean`
 
 ```json
-{% include foundations/find-patient-response-payload-1.json %}
+{% include foundations/find_patient_response_example.json %}
 ```
 
 #### Provider system unverified record requirements ####

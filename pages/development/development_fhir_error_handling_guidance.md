@@ -123,8 +123,7 @@ This is a catch-all where a request for a resource instance cannot be found at t
             "display": "No record found"
           }
         ]
-      },
-      "diagnostics": "The HealthcareService identified by the service.identifier parameter was not found"
+      }
     }
   ]
 }

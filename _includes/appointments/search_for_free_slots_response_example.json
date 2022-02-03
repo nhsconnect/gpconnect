@@ -20,15 +20,15 @@
         ],
         "serviceType": [
           {
-            "text": "GP Appointment"
+            "text": "General GP Appointment"
           }
         ],
         "schedule": {
           "reference": "Schedule/14"
         },
         "status": "free",
-        "start": "2017-09-15T11:30:00+01:00",
-        "end": "2017-09-15T11:40:00+01:00"
+        "start": "2016-08-15T11:30:00+01:00",
+        "end": "2016-08-15T11:40:00+01:00"
       }
     },
     {
@@ -56,8 +56,8 @@
           "reference": "Schedule/14"
         },
         "status": "free",
-        "start": "2017-09-15T11:40:00+01:00",
-        "end": "2017-09-15T11:50:00+01:00"
+        "start": "2016-08-15T11:40:00+01:00",
+        "end": "2016-08-15T11:50:00+01:00"
       }
     },
     {
@@ -93,14 +93,11 @@
           },
           {
             "reference": "Practitioner/2"
-          },
-          {
-            "reference": "HealthcareService/3"
           }
         ],
         "planningHorizon": {
-          "start": "2017-09-15T09:00:00+01:00",
-          "end": "2017-09-15T12:00:00+01:00"
+          "start": "2016-08-15T09:00:00+01:00",
+          "end": "2016-08-15T12:00:00+01:00"
         }
       }
     },
@@ -153,38 +150,14 @@
           ],
           "postalCode": "LS1 6AE"
         },
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "03003035678",
-            "use": "work"
-          }
-        ],
+        "telecom": {
+          "system": "phone",
+          "value": "03003035678",
+          "use": "work"
+        },
         "managingOrganization": {
           "reference": "Organization/23"
         }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "HealthcareService",
-        "id": "3",
-        "meta": {
-          "versionId": "636064088100870233",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-HealthcareService-1"
-          ]
-        },
-        "identifier": [
-          {
-            "system": "https://fhir.nhs.uk/Id/uec-dos-service-id",
-            "value": "1000000123"
-          }
-        ],
-        "providedBy": {
-          "reference": "Organization/23"
-        },
-        "name": "The Trevelyan GP Hub"
       }
     },
     {
@@ -204,24 +177,20 @@
           }
         ],
         "name": "The Trevelyan Practice",
-        "address": [
-          {
-            "line": [
-              "Trevelyan Square",
-              "Boar Ln"
-            ],
-            "city": "Leeds",
-            "district": "West Yorkshire",
-            "postalCode": "LS1 6AE"
-          }
-        ],
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "03003035678",
-            "use": "work"
-          }
-        ]
+        "address": {
+          "line": [
+            "Trevelyan Square",
+            "Boar Ln"
+          ],
+          "city": "Leeds",
+          "district": "West Yorkshire",
+          "postalCode": "LS1 6AE"
+        },
+        "telecom": {
+          "system": "phone",
+          "value": "03003035678",
+          "use": "work"
+        }
       }
     }
   ]

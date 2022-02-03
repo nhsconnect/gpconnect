@@ -1,8 +1,8 @@
 {
   "resourceType": "Appointment",
-  "id": "150",
+  "id": "148",
   "meta": {
-    "versionId": "1503440820000",
+    "versionId": "1503310820000",
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
     ]
@@ -19,7 +19,7 @@
       "identifier": [
         {
           "system": "https://fhir.nhs.uk/Id/ods-organization-code",
-          "value": "Z100"
+          "value": "A00001"
         }
       ],
       "type": [
@@ -27,16 +27,16 @@
           "coding": [
             {
               "system": "https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1",
-              "code": "urgent-care"
+              "code": "gp-practice"
             }
           ]
         }
       ],
-      "name": "North Ambulance Service",
+      "name": "Test Organization Name",
       "telecom": [
         {
           "system": "phone",
-          "value": "01111222333"
+          "value": "0300 303 5678"
         }
       ]
     }
@@ -75,18 +75,25 @@
     }
   ],
   "description": "GP Connect Appointment description 148",
-  "start": "2017-08-17T11:20:00+01:00",
-  "end": "2017-08-17T11:30:00+01:00",
+  "start": "2017-08-21T10:20:00+01:00",
+  "end": "2017-08-21T10:50:00+01:00",
   "slot": [
     {
-      "reference": "Slot/303"
+      "reference": "Slot/544"
+    },
+    {
+      "reference": "Slot/545"
+    },
+    {
+      "reference": "Slot/546"
     }
   ],
-  "created": "2017-08-14T13:48:41+01:00",
+  "created": "2017-07-09T13:48:41+01:00",
+  "comment": "Test Appointment Comment 148",
   "participant": [
     {
       "actor": {
-        "reference": "Patient/1001"
+        "reference": "Patient/2"
       },
       "status": "accepted"
     },
@@ -98,7 +105,7 @@
     },
     {
       "actor": {
-        "reference": "HealthcareService/15"
+        "reference": "Practitioner/2"
       },
       "status": "accepted"
     }

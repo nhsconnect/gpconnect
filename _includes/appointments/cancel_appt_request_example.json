@@ -32,11 +32,11 @@
           ]
         }
       ],
-      "name": "West Road GP Practice",
+      "name": "Test Organization Name",
       "telecom": [
         {
           "system": "phone",
-          "value": "03003035678"
+          "value": "0300 303 5678"
         }
       ]
     }
@@ -47,9 +47,13 @@
       "valueReference": {
         "reference": "#1"
       }
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
+      "valueString": "Free text cancellation reason."
     }
   ],
-  "status": "booked",
+  "status": "cancelled",
   "description": "Free text description updated.",
   "start": "2017-05-30T10:00:00+01:00",
   "end": "2017-05-30T10:25:00+01:00",
@@ -70,12 +74,6 @@
     {
       "actor": {
         "reference": "Location/32"
-      },
-      "status": "accepted"
-    },
-    {
-      "actor": {
-        "reference": "Practitioner/18"
       },
       "status": "accepted"
     }

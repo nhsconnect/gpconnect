@@ -9,11 +9,11 @@ summary: "Book an appointment for a patient at an organisation"
 
 ## Use case ##
 
-{% include important.html content="The Appointment Management capability is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements the book appointment capability has been restricted to future appointments. See [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments)." %}
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements the book appointment capability has been restricted to future appointments. See [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments)." %}
 
 The typical flow to book an appointment is:
 
- 1. Search by NHS number for, or otherwise obtain, a `Patient` resource.
+ 1. Search by `NHS Number` for, or otherwise obtain, a `Patient` resource.
  2. Search for available `Slot` resources by date range.
  3. Create an `Appointment` for the chosen `Slot` and `Patient` resources.
 
@@ -35,24 +35,11 @@ The consumer system:
 - SHALL have previously obtained the details for one or more free slots that are to be booked, using [Search for free slots](appointments_use_case_search_for_free_slots.html)
 - SHALL have previously performed a [Find a patient](foundations_use_case_find_a_patient.html) request to obtain the logical identifier for the patient on the organisation's FHIR server.
 
-## Consumer display requirements ##
-
-Consumer systems SHALL display the following fields upon a successful booking in order to confirm the full context of the appointment to the user: 
-
-- Start date and time
-- End date and time, or duration
-- Delivery channel (in-person, telephone, video)
-- Slot type and schedule type (see `Appointment.serviceType` and `Appointment.serviceCategory`)
-- Service name (where present, see [service filtering](appointments_serviceid_filtering.html) for more information)
-- Location name and address
-- Practitioner role (e.g. General Medical Practitioner, Nurse)
-- Practitioner name and gender
-
 ## API usage ##
 
 The consumer system SHALL only use the book appointment capability to book future appointments, where the appointment start dateTime is after the current date and time. If the appointment start date is in the past the provider SHALL return an error.
 
-Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of slots.
+Adherence is expected to local business rules, agreements and policies defining good practice in GP Connect-enabled cross-organisational appointment booking.  This will discourage for example the over-booking and subsequent cancellation of Slots.
 
 ### Booking multiple adjacent slots ###
 
@@ -83,7 +70,7 @@ Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's trace ID (i.e. GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:create:appointment-1` |
@@ -119,16 +106,13 @@ The following data elements are mandatory (that is, data **MUST** be present):
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
 
 The following data elements **SHOULD** be included when available:
-- a practitioner `participant` of the appointment
-- a healthcare service `participant` of the appointment
+- a practitioner `participant` of the appointment.
 
 The following data elements **MAY** be included:
 
 - `comment` containing 'patient specific notes' and any additional comments relating to the appointment.
   - Consumers SHALL impose a character limit of 500 characters for this element.
   - This element SHALL only contain limited information to support the appointment and SHALL NOT be used for "transfer of care" clinical information.
-
-{% include important.html content="Provider systems **MUST** not expect the fields in the *SHOULD* and *MAY* sections above to be present all request messages." %}
 
 The following data elements **MUST NOT** be included:
   - `reason`
@@ -146,32 +130,13 @@ When receiving `description` and `comment` fields in the provider system:
 - Where a consumer sends information longer than character limits supported, an error SHALL be returned to the consumer
 - Where there are not two suitable appointment text fields in a provider system, providers MAY concatenate `description` and `comment` (with suitable delimiters) in order to store in a single field, such that data is not lost
 
-### Request response ###
+#### Example request body ####
 
-#### Response headers ####
+On the wire, a JSON serialised request would look something like the following:
 
-Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
-
-#### Payload response body ####
-
-Provider systems:
-
-- SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
-- SHALL return a `Location` header as described in [FHIR API guidance](development_fhir_api_guidance.html#create-resource).
-- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
-- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
-- SHALL include the `versionId` of the current version of each appointment resource.
-- SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
-
-- SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
-  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service filtering
-  - and the service filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
-
-- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
-
-- SHALL NOT populate the following fields:
-  - `reason`
-  - `specialty`
+```json
+{% include appointments/book_appt_request_example.json %}
+```
 
 #### Error handling ####
 
@@ -193,27 +158,29 @@ Refer to [Development - FHIR API guidance - error handling](development_fhir_err
 
 {% include important.html content="Provider systems MAY implement business rules to protect the responsible use of the booking API, in line with current business rules already in place, to prevent misuse of appointment booking outside of the GP Connect API implementation." %}
 
+### Request response ###
 
-## Examples ##
+#### Response headers ####
 
-### Book an appointment ###
+Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
-#### Request ####
+#### Payload response body ####
 
-The consumer system constructs an `Appointment` resource from slot (and its associated schedule) chosen by the user and posts the resource to the `/Appointment` endpoint in order to book the appointment.  The consumer organisation making the booking is populated as a contained resource.
+Provider systems:
 
-```http
-{% include appointments/book-appt-request-header-1.txt %}
-```
+- SHALL return a `201` **Created** HTTP status code on successful execution of the operation.
+- SHALL return a `Location` header as described in [FHIR API guidance](development_fhir_api_guidance.html#create-resource).
+- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
+- SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
+- SHALL include the `versionId` of the current version of each appointment resource.
+- SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
+
+- SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
+
+- SHALL NOT populate the following fields:
+  - `reason`
+  - `specialty`
 
 ```json
-{% include appointments/book-appt-request-payload-1.json %}
-```
-
-#### Response ####
-
-The provider system responds back with the Appointment resource with the `id` field populated to indicate the appointment was booked.
-
-```json
-{% include appointments/book-appt-response-payload-1.json %}
+{% include appointments/book_appt_response_example.json %}
 ```

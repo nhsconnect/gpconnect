@@ -31,21 +31,20 @@ In order to be a compliant FHIR server, provider systems need to expose a valid 
 
 Refer to [Development Guidance - FHIR API Guidance - Common API Guidance](development_fhir_api_guidance.html) for full details on the common FHIR API patterns used throughout all the GP Connect APIs.
 
+## Scenarios ##
+
+- Search for a patient by `NHS Number`
+- Search for an organisation by `ODS Code`
+- Search for a practitioner by `SDS UserID`
+
 ## API definition ##
 
 The following individual API calls make up the Foundations capability and support the other capability packs:
 
 - [Get the FHIR capability statement](foundations_use_case_get_the_fhir_capability_statement.html)
 - [Find a patient](foundations_use_case_find_a_patient.html)
-- [Read a patient](foundations_use_case_read_a_patient.html)
 - [Find a practitioner](foundations_use_case_find_a_practitioner.html)
-- [Read a practitioner](foundations_use_case_read_a_practitioner.html)
 - [Find an organisation](foundations_use_case_find_an_organisation.html)
-- [Read an organisation](foundations_use_case_read_an_organisation.html)
-- [Find a healthcare service](foundations_use_case_find_a_healthcareservice.html)
-- [Read a healthcare service](foundations_use_case_read_a_healthcareservice.html)
-- [Read a location](foundations_use_case_read_a_location.html)
-- [Register a patient](foundations_use_case_register_a_patient.html)
 
 ## Spine interactions
 
@@ -60,7 +59,25 @@ The Foundations capability message set includes the following set of Spine inter
 | [Practitioner Search](foundations_use_case_find_a_practitioner.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1` |
 | [Read Organisation](foundations_use_case_read_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:organization-1` |
 | [Organisation Search](foundations_use_case_find_an_organisation.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:organization-1` |
-| [Read Healthcare Service](foundations_use_case_read_a_healthcareservice.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:healthcareservice-1` |
-| [Healthcare Service Search](foundations_use_case_find_a_healthcareservice.html) | `urn:nhs:names:services:gpconnect:fhir:rest:search:healthcareservice-1` |
 | [Read Location](foundations_use_case_read_a_location.html) | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1` | 
 | [Register Patient](foundations_use_case_register_a_patient.html)          | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1`
+
+
+## Implementation and testing ##
+
+Below is the suggested order in which the Foundations capabilities should be implemented by provider suppliers. The specified order has been recommended around the functionality of the GP Connect Automated Test Suite and any internal dependencies between the test scenarios for the different foundation endpoints.
+
+It is advisable to develop against the Automated Test Suite as this will assist with creating a GP Connect compliant product. By implementing the endpoints in the order below, this means that the automated test suite set of tests for that endpoint can be run during development without the developer seeing errors due to pre-test API calls or post-test validation API calls relevant to the test being run and failing as they have not been developed yet.
+
+### 1. Foundation endpoints ###
+
+| Order | API Endpoint | Test Suite Endpoint Dependencies | Reason For Dependency |
+| ------------- | ------------- | ------------- | ------------- |
+| #1 | Find an organization | - | The find an organization capability is not dependent on any other capability within the automated test suite. |
+| #2 | Read an Organization | Find an organization | `Find an organization` is a dependency for `Read an organization` as it is used to lookup the local identifier from the organization code which is setup in the test suite organization mapping csv file. |
+| #3 | Find a practitioner | Read an Organization | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource. |
+| #4 | Read a practitioner | Find a practitioner / Read an organization | `Find a practitioner` is required to lookup the logical identifier, from the practitioner user id setup in the test suite practitioner mapping csv file, to use for the read. The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource.|
+| #5 | Find a patient | Read and organization / Read a practitioner | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the practitioner resource. The `Read a practitioner` endpoint is required to validate the “careProvider” reference if returned within the patient resource. |
+| #6 | Read a patient | Find a patient / Read an organization / Read a practitioner | `Find a patient` is required to lookup logical identifier from the patient from the NHS number set up in the test suite nhsNoMap csv file. The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the patient resource. The `Read a practitioner` endpoint is required to validate the “careProvider” reference if returned within the patient resource. |
+| #7 | Read a location | Read an organization | The `Read an organization` endpoint is required to validate the “managingOrganization” reference returned within the location resource. |
+| #8 | Register a patient | Find a patient / Read a patient / Read an organization  |The register patient endpoint tests require a number of the foundation search and read endpoints to be implemented and therefore it is advised that this is done as the last foundation capability. The foundation endpoints are used to create rich register patient requests as well as validating the registered patient resource is valid and retrievable on the providers system. |

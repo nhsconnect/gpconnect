@@ -1,1 +1,0 @@
-GET /Appointment/150

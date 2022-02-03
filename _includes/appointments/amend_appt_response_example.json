@@ -2,7 +2,7 @@
   "resourceType": "Appointment",
   "id": "9",
   "meta": {
-    "versionId": "636068818095315079",
+    "versionId": "6360688180953112345",
     "profile": [
       "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1"
     ]
@@ -32,11 +32,11 @@
           ]
         }
       ],
-      "name": "West Road GP Practice",
+      "name": "Test Organization Name",
       "telecom": [
         {
           "system": "phone",
-          "value": "0300303 5678"
+          "value": "0300 303 5678"
         }
       ]
     }
@@ -49,11 +49,31 @@
       }
     },
     {
-      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-AppointmentCancellationReason-1",
-      "valueString": "Free text cancellation reason."
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-PractitionerRole-1",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-SDSJobRoleName-1",
+            "code": "R0260",
+            "display": "General Medical Practitioner"
+          }
+        ]
+      }
+    },
+    {
+      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-DeliveryChannel-2",
+      "valueCode": "In-person"
     }
   ],
-  "status": "cancelled",
+  "status": "booked",
+  "serviceCategory": {
+    "text": "General GP Appointments"
+  },
+  "serviceType": [
+    {
+      "text": "General GP Appointment"
+    }
+  ],
   "description": "Free text description updated.",
   "start": "2017-05-30T10:00:00+01:00",
   "end": "2017-05-30T10:25:00+01:00",

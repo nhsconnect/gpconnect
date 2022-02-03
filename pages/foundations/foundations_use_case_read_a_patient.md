@@ -108,5 +108,5 @@ Provider systems:
   - `multipleBirthBoolean`
   
 ```json
-{% include foundations/read-patient-response-payload-1.json %}
+{% include foundations/read_patient_response_example.json %}
 ```

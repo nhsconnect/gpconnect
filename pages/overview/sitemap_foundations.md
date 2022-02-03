@@ -43,10 +43,7 @@ toc: false
     	<p><a href="foundations_use_case_read_a_patient.html">Read a patient</a></p>
     	<p><a href="foundations_use_case_find_a_practitioner.html">Find a practitioner</a></p>
     	<p><a href="foundations_use_case_read_a_practitioner.html">Read a practitioner</a></p>
-      <p><a href="foundations_use_case_find_an_organisation.html">Find an organisation</a></p>
-    	<p><a href="foundations_use_case_read_an_organisation.html">Read an organisation</a></p>
-      <p><a href="foundations_use_case_find_a_healthcareservice.html">Find a healthcare service</a></p>
-      <p><a href="foundations_use_case_read_a_healthcareservice.html">Read a healthcare service</a></p>
+    	<p><a href="foundations_use_case_find_an_organisation.html">Read an organisation</a></p>
     	<p><a href="foundations_use_case_read_a_location.html">Read a location</a></p>
     	<p><a href="foundations_use_case_register_a_patient.html">Register a patient</a></p>    
   </div>

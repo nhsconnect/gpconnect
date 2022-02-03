@@ -1,17 +1,17 @@
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.2.8",
+  "version": "1.2.7",
   "name": "GP Connect",
   "status": "active",
-  "date": "2021-01-03",
+  "date": "2020-01-15",
   "publisher": "[Provider Software Vendor Name]",
   "contact": [
     {
       "name": "[Provider Software Vendor Contact Name]"
     }
   ],
-  "description": "This server implements the GP Connect API version 1.2.8",
-  "copyright": "Copyright NHS Digital 2016-21",
+  "description": "This server implements the GP Connect API version 1.2.7",
+  "copyright": "Copyright NHS Digital 2016-20",
   "kind": "capability",
   "software": {
     "name": "[Provider Software Name]",
@@ -24,19 +24,12 @@
     "application/fhir+json",
     "application/fhir+xml"
   ],
-  "extension" : [
-    {
-      "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-GPConnect-ServiceFilteringStatus-1",
-      "valueCode": "organization-disabled"
-    }
-  ],
   "profile": [
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-PractitionerRole-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1" },
-      { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-HealthcareService-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1" },
       { "reference": "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Schedule-1" },
@@ -69,7 +62,7 @@
             {
               "name": "identifier",
               "type": "token",
-              "documentation": "NHS number (e.g. https://fhir.nhs.uk/Id/nhs-number|123456789)"
+              "documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
             }
           ]
         },
@@ -87,25 +80,7 @@
             {
               "name": "identifier",
               "type": "token",
-              "documentation": "ODS code (e.g. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)"
-            }
-          ]
-        },
-        {
-          "type": "HealthcareService",
-          "interaction": [
-            {
-              "code": "read"
-            },
-            {
-              "code": "search-type"
-            }
-          ],
-          "searchParam": [
-            {
-              "name": "identifier",
-              "type": "token",
-              "documentation": "DOS service ID (e.g. https://fhir.nhs.uk/Id/uec-dos-service-id|100000123)"
+              "documentation": "ODS Code (i.e. https://fhir.nhs.uk/Id/ods-organization-code|Y12345)"
             }
           ]
         },
@@ -123,7 +98,7 @@
             {
               "name": "identifier",
               "type": "token",
-              "documentation": "SDS user ID (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)"
+              "documentation": "SDS User Id (i.e. https://fhir.nhs.uk/Id/sds-user-id|999999)"
             }
           ]
         },
@@ -154,8 +129,9 @@
           "updateCreate": false,
           "searchParam": [
             {
-              "name": "start",
-              "type": "date"
+              "name": "identifier",
+              "type": "token",
+              "documentation": "NHS Number (i.e. https://fhir.nhs.uk/Id/nhs-number|123456789)"
             }
           ]
         },
@@ -169,7 +145,6 @@
           "searchInclude": [
             "Schedule:actor:Location",
             "Schedule:actor:Practitioner",
-            "Schedule:actor:HealthcareService",
             "Slot:schedule",
             "Location:managingOrganization"
           ],
@@ -189,12 +164,6 @@
             {
               "name": "searchFilter",
               "type": "token"
-            },
-            {
-              "name": "service.identifier",
-              "definition": "https://fhir.nhs.uk/STU3/SearchParameter/GPConnect-Slot-ServiceIdentifier-1",
-              "type": "token",
-              "documentation": "UEC DOS service ID (i.e. https://fhir.nhs.uk/Id/uec-dos-service-id|1000123)"
             }
           ]
         }

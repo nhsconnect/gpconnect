@@ -60,7 +60,19 @@ Consumers SHALL include the following additional HTTP request headers:
 Example HTTP request headers:
 
 ```http
-{% include foundations/register-patient-request-headers-1.txt %}
+POST http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/$gpc.registerpatient HTTP/1.1
+User-Agent: .NET FhirClient for FHIR 1.2.0
+Accept: application/fhir+json;charset=utf-8
+Prefer: return=representation
+Host: michaelm-pc
+Content-Type: application/fhir+json;charset=utf-8
+Content-Length: 289
+Expect: 100-continue
+Connection: Keep-Alive
+Ssp-TraceID: 629ea9ba-a077-4d99-b289-7a9b19fd4e03
+Ssp-From: 200000000115
+Ssp-To: 200000000116
+Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1
 ```
 
 #### Payload request body ####
@@ -93,7 +105,7 @@ Within the `Patient` resource:
 On the wire a JSON serialised `$gpc.registerpatient` request would look something like the following:
 
 ```json
-{% include foundations/register-patient-request-payload-1.json %}
+{% include foundations/register_patient_request_example.json %}
 ```
 
 ### Provider system registration requirements ###
@@ -239,5 +251,5 @@ Provider systems:
   - `multipleBirthBoolean`
 
 ```json
-{% include foundations/register-patient-response-payload-1.json %}
+{% include foundations/register_patient_response_example.json %}
 ```

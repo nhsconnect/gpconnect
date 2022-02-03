@@ -9,11 +9,11 @@ summary: "Retrieve a patient's future appointments at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings at a provider organisation. 
+This specification describes a single use case enabling the consumer to retrieve a patient's future appointment bookings from a targeted provider system. 
 
-All future appointments for the requested patient, irrespective of the organisation that made the original booking or whether the appointment was booked via the GP Connect API, will be returned by the provider system.
+All future appointments for the requested patient, irrespective of the booking organisation, and irrespective of whether the appointment was booked via the GP Connect API, will be returned from the provider system.
 
-{% include important.html content="The Appointment Management capability is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the retrieval of a patient's appointments has been restricted to future appointments only. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
+{% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As part of information governance (IG) requirements the retrieval of a patient's appointments has been restricted to future appointments only. Additional details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
 
 ## Security ##
 
@@ -38,12 +38,9 @@ Consumer systems SHALL support the following fields in order to provide the full
 - End date and time, or duration
 - Delivery channel (in-person, telephone, video)
 - Slot type and schedule type (see `Appointment.serviceType` and `Appointment.serviceCategory`)
-- Service name (where present, see [service filtering](appointments_serviceid_filtering.html) for more information)
 - Location name and address
 - Practitioner role (e.g. General Medical Practitioner, Nurse)
 - Practitioner name and gender
-
-Consumer systems displaying a list of a patient's appointments SHALL use [Read practitioner](foundations_use_case_read_a_practitioner.html), [Read location](foundations_use_case_read_a_location.html) and [Read healthcare service](foundations_use_case_read_a_healthcareservice.html) endpoints in order to retrieve the service, location and practitioner fields above associated with the patient's appointments.
 
 ## API usage ##
 
@@ -89,20 +86,38 @@ GET /Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper_date_range_boundary]
 ```
 
+#### Example request ####
+
+Retrieve all appointments for patient with logical id 1001 which start on or between 2017-07-11 and 2017-09-14:
+
+```json
+GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14
+```
+
+
 #### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
 
 | Header               | Value |
 |----------------------|-------|
-| `Ssp-TraceID`        | Consumer's trace ID (i.e. GUID/UUID) |
+| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
 | `Ssp-From`           | Consumer's ASID |
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient_appointments-1` |
 
 #### Payload request body ####
 
-No payload is sent in the request.
+N/A
+
+### Error handling ###
+
+Provider systems:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+- SHALL return an error if any part of the consumer supplied date range is in the past. The OperationOutcome returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
+- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details SHALL be returned in the diagnostics element.
+
 
 ### Request response ###
 
@@ -125,46 +140,12 @@ Provider systems:
 
 - SHALL populate `Appointment.serviceType.text` with the practice defined slot type description, and where available `Appointment.serviceCategory.text` with a practice defined schedule type description (may be called session name or rota type).
 
-- SHALL populate a reference to a `HealthcareService` in the `Appointment.participant.actor` element where:
-  - the Appointment is [linked to a service](appointments_serviceid_configuration.html#linking-services-to-schedules) set up for service filtering
-  - and the service filtering [organisation switch](appointments_serviceid_configuration.html#organisation-switch) is set to ON
-
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - SHALL NOT populate the following fields:
   - `reason`
   - `specialty`
 
-### Error handling ###
-
-Provider systems:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
-- SHALL return an error if any part of the consumer supplied date range is in the past. The OperationOutcome returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
-- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details SHALL be returned in the diagnostics element.
-
-## Examples ##
-
-### Retrieve a patient's appointments ###
-
-#### Request ####
-
-Retrieve all appointments for patient with logical id 1001 which start between 2017-07-11 and 2017-09-14 inclusive:
-
-```http
-{% include appointments/retrieve-patient-appts-request-header-1.txt %}
-```
-
-#### Response when the patient has appoinments in the date range provided ####
-
-The response example includes two appointments for the patient, with the organisations that made the original bookings populated as included resources.
-
 ```json
-{% include appointments/retrieve-patient-appts-response-payload-1a.json %}
-```
-
-#### Response when the patient has no appointments in the date range provided ####
-
-```json
-{% include appointments/retrieve-patient-appts-response-payload-1b.json %}
+{% include appointments/retrieve_patients_appts_response_example.json %}
 ```
