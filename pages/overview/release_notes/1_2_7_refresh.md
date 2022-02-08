@@ -34,3 +34,21 @@ The GP Connect API 1.2.7-refresh is a refresh of the 1.2.7 specification to impr
 - [FHIR&reg; resources](datalibraryappointment.html)
 
 ---
+
+### Remove superseded pages from the business requirements spreadsheet ###
+
+**Tickets:**&nbsp; [#1113](https://github.com/nhsconnect/gpconnect/issues/1113)
+
+**Affects:**&nbsp; Appointments
+
+**Impacts:** *(none)*
+
+**Description:**
+
+- Remove superseded and superfluous pages from the business requirements spreadsheet
+
+**Pages changed:**
+
+- [Business requirements](appointments_requirements.html)
+
+---
