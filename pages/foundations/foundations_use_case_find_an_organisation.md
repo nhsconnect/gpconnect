@@ -56,19 +56,6 @@ Consumers SHALL include the following additional HTTP request headers:
 
 N/A
 
-#### Error handling ####
-
-Provider systems:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
-
-For example, the:
-
-- Business identifier `[system]` is not recognised/supported by the provider system
-- Business identifier fails any structural validation checks (for example, length and check digits)
-
-{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
-
 ### Request response ###
 
 #### Response headers ####
@@ -97,6 +84,38 @@ Provider systems:
   - `contact`
   - `endpoint`
 
+#### Error handling ####
+
+Provider systems:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+
+For example, the:
+
+- Business identifier `[system]` is not recognised/supported by the provider system
+- Business identifier fails any structural validation checks (for example, length and check digits)
+
+{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
+
+
+### Examples ###
+
+#### Find an organisation by ODS organisation code ####
+
+##### Request #####
+
+```http
+{% include foundations/find-organization-request-header-1.txt %}
+```
+
+##### Response #####
+
 ```json
-{% include foundations/find_organization_response_example.json %}
+{% include foundations/find-organization-response-payload-1a.json %}
+```
+
+##### Response when no organisation is found #####
+
+```json
+{% include foundations/find-organization-response-payload-1b.json %}
 ```

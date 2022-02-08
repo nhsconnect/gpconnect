@@ -1,0 +1,1 @@
+GET /Patient/2

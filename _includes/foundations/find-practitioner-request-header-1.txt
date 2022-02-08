@@ -1,0 +1,1 @@
+GET /Practitioner?identifier=https://fhir.nhs.uk/Id/sds-user-id|111122223333

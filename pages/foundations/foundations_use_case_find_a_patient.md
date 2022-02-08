@@ -57,19 +57,6 @@ Consumers SHALL include the following additional HTTP request headers:
 
 N/A
 
-#### Error handling ####
-
-Provider systems:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
-
-For example, the:
-
-- business identifier `[system]` is not recognised/supported by the Provider system
-- business identifier fails structural validation checks (that is, not enough digits to be a valid NHS number)
-
-{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
-
 ### Request response ###
 
 #### Response headers ####
@@ -112,10 +99,6 @@ Provider systems:
   - `maritalStatus`
   - `multipleBirthBoolean`
 
-```json
-{% include foundations/find_patient_response_example.json %}
-```
-
 #### Provider system unverified record requirements ####
 
 Where an **[active](overview_glossary.html#active-patient) matching patient record** is found, but the **NHS number on this record has never been traced or verified** (either on PDS, or indirectly via NHAIS), the provider SHALL retrieve the patient's demographic record using a PDS Retrieval Query, and then:
@@ -135,3 +118,38 @@ Where an **[active](overview_glossary.html#active-patient) matching patient reco
   - Superseded
 
 If all three steps above succeed the patient's NHS number SHALL be marked as verified, and the patient SHALL be included in the response bundle. Otherwise the patient's NHS number SHALL NOT be marked as verified and SHALL NOT be included in the response bundle.
+
+#### Error handling ####
+
+Provider systems:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+
+For example, the:
+
+- business identifier `[system]` is not recognised/supported by the Provider system
+- business identifier fails structural validation checks (that is, not enough digits to be a valid NHS number)
+
+{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
+
+### Examples ###
+
+#### Find a patient by NHS number ####
+
+##### Request #####
+
+```http
+{% include foundations/find-patient-request-header-1.txt %}
+```
+
+##### Response #####
+
+```json
+{% include foundations/find-patient-response-payload-1a.json %}
+```
+
+##### Response when no patient is found #####
+
+```json
+{% include foundations/find-patient-response-payload-1b.json %}
+```

@@ -48,19 +48,6 @@ Consumers SHALL include the following additional HTTP request headers:
 
 N/A
 
-#### Error handling ####
-
-Provider systems:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
-
-For example, the:
-
-- Business identifier `[system]` is not recognised/supported by the provider system
-- Business identifier fails any structural validation checks (for example, length and check digits)
-
-{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
-
 ### Request response ###
 
 #### Response headers ####
@@ -92,6 +79,39 @@ Provider systems:
   - `photo`
   - `qualification`
 
+
+#### Error handling ####
+
+Provider systems:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached
+
+For example, the:
+
+- Business identifier `[system]` is not recognised/supported by the provider system
+- Business identifier fails any structural validation checks (for example, length and check digits)
+
+{% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
+
+
+### Examples ###
+
+#### Find a practitioner by SDS user ID ####
+
+##### Request #####
+
+```http
+{% include foundations/find-practitioner-request-header-1.txt %}
+```
+
+##### Response #####
+
 ```json
-{% include foundations/find_practitioner_response_example.json %}
+{% include foundations/find-practitioner-response-payload-1a.json %}
+```
+
+##### Response when no practitioner is found #####
+
+```json
+{% include foundations/find-practitioner-response-payload-1b.json %}
 ```

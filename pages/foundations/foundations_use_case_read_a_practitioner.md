@@ -47,16 +47,6 @@ Consumers SHALL include the following additional HTTP request headers:
 
 N/A
 
-#### Error handling ####
-
-Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
-
-For example, the:
-
-- Logical identifier of the resource is not valid/can't be found on the server.  
-
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
-
 ### Request response ###
 
 #### Response headers ####
@@ -87,6 +77,28 @@ Provider systems:
   - `photo`
   - `qualification`
 
+#### Error handling ####
+
+Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+
+For example, the:
+
+- Logical identifier of the resource is not valid/can't be found on the server.  
+
+Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+### Examples ###
+
+#### Read a practitioner by id ####
+
+##### Request #####
+
+```http
+{% include foundations/read-practitioner-request-header-1.txt %}
+```
+
+##### Response #####
+
 ```json
-{% include foundations/read_practitioner_response_example.json %}
+{% include foundations/read-practitioner-response-payload-1.json %}
 ```

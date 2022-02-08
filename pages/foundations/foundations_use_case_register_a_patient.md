@@ -57,23 +57,6 @@ Consumers SHALL include the following additional HTTP request headers:
 | `Ssp-To`             | Provider's ASID |
 | `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1`|
 
-Example HTTP request headers:
-
-```http
-POST http://gpconnect.aprovider.nhs.net/GP001/DSTU2/1/Patient/$gpc.registerpatient HTTP/1.1
-User-Agent: .NET FhirClient for FHIR 1.2.0
-Accept: application/fhir+json;charset=utf-8
-Prefer: return=representation
-Host: michaelm-pc
-Content-Type: application/fhir+json;charset=utf-8
-Content-Length: 289
-Expect: 100-continue
-Connection: Keep-Alive
-Ssp-TraceID: 629ea9ba-a077-4d99-b289-7a9b19fd4e03
-Ssp-From: 200000000115
-Ssp-To: 200000000116
-Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1
-```
 
 #### Payload request body ####
 
@@ -102,11 +85,6 @@ Within the `Patient` resource:
 
 - **All other fields MUST NOT be populated.**
 
-On the wire a JSON serialised `$gpc.registerpatient` request would look something like the following:
-
-```json
-{% include foundations/register_patient_request_example.json %}
-```
 
 ### Provider system registration requirements ###
 
@@ -182,37 +160,11 @@ Before registering the patient record on the local system, the provider SHALL ch
 
 - **a populated `Patient` resource representing the record created, or reactivated and updated, SHALL be returned to the consuming system shown in [Payload response body](foundations_use_case_register_a_patient.html#payload-response-body) below**.
 
-#### Error Handling ####
-
-The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
-
-The table below shown common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
-
-Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
-
-|-------------------------|-------------------|
-| Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
-| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The NHS number could not be found on PDS, or verified against a PDS record | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The patient is marked as deceased on PDS, or on the provider system | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The registration request is for a sensitive patient | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The PDS record contains an invalid or superseded flag | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| PDS is unavailable, or could not be contacted | [`INTERNAL_SERVER_ERROR`](development_fhir_error_handling_guidance.html#internal-server-errors) |
-| The patient is already registered | [`DUPLICATE_REJECTED`](development_fhir_error_handling_guidance.html#duplicate-errors) |
-|-------------------------|-------------------|
-
 ### Request response ###
 
 #### Response headers ####
 
-```http
-HTTP/1.1 200 OK
-Cache-Control: no-store
-Content-Type: application/fhir+json; charset=utf-8
-Date: Sun, 07 Aug 2016 11:13:05 GMT
-Content-Length: 1464
-```
+Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR&reg; standards.
 
 #### Payload response body ####
 
@@ -250,6 +202,43 @@ Provider systems:
   - `maritalStatus`
   - `multipleBirthBoolean`
 
+
+#### Error Handling ####
+
+The provider system **MUST** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data field is corrupt or a specific business rule/constraint is breached.
+
+The table below shown common errors that may be encountered during this API call, and the returned Spine error code.  Please see [Error handling guidance](development_fhir_error_handling_guidance.html) for additional information needed to create the error response, or to determine the response for errors encountered that are not shown below.
+
+Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
+
+|-------------------------|-------------------|
+| Error encountered        | Spine error code returned |
+|-------------------------|-------------------|
+| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
+| The NHS number could not be found on PDS, or verified against a PDS record | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The patient is marked as deceased on PDS, or on the provider system | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The registration request is for a sensitive patient | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The PDS record contains an invalid or superseded flag | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| PDS is unavailable, or could not be contacted | [`INTERNAL_SERVER_ERROR`](development_fhir_error_handling_guidance.html#internal-server-errors) |
+| The patient is already registered | [`DUPLICATE_REJECTED`](development_fhir_error_handling_guidance.html#duplicate-errors) |
+|-------------------------|-------------------|
+
+### Examples ###
+
+#### Register a patient ####
+
+##### Request #####
+
 ```json
-{% include foundations/register_patient_response_example.json %}
+{% include foundations/register-patient-request-headers-1.txt %}
+```
+
+```json
+{% include foundations/register-patient-request-payload-1.json %}
+```
+
+##### Response #####
+
+```json
+{% include foundations/register-patient-response-payload-1.json %}
 ```

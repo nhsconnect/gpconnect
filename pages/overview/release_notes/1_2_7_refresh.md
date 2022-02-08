@@ -78,3 +78,32 @@ The GP Connect API 1.2.7-refresh is a refresh of the 1.2.7 specification to impr
 - [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)
 
 ---
+
+## Foundations ##
+
+### Improve layout of Foundations API definition pages ###
+
+**Tickets:**&nbsp; [#1150](https://github.com/nhsconnect/gpconnect/issues/1150)
+
+**Affects:**&nbsp; Foundations
+
+**Impacts:** *(none)*
+
+**Description:**
+
+- Co-locate request and response examples at the end of page
+- Create additional examples
+- Move error handling from request operation section to request response section
+
+**Pages changed:**
+
+- [Get the FHIR&reg; capability statement](foundations_use_case_get_the_fhir_capability_statement.html)
+- [Find a patient](foundations_use_case_find_a_patient.html)
+- [Read a patient](foundations_use_case_read_a_patient.html)
+- [Find a practitioner](foundations_use_case_find_a_practitioner.html)
+- [Read a practitioner](foundations_use_case_read_a_practitioner.html)
+- [Find an organisation](foundations_use_case_find_an_organisation.html)
+- [Read an organisation](foundations_use_case_read_an_organisation.html)
+- [Read a location](foundations_use_case_read_a_location.html)
+- [Register a patient](foundations_use_case_register_a_patient.html)
+
