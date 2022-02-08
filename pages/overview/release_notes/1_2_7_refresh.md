@@ -52,3 +52,29 @@ The GP Connect API 1.2.7-refresh is a refresh of the 1.2.7 specification to impr
 - [Business requirements](appointments_requirements.html)
 
 ---
+
+### Improve layout of Appointments API definition pages ###
+
+**Tickets:**&nbsp; [#1149](https://github.com/nhsconnect/gpconnect/issues/1149)
+
+**Affects:**&nbsp; Appointments
+
+**Impacts:** *(none)*
+
+**Description:**
+
+- Co-locate request and response examples at the end of page
+- Create additional examples
+- Move error handling from request operation section to request response section
+- Add free slot resource relationship diagram to search for free slots page
+
+**Pages changed:**
+
+- [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)
+- [Search for free slots](appointments_use_case_search_for_free_slots.html)
+- [Read an appointment](appointments_use_case_read_an_appointment.html)
+- [Book an appointment](appointments_use_case_book_an_appointment.html)
+- [Amend an appointment](appointments_use_case_amend_an_appointment.html)
+- [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)
+
+---

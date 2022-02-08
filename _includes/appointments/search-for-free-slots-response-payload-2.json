@@ -20,15 +20,15 @@
         ],
         "serviceType": [
           {
-            "text": "General GP Appointment"
+            "text": "GP Appointment"
           }
         ],
         "schedule": {
           "reference": "Schedule/14"
         },
         "status": "free",
-        "start": "2016-08-15T11:30:00+01:00",
-        "end": "2016-08-15T11:40:00+01:00"
+        "start": "2019-03-29T11:30:00+01:00",
+        "end": "2019-03-29T11:40:00+01:00"
       }
     },
     {
@@ -56,8 +56,8 @@
           "reference": "Schedule/14"
         },
         "status": "free",
-        "start": "2016-08-15T11:40:00+01:00",
-        "end": "2016-08-15T11:50:00+01:00"
+        "start": "2019-03-29T11:40:00+01:00",
+        "end": "2019-03-29T11:50:00+01:00"
       }
     },
     {
@@ -90,73 +90,11 @@
         "actor": [
           {
             "reference": "Location/17"
-          },
-          {
-            "reference": "Practitioner/2"
           }
         ],
         "planningHorizon": {
-          "start": "2016-08-15T09:00:00+01:00",
-          "end": "2016-08-15T12:00:00+01:00"
-        }
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Practitioner",
-        "id": "2",
-        "meta": {
-          "versionId": "636064088099800115",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1"
-          ]
-        },
-        "identifier": [
-          {
-            "system": "https://fhir.nhs.uk/Id/sds-user-id",
-            "value": "111122223333"
-          }
-        ],
-        "name": [
-          {
-            "family": "Black",
-            "given": [
-              "Sarah"
-            ],
-            "prefix": [
-              "Mrs"
-            ]
-          }
-        ],
-        "gender": "female"
-      }
-    },
-    {
-      "resource": {
-        "resourceType": "Location",
-        "id": "17",
-        "meta": {
-          "versionId": "636064088100870233",
-          "profile": [
-            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1"
-          ]
-        },
-        "name": "The Trevelyan Practice",
-        "address": {
-          "line": [
-            "Trevelyan Square",
-            "Boar Ln",
-            "Leeds"
-          ],
-          "postalCode": "LS1 6AE"
-        },
-        "telecom": {
-          "system": "phone",
-          "value": "03003035678",
-          "use": "work"
-        },
-        "managingOrganization": {
-          "reference": "Organization/23"
+          "start": "2019-03-29T09:00:00+01:00",
+          "end": "2019-03-29T12:00:00+01:00"
         }
       }
     },
@@ -177,20 +115,24 @@
           }
         ],
         "name": "The Trevelyan Practice",
-        "address": {
-          "line": [
-            "Trevelyan Square",
-            "Boar Ln"
-          ],
-          "city": "Leeds",
-          "district": "West Yorkshire",
-          "postalCode": "LS1 6AE"
-        },
-        "telecom": {
-          "system": "phone",
-          "value": "03003035678",
-          "use": "work"
-        }
+        "address": [
+          {
+            "line": [
+              "Trevelyan Square",
+              "Boar Ln"
+            ],
+            "city": "Leeds",
+            "district": "West Yorkshire",
+            "postalCode": "LS1 6AE"
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03003035678",
+            "use": "work"
+          }
+        ]
       }
     }
   ]

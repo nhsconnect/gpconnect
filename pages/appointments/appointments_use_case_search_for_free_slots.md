@@ -84,19 +84,6 @@ In order for providers to return the appropriate slots for the consumer, the con
 
 Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
 
-## Search for free slots on the wire ##
-
-On the wire, a search for free slots request sending all parameters, and searching on date, would look something like the following:
-
-```http
-GET /Slot?status=free&start=ge2017-10-20&end=le2017-10-31&_include=Slot:schedule&_include:recurse=Schedule:actor:Practitioner&_include:recurse=Schedule:actor:Location&_include:recurse=Location:managingOrganization&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
-```
-
-A search for free slots request sending only mandatory and required parameters, and searching on date and time, would look something like the following:
-
-```http
-GET /Slot?status=free&start=ge2019-03-29T12:00:00+00:00&end=le2019-04-01T17:00:00+01:00&_include=Slot:schedule&searchFilter=https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1|gp-practice&searchFilter=https://fhir.nhs.uk/Id/ods-organization-code|A1001
-```
 
 ## Booking multiple adjacent slots ##
 
@@ -175,20 +162,16 @@ Consumers SHALL include the following additional HTTP request headers:
 
 N/A
 
-
-#### Error handling ####
-
-The provider system SHALL return an error if:
-
-- the time period defined by `start` and `end` parameters is greater than a two week period
-- the `status` parameter is absent or is present with a value other than `free`
-- the `_include=Slot:schedule` is absent
-
-SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
-
-Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
-
 ### Request response ###
+
+#### FHIR resource relationships ####
+
+This diagram shows the relationships between FHIR resources in the search for free slots response message.
+
+![Diagram - Slot resource relationship structure](images/appointments/appointment-fhir-resources-slot.png)
+
+{% include important.html content="A Schedule may not have Practitioner references present in the actor element, and therefore the Practitioner resource may not be returned in the response Bundle, regardless of the _include parameters sent." %}
+
 
 #### Response headers ####
 
@@ -242,6 +225,93 @@ Provider systems:
 
 - SHALL NOT populate the `specialty` field on `Schedule` or `Slot`  
 
+
+#### Error handling ####
+
+The provider system SHALL return an error if:
+
+- the time period defined by `start` and `end` parameters is greater than a two week period
+- the `status` parameter is absent or is present with a value other than `free`
+- the `_include=Slot:schedule` is absent
+
+SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
+
+Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
+
+
+
+## Examples ##
+
+### Example - Searching with all parameters ###
+
+#### Request ####
+
+The example below shows a typical search for free slots request from a consumer system.
+
+The consumer system is:
+  
+- sending all search parameters
+- and searching on date
+
+```http
+{% include appointments/search-for-free-slots-request-header-1.txt %}
+```
+{% include note.html content="Please note: Newlines and spacing have been added for readability in the example above, these are not included in an actual request." %}
+
+#### Response ####
+
+The example response includes two Slot resources matching the search criteria, and associated Schedule, Location, Practitioner and Organization resources.
+
 ```json
-{% include appointments/search_for_free_slots_response_example.json %}
+{% include appointments/search-for-free-slots-response-payload-1.json %}
+```
+
+### Example - Searching with the minimum parameters ###
+
+#### Request ####
+
+The example below shows a typical search for free slots request:
+
+- sending mandatory and required parameters only
+- and searching on date and time
+
+```http
+{% include appointments/search-for-free-slots-request-header-2.txt %}
+```
+
+{% include note.html content="Please note: Newlines and spacing have been added for readability in the example above, these are not included in an actual request." %}
+
+#### Response ####
+
+The example response includes two Slot resources matching the search criteria, and associated Schedule and Organization resources.
+
+This example also shows the absence of a Practitioner resource.  This may happen where a provider organisation has not yet assigned a named practitioner to an appointment schedule.
+
+Please note:  the Organization resource is returned in this Bundle despite the Organization _include parameter not being sent (this is a [Known issue](appointments_known_issues.html#organization-resource-in-search-for-free-slots-returned-bundle)).
+
+```json
+{% include appointments/search-for-free-slots-response-payload-2.json %}
+```
+
+### Example - No slots returned ###
+
+#### Request ####
+
+The example below shows a typical search for free slots request:
+
+- sending all request parameters
+- and searching on date
+
+```http
+{% include appointments/search-for-free-slots-request-header-3.txt %}
+```
+
+{% include note.html content="Please note: Newlines and spacing have been added for readability in the example above, these are not included in an actual request." %}
+
+#### Response ####
+
+The example response shows an empty Bundle as no slots were found matching the search criteria.
+
+```json
+{% include appointments/search-for-free-slots-response-payload-3.json %}
 ```

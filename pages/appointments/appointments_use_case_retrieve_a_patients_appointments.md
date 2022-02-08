@@ -86,15 +86,6 @@ GET /Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper
 GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]/Appointment?start=ge[lower_date_range_boundary]&start=le[upper_date_range_boundary]
 ```
 
-#### Example request ####
-
-Retrieve all appointments for patient with logical id 1001 which start on or between 2017-07-11 and 2017-09-14:
-
-```json
-GET /Patient/1001/Appointment?start=ge2017-07-11&start=le2017-09-14
-```
-
-
 #### Request headers ####
 
 Consumers SHALL include the following additional HTTP request headers:
@@ -109,15 +100,6 @@ Consumers SHALL include the following additional HTTP request headers:
 #### Payload request body ####
 
 N/A
-
-### Error handling ###
-
-Provider systems:
-
-- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
-- SHALL return an error if any part of the consumer supplied date range is in the past. The OperationOutcome returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
-- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details SHALL be returned in the diagnostics element.
-
 
 ### Request response ###
 
@@ -146,6 +128,36 @@ Provider systems:
   - `reason`
   - `specialty`
 
+### Error handling ###
+
+Provider systems:
+
+- SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more request fields are corrupt or a specific business rule/constraint is breached. Refer to [Development - FHIR API guidance - error handling](development_fhir_error_handling_guidance.html) for details of error codes.
+- SHALL return an error if any part of the consumer supplied date range is in the past. The OperationOutcome returned SHALL include a meaningful error message to indicate that the search parameters can not request appointments in the past.
+- Where the use of the `start` search parameter does not define a valid date range, `HTTP Status code 422` with error code `INVALID_PARAMETER` will be returned. Additional details SHALL be returned in the diagnostics element.
+
+## Examples ##
+
+### Retrieve a patient's appointments ###
+
+#### Request ####
+
+Retrieve all appointments for patient with logical id 1001 which start between 2017-07-11 and 2017-09-14 inclusive:
+
+```http
+{% include appointments/retrieve-patient-appts-request-header-1.txt %}
+```
+
+#### Response when the patient has appoinments in the date range provided ####
+
+The response example includes two appointments for the patient, with the organisations that made the original bookings populated as included resources.
+
 ```json
-{% include appointments/retrieve_patients_appts_response_example.json %}
+{% include appointments/retrieve-patient-appts-response-payload-1a.json %}
+```
+
+#### Response when the patient has no appointments in the date range provided ####
+
+```json
+{% include appointments/retrieve-patient-appts-response-payload-1b.json %}
 ```

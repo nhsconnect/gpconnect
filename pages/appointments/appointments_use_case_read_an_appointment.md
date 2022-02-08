@@ -64,18 +64,6 @@ Consumers SHALL include the following additional HTTP request headers:
 
 N/A
 
-#### Error handling ####
-
-Provider systems:
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
-- SHALL return an error if the appointment being read is in the past (the appointment start dateTime is before the current date and time).
-
-Examples of other scenarios which may result in error being returned:
-- Where a logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevant OperationOutcome resource.
-- Where insufficient data about an appointment is present in the provider system to populate an appointment resource which validates to the `GPConnect-Appointment-1` profile, a 500 HTTP Status code should be returned, together with the appropriate OperationOutcome resource providing diagnostic detail.
-
-Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
-
 ### Request response ###
 
 #### Response headers ####
@@ -102,6 +90,30 @@ Provider systems:
   - `reason`
   - `specialty`
 
+#### Error handling ####
+
+Provider systems:
+- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an error if the appointment being read is in the past (the appointment start dateTime is before the current date and time).
+
+Examples of other scenarios which may result in error being returned:
+- Where a logical identifier of the resource is not valid/can't be found on the server, a 404 HTTP Status code would be returned with the relevant OperationOutcome resource.
+- Where insufficient data about an appointment is present in the provider system to populate an appointment resource which validates to the `GPConnect-Appointment-1` profile, a 500 HTTP Status code should be returned, together with the appropriate OperationOutcome resource providing diagnostic detail.
+
+Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
+
+## Examples ##
+
+### Read an appointment by id ###
+
+#### Request ####
+
+```http
+{% include appointments/read-appt-request-header-1.txt %}
+```
+
+#### Response ####
+
 ```json
-{% include appointments/read_appt_response_example.json %}
+{% include appointments/read-appt-response-payload-1.json %}
 ```
