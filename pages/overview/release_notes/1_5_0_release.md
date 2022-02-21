@@ -950,7 +950,7 @@ Minor changes to the text to clarify that free text recorded in consultation use
 
 ---
 
-### Updated List guidance 
+### Updated List guidance
 
 **Tickets:** &nbsp; [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
 
@@ -1148,7 +1148,7 @@ Notes under here for the published version
 
 ---
 
-### Document retrieval file size limit
+#### Document retrieval file size limit
 
 **Affects:**&nbsp; Access Documents
 
@@ -1305,7 +1305,7 @@ Notes under here for the published version
 
 ---
 
-### Bundle.id must now be populated
+#### Bundle.id must now be populated
 
 **Affects:**&nbsp; Access Structured, Access Document
 
@@ -1322,7 +1322,7 @@ Notes under here for the published version
 
 ---
 
-### Updated examples for includeNumberOfMostRecent part parameter
+#### Updated examples for includeNumberOfMostRecent part parameter
 
 **Affects:**&nbsp; Access Structured
 
