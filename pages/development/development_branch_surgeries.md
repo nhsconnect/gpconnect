@@ -9,6 +9,8 @@ summary: "Describes how GP Connect manages branch surgery data"
 
 ## GP practices with multiple surgeries
 
+The quick brown fox jumps over the lazy dog.
+
 A GP practice may operate from a single surgery (location) or from multiple surgeries (multiple locations).
 
 In GP Connect, a GP practice is represented by an `Organization` resource, and the surgeries are represented by `Location` resources.  The surgery `Location` is linked to the GP practice `Organization` via the `Location.managingOrganisation` element.

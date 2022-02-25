@@ -24,6 +24,9 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
+        - title: 1.2.7a
+          url: /overview_release_notes_1_2_7a.html
+          output: web
         - title: 1.2.7
           url: /overview_release_notes_1_2_7.html
           output: web
@@ -107,6 +110,9 @@ entries:
   - title: Development
     output: web
     folderitems:
+    - title: Test menu item
+      url: /development_deliverables.html
+      output: web
     - title: Development deliverables
       url: /development_deliverables.html
       output: web
