@@ -375,7 +375,7 @@ Notes about the immunization.
 The reason why the immunization was given, for example, travel, occupation, and so on.
 This **MUST** be absent if <code>notGiven</code> is <code>true</code>.
 
-### explanation.notGivenReason
+### explanation.reasonNotGiven
 
 <table class='resource-attributes'>
   <tr>
