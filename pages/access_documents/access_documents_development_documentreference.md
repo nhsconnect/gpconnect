@@ -94,7 +94,7 @@ This field will always have default value of current as only the latest version 
   </tr>
 </table>
 
-Kind of document, a value **SHOULD** be taken from the SNOMED refset `1127551000000109 |Record composition type simple reference set (foundation metadata concept)|`. 
+Kind of document, a value **SHOULD** be taken from the SNOMED refset `1127551000000109 |Record composition type simple reference set (foundation metadata concept)|`.
 Other classifications of documents **SHOULD** be sent as `text`.
 
 ### subject ###
@@ -193,7 +193,7 @@ URL to retrieve the document, this **MUST** be populated when the document is av
   </tr>
 </table>
 
-Size of the file. Where the document is unavailable this **MUST** be set to `0`.
+Size of the file.
 
 ### content.attachment.title ###
 
