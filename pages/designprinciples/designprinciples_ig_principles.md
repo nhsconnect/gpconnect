@@ -34,6 +34,11 @@ Review and agreement as to IG model changes (to accommodate additional capabilit
 
 - Consuming Organisations **MUST** seek permission to view from the Patient for any information supplied via a GP Connect service; in scenarios where the patient is not present, for example a referral to an outpatient clinic where it would be reasonable to review the GP record prior to the appointment, access to the record can be made based on a Legitimate Relationship with the patient, subject to Data-Sharing agreement and absence of Provider System Patient Dissent to share indicator
 
+- Consuming organisations **MUST**
+  - ensure the service is only accessed for the sole purpose of supporting direct patient care, and
+  - ensure appropriate role-based access controls are applied such that only appropriate users are able to access the service, subject to the extent to which it can be limited for each capability, and
+  - be aware of any limitations set by data controllers as to the extent of access allowed by their data sharing agreement for a healthcare setting and / or user role, and ensure such limitations are robustly applied, see WEB-LINK-TO-BE_ADDDED for further details
+
 - the presence of any local patient dissent to share flag within a GP Practice system **MUST** be implemented when accessing the patient medical record and cannot be overridden by consent given at the point of care
 
 - functionality to support the application of an exclusion set **MUST** be provided;  the current Royal College of General Practitioners (RCGP) sensitive dataset for specific conditions (for example, sexual health, HIV and so on) will be applied (excluded) for FoT with any changes arising from national policy to be reflected
