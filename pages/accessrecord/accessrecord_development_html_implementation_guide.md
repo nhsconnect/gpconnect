@@ -129,6 +129,10 @@ Where a patient is flagged on the Personal Demographics Service (PDS) as sensiti
 
 ## Section retrieval ##
 
+The consuming system **MUST** provide role based access controls to the HTML section retrieval at an appropriate level such that the consuming organisation can meet its obligations as described in the [Information governance principles](designprinciples_ig_principles.html) page.
+
+The consuming organisation **MUST** provide appropriate support to its users to understand the error messages associated with the HTML sections as follows.
+
 ### Error handling ###
 
 If a GP principal system can't meaningfully supply content for a requested HTML section (or subset of the Summary View) then the system **MUST** return the following HTML fragment in place of the HTML table.
