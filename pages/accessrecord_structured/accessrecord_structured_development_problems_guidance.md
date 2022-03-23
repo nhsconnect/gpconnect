@@ -35,6 +35,8 @@ To support this, problems are linked to:
 ## Problem relationships
 Problem records are linked to consultations, clinical items and other problems. Different provider systems manage links to problems in different ways. To reduce the impact of this to consumers, the provider system will transform their problem linkages into a common model for export.
 
+{% include note.html content="The diagrams are illustrative to support the specification text. There may be some simplifications or omissions, for instance not all possible linkages to the resources for investigations are shown." %}
+
 Each problem record is linked to:
 *	all consultations where the problem was discussed or information about the problem was recorded
     *	consultations that are directly linked to the problem in the provider system; and
@@ -70,6 +72,8 @@ It is possible within GP clinical systems to link problems together. This is don
 The methods and terminology used to link problems varies a great deal between clinical systems and are not compatible with each other. For example, in one GP clinical system grouping two problems merges them into a single problem while in another it keeps them as two separate problems that are linked together.
 
 To resolve this, GP Connect will only show the logical linkage between problems (whether the linked problem is a parent, child or sibling) without reflecting the terminology of the provider system.
+
+Problem linkages may be impacted by filtering. See the guidance in the [retrieve a patients structured record page.](https://gpc-structured-1-5-0.netlify.app/accessrecord_structured_development_retrieve_patient_record.html)
 
 ## Problems linking to out of scope clinical items
 

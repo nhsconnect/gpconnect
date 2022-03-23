@@ -14,7 +14,7 @@ The headings below list the elements of the `Observation` profile and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7)." %}
 
 ## Observation elements #
 
@@ -245,7 +245,7 @@ If there is no code or value in this component, then a data absent reason may be
   </tr>
 </table>
 
-A human-readable clinical summary relating to the reading - for example, if the patient was lying or standing.
+A human-readable clinical summary relating to a test result and/or additional notes provided by the laboratory - for example, the specimen has haemolysed or has leaked.
 
 
 ### component.referenceRange ###

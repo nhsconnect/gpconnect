@@ -27,7 +27,7 @@ entries:
           url: /overview_release_notes_1_6_0.html
           output: web
         - title: 1.5.0
-          url: /overview_release_notes_1_5_0.html
+          url: /overview_release_notes_1_5_0_release.html
           output: web
         - title: Access Document 1.0.1
           url: /overview_release_notes_documents_1_0_1.html

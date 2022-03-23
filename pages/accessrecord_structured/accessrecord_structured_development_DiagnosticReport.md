@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_DiagnosticReport.html
 summary: "Guidance for populating and consuming investigations data in GP Connect"
+div: resource-page
 ---
 
 
@@ -125,6 +126,17 @@ As this item is mandatory in FHIR then suppliers should populate it with the SNO
 
 A reference to the `Patient` who the DiagnosticReport is about.
 
+### context ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A reference to the `Encounter` profile representing the consultation the test report is associated to.
 
 ### issued ###
 
@@ -173,9 +185,13 @@ Reference to the specimen(s) on which these results were based.
   </tr>
 </table>
 
-Reference to the result(s) which are contained in the DiagnosticReport. This may contain references to standalone test results, test group headers (which then reference further results) or a mixture of both.
+Reference to the result(s) which are contained in the DiagnosticReport. 
+This may contain references to standalone test results, test group headers (which then reference further results) or a mixture of both.
 
-In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record. This will be identified as the `observation.code` element will be populated with the SNOMED code `37331000000100` for `Comment note`.
+Test results which are part of a test group will not be referenced by this element, the reference will be to the test group which will in turn reference the test results.
+
+In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record. 
+This will be identified as the `observation.code` element will be populated with the SNOMED code `37331000000100` for `Comment note`.
 
 ### codedDiagnosis ###
 
@@ -217,17 +233,6 @@ The following elements **MUST NOT** be populated:
 </table>
 
 Out of scope for the current iteration.
-
-<h3 style="color:#ED1951;"> context </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
-  </tr>
-</table>
-
-Out of scope for the current iteration.
-
 
 <h3 style="color:#ED1951;"> imagingStudy </h3>
 

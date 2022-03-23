@@ -17,7 +17,7 @@ As such, there are a number of items that are **NOT** currently in scope. These 
 * test results that are received as documents or images
 * making available any test requests
 * providing the original test report document as it was provided to the practice
-* any other numeric results that do not form part of an EDIFACT message (blood pressure
+* any other numeric results that do not form part of an EDIFACT message (blood pressure, height, weight)
 
 These may be addressed in future versions or within different areas of GP Connect - for example, manually entered results will be dealt with when we curate the uncategorised data in GP systems contained in the journal or care history areas.
 
@@ -52,7 +52,9 @@ When results are filed by the user it is possible to file the entire report or a
 
 Results may not always be filed on the day they were received. However, in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such, this date is an important date when moving records between GP systems.
 
-At the point at which the record is filed, there is opportunity for the user to provide comments against the report or part of the report that they are filing.
+At the point at which the record is filed, there is opportunity for the user to provide comments against the report or part of the report that they are filing. 
+
+GP Connect will return any diagnosticReports that are associated with a patient whether they have been filed or not. In all cases where reports have been filed into the record there will be a 'Filing comments' observation this will always have a date indicating when the result/report was filed and details any comments made by the user at the time. 
 
 ## Report structure
 
@@ -103,6 +105,11 @@ DiagnosticReport is at the centre of the model and all the other entities are li
 The `Observation` resource is used for three different entities within the model. The test group header, test results and to contain any filing comments. Although we have used this resource in different settings, there will be only one FHIR profile that can then be populated appropriately for each individual use.
 
 There are detailed notes about how to populate each of these resources in the individual resource pages.
+
+## Investigations and Problems
+
+There is specific guidance for representing the relationship of a problem to an investigation.
+Details are provided on the [Problem guidance](accessrecord_structured_development_problems_guidance.html).
 
 ## Using the `List` resource for investigations queries
 

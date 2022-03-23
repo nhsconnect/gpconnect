@@ -114,7 +114,9 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
 
 ## Consultation notes
 
-Consultation notes are the human readable version of the clinical information recorded under each heading. They may or may not be accompanied by a clinically coded version of the information.
+Consultation notes are the human readable version of the clinical information recorded under each heading. 
+They may or may not be accompanied by a clinically coded version of the information.
+Where text is entered freely into a consultation without being associated with a clinical code it will be returned in an `Observation` with the SNOMED code `37331000000100 Comment note`
 
 There are two primary ways that consultation notes are recorded on native GP systems:
 
@@ -242,8 +244,9 @@ The same approach is followed for empty topic and heading levels recorded at sou
 
 ## Using the `List` resource for consultation queries
 
-The results of a query for consultation details **MUST** return a `List` containing references to all the `List` resources at the top consultation level which are identified by the SNOMED code **325851000000107 Consultation encounter type** and represent each consultation that is returned.
+The results of a query for consultation details **MUST** return a `List` containing references to all the `Encounter` resources which represent each consultation that is returned.
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. In this case, `List.note` **MUST** be populated with the text 'Information not available'.
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. 
+In this case, `List.note` **MUST** be populated with the text 'Information not available'.

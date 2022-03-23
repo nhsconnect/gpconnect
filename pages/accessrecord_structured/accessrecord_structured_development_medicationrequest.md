@@ -168,7 +168,7 @@ The textual reason either free text or the term of a code for stopping/discontin
   </tr>
 </table>
 
-If a medication/medical device is an acute, acute-handwritten, delayed acute, repeat or repeat dispense.
+If a medication/medical device is an acute (code : `acute`), delayed acute (`delayed-prescribing`), repeat (`repeat`) or repeat dispense (`repeat-dispensing`).
 
 This field provides an explicit repeat/acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
@@ -188,7 +188,7 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
-If the EPS identifier is present then the identifier.value is where the EPS Id SHOULD also be added. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/eps-line-item-identifier`
+If the EPS identifier is present then the identifier.value is where the EPS Id SHOULD also be added. The codeSystem for this identifier is `https://fhir.nhs.uk/Id/prescription-order-item-number`
 
 ### basedOn ###
 
@@ -213,10 +213,9 @@ This field is used to create the links between `MedicationRequest` profiles to r
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
+The EPS prescriptionID if this medication or medical device has been prescribed via the Electronic Prescriptions Service. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is `identifier.value`.
 
-Composite request this is part of. The element in the Identifier data type that **MUST** be populated when a groupIdentifier is populated is `identifier.value`.
-
-All repeat prescribed and repeat dispensed medications **MUST** have a group identifier that is populated for the ‘plan’ and all ‘orders’ relating to them.
+All EPS prescribed drugs **MUST** have the prescriptionID present in this field and have `system` element set to `https://fhir.nhs.uk/Id/prescription-order-number`.
 
 ### status ###
 
@@ -331,9 +330,9 @@ Unless there is a distinct user-modifiable date and time for the authorisation, 
 
 Person and their organization requesting authorisation for prescription.
 
-To be used if the medication/medical device was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
+May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
 
-If the medication/medical device has been prescribed elsewhere and, for example, is detailed in the sending system as a hospital medication, this **MUST** be detailed using an `organisation.type` code in the agent reference in the requester element.
+If it was prescribed at another practice and has been imported via GP2GP. In that case, the `onBehalfOf` **MUST** be completed with a reference to the other organisation.
 
 ### recorder ###
 
@@ -345,9 +344,7 @@ If the medication/medical device has been prescribed elsewhere and, for example,
   </tr>
 </table>
 
-The responsible `Practitioner` who authorised the medication/medical device.
-
-May not always be the user who entered the record on the system but, where a system supports attribution to a responsible clinician, the attributed clinician **MUST** be referenced here.
+The person who entered the record on the system.
 
 ### note ###
 

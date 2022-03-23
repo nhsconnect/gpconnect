@@ -35,10 +35,10 @@ Any future intention for a clinical action recorded as an Appointment, Warning /
 
 Medication reviews are considered to fall under the definition of a diary entry.
 GP clinical systems which have a separate feature for medication reviews **MUST** include the medication reviews within diary entries.
-These medication reviews **MUST** be assigned the SNOMED CT code <code>314529007 | Medication review due (situation) |</code> or one of its child codes as most appropriate.
+The entered medication review code can be sent or the provider **MAY** substitute with the SNOMED CT code <code>314529007 | Medication review due (situation) |</code> as most appropriate.
 Hereafter, reference to diary entries **MUST** be assumed to include medication reviews.
 
-Consumers should be aware that medication reviews may occur in additional to the main, planned medication review(s) recorded in the GP clinical system and shared via this resource.
+Consumers should be aware that medication reviews may occur in addition to the main, planned medication review(s) recorded in the GP clinical system and shared via this resource.
 
 ## Diary entry status
 
@@ -65,6 +65,10 @@ The planned date may be a single date or a date range according to the source GP
 The GP clinical system provider is to determine whether its data supports the inclusion of a period for the planned date or can only meaningfully return a single planned date.
 Wherever feasible and meaningful, a date period is preferred.
 The planned date(s) may represent an earliest date, latest date, indicative date or a combination but this may vary by record / use and the resource will not provide distinctions in this respect.
+
+Consumers may include a part parameter to return only diary entries up to a selected date in the future.
+As the search filter only provides an upper boundary and has to be a future date, diary entries which are `active` and have passed their planned date will always be included.
+Full details about search criteria for diary entries is detailed in the [Search criteria](accessrecord_structured_development_search.html#diary-entries) and [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html#request-operation) pages.
 
 ## Dairy entry authoredOn
 

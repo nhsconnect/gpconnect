@@ -26,7 +26,6 @@ toc: false
   clear: both;
 }
 </style>
-
 <div class="row">
   <div class="column">
    <p style="font-size:18px">Overview</p>
@@ -35,12 +34,18 @@ toc: false
 	 <p><a href="pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.1.xlsx">Requirements catalogue</a></p>
     	<p><a href="accessrecord_structured_known_issues.html">Known issues</a></p>
   </div>
+</div>
+
+<div class="row">
   <div class="column">
     <p style="font-size:18px">Development</p>
 	<p><a href="accessrecord_structured_development.html">Introduction</a></p>
     	<p><a href="accessrecord_structured_development_resources_overview.html">Resource population fundamentals</a></p>
+		<p><a href="accessrecord_structured_development_lists_for_message_structure.html">Using lists to return data</a></p>
 	<p><a href="accessrecord_structured_development_linkages.html">Linkages</a></p>  
+	<p style="padding-top:8px">Search</p>  
 	  <p><a href="accessrecord_structured_development_search.html">Search criteria</a></p>
+	  <p><a href="accessrecord_structured_development_searchmultiareasearches.html">Multi area searches</a></p>
 	  <p><a href="accessrecord_structured_development_searchExamples.html">Search examples</a></p>
 	<p style="padding-top:8px">Structural resources</p>  
 	<p><a href="accessrecord_structured_development_list.html">List</a></p>
@@ -66,6 +71,7 @@ toc: false
 	<p><a href="accessrecord_structured_development_uncategorisedData_guidance.html">Uncategorised data guidance</a></p>
 	<p><a href="accessrecord_structured_development_observation_uncategorisedData.html">Observation - uncategorised data</a></p>
 	<p><a href="accessrecord_structured_development_observation_bloodPressure.html">Observation - blood pressure</a></p>
+	<p><a href="accessrecord_structured_development_questionnaireresponse.html">QuestionnaireResponse</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_uncategorised.html">Uncategorised data FHIR® examples</a></p>
 	<p style="padding-top:8px">Consultations</p>
 	<p><a href="accessrecord_structured_development_consultation_guidance.html">Consultation guidance</a></p>
@@ -76,6 +82,8 @@ toc: false
 	<p><a href="accessrecord_structured_development_problems_guidance.html">Problem guidance</a></p>
 	<p><a href="accessrecord_structured_problems.html">ProblemHeader (Condition)</a></p>
 	<p><a href="accessrecord_structured_development_fhir_examples_consultations.html">Problems FHIR® examples</a></p>
+</div>
+<div class="column">
   <p style="padding-top:8px">Investigations</p>
   <p><a href="accessrecord_structured_development_pathology_guidance.html">Investigations guidance</a></p>
   <p><a href="accessrecord_structured_development_DiagnosticReport.html">DiagnosticReport</a></p>
@@ -85,8 +93,6 @@ toc: false
   <p><a href="accessrecord_structured_development_observation_filingComments.html">Observation - Filing Comments</a></p>
   <p><a href="accessrecord_structured_development_ProcedureRequest.html">ProcedureRequest</a></p>
   <p><a href="accessrecord_structured_development_fhir_examples_pathology.html">Investigations FHIR&reg; examples</a></p>
-</div>
-<div class="column">
   <p style="padding-top:8px">Referrals</p>
   <p><a href="accessrecord_structured_development_referralrequest_guidance.html">Referrals guidance</a></p>
   <p><a href="accessrecord_structured_development_referralrequest.html">ReferralRequest</a></p>
@@ -97,9 +103,14 @@ toc: false
   <p><a href="accessrecord_structured_development_diaryentry_guidance.html">Diary entry guidance</a></p>
   <p><a href="accessrecord_structured_development_diaryentry.html">ProcedureRequest</a></p>
   <p><a href="accessrecord_structured_development_fhir_examples_diaryentries.html">Diary entry FHIR&reg; examples</a></p>
+  </div>
+</div>
+<div class="row">
+   <div class="column">
 	<p style="font-size:18px">API definition</p>
 	<p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
 	<p><a href="accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>  
+	<p><a href="accessrecord_structured_development_clinical_area_config.html">Configuration for clinical areas</a></p>  
 	<p><a href="accessrecord_structured_development_fhir_examples_forwards_consultations.html">Forwards compatibility support example</a></p>
   <p><a href="accessrecord_structured_get_the_fhir_capability_statement.html">Get the FHIR&reg; capability statement</a></p>  
   </div>

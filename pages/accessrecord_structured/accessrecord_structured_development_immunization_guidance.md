@@ -139,7 +139,7 @@ For example, if the GP system holds the dosage information in a format which doe
 
 ## Using the `List` resource for immunisation queries
 
-The results of a query for immunisation details **MUST** return a `List` containing references to all `Immunization` and 'Observation' resources that are returned.
+The results of a query for immunisation details **MUST** return a `List` containing references to all `Immunization` and `Observation` resources that are returned.
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 

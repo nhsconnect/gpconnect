@@ -13,7 +13,7 @@ The headings below list the elements of the `questionnaireResponse` profile and 
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [QuestionnaireResponse profile definition](https://simplifier.net/nhsdigitalstu3assets/careconnect-questionnaireresponse-1)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [QuestionnaireResponse profile definition](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-QuestionnaireResponse-1/_history/1.0)." %}
 
 ## QuestionnaireResponse elements ##
 
@@ -140,12 +140,14 @@ When this `questionnaireResponse` was created on the system.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>String</code></td>
-    <td><b>Optionality:</b> Required</td>
-    <td><b>Cardinality:</b> 0..1</td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
   </tr>
 </table>
 
-Pointer to a specific item from a linked `questionnaire`.
+Pointer to a specific item from a linked `questionnaire`. 
+Where the questionnaireResponse does not link back to a questionnaire this should be populated with the rubric of the 'parent' observation.
+If the 'parent' observation does not have a text description which can be used, then populate with ‘No information available’. 
 
 ### item.text ###
 
@@ -164,13 +166,15 @@ A text description of the question this item is an answer to or name of the grou
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Multiple</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Answer to the question or item contained in the group.
+Answer to the question or item contained in the group. 
+
+In the current build of GP Connect this will always be in the form of a reference to another resource.
 
 
 

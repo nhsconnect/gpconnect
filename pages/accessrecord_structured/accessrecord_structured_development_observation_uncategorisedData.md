@@ -14,7 +14,7 @@ The headings below list the elements of the `Observation` profile and describe h
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7)." %}
 
 ## Observation elements #
 
@@ -84,7 +84,7 @@ Fixed value of `final`.
 
 The clinical code that represents the data within the observation.
 
-Where the uncategorised data is free text without any clinical code set to 37331000000100 Comment note.
+For free text without any clinical code set to `37331000000100 Comment note`.
 
 ### subject ###
 
@@ -139,17 +139,20 @@ The audit trail timestamp representing when the data was recorded.
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Practitioner, Organization)</code></td>
-    <td><b>Optionality:</b> Mandatory</td>
-    <td><b>Cardinality:</b> 1..*</td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
 The `Practitioner` profile representing the clinician responsible for making the observation.
 
-Where the observation was performed at another organisation and an `Organization` profile can be populated then that **MUST** be populated here. 
+Where the observation was performed at another organisation and an `Organization` profile can be populated then that **MUST** be populated here.
 This will be in addition to the clinical practitioner if both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person who recorded the data in the system.
+
+Additional criteria apply for representation of an inbound referral.
+See the [guidance page](accessrecord_structured_development_uncategoriseddata_guidance#representing-inbound-referrals) for details.
 
 ### value[x] ###
 
@@ -210,16 +213,12 @@ Where a reference range contains a less than '<' or greater than '>' operator it
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>BackboneElement</code></td>
-    <td><b>Optionality:</b> Required</td>
+    <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
-Contains any hierarchical information between uncategorised data items.
-
-* Populate `related.target` with a reference to the related item of uncategorised data
-* Where the related item is a child of this item set `related.type` to `has-member`
-* Where the related item is a parent of this item set `related.type` to `derived-from`
+Can be used to reference another resource related to this observation
 
 ### component ###
 
@@ -233,6 +232,8 @@ Contains any hierarchical information between uncategorised data items.
 
 This **MAY** be used for the component part of a blood pressure that is recorded as a triple or to carry qualifying data to the main observation code.
 
+This **MAY** be used for inbound referrals.
+See the [guidance page](accessrecord_structured_development_uncategoriseddata_guidance#representing-inbound-referrals) for details.
 
 <br>
 

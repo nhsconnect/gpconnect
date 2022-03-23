@@ -29,19 +29,23 @@ For the majority of provider systems, the following types of information are exp
 * Test Request
 
 ## What is uncategorised data? ##
-There is data that a clinician/user will enter without identifying what type of information they are recording. This information is usually entered as either free text or a combination of clinical code(s), values, qualifiers and text.
+There is data that a clinician/user will enter without identifying what type of information they are recording. 
+This information is usually entered as a combination of clinical code(s), values, qualifiers and text.
 
 For example:
 * the clinician records the patient’s resting pulse by recording the resting pulse clinical code followed by a value of the patient’s pulse.
 * the clinician records that a patient has a sore throat by recording the sore throat clinical code
-* the clinician records that a patient reports being irritable with their family as a piece of free text
 
-Consideration was given to attempting to categorise data using the recorded clinical codes. It was decided not to progress this based on a clinical review of its risks and benefits.
+Consideration was given to attempting to categorise data using the recorded clinical codes. 
+It was decided not to progress this based on a clinical review of its risks and benefits.
 
 ## Uncategorised data definition ##
 Uncategorised data will include the following 
 * data items in the patient record that do not fit into one of the existing or planned clinical areas defined by GP Connect
 * inbound referrals (GP Connect referral resource is defined as outbound referrals only) 
+
+Where text is entered freely into a consultation without being associated with a clinical code it will not be returned as an item of uncategorised data. 
+This free text will ONLY be returned as part of the consultation and will be returned in an `Observation` with the SNOMED code `37331000000100 Comment note`.
 
 ## Observation profile ##
 
@@ -84,32 +88,58 @@ For example:
     * Breath alcohol level 15mmol/L
     * O/E - spleen just palpable
 
-Where this occurs, the data is supplied in a flattened format with the hierarchical information made available to the consumer system if they want to rebuild the hierarchical structure.
+Where this occurs, the data is supplied in a format where the hierarchical information is made available to the consumer system if they want to rebuild the hierarchical structure or if not they can consume each of the resources individually flattening out the structure if it is not of benefit to their users.
 
 ### Modelling ###
 
-Each item of uncategorised data in the hierarchy is recorded in its own `observation` profile. The structure is represented using the `observation.related` field.
+Each item of uncategorised data in the hierarchy is recorded in its own FHIR resource, this may be an `observation`, `immunization` or any other that is defined in GP Connect . The structure is represented using the `questionnaireResponse` resource.
 
-* The top-level item will contain `observation.related.target` pointing to each of the child items with an `observation.related.type` of `has-member`
-* The child items will contain `observation.related.target` pointing to the top-level item with an `observation.related.type` of `derived-from`
-
-Note: This follows the same model that will be used to represent Investigations and Pathology.
+* The top-level item will contain an `observation` in the `questionnaireResponse.parent` element. 
+* The child items will be pointed to as references to the relevant resources within the `questionnaireResponse.item.answer` field(s). 
 
 ### Consultations and problem ###
 
-Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem. If the item is recorded in a consultation it will be directly referenced by the consultation. If the item is linked to a problem it will be directly referenced by the problem.
+Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem. 
+If the item is recorded in a consultation it will be directly referenced by the consultation. 
+If the item is linked to a problem it will be directly referenced by the problem.
 
-For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. Direct references to all four items will be populated in the `List(Heading)` profile. If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
+For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. 
+Direct references to all four items will be populated in the `List(Heading)` profile. 
+If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
 
-<a href="images/access_structured/Uncategorised_Structure.png"><IMG src="images/access_structured/Uncategorised_Structure.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Uncategorised_Structure_v2.png"><IMG src="images/access_structured/Uncategorised_Structure_v2.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
 
 ### Hierarchical data involving different clinical areas
 
-If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the header observation related element as a 'has-member' type. This will mean that, unlike references to other observations, references to these data items will be one directional as illustrated in the diagram below.
+If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the questoinnaireResponse as for any other uncategorised 'observation' resource.
 
-<a href="images/access_structured/Uncategorised_Structured1.png"><IMG src="images/access_structured/Uncategorised_Structured1.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Uncategorised_Structure1_v2.png"><IMG src="images/access_structured/Uncategorised_Structure1_v2.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
 
-Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as a child element and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. This **MUST** be done in accordance with the [uncategorised observation guidelines] and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
+Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. 
+This **MUST** be done in accordance with the [uncategorised observation guidelines](accessrecord_structured_development_observation_uncategoriseddata) and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
+
+### Different clinical areas against an uncategorised data request only
+   
+The above example demonstrate the structure for the hierachical date and the relationship with consultations.
+The same principles apply if consultations are not requested.
+This example shows where only uncategorised data has been requested but the hierarchical data includes resources from a different clinical area, an allergy in this case.
+The questionnaireResponse is populated identical to the example above.
+However, only resources which satisfy the criteria of the request are included.
+The diagram therefore shows the response for uncategorised data only, thus the items in grey boxes (encounter and allergyIntolerance resources) are referenced but not included.
+   
+<a href="images/access_structured/Uncat_plus_hierarchy.png"><IMG src="images/access_structured/Uncat_plus_hierarchy.png" alt="Different clinical areas without consultations included" style="max-width:100%;max-height:100%;"></a>
+
+## Representing inbound referrals ##
+
+As noted above, inbound referrals are to be returned using `observation` resources as per this guidance.
+The following additions / exceptions apply to the population of elements, otherwise populate as per the [uncategorised data profile](accessrecord_structured_development_observation_uncategoriseddata) implementation guidance. 
+
+* Where known, the referrer details **MUST** be returned using the `performer` element
+* The `performer` element **MAY** be absent, for example if the referrer is not recorded
+* Additional fields capturing details of the referral in the source system **SHOULD** be returned in the `component`
+   * Populate `component.code.text` with the data label
+   * Populate `component.value` with the data item code / text
+* Self referrals **MUST** be identified by including the text "Self referral" in the `comment` element
 
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year.

@@ -34,14 +34,14 @@ When searching for data for more than one clinical area there are several factor
 
 These factors are all related and finding the best approach for a consumers use case requires the developers/commisioners of the system to understand, prioritise and balance them. In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training recording these in the clinical safety case and hazard log that they produce.
 
-There are resources on the GP Connect consumer test hub that are available in order support this proccess,
+There are resources available on or accessed from the GP Connect Access Record Structure page of the API Catalogue to support this proccess,
 
  - GP Connect stuctured test data records
  - test data definitions
  - a list of known clinical risks and possible mitigations
  - guidance for clinical safety officers
 
-[GP Connect consumer support hub](https://github.com/nhsconnect/gpc-consumer-support/wiki).
+[API Catalogue](https://digital.nhs.uk/developer/api-catalogue/gp-connect-access-record-structured-fhir#environments-and-testing).
 
 ### Restrictions on query parameters when making searches ##
 

@@ -186,7 +186,7 @@ Provider systems **MUST**:
   - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](access_documents_development_documentreference.html) profile that match the supplied search criteria
     - where the `created` parameter has been supplied and `DocumentReference.created` doesn't exist, `DocumentReference.indexed` **MUST** be used instead
     - where the 'description' parameter has been supplied, both DocumentReference.description and DocumentReference.type **MUST** be searched
-  - Only `Organization` resources SHALL be returned where they are associated with the `DocumentReference` resources matching the query
+  - `Organization` resources for supplementary actors
 
 #### Payload response examples ####
 

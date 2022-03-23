@@ -5,6 +5,7 @@ tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_observation_filingComments.html
 summary: "Guidance for populating and consuming investigations data in GP Connect"
+div: resource-page
 ---
 
 
@@ -14,7 +15,7 @@ The headings below list the elements of the `Observation` resource and describe 
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.6)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7)." %}
 
 ## Filing comments - `Observation` resource elements ##
 
@@ -93,6 +94,18 @@ Fixed value of `37331000000100` for `Comment note`.
 </table>
 
 A reference to the patient who the observation is about.
+
+### context ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+A reference to the `Encounter` profile representing the consultation the test report is filed against.
 
 ### effective[x] ###
 
@@ -189,14 +202,6 @@ The following elements **MUST NOT** be populated:
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>CodableConcept</code></td>
-  </tr>
-</table>
-
-### context ###
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
 

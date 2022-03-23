@@ -99,7 +99,7 @@ Whether the List has a `mode` of `working`, `snapshot`, or `changes`.
   </tr>
 </table>
 
-Descriptive name for the list. This will be taken from the 'display' element from the 'code' field.
+Descriptive name for the list. The list titles for primary and secondary lists **MUST** be the titles as provided in the tables in [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html#primary-lists-in-the-query-response).
 
 ### code ###
 
@@ -154,7 +154,7 @@ Reference to the patient.
   </tr>
 </table>
 
-Whre the list is used to create primary or seciondary lists in response to a query this is  when the list was created.
+Where the list is used to create primary or secondary lists in response to a query this is when the list was created.
 
 Where a list is used to represent a consultation this is the date the consultation was recorded as specified on the [list consultation page](accessrecord_structured_development_list_consultation.html) 
 

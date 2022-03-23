@@ -15,11 +15,11 @@ The consumer system can specify which clinical areas it wishes to retrieve and, 
 
 * Search for all Medications and Medical Devices that were active on or after the specified date
      * The consumer system requests all items from a start date
-     * The provider system returns all plans whose effective period end date is null or is on or after the start date
+     * The provider system returns all medication authorisations (MedicationStatement and MedicationRequest with intent set to 'plan') whose effective period end date is null or is on or after the start date
      * Where no date is supplied by the consumer, all medications and medical devices are returned
-* Include all the prescriptions issued under the returned medication/medical device plans
+* Include all the prescriptions issued under the returned medication/medical device medication authorisations
      * The consumer system requests prescription issues
-     * For each of the returned medication/medical device plans, the provider system includes data for all of its issues
+     * For each of the returned medication/medical device plans, the provider system includes data for all of its issues (MedicationStatement and MedicationRequest with intent set to 'plan').
 
 ### Allergies ###
 
@@ -67,11 +67,11 @@ The consumer system can specify which clinical areas it wishes to retrieve and, 
 * Include immunisations which were intended but were not given
     * The consumer requests immunisations which were not given
     * The provider returns all immunisation given and intended but not given
-    * If no part parameters are included, the provider only returns given immunisations
-* Include coded immunisation consent and dissent records
-    * The consumer requests consent and dissent records
+    * If no part parameters are included, the provider only returns given immunisations, related status and observations
+* Include immunisation status and related observations
+    * The consumer requests immunisation status records
     * The provider returns all immunisation given and consent and dissent observations
-    * If no part parameters are included, the provider only returns given immunisations
+    * If no part parameters are included, the provider returns given immunisations, related status and observations
 
 ### Investigations ###
 

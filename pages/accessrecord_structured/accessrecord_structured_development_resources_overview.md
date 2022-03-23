@@ -96,6 +96,8 @@ Each clinical resource will have a unique business identifier that will be persi
 * [MedicationRequest](accessrecord_structured_development_medicationrequest.html)
 * [Immunization](accessrecord_structured_development_immunization.html)
 * [Observation - uncategorised data](accessrecord_structured_development_observation_uncategorisedData.html)
+* [Observation - blood pressure](accessrecord_structured_development_observation_bloodpressure.html)
+* [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse.html)
 * [Encounter](accessrecord_structured_development_encounter.html)
 * [List - consultation structure](accessrecord_structured_development_list_consultation.html)
 * [Observation - narrative data](accessrecord_structured_development_guidance_observation_narrative.html)

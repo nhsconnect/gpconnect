@@ -101,21 +101,6 @@ The following table gives an overview of which parameters are supported in each 
 |        | includeAllergies       |
 |             | &nbsp;&nbsp;&#8627; includeResolvedAllergies|
 |||
-| 1.3.x       | includeMedication       |
-|             | &nbsp;&nbsp;&#8627; includePrescriptionIssues|
-|             | &nbsp;&nbsp;&#8627; medicationSearchFromDate|
-|        | includeAllergies       |
-|             | &nbsp;&nbsp;&#8627; includeResolvedAllergies|
-|        | includeConsultations       |
-|             | &nbsp;&nbsp;&#8627; consultationSearchPeriod|
-|             | &nbsp;&nbsp;&#8627; includeNumberOfMostRecent|
-|        | includeProblems       |
-|             | &nbsp;&nbsp;&#8627; includeStatus|
-|             | &nbsp;&nbsp;&#8627; includeSignificance|
-|        | includeImmunisations       |
-|        | includeUncategorisedData       |
-|             | &nbsp;&nbsp;&#8627; uncategorisedDataSearchPeriod|
-|||
 | 1.5.x       | includeMedication       |
 |             | &nbsp;&nbsp;&#8627; includePrescriptionIssues|
 |             | &nbsp;&nbsp;&#8627; medicationSearchFromDate|
