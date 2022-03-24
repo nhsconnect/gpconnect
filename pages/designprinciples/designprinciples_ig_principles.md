@@ -37,7 +37,7 @@ Review and agreement as to IG model changes (to accommodate additional capabilit
 - Consuming organisations **MUST**
   - ensure the service is only accessed for the sole purpose of supporting direct patient care, and
   - ensure appropriate role-based access controls are applied such that only appropriate users are able to access the service, subject to the extent to which it can be limited for each capability, and
-  - be aware of any limitations set by data controllers as to the extent of access allowed by their data sharing agreement for a healthcare setting and / or user role, and ensure such limitations are robustly applied, see WEB-LINK-TO-BE_ADDDED for further details
+  - be aware of any limitations set as to the extent of access allowed for a healthcare setting and / or user role, and ensure such limitations are robustly applied, see WEB-LINK-TO-BE_ADDDED for further details
 
 - the presence of any local patient dissent to share flag within a GP Practice system **MUST** be implemented when accessing the patient medical record and cannot be overridden by consent given at the point of care
 
