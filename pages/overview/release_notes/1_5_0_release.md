@@ -87,75 +87,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 
 
-#### Add Investigations
 
-**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Added general guidance page for Investigations
-- Added description of populating the profiles for Diary Entries
-- Updated pages referring to clinical areas to include Investigations
-- Added `includeInvestigations` and `investigationSearchPeriod` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
-- added error handling guidance for `investigationSearchPeriod`
-- updated bundle population diagram to include Investigations
-
-#### Add Outbound Referrals
-
-**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Added general guidance page for Outbound Referrals
-- Added description of populating the profiles for Outbound Referrals
-- Updated pages referring to clinical areas to include Outbound Referrals
-- Added `includeReferrals` and `referralSearchPeriod` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
-- added error handling guidance for `referralSearchPeriod`
-- updated bundle population diagram to include Outbound Referrals
-
-#### Add Diary Entries
-
-**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Added general guidance page for Diary Entries
-- Added description of populating the ProcedureRequest profile for Diary Entries
-- Added example for Diary Entries
-- Updated pages referring to clinical areas to include Diary Entries
-- added `includeDiaryEntries` parameter and `diaryEntriesSearchDate` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
-- added error handling guidance for `diaryEntriesSearchDate`
-- updated bundle population diagram to include diary entries
-
-**Pages changed:**
-
-- [Access Record Structured](accessrecord_structured.html)
-- [Business requirements](accessrecord_structured_requirements.html)
-- [Development Introduction](accessrecord_structured_development.html)
-- [Resource population fundamentals](accessrecord_structured_development_resources_overview.html)
-- [Linkages](accessrecord_structured_development_linkages.html)
-- [Search Criteria](accessrecord_structured_development_search.html)
-- [List](accessrecord_structured_development_list.html)
-- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
-- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
-- [Diary Entry guidance](accessrecord_structured_development_diaryentry_guidance.html)
-- [Diary Entry](accessrecord_structured_development_diaryentry.html)
-- [Diary Entry FHIR&reg; examples](accessrecord_structured_development_fhir_examples_diaryentries.html)
-- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
-
----
 
 
 
@@ -563,23 +495,6 @@ Known issues with the specification are documented on the <a href="accessrecord_
 - [Uncategorised data](accessrecord_structured_development_uncategoriseddata_guidance.html)
 
 ---
-#### Updated the guidance around fasting status in investigations specimens
-
-**Tickets:**&nbsp; [#1018](https://github.com/nhsconnect/gpconnect/issues/1018)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated to describe how to populate the fasting status with data from EDIFACT.
-
-**Pages changed:**
-
-- [IInvestigations specimen](accessrecord_structured_development_specimen)
-
----
 
 #### Updated the guidance on how and when to populate list.date
 
@@ -719,55 +634,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ---
 
-### Updated guidance and profiles for uncategorised data
-
-**Tickets:**&nbsp; [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated to reflect the range of data that can be used to populate the component element
-- Updated the performer element to include organization in reference types
-- Minor re-word for code for free text
-- Section added with additional guidance for populating the observation resource for an inbound referral and updated the profile guidance
-- Updated guidance and diagrams for hierarchical data and added questionnaireResponse profile
-
-**Pages changed:**
-
-- [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance)
-- [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
-- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse)
-
----
-
-### Updates to Investigations guidance
-
-**Tickets:** [#1051](https://github.com/nhsconnect/gpconnect/issues/1051), [#1061](https://github.com/nhsconnect/gpconnect/issues/1061), [#1063](https://github.com/nhsconnect/gpconnect/issues/1063), [#1143](https://github.com/nhsconnect/gpconnect/issues/1143)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Add a line to say to use \n to keep line breaks in textual results. Updated pathology guidance page to specify use of \n to maintain line breaks.
-- Note added regarding linkage between investigations and problems
-- DiagnosticReport guidance for result element expanded to be explicit that only test result which are not part of a test group should be referenced from this element
-- Moved the context element from the do not populate list to be required / optional for diagnoticReport and observation profiles
-
-**Pages changed:**
-
-- [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
-- [DiagnosticReport](accessrecord_structured_development_diagnosticreport#result)
-- [Observation - Test Group Header](accessrecord_structured_development_observation_testGroup.html)
-- [Observation - Test Result](accessrecord_structured_development_observation_testResult.html)
-- [Observation - Filing Comments](accessrecord_structured_development_observation_filingComments.html)
-
----
-
 ### Remove warning codes from resource pop fundamentals
 
 **Tickets:** #1050
@@ -783,24 +649,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 **Pages changed:**
 
 - [Resource population fundamentals)](accessrecord_structured_development_resources_overview.html)and [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
-
----
-
-### Investigations - How to handle Confidential items inside a report
-
-**Tickets:** #1047
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Users in providing systems can flag reports results and headers as confidential within a diagnosticReport. Updated confidential items text to reflect this.
-
-**Pages changed:**
-
-- [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
 
 ---
 
@@ -828,163 +676,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ---
 
-### Change how to deal with split plans due to a change in dose
-
-**Tickets:** #1046
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Add detail to the spec that describes how to split plans.
-
-  Also detail how it applies to a date filter. Details about the repeatInformation. Details of how to change the ids. Use of priorPrescription element.
-
-  Updated the medication guidance with example and removed dosageLastChanged extension from Med Statement page
-
-**Pages changed:**
-
-- [Medication guidance](accessrecord_structured_development_medication_guidance.html)
-
----
-
-### Updated medication request profile guidance
-
-**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Removed acute-handwritten from list of supported prescription types
-- Added codes against prescription type descriptions
-
-**Pages changed:**
-
-- [medicationRequest](accessrecord_structured_development_medicationrequest.html)
-
----
-
-### List of Lists - Path header/result as a problem
-
-**Tickets:** #1043
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
--  it is possible to flag test result headers/results as Problems.
-
-  Currently the specification states that only the DiagnosticReport can be linked to a Problem, should this be updated to state that the child resources can also be linked
-
-  Updated the linkages page to say the DiagnosticReport must be linked as a related clinical item when any containing element is made a problem.
-
-**Pages changed:**
-
-- [Linkages page - problem section](accessrecord_structured_development_linkages.html)
-
----
-
-### Corrected allergies example
-
-**Tickets:** #1038
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
--  Corrected third allergies example to use correct value for `note` field
-- Updated descriptions for examples two and three to reflect content of example
-
-**Pages changed:**
-
-- [Allergies FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
-
----
-
-
-### Diary Entries guidance
-
-**Tickets:** &nbsp; [#1062](https://github.com/nhsconnect/gpconnect/issues/1062), [#1144](https://github.com/nhsconnect/gpconnect/issues/1144)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Note added regarding search criteria to be explicit about inclusion of historic, active diary entries
-- Amended guidance for medication reviews
-
-**Pages changed:**
-
-- [Diary entry guidance](accessrecord_structured_development_diaryentry_guidance.html#diary-entry-planned-date)
-
----
-
-
-### Update to guidance on free text records
-
-**Tickets:** &nbsp; [#1037](https://github.com/nhsconnect/gpconnect/issues/1037)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-Minor changes to the text to clarify that free text recorded in consultation use the observation resource as defined under uncategorised data, but free text which is not associated with a c;linical code must only be returned in the context of a consultation (and problem when linking a consultation topic items) and not in response to only an uncategorised data request.
-
-**Pages changed:**
-
-- [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance#uncategorised-data-definition)
-- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html#consultation-notes)
-
----
-
-### Updated List guidance
-
-**Tickets:** &nbsp; [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider systems
-
-**Description:**
-
-Updated the guidance for the title element, so that it referenced using the titles defined in the 'Using lists to return data' guidance.
-
-**Pages changed:**
-
-- [List](accessrecord_structured_development_list.html#title)
-
----
-
-### Updated consultations guidance
-
-**Tickets:** &nbsp; [#1145](https://github.com/nhsconnect/gpconnect/issues/1145)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-Changed the query response List profile guidance to reference Encounter resources instead of Lists used for the Consultation structure.
-
-**Pages changed:**
-
-- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html#using-the-list-resource-for-consultation-queries)
-
----
 
 ## NEW NOTES FOR RELEASE
 
@@ -1169,6 +860,117 @@ Notes under here for the published version
 
 ### Access Record Structured ###
 
+#### Add Investigations
+
+**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902), [#1018](https://github.com/nhsconnect/gpconnect/issues/1018), [#1043](https://github.com/nhsconnect/gpconnect/issues/1045), [#1047](https://github.com/nhsconnect/gpconnect/issues/1047), [#1051](https://github.com/nhsconnect/gpconnect/issues/1051), [#1061](https://github.com/nhsconnect/gpconnect/issues/1061), [#1063](https://github.com/nhsconnect/gpconnect/issues/1063), [#1143](https://github.com/nhsconnect/gpconnect/issues/1143)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Added general guidance page for Investigations
+- Added description of populating the profiles for Diary Entries
+- Updated pages referring to clinical areas to include Investigations
+- Added `includeInvestigations` and `investigationSearchPeriod` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
+- added error handling guidance for `investigationSearchPeriod`
+- updated bundle population diagram to include Investigations
+
+**Pages changed:**
+
+- [Access Record Structured](accessrecord_structured.html)
+- [Business requirements](accessrecord_structured_requirements.html)
+- [Development Introduction](accessrecord_structured_development.html)
+- [Resource population fundamentals](accessrecord_structured_development_resources_overview.html)
+- [Linkages](accessrecord_structured_development_linkages.html)
+- [Search Criteria](accessrecord_structured_development_search.html)
+- [List](accessrecord_structured_development_list.html)
+- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
+- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
+- [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
+- [DiagnosticReport](accessrecord_structured_development_DiagnosticReport.html)
+- [Specimen](accessrecord_structured_development_specimen.html)
+- [Observation - Test Group Header](accessrecord_structured_development_observation_testGroup.html)
+- [Observation - Test Result](accessrecord_structured_development_observation_testResult.html)
+- [Observation - Filing Comments](accessrecord_structured_development_observation_filingComments.html)
+- [ProcedureRequest](accessrecord_structured_development_ProcedureRequest.html)
+- [Investigations FHIR&reg; examples](accessrecord_structured_development_fhir_examples_pathology.html)
+- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
+
+---
+
+#### Add Outbound Referrals
+
+**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Added general guidance page for Outbound Referrals
+- Added description of populating the profiles for Outbound Referrals
+- Updated pages referring to clinical areas to include Outbound Referrals
+- Added `includeReferrals` and `referralSearchPeriod` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
+- added error handling guidance for `referralSearchPeriod`
+- updated bundle population diagram to include Outbound Referrals
+
+**Pages changed:**
+
+- [Access Record Structured](accessrecord_structured.html)
+- [Business requirements](accessrecord_structured_requirements.html)
+- [Development Introduction](accessrecord_structured_development.html)
+- [Resource population fundamentals](accessrecord_structured_development_resources_overview.html)
+- [Linkages](accessrecord_structured_development_linkages.html)
+- [Search Criteria](accessrecord_structured_development_search.html)
+- [List](accessrecord_structured_development_list.html)
+- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
+- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
+- [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
+- [ReferralRequest](accessrecord_structured_development_referralrequest.html)
+- [Referrals FHIR&reg; examples](accessrecord_structured_development_fhir_examples_referrals.html)
+- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
+
+---
+
+#### Add Diary Entries
+
+**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902), [#1062](https://github.com/nhsconnect/gpconnect/issues/1062), [#1144](https://github.com/nhsconnect/gpconnect/issues/1144)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Added general guidance page for Diary Entries
+- Added description of populating the ProcedureRequest profile for Diary Entries
+- Added example for Diary Entries
+- Updated pages referring to clinical areas to include Diary Entries
+- added `includeDiaryEntries` parameter and `diaryEntriesSearchDate` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
+- added error handling guidance for `diaryEntriesSearchDate`
+- updated bundle population diagram to include diary entries
+
+**Pages changed:**
+
+- [Access Record Structured](accessrecord_structured.html)
+- [Business requirements](accessrecord_structured_requirements.html)
+- [Development Introduction](accessrecord_structured_development.html)
+- [Resource population fundamentals](accessrecord_structured_development_resources_overview.html)
+- [Linkages](accessrecord_structured_development_linkages.html)
+- [Search Criteria](accessrecord_structured_development_search.html)
+- [List](accessrecord_structured_development_list.html)
+- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
+- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
+- [Diary Entry guidance](accessrecord_structured_development_diaryentry_guidance.html)
+- [Diary Entry](accessrecord_structured_development_diaryentry.html)
+- [Diary Entry FHIR&reg; examples](accessrecord_structured_development_fhir_examples_diaryentries.html)
+- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
+
+---
+
 #### Add immunisations not given
 
 **Tickets:** [#849](https://github.com/nhsconnect/gpconnect/issues/849)
@@ -1199,6 +1001,114 @@ Notes under here for the published version
 
 ---
 
+### Updated List guidance
+
+**Tickets:** &nbsp; [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider systems
+
+**Description:**
+
+Updated the guidance for the title element, so that it referenced using the titles defined in the 'Using lists to return data' guidance.
+
+**Pages changed:**
+
+- [List](accessrecord_structured_development_list.html#title)
+
+---
+
+### Updated allergies guidance
+
+**Tickets:** [#1038](https://github.com/nhsconnect/gpconnect/issues/1038)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+-  Corrected third allergies example to use correct value for `note` field
+- Updated descriptions for examples two and three to reflect content of example
+
+**Pages changed:**
+
+- [Allergies FHIR examples](accessrecord_structured_development_fhir_examples_allergies.html)
+
+---
+
+### Updated medication guidance
+
+**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), #1046(https://github.com/nhsconnect/gpconnect/issues/1046), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Removed acute-handwritten from list of supported prescription types
+- Added codes against prescription type descriptions
+- Added detail to the spec that describes how to split plans
+  - Detailed how they apply to a date filter
+  - Details about the repeatInformation 
+  - Details of how to change the ids
+  - Detail from use of priorPrescription element
+  - Updated the medication guidance with example 
+  - Removed dosageLastChanged extension from Med Statement page
+
+**Pages changed:**
+
+- [Medication guidance](accessrecord_structured_development_medication_guidance.html)
+- [medicationStatement](accessrecord_structured_development_medicationstatement.html)
+- [medicationRequest](accessrecord_structured_development_medicationrequest.html)
+
+---
+
+#### Updated consultations guidance
+
+**Tickets:** &nbsp; [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1145](https://github.com/nhsconnect/gpconnect/issues/1145)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Changed the query response List profile guidance to reference Encounter resources instead of Lists used for the Consultation structure
+- Minor changes to the text to clarify that free text recorded in consultation use the observation resource as defined under uncategorised data
+
+**Pages changed:**
+
+- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
+
+---
+
+### Updated uncategorised data guidance
+
+**Tickets:** &nbsp; [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated to reflect the range of data that can be used to populate the component element
+- Updated the performer element to include organization in reference types
+- Minor re-word for code for free text
+- Section added with additional guidance for populating the observation resource for an inbound referral and updated the profile guidance
+- Updated guidance and diagrams for hierarchical data and added questionnaireResponse profile
+- Free text which is not associated with a clinical code must only be returned in the context of a consultation (and problem when linking a consultation topic items) and not in response to only an uncategorised data request.
+
+**Pages changed:**
+
+- [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance#uncategorised-data-definition)
+- [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
+- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse)
+
+---
 
 #### API Updates ####
 
