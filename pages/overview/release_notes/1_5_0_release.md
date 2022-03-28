@@ -533,43 +533,6 @@ Known issues with the specification are documented on the <a href="accessrecord_
 
 ---
 
-#### Uncategorised data value units
-
-**Tickets:**&nbsp; [#754](https://github.com/nhsconnect/gpconnect/issues/754)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Added a note to the Uncategorised data observation page that suppliers MUST use the units from the FHIR spec vital signs page.
-
-**Pages changed:**
-
-- [Uncategorised data observation](accessrecord_structured_development_observation_uncategoriseddata.html)
-
----
-
-#### Immunisations not given
-
-**Tickets:**&nbsp; [#977](https://github.com/nhsconnect/gpconnect/issues/977), [#987](https://github.com/nhsconnect/gpconnect/issues/987)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated guidance and profile definition following addition of 'not done' situation codes to the valueset for the vaccination procedure
-
-**Pages changed:**
-
-- [Immunisation guidance](accessrecord_structured_development_immunization_guidance.html)
-- [Immunization](accessrecord_structured_development_immunization.html)
-
----
-
 
 ## Updates following last release
 
@@ -597,84 +560,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 
 
-### Updated guidance for immunisations
-
-**Tickets:**&nbsp; [#1036](https://github.com/nhsconnect/gpconnect/issues/1036), [#1053](https://github.com/nhsconnect/gpconnect/issues/1053), [#987](https://github.com/nhsconnect/gpconnect/issues/987),
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Medication records for immunisations are treated as medications and returned against medication not immunisation requests
-- Guidance on notes population updated to remove reference to free text manufacturer
-- Extended scope from inclusion of consent and dissent information to cover any coded information recorded within an immunisation module or categorised as immunisation data in the GP system
-
-**Pages changed:**
-
-- [Immunisations guidance](accessrecord_structured_development_immunization_guidance.html)
-
----
-
-
-### Updated link for secondary list CodeSystem
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Link to CodeSystem has been updated to [https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1](https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1)
-
-**Pages changed:**
-
-- [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
-
----
-
-### Remove warning codes from resource pop fundamentals
-
-**Tickets:** #1050
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Removed and replaced with a link to the returning data in lists page.
-
-**Pages changed:**
-
-- [Resource population fundamentals)](accessrecord_structured_development_resources_overview.html)and [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
-
----
-
-### Updated diagrams for linkages between resources
-
-**Tickets:** &nbsp; [#1042](https://github.com/nhsconnect/gpconnect/issues/1042), [#1044](https://github.com/nhsconnect/gpconnect/issues/1044), [#1060](https://github.com/nhsconnect/gpconnect/issues/1060), [#1127](https://github.com/nhsconnect/gpconnect/issues/1127), [#1147](https://github.com/nhsconnect/gpconnect/issues/1147)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Diagrams updated to show correct relationship of linkages for filing comments
-- Diagrams updated to show additional problem and consultation linkages
-- Note added that diagrams do not include all possible linkages
-- Diagrams updated for medication resource relationships to correct intent labels typo
-- DocumentReference added as a profile returned for referrals and the associated diagram updated
-
-**Pages changed:**
-
-- [Linkages](accessrecord_structured_development_linkages.html)
-- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
-- [Medication resource relationship](accessrecord_structured_development_medication_resource_relationships.html)
-
----
 
 
 ## NEW NOTES FOR RELEASE
@@ -794,7 +679,6 @@ Notes under here for the published version
 - [FHIR&reg; examples](access_documents_development_fhir_examples_documents.html)
 
 ---
-
 
 #### Updates to CapabilityStatement
 
@@ -973,7 +857,7 @@ Notes under here for the published version
 
 #### Add immunisations not given
 
-**Tickets:** [#849](https://github.com/nhsconnect/gpconnect/issues/849)
+**Tickets:** [#849](https://github.com/nhsconnect/gpconnect/issues/849), [#977](https://github.com/nhsconnect/gpconnect/issues/977), [#987](https://github.com/nhsconnect/gpconnect/issues/987)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -982,15 +866,15 @@ Notes under here for the published version
 **Description:**
 
 - added `includeNotGiven` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
-- added `includeDissentConsent` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
+- added `includeStatus` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
 - updated bundle population diagram to include `includeNotGiven` and `includeStatus` part parameters and `QuestionnaireResponse`
 - Updated immunisation guidance to include details of inclusion of immunisation not given for providers
 - Added guidance for consumers for handling immunisations not given
 - Updated immunization profile to include additional guidance and valuesets
 - Observations representing the status of a patient's immunisations will be returned
 - includeImmunisations.includeStatus has a default value of `true`
+- Updated guidance and profile definition following addition of 'not done' situation codes to the valueset for the vaccination procedure
 - Added QuestionnaireResponse to uncategorised data response
-
 
 **Pages changed:**
 
@@ -1001,7 +885,63 @@ Notes under here for the published version
 
 ---
 
-### Updated List guidance
+#### Updated link for secondary list CodeSystem
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Link to CodeSystem has been updated to [https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1](https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1)
+
+**Pages changed:**
+
+- [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
+
+---
+
+#### Remove warning codes from resource pop fundamentals
+
+**Tickets:** [#1050](https://github.com/nhsconnect/gpconnect/issues/1050)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Removed and replaced with a link to the returning data in lists page.
+
+**Pages changed:**
+
+- [Resource population fundamentals)](accessrecord_structured_development_resources_overview.html)
+- [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
+
+---
+
+#### Updated linkages guidance
+
+**Tickets:** &nbsp; [#1042](https://github.com/nhsconnect/gpconnect/issues/1042), [#1147](https://github.com/nhsconnect/gpconnect/issues/1147)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Diagrams updated to show additional problem and consultation linkages
+- Note added that diagrams do not include all possible linkages
+- DocumentReference added as a profile returned for referrals and the associated diagram updated
+
+**Pages changed:**
+
+- [Linkages](accessrecord_structured_development_linkages.html)
+- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
+
+---
+
+#### Updated List guidance
 
 **Tickets:** &nbsp; [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
 
@@ -1019,7 +959,24 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 ---
 
-### Updated allergies guidance
+#### Bundle.id must now be populated
+
+**Affects:**&nbsp; Access Structured, Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Bundle.id must now be populated.
+
+**Pages changed:**
+
+- [Bundle](accessrecord_structured_development_bundle.html)
+- [Bundle](access_documents_development_bundle.html)
+
+---
+
+#### Updated allergies guidance
 
 **Tickets:** [#1038](https://github.com/nhsconnect/gpconnect/issues/1038)
 
@@ -1038,9 +995,9 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 ---
 
-### Updated medication guidance
+#### Updated medication guidance
 
-**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), #1046(https://github.com/nhsconnect/gpconnect/issues/1046), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
+**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), #1046(https://github.com/nhsconnect/gpconnect/issues/1046), [#1127](https://github.com/nhsconnect/gpconnect/issues/1127), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
 
 **Affects:**&nbsp; Access Structured
 
@@ -1057,12 +1014,33 @@ Updated the guidance for the title element, so that it referenced using the titl
   - Detail from use of priorPrescription element
   - Updated the medication guidance with example 
   - Removed dosageLastChanged extension from Med Statement page
+- Diagrams updated for medication resource relationships to correct intent labels typo
 
 **Pages changed:**
 
+- [Medication resource relationship](accessrecord_structured_development_medication_resource_relationships.html)
 - [Medication guidance](accessrecord_structured_development_medication_guidance.html)
 - [medicationStatement](accessrecord_structured_development_medicationstatement.html)
 - [medicationRequest](accessrecord_structured_development_medicationrequest.html)
+
+---
+
+#### Updated guidance for immunisations
+
+**Tickets:**&nbsp; [#1036](https://github.com/nhsconnect/gpconnect/issues/1036), [#1053](https://github.com/nhsconnect/gpconnect/issues/1053)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Medication records for immunisations are treated as medications and returned against medication not immunisation requests
+- Guidance on notes population updated to remove reference to free text manufacturer
+
+**Pages changed:**
+
+- [Immunisations guidance](accessrecord_structured_development_immunization_guidance.html)
 
 ---
 
@@ -1085,9 +1063,9 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 ---
 
-### Updated uncategorised data guidance
+#### Updated uncategorised data guidance
 
-**Tickets:** &nbsp; [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
+**Tickets:** &nbsp; [#754](https://github.com/nhsconnect/gpconnect/issues/754), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
 
 **Affects:**&nbsp; Access Structured
 
@@ -1095,6 +1073,7 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 **Description:**
 
+- Added a note to the Uncategorised data observation page that suppliers MUST use the units from the FHIR spec vital signs page.
 - Updated to reflect the range of data that can be used to populate the component element
 - Updated the performer element to include organization in reference types
 - Minor re-word for code for free text
@@ -1212,23 +1191,6 @@ Updated the guidance for the title element, so that it referenced using the titl
 - [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html#unavailability-of-data)
 - [Configuration for supported clinical areas](accessrecord_structured_development_clinical_area_config.html)
 - [Linkages](accessrecord_structured_development_linkages.html)
-
----
-
-#### Bundle.id must now be populated
-
-**Affects:**&nbsp; Access Structured, Access Document
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Bundle.id must now be populated.
-
-**Pages changed:**
-
-- [Bundle](accessrecord_structured_development_bundle.html)
-- [Bundle](access_documents_development_bundle.html)
 
 ---
 
