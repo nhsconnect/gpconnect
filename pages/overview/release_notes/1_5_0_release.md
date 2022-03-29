@@ -299,82 +299,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ---
 
-#### Update to Problem Header profile guidance
-
-**Tickets:**&nbsp; [#1012](https://github.com/nhsconnect/gpconnect/issues/1012)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Update to the actualProblem extension guidance to include all clinical areas for this specification
-- Update to the relatedClinicalItems extension guidance to include all clinical areas for this specification
-
-**Pages changed:**
-
-- [Problem Header profile guidance](accessrecord_structured_problems.html)
-
----
-
-#### Update to Consultation guidance
-
-**Tickets:**&nbsp; [#1009](https://github.com/nhsconnect/gpconnect/issues/1009)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Detail on returning out of scope items from clinical areas as text has been added
-
-**Pages changed:**
-
-- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html#coded-clinical-items-returned-as-text)
-
----
-
-#### Update to include Inbound Referrals in Uncategorised Data
-
-**Tickets:**&nbsp; [#1013](https://github.com/nhsconnect/gpconnect/issues/1013)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Inbound referrals referenced in scope of uncategorised data
-- Referrals guidance references inbound referrals covered by uncategorised data
-
-**Pages changed:**
-
-- [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance#uncategorised-data-definition)
-- [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html#what-is-an-outbound-referral)
-
----
-
-#### Update to documents returned in Access Record Structured
-
-**Tickets:**&nbsp;
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- A note has been added to the linkages page to state that consumers must have implemented the Access Document capability to retrieve documents linked from returned `DocumentReference` resources
-- The documents guidance page has been updated to state that consumers must have implemented the Access Document capability to retrieve documents linked from returned `DocumentReference` resources
-
-**Pages changed:**
-
-- [Linkages](accessrecord_structured_development_linkages.html)
-
----
-
 ## Update issued on 1st October 2020
 
 The following changes were made to clarify and correct issues in the GP Connect 1.5.0 specification
@@ -383,155 +307,7 @@ Known issues with the specification are documented on the <a href="accessrecord_
 
 ---
 
-### Access Record Structured ###
 
-#### Update to Investigations diagrams
-
-**Tickets:**&nbsp; [#1021](https://github.com/nhsconnect/gpconnect/issues/1021)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Diagrams changed to reflect filling comments are referenced from the diagnostic report and not the other direction
-
-**Pages changed:**
-
-- [Linkages](accessrecord_structured_development_linkages.html)
-- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
-
----
-
-#### Empty list guidance
-
-**Tickets:**&nbsp; [#900](https://github.com/nhsconnect/gpconnect/issues/900)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Corrected the empty reason code for investigations and referrals
-
-**Pages changed:**
-
-- [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
-- [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
-
----
-
-#### Filing comments for a test result
-
-**Tickets:**&nbsp; [#1024](https://github.com/nhsconnect/gpconnect/issues/1024)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Guidance for the filling comments observation profile has been updated to reference population of elements where the comments relate to a single test result
-
-**Pages changed:**
-
-- [Observation - Filing Comments](accessrecord_structured_development_observation_filingcomments)
-
----
-
-
-#### Confidential items in consultations
-
-**Tickets:**&nbsp; [#1029](https://github.com/nhsconnect/gpconnect/issues/1029)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated the description for confidential items in consultations to reference secondary lists
-
-**Pages changed:**
-
-- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
-
----
-
-#### Fixed issue in requests in multi area searches page
-
-**Tickets:**&nbsp; [#1030](https://github.com/nhsconnect/gpconnect/issues/1030), [#1023](https://github.com/nhsconnect/gpconnect/issues/1023)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Example requests have been updated to be valid requests. The example now says 365 days instead of 1 year.
-
-**Pages changed:**
-
-- [Multi area searches](accessrecord_structured_development_searchmultiareasearches,html)
-
----
-
-#### Updated the guidance around blood pressure following the curation outcomes
-
-**Tickets:**&nbsp; [#1027](https://github.com/nhsconnect/gpconnect/issues/1027), [#1028](https://github.com/nhsconnect/gpconnect/issues/1028)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated to describe how bp's are recorded in GP systems and include details of which blood pressures should be exported as a triple.
-
-**Pages changed:**
-
-- [Uncategorised data](accessrecord_structured_development_uncategoriseddata_guidance.html)
-
----
-
-#### Updated the guidance on how and when to populate list.date
-
-**Tickets:**&nbsp; [#1014](https://github.com/nhsconnect/gpconnect/issues/1014)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated to describe how to populate the list.date field.
-
-**Pages changed:**
-
-- [Sturctural resources list page](accessrecord_structured_development_list.html)
-
----
-
-
-#### Updated the guidance on using lists to return data
-
-**Tickets:**&nbsp; [#1022](https://github.com/nhsconnect/gpconnect/issues/1022)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Following curation this has been updated to reflect the new secondary list codes
-
-**Pages changed:**
-
-- [Returning data in lists](accessrecord_structured_development_lists_for_message_structure.html)
-
----
 
 
 ## Updates following last release
@@ -746,7 +522,7 @@ Notes under here for the published version
 
 #### Add Investigations
 
-**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902), [#1018](https://github.com/nhsconnect/gpconnect/issues/1018), [#1043](https://github.com/nhsconnect/gpconnect/issues/1045), [#1047](https://github.com/nhsconnect/gpconnect/issues/1047), [#1051](https://github.com/nhsconnect/gpconnect/issues/1051), [#1061](https://github.com/nhsconnect/gpconnect/issues/1061), [#1063](https://github.com/nhsconnect/gpconnect/issues/1063), [#1143](https://github.com/nhsconnect/gpconnect/issues/1143)
+**Tickets:** [#900](https://github.com/nhsconnect/gpconnect/issues/900), [#902](https://github.com/nhsconnect/gpconnect/issues/902), [#1018](https://github.com/nhsconnect/gpconnect/issues/1018), [#1021](https://github.com/nhsconnect/gpconnect/issues/1021), [#1024](https://github.com/nhsconnect/gpconnect/issues/1024), [#1043](https://github.com/nhsconnect/gpconnect/issues/1045), [#1047](https://github.com/nhsconnect/gpconnect/issues/1047), [#1051](https://github.com/nhsconnect/gpconnect/issues/1051), [#1061](https://github.com/nhsconnect/gpconnect/issues/1061), [#1063](https://github.com/nhsconnect/gpconnect/issues/1063), [#1143](https://github.com/nhsconnect/gpconnect/issues/1143)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -755,11 +531,13 @@ Notes under here for the published version
 **Description:**
 
 - Added general guidance page for Investigations
-- Added description of populating the profiles for Diary Entries
+- Added description of populating the profiles for Investigations
 - Updated pages referring to clinical areas to include Investigations
 - Added `includeInvestigations` and `investigationSearchPeriod` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
 - added error handling guidance for `investigationSearchPeriod`
 - updated bundle population diagram to include Investigations
+- Updated linkages guidance
+- Updated problems guidance
 
 **Pages changed:**
 
@@ -786,7 +564,7 @@ Notes under here for the published version
 
 #### Add Outbound Referrals
 
-**Tickets:** [#902](https://github.com/nhsconnect/gpconnect/issues/902)
+**Tickets:** [#900](https://github.com/nhsconnect/gpconnect/issues/900), [#902](https://github.com/nhsconnect/gpconnect/issues/902), [#1013](https://github.com/nhsconnect/gpconnect/issues/1013)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -800,6 +578,7 @@ Notes under here for the published version
 - Added `includeReferrals` and `referralSearchPeriod` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1)
 - added error handling guidance for `referralSearchPeriod`
 - updated bundle population diagram to include Outbound Referrals
+- Referrals guidance references inbound referrals covered by uncategorised data
 
 **Pages changed:**
 
@@ -885,6 +664,24 @@ Notes under here for the published version
 
 ---
 
+#### Updated the guidance on using lists to return data
+
+**Tickets:**&nbsp; [#1022](https://github.com/nhsconnect/gpconnect/issues/1022)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Following curation this has been updated to reflect the new secondary list codes
+
+**Pages changed:**
+
+- [Returning data in lists](accessrecord_structured_development_lists_for_message_structure.html)
+
+---
+
 #### Updated link for secondary list CodeSystem
 
 **Affects:**&nbsp; Access Structured
@@ -933,6 +730,8 @@ Notes under here for the published version
 - Diagrams updated to show additional problem and consultation linkages
 - Note added that diagrams do not include all possible linkages
 - DocumentReference added as a profile returned for referrals and the associated diagram updated
+- A note has been added to the linkages page to state that consumers must have implemented the Access Document capability to retrieve documents linked from returned `DocumentReference` resources
+- The documents guidance page has been updated to state that consumers must have implemented the Access Document capability to retrieve documents linked from returned `DocumentReference` resources
 
 **Pages changed:**
 
@@ -941,9 +740,27 @@ Notes under here for the published version
 
 ---
 
+#### Updated multi area searches guidance
+
+**Tickets:**&nbsp; [#1023](https://github.com/nhsconnect/gpconnect/issues/1023), [#1030](https://github.com/nhsconnect/gpconnect/issues/1030)
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Fixed issue in requests in multi area searches. Example requests have been updated to be valid requests. The example now says 365 days instead of 1 year.
+
+**Pages changed:**
+
+- [Multi area searches](accessrecord_structured_development_searchmultiareasearches,html)
+
+---
+
 #### Updated List guidance
 
-**Tickets:** &nbsp; [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
+**Tickets:** &nbsp; [#1014](https://github.com/nhsconnect/gpconnect/issues/1014), [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
 
 **Affects:**&nbsp; Access Structured
 
@@ -951,7 +768,8 @@ Notes under here for the published version
 
 **Description:**
 
-Updated the guidance for the title element, so that it referenced using the titles defined in the 'Using lists to return data' guidance.
+- Updated to describe how to populate the list.date field
+- Updated the guidance for the title element, so that it referenced using the titles defined in the 'Using lists to return data' guidance
 
 **Pages changed:**
 
@@ -1044,9 +862,9 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 ---
 
-#### Updated consultations guidance
+#### Updated uncategorised data guidance
 
-**Tickets:** &nbsp; [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1145](https://github.com/nhsconnect/gpconnect/issues/1145)
+**Tickets:** &nbsp; [#754](https://github.com/nhsconnect/gpconnect/issues/754), [#1013](https://github.com/nhsconnect/gpconnect/issues/1013), [#1027](https://github.com/nhsconnect/gpconnect/issues/1027), [#1028](https://github.com/nhsconnect/gpconnect/issues/1028), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
 
 **Affects:**&nbsp; Access Structured
 
@@ -1054,8 +872,38 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 **Description:**
 
+- Added a note to the Uncategorised data observation page that suppliers MUST use the units from the FHIR spec vital signs page
+- Updated to describe how blood pressures are recorded in GP systems and include details of which blood pressures should be exported as a triple
+- Updated to reflect the range of data that can be used to populate the component element
+- Updated the performer element to include organization in reference types
+- Minor re-word for code for free text
+- Section added with additional guidance for populating the observation resource for an inbound referral and updated the profile guidance
+- Updated guidance and diagrams for hierarchical data and added questionnaireResponse profile
+- Free text which is not associated with a clinical code must only be returned in the context of a consultation (and problem when linking a consultation topic items) and not in response to only an uncategorised data request.
+- Inbound referrals referenced in scope of uncategorised data
+
+**Pages changed:**
+
+- [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance.html)
+- [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
+- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse)
+
+---
+
+#### Updated consultations guidance
+
+**Tickets:** &nbsp; [#1009](https://github.com/nhsconnect/gpconnect/issues/1009), [#1029](https://github.com/nhsconnect/gpconnect/issues/1029), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1145](https://github.com/nhsconnect/gpconnect/issues/1145)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated the description for confidential items in consultations to reference secondary lists
 - Changed the query response List profile guidance to reference Encounter resources instead of Lists used for the Consultation structure
 - Minor changes to the text to clarify that free text recorded in consultation use the observation resource as defined under uncategorised data
+- Detail on returning out of scope items from clinical areas as text has been added
 
 **Pages changed:**
 
@@ -1063,29 +911,22 @@ Updated the guidance for the title element, so that it referenced using the titl
 
 ---
 
-#### Updated uncategorised data guidance
+#### Update to Problem Header profile guidance
 
-**Tickets:** &nbsp; [#754](https://github.com/nhsconnect/gpconnect/issues/754), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
+**Tickets:**&nbsp; [#1012](https://github.com/nhsconnect/gpconnect/issues/1012)
 
-**Affects:**&nbsp; Access Structured
+**Affects:**&nbsp; Access Record Structured
 
 **Impacts:** Provider and consumer systems
 
 **Description:**
 
-- Added a note to the Uncategorised data observation page that suppliers MUST use the units from the FHIR spec vital signs page.
-- Updated to reflect the range of data that can be used to populate the component element
-- Updated the performer element to include organization in reference types
-- Minor re-word for code for free text
-- Section added with additional guidance for populating the observation resource for an inbound referral and updated the profile guidance
-- Updated guidance and diagrams for hierarchical data and added questionnaireResponse profile
-- Free text which is not associated with a clinical code must only be returned in the context of a consultation (and problem when linking a consultation topic items) and not in response to only an uncategorised data request.
+- Update to the actualProblem extension guidance to include all clinical areas for this specification
+- Update to the relatedClinicalItems extension guidance to include all clinical areas for this specification
 
 **Pages changed:**
 
-- [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance#uncategorised-data-definition)
-- [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
-- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse)
+- [Problem Header profile guidance](accessrecord_structured_problems.html)
 
 ---
 
