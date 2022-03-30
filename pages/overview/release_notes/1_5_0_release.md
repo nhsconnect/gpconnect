@@ -25,8 +25,6 @@ This release also contains updates from the following releases:
 - [1.3.2](overview_release_notes_1_3_2.html)
 
 
-
-
 ## 1.5.0 changes ##
 
 These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Documents 1.0.0 and Access Documents 1.0.1 specifications that were merged into 1.5.0
@@ -85,53 +83,6 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 ---
 
-
-
-
-
-
-
-#### Correction to Consultation List guidance
-
-**Tickets:**&nbsp; [#983](https://github.com/nhsconnect/gpconnect/issues/983)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:**&nbsp; Providers and consumers
-
-**Description:**&nbsp;
-
-- the `problemReference` extension has been corrected to be `relatedProblemHeader`
-
-**Pages changed:**
-
-- [Guidance for populating and consuming the List profile for Consultations](accessrecord_structured_development_list_consultation.html)
-
----
-
-
-
-#### Updates to investigations examples
-
-**Tickets:**
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Removed includeMedication and includeAllergies parameters from both requests
-- Corrected duplicate id being used across multiple Observation resources
-- added type to Observation.related
-- removed use of Bundle.identifier
-
-**Pages changed:**
-
-- [FHIR&reg; Investigations examples](accessrecord_structured_development_fhir_examples_pathology.html)
-
----
-
 ## Update issued on 31st July 2020
 
 The following changes were made to clarify and correct issues in the GP Connect 1.5.0 specification
@@ -172,8 +123,6 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ### Access Document ###
 
-
-
 #### Example updates
 
 **Tickets:**
@@ -192,112 +141,7 @@ The following changes were made to clarify and correct issues in the GP Connect 
 
 ---
 
-
 ### Access Record Structured ###
-
-
-
-#### Updates to examples
-
-**Tickets:**
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Issues in the diary entry example have been fixed
-- Updates were made to the investigations examples in the Access Record Structured capability
-- The consultations example has been updated to use the new Lists guidance
-
-**Pages changed:**
-
-- [FHIR&reg; (Diary Entry) ProcedureRequest examples](accessrecord_structured_development_fhir_examples_diaryentries.html)
-- [FHIR&reg; Investigations examples](accessrecord_structured_development_fhir_examples_pathology.html)
-- [FHIR&reg; Consultations and Problems examples](accessrecord_structured_development_fhir_examples_consultations.html)
-
----
-
-#### Updates to Consultation List profile guidance
-
-**Tickets:**
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Guidance for the List profile for Consultations has been updated, the `problemReference` extension has been corrected to `relatedProblemHeader` to match the profile
-
-**Pages changed:**
-
-- [List - consultation structure](accessrecord_structured_development_list_consultation.html)
-
----
-
-#### Update to multiple search parameters guidance
-
-**Tickets:**&nbsp; [#1004](https://github.com/nhsconnect/gpconnect/issues/1004)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Guidance has been extended for requests using multiple search parameters
-- Common search definitions have been added
-
-**Pages changed:**
-
-- [Multi area searches](accessrecord_structured_development_searchmultiareasearches)
-
----
-
-#### Update to Lists guidance
-
-**Tickets:**&nbsp; [#1007](https://github.com/nhsconnect/gpconnect/issues/1007)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- The definition of Lists has been extended to introduce secondary lists to describe the bundle content
-- Guidance for populating lists with warning codes has been updated to reflect the additional lists
-- A new page has been created to incorporate the extended List guidance with some content moved from the resource population fundamentals page
-- The linkages page has been updated and extended to reflect these changes
-
-**Pages changed:**
-
-- [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
-- [Linkages](accessrecord_structured_development_linkages.html)
-- [Resource population fundamentals](accessrecord_structured_development_resources_overview.html)
-
----
-
-#### Update to Problems guidance
-
-**Tickets:**&nbsp; [#1008](https://github.com/nhsconnect/gpconnect/issues/1008), [#1010](https://github.com/nhsconnect/gpconnect/issues/1010)
-
-**Affects:**&nbsp; Access Record Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- The list of clinical item references has been updated to include consultations / encounters
-- Guidance for out of scope items (complete diary entries and test requests outside of investigations) which are linked to problems
-
-**Pages changed:**
-
-- [Problem guidance - clinical items](accessrecord_structured_development_problems_guidance.html#clinical-item-references)
-- [Problem guidance - out of scope items](accessrecord_structured_development_problems_guidance.html#problems-linking-to-out-of-scope-clinical-items)
-
----
 
 ## Update issued on 1st October 2020
 
@@ -307,16 +151,9 @@ Known issues with the specification are documented on the <a href="accessrecord_
 
 ---
 
-
-
-
 ## Updates following last release
 
 The following changes were made to clarify and correct issues in the GP Connect 1.5.0 specification:
-
-
-
-
 
 ### Change to document type refset
 
@@ -664,9 +501,9 @@ Notes under here for the published version
 
 ---
 
-#### Updated the guidance on using lists to return data
+#### Add Using lists to return data guidance page
 
-**Tickets:**&nbsp; [#1022](https://github.com/nhsconnect/gpconnect/issues/1022)
+**Tickets:**&nbsp; [#1022](https://github.com/nhsconnect/gpconnect/issues/1022), [#1050](https://github.com/nhsconnect/gpconnect/issues/1050)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -674,52 +511,36 @@ Notes under here for the published version
 
 **Description:**
 
+- A new page has been created to incorporate the extended List guidance with some content moved from the resource population fundamentals page
 - Following curation this has been updated to reflect the new secondary list codes
 
 **Pages changed:**
 
-- [Returning data in lists](accessrecord_structured_development_lists_for_message_structure.html)
-
----
-
-#### Updated link for secondary list CodeSystem
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Link to CodeSystem has been updated to [https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1](https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1)
-
-**Pages changed:**
-
 - [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
 
 ---
 
-#### Remove warning codes from resource pop fundamentals
+#### Updated resource population fundamentals guidance
 
-**Tickets:** [#1050](https://github.com/nhsconnect/gpconnect/issues/1050)
+**Tickets:** [#1007](https://github.com/nhsconnect/gpconnect/issues/1007), [#1050](https://github.com/nhsconnect/gpconnect/issues/1050)
 
-**Affects:**&nbsp; Access Structured
+**Affects:**&nbsp; Access Record Structured
 
 **Impacts:** Provider and consumer systems
 
 **Description:**
 
-- Removed and replaced with a link to the returning data in lists page.
+- Moved warning codes to the returning data in lists page and replaced with a link
 
 **Pages changed:**
 
 - [Resource population fundamentals)](accessrecord_structured_development_resources_overview.html)
-- [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html)
 
 ---
 
 #### Updated linkages guidance
 
-**Tickets:** &nbsp; [#1042](https://github.com/nhsconnect/gpconnect/issues/1042), [#1147](https://github.com/nhsconnect/gpconnect/issues/1147)
+**Tickets:** &nbsp; [#1007](https://github.com/nhsconnect/gpconnect/issues/1007), [#1042](https://github.com/nhsconnect/gpconnect/issues/1042), [#1147](https://github.com/nhsconnect/gpconnect/issues/1147)
 
 **Affects:**&nbsp; Access Structured
 
@@ -732,17 +553,17 @@ Notes under here for the published version
 - DocumentReference added as a profile returned for referrals and the associated diagram updated
 - A note has been added to the linkages page to state that consumers must have implemented the Access Document capability to retrieve documents linked from returned `DocumentReference` resources
 - The documents guidance page has been updated to state that consumers must have implemented the Access Document capability to retrieve documents linked from returned `DocumentReference` resources
+- Added reference to secondary lists to the guidance and diagrams
 
 **Pages changed:**
 
 - [Linkages](accessrecord_structured_development_linkages.html)
-- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
 
 ---
 
 #### Updated multi area searches guidance
 
-**Tickets:**&nbsp; [#1023](https://github.com/nhsconnect/gpconnect/issues/1023), [#1030](https://github.com/nhsconnect/gpconnect/issues/1030)
+**Tickets:**&nbsp; [#1004](https://github.com/nhsconnect/gpconnect/issues/1004), [#1023](https://github.com/nhsconnect/gpconnect/issues/1023), [#1030](https://github.com/nhsconnect/gpconnect/issues/1030)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -750,17 +571,34 @@ Notes under here for the published version
 
 **Description:**
 
-- Fixed issue in requests in multi area searches. Example requests have been updated to be valid requests. The example now says 365 days instead of 1 year.
+- Guidance has been extended for requests using multiple search parameters
+- Common search definitions have been added
 
 **Pages changed:**
 
-- [Multi area searches](accessrecord_structured_development_searchmultiareasearches,html)
+- [Multi area searches](accessrecord_structured_development_searchmultiareasearches.html)
+
+---
+
+#### Update to multiple search parameters guidance
+
+**Tickets:**&nbsp; 
+
+**Affects:**&nbsp; Access Record Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+**Pages changed:**
+
+- [Multi area searches](accessrecord_structured_development_searchmultiareasearches)
 
 ---
 
 #### Updated List guidance
 
-**Tickets:** &nbsp; [#1014](https://github.com/nhsconnect/gpconnect/issues/1014), [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
+**Tickets:** &nbsp; [#1007](https://github.com/nhsconnect/gpconnect/issues/1007), [#1014](https://github.com/nhsconnect/gpconnect/issues/1014), [#1115](https://github.com/nhsconnect/gpconnect/issues/1115)
 
 **Affects:**&nbsp; Access Structured
 
@@ -770,10 +608,12 @@ Notes under here for the published version
 
 - Updated to describe how to populate the list.date field
 - Updated the guidance for the title element, so that it referenced using the titles defined in the 'Using lists to return data' guidance
+- The definition of Lists has been extended to introduce secondary lists to describe the bundle content
+- Guidance for populating lists with warning codes has been updated to reflect the additional lists
 
 **Pages changed:**
 
-- [List](accessrecord_structured_development_list.html#title)
+- [List](accessrecord_structured_development_list.html)
 
 ---
 
@@ -892,7 +732,7 @@ Notes under here for the published version
 
 #### Updated consultations guidance
 
-**Tickets:** &nbsp; [#1009](https://github.com/nhsconnect/gpconnect/issues/1009), [#1029](https://github.com/nhsconnect/gpconnect/issues/1029), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1145](https://github.com/nhsconnect/gpconnect/issues/1145)
+**Tickets:** &nbsp; [#983](https://github.com/nhsconnect/gpconnect/issues/983), [#1009](https://github.com/nhsconnect/gpconnect/issues/1009), [#1029](https://github.com/nhsconnect/gpconnect/issues/1029), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1145](https://github.com/nhsconnect/gpconnect/issues/1145)
 
 **Affects:**&nbsp; Access Structured
 
@@ -904,16 +744,20 @@ Notes under here for the published version
 - Changed the query response List profile guidance to reference Encounter resources instead of Lists used for the Consultation structure
 - Minor changes to the text to clarify that free text recorded in consultation use the observation resource as defined under uncategorised data
 - Detail on returning out of scope items from clinical areas as text has been added
+- Guidance for the List profile for Consultations has been updated, the `problemReference` extension has been corrected to `relatedProblemHeader` to match the profile
+- The consultations example has been updated to use the new Lists guidance
 
 **Pages changed:**
 
 - [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
+- [List - consultation structure](accessrecord_structured_development_list_consultation.html)
+- [FHIR&reg; Consultations and Problems examples](accessrecord_structured_development_fhir_examples_consultations.html)
 
 ---
 
-#### Update to Problem Header profile guidance
+#### Updated to Problems guidance
 
-**Tickets:**&nbsp; [#1012](https://github.com/nhsconnect/gpconnect/issues/1012)
+**Tickets:**&nbsp; [#1008](https://github.com/nhsconnect/gpconnect/issues/1008), [#1010](https://github.com/nhsconnect/gpconnect/issues/1010), [#1012](https://github.com/nhsconnect/gpconnect/issues/1012)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -923,10 +767,17 @@ Notes under here for the published version
 
 - Update to the actualProblem extension guidance to include all clinical areas for this specification
 - Update to the relatedClinicalItems extension guidance to include all clinical areas for this specification
+- Diagram updated to show additional problem and consultation linkages
+- Note added that diagrams do not include all possible linkages
+- The list of clinical item references has been updated to include consultations / encounters
+- Guidance for out of scope items (complete diary entries and test requests outside of investigations) which are linked to problems
+- The consultations example has been updated to use the new Lists guidance
 
 **Pages changed:**
 
+- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
 - [Problem Header profile guidance](accessrecord_structured_problems.html)
+- [FHIR&reg; Consultations and Problems examples](accessrecord_structured_development_fhir_examples_consultations.html)
 
 ---
 
