@@ -29,6 +29,12 @@ This release also contains updates from the following releases:
 
 These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Documents 1.0.0 and Access Documents 1.0.1 specifications that were merged into 1.5.0
 
+---
+
+### Core
+
+---
+
 ### Access Document ###
 
 #### Added Access Record Documents link to Implement a capability menu ####
@@ -41,6 +47,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 **Page added:**
 
 - [Access Record Documents](access_documents.html)
+
 
 ---
 
@@ -63,121 +70,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Capabilities](overview_priority_capabilities.html)
 - [Send Document](send_document.html)
 
-
-
-#### Merge separate Access Document 1.0.1 specification into this GP Connect API 1.5.0 specification ####
-
-**Tickets:** [#933](https://github.com/nhsconnect/gpconnect/issues/933)
-
-**Affects:**&nbsp; Access Document
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- The Access Document specification will no longer be published independently of this specification (GP Connect API 1.x.x).
-- An Access Document capability has been created under this specification and the content of the previously separate Access Document has been merged in.
-- The release notes from before the merge can be viewed here:
-  - [GP Connect API - Access Document 1.0.1](overview_release_notes_documents_1_0_1.html)
-  - [GP Connect API - Access Document 1.0.0](overview_release_notes_documents_1_0_0.html)
-
 ---
-
-## Update issued on 31st July 2020
-
-The following changes were made to clarify and correct issues in the GP Connect 1.5.0 specification
-
-<div class="alert alert-warning" role="alert">
-  <i class="fa fa-warning"></i> <b>Important: Outstanding specification issues</b><br/>
-
-  <p>Some profiles still require updates to bring them in line with the guidance in this specification:</p>
-
-  <ul>
-    <li>https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/</li>
-    <li>https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1</li>
-    <li>https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ListCode-1</li>
-    <li>https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1</li>
-  </ul>
-
-  <p>Other known issues with the specification are documented on the <a href="accessrecord_structured_known_issues.html">Known issues page</a></p>
-
-</div>
-
-### Core ###
-
-**Tickets:**
-
-**Affects:**&nbsp; Core
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- The statement saying that all references **SHALL** be relative has been removed due to `DocumentReference` resources using full URLs for document locations
-
-**Pages changed:**
-
-- [FHIR&reg; implementation](development_fhir_api_guidance.html#resource-references)
-
----
-
-### Access Document ###
-
-#### Example updates
-
-**Tickets:**
-
-**Affects:**&nbsp; Access Document
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- An error was fixed with the date in the example of searching for a patient's documents
-
-**Pages changed:**
-
-- [FHIR&reg; examples](access_documents_development_fhir_examples_documents.html)
-
----
-
-### Access Record Structured ###
-
-## Update issued on 1st October 2020
-
-The following changes were made to clarify and correct issues in the GP Connect 1.5.0 specification
-
-Known issues with the specification are documented on the <a href="accessrecord_structured_known_issues.html">Known issues page</a>
-
----
-
-## Updates following last release
-
-The following changes were made to clarify and correct issues in the GP Connect 1.5.0 specification:
-
-### Change to document type refset
-
-**Affects:**&nbsp; Access Documents
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- The refset to use for the document type is changed
-
-**Pages changed:**
-
-- [DocumentReference](access_documents_development_documentreference.html#type)
-
----
-
-
-
-
-
-## NEW NOTES FOR RELEASE
-
-Notes under here for the published version
 
 ### Access Document
 
@@ -201,6 +94,24 @@ Notes under here for the published version
 - [Interaction IDs](integration_interaction_ids.html)
 - [General API guidance](development_general_api_guidance.html#service-root-url)
 - [Find a patient](access_documents_use_case_find_a_patient.html)
+
+---
+
+#### Merge separate Access Document 1.0.1 specification into this GP Connect API 1.5.0 specification ####
+
+**Tickets:** [#933](https://github.com/nhsconnect/gpconnect/issues/933)
+
+**Affects:**&nbsp; Access Document
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- The Access Document specification will no longer be published independently of this specification (GP Connect API 1.x.x).
+- An Access Document capability has been created under this specification and the content of the previously separate Access Document has been merged in.
+- The release notes from before the merge can be viewed here:
+  - [GP Connect API - Access Document 1.0.1](overview_release_notes_documents_1_0_1.html)
+  - [GP Connect API - Access Document 1.0.0](overview_release_notes_documents_1_0_0.html)
 
 ---
 
@@ -582,7 +493,7 @@ Notes under here for the published version
 
 #### Update to multiple search parameters guidance
 
-**Tickets:**&nbsp; 
+**Tickets:**&nbsp;
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -667,10 +578,10 @@ Notes under here for the published version
 - Added codes against prescription type descriptions
 - Added detail to the spec that describes how to split plans
   - Detailed how they apply to a date filter
-  - Details about the repeatInformation 
+  - Details about the repeatInformation
   - Details of how to change the ids
   - Detail from use of priorPrescription element
-  - Updated the medication guidance with example 
+  - Updated the medication guidance with example
   - Removed dosageLastChanged extension from Med Statement page
 - Diagrams updated for medication resource relationships to correct intent labels typo
 
