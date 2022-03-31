@@ -35,8 +35,6 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 ---
 
-### Access Document ###
-
 #### Added Access Record Documents link to Implement a capability menu ####
 
 **Description:**
