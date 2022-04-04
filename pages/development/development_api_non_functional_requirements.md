@@ -19,7 +19,7 @@ Please refer to the [Security guidance](development_api_security_guidance.html) 
 
 #### Volumetric ####
 
-Provider systems **MUST** meet the agreed volumetric performance targets.
+Provider systems **MUST** meet the agreed volumetric performance targets. 
 
 Please refer to the [Volumetric guidance](development_api_volume_and_performance.html#volumetrics) page for technical details.
 
