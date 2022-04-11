@@ -813,3 +813,42 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Multi area searches](accessrecord_structured_development_searchmultiareasearches)
 
 ---
+
+### Update guidance for documents size
+
+**Tickets:** &nbsp; [#1152](https://github.com/nhsconnect/gpconnect/issues/1152)
+
+**Affects:**&nbsp; Access Documents
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated guidance for content.attachment.size
+
+**Pages changed:**
+
+- [DocumentReference](access_documents_development_documentreference.html)
+
+---
+
+### Corrections and updates for CareConnect-GPC-ProblemHeader-Condition-1
+
+**Tickets:** &nbsp; [#1157](https://github.com/nhsconnect/gpconnect/issues/1157)
+
+**Affects:**&nbsp; Foundations, Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- References to ‘CareConnect-GPC-Condition-ProblemHeader-1’ have been corrected to 'CareConnect-GPC-ProblemHeader-Condition-1'
+- CareConnect-GPC-ProblemHeader-Condition-1 has been updated to 1.7
+
+**Pages changed:**
+
+- [Get the FHIR&reg; capability statement (Foundations)](foundations_use_case_get_the_fhir_capability_statement.html)
+- [Get the FHIR&reg; capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)
+- [ProblemHeader (Condition)](accessrecord_structured_problems.html)
+
+---
