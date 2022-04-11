@@ -86,7 +86,7 @@ The following data-elements are optional (meaning, **MAY** be supplied for certa
 
 The request payload is a set of [Parameters](https://www.hl7.org/fhir/stu3/parameters.html) conforming to the `gpconnect-carerecord-operation-1` profiled `OperationDefinition`, see below:
 
-{% include tip.html content="This is a type level operation (meaning, is not associated with a given resource instance)." %} 
+{% include tip.html content="This is a type level operation (meaning, is not associated with a given resource instance)." %}
 
 ```xml
 <OperationDefinition xmlns="http://hl7.org/fhir">
@@ -183,6 +183,7 @@ The provider system **MUST** return an error if:
 - the `recordSection` is invalid (meaning, isn't from the correct value set)
 - an invalid `timePeriod` is requested (i.e. end date > start date)
 - a `timePeriod` is specified for a `recordSection` that is time period agnostic (for example, Patient Summary, Allergies etc.)
+- the patient is recorded as deceased and the request is received after the allowed access period post patient's death
 
 Provider systems **MUST** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
@@ -208,6 +209,7 @@ Provider systems:
 - **MUST** return the care record section as valid XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance
 - **MUST** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response
 - **MUST** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`
+- **MUST** include patient's date of death and next of kin details in Patient.deceased\[x\](deceasedDateTime) and Patient.contact respectively, where this information is recorded in the provider system
 
 ```json
 {

@@ -109,12 +109,13 @@ If differences exist then the consumer system **MUST** show an alert/warning and
 The following data **MUST** be cross checked between consumer and returned provider data. Any differences between these fields **MUST** be brought to the attention of the user.   
 
 | Item | Resource element |
-| ---- | -------------- | 
-| Family Name | `patient.name.family` |
-| Given Name | `patient.name.given` |
-| Gender | `patient.gender` |
-| Birth Date | `patient.birthDate` |
-| GP Practice Code | `patient.managingOrganization` | 
+| ---- | -------------- |
+| Family Name | `Patient.name.family` |
+| Given Name | `Patient.name.given` |
+| Gender | `Patient.gender` |
+| Birth Date | `Patient.birthDate` |
+| GP Practice Code | `Patient.managingOrganization` |
+| Deceased Date Time | `Patient.deceased[x](deceasedDateTime)` |  
 
 Additionally, the following data **MAY** be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
 
@@ -237,5 +238,3 @@ The following HTML classes **MUST** be applied across the HTML view:
 | `gptransfer-banner`| Applied within the `<div>` tag of any section/subsection exclusion banner                | All views
 | `date-column` 	 | Applied within the `<td>` tag of any table column with a `dd-Mmm-yyyy` date format       | All views
 | `med-item-column`  | Applied within the `<td>` tag of a grouped distinct `Medication Item`       				| Medications (All Medication (Summary) & All Medication Issues only)
-
-

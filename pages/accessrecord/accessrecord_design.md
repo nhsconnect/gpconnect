@@ -36,8 +36,8 @@ Potential grounds for not returning an HTML view?
 	- corrupt record, etc.
 
 
-## General ##	
-	
+## General ##
+
 ### Record 'In-transit' as a result of GP transfer ###
 
 If the patient's record is indicated in the provider system as not fully-integrated following a GP to GP transfer, then only data which has been entered to the current GP record should be returned, and NOT the contents of the previous GP record. Where data is excluded according to this, a warning should be included in the section banner indicating that some data has been excluded as a result of the transfer.    
@@ -47,6 +47,12 @@ If the patient's record is indicated in the provider system as not fully-integra
 
 <span class="label label-info">DECISION</span> The provider **MUST** display a banner message when a record is in-transit.
 
+### Deceased patient's record ###
+
+Behaviour when a deceased patient's record is requested:
+
+- <span class="label label-info">DECISION</span> The provider **MUST** allow access to a deceased patient's record for a period of 28 days after the patient's death. The provider **MUST** allow for the period to be configurable. If the request is made after this period, provider **MUST** return an error.
+- <span class="label label-info">DECISION</span> The provider **MUST** return a deceased patient's record only if the patient was a main GMS registered patient prior to being de-registered due to death.
 
 ### Record locking ###
 
@@ -133,7 +139,7 @@ How often should the trace be run by consumers?
 ### Patient identity cross check ###
 
 Although a traced national identifier is initially mandated for use with the GP Connect APIs, there are edge case scenarios where the patient record being retrieved from the GP system may have different patient details than the source system. The basic patient resource has been bundled into the response so that a cross check may be performed in the consuming system.
-   
+
 - <span class="label label-success">SELECTED</span> consumer system to cross-check
 - provider system to cross-check
 - Spine Security Proxy (SSP) to cross-check
@@ -195,7 +201,7 @@ How are sensitive data items dealt with?
 <span class="label label-info">DECISION</span> Provider API processing **MUST** support the application of an exclusion set, which **MUST** be configurable, including containing null values. The current Royal College of General Practitioners (RCGP) sensitive exclusion set **MUST** be applied, for the complete patient record, or sections/data-items, but is likely to amended pending future guidance and review (to be approved by the Joint GP IT Committee (JGPIT)).
 <br>[GP summary exclusion code Lists](https://isd.hscic.gov.uk/trud3/user/guest/group/0/pack/1/subpack/141/releases)
 
-{% include custominfocallout.html content="**Information:** You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link." type="info" %} 
+{% include custominfocallout.html content="**Information:** You will need to register for an account on TRUD (the NHS Terminology Reference Data Update Distribution Service) in order to view the above link." type="info" %}
 
 
 ### Data sharing agreements ###
@@ -234,7 +240,7 @@ Date range handling in the summary per section:
  - date range to match SCR time-frames for all subsections
 
 <span class="label label-info">DECISION</span> No date ranges are applied to the summary section.
- 
+
 ### Section time frames ###
 
 Date range handling in the HTML view per section:
@@ -244,6 +250,3 @@ Date range handling in the HTML view per section:
 - <span class="label label-success">SELECTED</span> date ranges to be applied as indicated in the relevant section implementation guidance (for example, always return all allergies) with clinical sign off
 
 <span class="label label-info">DECISION</span> Date ranges are applied, where permitted, throughout Access Record HTML, please see each HTML view page for details.
-
-
-
