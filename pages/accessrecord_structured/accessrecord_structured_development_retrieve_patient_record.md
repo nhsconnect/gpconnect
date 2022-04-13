@@ -488,6 +488,7 @@ When requesting consultations, the following part parameters **MUST NOT** be inc
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
   - `includeImmunisations.includeNotGiven`
+  - `includeImmunisations.includeStatus`  
 
 When requesting problems, the following part parameters **MUST NOT** be included:
   - `includeMedication.medicationSearchFromDate`
@@ -495,6 +496,7 @@ When requesting problems, the following part parameters **MUST NOT** be included
   - `includeReferrals.referralSearchPeriod`
   - `includeDiaryEntries.diaryEntriesSearchDate`
   - `includeImmunisations.includeNotGiven`
+  - `includeImmunisations.includeStatus`    
 
 In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
 
@@ -748,11 +750,11 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
     - all immunisations where `notGiven` is set to `true` or `false` shall be returned
 
-  - and when the `includeStatus` part parameter is set to `false` or not supplied:
+  - and when the `includeStatus` part parameter is set to `false`:
 
     - only immunisations will be returned
 
-  - and when the `includeStatus` part parameter is set to `true`:
+  - and when the `includeStatus` part parameter is set to `true` or not supplied:
 
     - [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the status of patient's immunisations will also be returned.
 

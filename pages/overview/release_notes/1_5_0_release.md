@@ -871,3 +871,21 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse.html)
 
 ---
+
+### Updates to not permitted parameter combinations
+
+**Tickets:** &nbsp; [#1165](https://github.com/nhsconnect/gpconnect/issues/1165)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Added includeImmunisations.includeStatus to not permitted parameter combinations
+
+**Pages changed:**
+
+- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
+
+---
