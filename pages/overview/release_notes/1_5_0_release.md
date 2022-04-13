@@ -852,3 +852,22 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [ProblemHeader (Condition)](accessrecord_structured_problems.html)
 
 ---
+
+### Updates to QuestionnaireResponse profile
+
+**Tickets:** &nbsp; [#1164](https://github.com/nhsconnect/gpconnect/issues/1164)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- References to ‘questionnaireResponse’ have been corrected to 'QuestionnaireResponse'
+- The value for meta.profile and the URL have been corrected.
+
+**Pages changed:**
+
+- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse.html)
+
+---

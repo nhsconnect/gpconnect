@@ -4,12 +4,12 @@ keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_questionnaireResponse.html
-summary: "Guidance for populating and consuming the questionnaireResponse profile for hierarchichal uncategorised data"
+summary: "Guidance for populating and consuming the QuestionnaireResponse profile for hierarchichal uncategorised data"
 div: resource-page
 ---
 ## Introduction ##
 
-The headings below list the elements of the `questionnaireResponse` profile and describes how to populate and consume them for hierarchichal uncategorised data.
+The headings below list the elements of the `QuestionnaireResponse` profile and describes how to populate and consume them for hierarchichal uncategorised data.
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
@@ -27,7 +27,7 @@ The headings below list the elements of the `questionnaireResponse` profile and 
   </tr>
 </table>
 
-The logical identifier of the `questionnaireResponse` profile.
+The logical identifier of the `QuestionnaireResponse` profile.
 
 ### meta.profile ###
 
@@ -39,9 +39,9 @@ The logical identifier of the `questionnaireResponse` profile.
   </tr>
 </table>
 
-The `questionnaireResponse` profile URL.
+The `QuestionnaireResponse` profile URL.
 
-Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-questionnaireResponse-1](https://simplifier.net/nhsdigitalstu3assets/careconnect-questionnaireResponse-1).
+Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-QuestionnaireResponse-1](https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-QuestionnaireResponse-1).
 
 ### identifier ###
 
@@ -69,9 +69,9 @@ Where *consuming* systems are integrating data from this resource to their local
   </tr>
 </table>
 
-Link to the 'Observation' that is the parent to this `questionnaireResponse`.
+Link to the 'Observation' that is the parent to this `QuestionnaireResponse`.
 
-Every `questionnaireResponse` **MUST** have a parent `Observation`.
+Every `QuestionnaireResponse` **MUST** have a parent `Observation`.
 
 ### questionnaire ###
 
@@ -95,7 +95,7 @@ Reference to the set of questions or form being answered.
   </tr>
 </table>
 
-The status of the `questionnaireResponse`.
+The status of the `QuestionnaireResponse`.
 
 Fixed value of 'completed'
 
@@ -109,7 +109,7 @@ Fixed value of 'completed'
   </tr>
 </table>
 
-Reference to patient this `questionnaireResponse` is about.
+Reference to patient this `QuestionnaireResponse` is about.
 
 ### context ###
 
@@ -121,7 +121,7 @@ Reference to patient this `questionnaireResponse` is about.
   </tr>
 </table>
 
-The `Encounter` within which the `questionnaireResponse` was authored.
+The `Encounter` within which the `QuestionnaireResponse` was authored.
 
 ### authored ###
 
@@ -133,7 +133,7 @@ The `Encounter` within which the `questionnaireResponse` was authored.
   </tr>
 </table>
 
-When this `questionnaireResponse` was created on the system.
+When this `QuestionnaireResponse` was created on the system.
 
 ### item.linkId ###
 
@@ -145,9 +145,9 @@ When this `questionnaireResponse` was created on the system.
   </tr>
 </table>
 
-Pointer to a specific item from a linked `questionnaire`. 
-Where the questionnaireResponse does not link back to a questionnaire this should be populated with the rubric of the 'parent' observation.
-If the 'parent' observation does not have a text description which can be used, then populate with ‘No information available’. 
+Pointer to a specific item from a linked `Questionnaire`.
+Where the QuestionnaireResponse does not link back to a Questionnaire this should be populated with the rubric of the 'parent' observation.
+If the 'parent' observation does not have a text description which can be used, then populate with ‘No information available’.
 
 ### item.text ###
 
@@ -172,9 +172,6 @@ A text description of the question this item is an answer to or name of the grou
   </tr>
 </table>
 
-Answer to the question or item contained in the group. 
+Answer to the question or item contained in the group.
 
 In the current build of GP Connect this will always be in the form of a reference to another resource.
-
-
-
