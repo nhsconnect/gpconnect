@@ -889,3 +889,22 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
 
 ---
+
+### Updates to guidance for documents linked to inbound referrals
+
+**Tickets:** &nbsp; [#1166](https://github.com/nhsconnect/gpconnect/issues/1166)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated guidance for documents linked to inbound referrals to be sent using DocumentReference resources
+
+**Pages changed:**
+
+- [DocumentReference](access_documents_development_documentreference.html)
+- [Uncategorised data guidance - Representing inbound referrals](accessrecord_structured_development_uncategoriseddata_guidance#representing-inbound-referrals)
+
+---

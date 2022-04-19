@@ -243,6 +243,17 @@ Reference to the consultation the document was created/attached in.
 
 Additional details about where the content was created (for example, clinical specialty), the value **SHOULD** be taken from the refset.  Other classifications of documents should be sent as `text`.
 
+### context.related ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>BackboneElement</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+Reference to other resource(s) to which the document is linked to, for instance this could be a reference to an inbound referral.
 
 <h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
 
