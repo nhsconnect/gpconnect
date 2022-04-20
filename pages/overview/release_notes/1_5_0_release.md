@@ -908,3 +908,21 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Uncategorised data guidance - Representing inbound referrals](accessrecord_structured_development_uncategoriseddata_guidance#representing-inbound-referrals)
 
 ---
+
+### Updates to guidance for populating references to clinical areas that aren’t available
+
+**Tickets:** &nbsp; [#1167](https://github.com/nhsconnect/gpconnect/issues/1167)
+
+**Affects:**&nbsp; Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated guidance for how to populate references for clinical items that are unavailable and also confidential
+
+**Pages changed:**
+
+- [Populating references to clinical areas that aren’t available](accessrecord_structured_development_clinical_area_config.html#populating-references-to-clinical-areas-that-arent-available)
+
+---

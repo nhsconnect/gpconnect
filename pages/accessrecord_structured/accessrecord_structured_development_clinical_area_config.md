@@ -86,26 +86,28 @@ In the above scenarios, providers **MUST** respond in the following way:
   }
 
   ```
+
 ### Populating references to clinical areas that aren't available
-Where clinical areas are unavailable, references to them will need to be populated with a warning that the information is unavailable:
+Where clinical areas are unavailable, references to them will need to be populated with a warning that the information is unavailable. However, if the clinical item that is unavailable is also marked as confidential, then the response should be as per the [Confidential items](accessrecord_structured_development_lists_for_message_structure.html#confidential-items) guidance.
 
 Where a clinical area has been turned off, it will create a section.section.entry (or section.entry) entry with the:
 
--   `List.entry.item.display` set to “[Clinical area] items have been disabled.”
+- `List.entry.item.display` set to “[Clinical area] items have been disabled.”
 
-       Where [Clinical area] identifies the type of the clinical item that isn't available.
+  Where [Clinical area] identifies the type of the clinical item that isn't available.
 
-The example below shows references to two items, one for an observation and another for referrals that have been disabled in the provider system:
+  The example below shows references to two items, one for an observation and another for referrals that have been disabled in the provider system:
 
-```json
-{
-  "item": {
-    "reference": "Observation/6734572634"
-  }
-},
-{
-  "item": {
-    "display": "Referral items have been disabled"
-  }
-}
-```
+  ```json
+  {
+    "item": {
+      "reference": "Observation/6734572634"
+    }
+    },
+    {
+      "item": {
+        "display": "Referral items have been disabled"
+      }
+    }
+
+  ```
