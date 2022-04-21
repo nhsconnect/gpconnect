@@ -51,7 +51,7 @@ If the patient's record is indicated in the provider system as not fully-integra
 
 Behaviour when a deceased patient's record is requested:
 
-- <span class="label label-info">DECISION</span> The provider **MUST** allow access to a deceased patient's record for a period of 28 days after the patient's death. The provider **MUST** allow for the period to be configurable. If the request is made after this period, provider **MUST** return an error.
+- <span class="label label-info">DECISION</span> The provider **MUST** allow access to a deceased patient's record for a period of 28 days after the patient's death. The provider **MUST** allow for the period to be configurable. If the request is made after this period, the provider **MUST** return an error.
 - <span class="label label-info">DECISION</span> The provider **MUST** return a deceased patient's record only if the patient was a main GMS registered patient prior to being de-registered due to death.
 
 ### Record locking ###
