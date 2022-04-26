@@ -92,10 +92,10 @@ Where this occurs, the data is supplied in a format where the hierarchical infor
 
 ### Modelling ###
 
-Each item of uncategorised data in the hierarchy is recorded in its own FHIR resource, this may be an `observation`, `immunization` or any other that is defined in GP Connect . The structure is represented using the `questionnaireResponse` resource.
+Each item of uncategorised data in the hierarchy is recorded in its own FHIR `observation` resource. The structure is represented using the `related` element within the reource.
 
-* The top-level item will contain an `observation` in the `questionnaireResponse.parent` element.
-* The child items will be pointed to as references to the relevant resources within the `questionnaireResponse.item.answer` field(s).
+* The top-level item will contain an `observation` where the 'observation.related.type' element is set to 'has-member'.
+* The child items will be pointed to as references to the relevant resources where the 'observation.related.type' element is set to 'derived-from'.
 
 ### Consultations and problem ###
 
@@ -108,26 +108,6 @@ Direct references to all four items will be populated in the `List(Heading)` pro
 If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
 
 <a href="images/access_structured/Uncategorised_Structure_v2.png"><IMG src="images/access_structured/Uncategorised_Structure_v2.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
-
-### Hierarchical data involving different clinical areas
-
-If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the questoinnaireResponse as for any other uncategorised 'observation' resource.
-
-<a href="images/access_structured/Uncategorised_Structure1_v2.png"><IMG src="images/access_structured/Uncategorised_Structure1_v2.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
-
-Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept.
-This **MUST** be done in accordance with the [uncategorised observation guidelines](accessrecord_structured_development_observation_uncategoriseddata) and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
-
-### Different clinical areas against an uncategorised data request only
-
-The above example demonstrate the structure for the hierachical date and the relationship with consultations.
-The same principles apply if consultations are not requested.
-This example shows where only uncategorised data has been requested but the hierarchical data includes resources from a different clinical area, an allergy in this case.
-The questionnaireResponse is populated identical to the example above.
-However, only resources which satisfy the criteria of the request are included.
-The diagram therefore shows the response for uncategorised data only, thus the items in grey boxes (encounter and allergyIntolerance resources) are referenced but not included.
-
-<a href="images/access_structured/Uncat_plus_hierarchy.png"><IMG src="images/access_structured/Uncat_plus_hierarchy.png" alt="Different clinical areas without consultations included" style="max-width:100%;max-height:100%;"></a>
 
 ## Representing inbound referrals ##
 
