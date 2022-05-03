@@ -12,7 +12,7 @@ toc: false
 
 ## HTML view ##
 
-{% include custominfocallout.html content="<strong>Information:</strong> For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable (subject to IG and Clinical Safety requirements) across health care settings. <br/><br/>Access Record HTML is delivering the capability to view a patient record and **MUST** be used in real time for read only. <br/><br/> Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care. " type="danger" %} 
+{% include custominfocallout.html content="<strong>Information:</strong> For Direct Patient Care purposes only, the Primary Care record contains a wealth of useful information which can improve patient safety and efficiency if it is made interoperable across health care settings (subject to [IG](designprinciples_ig_principles.html) and [Clinical Safety](designprinciples_clinical_safety_principles.html) requirements which consumers **MUST** meet and confirm compliance with during assurance). <br/><br/>Access Record HTML is delivering the capability to view a patient record and **MUST** be used in real time for read only. <br/><br/> Please refer to [NHS Digital - FAQ on legal access to personal confidential data - Definitions questions - How is Direct Patient Care defined?](http://content.digital.nhs.uk/article/3638/Personal-data-access-FAQs){:target='_blank'} for details of what constitutes direct patient care. " type="danger" %}
 
 
 ### Purpose ###
@@ -54,6 +54,6 @@ Please refer to the [AccessRecord HTML FHIR Resources](datalibraryaccessRecord.h
 
 The Access Record HTML capability message set includes the following set of Spine interactions:
 
-| Operation                 | InteractionID             | 
-|---------------------------|---------------------------| 
+| Operation                 | InteractionID             |
+|---------------------------|---------------------------|
 | [Get Care Record](accessrecord_use_case_retrieve_a_care_record_section.html) | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getcarerecord` |

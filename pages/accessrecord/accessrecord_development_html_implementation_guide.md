@@ -109,12 +109,12 @@ If differences exist then the consumer system **MUST** show an alert/warning and
 The following data **MUST** be cross checked between consumer and returned provider data. Any differences between these fields **MUST** be brought to the attention of the user.   
 
 | Item | Resource element |
-| ---- | -------------- | 
+| ---- | -------------- |
 | Family Name | `patient.name.family` |
 | Given Name | `patient.name.given` |
 | Gender | `patient.gender` |
 | Birth Date | `patient.birthDate` |
-| GP Practice Code | `patient.managingOrganization` | 
+| GP Practice Code | `patient.managingOrganization` |
 
 Additionally, the following data **MAY** be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
 
@@ -128,6 +128,10 @@ Where a patient is flagged on the GP clinical system as sensitive (and as such t
 Where a patient is flagged on the Personal Demographics Service (PDS) as sensitive (and as such it is not possible to confirm their registered GP practice), the consumer system **MUST NOT** use GP Connect.
 
 ## Section retrieval ##
+
+The consuming system **MUST** provide role based access controls to the HTML section retrieval at an appropriate level such that the consuming organisation can meet its obligations as described in the [Information governance principles](designprinciples_ig_principles.html) page.
+
+The consuming organisation **MUST** provide appropriate support to its users to understand the error messages associated with the HTML sections as follows.
 
 ### Error handling ###
 
@@ -233,5 +237,3 @@ The following HTML classes **MUST** be applied across the HTML view:
 | `gptransfer-banner`| Applied within the `<div>` tag of any section/subsection exclusion banner                | All views
 | `date-column` 	 | Applied within the `<td>` tag of any table column with a `dd-Mmm-yyyy` date format       | All views
 | `med-item-column`  | Applied within the `<td>` tag of a grouped distinct `Medication Item`       				| Medications (All Medication (Summary) & All Medication Issues only)
-
-
