@@ -1,71 +1,38 @@
 {% include custom/versionconfig.html %}
 {% include custom/sidebarconfigs.html %}
 
-<img src="{{ "/images/logo.png" }}" alt="NHS Digital Logo" height="110" width="110" alt="NHS Digital Logo" />
 
-<p><strong>GP Connect API {{ gpconnectVersion }}</strong><br /><span style="font-size: smaller;">FHIR&reg; {{ fhirVersion }}</span></p>
-<p><strong>{{sidebar.title}}</strong></p>
+<img src="{{ "/images/logo.png" }}" alt="NHS Digital Logo" height="110" width="110" />
+<li class="sidebarTitle" style="list-style-type:none;">GP Connect API {{ gpconnectVersion }}<br/><span style="font-size: smaller;">FHIR&reg; {{ fhirVersion }}</span></li>
+<li class="sidebarSection" style="list-style-type:none;">{{sidebar.title}}</li>	
 
-
-<ul class="nav">
-    {% if showbackbutton == true %}
+<ul class="nav">	
+{% if showbackbutton == true %}
     <li id="gpcnavlink" style="list-style-type:none;">
         <a href="./"> {{ backbuttontext }}</a>
     </li>
     {% endif %}
 </ul>
 
-<ul id="mysidebar" role="tree" class="nav">
-    {% include {{the_sidebar}} menuitems=sidebar.children %}
+<ul id="mysidebar" class="nav">
+  {% include {{the_sidebar}} menuitems=sidebar.children %}
 </ul>
 
-<br />
-<br />
+<br>
+<br>
 <div class="panel panel-quick">
-    <div class="panel-heading">Quick links</div>
-    <div class="panel-body">
-        <ul style="padding-left:20px; color: #000000">
-            {% for item in quicklinks %}
-            {{item.url}}
-            {% endfor %}
-        </ul>
-        <br>
-        <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-        <a href="javascript:history.go(-1)"> Go back to previous page</a>
-    </div>
+	<div class="panel-heading">Quick links</div>
+		<div class="panel-body">
+			<ul style="padding-left:20px; color: #000000">
+				{% for item in quicklinks %}
+						{{item.url}}
+				{% endfor %}
+			</ul>
+			<br>
+			<span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+              <a href="javascript:history.go(-1)"> Go back to previous page</a>
+	</div>
 </div>
 </div>
 <!-- this highlights the active parent class in the navgoco sidebar. this is critical so that the parent expands when you're viewing a page. This must appear below the sidebar code above. Otherwise, if placed inside customscripts.js, the script runs before the sidebar code runs and the class never gets inserted.-->
-<script>
-    $("[id^=nav_item]").on('click', function () {
-
-        $('ul#mysidebar li a').each(function () {
-            $(this).removeAttr("aria-expanded");
-        });
-
-        var $el = $(this);
-
-        if ($el.parent("li").hasClass("active") === false) {
-            $el.attr("aria-expanded", "true");
-        }
-
-        $el.closest("ul").parents("li").children("a").each(function () {
-            $(this).attr('aria-expanded', 'true');
-        });
-
-        if ($el.data('url') !== '' && typeof ($el.data('url')) !== "undefined") {
-            var re = new RegExp(/^.*\//);
-            window.location.assign(re.exec(window.location.href) + $el.data('url').replace(/^\//g, ''));
-        }
-    });
-
-    if (window.location.pathname === '/') {
-        $('ul#mysidebar li:first > a').attr("aria-expanded", "true");
-    }
-
-    $('a[data-url="' + window.location.pathname + '"]').parents("li.tree-parent").children("a").each(function () {
-        $(this).attr('aria-expanded', 'true');
-    });
-
-    $("li.active").parents("li").toggleClass("active");
-</script>
+<script>$("li.active").parents('li').toggleClass("active");</script>

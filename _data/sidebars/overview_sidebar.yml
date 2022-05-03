@@ -30,9 +30,6 @@ children:
   - title: Release notes
     output: web
     children:
-    - title: 0.7.4
-      url: /overview_release_notes_0_7_4.html
-      output: web 
     - title: 0.7.3
       url: /overview_release_notes_0_7_3.html
       output: web    
