@@ -110,11 +110,12 @@ The following data **MUST** be cross checked between consumer and returned provi
 
 | Item | Resource element |
 | ---- | -------------- |
-| Family Name | `patient.name.family` |
-| Given Name | `patient.name.given` |
-| Gender | `patient.gender` |
-| Birth Date | `patient.birthDate` |
-| GP Practice Code | `patient.managingOrganization` |
+| Family Name | `Patient.name.family` |
+| Given Name | `Patient.name.given` |
+| Gender | `Patient.gender` |
+| Birth Date | `Patient.birthDate` |
+| GP Practice Code | `Patient.managingOrganization` |
+| Deceased Date Time | `Patient.deceased[x](deceasedDateTime)` |  
 
 Additionally, the following data **MAY** be displayed if returned from the provider to assist a visual cross check and for safe identification but should not be part of the automatic comparison.
 
