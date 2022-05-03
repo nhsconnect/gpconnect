@@ -445,10 +445,9 @@ A history view of drugs or other forms of medicines that have been used to treat
 
 ### Purpose ###
 
-The purpose of this subsection is to provide a distinct list of all the medications recorded for the patient and to present the list alphabetically to make it easier to view for specific medication items. 
-The list is also presented alphabetically to enable easier identification of changes to a medication over time, for example, change in dosage.
+The purpose of this subsection is to provide a distinct list of all the medications recorded for the patient and to present the list alphabetically to make it easier to view for specific medication items. The list is also presented alphabetically to enable easier identification of changes to a medication over time, for example, change in dosage.
 
-Items included in the Recent Acute Medication and Current Repeat Medication **MUST** also be included within this subsection, as well as past medications, unless excluded by a date filter.
+Items included in the Recent Acute Medication and Current Repeat Medication **MUST** also be included within this subsection, as well as past medications.
 
 ### Subsection title ###
 
@@ -480,8 +479,7 @@ Provider message describing at a summary level how they have populated this sect
 
 Providers **MUST** return all the columns as described in the table below. 
 
-It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. 
-`Medication Items` listed within a group **MUST** be sorted by `Start Date` descending.
+It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Start Date` descending.
 
 Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded example of displaying this subsection.
 
@@ -607,8 +605,7 @@ The subsection title **MUST** be 'All Medication Issues'.
 
 If a consumer submits a date filter for this section the dates will be applied as follows:
 
-The provider **MUST** return all medication issues which relate to the medication items returned for the All Medication subsection. 
-This may result in records which have an issue date outside of the consumer date filter range.
+The provider **MUST** return all medication issues which relate to the medication items returned for the All Medication subsection. This may result in records which have an issue date outside of the consumer date filter range.
 
 ### Subsection content banner ###
 
@@ -618,8 +615,7 @@ Providers message describing at a summary level how they have populated this sec
 
 Providers **MUST** return all the columns as described in the table below. 
 
-It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. 
-`Medication Items` listed within a group **MUST** be sorted by `Issue Date` descending.
+It **MUST** be grouped by `Medication Item`, with `Medication Item` repeated as a distinct group title, then sorted alphabetically. `Medication Items` listed within a group **MUST** be sorted by `Issue Date` descending.
 
 Please see the [HTML view](accessrecord_view_medications.html#html-view) and [Example view](accessrecord_view_medications.html#example-view) for a coded example of displaying this subsection.
 
