@@ -49,7 +49,7 @@ In GP Connect, it is used to organise data returned by a query into groups of re
 
 ## Warning codes
 
-Details on the warning codes available in the GP Connect message and how they are populated are on the page [Returning data in lists page](accessrecord_structured_development_lists_for_message_structure.html). 
+Details on the warning codes available in the GP Connect message and how they are populated are on the page [Returning data in lists page](accessrecord_structured_development_lists_for_message_structure.html).
 
 ## Common code systems ##
 
@@ -97,7 +97,6 @@ Each clinical resource will have a unique business identifier that will be persi
 * [Immunization](accessrecord_structured_development_immunization.html)
 * [Observation - uncategorised data](accessrecord_structured_development_observation_uncategorisedData.html)
 * [Observation - blood pressure](accessrecord_structured_development_observation_bloodpressure.html)
-* [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse.html)
 * [Encounter](accessrecord_structured_development_encounter.html)
 * [List - consultation structure](accessrecord_structured_development_list_consultation.html)
 * [Observation - narrative data](accessrecord_structured_development_guidance_observation_narrative.html)

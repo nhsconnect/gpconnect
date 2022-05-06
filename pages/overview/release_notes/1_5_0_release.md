@@ -392,14 +392,13 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 - added `includeNotGiven` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
 - added `includeStatus` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
-- updated bundle population diagram to include `includeNotGiven` and `includeStatus` part parameters and `QuestionnaireResponse`
+- updated bundle population diagram to include `includeNotGiven` and `includeStatus` part parameters
 - Updated immunisation guidance to include details of inclusion of immunisation not given for providers
 - Added guidance for consumers for handling immunisations not given
 - Updated immunization profile to include additional guidance and valuesets
 - Observations representing the status of a patient's immunisations will be returned
 - includeImmunisations.includeStatus has a default value of `true`
 - Updated guidance and profile definition following addition of 'not done' situation codes to the valueset for the vaccination procedure
-- Added QuestionnaireResponse to uncategorised data response
 
 **Pages changed:**
 
@@ -627,7 +626,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - Updated the performer element to include organization in reference types
 - Minor re-word for code for free text
 - Section added with additional guidance for populating the observation resource for an inbound referral and updated the profile guidance
-- Updated guidance and diagrams for hierarchical data and added questionnaireResponse profile
+- Updated guidance and diagrams for hierarchical data
 - Free text which is not associated with a clinical code must only be returned in the context of a consultation (and problem when linking a consultation topic items) and not in response to only an uncategorised data request.
 - Inbound referrals referenced in scope of uncategorised data
 
@@ -635,7 +634,6 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 - [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance.html)
 - [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
-- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse)
 
 ---
 
@@ -850,25 +848,6 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Get the FHIR&reg; capability statement (Foundations)](foundations_use_case_get_the_fhir_capability_statement.html)
 - [Get the FHIR&reg; capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)
 - [ProblemHeader (Condition)](accessrecord_structured_problems.html)
-
----
-
-### Updates to QuestionnaireResponse profile
-
-**Tickets:** &nbsp; [#1164](https://github.com/nhsconnect/gpconnect/issues/1164)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- References to ‘questionnaireResponse’ have been corrected to 'QuestionnaireResponse'
-- The value for meta.profile and the URL have been corrected.
-
-**Pages changed:**
-
-- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse.html)
 
 ---
 
