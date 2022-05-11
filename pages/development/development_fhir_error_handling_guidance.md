@@ -32,11 +32,11 @@ Provider systems **SHALL** respond by returning one of the following `OperationO
 | --------- | -----------|------------|-------------|
 | `400`     | value | INVALID_IDENTIFIER_SYSTEM | Invalid identifier system |
 | `400`     | value | INVALID_IDENTIFIER_VALUE | Invalid identifier value |
-| `400`     | value | INVALID_NHS_NUMBER   | NHS number invalid |
+| `400`     | value | INVALID_NHS_NUMBER   | Invalid NHS number |
 | `400`     | business-rule | INVALID_PATIENT_DEMOGRAPHICS | Invalid patient demographics (that is, PDS trace failed) |
-| `404`     | not-found | ORGANISATION_NOT_FOUND   | Organisation record not found |
-| `404`     | not-found | PATIENT_NOT_FOUND   | Patient record not found |
-| `404`     | not-found | PRACTITIONER_NOT_FOUND   | Practitioner record not found |
+| `404`     | not-found | ORGANISATION_NOT_FOUND   | Organisation not found |
+| `404`     | not-found | PATIENT_NOT_FOUND   | Patient not found |
+| `404`     | not-found | PRACTITIONER_NOT_FOUND   | Practitioner not found |
 | `404`     | not-found | NO_RECORD_FOUND | No record found |
 
 #### Example: Invalid NHS number supplied #####
@@ -227,7 +227,7 @@ For example, if the consumer attempted to register a patient that already has an
           {
             "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
             "code": "DUPLICATE_REJECTED",
-            "display": "Create would lead to creation of duplicate resource"
+            "display": "Create would lead to creation of a duplicate resource"
           }
         ]
       },
@@ -243,9 +243,9 @@ Where FHIR resource validation issues arise during processing of consumer reques
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
-| `422`     | invalid | INVALID_RESOURCE | Submitted resource is not valid. |
-| `422`     | invalid | INVALID_PARAMETER | Submitted parameter is not valid. |
-| `422`     | invalid | REFERENCE_NOT_FOUND | Referenced resource not found. |
+| `422`     | invalid | INVALID_RESOURCE | Invalid validation of resource |
+| `422`     | invalid | INVALID_PARAMETER | Invalid parameter |
+| `422`     | invalid | REFERENCE_NOT_FOUND | Reference not found |
 
 Detailed diagnostic information **MUST** be supplied when erroring on the codes above.
 
@@ -280,7 +280,7 @@ For example, when using the 'Book an appointment' API use case, a consumer inclu
           {
             "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
             "code": "REFERENCE_NOT_FOUND",
-            "display": "FHIR reference not found"
+            "display": "Reference not found"
           }
         ]
       },
@@ -296,7 +296,7 @@ When the server cannot or will not process a request due to an apparent client e
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
-| `400`     | invalid | BAD_REQUEST | Submitted request is malformed/invalid. |
+| `400`     | invalid | BAD_REQUEST | Bad request |
 
 BAD_REQUEST Spine error codes should be used in the following types of scenario:
 - JWT claims information is not valid JSON, is null, or has an invalid value
@@ -345,13 +345,13 @@ When the FHIR server has received a request for an operation or FHIR resource wh
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
-| `501`     | not-supported | NOT_IMPLEMENTED | FHIR resource or operation not implemented at server |
+| `501`     | not-supported | NOT_IMPLEMENTED | Not implemented |
 
 When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the `INTERNAL_SERVER_ERROR` Spine error code **SHALL** be used, and diagnostics **SHALL** be included to provide detail of the error.
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ------- | ---------- | ----------- |
-| `500`     | processing | INTERNAL_SERVER_ERROR | Unexpected internal server error. |
+| `500`     | processing | INTERNAL_SERVER_ERROR | Unexpected internal server error |
 
 #### Example: Unexpected exception #####
 
@@ -391,10 +391,10 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
 
 | HTTP code | Issue type | Description of error  |
 | --------- | ------- | ----------- |
-| `400`     | invalid |  Target URL varies from endpoint registered in SDS | 
-| `403`     | forbidden |  Sender ASID is not authorised for this interaction | 
+| `400`     | invalid |  Target URL varies from endpoint registered in SDS |
+| `403`     | forbidden |  Sender ASID is not authorised for this interaction |
 | `403`     | forbidden | Receiver ASID is not authorised for this interaction |
-| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID | 
+| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID |
 | `405`     | not-supported | Method not allowed |
 | `415`     | not-supported | Unsupported media type |
 | `502`     | transient | Error communicating to target URL |

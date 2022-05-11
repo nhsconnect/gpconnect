@@ -905,3 +905,23 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Populating references to clinical areas that aren’t available](accessrecord_structured_development_clinical_area_config.html#populating-references-to-clinical-areas-that-arent-available)
 
 ---
+
+### Updates to API error display values
+
+**Tickets:** [#1171](https://github.com/nhsconnect/gpconnect/issues/1171)
+
+**Date:** 11 May 2022
+
+**Affects:** Core
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated API error display values to the Spine error or warning display values
+
+**Pages changed:**
+
+- [Error handling](development_fhir_error_handling_guidance.html)
+
+---
