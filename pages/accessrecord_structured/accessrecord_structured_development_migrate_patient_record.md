@@ -179,9 +179,8 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| An unauthorised request has been made for sensitive information  | [`NOT_AUTHORISED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The ODS code in the JWT doesn't match the ODS code for the patient's registered practice on PDS  | [`NOT_AUTHORISED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The JWT `requested_scope` is set to `conf/N` when a request has been made for sensitive information  | [`NOT_AUTHORISED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The ODS code in the JWT doesn't match the ODS code for the patient's registered practice on PDS  | [`NO_RELATIONSHIP`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The JWT `requested_scope` is set to `conf/N` when a request has been made for sensitive information  | [`CONFLICTING_VALUES`](development_fhir_error_handling_guidance.html#malformed-request-errors) |
 | The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | A part parameter is passed without a value | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |

@@ -138,7 +138,7 @@ When responding to consumer API requests, provider systems **SHALL** return one 
 | `403` | forbidden | NO_PATIENT_CONSENT | Patient has not provided consent to share data |
 | `403` | forbidden | NO_ORGANISATION_CONSENT | Organisation has not provided consent to share data |
 | `403` | forbidden | ACCESS DENIED | Access denied |
-| `403` | forbidden | NOT_AUTHORISED | Not authorised |
+| `403` | forbidden | NO_RELATIONSHIP | No legitimate relationship exists with this patient |
 
 #### Example: No patient consent to share #####
 
@@ -297,7 +297,8 @@ When the server cannot or will not process a request due to an apparent client e
 
 | HTTP code | Issue type |Spine error code - code | Spine error code - display |
 | --------- | ---------- | ---------- | ----------- |
-| `400`     | invalid | BAD_REQUEST | Submitted request is malformed/invalid. |
+| `400`     | invalid | BAD_REQUEST | Submitted request is malformed/invalid |
+| `400`     | invalid | CONFLICTING_VALUES | Conflicting values have been specified in different fields |
 
 BAD_REQUEST Spine error codes should be used in the following types of scenario:
 - JWT claims information is not valid JSON, is null, or has an invalid value
