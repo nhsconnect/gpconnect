@@ -925,3 +925,23 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Error handling](development_fhir_error_handling_guidance.html)
 
 ---
+
+### Updates to patient retrieve bundle illustration
+
+**Tickets:** [#1174](https://github.com/nhsconnect/gpconnect/issues/1174)
+
+**Date:** 17 May 2022
+
+**Affects:** Access Structured
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated the illustration diagram to include all resources that are returned for problems
+
+**Pages changed:**
+
+- [Bundle population illustrated](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated)
+
+---
