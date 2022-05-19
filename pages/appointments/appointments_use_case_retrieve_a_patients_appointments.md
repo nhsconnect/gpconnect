@@ -148,7 +148,7 @@ Retrieve all appointments for patient with logical id 1001 which start between 2
 {% include appointments/retrieve-patient-appts-request-header-1.txt %}
 ```
 
-#### Response when the patient has appoinments in the date range provided ####
+#### Response when the patient has appointments in the date range provided ####
 
 The response example includes two appointments for the patient, with the organisations that made the original bookings populated as included resources.
 
