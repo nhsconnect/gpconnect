@@ -202,6 +202,18 @@ When this medication statement was believed true.
 
 Unless there is a distinct user-modifiable availability date/time for the authorisation, this is the audit trail date/time for when the authorisation was entered.
 
+### informationSource ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Reference(Patient, Practitioner, RelatedPerson, Organization)  </code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+Person or organization that provided the information about the taking of this medication
+
 ### subject ###
 
 <table class='resource-attributes'>
@@ -328,14 +340,6 @@ This is not in scope for this version of Care Connect and therefore not availabl
 </table>
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
-
-<h3 style="color:#ED1951;"> informationSource </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>Reference(Patient, Practitioner, RelatedPerson, Organization)  </code></td>
-  </tr>
-</table>
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
