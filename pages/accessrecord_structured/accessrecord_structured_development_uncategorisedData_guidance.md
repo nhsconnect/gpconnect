@@ -12,7 +12,7 @@ When a clinician/user of a GP clinical system records clinical data they may, as
 
 For example, where the clinician uses a GP system's allergy function to record a patient’s allergy information it is explicitly identified in the system as an allergy.
 
-The volume of this categorisation varies between provider systems. 
+The volume of this categorisation varies between provider systems.
 For the majority of provider systems, the following types of information are explicitly categorised when they are recorded.
 * Allergy
 * Appointment
@@ -29,22 +29,22 @@ For the majority of provider systems, the following types of information are exp
 * Test Request
 
 ## What is uncategorised data? ##
-There is data that a clinician/user will enter without identifying what type of information they are recording. 
+There is data that a clinician/user will enter without identifying what type of information they are recording.
 This information is usually entered as a combination of clinical code(s), values, qualifiers and text.
 
 For example:
 * the clinician records the patient’s resting pulse by recording the resting pulse clinical code followed by a value of the patient’s pulse.
 * the clinician records that a patient has a sore throat by recording the sore throat clinical code
 
-Consideration was given to attempting to categorise data using the recorded clinical codes. 
+Consideration was given to attempting to categorise data using the recorded clinical codes.
 It was decided not to progress this based on a clinical review of its risks and benefits.
 
 ## Uncategorised data definition ##
-Uncategorised data will include the following 
+Uncategorised data will include the following
 * data items in the patient record that do not fit into one of the existing or planned clinical areas defined by GP Connect
-* inbound referrals (GP Connect referral resource is defined as outbound referrals only) 
+* inbound referrals (GP Connect referral resource is defined as outbound referrals only)
 
-Where text is entered freely into a consultation without being associated with a clinical code it will not be returned as an item of uncategorised data. 
+Where text is entered freely into a consultation without being associated with a clinical code it will not be returned as an item of uncategorised data.
 This free text will ONLY be returned as part of the consultation and will be returned in an `Observation` with the SNOMED code `37331000000100 Comment note`.
 
 ## Observation profile ##
@@ -92,47 +92,27 @@ Where this occurs, the data is supplied in a format where the hierarchical infor
 
 ### Modelling ###
 
-Each item of uncategorised data in the hierarchy is recorded in its own FHIR resource, this may be an `observation`, `immunization` or any other that is defined in GP Connect . The structure is represented using the `questionnaireResponse` resource.
+Each item of uncategorised data in the hierarchy is recorded in its own FHIR `observation` resource. The structure is represented using the `related` element within the reource.
 
-* The top-level item will contain an `observation` in the `questionnaireResponse.parent` element. 
-* The child items will be pointed to as references to the relevant resources within the `questionnaireResponse.item.answer` field(s). 
+* The top-level item will contain an `observation` where the 'observation.related.type' element is set to 'has-member'.
+* The child items will be pointed to as references to the relevant resources where the 'observation.related.type' element is set to 'derived-from'.
 
 ### Consultations and problem ###
 
-Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem. 
-If the item is recorded in a consultation it will be directly referenced by the consultation. 
+Being in a hierarchy has no impact on the linkage between an item of uncategorised data and a consultation or problem.
+If the item is recorded in a consultation it will be directly referenced by the consultation.
 If the item is linked to a problem it will be directly referenced by the problem.
 
-For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items. 
-Direct references to all four items will be populated in the `List(Heading)` profile. 
+For example, if four items of uncategorised data are recorded under the investigation heading in a consultation with one of the items acting as a parent to the other three items.
+Direct references to all four items will be populated in the `List(Heading)` profile.
 If all four items are linked to a problem then all four items will be populated in the `ProblemHeader (Condition)` profile.
 
 <a href="images/access_structured/Uncategorised_Structure_v2.png"><IMG src="images/access_structured/Uncategorised_Structure_v2.png" alt="Uncateogirsed Structure" style="max-width:100%;max-height:100%;"></a>
 
-### Hierarchical data involving different clinical areas
-
-If the hierarchical data contains items from other clinical areas that are not held in an observation resource, then these should always be included by referencing them from the questoinnaireResponse as for any other uncategorised 'observation' resource.
-
-<a href="images/access_structured/Uncategorised_Structure1_v2.png"><IMG src="images/access_structured/Uncategorised_Structure1_v2.png" alt="Uncategorised structure with items from different clinical areas" style="max-width:100%;max-height:100%;"></a>
-
-Where an item from a different clinical area that is not in an observation resource but is the header element in the native system, then the provider system **MUST** include them as an item in the questionnaireResponse and create an observation to act as the header with the rubric from the code of the original element in the text field of the codable concept. 
-This **MUST** be done in accordance with the [uncategorised observation guidelines](accessrecord_structured_development_observation_uncategoriseddata) and populate the performer and issued elements in line with who recorded the original data and when it was recorded.
-
-### Different clinical areas against an uncategorised data request only
-   
-The above example demonstrate the structure for the hierachical date and the relationship with consultations.
-The same principles apply if consultations are not requested.
-This example shows where only uncategorised data has been requested but the hierarchical data includes resources from a different clinical area, an allergy in this case.
-The questionnaireResponse is populated identical to the example above.
-However, only resources which satisfy the criteria of the request are included.
-The diagram therefore shows the response for uncategorised data only, thus the items in grey boxes (encounter and allergyIntolerance resources) are referenced but not included.
-   
-<a href="images/access_structured/Uncat_plus_hierarchy.png"><IMG src="images/access_structured/Uncat_plus_hierarchy.png" alt="Different clinical areas without consultations included" style="max-width:100%;max-height:100%;"></a>
-
 ## Representing inbound referrals ##
 
 As noted above, inbound referrals are to be returned using `observation` resources as per this guidance.
-The following additions / exceptions apply to the population of elements, otherwise populate as per the [uncategorised data profile](accessrecord_structured_development_observation_uncategoriseddata) implementation guidance. 
+The following additions / exceptions apply to the population of elements, otherwise populate as per the [uncategorised data profile](accessrecord_structured_development_observation_uncategoriseddata) implementation guidance.
 
 * Where known, the referrer details **MUST** be returned using the `performer` element
 * The `performer` element **MAY** be absent, for example if the referrer is not recorded
@@ -141,18 +121,20 @@ The following additions / exceptions apply to the population of elements, otherw
    * Populate `component.value` with the data item code / text
 * Self referrals **MUST** be identified by including the text "Self referral" in the `comment` element
 
+Any document(s) linked to the referral **MUST** be returned in [DocumentReference](access_documents_development_documentreference.html) resource(s) containing reference(s) to the related referral.
+
 ## Representing blood pressure readings from GP systems
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year.
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible.
-In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept. 
+In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept.
 
 ### The FHIR vital sign blood pressure profile
-This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification as there is currently no consensus in the UK as to what is/isn't a vital sign. 
+This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification as there is currently no consensus in the UK as to what is/isn't a vital sign.
 
 However, the way we have represented blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
-The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs. We are not currently using this flag in GP Connect. 
+The profile uses a loinc 'magic code' to flag certain blood pressures as vital signs. We are not currently using this flag in GP Connect.
 
-Where possible blood pressures exported via GP Connect though will be exported using the same structure as the vital signs blood pressure profile. They **MUST** always use the same units, mm[Hg] whether exported in the triple structure or as individual observations. 
+Where possible blood pressures exported via GP Connect though will be exported using the same structure as the vital signs blood pressure profile. They **MUST** always use the same units, mm[Hg] whether exported in the triple structure or as individual observations.
 
 GP Connect has improved the consistency of the data that will be exported, it is however the responsibility of the consuming system to interpret the blood pressure codes they recieve regardless of whether they are in a triple structure or as individual observations.
 
@@ -161,30 +143,30 @@ GP Connect has improved the consistency of the data that will be exported, it is
 The way standard blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different patterns,
 
  - Recorded as the following triple in the below structure and using any of the codes from the table below,
- 
+
 <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Triple.png"></a>   
- 
+
  - Recorded as 2 individual readings that are grouped together with no panel code using any of the systolic and diastolic codes from the table below,
- 
+
  <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_ComponentCodes.png"></a>   
- 
+
    Where there is no panel code then '163020007 On examination - blood pressure reading (finding)' **MUST** be used in the GP Connect triple.
-   
+
  - Recorded using a panel code with two readings but no systolic and diastolic codes. This may be recorded as either of the 2 panel codes from the table below,
- 
+
  <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponent.png"></a>   
- 
-   Where there is only a panel code the following codes **MUST** be used to complete the triple for export in GP Connect, 
+
+   Where there is only a panel code the following codes **MUST** be used to complete the triple for export in GP Connect,
       - 163020007 On examination - blood pressure reading (finding) and 386534000 Arterial blood pressure (observable entity)
- 
+
 In GP Connect we have decided that all of these variations will be represented using the triple structure in order to make the representation more uniform.
 
-Following the guidance above to determine the appropriate codes for the triple will result in the following structure which may contain any of the codes from the table below, 
- 
-<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a> 
- 
+Following the guidance above to determine the appropriate codes for the triple will result in the following structure which may contain any of the codes from the table below,
+
+<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Diagram.png"></a>
+
 The triple may contain any combination of the following SNOMED codes for the panel, systolic and diastolic components,
- 
+
 | Panel code | Systolic blood pressure code | Diastolic blood pressure code |
 |---|---|---|
 |163020007 On examination - blood pressure reading (finding)  | 72313002 Systolic arterial pressure (observable entity)  | 1091811000000102 Diastolic arterial pressure (observable entity) |
