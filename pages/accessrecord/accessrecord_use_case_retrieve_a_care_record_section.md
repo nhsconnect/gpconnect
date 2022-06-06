@@ -209,7 +209,7 @@ Provider systems:
 - **MUST** return the care record section as valid XHTML in line with the [FHIR Narrative](https://www.hl7.org/fhir/stu3/narrative.html) guidance
 - **MUST** include the relevant GP Connect `StructureDefinition` profile details in the `meta` fields of the returned response
 - **MUST** include the `Patient`, `Practitioner` and `Organization` details for the retrieved care record in a searchset `Bundle`
-- **MUST** include patient's date of death and next of kin details in Patient.deceased\[x\](deceasedDateTime) and Patient.contact respectively, where this information is recorded in the provider system
+- **MUST** include patient's date of death in Patient.deceased\[x\](deceasedDateTime) where it is recorded in the provider system
 
 ```json
 {
