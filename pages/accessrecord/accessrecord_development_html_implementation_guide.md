@@ -132,6 +132,8 @@ Where a patient is flagged on the Personal Demographics Service (PDS) as sensiti
 
 The consuming system **MUST** provide role based access controls to the HTML section retrieval at an appropriate level such that the consuming organisation can meet its obligations as described in the [Information governance principles](designprinciples_ig_principles.html) page.
 
+Please refer to the consumer support page, [Developing a restricted Access Record: HTML view, for additional guidance](https://github.com/nhsconnect/gpc-consumer-support/wiki/Developing-a-restricted-Access-Record:-HTML-view).
+
 The consuming organisation **MUST** provide appropriate support to its users to understand the error messages associated with the HTML sections as follows.
 
 ### Error handling ###
