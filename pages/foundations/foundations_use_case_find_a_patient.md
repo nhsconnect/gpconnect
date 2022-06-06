@@ -119,6 +119,10 @@ Where an **[active](overview_glossary.html#active-patient) matching patient reco
 
 If all three steps above succeed the patient's NHS number SHALL be marked as verified, and the patient SHALL be included in the response bundle. Otherwise the patient's NHS number SHALL NOT be marked as verified and SHALL NOT be included in the response bundle.
 
+#### Note for when receiving Telecom details with system value of "email". ####
+
+Unlike other telecom systems, which require a value to be provided for the `use` field in the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) message  (for example - "home", "work", "temp", "old", "mobile"), when the `system` value is set to "email" there is no requirement to retrieve data stored in the `use` field as this value has no meaning in terms of email.
+
 #### Error handling ####
 
 Provider systems:

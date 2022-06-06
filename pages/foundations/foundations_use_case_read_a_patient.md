@@ -97,6 +97,10 @@ Provider systems:
   - `maritalStatus`
   - `multipleBirthBoolean`
 
+#### Note for when receiving Telecom details with system value of "email". ####
+
+Unlike other telecom systems, which require a value to be provided for the `use` field in the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) message  (for example - "home", "work", "temp", "old", "mobile"), when the `system` value is set to "email" there is no requirement to retrieve data stored in the `use` field as this value has no meaning in terms of email.
+
 #### Error handling ####
 
 Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
