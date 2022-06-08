@@ -317,7 +317,7 @@ This **MUST** also include the practitioner who administered the vaccine if diff
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Code</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b>Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
