@@ -198,6 +198,7 @@ If the referral does not clearly identify responsibility for the referral decisi
 
 This **MUST** be populated if the <code>requester.agent</code> is a practitioner and the <code>Organization</code> associated with the referenced <code>Practitioner</code> is not the GP practice responsible for the referral.
 This element **SHOULD** be absent if the <code>requester.agent</code> is not a practitioner.
+This element **MAY** be populated or absent where the GP practice responsible for the referral is the same organisation as associated with <code>requester.agent</code> practitioner via the practitioner role.
 
 ### specialty
 
