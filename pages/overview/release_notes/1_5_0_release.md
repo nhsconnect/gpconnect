@@ -59,7 +59,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 **Description:**
 
-- Added Send DOcument to the capabilities page
+- Added Send Document to the capabilities page
 - Added a sub-menu item for Send Document to the Implement a capability menu.
 - These new items link to a Send Document page which references the GP Connect versions page so the appropriate version of the Send Document specification can be selected as versions of the specifications may change independently.
 
@@ -70,6 +70,23 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 ---
 
+#### Updates to API error display values
+
+**Tickets:** [#1171](https://github.com/nhsconnect/gpconnect/issues/1171)
+
+**Affects:** Core
+
+**Impacts:** Provider and consumer systems
+
+**Description:**
+
+- Updated API error display values to the Spine error or warning display values
+
+**Pages changed:**
+
+- [Error handling](development_fhir_error_handling_guidance.html)
+
+---
 ### Access Document
 
 ---
@@ -226,7 +243,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 #### Updates to DocumentReference population guidance
 
-**Tickets:**
+**Tickets:** [#1152](https://github.com/nhsconnect/gpconnect/issues/1152)
 
 **Affects:**&nbsp; Access Document
 
@@ -238,6 +255,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - DocumentReference.context.practiceSetting guidance updated so text can be used where code is outside of refset
 - DocumentReference.identifier guidance has been updated in line with use of identifier attributes in Access Record Structured
 - DocumentReference.content.attachment.title SHOULD be populated with a reason when a document is unavailable
+- Updated guidance for content.attachment.size
 
 **Pages changed:**
 
@@ -392,14 +410,13 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 - added `includeNotGiven` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
 - added `includeStatus` part parameter to [`GPConnect-GetStructuredRecord-Operation-1`](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1) with a default value of `false`
-- updated bundle population diagram to include `includeNotGiven` and `includeStatus` part parameters and `QuestionnaireResponse`
+- updated bundle population diagram to include `includeNotGiven` and `includeStatus` part parameters
 - Updated immunisation guidance to include details of inclusion of immunisation not given for providers
 - Added guidance for consumers for handling immunisations not given
 - Updated immunization profile to include additional guidance and valuesets
 - Observations representing the status of a patient's immunisations will be returned
 - includeImmunisations.includeStatus has a default value of `true`
 - Updated guidance and profile definition following addition of 'not done' situation codes to the valueset for the vaccination procedure
-- Added QuestionnaireResponse to uncategorised data response
 
 **Pages changed:**
 
@@ -613,7 +630,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 #### Updated uncategorised data guidance
 
-**Tickets:** &nbsp; [#754](https://github.com/nhsconnect/gpconnect/issues/754), [#1013](https://github.com/nhsconnect/gpconnect/issues/1013), [#1027](https://github.com/nhsconnect/gpconnect/issues/1027), [#1028](https://github.com/nhsconnect/gpconnect/issues/1028), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132)
+**Tickets:** &nbsp; [#754](https://github.com/nhsconnect/gpconnect/issues/754), [#1013](https://github.com/nhsconnect/gpconnect/issues/1013), [#1027](https://github.com/nhsconnect/gpconnect/issues/1027), [#1028](https://github.com/nhsconnect/gpconnect/issues/1028), [#1037](https://github.com/nhsconnect/gpconnect/issues/1037), [#1040](https://github.com/nhsconnect/gpconnect/issues/1040), [#1052](https://github.com/nhsconnect/gpconnect/issues/1052), [#1066](https://github.com/nhsconnect/gpconnect/issues/1066), [#1132](https://github.com/nhsconnect/gpconnect/issues/1132), [#1166](https://github.com/nhsconnect/gpconnect/issues/1166)
 
 **Affects:**&nbsp; Access Structured
 
@@ -627,15 +644,16 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - Updated the performer element to include organization in reference types
 - Minor re-word for code for free text
 - Section added with additional guidance for populating the observation resource for an inbound referral and updated the profile guidance
-- Updated guidance and diagrams for hierarchical data and added questionnaireResponse profile
+- Updated guidance and diagrams for hierarchical data
 - Free text which is not associated with a clinical code must only be returned in the context of a consultation (and problem when linking a consultation topic items) and not in response to only an uncategorised data request.
 - Inbound referrals referenced in scope of uncategorised data
+- Update to guidance for documents linked to inbound referrals to be sent using DocumentReference resources
 
 **Pages changed:**
 
 - [Uncategorised data guidance](accessrecord_structured_development_uncategoriseddata_guidance.html)
 - [Observation - uncategorised data](accessrecord_structured_development_observation_uncategoriseddata)
-- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse)
+- [DocumentReference](access_documents_development_documentreference.html)
 
 ---
 
@@ -666,7 +684,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 #### Updated to Problems guidance
 
-**Tickets:**&nbsp; [#1008](https://github.com/nhsconnect/gpconnect/issues/1008), [#1010](https://github.com/nhsconnect/gpconnect/issues/1010), [#1012](https://github.com/nhsconnect/gpconnect/issues/1012)
+**Tickets:**&nbsp; [#1008](https://github.com/nhsconnect/gpconnect/issues/1008), [#1010](https://github.com/nhsconnect/gpconnect/issues/1010), [#1012](https://github.com/nhsconnect/gpconnect/issues/1012), [#1174](https://github.com/nhsconnect/gpconnect/issues/1174)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -681,18 +699,20 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - The list of clinical item references has been updated to include consultations / encounters
 - Guidance for out of scope items (complete diary entries and test requests outside of investigations) which are linked to problems
 - The consultations example has been updated to use the new Lists guidance
+- Update to the illustration diagram to include all resources that are returned for problems
 
 **Pages changed:**
 
 - [Problem guidance](accessrecord_structured_development_problems_guidance.html)
 - [Problem Header profile guidance](accessrecord_structured_problems.html)
 - [FHIR&reg; Consultations and Problems examples](accessrecord_structured_development_fhir_examples_consultations.html)
+- [Bundle population illustrated](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated)
 
 ---
 
 #### API Updates ####
 
-**Tickets:**&nbsp; [#904](https://github.com/nhsconnect/gpconnect/issues/914)
+**Tickets:**&nbsp; [#904](https://github.com/nhsconnect/gpconnect/issues/914), [#1165](https://github.com/nhsconnect/gpconnect/issues/1165)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -707,6 +727,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
   - `includeDiaryEntries.diaryEntriesSearchDate`
   - `includeImmunisations.includeNotGiven`
   - `includeImmunisations.includeDissentConsent`
+  - `includeImmunisations.includeStatus`
 - The error code for access denied has been updated to use the value from the value set, `ACCESS DENIED`
 - Clarification has been added around how information with partial or unknown dates should be returned for clinical areas which have date search parameters
 
@@ -769,7 +790,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 #### Configuration of supported clinical areas
 
-**Tickets:**&nbsp; [#1026](https://github.com/nhsconnect/gpconnect/issues/1026)
+**Tickets:**&nbsp; [#1026](https://github.com/nhsconnect/gpconnect/issues/1026), [#1167](https://github.com/nhsconnect/gpconnect/issues/1167)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -811,118 +832,5 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [FHIR&reg; Examples](accessrecord_structured_development_fhir_examples_consultations.html)
 - [Search examples](accessrecord_structured_development_searchExamples.html)
 - [Multi area searches](accessrecord_structured_development_searchmultiareasearches)
-
----
-
-### Update guidance for documents size
-
-**Tickets:** &nbsp; [#1152](https://github.com/nhsconnect/gpconnect/issues/1152)
-
-**Affects:**&nbsp; Access Documents
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated guidance for content.attachment.size
-
-**Pages changed:**
-
-- [DocumentReference](access_documents_development_documentreference.html)
-
----
-
-### Corrections and updates for CareConnect-GPC-ProblemHeader-Condition-1
-
-**Tickets:** &nbsp; [#1157](https://github.com/nhsconnect/gpconnect/issues/1157)
-
-**Affects:**&nbsp; Foundations, Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- References to ‘CareConnect-GPC-Condition-ProblemHeader-1’ have been corrected to 'CareConnect-GPC-ProblemHeader-Condition-1'
-- CareConnect-GPC-ProblemHeader-Condition-1 has been updated to 1.7
-
-**Pages changed:**
-
-- [Get the FHIR&reg; capability statement (Foundations)](foundations_use_case_get_the_fhir_capability_statement.html)
-- [Get the FHIR&reg; capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)
-- [ProblemHeader (Condition)](accessrecord_structured_problems.html)
-
----
-
-### Updates to QuestionnaireResponse profile
-
-**Tickets:** &nbsp; [#1164](https://github.com/nhsconnect/gpconnect/issues/1164)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- References to ‘questionnaireResponse’ have been corrected to 'QuestionnaireResponse'
-- The value for meta.profile and the URL have been corrected.
-
-**Pages changed:**
-
-- [QuestionnaireResponse](accessrecord_structured_development_questionnaireresponse.html)
-
----
-
-### Updates to not permitted parameter combinations
-
-**Tickets:** &nbsp; [#1165](https://github.com/nhsconnect/gpconnect/issues/1165)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Added includeImmunisations.includeStatus to not permitted parameter combinations
-
-**Pages changed:**
-
-- [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)
-
----
-
-### Updates to guidance for documents linked to inbound referrals
-
-**Tickets:** &nbsp; [#1166](https://github.com/nhsconnect/gpconnect/issues/1166)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated guidance for documents linked to inbound referrals to be sent using DocumentReference resources
-
-**Pages changed:**
-
-- [DocumentReference](access_documents_development_documentreference.html)
-- [Uncategorised data guidance - Representing inbound referrals](accessrecord_structured_development_uncategoriseddata_guidance#representing-inbound-referrals)
-
----
-
-### Updates to guidance for populating references to clinical areas that aren’t available
-
-**Tickets:** &nbsp; [#1167](https://github.com/nhsconnect/gpconnect/issues/1167)
-
-**Affects:**&nbsp; Access Structured
-
-**Impacts:** Provider and consumer systems
-
-**Description:**
-
-- Updated guidance for how to populate references for clinical items that are unavailable and also confidential
-
-**Pages changed:**
-
-- [Populating references to clinical areas that aren’t available](accessrecord_structured_development_clinical_area_config.html#populating-references-to-clinical-areas-that-arent-available)
 
 ---

@@ -19,7 +19,9 @@ In GP Connect it is used to organise data returned by a query into groups of res
 
 When either problems or consultations are requested then in addition to the primary list the response will contain further secondary lists which detail resources that are contained in the requested consultations or have been linked to the problems that are returned. All the information needed to process the data from these clinical areas will be contained in these primary and secondary lists. The secondary lists related to each area are contained in the table below.
 
-The list containing resolved allergies is a special case as it is a list that is contained within the allergies list. This is a safety precaution intended to reduce the risk of resolved allergies being confused with active allergies. Further details about how the allergies lists work can be found on the [allergies guidance page](accessrecord_structured_development_allergies_guidance.html#resolved-allergies-and-intolerances).
+The list containing resolved allergies is a special case as it is a list where the resources are contained within it. This is a safety precaution intended to reduce the risk of resolved allergies being confused with active allergies. It means resolved allergies can only be referenced in context to the list and do not exist independently outside the list. Where resolved allergies are returned as part of a problems or consultations call the primary list **MUST** also be returned so that the resolved allergies can be referenced from the problems and consultations lists in the context of that list.
+
+Further details about how the allergies lists work can be found on the [allergies guidance page](accessrecord_structured_development_allergies_guidance.html#resolved-allergies-and-intolerances).
 
 In GP Connect we also use lists to represent the structure of consultations. This is a separate topic that is documented in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
 
