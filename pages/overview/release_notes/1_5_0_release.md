@@ -581,7 +581,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 #### Updated medication guidance
 
-**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), #1046(https://github.com/nhsconnect/gpconnect/issues/1046), [#1127](https://github.com/nhsconnect/gpconnect/issues/1127), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
+**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), [#1046](https://github.com/nhsconnect/gpconnect/issues/1046), [#1127](https://github.com/nhsconnect/gpconnect/issues/1127), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129), [#1058](https://github.com/nhsconnect/gpconnect/issues/1058), [#1074](https://github.com/nhsconnect/gpconnect/issues/1074), [#1075](https://github.com/nhsconnect/gpconnect/issues/1075)
 
 **Affects:**&nbsp; Access Structured
 
@@ -599,6 +599,8 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
   - Updated the medication guidance with example
   - Removed dosageLastChanged extension from Med Statement page
 - Diagrams updated for medication resource relationships to correct intent labels typo
+- Changed description for the status element for the medicationRequest and medicationStatement updated to the same definition
+- Refined wording for the medicationStatement effective element
 
 **Pages changed:**
 
@@ -684,7 +686,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 #### Updated to Problems guidance
 
-**Tickets:**&nbsp; [#1008](https://github.com/nhsconnect/gpconnect/issues/1008), [#1010](https://github.com/nhsconnect/gpconnect/issues/1010), [#1012](https://github.com/nhsconnect/gpconnect/issues/1012), [#1174](https://github.com/nhsconnect/gpconnect/issues/1174)
+**Tickets:**&nbsp; [#1008](https://github.com/nhsconnect/gpconnect/issues/1008), [#1010](https://github.com/nhsconnect/gpconnect/issues/1010), [#1012](https://github.com/nhsconnect/gpconnect/issues/1012), [#1174](https://github.com/nhsconnect/gpconnect/issues/1174), [1177](https://github.com/nhsconnect/gpconnect/issues/1177)
 
 **Affects:**&nbsp; Access Record Structured
 
@@ -700,6 +702,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - Guidance for out of scope items (complete diary entries and test requests outside of investigations) which are linked to problems
 - The consultations example has been updated to use the new Lists guidance
 - Update to the illustration diagram to include all resources that are returned for problems
+- Corrected the code system identifier for the Problem Header condition.category
 
 **Pages changed:**
 
