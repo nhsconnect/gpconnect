@@ -127,16 +127,14 @@ As per base profile guidance.
 </table>
 
 The status of the authorisation.
+This **MUST** be the same as the related `medicationRequest.status` where 'intent' is set to 'plan'.
 
 Use one of `active`, `completed` or `stopped`:
 
-- `active` represents an active authorisation - used for active repeat medications/medical devices
-- `stopped` represents an authorisation which has been discontinued, cancelled or stopped
-- `complete` represents an authorisation which has run its course
+- `active` represents an authorisation where all allowed orders have not been issued, e.g. an unissued acute or a repeat with outstanding issues.
+- `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
+- `complete` represents an authorisation where all orders have been issued.
 
-For repeat and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
-
-For acute, the status refers to the status of the prescription issue.
 
 ### medicationReference ###
 
@@ -162,7 +160,9 @@ The `Medication` profile provides the coded representation of the medication/med
   </tr>
 </table>
 
-The period the medication or medical device is authorised under this medication/medical device plan. For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation. For acutes, this refers to the period of the prescription issue.
+The period the medication or medical device is authorised under this medication/medical device plan. 
+For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation. 
+For acutes, this refers to the period of the prescription issue.
 
 `Period.start` is **MANDATORY**.
 
@@ -178,15 +178,13 @@ Use one of the following dates in order of descending preference:
 
 The date when the authorisation under this plan ends.
 
-Where the medication/medical device plan is still active, set to null.
-
-Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
+Where the medication/medical device plan status is active, set to null.
+Otherwise, use one of the following dates in order of descending preference:
 *	the end date recorded in the patient record
-*	the end date of the final issue under the medication/medical device plan
+*	the end date of the final issue under the medication/medical device plan. This is the start date of the final issue plus the expected supply duration.
 *	the date the plan was updated to ended
 *	the Period.start date
     * this option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date
-
 
 ### dateAsserted ###
 
