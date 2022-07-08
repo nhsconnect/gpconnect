@@ -183,7 +183,7 @@ The provider system **MUST** return an error if:
 - the `recordSection` is invalid (meaning, isn't from the correct value set)
 - an invalid `timePeriod` is requested (i.e. end date > start date)
 - a `timePeriod` is specified for a `recordSection` that is time period agnostic (for example, Patient Summary, Allergies etc.)
-- the patient is recorded as deceased and the request is received after the allowed access period post patient's death
+- the patient is recorded as deceased and the request is received after the allowed access period post patient's death. In this case, the error code "PATIENT_NOT_FOUND" should be returned.
 
 Provider systems **MUST** return an [OperationOutcome](https://www.hl7.org/fhir/stu3/operationoutcome.html) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
