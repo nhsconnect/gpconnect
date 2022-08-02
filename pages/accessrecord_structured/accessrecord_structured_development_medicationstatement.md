@@ -127,13 +127,13 @@ As per base profile guidance.
 </table>
 
 The status of the authorisation.
-This **MUST** be the same as the related `medicationRequest.status` where 'intent' is set to 'plan'.
+This **MUST** be the same as the related `medicationRequest.status` where `intent` is set to `plan`.
 
 Use one of `active`, `completed` or `stopped`:
 
 - `active` represents an authorisation where all allowed orders have not been issued, e.g. an unissued acute or a repeat with outstanding issues.
 - `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
-- `complete` represents an authorisation where all orders have been issued.
+- `completed` represents an authorisation where all orders have been issued.
 
 
 ### medicationReference ###
