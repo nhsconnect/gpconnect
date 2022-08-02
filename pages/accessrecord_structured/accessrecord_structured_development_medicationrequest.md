@@ -233,11 +233,11 @@ Use one of `active`, `completed` or `stopped`:
 
 - `active` represents an authorisation where all allowed orders have not been issued, for example an unissued acute or a repeat with outstanding issues.
 - `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
-- `complete` represents an authorisation where all orders have been issued.
+- `completed` represents an authorisation where all orders have been issued.
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
-* The status **MUST** be set to `complete` unless the medication has been stopped by a clinician.
+* The status **MUST** be set to `completed` unless the medication has been stopped by a clinician.
 * Stopped prescription **MUST** have a `stopped` status except where the system captures that the order has been stopped prior to dispense such that the patient cannot have received the medication where it **SHOULD** have a `cancelled` status
 
 ### intent ###
