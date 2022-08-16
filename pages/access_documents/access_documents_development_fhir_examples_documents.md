@@ -22,14 +22,14 @@ The following is a set of request/response examples for Access Document:
 <p style="line-height: 2; font-size: 20px">Search for a patient's documents</p>
 <p style="line-height: 1; font-size: 18px">Request</p>
 
-<p>Example of a search for a list of a patient's documents:</p>
+<p>Example of a search for a list of a patient's documents, created on or after June 24th 2019, requesting some additional fields, and also searching by the optional author parameter:</p>
 
 <br/>
 
 <p style="line-height: 1; font-size: 18px">Request</p>
 
 ```http
-GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Patient/04603d77-1a4e-4d63-b246-d7504f8bd833/DocumentReference?created=ge2019-06-24&_include=DocumentReference:subject:Patient&_include=DocumentReference:custodian:Organization&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner&author=https://fhir.nhs.uk/Id/sds-user-id|G13579135
+GET http://exampleGPSystem.co.uk/GP0001/STU3/1/gpconnect/documents/Patient/04603d77-1a4e-4d63-b246-d7504f8bd833/DocumentReference?created=ge2019-06-24&_include=DocumentReference:subject:Patient&_include=DocumentReference:custodian:Organization&_include=DocumentReference:author:Organization&_include=DocumentReference:author:Practitioner&_revinclude:recurse=PractitionerRole:practitioner&author=https://fhir.nhs.uk/Id/ods-organization-code|O001
 ```
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
