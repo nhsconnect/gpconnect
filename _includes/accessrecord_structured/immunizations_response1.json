@@ -87,9 +87,11 @@
             "postalCode": "LS1 5HT"
           }
         ],
-        "generalPractitioner": {
-          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-        },
+        "generalPractitioner": [
+          {
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+          }
+        ],
         "managingOrganization": {
           "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
         }
@@ -224,11 +226,13 @@
           ],
           "postalCode": "LS1 6AE"
         },
-        "telecom": {
-          "system": "phone",
-          "value": "03003035678",
-          "use": "work"
-        },
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "03003035678",
+            "use": "work"
+          }
+        ],
         "managingOrganization": {
           "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
         }
@@ -405,7 +409,7 @@
                   {
                     "system": "http://snomed.info/sct",
                     "code": "40468003",
-      			  "display": "Viral hepatitis, type A"
+                    "display": "Viral hepatitis, type A"
                   }
                 ]
               }

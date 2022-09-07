@@ -87,9 +87,11 @@
             "postalCode": "LS1 5HT"
           }
         ],
-        "generalPractitioner": {
-          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-        },
+        "generalPractitioner": [
+          {
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+          }
+        ],
         "managingOrganization": {
           "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
         }
@@ -192,7 +194,6 @@
         ]
       }
     },
-
     {
       "resource": {
         "resourceType": "List",
@@ -232,7 +233,7 @@
             }
           },
           {
-            "item":{
+            "item": {
               "reference": "Observation/Consultation1-topic2-category-Examination-Observation-2"
             }
           },
@@ -266,40 +267,42 @@
               "system": "http://snomed.info/sct",
               "code": "703421000",
               "display": "Temperature",
-              "extension": {
-                "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                "extension": [
-                  {
-                    "url": "DescriptionID",
-                    "valueId": "3008650016"
-                  },
-                  {
-                    "url": "descriptionDisplay",
-                    "valueString": "Temperature"
-                  }
-                ]
-              }
+              "extension": [
+                {
+                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "3008650016"
+                    },
+                    {
+                      "url": "descriptionDisplay",
+                      "valueString": "Temperature"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
-      "valueQuantity": {
-        "value": 36.7,
-        "unit": "C",
-        "system": "http://unitsofmeasure.org",
-        "code": "Cel"
-      },
-
-      "subject": {
-        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
-      },
-      "issued": "2019-03-28T10:30:00+00:00",
-      "performer":
-  			{
+        "valueQuantity": {
+          "value": 36.7,
+          "unit": "C",
+          "system": "http://unitsofmeasure.org",
+          "code": "Cel"
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "issued": "2019-03-28T10:30:00+00:00",
+        "performer": [
+          {
             "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-  			},
-
-      "effectiveDateTime": "2019-03-28T10:30:00+00:00"
-    }},
+          }
+        ],
+        "effectiveDateTime": "2019-03-28T10:30:00+00:00"
+      }
+    },
     {
       "resource": {
         "resourceType": "Observation",
@@ -322,19 +325,21 @@
               "system": "http://snomed.info/sct",
               "code": "1097811000000106",
               "display": "Arterial oxygen saturation breathing room air at rest",
-              "extension": {
-                "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                "extension": [
-                  {
-                    "url": "DescriptionID",
-                    "valueId": "2748921000000116"
-                  },
-                  {
-                    "url": "descriptionDisplay",
-                    "valueString": "Arterial oxygen saturation on room air at rest"
-                  }
-                ]
-              }
+              "extension": [
+                {
+                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "2748921000000116"
+                    },
+                    {
+                      "url": "descriptionDisplay",
+                      "valueString": "Arterial oxygen saturation on room air at rest"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -348,10 +353,11 @@
           "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
         },
         "issued": "2019-03-28T10:30:00+00:00",
-        "performer":
-    			{
-              "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-    			},
+        "performer": [
+          {
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+          }
+        ],
         "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     },
@@ -377,19 +383,21 @@
               "system": "http://snomed.info/sct",
               "code": " 86290005",
               "display": "Respiratory rate",
-              "extension": {
-                "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
-                "extension": [
-                  {
-                    "url": "DescriptionID",
-                    "valueId": "143107019"
-                  },
-                  {
-                    "url": "descriptionDisplay",
-                    "valueString": "Respiratory rate"
-                  }
-                ]
-              }
+              "extension": [
+                {
+                  "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "143107019"
+                    },
+                    {
+                      "url": "descriptionDisplay",
+                      "valueString": "Respiratory rate"
+                    }
+                  ]
+                }
+              ]
             }
           ]
         },
@@ -403,11 +411,11 @@
           "reference": "Patient/9340157B-6973-4209-9B57-BF6C64F29E46"
         },
         "issued": "2019-03-28T10:30:00+00:00",
-        "performer":
-    			{
-              "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-    			},
-
+        "performer": [
+          {
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+          }
+        ],
         "effectiveDateTime": "2019-03-28T10:30:00+00:00"
       }
     }
