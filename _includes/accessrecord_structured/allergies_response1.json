@@ -87,9 +87,11 @@
             "postalCode": "LS1 5HT"
           }
         ],
-        "generalPractitioner": {
-          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
-        },
+        "generalPractitioner": [
+          {
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+          }
+        ],
         "managingOrganization": {
           "reference": "Organization/db67f447-b30d-442a-8e31-6918d1367eeb"
         }
@@ -509,7 +511,7 @@
                     ]
                   }
                 ],
-			"text": "Anaphalactic shock"
+                "text": "Anaphalactic shock"
               }
             ],
             "severity": "severe"
@@ -541,7 +543,7 @@
               ]
             }
           ],
-		  "text": "Nut allergy"
+          "text": "Nut allergy"
         },
         "clinicalStatus": "active",
         "patient": {
@@ -597,7 +599,7 @@
               ]
             }
           ],
-		  "text": "Allergy to paracetemol"
+          "text": "Allergy to paracetemol"
         },
         "clinicalStatus": "active",
         "patient": {
