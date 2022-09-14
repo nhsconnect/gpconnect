@@ -370,7 +370,7 @@ Sometimes labelled Pharmacy text or instructions for pharmacy.
   </tr>
 </table>
 
-The elements of the dosage datatype detailed below should be populated as described. All other elements that are part of the dosage datatype are optional.
+The elements of the dosage datatype detailed below should be populated as described. All other elements that are part of the dosage datatype are optional, and may be populated in line with [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer)
 
 ### dosageInstruction.text ###
 
@@ -383,6 +383,8 @@ The elements of the dosage datatype detailed below should be populated as descri
 </table>
 
 Complete dosage instructions as text.
+
+These instructions should be formatted as specified by [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer) and laid out in the [UK Core implementation guide](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current#text). 
 
 In exceptional cases where for legacy data there is no dosage information recorded in the system then this **MUST** be populated with the text 'No information available'.
 
