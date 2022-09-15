@@ -259,6 +259,8 @@ All notes that are associated with this medication/medical device record.
 
 All patient notes and prescriber notes at authorisation(plan) and issue(order) level **MUST** be included in this field. They **MUST** be concatenated and indicate the level the notes come from (for example, 1st Issue) and be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
 
+Any other relevant medication notes, such as notes relating to medications which were not prescribed by the practice (over the counter, hospital prescribed or similar), **MUST** be indicated by prefixing the note with 'Additional Information: '.
+
 ### dosage.text ###
 
 <table class='resource-attributes'>
