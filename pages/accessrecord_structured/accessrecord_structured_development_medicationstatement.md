@@ -353,16 +353,6 @@ This is not in scope for this version of Care Connect and therefore not availabl
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
-<h3 style="color:#ED1951;"> taken </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>code</code></td>
-  </tr>
-</table>
-
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
-
 <h3 style="color:#ED1951;"> reasonNotTaken </h3>
 
 <table class='resource-attributes'>
