@@ -153,6 +153,19 @@ both are available.
 
 If neither the performing organisation or the clinical practitioner is known then this **MUST** be populated with the details of the person that recorded the data in the system.
 
+### interpretation ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+This element is populated where there is an explicit, clinical interpretation for the overall blood pressure reading which is not specific to the systolic and / or diastolic readings.
+Populate the `component.interpretation` where the interpretation relates to the systolic or diastolic reading.
+
 ### comment ###
 
 <table class='resource-attributes'>
