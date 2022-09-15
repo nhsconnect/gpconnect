@@ -317,7 +317,7 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/v3/NullFlavor ",
+              "system": "http://hl7.org/fhir/v3/NullFlavor",
               "code": "UNK"
             }
           ],

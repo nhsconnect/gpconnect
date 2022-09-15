@@ -268,83 +268,87 @@
       }
     },
     {
-      "resourceType": "ProcedureRequest",
-      "meta": {
-        "profile": [
-          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"
-        ]
-      },
-      "id": "eba25af1-5b74-4790-aa5a-2134fd27ad45",
-      "identifier": [
-        {
-          "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
-          "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
-        }
-      ],
-      "status": "active",
-      "intent": "plan",
-      "code": {
-        "coding": [
+      "resource": {
+        "resourceType": "ProcedureRequest",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"
+          ]
+        },
+        "id": "eba25af1-5b74-4790-aa5a-2134fd27ad45",
+        "identifier": [
           {
-            "system": "http://snomed.info/sct",
-            "code": "314529007",
-            "display": "Medication review due"
+            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
           }
-        ]
-      },
-      "subject": {
-        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
-      },
-      "context": {
-        "reference": "Encounter/Encounter1"
-      },
-      "occurrence": "2019-05-02",
-      "authoredOn": "2019-03-02",
-      "requester": {
-        "agent": {
-          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        ],
+        "status": "active",
+        "intent": "plan",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "314529007",
+              "display": "Medication review due"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "context": {
+          "reference": "Encounter/Encounter1"
+        },
+        "occurrence": "2019-05-02",
+        "authoredOn": "2019-03-02",
+        "requester": {
+          "agent": {
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+          }
         }
       }
     },
     {
-      "resourceType": "ProcedureRequest",
-      "meta": {
-        "profile": [
-          "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"
-        ]
-      },
-      "id": "eba25af1-5b74-4790-aa5a-2134fd57ad45",
-      "identifier": [
-        {
-          "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
-          "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
-        }
-      ],
-      "status": "active",
-      "intent": "plan",
-      "code": {
-        "coding": [
+      "resource": {
+        "resourceType": "ProcedureRequest",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1"
+          ]
+        },
+        "id": "eba25af1-5b74-4790-aa5a-2134fd57ad45",
+        "identifier": [
           {
-            "system": "http://snomed.info/sct",
-            "code": "408490001",
-            "display": "Antipsychotic drug therapy"
+            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
           }
-        ]
-      },
-      "subject": {
-        "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
-      },
-      "context": {
-        "reference": "Encounter/Encounter3"
-      },
-      "occurrence": {
-        "start": "2019-05-01",
-        "end": "2019-05-01"
-      },
-      "authoredOn": "2019-05-01",
-      "requester": {
-        "agent": {
-          "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+        ],
+        "status": "active",
+        "intent": "plan",
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "408490001",
+              "display": "Antipsychotic drug therapy"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "context": {
+          "reference": "Encounter/Encounter3"
+        },
+        "occurrence": {
+          "start": "2019-05-01",
+          "end": "2019-05-01"
+        },
+        "authoredOn": "2019-05-01",
+        "requester": {
+          "agent": {
+            "reference": "Practitioner/6c41ebfd-57c3-4162-9d7b-208c171a2fd7"
+          }
         }
       }
     },
@@ -395,8 +399,8 @@
             }
         }
     	],
-        "assertedDate": "2018-09-28T10:30:00",
-        "onsetDateTime": "2019-03-28T10:30:00"
+        "assertedDate": "2018-09-28T10:30:00+00:00",
+        "onsetDateTime": "2019-03-28T10:30:00+00:00"
     }
     }
   ]

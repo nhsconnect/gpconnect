@@ -37,7 +37,7 @@
       "part": [
         {
           "name": "includeNumberOfMostRecent",
-          "valueBoolean": 3
+          "valueBoolean": true
         }
       ]
     },

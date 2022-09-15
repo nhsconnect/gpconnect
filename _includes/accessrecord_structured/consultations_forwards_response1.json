@@ -796,7 +796,7 @@
         "dispenseRequest": {
           "expectedSupplyDuration": {
             "code": "d",
-            "value": "28",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -807,7 +807,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2016-05-10"
@@ -866,10 +866,8 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
-            "value": "28",
+            "code": "d",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -880,7 +878,7 @@
                 "valueString": "capsule(s)"
               }
             ],
-            "value": "28"
+            "value": 28
           },
           "validityPeriod": {
             "start": "2016-05-10"
@@ -939,10 +937,8 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
-            "value": "28",
+            "code": "d",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -953,7 +949,7 @@
                 "valueString": "tablets(s)"
               }
             ],
-            "value": "84"
+            "value": 84
           },
           "validityPeriod": {
             "start": "2016-08-11"
@@ -1028,10 +1024,8 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
-            "value": "28",
+            "code": "d",
+            "value": 28,
             "unit": "day",
             "system": "http://unitsofmeasure.org"
           },
@@ -1042,7 +1036,7 @@
                 "valueString": "tablet(s)"
               }
             ],
-            "value": "84"
+            "value": 84
           },
           "validityPeriod": {
             "start": "2016-08-11"
@@ -1104,9 +1098,7 @@
         ],
         "dispenseRequest": {
           "expectedSupplyDuration": {
-            "code": [
-              "d"
-            ],
+            "code": "d",
             "value": "28",
             "unit": "day",
             "system": "http://unitsofmeasure.org"

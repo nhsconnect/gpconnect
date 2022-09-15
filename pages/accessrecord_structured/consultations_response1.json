@@ -4400,7 +4400,7 @@
     {
       "resource": {
         "resourceType": "MedicationRequest",
-        "id": "MedicationRequest/Consultation1-Topic3-flat-Medication-Order-1",
+        "id": "Consultation1-Topic3-flat-Medication-Order-1",
         "meta": {
           "profile": [
             "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
@@ -5379,7 +5379,7 @@
         ],
         "period": {
           "start": "2019-05-01T10:30:00+00:00",
-          "end": "2019-05-01T10:38:00"
+          "end": "2019-05-01T10:38:00+00:00"
         },
         "length": {
           "value": 8,

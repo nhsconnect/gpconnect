@@ -375,7 +375,7 @@
           "coding": [
             {
               "system": "http://snomed.info/sct",
-              "code": " 86290005",
+              "code": "86290005",
               "display": "Respiratory rate",
               "extension": {
                 "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
