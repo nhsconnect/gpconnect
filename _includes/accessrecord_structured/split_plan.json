@@ -67,7 +67,7 @@
                 },
                 "dosageInstruction": [
                     {
-                        "text": "Twice daily as advised"
+                        "text": "1 tablet - 2 times a day - as advised - oral"
                     }
                 ],
                 "dispenseRequest": {
@@ -139,7 +139,7 @@
                 },
                 "dosageInstruction": [
                     {
-                        "text": "Twice daily as advised"
+                        "text": "1 tablet - 2 times a day - as advised - oral"
                     }
                 ],
                 "dispenseRequest": {
@@ -219,7 +219,7 @@
                 },
                 "dosageInstruction": [
                     {
-                        "text": "One To Be Taken Each Morning"
+                        "text": "1 tablet - daily - in the morning - oral"
                     }
                 ],
                 "dispenseRequest": {

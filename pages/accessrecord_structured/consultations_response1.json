@@ -3422,7 +3422,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -3535,7 +3535,7 @@
         "dosage": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ]
       }
@@ -3580,7 +3580,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -4279,7 +4279,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -4392,7 +4392,7 @@
         "dosage": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ]
       }
@@ -4437,7 +4437,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -4770,7 +4770,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -4883,7 +4883,7 @@
         "dosage": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ]
       }
@@ -4928,7 +4928,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -6151,7 +6151,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -6264,7 +6264,7 @@
         "dosage": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ]
       }
@@ -6309,7 +6309,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -7428,7 +7428,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
@@ -7541,7 +7541,7 @@
         "dosage": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ]
       }
@@ -7586,7 +7586,7 @@
         "dosageInstruction": [
           {
             "patientInstruction": "INSTRUCTIONS FOR PATIENT",
-            "text": "TAKE ONE DAILY"
+            "text": "1 tablet - daily - oral"
           }
         ],
         "dispenseRequest": {
