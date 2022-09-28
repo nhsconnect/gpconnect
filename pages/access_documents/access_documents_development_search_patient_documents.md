@@ -11,6 +11,8 @@ summary: "Search for a patient's documents"
 
 Search for a patient's documents from a GP practice.
 
+We assume an understanding of FHIR REST and search features. For further information with regards to the features described in this page see [http://hl7.org/fhir/STU3/search.html](http://hl7.org/fhir/STU3/search.html).
+
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization
