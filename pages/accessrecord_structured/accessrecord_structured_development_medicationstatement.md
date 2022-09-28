@@ -275,7 +275,7 @@ Complete dosage instructions as text.
 Where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan append the following warning text to end of the dosage instructions:
 * "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
 
-In exceptional cases where for legacy data there is no dosage recorded in the system then this MUST be populated with the text 'No information available'.
+In exceptional cases where for legacy data, over-the-counter treatments or hospital treatments there is no dosage recorded in the system then this MUST be populated with the text 'No information available' or 'Not recorded' as most appropriate to the circumstance.
 
 ### dosage.patientInstruction ###
 
