@@ -380,7 +380,7 @@ The elements of the dosage datatype detailed below should be populated as descri
 
 Complete dosage instructions as text.
 
-In exceptional cases where for legacy data there is no dosage information recorded in the system then this **MUST** be populated with the text 'No information available'.
+In exceptional cases where for legacy data, over-the-counter treatments or hospital treatments there is no dosage recorded in the system then this **MUST** be populated with the text 'No information available' or 'Not recorded' as most appropriate to the circumstance.
 
 ### dosageInstruction.patientInstruction ###
 
