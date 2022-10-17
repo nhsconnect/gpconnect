@@ -82,8 +82,8 @@ Indicates any plans or prior referrals that this referral is intended to fulfill
   </tr>
 </table>
 
-A default value of <code>unknown</code> **SHOULD** be used for open or complete referrals as generally the status of referrals is not consistnetly maintained in a GP patient record.
-A status of <code>cancelled</code> **MAY** be used where the GP System has directly cancelled a referral, for example has cancelled via eRS.
+A default value of <code>unknown</code> **SHOULD** be used for open or complete referrals as generally the status of referrals is not consistently maintained in a GP patient record.
+A status of <code>cancelled</code> **MAY** be used where the GP System has directly cancelled a referral, for example cancelled via eRS.
 Referrals <code>entered in error</code> **MUST NOT** be included.
 
 ### intent
