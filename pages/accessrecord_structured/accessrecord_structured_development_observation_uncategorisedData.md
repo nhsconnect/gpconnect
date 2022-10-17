@@ -194,6 +194,19 @@ This **MUST** include any qualifiers to the code element that were present in th
 
 It **MUST** also include any text relating to the observation.
 
+### bodySite ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..1</td>
+  </tr>
+</table>
+
+This **MAY** be populated where a suitably coded body site is captured with an appropriate terminology. 
+Alternatievly, the <code>comment</code> can be populated as described above.
+
 ### referenceRange ###
 
 <table class='resource-attributes'>
@@ -258,14 +271,6 @@ The following elements **MUST NOT** be populated:
 </table>
 
 <h3 style="color:#ED1951;"> dataAbsentReason </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>CodeableConcept</code></td>
-  </tr>
-</table>
-
-<h3 style="color:#ED1951;"> bodysite </h3>
 
 <table class='resource-attributes'>
   <tr>
