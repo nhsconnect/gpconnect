@@ -162,3 +162,6 @@ GP Connect APIs are currently restricted to search and retrieval of documents th
 ## Unreviewed Documents ##
 GP Connect APIs allow search and retrieval of documents that have not been reviewed and filed. It would enable the health and care workers to have access to the required documents at the right time and take informed decisions with the patient for their health and  care.
 It has been considered that there is the possibility that some of the unreviewed documents might be deemed and subsequently marked confidential at clinical review, but at this stage the clinical safety and continuity concerns outweigh the small risk of disclosure of data that may merit consideration of confidentiality policy application.
+
+## Documents for deceased patients ##
+GP Connect APIs allow search and retrieval of documents for deceased patients for a period of 28 days after the patient’s death. The providers should allow for the period to be configurable. If a request is received after this period, the providers should return an error. The providers should return a deceased patient’s record only if the patient was a main GMS registered patient prior to being de-registered due to death.

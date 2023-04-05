@@ -90,6 +90,7 @@ Errors returned due to query parameter failure **MUST** include diagnostic infor
 | The NHS number provided is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 | GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The patient is deceased and the request is received after the allowed access period | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
 |-------------------------|-------------------|
 
 {% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
@@ -106,7 +107,9 @@ Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation
 - **SHALL** return zero or more matching `Patient` resources in a `Bundle` of `type` searchset
-- **SHALL** only return `Patient` resources for [active patients](overview_glossary.html#active-patient) with a Regular/GMS registration type (i.e. where this is their registered GP practice)
+- **SHALL** only return `Patient` resources for:
+  - [active patients](overview_glossary.html#active-patient) with a Regular/GMS registration type (i.e. where this is their registered GP practice), or
+  - deceased patients if the patient was a main GMS registered patient prior to being de-registered due to death, and the request is within the allowed access period.
 
   {% include note.html content="Please note the restriction on returning patient records with a Regular/GMS registration type is a difference in behaviour between this Find a patient and [Find a patient](foundations_use_case_find_a_patient.html) in the Foundations capability." %}
 
@@ -120,6 +123,7 @@ Provider systems:
     - The patient resource **SHALL** contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS
   - `birthDate`
   - `gender`
+  - `deceasedDateTime` where available
   - `address` where available
   - `telecom` where available
   - `contact` with the patient's contacts - see [Patient.contact population](development_fhir_resource_guidance.html#patientcontact) for further details
