@@ -15,12 +15,12 @@ As a default, the medication issues are always included in the bundle that is re
 Below is a further detail about how the search criteria should be applied:
 
 * Search for all Medications and Medical Devices that were active on or after the specified date
-     * The consumer system requests all items from a start date
-     * The provider system returns all authorisations (MedicationStatement and MedicationRequest with intent set to ‘plan’) whose effective period end date is null or is on or after the start date
-     * Where no date is supplied by the consumer, all medications and medical devices are returned
+  * The consumer system requests all items from a start date
+  * The provider system returns all authorisations (MedicationStatement and MedicationRequest with intent set to ‘plan’) whose effective period end date is null or is on or after the start date
+  * Where no date is supplied by the consumer, all medications and medical devices are returned
 * Do not include all the prescriptions issued under the returned medication/medical device authorisations
-     * The consumer system requests not to include prescription issues
-     * For each of the returned medication/medical device item, the provider system only includes the authorisations
+  * The consumer system requests not to include prescription issues
+  * For each of the returned medication/medical device item, the provider system only includes the authorisations
 
 Technical details relating to the search criteria are available on the [Retrieve a patient's structured record page](accessrecord_structured_development_retrieve_patient_record.html).
 
@@ -96,6 +96,40 @@ and the new plan would contain,
 The populated resources for this example are shown below,
 
 {% include accessrecord_structured/split_plan.json %}
+
+## Populate complete Dosage structure where supported
+
+For provider systems that support fully structured dosage instructions a complete `Dosage` structure should be populated as per the [implementation guidance](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current). **Note** that the implementation guidance has been written for FHIR R4 UKCore with all examples based on R4 UKCore.
+
+There are minimal differences between the FHIR STU3 and R4 UKCore versions of the `Dosage` structure. The UKCore version is identical to the international FHIR R4 version. Differences between STU3 and R4 are [documented](https://hl7.org/fhir/R4/dosage.html#tabs-Dosage-diff) (see 'R3 Diff' for details). Additional guidance is provided here to support implementations within the UK.
+
+The difference relates to the `dose[x]` and `rate[x]` elements from STU3 that have been parented by a new `doseAndRate` element in FHIR R4. An optional `doseAndRate.type` element has been added to distinguish between calculated and ordered (by a human) dosage rates. This is not supported within the STU3 so can be ignored.
+
+To convert an example into STU3, remove the parent `doseAndRate` element as shown in the example below:
+
+### FHIR R4 and R4 UKCore Example
+
+```xml
+<doseAndRate>
+      <doseQuantity>
+          <value value="2" />
+          <unit value="tablet" />
+          <system value="http://snomed.info/sct" />
+          <code value="428673006" />
+      </doseQuantity>
+</doseAndRate>
+```
+
+### FHIR STU3 Example
+
+```xml
+<doseQuantity>
+     <value value="2" />
+     <unit value="tablet" />
+     <system value="http://snomed.info/sct" />
+     <code value="428673006" />
+</doseQuantity>
+```
 
 ## Medication discontinuation/stopping
 
