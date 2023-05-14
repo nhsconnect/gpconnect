@@ -162,7 +162,9 @@ The `Medication` profile provides the coded representation of the medication/med
   </tr>
 </table>
 
-The period the medication or medical device is authorised under this medication/medical device plan. For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation. For acutes, this refers to the period of the prescription issue.
+The period the medication or medical device is authorised under this medication/medical device plan.
+For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation.
+For acutes, this refers to the period of the prescription issue.
 
 `Period.start` is **MANDATORY**.
 
@@ -179,12 +181,11 @@ Use one of the following dates in order of descending preference:
 
 The date when the authorisation under this plan ends.
 
-Where the medication/medical device plan is still active, set to null.
-
-Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
+Where the medication/medical device plan status is active, set to null.
+Otherwise, use one of the following dates in order of descending preference:
 
 - the end date recorded in the patient record
-- the end date of the final issue under the medication/medical device plan
+- the end date of the final issue under the medication/medical device plan. This is the start date of the final issue plus the expected supply duration.
 - the date the plan was updated to ended
 - the Period.start date
   - this option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date
@@ -262,6 +263,20 @@ All notes that are associated with this medication/medical device record.
 All patient notes and prescriber notes at authorisation(plan) and issue(order) level **MUST** be included in this field. They **MUST** be concatenated and indicate the level the notes come from (for example, 1st Issue) and be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
 
 Any other relevant medication notes, such as notes relating to medications which were not prescribed by the practice (over the counter, hospital prescribed or similar), **MUST** be indicated by prefixing the note with 'Additional Information: '.
+
+### dosage ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Dosage</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+For provider systems that support fully structured dosage instructions a complete `Dosage` structure should be populated as per [guidance](accessrecord_structured_development_medication_guidance.html#populate-complete-dosage-structure-where-supported).
+
+Where fully structured dosage instructions are not supported by provider systems `Dosage.text` and `Dosage.patientInstruction` should be populated as described below. All other elements that are part of the dosage datatype are optional, and may be populated in line with [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer)
 
 ### dosage.text ###
 
