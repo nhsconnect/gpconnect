@@ -135,7 +135,6 @@ Use one of `active`, `completed` or `stopped`:
 - `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
 - `completed` represents an authorisation where all orders have been issued.
 
-
 ### medicationReference ###
 
 <table class='resource-attributes'>
@@ -160,8 +159,8 @@ The `Medication` profile provides the coded representation of the medication/med
   </tr>
 </table>
 
-The period the medication or medical device is authorised under this medication/medical device plan. 
-For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation. 
+The period the medication or medical device is authorised under this medication/medical device plan.
+For items that are repeats and repeat dispensed this refers to the entire cycle of prescriptions made under the authorisation.
 For acutes, this refers to the period of the prescription issue.
 
 `Period.start` is **MANDATORY**.
@@ -169,10 +168,11 @@ For acutes, this refers to the period of the prescription issue.
 The date from which the medication or medical device is authorised under this plan.
 
 Use one of the following dates in order of descending preference:
-*	the authorised date as recorded in the patient record
-    * for authorisation that were performed during a consultation this will be the date when the consultation took place
-*	the date of the first issue under the medication/medical device plan
-*	the date the medication/medical device plan was recorded onto the system (the audit date)
+
+- the authorised date as recorded in the patient record
+  - for authorisation that were performed during a consultation this will be the date when the consultation took place
+- the date of the first issue under the medication/medical device plan
+- the date the medication/medical device plan was recorded onto the system (the audit date)
 
 `Period.end` is **REQUIRED**.
 
@@ -180,11 +180,12 @@ The date when the authorisation under this plan ends.
 
 Where the medication/medical device plan status is active, set to null.
 Otherwise, use one of the following dates in order of descending preference:
-*	the end date recorded in the patient record
-*	the end date of the final issue under the medication/medical device plan. This is the start date of the final issue plus the expected supply duration.
-*	the date the plan was updated to ended
-*	the Period.start date
-    * this option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date
+
+- the end date recorded in the patient record
+- the end date of the final issue under the medication/medical device plan. This is the start date of the final issue plus the expected supply duration.
+- the date the plan was updated to ended
+- the Period.start date
+  - this option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date
 
 ### dateAsserted ###
 
@@ -260,6 +261,20 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 
 Any other relevant medication notes, such as notes relating to medications which were not prescribed by the practice (over the counter, hospital prescribed or similar), **MUST** be indicated by prefixing the note with 'Additional Information: '.
 
+### dosage ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Dosage</code></td>
+    <td><b>Optionality:</b> Mandatory</td>
+    <td><b>Cardinality:</b> 1..1</td>
+  </tr>
+</table>
+
+For provider systems that support fully structured dosage instructions a complete `Dosage` structure should be populated as per [guidance](accessrecord_structured_development_medication_guidance.html#populate-complete-dosage-structure-where-supported).
+
+Where fully structured dosage instructions are not supported by provider systems `Dosage.text` and `Dosage.patientInstruction` should be populated as described below. All other elements that are part of the dosage datatype are optional, and may be populated in line with [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer)
+
 ### dosage.text ###
 
 <table class='resource-attributes'>
@@ -273,7 +288,8 @@ Any other relevant medication notes, such as notes relating to medications which
 Complete dosage instructions as text.
 
 Where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan append the following warning text to end of the dosage instructions:
-* "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
+
+- "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
 
 In exceptional cases where for legacy data, over-the-counter treatments or hospital treatments there is no dosage recorded in the system then this **MUST** be populated with the text 'No information available' or 'Not recorded' as most appropriate to the circumstance.
 
