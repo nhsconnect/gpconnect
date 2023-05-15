@@ -287,7 +287,7 @@ Where fully structured dosage instructions are not supported by provider systems
 
 Complete dosage instructions as text.
 
-These instructions should be formatted as specified by [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer) and laid out in the [UK Core implementation guide](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current#text).
+These instructions should be formatted as specified by [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer) and laid out in the [UK Core implementation guide](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current#text)
 
 Where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan append the following warning text to end of the dosage instructions:
 
