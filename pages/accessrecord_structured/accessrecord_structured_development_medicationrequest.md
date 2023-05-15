@@ -237,8 +237,8 @@ Use one of `active`, `completed` or `stopped`:
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
-* The status **MUST** be set to `completed` unless the medication has been stopped by a clinician.
-* Stopped prescription **MUST** have a `stopped` status except where the system captures that the order has been stopped prior to dispense such that the patient cannot have received the medication where it **SHOULD** have a `cancelled` status
+- The status **MUST** be set to `completed` unless the medication has been stopped by a clinician.
+- Stopped prescription **MUST** have a `stopped` status except where the system captures that the order has been stopped prior to dispense such that the patient cannot have received the medication where it **SHOULD** have a `cancelled` status
 
 ### intent ###
 
@@ -366,7 +366,9 @@ Sometimes labelled Pharmacy text or instructions for pharmacy.
   </tr>
 </table>
 
-The elements of the dosage datatype detailed below should be populated as described. All other elements that are part of the dosage datatype are optional.
+For provider systems that support fully structured dosage instructions a complete `Dosage` structure should be populated as per [implementation guidance](accessrecord_structured_development_medication_guidance.html#medication-and-medical-device-interoperability).
+
+Where fully structured dosage instructions are not supported by provider systems `Dosage.text` and `Dosage.patientInstruction` should be populated as described below. All other elements that are part of the dosage datatype are optional, and may be populated in line with [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer).
 
 ### dosageInstruction.text ###
 
@@ -379,6 +381,8 @@ The elements of the dosage datatype detailed below should be populated as descri
 </table>
 
 Complete dosage instructions as text.
+
+These instructions should be formatted as specified by [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer) and laid out in the [UK Core implementation guide](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current#text).
 
 In exceptional cases where for legacy data, over-the-counter treatments or hospital treatments there is no dosage recorded in the system then this **MUST** be populated with the text 'No information available' or 'Not recorded' as most appropriate to the circumstance.
 
@@ -410,27 +414,26 @@ Start date is mandatory. Where there is a defined expiry or end date the end dat
 
 For `MedicationRequest` instances where `intent` is set to `plan`:
 
-* This refers to the period that the medication/medical device plan is active.
-* This **MUST** mirror `MedicationStatement.effective`
+- This refers to the period that the medication/medical device plan is active.
+- This **MUST** mirror `MedicationStatement.effective`
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
-*	This refers to the period that the issued prescription is active
+- This refers to the period that the issued prescription is active
 
 `Period.start` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
-*	The prescription issue date recorded in the patient record
-*	The date the prescription was recorded.
+- The prescription issue date recorded in the patient record
+- The date the prescription was recorded.
 
 `Period.end` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
-*	The prescription end date recorded in the patient record
-*	The prescription end date derived from period.start and the duration
-*	The Period.start date
-    * This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
-
+- The prescription end date recorded in the patient record
+- The prescription end date derived from period.start and the duration
+- The Period.start date
+  - This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
 
 ### dispenseRequest.quantity ###
 
