@@ -366,9 +366,9 @@ Sometimes labelled Pharmacy text or instructions for pharmacy.
   </tr>
 </table>
 
-For provider systems that support fully structured dosage instructions a complete `Dosage` structure should be populated as per [implementation guidance](accessrecord_structured_development_medication_guidance.html#medication-and-medical-device-interoperability).
+For provider systems that support fully structured dosage instructions a complete `Dosage` structure **SHOULD** be populated as per [implementation guidance](accessrecord_structured_development_medication_guidance.html#medication-and-medical-device-interoperability).
 
-Where fully structured dosage instructions are not supported by provider systems `Dosage.text` and `Dosage.patientInstruction` should be populated as described below. All other elements that are part of the dosage datatype are optional, and may be populated in line with [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer).
+Where fully structured dosage instructions are not supported by provider systems `Dosage.text` and `Dosage.patientInstruction` **MUST** be populated as described below. All other elements that are part of the dosage datatype are optional, and **MAY** be populated in line with [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer).
 
 ### dosageInstruction.text ###
 
@@ -382,7 +382,7 @@ Where fully structured dosage instructions are not supported by provider systems
 
 Complete dosage instructions as text.
 
-These instructions should be formatted as specified by [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer) and laid out in the [UK Core implementation guide](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current#text)
+These instructions **SHOULD** be formatted as specified by [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer) and laid out in the [UK Core implementation guide](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current#text)
 
 In exceptional cases where for legacy data, over-the-counter treatments or hospital treatments there is no dosage recorded in the system then this **MUST** be populated with the text 'No information available' or 'Not recorded' as most appropriate to the circumstance.
 
