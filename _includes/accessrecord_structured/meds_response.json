@@ -368,6 +368,15 @@
                 "periodUnit": "d"
               }
             },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral Route"
+                }
+              ]
+            },
             "doseAndRate": [
               {
                 "type": {
@@ -380,10 +389,10 @@
                   ]
                 },
                 "doseQuantity": {
-                  "value": 75,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://snomed.info/sct",
+                  "code": "428673006"
                 }
               }
             ]
@@ -593,6 +602,15 @@
                 "periodUnit": "d"
               }
             },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral Route"
+                }
+              ]
+            },
             "doseAndRate": [
               {
                 "type": {
@@ -605,10 +623,10 @@
                   ]
                 },
                 "doseQuantity": {
-                  "value": 75,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://snomed.info/sct",
+                  "code": "428673006"
                 }
               }
             ]
@@ -717,6 +735,15 @@
                 "periodUnit": "d"
               }
             },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral Route"
+                }
+              ]
+            },
             "doseAndRate": [
               {
                 "type": {
@@ -729,10 +756,10 @@
                   ]
                 },
                 "doseQuantity": {
-                  "value": 75,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://snomed.info/sct",
+                  "code": "428673006"
                 }
               }
             ]
@@ -828,6 +855,15 @@
                 "periodUnit": "d"
               }
             },
+            "route": {
+              "coding": [
+                {
+                  "system": "http://snomed.info/sct",
+                  "code": "26643006",
+                  "display": "Oral Route"
+                }
+              ]
+            },
             "doseAndRate": [
               {
                 "type": {
@@ -840,10 +876,10 @@
                   ]
                 },
                 "doseQuantity": {
-                  "value": 75,
-                  "unit": "mg",
-                  "system": "http://unitsofmeasure.org",
-                  "code": "mg"
+                  "value": 1,
+                  "unit": "tablet",
+                  "system": "http://snomed.info/sct",
+                  "code": "428673006"
                 }
               }
             ]
