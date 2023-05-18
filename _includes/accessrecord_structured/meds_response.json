@@ -948,7 +948,7 @@
               ],
               "display": "Amoxicillin 250mg capsules",
               "code": "323509004",
-              "system": "http://snomed.info/sct"
+              "system": "http://dmd.nhs.uk"
             }
           ]
         }

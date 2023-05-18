@@ -3447,7 +3447,7 @@
             {
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
-              "system": "http://snomed.info/sct"
+              "system": "http://dmd.nhs.uk"
             }
           ]
         }
@@ -4303,7 +4303,7 @@
             {
               "display": "Amlodipine 10mg tablets",
               "code": "319284000",
-              "system": "http://snomed.info/sct"
+              "system": "http://dmd.nhs.uk"
             }
           ]
         }
@@ -4794,7 +4794,7 @@
             {
               "display": "Paracetamol 500mg tablets",
               "code": "322236009",
-              "system": "http://snomed.info/sct"
+              "system": "http://dmd.nhs.uk"
             }
           ]
         }
@@ -6165,7 +6165,7 @@
             {
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
-              "system": "http://snomed.info/sct"
+              "system": "http://dmd.nhs.uk"
             }
           ]
         }
@@ -7432,7 +7432,7 @@
             {
               "display": "Citalopram 20mg tablets",
               "code": "321987003",
-              "system": "http://snomed.info/sct"
+              "system": "http://dmd.nhs.uk"
             }
           ]
         }
