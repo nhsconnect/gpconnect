@@ -983,7 +983,7 @@
               ],
               "display": "Aspirin 75mg dispersible tablets",
               "code": "319773006",
-              "system": "http://snomed.info/sct"
+              "system": "http://dmd.nhs.uk"
             }
           ]
         }
