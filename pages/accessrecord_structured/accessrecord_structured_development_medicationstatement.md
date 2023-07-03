@@ -169,10 +169,10 @@ The period the medication or medical device is authorised under this medication/
 The date from which the medication or medical device is authorised under this plan.
 
 Use one of the following dates in order of descending preference:
-*	the authorised date as recorded in the patient record
-    * for authorisation that were performed during a consultation this will be the date when the consultation took place
-*	the date of the first issue under the medication/medical device plan
-*	the date the medication/medical device plan was recorded onto the system (the audit date)
+- the authorised date as recorded in the patient record
+  - for authorisation that were performed during a consultation this will be the date when the consultation took place
+- the date of the first issue under the medication/medical device plan
+- the date the medication/medical device plan was recorded onto the system (the audit date)
 
 `Period.end` is **REQUIRED**.
 
@@ -181,12 +181,11 @@ The date when the authorisation under this plan ends.
 Where the medication/medical device plan is still active, set to null.
 
 Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
-*	the end date recorded in the patient record
-*	the end date of the final issue under the medication/medical device plan
-*	the date the plan was updated to ended
-*	the Period.start date
-    * this option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date
-
+- the end date recorded in the patient record
+- the end date of the final issue under the medication/medical device plan
+- the date the plan was updated to ended
+- the Period.start date
+  - this option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended plan will always have an end date
 
 ### dateAsserted ###
 
@@ -273,7 +272,8 @@ All patient notes and prescriber notes at authorisation(plan) and issue(order) l
 Complete dosage instructions as text.
 
 Where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan append the following warning text to end of the dosage instructions:
-* "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
+
+- "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
 
 In exceptional cases where for legacy data there is no dosage recorded in the system then this MUST be populated with the text 'No information available'.
 

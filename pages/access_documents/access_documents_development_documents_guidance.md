@@ -98,11 +98,10 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ### Known issues ###
 
-   * Lack of versioning of documents in the GP practices. DateTime stamp is used to identify the latest version of the document.
-   * No nationally agreed list of document types - GP practices have their own list of document types, which may also include free text.
-   * Poor metadata of documents - GP systems have poor metadata information about documents.
-   * Documents in disparate systems in a GP practice - Documents metadata information and its versions may exist in disparate systems in a GP practice. However, documents and its basic information does sync back from document management systems to the clinical system.
-
+* Lack of versioning of documents in the GP practices. DateTime stamp is used to identify the latest version of the document.
+* No nationally agreed list of document types - GP practices have their own list of document types, which may also include free text.
+* Poor metadata of documents - GP systems have poor metadata information about documents.
+* Documents in disparate systems in a GP practice - Documents metadata information and its versions may exist in disparate systems in a GP practice. However, documents and its basic information does sync back from document management systems to the clinical system.
 
 ## Value proposition ##
 
@@ -117,51 +116,59 @@ Standardise the search and retrieval of clinical documents from the GP practices
 <IMG src="images/access_documents/DistrictNursePatient.png" alt="District nurse attends a patient at home and views their discharge summary"  style="max-width:73%;max-height:60%;">
 
 ## Document Type ##
-Document types vary across GP practices and may contain free text. 
+
+Document types vary across GP practices and may contain free text.
 Requirements analysis and Professional Record Standards Body (PRSB) documentation identifies a demand for a clear classification of documents.
-To address this issue, GP Connect recommends the use of the 'Record composition type simple reference set (foundation metadata concept)' with Refset Id 1127551000000109. 
+To address this issue, GP Connect recommends the use of the 'Record composition type simple reference set (foundation metadata concept)' with Refset Id 1127551000000109.
 A text value can be provided for values that do not exist in the valueset.
 
 ## Patient records where documents are not available ##
+
 GP clinical systems may have some patient records that have information about the document but the document may not be available to the clinical system. To resolve this, GP Connect APIs should return a placeholder for the document specifying that there is a document but it is not available. The metadata information about the document should provide information about the authoring organisation of the document. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html#contentattachmenttitle).
 
 ## Document format ##
+
 Documents of industry standard format are allowed. Any local document formats are not allowed.
 
 ## Multiple versions of the document ##
+
 A GP practice may have multiple versions of the same document of the patient in their clinical system. Providers shall only return latest version of the document via the GP Connect APIs.
 
 ## Internal or external documents ##
+
 The GP practice from which the document is being requested is the custodian of the document. Requirements analysis suggests that end-users would like to understand if the patient document that they are retrieving from the GP practice is an internally generated document in the GP practice or an external organisation has sent that document to the GP practice.
 If the 'Authoring Organisation' of the document is the same as the custodian of the document then it's an internally generated document.
 If the 'Authoring Organisation' of the document is NOT the same as the custodian of the document then it's an externally generated document.
 
 ## File size of the document ##
+
 End-users would like to know the size of the document before retrieving the document. Providers would return the file size of the document in the response payload for Search Document GP Connect API request.
 
 Documents **MUST NOT** be retrievable using the GP Connect API when they are over the following file size limits:
-- [Retrieve a document](access_documents_development_retrieve_patient_documents.html) - 5MB
-- [Migrate a document](access_documents_development_migrate_patient_documents.html) - 100MB
 
-Documents that are over 5mb **MUST NOT** be retrievable using the GP Connect API,
+* [Retrieve a document](access_documents_development_retrieve_patient_documents.html) - 5MB
+* [Migrate a document](access_documents_development_migrate_patient_documents.html) - 100MB
 
-instead a placeholder should be returned specifying that the document hasn't been returned due to its file size. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html#contentattachmenttitle).
-
-
+Documents that are over 5mb **MUST NOT** be retrievable using the GP Connect API, instead a placeholder should be returned specifying that the document hasn't been returned due to its file size. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html#contentattachmenttitle).
 
 ## Multiple systems/providers being used in a GP practice to manage documents ##
+
 A GP practice may use document management systems for managing documents besides the clinical systems. The documents held in document management system sync to the clinical system along with its basic information such as document type, clinical setting, organisation, description and date. Any read codes extracted in the document management system is also synced to the clinical system. This is done so that, in the case when the document management system is unavailable, the document is still available in the principal clinical system and vice versa.
 GP Connect APIs would search for documents and retrieve documents only from the clinical system.
 
 ## Document Status ##
+
 Document Status would always have default value of 'current' as only the latest version of the document is retrievable from a GP practice.
 
 ## Confidential Documents ##
+
 GP Connect APIs are currently restricted to search and retrieval of documents that have NO internal confidentiality policy applied, but may in future expand to include all documents subject to data controller determination of who can access documents from the clinical record that has confidentiality/protection policy applied.
 
 ## Unreviewed Documents ##
+
 GP Connect APIs allow search and retrieval of documents that have not been reviewed and filed. It would enable the health and care workers to have access to the required documents at the right time and take informed decisions with the patient for their health and  care.
 It has been considered that there is the possibility that some of the unreviewed documents might be deemed and subsequently marked confidential at clinical review, but at this stage the clinical safety and continuity concerns outweigh the small risk of disclosure of data that may merit consideration of confidentiality policy application.
 
 ## Documents for deceased patients ##
+
 GP Connect APIs allow search and retrieval of documents for deceased patients for a period of 28 days after the patient’s death. The providers should allow for the period to be configurable. If a request is received after this period, the providers should return an error. The providers should return a deceased patient’s record only if the patient was a main GMS registered patient prior to being de-registered due to death.

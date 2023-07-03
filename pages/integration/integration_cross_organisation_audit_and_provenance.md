@@ -53,7 +53,6 @@ Provider systems **SHALL** record the following provenance details of all API pe
 
 Provider systems **SHALL** ensure that data provided to consumer systems only includes data for which the GP practice acts as data controller.
 
-
 ## Patient demographic cross-checking ##
 
 Consumer systems **SHALL** always perform a patient demographic check as part of the use of a GP Connect capability to ensure that the patient for whom the information has been provided is the same patient for whom the request was made, and make clear to the end user any discrepancies.
@@ -83,6 +82,7 @@ Consumer system **SHALL** generate a new JWT for each API request. The consumer 
 - signature
 
 #### Header ####
+
 Consumer systems **SHALL** generate an unsecured JWT using the 'none' algorithm parameter in the header to indicate that no digital signature or MAC has been performed (please refer to section 6 of [RFC 7519](https://tools.ietf.org/html/rfc7519){:target="_blank"}_ for details).
 
 ```json
@@ -109,7 +109,6 @@ eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJpc3MiOiJodHRwOi8vZWMyLTU0LTE5NC0xMDktMTg0
 ```
 
 **Note**: the final section (the signature) is empty, so the JWT will end with a trailing `.` (this must not be omitted, otherwise it would be an invalid token)
-
 
 ### JWT payload ###
 
@@ -193,6 +192,7 @@ The value **SHALL** be an integer representing seconds past 01 Jan 1970 00:00:00
 The purpose for which access is being requested.
 
 GP Connect supports two reasons for requesting the patient record:
+
 - `directcare` where the record is being requested to support direct care
 - `migration` where the record is being retrieved for the purpose of migration, for example, a GP2GP record transfer
 
@@ -206,19 +206,19 @@ The scope of the request.
 
 Please see the table below for which values to populate.
 
-| Claim value | Description | When to use |
-|-------|-------------|------|
-| `patient/*.read` | Patient record read request | - [Find a patient](foundations_use_case_find_a_patient.html)<br/> - [Read a patient](foundations_use_case_read_a_patient.html)<br/> - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)<br/> - [Read an appointment](appointments_use_case_read_an_appointment.html)<br/> - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/> - [Find a patient (Access Document)](access_documents_use_case_find_a_patient.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>
-| `patient/*.write` | Patient record write request | - [Register a patient](foundations_use_case_register_a_patient.html)<br/>- [Book an appointment](appointments_use_case_book_an_appointment.html)<br/>- [Amend an appointment](appointments_use_case_amend_an_appointment.html)<br/>- [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)<br/> |
-| `organization/*.read` | Other read request | - [Get the capability statement](foundations_use_case_get_the_fhir_capability_statement.html)<br/>- [Find a practitioner](foundations_use_case_find_a_practitioner.html)<br/>- [Read practitioner](foundations_use_case_read_a_practitioner.html)<br/>- [Find an organisation](foundations_use_case_find_an_organisation.html)<br/>- [Read organisation](foundations_use_case_read_an_organisation.html)<br/>- [Read location](foundations_use_case_read_a_location.html)<br/>- [Search for free slots](appointments_use_case_search_for_free_slots.html)<br/>- [Get the capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)<br/> |
-| `organization/*.write` | Other write request | *(none currently)* |
+| Claim value            | Description                  | When to use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| -----------            | -----------                  | -----------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| `patient/*.read`       | Patient record read request  | - [Find a patient](foundations_use_case_find_a_patient.html)<br/> - [Read a patient](foundations_use_case_read_a_patient.html)<br/> - [Retrieve a patient's appointments](appointments_use_case_retrieve_a_patients_appointments.html)<br/> - [Read an appointment](appointments_use_case_read_an_appointment.html)<br/> - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/> - [Find a patient (Access Document)](access_documents_use_case_find_a_patient.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>
+| `patient/*.write`      | Patient record write request | - [Register a patient](foundations_use_case_register_a_patient.html)<br/>- [Book an appointment](appointments_use_case_book_an_appointment.html)<br/>- [Amend an appointment](appointments_use_case_amend_an_appointment.html)<br/>- [Cancel an appointment](appointments_use_case_cancel_an_appointment.html)<br/>                                                                                                                                                                                                                                                                                                                                                                            |
+| `organization/*.read`  | Other read request           | - [Get the capability statement](foundations_use_case_get_the_fhir_capability_statement.html)<br/>- [Find a practitioner](foundations_use_case_find_a_practitioner.html)<br/>- [Read practitioner](foundations_use_case_read_a_practitioner.html)<br/>- [Find an organisation](foundations_use_case_find_an_organisation.html)<br/>- [Read organisation](foundations_use_case_read_an_organisation.html)<br/>- [Read location](foundations_use_case_read_a_location.html)<br/>- [Search for free slots](appointments_use_case_search_for_free_slots.html)<br/>- [Get the capability statement (Access Record Structured)](accessrecord_structured_get_the_fhir_capability_statement.html)<br/> |
+| `organization/*.write` | Other write request          | _(none currently)_                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 
 In addition to the above values, the table below contains claims around the sensitivity/confidentiality of the requested information.
 
-| Claim value | Description | When to use |
-|-------|-------------|------|
-| conf/N | Normal confidentiality | - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>|
-| conf/R | Restricted confidentiality | Restricted confidentiality	This MUST be only be used in a restricted set of use cases, this is currently restricted to GP2GP record transfers. In this scenario, provider systems will check whether the requesting organisation is permitted to retrieve sensitive information from the patient's record. <br/> - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/> |
+| Claim value | Description                | When to use                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| ----------- | -----------                | -----------                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| conf/N      | Normal confidentiality     | - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/>                                                                                                                                                                                                                                                                                                                  |
+| conf/R      | Restricted confidentiality | Restricted confidentiality This MUST be only be used in a restricted set of use cases, this is currently restricted to GP2GP record transfers. In this scenario, provider systems will check whether the requesting organisation is permitted to retrieve sensitive information from the patient's record. <br/> - [Get patient's structured record](accessrecord_structured_development_retrieve_patient_record.html)<br/> - [Migrate patient's structured record](accessrecord_structured_development_migrate_patient_record.html)<br/> - [Search for a patient's documents](access_documents_development_search_patient_documents.html)<br/> - [Retrieve a patient's documents](access_documents_development_retrieve_patient_documents.html)<br/> |
 
 Where multiple values are required, they **MUST** be provided as a space separated string. Where no confidentiality scope has been included, provider systems **MUST** interpret this as normal confidentiality, `conf/N`.
 
@@ -351,7 +351,6 @@ The [Practitioner](https://www.hl7.org/fhir/STU3/practitioner.html) resource pop
     }
   ]
 }</code></pre>
-
 
 ### JWT payload full example ###
 

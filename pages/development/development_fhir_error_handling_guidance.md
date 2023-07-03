@@ -16,11 +16,11 @@ However, the guidance given below is the definitive error handling definition fo
 In the event of an error, provider systems **SHALL** respond by providing an OperationOutcome resource profiled to [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1).
 
 The `GPConnect-OperationOutcome-1`:
+
 - **SHALL** contain a definition of severity in the `OperationOutcome.issue.severity` field providing a value from the [valueset-issue-severity](http://hl7.org/fhir/STU3/valueset-issue-severity.html) value set. In all cases described in this guidance, the value used will be `error`.
 - **SHALL** contain a definition of the type of error in the `OperationOutcome.issue.code` element, providing a value from the [issue-type](http://hl7.org/fhir/STU3/valueset-issue-type.html) value set.
 - **SHALL** contain details of the `Spine error code` in the `OperationOutcome.issue.details.coding.code` and `OperationOutcome.issue.details.coding.display` fields. These shall be taken from the standard set of NHS Spine error codes as defined in the [spine-error-or-warning-code-1](https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1) value set. The Spine error and warning codes provide a greater degree of error handling granularity, and also ensure a standardised error handling approach across NHS APIs.
 - **SHOULD** provide additional diagnostic details of the error in the `OperationOutcome.diagnostics` property where such details securely provide additional error context for consumer applications.
-
 
 The sections below provide guidance on the error details to be returned in a number of key scenarios.
 
@@ -28,16 +28,16 @@ The sections below provide guidance on the error details to be returned in a num
 
 Provider systems **SHALL** respond by returning one of the following `OperationOutcome` error codes where FHIR resource identity error scenarios are encountered:
 
-| HTTP code | Issue type |Spine error code - code | Spine error code - display |
-| --------- | -----------|------------|-------------|
-| `400`     | value | INVALID_IDENTIFIER_SYSTEM | Invalid identifier system |
-| `400`     | value | INVALID_IDENTIFIER_VALUE | Invalid identifier value |
-| `400`     | value | INVALID_NHS_NUMBER   | Invalid NHS number |
+| HTTP code | Issue type    | Spine error code - code      | Spine error code - display                               |
+| --------- | ----------    | -----------------------      | --------------------------                               |
+| `400`     | value         | INVALID_IDENTIFIER_SYSTEM    | Invalid identifier system                                |
+| `400`     | value         | INVALID_IDENTIFIER_VALUE     | Invalid identifier value                                 |
+| `400`     | value         | INVALID_NHS_NUMBER           | Invalid NHS number                                       |
 | `400`     | business-rule | INVALID_PATIENT_DEMOGRAPHICS | Invalid patient demographics (that is, PDS trace failed) |
-| `404`     | not-found | ORGANISATION_NOT_FOUND   | Organisation not found |
-| `404`     | not-found | PATIENT_NOT_FOUND   | Patient not found |
-| `404`     | not-found | PRACTITIONER_NOT_FOUND   | Practitioner not found |
-| `404`     | not-found | NO_RECORD_FOUND | No record found |
+| `404`     | not-found     | ORGANISATION_NOT_FOUND       | Organisation not found                                   |
+| `404`     | not-found     | PATIENT_NOT_FOUND            | Patient not found                                        |
+| `404`     | not-found     | PRACTITIONER_NOT_FOUND       | Practitioner not found                                   |
+| `404`     | not-found     | NO_RECORD_FOUND              | No record found                                          |
 
 #### Example: Invalid NHS number supplied #####
 
@@ -133,12 +133,12 @@ This is a catch-all where a request for a resource instance cannot be found at t
 
 When responding to consumer API requests, provider systems **SHALL** return one of the following `OperationOutcome` details when enforcement of local consent rules result in an error condition:
 
-| HTTP code | Issue type |Spine error code - code | Spine error code - display |
-| --------- | -----------|------------|-------------|
-| `403` | forbidden | NO_PATIENT_CONSENT | Patient has not provided consent to share data |
-| `403` | forbidden | NO_ORGANISATION_CONSENT | Organisation has not provided consent to share data |
-| `403` | forbidden | ACCESS DENIED | Access denied |
-| `403` | forbidden | NO_RELATIONSHIP | No legitimate relationship exists with this patient |
+| HTTP code | Issue type  | Spine error code - code | Spine error code - display                          |
+| --------- | ----------- | ----------------------- | --------------------------                          |
+| `403`     | forbidden   | NO_PATIENT_CONSENT      | Patient has not provided consent to share data      |
+| `403`     | forbidden   | NO_ORGANISATION_CONSENT | Organisation has not provided consent to share data |
+| `403`     | forbidden   | ACCESS DENIED           | Access denied                                       |
+| `403`     | forbidden   | NO_RELATIONSHIP         | No legitimate relationship exists with this patient |
 
 #### Example: No patient consent to share #####
 
@@ -203,9 +203,9 @@ For example, if the patient has requested that their record should not be shared
 
 When responding to consumer API requests, provider systems **SHALL** return one of the following `OperationOutcome` details when a resource could not be created or updated because it would cause a duplicate in the provider system:
 
-| HTTP code | Issue type |Spine error code - code | Spine error code - display |
-| --------- | -----------|------------|-------------|
-| `409` | duplicate | DUPLICATE_REJECTED | Create would lead to creation of a duplicate resource |
+| HTTP code | Issue type  | Spine error code - code | Spine error code - display                            |
+| --------- | ----------- | ----------------------- | --------------------------                            |
+| `409`     | duplicate   | DUPLICATE_REJECTED      | Create would lead to creation of a duplicate resource |
 
 #### Example: Attempting to register a patient that already exists #####
 
@@ -242,19 +242,21 @@ For example, if the consumer attempted to register a patient that already has an
 
 Where FHIR resource validation issues arise during processing of consumer requests, provider systems **SHALL** utilise one the following error details:
 
-| HTTP code | Issue type |Spine error code - code | Spine error code - display |
-| --------- | ---------- | ---------- | ----------- |
-| `422`     | invalid | INVALID_RESOURCE | Invalid validation of resource |
-| `422`     | invalid | INVALID_PARAMETER | Invalid parameter |
-| `422`     | invalid | REFERENCE_NOT_FOUND | Reference not found |
+| HTTP code | Issue type | Spine error code - code | Spine error code - display     |
+| --------- | ---------- | ----------------------- | --------------------------     |
+| `422`     | invalid    | INVALID_RESOURCE        | Invalid validation of resource |
+| `422`     | invalid    | INVALID_PARAMETER       | Invalid parameter              |
+| `422`     | invalid    | REFERENCE_NOT_FOUND     | Reference not found            |
 
 Detailed diagnostic information **MUST** be supplied when erroring on the codes above.
 
 INVALID_PARAMETER would be used in the following, or similar, scenarios:
+
 - Unexpected parameter value for a custom operation. For example, a lowercase value is supplied to the recordSection parameter of the $gpc.getcarerecord operation.
 - An invalid date/time value specified in a custom operation parameter. For example, an invalid timePeriod defined in the timePeriod input parameter to the $gpc.getcarerecord operation.
 
 INVALID_RESOURCE would be used in situations such as the following:
+
 - Resource fails to validate against StructureDefinition (either in request body or in JSON Web Tokens (JWT) claim).
 - A resource fails to be processed because of a FHIR constraint, or other rule application, where the error is not already covered by other error codes
 
@@ -295,12 +297,13 @@ For example, when using the 'Book an appointment' API use case, a consumer inclu
 
 When the server cannot or will not process a request due to an apparent client error then the following `BAD_REQUEST` error **SHALL** be used to return debug details.
 
-| HTTP code | Issue type |Spine error code - code | Spine error code - display |
-| --------- | ---------- | ---------- | ----------- |
-| `400`     | invalid | BAD_REQUEST | Submitted request is malformed/invalid |
-| `400`     | invalid | CONFLICTING_VALUES | Conflicting values have been specified in different fields |
+| HTTP code | Issue type | Spine error code - code | Spine error code - display                                 |
+| --------- | ---------- | ----------------------- | --------------------------                                 |
+| `400`     | invalid    | BAD_REQUEST             | Submitted request is malformed/invalid                     |
+| `400`     | invalid    | CONFLICTING_VALUES      | Conflicting values have been specified in different fields |
 
 BAD_REQUEST Spine error codes should be used in the following types of scenario:
+
 - JWT claims information is not valid JSON, is null, or has an invalid value
 - invalid FHIR resource in JWT claim (for example, patient resource when practitioner expected)
 - malformed JSON or XML content in request body
@@ -339,21 +342,19 @@ For example, if the request contained a null `aud` claim in the JWT, then the fo
 }
 ```
 
-
-
 ### Internal server errors ###
 
 When the FHIR server has received a request for an operation or FHIR resource which is not (yet) implemented, then the NOT_IMPLEMENTED Spine error code **SHALL** be used.
 
-| HTTP code | Issue type |Spine error code - code | Spine error code - display |
-| --------- | ---------- | ---------- | ----------- |
-| `501`     | not-supported | NOT_IMPLEMENTED | Not implemented |
+| HTTP code | Issue type    | Spine error code - code | Spine error code - display |
+| --------- | ----------    | ----------------------- | -------------------------- |
+| `501`     | not-supported | NOT_IMPLEMENTED         | Not implemented            |
 
 When the error is **unexpected** and the server can't be more specific on the exact nature of the problem then the `INTERNAL_SERVER_ERROR` Spine error code **SHALL** be used, and diagnostics **SHALL** be included to provide detail of the error.
 
-| HTTP code | Issue type |Spine error code - code | Spine error code - display |
-| --------- | ------- | ---------- | ----------- |
-| `500`     | processing | INTERNAL_SERVER_ERROR | Unexpected internal server error |
+| HTTP code | Issue type | Spine error code - code | Spine error code - display       |
+| --------- | ---------- | ----------------------- | --------------------------       |
+| `500`     | processing | INTERNAL_SERVER_ERROR   | Unexpected internal server error |
 
 #### Example: Unexpected exception #####
 
@@ -386,20 +387,19 @@ For example, if an unexpected internal exception is thrown by either an Operatio
 }
 ```
 
-
 ### Spine Secure Proxy (SSP) errors ###
 
 When the Spine Secure Proxy cannot or will not process a request then one of the following errors are used to return debug details:
 
-| HTTP code | Issue type | Description of error  |
-| --------- | ------- | ----------- |
-| `400`     | invalid |  Target URL varies from endpoint registered in SDS |
-| `403`     | forbidden |  Sender ASID is not authorised for this interaction |
-| `403`     | forbidden | Receiver ASID is not authorised for this interaction |
-| `403`     | forbidden |  Sender ASID is not authorised to send the interaction to receiver ASID |
-| `405`     | not-supported | Method not allowed |
-| `415`     | not-supported | Unsupported media type |
-| `502`     | transient | Error communicating to target URL |
+| HTTP code | Issue type    | Description of error                                                   |
+| --------- | ----------    | --------------------                                                   |
+| `400`     | invalid       | Target URL varies from endpoint registered in SDS                      |
+| `403`     | forbidden     | Sender ASID is not authorised for this interaction                     |
+| `403`     | forbidden     | Receiver ASID is not authorised for this interaction                   |
+| `403`     | forbidden     | Sender ASID is not authorised to send the interaction to receiver ASID |
+| `405`     | not-supported | Method not allowed                                                     |
+| `415`     | not-supported | Unsupported media type                                                 |
+| `502`     | transient     | Error communicating to target URL                                      |
 
 #### SSP error example: Target URL varies from endpoint registered in SDS #####
 
@@ -475,7 +475,6 @@ When the Spine Secure Proxy cannot or will not process a request then one of the
     ]
 }
 ```
-
 
 #### SSP error example: Sender ASID is not authorised to send the interaction to receiver ASID #####
 

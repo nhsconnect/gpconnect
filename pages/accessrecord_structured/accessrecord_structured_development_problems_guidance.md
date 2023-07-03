@@ -8,22 +8,24 @@ summary: "Guidance for populating and consuming the ProblemHeader resource"
 ---
 
 ## What is a problem? ##
+
 'Problem' is a concept supported by all the GP clinical systems that allows a clinician to identify/highlight specific clinical items in the medical record to describe the status of the patient's health.
 
 Any clinical item can be identified as a problem, though the method of doing this varies between GP clinical systems.
 
 Examples of possible problems:
-*	Anxiety with depression		
-*	Swollen legs		
-*	Hypertension		
-*	Blood pressure recorded by patient at home 		
-*	Atrial fibrillation		
-*	Knee pain		
-*	Upper respiratory tract infection		
-*	Lives alone		
+
+* Anxiety with depression
+* Swollen legs
+* Hypertension
+* Blood pressure recorded by patient at home
+* Atrial fibrillation
+* Knee pain
+* Upper respiratory tract infection
+* Lives alone
 
 As well as highlighting an item, the problem record also links that item to all the other information in the patient record that describes what has happened in regard to that item.
-For example, the problems record highlights that the patient has hypertension. 
+For example, the problems record highlights that the patient has hypertension.
 It also shows how the hypertension was identified, what discussions have taken place with the patient about their hypertension and what treatments and medication the patient is on to help manage their hypertension.
 
 To support this, problems are linked to:
@@ -33,19 +35,21 @@ To support this, problems are linked to:
 * every other problem in the patient record that a clinician has identified as relevant to the problem
 
 ## Problem relationships
+
 Problem records are linked to consultations, clinical items and other problems. Different provider systems manage links to problems in different ways. To reduce the impact of this to consumers, the provider system will transform their problem linkages into a common model for export.
 
 {% include note.html content="The diagrams are illustrative to support the specification text. There may be some simplifications or omissions, for instance not all possible linkages to the resources for investigations are shown." %}
 
 Each problem record is linked to:
-*	all consultations where the problem was discussed or information about the problem was recorded
-    *	consultations that are directly linked to the problem in the provider system; and
-    *	consultations that created/updated a clinical item that has been linked to the problem
-*	all clinical items in the patient record that the recording clinician identified as giving further information about the problem
-    *	clinical items that are directly linked to the problem in the provider system; and
-    *	clinical items that are within a consultation topic that is linked to the problem
-*	other problems that the recording clinician identified as giving further information about the problem
-    *	problems that are directly linked to the problem in the provider system
+
+* all consultations where the problem was discussed or information about the problem was recorded
+  * consultations that are directly linked to the problem in the provider system; and
+  * consultations that created/updated a clinical item that has been linked to the problem
+* all clinical items in the patient record that the recording clinician identified as giving further information about the problem
+  * clinical items that are directly linked to the problem in the provider system; and
+  * clinical items that are within a consultation topic that is linked to the problem
+* other problems that the recording clinician identified as giving further information about the problem
+  * problems that are directly linked to the problem in the provider system
 
 <a href="images/access_structured/Problem_Relationships_1_5_v4.png"><img src="images/access_structured/Problem_Relationships_1_5_v4.png" alt="Problem Relationships" style="max-width:100%;max-height:100%;"></a>
 
@@ -54,6 +58,7 @@ Each problem record is linked to:
 When a clinical item is linked to the problem, a reference to its FHIR&reg; resource is held in either extension[actualProblem] or extension[relatedClinicalContent].
 
 When linking to the clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example, Medication and Medical Device) the reference must be to the FHIR resource specified below.
+
 * for a Medication or Medical Device prescription plan - reference the `MedicationRequest` (intent = plan) profile
 * for a Medication or Medical Device prescription issue - reference the `MedicationRequest` (intent = order) profile
 * for an Allergy – reference the `Allergy` profile
@@ -78,8 +83,9 @@ Problem linkages may be impacted by filtering. See the guidance in the [retrieve
 ## Problems linking to out of scope clinical items
 
 The following items may be recorded in defined clinical areas which are supported by the provider but the clinical items are out of scope in this version of the specification
-- Complete diary entries
-- Test requests not part of investigation reports
+
+* Complete diary entries
+* Test requests not part of investigation reports
 
 If these clinical items are linked to a problem, they will not be referenced in the provider response.
 An encounter reference **MUST** be included as a reference from the problem where applicable, as defined above, regardless of the absence of a reference to the clinical item.
@@ -95,6 +101,7 @@ Where a provider system is not able to export a linked clinical item, it will cr
    Where [Clinical area] identifies the type of the clinical item that is not supported.
 
 The example below shows references to two items, one for an observation and another for referrals that aren’t supported by the provider system:
+
 ```json
 
 "extension": [
@@ -113,12 +120,12 @@ The example below shows references to two items, one for an observation and anot
 ]
 ```
 
-
 ## Problems containing confidential items
 
 Where a Problem is marked as confidential it will (as per the structured requirements on confidentially) not be included in returned data and the Confidential Items warning message will be included in the `List` containing the query response.
 
 Where a Problem is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
+
 * The Problem will be included in the response as normal
 * The confidential item(s) will NOT be included in the response
 * There will be NO reference to the confidential item(s) in the `ProblemHeader (Condition)` profile.
