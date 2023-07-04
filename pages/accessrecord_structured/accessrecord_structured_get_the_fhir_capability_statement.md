@@ -87,7 +87,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful retrieval of the capability statement
-- **SHALL** return a capability statement which conforms to the standard [FHIR CapabilityStatement](http://hl7.org/fhir/STU3/capabilitystatement.html)
+- **SHALL** return a capability statement which conforms to the standard [FHIR CapabilityStatement](https://hl7.org/fhir/STU3/capabilitystatement.html)
 
 An example Access Record Structured capability statement is shown below ready for customisation and embedding into assured provider systems. Providers should use this capability statement as a base for their own Access Record Structured capability statement, replacing the element in square brackets (`[` & `]`) with specific information of their implementation. The main version at the top of the CapabilityStatement should represent the GP Connect API specification version that the Access Record Structured FHIR server implements.
 
