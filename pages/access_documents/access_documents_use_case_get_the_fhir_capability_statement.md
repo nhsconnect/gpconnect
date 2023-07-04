@@ -50,12 +50,12 @@ GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_b
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1`|
+| Header              | Value                                                                  |
+| ------              | -----                                                                  |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                                    |
+| `Ssp-From`          | Consumer's ASID                                                        |
+| `Ssp-To`            | Provider's ASID                                                        |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1` |
 
 #### Payload request body ####
 
@@ -69,13 +69,10 @@ The table below shown common errors that may be encountered during this API call
 
 Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-|-------------------------|-------------------|
-| Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
-| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| Error encountered                                                                                                                             | Spine error code returned                                                                   |
+| -----------------                                                                                                                             | -------------------------                                                                   |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                     | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS_DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-|-------------------------|-------------------|
-
 
 ### Request response ###
 
@@ -196,5 +193,6 @@ An example Access Document capability statement is shown below ready for customi
 ```
 
 Consumer systems:
+
 - **SHOULD** request the capability statement from the Access Document FHIR server endpoint in order to ascertain details of the implementation delivered by the FHIR server, this includes checking the version number specified in `CapabilityStatement.version`
 - **MAY** also cache the Access Document capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organization's Access Document FHIR server.

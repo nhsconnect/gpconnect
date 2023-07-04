@@ -24,7 +24,6 @@ This release also contains updates from the following releases:
 - [1.2.6](overview_release_notes_1_2_6.html)
 - [1.3.2](overview_release_notes_1_3_2.html)
 
-
 ## 1.5.0 changes ##
 
 These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Documents 1.0.0 and Access Documents 1.0.1 specifications that were merged into 1.5.0
@@ -45,7 +44,6 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 **Page added:**
 
 - [Access Record Documents](access_documents.html)
-
 
 ---
 
@@ -87,6 +85,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Error handling](development_fhir_error_handling_guidance.html)
 
 ---
+
 ### Access Document
 
 ---
@@ -141,8 +140,8 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 **Description:**
 
 - Change search for patient documents to use a patient compartment based URL
--   Previously: `/DocumentReference?patientId=111&queryParam=`
--   Now: `/Patient/111/DocumentReference?queryParam=`
+- Previously: `/DocumentReference?patientId=111&queryParam=`
+- Now: `/Patient/111/DocumentReference?queryParam=`
 - The syntax of the Patient `_include` parameter for Search for a patient's documents was incorrect and has been updated
 - the facility parameter now uses a token instead of an identifier as its datatype
 - Updated examples to include all search parameters
@@ -570,7 +569,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 **Description:**
 
--  Corrected third allergies example to use correct value for `note` field
+- Corrected third allergies example to use correct value for `note` field
 - Updated descriptions for examples two and three to reflect content of example
 
 **Pages changed:**
@@ -581,7 +580,7 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 
 #### Updated medication guidance
 
-**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), #1046(https://github.com/nhsconnect/gpconnect/issues/1046), [#1127](https://github.com/nhsconnect/gpconnect/issues/1127), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
+**Tickets:** [#993](https://github.com/nhsconnect/gpconnect/issues/993), [#1046](https://github.com/nhsconnect/gpconnect/issues/1046), [#1127](https://github.com/nhsconnect/gpconnect/issues/1127), [#1129](https://github.com/nhsconnect/gpconnect/issues/1129)
 
 **Affects:**&nbsp; Access Structured
 
@@ -767,7 +766,6 @@ These release notes now incorporate entries from the 1.4.0, 1.4.1, Access Docume
 - [Specimen](accessrecord_structured_development_specimen.html)
 
 ---
-
 
 #### Updates to structured capability statement
 
