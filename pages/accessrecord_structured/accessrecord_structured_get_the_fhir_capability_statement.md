@@ -52,12 +52,12 @@ GET https://[proxy_server]/https://[structured_provider_server]/[structured_fhir
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1`|
+| Header              | Value                                                                   |
+| ------              | -----                                                                   |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                                     |
+| `Ssp-From`          | Consumer's ASID                                                         |
+| `Ssp-To`            | Provider's ASID                                                         |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:structured:fhir:rest:read:metadata-1` |
 
 #### Payload request body ####
 
@@ -71,13 +71,10 @@ The table below shown common errors that may be encountered during this API call
 
 Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-|-------------------------|-------------------|
-| Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
-| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| Error encountered                                                                                                                                      | Spine error code returned                                                                   |
+| -----------------                                                                                                                                      | -------------------------                                                                   |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                              | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-|-------------------------|-------------------|
-
 
 ### Request response ###
 
@@ -170,5 +167,6 @@ An example Access Record Structured capability statement is shown below ready fo
 ```
 
 Consumer systems:
+
 - **SHOULD** request the capability statement from the Access Record Structured FHIR server endpoint in order to ascertain details of the implementation delivered by the FHIR server, this includes checking the version number specified in `CapabilityStatement.version`
 - **MAY** also cache the Access Record Structured capability statement information retrieved from an endpoint to reduce the number of future calls they make to the target organization's Access Record Structured FHIR server.
