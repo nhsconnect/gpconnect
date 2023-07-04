@@ -7,6 +7,8 @@ permalink: accessrecord_structured_development_migrate_patient_record.html
 summary: "Migrate a patient's record in structured format"
 ---
 
+{% include important.html content="This migrate a patient's structured record interaction **COULD** be implemented by incumbent GP system suppliers, however, it **MUST** be implemented by NMEs." %}
+
 ## Use case ##
 
 Migrate a patient's record from one organisation to another in FHIR&reg; structured format.
