@@ -7,6 +7,8 @@ permalink: access_documents_development_migrate_patient_documents.html
 summary: "Migrate a document"
 ---
 
+{% include important.html content="This migrate a patient's document interaction **MAY** be implemented by incumbent GP system suppliers and it **MUST** be implemented by NMEs." %}
+
 ## Use case ##
 
 Retrieve a document for the purpose of migrating it to a patient's new registered practice.
