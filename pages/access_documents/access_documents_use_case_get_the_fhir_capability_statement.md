@@ -92,7 +92,7 @@ An example Access Document capability statement is shown below ready for customi
 ```json
 {
   "resourceType": "CapabilityStatement",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "name": "GP Connect API - Access Document",
   "status": "active",
   "date": "2020-02-10",
@@ -102,8 +102,8 @@ An example Access Document capability statement is shown below ready for customi
       "name": "[Provider Software Vendor Contact Name]"
     }
   ],
-  "description": "This server implements the GP Connect API - Access Document version 1.6.1",
-  "copyright": "Copyright NHS Digital 2016-21",
+  "description": "This server implements the GP Connect API - Access Document version 1.6.2",
+  "copyright": "Copyright NHS Digital 2016-23",
   "kind": "capability",
   "software": {
     "name": "[Provider Software Name]",
