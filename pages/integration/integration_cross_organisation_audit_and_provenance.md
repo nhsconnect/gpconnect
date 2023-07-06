@@ -198,6 +198,8 @@ GP Connect supports two reasons for requesting the patient record:
 
 **Example**: `"reason_for_request": "directcare"`
 
+{% include note.html content="Only some producers **MUST** implement migrate capability, see [Migrate a patient's record in structured format](accessrecord_structured_development_migrate_patient_record.html) and [Migrate a document](access_documents_development_migrate_patient_documents.html) for additional information." %}
+
 ---
 
 #### `requested_scope` claim
