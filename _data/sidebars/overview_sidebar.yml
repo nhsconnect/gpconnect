@@ -2,7 +2,6 @@ entries:
 - title: GP Connect
   levels: one
   folders:
-
   - title: Overview
     output: web
     folderitems:
@@ -23,6 +22,9 @@ entries:
       - title: Release notes
         output: web
         subfolderitems:
+        - title: 1.6.2
+          url: /overview_release_notes_1_6_2.html
+          output: web
         - title: 1.6.1
           url: /overview_release_notes_1_6_1.html
           output: web
@@ -34,7 +36,7 @@ entries:
           output: web
         - title: 1.5.0 - working
           url: /overview_release_notes_1_5_0.html
-          output: web  
+          output: web
         - title: Access Document 1.0.1
           url: /overview_release_notes_documents_1_0_1.html
           output: web
@@ -92,11 +94,9 @@ entries:
         - title: 0.5.0
           url: /overview_release_notes_0_5_0.html
           output: web
-
   - title: Design approach
     output: web
     folderitems:
-
     - title: API design principles
       url: /designprinciples_open_api_principles.html
       output: web
@@ -122,7 +122,6 @@ entries:
     - title: Specification versioning
       url: /design_product_versioning.html
       output: web
-
   - title: Explore
     output: web
     folderitems:
@@ -135,7 +134,6 @@ entries:
     - title: Postman API examples
       url: /system_reference_postman.html
       output: web
-
   - title: Development
     output: web
     folderitems:
@@ -166,7 +164,6 @@ entries:
     - title: Non-functional requirements
       url: /development_api_non_functional_requirements.html
       output: web
-
   - title: Implement a capability
     output: web
     folderitems:
@@ -188,7 +185,6 @@ entries:
     - title: <b class="capability-not-available">Access Record HTML</b>
       url: /accessrecord.html
       output: web
-
   - title: Integrate with Spine
     output: web
     folderitems:
@@ -204,7 +200,6 @@ entries:
     - title: Personal Demographic Service
       url: /integration_personal_demographic_service.html
       output: web
-
       subfolders:
       - title: Spine Directory Services
         output: web
@@ -215,14 +210,12 @@ entries:
         - title: Registering systems
           url: /integration_sds_registering_endpoints.html
           output: web
-
     - title: Interaction IDs
       url: /integration_interaction_ids.html
       output: web
     - title: Spine Secure Proxy
       url: /integration_spine_secure_proxy.html
       output: web
-
   - title: Test and assure
     output: web
     folderitems:
@@ -238,7 +231,6 @@ entries:
     - title: Consumer testing
       url: /testing_api_consumer_testing.html
       output: web
-
   - title: Help and support
     output: web
     folderitems:
@@ -251,7 +243,6 @@ entries:
     - title: Communication channels
       url: /support_communications.html
       output: web
-
       subfolders:
       - title: External links
         output: web
@@ -268,7 +259,6 @@ entries:
         - title: GPC GitHub provider test harness
           external_url: https://github.com/nhsconnect/gpconnect-provider-testing/
           output: web
-
     - title: Run website locally
       url: /support_run_website_locally.html
       output: web
