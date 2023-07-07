@@ -1,5 +1,4 @@
 {% highlight json %}
-
 {
   "resourceType": "Parameters",
   "parameter": [
@@ -37,7 +36,7 @@
       "part": [
         {
           "name": "includeNumberOfMostRecent",
-          "valueBoolean": 3
+          "valuePositiveInt": 3
         }
       ]
     },
@@ -56,5 +55,4 @@
     }
   ]
 }
-
 {% endhighlight %}
