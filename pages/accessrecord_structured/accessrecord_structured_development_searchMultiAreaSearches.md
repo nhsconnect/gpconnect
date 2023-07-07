@@ -32,11 +32,11 @@ When searching for data for more than one clinical area there are several factor
 * Scale of search required
 * The volume and complexity of the data that may be returned
 
-These factors are all related and finding the best approach for a consumers use case requires the developers/commisioners of the system to understand, prioritise and balance them. In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training recording these in the clinical safety case and hazard log that they produce.
+These factors are all related and finding the best approach for a consumers use case requires the developers/commissioners of the system to understand, prioritise and balance them. In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training recording these in the clinical safety case and hazard log that they produce.
 
-There are resources available on or accessed from the GP Connect Access Record Structure page of the API Catalogue to support this proccess,
+There are resources available on or accessed from the GP Connect Access Record Structure page of the API Catalogue to support this process,
 
-* GP Connect stuctured test data records
+* GP Connect structured test data records
 * test data definitions
 * a list of known clinical risks and possible mitigations
 * guidance for clinical safety officers
@@ -177,7 +177,7 @@ A skeleton request is included below consumers just need to insert the correct d
 
 This query covers all the same data returned in rep-defined search 1 with the addition of immunisations and uncategorised data.
 
-This search is intended to cover common use cases relating to peadiatric care where childhood vaccinations and observations may often be required.
+This search is intended to cover common use cases relating to paediatric care where childhood vaccinations and observations may often be required.
 
 #### Request
 
@@ -240,7 +240,7 @@ It can occur if a medication either contained in a consultation or linked to a p
 
 ### Mitigations
 
-When processing data that is recieved consuming systems should exercise caution when processing medication data that is returned as part of a problem or consultation.
+When processing data that is received consuming systems should exercise caution when processing medication data that is returned as part of a problem or consultation.
 
 If additional medication data than that included in the primary medications list is returned by the query, for instance as a part of a problem or consultation. Then the consuming system **MUST** consider how this is processed and/or displayed to the user.
 
