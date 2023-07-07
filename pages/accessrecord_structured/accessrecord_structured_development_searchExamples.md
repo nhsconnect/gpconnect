@@ -49,7 +49,9 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 2. Request medications for the last year, allergies and problems
+
 **a) If done in one query then all medications would be returned, no date filter could be applied:**
+
 ```json
 {
   "resourceType": "Parameters",
@@ -93,7 +95,7 @@ The different approaches to requests that will return similar information have b
         "value": "9999999999"
       }
     },
-		{
+    {
       "name": "includeAllergies",
       "part": [
         {
@@ -108,6 +110,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
+
 **AND**
 
 ```json
@@ -161,44 +164,45 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 4. Request a patient's last three consultations with problems, medications and allergies
+
 **a) If done in one query then all medications would be returned, no date filter could be applied:**
 
 ```json
 {
-"resourceType": "Parameters",
-"parameter": [
-	{
-		"name": "patientNHSNumber",
-		"valueIdentifier": {
-			"system": "https://fhir.nhs.uk/Id/nhs-number",
-			"value": "9999999999"
-		}
-	},
-	{
-		"name": "includeConsultations",
-		"part": [
-			{
-				"name": "includeNumberOfMostRecent",
-				"valuePositiveInt": 3
-			}
-		]
-	},
-	{
-		"name": "includeProblems"
-	},
-	{
-		"name": "includeAllergies",
-		"part": [
-			{
-				"name": "includeResolvedAllergies",
-				"valueBoolean": true
-			}
-		]
-	},
-	{
-		"name": "includeMedication"
-	}
-]
+  "resourceType":"Parameters",
+  "parameter":[
+    {
+      "name":"patientNHSNumber",
+      "valueIdentifier":{
+        "system":"https://fhir.nhs.uk/Id/nhs-number",
+        "value":"9999999999"
+      }
+    },
+    {
+      "name":"includeConsultations",
+      "part":[
+        {
+          "name":"includeNumberOfMostRecent",
+          "valuePositiveInt":3
+        }
+      ]
+    },
+    {
+      "name":"includeProblems"
+    },
+    {
+      "name":"includeAllergies",
+      "part":[
+        {
+          "name":"includeResolvedAllergies",
+          "valueBoolean":true
+        }
+      ]
+    },
+    {
+      "name":"includeMedication"
+    }
+  ]
 }
 ```
 
@@ -230,6 +234,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
+
 **AND**
 
 ```json
@@ -266,6 +271,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 5. Request child health information, medication, allergies, immunisations, problems and observations
+
 **a) If done in one query this would retrieve all medications and observations, no filters could be applied:**
 
 ```json
@@ -329,6 +335,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
+
 **AND**
 
 ```json
@@ -367,7 +374,6 @@ The different approaches to requests that will return similar information have b
 **c) Another option would be two queries where the first retrieves the last year of medications and observations and the second retrieves all allergies, problems and immunisations:**
 
 ```json
-
 {
   "resourceType": "Parameters",
   "parameter": [
@@ -387,7 +393,7 @@ The different approaches to requests that will return similar information have b
         }
       ]
     },
-		{
+  {
       "name": "includeUncategorisedData",
       "part": [
         {
@@ -402,6 +408,7 @@ The different approaches to requests that will return similar information have b
   ]
 }
 ```
+
 **AND**
 
 ```json
@@ -435,7 +442,9 @@ The different approaches to requests that will return similar information have b
 ```
 
 ### 6. Request all information that has been recorded for the patient in the last three months
+
 **a) If done in one query this would return everything, no date filter could be applied on medications, observations, investigations, referrals or diary entries:**
+
 ```json
 {
   "resourceType": "Parameters",
@@ -494,6 +503,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 **b) If done in two queries this would be a query for the last three months for observations, medications, investigations, referrals and diary entries and a second query for the last three months' consultations and all allergies, problems and immunisations:**
+
 ```json
 {
   "resourceType": "Parameters",
@@ -564,6 +574,7 @@ The different approaches to requests that will return similar information have b
 ```
 
 **AND**
+
 ```json
 {
   "resourceType": "Parameters",
@@ -575,7 +586,7 @@ The different approaches to requests that will return similar information have b
         "value": "9999999999"
       }
     },
-		{
+  {
       "name": "includeConsultations",
       "part": [
         {

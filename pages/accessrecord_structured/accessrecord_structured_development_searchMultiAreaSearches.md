@@ -17,8 +17,8 @@ It is the responsibility of the consuming system to decide what data to request 
 * The consumer system should aim to avoid scenarios where more than two queries are required on the same patient as part of the same local interaction with a clinician/user. This does NOT preclude the consumer system from making further queries where necessary to support patient care.
 * It is acceptable for the consumer system to request and retrieve a large proportion of the patient's record from the provider system and filter out the unnecessary data before presenting it to their clinicians/users where the consumer organisation:
 
-     * has determined it is necessary to support patient care
-     * has met all of the GP Connect information governance (IG) requirements including data sharing agreements, confidentiality and auditing
+  * has determined it is necessary to support patient care
+  * has met all of the GP Connect information governance (IG) requirements including data sharing agreements, confidentiality and auditing
 
 The details on how this is implemented in an API can be found in the [API definition](accessrecord_structured_development_retrieve_patient_record.html).
 <a name="clinicalrisk"></a>
@@ -27,19 +27,19 @@ The details on how this is implemented in an API can be found in the [API defini
 
 When searching for data for more than one clinical area there are several factors to consider,
 
- - Clincal safety
- - Information governance
- - Scale of search required
- - The volume and complexity of the data that may be returned
+* Clincal safety
+* Information governance
+* Scale of search required
+* The volume and complexity of the data that may be returned
 
 These factors are all related and finding the best approach for a consumers use case requires the developers/commisioners of the system to understand, prioritise and balance them. In doing so they will need to mitigate any clinical risks by using levers such as design, testing and end user training recording these in the clinical safety case and hazard log that they produce.
 
 There are resources available on or accessed from the GP Connect Access Record Structure page of the API Catalogue to support this proccess,
 
- - GP Connect stuctured test data records
- - test data definitions
- - a list of known clinical risks and possible mitigations
- - guidance for clinical safety officers
+* GP Connect stuctured test data records
+* test data definitions
+* a list of known clinical risks and possible mitigations
+* guidance for clinical safety officers
 
 [API Catalogue](https://digital.nhs.uk/developer/api-catalogue/gp-connect-access-record-structured-fhir#environments-and-testing).
 
@@ -130,46 +130,46 @@ A skeleton request is included below consumers just need to insert the correct d
 
 ```json
 {
-"resourceType": "Parameters",
-"parameter": [
-	{
-		"name": "patientNHSNumber",
-		"valueIdentifier": {
-			"system": "https://fhir.nhs.uk/Id/nhs-number",
-			"value": "9999999999"
-		}
-	},
-	{
-		"name": "includeConsultations",
-		"part": [
-			{
-				"name": "includeNumberOfMostRecent",
-				"valuePositiveInt": 3
-			}
-		]
-	},
-	{
-		"name": "includeProblems"
-	},
-  {
-    "name": "includeAllergies",
-    "part": [
-      {
-        "name": "includeResolvedAllergies",
-        "valueBoolean": true
+  "resourceType":"Parameters",
+  "parameter":[
+    {
+      "name":"patientNHSNumber",
+      "valueIdentifier":{
+        "system":"https://fhir.nhs.uk/Id/nhs-number",
+        "value":"9999999999"
       }
-    ]
-  },
-	{
-		"name": "includeMedication",
-	        "part": [
-			{
-			  "name": "medicationSearchFromDate",
-			  "valueDate": "today()-365 days"
-			}
-	      ]
-	}
-    ]
+    },
+    {
+      "name":"includeConsultations",
+      "part":[
+        {
+          "name":"includeNumberOfMostRecent",
+          "valuePositiveInt":3
+        }
+      ]
+    },
+    {
+      "name":"includeProblems"
+    },
+    {
+      "name":"includeAllergies",
+      "part":[
+        {
+          "name":"includeResolvedAllergies",
+          "valueBoolean":true
+        }
+      ]
+    },
+    {
+      "name":"includeMedication",
+      "part":[
+        {
+          "name":"medicationSearchFromDate",
+          "valueDate":"today()-365 days"
+        }
+      ]
+    }
+  ]
 }
 ```
 
@@ -183,54 +183,55 @@ This search is intended to cover common use cases relating to peadiatric care wh
 
 ```json
 {
-  "resourceType": "Parameters",
-  "parameter": [
+  "resourceType":"Parameters",
+  "parameter":[
     {
-      "name": "patientNHSNumber",
-      "valueIdentifier": {
-        "system": "https://fhir.nhs.uk/Id/nhs-number",
-        "value": "9999999999"
+      "name":"patientNHSNumber",
+      "valueIdentifier":{
+        "system":"https://fhir.nhs.uk/Id/nhs-number",
+        "value":"9999999999"
       }
     },
     {
-	"name": "includeConsultations",
-	"part": [
-		{
-			"name": "includeNumberOfMostRecent",
-			"valuePositiveInt": 3
-		}
-	]
-    },
-    {
-      "name": "includeAllergies",
-      "part": [
+      "name":"includeConsultations",
+      "part":[
         {
-          "name": "includeResolvedAllergies",
-          "valueBoolean": true
+          "name":"includeNumberOfMostRecent",
+          "valuePositiveInt":3
         }
       ]
     },
     {
-      "name": "includeMedication",
-      "part": [
+      "name":"includeAllergies",
+      "part":[
         {
-          "name": "medicationSearchFromDate",
-          "valueDate": "today()-365 days"
+          "name":"includeResolvedAllergies",
+          "valueBoolean":true
         }
       ]
     },
     {
-      "name": "includeProblems"
+      "name":"includeMedication",
+      "part":[
+        {
+          "name":"medicationSearchFromDate",
+          "valueDate":"today()-365 days"
+        }
+      ]
     },
     {
-      "name": "includeImmunisations"
+      "name":"includeProblems"
     },
     {
-      "name": "includeUncategorisedData"
+      "name":"includeImmunisations"
+    },
+    {
+      "name":"includeUncategorisedData"
     }
   ]
 }
 ```
+
 ### Clinical risk
 
 The clinical risks that are associated with these 2 queries are the same as the risk outlined above.
@@ -243,5 +244,5 @@ When processing data that is recieved consuming systems should exercise caution 
 
 If additional medication data than that included in the primary medications list is returned by the query, for instance as a part of a problem or consultation. Then the consuming system **MUST** consider how this is processed and/or displayed to the user.
 
- - It may be best to display the secondary list medication data separately to the medications returned in the main medications list.
- - Consumers should consider if there are appropriate places to display prominent/disruptive warnings to their users to ensure that they are aware of any possible gaps in the data.
+* It may be best to display the secondary list medication data separately to the medications returned in the main medications list.
+* Consumers should consider if there are appropriate places to display prominent/disruptive warnings to their users to ensure that they are aware of any possible gaps in the data.

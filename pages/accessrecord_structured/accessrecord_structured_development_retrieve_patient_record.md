@@ -105,7 +105,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>1..1</td>
       <td>
         Include resolved allergies and intolerances in the response.
-        <p><i>Part parameter: may only be provided if <code>includeAllergies</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeAllergies</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -122,7 +122,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Include each prescription issue in the response, this parameter has a default value of 'true'. More guidance relating to its use is available in the <a href="accessrecord_structured_development_medication_guidance.html#medication-search-criteria">Medication guidance page</a>
-        <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -133,12 +133,12 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>
         Restrict medications returned on or after the date specified. Rules:
         <ul>
-			<li>If the <code>medicationSearchFromDate</code> is not specified, all medication will be returned.</li>
-			<li>If the <code>medicationSearchFromDate</code> is populated, all medications which are active on or after the <code>medicationSearchFromDate</code> <b>MUST</b> be returned.</li>
-			<li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
-	        <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
-    	</ul>
-    	<p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
+   <li>If the <code>medicationSearchFromDate</code> is not specified, all medication will be returned.</li>
+   <li>If the <code>medicationSearchFromDate</code> is populated, all medications which are active on or after the <code>medicationSearchFromDate</code> <b>MUST</b> be returned.</li>
+   <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
+         <li><code>medicationSearchFromDate</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
+     </ul>
+     <p><i>Part parameter: may only be provided if <code>includeMedication</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -157,14 +157,14 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
         Restrict consultations by defining a time period
 
         <ul>
-			     <li>If the <code>consultationSearchPeriod</code> is not specified, all consultations will be returned.</li>
-			     <li>If the <code>consultationSearchPeriod.start</code> is populated, all consultations on or after the <code>consultationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
+        <li>If the <code>consultationSearchPeriod</code> is not specified, all consultations will be returned.</li>
+        <li>If the <code>consultationSearchPeriod.start</code> is populated, all consultations on or after the <code>consultationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
            <li>If the <code>consultationSearchPeriod.end</code> is populated, all consultations on or before the <code>consultationSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
           <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
-    	</ul>
+     </ul>
 
-        <p><i>Part parameter: may only be provided if <code>includeConsultations</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeConsultations</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -174,7 +174,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Limit the number of returned consultations
-        <p><i>Part parameter: may only be provided if <code>includeConsultations</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeConsultations</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -192,7 +192,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>
         Restrict the problems that are returned by their clinical status. <br/>
         Valueset: <a href="http://hl7.org/fhir/stu3/valueset-condition-clinical.html">http://hl7.org/fhir/stu3/valueset-condition-clinical.html</a> Values <b>MUST</b> be <code>`active`</code> or <code>`inactive`</code><br/>
-        <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -203,7 +203,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>
         Restrict the problems that are returned by their clinical significance<br/>
         Valueset: <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ProblemSignificance-1">ValueSet-CareConnect-ProblemSignificance-1</a><br/>
-        <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -220,7 +220,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Only include immunisations that have been given in the response. The default value for this is <code>false</code>.
-        <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -230,7 +230,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Include information about consent and dissent for immunisations in the response. The default value for this is <code>true</code>.
-        <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeImmunisations</code> is set.</i></p>
       </td>
     </tr>
     <tr>
@@ -249,14 +249,14 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
         Restrict uncategorised data by defining a time period
 
         <ul>
-			     <li>If the <code>uncategorisedDataSearchPeriod</code> is not specified, all uncategorised data will be returned.</li>
-			     <li>If the <code>uncategorisedDataSearchPeriod.start</code> is populated, all uncategorised data on or after the <code>uncategorisedDataSearchPeriod.start</code> <b>MUST</b> be returned.</li>
+        <li>If the <code>uncategorisedDataSearchPeriod</code> is not specified, all uncategorised data will be returned.</li>
+        <li>If the <code>uncategorisedDataSearchPeriod.start</code> is populated, all uncategorised data on or after the <code>uncategorisedDataSearchPeriod.start</code> <b>MUST</b> be returned.</li>
            <li>If the <code>uncategorisedDataSearchPeriod.end</code> is populated, all uncategorised data on or before the <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be returned.</li>
            <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
           <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
-    	</ul>
+     </ul>
 
-        <p><i>Part parameter: may only be provided if <code>includeUncategorisedData</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeUncategorisedData</code> is set.</i></p>
       </td>
     </tr>
 
@@ -283,7 +283,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
           <li><code>investigationSearchPeriod.start</code> and <code>investigationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
       </ul>
 
-        <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>
       </td>
     </tr>
 
@@ -310,7 +310,7 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
           <li><code>referralSearchPeriod.start</code> and <code>referralSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
       </ul>
 
-        <p><i>Part parameter: may only be provided if <code>includeReferrals</code> is set.</i></p>        
+        <p><i>Part parameter: may only be provided if <code>includeReferrals</code> is set.</i></p>
       </td>
     </tr>
 
@@ -338,10 +338,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <p><i>Part parameter: may only be provided if <code>includeDiaryEntries</code> is set.</i></p>
       </td>
     </tr>
-
-
-
-
 
   </tbody>
 </table>
@@ -481,22 +477,24 @@ The example below shows a fully populated `Parameters` resource as a request to 
 Certain combinations of query parameters have the potential to introduce clinical risks. To prevent these scenarios occurring, the following combinations of parameters are not permitted and **SHALL** not be used by consumers:
 
 When requesting consultations, the following part parameters **MUST NOT** be included:
-  - `includeMedication.medicationSearchFromDate`
-  - `includeUncategorisedData.uncategorisedDataSearchPeriod`
-  - `includeProblems.filterSignificance`
-  - `includeProblems.filterStatus`
-  - `includeReferrals.referralSearchPeriod`
-  - `includeDiaryEntries.diaryEntriesSearchDate`
-  - `includeImmunisations.includeNotGiven`
-  - `includeImmunisations.includeStatus`  
+
+- `includeMedication.medicationSearchFromDate`
+- `includeUncategorisedData.uncategorisedDataSearchPeriod`
+- `includeProblems.filterSignificance`
+- `includeProblems.filterStatus`
+- `includeReferrals.referralSearchPeriod`
+- `includeDiaryEntries.diaryEntriesSearchDate`
+- `includeImmunisations.includeNotGiven`
+- `includeImmunisations.includeStatus`
 
 When requesting problems, the following part parameters **MUST NOT** be included:
-  - `includeMedication.medicationSearchFromDate`
-  - `includeUncategorisedData.uncategorisedDataSearchPeriod`
-  - `includeReferrals.referralSearchPeriod`
-  - `includeDiaryEntries.diaryEntriesSearchDate`
-  - `includeImmunisations.includeNotGiven`
-  - `includeImmunisations.includeStatus`    
+
+- `includeMedication.medicationSearchFromDate`
+- `includeUncategorisedData.uncategorisedDataSearchPeriod`
+- `includeReferrals.referralSearchPeriod`
+- `includeDiaryEntries.diaryEntriesSearchDate`
+- `includeImmunisations.includeNotGiven`
+- `includeImmunisations.includeStatus`
 
 In the event that one of the combinations of parameters are used in a request, an error **MUST** be raised as specified in the error handling table below. There are no restrictions on using combinations of top level parameters.
 
@@ -514,9 +512,8 @@ The table below shows common errors that may be encountered during this API call
 
 Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
-|-------------------------|-------------------|
 | Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
+| -----------------        | -------------------------|
 | The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.13) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | The provider could not parse the `Parameters` resource.  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | No recognised parameters are provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
@@ -548,7 +545,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | A combination of parameters is included that isn't permitted | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
 | GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
 | The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-|-------------------------|-------------------|
 
 <div class="alert alert-warning" role="alert">
   <i class="fa fa-warning"></i> <b>Important:</b> The HL7 FHIR specification states that Parameters.parameter MUST have one of part, value or resource. However, in the case of Parameters which just have optional part parameters such as `includeProblems` it is valid to have no part parameters or value in a request. The following is an example of the `includeProblems` parameter with no part parameters:<br/>
@@ -595,6 +591,7 @@ Consumers systems **MUST NOT**:
 - rely on order or index of elements within the `Bundle` resource in order to parse encapsulated resources.
 
 ##### Unavailability of data #####
+
 There are scenarios where requested clinical areas may not be returned, these are listed on the  [Configuration for supported clinical areas](accessrecord_structured_development_clinical_area_config.html) page along with guidance on implementation. Consumer systems **MUST** be able to handle this unavailability and warn users that some information hasn't been returned.
 
 ##### Allergies #####
@@ -638,12 +635,12 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
 
   - when the `medicationSearchFromDate` parameter is set:
-	- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
-	  - A medication is considered active between its `effective.start` and `effective.end` (inclusive)
-		  - when a medication **does not** have an `effective.end`:
-			- an acute medication is considered active on its `effective.start` only
-			- a repeat medication is considered on-going and is active from its `effective.start`
-			- when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
+    - all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
+      - A medication is considered active between its `effective.start` and `effective.end` (inclusive)
+        - when a medication **does not** have an `effective.end`:
+          - an acute medication is considered active on its `effective.start` only
+          - a repeat medication is considered on-going and is active from its `effective.start`
+          - when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
   - all medications that are prescribed elsewhere will be returned regardless of the `medicationSearchFromDate`
 
   - and when the `includePrescriptionIssues` parameter is set to `false`:
@@ -800,7 +797,6 @@ Provider systems **MUST** include the following in the response `Bundle`:
     - and when an `end` value is set, all investigations with a `DiagnosticReport.issued` before the date **MUST** be returned
     - and when both a `start` and `end` are specified, investigations with a `DiagnosticReport.issued` after the `start` and before the `end` **MUST** be returned
 
-
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the above resources that represent the uncategorised data and its linked information
 
 ##### Referrals #####
@@ -825,6 +821,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - `Organization`, `Practitioner`, `PractitionerRole` and `HealthcareService` resources that are referenced by the above resources that represent the referral and its linked information
 
 ##### Diary entries #####
+
 Provider systems **MUST** include the following in the response `Bundle`:
 
 - when the `includeDiaryEntries` parameter is not set:
@@ -845,6 +842,7 @@ Provider systems **MUST** include the following in the response `Bundle`:
 #### Unknown and partial date handling in searches ####
 
 Where parameters contain part parameters for date searches, the following **SHALL** apply:
+
 - clinical information where an effective date is unknown or not recorded shall be returned alongside information that matches the supplied dates
 - where partial dates have been recorded, they will be evaluated against the supplied dates in the following way:
   - Dates with only the year specified are equivalent to an interval that starts on the first instant of January 1st and ends on the last instant of December 31st
@@ -860,14 +858,14 @@ The scenarios below represent how a selection of acute and repeat medications ar
     <li class="active"><a href="#scenario1" data-toggle="tab">Scenario 1</a></li>
     <li><a href="#scenario2" data-toggle="tab">Scenario 2</a></li>
     <li><a href="#scenario3" data-toggle="tab">Scenario 3</a></li>
-	<li><a href="#scenario4" data-toggle="tab">Scenario 4</a></li>
+ <li><a href="#scenario4" data-toggle="tab">Scenario 4</a></li>
 </ul>
   <div class="tab-content">
 <div role="tabpanel" class="tab-pane active" id="scenario1">
 <table class='resource-attributes'>
   <tr>
     <td style="font-size:14px"><b>Search date:</b> <code>15/01/2018</code></td>
-	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+ <td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
@@ -878,7 +876,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
 <table class='resource-attributes'>
   <tr>
     <td style="font-size:14px"><b>Search date:</b> <code>01/03/2018</code></td>
-	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+ <td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
@@ -889,7 +887,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
 <table class='resource-attributes'>
   <tr>
     <td style="font-size:14px"><b>Search date:</b> <code>08/07/2018</code></td>
-	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+ <td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
@@ -900,7 +898,7 @@ The scenarios below represent how a selection of acute and repeat medications ar
 <table class='resource-attributes'>
   <tr>
     <td style="font-size:14px"><b>Search date:</b> <code>08/10/2018</code></td>
-	<td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
+ <td style="font-size:14px" align="right"><b>Current date:</b> <code>08/10/2018</code></td>
   </tr>
 </table>
 
@@ -930,4 +928,5 @@ Examples of the payload requests and responses can be found here:
 - [Diary entries - FHIR&reg; examples](accessrecord_structured_development_fhir_examples_diaryentries.html)
 
 To illustrate how forwards compatibility works, the following example has been included:
+
 - [Retrieve consultations, problems, medications and allergies from a provider on version 1.2.3 of the GP Connect API](accessrecord_structured_development_fhir_examples_forwards_consultations.html)
