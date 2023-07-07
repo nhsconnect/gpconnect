@@ -49,12 +49,12 @@ POST https://[proxy_server]/https://[structured_provider_server]/[structured_fhi
 
 Consumers **MUST** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's Trace ID (a GUID or UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1`|
+| Header              | Value                                                                       |
+| ------              | -----                                                                       |
+| `Ssp-TraceID`       | Consumer's Trace ID (a GUID or UUID)                                        |
+| `Ssp-From`          | Consumer's ASID                                                             |
+| `Ssp-To`            | Provider's ASID                                                             |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.getstructuredrecord-1` |
 
 Example HTTP request headers:
 
@@ -155,7 +155,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Restrict consultations by defining a time period
-
         <ul>
         <li>If the <code>consultationSearchPeriod</code> is not specified, all consultations will be returned.</li>
         <li>If the <code>consultationSearchPeriod.start</code> is populated, all consultations on or after the <code>consultationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
@@ -163,7 +162,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
            <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
           <li><code>consultationSearchPeriod.start</code> and <code>consultationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
      </ul>
-
         <p><i>Part parameter: may only be provided if <code>includeConsultations</code> is set.</i></p>
       </td>
     </tr>
@@ -247,7 +245,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Restrict uncategorised data by defining a time period
-
         <ul>
         <li>If the <code>uncategorisedDataSearchPeriod</code> is not specified, all uncategorised data will be returned.</li>
         <li>If the <code>uncategorisedDataSearchPeriod.start</code> is populated, all uncategorised data on or after the <code>uncategorisedDataSearchPeriod.start</code> <b>MUST</b> be returned.</li>
@@ -255,11 +252,9 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
            <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
           <li><code>uncategorisedDataSearchPeriod.start</code> and <code>uncategorisedDataSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
      </ul>
-
         <p><i>Part parameter: may only be provided if <code>includeUncategorisedData</code> is set.</i></p>
       </td>
     </tr>
-
     <tr>
       <td><code class="highlighter-rouge">includeInvestigations</code></td>
       <td><code class="highlighter-rouge"></code></td>
@@ -274,7 +269,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Restrict test results by defining a time period
-
         <ul>
            <li>If the <code>investigationSearchPeriod</code> is not specified, all test results will be returned.</li>
            <li>If the <code>investigationSearchPeriod.start</code> is populated, all test results on or after the <code>investigationSearchPeriod.start</code> <b>MUST</b> be returned.</li>
@@ -282,11 +276,9 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
            <li><code>investigationSearchPeriod.start</code> and <code>investigationSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
           <li><code>investigationSearchPeriod.start</code> and <code>investigationSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
       </ul>
-
         <p><i>Part parameter: may only be provided if <code>includeInvestigations</code> is set.</i></p>
       </td>
     </tr>
-
     <tr>
       <td><code class="highlighter-rouge">includeReferrals</code></td>
       <td><code class="highlighter-rouge"></code></td>
@@ -301,7 +293,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>0..1</td>
       <td>
         Restrict referrals by defining a time period
-
         <ul>
            <li>If the <code>referralSearchPeriod</code> is not specified, all referrals will be returned.</li>
            <li>If the <code>referralSearchPeriod.start</code> is populated, all referrals on or after the <code>referralSearchPeriod.start</code> <b>MUST</b> be returned.</li>
@@ -309,12 +300,9 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
            <li><code>referralSearchPeriod.start</code> and <code>referralSearchPeriod.end</code> <b>MUST</b> be populated with a date less than or equal to the current date.</li>
           <li><code>referralSearchPeriod.start</code> and <code>referralSearchPeriod.end</code> <b>MUST</b> be populated with whole dates only (for example, 2017-02-01) - that is, no partial dates, or with a time period or offset.</li>
       </ul>
-
         <p><i>Part parameter: may only be provided if <code>includeReferrals</code> is set.</i></p>
       </td>
     </tr>
-
-
     <tr>
       <td><code class="highlighter-rouge">includeDiaryEntries</code></td>
       <td><code class="highlighter-rouge"></code></td>
@@ -338,7 +326,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <p><i>Part parameter: may only be provided if <code>includeDiaryEntries</code> is set.</i></p>
       </td>
     </tr>
-
   </tbody>
 </table>
 
@@ -512,39 +499,39 @@ The table below shows common errors that may be encountered during this API call
 
 Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
-| Error encountered        | Spine error code returned |
-| -----------------        | -------------------------|
-| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.13) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The provider could not parse the `Parameters` resource.  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| No recognised parameters are provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `patientNHSNumber` parameter is not provided | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `medicationSearchFromDate` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The start date of the `consultationSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The end date of the `consultationSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The start date of the `consultationSearchPeriod` part parameter is greater than the end date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The start date of the `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The start date of the `uncategorisedDataSearchPeriod` part parameter is greater than the end date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `filterStatus` part parameter contains a value other than `active` or `inactive` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `filterSignificance` part parameter contains a value other than `major` or `minor` | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `investigationSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `referralSearchPeriod` part parameter is greater than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| A patient could not be found matching the `patientNHSNumber` provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The `diaryEntriesSearchDate` part parameter contains a partial date, or has a value containing a time or offset component | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The `diaryEntriesSearchDate` part parameter is less than the current date | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| A part parameter is passed without a value | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| A combination of parameters is included that isn't permitted | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| Error encountered                                                                                                                                                                                                                                  | Spine error code returned                                                                        |
+| -----------------                                                                                                                                                                                                                                  | -------------------------                                                                        |
+| The `Parameters` resource passed does not conform to that specified in the [GPConnect-GetStructuredRecord-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-GetStructuredRecord-Operation-1/_history/1.13) `OperationDefinition` | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors)   |
+| The provider could not parse the `Parameters` resource.                                                                                                                                                                                            | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors)   |
+| No recognised parameters are provided                                                                                                                                                                                                              | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `patientNHSNumber` parameter is not provided                                                                                                                                                                                                   | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `patientNHSNumber` parameter value is invalid, for example it fails format or check digit tests                                                                                                                                                | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The `medicationSearchFromDate` part parameter contains a partial date, or has a value containing a time or offset component                                                                                                                        | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `medicationSearchFromDate` part parameter is greater than the current date                                                                                                                                                                     | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `includeAllergies` parameter is passed without the corresponding `includeResolvedAllergies` part parameter                                                                                                                                     | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The start date of the `consultationSearchPeriod` part parameter is greater than the current date                                                                                                                                                   | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The end date of the `consultationSearchPeriod` part parameter is greater than the current date                                                                                                                                                     | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The start date of the `consultationSearchPeriod` part parameter is greater than the end date                                                                                                                                                       | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `consultationSearchPeriod` and `includeNumberOfMostRecent` part parameters are both populated                                                                                                                                                  | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors)   |
+| The start date of the `uncategorisedDataSearchPeriod` part parameter is greater than the current date                                                                                                                                              | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the current date                                                                                                                                                | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The start date of the `uncategorisedDataSearchPeriod` part parameter is greater than the end date                                                                                                                                                  | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `filterStatus` part parameter contains a value other than `active` or `inactive`                                                                                                                                                               | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `filterSignificance` part parameter contains a value other than `major` or `minor`                                                                                                                                                             | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `investigationSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component                                                                                                                      | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `referralSearchPeriod` part parameter is greater than the current date                                                                                                                                                                         | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The patient has dissented to sharing their clinical record                                                                                                                                                                                         | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| A patient could not be found matching the `patientNHSNumber` provided                                                                                                                                                                              | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient                                                                                                                                          | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else)                                                                                                                              | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified'                                                                                                         | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The request is for a sensitive patient                                                                                                                                                                                                             | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The `diaryEntriesSearchDate` part parameter contains a partial date, or has a value containing a time or offset component                                                                                                                          | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `diaryEntriesSearchDate` part parameter is less than the current date                                                                                                                                                                          | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| A part parameter is passed without a value                                                                                                                                                                                                         | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| A combination of parameters is included that isn't permitted                                                                                                                                                                                       | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                                                                                                                          | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
+| The Access Record Structured capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                                                                                             | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
 
 <div class="alert alert-warning" role="alert">
   <i class="fa fa-warning"></i> <b>Important:</b> The HL7 FHIR specification states that Parameters.parameter MUST have one of part, value or resource. However, in the case of Parameters which just have optional part parameters such as `includeProblems` it is valid to have no part parameters or value in a request. The following is an example of the `includeProblems` parameter with no part parameters:<br/>
