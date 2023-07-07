@@ -364,7 +364,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
         },
         {
           "name": "includePrescriptionIssues",
-          "valueDate": true
+          "valueBoolean": true
         }
       ]
     },
