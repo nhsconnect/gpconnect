@@ -15,8 +15,8 @@
       }
     },
     {
-      "name": "includeReferrals"
-	  "part": [
+      "name": "includeReferrals",
+      "part": [
         {
           "name": "referralsSearchPeriod",
           "valuePeriod": {
@@ -28,5 +28,4 @@
     }
   ]
 }
-
 {% endhighlight %}

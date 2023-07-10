@@ -1,5 +1,4 @@
 {% highlight json %}
-
 {
   "resourceType": "Parameters",
   "parameter": [
@@ -18,8 +17,7 @@
           "valuePositiveInt": 3
         }
       ]
-    },
+    }
   ]
 }
-
 {% endhighlight %}
