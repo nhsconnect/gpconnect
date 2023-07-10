@@ -237,12 +237,12 @@ Use one of `active`, `completed` or `stopped`:
 
 For `MedicationRequest` instances where `intent` is set to `plan`:
 
-* For repeats and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
-* For acutes the status refers to the status of the prescription issue.
+- For repeats and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
+- For acutes the status refers to the status of the prescription issue.
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
-* The status refers to the status of the prescription issue.
+- The status refers to the status of the prescription issue.
 
 ### intent ###
 
@@ -414,27 +414,26 @@ Start date is mandatory. Where there is a defined expiry or end date the end dat
 
 For `MedicationRequest` instances where `intent` is set to `plan`:
 
-* This refers to the period that the medication/medical device plan is active.
-* This **MUST** mirror `MedicationStatement.effective`
+- This refers to the period that the medication/medical device plan is active.
+- This **MUST** mirror `MedicationStatement.effective`
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
-*	This refers to the period that the issued prescription is active
+- This refers to the period that the issued prescription is active
 
 `Period.start` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
-*	The prescription issue date recorded in the patient record
-*	The date the prescription was recorded.
+- The prescription issue date recorded in the patient record
+- The date the prescription was recorded.
 
 `Period.end` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
-*	The prescription end date recorded in the patient record
-*	The prescription end date derived from period.start and the duration
-*	The Period.start date
-    * This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
-
+- The prescription end date recorded in the patient record
+- The prescription end date derived from period.start and the duration
+- The Period.start date
+  - This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
 
 ### dispenseRequest.quantity ###
 

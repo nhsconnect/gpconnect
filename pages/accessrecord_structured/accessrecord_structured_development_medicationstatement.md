@@ -169,6 +169,7 @@ The period the medication or medical device is authorised under this medication/
 The date from which the medication or medical device is authorised under this plan.
 
 Use one of the following dates in order of descending preference:
+
 - the authorised date as recorded in the patient record
   - for authorisation that were performed during a consultation this will be the date when the consultation took place
 - the date of the first issue under the medication/medical device plan
@@ -181,6 +182,7 @@ The date when the authorisation under this plan ends.
 Where the medication/medical device plan is still active, set to null.
 
 Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
+
 - the end date recorded in the patient record
 - the end date of the final issue under the medication/medical device plan
 - the date the plan was updated to ended
