@@ -1,379 +1,364 @@
 {
-  "resourceType": "Bundle",
-  "meta": {
-    "profile": [
+  "resourceType":"Bundle",
+  "meta":{
+    "profile":[
       "https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1"
     ]
   },
-  "type": "collection",
-  "entry": [
+  "type":"collection",
+  "entry":[
     {
-      "resource": {
-        "resourceType": "List",
-        "title": "Consultation List",
-        ...
-        "entry": [
+      "resource":{
+        "resourceType":"List",
+        "title":"Consultation List",
+        "entry":[
           {
-            "item": {
-              "reference": "Encounter/Encounter1"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Problem List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "Condition/Condition1"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Allergies List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "AllergyIntolerance/AllergyIntolerance1"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Medication List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "MedicationStatement/MedicationStatement1"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Uncategorised data List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "Observation/Observation1"
-            }
-          },
-        ]
-    },
-
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Immunization List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "Immunization/Immunization1"
-            }
-          },
-        ]
-    },
-
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Allergies linked to consultation List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "AllergyIntolerance/AllergyIntolerance2"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Resolved allergies linked to consultation List",
-        ...
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Medications linked to consultation List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "MedicationStatement/MedicationStatement2"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Uncategorised data linked to consultation List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "Observation/Observation2"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Immunisations linked to consultation List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "Immunization/Immunization2"
-            }
-          },
-        ]
-    },
-
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Allergies linked to problem List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "AllergyIntolerance/AllergyIntolerance3"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Medications linked to problem List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "MedicationStatement/MedicationStatement3"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Uncategorised data linked to problem List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "Observation/Observation3"
-            }
-          },
-        ]
-    },
-    {
-      "resource": {
-        "resourceType": "List",
-        "title": "Immunisations linked to problem List",
-        ...
-        "entry": [
-          {
-            "item": {
-              "reference": "Immunization/Immunization3"
-            }
-          },
-        ]
-    },
-
-    {
-      "resource": {
-        "resourceType": "List",
-        "id": "Consultation1",
-        "title": "History",
-        "encounter": {
-          "reference": "Encounter/Encounter1"
-        },
-        ....
-        "entry": [
-          {
-            "item": {
-              "reference": "MedicationStatement/MedicationStatement2"
-            }
-          },
-          {
-            "item": {
-              "reference": "AllergyIntolerance/AllergyIntolerance2"
-            }
-          },
-          {
-            "item": {
-              "reference": "Observation/Observation2"
-            }
-          },
-          {
-            "item": {
-              "reference": "Immunization/Immunization2"
+            "item":{
+              "reference":"Encounter/Encounter1"
             }
           }
         ]
       }
     },
     {
-      "resource": {
-        "resourceType": "Encounter",
-        "id": "Encounter1",
-        ...
-    },
-    {
-      "resource": {
-        "resourceType": "Condition",
-        "id": "Condition1",
-        ...
-        "context": {
-          "reference": "Encounter/Encounter1"
-        },
-  		  "extension": [
+      "resource":{
+        "resourceType":"List",
+        "title":"Problem List",
+        "entry":[
           {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "MedicationStatement/MedicationStatement3"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "AllergyIntolerance/AllergyIntolerance3"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "Observation/Observation3"
-            }
-          },
-          {
-            "url": "http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
-            "valueReference": {
-              "reference": "Immunization/Immunization3"
+            "item":{
+              "reference":"Condition/Condition1"
             }
           }
         ]
       }
     },
     {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Observation1",
-        ..
-	  },
-    {
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "MedicationStatement1",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Allergies List",
+        "entry":[
+          {
+            "item":{
+              "reference":"AllergyIntolerance/AllergyIntolerance1"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "AllergyIntolerance",
-        "id": "AllergyIntolerance1",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Medication List",
+        "entry":[
+          {
+            "item":{
+              "reference":"MedicationStatement/MedicationStatement1"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "Immunization1",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Uncategorised data List",
+        "entry":[
+          {
+            "item":{
+              "reference":"Observation/Observation1"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Observation2",
-        ..
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "MedicationStatement2",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Immunization List",
+        "entry":[
+          {
+            "item":{
+              "reference":"Immunization/Immunization1"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "AllergyIntolerance",
-        "id": "AllergyIntolerance2",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Allergies linked to consultation List",
+        "entry":[
+          {
+            "item":{
+              "reference":"AllergyIntolerance/AllergyIntolerance2"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "Immunization2",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Resolved allergies linked to consultation List"
       }
     },
     {
-      "resource": {
-        "resourceType": "Observation",
-        "id": "Observation3",
-        ..
-    },
-    {
-      "resource": {
-        "resourceType": "MedicationStatement",
-        "id": "MedicationStatement3",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Medications linked to consultation List",
+        "entry":[
+          {
+            "item":{
+              "reference":"MedicationStatement/MedicationStatement2"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "AllergyIntolerance",
-        "id": "AllergyIntolerance3",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Uncategorised data linked to consultation List",
+        "entry":[
+          {
+            "item":{
+              "reference":"Observation/Observation2"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "Immunization3",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Immunisations linked to consultation List",
+        "entry":[
+          {
+            "item":{
+              "reference":"Immunization/Immunization2"
+            }
+          }
+        ]
       }
     },
     {
-      "resource": {
-        "resourceType": "Patient",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Allergies linked to problem List",
+        "entry":[
+          {
+            "item":{
+              "reference":"AllergyIntolerance/AllergyIntolerance3"
+            }
+          }
+        ]
+      }
     },
     {
-      "resource": {
-        "resourceType": "Organization",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Medications linked to problem List",
+        "entry":[
+          {
+            "item":{
+              "reference":"MedicationStatement/MedicationStatement3"
+            }
+          }
+        ]
+      }
     },
     {
-      "resource": {
-        "resourceType": "Practitioner",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Uncategorised data linked to problem List",
+        "entry":[
+          {
+            "item":{
+              "reference":"Observation/Observation3"
+            }
+          }
+        ]
+      }
     },
     {
-      "resource": {
-        "resourceType": "PractitionerRole",
-        ...
+      "resource":{
+        "resourceType":"List",
+        "title":"Immunisations linked to problem List",
+        "entry":[
+          {
+            "item":{
+              "reference":"Immunization/Immunization3"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"List",
+        "id":"Consultation1",
+        "title":"History",
+        "encounter":{
+          "reference":"Encounter/Encounter1"
+        },
+        "entry":[
+          {
+            "item":{
+              "reference":"MedicationStatement/MedicationStatement2"
+            }
+          },
+          {
+            "item":{
+              "reference":"AllergyIntolerance/AllergyIntolerance2"
+            }
+          },
+          {
+            "item":{
+              "reference":"Observation/Observation2"
+            }
+          },
+          {
+            "item":{
+              "reference":"Immunization/Immunization2"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Encounter",
+        "id":"Encounter1"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Condition",
+        "id":"Condition1",
+        "context":{
+          "reference":"Encounter/Encounter1"
+        },
+        "extension":[
+          {
+            "url":"http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference":{
+              "reference":"MedicationStatement/MedicationStatement3"
+            }
+          },
+          {
+            "url":"http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference":{
+              "reference":"AllergyIntolerance/AllergyIntolerance3"
+            }
+          },
+          {
+            "url":"http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference":{
+              "reference":"Observation/Observation3"
+            }
+          },
+          {
+            "url":"http://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-RelatedClinicalContent-1",
+            "valueReference":{
+              "reference":"Immunization/Immunization3"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Observation",
+        "id":"Observation1"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"MedicationStatement",
+        "id":"MedicationStatement1"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"AllergyIntolerance",
+        "id":"AllergyIntolerance1"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Immunization",
+        "id":"Immunization1"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Observation",
+        "id":"Observation2"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"MedicationStatement",
+        "id":"MedicationStatement2"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"AllergyIntolerance",
+        "id":"AllergyIntolerance2"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Immunization",
+        "id":"Immunization2"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Observation",
+        "id":"Observation3"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"MedicationStatement",
+        "id":"MedicationStatement3"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"AllergyIntolerance",
+        "id":"AllergyIntolerance3"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Immunization",
+        "id":"Immunization3"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Patient"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Organization"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"Practitioner"
+      }
+    },
+    {
+      "resource":{
+        "resourceType":"PractitionerRole"
       }
     }
+  ]
 }

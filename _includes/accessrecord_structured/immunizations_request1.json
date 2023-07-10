@@ -1,5 +1,4 @@
 {% highlight json %}
-
 {
   "resourceType": "Parameters",
   "parameter": [
@@ -15,5 +14,4 @@
     }
   ]
 }
-
 {% endhighlight %}
