@@ -233,7 +233,7 @@ Use one of `active`, `completed` or `stopped`:
 
 - `active` represents an active authorisation - used for active medications/medical devices.
 - `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
-- `complete` represents an authorisation which has run its course.
+- `completed` represents an authorisation which has run its course.
 
 For `MedicationRequest` instances where `intent` is set to `plan`:
 
