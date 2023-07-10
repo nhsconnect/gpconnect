@@ -58,7 +58,7 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
 If the referral was made via the e-Referral Service and a Unique Booking Reference Number (UBRN) exists for the referral, then it **MUST** be included as an identifier.
-The system identifier for this is `https://fhir.nhs.uk/Id/ubr-number`.
+The system identifier for this is `https://fhir.nhs.uk/Id/UBRN`.
 
 ### basedOn
 
@@ -82,8 +82,9 @@ Indicates any plans or prior referrals that this referral is intended to fulfill
   </tr>
 </table>
 
-Fixed value of <code>unknown</code>.
-Referrals 'entered in error' must not be included.
+A default value of <code>unknown</code> **SHOULD** be used for open or complete referrals as generally the status of referrals is not consistently maintained in a GP patient record.
+A status of <code>cancelled</code> **MAY** be used where the GP System has directly cancelled a referral, for example cancelled via eRS.
+Referrals <code>entered in error</code> **MUST NOT** be included.
 
 ### intent
 
@@ -198,6 +199,7 @@ If the referral does not clearly identify responsibility for the referral decisi
 
 This **MUST** be populated if the <code>requester.agent</code> is a practitioner and the <code>Organization</code> associated with the referenced <code>Practitioner</code> is not the GP practice responsible for the referral.
 This element **SHOULD** be absent if the <code>requester.agent</code> is not a practitioner.
+This element **MAY** be populated or absent where the GP practice responsible for the referral is the same organisation as associated with <code>requester.agent</code> practitioner via the practitioner role.
 
 ### specialty
 

@@ -133,6 +133,28 @@ Where a Problem is not marked as confidential but includes items that are marked
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed.
 
+## Using Problem search parameters
+
+The request for problems supports searching via part parameters for problem clinical status and problem significance.
+Guidance is given in other sections of this specification as to how the provider will populate the response with identifying lists and related clinical content.
+This section describes consequences of those requirements specfic to problem requests with search criteria.
+
+If the consumer request specifies a single parameter, the provider **MUST** return all problems which match that part parameter value.
+If the consumer request specifies both part parameters, the provider **MUST** return only problems which match both the part parameters as its primary query response.
+The consumer **MAY** include the problem parameter more than once and **MAY** specific different part parameter search criteria.
+The provider **MUST** return the cumulative response from each problem parameter included in the request, de-duplicating problems which satisfy more than one of the problem parameters included.
+All problems which are primary matches to the request **MUST** be referenced from the primary problems list as described in [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html).
+
+EXAMPLE TO BE ADDED
+
+In addition to the problem headers returned for a request with search parameters specified, the provider **MUST** return the resource items referenced by the problem header as the actual problem, related problems or related clinical content as described on the [Linkages](accessrecord_structured_development_linkages.html) and the [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html#problems) pages.
+The provider **MUST** include the related problem header resource regardless of whether the related problem matches the search criteria.
+The provider **MUST** include a reference to the related problem header in the problems secondary list as described in [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html) where the problem header is included but does not meet the search criteria but is returned as a result of being linked to a problem which does meet the search criteria.
+The provider **MAY** include problems in the 'problems linked to problems' secondary list which both meet the search criteria and are linked problems.
+The provider **MUST NOT** include any problem reference in the primary problem list which are returned only as linked problems and do not directly meet any of the problem search criteria.
+
+A consequence of the above criteria is that a consumer can receive problems which do not meet the specified search criteria, but the consumer can identify such problem header resources as they will be referenced in the 'problems related to problems' list but are not referenced by the primary problem's list.
+
 ## Using the `List` resource for problem queries
 
 The results of a query for problem details **MUST** return a `List` containing references to all `ProblemHeader (Condition)` resources that are returned.

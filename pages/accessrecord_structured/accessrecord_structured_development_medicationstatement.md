@@ -132,7 +132,7 @@ Use one of `active`, `completed` or `stopped`:
 
 - `active` represents an active authorisation - used for active repeat medications/medical devices
 - `stopped` represents an authorisation which has been discontinued, cancelled or stopped
-- `complete` represents an authorisation which has run its course
+- `completed` represents an authorisation which has run its course
 
 For repeat and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
 
@@ -169,6 +169,7 @@ The period the medication or medical device is authorised under this medication/
 The date from which the medication or medical device is authorised under this plan.
 
 Use one of the following dates in order of descending preference:
+
 - the authorised date as recorded in the patient record
   - for authorisation that were performed during a consultation this will be the date when the consultation took place
 - the date of the first issue under the medication/medical device plan
@@ -181,6 +182,7 @@ The date when the authorisation under this plan ends.
 Where the medication/medical device plan is still active, set to null.
 
 Where the medication/medical device plan has ended use one of the following dates in order of descending preference:
+
 - the end date recorded in the patient record
 - the end date of the final issue under the medication/medical device plan
 - the date the plan was updated to ended
@@ -259,6 +261,8 @@ All notes that are associated with this medication/medical device record.
 
 All patient notes and prescriber notes at authorisation(plan) and issue(order) level **MUST** be included in this field. They **MUST** be concatenated and indicate the level the notes come from (for example, 1st Issue) and be prefixed with either ‘Patient Notes:’ or ‘Prescriber Notes:’ as appropriate.
 
+Any other relevant medication notes, such as notes relating to medications which were not prescribed by the practice (over the counter, hospital prescribed or similar), **MUST** be indicated by prefixing the note with 'Additional Information: '.
+
 ### dosage.text ###
 
 <table class='resource-attributes'>
@@ -275,7 +279,7 @@ Where the dosage instructions have been changed during the lifetime of the Medic
 
 - "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
 
-In exceptional cases where for legacy data there is no dosage recorded in the system then this MUST be populated with the text 'No information available'.
+In exceptional cases where for legacy data, over-the-counter treatments or hospital treatments there is no dosage recorded in the system then this **MUST** be populated with the text 'No information available' or 'Not recorded' as most appropriate to the circumstance.
 
 ### dosage.patientInstruction ###
 
@@ -348,16 +352,6 @@ This is not in scope for this version of Care Connect and therefore not availabl
 <table class='resource-attributes'>
   <tr>
     <td><b>Data type:</b> <code>Reference(Any)</code></td>
-  </tr>
-</table>
-
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
-
-<h3 style="color:#ED1951;"> taken </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>code</code></td>
   </tr>
 </table>
 

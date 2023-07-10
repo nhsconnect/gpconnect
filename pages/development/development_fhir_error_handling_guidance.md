@@ -58,7 +58,7 @@ If an invalid NHS number value is supplied to the `$gpc.getstructuredrecord` ope
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "INVALID_NHS_NUMBER",
             "display": "Invalid NHS number"
           }
@@ -88,7 +88,7 @@ For example, if a valid NHS number value is supplied to the `$gpc.getstructuredr
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "PATIENT_NOT_FOUND",
             "display": "Patient not found"
           }
@@ -118,7 +118,7 @@ This is a catch-all where a request for a resource instance cannot be found at t
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "NO_RECORD_FOUND",
             "display": "No record found"
           }
@@ -159,7 +159,7 @@ For example, if the patient has requested that their record should not be shared
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "NO_PATIENT_CONSENT",
             "display": "Patient has not provided consent to share data"
           }
@@ -187,7 +187,7 @@ For example, if the patient has requested that their record should not be shared
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "ACCESS DENIED",
             "display": "Access denied"
           }
@@ -226,7 +226,7 @@ For example, if the consumer attempted to register a patient that already has an
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "DUPLICATE_REJECTED",
             "display": "Create would lead to creation of a duplicate resource"
           }
@@ -281,7 +281,7 @@ For example, when using the 'Book an appointment' API use case, a consumer inclu
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "REFERENCE_NOT_FOUND",
             "display": "Reference not found"
           }
@@ -330,7 +330,7 @@ For example, if the request contained a null `aud` claim in the JWT, then the fo
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "BAD_REQUEST",
             "display": "Bad request"
           }
@@ -375,7 +375,7 @@ For example, if an unexpected internal exception is thrown by either an Operatio
       "details": {
         "coding": [
           {
-            "system": "https://fhir.nhs.uk/STU3/ValueSet/Spine-ErrorOrWarningCode-1",
+            "system": "https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1",
             "code": "INTERNAL_SERVER_ERROR",
             "display": "Internal server error"
           }

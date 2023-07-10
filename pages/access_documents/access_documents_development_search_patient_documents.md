@@ -11,6 +11,8 @@ summary: "Search for a patient's documents"
 
 Search for a patient's documents from a GP practice.
 
+We assume an understanding of FHIR REST and search features. For further information with regards to the features described in this page see [http://hl7.org/fhir/STU3/search.html](http://hl7.org/fhir/STU3/search.html).
+
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization
@@ -27,6 +29,7 @@ Provider systems **SHALL** support the following search parameters:
 | `description` | `string` | Keyword based search | `DocumentReference.description` + `DocumentReference.type` |
 
 {% include note.html content="The supported search parameters **MUST** be included in the Access Document [FHIR capability statement](access_documents_use_case_get_the_fhir_capability_statement.html)." %}
+{% include important.html content="GP Connect does not support searching for documents based on a practitioner author. The `author` search parameter **MUST** only be used to search by an organisation author using an ODS code" %}
 {% include important.html content="The `type` and `facility` parameters have been removed from the API. These will be reinstated in the future when provider systems contain the metadata to support them. The original release of the Access Documents capability contained `type` and `facility` parameters which could be used to search for types of clinical document and the types of clinical settings where they were created. These have been removed while the quality of the metadata in provider systems around these items improves. They will be reinstated at the point that they can be supported." %}
 
 ## _include parameters ##

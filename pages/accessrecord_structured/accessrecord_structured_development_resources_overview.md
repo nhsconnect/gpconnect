@@ -55,32 +55,31 @@ Details on the warning codes available in the GP Connect message and how they ar
 
 The following common code systems are used when populating `CodeableConcept.coding.system` in resources for this capability:
 
-| Name | Code system |
-| ----------- | ------ |
-| SNOMED CT   | `http://snomed.info/sct` |
-| Read codes V2     | `http://read.info/readv2` |
-| Read codes CTV3   | `http://read.info/ctv3` |
-| EMIS drug codes | `https://fhir.hl7.org.uk/Id/emis-drug-codes` |
-| Egton codes | `https://fhir.hl7.org.uk/Id/egton-codes` |
-| Multilex drug codes | `https://fhir.hl7.org.uk/Id/multilex-drug-codes` |
+| Name                          | Code system                                               |
+| ----                          | -----------                                               |
+| SNOMED CT                     | `http://snomed.info/sct`                                  |
+| Read codes V2                 | `http://read.info/readv2`                                 |
+| Read codes CTV3               | `http://read.info/ctv3`                                   |
+| EMIS drug codes               | `https://fhir.hl7.org.uk/Id/emis-drug-codes`              |
+| Egton codes                   | `https://fhir.hl7.org.uk/Id/egton-codes`                  |
+| Multilex drug codes           | `https://fhir.hl7.org.uk/Id/multilex-drug-codes`          |
 | Resip UK Gemscript drug codes | `https://fhir.hl7.org.uk/Id/resipuk-gemscript-drug-codes` |
 
 ## Common identifier systems ##
 
 The following common identifier systems are used when populating `Identifier.system` in resources for this capability:
 
-| Name | Identifier system |
-| ---------- | -------- |
-| NHS number | `https://fhir.nhs.uk/Id/nhs-number` |
-| ODS organisation code | `https://fhir.nhs.uk/Id/ods-organization-code` |
-| ODS site code | `https://fhir.nhs.uk/Id/ods-site-code` |
-| SDS user ID | `https://fhir.nhs.uk/Id/sds-user-id` |
-| SDS role profile ID | `https://fhir.nhs.uk/Id/sds-role-profile-id` |
-| General Medical Council (GMC) number | `https://fhir.hl7.org.uk/Id/gmc-number` |
-| General Practitioner (GMP) number | `https://fhir.hl7.org.uk/Id/gmp-number` |
-| Cross care setting identifier | `https://fhir.nhs.uk/Id/cross-care-setting-identifier` |
-| EPS Line item identifier | `https://fhir.nhs.uk/Id/eps-line-item-identifier` |
-
+| Name                                 | Identifier system                                      |
+| ----                                 | -----------------                                      |
+| NHS number                           | `https://fhir.nhs.uk/Id/nhs-number`                    |
+| ODS organisation code                | `https://fhir.nhs.uk/Id/ods-organization-code`         |
+| ODS site code                        | `https://fhir.nhs.uk/Id/ods-site-code`                 |
+| SDS user ID                          | `https://fhir.nhs.uk/Id/sds-user-id`                   |
+| SDS role profile ID                  | `https://fhir.nhs.uk/Id/sds-role-profile-id`           |
+| General Medical Council (GMC) number | `https://fhir.hl7.org.uk/Id/gmc-number`                |
+| General Practitioner (GMP) number    | `https://fhir.hl7.org.uk/Id/gmp-number`                |
+| Cross care setting identifier        | `https://fhir.nhs.uk/Id/cross-care-setting-identifier` |
+| EPS Line item identifier             | `https://fhir.nhs.uk/Id/eps-line-item-identifier`      |
 
 The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are used in this capability pack:
 
@@ -90,40 +89,40 @@ Each clinical resource will have a unique business identifier that will be persi
 
 ### Clinical ###
 
-* [AllergyIntolerance](accessrecord_structured_development_allergyintolerance.html)
-* [Medication](accessrecord_structured_development_medication.html)
-* [MedicationStatement](accessrecord_structured_development_medicationstatement.html)
-* [MedicationRequest](accessrecord_structured_development_medicationrequest.html)
-* [Immunization](accessrecord_structured_development_immunization.html)
-* [Observation - uncategorised data](accessrecord_structured_development_observation_uncategorisedData.html)
-* [Observation - blood pressure](accessrecord_structured_development_observation_bloodpressure.html)
-* [Encounter](accessrecord_structured_development_encounter.html)
-* [List - consultation structure](accessrecord_structured_development_list_consultation.html)
-* [Observation - narrative data](accessrecord_structured_development_guidance_observation_narrative.html)
-* [Condition - ProblemHeader](accessrecord_structured_problems.html)
-* [Diagnostic Report](accessrecord_structured_development_diagnosticreport.html)
-* [Specimen](accessrecord_structured_development_specimen.html)
-* [Observation - Test Group Header](accessrecord_structured_development_observation_testgroup.html)
-* [Observation - Test Result](accessrecord_structured_development_observation_testresult.html)
-* [Observation - Filing Comments](accessrecord_structured_development_observation_filingcomments.html)
-* [ProcedureRequest](accessrecord_structured_development_procedurerequest.html)
-* [ReferralRequest](accessrecord_structured_development_referralrequest.html)
-* [ProcedureRequest - Diary Entry](accessrecord_structured_development_diaryentry.html)
-* DocumentReference - see note below
+- [AllergyIntolerance](accessrecord_structured_development_allergyintolerance.html)
+- [Medication](accessrecord_structured_development_medication.html)
+- [MedicationStatement](accessrecord_structured_development_medicationstatement.html)
+- [MedicationRequest](accessrecord_structured_development_medicationrequest.html)
+- [Immunization](accessrecord_structured_development_immunization.html)
+- [Observation - uncategorised data](accessrecord_structured_development_observation_uncategorisedData.html)
+- [Observation - blood pressure](accessrecord_structured_development_observation_bloodpressure.html)
+- [Encounter](accessrecord_structured_development_encounter.html)
+- [List - consultation structure](accessrecord_structured_development_list_consultation.html)
+- [Observation - narrative data](accessrecord_structured_development_guidance_observation_narrative.html)
+- [Condition - ProblemHeader](accessrecord_structured_problems.html)
+- [Diagnostic Report](accessrecord_structured_development_diagnosticreport.html)
+- [Specimen](accessrecord_structured_development_specimen.html)
+- [Observation - Test Group Header](accessrecord_structured_development_observation_testgroup.html)
+- [Observation - Test Result](accessrecord_structured_development_observation_testresult.html)
+- [Observation - Filing Comments](accessrecord_structured_development_observation_filingcomments.html)
+- [ProcedureRequest](accessrecord_structured_development_procedurerequest.html)
+- [ReferralRequest](accessrecord_structured_development_referralrequest.html)
+- [ProcedureRequest - Diary Entry](accessrecord_structured_development_diaryentry.html)
+- DocumentReference - see note below
 
 {% include note.html content="DocumentReference is defined as part of a seperate [Access Document](access_documents.html) capability. Access Document complements Access Record Structured by allowing the querying and retrieval of documents for a patient." %}
 
 ### Administrative ###
 
-* Patient
-* Organization
-* PractitionerRole
-* Practitioner
-* Location
+- Patient
+- Organization
+- PractitionerRole
+- Practitioner
+- Location
 
 {% include tip.html content="Please see the [Foundations](foundations.html) section for details on population and consumption of the administrative resources." %}
 
 ### Structural ###
 
-* [Bundle](accessrecord_structured_development_bundle.html)
-* [List](accessrecord_structured_development_list.html)
+- [Bundle](accessrecord_structured_development_bundle.html)
+- [List](accessrecord_structured_development_list.html)
