@@ -27,7 +27,7 @@ The details on how this is implemented in an API can be found in the [API defini
 
 When searching for data for more than one clinical area there are several factors to consider,
 
-* Clincal safety
+* Clinical safety
 * Information governance
 * Scale of search required
 * The volume and complexity of the data that may be returned
