@@ -243,6 +243,7 @@ For `MedicationRequest` instances where `intent` is set to `plan`:
 For `MedicationRequest` instances where `intent` is set to `order`:
 
 - The status refers to the status of the prescription issue.
+- Where the plan has been discontinued then the status should not be updated to `stopped`
 
 ### intent ###
 
