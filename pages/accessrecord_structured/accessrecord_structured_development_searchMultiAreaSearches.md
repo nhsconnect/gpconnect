@@ -104,17 +104,18 @@ The clinical risk here is that a user of the consumer system may believe they ha
 
 In order to mitigate this risk and emphasise the separation of data in the different parts of certain queries, we have introduced rules around which filters can be used at the same time. For example, problem filters and medication date filters can't be used while requesting consultations. This will prevent data with these sorts of gaps being returned in a single bundle.
 
-The technical details of these rules are detailed in the 'Not permitted parameter combinations' section of the [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html) page.
+The technical details of these rules are detailed in the [Not permitted parameter combinations](accessrecord_structured_development_retrieve_patient_record.html#not-permitted-parameter-combinations) section of the [Retrieve a patient's structured record](accessrecord_structured_development_retrieve_patient_record.html) page.
 
 This data can still be requested with the same restrictions by using two calls and how this is done is detailed in the [Search examples](accessrecord_structured_development_searchExamples.html) page.
 
-The search example above is shown as example number 2 on that page.
+The search example above is shown as example number 2 - [Request medications for the last year, allergies and problems](accessrecord_structured_development_searchexamples#2-request-medications-for-the-last-year-allergies-and-problems).
 
 ## Predefined multi area searches for common use cases
 
 In order to help consuming systems manage the risk of multiple area searches and to help providers by minimising calls to the API and the volume of data returned we have decided to introduce some predefined searches.
 
-These searches are exceptions to the rules that we have imposed on search parameters and will use combinations of filters that are not available to consumers when building their own searches. These have been created to reduce the burden on suppliers from an API and volume of data perspective while also giving us the opportunity to highlight the clinical risks that are present when these queries are used.
+These searches are exceptions to the rules that we have imposed on search parameters and will use combinations of filters that are not available to consumers when building their own searches, see [Not permitted parameter combinations](accessrecord_structured_development_retrieve_patient_record.html#not-permitted-parameter-combinations) for the full list.
+These have been created to reduce the burden on suppliers from an API and volume of data perspective while also giving us the opportunity to highlight the clinical risks that are present when these queries are used.
 
 Here we provide the code needed make these requests so consuming systems can pick up and use efficient queries that will pull back a set of data that they are likely to need in one call. We also highlight to them the precise risks involved in the queries and offer advice to help them mitigate these risks.
 
