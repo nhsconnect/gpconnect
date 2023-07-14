@@ -7,7 +7,7 @@ permalink: accessrecord_structured_development_migrate_patient_record.html
 summary: "Migrate a patient's record in structured format"
 ---
 
-{% include important.html content="This migrate a patient's structured record interaction **MAY** be implemented by incumbent GP system suppliers and it **MUST** be implemented by New Market Entrants." %}
+{% include important.html content="This migrate a patient's structured record interaction **MAY** be implemented by existing suppliers on the GP IT Futures framework and it **MUST** be implemented by New Market Entrants." %}
 
 ## Use case ##
 
