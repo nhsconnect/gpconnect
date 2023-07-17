@@ -22,11 +22,11 @@ We assume an understanding of FHIR REST and search features. For further informa
 
 Provider systems **SHALL** support the following search parameters:
 
-| Name | Type | Description | Paths |
-|---|---|---|---|
-| `created` | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created` |
-| `author` | `token` | Who and/or what authored the document. | `DocumentReference.author` |
-| `description` | `string` | Keyword based search | `DocumentReference.description` + `DocumentReference.type` |
+| Name          | Type                 | Description                             | Paths                                                      |
+| ----          | ----                 | -----------                             | -----                                                      |
+| `created`     | `date` or `dateTime` | Creation/Edit datetime of the document. | `DocumentReference.created`                                |
+| `author`      | `token`              | Who and/or what authored the document.  | `DocumentReference.author`                                 |
+| `description` | `string`             | Keyword based search                    | `DocumentReference.description` + `DocumentReference.type` |
 
 {% include note.html content="The supported search parameters **MUST** be included in the Access Document [FHIR capability statement](access_documents_use_case_get_the_fhir_capability_statement.html)." %}
 {% include important.html content="GP Connect does not support searching for documents based on a practitioner author. The `author` search parameter **MUST** only be used to search by an organisation author using an ODS code" %}
@@ -36,13 +36,13 @@ Provider systems **SHALL** support the following search parameters:
 
 Provider systems **SHALL** support the following include parameters:
 
-| Name | Description | Paths |
-|---|---|---|
-| `_include= DocumentReference:subject:Patient` | Include `Patient` resources referenced within the returned `DocumentReference` resources | `DocumentReference.subject` |
+| Name                                                 | Description                                                                                                     | Paths                                   |
+| ----                                                 | -----------                                                                                                     | -----                                   |
+| `_include= DocumentReference:subject:Patient`        | Include `Patient` resources referenced within the returned `DocumentReference` resources                        | `DocumentReference.subject`             |
 | `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |
-| `_include= DocumentReference:author:Organization` | Details of organisations that authored the documents that are returned in DocumentReference resources |
-| `_include= DocumentReference:author:Practitioner` | Details of who/what authored the documents that are returned in DocumentReference resources |
-| `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources | `DocumentReference.author:Practitioner` |
+| `_include= DocumentReference:author:Organization`    | Details of organisations that authored the documents that are returned in DocumentReference resources           |
+| `_include= DocumentReference:author:Practitioner`    | Details of who/what authored the documents that are returned in DocumentReference resources                     |
+| `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources                          | `DocumentReference.author:Practitioner` |
 
 Consumer systems **MUST** send the following parameters to reduce the number of API calls:
 
@@ -59,6 +59,7 @@ Consumer systems **MAY** send the following parameters in the request:
 - `description`
 
 When using the 'created' parameter, consumers **MUST** do the following
+
 - to search for a lower boundary of a date:
   - a single `created` parameter with a date prefixed by `ge` should be supplied
 - to search for a upper boundary of a date:
@@ -115,12 +116,12 @@ GET https://[proxy_server]/https://[documents_provider_server]/[documents_fhir_b
 
 Consumers **MUST** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's Trace ID (a GUID or UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1`|
+| Header              | Value                                                                             |
+| ------              | -----                                                                             |
+| `Ssp-TraceID`       | Consumer's Trace ID (a GUID or UUID)                                              |
+| `Ssp-From`          | Consumer's ASID                                                                   |
+| `Ssp-To`            | Provider's ASID                                                                   |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1` |
 
 Example HTTP request headers:
 
@@ -145,20 +146,18 @@ The table below shown common errors that may be encountered during this API call
 
 Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-|-------------------------|-------------------|
-| Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
-| A patient could not be found with the patient id provided | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified' | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The request is for a sensitive patient | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The patient has dissented to sharing their clinical record | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The author query parameter contains an identifier other than an ODS code | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The request does not contain the mandatory _include parameters | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-|-------------------------|-------------------|
+| Error encountered                                                                                                                             | Spine error code returned                                                                        |
+| -----------------                                                                                                                             | -------------------------                                                                        |
+| A patient could not be found with the patient id provided                                                                                     | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The request is for the record of an [inactive](overview_glossary.html#active-patient) or deceased patient                                     | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The request is for the record of a non-Regular/GMS patient (i.e. the patient’s registered practice is somewhere else)                         | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The patient's NHS number in the provider system is not associated with a NHS number status indicator code of 'Number present and verified'    | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The request is for a sensitive patient                                                                                                        | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| The patient has dissented to sharing their clinical record                                                                                    | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
+| The author query parameter contains an identifier other than an ODS code                                                                      | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The request does not contain the mandatory _include parameters                                                                                | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                     | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
 
 ### Request response ###
 
