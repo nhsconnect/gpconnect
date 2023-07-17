@@ -17,7 +17,6 @@ The headings below list the elements of the Specimen resource and describe how t
 
 ## Specimen resource elements ##
 
-
 ### id ###
 
 <table class='resource-attributes'>
@@ -58,7 +57,6 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
-
 ### accessionIdentifier ###
 
 <table class='resource-attributes'>
@@ -96,9 +94,11 @@ The availability of the specimen.
 The kind of material that forms the specimen.
 
 Examples from substance in SNOMED:
-87612001 | Blood (substance) |
-53130003 | Venous blood (substance) |
 
+| Code     | Display                  |
+| ----     | -------                  |
+| 87612001 | Blood (substance)        |
+| 53130003 | Venous blood (substance) |
 
 ### subject ###
 
@@ -310,7 +310,6 @@ The following elements **MUST NOT** be populated:
   </tr>
 </table>
 
-
 ### container.capacity ###
 
 <table class='resource-attributes'>
@@ -326,7 +325,6 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
 
 ### container.additive[x] ###
 
