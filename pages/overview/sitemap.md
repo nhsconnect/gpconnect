@@ -34,6 +34,7 @@ toc: false
         <p><a href="overview_engage.html">Getting started</a></p>
         <p><a href="overview_priority_capabilities.html">Capabilities</a></p>
         <p style="padding-top:8px">Release notes</p>
+        <p><a href="overview_release_notes_1_6_2.html">1.6.2</a></p>
         <p><a href="overview_release_notes_1_6_1.html">1.6.1</a></p>
         <p><a href="overview_release_notes_1_6_0.html">1.6.0</a></p>
         <p><a href="overview_release_notes_1_5_0.html">1.5.0</a></p>
