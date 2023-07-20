@@ -7,8 +7,6 @@ permalink: accessrecord_structured_development_fhir_examples_referrals.html
 summary: "Access Record Structured FHIR examples"
 ---
 
-
-
 The following is a set of request/response examples for ReferralRequest:
 
 <ul id="profileTabs" class="nav nav-tabs">
@@ -38,7 +36,6 @@ The following is a set of request/response examples for ReferralRequest:
 
 {% include accessrecord_structured/referrals_response1.json %}
 
-
 </div>
 <!--
 <div role="tabpanel" class="tab-pane" id="example2">
@@ -61,7 +58,6 @@ The following is a set of request/response examples for ReferralRequest:
 
 {% include accessrecord_structured/immunizations_response2.json %}
 
-
 </div>
 
 <div role="tabpanel" class="tab-pane" id="example3">
@@ -83,7 +79,6 @@ The following is a set of request/response examples for ReferralRequest:
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 {% include accessrecord_structured/immunizations_response3.json %}
-
 
 </div> -->
 </div>
