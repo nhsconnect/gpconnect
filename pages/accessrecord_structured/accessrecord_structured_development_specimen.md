@@ -148,7 +148,10 @@ Details of when/how the specimen was collected.
 
 Whether or how long patient abstained from food and/or drink.
 
-Where this is indicated in the incoming EDIFACT report it will be indicated with an 'F'. When this is the case, the coding element **MUST** be populated as a CodeableConcept with the values for the 'F' code from the [relevantClincialInformation ValueSet](https://terminology.hl7.org/5.1.0/ValueSet-v2-0916.html).
+Where this is indicated in the incoming EDIFACT report it will be indicated with an 'F'. In this scenario:
+
+- This **MUST** be used to populate the coding.text element
+- This **SHOULD** be used to populate the coding element with values for the 'F' code from the [relevantClincialInformation ValueSet](https://terminology.hl7.org/ValueSet-v2-0916.html)
 
 ### collection.collector ###
 
