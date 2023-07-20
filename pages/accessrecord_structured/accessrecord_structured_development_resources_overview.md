@@ -78,7 +78,6 @@ The following common identifier systems are used when populating `Identifier.sys
 | SDS role profile ID                    | `https://fhir.nhs.uk/Id/sds-role-profile-id`            |
 | General Medical Council (GMC) number   | `https://fhir.hl7.org.uk/Id/gmc-number`                 |
 | General Practitioner (GMP) number      | `https://fhir.hl7.org.uk/Id/gmp-number`                 |
-| Cross care setting identifier          | `https://fhir.nhs.uk/Id/cross-care-setting-identifier`  |
 | EPS prescription order item identifier | `https://fhir.nhs.uk/Id/prescription-order-item-number` |
 | EPS short form prescription identifier | `https://fhir.nhs.uk/Id/prescription-order-number`      |
 
