@@ -69,7 +69,7 @@
             "value":"B154D1A3-D631-49BD-8B67-2F76D7D85865"
           },
           {
-            "system":"https://fhir.nhs.uk/Id/ubr-number",
+            "system":"https://fhir.nhs.uk/Id/UBRN",
             "value":"bb2378b6-dde2-11e9-9d36-2a2ae2dbcce4"
           }
         ],
@@ -123,7 +123,7 @@
             "value":"B154D1A3-D631-49BD-8B67-2F76D7D85865"
           },
           {
-            "system":"https://fhir.nhs.uk/Id/ubr-number",
+            "system":"https://fhir.nhs.uk/Id/UBRN",
             "value":"bb2378b6-dde2-11e9-9d36-2a2ae2dbcce4"
           }
         ],
