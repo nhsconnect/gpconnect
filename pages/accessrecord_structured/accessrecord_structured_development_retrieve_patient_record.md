@@ -461,7 +461,7 @@ The example below shows a fully populated `Parameters` resource as a request to 
 
 ##### Not permitted parameter combinations #####
 
-Certain combinations of query parameters have the potential to introduce clinical risks. To prevent these scenarios occurring, the following combinations of parameters are not permitted and **SHALL** not be used by consumers:
+Certain combinations of query parameters have the potential to introduce clinical risks. To prevent these scenarios occurring, the following combinations of parameters are not permitted and **SHALL** not be used by consumers with the exception of the predefined searches listed as [Predefined multi area searches for common use cases](accessrecord_structured_development_searchmultiareasearches#predefined-multi-area-searches-for-common-use-cases):
 
 When requesting consultations, the following part parameters **MUST NOT** be included:
 
