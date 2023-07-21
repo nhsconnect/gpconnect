@@ -281,7 +281,7 @@
       "id": "eba25af1-5b74-4790-aa5a-2134fd27ad45",
       "identifier": [
         {
-          "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+          "system": "https://provider.nhs.uk/data-identifier",
           "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
         }
       ],
@@ -320,7 +320,7 @@
       "id": "eba25af1-5b74-4790-aa5a-2134fd57ad45",
       "identifier": [
         {
-          "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+          "system": "https://provider.nhs.uk/data-identifier",
           "value": "urn:uuid:eba25af1-5b74-4790-aa5a-2134fd27ad75"
         }
       ],

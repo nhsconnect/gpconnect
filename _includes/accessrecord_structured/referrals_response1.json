@@ -65,7 +65,7 @@
         },
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "system": "https://provider.nhs.uk/data-identifier",
             "value": "B154D1A3-D631-49BD-8B67-2F76D7D85865"
           },
           {
@@ -119,7 +119,7 @@
         },
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "system": "https://provider.nhs.uk/data-identifier",
             "value": "B154D1A3-D631-49BD-8B67-2F76D7D85865"
           },
           {

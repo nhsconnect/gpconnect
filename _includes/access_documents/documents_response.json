@@ -114,7 +114,7 @@
         },
         "identifier": [
           {
-            "system": "https://fhir.nhs.uk/Id/cross-care-setting-identifier",
+            "system": "https://provider.nhs.uk/data-identifier",
             "value": "bb237762-dde2-11e9-9d36-2a2ae2dbcce4"
           }
         ],
