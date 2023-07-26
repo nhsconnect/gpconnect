@@ -69,17 +69,18 @@ The following common code systems are used when populating `CodeableConcept.codi
 
 The following common identifier systems are used when populating `Identifier.system` in resources for this capability:
 
-| Name                                 | Identifier system                                      |
-| ----                                 | -----------------                                      |
-| NHS number                           | `https://fhir.nhs.uk/Id/nhs-number`                    |
-| ODS organisation code                | `https://fhir.nhs.uk/Id/ods-organization-code`         |
-| ODS site code                        | `https://fhir.nhs.uk/Id/ods-site-code`                 |
-| SDS user ID                          | `https://fhir.nhs.uk/Id/sds-user-id`                   |
-| SDS role profile ID                  | `https://fhir.nhs.uk/Id/sds-role-profile-id`           |
-| General Medical Council (GMC) number | `https://fhir.hl7.org.uk/Id/gmc-number`                |
-| General Practitioner (GMP) number    | `https://fhir.hl7.org.uk/Id/gmp-number`                |
-| Cross care setting identifier        | `https://fhir.nhs.uk/Id/cross-care-setting-identifier` |
-| EPS Line item identifier             | `https://fhir.nhs.uk/Id/eps-line-item-identifier`      |
+| Name                                                             | Identifier system                                       |
+| ----                                                             | -----------------                                       |
+| NHS number                                                       | `https://fhir.nhs.uk/Id/nhs-number`                     |
+| ODS organisation code                                            | `https://fhir.nhs.uk/Id/ods-organization-code`          |
+| ODS site code                                                    | `https://fhir.nhs.uk/Id/ods-site-code`                  |
+| SDS user ID                                                      | `https://fhir.nhs.uk/Id/sds-user-id`                    |
+| SDS role profile ID                                              | `https://fhir.nhs.uk/Id/sds-role-profile-id`            |
+| General Medical Council (GMC) number                             | `https://fhir.hl7.org.uk/Id/gmc-number`                 |
+| General Practitioner (GMP) number                                | `https://fhir.hl7.org.uk/Id/gmp-number`                 |
+| EPS prescription order item identifier                           | `https://fhir.nhs.uk/Id/prescription-order-item-number` |
+| EPS short form prescription identifier                           | `https://fhir.nhs.uk/Id/prescription-order-number`      |
+| e-Referral Service (e-RS) Unique Booking Reference Number (UBRN) | `https://fhir.nhs.uk/Id/UBRN`                           |
 
 The following profiled <span class="stu3">STU3</span> FHIR&reg; resources are used in this capability pack:
 
