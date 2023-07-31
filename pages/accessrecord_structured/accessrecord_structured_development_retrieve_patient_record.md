@@ -585,25 +585,21 @@ There are scenarios where requested clinical areas may not be returned, these ar
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeAllergies` parameter is not set:
+When the `includeAllergies` parameter is not set:
 
-  - no allergy or intolerance information shall be returned
+- no allergy or intolerance information shall be returned
 
-- when the `includeAllergies` parameter is set:
+When the `includeAllergies` parameter is set:
 
-  - and when the `includeResolvedAllergies` parameter is set to `false`:
-
-    - A [`List`](accessrecord_structured_development_list.html) resource referencing [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources that match the supplied query parameters
-    - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
-    - [`Condition`](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
-
+- and when the `includeResolvedAllergies` parameter is set to `false`:
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources that match the supplied query parameters
+  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
+  - [`Condition`](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>excluding</i> those marked as resolved or ended
   - and when the `includeResolvedAllergies` parameter is set to `true`:
-
     - A [`List`](accessrecord_structured_development_list.html) resource referencing [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources that match the supplied query parameters
     - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
     - [`Condition`](accessrecord_structured_problems.html) and [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances, <i>including</i> those marked as resolved or ended
-
-- `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
+    - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources
 
 <br/>
 
@@ -611,33 +607,27 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeMedication` parameter is not set:
+When the `includeMedication` parameter is not set:
 
-  - no medication information shall be returned
+- no medication information shall be returned
 
-- when the `includeMedication` parameter is set:
+When the `includeMedication` parameter is set:
 
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) resources that match the supplied query parameters
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) resources
-  - [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
-
-  - when the `medicationSearchFromDate` parameter is set:
-    - all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
-      - A medication is considered active between its `effective.start` and `effective.end` (inclusive)
-        - when a medication **does not** have an `effective.end`:
-          - an acute medication is considered active on its `effective.start` only
-          - a repeat medication is considered on-going and is active from its `effective.start`
-          - when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
-  - all medications that are prescribed elsewhere will be returned regardless of the `medicationSearchFromDate`
-
-  - and when the `includePrescriptionIssues` parameter is set to `false`:
-
-    - no prescription issue information should be returned
-
-  - and when the `includePrescriptionIssues` parameter is set to `true` or not included:
-
-    - [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources with an `intent` of `order` representing the patient's prescription issues, for the above medication summary data
-
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) resources that match the supplied query parameters
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) resources
+- [`Condition`](accessrecord_structured_problems.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) with an `intent` of `plan` and &nbsp; [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication summary information (authorisations and medication prescribed elsewhere)
+- when the `medicationSearchFromDate` parameter is set:
+- all medications which are active on or after the `medicationSearchFromDate` **MUST** be returned
+  - A medication is considered active between its `effective.start` and `effective.end` (inclusive)
+    - when a medication **does not** have an `effective.end`:
+      - an acute medication is considered active on its `effective.start` only
+      - a repeat medication is considered on-going and is active from its `effective.start`
+      - when a medication is not defined as an acute or repeat it **MUST** be treated as repeat
+- all medications that are prescribed elsewhere will be returned regardless of the `medicationSearchFromDate`
+- and when the `includePrescriptionIssues` parameter is set to `false`:
+- no prescription issue information should be returned
+- and when the `includePrescriptionIssues` parameter is set to `true` or not included:
+- [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources with an `intent` of `order` representing the patient's prescription issues, for the above medication summary data
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the &nbsp; [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html) and &nbsp; [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) resources
 
 <br/>
@@ -646,14 +636,14 @@ Provider systems **MUST** include the following in the response `Bundle`:
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeConsultations` parameter is not set:
+When the `includeConsultations` parameter is not set:
 
-  - no consultation information shall be returned
+- no consultation information shall be returned
 
-- when the `includeConsultations` parameter is set:
+When the `includeConsultations` parameter is set:
+
 - A [`List`](accessrecord_structured_development_list.html) resource for each clinical area referencing resources that have been returned
 - A [`List`](accessrecord_structured_development_list.html) resource for secondary lists referencing resources contained in requested problems and consultations
-
 - [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html), [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication
 - [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances
 - [`List`](accessrecord_structured_development_list.html), [`Condition`](accessrecord_structured_problems.html), [`Encounter`](accessrecord_structured_development_encounter.html), [`List - Consultation`](accessrecord_structured_development_list_consultation.html) and [`Observation - narrative`](accessrecord_structured_development_guidance_observation_narrative.html) resources representing the patient's consultations
@@ -666,31 +656,27 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - [`DocumentReference`]() resources representing the patient's documents.
   - and when the `numberOfMostRecent` parameter is set:
     - limit the number of returned consultations to match the included value
-
 - when the `consultationSearchPeriod` is set:
   - when a `start` value is set, all consultations with an `Encounter.period.start` after the date **MUST** be returned
   - and when an `end` value is set, all consultations with an `Encounter.period.end` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, consultations with an `Encounter.period.start` after the `start` and an `Encounter.period.end` before the `end` **MUST** be returned
-
 - when the `includeNumberOfMostRecent` is set:
   - consultations **MUST** be ordered by `Encounter.period.start` descending
   - and the number of most recent consultations matching the parameter value **MUST** be returned
-
 - `Organization`, `Practitioner`, `PractitionerRole` and `Location` resources that are referenced by the above resources that represent the consultation and its linked information
 
 ##### Problems #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeProblems` parameter is not set:
+When the `includeProblems` parameter is not set:
 
-  - no problem information shall be returned
+- no problem information shall be returned
 
-- when the `includeProblems` parameter is set:
+When the `includeProblems` parameter is set:
 
 - A [`List`](accessrecord_structured_development_list.html) resource for each clinical area referencing resources that have been returned
 - A [`List`](accessrecord_structured_development_list.html) resource for secondary lists referencing resources contained in requested problems and consultations
-
 - [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html), [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication
 - [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances
 - [`Encounter`](accessrecord_structured_development_encounter.html) resources representing the patient's consultations
@@ -701,129 +687,107 @@ Provider systems **MUST** include the following in the response `Bundle`:
 - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources representing the patient's referrals will be returned.
 - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources representing the patient's diary entries will be returned.
 - [`DocumentReference`]() resources representing the patient's documents.
-
 - and when the `filterStatus` parameter is set:
-
   - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
-
 - and when the `filterSignificance` parameter is set:
-
   - problems with a `problemSignificance` matching the parameter value and all linked clinical information
-
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the above resources that represent the problem and its linked information
 
 ##### Immunisations #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeImmunisations` parameter is not set:
+When the `includeImmunisations` parameter is not set:
 
-  - no immunisation information shall be returned
+- no immunisation information shall be returned
 
-- when the `includeImmunisations` parameter is set:
+When the `includeImmunisations` parameter is set:
 
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Immunization`](accessrecord_structured_development_immunization.html) resources that match the supplied query parameters
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`Immunization`](accessrecord_structured_development_immunization.html) resources
-  - [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations that have been given will be returned.
-
-  - and when the `includeNotGiven` part parameter is set to `false` or not supplied:
-
-    - only immunisations where `notGiven` is set to `false` shall be returned
-
-  - and when the `includeNotGiven` part parameter is set to `true`
-
-    - all immunisations where `notGiven` is set to `true` or `false` shall be returned
-
-  - and when the `includeStatus` part parameter is set to `false`:
-
-    - only immunisations will be returned
-
-  - and when the `includeStatus` part parameter is set to `true` or not supplied:
-
-    - [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the status of patient's immunisations will also be returned.
-
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Immunization`](accessrecord_structured_development_immunization.html) resources that match the supplied query parameters
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`Immunization`](accessrecord_structured_development_immunization.html) resources
+- [`Condition`](accessrecord_structured_problems.html) and [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations that have been given will be returned.
+- and when the `includeNotGiven` part parameter is set to `false` or not supplied:
+  - only immunisations where `notGiven` is set to `false` shall be returned
+- and when the `includeNotGiven` part parameter is set to `true`
+  - all immunisations where `notGiven` is set to `true` or `false` shall be returned
+- and when the `includeStatus` part parameter is set to `false`:
+  - only immunisations will be returned
+- and when the `includeStatus` part parameter is set to `true` or not supplied:
+  - [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the status of patient's immunisations will also be returned.
 - `Organization`, `Practitioner`, `PractitionerRole` and `Location` resources that are referenced by the above resources that represent the immunization and its linked information
 
 ##### Uncategorised data #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeUncategorisedData` parameter is not set:
+When the `includeUncategorisedData` parameter is not set:
 
-  - no uncategorised data shall be returned
+- no uncategorised data shall be returned
 
-- when the `includeUncategorisedData` parameter is set:
+When the `includeUncategorisedData` parameter is set:
 
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources that match the supplied query parameters
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources
-  - [`Condition`](accessrecord_structured_problems.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Observation - blood pressure`](accessrecord_structured_development_observation_bloodpressure) resources representing the patient's uncategorised data will be returned.
-
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources that match the supplied query parameters
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources
+- [`Condition`](accessrecord_structured_problems.html), [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Observation - blood pressure`](accessrecord_structured_development_observation_bloodpressure) resources representing the patient's uncategorised data will be returned.
 - when the `uncategorisedDataSearchPeriod` is set:
   - when a `start` value is set, all uncategorised data with an `Observation.effectiveTime` after the date **MUST** be returned
   - and when an `end` value is set, all uncategorised data with an `Observation.effectiveTime` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, uncategorised data with an `Observation.effectiveTime` after the `start` and with an `Observation.effectiveTime` before the `end` **MUST** be returned
-
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the above resources that represent the uncategorised data and its linked information
 
 ##### Investigations #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeInvestigations` parameter is not set:
+When the `includeInvestigations` parameter is not set:
 
-  - no investigations shall be returned
+- no investigations shall be returned
 
-- when the `includeInvestigations` parameter is set:
+When the `includeInvestigations` parameter is set:
 
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) resources that match the supplied query parameters
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) resources
-  - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html) and &nbsp; [`Condition`](accessrecord_structured_problems.html) resources representing the patient's test results
-
-  - and when the `investigationSearchPeriod` parameter is set:
-    - when a `start` value is set, all investigations with a `DiagnosticReport.issued` after the date **MUST** be returned
-    - and when an `end` value is set, all investigations with a `DiagnosticReport.issued` before the date **MUST** be returned
-    - and when both a `start` and `end` are specified, investigations with a `DiagnosticReport.issued` after the `start` and before the `end` **MUST** be returned
-
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) resources that match the supplied query parameters
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) resources
+- [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html) and &nbsp; [`Condition`](accessrecord_structured_problems.html) resources representing the patient's test results
+- and when the `investigationSearchPeriod` parameter is set:
+  - when a `start` value is set, all investigations with a `DiagnosticReport.issued` after the date **MUST** be returned
+  - and when an `end` value is set, all investigations with a `DiagnosticReport.issued` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, investigations with a `DiagnosticReport.issued` after the `start` and before the `end` **MUST** be returned
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the above resources that represent the uncategorised data and its linked information
 
 ##### Referrals #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeReferrals` parameter is not set:
+When the `includeReferrals` parameter is not set:
 
-  - no referrals information shall be returned
+- no referrals information shall be returned
 
-- when the `includeReferrals` parameter is set:
+When the `includeReferrals` parameter is set:
 
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources that match the supplied query parameters
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources
-  - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html), [`Condition`](accessrecord_structured_problems.html) and [`DocumentReference`]() resources representing the patient's referrals will be returned.
-
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources that match the supplied query parameters
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources
+- [`ReferralRequest`](accessrecord_structured_development_referralrequest.html), [`Condition`](accessrecord_structured_problems.html) and [`DocumentReference`]() resources representing the patient's referrals will be returned.
 - when the `referralSearchPeriod` is set:
   - when a `start` value is set, all referrals with a `ReferralRequest.authoredOn` after the date **MUST** be returned
   - and when an `end` value is set, all referrals with a `ReferralRequest.authoredOn` before the date **MUST** be returned
   - and when both a `start` and `end` are specified, referrals with a `ReferralRequest.authoredOn` after the `start` and with a `ReferralRequest.authoredOn` before the `end` **MUST** be returned
-
 - `Organization`, `Practitioner`, `PractitionerRole` and `HealthcareService` resources that are referenced by the above resources that represent the referral and its linked information
 
 ##### Diary entries #####
 
 Provider systems **MUST** include the following in the response `Bundle`:
 
-- when the `includeDiaryEntries` parameter is not set:
+When the `includeDiaryEntries` parameter is not set:
 
-  - no diary entries shall be returned
+- no diary entries shall be returned
 
-- when the `includeDiaryEntries` parameter is set:
+When the `includeDiaryEntries` parameter is set:
 
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources that match the supplied query parameters
-  - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources
-  - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's diary entries will be returned.
-
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources that match the supplied query parameters
+- A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources
+- [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) and [`Condition`](accessrecord_structured_problems.html) resources representing the patient's diary entries will be returned.
 - when the `diaryEntriesSearchDate` parameter is set:
   - all diary entries that occur on or before the `diaryEntriesSearchDate` **MUST** be returned
-
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the above resources that represent the diary entry and its linked information
 
 #### Unknown and partial date handling in searches ####
