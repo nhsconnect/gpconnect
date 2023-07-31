@@ -103,7 +103,7 @@ Warning codes are used to manage negation where resources are present in a syste
 
 Warning codes will be returned in the primary and secondary lists defined on this page when any item that would have been included in that list as a response to the query is not present due to one of the defined reasons. In the case where an item may have been present in more than one list, e.g. medications and medications related to problems, the warning code will be present in both lists. Any warning codes returned will be contained in the extension List.extension[warningCode].
 
-Warning codes will **NOT** be returned in any of the lists used to represent consultations structure that are defined in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
+Warning codes will **NOT** be returned in any of the lists used to represent consultations structure that are defined in the page [List - consultation structure'](accessrecord_structured_development_list_consultation.html).
 
 Where a warning code is returned related to an item from a given clinical area, for example referrals, if the referrals capability is turned off then the warning code **MUST** still be returned if the list that it would have been present in is still contained in the response. This applies to all clinical areas.
 
