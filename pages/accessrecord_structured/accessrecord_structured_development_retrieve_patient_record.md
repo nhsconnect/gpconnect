@@ -650,7 +650,7 @@ When the `includeConsultations` parameter is set:
 - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html) resources representing the patient's test results
 - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources representing the patient's referrals will be returned.
 - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources representing the patient's diary entries will be returned.
-- [`DocumentReference`]() resources representing the patient's documents.
+- [`DocumentReference`](access_documents_development_documentreference.html) resources representing the patient's documents.
 - and when the `numberOfMostRecent` parameter is set:
   - limit the number of returned consultations to match the included value
 - and when the `consultationSearchPeriod` parameter is set:
@@ -682,7 +682,7 @@ When the `includeProblems` parameter is set:
 - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html) resources representing the patient's test results
 - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources representing the patient's referrals will be returned.
 - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources representing the patient's diary entries will be returned.
-- [`DocumentReference`]() resources representing the patient's documents.
+- [`DocumentReference`](access_documents_development_documentreference.html) resources representing the patient's documents.
 - and when the `filterStatus` parameter is set:
   - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
 - and when the `filterSignificance` parameter is set:
@@ -758,7 +758,7 @@ When the `includeReferrals` parameter is set:
 
 - A [`List`](accessrecord_structured_development_list.html) resource referencing [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources that match the supplied query parameters
 - A [`List`](accessrecord_structured_development_list.html) resource referencing [`Condition`](accessrecord_structured_problems.html) resources that are linked from the returned [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources
-- [`ReferralRequest`](accessrecord_structured_development_referralrequest.html), [`Condition`](accessrecord_structured_problems.html) and [`DocumentReference`]() resources representing the patient's referrals will be returned.
+- [`ReferralRequest`](accessrecord_structured_development_referralrequest.html), [`Condition`](accessrecord_structured_problems.html) and [`DocumentReference`](access_documents_development_documentreference.html) resources representing the patient's referrals will be returned.
 - and when the `referralSearchPeriod` parameter is set:
   - when a `start` value is set, all referrals with a `ReferralRequest.authoredOn` after the date **MUST** be returned
   - and when an `end` value is set, all referrals with a `ReferralRequest.authoredOn` before the date **MUST** be returned

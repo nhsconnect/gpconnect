@@ -230,10 +230,10 @@ Provider systems **MUST** include the following in the response `Bundle`:
   - [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems
   - [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations
   - [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resources representing the patient's uncategorised data
-  - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html), [`DocumentReference`]() resources representing the patient's test results
+  - [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html), [`DocumentReference`](access_documents_development_documentreference.html) resources representing the patient's test results
   - [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources representing the patient's referrals will be returned.
   - [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources representing the patient's diary entries will be returned.
-  - [`DocumentReference`]() resources representing the patient's documents.
+  - [`DocumentReference`](access_documents_development_documentreference.html) resources representing the patient's documents.
 - and when the `includeSensitiveInformation` parameter is set to `false`:
   - only non confidential information will be returned
 - and when the `includeSensitiveInformation` parameter is set to `true`:
