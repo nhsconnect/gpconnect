@@ -641,7 +641,6 @@ When the `includeConsultations` parameter is set:
 
 - A [`List`](accessrecord_structured_development_list.html) resource for referencing [`Encounter`](accessrecord_structured_development_encounter.html) resources that match the supplied query parameters
 - A [`List`](accessrecord_structured_development_list.html) resource of [secondary lists](accessrecord_structured_development_lists_for_message_structure.html#secondary-lists-in-the-query-response) referencing resources that are linked from the returned [`Encounter`](accessrecord_structured_development_encounter.html) resources
-
 - For each [`Encounter`](accessrecord_structured_development_encounter.html) referenced in the [`List`](accessrecord_structured_development_list.html) resource:
   - The [`Encounter`](accessrecord_structured_development_encounter.html) resource of the Consultation
   - The [`List`](accessrecord_structured_development_list.html) resources that describe the structure of the Consultation
@@ -662,18 +661,18 @@ When the `includeConsultations` parameter is set:
     - Only include the document metadata in any returned [`DocumentReference`](access_documents_development_documentreference.html) resource, do not include the binary file
     - In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
     - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Documents
-  - The [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), `Observation`, [`Specimen`](accessrecord_structured_development_specimen.html) and `[`DocumentReference`](access_documents_development_documentreference.html)` resources of any linked Investigations
-    - Only include the document metadata in any returned `[`DocumentReference`](access_documents_development_documentreference.html)` resource, do not include the binary file.
+  - The [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), `Observation`, [`Specimen`](accessrecord_structured_development_specimen.html) and [`DocumentReference`](access_documents_development_documentreference.html) resources of any linked Investigations
+    - Only include the document metadata in any returned [`DocumentReference`](access_documents_development_documentreference.html) resource, do not include the binary file.
     - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Investigation
   - The [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) resource of any linked Diary Entries
     - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Diary Entries
-  - and when the `consultationSearchPeriod` parameter is set:
-    - when a `start` value is set, all consultations with an `Encounter.period.start` after the date **MUST** be returned
-    - and when an `end` value is set, all consultations with an `Encounter.period.end` before the date **MUST** be returned
-    - and when both a `start` and `end` are specified, consultations with an `Encounter.period.start` after the `start` and an `Encounter.period.end` before the `end` **MUST** be returned
-  - and when the `includeNumberOfMostRecent` parameter is set:
-    - consultations **MUST** be ordered by `Encounter.period.start` descending
-  - and the number of most recent consultations matching the parameter value **MUST** be returned
+- and when the `consultationSearchPeriod` parameter is set:
+  - when a `start` value is set, all consultations with an `Encounter.period.start` after the date **MUST** be returned
+  - and when an `end` value is set, all consultations with an `Encounter.period.end` before the date **MUST** be returned
+  - and when both a `start` and `end` are specified, consultations with an `Encounter.period.start` after the `start` and an `Encounter.period.end` before the `end` **MUST** be returned
+- and when the `includeNumberOfMostRecent` parameter is set:
+  - consultations **MUST** be ordered by `Encounter.period.start` descending
+- and the number of most recent consultations matching the parameter value **MUST** be returned
 - `Organization`, `Practitioner`, `PractitionerRole` and `Location` resources that are referenced by the above resources that represent the consultation and its linked information
 
 ##### Problems #####
@@ -685,18 +684,34 @@ When the `includeProblems` parameter is not set:
 
 When the `includeProblems` parameter is set:
 
-- A [`List`](accessrecord_structured_development_list.html) resource for each clinical area referencing resources that have been returned
-- A [`List`](accessrecord_structured_development_list.html) resource for secondary lists referencing resources contained in requested problems and consultations
-- [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html), [`Medication`](accessrecord_structured_development_medication.html) resources representing the patient's medication
-- [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resources representing the patient's allergies and intolerances
-- [`Encounter`](accessrecord_structured_development_encounter.html) resources representing the patient's consultations
-- [`Condition`](accessrecord_structured_problems.html) resources representing the patient's problems
-- [`Immunization`](accessrecord_structured_development_immunization.html) resources representing the patient's immunisations
-- [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) and [`Observation - blood pressure`](accessrecord_structured_development_observation_bloodpressure) resources representing the patient's uncategorised data
-- [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`Observation - Test Group Header`](accessrecord_structured_development_observation_testGroup.html), [`Observation - Test Result`](accessrecord_structured_development_observation_testResult.html), [`Observation - Filing Comments`](accessrecord_structured_development_observation_filingComments.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), [`Specimen`](accessrecord_structured_development_specimen.html) resources representing the patient's test results
-- [`ReferralRequest`](accessrecord_structured_development_referralrequest.html) resources representing the patient's referrals will be returned.
-- [`ProcedureRequest`](accessrecord_structured_development_diaryentry.html) resources representing the patient's diary entries will be returned.
-- [`DocumentReference`](access_documents_development_documentreference.html) resources representing the patient's documents.
+- A [`List`](accessrecord_structured_development_list.html) resource containing references to [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) for every Problem that met the search criteria
+- A [`List`](accessrecord_structured_development_list.html) resource containing references to [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) for every Problem not meeting the search criteria but directly linked to a Problem which does meet the search criteria
+- A [`List`](accessrecord_structured_development_list.html) resource of [secondary lists](accessrecord_structured_development_lists_for_message_structure.html#secondary-lists-in-the-query-response) referencing resources that are linked from the returned [`Encounter`](accessrecord_structured_development_encounter.html) resources
+- For each [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) referenced in the `List` resource:
+  - The [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of the Problem
+  - The [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resources of any directly linked Problems
+  - The [`Encounter`](accessrecord_structured_development_encounter.html) resources of any linked Consultations
+  - The [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html), [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), and [`Medication`](accessrecord_structured_development_medication.html) resources of any linked Medications or Medical Devices
+    - Always include the [`MedicationStatement`](accessrecord_structured_development_medicationstatement.html), [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) (intent = plan) and [`Medication`](accessrecord_structured_development_medication.html) resources
+    - Only include [`MedicationRequest`](accessrecord_structured_development_medicationrequest.html) (intent = order) for directly linked issues
+  - The [`AllergyIntolerance`](accessrecord_structured_development_allergyintolerance.html) resource of any linked Allergies
+    - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Allergies
+  - The [`Immunization`](accessrecord_structured_development_immunization.html) resource of any linked Immunisations
+    - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Immunisations
+  - The [`Observation - uncategorised`](accessrecord_structured_development_observation_uncategorisedData.html) resource of any linked Uncategorised Data
+    - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Uncategorised Data
+  - The `ReferralRequest` resource of any linked Referrals
+    - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Referrals
+  - The [`DocumentReference`](access_documents_development_documentreference.html) resource of any linked Documents
+    - Only include the document metadata in any returned [`DocumentReference`](access_documents_development_documentreference.html) resource, do not include the binary file.
+    - In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
+    - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Documents
+  - The [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html), [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html), `Observation`, [`Specimen`](accessrecord_structured_development_specimen.html) and [`DocumentReference`](access_documents_development_documentreference.html) resources of any linked Investigations
+    - Only include the document metadata in any returned [`DocumentReference`](access_documents_development_documentreference.html) resource, do not include the binary file.
+    - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Investigation
+    - Where an `Observation` that represents a test or test group header has been made the actual problem then the 'diagnosticReport' it is from **MUST** be linked to the problem in    the `relatedClinicalContent` extension.
+  - The [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) resource of any linked Diary Entries
+    - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Diary Entries
 - and when the `filterStatus` parameter is set:
   - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
 - and when the `filterSignificance` parameter is set:
