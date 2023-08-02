@@ -584,6 +584,7 @@ There are scenarios where requested clinical areas may not be returned, these ar
 ##### Allergies #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeAllergies` parameter is not set:
 
 - no allergy or intolerance information shall be returned
@@ -633,6 +634,7 @@ When the `includeMedication` parameter is set:
 ##### Consultations #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeConsultations` parameter is not set:
 
 - no consultation information shall be returned
@@ -678,6 +680,7 @@ When the `includeConsultations` parameter is set:
 ##### Problems #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeProblems` parameter is not set:
 
 - no problem information shall be returned
@@ -721,6 +724,7 @@ When the `includeProblems` parameter is set:
 ##### Immunisations #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeImmunisations` parameter is not set:
 
 - no immunisation information shall be returned
@@ -743,6 +747,7 @@ When the `includeImmunisations` parameter is set:
 ##### Uncategorised data #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeUncategorisedData` parameter is not set:
 
 - no uncategorised data shall be returned
@@ -761,6 +766,7 @@ When the `includeUncategorisedData` parameter is set:
 ##### Investigations #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeInvestigations` parameter is not set:
 
 - no investigations shall be returned
@@ -779,6 +785,7 @@ When the `includeInvestigations` parameter is set:
 ##### Referrals #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeReferrals` parameter is not set:
 
 - no referrals information shall be returned
@@ -797,6 +804,7 @@ When the `includeReferrals` parameter is set:
 ##### Diary entries #####
 
 Provider systems **MUST** include the following in the response `Bundle`.
+
 When the `includeDiaryEntries` parameter is not set:
 
 - no diary entries shall be returned
