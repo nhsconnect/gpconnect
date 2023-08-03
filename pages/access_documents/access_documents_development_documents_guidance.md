@@ -29,72 +29,19 @@ Standardise the search and retrieval of clinical documents from the GP practices
 
 ### Process steps
 
- <table width="80%" height="60%">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Title</th>
-            <th>Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1</td>
-            <td>Send document</td>
-            <td>Hospital sends document to the GP practice.</td>
-        </tr>
-      <tr>
-            <td>2</td>
-            <td>Document upload to clinical system</td>
-            <td>The document is manually or automatically uploaded to the clinical system of the GP practice.</td>
-        </tr>
-      <tr>
-            <td>3</td>
-            <td>Document matched to patient record</td>
-            <td>The clinical system matches the document to the patient record.</td>
-        </tr>
-      <tr>
-            <td>4</td>
-            <td>File document</td>
-            <td>Clinician views the document in their clinical system.</td>
-        </tr>
-      <tr>
-            <td>5</td>
-            <td>File document</td>
-            <td>Clinician reads or adds meta data information to the document.</td>
-        </tr>
-      <tr>
-            <td>6</td>
-            <td>File document</td>
-            <td>Clinician extracts read codes, adds read code or annotates the document.</td>
-        </tr>
-      <tr>
-            <td>7</td>
-            <td>File document</td>
-            <td>Clinician adds the document to a workflow.</td>
-        </tr>
-      <tr>
-            <td>8</td>
-            <td>Request document</td>
-            <td>Hospital request for a document of a patient from its registered GP practice.</td>
-        </tr>
-      <tr>
-            <td>9</td>
-            <td>Search document</td>
-            <td>Clinician in a GP practice searches for the document.</td>
-        </tr>
-     <tr>
-            <td>10</td>
-            <td>Send document</td>
-            <td>Clinician emails/faxes the document to the hospital. </td>
-        </tr>
-     <tr>
-            <td>11</td>
-            <td>View document</td>
-            <td>Hospital receives and views the requested document.</td>
-        </tr>
-    </tbody>
-</table>
+| Id | Title                              | Description                                                                                   |
+| -- | -----                              | -----------                                                                                   |
+| 1  | Send document                      | Hospital sends document to the GP practice.                                                   |
+| 2  | Document upload to clinical system | The document is manually or automatically uploaded to the clinical system of the GP practice. |
+| 3  | Document matched to patient record | The clinical system matches the document to the patient record.                               |
+| 4  | File document                      | Clinician views the document in their clinical system.                                        |
+| 5  | File document                      | Clinician reads or adds meta data information to the document.                                |
+| 6  | File document                      | Clinician extracts read codes, adds read code or annotates the document.                      |
+| 7  | File document                      | Clinician adds the document to a workflow.                                                    |
+| 8  | Request document                   | Hospital request for a document of a patient from its registered GP practice.                 |
+| 9  | Search document                    | Clinician in a GP practice searches for the document.                                         |
+| 10 | Send document                      | Clinician emails/faxes the document to the hospital.                                          |
+| 11 | View document                      | Hospital receives and views the requested document.                                           |
 
 ### Known issues ###
 
