@@ -89,14 +89,15 @@ If the 'Authoring Organisation' of the document is NOT the same as the custodian
 
 ## File size of the document ##
 
-End-users would like to know the size of the document before retrieving the document. Providers would return the file size of the document in the response payload for Search Document GP Connect API request.
+End-users would like to know the size of the document before retrieving the document. Providers return the size of the document in the response payload to the API requests that are made prior to retrieving a document. The information is contained in `content.attachment.size` on the [DocumentReference](access_documents_development_documentreference.html) resource. The API calls made prior to retrieving a document are:
 
-Documents **MUST NOT** be retrievable using the GP Connect API when they are over the following file size limits:
+* [Search for a patient's documents](access_documents_development_search_patient_documents.html) for standard document retrieval
+* [Migrate a patient's structured record](accessrecord_structured_development_migrate_patient_record.html) for patient migration
 
-* [Retrieve a document](access_documents_development_retrieve_patient_documents.html) - 5MB
-* [Migrate a document](access_documents_development_migrate_patient_documents.html) - 100MB
+When retrieving documents through the [Retrieve a document](access_documents_development_retrieve_patient_documents.html) API the document **MUST NOT** be larger than 5MB.
+If a document exceeds 5MB a placeholder should be returned specifying that the document hasn't been returned due to its file size. This is achieved by populating the `content.attachment.title` property of the [DocumentReference](access_documents_development_documentreference.html).
 
-Documents that are over 5mb **MUST NOT** be retrievable using the GP Connect API, instead a placeholder should be returned specifying that the document hasn't been returned due to its file size. More information about how this should be populated is available on the [DocumentReference page](access_documents_development_documentreference.html#contentattachmenttitle).
+There is no such limitation on the size of documents able to be retrieved through the [Migrate a patient's structured record](accessrecord_structured_development_migrate_patient_record.html) API.
 
 ## Multiple systems/providers being used in a GP practice to manage documents ##
 

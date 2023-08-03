@@ -58,7 +58,7 @@ This interaction allows confidential and sensitive documents to be retrieved. Th
 
 #### File size limit ####
 
-Documents up to 100MB can be retrieved using this interaction.
+There is no limit on the size of files able to be retrieved through this API. Files may exceed 100MB and in rare circumstances they maybe closer to 250MB. However, due to there being no imposed limit they may be larger than this.
 
 #### Request headers ####
 
