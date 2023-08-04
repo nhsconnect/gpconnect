@@ -21,14 +21,16 @@ The following API definitions are included in this capability:
 
 - [Search for a patient's documents](access_documents_development_search_patient_documents.html)
 - [Retrieve a document](access_documents_development_retrieve_patient_documents.html)
+- [Migrate a document](access_documents_development_migrate_patient_documents.html)
 
 ## Spine interactions ##
 
 The Access Document capability message set includes the following set of Spine interactions:
 
-| Operation                 | InteractionID             |
-|---------------------------|---------------------------|
-| [Read metadata (Access Document)](access_documents_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1` |
-| [Patient search (Access Document)](access_documents_use_case_find_a_patient.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1` |
-| [Search for documents](access_documents_development_search_patient_documents.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1` |
-| [Retrieve document](access_documents_development_retrieve_patient_documents.html)          | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |
+| Operation                                                                                           | InteractionID                                                                     |
+| ---------                                                                                           | -------------                                                                     |
+| [Read metadata (Access Document)](access_documents_use_case_get_the_fhir_capability_statement.html) | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:metadata-1`            |
+| [Patient search (Access Document)](access_documents_use_case_find_a_patient.html)                   | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:patient-1`           |
+| [Search for documents](access_documents_development_search_patient_documents.html)                  | `urn:nhs:names:services:gpconnect:documents:fhir:rest:search:documentreference-1` |
+| [Retrieve a document](access_documents_development_retrieve_patient_documents.html)                 | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1`              |
+| [Migrate a document](access_documents_development_migrate_patient_documents.html)                   | `urn:nhs:names:services:gpconnect:documents:fhir:rest:migrate:binary-1`           |
