@@ -92,12 +92,12 @@ If the 'Authoring Organisation' of the document is NOT the same as the custodian
 End-users would like to know the size of the document before retrieving the document. Providers return the size of the document in the response payload to the API requests that are made prior to retrieving a document. The information is contained in `content.attachment.size` on the [DocumentReference](access_documents_development_documentreference.html) resource. The API calls made prior to retrieving a document are:
 
 * [Search for a patient's documents](access_documents_development_search_patient_documents.html) for standard document retrieval
-* [Migrate a patient's structured record](accessrecord_structured_development_migrate_patient_record.html) for patient migration
+* [Migrate a patient's structured record](accessrecord_structured_development_migrate_patient_record.html) for patient migration document retrieval
 
 When retrieving documents through the [Retrieve a document](access_documents_development_retrieve_patient_documents.html) API the document **MUST NOT** be larger than 5MB.
 If a document exceeds 5MB a placeholder should be returned specifying that the document hasn't been returned due to its file size. This is achieved by populating the `content.attachment.title` property of the [DocumentReference](access_documents_development_documentreference.html).
 
-There is no such limitation on the size of documents able to be retrieved through the [Migrate a patient's structured record](accessrecord_structured_development_migrate_patient_record.html) API.
+There is no such limitation on the size of documents able to be retrieved through the [Migrate a document](access_documents_development_migrate_patient_documents.html) API.
 
 ## Multiple systems/providers being used in a GP practice to manage documents ##
 
