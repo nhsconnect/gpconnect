@@ -37,12 +37,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Practitioner?id
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1`|
+| Header              | Value                                                              |
+| ------              | -----                                                              |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                                |
+| `Ssp-From`          | Consumer's ASID                                                    |
+| `Ssp-To`            | Provider's ASID                                                    |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1` |
 
 #### Payload request body ####
 

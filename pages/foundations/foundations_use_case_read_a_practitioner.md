@@ -36,12 +36,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Practitioner/[i
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1`|
+| Header              | Value                                                            |
+| ------              | -----                                                            |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                              |
+| `Ssp-From`          | Consumer's ASID                                                  |
+| `Ssp-To`            | Provider's ASID                                                  |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:read:practitioner-1` |
 
 #### Payload request body ####
 
@@ -53,7 +53,7 @@ Provider systems **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.
 
 For example, the:
 
-- Logical identifier of the resource is not valid/can't be found on the server.  
+- Logical identifier of the resource is not valid/can't be found on the server.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -69,7 +69,6 @@ Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
 - **SHALL** return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) profile.
-
 - **SHALL** populate the following `Practitioner` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of the `Practitioner` resource.
@@ -77,9 +76,7 @@ Provider systems:
   - `name`
   - `gender` where available
   - `nhsCommunication` with the practitioner's language information, where available
-
 - **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
-
 - **SHALL NOT** populate the following fields:
   - `telecom`
   - `address`
