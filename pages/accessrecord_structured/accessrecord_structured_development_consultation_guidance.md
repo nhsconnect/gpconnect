@@ -21,10 +21,10 @@ It is important to define what we mean by consultation. Not all clinical informa
 
 This document is designed to address these challenges:
 
--   it provides a clear definition of what is meant by consultation in the context of the current set of participating provider systems
--   it identifies the limitations of consultation-based queries in isolation as a method for retrieving all elements of patient records
--   it describes the set of consultation structures available in provider systems and guidance for populating the FHIR resources required to represent these structures in a consistent manner that is processable by consumers
--   it provides guidance for consumer systems processing the FHIR resources representing consultation structures on source systems as to the variances between representations and the correct handling of these structures
+- it provides a clear definition of what is meant by consultation in the context of the current set of participating provider systems
+- it identifies the limitations of consultation-based queries in isolation as a method for retrieving all elements of patient records
+- it describes the set of consultation structures available in provider systems and guidance for populating the FHIR resources required to represent these structures in a consistent manner that is processable by consumers
+- it provides guidance for consumer systems processing the FHIR resources representing consultation structures on source systems as to the variances between representations and the correct handling of these structures
 
 ## What is a consultation?
 
@@ -42,33 +42,33 @@ For GP Connect, a consultation is the structure within which source systems grou
 
 Consultations follow a common logical structure:
 
--   Context
+### Context
 
-    Each consultation has context data that describes when and where the consultation took place, the patient it covered, and who else was involved (such as a doctor). This information is usually generated automatically by the provider system but it may include some manually recorded values.
+- Each consultation has context data that describes when and where the consultation took place, the patient it covered, and who else was involved (such as a doctor). This information is usually generated automatically by the provider system but it may include some manually recorded values.
 
--   Topics
+### Topics
 
-    A Consultation will be split into one of more topics. Each topic describes an area of discussion (or activity) that took place in the Consultation.
+- A Consultation will be split into one of more topics. Each topic describes an area of discussion (or activity) that took place in the Consultation.
 
-    A topic may (or may not) have a title.
+- A topic may (or may not) have a title.
 
-    A topic may (or may not) be related to a specific problem in the patient’s record. In these cases, all the discussions and activities recorded under that topic are in regard to that problem.
+- A topic may (or may not) be related to a specific problem in the patient’s record. In these cases, all the discussions and activities recorded under that topic are in regard to that problem.
 
--   Headings
+### Headings
 
-    A topic may be split into one of more headings (sometimes referred to as SOAP headings). Each heading covers a specific part of the Consultation process about that topic.
+- A topic may be split into one of more headings (sometimes referred to as SOAP headings). Each heading covers a specific part of the Consultation process about that topic.
 
-    There is no national standard for headings so they will reflect the headings available in the provider clinical system.
+- There is no national standard for headings so they will reflect the headings available in the provider clinical system.
 
--   Clinical items
+### Clinical items
 
-    Within each heading there may be one or more clinical items. Grouped together and in order, these clinical items describe in full all the details recorded under that heading of the consultation.
+- Within each heading there may be one or more clinical items. Grouped together and in order, these clinical items describe in full all the details recorded under that heading of the consultation.
 
-    Any type of clinical item may form part of the consultation (medications, allergies, immunisations, uncategorised data, and so on).
+- Any type of clinical item may form part of the consultation (medications, allergies, immunisations, uncategorised data, and so on).
 
--   Topics without headings
+### Topics without headings
 
-    A topic can be created without headings. In these cases, the clinical items are recorded directly under the topic the same way they are recording under a heading.
+- A topic can be created without headings. In these cases, the clinical items are recorded directly under the topic the same way they are recording under a heading.
 
 ## Approach
 
@@ -103,41 +103,37 @@ The logical structure of a Consultation is reflected in FHIR using the `Encounte
   <tr>
     <td>Clinical Items</td>
     <td>Appropriate FHIR profile</td>
-    <td>Each Clinical Item will be head in the appropriate FHIR profile as defined elsewhere in this specification.</td>
-  </tr></table>
-
+    <td>Each Clinical Item will be held in the appropriate FHIR profile as defined elsewhere in this specification.</td>
+  </tr>
+</table>
 
 <a href="images/access_structured/Consultation_FHIR_Resource_Model.png"><IMG src="images/access_structured/Consultation_FHIR_Resource_Model.png" alt="Consultation FHIR Resource Model" style="max-width:100%;max-height:100%;"></a>
-
 
 <a href="images/access_structured/Consultation_Stucture.png"><IMG src="images/access_structured/Consultation_Stucture.png" alt="Consultation Structure" style="max-width:100%;max-height:100%;">
 
 ## Consultation notes
 
-Consultation notes are the human readable version of the clinical information recorded under each heading. 
+Consultation notes are the human readable version of the clinical information recorded under each heading.
 They may or may not be accompanied by a clinically coded version of the information.
 Where text is entered freely into a consultation without being associated with a clinical code it will be returned in an `Observation` with the SNOMED code `37331000000100 Comment note`
 
 There are two primary ways that consultation notes are recorded on native GP systems:
 
--   Consultation notes for a heading are recorded as a single piece of free text. Any clinical coded information under the same heading is associated to that text as a whole.
+- Consultation notes for a heading are recorded as a single piece of free text. Any clinical coded information under the same heading is associated to that text as a whole.
 
 <a href="images/access_structured/Consultation_text_1a.png"><IMG src="images/access_structured/Consultation_text_1a.png" alt="Free text with multiple clinical codes"  style="max-width:100%;max-height:100%;"></a>
 
--   Consultation notes for a heading are recorded as a collection of observations, each with a clinical code and or text. When read together in order they produce the consultation notes.
+- Consultation notes for a heading are recorded as a collection of observations, each with a clinical code and or text. When read together in order they produce the consultation notes.
     Note – this may be entering free text format dynamically identifying codes or through forms where there are specific fields for codes and free text.
 
 <center>
-<a href="images/access_structured/Consultation_text_1b.png"><IMG src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text"  style="max-width:40%;max-height:40%;"></a>
+    <a href="images/access_structured/Consultation_text_1b.png"><IMG src="images/access_structured/Consultation_text_1b.png" alt="Clinical code and text"  style="max-width:40%;max-height:40%;"></a>
 </center>
 &nbsp;
-
 
 When reflecting these in FHIR it is important they these two methods are represented in a way that retains the structural information they contain, does not create any unintended clinical meaning and can be viewed / imported. This is done by taking any free text in model one and representing it as uncategorised data and positioning it as the first clinical item under the heading.
 
 <a href="images/access_structured/Consultation_text_2.png"><IMG src="images/access_structured/Consultation_text_2.png" alt="Consultation text in FHIR"  style="max-width:100%;max-height:100%;"></a>
-
-
 
 While there are differences between the two outputs, the consultation notes can be derived from both by reading through each clinical item in order and merging the Term Text, Clinical Code, Values and Comment into a single narrative.
 
@@ -153,21 +149,22 @@ When a clinical item is linked to the consultation a reference to its FHIR® res
 
 When linking to a clinical item that is held in a single FHIR resource the reference will be to that resource. When linking to the clinical item that is held across multiple resources (for example, Medication and Medical Device) the reference must be to the FHIR resource specified below.
 
-* For a Medication or Medical Device prescription plan - reference the `MedicationRequest` (intent = plan) profile
-* For a Medication or Medical Device prescription issue - reference the `MedicationRequest` (intent = order) profile
-* For an Allergy – reference the `Allergy` profile
-* For an Immunisation – reference the `Immunization` profile
-* For Uncategorised Data – reference the `Observation` – Uncategorised profile
-* For a Referral - reference the `ReferralRequest` profile
-* For a Document - reference the `DocumentReference` profile
-* For an Investigation - reference the `DiagnosticReport` profile
-* For a Diary Entry - reference the `ProcedureRequest` profile
+- For a Medication or Medical Device prescription plan - reference the `MedicationRequest` (intent = plan) profile
+- For a Medication or Medical Device prescription issue - reference the `MedicationRequest` (intent = order) profile
+- For an Allergy – reference the `Allergy` profile
+- For an Immunisation – reference the `Immunization` profile
+- For Uncategorised Data – reference the `Observation` – Uncategorised profile
+- For a Referral - reference the `ReferralRequest` profile
+- For a Document - reference the `DocumentReference` profile
+- For an Investigation - reference the `DiagnosticReport` profile
+- For a Diary Entry - reference the `ProcedureRequest` profile
 
 ## Coded clinical items returned as text
 
 The provider **MUST** return the following items as text, where they are contained in returned consultations, as they are not covered by the clinical areas defined in this specification version
-* Completed diary entries
-* Test requests (which are not in scope of `investigations`)
+
+- Completed diary entries
+- Test requests (which are not in scope of `investigations`)
 
 These must be returned in an `Observation` resource in the same manner as a comment note and as defined in the [uncategorised data profile](accessrecord_structured_development_observation_uncategorisedData.html).
 The returned resource must represent the full text as presented in the GP system, including notes and qualifiers, not just the code description.
@@ -178,7 +175,7 @@ Depending on the GP Connect version supported by the provider system it can be p
 
 Where a provider system is not able to export a linked clinical item, it will create a section.section.entry (or section.entry) entry with the:
 
--   `List.entry.item.display` set to “[Clinical area] items are not supported by the provider system.”
+- `List.entry.item.display` set to “[Clinical area] items are not supported by the provider system.”
 
        Where [Clinical area] identifies the type of the clinical item that is not supported.
 
@@ -202,10 +199,11 @@ The example below shows references to two items, one for an observation and anot
 Where a Consultation is marked as confidential it will (as per the structured requirements on confidentially) not be included in the returned data and the Confidential Items warning message will be included in the primary `List` containing the query response.
 
 Where a Consultation is not marked as confidential but includes items that are marked as confidential or are considered sensitive, the following information is returned:
-* the Consultation will be included in the response as normal
-* the confidential item(s) will NOT be included in the response
-* there will be NO reference to the confidential item(s) in the `List` profiles defining the Consultation structure
-* the Confidential Items warning message will be included in the appropriate [secondary list](accessrecord_structured_development_lists_for_message_structure.html) for the relevant type of type data that was omitted (for example, if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the `List`  'Consultations - uncategorised data contained in consultations' that was returned as part of the query) - the warning will NOT be included in the `List` profiles defining the Consultation structure
+
+- the Consultation will be included in the response as normal
+- the confidential item(s) will NOT be included in the response
+- there will be NO reference to the confidential item(s) in the `List` profiles defining the Consultation structure
+- the Confidential Items warning message will be included in the appropriate [secondary list](accessrecord_structured_development_lists_for_message_structure.html) for the relevant type of type data that was omitted (for example, if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the `List`  'Consultations - uncategorised data contained in consultations' that was returned as part of the query) - the warning will NOT be included in the `List` profiles defining the Consultation structure
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Consultation(s) they were removed from.
 
@@ -225,22 +223,22 @@ The same approach is followed for empty topic and heading levels recorded at sou
 
 ## What information may be recorded outside of consultations
 
--  some systems do not restrict entry of clinical data to a consultation context - that is, it is possible to record clinical information about a patient without starting or initiating a consultation
--   such 'Non-Consultation' behaviour does not imply any loss of information or structure by the source system - that is, the record items are still fully recorded and attributed
--   but because they are recorded outside of a consultation context, they will not be returned by an API query directed at returning consultation resources (see 'Design decisions' section below)
+- some systems do not restrict entry of clinical data to a consultation context - that is, it is possible to record clinical information about a patient without starting or initiating a consultation
+- such 'Non-Consultation' behaviour does not imply any loss of information or structure by the source system - that is, the record items are still fully recorded and attributed
+- but because they are recorded outside of a consultation context, they will not be returned by an API query directed at returning consultation resources (see 'Design decisions' section below)
 
 ## Consumer guidance
 
--   Although the expression of full consultation structure is provided by the specified protocols, it is recognised that many consumers simply want access to the resources referenced by the consultations rather than the topic or SOAP heading structures. Consumers in the category may simply flatten the consultation structure or otherwise extract the resources referenced within the List resources carrying the consultation structure.
+- Although the expression of full consultation structure is provided by the specified protocols, it is recognised that many consumers simply want access to the resources referenced by the consultations rather than the topic or SOAP heading structures. Consumers in the category may simply flatten the consultation structure or otherwise extract the resources referenced within the List resources carrying the consultation structure.
 
 ## Consumer cautions
 
--   A consumer making consultation-oriented queries only **MUST NOT** expect to obtain all items in the patient record.
--   Other GP Connect APIs will provide full access to items in the patient record including all medications, all allergies, all problems up to and including get whole record queries.
+- A consumer making consultation-oriented queries only **MUST NOT** expect to obtain all items in the patient record.
+- Other GP Connect APIs will provide full access to items in the patient record including all medications, all allergies, all problems up to and including get whole record queries.
 
 ## Design decisions
 
--   Systems which allow direct recording of data outside of consultation contexts should not fabricate consultations to return such data when consultation queries are received, as to do so would be generating information and structure which does not exist on the source system, and which would obscure the genuine consultation content that does exist. Systems in this category have clear distinctions between consultations and other types of record content (for example, last X Consultations displayed in patient summaries and to synthesise consultations would distort this native behaviour).
+- Systems which allow direct recording of data outside of consultation contexts should not fabricate consultations to return such data when consultation queries are received, as to do so would be generating information and structure which does not exist on the source system, and which would obscure the genuine consultation content that does exist. Systems in this category have clear distinctions between consultations and other types of record content (for example, last X Consultations displayed in patient summaries and to synthesise consultations would distort this native behaviour).
 
 ## Using the `List` resource for consultation queries
 
@@ -248,5 +246,5 @@ The results of a query for consultation details **MUST** return a `List` contain
 
 The `List` **MUST** be populated in line with the guidance on `List` resources.
 
-If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`. 
+If the `List` is empty, then an empty `List` **MUST** be returned with an `emptyReason.code` with the value `no-content-recorded`.
 In this case, `List.note` **MUST** be populated with the text 'Information not available'.

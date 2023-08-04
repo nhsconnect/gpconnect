@@ -29,46 +29,46 @@ In this version of the GP Connect specification there are 10 types of primary li
 
 ### Primary lists in the query response
 
-| Clinical area | SNOMED Code |SNOMED Preferred Term | List.title|
-| ------ | ------ |
-|Allergies and adverse reactions | 886921000000105| Allergies and adverse reactions |Allergies and adverse reactions |
-|Allergies that have been ended | 1103671000000101| Ended allergies |Ended allergies |
-|Consultations | 1149501000000101 | List of consultations |List of consultations |
-|Diary Entries | 714311000000108 | Patient recall administration | Patient recall administration |
-|Immunisations | 1102181000000102| Immunisations | Immunisations |
-|Investigations | 887191000000108| Investigations and results | Investigations and results |
-|Medications and medical devices | 933361000000108| Medications and medical devices | Medications and medical devices |
-|Outbound Referrals | 792931000000107| Outbound referral | Outbound referral |
-|Problems | 717711000000103| Problems | Problems |
-|Uncategorised data | 826501000000100| Miscellaneous record | Uncategorised data |
+| Clinical area                   | SNOMED Code      | SNOMED Preferred Term           | List.title                      |
+| -------------                   | -----------      | ---------------------           | ----------                      |
+| Allergies and adverse reactions | 886921000000105  | Allergies and adverse reactions | Allergies and adverse reactions |
+| Allergies that have been ended  | 1103671000000101 | Ended allergies                 | Ended allergies                 |
+| Consultations                   | 1149501000000101 | List of consultations           | List of consultations           |
+| Diary Entries                   | 714311000000108  | Patient recall administration   | Patient recall administration   |
+| Immunisations                   | 1102181000000102 | Immunisations                   | Immunisations                   |
+| Investigations                  | 887191000000108  | Investigations and results      | Investigations and results      |
+| Medications and medical devices | 933361000000108  | Medications and medical devices | Medications and medical devices |
+| Outbound Referrals              | 792931000000107  | Outbound referral               | Outbound referral               |
+| Problems                        | 717711000000103  | Problems                        | Problems                        |
+| Uncategorised data              | 826501000000100  | Miscellaneous record            | Uncategorised data              |
 
 ### Secondary lists in the query response
 
 There are also 21 secondary lists that will contain data that is linked to problems or contained in consultations. These are defined in this [codeSystem](https://fhir.hl7.org.uk/STU3/CodeSystem/GPConnect-SecondaryListValues-1) and are detailed in the table below.
 
-| List.title | Code | Display |
-| ------ | ------ |
-| Consultations - allergies contained in consultations  | consultations-allergies-contained-in-consultations  | Consultations - allergies contained in consultations  |
-| Consultations - allergies that have been ended contained in consultations  |consultations-allergies-that-have-been-ended-contained-in-consultations  | Consultations - allergies that have been ended contained in consultations  |
-| Consultations - diary entries contained in consultations  | consultations-diary-entries-contained-in-consultations  | Consultations - diary entries contained in consultations  |
-| Consultations - documents contained in consultations  | consultations-documents-contained-in-consultations  | Consultations - documents contained in consultations  |
-| Consultations - immunisations contained in consultations  | consultations-immunisations-contained-in-consultations  | Consultations - immunisations contained in consultations  |
-| Consultations - investigations contained in consultations  |consultations-investigations-contained-in-consultations  | Consultations - investigations contained in consultations  |
-| Consultations - medications contained in consultations  | consultations-medications-contained-in-consultations  | Consultations - medications contained in consultations  |
-| Consultations - outbound referrals in consultations  | consultations-outbound-referrals-in-consultations  | Consultations - outbound referrals in consultations  |
-| Consultations - problems contained in consultations  | consultations-problems-contained-in-consultations  | Consultations - problems contained in consultations  |
-| Consultations - uncategorised data contained in consultations  | consultations-uncategorised-data-contained-in-consultations  | Consultations - uncategorised data contained in consultations  |
-| Problems - allergies related to problems  | problems-allergies-related-to-problems  | Problems - allergies related to problems  |
-| Problems - allergies that have been ended related to problems  | problems-allergies-that-have-been-ended-related-to-problems  | Problems - allergies that have been ended related to problems  |
-| Problems - consultations related to problems  | problems-consultations-related-to-problems  | Problems - consultations related to problems  |
-| Problems - diary entries related to problems  | problems-diary-entries-related-to-problems  | Problems - diary entries related to problems  |
-| Problems - documents related to problems  | problems-documents-related-to-problems  | Problems - documents related to problems  |
-| Problems - immunisations related to problems  | problems-immunisations-related-to-problems  | Problems - immunisations related to problems  |
-| Problems - investigations related to problems  | problems-investigations-related-to-problems  | Problems - investigations related to problems  |
-| Problems - medications related to problems  | problems-medications-related-to-problems  | Problems - medications related to problems  |
-| Problems - outbound referrals related to problems  | problems-outbound-referrals-related-to-problems  | Problems - outbound referrals related to problems  |
-| Problems - linked problems not relating to the primary query | problems-linked-problems-not-relating-to-the-primary-query | Problems - linked problems not relating to the primary query |
-| Problems - uncategorised data related to problems | problems-uncategorised-data-related-to-problems | Problems - uncategorised data related to problems |
+| List.title                                                                | Code                                                                    | Display                                                                   |
+| ----------                                                                | ----                                                                    | -------                                                                   |
+| Consultations - allergies contained in consultations                      | consultations-allergies-contained-in-consultations                      | Consultations - allergies contained in consultations                      |
+| Consultations - allergies that have been ended contained in consultations | consultations-allergies-that-have-been-ended-contained-in-consultations | Consultations - allergies that have been ended contained in consultations |
+| Consultations - diary entries contained in consultations                  | consultations-diary-entries-contained-in-consultations                  | Consultations - diary entries contained in consultations                  |
+| Consultations - documents contained in consultations                      | consultations-documents-contained-in-consultations                      | Consultations - documents contained in consultations                      |
+| Consultations - immunisations contained in consultations                  | consultations-immunisations-contained-in-consultations                  | Consultations - immunisations contained in consultations                  |
+| Consultations - investigations contained in consultations                 | consultations-investigations-contained-in-consultations                 | Consultations - investigations contained in consultations                 |
+| Consultations - medications contained in consultations                    | consultations-medications-contained-in-consultations                    | Consultations - medications contained in consultations                    |
+| Consultations - outbound referrals in consultations                       | consultations-outbound-referrals-in-consultations                       | Consultations - outbound referrals in consultations                       |
+| Consultations - problems contained in consultations                       | consultations-problems-contained-in-consultations                       | Consultations - problems contained in consultations                       |
+| Consultations - uncategorised data contained in consultations             | consultations-uncategorised-data-contained-in-consultations             | Consultations - uncategorised data contained in consultations             |
+| Problems - allergies related to problems                                  | problems-allergies-related-to-problems                                  | Problems - allergies related to problems                                  |
+| Problems - allergies that have been ended related to problems             | problems-allergies-that-have-been-ended-related-to-problems             | Problems - allergies that have been ended related to problems             |
+| Problems - consultations related to problems                              | problems-consultations-related-to-problems                              | Problems - consultations related to problems                              |
+| Problems - diary entries related to problems                              | problems-diary-entries-related-to-problems                              | Problems - diary entries related to problems                              |
+| Problems - documents related to problems                                  | problems-documents-related-to-problems                                  | Problems - documents related to problems                                  |
+| Problems - immunisations related to problems                              | problems-immunisations-related-to-problems                              | Problems - immunisations related to problems                              |
+| Problems - investigations related to problems                             | problems-investigations-related-to-problems                             | Problems - investigations related to problems                             |
+| Problems - medications related to problems                                | problems-medications-related-to-problems                                | Problems - medications related to problems                                |
+| Problems - outbound referrals related to problems                         | problems-outbound-referrals-related-to-problems                         | Problems - outbound referrals related to problems                         |
+| Problems - linked problems not relating to the primary query              | problems-linked-problems-not-relating-to-the-primary-query              | Problems - linked problems not relating to the primary query              |
+| Problems - uncategorised data related to problems                         | problems-uncategorised-data-related-to-problems                         | Problems - uncategorised data related to problems                         |
 
 ## Using secondary lists to respond to queries for consultations and problems
 
@@ -82,12 +82,12 @@ For example if a query was made to GP Connect for all problems in a record but n
 
 The following rules apply to how secondary lists are populated
 
- - Secondary lists will only be present where problems or consultations clinical areas have been queried directly
- - Secondary lists will only be present where data is available
- - Secondary lists for items related to problems will include items related to the problem by the extensions relatedClinicalContent and actualProblem
- - If data has been excluded from a secondary list for one of the reasons defined in the warning code section, then the relevant warning code(s) **SHALL** be included
- - For consultation secondary lists where data is excluded a warning code **SHALL** be present even if no other data is contained in the list
- - Secondary lists will never return an empty list with no warning codes
+- Secondary lists will only be present where problems or consultations clinical areas have been queried directly
+- Secondary lists will only be present where data is available
+- Secondary lists for items related to problems will include items related to the problem by the extensions relatedClinicalContent and actualProblem
+- If data has been excluded from a secondary list for one of the reasons defined in the warning code section, then the relevant warning code(s) **SHALL** be included
+- For consultation secondary lists where data is excluded a warning code **SHALL** be present even if no other data is contained in the list
+- Secondary lists will never return an empty list with no warning codes
 
 ## The secondary list for related problems
 
@@ -103,7 +103,7 @@ Warning codes are used to manage negation where resources are present in a syste
 
 Warning codes will be returned in the primary and secondary lists defined on this page when any item that would have been included in that list as a response to the query is not present due to one of the defined reasons. In the case where an item may have been present in more than one list, e.g. medications and medications related to problems, the warning code will be present in both lists. Any warning codes returned will be contained in the extension List.extension[warningCode].
 
-Warning codes will **NOT** be returned in any of the lists used to represent consultations structure that are defined in the page [List - consultation structure'](accessrecord_structured_development_lists_for_message_structure.html).
+Warning codes will **NOT** be returned in any of the lists used to represent consultations structure that are defined in the page [List - consultation structure'](accessrecord_structured_development_list_consultation.html).
 
 Where a warning code is returned related to an item from a given clinical area, for example referrals, if the referrals capability is turned off then the warning code **MUST** still be returned if the list that it would have been present in is still contained in the response. This applies to all clinical areas.
 
@@ -128,7 +128,7 @@ The following table provides details of the warning codes that are to be used in
    <tr>
     <td>Data awaiting filing</td>
     <td>data-awaiting-filing</td>
-    <td>Patient record contains some items in the GP practice workflow that have not been reviewed for inculsion in this message; information recorded before dd-Mmm-yyyy may be missing.</td>
+    <td>Patient record contains some items in the GP practice workflow that have not been reviewed for inclusion in this message; information recorded before dd-Mmm-yyyy may be missing.</td>
   </tr>
 </table>
 
@@ -138,6 +138,7 @@ Where items have been excluded from the returned resources due to patient consen
 
 Note: If the results of a search contained only confidential items, it would present as an `List` with no entries, an `emptyReason` and the Confidential Items warning code.
 Note: If an element of a diagnostic report is made confidential then the warning code **SHALL** be populated in the relevant `Investigations` list.
+
 ### Data in transit
 
 This only refers to data transmitted from GP to GP when a patient moves GP practice. This is where a patient is registered at their new GP practice but their medical records from their previous GP practice have not yet been received and/or incorporated into their new GP practice system. When this takes place all the lists returned **MUST** be populated using the data in transit warning code from the above table. The associated text **MUST** also be added into the note field when the code is used. Set dd-mmm-yyyy to the date the patient registered at their new GP practice.

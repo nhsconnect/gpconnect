@@ -35,10 +35,12 @@ For example, the `MedicationStatement` profile contains a field that can be used
 There is no field in the `Medication` profile that can be used to look up the linked `MedicationStatement`.
 
 ## FHIR profiles returned on query ##
+
 When a consumer system requests data on a clinical area the information may be returned across a number of FHIR profiles.
 Choosing which FHIR profiles to return is a balancing act between including enough linked profiles to give the consumer system a comprehensive response to their query but not including so many linked profiles as to swamp the consumer system with data.
 
 The three main considerations used to decide which data to return for each clinical area were:
+
 * include all the FHIR profiles required to fully describe the requested clinical area
 * include the FHIR profiles required to define all the linkages from the requested clinical area
 * include the FHIR profiles from linked clinical areas where they are key to understanding the requested clinical area
@@ -53,7 +55,7 @@ Depending on the GP Connect version supported by the provider system it can be p
 
 Where a provider system is not able to export a linked clinical item, it will create a section.section.entry (or section.entry) entry with the:
 
--   `List.entry.item.display` set to “[Clinical area] items are not supported by the provider system.”
+* `List.entry.item.display` set to “[Clinical area] items are not supported by the provider system.”
 
        Where [Clinical area] identifies the type of the clinical item that is not supported.
 
@@ -77,36 +79,38 @@ The example below shows references to two items, one for an observation and anot
 When GP Connect returns a consultation it will supply the metadata of the consultation and all the clinical data that was recorded during the consultation.
 
 The response to the query includes:
+
 * A `List` profile containing references to `Encounter` for every Consultation that met the search criteria
 * A `List` profile for each clinical area that data exists in the bundle
 
 For each `Encounter` referenced in the `List` profile:
-*   The `Encounter` profile of the Consultation
-*	The `List` profiles that describe the structure of the Consultation
-*	The `ProblemHeader (Condition)` profile of any directly linked Problems
-*	The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
-    *   Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
-    *   Only include `MedicationRequest` (intent = order) for directly linked issues
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Medications and Medical Devices
-*	The `AllergyIntolerance` profile of any linked Allergies, including resolved allergies
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Allergies
-*	The `Immunization` profile of any linked Immunisations
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Immunisations
-*	The `Observation` profile of any linked Uncategorised Data
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Uncategorised Data
-*	The `ReferralRequest` profile of any linked Referrals
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
-*	The `DocumentReference` profile of any linked Documents
-    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file
-    * In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
-*	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
-    *   Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation    
-*  The `ProcedureRequest`profile of any linked Diary Entries
-    *   Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Diary Entries
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    *   Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
+
+* The `Encounter` profile of the Consultation
+* The `List` profiles that describe the structure of the Consultation
+* The `ProblemHeader (Condition)` profile of any directly linked Problems
+* The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
+  * Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
+  * Only include `MedicationRequest` (intent = order) for directly linked issues
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Medications and Medical Devices
+* The `AllergyIntolerance` profile of any linked Allergies, including resolved allergies
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Allergies
+* The `Immunization` profile of any linked Immunisations
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Immunisations
+* The `Observation` profile of any linked Uncategorised Data
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Uncategorised Data
+* The `ReferralRequest` profile of any linked Referrals
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
+* The `DocumentReference` profile of any linked Documents
+  * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file
+  * In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
+* The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
+  * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation
+* The `ProcedureRequest` profile of any linked Diary Entries
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Diary Entries
+* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`.
 
 Where a Consultation links to a profile that is not yet supported by the provider system then it is not included in the response.
 Details on how this is done can be found in the [Consultation Guidance](accessrecord_structured_development_consultation_guidance.html).
@@ -121,37 +125,39 @@ So, for example, if a consumer requests consultations then any medications that 
 When GP Connect returns a problem it will supply the metadata and description of the problem and all the clinical data that has been linked to the problem.
 
 The response to the query includes:
+
 * A `List` profile containing references to `ProblemHeader (Condition)` for every Problem that met the search criteria
-* A `List` profile containing references to `ProblemHeader (Condition)` for every Problem not meeting the search critieria but directly linked to a Problem which does meet the search criteria
+* A `List` profile containing references to `ProblemHeader (Condition)` for every Problem not meeting the search criteria but directly linked to a Problem which does meet the search criteria
 * A `List` profile for each clinical area that data exists in the bundle
 
 For each `ProblemHeader (Condition)` referenced in the `List` profile:
-*	The `ProblemHeader (Condition)` profile of the Problem
-*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
-*	The `Encounter` profiles of any linked Consultations
-*   The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
-    *	Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
-    *	Only include `MedicationRequest` (intent = order) for directly linked issues
-*	The `AllergyIntolerance` profile of any linked Allergies
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Allergies
-*	The `Immunization` profile of any linked Immunisations
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Immunisations
-*	The `Observation` profile of any linked Uncategorised Data
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Uncategorised Data
-*	The `ReferralRequest` profile of any linked Referrals
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
-*	The `DocumentReference` profile of any linked Documents
-    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    * In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
-*	The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
-    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-    *	Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation
-    *  Where an `observation` that represents a test or test group header has been made the actual problem then the 'diagnosticReport' it is from **MUST** be linked to the problem in    the `relatedClinicalContent` extension.
-*  The `ProcedureRequest`profile of any linked Diary Entries
-    * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Diary Entries
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+* The `ProblemHeader (Condition)` profile of the Problem
+* The `ProblemHeader (Condition)` profiles of any directly linked Problems
+* The `Encounter` profiles of any linked Consultations
+* The `MedicationRequest`, `MedicationStatement` and `Medication` profiles of any linked Medications or Medical Devices
+  * Always include the `MedicationStatement`, `MedicationRequest` (intent = plan) and `Medication` profiles
+  * Only include `MedicationRequest` (intent = order) for directly linked issues
+* The `AllergyIntolerance` profile of any linked Allergies
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Allergies
+* The `Immunization` profile of any linked Immunisations
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Immunisations
+* The `Observation` profile of any linked Uncategorised Data
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Uncategorised Data
+* The `ReferralRequest` profile of any linked Referrals
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Referrals
+* The `DocumentReference` profile of any linked Documents
+  * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+  * In order to retrieve the binary file, a consumer must have been assured for the Access Document capability
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Documents
+* The `DiagnosticReport`, `ProcedureRequest`, `Observation`, `Specimen` and `DocumentReference` profiles of any linked Investigations
+  * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Investigation
+  * Where an `Observation` that represents a test or test group header has been made the actual problem then the 'diagnosticReport' it is from **MUST** be linked to the problem in the `relatedClinicalContent` extension.
+* The `ProcedureRequest` profile of any linked Diary Entries
+  * Include the `ProblemHeader (Condition)` profile of any Problems linked to the returned Diary Entries
+* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 Where a Problem links to a profile that is not yet supported by the provider system, then it is not included in the response. Details on how this is done can be found in the [Problem Guidance](accessrecord_structured_development_problems_guidance.html).
 
@@ -166,17 +172,19 @@ When GP Connect returns a medication or medical device it will supply the prescr
 Unless excluded by the consumer request, GP Connect will also return all the prescription issues made under the plan.
 
 The response to the query includes:
+
 * A `List` profile containing references to `MedicationStatement` for every Medication and Medical Device that met the search criteria
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `MedicationStatement` referenced in the `List` profile:
+
 * The `MedicationStatement` profile of the Medication or Medical Device
 * The `MedicationRequest` (intent = plan) profile of the Medication or Medical Device
 * The `Medication` profile of the Medication and Medical Device
 * Where requested, the `MedicationRequest` (intent = order) profile for every issue
 * The `ProblemHeader (Condition)` profiles of any directly linked Problems
 * All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <a href="images/access_structured/Medication_Return_v2.png"><img src="images/access_structured/Medication_Return_v2.png" alt="Medication and Medical Device Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
@@ -185,110 +193,129 @@ For each `MedicationStatement` referenced in the `List` profile:
 When GP Connect returns an allergy it will supply all the allergy data.
 
 The response to the query includes:
+
 * A `List` profile containing references to `AllergyIntolerance` for every active Allergy
 * Where requested, a `List` profile containing references to `AllergyIntolerance` for every ended Allergy
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `AllergyIntolerance` referenced in either of the `List` profiles:
+
 * The `AllergyIntolerance` profile of the Allergy
 * The `ProblemHeader (Condition)` profiles of any directly linked Problems
 * All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
 <a href="images/access_structured/Allergy_Return.png"><img src="images/access_structured/Allergy_Return.png" alt="Allergy Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Immunisations ###
+
 When GP Connect returns an immunisation it will supply all the immunisation data.
 
 The response to the query includes:
+
 * A `List` profile containing references to `Immunization` for every Immunisation and `Observation` for every consent / dissent to immunisation (referred to below as query response `List` profile)
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `Immunization` referenced in the query response `List` profile:
-*	The `Immunization` profile of the Immunisation
-*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
+
+* The `Immunization` profile of the Immunisation
+* The `ProblemHeader (Condition)` profiles of any directly linked Problems
 
 For each `Observation` referenced in the query response `List` profile:
-*	The `Observation` profile of the consent / dissent for immunisation
-*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
+
+* The `Observation` profile of the consent / dissent for immunisation
+* The `ProblemHeader (Condition)` profiles of any directly linked Problems
 
 For each `Immunization` and `Observation` referenced in the query response `List` profile:
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
 <a href="images/access_structured/Immunisation_Return_2.png"><img src="images/access_structured/Immunisation_Return_2.png" alt="Immunisation Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Uncategorised data ###
+
 When GP Connect returns uncategorised data it will supply all the data about the uncategorised data.
 
 The response to the query includes:
+
 * A `List` profile containing references to `Observation` for every Uncategorised Data that met the search criteria
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `Observation` referenced in the `List` profile:
-*	The `Observation` profile of the Uncategorised Data
-*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+* The `Observation` profile of the Uncategorised Data
+* The `ProblemHeader (Condition)` profiles of any directly linked Problems
+* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
 <a href="images/access_structured/Uncategorised_Return.png"><img src="images/access_structured/Uncategorised_Return.png" alt="Uncategorised Data Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Referrals ###
+
 When GP Connect returns a referral it will supply all the referral data.
 
 The response to the query includes:
+
 * A `List` profile containing references to `ReferralRequest` for every Referral that met the search criteria
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `ReferralRequest` referenced in the `List` profile:
-*	The `ReferralRequest` profile of the Referral
-*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
-*	The `DocumentReference` profiles of any directly linked Documents (do not include the `Binary`)
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+* The `ReferralRequest` profile of the Referral
+* The `ProblemHeader (Condition)` profiles of any directly linked Problems
+* The `DocumentReference` profiles of any directly linked Documents (do not include the `Binary`)
+* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
 <a href="images/access_structured/Referral_Return_v2.png"><img src="images/access_structured/Referral_Return_v2.png" alt="Referral Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Investigations ###
+
 When GP Connect returns an investigation it will supply all the investigation information.
 
 The response to the query includes:
+
 * A `List` profile containing references to `DiagnosticReport` for every Investigation that met the search criteria
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `DiagnosticReport` referenced in the `List` profile:
-*  The `DiagnosticReport` profile of the Investigation
-*  The `ProcedureRequest` profile of the Investigation
-*	The `Specimen` profiles of the Investigation
-*	The `Observation` profiles of the Investigation
-*	The `DocumentReference` profiles of the Investigation
-    * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
-*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+* The `DiagnosticReport` profile of the Investigation
+* The `ProcedureRequest` profile of the Investigation
+* The `Specimen` profiles of the Investigation
+* The `Observation` profiles of the Investigation
+* The `DocumentReference` profiles of the Investigation
+  * Only include the document metadata in any returned `DocumentReference` profile, do not include the binary file.
+* The `ProblemHeader (Condition)` profiles of any directly linked Problems
+* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <a href="images/access_structured/Investigation_Return_v4.png"><img src="images/access_structured/Investigation_Return_v4.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
 ### Diary entries ###
+
 When GP Connect returns a diary entry it will supply all the diary entry data.
 
 The response to the query includes:
+
 * A `List` profile containing references to `ProcedureRequest` for every Diary Entry that met the search criteria
 * A `List` profile containing references to each `ProblemHeader` that is contained in the bundle
 
 For each `ProcedureRequest` referenced in the `List` profile:
-*	The `ProcedureRequest` profile of the Diary Entry
-*	The `ProblemHeader (Condition)` profiles of any directly linked Problems
-*  All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
-    * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
+
+* The `ProcedureRequest` profile of the Diary Entry
+* The `ProblemHeader (Condition)` profiles of any directly linked Problems
+* All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
+  * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
 <center>
 <a href="images/access_structured/DiaryEntry_Return.png"><img src="images/access_structured/DiaryEntry_Return.png" alt="Diary Entry Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
@@ -298,9 +325,10 @@ For each `ProcedureRequest` referenced in the `List` profile:
 
 The sections above show general details of the linkages for problems or consultations responses.
 This section looks at the representation of problem and consultation linkages, when consultations have been requested.
-Providers **SHOULD** return all references between all resources wherever possible and include the actual clinical item which relates to the problem header whether the actual problem item or a subsequent recording of the problem. 
+Providers **SHOULD** return all references between all resources wherever possible and include the actual clinical item which relates to the problem header whether the actual problem item or a subsequent recording of the problem.
 
 The example below represents a simple case of a consultation and its content which all relates to a single, new problem.
+
 * The problem header references to the consultation, the consultation topic, the actual problem and any other content of the consultation
 * The consultation topic references the problem header
 * The actual problem is included as a resource (an uncategorised data observation in this case) and references the consultation
@@ -330,7 +358,7 @@ The following models demonstrate this.
 
 This model is an example of a request for medications and allergies.
 It is included to show how related problem references are consolidated into a single `List` profile where more than one clinical area has been requested.
-This applies regardles of which clincial areas or how many clinical areas are included in the request.
+This applies regardless of which clinical areas or how many clinical areas are included in the request.
 
 <center>
 <a href="images/access_structured/Medications_Allergies_Return.png"><img src="images/access_structured/Medications_Allergies_Return.png" alt="Medications and Allergies Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
@@ -338,6 +366,7 @@ This applies regardles of which clincial areas or how many clinical areas are in
 
 This model is an example of a request for consultations, problems, medications and allergies.
 It also includes a consolidated related problems `List` profile, but is included to show the multiple `List` profiles returned due to the inclusion of
+
 * a primary list for each of the requested clinical areas
 * secondary lists for all clinical areas contained in consultations or linked to problems, regardless of inclusion in the request
 
