@@ -122,7 +122,7 @@ Where *consuming* systems are integrating data from this resource to their local
 
 `active` for all active allergies. `resolved` for resolved allergies.
 
-GP systems which support the concept of resolved/ended allergies **MUST** set the `clinicalStatus` of resolved allergies to `resolved` and populate the end date field, where an allergy or intolerance is resolved/ended.  
+GP systems which support the concept of resolved/ended allergies **MUST** set the `clinicalStatus` of resolved allergies to `resolved` and populate the end date field, where an allergy or intolerance is resolved/ended.
 
 ### verificationStatus ###
 
@@ -354,7 +354,6 @@ Severities of `Mild`, `Moderate`, `Severe` are mapped directly to the ValueSet. 
 The route by which exposure to the substance causing the reaction occurred. Utilise the dm+d route codes.
 
 {% include tip.html content="Please see [CodeableConcept and common code systems](accessrecord_structured_development_resources_overview.html#codeableconcept-and-common-code-and-identifier-systems) when populating this element." %}
-
 
 <h2 style="color:#ED1951;"> AllergyIntolerance elements <b>not in use</b> </h2>
 
