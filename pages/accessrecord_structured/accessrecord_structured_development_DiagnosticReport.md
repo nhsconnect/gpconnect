@@ -59,7 +59,6 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
-
 ### basedOn ###
 
 <table class='resource-attributes'>
@@ -150,12 +149,11 @@ A reference to the `Encounter` profile representing the consultation the test re
 
 The date and time that the DiagnosticReport was issued by the laboratory or other report provider.
 
-
 ### performer ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -185,12 +183,12 @@ Reference to the specimen(s) on which these results were based.
   </tr>
 </table>
 
-Reference to the result(s) which are contained in the DiagnosticReport. 
+Reference to the result(s) which are contained in the DiagnosticReport.
 This may contain references to standalone test results, test group headers (which then reference further results) or a mixture of both.
 
 Test results which are part of a test group will not be referenced by this element, the reference will be to the test group which will in turn reference the test results.
 
-In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record. 
+In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record.
 This will be identified as the `observation.code` element will be populated with the SNOMED code `37331000000100` for `Comment note`.
 
 ### codedDiagnosis ###

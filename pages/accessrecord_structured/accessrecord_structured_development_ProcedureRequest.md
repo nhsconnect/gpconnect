@@ -113,7 +113,7 @@ A reference to the `Patient` that the ProcedureRequest is about.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner | Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -125,7 +125,7 @@ Reference to the resource for the practitioner or organization that is requested
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner | Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>

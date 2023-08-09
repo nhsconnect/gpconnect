@@ -135,7 +135,7 @@ The date time that the time/comment was recorded in the GP system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organisation)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..*</td>
   </tr>
@@ -166,7 +166,6 @@ Where a 'Test group' or 'Test result' has been filed the value should match the 
 </table>
 
 Notes added by the GP practice clinician about the 'Test report', 'Test group' or 'Test result' that has been filed into the patient record.
-
 
 ### related ###
 
@@ -228,7 +227,6 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
-
 
 ### method ###
 

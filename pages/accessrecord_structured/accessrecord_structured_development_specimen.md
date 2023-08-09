@@ -157,7 +157,7 @@ Where this is indicated in the incoming EDIFACT report it will be indicated with
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
