@@ -260,11 +260,11 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(preliminary | final | appended | amended | entered-in-error)</code></td>
+    <td><b>Data type:</b> <code>Code</code></td>
   </tr>
 </table>
 
-This is not required by GP Connect.
+Status of the underlying document. This is not required by GP Connect.
 
 <h3 style="color:#ED1951;"> class </h3>
 
