@@ -302,8 +302,8 @@ Data of the attachment is not required by GP Connect as it will be populated in 
     <td><b>Data type:</b> <code>code</code></td>
   </tr>
 </table>
-replaces | transforms | signs | appends
-Relationships to other documents is not required by GP Connect.
+
+Relationships to other documents. This is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
