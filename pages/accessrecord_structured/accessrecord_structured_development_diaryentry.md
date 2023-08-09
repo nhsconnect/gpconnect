@@ -13,7 +13,7 @@ The headings below list the elements of the `Diary Entry (ProcedureRequest)` pro
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_diaryentry.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.4)." %}
 
 ## Diary Entry (ProcedureRequest) elements
 
@@ -186,13 +186,15 @@ This is the trigger reason for the diary entry not the action of the diary entry
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Observation)</code></td>
+    <td><b>Data type:</b> <code>Reference(Observation | Resource)</code></td>
     <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
 </table>
 
 Additional clinical information linked to the diary entry **MAY** be included, except a linked problem which **MUST** be included in the bundle as a <code>ProblemHeader(Condition)</code> which references the diary entry, not vice versa.
+
+A document **MAY** be linked through a reference to the `Resource`.
 
 ### note
 
