@@ -57,7 +57,6 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
-
 ### status ###
 
 <table class='resource-attributes'>
@@ -114,7 +113,7 @@ A reference to the `Patient` that the ProcedureRequest is about.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference (Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -126,7 +125,7 @@ Reference to the resource for the practitioner or organization that is requested
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference (Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>

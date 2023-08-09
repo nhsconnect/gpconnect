@@ -64,7 +64,7 @@ The system identifier for this is `https://fhir.nhs.uk/Id/UBRN`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(CarePlan, ProcedureRequest, ReferralRequest)</code></td>
+    <td><b>Data type:</b> <code>Reference(CarePlan | ProcedureRequest | ReferralRequest)</code></td>
     <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -177,7 +177,7 @@ The details of the person, practitioner or organisation responsible for the deci
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Device, Organization, Patient, RelatedPerson, Practitioner)</code></td>
+    <td><b>Data type:</b> <code>Reference(Device | Organization | Patient | RelatedPerson | Practitioner)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -218,7 +218,7 @@ This **MAY** be populated if the GP clinical system holds a distinct entry for t
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(HealthcareService, Organization, Practitioner)</code></td>
+    <td><b>Data type:</b> <code>Reference(HealthcareService | Organization | Practitioner)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -281,7 +281,6 @@ The <code>referralRequest</code> **MUST NOT** reference to the problem.
 Any additional information recorded against the referral which is not accommodated by other elements.
 This could include additional categorisation of the referral or notes recorded against the referral after it has been made such as details of progress or outcomes.
 
-
 <h2 style="color:#ED1951;"> Elements <b>not in use</b> </h2>
 
 The following elements **MUST NOT** be populated:
@@ -290,7 +289,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(ActivityDefinition, PlanDefinition)</code></td>
+    <td><b>Data type:</b> <code>Reference(ActivityDefinition | PlanDefinition)</code></td>
   </tr>
 </table>
 

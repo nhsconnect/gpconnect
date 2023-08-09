@@ -209,7 +209,7 @@ Unless there is a distinct user-modifiable availability date/time for the author
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient, Practitioner, RelatedPerson, Organization)  </code></td>
+    <td><b>Data type:</b> <code>Reference(Patient | Practitioner | RelatedPerson | Organization)  </code></td>
     <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -345,7 +345,7 @@ This is not in scope for this version of GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(MedicationAdministration, MedicationDispense, MedicationStatement, Procedure, Observation)</code></td>
+    <td><b>Data type:</b> <code>Reference(MedicationAdministration | MedicationDispense | MedicationStatement | Procedure | Observation)</code></td>
   </tr>
 </table>
 
@@ -397,7 +397,7 @@ This information is available via linking to a Problem record.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
+    <td><b>Data type:</b> <code>Reference(Condition | Observation)</code></td>
   </tr>
 </table>
 

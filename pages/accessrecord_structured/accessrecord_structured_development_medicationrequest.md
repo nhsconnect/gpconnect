@@ -194,7 +194,7 @@ If the EPS identifier is present then the identifier.value is where the EPS Id S
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(CarePlan, MedicationRequest, ProcedureRequest, ReferralRequest)</code></td>
+    <td><b>Data type:</b> <code>Reference(CarePlan | MedicationRequest | ProcedureRequest | ReferralRequest)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -534,7 +534,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(ActivityDefinition, PlanDefinition)</code></td>
+    <td><b>Data type:</b> <code>Reference(ActivityDefinition | PlanDefinition)</code></td>
   </tr>
 </table>
 
@@ -584,7 +584,7 @@ This information is available via linking to a Problem record.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
+    <td><b>Data type:</b> <code>Reference(Condition | Observation)</code></td>
   </tr>
 </table>
 
