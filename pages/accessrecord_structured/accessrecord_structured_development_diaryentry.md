@@ -186,7 +186,7 @@ This is the trigger reason for the diary entry not the action of the diary entry
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Observation | Resource)</code></td>
+    <td><b>Data type:</b> <code>Reference(Any)</code></td>
     <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
