@@ -138,7 +138,7 @@ Is this is not provided for a test group header result then it should inherit th
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organisation)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -267,7 +267,6 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
 
 ### component ###
 
