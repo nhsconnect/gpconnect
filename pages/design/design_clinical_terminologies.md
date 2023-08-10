@@ -7,9 +7,9 @@ permalink: design_clinical_terminologies.html
 summary: "Brief guidance on how clinical terminologies are expected to be used within GP Connect"
 ---
 
-## Terminology and classifications ## 
+## Terminology and classifications ##
 
-NHS Digital Information Standards(https://digital.nhs.uk/services/terminology-and-classifications){:target="_blank"} are responsible for the UK management of [SNOMED CT](https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct){:target="_blank"}, [Read Codes](https://digital.nhs.uk/services/terminology-and-classifications/read-codes){:target="_blank"} and other healthcare terminology products.
+[NHS Digital Information Standards](https://digital.nhs.uk/services/terminology-and-classifications){:target="_blank"} are responsible for the UK management of [SNOMED CT](https://digital.nhs.uk/services/terminology-and-classifications/snomed-ct){:target="_blank"}, [Read Codes](https://digital.nhs.uk/services/terminology-and-classifications/read-codes){:target="_blank"} and other healthcare terminology products.
 
 They also maintain the [NHS Dictionary of Medicines and Devices (dm+d)](http://www.nhsbsa.nhs.uk/1121.aspx){:target="_blank"} in partnership with the NHS Business Service Authority.
 
@@ -30,13 +30,14 @@ GP Connect systems are expected to handle coded data as follows:
 
 {% include important.html content="Updated assured mappings are released every 6 months; suppliers are expected to update their systems in line with the timescales currently required under the GPSoC framework." %}
 
-
 ### Case sensitivity of terminologies ###
+
 [FHIR terminologies](https://www.hl7.org/fhir/STU3/terminologies.html#required){:target="_blank"}
 
-Throughout this specification, coded values are always treated as a pair composed of 'system' and 'code', where the system is a URL that identifies the code system that defines the codes. 
+Throughout this specification, coded values are always treated as a pair composed of 'system' and 'code', where the system is a URL that identifies the code system that defines the codes.
 
 **Notes:**
- - system values are always case sensitive
- - different code systems make their own rules as to whether the codes they define are case sensitive or not 
- - all the codes defined by FHIR itself are case sensitive and SHALL be used in the provided case (usually, but not always, lowercase)
+
+- system values are always case sensitive
+- different code systems make their own rules as to whether the codes they define are case sensitive or not
+- all the codes defined by FHIR itself are case sensitive and SHALL be used in the provided case (usually, but not always, lowercase)
