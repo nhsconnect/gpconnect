@@ -49,9 +49,13 @@ For example, see the [Register a patient request body](foundations_use_case_regi
 
 ### Resources not to be disclosed to a patient
 
-Some items within a patient's record might not be suitable for a patient to view, either until they have been appraised by their healthcare professional or ever. Examples might include items such as test results that have not yet been discussed with the patient by their healthcare professional.
+There are occasions when information within a patient's record is not suitable or desirable to be disclosed to them. This might be for a temporary period of time such as test results that either should or must be disclosed by their primary healthcare professional before they can be discussed with the patient, or it might be information that could cause the patient psychological harm and the healthcare professional has deemed a risk to patient's emotional well-being should it be discussed with them.
 
-In this scenario the resource containing the information **MUST** be marked as not to be disclosed to the patient. This is done through [security labels](http://hl7.org/fhir/stu3/resource.html#security-labels) within the [Resource Metadata](http://hl7.org/fhir/stu3/resource.html#Meta). Specifically, the [NOPAT](http://hl7.org/fhir/stu3/v3/ActCode/cs.html#v3-ActCode-NOPAT) code of the [ActCode Code System](https://hl7.org/fhir/stu3/v3/ActCode/cs.html).
+Alongside information not suitable for patient disclosure there is another category of information, classified as sensitive and confidential. This is information that the primary healthcare professional has deemed to not be suitable for disclosure to other healthcare professionals. Currently this information is only returned in a call made to the [migrate a patient's record](accessrecord_structured_development_migrate_patient_record) API when the parameter `includeSensitiveInformation` is set to `true`.
+The inclusion of security labels does not change this behaviour i.e. if information was not going to be output previously due to sensitivity or confidentiality reasons, this should still be the case. And for information that was previously output this should continue to be output just now it should be output according to the guidance below.
+
+Any resource, with the exception of [List](accessrecord_structured_development_migrate_patient_record) and [Bundle](accessrecord_structured_development_bundle) containing information that is not to be disclosed to the patient **MUST** be marked with the `NOPAT` [security label](http://hl7.org/fhir/stu3/resource.html#security-labels) within the [Resource Metadata](http://hl7.org/fhir/stu3/resource.html#Meta).
+[NOPAT](http://hl7.org/fhir/stu3/v3/ActCode/cs.html#v3-ActCode-NOPAT) is a code within the [ActCode Code System](https://hl7.org/fhir/stu3/v3/ActCode/cs.html) and signifies the information should not be disclosed to the patient, family or caregivers.
 
 The label should be applied to the [Meta.security](http://hl7.org/fhir/stu3/resource-definitions.html#Meta.security) element as follows:
 
@@ -69,12 +73,19 @@ The label should be applied to the [Meta.security](http://hl7.org/fhir/stu3/reso
 }
 ```
 
-Within the documentation every resource that could have the security label applied includes information to that end.
+For any resource carrying information that has been deemed to not be suitable to be disclosed to the patient:
 
-For a Provider the label **MUST** be populated when the resource is not to be disclosed to a patient.
-For a Consumer, when a resource with the `NOPAT` label is encountered it **MUST** be made clear within the consuming system that the healthcare professional is not to disclose the information to the patient.
+* in a response to [retrieve a patient's record](accessrecord_structured_development_retrieve_patient_record):
 
-It is anticipated additional labels will be introduced in the future, therefore, the mere existence of the label is not enough to consider the information it not suitable for patient disclosure, the label **MUST** be `NOPAT`.
+  * Providers **MUST** include the `NOPAT` security label
+  * Consumers **MAY** utilise the information to display a message to the healthcare professional that the information is not to be disclosed to the patient
+
+* in a response to [migrate a patient's record](accessrecord_structured_development_migrate_patient_record):
+
+  * Providers **MUST** include the `NOPAT` security label
+  * Consumers **MUST** record the `NOPAT` security label against any resources as returned within the response from the Provider
+
+It is anticipated additional labels will be introduced in the future and as such the existence of the label is not enough to consider the information is not suitable for patient disclosure.
 
 ## FHIR resource element/data type specific population requirements
 
