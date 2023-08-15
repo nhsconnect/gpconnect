@@ -44,6 +44,18 @@ The MedicationStatement profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)
 
+### meta.security ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><b>Optionality:</b> Required</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+See [FHIR resources](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for details on how to populate the element.
+
 ### extension[lastIssueDate] ###
 
 <table class='resource-attributes'>

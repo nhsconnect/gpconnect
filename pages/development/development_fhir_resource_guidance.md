@@ -47,6 +47,35 @@ If an element within a FHIR profile is marked as must support then all sub eleme
 
 For example, see the [Register a patient request body](foundations_use_case_register_a_patient.html#payload-request-body).
 
+### Resources not to be disclosed to a patient
+
+Some items within a patient's record might not be suitable for a patient to view, either until they have been appraised by their health care professional or ever. Examples might include items such as test results that have not yet been discussed with the patient by their health care professional.
+
+In this scenario the resource containing the information **MUST** be marked as not to be disclosed to the patient. This is done through [security labels](http://hl7.org/fhir/stu3/resource.html#security-labels) within the [Resource Metadata](http://hl7.org/fhir/stu3/resource.html#Meta). Specifically, the [NOPAT](http://hl7.org/fhir/stu3/v3/ActCode/cs.html#v3-ActCode-NOPAT) code of the [ActCode Code System](https://hl7.org/fhir/stu3/v3/ActCode/cs.html).
+
+The label should be applied to the [Meta.security](http://hl7.org/fhir/stu3/resource-definitions.html#Meta.security) element as follows:
+
+```json
+{
+  "meta":{
+    "security":[
+      {
+        "system":"http://hl7.org/fhir/v3/ActCode",
+        "code":"NOPAT",
+        "display":"no disclosure to patient, family or caregivers without attending provider's authorization"
+      }
+    ]
+  }
+}
+```
+
+Within the documentation every resource that could have the security label applied includes information to that end.
+
+For a Provider the label **MUST** be populated when the resource is not to be disclosed to a patient.
+For a Consumer, when a resource with the `NOPAT` label is encountered it **MUST** be made clear within the consuming system that the health care professional is not to disclose the information to the patient.
+
+It is anticipated additional labels will be introduced in the future, therefore, the mere existence of the label is not enough to consider the information it not suitable for patient disclosure, the label **MUST** be `NOPAT`.
+
 ## FHIR resource element/data type specific population requirements
 
 ### id
