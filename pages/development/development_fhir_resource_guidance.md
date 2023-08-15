@@ -73,7 +73,7 @@ The `Address` data type is used in many of the FHIR resources across the GP Conn
 
 Example:
 
-```
+```json
 {
   "use": "home",
   "line": [
