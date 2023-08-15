@@ -47,14 +47,14 @@ If an element within a FHIR profile is marked as must support then all sub eleme
 
 For example, see the [Register a patient request body](foundations_use_case_register_a_patient.html#payload-request-body).
 
-### Resources not to be disclosed to a patient
+## Resources not to be disclosed to a patient
 
 There are occasions when information within a patient's record is not suitable or desirable to be disclosed to them. This might be for a temporary period of time such as test results that either should or must be disclosed by their primary healthcare professional before they can be discussed with the patient, or it might be information that could cause the patient psychological harm and the healthcare professional has deemed a risk to patient's emotional well-being should it be discussed with them.
 
 Alongside information not suitable for patient disclosure there is another category of information, classified as sensitive and confidential. This is information that the primary healthcare professional has deemed to not be suitable for disclosure to other healthcare professionals. Currently this information is only returned in a call made to the [migrate a patient's record](accessrecord_structured_development_migrate_patient_record) API when the parameter `includeSensitiveInformation` is set to `true`.
 The inclusion of security labels does not change this behaviour i.e. if information was not going to be output previously due to sensitivity or confidentiality reasons, this should still be the case. And for information that was previously output this should continue to be output just now it should be output according to the guidance below.
 
-Any resource, with the exception of [List](accessrecord_structured_development_migrate_patient_record) and [Bundle](accessrecord_structured_development_bundle) containing information that is not to be disclosed to the patient **MUST** be marked with the `NOPAT` [security label](http://hl7.org/fhir/stu3/resource.html#security-labels) within the [Resource Metadata](http://hl7.org/fhir/stu3/resource.html#Meta).
+Any resource, with the exception of [List](accessrecord_structured_development_migrate_patient_record), [Bundle](accessrecord_structured_development_bundle) and [Binary](access_documents_development_binary) containing information that is not to be disclosed to the patient **MUST** be marked with the `NOPAT` [security label](http://hl7.org/fhir/stu3/resource.html#security-labels) within the [Resource Metadata](http://hl7.org/fhir/stu3/resource.html#Meta).
 [NOPAT](http://hl7.org/fhir/stu3/v3/ActCode/cs.html#v3-ActCode-NOPAT) is a code within the [ActCode Code System](https://hl7.org/fhir/stu3/v3/ActCode/cs.html) and signifies the information should not be disclosed to the patient, family or caregivers.
 
 The label should be applied to the [Meta.security](http://hl7.org/fhir/stu3/resource-definitions.html#Meta.security) element as follows:
@@ -86,6 +86,10 @@ For any resource carrying information that has been deemed to not be suitable to
   * Consumers **MUST** record the `NOPAT` security label against any resources as returned within the response from the Provider
 
 It is anticipated additional labels will be introduced in the future and as such the existence of the label is not enough to consider the information is not suitable for patient disclosure.
+
+### Documents not to be disclosed to a patient
+
+There are two APIs available to retrieve a patient's documents, [retrieve a document](access_documents_development_retrieve_patient_documents) and [migrate a document](access_documents_development_migrate_patient_documents). Both APIs return a [Binary](access_documents_development_binary) resource onto which it is not possible to use security labels. However, prior to calling either API a search is performed for the patient's documents, retrieve a document uses [search for a patient's documents](access_documents_development_search_patient_documents) and migrate a document uses [migrate a patient's record](accessrecord_structured_development_migrate_patient_record). Within the responses to these calls is a list of [DocumentReference](access_documents_development_documentreference.html), onto which it is possible to use security labels. And it is the `DocumentReference` resources which **MUST** contain the security labels indicating if they are not suitable to be disclosed to the patient.
 
 ## FHIR resource element/data type specific population requirements
 
