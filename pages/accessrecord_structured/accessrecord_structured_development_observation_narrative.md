@@ -11,6 +11,7 @@ div: resource-page
 ## Introduction ##
 
 There are many instances of uncoded free text narrative notes within patient records.
+
 * Paragraphs of free text consultation notes perhaps associated with codes via the wider consultation context but not otherwise explicitly coded.
 * Text which may or may not be associated with codes but where the association is inexact and it is considered better to express the notes text as a standalone item rather than bind the text (possibly incorrectly) to an associated coded resource. See [Consultation guidance](accessrecord_structured_development_consultation_guidance.html) for further information.
 * Representing uncoded or structural elements in patient records for which no suitable resource or is currently available to represent the information and for which falling back to a coded `Observation` resource as the 'uncategorised' representation is inappropriate (for example, no appropriate codes are available to represent the source record entry as an observation).
@@ -55,6 +56,20 @@ The Observation narrative profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1)
 
+### meta.security ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The security label(s) applicable to the resource.
+
+See [FHIR resources](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details on how to populate the element.
+
 ### identifier ###
 
 <table class='resource-attributes'>
@@ -69,7 +84,6 @@ This **MUST** be populated with a globally unique and persistent identifier (tha
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
-
 ### status ###
 
 <table class='resource-attributes'>
@@ -81,8 +95,6 @@ Where *consuming* systems are integrating data from this resource to their local
 </table>
 
 Fixed value of `finished`.
-
-
 
 ### code ###
 
