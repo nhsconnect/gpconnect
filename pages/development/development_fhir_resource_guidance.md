@@ -92,7 +92,7 @@ It is anticipated additional labels will be introduced in the future and as such
 There are two APIs available to retrieve a patient's documents, [retrieve a document](access_documents_development_retrieve_patient_documents) and [migrate a document](access_documents_development_migrate_patient_documents). Both APIs return a [Binary](access_documents_development_binary) resource that can not have security labels applied.
 However, prior to calling either API a search is performed for the patient's documents, retrieve a document uses [search for a patient's documents](access_documents_development_search_patient_documents) and migrate a document uses [migrate a patient's record](accessrecord_structured_development_migrate_patient_record). Within the responses to these calls is a list of [DocumentReference](access_documents_development_documentreference)s that are able to have security labels applied. It is the `DocumentReference` resources which **MUST** contain the security labels indicating if they are not suitable to be disclosed to the patient.
 
-Where applicable, Providers **MUST** ensure `DocumentReference`s contain the `NOPAT` security label and Consumers **MUST** honour and store this information for the documents in the search list.
+Where applicable, Providers **MUST** ensure `DocumentReference`s contain the `NOPAT` security label and Consumers **MUST** honour and store this information against the documents returned in the search list.
 
 ## FHIR resource element/data type specific population requirements
 
