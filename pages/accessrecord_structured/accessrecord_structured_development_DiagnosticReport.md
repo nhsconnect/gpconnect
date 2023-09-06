@@ -55,10 +55,8 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
   </tr>
 </table>
 
-This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). At least one of the following **MUST** be included:
-
-- an identifier scoped by a provider specific namespace
-- the lab report ID, if it is scoped to the NHS PMIP Report Numbers CodeSystem (from [HL7 UK Issued OIDs](https://www.hl7.org.uk/standards/object-identifiers-oids/hl7-uk-issued-oids/)) and it could be used to assist in matching lab reports. In this case `identifier.system` would be `urn:oid:2.16.840.1.113883.2.1.4.5.5`
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). An identifier scoped by a provider specific namespace **MUST** be included.
+If there is a lab report ID, and if it is scoped to the NHS PMIP Report Numbers CodeSystem (from [HL7 UK Issued OIDs](https://www.hl7.org.uk/standards/object-identifiers-oids/hl7-uk-issued-oids/)) and it could be used to assist in matching lab reports this **SHOULD** also be included. In this case `identifier.system` would be `urn:oid:2.16.840.1.113883.2.1.4.5.5`.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
 
