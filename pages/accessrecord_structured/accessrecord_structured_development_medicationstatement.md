@@ -201,9 +201,9 @@ Where the medication/medical device plan has ended use one of the following date
   </tr>
 </table>
 
-When this medication statement was believed true.
+The date when the medication statement was asserted by the information source.
 
-Unless there is a distinct user-modifiable availability date/time for the authorisation, this is the audit trail date/time for when the authorisation was entered.
+If this is unclear, it should be the date/time when the authorisation was entered onto the record.
 
 ### informationSource ###
 
