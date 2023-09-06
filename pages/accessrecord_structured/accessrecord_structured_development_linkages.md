@@ -25,7 +25,7 @@ To support this, GP Connect has developed a FHIR model that identifies all the G
 The model currently covers Consultations, Problems, Medications and Medical Devices, Allergies, Immunisations, Uncategorised Data, Referrals, Investigations, Documents and Diary Entries.
 Other clinical areas will be added as they are developed.
 
-<a href="images/access_structured/GP_Connect_FHIR_Model_v4.png"><img src="images/access_structured/GP_Connect_FHIR_Model_v4.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/GP_Connect_FHIR_Model_v5.png"><img src="images/access_structured/GP_Connect_FHIR_Model_v5.png" alt="GP Connect FHIR Model" style="max-width:100%;max-height:100%;"></a>
 
 <img src="images/access_structured/FHIR_model_key.png" alt="Key for GP Connect FHIR Model" style="max-width:50%;max-height:50%;">
 
@@ -118,7 +118,7 @@ Details on how this is done can be found in the [Consultation Guidance](accessre
 Clinical items within the Consultation are always included in the response regardless of their inclusion/exclusion in other parts of the query.
 So, for example, if a consumer requests consultations then any medications that are contained in the consultations returned will be present in the bundle, regardless of the medications parameter being absent or set to false in the request.
 
-<a href="images/access_structured/Consultation_Return_v4.png"><img src="images/access_structured/Consultation_Return_v4.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Consultation_Return_v5.png"><img src="images/access_structured/Consultation_Return_v5.png" alt="Consultation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
 ### Problems ###
 
@@ -164,7 +164,7 @@ Where a Problem links to a profile that is not yet supported by the provider sys
 Clinical items linked to the Problem are always included in the response regardless of their inclusion/exclusion in other parts of the query.
 So, for example, if a consumer requests a Problem that links to a Medication but does not explicitly request Medications in the query, the provider will still include the Medication linked to the Problem as part of its response.
 
-<a href="images/access_structured/Problem_Return_v4.png"><img src="images/access_structured/Problem_Return_v4.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Problem_Return_v5.png"><img src="images/access_structured/Problem_Return_v5.png" alt="Problem Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
 ### Medications and medical devices ###
 
@@ -299,7 +299,7 @@ For each `DiagnosticReport` referenced in the `List` profile:
 * All administrative profiles referenced directly (or via another administrative profile) by any of the clinical profiles included above
   * Include `Patient`, `Organization`, `PractitionerRole`, `Practitioner` and `Location`
 
-<a href="images/access_structured/Investigation_Return_v4.png"><img src="images/access_structured/Investigation_Return_v4.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
+<a href="images/access_structured/Investigation_Return_v5.png"><img src="images/access_structured/Investigation_Return_v5.png" alt="Investigation Returned FHIR profiles" style="max-width:100%;max-height:100%;"></a>
 
 ### Diary entries ###
 
@@ -371,7 +371,7 @@ It also includes a consolidated related problems `List` profile, but is included
 * secondary lists for all clinical areas contained in consultations or linked to problems, regardless of inclusion in the request
 
 <center>
-<a href="images/access_structured/Summary_Return_v3.png"><img src="images/access_structured/Summary_Return_v3.png" alt="Medications, Allergies, Problems and Consultations Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
+<a href="images/access_structured/Summary_Return_v4.png"><img src="images/access_structured/Summary_Return_v4.png" alt="Medications, Allergies, Problems and Consultations Returned FHIR profiles" style="max-width:70%;max-height:70%;"></a>
 </center>
 
 ### Duplicate returned profiles ###

@@ -52,9 +52,9 @@ When results are filed by the user it is possible to file the entire report or a
 
 Results may not always be filed on the day they were received. However, in most GP systems the date the report is filed is the date against which it will appear in the patient record. As such, this date is an important date when moving records between GP systems.
 
-At the point at which the record is filed, there is opportunity for the user to provide comments against the report or part of the report that they are filing. 
+When the results are filed, there is opportunity for the user to provide comments against the report or part of the report that they are filing. In GP systems that allow multiple comments to be added against a test group, test report or test result each comment **MUST** be returned.
 
-GP Connect will return any diagnosticReports that are associated with a patient whether they have been filed or not. In all cases where reports have been filed into the record there will be a 'Filing comments' observation this will always have a date indicating when the result/report was filed and details any comments made by the user at the time. 
+GP Connect will return any diagnosticReports that are associated with a patient whether they have been filed or not. In all cases where reports have been filed into the record there will be a 'Filing comments' observation this will always have a date indicating when the result/report was filed and details any comments made by the user at the time. If multiple comments are associated to the diagnosticReport the earliest comment indicates the date of the filing.
 
 ## Report structure
 
@@ -65,16 +65,16 @@ The following entity diagram describes the logical model for investigations in G
 
 In the image we have made the key entities more prominent. Entities representing organizations and practitioners sit in the background but are still part of the exported data.
 
-|Entity Name |Description |
-|------------|--------------|
-|Test Report |	The summary data from the test report including the clinical interpretation|
-|Test Group	|Output from a group of tests including the clinical interpretation|
-|Test Result|Output from a single test including the clinical interpretation|
-|Specimen	|Information on the specimen tested|
-|Test Report Filing	|Information recorded by the general practice clinician when they file the test report|
-|Test Request Summary	|A summary of the original test request that is returned with the test report|
-|Test Report Document	|The test report in the format it was received by the GP practice|
-|Test Result Document	|Documents that form part of the test results (for example, images and charts)|
+| Entity Name          | Description                                                                           |
+| -----------          | -----------                                                                           |
+| Test Report          | The summary data from the test report including the clinical interpretation           |
+| Test Group           | Output from a group of tests including the clinical interpretation                    |
+| Test Result          | Output from a single test including the clinical interpretation                       |
+| Specimen             | Information on the specimen tested                                                    |
+| Test Report Filing   | Information recorded by the general practice clinician when they file the test report |
+| Test Request Summary | A summary of the original test request that is returned with the test report          |
+| Test Report Document | The test report in the format it was received by the GP practice                      |
+| Test Result Document | Documents that form part of the test results (for example, images and charts)         |
 
 The 'Test Report Document' and 'Test Result Document' are out of scope for the current iteration, but are represented in the diagram.
 
@@ -84,12 +84,12 @@ We have modelled the investigations report in such a way that it will be able to
 
 There are a number of resources available in FHIR to represent the different entities that exist in investigation reporting. The resources that we are concerned with in order to represent our model are in the following table.
 
-| Resource name       | Description |
-|---------------------|-------------------|
-| [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) | For requesting investigations to be performed by a laboratory |
-| [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) | A reporting structure that contains results and any relevant data such as specimen details or attribution |
-| [`Specimen`](accessrecord_structured_development_Specimen.html) | For carrying details about the specimen that was collected and the investigations were performed on |
-| [`Observation`](accessrecord_structured_development_observation_testgroup.html) |Represents details related to the test group header, test result and details of when a report or group of results was filed into the patient record|
+| Resource name                                                                   | Description                                                                                                                                         |
+| -------------                                                                   | -----------                                                                                                                                         |
+| [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) | For requesting investigations to be performed by a laboratory                                                                                       |
+| [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) | A reporting structure that contains results and any relevant data such as specimen details or attribution                                           |
+| [`Specimen`](accessrecord_structured_development_Specimen.html)                 | For carrying details about the specimen that was collected and the investigations were performed on                                                 |
+| [`Observation`](accessrecord_structured_development_observation_testgroup.html) | Represents details related to the test group header, test result and details of when a report or group of results was filed into the patient record |
 
 There are other resources that may be relevant in the future, such as imagingStudy, imagingManifest and sequence, but currently we are only utilising the resources listed in the table.
 
