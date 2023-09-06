@@ -231,19 +231,19 @@ The status of the authorisation.
 
 Use one of `active`, `completed` or `stopped`:
 
-- `active` represents an active authorisation - used for active medications/medical devices.
-- `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
-- `completed` represents an authorisation which has run its course.
+* `active` represents an active authorisation - used for active medications/medical devices.
+* `stopped` represents an authorisation which has been discontinued, cancelled or stopped.
+* `completed` represents an authorisation which has run its course.
 
 For `MedicationRequest` instances where `intent` is set to `plan`:
 
-- For repeats and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
-- For acutes the status refers to the status of the prescription issue.
+* For repeats and repeat dispensed the status refers to the status of the plan (the entire cycle of prescriptions).
+* For acutes the status refers to the status of the prescription issue.
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
-- The status refers to the status of the prescription issue.
-- Where the plan has been discontinued then the status should not be updated to `stopped`
+* The status refers to the status of the prescription issue.
+* Where the plan has been discontinued then the status should not be updated to `stopped`
 
 ### intent ###
 
@@ -259,8 +259,8 @@ Used to distinguish between authorisations and issues.
 
 Use one of `plan` or `order`:
 
-- `plan` represents an authorisation of a medication or medical device.
-- `order` represents a prescription or issue of a medication or medical device.
+* `plan` represents an authorisation of a medication or medical device.
+* `order` represents a prescription or issue of a medication or medical device.
 
 ### medication ###
 
@@ -419,28 +419,28 @@ Start date is mandatory. Where there is a defined expiry or end date the end dat
 
 For `MedicationRequest` instances where `intent` is set to `plan`:
 
-- This refers to the period that the medication/medical device plan is active.
-- This **MUST** mirror `MedicationStatement.effective`
+* This refers to the period that the medication/medical device plan is active.
+* This **MUST** mirror `MedicationStatement.effective`
 
 For `MedicationRequest` instances where `intent` is set to `order`:
 
-- This refers to the period that the issued prescription is active
+* This refers to the period that the issued prescription is active
 
 `Period.start` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 
-- The prescription issue date recorded in the patient record
-- The date the prescription was recorded.
+* The prescription issue date recorded in the patient record
+* The date the prescription was recorded.
 
 `Period.end` is **MANDATORY**.
 
 Use one of the following dates in order of descending preference:
 
-- The prescription end date recorded in the patient record
-- The prescription end date derived from period.start and the duration
-- The Period.start date
-  - This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
+* The prescription end date recorded in the patient record
+* The prescription end date derived from period.start and the duration
+* The Period.start date
+  * This option should only occur where data has been lost (for example, during the record transfer between two systems) and is used to ensure that an ended prescription will always have an end date.
 
 ### dispenseRequest.quantity ###
 
