@@ -54,7 +54,7 @@ Results may not always be filed on the day they were received. However, in most 
 
 When the results are filed, there is opportunity for the user to provide comments against the report or part of the report that they are filing. In GP systems that allow multiple comments to be added against a test group, test report or test result each comment **MUST** be returned.
 
-GP Connect will return any diagnosticReports that are associated with a patient whether they have been filed or not. In all cases where reports have been filed into the record there will be a 'Filing comments' observation this will always have a date indicating when the result/report was filed and details any comments made by the user at the time.
+GP Connect will return any diagnosticReports that are associated with a patient whether they have been filed or not. In all cases where reports have been filed into the record there will be a 'Filing comments' observation this will always have a date indicating when the result/report was filed and details any comments made by the user at the time. If multiple comments are associated to the diagnosticReport the earliest comment indicates the date of the filing.
 
 ## Report structure
 
