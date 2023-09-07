@@ -6,3 +6,4 @@ _pdf
 .vscode/
 .bundle/
 .gems/
+.DS_Store
