@@ -58,6 +58,20 @@ The security label(s) applicable to the resource.
 
 See [FHIR resources](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details on how to populate the element.
 
+### securityLabel ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The security label(s) applicable to the document the reference refers to.
+
+See [Documents not to be disclosed to a patient](development_fhir_resource_guidance#documents-not-to-be-disclosed-to-a-patient) on the [FHIR resources](development_fhir_resource_guidance.html) page for more details on how to populate the element.
+
 ### masterIdentifier ###
 
 <table class='resource-attributes'>
@@ -328,15 +342,5 @@ Relationships to other documents. This is not required by GP Connect.
 </table>
 
 Patient demographics from source.
-
-<h3 style="color:#ED1951;"> securityLabel </h3>
-
-<table class='resource-attributes'>
-  <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
-  </tr>
-</table>
-
-Document security-tags is not required by GP Connect.
 
 <br>

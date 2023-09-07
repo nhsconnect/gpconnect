@@ -77,7 +77,7 @@ For any resource carrying information that has been deemed to not be suitable to
 
 * in a response to [retrieve a patient's record](accessrecord_structured_development_retrieve_patient_record):
 
-  * Providers **MUST** include the `NOPAT` security label for all applicable resources
+  * Providers **MAY** include the `NOPAT` security label for all applicable resources
   * Consumers **MAY** utilise the information to display a message to the healthcare professional that the information is not to be disclosed to the patient
 
 * in a response to [migrate a patient's record](accessrecord_structured_development_migrate_patient_record):
@@ -90,9 +90,30 @@ It is anticipated additional labels will be introduced in the future and as such
 ### Documents not to be disclosed to a patient
 
 There are two APIs available to retrieve a patient's documents, [retrieve a document](access_documents_development_retrieve_patient_documents) and [migrate a document](access_documents_development_migrate_patient_documents). Both APIs return a [Binary](access_documents_development_binary) resource that can not have security labels applied.
-However, prior to calling either API a search is performed for the patient's documents, retrieve a document uses [search for a patient's documents](access_documents_development_search_patient_documents) and migrate a document uses [migrate a patient's record](accessrecord_structured_development_migrate_patient_record). Within the responses to these calls is a list of [DocumentReference](access_documents_development_documentreference)s that are able to have security labels applied. It is the `DocumentReference` resources which **MUST** contain the security labels indicating if they are not suitable to be disclosed to the patient.
+However, prior to calling either API a search is performed for the patient's documents, retrieve a document uses [search for a patient's documents](access_documents_development_search_patient_documents) and migrate a document uses [migrate a patient's record](accessrecord_structured_development_migrate_patient_record). Within the responses to these calls is a list of [DocumentReference](access_documents_development_documentreference)s that are able to have security labels applied.
+Security labels can be applied to the DocumentReference resource (through the `meta.security` element, as described above), and in doing so the existence of the document has been deemed to not be suitable for the patient to know. Or, the document might not be suitable for a patient e.g. a test result that needs discussion first. In this scenario the reference to the document needs to have the security label applied. This is done through the `DocumentReference.securityLabel` element. It **MUST** be populated as follows:
 
-Where applicable, Providers **MUST** ensure `DocumentReference`s contain the `NOPAT` security label and Consumers **MUST** honour and store this information against the documents returned in the search list.
+```json
+{
+  "securityLabel":[
+    {
+      "coding": [
+        {
+          "system":"http://hl7.org/fhir/v3/ActCode",
+          "code":"NOPAT",
+          "display":"no disclosure to patient, family or caregivers without attending provider's authorization"
+        }
+      ]
+    }
+  ]
+}
+```
+
+Where applicable, Providers **MUST** ensure `DocumentReference`s contain the appropriate `NOPAT` security label either on the DocumentReference resource (in the `meta.security` element), the `securityLabel` element or both. Consumers **MUST** honour and store this information against the documents returned in the search list.
+
+### Other security labels
+
+Other security labels **MAY** be included, however, `NOPAT` labels **MUST** be used in the way described above.
 
 ## FHIR resource element/data type specific population requirements
 
