@@ -37,12 +37,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Practitioner?id
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1`|
+| Header              | Value                                                              |
+| ------              | -----                                                              |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                                |
+| `Ssp-From`          | Consumer's ASID                                                    |
+| `Ssp-To`            | Provider's ASID                                                    |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:search:practitioner-1` |
 
 #### Payload request body ####
 
@@ -74,17 +74,16 @@ Provider systems:
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
 - **SHALL** return zero or more matching `Practitioner` resources in a `Bundle` of `type` searchset.
 - **SHALL** return `Practitioner` resources that conform to the [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) profile.
-
 - **SHALL** populate the following `Practitioner` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of each `Practitioner` resource
   - `identifier` with relevant business identifiers (for example, SDS User Id) for each `Practitioner` resource
   - `name`
+    - If the practitioner is represented with structured data such that the family name can be determined (this should be the case when they originate from an internal system) this data **SHOULD** be used to populate `name` including `name.family`. `name.text` **MUST** not be populated
+    - If the practitioner is not represented with structured data or the family name can not be determined (this may be the case when they originate from an external system), `name.text` **MUST** be populated with the full name
   - `gender` where available
   - `nhsCommunication` with the practitioner's language information, where available
-
 - **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
-
 - **SHALL NOT** populate the following fields:
   - `telecom`
   - `address`
