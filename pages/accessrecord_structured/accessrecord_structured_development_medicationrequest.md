@@ -460,7 +460,7 @@ The quantity to dispense.
 
 If the value is text, then the extension dispenseRequest.quantityText **MUST** be used.
 
-### dispenseRequest.quantityText ###
+### extension[dispenseRequest.quantityText] ###
 
 <table class='resource-attributes'>
   <tr>
