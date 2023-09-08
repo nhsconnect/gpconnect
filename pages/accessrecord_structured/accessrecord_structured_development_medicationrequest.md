@@ -176,7 +176,7 @@ If a medication/medical device is an acute (code : `acute`), delayed acute (`del
 
 This field provides an explicit repeat/acute flag rather than deriving it from presence of extension elements or repeatNumber.
 
-In exceptional cases where for legacy data there is no prescriptionType recorded in the system then this **MUST** be populated with the text ‘No information available’.
+In exceptional cases where for legacy data there is no prescriptionType recorded in the system, the supplier **MUST** not populate the element and the consumer **SHOULD** use the text ‘No information available’.
 
 ### identifier ###
 
