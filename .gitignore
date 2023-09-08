@@ -7,3 +7,4 @@ _pdf
 .bundle/
 .gems/
 .DS_Store
+*.bkp

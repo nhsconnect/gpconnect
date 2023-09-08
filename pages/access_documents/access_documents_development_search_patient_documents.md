@@ -39,9 +39,9 @@ Provider systems **SHALL** support the following include parameters:
 | Name                                                 | Description                                                                                                     | Paths                                   |
 | ----                                                 | -----------                                                                                                     | -----                                   |
 | `_include= DocumentReference:subject:Patient`        | Include `Patient` resources referenced within the returned `DocumentReference` resources                        | `DocumentReference.subject`             |
-| `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |
-| `_include= DocumentReference:author:Organization`    | Details of organisations that authored the documents that are returned in DocumentReference resources           |
-| `_include= DocumentReference:author:Practitioner`    | Details of who/what authored the documents that are returned in DocumentReference resources                     |
+| `_include= DocumentReference:custodian:Organization` | Details of organisations that are custodians for the documents that are returned in DocumentReference resources |                                         |
+| `_include= DocumentReference:author:Organization`    | Details of organisations that authored the documents that are returned in DocumentReference resources           |                                         |
+| `_include= DocumentReference:author:Practitioner`    | Details of who/what authored the documents that are returned in DocumentReference resources                     |                                         |
 | `_revinclude:recurse= PractitionerRole:practitioner` | Include `PractitionerRole` resources referenced from matching `Practitioner` resources                          | `DocumentReference.author:Practitioner` |
 
 Consumer systems **MUST** send the following parameters to reduce the number of API calls:
@@ -187,7 +187,7 @@ Provider systems **MUST**:
   - `PractitionerRole` resources for the roles of supplementary actors
   - `DocumentReference` resources conforming to the [CareConnect-GPC-DocumentReference-1](access_documents_development_documentreference.html) profile that match the supplied search criteria
     - where the `created` parameter has been supplied and `DocumentReference.created` doesn't exist, `DocumentReference.indexed` **MUST** be used instead
-    - where the 'description' parameter has been supplied, both DocumentReference.description and DocumentReference.type **MUST** be searched
+    - where the `description` parameter has been supplied, both `DocumentReference.description` and `DocumentReference.type` **MUST** be searched
   - `Organization` resources for supplementary actors
 
 #### Payload response examples ####

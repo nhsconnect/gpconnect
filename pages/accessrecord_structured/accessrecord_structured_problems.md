@@ -106,10 +106,12 @@ A complex extension that contains a reference to a related ProblemHeader (Condit
 Contains references to clinical items and consultations that a user in the sending clinical system has chosen to link to this Problem.
 
 When populating this field the provider system must include every clinical item in the patient record that provides information about the problem and includes:
+
 * Clinical items that are directly linked to the problem in the provider system; and
 * Clinical items that are within a consultation topic that is linked to the problem
 
 When populating this field the provider system must include every consultation where the problem was discussed or information about the problem was recorded. This includes:
+
 * consultations that are directly linked to the problem in the provider system; and
 * consultations that created/updated a clinical item that has been linked to the problem
 
@@ -248,7 +250,7 @@ The datetime that the Problem was recorded on the clinical system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>

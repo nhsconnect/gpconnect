@@ -201,15 +201,15 @@ Where the medication/medical device plan has ended use one of the following date
   </tr>
 </table>
 
-When this medication statement was believed true.
+The date when the medication statement was asserted by the information source.
 
-Unless there is a distinct user-modifiable availability date/time for the authorisation, this is the audit trail date/time for when the authorisation was entered.
+If this is unclear, it should be the date/time when the authorisation was entered onto the record.
 
 ### informationSource ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Patient, Practitioner, RelatedPerson, Organization)  </code></td>
+    <td><b>Data type:</b> <code>Reference(Patient | Practitioner | RelatedPerson | Organization)  </code></td>
     <td><b>Optionality:</b> Optional</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -291,6 +291,8 @@ Where fully structured dosage instructions are not supported by provider systems
 
 Complete dosage instructions as text.
 
+These instructions should be formatted as specified by [ISN DAPB4013](https://digital.nhs.uk/data-and-information/information-standards/information-standards-and-data-collections-including-extractions/publications-and-notifications/standards-and-collections/dapb4013-medicine-and-allergy-intolerance-data-transfer) and laid out in the [UK Core implementation guide](https://simplifier.net/guide/ukcoreimplementationguideformedicines/ElementDosage?version=current#text).
+
 Where the dosage instructions have been changed during the lifetime of the Medication/Medical Device plan append the following warning text to end of the dosage instructions:
 
 - "WARNING – Dosage has changed during the effective period. The latest change was made on DD-Mmm-YYYY”, where DD-Mmm-YYYY is the date the dosage was last changed.
@@ -345,7 +347,7 @@ This is not in scope for this version of GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(MedicationAdministration, MedicationDispense, MedicationStatement, Procedure, Observation)</code></td>
+    <td><b>Data type:</b> <code>Reference(MedicationAdministration | MedicationDispense | MedicationStatement | Procedure | Observation)</code></td>
   </tr>
 </table>
 
@@ -397,7 +399,7 @@ This information is available via linking to a Problem record.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Condition), Reference(Observation)</code></td>
+    <td><b>Data type:</b> <code>Reference(Condition | Observation)</code></td>
   </tr>
 </table>
 

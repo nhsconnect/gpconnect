@@ -30,7 +30,6 @@ The headings below list the elements of the DocumentReference resource and descr
 
 The logical identifier of the DocumentReference resource.
 
-
 ### meta.profile ###
 
 <table class='resource-attributes'>
@@ -101,7 +100,7 @@ Other classifications of documents **SHOULD** be sent as `text`.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(CareConnect-GPC-Patient-1 | CareConnect-GPC-Practitioner-1)</code></td>
+    <td><b>Data type:</b> <code>Reference(Patient | Practitioner)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -137,14 +136,13 @@ When the GP Practice added the document to their clinical system.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
 </table>
 
 Who and/or what authored the document.
-
 
 ### custodian ###
 
@@ -157,7 +155,6 @@ Who and/or what authored the document.
 </table>
 
 Organisation which maintains this document.
-
 
 ### description ###
 
@@ -223,7 +220,7 @@ MIME type for the document.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(CareConnect-GPC-Encounter-1)</code></td>
+    <td><b>Data type:</b> <code>Reference(Encounter)</code></td>
     <td><b>Optionality:</b> Required/Optional</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -263,11 +260,11 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(preliminary | final | appended | amended | entered-in-error)</code></td>
+    <td><b>Data type:</b> <code>Code</code></td>
   </tr>
 </table>
 
-This is not required by GP Connect.
+Status of the underlying document. This is not required by GP Connect.
 
 <h3 style="color:#ED1951;"> class </h3>
 
@@ -283,7 +280,7 @@ Categorization of document is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference ( CareConnect-GPC-Practitioner-1 | CareConnect-GPC-Organization-1 )</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
   </tr>
 </table>
 
@@ -305,12 +302,12 @@ Data of the attachment is not required by GP Connect as it will be populated in 
     <td><b>Data type:</b> <code>code</code></td>
   </tr>
 </table>
-replaces | transforms | signs | appends
-Relationships to other documents is not required by GP Connect.
+
+Relationships to other documents. This is not required by GP Connect.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b><code>Reference(CareConnect-GPC-Patient-1)</code></td>
+    <td><b>Data type:</b><code>Reference(Patient)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>

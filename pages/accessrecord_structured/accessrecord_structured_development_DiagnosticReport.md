@@ -55,10 +55,10 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
   </tr>
 </table>
 
-This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
+This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). An identifier scoped by a provider specific namespace **MUST** be included.
+If there is a lab report ID, and if it is scoped to the NHS PMIP Report Numbers CodeSystem (from [HL7 UK Issued OIDs](https://www.hl7.org.uk/standards/object-identifiers-oids/hl7-uk-issued-oids/)) and it could be used to assist in matching lab reports this **SHOULD** also be included. In this case `identifier.system` would be `urn:oid:2.16.840.1.113883.2.1.4.5.5`.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
-
 
 ### basedOn ###
 
@@ -150,12 +150,11 @@ A reference to the `Encounter` profile representing the consultation the test re
 
 The date and time that the DiagnosticReport was issued by the laboratory or other report provider.
 
-
 ### performer ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -185,12 +184,12 @@ Reference to the specimen(s) on which these results were based.
   </tr>
 </table>
 
-Reference to the result(s) which are contained in the DiagnosticReport. 
+Reference to the result(s) which are contained in the DiagnosticReport.
 This may contain references to standalone test results, test group headers (which then reference further results) or a mixture of both.
 
 Test results which are part of a test group will not be referenced by this element, the reference will be to the test group which will in turn reference the test results.
 
-In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record. 
+In GP systems this will also contain a reference to an `observation` that contains the details of the time that the report was filed into the record.
 This will be identified as the `observation.code` element will be populated with the SNOMED code `37331000000100` for `Comment note`.
 
 ### codedDiagnosis ###

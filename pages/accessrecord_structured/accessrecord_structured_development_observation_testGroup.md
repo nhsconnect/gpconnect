@@ -12,7 +12,7 @@ div: resource-page
 
 The headings below list the elements of the `Observation` resource and describe how to populate and consume them.
 
-{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_observation.html#elements-not-in-use)." %}
+{% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](#elements-not-in-use)." %}
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [Observation profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Observation-1/_history/1.7)." %}
 
@@ -138,7 +138,7 @@ Is this is not provided for a test group header result then it should inherit th
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organisation)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organisation)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -267,7 +267,6 @@ The following elements **MUST NOT** be populated:
     <td><b>Data type:</b> BackboneElement</td>
   </tr>
 </table>
-
 
 ### component ###
 

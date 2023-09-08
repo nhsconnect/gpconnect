@@ -16,7 +16,6 @@ The headings below detail the elements of the `List` profile and describe how to
 
 {% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [List profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1/_history/1.7)." %}
 
-
 ## List elements ##
 
 ### meta.profile ###
@@ -33,7 +32,6 @@ The List profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1)
 
-
 ### extension[warningCode] ###
 
 <table class='resource-attributes'>
@@ -47,7 +45,6 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-List-1
 A code or codes warning of an issue related to this list.
 
 This extension is used to capture warnings that the list may be incomplete as data has been excluded due to confidentiality or may be missing due to data being in transit. It **MUST** be populated using the appropriate code from the table in the warning codes section on the [resource population fundamentals page](accessrecord_structured_development_resources_overview.html).
-
 
 ### extension[clinicalSetting] ###
 
@@ -156,7 +153,7 @@ Reference to the patient.
 
 Where the list is used to create primary or secondary lists in response to a query this is when the list was created.
 
-Where a list is used to represent a consultation this is the date the consultation was recorded as specified on the [list consultation page](accessrecord_structured_development_list_consultation.html) 
+Where a list is used to represent a consultation this is the date the consultation was recorded as specified on the [list consultation page](accessrecord_structured_development_list_consultation.html)
 
 ### orderedBy ###
 
@@ -270,6 +267,6 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Practitioner, Patient, Device)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Patient | Device)</code></td>
   </tr>
 </table>

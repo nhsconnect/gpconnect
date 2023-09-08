@@ -13,7 +13,7 @@ The headings below list the elements of the ProcedureRequest resource and descri
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_ProcedureRequest.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.3)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProcedureRequest profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProcedureRequest-1/_history/1.4)." %}
 
 ## ProcedureRequest resource elements ##
 
@@ -33,7 +33,7 @@ The logical identifier of the DiagnosticReport resource.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>uri</code></td>
+    <td><b>Data type:</b> <code>Uri</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -56,7 +56,6 @@ Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Diagno
 This **MUST** be populated with a globally unique and persistent identifier (that is, it doesn't change between requests and therefore stored with the source data). This **MUST** be scoped by a provider specific namespace for the identifier.
 
 Where *consuming* systems are integrating data from this resource to their local system, they **MUST** also persist this identifier at the same time.
-
 
 ### status ###
 
@@ -114,7 +113,7 @@ A reference to the `Patient` that the ProcedureRequest is about.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -126,7 +125,7 @@ Reference to the resource for the practitioner or organization that is requested
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference (Practitioner/Organization)</code></td>
+    <td><b>Data type:</b> <code>Reference(Practitioner | Organization)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..1</td>
   </tr>
@@ -138,7 +137,7 @@ Reference to the resource for the practitioner or organization that created the 
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>codeableConcept</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -150,7 +149,7 @@ An explanation or justification for why this diagnostic investigation is being r
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code> reference</code></td>
+    <td><b>Data type:</b> <code>Reference(Observation | Condition)</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -162,7 +161,7 @@ A reference to any conditions the patient has that are supplied by the requestin
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>string</code></td>
+    <td><b>Data type:</b> <code>String</code></td>
     <td><b>Optionality:</b> Required</td>
     <td><b>Cardinality:</b> 0..*</td>
   </tr>
@@ -180,7 +179,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
   </tr>
 </table>
 
@@ -188,7 +187,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
   </tr>
 </table>
 
@@ -196,7 +195,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>reference</code></td>
+    <td><b>Data type:</b> <code>Reference</code></td>
   </tr>
 </table>
 
@@ -212,7 +211,7 @@ The following elements **MUST NOT** be populated:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>code</code></td>
+    <td><b>Data type:</b> <code>Code</code></td>
   </tr>
 </table>
 
@@ -222,7 +221,7 @@ Out of scope for the current iteration.
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>boolean</code></td>
+    <td><b>Data type:</b> <code>Boolean</code></td>
   </tr>
 </table>
 
@@ -278,7 +277,7 @@ Out of scope for the current iteration.
   </tr>
 </table>
 
-Out of scope for the current itera
+Out of scope for the current iteration.
 
 ### supportingInformation ###
 
@@ -308,6 +307,6 @@ Out of scope for the current itera
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference</code></td>
+    <td><b>Data type:</b> <code>Reference(Provenance)</code></td>
   </tr>
 </table>
