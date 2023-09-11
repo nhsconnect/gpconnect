@@ -410,13 +410,9 @@
             "system": "http://unitsofmeasure.org"
           },
           "quantity": {
-            "extension": [
-              {
-                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "capsule(s)"
-              }
-            ],
-            "value": "28"
+            "value": "28",
+            "unit": "tablets",
+            "system": "http://unitsofmeasure.org"
           },
           "validityPeriod": {
             "start": "2016-05-10"
@@ -491,13 +487,9 @@
             "system": "http://unitsofmeasure.org"
           },
           "quantity": {
-            "extension": [
-              {
-                "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "capsule(s)"
-              }
-            ],
-            "value": "28"
+            "value": "28",
+            "unit": "tablets",
+            "system": "http://unitsofmeasure.org"
           },
           "validityPeriod": {
             "start": "2016-05-10"
