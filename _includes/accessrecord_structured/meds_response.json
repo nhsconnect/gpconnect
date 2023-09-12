@@ -234,6 +234,11 @@
           },
           {
             "item": {
+              "reference": "MedicationStatement/985eba1d-e4fd-41ad-90aa-f840dff453d9"
+            }
+          },
+          {
+            "item": {
               "reference": "MedicationStatement/791ceb40-db0a-491d-ab0f-22f5a08509fd"
             }
           }
@@ -281,6 +286,67 @@
         "status": "completed",
         "medicationReference": {
           "reference": "Medication/c260b451-9821-42de-81f9-ba86dcea2c32"
+        },
+        "effectiveDateTime": "2016-05-10",
+        "dateAsserted": "2016-05-10",
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "taken": "unk",
+        "note": [
+          {
+            "text": "Pharmacy Notes: NOTES FOR PHARMACY"
+          }
+        ],
+        "dosage": [
+          {
+            "patientInstruction": "INSTRUCTIONS FOR PATIENT",
+            "text": "TAKE ONE DAILY"
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "985eba1d-e4fd-41ad-90aa-f840dff453d9",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1"
+          ]
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationStatementLastIssueDate-1",
+            "valueDateTime": "2016-05-10"
+          },
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescribingAgency-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescribingAgency-1",
+                  "code": "prescribed-at-gp-practice",
+                  "display": "Prescribed at GP practice"
+                }
+              ]
+            }
+          }
+        ],
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "13426283749629"
+          }
+        ],
+        "basedOn": [
+          {
+            "reference": "MedicationRequest/686f3293-b166-4ea8-9951-df262c49a43a"
+          }
+        ],
+        "status": "completed",
+        "medicationReference": {
+          "reference": "Medication/7e1995cd-a91c-4b49-8fcb-339c479a0c83"
         },
         "effectiveDateTime": "2016-05-10",
         "dateAsserted": "2016-05-10",
@@ -413,10 +479,79 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "capsule(s)"
+                "valueString": "28 capsule(s)"
               }
-            ],
-            "value": "28"
+            ]
+          },
+          "validityPeriod": {
+            "start": "2016-05-10"
+          }
+        },
+        "extension": [
+          {
+            "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-PrescriptionType-1",
+            "valueCodeableConcept": {
+              "coding": [
+                {
+                  "code": "acute",
+                  "display": "Acute",
+                  "system": "https://fhir.nhs.uk/STU3/CodeSystem/CareConnect-PrescriptionType-1"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "MedicationRequest",
+        "id": "686f3293-b166-4ea8-9951-df262c49a43a",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationRequest-1"
+          ]
+        },
+        "identifier": [
+          {
+            "system": "https://provider.nhs.uk/data-identifier",
+            "value": "33426283749629"
+          }
+        ],
+        "status": "completed",
+        "intent": "plan",
+        "medicationReference": {
+          "reference": "Medication/7e1995cd-a91c-4b49-8fcb-339c479a0c83"
+        },
+        "subject": {
+          "reference": "Patient/04603d77-1a4e-4d63-b246-d7504f8bd833"
+        },
+        "authoredOn": "2016-05-10",
+        "recorder": {
+          "reference": "PractitionerRole/e0244de8-07ef-4274-9f7a-d7067bcc8d21"
+        },
+        "note": [
+          {
+            "text": "Pharmacy Notes: NOTES FOR PHARMACY"
+          }
+        ],
+        "dosageInstruction": [
+          {
+            "patientInstruction": "INSTRUCTIONS FOR PATIENT",
+            "text": "TAKE ONE DAILY"
+          }
+        ],
+        "dispenseRequest": {
+          "expectedSupplyDuration": {
+            "code": "d",
+            "value": "28",
+            "unit": "day",
+            "system": "http://unitsofmeasure.org"
+          },
+          "quantity": {
+            "value": "28",
+            "unit": "capsules",
+            "system": "http://unitsofmeasure.org"
           },
           "validityPeriod": {
             "start": "2016-05-10"
@@ -494,10 +629,9 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "capsule(s)"
+                "valueString": "28 capsule(s)"
               }
-            ],
-            "value": "28"
+            ]
           },
           "validityPeriod": {
             "start": "2016-05-10"
@@ -573,7 +707,7 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "tablets(s)"
+                "valueString": "tablet(s)"
               }
             ],
             "value": "84"
@@ -788,6 +922,37 @@
           ]
         },
         "id": "c260b451-9821-42de-81f9-ba86dcea2c32",
+        "code": {
+          "coding": [
+            {
+              "extension": [
+                {
+                  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-coding-sctdescid",
+                  "extension": [
+                    {
+                      "url": "DescriptionID",
+                      "valueId": "56966201000001112"
+                    }
+                  ]
+                }
+              ],
+              "display": "Amoxicillin 250mg capsules",
+              "code": "323509004",
+              "system": "http://snomed.info/sct"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "resource": {
+        "resourceType": "Medication",
+        "meta": {
+          "profile": [
+            "https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Medication-1"
+          ]
+        },
+        "id": "7e1995cd-a91c-4b49-8fcb-339c479a0c83",
         "code": {
           "coding": [
             {

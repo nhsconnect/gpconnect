@@ -456,11 +456,11 @@ Use one of the following dates in order of descending preference:
   </tr>
 </table>
 
-The quantity to dispense.
+When quantity to dispense is available as a numerical value this **MUST** be used. When the unit of the quantity to dispense is coded this **SHOULD** be included along with the system.
 
-If the value is text, then the extension dispenseRequest.quantityText **MUST** be used.
+If quantity is a textual value, then the extension dispenseRequest.quantityText **MUST** be used.
 
-### dispenseRequest.quantityText ###
+### extension[dispenseRequest.quantityText] ###
 
 <table class='resource-attributes'>
   <tr>
@@ -470,9 +470,9 @@ If the value is text, then the extension dispenseRequest.quantityText **MUST** b
   </tr>
 </table>
 
-This field is used to contain the units relating to the quantity. For example, 'tablet(s)', 'capsule(s)' or 'dose(s)'.
+When quantity to dispense is a numerical value and the unit is not coded this field **SHOULD** contain the textual representation of the unit e.g. 'tablet(s)', 'capsule(s)', 'does(s)'.
 
-It may also be a textual representation of quantity. Only to be used in this way if there is no numerical value.
+When quantity to dispense is a textual value this field **SHOULD** contain both the value of the quantity to dispense and the unit e.g. '10 tablets', '90 capsules', '1 dose'.
 
 ### dispenseRequest.expectedSupplyDuration ###
 
