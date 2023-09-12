@@ -456,7 +456,7 @@ Use one of the following dates in order of descending preference:
   </tr>
 </table>
 
-The quantity to dispense, if available as a numerical value. When the unit of the quantity to dispense are coded they should be included along with the system.
+When quantity to dispense is available as a numerical value this **MUST** be used. When the unit of the quantity to dispense is coded this **SHOULD** be included along with the system.
 
 If quantity is a textual value, then the extension dispenseRequest.quantityText **MUST** be used.
 
@@ -472,7 +472,7 @@ If quantity is a textual value, then the extension dispenseRequest.quantityText 
 
 When quantity to dispense is a numerical value and the unit is not coded this field **SHOULD** contain the textual representation of the unit e.g. 'tablet(s)', 'capsule(s)', 'does(s)'.
 
-When quantity to dispense is a textual value this field should contain both the value of the quantity to dispense and the unit e.g. '10 tablets', '90 capsules', '1 dose'.
+When quantity to dispense is a textual value this field **SHOULD** contain both the value of the quantity to dispense and the unit e.g. '10 tablets', '90 capsules', '1 dose'.
 
 ### dispenseRequest.expectedSupplyDuration ###
 
