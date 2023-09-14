@@ -57,9 +57,7 @@ The inclusion of security labels does not change this behaviour i.e. if informat
 Any resource, with the exception of [List](accessrecord_structured_development_migrate_patient_record), [Bundle](accessrecord_structured_development_bundle) and [Binary](access_documents_development_binary) that contains information that is not to be disclosed to the patient **MAY** be marked with the `NOPAT` [security label](http://hl7.org/fhir/stu3/resource.html#security-labels) within the [Resource Metadata](http://hl7.org/fhir/stu3/resource.html#Meta).
 [NOPAT](http://hl7.org/fhir/stu3/v3/ActCode/cs.html#v3-ActCode-NOPAT) is a code within the [ActCode Code System](https://hl7.org/fhir/stu3/v3/ActCode/cs.html) and signifies the information should not be disclosed to the patient, family or caregivers.
 
-{% include note.html content="When a supplier wishes to communicate information within a resource is not suitable for a patient it is this label that **MUST** be used." %}
-
-{% include important.html content="The absence of a label has no special meaning i.e. it doesn't mean the information within *is* suitable for a patient. The information *may* have been reviewed and deemed suitable for a patient, however, it *may* not have been reviewed at all. Therefore, where no label is present, information disclosure to the patient must be handled in the normal way and is ultimately the responsibility of the healthcare professional." %}
+{% include note.html content="When a supplier wishes to communicate that information within a resource is not suitable for a patient, it is this label that **MUST** be used." %}
 
 The label should be applied to the [Meta.security](http://hl7.org/fhir/stu3/resource-definitions.html#Meta.security) element as follows:
 
@@ -76,6 +74,8 @@ The label should be applied to the [Meta.security](http://hl7.org/fhir/stu3/reso
   }
 }
 ```
+
+{% include important.html content="The absence of a label has no special meaning i.e. it doesn't mean the information within *is* suitable for a patient. The information *may* have been reviewed and deemed suitable for a patient, however, it *may* not have been reviewed at all. Therefore, where no label is present, information disclosure to the patient must be handled in the normal way and is ultimately the responsibility of the healthcare professional." %}
 
 For any resource carrying information that has been deemed to not be suitable to be disclosed to the patient:
 
