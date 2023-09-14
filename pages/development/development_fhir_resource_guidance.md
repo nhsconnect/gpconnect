@@ -54,10 +54,12 @@ There are occasions when information within a patient's record is not suitable o
 Alongside information not suitable for patient disclosure there is another category of information, classified as sensitive and confidential. This is information that the primary healthcare professional has deemed to not be suitable for disclosure to other healthcare professionals. Currently, this information is only returned in a call made to the [migrate a patient's record](accessrecord_structured_development_migrate_patient_record) API when the parameter `includeSensitiveInformation` is set to `true`.
 The inclusion of security labels does not change this behaviour i.e. if information was not going to be output previously due to sensitivity or confidentiality reasons, this should still be the case. And for information that was previously output this should continue to be output, just now it should be output according to the guidance below and with a security label, if appropriate.
 
-{% include important.html content="The absence of a label has no special meaning i.e. it doesn't mean the information within *is* suitable for a patient. The information *may* have been reviewed and deemed suitable for a patient, however, it *may* not have been reviewed at all. Therefore, where no label is present, information disclosure to the patient must be handled in the normal way and is ultimately the responsibility of the healthcare professional." %}
-
 Any resource, with the exception of [List](accessrecord_structured_development_migrate_patient_record), [Bundle](accessrecord_structured_development_bundle) and [Binary](access_documents_development_binary) that contains information that is not to be disclosed to the patient **MAY** be marked with the `NOPAT` [security label](http://hl7.org/fhir/stu3/resource.html#security-labels) within the [Resource Metadata](http://hl7.org/fhir/stu3/resource.html#Meta).
 [NOPAT](http://hl7.org/fhir/stu3/v3/ActCode/cs.html#v3-ActCode-NOPAT) is a code within the [ActCode Code System](https://hl7.org/fhir/stu3/v3/ActCode/cs.html) and signifies the information should not be disclosed to the patient, family or caregivers.
+
+{% include note.html content="When a supplier wishes to communicate information within a resource is not suitable for a patient it is this label that **MUST** be used." %}
+
+{% include important.html content="The absence of a label has no special meaning i.e. it doesn't mean the information within *is* suitable for a patient. The information *may* have been reviewed and deemed suitable for a patient, however, it *may* not have been reviewed at all. Therefore, where no label is present, information disclosure to the patient must be handled in the normal way and is ultimately the responsibility of the healthcare professional." %}
 
 The label should be applied to the [Meta.security](http://hl7.org/fhir/stu3/resource-definitions.html#Meta.security) element as follows:
 
