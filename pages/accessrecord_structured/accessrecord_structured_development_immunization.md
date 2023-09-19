@@ -43,6 +43,20 @@ The Immunization profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Immunization-1)
 
+### meta.security ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The security label(s) applicable to the resource.
+
+See [FHIR resources](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details on how to populate the element.
+
 ### extension[parentPresent]
 
 <table class='resource-attributes'>
@@ -222,6 +236,7 @@ This **MUST** be absent where <code>primarySource</code> is <code>true</code>.
 The GP practice, branch surgery or other location where the vaccination occurred or was intended to occur, if known.
 
 If the immunisation record in the GP Clinical System does not record a location for the vaccination, but is linked to a consultation then
+
 - if the vaccine was administered or was intended to be administered during the consultation the <code>location</code> **MUST** be populated with the location of the consultation
 - if the vaccine was NOT administered or intended to be administered during the consultation and the location for the vaccination is therefore unknown, then a <code>location</code> **MUST** be absent
 
@@ -345,6 +360,7 @@ The code <code>AP</code> (Administering Provider) **MUST** be used to designate 
 A reference to the <code>practitioner</code> profile for who administered and / or recorded the vaccine.
 
 Where there is only a single practitioner recorded against the immunisation record:
+
 - if the practitioner recording the vaccination also administered it (or intended to), then associate a <code>practitioner.role</code> code <code>AP</code> (Administering Provider) with practitioner profile
 - if the GP Clinical System cannot determine whether the practitioner administered the vaccine or just recorded the vaccination event or both, then do not return a <code>practitioner.role</code>
 

@@ -44,6 +44,20 @@ The MedicationStatement profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-MedicationStatement-1)
 
+### meta.security ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The security label(s) applicable to the resource.
+
+See [FHIR resources](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details on how to populate the element.
+
 ### extension[lastIssueDate] ###
 
 <table class='resource-attributes'>
@@ -360,8 +374,6 @@ This is not in scope for this version of Care Connect and therefore not availabl
     <td><b>Data type:</b> <code>CodeableConcept</code></td>
   </tr>
 </table>
-
-This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 
 This is not in scope for this version of Care Connect and therefore not available for use in GP Connect.
 

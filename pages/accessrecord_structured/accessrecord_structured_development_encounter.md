@@ -44,6 +44,20 @@ The `Encounter` profile URL.
 
 Fixed value [https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Encounter-1)
 
+### meta.security ###
+
+<table class='resource-attributes'>
+  <tr>
+    <td><b>Data type:</b> <code>Coding</code></td>
+    <td><b>Optionality:</b> Optional</td>
+    <td><b>Cardinality:</b> 0..*</td>
+  </tr>
+</table>
+
+The security label(s) applicable to the resource.
+
+See [FHIR resources](development_fhir_resource_guidance.html#resources-not-to-be-disclosed-to-a-patient) for more details on how to populate the element.
+
 ### identifier ###
 
 <table class='resource-attributes'>
@@ -100,7 +114,6 @@ Carries the consultation type as displayed by the system. This may be a SNOMED C
 </table>
 
 Reference to <code>Patient</code> profile representing the patient against whom the source consultation/encounter was recorded.
-
 
 ### participant ###
 
