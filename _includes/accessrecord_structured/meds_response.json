@@ -707,7 +707,7 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "84 tablet(s)"
+                "valueString": "quantity varies dependent on schedule"
               }
             ]
           },
@@ -803,7 +803,7 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "84 tablet(s)"
+                "valueString": "quantity varies dependent on schedule"
               }
             ]
           },
@@ -886,7 +886,7 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "84 tablet(s)"
+                "valueString": "quantity varies dependent on schedule"
               }
             ]
           },
