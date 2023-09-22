@@ -284,7 +284,7 @@ Use one of `plan` or `order`:
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Medication)</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept | Reference(Medication)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -292,7 +292,7 @@ Use one of `plan` or `order`:
 
 The medication/medical device the authorisation is for.
 
-The `Medication` profile provides the coded representation of the medication/medical device.
+The `Medication` profile provides the coded representation of the medication/medical device and **MUST** be linked using the Reference(Medication) data type.
 
 ### subject ###
 
