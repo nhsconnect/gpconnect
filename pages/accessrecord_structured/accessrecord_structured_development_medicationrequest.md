@@ -486,7 +486,7 @@ If quantity is a textual value, then the extension [dispenseRequest.quantityText
   </tr>
 </table>
 
-When quantity to dispense is a textual value this field **MUST** contain both the value of the quantity to dispense and the unit e.g. '10 tablets', '90 capsules', '1 dose'. No information should be populated into [dispenseRequest.quantity](#dispenserequestquantity) in this scenario.
+When quantity to dispense is a textual value this field **MUST** contain both the value of the quantity to dispense and the unit e.g. 'ten tablets', '90 capsules', 'one dose', 'three millilitres', 'quantity varies dependent on schedule'. No information should be populated into [dispenseRequest.quantity](#dispenserequestquantity) in this scenario.
 
 ### dispenseRequest.expectedSupplyDuration ###
 
