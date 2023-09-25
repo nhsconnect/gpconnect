@@ -115,13 +115,14 @@ Each clinical resource will have a unique business identifier that will be persi
 
 ### Administrative ###
 
-- Patient
-- Organization
-- PractitionerRole
-- Practitioner
+- [HealthcareService](https://simplifier.net/guide/hl7fhircareconnectprofilesstu3/Home/ProfilesandExtensions/AllAssets/AllProfiles/ProfileCareConnect-HealthcareService.guide.md?version=current)
 - Location
+- Organization
+- Patient
+- Practitioner
+- PractitionerRole
 
-{% include tip.html content="Please see the [Foundations](foundations.html) section for details on population and consumption of the administrative resources." %}
+{% include tip.html content="For administrative resources listed above that are not linked, please see the [Foundations](foundations.html) section for details on population and consumption." %}
 
 ### Structural ###
 
