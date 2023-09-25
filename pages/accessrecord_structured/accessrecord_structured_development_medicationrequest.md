@@ -470,9 +470,11 @@ Use one of the following dates in order of descending preference:
   </tr>
 </table>
 
-When quantity to dispense is available as a numerical value this **MUST** be used. When the unit of the quantity to dispense is coded this **SHOULD** be included along with the system.
+When quantity to dispense is available as a numerical value this element **MUST** be populated, in preference to [dispenseRequest.quantityText](#extensiondispenserequestquantitytext).
 
-If quantity is a textual value, then the extension dispenseRequest.quantityText **MUST** be used.
+`Unit`, `system` and `code` elements **MUST** be populated when information is available.
+
+If quantity is a textual value, then the extension [dispenseRequest.quantityText](#extensiondispenserequestquantitytext) **MUST** be used for both value and units, leaving this quantity element unpopulated.
 
 ### extension[dispenseRequest.quantityText] ###
 
@@ -484,9 +486,7 @@ If quantity is a textual value, then the extension dispenseRequest.quantityText 
   </tr>
 </table>
 
-When quantity to dispense is a numerical value and the unit is not coded this field **SHOULD** contain the textual representation of the unit e.g. 'tablet(s)', 'capsule(s)', 'does(s)'.
-
-When quantity to dispense is a textual value this field **SHOULD** contain both the value of the quantity to dispense and the unit e.g. '10 tablets', '90 capsules', '1 dose'.
+When quantity to dispense is a textual value this field **MUST** contain both the value of the quantity to dispense and the unit e.g. 'ten tablets', '90 capsules', 'one dose', 'three millilitres', 'quantity varies dependent on schedule'. No information should be populated into [dispenseRequest.quantity](#dispenserequestquantity) in this scenario.
 
 ### dispenseRequest.expectedSupplyDuration ###
 

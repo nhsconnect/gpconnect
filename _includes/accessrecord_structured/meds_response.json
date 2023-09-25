@@ -707,10 +707,9 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "tablet(s)"
+                "valueString": "quantity varies dependent on schedule"
               }
-            ],
-            "value": "84"
+            ]
           },
           "validityPeriod": {
             "start": "2016-08-11"
@@ -804,10 +803,9 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "tablet(s)"
+                "valueString": "quantity varies dependent on schedule"
               }
-            ],
-            "value": "84"
+            ]
           },
           "validityPeriod": {
             "start": "2016-08-11"
@@ -888,10 +886,9 @@
             "extension": [
               {
                 "url": "https://fhir.nhs.uk/STU3/StructureDefinition/Extension-CareConnect-GPC-MedicationQuantityText-1",
-                "valueString": "tablet(s)"
+                "valueString": "quantity varies dependent on schedule"
               }
-            ],
-            "value": "84"
+            ]
           },
           "validityPeriod": {
             "start": "2016-09-11"
