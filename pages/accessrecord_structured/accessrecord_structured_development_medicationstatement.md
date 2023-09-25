@@ -152,11 +152,11 @@ For repeat and repeat dispensed the status refers to the status of the plan (the
 
 For acute, the status refers to the status of the prescription issue.
 
-### medicationReference ###
+### medication ###
 
 <table class='resource-attributes'>
   <tr>
-    <td><b>Data type:</b> <code>Reference(Medication)</code></td>
+    <td><b>Data type:</b> <code>CodeableConcept | Reference(Medication)</code></td>
     <td><b>Optionality:</b> Mandatory</td>
     <td><b>Cardinality:</b> 1..1</td>
   </tr>
@@ -164,7 +164,7 @@ For acute, the status refers to the status of the prescription issue.
 
 The medication/medical device the authorisation is for.
 
-The `Medication` profile provides the coded representation of the medication/medical device.
+The `Medication` profile provides the coded representation of the medication/medical device and **MUST** be linked using the Reference(Medication) data type.
 
 ### effective ###
 
