@@ -241,6 +241,6 @@ AS record lookup on SDS to determine the consumer's ASID.
 
 ```bash
 ldapsearch -x -H ldaps://ldap.vn03.national.ncrs.nhs.uk –b "ou=services, o=nhs"
- "(&(nhsIDCode=[odsCode]) (objectClass=nhsAS) (nhsaASvcIA=[interactionId]) (nhsMhsManufacturerOrg=[odsCode]))"
+ "(&(nhsIDCode=[odsCode]) (objectClass=nhsAS) (nhsAsSvcIA=[interactionId]) (nhsMhsManufacturerOrg=[odsCode]))"
  uniqueIdentifier
 ```
