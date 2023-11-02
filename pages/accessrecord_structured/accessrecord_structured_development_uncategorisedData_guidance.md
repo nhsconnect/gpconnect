@@ -8,12 +8,14 @@ summary: "Guidance for populating and consuming the uncategorised data from GP s
 ---
 
 ## What is categorised data? ##
+
 When a clinician/user of a GP clinical system records clinical data they may, as part of entering the information, identify what type of information they are recording.
 
 For example, where the clinician uses a GP system's allergy function to record a patient’s allergy information it is explicitly identified in the system as an allergy.
 
 The volume of this categorisation varies between provider systems.
 For the majority of provider systems, the following types of information are explicitly categorised when they are recorded.
+
 * Allergy
 * Appointment
 * Consultation
@@ -29,10 +31,12 @@ For the majority of provider systems, the following types of information are exp
 * Test Request
 
 ## What is uncategorised data? ##
+
 There is data that a clinician/user will enter without identifying what type of information they are recording.
 This information is usually entered as a combination of clinical code(s), values, qualifiers and text.
 
 For example:
+
 * the clinician records the patient’s resting pulse by recording the resting pulse clinical code followed by a value of the patient’s pulse.
 * the clinician records that a patient has a sore throat by recording the sore throat clinical code
 
@@ -40,7 +44,9 @@ Consideration was given to attempting to categorise data using the recorded clin
 It was decided not to progress this based on a clinical review of its risks and benefits.
 
 ## Uncategorised data definition ##
+
 Uncategorised data will include the following
+
 * data items in the patient record that do not fit into one of the existing or planned clinical areas defined by GP Connect
 * inbound referrals (GP Connect referral resource is defined as outbound referrals only)
 
@@ -68,10 +74,13 @@ The provider system will translate all of the qualifiers included with the clini
 Values are any reading or result that is recorded with the uncategorised data. For example, the uncategorised data 50373000 (Body Height) may have a value of 156cm.
 
 ### Single values ###
+
 The majority of uncategorised data that contains values will only have a single value. In these cases, the value will be exported in `observation.value`.
 
 ### Multiple values ###
+
 There are cases where an item of uncategorised data may contain multiple values. This happens when:
+
 * there is a single clinical code that describes the uncategorised data as a whole
 and
 * each recorded value in the uncategorised data is described by its own clinical code
@@ -81,12 +90,14 @@ In these cases, each value will be exported in an instance of `observation.compo
 This approach **MUST** be used for blood pressure readings where the systolic and diastolic values were taken together.
 
 ## Hierarchical uncategorised data ##
+
 There are cases where several pieces of uncategorised data are related to each other in a hierarchical structure.
 
 For example:
+
 * Alcohol Consumption
-    * Breath alcohol level 15mmol/L
-    * O/E - spleen just palpable
+  * Breath alcohol level 15mmol/L
+  * O/E - spleen just palpable
 
 Where this occurs, the data is supplied in a format where the hierarchical information is made available to the consumer system if they want to rebuild the hierarchical structure or if not they can consume each of the resources individually flattening out the structure if it is not of benefit to their users.
 
@@ -117,18 +128,20 @@ The following additions / exceptions apply to the population of elements, otherw
 * Where known, the referrer details **MUST** be returned using the `performer` element
 * The `performer` element **MAY** be absent, for example if the referrer is not recorded
 * Additional fields capturing details of the referral in the source system **SHOULD** be returned in the `component`
-   * Populate `component.code.text` with the data label
-   * Populate `component.value` with the data item code / text
+  * Populate `component.code.text` with the data label
+  * Populate `component.value` with the data item code / text
 * Self referrals **MUST** be identified by including the text "Self referral" in the `comment` element
 
 Any document(s) linked to the referral **MUST** be returned in [DocumentReference](access_documents_development_documentreference.html) resource(s) containing reference(s) to the related referral.
 
 ## Representing blood pressure readings from GP systems
+
 Blood pressure is one of the most common observations that is recorded in GP records. There are over 70 million blood pressures recorded in general practice every year.
 As this is the case there is a desire to represent the various blood pressure concepts that are recorded in a common format wherever possible.
 In the majority of cases there are two components that comprise a blood pressure reading regardless of the type of reading. These are a systolic blood pressure reading and a diastolic blood pressure reading. In many cases these are also recorded as a triple with a heading or panel concept.
 
 ### The FHIR vital sign blood pressure profile
+
 This version of GP Connect does not support the 'vital signs' aspect of the FHIR specification as there is currently no consensus in the UK as to what is/isn't a vital sign.
 
 However, the way we have represented blood pressures is based on the FHIR vital signs blood pressure profile [http://hl7.org/fhir/STU3/bp.html](http://hl7.org/fhir/STU3/bp.html).
@@ -142,19 +155,19 @@ GP Connect has improved the consistency of the data that will be exported, it is
 
 The way standard blood pressures are recorded in different clinical systems varies. These can be described by the following 3 different patterns,
 
- - Recorded as the following triple in the below structure and using any of the codes from the table below,
+* Recorded as the following triple in the below structure and using any of the codes from the table below,
 
-<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Triple.png"></a>   
+<a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_Triple.png"></a>
 
- - Recorded as 2 individual readings that are grouped together with no panel code using any of the systolic and diastolic codes from the table below,
+* Recorded as 2 individual readings that are grouped together with no panel code using any of the systolic and diastolic codes from the table below,
 
- <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_ComponentCodes.png"></a>   
+ <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_ComponentCodes.png"></a>
 
    Where there is no panel code then '163020007 On examination - blood pressure reading (finding)' **MUST** be used in the GP Connect triple.
 
- - Recorded using a panel code with two readings but no systolic and diastolic codes. This may be recorded as either of the 2 panel codes from the table below,
+* Recorded using a panel code with two readings but no systolic and diastolic codes. This may be recorded as either of the 2 panel codes from the table below,
 
- <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponent.png"></a>   
+ <a href="images/access_structured/BP_Diagram.png"><IMG src="images/access_structured/BP_HeaderCodeNoComponent.png"></a>
 
    Where there is only a panel code the following codes **MUST** be used to complete the triple for export in GP Connect,
       - 163020007 On examination - blood pressure reading (finding) and 386534000 Arterial blood pressure (observable entity)
