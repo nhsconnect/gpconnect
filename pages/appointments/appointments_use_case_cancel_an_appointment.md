@@ -20,11 +20,11 @@ The typical flow to cancel an appointment is:
  3. Choose an `Appointment` resource and cancel it by amending the `status` to `cancelled`.
 
 {% include important.html content="The Appointment Management capability pack is aimed at administration of a patient's appointments. As a result of information governance (IG) requirements, the cancel appointments capability has been restricted to future appointments. More details are available on the [Design decisions](appointments_design.html#viewing-and-amending-booked-appointments) page." %}
- 
+
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details 
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## Prerequisites ##
 
@@ -58,25 +58,27 @@ PUT https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment/[id
 
 Consumers SHALL include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (that is, GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1` |
-| `If-Match`           | The Appointment's current [ETag](development_general_api_guidance.html#managing-resource-contention), e.g. `W/"23"` |
+| Header              | Value                                                                                                               |
+| ------              | -----                                                                                                               |
+| `Ssp-TraceID`       | Consumer's TraceID (that is, GUID/UUID)                                                                             |
+| `Ssp-From`          | Consumer's ASID                                                                                                     |
+| `Ssp-To`            | Provider's ASID                                                                                                     |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:cancel:appointment-1`                                                   |
+| `If-Match`          | The Appointment's current [ETag](development_general_api_guidance.html#managing-resource-contention), e.g. `W/"23"` |
 
 #### Payload request body ####
 
 The request payload is a profiled version of the standard FHIR&reg; [Appointment](https://www.hl7.org/fhir/STU3/appointment.html) resource. See the [FHIR resources](/datalibraryappointment.html) page for more details.
 
 Consumer systems:
-- SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
+
+- SHALL send an `Appointment` resource that conforms to the [GPConnect-Appointment-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-Appointment-1?version=current) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the appointment resource.
 
   {% include important.html content="It is recommended that Consumers read the Appointment they wish to cancel (via Read an appointment or Retrieve a patient's appointments), then update the fields allowed below in place. Attempting to recreate the Appointment resource from local transformed data formats/structures is not advised, and may result in the provider system rejecting the amendment due to an unintended change or missing field." %}
 
 Only the following data elements can be modified when performing an appointment cancellation:
+
 - the appointment `status` MUST be updated to "cancelled"
 - the appointment `cancellation-reason` extension SHALL be included with the cancellation reason details
 
@@ -112,7 +114,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Appointment-1) profile.
+- SHALL return an `Appointment` resource that conform to the [GPConnect-Appointment-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-Appointment-1?version=current) profile.
 - SHALL include the URI of the `GPConnect-Appointment-1` profile StructureDefinition in the `Appointment.meta.profile` element of the returned appointment resource.
 - SHALL include the `versionId` of the current version of each appointment resource.
 - SHALL have updated the appointment `status` to "cancelled".
