@@ -14,7 +14,7 @@ The headings below list the elements of the ProblemHeader (Condition) profile an
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProblemHeader profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-ProblemHeader-Condition-1/_history/1.7)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [ProblemHeader profile definition](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-ProblemHeader-Condition-1?version=current)." %}
 
 ## ProblemHeader (Condition) elements ##
 
