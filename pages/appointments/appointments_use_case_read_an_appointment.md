@@ -51,12 +51,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Appointment/[id
 
 Consumers SHALL include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1`|
+| Header              | Value                                                           |
+| -----               | -----                                                           |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                             |
+| `Ssp-From`          | Consumer's ASID                                                 |
+| `Ssp-To`            | Provider's ASID                                                 |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:read:appointment-1` |
 
 #### Payload request body ####
 
@@ -66,7 +66,7 @@ N/A
 
 Provider systems:
 
-- SHALL return an [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+- SHALL return an [GPConnect-OperationOutcome-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-OperationOutcome-1?version=current) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 - SHALL return an error if the appointment being read is in the past (the appointment start dateTime is before the current date and time).
 
 Examples of other scenarios which may result in error being returned:

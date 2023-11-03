@@ -79,4 +79,4 @@ If there is a problem with the request or an error occurs during processing of t
 
 ### Response ###
 
-* [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) (based on [FHIR OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html))
+* [GPConnect-OperationOutcome-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-OperationOutcome-1?version=current) (based on [FHIR OperationOutcome](https://www.hl7.org/fhir/STU3/operationoutcome.html))
