@@ -18,7 +18,7 @@ This page describes a single use case. For complete details and background pleas
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorisation
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details 
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit and provenance details
 
 ## Prerequisites ##
 
@@ -28,7 +28,6 @@ The consumer system:
 
 - SHALL have previously resolved the organisation's FHIR endpoint Base URL through the [Spine Directory Service](integration_spine_directory_service.html)
 - SHALL have previously traced the patient's NHS number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
-
 
 ## API usage ##
 
@@ -50,12 +49,12 @@ POST https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/$gpc.r
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1`|
+| Header              | Value                                                                   |
+| ------              | -----                                                                   |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                                     |
+| `Ssp-From`          | Consumer's ASID                                                         |
+| `Ssp-To`            | Provider's ASID                                                         |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerpatient-1` |
 
 Example HTTP request headers:
 
@@ -77,9 +76,9 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 #### Payload request body ####
 
-The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) resource conforming to the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) profile, with a single parameter of `registerPatient` containing a `Patient` resource profiled to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.  This is the patient to be registered.
+The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) resource conforming to the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) profile, with a single parameter of `registerPatient` containing a `Patient` resource profiled to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile.  This is the patient to be registered.
 
-Within the `Patient` resource: 
+Within the `Patient` resource:
 
 - The following fields SHALL be populated as a minimum to allow the provider system to perform a PDS trace:
   - `identifier` with the patient's NHS Number
@@ -93,7 +92,7 @@ Within the `Patient` resource:
   - `telecom` with the patient's telephone number(s), with `use` of `home`, `work` or `mobile`, and `system` of `phone`. No more than one instance of each `use` SHALL be populated.
   - `telecom` with the patient's email address if available, with `system` of `email`. No more than one instance of this SHALL be populated.
   - a single instance of `nhsCommunication` if available, specifically the `language` and `interpreterRequired` sub-elements
-  
+
     {% include important.html content="If the above *\"SHOULD\"* fields are not provided, the provider system will use demographics retrieved from PDS in order to create the patient's record." %}
 
 - The following fields MAY be populated in order to record temporary details known to the consuming system:
@@ -134,7 +133,6 @@ Before registering the patient record on the local system, the provider SHALL re
   - Sensitive
   - Superseded
 
-
 #### Duplicate record prevention
 
 Before registering the patient record on the local system, the provider SHALL check the practice patient index for matching patients using the patient's NHS Number, and then:
@@ -153,7 +151,7 @@ Before registering the patient record on the local system, the provider SHALL ch
 
     - is **inactive** (i.e. a patient whose registration has lapsed of any registration type):
 
-      - The patient record **SHALL** be re-activated as a **temporary** patient 
+      - The patient record **SHALL** be re-activated as a **temporary** patient
       - Follow the [Local registration requirements](foundations_use_case_register_a_patient.html#local-registration-requirements) when updating the patient's demographics
 
     - is recorded as **deceased**:
@@ -190,17 +188,15 @@ The table below shown common errors that may be encountered during this API call
 
 Errors returned due to parameter failure **MUST** include diagnostic information detailing the invalid parameter.
 
-|-------------------------|-------------------|
-| Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
-| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors) |
-| The NHS Number could not be found on PDS, or verified against a PDS record | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The patient is marked as deceased on PDS, or on the provider system | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The registration request is for a sensitive patient | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The PDS record contains an invalid or superseded flag | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| PDS is unavailable, or could not be contacted | [`INTERNAL_SERVER_ERROR`](development_fhir_error_handling_guidance.html#internal-server-errors) |
-| The patient is already registered | [`DUPLICATE_REJECTED`](development_fhir_error_handling_guidance.html#duplicate-errors) |
-|-------------------------|-------------------|
+| Error encountered                                                                                                                                                | Spine error code returned                                                                                  |
+| -----------------                                                                                                                                                | -------------------------                                                                                  |
+| The `Parameters` resource passed by the consuming system including the embedded `Patient` resource is invalid, or does not include the minimum mandatory details | [`INVALID_RESOURCE`](development_fhir_error_handling_guidance.html#resource-validation-errors)             |
+| The NHS Number could not be found on PDS, or verified against a PDS record                                                                                       | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The patient is marked as deceased on PDS, or on the provider system                                                                                              | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The registration request is for a sensitive patient                                                                                                              | [`INVALID_PATIENT_DEMOGRAPHICS`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The PDS record contains an invalid or superseded flag                                                                                                            | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors)           |
+| PDS is unavailable, or could not be contacted                                                                                                                    | [`INTERNAL_SERVER_ERROR`](development_fhir_error_handling_guidance.html#internal-server-errors)            |
+| The patient is already registered                                                                                                                                | [`DUPLICATE_REJECTED`](development_fhir_error_handling_guidance.html#duplicate-errors)                     |
 
 ### Request response ###
 
@@ -220,7 +216,7 @@ Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - **SHALL** include the URI of the relevant GP Connect `StructureDefinition` profile in the `Patient.meta.profile` element of the returned resources.
-- **SHALL** return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) 
+- **SHALL** return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current)
 - **SHALL** populate the `Patient` resource with details of the newly registered or re-activated patient
 
 - **SHALL** populate the following fields:

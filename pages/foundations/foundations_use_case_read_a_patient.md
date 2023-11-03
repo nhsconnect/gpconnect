@@ -46,12 +46,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1`|
+| Header              | Value                                                       |
+| ------              | -----                                                       |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                         |
+| `Ssp-From`          | Consumer's ASID                                             |
+| `Ssp-To`            | Provider's ASID                                             |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1` |
 
 #### Payload request body ####
 
@@ -78,7 +78,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
-- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
+- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile.
 
 - **SHALL** populate the following fields:
   - `meta.profile` with the profile URI
