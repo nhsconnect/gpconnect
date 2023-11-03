@@ -13,7 +13,7 @@ The headings below list the elements of the Specimen resource and describe how t
 
 {% include important.html content="Any element not specifically listed below **MUST NOT** be populated or consumed. A full list of elements not used is available [here](accessrecord_structured_development_specimen.html#elements-not-in-use)." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [specimen profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Specimen-1/_history/1.3)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the underlying [specimen profile definition](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Specimen-1?version=current)." %}
 
 ## Specimen resource elements ##
 
