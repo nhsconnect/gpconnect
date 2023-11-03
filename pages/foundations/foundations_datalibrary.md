@@ -43,7 +43,7 @@ N/A - No FHIR resource is sent within the request.
 
 ### Response ###
 
-* [CareConnect-GPC-Organization-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Organization-1) (based on [FHIR Organization](https://www.hl7.org/fhir/STU3/organization.html))
+* [CareConnect-GPC-Organization-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Organization-1?version=current) (based on [FHIR Organization](https://www.hl7.org/fhir/STU3/organization.html))
 
 ---
 
