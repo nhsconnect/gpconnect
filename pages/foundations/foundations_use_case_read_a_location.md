@@ -22,7 +22,7 @@ This page describes a single use case. For complete details and background pleas
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details.
 
 ## API usage ##
 
@@ -44,12 +44,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Location/[id]
 
 Consumers SHALL include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1`|
+| Header              | Value                                                        |
+| ------              | -----                                                        |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                          |
+| `Ssp-From`          | Consumer's ASID                                              |
+| `Ssp-To`            | Provider's ASID                                              |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1` |
 
 #### Payload request body ####
 
@@ -61,7 +61,7 @@ Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.
 
 For example, the:
 
-- Logical identifier of the resource is not valid/can't be found on the server.  
+- Logical identifier of the resource is not valid/can't be found on the server.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
