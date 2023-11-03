@@ -31,7 +31,7 @@ N/A - No FHIR resource is sent within the request.
 
 ### Response ###
 
-* [CareConnect-GPC-Practitioner-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Practitioner-1) (based on [FHIR Practitioner](http://hl7.org/fhir/STU3/practitioner.html))
+* [CareConnect-GPC-Practitioner-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Practitioner-1?version=current) (based on [FHIR Practitioner](http://hl7.org/fhir/STU3/practitioner.html))
 
 ---
 
