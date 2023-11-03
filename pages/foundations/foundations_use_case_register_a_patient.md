@@ -216,7 +216,7 @@ Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful registration of the patient into the provider system.
 - **SHALL** include the URI of the relevant GP Connect `StructureDefinition` profile in the `Patient.meta.profile` element of the returned resources.
-- **SHALL** return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current)
+- **SHALL** return a searchset `Bundle` profiled to [GPConnect-Searchset-Bundle-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-Searchset-Bundle-1?version=current) with a `Patient` profiled to [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current)
 - **SHALL** populate the `Patient` resource with details of the newly registered or re-activated patient
 
 - **SHALL** populate the following fields:

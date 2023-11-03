@@ -68,7 +68,7 @@ N/A - No FHIR resource is sent within the request.
 
 ### Response ###
 
-* [GPConnect-Searchset-Bundle-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-Searchset-Bundle-1) (based on [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html))
+* [GPConnect-Searchset-Bundle-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-Searchset-Bundle-1?version=current) (based on [FHIR Bundle](https://www.hl7.org/fhir/STU3/bundle.html))
   * [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) (based on [FHIR Patient](https://www.hl7.org/fhir/STU3/patient.html))
 
 ---
