@@ -560,7 +560,7 @@ Content-Length: 1464
 Provider systems **MUST**:
 
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
-- return a `Bundle` conforming to the [`GPConnect-StructuredRecord-Bundle-1`](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3) profile definition
+- return a `Bundle` conforming to the [`GPConnect-StructuredRecord-Bundle-1`](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-StructuredRecord-Bundle-1?version=current) profile definition
 - return the following resources in the `Bundle`:
   - `Patient` matching the NHS Number sent in the body of the request
   - `Organization` matching the patient's registered GP practice, referenced from `Patient.generalPractitioner`

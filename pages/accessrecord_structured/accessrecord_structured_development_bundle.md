@@ -14,7 +14,7 @@ The headings below list the elements of the `Bundle` profile and describe how to
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with: the underlying [Bundle population illustration diagram](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) and the [Bundle profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-StructuredRecord-Bundle-1/_history/1.3)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with: the underlying [Bundle population illustration diagram](accessrecord_structured_development_retrieve_patient_record.html#bundle-population-illustrated) and the [Bundle profile definition](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-StructuredRecord-Bundle-1?version=current)." %}
 
 ## Bundle elements ##
 
