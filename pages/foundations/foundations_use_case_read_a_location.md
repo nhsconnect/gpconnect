@@ -76,7 +76,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
-- **SHALL** return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) profile.
+- **SHALL** return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Location-1?version=current) profile.
 
 - **SHALL** populate the following `Location` fields:
   - `meta.profile` with the profile URI

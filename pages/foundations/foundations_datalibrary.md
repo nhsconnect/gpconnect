@@ -55,7 +55,7 @@ N/A - No FHIR resource is sent within the request.
 
 ### Response ###
 
-* [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) (based on [FHIR Location](https://www.hl7.org/fhir/STU3/location.html))
+* [CareConnect-GPC-Location-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Location-1?version=current) (based on [FHIR Location](https://www.hl7.org/fhir/STU3/location.html))
 
 ---
 
