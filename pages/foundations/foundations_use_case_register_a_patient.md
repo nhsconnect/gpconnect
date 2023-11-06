@@ -76,7 +76,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:fhir:operation:gpc.registerp
 
 #### Payload request body ####
 
-The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) resource conforming to the [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1/) profile, with a single parameter of `registerPatient` containing a `Patient` resource profiled to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile.  This is the patient to be registered.
+The request payload is a [Parameters](https://www.hl7.org/fhir/STU3/parameters.html) resource conforming to the [GPConnect-RegisterPatient-Operation-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/OperationDefinitions/OperationDefinition--GPConnect-RegisterPatient-Operation-1?version=current) profile, with a single parameter of `registerPatient` containing a `Patient` resource profiled to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile.  This is the patient to be registered.
 
 Within the `Patient` resource:
 

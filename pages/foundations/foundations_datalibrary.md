@@ -63,7 +63,7 @@ N/A - No FHIR resource is sent within the request.
 
 ### Request ###
 
-* [GPConnect-RegisterPatient-Operation-1](https://fhir.nhs.uk/STU3/OperationDefinition/GPConnect-RegisterPatient-Operation-1) (based on [FHIR Parameters](https://www.hl7.org/fhir/STU3/parameters.html))
+* [GPConnect-RegisterPatient-Operation-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/OperationDefinitions/OperationDefinition--GPConnect-RegisterPatient-Operation-1?version=current) (based on [FHIR Parameters](https://www.hl7.org/fhir/STU3/parameters.html))
   * [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) (based on [FHIR Patient](https://www.hl7.org/fhir/STU3/patient.html))
 
 ### Response ###
