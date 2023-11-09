@@ -15,10 +15,6 @@
         {
           "name": "filterStatus",
           "valueCode": "active"
-        },
-        {
-          "name": "filterSignificance",
-          "valueCode": "major"
         }
       ]
     }
