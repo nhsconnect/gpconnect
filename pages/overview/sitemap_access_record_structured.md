@@ -110,6 +110,7 @@ toc: false
     <p style="font-size:18px">API definition</p>
     <p><a href="accessrecord_structured_development_retrieve_patient_record.html">Retrieve a patient's structured record</a></p>
     <p><a href="accessrecord_structured_development_version_compatibility.html">API version compatibility</a></p>
+    <p><a href="accessrecord_structured_development_clinical_area_config.html">Configuration for clinical areas</a></p>
     <p><a href="accessrecord_structured_development_fhir_examples_forwards_consultations.html">Forwards compatibility support example</a></p>
     <p><a href="accessrecord_structured_get_the_fhir_capability_statement.html">Get the FHIR&reg; capability statement</a></p>
   </div>

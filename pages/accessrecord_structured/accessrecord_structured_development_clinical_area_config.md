@@ -19,7 +19,11 @@ Also, in addition to the [enablement switch defined in the non-functional requir
 
 ### Clinical areas
 
-The configuration of the Provider system **MUST** allow for clinical areas to be switched on or off for all sites without requiring a release. This MUST be achieved using a single configuration item or action. For example, in the case of a clinical safety incident with a clinical area where a provider would be required to turn off the clinical area across their entire estate. Where information for a clinical area isn't returned, provider systems **MUST** return a warning for each clinical area that isn't supported according to the rules below. The following clinical areas can be configured to be on or off:
+The configuration of the Provider system **MAY** allow for clinical areas to be switched on or off for all sites without requiring a release. This **MAY** be achieved using a single configuration item or action.
+
+For example, in the case of a clinical safety incident with a clinical area where a provider would be required to turn off the clinical area across their entire estate. Where information for a clinical area isn't returned, provider systems **MUST** return a warning for each clinical area that isn't supported according to the rules below.
+
+The following clinical areas can be configured to be on or off:
 
 - Medications
 - Allergies
@@ -47,14 +51,14 @@ Consumer systems **MUST** be able to handle the unavailability of clinical areas
 In the above scenarios, providers **MUST** respond in the following way:
 
 - return a `200` **OK** HTTP status code to indicate successful retrieval of a patient's structured record
-- Include FHIR&reg; resources for clinical areas that are switched on
+- include FHIR&reg; resources for clinical areas that are switched on
 - as part of the returned bundle, include a single [`OperationOutcome`](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-OperationOutcome-1?version=current) with an `issue` for each clinical area that is disabled, that is, any disabled clinical area that would have been included either in response to a query parameter or linked to from requested clinical information, where:
   - `issue.code` = `not-supported`
   - `issue.severity` = `warning`
   - `issue.details.coding.system` = `https://fhir.nhs.uk/STU3/CodeSystem/Spine-ErrorOrWarningCode-1`
   - `issue.details.coding.code` = `NOT_IMPLEMENTED`
   - `issue.details.coding.display` = `Not implemented`
-- For each disabled clinical area the following **MUST** be supplied:
+- for each disabled clinical area the following **MUST** be supplied:
   - `issue.details.text` = `<parameter-name>` has been disabled
   - `issue.diagnostics` = `<parameter-name>`
   - Where documents have been switched off 'DocumentReferences' **MUST** be returned in place of `<parameter-name>`.
