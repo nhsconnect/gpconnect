@@ -305,7 +305,7 @@
         "resourceType": "Observation",
         "status": "final",
         "valueQuantity": {
-          "value": 5.9000000000000004,
+          "value": 5.904,
           "unit": "ug/L"
         },
         "performer": [
