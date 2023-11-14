@@ -100,7 +100,7 @@ Where a provider system is not able to export a linked clinical item, it will cr
 
    Where [Clinical area] identifies the type of the clinical item that is not supported.
 
-The example below shows references to two items, one for an observation and another for referrals that aren’t supported by the provider system:
+The example below shows references to two items, one for an observation and another for referrals that aren't supported by the provider system:
 
 ```json
 
@@ -129,7 +129,7 @@ Where a Problem is not marked as confidential but includes items that are marked
 * The Problem will be included in the response as normal
 * The confidential item(s) will NOT be included in the response
 * There will be NO reference to the confidential item(s) in the `ProblemHeader (Condition)` profile.
-* The Confidential Items warning message will be included in the `List` on the relevant type of type data that was ommitted. For example if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query.
+* The Confidential Items warning message will be included in the `List` on the relevant type of type data that was omitted. For example if a piece of uncategorised data was excluded as it was confidential then the warning code would be in the list of uncategorised data that was returned as part of the query.
 
 In effect, there will be a warning message that items were excluded from the response due to confidentiality but there will be no indication from which Problems(s) they were removed.
 
@@ -137,7 +137,7 @@ In effect, there will be a warning message that items were excluded from the res
 
 The request for problems supports searching via part parameters for problem clinical status and problem significance.
 Guidance is given in other sections of this specification as to how the provider will populate the response with identifying lists and related clinical content.
-This section describes consequences of those requirements specfic to problem requests with search criteria.
+This section describes consequences of those requirements specific to problem requests with search criteria.
 
 If the consumer request specifies a single parameter, the provider **MUST** return all problems which match that part parameter value.
 If the consumer request specifies both part parameters, the provider **MUST** return only problems which match both the part parameters as its primary query response.
