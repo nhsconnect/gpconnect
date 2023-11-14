@@ -85,7 +85,6 @@ The benefits of this approach are:
 ### API search/filter parameters for problems ###
 
 - clinical status of problem
-- clinical significance of problem
 
 ### API search/filter parameters for uncategorised data ###
 

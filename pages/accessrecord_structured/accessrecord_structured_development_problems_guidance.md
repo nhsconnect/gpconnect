@@ -135,14 +135,11 @@ In effect, there will be a warning message that items were excluded from the res
 
 ## Using Problem search parameters
 
-The request for problems supports searching via part parameters for problem clinical status and problem significance.
+The request for problems supports searching via part parameters for problem clinical status.
 Guidance is given in other sections of this specification as to how the provider will populate the response with identifying lists and related clinical content.
 This section describes consequences of those requirements specific to problem requests with search criteria.
 
-If the consumer request specifies a single parameter, the provider **MUST** return all problems which match that part parameter value.
-If the consumer request specifies both part parameters, the provider **MUST** return only problems which match both the part parameters as its primary query response.
-The consumer **MAY** include the problem parameter more than once and **MAY** specific different part parameter search criteria.
-The provider **MUST** return the cumulative response from each problem parameter included in the request, de-duplicating problems which satisfy more than one of the problem parameters included.
+If the consumer request specifies a part parameter for status, the provider **MUST** return all problems which match that part parameter value.
 All problems which are primary matches to the request **MUST** be referenced from the primary problems list as described in [Using lists to return data](accessrecord_structured_development_lists_for_message_structure.html).
 
 EXAMPLE TO BE ADDED
