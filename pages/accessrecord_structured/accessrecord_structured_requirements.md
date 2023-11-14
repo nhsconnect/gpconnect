@@ -11,7 +11,7 @@ summary: "Clinical, user and governance requirements that must be supported by t
 
 The GP Connect Requirements Catalogue for Access Record Structured Data contains the full set of business requirements that need to be met to support the retrieval of data in a structured format for the supported clinical areas of the GP record:
 
->###   [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.3.xlsx){:target="_blank"}
+>###   [GP Connect Requirements Catalogue for Access Record Structured Data](pages/accessrecord_structured/GP%20Connect%20Req%20Cat%20-%20Access%20Record%20Structured%20Data%20v2.4.xlsx){:target="_blank"}
 
 The requirements are described as a set of user stories with separate acceptance criteria for the provider and consumer systems.
 
