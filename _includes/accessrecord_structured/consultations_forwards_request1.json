@@ -46,10 +46,6 @@
         {
           "name": "includeStatus",
           "valueCode": "active"
-        },
-        {
-          "name": "includeSignificance",
-          "valueCode": "major"
         }
       ]
     }
