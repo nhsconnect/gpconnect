@@ -30,12 +30,10 @@ The consumer system can specify which clinical areas it wishes to retrieve and, 
 
 ### Problems ###
 
-* Search for Problems with the specified combinations of significance and status
-  * The consumer system requests combinations of significance and status
-  * The consumer system can request Major Active, Minor Active, Major Inactive and/or Minor Inactive
-  * The consumer system can request multiple combinations in a single query
-  * The provider system returns all Problems that match the requested significance / status
-  * Where no significance / status is supplied by the consumer, all Problems are returned
+* Search for Problems with the specified status
+  * The consumer system requests Problems with status of Active or Inactive
+  * The provider system returns all Problems that match the requested status
+  * Where no status is supplied by the consumer, all Problems are returned
 
 ### Uncategorised data ###
 
