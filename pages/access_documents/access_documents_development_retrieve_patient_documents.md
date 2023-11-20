@@ -53,12 +53,12 @@ Documents up to 5MB can be retrieved using this interaction.
 
 Consumers **MUST** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's Trace ID (a GUID or UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1`|
+| Header              | Value                                                                |
+| -----               | -----                                                                |
+| `Ssp-TraceID`       | Consumer's Trace ID (a GUID or UUID)                                 |
+| `Ssp-From`          | Consumer's ASID                                                      |
+| `Ssp-To`            | Provider's ASID                                                      |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:documents:fhir:rest:read:binary-1` |
 
 Example HTTP request headers:
 
@@ -72,6 +72,7 @@ Ssp-InteractionID: urn:nhs:names:services:gpconnect:documents:fhir:rest:read:bin
 ```
 
 #### Payload request body ####
+
 N/A
 
 #### Error handling ####
@@ -82,18 +83,17 @@ The table below shown common errors that may be encountered during this API call
 
 Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-|-------------------------|-------------------|
-| Error encountered        | Spine error code returned |
-|-------------------------|-------------------|
-| A document could not be found with the document id provided | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| The document could not be retrieved due to it exceeding the file size limit | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors) |
-|-------------------------|-------------------|
+| Error encountered                                                                                                                             | Spine error code returned                                                                     |
+| -----------------                                                                                                                             | -------------------------                                                                     |
+| A document could not be found with the document id provided                                                                                   | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| The document could not be retrieved due to it exceeding the file size limit                                                                   | [`NO_RECORD_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                     | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)   |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)   |
 
 ### Request response ###
 
 #### Response headers ####
+
 Provider systems are not expected to add any specific headers beyond that described in the HTTP and FHIR® standards.
 
 #### Payload response body ####
