@@ -82,14 +82,14 @@ The table below shown common errors that may be encountered during this API call
 
 Errors returned due to query parameter failure **MUST** include diagnostic information detailing the invalid query parameter.
 
-| Error encountered                                                                                                                             | Spine error code returned                                                                        |
-| -----------------                                                                                                                             | -------------------------                                                                        |
-| The `identifier` parameter is not provided                                                                                                    | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
-| The `identifier` parameter contains a missing or unrecognised system                                                                          | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
-| The NHS number provided is invalid, for example it fails format or check digit tests                                                          | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
-| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                     | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
-| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement)) | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
-| The patient is deceased and the request is received after the allowed access period                                                           | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
+| Error encountered                                                                                                                                                      | Spine error code returned                                                                        |
+| -----------------                                                                                                                                                      | -------------------------                                                                        |
+| The `identifier` parameter is not provided                                                                                                                             | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The `identifier` parameter contains a missing or unrecognised system                                                                                                   | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
+| The NHS number provided is invalid, for example it fails format or check digit tests                                                                                   | [`INVALID_NHS_NUMBER`](development_fhir_error_handling_guidance.html#identity-validation-errors) |
+| GP Connect is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                                              | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
+| The Access Document capability is not enabled at the practice (see [Enablement](development_api_non_functional_requirements.html#enablement))                          | [`ACCESS DENIED`](development_fhir_error_handling_guidance.html#security-validation-errors)      |
+| The patient is deceased and the request is received after the allowed [access period](access_documents_development_documents_guidance#documents-for-deceased-patients) | [`PATIENT_NOT_FOUND`](development_fhir_error_handling_guidance.html#identity-validation-errors)  |
 
 {% include important.html content="Failure to find a record with the supplied business identifier is not considered an error condition." %}
 
