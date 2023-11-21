@@ -111,7 +111,7 @@ Provider systems:
 
   {% include note.html content="Please note the restriction on returning patient records with a Regular/GMS registration type is a difference in behaviour between this Find a patient and [Find a patient](foundations_use_case_find_a_patient.html) in the Foundations capability." %}
 
-- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1/_history/1.8) profile
+- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile
 
 - **SHALL** populate the following `Patient` fields:
   - `meta.profile` with the profile URI
