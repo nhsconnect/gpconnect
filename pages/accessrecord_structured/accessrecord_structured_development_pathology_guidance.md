@@ -84,12 +84,12 @@ We have modelled the investigations report in such a way that it will be able to
 
 There are a number of resources available in FHIR to represent the different entities that exist in investigation reporting. The resources that we are concerned with in order to represent our model are in the following table.
 
-| Resource name                                                                   | Description                                                                                                                                         |
-| -------------                                                                   | -----------                                                                                                                                         |
-| [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest.html) | For requesting investigations to be performed by a laboratory                                                                                       |
-| [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport.html) | A reporting structure that contains results and any relevant data such as specimen details or attribution                                           |
-| [`Specimen`](accessrecord_structured_development_Specimen.html)                 | For carrying details about the specimen that was collected and the investigations were performed on                                                 |
-| [`Observation`](accessrecord_structured_development_observation_testgroup.html) | Represents details related to the test group header, test result and details of when a report or group of results was filed into the patient record |
+| Resource name                                                              | Description                                                                                                                                         |
+| -------------                                                              | -----------                                                                                                                                         |
+| [`ProcedureRequest`](accessrecord_structured_development_ProcedureRequest) | For requesting investigations to be performed by a laboratory                                                                                       |
+| [`DiagnosticReport`](accessrecord_structured_development_DiagnosticReport) | A reporting structure that contains results and any relevant data such as specimen details or attribution                                           |
+| [`Specimen`](accessrecord_structured_development_specimen)                 | For carrying details about the specimen that was collected and the investigations were performed on                                                 |
+| [`Observation`](accessrecord_structured_development_observation_testGroup) | Represents details related to the test group header, test result and details of when a report or group of results was filed into the patient record |
 
 There are other resources that may be relevant in the future, such as imagingStudy, imagingManifest and sequence, but currently we are only utilising the resources listed in the table.
 
