@@ -179,8 +179,8 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td><code class="highlighter-rouge">includeProblems</code></td>
       <td><code class="highlighter-rouge"></code></td>
       <td>Optional</td>
-      <td>0..*</td>
-      <td>Include problems in the response. This is a repeating parameter with each repetition representing a pair of problem significance and status values.</td>
+      <td>0..1</td>
+      <td>Include problems in the response.</td>
     </tr>
     <tr>
       <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterStatus</code></span></td>
@@ -190,17 +190,6 @@ The `Parameters` resource is populated with the parameters shown below.  Note: T
       <td>
         Restrict the problems that are returned by their clinical status. <br/>
         Valueset: <a href="http://hl7.org/fhir/stu3/valueset-condition-clinical.html">http://hl7.org/fhir/stu3/valueset-condition-clinical.html</a> Values <b>MUST</b> be <code>`active`</code> or <code>`inactive`</code><br/>
-        <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>
-      </td>
-    </tr>
-    <tr>
-      <td><span style="white-space: nowrap;">&nbsp;&nbsp;&#8627; <code class="highlighter-rouge">filterSignificance</code></span></td>
-      <td><code class="highlighter-rouge">Code</code></td>
-      <td>Optional</td>
-      <td>0..1</td>
-      <td>
-        Restrict the problems that are returned by their clinical significance<br/>
-        Valueset: <a href="https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-ProblemSignificance-1">ValueSet-CareConnect-ProblemSignificance-1</a><br/>
         <p><i>Part parameter: may only be provided if <code>includeProblems</code> is set.</i></p>
       </td>
     </tr>
@@ -390,10 +379,6 @@ The example below shows a fully populated `Parameters` resource as a request to 
         {
           "name": "filterStatus",
           "valueCode": "active"
-        },
-        {
-          "name": "filterSignificance",
-          "valueCode": "major"
         }
       ]
     },
@@ -467,7 +452,6 @@ When requesting consultations, the following part parameters **MUST NOT** be inc
 
 - `includeMedication.medicationSearchFromDate`
 - `includeUncategorisedData.uncategorisedDataSearchPeriod`
-- `includeProblems.filterSignificance`
 - `includeProblems.filterStatus`
 - `includeReferrals.referralSearchPeriod`
 - `includeDiaryEntries.diaryEntriesSearchDate`
@@ -489,7 +473,7 @@ Examples of queries are available on the [Search examples](accessrecord_structur
 
 #### Related problem headers not returned due to search criteria ####
 
-If a problem is related to another problem using the `relatedProblemHeader` extension it is possible that the related problem header is not returned due to the restrictions of the search criteria. It is possible for many problems to be related to each other and if the user needs to fully understand the problem relationships these can be returned by requesting all problems.  This is done by not specifying a filter for significance or status and putting `includeProblems` in the request. This will result in all problems recorded on the GP system being returned and will include all links between problems.
+If a problem is related to another problem using the `relatedProblemHeader` extension it is possible that the related problem header is not returned due to the restrictions of the search criteria. It is possible for many problems to be related to each other and if the user needs to fully understand the problem relationships these can be returned by requesting all problems.  This is done by not specifying a filter for status and putting `includeProblems` in the request. This will result in all problems recorded on the GP system being returned and will include all links between problems.
 
 #### Error handling ####
 
@@ -517,7 +501,6 @@ Errors returned due to parameter failure **MUST** include diagnostic information
 | The end date of the `uncategorisedDataSearchPeriod` part parameter is greater than the current date                                                                                                                                                                                                                            | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
 | The start date of the `uncategorisedDataSearchPeriod` part parameter is greater than the end date                                                                                                                                                                                                                              | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
 | The `filterStatus` part parameter contains a value other than `active` or `inactive`                                                                                                                                                                                                                                           | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
-| The `filterSignificance` part parameter contains a value other than `major` or `minor`                                                                                                                                                                                                                                         | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
 | The `investigationSearchPeriod` parameter value contains a partial date, or has a value containing a time or offset component                                                                                                                                                                                                  | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
 | The `referralSearchPeriod` part parameter is greater than the current date                                                                                                                                                                                                                                                     | [`INVALID_PARAMETER`](development_fhir_error_handling_guidance.html#resource-validation-errors)  |
 | The patient has dissented to sharing their clinical record                                                                                                                                                                                                                                                                     | [`NO_PATIENT_CONSENT`](development_fhir_error_handling_guidance.html#security-validation-errors) |
@@ -717,8 +700,6 @@ When the `includeProblems` parameter is set:
     - Include the [`ProblemHeader (Condition)`](accessrecord_structured_problems.html) resource of any Problems linked to the returned Diary Entries
 - and when the `filterStatus` parameter is set:
   - problems with a `clinicalStatus` matching the parameter value and all linked clinical information.
-- and when the `filterSignificance` parameter is set:
-  - problems with a `problemSignificance` matching the parameter value and all linked clinical information
 - `Organization`, `Practitioner` and `PractitionerRole` resources that are referenced by the above resources that represent the problem and its linked information
 
 ##### Immunisations #####
