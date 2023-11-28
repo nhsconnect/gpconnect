@@ -14,7 +14,7 @@ The headings below list the elements of the DocumentReference resource and descr
 
 {% include important.html content="Any element not specifically listed below **SHOULD NOT** be populated or consumed." %}
 
-{% include tip.html content="You'll find it helpful to read it in conjunction with the [DocumentReference profile definition](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-DocumentReference-1/_history/1.3)." %}
+{% include tip.html content="You'll find it helpful to read it in conjunction with the [DocumentReference profile definition](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-DocumentReference-1?version=current)." %}
 
 ## DocumentReference elements ##
 

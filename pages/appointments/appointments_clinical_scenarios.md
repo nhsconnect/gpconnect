@@ -7,7 +7,7 @@ permalink: appointments_clinical_scenarios.html
 summary: "Potential clinical scenarios for the Appointment Management capability pack"
 ---
 
-The clinical scenarios below detail the representative business use cases which the Appointment Management API specification supports for First of Type (FoT) scope and can potentially support in the longer term.  
+The clinical scenarios below detail the representative business use cases which the Appointment Management API specification supports for First of Type (FoT) scope and can potentially support in the longer term.
 
 {% include note.html content="For First of Type (FoT) care setting deployments, refer to [Appointment Management Introduction](appointments.html)" %}
 
@@ -29,7 +29,6 @@ Key:
 
 <i class='fa fa-check'/> As an Urgent Care Service Manager, I would like to have confidence that appointment slots agreed with GP Practices to be designated for the use of Urgent Care are not made available to other organisations so that our patients have access to the right appointment according to their requirement
 
-
 ## Retrieve a patient's appointments ##
 
 <i class='fa fa-check'/> As a healthcare professional at a healthcare organisation I would like to view for a patient their future appointments so that I can arrange their care appropriately.
@@ -43,18 +42,18 @@ Key:
 
 > 1. A patient would like to view their future appointments so that they can manage their time appropriately. They can access patient-facing services online and view their booked appointments with any GP practice.
 
-
 ## Book an appointment ##
+
 <i class='fa fa-check'/> As a healthcare professional at a healthcare organisation I would like to book an appointment for a registered patient so that I can manage their care appropriately.
 
-> 1. As an urgent care call centre handler requiring an in-hours or extended hours GP appointment for a patient, I would like to make an appropriate appointment directly from within my system. 
-> 2. As a GP I want to make an appointment for my patient with one of my local practices which provides a coil fitting clinic. 
+> 1. As an urgent care call centre handler requiring an in-hours or extended hours GP appointment for a patient, I would like to make an appropriate appointment directly from within my system.
+> 2. As a GP I want to make an appointment for my patient with one of my local practices which provides a coil fitting clinic.
 > 3. A&E triage nurses able to book appointments for patients 24/7 directly into GP systems - diverting patients to the most suitable contact type for their condition, and reducing the cost of inappropriate A&E attendances. Service to be available 24/7.
-> 4. As a practice nurse, I want to make an appointment for my patient to have bloods taken at the local GP phlebotomy service. 
+> 4. As a practice nurse, I want to make an appointment for my patient to have bloods taken at the local GP phlebotomy service.
 
 <i class='fa fa-check'/> As a healthcare professional at a healthcare organisation I would like to book an appointment for an unregistered patient so that I can manage their care appropriately.
 
-> 1. As an administrator at a hub, I want to book an appointment for a patient who is not registered at a local practice in one of the hub appointment sessions.  
+> 1. As an administrator at a hub, I want to book an appointment for a patient who is not registered at a local practice in one of the hub appointment sessions.
 
 <i class='fa fa-road'/>  As a healthcare professional in the admin hub of our federation, I want to book a GP appointment for a patient to have a home visit by our admissions prevention team.
 
@@ -62,10 +61,9 @@ Key:
 
 <i class='fa fa-road'/> As a healthcare professional at a healthcare organisation I would like to book an appointment for a registered patient with a pharmacy so that I can manage their care appropriately.
 
-> 1. Triage to pharmacy - primary care pharmacy projects - GP triage leads to GP making appointment for patient directly into the Pharmacy system as the patient has a minor ailment or requires a medication review. 
+> 1. Triage to pharmacy - primary care pharmacy projects - GP triage leads to GP making appointment for patient directly into the Pharmacy system as the patient has a minor ailment or requires a medication review.
 
 > 2. As a triage nurse at A&E, I want to book an appointment with a local pharmacist for the patient who has walked into A&E with a minor illness.
-
 
 <i class='fa fa-road'/> As a patient, I would like to book an appointment for myself so that I can manage my own care appropriately.
 
@@ -79,7 +77,7 @@ Key:
 
 <i class='fa fa-check'/>As a healthcare professional at a healthcare organisation I would like to update the appointment description and/or comment on behalf of the patient with additional information or to correct errors without having to cancel and rebook the appointment and potentially losing the slot in the process.
 
-> 1.	A nurse realises that an appointment that has been made for a patient does not highlight that the patient is a wheelchair user and will require to be seen in a room in the surgery on the ground floor. The nurse is able to update the appointment with this information so that the patient can be accommodated for their appointment.
+> 1. A nurse realises that an appointment that has been made for a patient does not highlight that the patient is a wheelchair user and will require to be seen in a room in the surgery on the ground floor. The nurse is able to update the appointment with this information so that the patient can be accommodated for their appointment.
 
 ## Cancel appointment ##
 
@@ -96,6 +94,5 @@ Key:
 > 1. A patient decides that they would like to cancel their appointment as the patient is no longer able to attend; the patient is able to access patient-facing services online, view their booked appointments and then cancel the relevant appointment - thus freeing it for someone else to book.
 
 <i class='fa fa-road'/> As a carer for a patient, I would like to cancel an appointment that I have made at any healthcare organisation for a patient so that the patients' appointment list is kept up to date and accurate.
-	
-> 1. A carer who is acting on behalf of a patient decides that they would like to cancel a patient's appointment as they are no longer able to attend; the carer is able to access patient-facing services online on behalf of the appointment, view the patient's booked appointments and then cancel the relevant appointment - thus freeing it for someone else to book.
 
+> 1. A carer who is acting on behalf of a patient decides that they would like to cancel a patient's appointment as they are no longer able to attend; the carer is able to access patient-facing services online on behalf of the appointment, view the patient's booked appointments and then cancel the relevant appointment - thus freeing it for someone else to book.

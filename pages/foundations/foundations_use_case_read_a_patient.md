@@ -46,12 +46,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient/[id]
 
 Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1`|
+| Header              | Value                                                       |
+| ------              | -----                                                       |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                         |
+| `Ssp-From`          | Consumer's ASID                                             |
+| `Ssp-To`            | Provider's ASID                                             |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:read:patient-1` |
 
 #### Payload request body ####
 
@@ -59,11 +59,11 @@ N/A
 
 #### Error handling ####
 
-Provider systems **SHALL** return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems **SHALL** return a [GPConnect-OperationOutcome-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-OperationOutcome-1?version=current) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
-- logical identifier of the resource is not valid/can't be found on the server 
+- logical identifier of the resource is not valid/can't be found on the server
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -78,7 +78,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
-- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Patient-1) profile.
+- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile.
 
 - **SHALL** populate the following fields:
   - `meta.profile` with the profile URI
@@ -94,7 +94,7 @@ Provider systems:
   - `registrationDetails.preferredBranchSurgery` with a reference to a `Location` resource representing the patient's preferred branch surgery (see [Branch surgeries](development_branch_surgeries.html) for more details)
   - `nhsCommunication` with the patient's language information, where available
   - `managingOrganization` Note: this is the current organisation, as addressed by ODS code in the base URL, and NOT the patient's registered practice which may be different
-  
+
 - **SHALL** meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields where data is available, excluding those listed below
 
 - **SHALL NOT** populate the following fields:
@@ -106,7 +106,7 @@ Provider systems:
   - `birthPlace`
   - `maritalStatus`
   - `multipleBirthBoolean`
-  
+
 ```json
 {% include foundations/read_patient_response_example.json %}
 ```

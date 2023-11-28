@@ -22,7 +22,7 @@ This page describes a single use case. For complete details and background pleas
 ## Security ##
 
 - GP Connect utilises TLS Mutual Authentication for system level authorization.
-- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details. 
+- GP Connect utilises a JSON Web Tokens (JWT) to transmit clinical audit & provenance details.
 
 ## API usage ##
 
@@ -44,12 +44,12 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Location/[id]
 
 Consumers SHALL include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1`|
+| Header              | Value                                                        |
+| ------              | -----                                                        |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                          |
+| `Ssp-From`          | Consumer's ASID                                              |
+| `Ssp-To`            | Provider's ASID                                              |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:read:location-1` |
 
 #### Payload request body ####
 
@@ -57,11 +57,11 @@ N/A
 
 #### Error handling ####
 
-Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
+Provider systems SHALL return a [GPConnect-OperationOutcome-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-OperationOutcome-1?version=current) resource that provides additional detail when one or more data fields are corrupt or a specific business rule/constraint is breached.
 
 For example, the:
 
-- Logical identifier of the resource is not valid/can't be found on the server.  
+- Logical identifier of the resource is not valid/can't be found on the server.
 
 Refer to [Development - FHIR API Guidance - Error Handling](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -76,7 +76,7 @@ Provider systems are not expected to add any specific headers beyond that descri
 Provider systems:
 
 - **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
-- **SHALL** return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://fhir.nhs.uk/STU3/StructureDefinition/CareConnect-GPC-Location-1) profile.
+- **SHALL** return `Location` resources that conform to the [CareConnect-GPC-Location-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Location-1?version=current) profile.
 
 - **SHALL** populate the following `Location` fields:
   - `meta.profile` with the profile URI

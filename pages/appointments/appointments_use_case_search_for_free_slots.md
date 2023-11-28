@@ -9,7 +9,7 @@ summary: "Search for free slots within a date range at an organisation"
 
 ## Use case ##
 
-This specification describes a single use case enabling the consumer to request from the targeted provider system slots matching the selected date range, booking organisation ODS Code and Type, and other parameters including UC Disposition Code and Service ID. 
+This specification describes a single use case enabling the consumer to request from the targeted provider system slots matching the selected date range, booking organisation ODS Code and Type, and other parameters including UC Disposition Code and Service ID.
 
 Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) for how this API use case could be used in the context of a typical consumer appointment management session.
 
@@ -22,12 +22,12 @@ Refer to [Consumer sessions illustrated](appointments_consumer_sessions.html) fo
 
 Provider systems SHALL support the following search parameters:
 
-| Name | Type | Description | Paths |
-|---|---|---|---|
-| `status` | `token` | The free/busy status of the appointment | `Slot.status` |
-| `start` | `date` or `dateTime` | Slot start date, or date and time | `Slot.start` |
-| `end` | `date` or `dateTime` | Slot end date, or date and time | `Slot.end` |
-| `searchFilter` | `token` | A generic token to allow consumers to pass additional search criteria to the provider. | (n/a) |
+| Name           | Type                 | Description                                                                            | Paths         |
+| ----           | ----                 | -----------                                                                            | -----         |
+| `status`       | `token`              | The free/busy status of the appointment                                                | `Slot.status` |
+| `start`        | `date` or `dateTime` | Slot start date, or date and time                                                      | `Slot.start`  |
+| `end`          | `date` or `dateTime` | Slot end date, or date and time                                                        | `Slot.end`    |
+| `searchFilter` | `token`              | A generic token to allow consumers to pass additional search criteria to the provider. | (n/a)         |
 
 {% include note.html content="The supported search parameters should be included in the [FHIR Capability Statement](foundations_use_case_get_the_fhir_capability_statement.html)." %}
 
@@ -35,12 +35,12 @@ Provider systems SHALL support the following search parameters:
 
 Provider systems SHALL support the following include parameters:
 
-| Name | Description | Paths |
-|---|---|---|
-| `_include=Slot:schedule` | Include `Schedule` resources referenced within the returned `Slot` Resources | `Slot.schedule` |
-| `_include:recurse= Schedule:actor:Practitioner` | Include `Practitioner` resources referenced within the returned `Schedule` resources | `Schedule.actor:Practitioner` |
-| `_include:recurse= Schedule:actor:Location` | Include `Location` resources referenced within the returned `Schedule` resources | `Schedule.actor:Location` |
-| `_include:recurse= Location:managingOrganization` | Include `Organization` resources references from matching `Location` resources | `Location.managingOrganization` |
+| Name                                              | Description                                                                          | Paths                           |
+| ----                                              | -----------                                                                          | -----                           |
+| `_include=Slot:schedule`                          | Include `Schedule` resources referenced within the returned `Slot` Resources         | `Slot.schedule`                 |
+| `_include:recurse= Schedule:actor:Practitioner`   | Include `Practitioner` resources referenced within the returned `Schedule` resources | `Schedule.actor:Practitioner`   |
+| `_include:recurse= Schedule:actor:Location`       | Include `Location` resources referenced within the returned `Schedule` resources     | `Schedule.actor:Location`       |
+| `_include:recurse= Location:managingOrganization` | Include `Organization` resources references from matching `Location` resources       | `Location.managingOrganization` |
 
 Consumer systems SHALL send the following parameters in the request:
 
@@ -48,7 +48,7 @@ Consumer systems SHALL send the following parameters in the request:
 - The `start` parameter SHALL be supplied with the `ge` search prefix. For example, `start=ge2017-09-22`, which indicates that the consumer would like slots where the slot start date is on or after "2017-09-22".
 - The `end` parameter SHALL only be included once in the request.
 - The `end` parameter SHALL be supplied with the `le` search prefix. For example, `end=le2017-09-26`, which indicates that the consumer would like slots where the slot end date is on or before "2017-09-26".
- 
+
   ![Diagram - Date range parameters](images/appointments/SearchForFreeSlots.png)
 
 - The `start` and `end` parameters SHALL contain a search prefix as specified above, and:
@@ -77,9 +77,9 @@ Consumer systems MAY send the following *_include* parameters in the request, to
 
 In order for providers to return the appropriate slots for the consumer, the consumer SHOULD send in the following parameters using the `searchFilter` parameter using the [token](https://www.hl7.org/fhir/STU3/search.html#token) parameter format of `system|code`:
 
-| Parameter name | Parameter value - system element | Parameter value - code element |
-| --- | --- |
-| `searchFilter` | `https://fhir.nhs.uk/Id/ods-organization-code` | Consumer ODS organisation code, e.g. `A11111`|
+| Parameter name | Parameter value - system element                                   | Parameter value - code element                                                                                                                                     |
+| -------------- | --------------------------------                                   | ------------------------------                                                                                                                                     |
+| `searchFilter` | `https://fhir.nhs.uk/Id/ods-organization-code`                     | Consumer ODS organisation code, e.g. `A11111`                                                                                                                      |
 | `searchFilter` | `https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1` | Consumer organisation type code from [GPConnect-OrganisationType-1 valueset](https://fhir.nhs.uk/STU3/CodeSystem/GPConnect-OrganisationType-1), e.g. `urgent-care` |
 
 Where search filters are sent by consumers which are not explicitly supported in this specification (for example, urgent care use a disposition code value set), providers who do not understand the additional parameters SHALL ignore them and SHALL NOT return an error.
@@ -106,7 +106,7 @@ Please see the conditions in which a consumer may book multiple adjacent slots o
 
 The fields below allow a patient to choose and attend an appointment appropriate to their needs.
 
-In order to prevent incorrect or unsuitable bookings, and to allow a patient to attend the appointment at the correct time, place or via the correct delivery channel, consumer systems SHALL support the following fields: 
+In order to prevent incorrect or unsuitable bookings, and to allow a patient to attend the appointment at the correct time, place or via the correct delivery channel, consumer systems SHALL support the following fields:
 
 - Start date and time
 - End date and time, or duration
@@ -164,17 +164,16 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]
 
 Consumers SHALL include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (that is, GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:slot-1` |
+| Header              | Value                                                      |
+| -----               | ------                                                     |
+| `Ssp-TraceID`       | Consumer's TraceID (that is, GUID/UUID)                    |
+| `Ssp-From`          | Consumer's ASID                                            |
+| `Ssp-To`            | Provider's ASID                                            |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:search:slot-1` |
 
 #### Payload request body ####
 
 N/A
-
 
 #### Error handling ####
 
@@ -184,7 +183,7 @@ The provider system SHALL return an error if:
 - the `status` parameter is absent or is present with a value other than `free`
 - the `_include=Slot:schedule` is absent
 
-SHALL return a [GPConnect-OperationOutcome-1](https://fhir.nhs.uk/STU3/StructureDefinition/GPConnect-OperationOutcome-1) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
+SHALL return a [GPConnect-OperationOutcome-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-OperationOutcome-1?version=current) resource that provides additional detail when one or more parameters are corrupt or a specific business rule/constraint is breached.
 
 Refer to [Error handling guidance](development_fhir_error_handling_guidance.html) for details of error codes.
 
@@ -207,7 +206,7 @@ Provider systems:
   - `Slot` resources for the organisation which:
     - have a `status` of `free`
     - **and** fall fully within the requested date range. That is, free slots which start before the `start` parameter and free slots which end after `end` search parameter SHALL NOT be returned.
-    - **and** are bookable according to related defined [embargo/booking window](appointments_slotavailabilitymanagement.html#booking-windowembargo) rules 
+    - **and** are bookable according to related defined [embargo/booking window](appointments_slotavailabilitymanagement.html#booking-windowembargo) rules
     - **and** which match the search filter parameters of Booking Organisation (ODS Code) and/or organisation type, or are not restricted for booking by ODS code and/or organisation type
 
   - `Schedule` resources associated with the returned `Slot` resources
@@ -240,7 +239,7 @@ Provider systems:
 
 - SHALL meet [General FHIR resource population requirements](development_fhir_resource_guidance.html#general-fhir-resource-population-requirements) populating all fields for `Schedule` and `Slot` where data is available, excluding those listed below
 
-- SHALL NOT populate the `specialty` field on `Schedule` or `Slot`  
+- SHALL NOT populate the `specialty` field on `Schedule` or `Slot`
 
 ```json
 {% include appointments/search_for_free_slots_response_example.json %}
