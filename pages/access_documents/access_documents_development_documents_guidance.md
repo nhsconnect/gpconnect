@@ -119,4 +119,5 @@ It has been considered that there is the possibility that some of the unreviewed
 
 ## Documents for deceased patients ##
 
-GP Connect APIs allow search and retrieval of documents for deceased patients for a period of 28 days after the patient’s death. The providers should allow for the period to be configurable. If a request is received after this period, the providers should return an error. The providers should return a deceased patient’s record only if the patient was a main GMS registered patient prior to being de-registered due to death.
+GP Connect APIs **MAY** allow for search and retrieval of documents for deceased patients for a period of 28 days after the patient’s death.
+The providers **MUST** allow for the period to be configurable. If a request is received after this period, the providers **MUST** return an error as per [error handling](access_documents_use_case_find_a_patient#error-handling). The providers **MUST** return a deceased patient’s record only if the patient was a main GMS registered patient prior to being de-registered due to death.
