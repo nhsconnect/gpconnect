@@ -13,8 +13,8 @@ summary: "Use case for finding a patient resource by business identity"
 
 The consumer system:
 
-- SHALL have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
-- SHALL have previously traced the patient's NHS number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
+- **SHALL** have previously resolved the organisation's FHIR endpoint base URL through the [Spine Directory Service](integration_spine_directory_service.html)
+- **SHALL** have previously traced the patient's NHS number using the [Personal Demographics Service](integration_personal_demographic_service.html) or an equivalent service
 
 ## API usage ##
 
@@ -44,14 +44,14 @@ GET https://[proxy_server]/https://[provider_server]/[fhir_base]/Patient?identif
 
 #### Request headers ####
 
-Consumers SHALL include the following additional HTTP request headers:
+Consumers **SHALL** include the following additional HTTP request headers:
 
-| Header               | Value |
-|----------------------|-------|
-| `Ssp-TraceID`        | Consumer's TraceID (i.e. GUID/UUID) |
-| `Ssp-From`           | Consumer's ASID |
-| `Ssp-To`             | Provider's ASID |
-| `Ssp-InteractionID`  | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1`|
+| Header              | Value                                                         |
+| -----               | -----                                                         |
+| `Ssp-TraceID`       | Consumer's TraceID (i.e. GUID/UUID)                           |
+| `Ssp-From`          | Consumer's ASID                                               |
+| `Ssp-To`            | Provider's ASID                                               |
+| `Ssp-InteractionID` | `urn:nhs:names:services:gpconnect:fhir:rest:search:patient-1` |
 
 #### Payload request body ####
 
@@ -80,17 +80,17 @@ Provider systems are not expected to add any specific headers beyond that descri
 
 Provider systems:
 
-- SHALL return a `200` **OK** HTTP status code on successful execution of the operation.
-- SHALL return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
-- SHALL only return `Patient` resources for [active patients](overview_glossary.html#active-patient). Where a patient is active but their NHS number has never been traced or verified, please see the [provider system unverified record requirements](#provider-system-unverified-record-requirements) below.
-- SHALL return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile.
+- **SHALL** return a `200` **OK** HTTP status code on successful execution of the operation.
+- **SHALL** return zero or more matching `Patient` resources in a `Bundle` of `type` searchset.
+- **SHALL** only return `Patient` resources for [active patients](overview_glossary.html#active-patient). Where a patient is active but their NHS number has never been traced or verified, please see the [provider system unverified record requirements](#provider-system-unverified-record-requirements) below.
+- **SHALL** return `Patient` resources that conform to the [CareConnect-GPC-Patient-1](https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Patient-1?version=current) profile.
 
 - **SHALL** populate the following `Patient` fields:
   - `meta.profile` with the profile URI
   - `versionId` with the current version of each `Patient` resource.
   - `identifier` with relevant business identifiers, including a minimum of the patient's NHS number
   - `name`
-    - The patient resource SHALL contain a single instance of the name element with the `use` of `official` and SHALL contain the name synchronised with PDS.
+    - The patient resource **SHALL** contain a single instance of the name element with the `use` of `official` and **SHALL** contain the name synchronised with PDS.
   - `birthDate`
   - `gender`
   - `address` where available
@@ -118,7 +118,7 @@ Provider systems:
 
 #### Provider system unverified record requirements ####
 
-Where an **[active](overview_glossary.html#active-patient) matching patient record** is found, but the **NHS number on this record has never been traced or verified** (either on PDS, or indirectly via NHAIS), the provider SHALL retrieve the patient's demographic record using a PDS Retrieval Query, and then:
+Where an **[active](overview_glossary.html#active-patient) matching patient record** is found, but the **NHS number on this record has never been traced or verified** (either on PDS, or indirectly via NHAIS), the provider **SHALL** retrieve the patient's demographic record using a PDS Retrieval Query, and then:
 
 - Verify the patient's NHS number according to the rules below:
 
@@ -134,4 +134,4 @@ Where an **[active](overview_glossary.html#active-patient) matching patient reco
   - Sensitive
   - Superseded
 
-If all three steps above succeed the patient's NHS number SHALL be marked as verified, and the patient SHALL be included in the response bundle. Otherwise the patient's NHS number SHALL NOT be marked as verified and SHALL NOT be included in the response bundle.
+If all three steps above succeed the patient's NHS number **SHALL** be marked as verified, and the patient **SHALL** be included in the response bundle. Otherwise the patient's NHS number **SHALL NOT** be marked as verified and **SHALL NOT** be included in the response bundle.
