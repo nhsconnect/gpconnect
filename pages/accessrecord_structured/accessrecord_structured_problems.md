@@ -1,5 +1,6 @@
 ---
 title: ProblemHeader (Condition)
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-ProblemHeader-Condition-1?version=current
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

@@ -1,5 +1,6 @@
 ---
 title: Observation - uncategorised data
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-Observation-1?version=current
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: accessrecord_structured_sidebar
