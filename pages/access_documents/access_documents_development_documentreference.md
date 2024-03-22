@@ -1,5 +1,6 @@
 ---
 title: DocumentReference
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-DocumentReference-1?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: access_documents_sidebar
