@@ -62,10 +62,10 @@ entries:
         subfolderitems:
 
         - title: <b class='resource'>List</b>
-          external_url: https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--CareConnect-GPC-List-1?version=current
+          url: /accessrecord_structured_development_list.html
           output: web
         - title: <b class='resource'>Bundle</b>
-          external_url: https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--GPConnect-Searchset-Bundle-1?version=current
+          url: /accessrecord_structured_development_bundle.html
           output: web
 
       - title: Allergies
