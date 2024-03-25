@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; resources
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/Build/FHIR-resources?version=current
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar

@@ -1,5 +1,6 @@
 ---
 title: Binary
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/FHIR-Assets/All-assets/Profiles/Profile--Binary?version=current
 keywords: documents design
 tags: [design,documents]
 sidebar: access_documents_sidebar
