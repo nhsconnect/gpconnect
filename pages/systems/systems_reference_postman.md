@@ -1,5 +1,6 @@
 ---
 title: Postman API examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Help-and-Support/GP-Connect-Demonstrator?version=current
 keywords: system, reference, postman, api
 tags: [system,reference]
 sidebar: overview_sidebar

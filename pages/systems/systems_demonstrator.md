@@ -1,5 +1,6 @@
 ---
 title: GP Connect Demonstrator
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Help-and-Support/GP-Connect-Demonstrator?version=current
 keywords: system, demonstrator
 tags: [system,demonstrator]
 sidebar: overview_sidebar
