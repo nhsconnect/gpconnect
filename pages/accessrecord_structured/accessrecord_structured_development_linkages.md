@@ -1,5 +1,6 @@
 ---
 title: Linkages
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Linkages?version=current
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar

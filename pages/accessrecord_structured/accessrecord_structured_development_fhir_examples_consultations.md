@@ -1,13 +1,12 @@
 ---
 title: FHIR&reg; Consultations examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Consultation-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
 permalink: accessrecord_structured_development_fhir_examples_consultations.html
 summary: "Access Record Structured FHIR examples"
 ---
-
-
 
 The following is a set of request/response examples for Consultations:
 
@@ -68,7 +67,6 @@ The response payload is available as a json file by clicking on the link below. 
 
 {% include accessrecord_structured/consultations_response2.json %}
 
-
 </div>
 
 <div role="tabpanel" class="tab-pane" id="example3">
@@ -90,7 +88,6 @@ The response payload is available as a json file by clicking on the link below. 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
 {% include accessrecord_structured/consultations_response3.json %}
-
 
 </div> -->
 </div>

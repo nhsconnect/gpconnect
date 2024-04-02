@@ -1,5 +1,6 @@
 ---
 title: Development introduction
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Development-introduction?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -21,42 +22,42 @@ Defining all the clinical data areas within a patient record has enabled GP Conn
 
 ## Representing the different clinical areas
 
-We have defined a data model for the whole GP record that we are working through a clinical area at a time. 
+We have defined a data model for the whole GP record that we are working through a clinical area at a time.
 This is illustrated in the diagram below:
 
 <a href="images/access_structured/GP_Record_Clinical_Areas_Overview_v3.png"><img src="images/access_structured/GP_Record_Clinical_Areas_Overview_v3.png" alt="Logical Model" style="max-width:100%;max-height:100%;"></a>
 
-In the diagram each of the boxes with a blue outline represents a clinical area. 
-These each contain 1 or more boxes representing FHIR&reg; resources. 
+In the diagram each of the boxes with a blue outline represents a clinical area.
+These each contain 1 or more boxes representing FHIR&reg; resources.
 The FHIR resource boxes are colour coded:
 
 * Green - are resources that are defined for GP Connect use in this version of the specification
 * Blue - are resources that have yet to have their GP Connect usage defined
 
-The clinical areas that are contained in the larger box on the right-hand side, labelled 'Clinical Item', are the clinical areas in which pieces of clinical information are held. 
-The clinical areas on the left of the diagram will be used to model the way the clinical items are viewed, organised and managed in GP systems. 
+The clinical areas that are contained in the larger box on the right-hand side, labelled 'Clinical Item', are the clinical areas in which pieces of clinical information are held.
+The clinical areas on the left of the diagram will be used to model the way the clinical items are viewed, organised and managed in GP systems.
 The aim being that data can be reproduced in consumer interfaces in a way that maintains the context of the data and most accurately communicates the meaning that was intended by the clinician who created it.
 
 ## Linkages
 
-It is also apparent in the diagram that many of the resources are linked together. 
+It is also apparent in the diagram that many of the resources are linked together.
 Details of how these linkages exist and will be managed can be found on the linkages page.
 
-- [Linkages](accessrecord_structured_development_linkages.html)
+* [Linkages](accessrecord_structured_development_linkages.html)
 
 ## Clinical areas
 
 The following pages describe each of the clinical areas in more detail and are followed by pages explaining how to populate the related resources and giving worked examples in FHIR.
 
-- [Allergies guidance](accessrecord_structured_development_allergies_guidance.html)
-- [Medication resource relationships](accessrecord_structured_development_medication_resource_relationships.html)
-- [Medication guidance](accessrecord_structured_development_medication_guidance.html)
-- [Immunization guidance](accessrecord_structured_development_immunization_guidance.html)
-- [Uncategorised data guidance](accessrecord_structured_development_uncategorisedData_guidance.html)
-- [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
-- [Problem guidance](accessrecord_structured_development_problems_guidance.html)
-- [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
-- [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
-- [Diary Entries guidance](accessrecord_structured_development_diaryentry_guidance.html)
+* [Allergies guidance](accessrecord_structured_development_allergies_guidance.html)
+* [Medication resource relationships](accessrecord_structured_development_medication_resource_relationships.html)
+* [Medication guidance](accessrecord_structured_development_medication_guidance.html)
+* [Immunization guidance](accessrecord_structured_development_immunization_guidance.html)
+* [Uncategorised data guidance](accessrecord_structured_development_uncategorisedData_guidance.html)
+* [Consultation guidance](accessrecord_structured_development_consultation_guidance.html)
+* [Problem guidance](accessrecord_structured_development_problems_guidance.html)
+* [Investigations guidance](accessrecord_structured_development_pathology_guidance.html)
+* [Referrals guidance](accessrecord_structured_development_referralrequest_guidance.html)
+* [Diary Entries guidance](accessrecord_structured_development_diaryentry_guidance.html)
 
 {% include note.html content="Documents are defined in a seperate [Access Document](access_documents.html) capability, which complements Access Record Structured by allowing the querying and retrieval of documents for a patient." %}

@@ -1,5 +1,6 @@
 ---
 title: Non-functional requirements
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/non-functional-requirements
 keywords: development non-functional requirements NFRs
 tags: [development]
 sidebar: overview_sidebar

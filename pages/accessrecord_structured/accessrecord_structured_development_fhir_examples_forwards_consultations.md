@@ -1,5 +1,6 @@
 ---
 title: Forward compatibility support examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Compatibility-support-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

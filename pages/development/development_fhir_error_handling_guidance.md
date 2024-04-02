@@ -1,5 +1,6 @@
 ---
 title: Error handling
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Error-handling?version=current
 keywords: fhir, development, operation outcome, error
 tags: [fhir,development,error]
 sidebar: overview_sidebar

@@ -1,5 +1,6 @@
 ---
 title: Clinical terminologies
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/Design/Clinical-terminologies?version=current
 keywords: development
 tags: [design,development]
 sidebar: overview_sidebar

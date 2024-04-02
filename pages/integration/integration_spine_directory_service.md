@@ -1,5 +1,6 @@
 ---
 title: Overview and querying
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/integrate-with-spine/spine-directory-service
 keywords: spine, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar

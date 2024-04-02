@@ -1,5 +1,6 @@
 ---
 title: Immunisation guidance
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Design/Immunisations-Guidance?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -32,8 +33,8 @@ This may be a contemporaneous record by the clinician administering the vaccinat
 A record of an immunisation may be created as part of a scheduled programme of immunisations such as childhood immunisations, seasonal influenza vaccination or in response to specific circumstances (for example, prior to travel, disease outbreak or occupational risk).
 
 If a vaccination is recorded as an issued medication, the details of the issued medication are not included in the immunisations response.
-The medication details **MUST** be sent as medication resources (if the consumer requests medications). 
-This may be in addition to an immunisation resource for the event of the vaccination administration, depending on how the immunisation event was recorded. 
+The medication details **MUST** be sent as medication resources (if the consumer requests medications).
+This may be in addition to an immunisation resource for the event of the vaccination administration, depending on how the immunisation event was recorded.
 
 ## Using the procedure code
 
@@ -74,7 +75,7 @@ The default is to return given immunisations only.
 
 Where a consumer system has requested immunisations not given, it **MUST** ensure that the not given data remains clearly distinct from given vaccinations. The consumer **MAY** need to handle <code>explanation.reasonNotGiven</code> alongside the "not done" code to provide the classified reason the vaccination was not given.
 
-## Additional information about vaccinations 
+## Additional information about vaccinations
 
 The above section addresses circumstances where an immunisation is not given at the point of intending to give the vaccine.
 GP Systems may capture other coded information relating to vaccinations other than the administration of the vaccine in an immunisations feature / module / categorisation.
@@ -85,9 +86,9 @@ See [Retrieve a patient's structured record](accessrecord_structured_development
 
 Such coded records **MUST** be included with the immunisation bundle using an <code>observation</code> resource, as defined for [uncategorised data](accessrecord_structured_development_observation_uncategoriseddata.html).
 
-Records returned against an immunisation request under the scope of this definition **MUST** be 
-- excluded from the records returned for an uncategorised data request
-- included in the immunisations `List`
+Records returned against an immunisation request under the scope of this definition **MUST** be
+* excluded from the records returned for an uncategorised data request
+* included in the immunisations `List`
 
 Consumers shoud note than GP Systems differ with respect to additional information categorised as immunisations, therefore the same coded data may be returned against an immunisation or uncategorised data request by different provider systems.
 

@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; Medication examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Medication-examples?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
@@ -34,19 +35,11 @@ The following is a set of request/response examples for Medication:
 
 <p>Note: The <code class="highlighter-rouge">includePrescriptionIssues</code> parameter has explicitly been set to <code class="highlighter-rouge">true</code>.</p>
 
-
-
 {% include accessrecord_structured/meds_request.json %}
-
-
 
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
-
-
 {% include accessrecord_structured/meds_response.json %}
-
-
 
 </div>
 <div role="tabpanel" class="tab-pane" id="example2">
@@ -59,8 +52,6 @@ The following is a set of request/response examples for Medication:
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 <p style="line-height: 1; font-size: 18px">Response payload</p>
 
-
-
 </div>
 <div role="tabpanel" class="tab-pane" id="example3">
 <p style="line-height: 2; font-size: 20px">Example 3</p>
@@ -71,7 +62,6 @@ The following is a set of request/response examples for Medication:
 </ul>
 <p style="line-height: 1; font-size: 18px">Request payload</p>
 <p style="line-height: 1; font-size: 18px">Response payload</p>
-
 
 </div>
 </div>

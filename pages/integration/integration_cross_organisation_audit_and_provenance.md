@@ -1,5 +1,6 @@
 ---
 title: Cross-organisation audit and provenance
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Cross-organisation-audit-and-provenance?version=current
 keywords: spine, ssp, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar

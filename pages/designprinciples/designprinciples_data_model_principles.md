@@ -1,5 +1,6 @@
 ---
 title: Data model principles
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/Design/Data-model-principles?version=current
 keywords: development, fhir, logical models
 tags: [development,fhir]
 sidebar: overview_sidebar

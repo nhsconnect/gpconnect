@@ -1,5 +1,6 @@
 ---
 title: Search examples
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Examples/Search-examples?version=current
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar

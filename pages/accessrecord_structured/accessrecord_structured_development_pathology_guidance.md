@@ -1,5 +1,6 @@
 ---
 title: Investigations guidance
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Design/Investigations-guidance?version=current
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar

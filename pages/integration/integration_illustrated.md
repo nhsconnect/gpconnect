@@ -1,5 +1,6 @@
 ---
 title: Spine integration illustrated
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/integrate-with-spine/spine-integration
 keywords: spine, pds, ssp, sds, integration, patient, demographics
 tags: [integration]
 sidebar: overview_sidebar
@@ -23,8 +24,8 @@ GP Connect provider APIs are accessed through the NHS Spine. As such, consumers 
 
 A GP Connect consumer queries PDS for the patient in order to:
 
-  - Verify the patient's NHS number
-  - Retrieve the ODS organisation code of the patient's registered GP practice
+- Verify the patient's NHS number
+- Retrieve the ODS organisation code of the patient's registered GP practice
 
 {% include important.html content="Appointment Management consumer suppliers may wish to build workflows that support appointment booking into other GP practices (other than the patient's registered practice) such as into Extended Access Hubs. For these consumers, an alternate mechanism for discovering the target practice's ODS organisation code is required. Please see the [Appointment Management Service Discovery page](appointments_service_discovery.html) for more details." %}
 
@@ -34,8 +35,8 @@ For further details on this step please see the [Personal Demographic Service](i
 
 A GP Connect consumer queries SDS using the ODS organisation code retrieved in the previous step in order to retrieve:
 
-  - The GP practice's GP Connect service root URL (their FHIR endpoint)
-  - The GP practice's GP Connect ASID
+- The GP practice's GP Connect service root URL (their FHIR endpoint)
+- The GP practice's GP Connect ASID
 
 For further details on this step please see the [Spine Directory Services - overview and querying](integration_spine_directory_service.html) page.
 
@@ -59,18 +60,18 @@ The steps shown in the diagram are detailed below.
 
 | Step | Description |
 |------|-------------|
-|      | *Step 1 is optional in the sense that a cached version of a these trace results may be available to the consumer.* |    
+|      | *Step 1 is optional in the sense that a cached version of a these trace results may be available to the consumer.* |
 | 1a   | **Consumer** is responsible for performing a  [Personal Demographics Service(PDS)](integration_personal_demographic_service.html) Trace to both verify the NHS Number and obtain the ODS code of the GP Practice system. |
 | 1b   | **PDS** returns NHS Number verification status, and the ODS code of the patient's registered GP practice. |
 | Note: | *Appointment Management consumers that wish to book into other GP practices require [an alternate mechanism](appointments_service_discovery.html) for determining a GP practice ODS code. Regardless of the mechanism used to determine a GP practices ODS code, the PDS step is required in order to verify the patient's NHS number.* |
 |      |      |
-|      | *Step 2 is optional in the sense that cached or configured endpoint details for the Practice may be available from a previous SDS interaction.* |    
-| 2a   | **Consumer** calls Spine Directory Service again to discover the URL of the FHIR server endpoint at the practice | 
-| 2b   | **SDS** returns details of the FHIR endpoint. | 
+|      | *Step 2 is optional in the sense that cached or configured endpoint details for the Practice may be available from a previous SDS interaction.* |
+| 2a   | **Consumer** calls Spine Directory Service again to discover the URL of the FHIR server endpoint at the practice |
+| 2b   | **SDS** returns details of the FHIR endpoint. |
 | 2c   | **Consumer** calls [Spine Directory Service (SDS)](integration_spine_directory_service.html) to discover the Accredited System ID (ASID) of the system which provides a FHIR endpoint at the practice identified by the specified ODS code. |
 | 2d   | **SDS** returns the ASID. |
 |      |      |
-|      | *Step 3 is optional in the sense that the Capability Statement may be used to verify the FHIR capabilities which the endpoint provides should this be required at run time. The results of this call may be cached for future interactions.* |    
+|      | *Step 3 is optional in the sense that the Capability Statement may be used to verify the FHIR capabilities which the endpoint provides should this be required at run time. The results of this call may be cached for future interactions.* |
 | 3a   | **Consumer** calls the [metadata endpoint](foundations_use_case_get_the_fhir_capability_statement.html) at the practice FHIR server to request full details of which FHIR operations are implemented at that server - the Capability Statement. |
 | 3b   | **Spine Secure Proxy (SSP)** receives the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 3c   | **Provider** returns the Capability Statement to the SSP. |
@@ -79,7 +80,7 @@ The steps shown in the diagram are detailed below.
 | 4a   | **Consumer** then makes an API call to [Search for free slots](appointments_use_case_search_for_free_slots.html) at the practice in the specified time-frame. |
 | 4b   | **SSP** forwards the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |
 | 4c   | **Provider** responds with details of what slots are available for booking. Should no applicable slots be returned, the consumer may make repeated calls to [Search for free slots](appointments_use_case_search_for_free_slots.html) with amended date ranges. |
-| 4d   | **SSP** forwards the free slots received from the Provider to the Consumer. |   
+| 4d   | **SSP** forwards the free slots received from the Provider to the Consumer. |
 |      |      |
 | 5a   | **Consumer** makes API call to [Find a patient](foundations_use_case_find_a_patient.html) providing the patient's NHS Number. |
 | 5b   | **Spine Secure Proxy (SSP)** receives the call from the Consumer, performs security checks, and if these pass, forwards the consumer request to the provider. |

@@ -1,5 +1,6 @@
 ---
 title: Volumetric and performance
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/volumetric-and-performance
 keywords: development
 tags: [development]
 sidebar: overview_sidebar
@@ -23,7 +24,7 @@ Provider systems SHALL through V&P profiling and solution assurance activities d
 
 ### Command APIs ###
 
-A command API is any API which performs a user-initiated operation with a side-effect (for example, booking an appointment, registering a patient). 
+A command API is any API which performs a user-initiated operation with a side-effect (for example, booking an appointment, registering a patient).
 
 Provider systems SHALL process command API calls in &lt;250ms.
 
@@ -38,12 +39,13 @@ Provider systems SHOULD process query API calls in &lt;1000ms, as this is the li
 Provider systems SHALL process query API calls in &lt;3000ms.
 
 ## Volume and performance testing ##
- 
-Suppliers of provider solutions are expected to undertake provider-led V&P testing of their solutions.  
- 
-### V&P testing model ### 
+
+Suppliers of provider solutions are expected to undertake provider-led V&P testing of their solutions.
+
+### V&P testing model ###
+
 Suppliers SHALL submit for review a high-level V&P testing model document that covers the stages of testing, details of the environment and how they intend to test.
- 
+
 Suppliers' test approaches SHOULD include a LOAD and a RAMP test and ideally a SOAK test.  Suppliers SHALL supply comprehensive results of the test including timings for round-trip API call/response against the message sizes used and the TPS at the time of the request was made.
 
 ### V&P testing infrastructure scaling ###
@@ -58,20 +60,20 @@ A plan outlining the points at which infrastructure will be scaled up should be 
 
 ### V&P test environment ###
 
-Test environments SHALL simulate consumer applications making API calls against simulated test data (such as, patient records, diaries.) 
- 
-Test data SHALL be populated with realistic complexity, depth and volume - for example, in the case of patients the data should be representative of clinical records of a mix of healthy patients and patients with multiple long-term conditions.  
+Test environments SHALL simulate consumer applications making API calls against simulated test data (such as, patient records, diaries.)
 
-If a small set of test data is repeatedly used as part of the V&P tests then test setup SHOULD seek to minimise the effects of caching - for example, within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).  
- 
+Test data SHALL be populated with realistic complexity, depth and volume - for example, in the case of patients the data should be representative of clinical records of a mix of healthy patients and patients with multiple long-term conditions.
+
+If a small set of test data is repeatedly used as part of the V&P tests then test setup SHOULD seek to minimise the effects of caching - for example, within API middleware (the data from a small number of patients repeatedly queried in quick succession could be served from cache which would invalidate test results).
+
 ### Volumetric model ###
 
 Suppliers SHOULD test API call volumes against a refined volumetric model<sup>1</sup>.
- 
+
 During the LOAD test, the timings for end-to-end API calls SHALL NOT exceed the maximum stated (250ms for command APIs, 3000ms for query APIs) and SHOULD NOT exceed the lower limits (100ms and 1000ms respectively).
- 
-Results for the RAMP test SHALL include the TPS and message size profile at the threshold where the above limits were exceeded, if applicable. 
- 
-If a SOAK test is performed, results SHALL be provided.  
- 
+
+Results for the RAMP test SHALL include the TPS and message size profile at the threshold where the above limits were exceeded, if applicable.
+
+If a SOAK test is performed, results SHALL be provided.
+
 <sup>1</sup>**Note:** V&P test profiles will differ according to the supplier based on the proportion of patient population whose GP records are held with that supplier.

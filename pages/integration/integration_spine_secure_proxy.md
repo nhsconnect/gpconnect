@@ -1,5 +1,6 @@
 ---
 title: Spine Secure Proxy
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/integrate-with-spine/spine-secure-proxy
 keywords: spine, proxy, ssp, security
 tags: [integration]
 sidebar: overview_sidebar
@@ -9,9 +10,9 @@ summary: "Overview of the role of the Spine Secure Proxy (SSP) within GP Connect
 
 ## Overview ##
 
-The Spine Secure Proxy (SSP) is a forward HTTP proxy which is used as a broker to control and protect access to GP principal IT systems that expose FHIR based GP Connect APIs.  
+The Spine Secure Proxy (SSP) is a forward HTTP proxy which is used as a broker to control and protect access to GP principal IT systems that expose FHIR based GP Connect APIs.
 
-It provides a single security point for both authentication and authorisation for consuming systems. Additional responsibilities include auditing of requests, checking data sharing agreements and transaction logging. 
+It provides a single security point for both authentication and authorisation for consuming systems. Additional responsibilities include auditing of requests, checking data sharing agreements and transaction logging.
 
 All HTTP communications are secured using TLS MA. This includes both legs of the request, from consumer system to the proxy and then from the proxy to provider system.
 
@@ -32,9 +33,9 @@ GET https://[ssp_fqdn]/[provider_service_root_url]/[fhir_request]
 
 Where:
 
-  - `[ssp_fqdn]` is the fully qualified domain name of the SSP
-  - `[provider_service_root_url]` is the provider's service root URL as returned from SDS in the `nhsMhsEndPoint` attribute. This element is normally in the format `https://[provider_fqdn]/[path_to_fhir_base]`
-  - `[fhir_request]` is the local portion of the request relating to the FHIR API call being made, including query parameters
+- `[ssp_fqdn]` is the fully qualified domain name of the SSP
+- `[provider_service_root_url]` is the provider's service root URL as returned from SDS in the `nhsMhsEndPoint` attribute. This element is normally in the format `https://[provider_fqdn]/[path_to_fhir_base]`
+- `[fhir_request]` is the local portion of the request relating to the FHIR API call being made, including query parameters
 
 Please note `GET` is used as an example; the actual HTTP method will vary based on API call.
 
@@ -68,4 +69,3 @@ The [Spine Core FHIR API Framework - SSP Implementation Guide](https://developer
 - [Architectural context](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#system-architecture)
 - GP Connect [Consuming system responsibilities](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#consumer)
 - GP Connect [Provider system responsibilities](https://developer.nhs.uk/apis/spine-core-1-0/ssp_implementation_guide.html#provider)
-

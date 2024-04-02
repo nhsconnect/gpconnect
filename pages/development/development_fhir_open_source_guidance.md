@@ -1,5 +1,6 @@
 ---
 title: FHIR&reg; library
+redirect_to: https://simplifier.net/guide/gpconnect-data-model/Home/Build/FHIR-library?version=current
 keywords: fhir, development, open source
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -15,7 +16,6 @@ GP Connect strongly advises suppliers to use an existing FHIR library as it will
 * ***Reduced complexity*** - using a library can reduce the quantity of boilerplate code required to configure provider endpoints, structure a request and validate consumed resources. This will help keep the code base smaller, and make it easier to work on and maintain.
 * ***Quicker development*** - a library gives developers the standard FHIR data types, FHIR resources and some validation of the FHIR resources, allowing developers to focus on data transformation and business rules.
 * ***Solution resilience*** - using a tried and tested implementation of the FHIR resources and data types should result in the implementation being more resilient to receiving valid but unexpected elements within FHIR resources. Many libraries will also include some level of validation to aid in ensuring that only valid data enters the system.
-
 
 ## What libraries to use? ##
 

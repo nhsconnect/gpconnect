@@ -1,5 +1,6 @@
 ---
 title: Returning data in lists
+redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Using-lists-to-return-data?version=current
 keywords: structured design
 tags: [design,structured]
 sidebar: accessrecord_structured_sidebar
