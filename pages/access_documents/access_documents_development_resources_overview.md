@@ -1,6 +1,5 @@
 ---
 title: FHIR&reg; resources overview
-redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Resource-population-fundamentals?version=current
 keywords: getcarerecord
 tags: [design,structured]
 sidebar: access_documents_sidebar

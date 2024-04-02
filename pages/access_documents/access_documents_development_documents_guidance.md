@@ -1,6 +1,5 @@
 ---
 title: Documents guidance
-redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Design/Documents-Guidance?version=current
 keywords: getcarerecord
 tags: [getcarerecord]
 sidebar: access_documents_sidebar
