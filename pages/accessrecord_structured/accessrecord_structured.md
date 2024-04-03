@@ -1,6 +1,5 @@
 ---
 title: Access Record Structured
-redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Introduction/Introduction?version=current
 keywords: getcarerecord, structured
 tags: [getcarerecord, structured]
 sidebar: accessrecord_structured_sidebar
