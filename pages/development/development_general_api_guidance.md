@@ -1,5 +1,6 @@
 ---
 title: General API guidance
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/general-api-guidance
 keywords: fhir development
 tags: [fhir,development]
 sidebar: overview_sidebar
@@ -101,7 +102,7 @@ The consumer system would therefore issue a request to the new version of the pr
 
 The [Resource URL](http://www.hl7.org/implement/standards/fhir/STU3/http.html) will be in the following format:
 
-	VERB [base]/[type]/[id] {?_format=[mime-type]}
+ VERB [base]/[type]/[id] {?_format=[mime-type]}
 
 Clients and servers constructing URLs SHALL conform to [RFC 3986 Section 6 Appendix A](https://tools.ietf.org/html/rfc3986#appendix-A) which requires percent-encoding for a number of characters that occasionally appear in the URLs (mainly in search parameters).
 
@@ -132,7 +133,7 @@ Once assigned, the identity SHALL never change. `logical Ids` are always opaque,
 
 {% include important.html content="As stated above and in the FHIR&reg; standard, `logical Ids` are opaque and other systems should not attempt to determine their structure (or rely on this structure for performing interactions). Furthermore, as they are assigned by each server responsible for storing a resource they are usually implementation specific. For example, NoSQL document stores typically preferring a GUID key (for example, 0b28be67-dfce-4bb3-a6df-0d0c7b5ab4) while a relational database stores typically preferring an integer key (for example, 2345)." %}
 
-For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)  
+For further background, refer to principles of [resource identity as described in the FHIR standard](http://www.hl7.org/implement/standards/fhir/STU3/resource.html#id)
 
 #### External resource resolution ####
 
@@ -218,12 +219,11 @@ The SSP SHALL perform the following checks to authenticate client request:
 
 - get the common name (CN) from the TLS session and compare the host name to the declared endpoint
 - check that the client/sending endpoint has been registered (and accredited) to initiate the given interaction
-- check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction   
+- check that the server/receiving endpoint has been registered (and accredited) to receive/process the given interaction
 
 #### Caching headers ####
 
 Providers SHALL use the following HTTP header to ensure that no intermediaries cache responses: `Cache-Control: no-store`
-
 
 ### [Managing Return Content](https://www.hl7.org/fhir/STU3/http.html#return) ###
 
@@ -245,7 +245,7 @@ Servers SHOULD honour a `return=minimal` or `return=representation` preference i
 
 Consumer systems SHALL compare the returned structured patient demographic data (supplied by the provider system as structured data) against the demographic data held in the consumer system.
 
-The following data SHALL be cross-checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.   
+The following data SHALL be cross-checked between consumer and returned provider data. Any differences between these fields SHALL be brought to the attention of the user.
 
 | Item | Resource field |
 | ---- | -------------- |
@@ -255,8 +255,9 @@ The following data SHALL be cross-checked between consumer and returned provider
 | Birth date | patient.birthDate |
 
 Additionally, the following data MAY be displayed if returned from the provider to assist a visual cross-check and for safe identification, but should not be part of the automatic comparison:
-* Address and postcode
-* Contact (telephone, mobile, email)
+
+- Address and postcode
+- Contact (telephone, mobile, email)
 
 All above may be redacted if patient is flagged on Spine as sensitive demographics.
 

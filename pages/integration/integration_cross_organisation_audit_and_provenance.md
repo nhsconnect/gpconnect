@@ -1,6 +1,6 @@
 ---
 title: Cross-organisation audit and provenance
-redirect_to: https://simplifier.net/guide/gp-connect-access-record-structured/Home/Build/Cross-organisation-audit-and-provenance?version=current
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/integrate-with-spine/cross-organisation-audit-and-provenance
 keywords: spine, ssp, integration, audit, provenance
 tags: [integration]
 sidebar: overview_sidebar
