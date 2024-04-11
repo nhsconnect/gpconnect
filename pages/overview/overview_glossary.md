@@ -1,5 +1,6 @@
 ---
 title: Glossary
+redirect_to: https://digital.nhs.uk/services/gp-connect/develop-gp-connect-services/development/glossary---gp-connect
 keywords: abbreviations, definitions, glossaries, terms
 tags: [getting_started]
 sidebar: overview_sidebar
@@ -14,6 +15,6 @@ toc: false
 ### {{ item.title }} ###
 
 <p> {{ item.value }} </p>
- {{ item.html }} 
+ {{ item.html }}
 
 {% endfor %}
